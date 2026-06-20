@@ -1,0 +1,217 @@
+{
+  "total_regions": 4,
+  "region_names": [
+    "framing_plan",
+    "beam_reinforcement",
+    "typical_stirrup",
+    "general_notes"
+  ],
+  "entity_count_per_region": {
+    "framing_plan": 421,
+    "beam_reinforcement": 183,
+    "unassigned": 8,
+    "general_notes": 1,
+    "typical_stirrup": 1
+  },
+  "top_texts_per_region": {
+    "framing_plan": [
+      "B12(200X600)",
+      "B13(200X600)",
+      "B3(200X600)",
+      "B18(200X600)",
+      "\\LSCALE 1:100",
+      "02",
+      "01",
+      "B1(200X600)",
+      "B2(200X600)",
+      "B4(200X600)",
+      "B6(200X600)",
+      "B7(200X600)",
+      "B8(200X600)",
+      "B9(200X600)",
+      "B10(200X600)",
+      "B11(150X600)",
+      "B16(200X600)",
+      "B17(200X600)",
+      "B14(200X600)",
+      "B15(200X600)"
+    ],
+    "beam_reinforcement": [
+      "2-Y16",
+      "2-Y20",
+      "2-Y12",
+      "4-Y8, SIDE FACE REINF. ON BOTH FACES\\P(2-Y8 ON ONE FACE)",
+      "S.F.R.\\PON BOTH FACE",
+      "\\LSHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS"
+    ],
+    "general_notes": [
+      "NOTE: \\P·^IALL SLABS ARE 150mm THK. U.N.O"
+    ],
+    "typical_stirrup": [
+      "TYPICAL STIRRUP DETAILS"
+    ]
+  },
+  "anchors_detected": 3,
+  "anchor_summary": [
+    {
+      "anchor_type": "framing_plan",
+      "text": "\\LSHR & OHT LVL TOP FRAMING PLAN",
+      "confidence": 1.0,
+      "x": 16869.770724,
+      "y": 38933.634366
+    },
+    {
+      "anchor_type": "beam_reinforcement",
+      "text": "\\LSHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "confidence": 0.98,
+      "x": 13546.902803,
+      "y": 5945.3213
+    },
+    {
+      "anchor_type": "typical_stirrup",
+      "text": "TYPICAL STIRRUP DETAILS",
+      "confidence": 1.0,
+      "x": 28861.223903,
+      "y": 2911.680772
+    }
+  ],
+  "regions": [
+    {
+      "region_type": "framing_plan",
+      "xmin": 4584.65675,
+      "ymin": 7479.672206,
+      "xmax": 36381.767135,
+      "ymax": 46823.878366,
+      "confidence": 0.9629,
+      "entity_count": 413
+    },
+    {
+      "region_type": "beam_reinforcement",
+      "xmin": 4133.038931,
+      "ymin": 45.3213,
+      "xmax": 36139.484298,
+      "ymax": 24333.239707,
+      "confidence": 0.8951,
+      "entity_count": 148
+    },
+    {
+      "region_type": "typical_stirrup",
+      "xmin": 22961.223903,
+      "ymin": -2988.319228,
+      "xmax": 34761.223903,
+      "ymax": 8811.680772,
+      "confidence": 0.988,
+      "entity_count": 10
+    },
+    {
+      "region_type": "general_notes",
+      "xmin": 15251.050688,
+      "ymin": 35713.94534,
+      "xmax": 18251.050688,
+      "ymax": 38713.94534,
+      "confidence": 0.68,
+      "entity_count": 1
+    }
+  ],
+  "validation": {
+    "passed": true,
+    "beam_reinforcement_checks": {
+      "2-Y16": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "2-Y20": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "2-Y12": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "2L-Y10@100": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "Ld": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "1900": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "2150": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "500": {
+        "found": true,
+        "region": "beam_reinforcement",
+        "required": false,
+        "present_in_drawing": false,
+        "skipped": true
+      }
+    },
+    "framing_plan_checks": {
+      "B1": {
+        "found": true,
+        "region": "framing_plan",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "B2": {
+        "found": true,
+        "region": "framing_plan",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "B3": {
+        "found": true,
+        "region": "framing_plan",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "B4": {
+        "found": true,
+        "region": "framing_plan",
+        "required": true,
+        "present_in_drawing": true,
+        "skipped": false
+      },
+      "beam_layout_geometry": {
+        "found": true,
+        "region": "framing_plan",
+        "required": true,
+        "present_in_drawing": true
+      }
+    },
+    "framing_plan_forbidden": {
+      "violations_found": false,
+      "violations": []
+    }
+  }
+}

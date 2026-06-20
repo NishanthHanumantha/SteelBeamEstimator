@@ -1,0 +1,22 @@
+# Steel Beam Estimation Automation
+
+Objective:
+Read DXF files and estimate beam steel quantity in KG and MT.
+
+Inputs:
+1. General Notes DXF
+2. Beam Framing + Reinforcement DXF
+
+Outputs:
+1. Beam-wise Steel Quantity
+2. Diameter-wise Steel Quantity (Dia)
+3. Total Steel KG
+4. Total Steel MT
+
+Business Rules:
+- Extract Development Length from General Notes
+- Extract Cover from General Notes
+- Extract Beam Geometry from Framing Plan
+- Extract Reinforcement from GFC Drawings
+- Calculate Cutting Length
+- Calculate Steel Weight

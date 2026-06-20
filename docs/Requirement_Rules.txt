@@ -1,0 +1,50 @@
+# Reinforcement Interpretation Rules
+
+## Type1
+
+2Y-16
+
+Meaning:
+2 bars of 16mm dia
+
+Regex:
+(\d+)Y-(\d+)
+
+--------------------------------
+
+## Type2
+
+2L-Y10@100C/C
+
+Meaning:
+2 legged stirrups
+10mm dia
+100mm spacing
+
+--------------------------------
+
+## Type3
+
+2L-Y8@100/200/100C/C
+
+Meaning:
+Support spacing = 100
+Middle spacing = 200
+Support spacing = 100
+
+If lengths not shown:
+Divide beam into 3 equal zones
+
+--------------------------------
+
+## Spacer Bars
+
+Dia = 25mm
+
+Spacing = 1m
+
+Number =
+ceil(overlap_length/1m)+1
+
+Cutting Length =
+Beam Width - 2*Cover
