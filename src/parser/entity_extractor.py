@@ -177,8 +177,13 @@ class EntityExtractor:
 
     def _dimension_text(self, entity: DXFGraphic) -> str:
         override = getattr(entity.dxf, "text", None)
-        if override:
+        if override is not None and str(override).strip():
             return str(override).strip()
+
+        if hasattr(entity.dxf, "actual_measurement"):
+            actual = entity.dxf.actual_measurement
+            if actual is not None:
+                return str(actual).strip()
 
         if hasattr(entity, "get_measurement"):
             try:

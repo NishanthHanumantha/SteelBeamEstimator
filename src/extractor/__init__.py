@@ -11,6 +11,10 @@ from src.extractor.reinforcement_block_detector import (
     ReinforcementBlockDetector,
     ReinforcementBlockSummary,
 )
+from src.extractor.reinforcement_detail_extractor import (
+    ReinforcementDetailBlock,
+    ReinforcementDetailExtractor,
+)
 
 __all__ = [
     "BeamLabel",
@@ -20,4 +24,6 @@ __all__ = [
     "ReinforcementBlock",
     "ReinforcementBlockDetector",
     "ReinforcementBlockSummary",
+    "ReinforcementDetailBlock",
+    "ReinforcementDetailExtractor",
 ]

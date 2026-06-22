@@ -1,0 +1,87 @@
+Phase 3B.1 – Geometry Driven Reinforcement Detail Extraction
+
+Current implementation is incorrect.
+
+Problem:
+
+The extractor builds reinforcement blocks around beam labels.
+
+This misses many reinforcement annotations because the beam label is not the centre of the reinforcement detail.
+
+Required change:
+
+Use reinforcement geometry as the primary object.
+
+Algorithm:
+
+1. Detect beam detail label:
+
+B1(200X600)
+B2(200X600)
+B3(200X600)
+
+2. Around each label find connected geometry on layers:
+
+-STR-BEAM
+-STR-REINF
+-STR-COLUMN
+-S-DIM
+SEC TEXT
+
+3. Build connected-component geometry graph.
+
+4. Compute bounding box of the connected reinforcement sketch.
+
+5. Collect all:
+
+TEXT
+MTEXT
+DIMENSION
+
+inside this geometry bounding box.
+
+6. Store coordinates for every collected text.
+
+Output:
+
+{
+"beam_mark":"B1",
+
+"bbox":{},
+
+"texts":[
+{
+"text":"2-Y16",
+"x":123,
+"y":456
+}
+]
+}
+
+Validation:
+
+For B1 extract:
+
+2-Y16
+2-Y16
+2-Y16
+2-Y20
+2-Y20
+1900
+1900
+Ld
+2L-Y10@100C/C
+4-Y8 SFR
+
+For B2 extract:
+
+2-Y16
+2-Y20
+2-Y12
+500
+2L-Y8@100/200/100C/C
+
+For B3 extract all reinforcement annotations visible inside the B3 reinforcement sketch.
+
+The reinforcement sketch geometry defines ownership of texts, not distance from the beam label.
+Create production-quality code.
