@@ -1,41 +1,52 @@
 # Steel Beam Estimator
 
-DXF extraction and structural steel beam estimation pipeline for AutoCAD drawings.
+Structural steel beam extraction pipeline from AutoCAD DXF drawings.
 
-## Phases implemented
+## Repository layout
 
-| Phase | Description | CLI |
-|-------|-------------|-----|
-| 1 | DXF entity extraction | `python main.py <dxf_path>` |
-| 2A | Beam label extraction | `python extract_beam_labels.py` |
-| 3A | Reinforcement block detection (nearest-neighbour) | `python extract_reinforcement_blocks.py` |
-| 3A.5 | Drawing region detection | `python detect_drawing_regions.py` |
-| 3B | Region-based reinforcement details | `python extract_reinforcement_details.py` |
+| Folder | Purpose |
+|--------|---------|
+| **Version1/** | Frozen archive — Phase 3B and earlier (do not modify) |
+| **Version2/** | Active development — Phases A through C.5.2 (pre-Phase D) |
 
-## Setup
+All new work happens in **Version2/**.
 
-```bash
+## Version 2 — current status
+
+Phases completed through **C.5.2** (sketch ownership validation + audit):
+
+- **Phase A** — Framing plan beam extraction (18 beams)
+- **Phase B** — Reinforcement header extraction (24 occurrences)
+- **Phase C** — Header grid / beam cells
+- **Sketch debug** — 38 reinforcement sketches detected
+- **Phase C.5** — Sketch-to-header occurrence ownership (PASS)
+- **Phase C.5.2** — Audit metrics and warnings (ownership PASS, audit PASS_WITH_WARNINGS)
+
+### Quick start (Version2)
+
+```powershell
+cd Version2
 pip install -r requirements.txt
+$env:PYTHONPATH="."
+python docs/run_phases_abc.py
+python run_beam_sketches_debug.py
+python run_sketch_ownership.py
 ```
 
-## Pipeline
+### Documentation
 
-```bash
-python main.py "data/dfx/SteelBeam_Galera_STR&OHT_Top.dxf"
-python extract_beam_labels.py
-python detect_drawing_regions.py
-python extract_reinforcement_details.py
-```
+- Workflow guide: `Version2/docs/Version2_Workflow.pdf`
+- Markdown source: `Version2/docs/Version2_Workflow.md`
 
-## Output
+### Inputs
 
-Generated under `data/output/`:
+- `Version2/data/framing/Beam_FramingPlan.dxf`
+- `Version2/data/reinforcement/Beam_ReinforcementDetails.dxf`
 
-- `entities.json` — raw extracted DXF entities
-- `beam_labels.json` — detected beam marks and sizes
-- `reinforcement_detail_blocks.json` — per-beam GFC reinforcement texts (region-scoped)
-- `drawing_regions.json`, `entity_region_map.json` — sheet region understanding
+### Outputs
 
-## Docs
+Pipeline JSON and debug DXF files are written to `Version2/data/output/`.
 
-See `docs/Project_FRD.txt` and `docs/Requirement_Rules.txt`.
+## Version 1
+
+See `Version1/README.md` and `Version1/VERSION_INFO.md` for the legacy Phase 3B pipeline.
