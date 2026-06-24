@@ -7,6 +7,7 @@ from pathlib import Path
 
 from loguru import logger
 
+from src.config.output_paths import OutputPaths, OUTPUT_ROOT
 from src.framing.framing_beam_extractor import FramingBeamExtractor
 from src.framing.framing_validator import FramingValidator
 from src.grid.beam_cell_builder import BeamCellBuilder
@@ -17,7 +18,6 @@ from src.reinforcement.header_validator import ReinforcementHeaderValidator
 
 DEFAULT_FRAMING_DIR = Path("data/framing")
 DEFAULT_REINFORCEMENT_DIR = Path("data/reinforcement")
-DEFAULT_OUTPUT_DIR = Path("data/output")
 
 
 def configure_logging(verbose: bool) -> None:
@@ -53,8 +53,8 @@ def parse_args() -> argparse.Namespace:
         "-o",
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help=f"Output directory (default: {DEFAULT_OUTPUT_DIR})",
+        default=OUTPUT_ROOT,
+        help=f"Output root directory (default: {OUTPUT_ROOT})",
     )
     parser.add_argument(
         "-v",
@@ -73,34 +73,32 @@ def save_json(data: object, path: Path) -> None:
 
 
 def run(framing_dir: Path, reinforcement_dir: Path, output_dir: Path) -> int:
-    output_dir.mkdir(parents=True, exist_ok=True)
+    paths = OutputPaths(output_dir)
+    paths.ensure_phase_dirs()
 
-    # Phase A
     framing_beams = FramingBeamExtractor().extract_from_directory(framing_dir)
     framing_validation = FramingValidator().validate(framing_beams)
-    save_json(framing_beams, output_dir / "framing_beams.json")
-    save_json(framing_validation, output_dir / "framing_validation.json")
+    save_json(framing_beams, paths.framing_beams)
+    save_json(framing_validation, paths.framing_validation)
 
-    # Phase B
     header_extractor = ReinforcementHeaderExtractor()
     all_headers = header_extractor.extract_from_directory(reinforcement_dir)
     output_headers = header_extractor.to_output_records(all_headers, dedupe=True)
     header_validation = ReinforcementHeaderValidator().validate(
         all_headers, output_headers
     )
-    save_json(output_headers, output_dir / "reinforcement_headers.json")
-    save_json(header_validation, output_dir / "reinforcement_header_validation.json")
+    save_json(output_headers, paths.reinforcement_headers)
+    save_json(header_validation, paths.reinforcement_header_validation)
 
-    # Phase C
     beam_cells = BeamCellBuilder().build(output_headers)
     cell_validation = BeamCellValidator().validate(beam_cells, output_headers)
-    save_json(beam_cells, output_dir / "beam_cells.json")
-    save_json(cell_validation, output_dir / "beam_cells_validation.json")
+    save_json(beam_cells, paths.beam_cells)
+    save_json(cell_validation, paths.beam_cells_validation)
 
     BeamCellDebugExporter().export_all(
-        cells_path=output_dir / "beam_cells.json",
-        output_dir=output_dir,
-        headers_path=output_dir / "reinforcement_headers.json",
+        cells_path=paths.beam_cells,
+        output_dir=paths.phase_c_debug_dir,
+        headers_path=paths.reinforcement_headers,
     )
 
     logger.info(

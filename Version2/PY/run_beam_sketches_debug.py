@@ -6,11 +6,10 @@ from pathlib import Path
 
 from loguru import logger
 
+from src.config.output_paths import OutputPaths, OUTPUT_ROOT
 from src.grid.beam_sketch_debug_exporter import BeamSketchDebugExporter
 
 DEFAULT_DXF = Path("data/reinforcement/Beam_ReinforcementDetails.dxf")
-DEFAULT_OUTPUT_DIR = Path("data/output")
-DEFAULT_CELLS = DEFAULT_OUTPUT_DIR / "beam_cells.json"
 
 
 def configure_logging(verbose: bool) -> None:
@@ -27,6 +26,7 @@ def configure_logging(verbose: bool) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    paths = OutputPaths()
     parser = argparse.ArgumentParser(
         description="Export reinforcement sketch debug JSON and DXF.",
     )
@@ -40,15 +40,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--cells",
         type=Path,
-        default=DEFAULT_CELLS,
-        help=f"Ownership cells JSON for fallback (default: {DEFAULT_CELLS})",
+        default=paths.beam_cells,
+        help=f"Ownership cells JSON for fallback (default: {paths.beam_cells})",
     )
     parser.add_argument(
         "-o",
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help=f"Output directory (default: {DEFAULT_OUTPUT_DIR})",
+        default=OUTPUT_ROOT,
+        help=f"Output root directory (default: {OUTPUT_ROOT})",
     )
     parser.add_argument(
         "-v",
@@ -62,6 +62,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     configure_logging(args.verbose)
+    paths = OutputPaths(args.output_dir)
 
     if not args.dxf.exists():
         logger.error("DXF not found: {}", args.dxf)
@@ -70,7 +71,7 @@ def main() -> int:
     try:
         result = BeamSketchDebugExporter().export_all(
             dxf_path=args.dxf,
-            output_dir=args.output_dir,
+            output_dir=paths.phase_c_debug_dir,
             cells_path=args.cells,
         )
         validation = result["validation"]

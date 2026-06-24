@@ -1,0 +1,64 @@
+{
+  "VALID_SFR": {
+    "action": "PARSE",
+    "description": "Parse bar quantity and diameter from side-face reinforcement callouts.",
+    "examples": [
+      "S.F.R.- 2-Y10",
+      "4-Y8, SIDE FACE REINF. ON BOTH FACES"
+    ],
+    "entries": [
+      {
+        "clean_text": "4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE FACE)",
+        "beam_mark": "B3",
+        "sketch_id": "B3_S1",
+        "classification": "VALID_SFR"
+      },
+      {
+        "clean_text": "4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE FACE)",
+        "beam_mark": "B9",
+        "sketch_id": "B9_S2",
+        "classification": "VALID_SFR"
+      },
+      {
+        "clean_text": "4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE FACE)",
+        "beam_mark": "B14",
+        "sketch_id": "B14_S3",
+        "classification": "VALID_SFR"
+      },
+      {
+        "clean_text": "4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE FACE)",
+        "beam_mark": "B14",
+        "sketch_id": "B14_S3",
+        "classification": "VALID_SFR"
+      },
+      {
+        "clean_text": "S.F.R.- 2-Y10",
+        "beam_mark": "B18",
+        "sketch_id": "B18_S1",
+        "classification": "VALID_SFR"
+      }
+    ]
+  },
+  "PARTIAL_SFR": {
+    "action": "IGNORE_NOTE",
+    "description": "Documented in final dataset but excluded from reinforcement quantity parsing.",
+    "examples": [
+      "S.F.R. ON BOTH FACE",
+      "SIDE FACE REINFORCEMENT DETAILS FOR CURVED BEAMS DEPTH>450"
+    ],
+    "entries": [
+      {
+        "clean_text": "S.F.R. ON BOTH FACE",
+        "beam_mark": "B18",
+        "sketch_id": "B18_S1",
+        "classification": "PARTIAL_SFR"
+      },
+      {
+        "clean_text": "SIDE.FACE.REINFORCEMENT DETAILS FOR CURVED BEAMS DEPTH>450",
+        "beam_mark": "B18",
+        "sketch_id": "B18_S1",
+        "classification": "PARTIAL_SFR"
+      }
+    ]
+  }
+}

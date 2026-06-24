@@ -6,11 +6,8 @@ from pathlib import Path
 
 from loguru import logger
 
+from src.config.output_paths import OutputPaths, OUTPUT_ROOT
 from src.grid.beam_cell_debug_exporter import BeamCellDebugExporter
-
-DEFAULT_OUTPUT_DIR = Path("data/output")
-DEFAULT_CELLS = DEFAULT_OUTPUT_DIR / "beam_cells.json"
-DEFAULT_HEADERS = DEFAULT_OUTPUT_DIR / "reinforcement_headers.json"
 
 
 def configure_logging(verbose: bool) -> None:
@@ -27,6 +24,7 @@ def configure_logging(verbose: bool) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    paths = OutputPaths()
     parser = argparse.ArgumentParser(
         description="Export beam ownership cell debug artifacts.",
     )
@@ -34,21 +32,21 @@ def parse_args() -> argparse.Namespace:
         "-i",
         "--cells",
         type=Path,
-        default=DEFAULT_CELLS,
-        help=f"Input beam_cells.json (default: {DEFAULT_CELLS})",
+        default=paths.beam_cells,
+        help=f"Input beam_cells.json (default: {paths.beam_cells})",
     )
     parser.add_argument(
         "--headers",
         type=Path,
-        default=DEFAULT_HEADERS,
-        help=f"Optional reinforcement_headers.json (default: {DEFAULT_HEADERS})",
+        default=paths.reinforcement_headers,
+        help=f"Optional reinforcement_headers.json (default: {paths.reinforcement_headers})",
     )
     parser.add_argument(
         "-o",
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help=f"Output directory (default: {DEFAULT_OUTPUT_DIR})",
+        default=OUTPUT_ROOT,
+        help=f"Output root directory (default: {OUTPUT_ROOT})",
     )
     parser.add_argument(
         "-v",
@@ -62,6 +60,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     configure_logging(args.verbose)
+    paths = OutputPaths(args.output_dir)
 
     if not args.cells.exists():
         logger.error("beam_cells.json not found: {}", args.cells)
@@ -71,7 +70,7 @@ def main() -> int:
         exporter = BeamCellDebugExporter()
         result = exporter.export_all(
             cells_path=args.cells,
-            output_dir=args.output_dir,
+            output_dir=paths.phase_c_debug_dir,
             headers_path=args.headers,
         )
         validation = result["validation"]

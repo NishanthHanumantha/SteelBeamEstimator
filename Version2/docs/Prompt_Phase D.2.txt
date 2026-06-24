@@ -1,0 +1,348 @@
+PHASE D.2 – ANNOTATION PARSING & NORMALIZATION
+
+OBJECTIVE
+Implement Phase D.2 to convert the finalized engineering annotation dataset into structured reinforcement objects ready for beam reinforcement assembly (Phase E).
+
+IMPORTANT RULES
+
+1. WORK ONLY INSIDE Version2.
+2. DO NOT MODIFY ANY EXISTING PHASES OR OUTPUTS.
+3. THIS IS A NEW PHASE ONLY.
+4. READ INPUT ONLY FROM:
+   data/output/phase_d1_7d/engineering_annotations_final.json
+5. USE:
+   data/output/phase_d1_7d/d2_parser_policy.json
+   data/output/phase_d1_7d/sfr_parsing_policy.json
+6. DO NOT CHANGE D.1.7D FILES.
+7. ALL NEW OUTPUTS MUST BE WRITTEN TO:
+   data/output/phase_d2/
+
+--------------------------------------------------
+INPUT DATASET
+--------------------------------------------------
+
+Use only annotations where:
+
+final_status == "PARSER_READY"
+
+Ignore:
+
+IGNORED_FRAGMENT
+DEDUPLICATED
+UNKNOWN
+
+--------------------------------------------------
+PARSING REQUIREMENTS
+--------------------------------------------------
+
+A) BAR PARSER
+
+Examples:
+
+2-Y12
+2-Y16
+2-Y20
+4-Y25
+
+Extract:
+
+{
+  "annotation_type": "BAR",
+  "quantity": 2,
+  "diameter_mm": 16
+}
+
+Validation:
+
+quantity > 0
+diameter_mm > 0
+
+--------------------------------------------------
+
+B) STIRRUP PARSER
+
+Examples:
+
+2L-Y8@100C/C
+2L-Y8@150C/C
+2L-Y8@200C/C
+2L-Y8@100/200/100C/C
+
+Extract:
+
+{
+  "annotation_type": "STIRRUP",
+  "leg_count": 2,
+  "diameter_mm": 8,
+  "spacing_mm": [100]
+}
+
+or
+
+{
+  "annotation_type": "STIRRUP",
+  "leg_count": 2,
+  "diameter_mm": 8,
+  "spacing_mm": [100,200,100]
+}
+
+Validation:
+
+leg_count > 0
+diameter_mm > 0
+all spacing values > 0
+
+--------------------------------------------------
+
+C) ANCHORAGE PARSER
+
+Examples:
+
+Ld
+Ld+10db
+Ld+12db
+
+Extract:
+
+Ld
+
+{
+  "annotation_type": "ANCHORAGE",
+  "anchorage_type": "LD",
+  "extension_db": 0
+}
+
+Ld+10db
+
+{
+  "annotation_type": "ANCHORAGE",
+  "anchorage_type": "LD_PLUS_DB",
+  "extension_db": 10
+}
+
+Ld+12db
+
+{
+  "annotation_type": "ANCHORAGE",
+  "anchorage_type": "LD_PLUS_DB",
+  "extension_db": 12
+}
+
+Validation:
+
+extension_db >= 0
+
+--------------------------------------------------
+
+D) SIDE FACE REINFORCEMENT PARSER
+
+Parse ONLY VALID_SFR entries.
+
+Ignore all PARTIAL_SFR entries.
+
+Examples:
+
+S.F.R.- 2-Y10
+
+{
+  "annotation_type": "SIDE_FACE_REINF",
+  "quantity": 2,
+  "diameter_mm": 10
+}
+
+4-Y8, SIDE FACE REINF. ON BOTH FACES
+
+{
+  "annotation_type": "SIDE_FACE_REINF",
+  "quantity": 4,
+  "diameter_mm": 8
+}
+
+Validation:
+
+quantity > 0
+diameter_mm > 0
+
+--------------------------------------------------
+NORMALIZATION
+--------------------------------------------------
+
+For every parsed annotation create:
+
+{
+  "annotation_id": "ANN_xxxxx",
+  "beam_mark": "...",
+  "occurrence_id": ...,
+  "sketch_id": "...",
+
+  "annotation_type": "...",
+
+  "raw_text": "...",
+  "clean_text": "...",
+
+  "parsed_fields": {...},
+
+  "source_entity_type": "...",
+  "source_layer": "...",
+
+  "parser_status": "PARSED"
+}
+
+--------------------------------------------------
+TRACEABILITY
+--------------------------------------------------
+
+Preserve lineage.
+
+Every parsed record must contain:
+
+{
+  "source_annotation_index": ...,
+  "source_occurrence_id": ...,
+  "source_sketch_id": ...
+}
+
+This traceability must survive into future phases.
+
+--------------------------------------------------
+OUTPUT FILES
+--------------------------------------------------
+
+Create:
+
+data/output/phase_d2/parsed_bars.json
+
+data/output/phase_d2/parsed_stirrups.json
+
+data/output/phase_d2/parsed_anchorage.json
+
+data/output/phase_d2/parsed_side_face_reinf.json
+
+data/output/phase_d2/parsed_annotations_master.json
+
+data/output/phase_d2/annotation_parsing_summary.json
+
+data/output/phase_d2/annotation_parsing_validation.json
+
+data/output/phase_d2/annotation_parsing_report.txt
+
+data/output/phase_d2/annotation_parsing_debug.dxf
+
+--------------------------------------------------
+VALIDATION
+--------------------------------------------------
+
+Create validation checks:
+
+1. Total parser-ready input count
+
+2. Parsed count by type
+
+3. Failed parse count
+
+4. Unsupported pattern count
+
+5. Duplicate annotation_id count
+
+6. Missing mandatory field count
+
+7. Parser coverage %
+
+Coverage =
+
+parsed_annotations /
+parser_ready_annotations
+
+PASS if coverage >= 98%
+
+WARN if coverage 95-98%
+
+FAIL if coverage <95%
+
+--------------------------------------------------
+DEBUG DXF
+--------------------------------------------------
+
+Create layer:
+
+DEBUG_PARSED_ANNOTATIONS
+
+Display:
+
+[BAR]
+2-Y16
+Q=2 D=16
+
+[STIRRUP]
+2L-Y8@100C/C
+L=2 D=8 S=100
+
+[ANCHORAGE]
+Ld+10db
+EXT=10
+
+[SFR]
+4-Y8
+Q=4 D=8
+
+Place labels near original annotation coordinates.
+
+--------------------------------------------------
+EXPECTED FINAL REPORT
+--------------------------------------------------
+
+Report:
+
+Total parser-ready annotations
+Parsed successfully
+Failed parses
+Coverage %
+
+BAR count
+STIRRUP count
+ANCHORAGE count
+SIDE_FACE_REINF count
+
+Top failed patterns
+
+Validation status
+
+READY_FOR_PHASE_E = TRUE/FALSE
+
+--------------------------------------------------
+IMPLEMENTATION CONSTRAINT
+--------------------------------------------------
+
+This phase is PARSING ONLY.
+
+DO NOT:
+
+- Assemble reinforcement cages
+- Infer top/bottom bars
+- Compute steel quantities
+- Compute cut lengths
+- Modify ownership
+- Modify annotations
+- Modify D.1 outputs
+
+Only parse and normalize engineering annotations into structured objects.
+
+After implementation:
+
+Run
+
+cd Version2
+$env:PYTHONPATH="."
+python run_phase_d2_annotation_parsing.py
+
+and provide:
+
+1. Full summary
+2. Validation result
+3. Type counts
+4. Coverage %
+5. Sample parsed records from each annotation type
+6. List of failed parse patterns (if any)
+
+STOP after Phase D.2.
+DO NOT START PHASE E.

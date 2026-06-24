@@ -8,6 +8,7 @@ from typing import Any
 
 from loguru import logger
 
+from src.config.output_paths import OutputPaths, OUTPUT_ROOT
 from src.grid.header_occurrence_exporter import HeaderOccurrenceExporter
 from src.grid.sketch_ownership_auditor import SketchOwnershipAuditor
 from src.grid.sketch_ownership_builder import SketchOwnershipBuilder
@@ -15,8 +16,6 @@ from src.grid.sketch_ownership_debug_exporter import SketchOwnershipDebugExporte
 from src.grid.sketch_ownership_validator import SketchOwnershipValidator
 
 DEFAULT_DXF = Path("data/reinforcement/Beam_ReinforcementDetails.dxf")
-DEFAULT_OUTPUT_DIR = Path("data/output")
-DEFAULT_SKETCHES = DEFAULT_OUTPUT_DIR / "beam_sketches_debug.json"
 
 
 def configure_logging(verbose: bool) -> None:
@@ -33,6 +32,7 @@ def configure_logging(verbose: bool) -> None:
 
 
 def parse_args() -> argparse.Namespace:
+    paths = OutputPaths()
     parser = argparse.ArgumentParser(
         description="Phase C.5 — validate sketch ownership per header occurrence.",
     )
@@ -46,15 +46,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--sketches",
         type=Path,
-        default=DEFAULT_SKETCHES,
-        help=f"Input beam_sketches_debug.json (default: {DEFAULT_SKETCHES})",
+        default=paths.beam_sketches_debug,
+        help=f"Input beam_sketches_debug.json (default: {paths.beam_sketches_debug})",
     )
     parser.add_argument(
         "-o",
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help=f"Output directory (default: {DEFAULT_OUTPUT_DIR})",
+        default=OUTPUT_ROOT,
+        help=f"Output root directory (default: {OUTPUT_ROOT})",
     )
     parser.add_argument(
         "-v",
@@ -82,14 +82,15 @@ def run(
     sketches_path: Path,
     output_dir: Path,
 ) -> int:
+    paths = OutputPaths(output_dir)
+    paths.phase_c5_dir.mkdir(parents=True, exist_ok=True)
+
     if not dxf_path.exists():
         logger.error("DXF not found: {}", dxf_path)
         return 1
     if not sketches_path.exists():
         logger.error("Sketches JSON not found: {}", sketches_path)
         return 1
-
-    output_dir.mkdir(parents=True, exist_ok=True)
 
     occurrences = HeaderOccurrenceExporter().extract_from_dxf(dxf_path)
     sketches = _load_json(sketches_path)
@@ -115,15 +116,15 @@ def run(
         audits,
     )
 
-    _write_json(output_dir / "header_occurrences.json", occurrences)
-    _write_json(output_dir / "sketch_ownership.json", enriched_ownership)
-    _write_json(output_dir / "sketch_ownership_validation.json", validation)
+    _write_json(paths.header_occurrences, occurrences)
+    _write_json(paths.sketch_ownership, enriched_ownership)
+    _write_json(paths.sketch_ownership_validation, validation)
 
     SketchOwnershipDebugExporter().export(
         occurrences=occurrences,
         sketches=sketches,
         ownership=enriched_ownership,
-        output_path=output_dir / "sketch_ownership_debug.dxf",
+        output_path=paths.sketch_ownership_debug_dxf,
     )
 
     logger.info(

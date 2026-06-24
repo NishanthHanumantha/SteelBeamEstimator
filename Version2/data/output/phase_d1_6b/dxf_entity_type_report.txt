@@ -1,0 +1,70 @@
+======================================================================
+DXF Entity-Type Survey Report (Phase D.1.6B)
+======================================================================
+
+Entity inventory (modelspace / blocks):
+  TEXT: 26
+  MTEXT: 65
+  ATTRIB: 0
+  ATTDEF: 0
+  DIMENSION: 88
+  LEADER: 67
+  MLEADER: 0
+  INSERT: 3
+
+Total text-bearing entities: 185
+
+1. Where are stirrup spacing annotations stored?
+   Found in entity types: DIMENSION
+   Example: DIMENSION — 2L-Y8@100/200/100C/C
+   Example: DIMENSION — 2L-Y8@100/200/100C/C
+   Example: DIMENSION — 2L-Y8@100C/C
+   Example: DIMENSION — 2L-Y8@100C/C
+   Example: DIMENSION — 2L-Y10@100C/C
+
+2. Where are Ld / Ld+10db annotations stored?
+   Found in entity types: DIMENSION
+   Example: DIMENSION — Ld
+   Example: DIMENSION — Ld
+   Example: DIMENSION — Ld
+   Example: DIMENSION — Ld+10db
+   Example: DIMENSION — Ld+10db
+
+3. Where are dimensions stored?
+   Found in entity types: DIMENSION
+   Example: DIMENSION — 1900 (layer -S-DIM)
+   Example: DIMENSION — 1900 (layer -S-DIM)
+   Example: DIMENSION — 2150 (layer -S-DIM)
+   Example: DIMENSION — 500 (layer -S-DIM)
+   Example: DIMENSION — 500 (layer -S-DIM)
+
+4. Are they TEXT?
+   Stirrup: no
+   Anchorage: no
+   Dimension: no
+
+5. Are they MTEXT?
+   Stirrup: no
+   Anchorage: no
+   Dimension: no
+
+6. Are they ATTRIB?
+   Stirrup: no
+   Anchorage: no
+   Dimension: no
+
+7. Are they DIMENSION entities?
+   Stirrup: yes
+   Anchorage: yes
+   Dimension: yes
+
+8. Are they inside INSERT blocks?
+   No stirrup/anchorage/dimension text found inside INSERT blocks.
+
+D.1 extraction coverage:
+   Extracted by D.1 (TEXT/MTEXT): MTEXT, TEXT
+   Not extracted by D.1: DIMENSION
+
+Recommendation: Extend D.1 extraction first
+
+======================================================================

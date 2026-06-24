@@ -1,0 +1,106 @@
+======================================================================
+DIMENSION Text Source Audit Report (Phase D.1.7A)
+======================================================================
+
+TOTAL DIMENSIONS: 88
+ENGINEERING_TEXT COUNT: 32
+MEASUREMENT_VALUE COUNT: 56
+UNKNOWN COUNT: 0
+
+TOP REPEATED VALUES
+
+  687: 42 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-STIRUP
+    actual_measurement range: 686.714 – 686.714
+    beam_marks: B1, B3, B4, B5, B8, B9, B10, B11, B12, B13, B15, B16, B17, B18
+
+  Investigation: 687
+    why_appearing: DIMENSION entities on layer -S-STIRUP with blank/space override and actual_measurement ~686.71 mm, rounded to 687 by D.1.7.
+    from_actual_measurement: yes
+    displayed_in_drawing: yes — AutoCAD renders the measured stirrup zone length (~687 mm), not an explicit engineering callout string.
+    should_be_retained: no for engineering annotation parsing — geometric stirrup segment lengths, not spacing callouts.
+    exclude_from_engineering_parsing: yes
+
+  2L-Y8@100/200/100C/C: 9 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -STR-RF-DIM
+    actual_measurement range: 2378.603 – 6664.095
+    beam_marks: B4, B5, B12, B13
+
+  2L-Y8@100C/C: 9 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -STR-RF-DIM
+    actual_measurement range: 699.265 – 3552.716
+    beam_marks: B3, B8, B9, B10, B14, B15, B18
+
+  Ld: 5 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -S-DIM, -STR-RF-DIM
+    actual_measurement range: 615.659 – 1018.515
+    beam_marks: B1, B7, B8, B10, B14
+
+  500: 3 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-DIM
+    actual_measurement range: 500.0 – 500.0
+    beam_marks: B3, B5
+
+  530: 3 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-STIRUP
+    actual_measurement range: 529.895 – 529.895
+    beam_marks: B2, B6, B7
+
+  1900: 2 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-DIM
+    actual_measurement range: 1899.921 – 1899.922
+    beam_marks: B1
+
+  2150: 2 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-DIM
+    actual_measurement range: 2150.221 – 2150.221
+    beam_marks: B1, B4
+
+  2L-Y10@100C/C: 2 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -STR-RF-DIM
+    actual_measurement range: 906.345 – 5418.331
+    beam_marks: B1, B7
+
+  2L-Y8@150C/C: 2 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -STR-RF-DIM
+    actual_measurement range: 3308.09 – 3757.091
+    beam_marks: B6, B16
+
+  2L-Y8@200C/C: 2 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -STR-RF-DIM
+    actual_measurement range: 1860.395 – 1860.395
+    beam_marks: B11, B17
+
+  537: 2 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-STIRUP
+    actual_measurement range: 536.714 – 536.714
+    beam_marks: B6, B14
+
+  688: 2 occurrences
+    source_type: MEASUREMENT_VALUE
+    layers: -S-STIRUP
+    actual_measurement range: 688.451 – 688.451
+    beam_marks: B18
+
+  Ld+10db: 2 occurrences
+    source_type: ENGINEERING_TEXT
+    layers: -S-DIM
+    actual_measurement range: 800.0 – 800.0
+    beam_marks: B18
+
+Recommended action for D.2:
+  KEEP only engineering text for D.2 parsing; EXCLUDE MEASUREMENT_VALUE entities sourced from actual_measurement on blank/<>/space overrides. Optionally retain primary beam dimensions (500, 1900, 2150) for geometry QA in a separate geometry channel, not reinforcement annotation parsing.
+
+======================================================================

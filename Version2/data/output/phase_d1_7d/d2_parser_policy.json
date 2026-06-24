@@ -1,0 +1,63 @@
+{
+  "BAR": {
+    "parse_fields": [
+      "quantity",
+      "diameter"
+    ],
+    "examples": [
+      "2-Y16",
+      "2-Y20",
+      "4-Y25"
+    ]
+  },
+  "STIRRUP": {
+    "parse_fields": [
+      "leg_count",
+      "diameter",
+      "spacing"
+    ],
+    "examples": [
+      "2L-Y8@100C/C",
+      "2L-Y8@150C/C",
+      "2L-Y8@100/200/100C/C"
+    ]
+  },
+  "ANCHORAGE": {
+    "parse_fields": [
+      "Ld",
+      "extension"
+    ],
+    "examples": [
+      "Ld",
+      "Ld+10db",
+      "Ld+12db"
+    ]
+  },
+  "SIDE_FACE_REINF": {
+    "parse_when": "bar_info_present",
+    "examples": [
+      "S.F.R.- 2-Y10",
+      "4-Y8 SIDE FACE REINF"
+    ],
+    "ignore_classification": "PARTIAL_SFR"
+  },
+  "IGNORE": {
+    "categories": [
+      "notes",
+      "fragments",
+      "geometry_dimensions",
+      "autocad_measurements",
+      "deduplicated_entries"
+    ],
+    "examples": [
+      "687",
+      "688",
+      "530",
+      "537",
+      "500",
+      "1900",
+      "2150",
+      "d"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+======================================================================
+Engineering Dataset Finalization Report (Phase D.1.7D)
+======================================================================
+
+1. False Rejection Resolution
+   Reviewed: 1
+   Remaining: 0
+   Merged with anchorage: 1
+
+   - 'd' (B18/B18_S1): MERGED_WITH_ANCHORAGE -> IGNORE_FRAGMENT
+     Linked: Ld+10db
+
+2. Deduplication Results
+   Entries removed: 50
+   Unique positions retained: 82
+
+3. Final Engineering Counts (parser-ready)
+   BAR: 49
+   STIRRUP: 22
+   ANCHORAGE: 6
+   SIDE_FACE_REINF: 3
+
+4. SFR Handling Policy
+   VALID_SFR action: PARSE
+   PARTIAL_SFR action: IGNORE_NOTE
+   Partial entries ignored: 2
+
+5. D.2 Parser Policy Summary
+   BAR: parse quantity + diameter
+   STIRRUP: parse leg_count + diameter + spacing
+   ANCHORAGE: parse Ld + extension
+   SIDE_FACE_REINF: parse when bar info present
+   IGNORE: notes, fragments, geometry, measurements
+
+6. Final Readiness Status
+   Questionable annotations: 0
+   Readiness: READY_FOR_D2
+
+======================================================================
