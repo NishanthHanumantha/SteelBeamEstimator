@@ -1,0 +1,52 @@
+======================================================================
+Phase D.3 — Beam Group Detection & Shared Annotation Ownership
+======================================================================
+
+Beam groups detected: 15
+Multi-beam groups: 2
+Group-owned annotations: 10
+Expanded annotations: 99
+Overall validation: PASS
+
+Multi-beam groups:
+  GROUP_003: B3, B4
+  GROUP_007: B8, B9, B10
+
+Group-owned annotations:
+  b4bf95e39b2a: GROUP_003 -> B3, B4 | 2-Y20
+  8b3f322c3fef: GROUP_003 -> B3, B4 | 2L-Y8@100C/C
+  f5648220ac5a: GROUP_007 -> B10, B8, B9 | 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE 
+  162de8862fd7: GROUP_003 -> B3, B4 | 2-Y20
+  8c8379b87887: GROUP_007 -> B10, B8, B9 | 2-Y16
+  ac04c1bf6649: GROUP_007 -> B10, B8, B9 | 2-Y16
+  3c5b038fd16c: GROUP_007 -> B10, B8, B9 | 2L-Y8@100C/C
+  d299155b3f7c: GROUP_007 -> B10, B8, B9 | 2-Y16
+  dfae08910165: GROUP_007 -> B10, B8, B9 | 2-Y16
+  7751a6e1ff64: GROUP_007 -> B10, B8, B9 | 2L-Y8@100C/C
+
+SFR expansions:
+  GROUP_007 -> B8: 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE 
+  GROUP_007 -> B9: 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE 
+  GROUP_007 -> B10: 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON ONE 
+
+All beam groups:
+  GROUP_001: B1 (multi=False)
+  GROUP_002: B2 (multi=False)
+  GROUP_003: B3, B4 (multi=True)
+  GROUP_004: B5 (multi=False)
+  GROUP_005: B6 (multi=False)
+  GROUP_006: B7 (multi=False)
+  GROUP_007: B8, B9, B10 (multi=True)
+  GROUP_008: B11 (multi=False)
+  GROUP_009: B12 (multi=False)
+  GROUP_010: B13 (multi=False)
+  GROUP_011: B14 (multi=False)
+  GROUP_012: B15 (multi=False)
+  GROUP_013: B16 (multi=False)
+  GROUP_014: B17 (multi=False)
+  GROUP_015: B18 (multi=False)
+
+Assumptions:
+  - Groups form from adjacent row cells with aligned detail sketch bands
+  - Shared annotations detected by geometry span, duplicate coords, semantics
+  - Version2 outputs used as read-only inputs; no Version2 files modified

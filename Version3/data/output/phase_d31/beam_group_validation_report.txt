@@ -1,0 +1,280 @@
+======================================================================
+Phase D.3.1 — Beam Group Confidence & Validation Report
+======================================================================
+
+Total groups: 15
+HIGH: 14
+MEDIUM: 0
+LOW: 1
+INVALID: 1
+Validation status: WARN
+Parser ready: False
+
+Recommended corrections:
+  - SPLIT into individual beam groups
+
+--------------------------------------------------
+GROUP_001
+Members: B1
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_002
+Members: B2
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_003
+Members: B3, B4
+Confidence: 59 LOW
+Rule scores:
+  beam_count: 25
+  sketch_span: 40
+  adjacency: 100
+  shared_annotations: 77
+  title_pattern: 100
+  alignment: 100
+  geometry_similarity: 100
+Reasons:
+  - Independent sketches detected across members
+  - Shared engineering annotations present
+  - Similar sketch geometry across members
+  - Aligned detail bands
+  - Beam titles within detail region
+Warnings:
+  - Multiple independent detail sketch clusters (2)
+  - Weak continuous sketch span across members
+  - INVALID_GROUP: multi-beam group below confidence threshold
+Recommendation: SPLIT into individual beam groups
+
+--------------------------------------------------
+GROUP_004
+Members: B5
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_005
+Members: B6
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_006
+Members: B7
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_007
+Members: B8, B9, B10
+Confidence: 89 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 100
+  adjacency: 100
+  shared_annotations: 62
+  title_pattern: 100
+  alignment: 100
+  geometry_similarity: 80
+Reasons:
+  - Continuous reinforcement detail envelope
+  - Similar sketch geometry across members
+  - Aligned detail bands
+  - Beam titles within detail region
+Recommendation: KEEP — excellent shared ownership candidate
+
+--------------------------------------------------
+GROUP_008
+Members: B11
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_009
+Members: B12
+Confidence: 89 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 70
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_010
+Members: B13
+Confidence: 89 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 70
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_011
+Members: B14
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_012
+Members: B15
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_013
+Members: B16
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_014
+Members: B17
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+--------------------------------------------------
+GROUP_015
+Members: B18
+Confidence: 96 HIGH
+Rule scores:
+  beam_count: 100
+  sketch_span: 95
+  adjacency: 100
+  shared_annotations: 90
+  title_pattern: 100
+  alignment: 95
+  geometry_similarity: 95
+Reasons:
+  - Single beam group
+  - Coherent detail sketches
+Recommendation: KEEP
+
+Assumptions:
+  - Read-only audit; Phase D.3 outputs unchanged
+  - Confidence from 7 weighted engineering signals (0–100)

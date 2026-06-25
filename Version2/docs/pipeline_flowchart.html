@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipeline Flowchart — Steel Beam Estimator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 2rem 1rem 3rem;
+    }
+    .page { max-width: 520px; margin: 0 auto 3rem; }
+    h1 { font-size: 1.15rem; margin-bottom: 0.25rem; }
+    h2 {
+      font-size: 0.95rem;
+      color: #8b949e;
+      margin: 2.5rem 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #30363d;
+    }
+    .subtitle { font-size: 0.8rem; color: #8b949e; margin-bottom: 1.5rem; }
+    .flow { display: flex; flex-direction: column; align-items: center; }
+    .node {
+      width: 100%; max-width: 420px;
+      padding: 0.85rem 1.25rem;
+      border: 1px solid #484f58;
+      border-radius: 4px;
+      background: #21262d;
+      text-align: center;
+    }
+    .node .title { font-size: 0.92rem; font-weight: 600; color: #f0f6fc; }
+    .node .detail { font-size: 0.78rem; color: #8b949e; margin-top: 0.35rem; line-height: 1.4; }
+    .node.input { background: #316d9e; border-color: #4a8bc4; }
+    .node.input .title, .node.input .detail { color: #fff; }
+    .node.input .detail { opacity: 0.9; }
+    .node.final { background: #c0392b; border-color: #e74c3c; }
+    .node.final .title, .node.final .detail { color: #fff; }
+    .node.planned { background: #3d444d; border-color: #6e7681; }
+    .connector { display: flex; flex-direction: column; align-items: center; height: 26px; }
+    .connector .line { width: 2px; height: 16px; background: #58a6ff; }
+    .connector .head {
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid #58a6ff;
+    }
+    footer { text-align: center; font-size: 0.7rem; color: #484f58; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Steel Beam Estimator — Pipeline Flowchart</h1>
+    <p class="subtitle">Version 2 · Cursor-friendly HTML (same content as Pipeline_Flowchart.pdf)</p>
+    <h2>Page 1 — Quick visual summary</h2>
+    <div class="flow" id="summary"></div>
+  </div>
+  <div class="page">
+    <h2>Page 2 — With process descriptions</h2>
+    <div class="flow" id="detail"></div>
+    <footer>Version2/docs/Pipeline_Flowchart.html</footer>
+  </div>
+  <script>
+    function renderFlow(containerId, steps) {
+      const el = document.getElementById(containerId);
+      steps.forEach((step, i) => {
+        const node = document.createElement("div");
+        node.className = "node" + (step.kind === "input" ? " input" : step.kind === "final" ? " final" : step.kind === "planned" ? " planned" : "");
+        node.innerHTML = `<div class="title">${step.title}</div><div class="detail">${step.detail}</div>`;
+        el.appendChild(node);
+        if (i < steps.length - 1) {
+          const conn = document.createElement("div");
+          conn.className = "connector";
+          conn.innerHTML = '<div class="line"></div><div class="head"></div>';
+          el.appendChild(conn);
+        }
+      });
+    }
+    renderFlow("summary", [{"kind": "input", "title": "DXF Input", "detail": "(Framing + Reinforcement)"}, {"kind": "done", "title": "Phase A", "detail": "Framing Beams"}, {"kind": "done", "title": "Phase B", "detail": "Reinforcement Headers"}, {"kind": "done", "title": "Phase C", "detail": "Beam Cells"}, {"kind": "done", "title": "Phase C.5", "detail": "Sketch Ownership"}, {"kind": "done", "title": "Phase D.1", "detail": "Raw Annotations"}, {"kind": "done", "title": "D.1.1 - D.1.5", "detail": "Ownership & Validation"}, {"kind": "done", "title": "D.1.6", "detail": "Type Classification"}, {"kind": "done", "title": "D.1.6A / B", "detail": "Coverage & Entity Survey"}, {"kind": "done", "title": "D.1.7", "detail": "DIMENSION Extraction"}, {"kind": "done", "title": "D.1.7A", "detail": "Source Audit"}, {"kind": "done", "title": "D.1.7B", "detail": "Engineering Filter (132)"}, {"kind": "done", "title": "D.1.7C", "detail": "Integrity Audit"}, {"kind": "final", "title": "D.1.7D", "detail": "80 parser-ready - READY_FOR_D2"}, {"kind": "planned", "title": "Phase D.2", "detail": "Parsing (planned)"}]);
+    renderFlow("detail", [{"kind": "input", "title": "DXF Input", "detail": "Framing plan and reinforcement drawing DXF files"}, {"kind": "done", "title": "Phase A - Framing Beams", "detail": "Extract beam marks, geometry, grid references from framing layers"}, {"kind": "done", "title": "Phase B - Reinforcement Headers", "detail": "Extract beam reinforcement header blocks and metadata"}, {"kind": "done", "title": "Phase C - Beam Cells", "detail": "Build beam cell grid; associate headers with framing beams"}, {"kind": "done", "title": "Phase C.5 - Sketch Ownership", "detail": "Assign sketch regions to beam occurrences"}, {"kind": "done", "title": "Phase D.1 - Raw Annotations", "detail": "Extract TEXT/MTEXT annotations inside sketch regions"}, {"kind": "done", "title": "D.1.1 - D.1.5 - Ownership & Validation", "detail": "Audit ownership, spatial/region checks, boundary leakage, reassignment"}, {"kind": "done", "title": "D.1.6 - Type Classification", "detail": "Classify BAR, STIRRUP, ANCHORAGE, SFR, DIMENSION, NOTE"}, {"kind": "done", "title": "D.1.6A / B - Coverage & Entity Survey", "detail": "Coverage audit; survey DIMENSION entities for engineering text"}, {"kind": "done", "title": "D.1.7 - DIMENSION Extraction", "detail": "Extract DIMENSION overrides; integrate with ownership (186 total)"}, {"kind": "done", "title": "D.1.7A - Source Audit", "detail": "Trace DIMENSION source: engineering override vs measurement value"}, {"kind": "done", "title": "D.1.7B - Engineering Filter", "detail": "Keep engineering text; reject AutoCAD measurements (132 retained)"}, {"kind": "done", "title": "D.1.7C - Integrity Audit", "detail": "Audit fragments, stirrups, anchorage, SFR, duplicates, readiness"}, {"kind": "final", "title": "D.1.7D - Final Dataset", "detail": "Deduplicate, resolve fragments; 80 parser-ready - READY_FOR_D2"}, {"kind": "planned", "title": "Phase D.2 - Parsing", "detail": "Parse bar qty/dia, stirrup spacing, anchorage, SFR (planned)"}]);
+  </script>
+</body>
+</html>

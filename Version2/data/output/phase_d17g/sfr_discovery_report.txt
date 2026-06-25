@@ -1,0 +1,43 @@
+======================================================================
+SFR Discovery Audit Report (Phase D.1.7G — Read-Only)
+======================================================================
+
+Total SFR entities found in DXF: 5
+Engineering-pattern entities in DXF: 5
+Parser-ready SFR in D.1.7F dataset: 1
+
+Expected beams: B1, B8, B9, B10, B14
+Discovered beams: B9, B14
+Missing parser-ready beams: B1, B8, B9, B10
+
+Root cause distribution:
+  OTHER: 1
+  OUTSIDE_SEARCH_REGION: 1
+  OWNERSHIP_FAILURE: 2
+  SEMANTIC_REJECTION: 1
+
+Pipeline loss locations:
+  Filtered during extraction typing or reassignment: 1
+  Never discovered (outside D.1 extraction region): 2
+  Present through pipeline (parser-ready): 1
+  Rejected at final stage (SFR_REJECTED): 1
+
+Recommendation: Investigate OUTSIDE_SEARCH_REGION and OWNERSHIP_FAILURE before Phase E
+
+Expected beam analysis:
+  B1: discovered=False dataset=False parser_ready=False status=ABSENT cause=OUTSIDE_SEARCH_REGION
+  B8: discovered=False dataset=False parser_ready=False status=ABSENT cause=NOT_FOUND_IN_DXF
+  B9: discovered=True dataset=False parser_ready=False status=ABSENT cause=OWNERSHIP_FAILURE
+  B10: discovered=False dataset=False parser_ready=False status=ABSENT cause=NOT_FOUND_IN_DXF
+  B14: discovered=True dataset=True parser_ready=True status=PARSER_READY cause=OTHER
+
+Per-entity root causes:
+  DXF_F09 (B13): SEMANTIC_REJECTION — Never discovered (outside D.1 extraction region)
+  DXF_F0A (B13): OWNERSHIP_FAILURE — Filtered during extraction typing or reassignment
+  DXF_F4D (B1): OUTSIDE_SEARCH_REGION — Never discovered (outside D.1 extraction region)
+  DXF_F50 (B4): OWNERSHIP_FAILURE — Rejected at final stage (SFR_REJECTED)
+  DXF_F53 (B4): OTHER — Present through pipeline (parser-ready)
+
+Validation: PASS
+
+======================================================================

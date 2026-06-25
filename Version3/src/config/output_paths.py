@@ -28,6 +28,10 @@ PHASE_D1_7E = "phase_d17e"
 PHASE_D1_7F = "phase_d17f"
 PHASE_D1_7G = "phase_d17g"
 PHASE_D2 = "phase_d2"
+PHASE_D3 = "phase_d3"
+PHASE_D31 = "phase_d31"
+PHASE_D32 = "phase_d32"
+PHASE_D33 = "phase_d33"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -692,6 +696,134 @@ class OutputPaths:
     def annotation_parsing_debug_dxf(self) -> Path:
         return self.phase_d2_dir / "annotation_parsing_debug.dxf"
 
+    # --- Phase D.3 ---
+    @property
+    def phase_d3_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D3)
+
+    @property
+    def beam_groups(self) -> Path:
+        return self.phase_d3_dir / "beam_groups.json"
+
+    @property
+    def beam_group_summary(self) -> Path:
+        return self.phase_d3_dir / "beam_group_summary.json"
+
+    @property
+    def shared_annotations(self) -> Path:
+        return self.phase_d3_dir / "shared_annotations.json"
+
+    @property
+    def group_annotation_ownership(self) -> Path:
+        return self.phase_d3_dir / "group_annotation_ownership.json"
+
+    @property
+    def expanded_group_annotations(self) -> Path:
+        return self.phase_d3_dir / "expanded_group_annotations.json"
+
+    @property
+    def beam_group_validation(self) -> Path:
+        return self.phase_d3_dir / "beam_group_validation.json"
+
+    @property
+    def beam_group_report_txt(self) -> Path:
+        return self.phase_d3_dir / "beam_group_report.txt"
+
+    @property
+    def beam_group_debug_dxf(self) -> Path:
+        return self.phase_d3_dir / "beam_group_debug.dxf"
+
+    # --- Phase D.3.1 ---
+    @property
+    def phase_d31_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D31)
+
+    @property
+    def beam_group_confidence(self) -> Path:
+        return self.phase_d31_dir / "beam_group_confidence.json"
+
+    @property
+    def beam_group_validation_v2(self) -> Path:
+        return self.phase_d31_dir / "beam_group_validation_v2.json"
+
+    @property
+    def beam_group_validation_report_txt(self) -> Path:
+        return self.phase_d31_dir / "beam_group_validation_report.txt"
+
+    @property
+    def beam_group_validation_debug_dxf(self) -> Path:
+        return self.phase_d31_dir / "beam_group_validation_debug.dxf"
+
+    # --- Phase D.3.2 ---
+    @property
+    def phase_d32_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D32)
+
+    @property
+    def detail_regions(self) -> Path:
+        return self.phase_d32_dir / "detail_regions.json"
+
+    @property
+    def beam_groups_refined(self) -> Path:
+        return self.phase_d32_dir / "beam_groups_refined.json"
+
+    @property
+    def detail_region_validation(self) -> Path:
+        return self.phase_d32_dir / "detail_region_validation.json"
+
+    @property
+    def detail_region_summary(self) -> Path:
+        return self.phase_d32_dir / "detail_region_summary.json"
+
+    @property
+    def detail_region_report_txt(self) -> Path:
+        return self.phase_d32_dir / "detail_region_report.txt"
+
+    @property
+    def detail_region_debug_dxf(self) -> Path:
+        return self.phase_d32_dir / "detail_region_debug.dxf"
+
+    # --- Phase D.3.3 ---
+    @property
+    def phase_d33_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D33)
+
+    @property
+    def annotation_ownership_master(self) -> Path:
+        return self.phase_d33_dir / "annotation_ownership_master.json"
+
+    @property
+    def annotation_region_mapping(self) -> Path:
+        return self.phase_d33_dir / "annotation_region_mapping.json"
+
+    @property
+    def annotation_sketch_mapping(self) -> Path:
+        return self.phase_d33_dir / "annotation_sketch_mapping.json"
+
+    @property
+    def ownership_confidence(self) -> Path:
+        return self.phase_d33_dir / "ownership_confidence.json"
+
+    @property
+    def ownership_conflicts(self) -> Path:
+        return self.phase_d33_dir / "ownership_conflicts.json"
+
+    @property
+    def ownership_validation(self) -> Path:
+        return self.phase_d33_dir / "ownership_validation.json"
+
+    @property
+    def ownership_summary(self) -> Path:
+        return self.phase_d33_dir / "ownership_summary.json"
+
+    @property
+    def ownership_report_txt(self) -> Path:
+        return self.phase_d33_dir / "ownership_report.txt"
+
+    @property
+    def ownership_debug_dxf(self) -> Path:
+        return self.phase_d33_dir / "ownership_debug.dxf"
+
     def ensure_phase_dirs(self) -> None:
         """Create all phase output directories."""
         for phase in (
@@ -719,5 +851,9 @@ class OutputPaths:
             PHASE_D1_7F,
             PHASE_D1_7G,
             PHASE_D2,
+            PHASE_D3,
+            PHASE_D31,
+            PHASE_D32,
+            PHASE_D33,
         ):
             phase_dir(self.root, phase).mkdir(parents=True, exist_ok=True)

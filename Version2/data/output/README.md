@@ -28,6 +28,10 @@ Canonical paths are defined in `src/config/output_paths.py` (`OutputPaths`).
 | `phase_d1_7b/` | D.1.7B — Engineering annotation filter | `run_phase_d17b_engineering_filter.py` |
 | `phase_d1_7c/` | D.1.7C — Engineering annotation integrity audit | `run_phase_d17c_integrity_audit.py` |
 | `phase_d1_7d/` | D.1.7D — Engineering dataset finalization | `run_phase_d17d_engineering_dataset_finalization.py` |
+| `phase_d17e/` | D.1.7E — SFR ownership validator | `run_phase_d17e_sfr_validator.py` |
+| `phase_d17f/` | D.1.7F — SFR semantic validation | `run_phase_d17f_sfr_semantic_validation.py` |
+| `phase_d17g/` | D.1.7G — SFR discovery audit (read-only) | `run_phase_d17g_sfr_discovery_audit.py` |
+| `phase_d2/` | D.2 — Annotation parsing & normalization | `run_phase_d2_annotation_parsing.py` |
 
 ## Cross-phase inputs (common dependencies)
 
@@ -42,6 +46,8 @@ Canonical paths are defined in `src/config/output_paths.py` (`OutputPaths`).
 | `beam_annotations_extended.json` | `phase_d1_7/` |
 | `engineering_annotations.json` | `phase_d1_7b/` |
 | `engineering_annotations_final.json` | `phase_d1_7d/` |
+| `validated_annotations_master.json` | `phase_d17e/` |
+| `engineering_dataset_phase_d17f.json` | `phase_d17f/` |
 
 ## Usage
 

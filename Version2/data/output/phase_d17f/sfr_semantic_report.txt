@@ -1,0 +1,33 @@
+======================================================================
+SFR Semantic Validation Report (Phase D.1.7F)
+======================================================================
+
+Semantic distribution:
+  ENGINEERING_SFR: 3
+  REFERENCE_NOTE: 2
+  PARTIAL_SFR: 0
+  UNKNOWN: 0
+
+Engineering SFR count: 3
+Reference note count: 2
+Partial fragment count: 0
+Parser-ready SFR count: 1
+Ownership-rejected engineering SFR: 2
+
+Validation: PASS
+Recommendation: READY_FOR_PHASE_E
+
+Checks:
+  engineering_sfr_have_quantity_and_diameter: PASS
+  no_reference_notes_parser_ready: PASS
+  no_partial_fragments_parser_ready: PASS
+  no_engineering_sfr_incorrectly_rejected: PASS
+
+Per-annotation classification:
+  SFR_SEM_00001 [B3] 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON: ENGINEERING_SFR -> SFR_REJECTED (Contains bar quantity and diameter specification)
+  SFR_SEM_00002 [B13] S.F.R. ON BOTH FACE: REFERENCE_NOTE -> IGNORED_REFERENCE (Reference note only)
+  SFR_SEM_00003 [B14] 4-Y8, SIDE FACE REINF. ON BOTH FACES (2-Y8 ON: ENGINEERING_SFR -> PARSER_READY (Contains bar quantity and diameter specification)
+  SFR_SEM_00004 [B18] SIDE.FACE.REINFORCEMENT DETAILS FOR CURVED BE: REFERENCE_NOTE -> IGNORED_REFERENCE (Reference note only)
+  SFR_SEM_00005 [B18] S.F.R.- 2-Y10: ENGINEERING_SFR -> SFR_REJECTED (Contains bar quantity and diameter specification)
+
+======================================================================

@@ -1,0 +1,36 @@
+{
+  "total_sfr_entities_in_dxf": 5,
+  "engineering_pattern_entities_in_dxf": 5,
+  "expected_beams": [
+    "B1",
+    "B8",
+    "B9",
+    "B10",
+    "B14"
+  ],
+  "discovered_beams": [
+    "B9",
+    "B14"
+  ],
+  "missing_beams": [
+    "B1",
+    "B8",
+    "B9",
+    "B10"
+  ],
+  "parser_ready_sfr_count": 1,
+  "expected_beam_parser_ready_count": 1,
+  "root_cause_distribution": {
+    "SEMANTIC_REJECTION": 1,
+    "OWNERSHIP_FAILURE": 2,
+    "OUTSIDE_SEARCH_REGION": 1,
+    "OTHER": 1
+  },
+  "pipeline_loss_locations": {
+    "Never discovered (outside D.1 extraction region)": 2,
+    "Filtered during extraction typing or reassignment": 1,
+    "Rejected at final stage (SFR_REJECTED)": 1,
+    "Present through pipeline (parser-ready)": 1
+  },
+  "recommendation": "Investigate OUTSIDE_SEARCH_REGION and OWNERSHIP_FAILURE before Phase E"
+}
