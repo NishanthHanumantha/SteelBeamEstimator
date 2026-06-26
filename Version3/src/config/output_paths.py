@@ -32,6 +32,10 @@ PHASE_D3 = "phase_d3"
 PHASE_D31 = "phase_d31"
 PHASE_D32 = "phase_d32"
 PHASE_D33 = "phase_d33"
+PHASE_D4 = "phase_d4"
+PHASE_D41 = "phase_d41"
+PHASE_D42 = "phase_d42"
+PHASE_E = "phase_e"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -824,6 +828,149 @@ class OutputPaths:
     def ownership_debug_dxf(self) -> Path:
         return self.phase_d33_dir / "ownership_debug.dxf"
 
+    # --- Phase D.4 ---
+    @property
+    def phase_d4_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D4)
+
+    @property
+    def engineering_objects(self) -> Path:
+        return self.phase_d4_dir / "engineering_objects.json"
+
+    @property
+    def parsed_longitudinal_bars(self) -> Path:
+        return self.phase_d4_dir / "parsed_longitudinal_bars.json"
+
+    @property
+    def parsed_stirrups_d4(self) -> Path:
+        return self.phase_d4_dir / "parsed_stirrups.json"
+
+    @property
+    def parsed_anchorage_d4(self) -> Path:
+        return self.phase_d4_dir / "parsed_anchorage.json"
+
+    @property
+    def parsed_sfr_d4(self) -> Path:
+        return self.phase_d4_dir / "parsed_sfr.json"
+
+    @property
+    def engineering_parser_summary(self) -> Path:
+        return self.phase_d4_dir / "engineering_parser_summary.json"
+
+    @property
+    def engineering_parser_validation(self) -> Path:
+        return self.phase_d4_dir / "engineering_parser_validation.json"
+
+    @property
+    def engineering_parser_report_txt(self) -> Path:
+        return self.phase_d4_dir / "engineering_parser_report.txt"
+
+    @property
+    def engineering_parser_debug_dxf(self) -> Path:
+        return self.phase_d4_dir / "engineering_parser_debug.dxf"
+
+    # --- Phase D.4.1 ---
+    @property
+    def phase_d41_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D41)
+
+    @property
+    def reinforcement_classification(self) -> Path:
+        return self.phase_d41_dir / "reinforcement_classification.json"
+
+    @property
+    def reinforcement_summary(self) -> Path:
+        return self.phase_d41_dir / "reinforcement_summary.json"
+
+    @property
+    def reinforcement_validation(self) -> Path:
+        return self.phase_d41_dir / "reinforcement_validation.json"
+
+    @property
+    def reinforcement_report_txt(self) -> Path:
+        return self.phase_d41_dir / "reinforcement_report.txt"
+
+    @property
+    def reinforcement_debug_dxf(self) -> Path:
+        return self.phase_d41_dir / "reinforcement_debug.dxf"
+
+    # --- Phase D.4.2 ---
+    @property
+    def phase_d42_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_D42)
+
+    @property
+    def longitudinal_geometry_resolution(self) -> Path:
+        return self.phase_d42_dir / "longitudinal_geometry_resolution.json"
+
+    @property
+    def engineering_objects_enriched(self) -> Path:
+        return self.phase_d42_dir / "engineering_objects_enriched.json"
+
+    @property
+    def phase_d42_summary(self) -> Path:
+        return self.phase_d42_dir / "phase_d42_summary.json"
+
+    @property
+    def phase_d42_validation(self) -> Path:
+        return self.phase_d42_dir / "phase_d42_validation.json"
+
+    @property
+    def phase_d42_debug_dxf(self) -> Path:
+        return self.phase_d42_dir / "phase_d42_debug.dxf"
+
+    # --- Phase E ---
+    @property
+    def phase_e_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_E)
+
+    @property
+    def general_notes_engineering_rules(self) -> Path:
+        return self.phase_e_dir / "general_notes_engineering_rules.json"
+
+    @property
+    def development_length_table(self) -> Path:
+        return self.phase_e_dir / "development_length_table.json"
+
+    @property
+    def cover_table(self) -> Path:
+        return self.phase_e_dir / "cover_table.json"
+
+    @property
+    def material_specifications(self) -> Path:
+        return self.phase_e_dir / "material_specifications.json"
+
+    @property
+    def engineering_constants(self) -> Path:
+        return self.phase_e_dir / "engineering_constants.json"
+
+    @property
+    def phase_e_summary(self) -> Path:
+        return self.phase_e_dir / "phase_e_summary.json"
+
+    @property
+    def phase_e_validation(self) -> Path:
+        return self.phase_e_dir / "phase_e_validation.json"
+
+    @property
+    def phase_e_debug_dxf(self) -> Path:
+        return self.phase_e_dir / "phase_e_debug.dxf"
+
+    @property
+    def project_defaults(self) -> Path:
+        return self.phase_e_dir / "project_defaults.json"
+
+    @property
+    def project_engineering_report(self) -> Path:
+        return self.phase_e_dir / "project_engineering_report.json"
+
+    def engineering_objects_for_classification(self) -> Path:
+        """Prefer D.4.2 enriched objects when Phase D.4.2 has been run."""
+        enriched = self.engineering_objects_enriched
+        if enriched.exists():
+            return enriched
+        return self.engineering_objects
+
     def ensure_phase_dirs(self) -> None:
         """Create all phase output directories."""
         for phase in (
@@ -855,5 +1002,9 @@ class OutputPaths:
             PHASE_D31,
             PHASE_D32,
             PHASE_D33,
+            PHASE_D4,
+            PHASE_D41,
+            PHASE_D42,
+            PHASE_E,
         ):
             phase_dir(self.root, phase).mkdir(parents=True, exist_ok=True)
