@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from loguru import logger
 
@@ -21,6 +21,10 @@ from src.framing.engineering_ids import (
     slug_from_project_name,
 )
 from src.framing.engineering_state_machine import EngineeringStateMachine, STATE_READY
+from src.project.drawing_identity import (
+    DRAWING_TYPE_FRAMING_PLAN,
+    framing_workspace_id,
+)
 from src.project.floor_workspace import FloorWorkspace
 from src.project.project_registry import ProjectRegistry
 from src.project.project_workspace import ProjectWorkspace
@@ -35,6 +39,7 @@ class WorkspaceManager:
         self.floors: list[FloorWorkspace] = []
         self.services: Optional[EngineeringServices] = None
         self._knowledge_version = "1.0"
+        self._floor_source = "config_default"
 
     def load(
         self,
@@ -52,34 +57,22 @@ class WorkspaceManager:
         project_slug, project_name = self._resolve_project_identity(output_root)
         pid = project_id(project_slug)
 
-        floor_cfg = ws_cfg.get("default_floor", {})
-        if not isinstance(floor_cfg, dict):
-            floor_cfg = {"name": "Ground Floor", "slug": str(floor_cfg or "GROUND_FLOOR")}
-        floor_name = str(floor_cfg.get("name", "Ground Floor"))
-        floor_slug = str(floor_cfg.get("slug", floor_slug_from_name(floor_name)))
-        fid = floor_id(floor_slug)
+        framing_identities = [
+            item for item in model.get("drawing_identities", [])
+            if item.get("drawing_type") == DRAWING_TYPE_FRAMING_PLAN
+        ]
+        primary_floor_id = self._build_floors(
+            model,
+            ws_cfg,
+            pid,
+            framing_identities,
+        )
 
-        contexts = self._refine_contexts(model, pid, fid)
+        contexts = self._refine_contexts(model, pid, primary_floor_id)
         model["beam_engineering_contexts"] = contexts
 
-        framing_source = model.get("source_files", [])
-        if not framing_source and model.get("beams"):
-            framing_source = [str(ws_cfg.get("framing_plan", "data/framing/Beam_FramingPlan.dxf"))]
-
-        floor_ws = FloorWorkspace(
-            floor_id=fid,
-            floor_name=floor_name,
-            framing_plan={
-                "status": "LOADED",
-                "source": framing_source[0] if framing_source else None,
-                "beam_count": len(model.get("beams", [])),
-                "phase": model.get("phase", "Phase F.7"),
-            },
-            reinforcement_plan={
-                "status": ws_cfg.get("reinforcement_status", "NOT_LOADED"),
-                "source": ws_cfg.get("reinforcement_plan"),
-            },
-            beam_contexts=[
+        for floor_ws in self.floors:
+            floor_ws.beam_contexts = [
                 {
                     "context_id": c.get("context_id"),
                     "beam_id": c.get("beam_id"),
@@ -87,13 +80,7 @@ class WorkspaceManager:
                     "status": c.get("status"),
                 }
                 for c in contexts
-            ],
-            metadata={
-                "project_id": pid,
-                "computation_state": STATE_READY,
-            },
-        )
-        self.floors = [floor_ws]
+            ]
 
         self.project = ProjectWorkspace(
             project_id=pid,
@@ -112,9 +99,10 @@ class WorkspaceManager:
             floors=[f.to_dict() for f in self.floors],
             services=self.services.to_workspace_ref(),
             metadata={
-                "phase": "Phase F.7",
+                "phase": "Phase G.1.1",
                 "floor_count": len(self.floors),
                 "beam_context_count": len(contexts),
+                "floor_source": self._floor_source,
             },
         )
 
@@ -128,19 +116,91 @@ class WorkspaceManager:
         model["floor_registry"] = floor_registry
         model["engineering_services_registry"] = services_registry
         model["workspace_manager"] = manager_snapshot
-        model["phase"] = "Phase F.7"
-        model["model_version"] = "1.6"
+        model["phase"] = "Phase G.1.1"
+        model["model_version"] = "1.7"
 
-        self._update_project_graph(model, fid)
+        self._update_project_graph(model)
         self._update_beam_lifecycle(model)
 
         logger.info(
-            "Workspace loaded — project={}, floors={}, contexts={}, services=5",
+            "Workspace loaded — project={}, floors={}, contexts={}, services=5, floor_source={}",
             pid,
             len(self.floors),
             len(contexts),
+            self._floor_source,
         )
         return model
+
+    def _build_floors(
+        self,
+        model: dict[str, Any],
+        ws_cfg: dict[str, Any],
+        pid: str,
+        framing_identities: List[dict[str, Any]],
+    ) -> str:
+        self.floors = []
+        if framing_identities:
+            self._floor_source = "drawing_identity"
+            for identity in framing_identities:
+                floor_slug = str(identity.get("floor_slug", ""))
+                fid = identity.get("floor_id", floor_id(floor_slug))
+                floor_name = str(identity.get("floor_name", floor_slug))
+                self.floors.append(
+                    FloorWorkspace(
+                        floor_id=fid,
+                        floor_name=floor_name,
+                        framing_plan={
+                            "workspace_id": framing_workspace_id(floor_slug),
+                            "drawing_id": identity.get("drawing_id"),
+                            "status": "LOADED",
+                            "source": identity.get("source_file"),
+                            "drawing_title": identity.get("drawing_title"),
+                            "beam_count": len(model.get("beams", [])),
+                            "phase": "Phase G.1.1",
+                        },
+                        beam_contexts=[],
+                        metadata={
+                            "project_id": pid,
+                            "computation_state": STATE_READY,
+                            "floor_slug": floor_slug,
+                            "detection_source": identity.get("detection_source"),
+                        },
+                    )
+                )
+            return self.floors[0].floor_id
+
+        self._floor_source = "config_default"
+        floor_cfg = ws_cfg.get("default_floor", {})
+        if not isinstance(floor_cfg, dict):
+            floor_cfg = {"name": "Ground Floor", "slug": str(floor_cfg or "GROUND_FLOOR")}
+        floor_name = str(floor_cfg.get("name", "Ground Floor"))
+        floor_slug = str(floor_cfg.get("slug", floor_slug_from_name(floor_name)))
+        fid = floor_id(floor_slug)
+
+        framing_source = model.get("source_files", [])
+        if not framing_source and model.get("beams"):
+            framing_source = [str(ws_cfg.get("framing_plan", "data/framing/Beam_FramingPlan.dxf"))]
+
+        self.floors = [
+            FloorWorkspace(
+                floor_id=fid,
+                floor_name=floor_name,
+                framing_plan={
+                    "workspace_id": framing_workspace_id(floor_slug),
+                    "status": "LOADED",
+                    "source": framing_source[0] if framing_source else None,
+                    "beam_count": len(model.get("beams", [])),
+                    "phase": "Phase F.7",
+                },
+                beam_contexts=[],
+                metadata={
+                    "project_id": pid,
+                    "computation_state": STATE_READY,
+                    "floor_slug": floor_slug,
+                },
+            )
+        ]
+        return fid
 
     def _refine_contexts(
         self,
@@ -174,7 +234,7 @@ class WorkspaceManager:
             entry["services"] = SERVICES_ID
             entry["metadata"] = {
                 **(entry.get("metadata") or {}),
-                "phase": "Phase F.7",
+                "phase": "Phase G.1.1",
                 "knowledge_references": [
                     RULE_PROJECT,
                     RULE_ESTIMATOR,
@@ -199,38 +259,45 @@ class WorkspaceManager:
 
     def _build_manager_snapshot(self, model: dict[str, Any]) -> dict[str, Any]:
         return {
-            "phase": "Phase F.7",
+            "phase": "Phase G.1.1",
             "status": STATE_READY,
             "project_id": self.project.project_id if self.project else None,
             "floor_count": len(self.floors),
             "beam_context_count": len(model.get("beam_engineering_contexts", [])),
             "services": SERVICES_ID,
             "services_initialized": self.services is not None,
+            "floor_source": self._floor_source,
+            "drawing_identity_count": len(model.get("drawing_identities", [])),
             "computation_state_machine": EngineeringStateMachine(STATE_READY).to_dict(),
             "ready_for_computation": True,
         }
 
-    def _update_project_graph(self, model: dict[str, Any], floor_id_val: str) -> None:
+    def _update_project_graph(self, model: dict[str, Any]) -> None:
         graph = model.get("project_engineering_graph", {})
         if not graph:
             return
-        graph["phase"] = "Phase F.7"
+        graph["phase"] = "Phase G.1.1"
         nodes = graph.get("nodes", [])
         pid = graph.get("project_id")
-        floor_node = {
-            "id": floor_id_val,
-            "type": "FLOOR",
-            "parent": pid,
-            "floor_name": self.floors[0].floor_name if self.floors else "",
-        }
-        if not any(n.get("id") == floor_id_val for n in nodes):
-            nodes.append(floor_node)
-            graph["nodes"] = nodes
-            graph["node_count"] = len(nodes)
-            edges = graph.get("edges", [])
-            edges.append({"from": pid, "to": floor_id_val, "relationship": "HAS_FLOOR"})
-            graph["edges"] = edges
-            graph["edge_count"] = len(edges)
+        edges = graph.get("edges", [])
+        for floor_ws in self.floors:
+            floor_node = {
+                "id": floor_ws.floor_id,
+                "type": "FLOOR",
+                "parent": pid,
+                "floor_name": floor_ws.floor_name,
+            }
+            if not any(n.get("id") == floor_ws.floor_id for n in nodes):
+                nodes.append(floor_node)
+                edges.append({
+                    "from": pid,
+                    "to": floor_ws.floor_id,
+                    "relationship": "HAS_FLOOR",
+                })
+        graph["nodes"] = nodes
+        graph["node_count"] = len(nodes)
+        graph["edges"] = edges
+        graph["edge_count"] = len(edges)
         model["project_engineering_graph"] = graph
 
     def _update_beam_lifecycle(self, model: dict[str, Any]) -> None:

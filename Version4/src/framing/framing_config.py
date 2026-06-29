@@ -90,12 +90,31 @@ def load_framing_config(config_path: Path | str = DEFAULT_CONFIG) -> dict[str, A
         },
         "workspace": {
             "enable": True,
-            "reinforcement_status": "NOT_LOADED",
             "generate_debug_workspace": True,
             "default_floor": {
                 "name": "Ground Floor",
                 "slug": "GROUND_FLOOR",
             },
+        },
+        "reinforcement_loading": {
+            "enable": True,
+            "generate_debug_reinforcement": True,
+        },
+        "reinforcement_drawings": {
+            "ground_floor": "data/framing/Beam_Reinforcement_Details.dxf",
+        },
+        "drawing_identity": {
+            "enable": True,
+            "generate_debug_drawing_identity": True,
+            "general_notes_path": "data/general_notes/SE-100-R0-SH-01&SH-02(GENERAL NOTES).dxf",
+        },
+        "drawing_set": {
+            "enable": True,
+            "generate_debug_drawing_set": True,
+        },
+        "drawing_set_lifecycle": {
+            "enable": True,
+            "generate_debug_drawing_set_state": True,
         },
     }
     path = Path(config_path)
@@ -112,7 +131,12 @@ def load_framing_config(config_path: Path | str = DEFAULT_CONFIG) -> dict[str, A
         "knowledge_graph": dict(defaults["knowledge_graph"]),
         "engineering_context": dict(defaults["engineering_context"]),
         "workspace": dict(defaults["workspace"]),
-    }
+        "reinforcement_loading": dict(defaults["reinforcement_loading"]),
+        "reinforcement_drawings": dict(defaults["reinforcement_drawings"]),
+            "drawing_identity": dict(defaults["drawing_identity"]),
+            "drawing_set": dict(defaults["drawing_set"]),
+            "drawing_set_lifecycle": dict(defaults["drawing_set_lifecycle"]),
+        }
     active_block: str | None = None
     block_indent = 0
 

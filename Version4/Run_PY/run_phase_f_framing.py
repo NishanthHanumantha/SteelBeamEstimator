@@ -1,4 +1,4 @@
-"""Phase F — Framing Plan Intelligence (F.1–F.7) runner."""
+"""Phase F — Framing Plan Intelligence (F.1–F.7) and G.1 runner."""
 
 import _bootstrap  # noqa: F401
 
@@ -23,7 +23,7 @@ def configure_logging(verbose: bool) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Phase F — Framing Plan Intelligence (F.1–F.7).",
+        description="Phase F (F.1–F.7) and Phase G.1 reinforcement loading.",
     )
     parser.add_argument(
         "-o",
@@ -57,6 +57,10 @@ def run() -> int:
         config_path=args.config,
     ).run()
     workspace_validation = result["workspace_validation"]
+    reinforcement_validation = result.get("reinforcement_validation", {})
+    drawing_identity_validation = result.get("drawing_identity_validation", {})
+    drawing_set_validation = result.get("drawing_set_validation", {})
+    drawing_set_state_validation = result.get("drawing_set_state_validation", {})
     model = result["model"]
     svc = model.get("engineering_services_registry", {})
 
@@ -70,6 +74,58 @@ def run() -> int:
     print(f"Beam Contexts: {len(model.get('beam_engineering_contexts', []))}")
     print(f"Engineering Services: {svc.get('service_count', 0)}")
     print(f"Validation: {workspace_validation['status']}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1")
+    print("Floor Reinforcement Loading")
+    print("=" * 52)
+    reg = model.get("reinforcement_registry", {})
+    print(f"Reinforcement Workspaces: {len(model.get('reinforcement_workspaces', []))}")
+    print(f"Documents Loaded: {reg.get('document_count', 0)}")
+    print(f"Validation: {reinforcement_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.1")
+    print("Drawing Identity & Floor Detection")
+    print("=" * 52)
+    drawing_reg = model.get("drawing_registry", {})
+    ws_mgr = model.get("workspace_manager", {})
+    print(f"Drawings Identified: {drawing_reg.get('drawing_count', 0)}")
+    print(f"Floor Source: {ws_mgr.get('floor_source', '?')}")
+    floors = model.get("project_workspace", {}).get("floors", [])
+    if floors:
+        print(f"Detected Floor: {floors[0].get('floor_name', '?')} ({floors[0].get('floor_id', '?')})")
+    print(f"Validation: {drawing_identity_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.2")
+    print("Drawing Set Architecture")
+    print("=" * 52)
+    set_reg = model.get("drawing_set_registry", {})
+    print(f"Drawing Sets: {set_reg.get('drawing_set_count', 0)}")
+    for ds in model.get("drawing_sets", []):
+        print(f"  {ds.get('drawing_set_id')} — {ds.get('floor_name')} ({ds.get('status')})")
+    print(f"Validation: {drawing_set_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.3")
+    print("Drawing Set Lifecycle & Beam Index")
+    print("=" * 52)
+    indices = model.get("beam_indices", [])
+    total_beams = sum(i.get("beam_count", 0) for i in indices)
+    print(f"Drawing Sets: {len(model.get('drawing_sets', []))}")
+    print(f"Beams Indexed: {total_beams}")
+    for ds in model.get("drawing_sets", []):
+        ver = ds.get("drawing_set_version", {})
+        print(
+            f"  {ds.get('drawing_set_id')} v{ver.get('drawing_set_version', '?')} "
+            f"loading={ds.get('loading_state', '?')}"
+        )
+    print(f"Validation: {drawing_set_state_validation.get('status', 'SKIP')}")
     print("=" * 52 + "\n")
 
     failed = any(
@@ -85,6 +141,14 @@ def run() -> int:
             "workspace_validation",
         )
     )
+    if reinforcement_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_identity_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_set_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_set_state_validation.get("status") == "FAIL":
+        failed = True
     return 1 if failed else 0
 
 

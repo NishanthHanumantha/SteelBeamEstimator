@@ -72,8 +72,27 @@ engineering_context:
 
 workspace:
     enable: true
-    reinforcement_status: NOT_LOADED
     generate_debug_workspace: true
     default_floor:
         name: Ground Floor
         slug: GROUND_FLOOR
+
+reinforcement_loading:
+    enable: true
+    generate_debug_reinforcement: true
+
+reinforcement_drawings:
+    ground_floor: data/framing/Beam_Reinforcement_Details.dxf
+
+drawing_identity:
+    enable: true
+    generate_debug_drawing_identity: true
+    general_notes_path: data/general_notes/SE-100-R0-SH-01&SH-02(GENERAL NOTES).dxf
+
+drawing_set:
+    enable: true
+    generate_debug_drawing_set: true
+
+drawing_set_lifecycle:
+    enable: true
+    generate_debug_drawing_set_state: true

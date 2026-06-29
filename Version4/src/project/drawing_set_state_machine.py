@@ -1,0 +1,102 @@
+"""Orchestration state constants for Drawing Set lifecycle (not EngineeringStatus)."""
+
+from __future__ import annotations
+
+from typing import FrozenSet
+
+
+# Loading
+LOADING_NOT_LOADED = "NOT_LOADED"
+LOADING_LOADING = "LOADING"
+LOADING_READY = "READY"
+
+VALID_LOADING: FrozenSet[str] = frozenset({
+    LOADING_NOT_LOADED,
+    LOADING_LOADING,
+    LOADING_READY,
+})
+
+# Matching
+MATCHING_NOT_STARTED = "NOT_STARTED"
+MATCHING_RUNNING = "RUNNING"
+MATCHING_COMPLETED = "COMPLETED"
+MATCHING_FAILED = "FAILED"
+
+VALID_MATCHING: FrozenSet[str] = frozenset({
+    MATCHING_NOT_STARTED,
+    MATCHING_RUNNING,
+    MATCHING_COMPLETED,
+    MATCHING_FAILED,
+})
+
+# Parsing
+PARSING_NOT_STARTED = "NOT_STARTED"
+PARSING_RUNNING = "RUNNING"
+PARSING_COMPLETED = "COMPLETED"
+PARSING_FAILED = "FAILED"
+
+VALID_PARSING: FrozenSet[str] = frozenset({
+    PARSING_NOT_STARTED,
+    PARSING_RUNNING,
+    PARSING_COMPLETED,
+    PARSING_FAILED,
+})
+
+# Engineering
+ENGINEERING_NOT_STARTED = "NOT_STARTED"
+ENGINEERING_RUNNING = "RUNNING"
+ENGINEERING_COMPUTED = "COMPUTED"
+ENGINEERING_VALIDATED = "VALIDATED"
+ENGINEERING_FAILED = "FAILED"
+
+VALID_ENGINEERING: FrozenSet[str] = frozenset({
+    ENGINEERING_NOT_STARTED,
+    ENGINEERING_RUNNING,
+    ENGINEERING_COMPUTED,
+    ENGINEERING_VALIDATED,
+    ENGINEERING_FAILED,
+})
+
+# Quantity
+QUANTITY_NOT_STARTED = "NOT_STARTED"
+QUANTITY_RUNNING = "RUNNING"
+QUANTITY_COMPUTED = "COMPUTED"
+QUANTITY_VALIDATED = "VALIDATED"
+QUANTITY_FAILED = "FAILED"
+
+VALID_QUANTITY: FrozenSet[str] = frozenset({
+    QUANTITY_NOT_STARTED,
+    QUANTITY_RUNNING,
+    QUANTITY_COMPUTED,
+    QUANTITY_VALIDATED,
+    QUANTITY_FAILED,
+})
+
+# BOQ
+BOQ_NOT_STARTED = "NOT_STARTED"
+BOQ_EXPORTING = "EXPORTING"
+BOQ_EXPORTED = "EXPORTED"
+BOQ_FAILED = "FAILED"
+
+VALID_BOQ: FrozenSet[str] = frozenset({
+    BOQ_NOT_STARTED,
+    BOQ_EXPORTING,
+    BOQ_EXPORTED,
+    BOQ_FAILED,
+})
+
+LIFECYCLE_FIELD_MAP = {
+    "loading_state": VALID_LOADING,
+    "matching_state": VALID_MATCHING,
+    "parsing_state": VALID_PARSING,
+    "engineering_state": VALID_ENGINEERING,
+    "quantity_state": VALID_QUANTITY,
+    "boq_state": VALID_BOQ,
+}
+
+
+def is_valid_lifecycle(lifecycle: dict[str, str]) -> bool:
+    for field, valid in LIFECYCLE_FIELD_MAP.items():
+        if lifecycle.get(field) not in valid:
+            return False
+    return True

@@ -1,0 +1,57 @@
+{
+  "phase": "Phase G.1.1",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Drawing Title Extracted",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "Drawing Type Identified",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Floor Detected",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "Floor Normalized",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Drawing ID Created",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Workspace Assigned",
+      "status": "PASS",
+      "framing_assigned": 1,
+      "framing_expected": 1
+    },
+    {
+      "name": "Registry Updated",
+      "status": "PASS",
+      "drawing_count": 3
+    },
+    {
+      "name": "No Hardcoded Ground Floor",
+      "status": "PASS",
+      "floor_source": "drawing_identity",
+      "detected_floor_ids": [
+        "FLOOR::SHR_OHT_LVL_TOP"
+      ],
+      "expected_not": "FLOOR::GROUND_FLOOR"
+    }
+  ],
+  "summary": {
+    "total_checks": 8,
+    "passed": 8,
+    "failed": 0,
+    "identity_count": 3
+  }
+}

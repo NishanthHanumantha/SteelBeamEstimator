@@ -44,6 +44,11 @@ PHASE_F_4_ENGINEERING_LENGTH = "f_4_engineering_length"
 PHASE_F_5_KNOWLEDGE_GRAPH = "f_5_knowledge_graph_and_coordinates"
 PHASE_F_6_ENGINEERING_CONTEXT = "f_6_engineering_context"
 PHASE_F_7_PROJECT_WORKSPACE = "f_7_project_workspace"
+PHASE_G = "phase_g"
+PHASE_G_1_REINFORCEMENT_LOADING = "g_1_reinforcement_loading"
+PHASE_G_1_1_DRAWING_IDENTITY = "g_1_1_drawing_identity"
+PHASE_G_1_2_DRAWING_SET = "g_1_2_drawing_set"
+PHASE_G_1_3_DRAWING_SET_STATE = "g_1_3_drawing_set_state"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -1126,6 +1131,154 @@ class OutputPaths:
         ):
             (self.phase_f_dir / subdir).mkdir(parents=True, exist_ok=True)
 
+    # --- Phase G ---
+    @property
+    def phase_g_dir(self) -> Path:
+        return phase_dir(self.root, PHASE_G)
+
+    @property
+    def phase_g_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_1_REINFORCEMENT_LOADING
+
+    @property
+    def phase_g_summary(self) -> Path:
+        return self.phase_g_dir / "phase_g_summary.json"
+
+    @property
+    def phase_g_debug_dxf(self) -> Path:
+        return self.phase_g_dir / "phase_g_debug.dxf"
+
+    @property
+    def reinforcement_workspace_export(self) -> Path:
+        return self.phase_g_1_dir / "reinforcement_workspace.json"
+
+    @property
+    def reinforcement_document_export(self) -> Path:
+        return self.phase_g_1_dir / "reinforcement_document.json"
+
+    @property
+    def reinforcement_registry(self) -> Path:
+        return self.phase_g_1_dir / "reinforcement_registry.json"
+
+    @property
+    def reinforcement_validation(self) -> Path:
+        return self.phase_g_1_dir / "reinforcement_validation.json"
+
+    @property
+    def phase_g_workspace_manager(self) -> Path:
+        return self.phase_g_1_dir / "workspace_manager.json"
+
+    @property
+    def phase_g_1_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_1_1_DRAWING_IDENTITY
+
+    @property
+    def drawing_identity_export(self) -> Path:
+        return self.phase_g_1_1_dir / "drawing_identity.json"
+
+    @property
+    def drawing_registry_export(self) -> Path:
+        return self.phase_g_1_1_dir / "drawing_registry.json"
+
+    @property
+    def drawing_identity_validation(self) -> Path:
+        return self.phase_g_1_1_dir / "drawing_identity_validation.json"
+
+    @property
+    def floor_detection_export(self) -> Path:
+        return self.phase_g_1_1_dir / "floor_detection.json"
+
+    @property
+    def phase_g_1_1_workspace_manager(self) -> Path:
+        return self.phase_g_1_1_dir / "workspace_manager.json"
+
+    @property
+    def phase_g_1_1_project_workspace(self) -> Path:
+        return self.phase_g_1_1_dir / "project_workspace.json"
+
+    @property
+    def phase_g_1_1_floor_registry(self) -> Path:
+        return self.phase_g_1_1_dir / "floor_registry.json"
+
+    @property
+    def phase_g_1_1_reinforcement_workspace(self) -> Path:
+        return self.phase_g_1_1_dir / "reinforcement_workspace.json"
+
+    @property
+    def phase_g_1_2_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_1_2_DRAWING_SET
+
+    @property
+    def drawing_set_export(self) -> Path:
+        return self.phase_g_1_2_dir / "drawing_set.json"
+
+    @property
+    def drawing_set_registry_export(self) -> Path:
+        return self.phase_g_1_2_dir / "drawing_set_registry.json"
+
+    @property
+    def drawing_set_validation(self) -> Path:
+        return self.phase_g_1_2_dir / "drawing_set_validation.json"
+
+    @property
+    def phase_g_1_2_beam_engineering_context(self) -> Path:
+        return self.phase_g_1_2_dir / "beam_engineering_context.json"
+
+    @property
+    def phase_g_1_2_project_workspace(self) -> Path:
+        return self.phase_g_1_2_dir / "project_workspace.json"
+
+    @property
+    def phase_g_1_2_project_registry(self) -> Path:
+        return self.phase_g_1_2_dir / "project_registry.json"
+
+    @property
+    def phase_g_1_2_project_engineering_graph(self) -> Path:
+        return self.phase_g_1_2_dir / "project_engineering_graph.json"
+
+    @property
+    def phase_g_1_2_drawing_registry(self) -> Path:
+        return self.phase_g_1_2_dir / "drawing_registry.json"
+
+    @property
+    def phase_g_1_2_workspace_manager(self) -> Path:
+        return self.phase_g_1_2_dir / "workspace_manager.json"
+
+    @property
+    def phase_g_1_3_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_1_3_DRAWING_SET_STATE
+
+    @property
+    def drawing_set_state_export(self) -> Path:
+        return self.phase_g_1_3_dir / "drawing_set_state.json"
+
+    @property
+    def beam_index_export(self) -> Path:
+        return self.phase_g_1_3_dir / "beam_index.json"
+
+    @property
+    def beam_lookup_registry_export(self) -> Path:
+        return self.phase_g_1_3_dir / "beam_lookup_registry.json"
+
+    @property
+    def drawing_set_version_export(self) -> Path:
+        return self.phase_g_1_3_dir / "drawing_set_version.json"
+
+    @property
+    def drawing_set_state_validation(self) -> Path:
+        return self.phase_g_1_3_dir / "drawing_set_state_validation.json"
+
+    def ensure_phase_g_subdirs(self) -> None:
+        """Create Phase G root and G.1 / G.1.1 / G.1.2 / G.1.3 subfolders."""
+        self.phase_g_dir.mkdir(parents=True, exist_ok=True)
+        for subdir in (
+            PHASE_G_1_REINFORCEMENT_LOADING,
+            PHASE_G_1_1_DRAWING_IDENTITY,
+            PHASE_G_1_2_DRAWING_SET,
+            PHASE_G_1_3_DRAWING_SET_STATE,
+        ):
+            (self.phase_g_dir / subdir).mkdir(parents=True, exist_ok=True)
+
     # --- Phase E ---
     @property
     def phase_e_dir(self) -> Path:
@@ -1230,5 +1383,6 @@ class OutputPaths:
             PHASE_D42,
             PHASE_E,
             PHASE_F,
+            PHASE_G,
         ):
             phase_dir(self.root, phase).mkdir(parents=True, exist_ok=True)

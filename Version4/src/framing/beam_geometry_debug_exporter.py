@@ -25,6 +25,9 @@ _LAYER_PROJECT_GRAPH = "DEBUG_PROJECT_GRAPH"
 _LAYER_DEBUG_PROJECT = "DEBUG_PROJECT"
 _LAYER_DEBUG_FLOORS = "DEBUG_FLOORS"
 _LAYER_DEBUG_WORKSPACE = "DEBUG_WORKSPACE"
+_LAYER_DEBUG_REINFORCEMENT_WORKSPACE = "DEBUG_REINFORCEMENT_WORKSPACE"
+_LAYER_DEBUG_REINFORCEMENT_DOCUMENT = "DEBUG_REINFORCEMENT_DOCUMENT"
+_LAYER_DEBUG_REINFORCEMENT_REGISTRY = "DEBUG_REINFORCEMENT_REGISTRY"
 
 
 class BeamGeometryDebugExporter:
@@ -433,3 +436,348 @@ class BeamGeometryDebugExporter:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         doc.saveas(str(output_path))
         logger.info("Phase F debug DXF written to {}", output_path)
+
+    def export_reinforcement(
+        self,
+        model: dict[str, Any],
+        output_path: Path,
+    ) -> None:
+        """Export Phase G.1 reinforcement loading debug layers."""
+        doc = ezdxf.new("R2010")
+        for layer in (
+            _LAYER_DEBUG_REINFORCEMENT_WORKSPACE,
+            _LAYER_DEBUG_REINFORCEMENT_DOCUMENT,
+            _LAYER_DEBUG_REINFORCEMENT_REGISTRY,
+        ):
+            if layer not in doc.layers:
+                doc.layers.add(layer)
+
+        msp = doc.modelspace()
+        workspaces = model.get("reinforcement_workspaces", [])
+        registry = model.get("reinforcement_registry", {})
+
+        msp.add_text(
+            f"G.1 Reinforcement Loading — workspaces={len(workspaces)}",
+            dxfattribs={
+                "layer": _LAYER_DEBUG_REINFORCEMENT_WORKSPACE,
+                "height": 400.0,
+                "insert": (-12000.0, 8000.0),
+                "color": 3,
+            },
+        )
+
+        for idx, ws in enumerate(workspaces):
+            y = 7000.0 - idx * 1200.0
+            msp.add_text(
+                f"WS:{ws.get('workspace_id', '?')} status={ws.get('status', '?')}",
+                dxfattribs={
+                    "layer": _LAYER_DEBUG_REINFORCEMENT_WORKSPACE,
+                    "height": 280.0,
+                    "insert": (-12000.0, y),
+                    "color": 3,
+                },
+            )
+            doc_info = ws.get("document", {})
+            msp.add_text(
+                (
+                    f"DOC:{doc_info.get('document_id', '?')} "
+                    f"entities={doc_info.get('entity_count', 0)} "
+                    f"layers={doc_info.get('layer_count', 0)}"
+                ),
+                dxfattribs={
+                    "layer": _LAYER_DEBUG_REINFORCEMENT_DOCUMENT,
+                    "height": 220.0,
+                    "insert": (-12000.0, y - 350),
+                    "color": 5,
+                },
+            )
+            msp.add_text(
+                f"FILE:{doc_info.get('drawing_name', '?')} type={doc_info.get('drawing_type', '?')}",
+                dxfattribs={
+                    "layer": _LAYER_DEBUG_REINFORCEMENT_DOCUMENT,
+                    "height": 180.0,
+                    "insert": (-12000.0, y - 600),
+                    "color": 5,
+                },
+            )
+
+        for idx, entry in enumerate(registry.get("documents", [])):
+            msp.add_text(
+                (
+                    f"REG:{entry.get('document_id', '?')} "
+                    f"floor={entry.get('floor', '?')} "
+                    f"status={entry.get('status', '?')}"
+                ),
+                dxfattribs={
+                    "layer": _LAYER_DEBUG_REINFORCEMENT_REGISTRY,
+                    "height": 200.0,
+                    "insert": (-12000.0, 2000.0 - idx * 300),
+                    "color": 6,
+                },
+            )
+
+        validation = model.get("reinforcement_validation", {})
+        msp.add_text(
+            f"VALIDATION:{validation.get('status', '?')}",
+            dxfattribs={
+                "layer": _LAYER_DEBUG_REINFORCEMENT_REGISTRY,
+                "height": 280.0,
+                "insert": (-12000.0, 2500.0),
+                "color": 1 if validation.get("status") == "FAIL" else 3,
+            },
+        )
+
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        doc.saveas(str(output_path))
+        logger.info("Phase G debug DXF written to {}", output_path)
+
+    def export_drawing_identity(
+        self,
+        model: dict[str, Any],
+        output_path: Path,
+    ) -> None:
+        """Append Phase G.1.1 drawing identity debug layers."""
+        try:
+            doc = ezdxf.readfile(str(output_path))
+        except Exception:
+            doc = ezdxf.new("R2010")
+
+        for layer in (
+            "DEBUG_DRAWING_IDENTITY",
+            "DEBUG_DRAWING_TITLE",
+            "DEBUG_FLOOR_DETECTION",
+        ):
+            if layer not in doc.layers:
+                doc.layers.add(layer)
+
+        msp = doc.modelspace()
+        identities = model.get("drawing_identities", [])
+
+        msp.add_text(
+            f"G.1.1 Drawing Identity — count={len(identities)}",
+            dxfattribs={
+                "layer": "DEBUG_DRAWING_IDENTITY",
+                "height": 400.0,
+                "insert": (-16000.0, 10000.0),
+                "color": 4,
+            },
+        )
+
+        for idx, identity in enumerate(identities):
+            y = 9000.0 - idx * 1400.0
+            msp.add_text(
+                (
+                    f"ID:{identity.get('drawing_id', '?')} "
+                    f"type={identity.get('drawing_type', '?')} "
+                    f"conf={identity.get('confidence', 0):.2f}"
+                ),
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_IDENTITY",
+                    "height": 260.0,
+                    "insert": (-16000.0, y),
+                    "color": 4,
+                },
+            )
+            msp.add_text(
+                f"TITLE:{identity.get('drawing_title', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_TITLE",
+                    "height": 220.0,
+                    "insert": (-16000.0, y - 350),
+                    "color": 30,
+                },
+            )
+            msp.add_text(
+                (
+                    f"FLOOR:{identity.get('floor_name', 'N/A')} "
+                    f"slug={identity.get('floor_slug', 'N/A')} "
+                    f"source={identity.get('detection_source', '?')}"
+                ),
+                dxfattribs={
+                    "layer": "DEBUG_FLOOR_DETECTION",
+                    "height": 200.0,
+                    "insert": (-16000.0, y - 650),
+                    "color": 2,
+                },
+            )
+
+        validation = model.get("drawing_identity_validation", {})
+        msp.add_text(
+            f"IDENTITY_VALIDATION:{validation.get('status', '?')}",
+            dxfattribs={
+                "layer": "DEBUG_FLOOR_DETECTION",
+                "height": 280.0,
+                "insert": (-16000.0, 10500.0),
+                "color": 1 if validation.get("status") == "FAIL" else 3,
+            },
+        )
+
+        doc.saveas(str(output_path))
+        logger.info("Phase G.1.1 drawing identity debug appended to {}", output_path)
+
+    def export_drawing_set(
+        self,
+        model: dict[str, Any],
+        output_path: Path,
+    ) -> None:
+        """Append Phase G.1.2 drawing set debug layers."""
+        try:
+            doc = ezdxf.readfile(str(output_path))
+        except Exception:
+            doc = ezdxf.new("R2010")
+
+        for layer in ("DEBUG_DRAWING_SET", "DEBUG_DRAWING_RELATIONSHIPS"):
+            if layer not in doc.layers:
+                doc.layers.add(layer)
+
+        msp = doc.modelspace()
+        sets = model.get("drawing_sets", [])
+
+        msp.add_text(
+            f"G.1.2 Drawing Sets — count={len(sets)}",
+            dxfattribs={
+                "layer": "DEBUG_DRAWING_SET",
+                "height": 400.0,
+                "insert": (-20000.0, 12000.0),
+                "color": 1,
+            },
+        )
+
+        for idx, ds in enumerate(sets):
+            y = 11000.0 - idx * 1600.0
+            msp.add_text(
+                (
+                    f"SET:{ds.get('drawing_set_id', '?')} "
+                    f"floor={ds.get('floor_name', '?')} "
+                    f"status={ds.get('status', '?')}"
+                ),
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_SET",
+                    "height": 280.0,
+                    "insert": (-20000.0, y),
+                    "color": 1,
+                },
+            )
+            drawings = ds.get("drawings", {})
+            msp.add_text(
+                f"FRAMING:{drawings.get('framing', 'N/A')}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_RELATIONSHIPS",
+                    "height": 220.0,
+                    "insert": (-20000.0, y - 350),
+                    "color": 5,
+                },
+            )
+            msp.add_text(
+                f"REINFORCEMENT:{drawings.get('reinforcement', 'N/A')}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_RELATIONSHIPS",
+                    "height": 220.0,
+                    "insert": (-20000.0, y - 600),
+                    "color": 5,
+                },
+            )
+            msp.add_text(
+                f"GN_REF:{drawings.get('general_notes', 'N/A')}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_RELATIONSHIPS",
+                    "height": 200.0,
+                    "insert": (-20000.0, y - 850),
+                    "color": 6,
+                },
+            )
+
+        validation = model.get("drawing_set_validation", {})
+        msp.add_text(
+            f"SET_VALIDATION:{validation.get('status', '?')}",
+            dxfattribs={
+                "layer": "DEBUG_DRAWING_SET",
+                "height": 280.0,
+                "insert": (-20000.0, 12500.0),
+                "color": 1 if validation.get("status") == "FAIL" else 3,
+            },
+        )
+
+        doc.saveas(str(output_path))
+        logger.info("Phase G.1.2 drawing set debug appended to {}", output_path)
+
+    def export_drawing_set_state(
+        self,
+        model: dict[str, Any],
+        output_path: Path,
+    ) -> None:
+        """Append Phase G.1.3 lifecycle, version, and beam index debug layers."""
+        try:
+            doc = ezdxf.readfile(str(output_path))
+        except Exception:
+            doc = ezdxf.new("R2010")
+
+        for layer in (
+            "DEBUG_DRAWING_SET_STATE",
+            "DEBUG_DRAWING_SET_VERSION",
+            "DEBUG_BEAM_INDEX",
+        ):
+            if layer not in doc.layers:
+                doc.layers.add(layer)
+
+        msp = doc.modelspace()
+        sets = model.get("drawing_sets", [])
+
+        for idx, ds in enumerate(sets):
+            y = 14000.0 - idx * 1800.0
+            msp.add_text(
+                f"SET:{ds.get('drawing_set_id', '?')} loading={ds.get('loading_state', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_SET_STATE",
+                    "height": 260.0,
+                    "insert": (-24000.0, y),
+                    "color": 2,
+                },
+            )
+            msp.add_text(
+                (
+                    f"match={ds.get('matching_state', '?')} "
+                    f"parse={ds.get('parsing_state', '?')} "
+                    f"eng={ds.get('engineering_state', '?')}"
+                ),
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_SET_STATE",
+                    "height": 200.0,
+                    "insert": (-24000.0, y - 300),
+                    "color": 2,
+                },
+            )
+            version = ds.get("drawing_set_version", {})
+            msp.add_text(
+                f"VER:{version.get('drawing_set_version', '?')} hash={version.get('version_hash', '?')[:12]}",
+                dxfattribs={
+                    "layer": "DEBUG_DRAWING_SET_VERSION",
+                    "height": 220.0,
+                    "insert": (-24000.0, y - 550),
+                    "color": 4,
+                },
+            )
+            meta = ds.get("beam_index_meta", {})
+            msp.add_text(
+                f"BEAMS_INDEXED:{meta.get('beam_count', 0)}",
+                dxfattribs={
+                    "layer": "DEBUG_BEAM_INDEX",
+                    "height": 220.0,
+                    "insert": (-24000.0, y - 800),
+                    "color": 3,
+                },
+            )
+
+        validation = model.get("drawing_set_state_validation", {})
+        msp.add_text(
+            f"STATE_VALIDATION:{validation.get('status', '?')}",
+            dxfattribs={
+                "layer": "DEBUG_DRAWING_SET_STATE",
+                "height": 280.0,
+                "insert": (-24000.0, 14500.0),
+                "color": 1 if validation.get("status") == "FAIL" else 3,
+            },
+        )
+
+        doc.saveas(str(output_path))
+        logger.info("Phase G.1.3 drawing set state debug appended to {}", output_path)

@@ -31,13 +31,14 @@ class ProjectRegistry:
         entries: List[dict[str, Any]] = []
         for floor in floors:
             framing = floor.get("framing_plan", {})
-            reinforcement = floor.get("reinforcement_plan", {})
+            reinforcement_ws = floor.get("reinforcement_workspace", {})
+            reinforcement_status = reinforcement_ws.get("status", "NOT_LOADED")
             entries.append(
                 {
                     "floor_id": floor.get("floor_id"),
                     "floor_name": floor.get("floor_name"),
                     "framing": framing.get("status", "NOT_LOADED"),
-                    "reinforcement": reinforcement.get("status", "NOT_LOADED"),
+                    "reinforcement": reinforcement_status,
                     "beam_count": framing.get("beam_count", len(floor.get("beam_contexts", []))),
                 }
             )
