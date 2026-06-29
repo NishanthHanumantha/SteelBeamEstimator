@@ -1,5 +1,7 @@
 # Steel Beam Estimator — Version 3
 
+> **Frozen** at Phase E.3. Continue new development in [`../Version4/`](../Version4/). See [`FROZEN.md`](FROZEN.md).
+
 Focused fork through engineering parsing and reinforcement classification (Phases D.3–D.4.1).
 
 Version 2 remains frozen as the stable production fallback. All new development happens here.

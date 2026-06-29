@@ -1,0 +1,735 @@
+# PROMPT FOR CURSOR
+
+You are continuing development of the CAD Beam Reinforcement AI pipeline.
+
+IMPORTANT
+---------
+This is Version3 development.
+
+Version2 is the frozen fallback version.
+
+DO NOT modify anything inside Version2.
+
+All new development must be created inside Version3.
+
+If functionality from Version2 is required, COPY it into Version3 first and then extend it.
+
+Maintain complete backward compatibility.
+
+------------------------------------------------------------
+CURRENT PIPELINE
+------------------------------------------------------------
+
+Version2
+---------
+Phase D.1
+Annotation Extraction
+
+Phase D.2
+Basic Annotation Parsing
+
+Version3
+---------
+Phase D.3
+Beam Group Detection
+
+Phase D.3.1
+Beam Group Confidence Validation
+
+Phase D.3.2
+Detail Region Detection & Group Refinement
+
+Phase D.3.3
+Annotation Ownership Reconciliation
+
+Current canonical input:
+
+Version3/data/output/phase_d33/annotation_ownership_master.json
+
+This is now the SINGLE SOURCE OF TRUTH.
+
+Do NOT use any previous ownership outputs from Version2.
+
+------------------------------------------------------------
+OBJECTIVE
+------------------------------------------------------------
+
+Implement
+
+Phase D.4
+
+ENGINEERING ANNOTATION PARSING
+
+AND
+
+Phase D.4.1
+
+REINFORCEMENT CLASSIFICATION ENGINE
+
+These two phases together create the canonical engineering interpretation of every beam reinforcement detail.
+
+The parser must be GENERIC.
+
+It must work for unseen reinforcement drawings.
+
+It must NOT depend on estimator naming.
+
+Estimator mapping comes only AFTER engineering parsing.
+
+------------------------------------------------------------
+IMPORTANT DESIGN CHANGE
+------------------------------------------------------------
+
+DO NOT directly classify bars as
+
+Top Bar
+
+Top Bar Extra
+
+Bottom Bar
+
+Bottom Bar Extra
+
+Instead...
+
+First create NORMALIZED ENGINEERING OBJECTS.
+
+Example
+
+Raw Annotation
+
+2-Y16
+
+↓
+
+Engineering Object
+
+{
+    "type": "LONGITUDINAL_BAR",
+    "quantity": 2,
+    "diameter_mm": 16,
+    "position": "TOP",
+    "continuity": "UNKNOWN"
+}
+
+Only AFTER normalization should the Reinforcement Classification Engine determine whether it becomes
+
+Top Bar
+
+Top Bar - Extra
+
+Bottom Bar
+
+Bottom Bar - Extra
+
+This architecture must remain generic.
+
+------------------------------------------------------------
+NEW FOLDER
+------------------------------------------------------------
+
+Create
+
+Version3/src/parsing/
+
+Version3/src/classification/
+
+------------------------------------------------------------
+MODULES TO CREATE
+------------------------------------------------------------
+
+PARSING
+
+engineering_annotation_parser.py
+
+bar_parser.py
+
+stirrup_parser.py
+
+anchorage_parser.py
+
+sfr_parser.py
+
+spacing_parser.py
+
+reinforcement_parser.py
+
+engineering_parser_validator.py
+
+engineering_parser_debug_exporter.py
+
+engineering_parser_pipeline.py
+
+------------------------------------------------------------
+
+CLASSIFICATION
+
+reinforcement_classifier.py
+
+longitudinal_bar_classifier.py
+
+reinforcement_geometry_classifier.py
+
+reinforcement_validator.py
+
+reinforcement_debug_exporter.py
+
+reinforcement_pipeline.py
+
+------------------------------------------------------------
+RUNNERS
+------------------------------------------------------------
+
+Version3/
+
+run_phase_d4_engineering_parser.py
+
+run_phase_d41_reinforcement_classifier.py
+
+------------------------------------------------------------
+INPUT
+------------------------------------------------------------
+
+Version3/data/output/phase_d33/
+
+annotation_ownership_master.json
+
+Read ONLY this ownership dataset.
+
+------------------------------------------------------------
+STEP 1
+ENGINEERING PARSER
+------------------------------------------------------------
+
+Parse every engineering annotation into normalized objects.
+
+Supported annotation types
+
+BAR
+
+STIRRUP
+
+ANCHORAGE
+
+SIDE_FACE_REINFORCEMENT
+
+SPACER_BAR
+
+HOOK
+
+LAP
+
+DIMENSION_ENGINEERING
+
+UNKNOWN
+
+------------------------------------------------------------
+STEP 2
+BAR PARSER
+------------------------------------------------------------
+
+Examples
+
+2-Y16
+
+↓
+
+quantity = 2
+
+diameter = 16
+
+3-Y20
+
+↓
+
+quantity = 3
+
+diameter = 20
+
+4-Y8
+
+↓
+
+quantity = 4
+
+diameter = 8
+
+Store
+
+quantity
+
+diameter
+
+coordinates
+
+owner region
+
+owner beam group
+
+owner sketch
+
+------------------------------------------------------------
+STEP 3
+STIRRUP PARSER
+------------------------------------------------------------
+
+Examples
+
+2L-Y8@100C/C
+
+2L-Y8@150C/C
+
+2L-Y8@100/200/100C/C
+
+Extract
+
+leg_count
+
+diameter
+
+spacing list
+
+spacing mode
+
+uniform
+
+variable
+
+alternating
+
+------------------------------------------------------------
+STEP 4
+ANCHORAGE PARSER
+------------------------------------------------------------
+
+Support
+
+Ld
+
+Ld+10db
+
+Ld+12db
+
+Hook
+
+Bend
+
+Store
+
+anchorage type
+
+extension
+
+hook type
+
+------------------------------------------------------------
+STEP 5
+SFR PARSER
+------------------------------------------------------------
+
+Support
+
+4-Y8
+
+S.F.R.-2Y10
+
+etc.
+
+Extract
+
+quantity
+
+diameter
+
+semantic class
+
+Do NOT perform ownership validation.
+
+Ownership is already finalized in D.3.3.
+
+------------------------------------------------------------
+STEP 6
+NORMALIZED ENGINEERING OBJECT
+------------------------------------------------------------
+
+Every parsed annotation becomes
+
+EngineeringObject
+
+Example
+
+{
+    "object_id": "...",
+
+    "annotation_type": "...",
+
+    "quantity": ...,
+
+    "diameter_mm": ...,
+
+    "spacing_mm": [...],
+
+    "beam_group": "...",
+
+    "detail_region": "...",
+
+    "owner_sketch": "...",
+
+    "coordinates": [...],
+
+    "parser_status": "SUCCESS"
+}
+
+------------------------------------------------------------
+PHASE D.4.1
+
+REINFORCEMENT CLASSIFICATION ENGINE
+
+------------------------------------------------------------
+
+Purpose
+
+Convert engineering objects into estimator-style reinforcement categories.
+
+This phase is NOT parsing.
+
+This is engineering interpretation.
+
+------------------------------------------------------------
+RULE 1
+
+LONGITUDINAL POSITION
+
+------------------------------------------------------------
+
+Determine
+
+TOP
+
+BOTTOM
+
+UNKNOWN
+
+Use
+
+geometry
+
+bar elevation
+
+leader direction
+
+relative position
+
+within sketch
+
+NOT text.
+
+------------------------------------------------------------
+RULE 2
+
+CONTINUITY
+
+------------------------------------------------------------
+
+Determine
+
+CONTINUOUS
+
+PARTIAL
+
+UNKNOWN
+
+Continuous
+
+extends nearly full beam
+
+Partial
+
+terminates
+
+starts
+
+support region
+
+cantilever
+
+etc.
+
+------------------------------------------------------------
+RULE 3
+
+CLASSIFICATION
+
+------------------------------------------------------------
+
+Combine
+
+Position
+
++
+
+Continuity
+
+↓
+
+Estimator category
+
+TOP
+
++
+
+CONTINUOUS
+
+↓
+
+TOP_BAR
+
+TOP
+
++
+
+PARTIAL
+
+↓
+
+TOP_BAR_EXTRA
+
+BOTTOM
+
++
+
+CONTINUOUS
+
+↓
+
+BOTTOM_BAR
+
+BOTTOM
+
++
+
+PARTIAL
+
+↓
+
+BOTTOM_BAR_EXTRA
+
+UNKNOWN
+
+↓
+
+UNCLASSIFIED
+
+------------------------------------------------------------
+IMPORTANT
+
+The parser must NEVER directly output
+
+TOP_BAR_EXTRA
+
+It must first output
+
+LONGITUDINAL_BAR
+
+Then classifier decides.
+
+------------------------------------------------------------
+RULE 4
+
+OTHER TYPES
+
+------------------------------------------------------------
+
+Keep
+
+STIRRUP
+
+SIDE_FACE_REINFORCEMENT
+
+ANCHORAGE
+
+SPACER_BAR
+
+HOOK
+
+LAP
+
+unchanged.
+
+------------------------------------------------------------
+OUTPUTS
+------------------------------------------------------------
+
+Version3/data/output/phase_d4/
+
+engineering_objects.json
+
+parsed_longitudinal_bars.json
+
+parsed_stirrups.json
+
+parsed_anchorage.json
+
+parsed_sfr.json
+
+engineering_parser_summary.json
+
+engineering_parser_validation.json
+
+engineering_parser_report.txt
+
+engineering_parser_debug.dxf
+
+------------------------------------------------------------
+
+Version3/data/output/phase_d41/
+
+reinforcement_classification.json
+
+reinforcement_summary.json
+
+reinforcement_validation.json
+
+reinforcement_report.txt
+
+reinforcement_debug.dxf
+
+------------------------------------------------------------
+DEBUG DXF
+------------------------------------------------------------
+
+Create
+
+DEBUG_ENGINEERING_OBJECTS
+
+DEBUG_REINFORCEMENT_CLASSIFICATION
+
+Display
+
+Object IDs
+
+Classification
+
+TOP
+
+BOTTOM
+
+CONTINUOUS
+
+PARTIAL
+
+Estimator category
+
+Leader
+
+Confidence
+
+------------------------------------------------------------
+VALIDATION
+------------------------------------------------------------
+
+Validate
+
+✓ Every owned annotation parsed
+
+✓ No parser failures
+
+✓ No duplicate engineering objects
+
+✓ Every BAR classified
+
+✓ Every STIRRUP parsed
+
+✓ Every ANCHORAGE parsed
+
+✓ Every SFR parsed
+
+✓ No engineering object without owner
+
+✓ Every longitudinal bar has
+
+TOP
+
+BOTTOM
+
+or
+
+UNKNOWN
+
+✓ Every longitudinal bar has
+
+CONTINUOUS
+
+PARTIAL
+
+or
+
+UNKNOWN
+
+✓ Every longitudinal bar maps to exactly one estimator category
+
+------------------------------------------------------------
+SUCCESS CRITERIA
+------------------------------------------------------------
+
+For beam B1 (sample drawing)
+
+The parser should produce normalized engineering objects representing:
+
+Top longitudinal bars
+
+Top longitudinal support bars
+
+Bottom longitudinal bars
+
+Stirrups
+
+Side Face Reinforcement
+
+Anchorage
+
+WITHOUT directly using estimator terminology.
+
+The Reinforcement Classification Engine should then classify them into:
+
+Top Bars
+
+Top Bars - Extra
+
+Bottom Bars
+
+Bottom Bars - Extra
+
+Stirrups
+
+SFR
+
+This architecture must remain generic and reusable for future drawings where estimator terminology may differ.
+
+------------------------------------------------------------
+IMPORTANT
+------------------------------------------------------------
+
+DO NOT begin Phase D.5.
+
+Stop after completing:
+
+Phase D.4
+
+and
+
+Phase D.4.1
+
+Provide:
+
+1. Architecture summary
+
+2. Parsing statistics
+
+3. Reinforcement classification summary
+
+4. Validation results
+
+5. Sample outputs for Beam B1, B8/B9/B10, and B14
+
+6. Remaining engineering cases requiring future enhancement.
