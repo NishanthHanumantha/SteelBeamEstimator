@@ -1,30 +1,379 @@
 {
   "project": {
+    "project_name": "Sobha Galera Clubhouse",
     "drawing_number": "SE-100",
     "source_file": "data\\general_notes\\SE-100-R0-SH-01&SH-02(GENERAL NOTES).dxf"
+  },
+  "project_metadata_confidence": {
+    "project_name": {
+      "value": "Sobha Galera Clubhouse",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "project_code": {
+      "value": "436",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "revision": {
+      "value": "R0",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "drawing_number": {
+      "value": "SE-100",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "drawing_date": {
+      "value": "13-08-2025",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "consultant": {
+      "value": "SRINIVAS SATHYANARAYAN",
+      "confidence": 0.9,
+      "source": "TITLE_BLOCK"
+    },
+    "company": {
+      "value": "Sobha",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "drawing_scale": {
+      "value": "AS NOTED",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    },
+    "drawing_title": {
+      "value": "GENERAL NOTES",
+      "confidence": 0.98,
+      "source": "TITLE_BLOCK"
+    }
   },
   "steel_grade": "Fe550D",
   "selected_ld_table": "Fe550",
   "selection_reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
   "concrete_grade": "M30",
   "beam_cover_mm": 30,
-  "spacer_rules": {
-    "diameter_mm": 20,
-    "spacing_mm": null,
+  "structural_detailing_rules": {
+    "spacer_diameter_mm": 20,
+    "spacer_spacing_mm": null,
     "chairs_required": true,
     "largest_bar_rule": "UNLESS OTHERWISE SPECIFIED, SPACER BARS SHALL BE  PROVIDED TO MAINTAIN CONSTANT SPACING BETWEEN CONSECUTIVE  LAYERS OF REINFORCEMENT. SPACER BARS SHALL BE 20mm  DIA. OR SAME DIA. AS LARGEST DIAMETER OF"
   },
+  "estimator_rules": {
+    "spacer": {
+      "diameter_mm": 25,
+      "spacing_mm": 1000,
+      "diameter": {
+        "value": 25,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      },
+      "spacing": {
+        "value": 1000,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    "steel": {
+      "unit_weight_formula": "d2/162",
+      "unit_weight_formula_value": {
+        "value": "d2/162",
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    "rounding": {
+      "precision": 3,
+      "precision_value": {
+        "value": 3,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    "source": "config\\estimator_rules.yaml"
+  },
+  "estimator_defaults": {
+    "spacer_diameter_mm": 25,
+    "spacer_spacing_mm": 1000,
+    "unit_weight_formula": "d2/162",
+    "rounding_precision": 3
+  },
   "engineering_defaults": {
     "default_cover_mm": 30,
-    "default_concrete_grade": "M30",
-    "default_steel_grade": "Fe550D",
-    "default_development_table": "Fe550",
-    "default_spacer_diameter_mm": 20,
-    "default_spacer_spacing_mm": null
+    "default_concrete_grade": {
+      "value": "M30",
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "table": "TABLE_2",
+      "sheet": "SH-02"
+    },
+    "default_steel_grade": {
+      "value": "Fe550D",
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "table": "TABLE_2",
+      "sheet": "SH-02",
+      "base_steel_grade": "Fe550",
+      "selection_method": "TABLE_2"
+    },
+    "default_development_table": {
+      "value": "Fe550",
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "table": "TABLE_1",
+      "sheet": "SH-02",
+      "selection_reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+      "steel_grade": "Fe550D"
+    },
+    "default_spacer_diameter_mm": 25,
+    "default_spacer_spacing_mm": 1000,
+    "structural_spacer_diameter_mm": 20,
+    "structural_spacer_spacing_mm": null,
+    "unit_weight_formula": {
+      "value": "d2/162",
+      "source": "ESTIMATOR_RULES",
+      "confidence": 1.0,
+      "config": "config\\estimator_rules.yaml"
+    },
+    "rounding_precision": {
+      "value": 3,
+      "source": "ESTIMATOR_RULES",
+      "confidence": 1.0,
+      "config": "config\\estimator_rules.yaml"
+    },
+    "default_cover": {
+      "value": 30,
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "unit": "mm",
+      "table": "COVER_TABLE",
+      "sheet": "SH-02",
+      "member": "BEAM"
+    },
+    "default_spacer_diameter": {
+      "value": 25,
+      "source": "ESTIMATOR_RULES",
+      "confidence": 1.0,
+      "unit": "mm",
+      "config": "config\\estimator_rules.yaml"
+    },
+    "default_spacer_spacing": {
+      "value": 1000,
+      "source": "ESTIMATOR_RULES",
+      "confidence": 1.0,
+      "unit": "mm",
+      "config": "config\\estimator_rules.yaml"
+    },
+    "structural_spacer_diameter": {
+      "value": 20,
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "unit": "mm",
+      "sheet": "SH-02",
+      "section": "9.01"
+    }
   },
   "active_ld_sample": {
     "diameter_mm": 20,
     "concrete_grade": "M30",
-    "development_length_mm": 910
-  }
+    "development_length_mm": 910,
+    "provenance": {
+      "value": 910,
+      "source": "GENERAL_NOTES",
+      "confidence": 1.0,
+      "unit": "mm",
+      "table": "TABLE_1",
+      "sheet": "SH-02",
+      "steel_grade": "Fe550D",
+      "base_steel_grade": "Fe550",
+      "concrete_grade": "M30",
+      "diameter_mm": 20,
+      "selection_method": "TABLE_2",
+      "physical_table_key": "Fe550",
+      "active_table_key": "Fe550"
+    }
+  },
+  "engineering_value_traceability": [
+    {
+      "label": "Beam Cover",
+      "value": 30,
+      "unit": "mm",
+      "chain": [
+        "General Notes",
+        "Cover Table",
+        "SH-02",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 30,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "COVER_TABLE",
+        "sheet": "SH-02",
+        "member": "BEAM"
+      }
+    },
+    {
+      "label": "Development Length",
+      "value": 910,
+      "unit": "mm",
+      "chain": [
+        "Table 1",
+        "Fe550D",
+        "M30",
+        "20 mm Bar",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 910,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "TABLE_1",
+        "sheet": "SH-02",
+        "steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550",
+        "concrete_grade": "M30",
+        "diameter_mm": 20,
+        "selection_method": "TABLE_2",
+        "physical_table_key": "Fe550",
+        "active_table_key": "Fe550"
+      }
+    },
+    {
+      "label": "Spacer Diameter (Estimator)",
+      "value": 25,
+      "unit": "mm",
+      "chain": [
+        "Estimator Rules",
+        "config\\estimator_rules.yaml",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 25,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    {
+      "label": "Spacer Diameter (Structural)",
+      "value": 20,
+      "unit": "mm",
+      "chain": [
+        "General Notes",
+        "Section 9.01",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 20,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "sheet": "SH-02",
+        "section": "9.01"
+      }
+    }
+  ],
+  "decision_trail": [
+    {
+      "decision": "Development Length Table Selection",
+      "inputs": {
+        "table2_steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550"
+      },
+      "selected": "Fe550",
+      "source": "GENERAL_NOTES_TABLE_1",
+      "reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+      "selection_method": "TABLE_2"
+    },
+    {
+      "decision": "Development Length Selection",
+      "inputs": {
+        "steel_grade": "Fe550D",
+        "concrete_grade": "M30",
+        "diameter": 20
+      },
+      "selected": 910,
+      "source": "GENERAL_NOTES_TABLE_1",
+      "reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+      "provenance": {
+        "value": 910,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "TABLE_1",
+        "sheet": "SH-02",
+        "steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550",
+        "concrete_grade": "M30",
+        "diameter_mm": 20,
+        "selection_method": "TABLE_2",
+        "physical_table_key": "Fe550",
+        "active_table_key": "Fe550"
+      }
+    },
+    {
+      "decision": "Default Beam Cover Selection",
+      "inputs": {
+        "member": "BEAM"
+      },
+      "selected": 30,
+      "source": "GENERAL_NOTES",
+      "reason": "Lowest normalized BEAM row in cover table",
+      "provenance": {
+        "value": 30,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "COVER_TABLE",
+        "sheet": "SH-02",
+        "member": "BEAM"
+      }
+    },
+    {
+      "decision": "Estimator Spacer Diameter Selection",
+      "inputs": {
+        "methodology": "estimator_rules"
+      },
+      "selected": 25,
+      "source": "ESTIMATOR_RULES",
+      "reason": "Configured estimator business rule (not structural detailing note)",
+      "provenance": {
+        "value": 25,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    {
+      "decision": "Structural Spacer Diameter Extraction",
+      "inputs": {
+        "section": "9.01"
+      },
+      "selected": 20,
+      "source": "GENERAL_NOTES",
+      "reason": "General Notes structural detailing rule",
+      "provenance": {
+        "value": 20,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "sheet": "SH-02",
+        "section": "9.01"
+      }
+    }
+  ]
 }

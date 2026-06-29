@@ -489,7 +489,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461218.6699421294
+2461221.460740741
   9
 $TDUCREATE
  40
@@ -497,7 +497,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461218.6699421294
+2461221.460740741
   9
 $TDUUPDATE
  40
@@ -549,7 +549,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-15B
+163
   9
 $SURFTAB1
  70
@@ -929,11 +929,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{9FAB69E8-AC27-414E-ABD3-588482395AA0}
+{AB40341A-6A38-4F6B-8E32-895633E7E57B}
   9
 $VERSIONGUID
   2
-{C6A776CD-E1DE-4546-B13E-B2A7808C81F5}
+{BADCA835-8AAF-4C70-B3B6-B7138C5E8431}
   9
 $EXTNAMES
 290
@@ -1323,9 +1323,9 @@ ISM
   0
 CLASS
   1
-LAYOUT
+ACDBPLACEHOLDER
   2
-AcDbLayout
+AcDbPlaceHolder
   3
 ObjectDBX Classes
  90
@@ -1339,9 +1339,9 @@ ObjectDBX Classes
   0
 CLASS
   1
-ACDBPLACEHOLDER
+LAYOUT
   2
-AcDbPlaceHolder
+AcDbLayout
   3
 ObjectDBX Classes
  90
@@ -1869,7 +1869,7 @@ ACAD
   0
 APPID
   5
-158
+160
 330
 3
 100
@@ -1883,7 +1883,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-159
+161
 330
 3
 100
@@ -8937,7 +8937,7 @@ AcDbText
  40
 10.0
   1
-default_concrete_grade: M30
+default_concrete_grade: {'value': 'M30', 'source': 'GENERAL_NOTES', 'confidence': 1.0, 'table': 'TABLE_2', 'sheet': 'SH-02'}
 100
 AcDbText
   0
@@ -8963,7 +8963,7 @@ AcDbText
  40
 10.0
   1
-default_steel_grade: Fe550D
+default_steel_grade: {'value': 'Fe550D', 'source': 'GENERAL_NOTES', 'confidence': 1.0, 'table': 'TABLE_2', 'sheet': 'SH-02', 'base_steel_grade': 'Fe550', 'selection_method': 'TABLE_2'}
 100
 AcDbText
   0
@@ -8989,7 +8989,7 @@ AcDbText
  40
 10.0
   1
-default_development_table: Fe550
+default_development_table: {'value': 'Fe550', 'source': 'GENERAL_NOTES', 'confidence': 1.0, 'table': 'TABLE_1', 'sheet': 'SH-02', 'selection_reason': 'Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)', 'steel_grade': 'Fe550D'}
 100
 AcDbText
   0
@@ -9015,7 +9015,7 @@ AcDbText
  40
 10.0
   1
-default_spacer_diameter_mm: 20
+default_spacer_diameter_mm: 25
 100
 AcDbText
   0
@@ -9041,13 +9041,221 @@ AcDbText
  40
 10.0
   1
-default_spacer_spacing_mm: None
+default_spacer_spacing_mm: 1000
+100
+AcDbText
+  0
+TEXT
+  5
+141
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+906.0
+ 30
+0.0
+ 40
+10.0
+  1
+structural_spacer_diameter_mm: 20
+100
+AcDbText
+  0
+TEXT
+  5
+142
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+892.0
+ 30
+0.0
+ 40
+10.0
+  1
+structural_spacer_spacing_mm: None
+100
+AcDbText
+  0
+TEXT
+  5
+143
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+878.0
+ 30
+0.0
+ 40
+10.0
+  1
+unit_weight_formula: {'value': 'd2/162', 'source': 'ESTIMATOR_RULES', 'confidence': 1.0, 'config': 'config\\estimator_rules.yaml'}
+100
+AcDbText
+  0
+TEXT
+  5
+144
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+864.0
+ 30
+0.0
+ 40
+10.0
+  1
+rounding_precision: {'value': 3, 'source': 'ESTIMATOR_RULES', 'confidence': 1.0, 'config': 'config\\estimator_rules.yaml'}
+100
+AcDbText
+  0
+TEXT
+  5
+145
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+850.0
+ 30
+0.0
+ 40
+10.0
+  1
+default_cover: {'value': 30, 'source': 'GENERAL_NOTES', 'confidence': 1.0, 'unit': 'mm', 'table': 'COVER_TABLE', 'sheet': 'SH-02', 'member': 'BEAM'}
+100
+AcDbText
+  0
+TEXT
+  5
+146
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+836.0
+ 30
+0.0
+ 40
+10.0
+  1
+default_spacer_diameter: {'value': 25, 'source': 'ESTIMATOR_RULES', 'confidence': 1.0, 'unit': 'mm', 'config': 'config\\estimator_rules.yaml'}
+100
+AcDbText
+  0
+TEXT
+  5
+147
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+822.0
+ 30
+0.0
+ 40
+10.0
+  1
+default_spacer_spacing: {'value': 1000, 'source': 'ESTIMATOR_RULES', 'confidence': 1.0, 'unit': 'mm', 'config': 'config\\estimator_rules.yaml'}
+100
+AcDbText
+  0
+TEXT
+  5
+148
+330
+17
+100
+AcDbEntity
+  8
+DEBUG_PROJECT_DEFAULTS
+ 62
+4
+100
+AcDbText
+ 10
+500.0
+ 20
+808.0
+ 30
+0.0
+ 40
+10.0
+  1
+structural_spacer_diameter: {'value': 20, 'source': 'GENERAL_NOTES', 'confidence': 1.0, 'unit': 'mm', 'sheet': 'SH-02', 'section': '9.01'}
 100
 AcDbText
   0
 CIRCLE
   5
-141
+149
 330
 17
 100
@@ -9069,7 +9277,7 @@ AcDbCircle
   0
 CIRCLE
   5
-142
+14A
 330
 17
 100
@@ -9091,7 +9299,7 @@ AcDbCircle
   0
 CIRCLE
   5
-143
+14B
 330
 17
 100
@@ -9113,7 +9321,7 @@ AcDbCircle
   0
 CIRCLE
   5
-144
+14C
 330
 17
 100
@@ -9135,7 +9343,7 @@ AcDbCircle
   0
 CIRCLE
   5
-145
+14D
 330
 17
 100
@@ -9157,7 +9365,7 @@ AcDbCircle
   0
 CIRCLE
   5
-146
+14E
 330
 17
 100
@@ -9179,7 +9387,7 @@ AcDbCircle
   0
 CIRCLE
   5
-147
+14F
 330
 17
 100
@@ -9201,7 +9409,7 @@ AcDbCircle
   0
 CIRCLE
   5
-148
+150
 330
 17
 100
@@ -9223,7 +9431,7 @@ AcDbCircle
   0
 CIRCLE
   5
-149
+151
 330
 17
 100
@@ -9245,7 +9453,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14A
+152
 330
 17
 100
@@ -9267,7 +9475,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14B
+153
 330
 17
 100
@@ -9289,7 +9497,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14C
+154
 330
 17
 100
@@ -9311,7 +9519,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14D
+155
 330
 17
 100
@@ -9333,7 +9541,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14E
+156
 330
 17
 100
@@ -9355,7 +9563,7 @@ AcDbCircle
   0
 CIRCLE
   5
-14F
+157
 330
 17
 100
@@ -9377,7 +9585,7 @@ AcDbCircle
   0
 CIRCLE
   5
-150
+158
 330
 17
 100
@@ -9399,7 +9607,7 @@ AcDbCircle
   0
 CIRCLE
   5
-151
+159
 330
 17
 100
@@ -9421,7 +9629,7 @@ AcDbCircle
   0
 CIRCLE
   5
-152
+15A
 330
 17
 100
@@ -9443,7 +9651,7 @@ AcDbCircle
   0
 CIRCLE
   5
-153
+15B
 330
 17
 100
@@ -9465,7 +9673,7 @@ AcDbCircle
   0
 CIRCLE
   5
-154
+15C
 330
 17
 100
@@ -9487,7 +9695,7 @@ AcDbCircle
   0
 CIRCLE
   5
-155
+15D
 330
 17
 100
@@ -9509,7 +9717,7 @@ AcDbCircle
   0
 CIRCLE
   5
-156
+15E
 330
 17
 100
@@ -9531,7 +9739,7 @@ AcDbCircle
   0
 CIRCLE
   5
-157
+15F
 330
 17
 100
@@ -10541,7 +10749,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-15A
+162
   0
 DICTIONARYVAR
   5
@@ -10553,11 +10761,11 @@ DictionaryVariables
 280
 0
   1
-1.4.4 @ 2026-06-26T10:34:43.002530+00:00
+1.4.4 @ 2026-06-29T05:33:28.663898+00:00
   0
 DICTIONARYVAR
   5
-15A
+162
 330
 2D
 100
@@ -10565,7 +10773,7 @@ DictionaryVariables
 280
 0
   1
-1.4.4 @ 2026-06-26T10:34:43.016905+00:00
+1.4.4 @ 2026-06-29T05:33:28.713147+00:00
   0
 ENDSEC
   0

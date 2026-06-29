@@ -1,8 +1,75 @@
 {
   "default_cover_mm": 30,
-  "default_concrete_grade": "M30",
-  "default_steel_grade": "Fe550D",
-  "default_development_table": "Fe550",
-  "default_spacer_diameter_mm": 20,
-  "default_spacer_spacing_mm": null
+  "default_concrete_grade": {
+    "value": "M30",
+    "source": "GENERAL_NOTES",
+    "confidence": 1.0,
+    "table": "TABLE_2",
+    "sheet": "SH-02"
+  },
+  "default_steel_grade": {
+    "value": "Fe550D",
+    "source": "GENERAL_NOTES",
+    "confidence": 1.0,
+    "table": "TABLE_2",
+    "sheet": "SH-02",
+    "base_steel_grade": "Fe550",
+    "selection_method": "TABLE_2"
+  },
+  "default_development_table": {
+    "value": "Fe550",
+    "source": "GENERAL_NOTES",
+    "confidence": 1.0,
+    "table": "TABLE_1",
+    "sheet": "SH-02",
+    "selection_reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+    "steel_grade": "Fe550D"
+  },
+  "default_spacer_diameter_mm": 25,
+  "default_spacer_spacing_mm": 1000,
+  "structural_spacer_diameter_mm": 20,
+  "structural_spacer_spacing_mm": null,
+  "unit_weight_formula": {
+    "value": "d2/162",
+    "source": "ESTIMATOR_RULES",
+    "confidence": 1.0,
+    "config": "config\\estimator_rules.yaml"
+  },
+  "rounding_precision": {
+    "value": 3,
+    "source": "ESTIMATOR_RULES",
+    "confidence": 1.0,
+    "config": "config\\estimator_rules.yaml"
+  },
+  "default_cover": {
+    "value": 30,
+    "source": "GENERAL_NOTES",
+    "confidence": 1.0,
+    "unit": "mm",
+    "table": "COVER_TABLE",
+    "sheet": "SH-02",
+    "member": "BEAM"
+  },
+  "default_spacer_diameter": {
+    "value": 25,
+    "source": "ESTIMATOR_RULES",
+    "confidence": 1.0,
+    "unit": "mm",
+    "config": "config\\estimator_rules.yaml"
+  },
+  "default_spacer_spacing": {
+    "value": 1000,
+    "source": "ESTIMATOR_RULES",
+    "confidence": 1.0,
+    "unit": "mm",
+    "config": "config\\estimator_rules.yaml"
+  },
+  "structural_spacer_diameter": {
+    "value": 20,
+    "source": "GENERAL_NOTES",
+    "confidence": 1.0,
+    "unit": "mm",
+    "sheet": "SH-02",
+    "section": "9.01"
+  }
 }

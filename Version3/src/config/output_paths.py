@@ -964,6 +964,22 @@ class OutputPaths:
     def project_engineering_report(self) -> Path:
         return self.phase_e_dir / "project_engineering_report.json"
 
+    @property
+    def estimator_rules(self) -> Path:
+        return self.phase_e_dir / "estimator_rules.json"
+
+    @property
+    def project_metadata(self) -> Path:
+        return self.phase_e_dir / "project_metadata.json"
+
+    @property
+    def engineering_value_registry(self) -> Path:
+        return self.phase_e_dir / "engineering_value_registry.json"
+
+    @property
+    def engineering_traceability_report(self) -> Path:
+        return self.phase_e_dir / "engineering_traceability_report.json"
+
     def engineering_objects_for_classification(self) -> Path:
         """Prefer D.4.2 enriched objects when Phase D.4.2 has been run."""
         enriched = self.engineering_objects_enriched

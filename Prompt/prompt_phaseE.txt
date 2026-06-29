@@ -1,0 +1,818 @@
+# Cursor Prompt — Implement Phase E: General Notes Intelligence Engine
+
+## Context
+
+The Beam Steel Estimation pipeline has successfully completed the following phases:
+
+```
+Phase D.1  DXF Parsing
+Phase D.2  Detail Region Detection
+Phase D.3  Annotation Ownership
+Phase D.4  Engineering Annotation Parser
+Phase D.4.2 Longitudinal Rebar Geometry Resolver
+Phase D.4.1 Reinforcement Classification
+```
+
+The D pipeline is now considered stable.
+
+During engineering review, an important architectural realization was made.
+
+The Reinforcement Drawing is NOT the source of engineering rules.
+
+Instead, beam estimation is performed using THREE independent drawing sources.
+
+```
+1. Framing Plan
+----------------
+• Beam geometry
+• Beam width
+• Beam depth
+• Beam centreline
+• Clear beam length
+• Slab thickness
+• Beam mark
+
+↓
+
+2. Reinforcement Drawing
+-------------------------
+• Top bars
+• Bottom bars
+• Extra bars
+• Stirrups
+• Side Face Reinforcement
+• Anchorage
+• Local dimensions
+• Reinforcement annotations
+
+↓
+
+3. General Notes Drawing
+-------------------------
+• Development Length tables
+• Steel Grade
+• Concrete Grade
+• Concrete Cover
+• Bend Standards
+• Hook Standards
+• Lap Rules
+• Spacer Bar Rules
+• Fabrication Rules
+• Engineering Tables
+```
+
+The General Notes drawing is NOT documentation.
+
+It is effectively the PROJECT ENGINEERING CONFIGURATION.
+
+It must therefore become its own intelligent parsing pipeline.
+
+--------------------------------------------------
+
+# OBJECTIVE
+
+Implement
+
+```
+Phase E
+General Notes Intelligence Engine
+```
+
+This phase must read the General Notes drawing (DXF/PDF) once per project and convert all engineering rules into structured machine-readable knowledge.
+
+This knowledge will be reused by every future beam estimation.
+
+This phase DOES NOT compute quantities.
+
+This phase ONLY extracts engineering rules.
+
+--------------------------------------------------
+
+# IMPORTANT DESIGN PRINCIPLE
+
+Treat General Notes as a project-level knowledge base.
+
+One project
+
+↓
+
+One General Notes
+
+↓
+
+Thousands of beams
+
+↓
+
+Same engineering rules.
+
+Therefore General Notes should be parsed once and cached.
+
+Never repeatedly parse General Notes during beam estimation.
+
+--------------------------------------------------
+
+# INPUT
+
+Support
+
+General Notes DXF (preferred)
+
+Fallback
+
+General Notes PDF
+
+Typical files:
+
+```
+SE-100-R0-SH-01
+SE-100-R0-SH-02
+```
+
+Both sheets belong to one project.
+
+The engine should merge both sheets into one engineering knowledge model.
+
+--------------------------------------------------
+
+# OUTPUT
+
+Create
+
+```
+Version3/data/output/phase_e/
+
+general_notes_engineering_rules.json
+
+development_length_table.json
+
+cover_table.json
+
+material_specifications.json
+
+engineering_constants.json
+
+phase_e_summary.json
+
+phase_e_validation.json
+```
+
+--------------------------------------------------
+
+# NEW MODULES
+
+Create
+
+```
+src/general_notes/
+
+general_notes_parser.py
+
+general_notes_pipeline.py
+
+table_extractor.py
+
+engineering_rule_extractor.py
+
+engineering_rule_validator.py
+
+engineering_rule_cache.py
+
+general_notes_debug_exporter.py
+```
+
+--------------------------------------------------
+
+# STEP 1
+
+Read all General Notes sheets.
+
+Automatically detect
+
+```
+Sheet-01
+
+Sheet-02
+```
+
+Merge them into one project model.
+
+Do not depend on filenames.
+
+Use title block information when available.
+
+--------------------------------------------------
+
+# STEP 2
+
+Extract Project Metadata
+
+Capture
+
+```
+Project Name
+
+Project Code
+
+Revision
+
+Drawing Number
+
+Drawing Date
+
+Consultant
+
+Drawing Scale
+
+Sheet Number
+```
+
+Store under
+
+```
+project_information
+```
+
+--------------------------------------------------
+
+# STEP 3
+
+Extract Material Specifications
+
+Examples
+
+```
+Steel Grade
+
+Fe500
+
+Fe550
+
+Concrete Grade
+
+M30
+
+M35
+
+M40
+```
+
+Store
+
+```
+default_steel_grade
+
+default_concrete_grade
+```
+
+If multiple grades exist
+
+Store all.
+
+--------------------------------------------------
+
+# STEP 4
+
+Extract Development Length Tables
+
+This is one of the most important outputs.
+
+Extract complete lookup tables.
+
+Support
+
+```
+Steel Grade
+
+↓
+
+Concrete Grade
+
+↓
+
+Bar Diameter
+
+↓
+
+Development Length
+```
+
+Example
+
+```
+Fe550
+
+↓
+
+M30
+
+↓
+
+20mm
+
+↓
+
+1000 mm
+```
+
+Do NOT hardcode.
+
+Store every table value.
+
+--------------------------------------------------
+
+# STEP 5
+
+Extract Concrete Cover Table
+
+Identify member-wise cover.
+
+Examples
+
+```
+Beam
+
+Column
+
+Slab
+
+Footing
+
+Retaining Wall
+
+Water Tank
+
+Lintel
+
+Plinth Beam
+```
+
+Store
+
+```
+member_type
+
+↓
+
+cover
+```
+
+--------------------------------------------------
+
+# STEP 6
+
+Extract Standard Bend Details
+
+Examples
+
+```
+90°
+
+135°
+
+180°
+
+Hook Length
+
+Bend Multipliers
+
+db multipliers
+```
+
+Store
+
+```
+bend_rules
+```
+
+--------------------------------------------------
+
+# STEP 7
+
+Extract Anchorage Rules
+
+Examples
+
+```
+Ld
+
+Compression
+
+Tension
+
+Hooks
+
+Anchorage Notes
+```
+
+Store
+
+```
+anchorage_rules
+```
+
+--------------------------------------------------
+
+# STEP 8
+
+Extract Reinforcement Fabrication Rules
+
+Examples
+
+```
+Lap splice rules
+
+Coupler rules
+
+Maximum splice percentage
+
+Minimum lap
+
+Mechanical coupler notes
+
+No lap zones
+```
+
+Store
+
+```
+fabrication_rules
+```
+
+--------------------------------------------------
+
+# STEP 9
+
+Extract Spacer Bar Rules
+
+Examples
+
+```
+Spacer Diameter
+
+Spacer Spacing
+
+Chair Requirements
+
+Cover Blocks
+```
+
+Store
+
+```
+spacer_rules
+```
+
+Example
+
+```
+Spacer Diameter
+
+25 mm
+
+Spacing
+
+1000 mm
+```
+
+--------------------------------------------------
+
+# STEP 10
+
+Extract Engineering Constants
+
+Examples
+
+```
+Default Cover
+
+Minimum Cover
+
+Maximum Aggregate
+
+Concrete Density
+
+Steel Density
+
+Standard Hook Multipliers
+
+Standard Bend Multipliers
+
+Minimum Lap
+```
+
+These become reusable constants.
+
+--------------------------------------------------
+
+# STEP 11
+
+Normalize Everything
+
+Do not leave values as free text.
+
+Convert
+
+```
+"25 mm"
+
+↓
+
+25
+```
+
+Convert
+
+```
+"M30"
+
+↓
+
+{
+grade:"M30"
+}
+```
+
+Convert
+
+```
+Fe550
+
+↓
+
+{
+grade:"Fe550"
+}
+```
+
+Normalize all units.
+
+mm
+
+m
+
+kN
+
+MPa
+
+Degrees
+
+--------------------------------------------------
+
+# STEP 12
+
+Create Engineering Knowledge Model
+
+Produce one unified JSON.
+
+Example
+
+```json
+{
+
+project_information:{...},
+
+materials:{...},
+
+development_length_tables:{...},
+
+cover_tables:{...},
+
+bend_rules:{...},
+
+anchorage_rules:{...},
+
+fabrication_rules:{...},
+
+spacer_rules:{...},
+
+engineering_constants:{...}
+
+}
+```
+
+This becomes the authoritative project configuration.
+
+--------------------------------------------------
+
+# STEP 13
+
+Engineering Rule Cache
+
+Create
+
+```
+engineering_rule_cache.py
+```
+
+Responsibilities
+
+Load
+
+Validate
+
+Cache
+
+Provide lookup functions
+
+Examples
+
+```
+get_cover(member)
+
+get_ld(steel_grade,
+       concrete_grade,
+       diameter)
+
+get_spacer_rule()
+
+get_hook_rule()
+
+get_bend_rule()
+```
+
+Future phases must use the cache.
+
+Never re-read JSON directly.
+
+--------------------------------------------------
+
+# STEP 14
+
+Validation
+
+Create validator.
+
+Verify
+
+```
+Development tables exist
+
+Cover tables exist
+
+Steel grades found
+
+Concrete grades found
+
+Spacer rules found
+
+Bend rules found
+
+Anchorage rules found
+
+Project metadata found
+```
+
+Validation example
+
+```
+Development Tables
+
+PASS
+
+Cover Tables
+
+PASS
+
+Material Grades
+
+PASS
+
+Engineering Constants
+
+PASS
+
+Validation
+
+PASS
+```
+
+--------------------------------------------------
+
+# STEP 15
+
+Debug Outputs
+
+Generate
+
+```
+DEBUG_GENERAL_NOTES_TABLES
+
+DEBUG_ENGINEERING_RULES
+
+DEBUG_DEVELOPMENT_TABLE
+
+DEBUG_COVER_TABLE
+```
+
+Allow easy inspection of extracted tables.
+
+--------------------------------------------------
+
+# CONFIGURATION
+
+Create
+
+```
+config/general_notes.yaml
+```
+
+Include
+
+```
+preferred_input = DXF
+
+fallback_pdf = true
+
+extract_tables = true
+
+normalize_units = true
+
+cache_rules = true
+
+debug = true
+```
+
+--------------------------------------------------
+
+# CODING REQUIREMENTS
+
+Maintain current architecture.
+
+Strong typing.
+
+Dataclasses.
+
+No hardcoded project names.
+
+No hardcoded development lengths.
+
+No hardcoded covers.
+
+Everything must come from General Notes.
+
+Design for reuse across multiple projects.
+
+Keep parser modular.
+
+Future drawings may have different table layouts.
+
+Parser must tolerate missing tables.
+
+--------------------------------------------------
+
+# IMPORTANT ENGINEERING PRINCIPLE
+
+This phase is NOT a beam parser.
+
+It is a PROJECT ENGINEERING KNOWLEDGE ENGINE.
+
+Its outputs will later be used by
+
+Phase F
+
+Framing Plan Geometry Engine
+
+and
+
+Phase G
+
+Steel Quantity Computation Engine.
+
+--------------------------------------------------
+
+# SUCCESS CRITERIA
+
+Implementation is complete only if
+
+✓ Both General Note sheets are parsed.
+
+✓ Engineering tables are extracted.
+
+✓ Development Length tables are machine-readable.
+
+✓ Concrete Cover tables are machine-readable.
+
+✓ Material grades are extracted.
+
+✓ Bend rules extracted.
+
+✓ Anchorage rules extracted.
+
+✓ Spacer rules extracted.
+
+✓ Unified engineering knowledge JSON generated.
+
+✓ Engineering Rule Cache implemented.
+
+✓ Validation passes.
+
+✓ Debug outputs generated.
+
+✓ Production-quality code.
+
+STOP after completing Phase E.
+
+Do NOT begin Framing Plan Geometry Engine (Phase F).
+
+Do NOT begin Steel Quantity Computation (Phase G).

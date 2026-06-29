@@ -1,0 +1,154 @@
+Phase 3B – Region-Based Reinforcement Detail Extraction
+
+Objective
+
+Rebuild reinforcement extraction using drawing regions.
+
+Current Problem
+
+Old reinforcement block detector used nearest-neighbour search around beam labels.
+
+This caused:
+
+* framing plan contamination
+* sheet title contamination
+* duplicate beam blocks
+
+Now entity_region_map.json is available.
+
+Use only entities assigned to:
+
+region = beam_reinforcement
+
+---
+
+Inputs
+
+entities.json
+
+entity_region_map.json
+
+beam_labels.json
+
+---
+
+Requirements
+
+Step 1
+
+Filter entities.
+
+Keep only:
+
+region = beam_reinforcement
+
+Ignore all other regions.
+
+---
+
+Step 2
+
+Detect beam detail headers.
+
+Pattern:
+
+B\d+(\d+X\d+)
+
+Examples:
+
+B1(200X600)
+
+B4(200X600)
+
+B11(150X600)
+
+---
+
+Step 3
+
+Each beam header defines one reinforcement detail.
+
+Build local bounding boxes around each beam detail.
+
+Use nearby geometry:
+
+LINE
+
+LWPOLYLINE
+
+DIMENSION
+
+TEXT
+
+MTEXT
+
+---
+
+Step 4
+
+Collect reinforcement entities belonging to that beam only.
+
+Expected entities:
+
+2-Y16
+
+2-Y20
+
+2-Y12
+
+2L-Y10@100
+
+2L-Y8@100/200/100
+
+Ld
+
+1900
+
+2150
+
+500
+
+Side Face Reinforcement
+
+---
+
+Step 5
+
+Generate:
+
+reinforcement_detail_blocks.json
+
+Format:
+
+{
+"beam_mark":"B1",
+
+"beam_width":200,
+
+"beam_depth":600,
+
+"bbox":{},
+
+"texts":[
+"2-Y16",
+"2-Y20",
+"Ld",
+"1900"
+]
+}
+
+---
+
+Validation
+
+B1 block must not contain B2 entities.
+
+B2 block must not contain B3 entities.
+
+No framing plan titles.
+
+No scale notes.
+
+No general notes.
+
+Create production-quality code.

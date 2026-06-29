@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, List, Optional
 
 from ezdxf import recover
-from loguru import logger
+from src.general_notes.title_block_extractor import TitleBlockExtractor
 
 _SECTION_RE = re.compile(r"^\s*(\d+)\.\d+")
 _SHEET_LAYOUT_RE = re.compile(r"SH[-_]?(\d+)", re.IGNORECASE)
@@ -60,7 +60,13 @@ def load_general_notes_config(config_path: Path) -> dict[str, Any]:
         "ld_table_y_min": 775.0,
         "cover_table_x_min": 1540.0,
         "cover_table_y_min": 500.0,
-        "cover_table_y_max": 720.0,
+        "table2_x_min": 1540.0,
+        "table2_steel_col_x_min": 1650.0,
+        "title_block_block_patterns": [
+            "Sobha_Titile block-A1",
+            "*title*",
+            "*titile*",
+        ],
     }
     if not config_path.exists():
         logger.warning("General notes config not found — using defaults: {}", config_path)
@@ -270,90 +276,4 @@ class GeneralNotesParser:
         )
 
     def extract_project_information(self, document: GeneralNotesDocument) -> dict[str, Any]:
-        blob = document.all_text_joined()
-        drawing_number: Optional[str] = None
-        for match in _DRAWING_CODE_RE.finditer(blob):
-            drawing_number = match.group(1)
-            break
-
-        path_match = re.search(r"(SE-\d+)", document.source_path.name, re.IGNORECASE)
-        if path_match:
-            drawing_number = path_match.group(1)
-
-        for layout in document.layouts:
-            layout_match = re.search(r"GN-(\d+)", layout, re.IGNORECASE)
-            if layout_match and drawing_number is None:
-                drawing_number = f"SE-{layout_match.group(1)}"
-
-        revision: Optional[str] = None
-        rev_match = _REVISION_RE.search(document.source_path.name)
-        if rev_match:
-            revision = f"R{rev_match.group(1)}"
-
-        sheet_numbers = [s.sheet_id for s in document.sheets]
-        layout_names = document.layouts
-        sheet_names = layout_names or sheet_numbers
-
-        project_name = self._find_label_value(
-            blob, ["PROJECT NAME", "PROJECT:", "NAME OF PROJECT"]
-        )
-        if not project_name:
-            project_name = self._infer_project_name(blob, document.source_path.name)
-
-        company = self._find_company(blob)
-        consultant = self._find_label_value(
-            blob, ["CONSULTANT", "STRUCTURAL ENGINEER", "ENGINEER"]
-        ) or company
-
-        project_info: dict[str, Any] = {
-            "project_name": project_name,
-            "project_code": drawing_number,
-            "revision": revision,
-            "drawing_number": drawing_number,
-            "drawing_date": self._find_label_value(
-                blob, ["DATE", "DRAWING DATE", "DATED"]
-            ),
-            "consultant": consultant,
-            "company": company,
-            "drawing_scale": self._find_label_value(
-                blob, ["SCALE", "DRAWING SCALE", "N.T.S"]
-            ),
-            "sheet_numbers": sheet_numbers,
-            "sheet_names": sheet_names,
-            "layout_names": layout_names,
-            "drawing_title": "GENERAL NOTES" if "GENERAL NOTES" in blob.upper() else None,
-            "source_file": str(document.source_path),
-            "source_format": document.source_format,
-        }
-        return project_info
-
-    def _infer_project_name(self, blob: str, filename: str) -> Optional[str]:
-        for line in blob.splitlines():
-            upper = line.upper()
-            if "PROJECT" in upper and len(line.strip()) < 120:
-                if any(skip in upper for skip in ("REFERS", "DRAWING", "COMPLETION", "TEMPORARY")):
-                    continue
-                cleaned = re.sub(r"^\d+\.\d+\s*", "", line.strip())
-                if len(cleaned) > 5 and "PROJECT" in upper:
-                    return cleaned[:100]
-        return None
-
-    def _find_company(self, blob: str) -> Optional[str]:
-        for line in blob.splitlines():
-            upper = line.upper()
-            if "QST" in upper and "TEAM" in upper:
-                return "QST"
-            if "COMPANY" in upper and ":" in line:
-                return line.split(":", 1)[1].strip()[:80]
-        qst = re.search(r"\b(QST)\b", blob, re.IGNORECASE)
-        if qst:
-            return qst.group(1)
-        return None
-
-    def _find_label_value(self, blob: str, labels: List[str]) -> Optional[str]:
-        for line in blob.splitlines():
-            upper = line.upper()
-            for label in labels:
-                if label in upper and ":" in line:
-                    return line.split(":", 1)[1].strip() or None
-        return None
+        return TitleBlockExtractor(self._config).build_project_information(document)

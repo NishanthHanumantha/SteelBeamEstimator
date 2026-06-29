@@ -1,0 +1,59 @@
+You are a senior Python developer experienced in AutoCAD DXF parsing and structural engineering automation.
+
+Project Goal:
+Build a DXF Extraction Engine for Steel Beam Estimation.
+
+Folder Structure:
+
+src/parser/dxf_reader.py
+src/parser/entity_extractor.py
+
+Requirements:
+
+Use ezdxf.
+
+Input DXF file path.
+
+Extract:
+
+1. TEXT
+2. MTEXT
+3. INSERT
+4. ATTRIB
+5. LINE
+6. LWPOLYLINE
+7. POLYLINE
+8. DIMENSION
+
+For every entity extract:
+
+{
+"entity_type":"",
+"layer":"",
+"text":"",
+"handle":"",
+"x":0,
+"y":0
+}
+
+Save output JSON to:
+
+data/output/entities.json
+
+Requirements:
+
+* Modular code
+* Type hints
+* Logging
+* Error handling
+* Production quality
+
+Do not perform beam calculations.
+
+Generate complete code for:
+
+1. dxf_reader.py
+2. entity_extractor.py
+3. main.py
+
+Also provide run instructions.
