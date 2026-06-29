@@ -1,0 +1,7015 @@
+{
+  "phase": "Phase F.7",
+  "context_count": 18,
+  "contexts": [
+    {
+      "context_id": "CTX::B1",
+      "beam_id": "BEAM::B1",
+      "beam_mark": "B1",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B1",
+        "section_id": "SECTION::B1",
+        "length_id": "LENGTH::B1",
+        "ecs_id": "ECS::B1",
+        "context_id": "CTX::B1",
+        "legacy_section_id": "SECTION_B1",
+        "legacy_length_id": "LM_B1",
+        "legacy_ecs_id": "ECS_B1",
+        "legacy_beam_id": "B1"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "HORIZONTAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3393.286,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3393.286,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B14",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B14"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.85,
+          "derived_from": [
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3393.286,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B14",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3393.286,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B14",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3393.286,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.765,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3393.286,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.85,
+          "derived_from": [
+            "B14",
+            "FREE_END"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.85
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B1",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3393.286,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 12950.646,
+            "y": 45761.611
+          },
+          "end": {
+            "x": 9561.051,
+            "y": 45919.835
+          },
+          "unit_vector": {
+            "x": -0.998912,
+            "y": 0.046629
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B14",
+          "distance_mm": 288.277,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "FREE_END",
+          "id": null,
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.85
+        },
+        "f1_records": [
+          {
+            "beam_id": "B1",
+            "end": "start",
+            "point": {
+              "x": 12950.646,
+              "y": 45761.611
+            },
+            "support_type": "beam",
+            "support_id": "B14",
+            "confidence": 0.88,
+            "distance_mm": 288.277
+          },
+          {
+            "beam_id": "B1",
+            "end": "end",
+            "point": {
+              "x": 9561.051,
+              "y": 45919.835
+            },
+            "support_type": "free_end",
+            "support_id": null,
+            "confidence": 0.8,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B1",
+        "type": "BEAM",
+        "beam_mark": "B1",
+        "section": "SECTION::B1",
+        "length_model": "LENGTH::B1",
+        "coordinate_system": "ECS_B1",
+        "supports": [
+          "B14"
+        ],
+        "legacy_id": "B1"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B1",
+        "span_mm": null,
+        "origin": {
+          "x": 12950.646,
+          "y": 45761.611
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 12950.646,
+              "y": 45761.611
+            }
+          },
+          {
+            "station_mm": 848.322,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 12103.247,
+              "y": 45801.167
+            }
+          },
+          {
+            "station_mm": 1696.643,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 11255.849,
+              "y": 45840.724
+            }
+          },
+          {
+            "station_mm": 2544.965,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 10408.45,
+              "y": 45880.28
+            }
+          },
+          {
+            "station_mm": 3393.286,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 9561.052,
+              "y": 45919.837
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B1",
+          "to": "BEAM::B14",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B1",
+          "legacy_to": "B14"
+        },
+        {
+          "from": "BEAM::B1",
+          "to": "BEAM::B14",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B1",
+          "legacy_to": "B14"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B2",
+      "beam_id": "BEAM::B2",
+      "beam_mark": "B2",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B2",
+        "section_id": "SECTION::B2",
+        "length_id": "LENGTH::B2",
+        "ecs_id": "ECS::B2",
+        "context_id": "CTX::B2",
+        "legacy_section_id": "SECTION_B2",
+        "legacy_length_id": "LM_B2",
+        "legacy_ecs_id": "ECS_B2",
+        "legacy_beam_id": "B2"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2448.915,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 4811.172,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2448.915,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74",
+            "WALL_74"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2448.915,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2448.915,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2448.915,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B2",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2448.915,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 13896.309,
+            "y": 45157.533
+          },
+          "end": {
+            "x": 16306.619,
+            "y": 45590.652
+          },
+          "unit_vector": {
+            "x": 0.984236,
+            "y": 0.176862
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_74",
+          "distance_mm": 49.764,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_74",
+          "distance_mm": 49.982,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B2",
+            "end": "start",
+            "point": {
+              "x": 13896.309,
+              "y": 45157.533
+            },
+            "support_type": "wall",
+            "support_id": "WALL_74",
+            "confidence": 0.9,
+            "distance_mm": 49.764
+          },
+          {
+            "beam_id": "B2",
+            "end": "end",
+            "point": {
+              "x": 16306.619,
+              "y": 45590.652
+            },
+            "support_type": "wall",
+            "support_id": "WALL_74",
+            "confidence": 0.9,
+            "distance_mm": 49.982
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B2",
+        "type": "BEAM",
+        "beam_mark": "B2",
+        "section": "SECTION::B2",
+        "length_model": "LENGTH::B2",
+        "coordinate_system": "ECS_B2",
+        "supports": [
+          "WALL_74",
+          "WALL_74"
+        ],
+        "legacy_id": "B2"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B2",
+        "span_mm": null,
+        "origin": {
+          "x": 13896.309,
+          "y": 45157.533
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 13896.309,
+              "y": 45157.533
+            }
+          },
+          {
+            "station_mm": 612.229,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 14498.887,
+              "y": 45265.813
+            }
+          },
+          {
+            "station_mm": 1224.457,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 15101.464,
+              "y": 45374.093
+            }
+          },
+          {
+            "station_mm": 1836.686,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 15704.042,
+              "y": 45482.373
+            }
+          },
+          {
+            "station_mm": 2448.915,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 16306.619,
+              "y": 45590.653
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B2",
+          "to": "WALL::74",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B2",
+          "legacy_to": "WALL_74"
+        },
+        {
+          "from": "BEAM::B2",
+          "to": "WALL::74",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B2",
+          "legacy_to": "WALL_74"
+        },
+        {
+          "from": "BEAM::B2",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_74",
+          "legacy_from": "B2",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B2",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.9991,
+          "distance_mm": 0.218,
+          "legacy_from": "B2",
+          "legacy_to": "B15"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B3",
+      "beam_id": "BEAM::B3",
+      "beam_mark": "B3",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B3",
+        "section_id": "SECTION::B3",
+        "length_id": "LENGTH::B3",
+        "ecs_id": "ECS::B3",
+        "context_id": "CTX::B3",
+        "legacy_section_id": "SECTION_B3",
+        "legacy_length_id": "LM_B3",
+        "legacy_ecs_id": "ECS_B3",
+        "legacy_beam_id": "B3"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2292.156,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 2393.08,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2292.156,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_79"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2292.156,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2292.156,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2292.156,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B3",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2292.156,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 21062.896,
+            "y": 46447.401
+          },
+          "end": {
+            "x": 23319.145,
+            "y": 46851.532
+          },
+          "unit_vector": {
+            "x": 0.984335,
+            "y": 0.17631
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_79",
+          "distance_mm": 48.452,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_79",
+          "distance_mm": 49.876,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B3",
+            "end": "start",
+            "point": {
+              "x": 21062.896,
+              "y": 46447.401
+            },
+            "support_type": "wall",
+            "support_id": "WALL_79",
+            "confidence": 0.9,
+            "distance_mm": 48.453
+          },
+          {
+            "beam_id": "B3",
+            "end": "end",
+            "point": {
+              "x": 23319.145,
+              "y": 46851.532
+            },
+            "support_type": "wall",
+            "support_id": "WALL_79",
+            "confidence": 0.9,
+            "distance_mm": 49.876
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B3",
+        "type": "BEAM",
+        "beam_mark": "B3",
+        "section": "SECTION::B3",
+        "length_model": "LENGTH::B3",
+        "coordinate_system": "ECS_B3",
+        "supports": [
+          "WALL_79",
+          "WALL_79"
+        ],
+        "legacy_id": "B3"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B3",
+        "span_mm": null,
+        "origin": {
+          "x": 21062.896,
+          "y": 46447.401
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 21062.896,
+              "y": 46447.401
+            }
+          },
+          {
+            "station_mm": 573.039,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 21626.958,
+              "y": 46548.434
+            }
+          },
+          {
+            "station_mm": 1146.078,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 22191.021,
+              "y": 46649.466
+            }
+          },
+          {
+            "station_mm": 1719.117,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 22755.083,
+              "y": 46750.499
+            }
+          },
+          {
+            "station_mm": 2292.156,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 23319.145,
+              "y": 46851.531
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B3",
+          "to": "WALL::79",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B3",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "WALL::79",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B3",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B17",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B3",
+          "legacy_to": "B17"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B3",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B17",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B3",
+          "legacy_to": "B17"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B18",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B3",
+          "legacy_to": "B18"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B4",
+      "beam_id": "BEAM::B4",
+      "beam_mark": "B4",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B4",
+        "section_id": "SECTION::B4",
+        "length_id": "LENGTH::B4",
+        "ecs_id": "ECS::B4",
+        "context_id": "CTX::B4",
+        "legacy_section_id": "SECTION_B4",
+        "legacy_length_id": "LM_B4",
+        "legacy_ecs_id": "ECS_B4",
+        "legacy_beam_id": "B4"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "HORIZONTAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3389.595,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 100.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.837,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.93
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B4",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3289.595,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 12950.646,
+            "y": 43984.472
+          },
+          "end": {
+            "x": 9561.051,
+            "y": 43984.472
+          },
+          "unit_vector": {
+            "x": -1.0,
+            "y": 0.0
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B13",
+          "distance_mm": 200.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "BEAM",
+          "id": "B12",
+          "distance_mm": 282.843,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "f1_records": [
+          {
+            "beam_id": "B4",
+            "end": "start",
+            "point": {
+              "x": 12950.646,
+              "y": 43984.472
+            },
+            "support_type": "beam",
+            "support_id": "B13",
+            "confidence": 0.88,
+            "distance_mm": 200.0
+          },
+          {
+            "beam_id": "B4",
+            "end": "end",
+            "point": {
+              "x": 9561.051,
+              "y": 43984.472
+            },
+            "support_type": "beam",
+            "support_id": "B12",
+            "confidence": 0.88,
+            "distance_mm": 282.843
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B4",
+        "type": "BEAM",
+        "beam_mark": "B4",
+        "section": "SECTION::B4",
+        "length_model": "LENGTH::B4",
+        "coordinate_system": "ECS_B4",
+        "supports": [
+          "B13",
+          "B12"
+        ],
+        "legacy_id": "B4"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B4",
+        "span_mm": null,
+        "origin": {
+          "x": 12950.646,
+          "y": 43984.472
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 12950.646,
+              "y": 43984.472
+            }
+          },
+          {
+            "station_mm": 822.399,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 12128.247,
+              "y": 43984.472
+            }
+          },
+          {
+            "station_mm": 1644.797,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 11305.849,
+              "y": 43984.472
+            }
+          },
+          {
+            "station_mm": 2467.196,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 10483.45,
+              "y": 43984.472
+            }
+          },
+          {
+            "station_mm": 3289.595,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 9661.051,
+              "y": 43984.472
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B4",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B12",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B4",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B12",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B4",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B13",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B4",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B13",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B5",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "B12",
+          "legacy_from": "B4",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "left",
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "right",
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B5",
+      "beam_id": "BEAM::B5",
+      "beam_mark": "B5",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B5",
+        "section_id": "SECTION::B5",
+        "length_id": "LENGTH::B5",
+        "ecs_id": "ECS::B5",
+        "context_id": "CTX::B5",
+        "legacy_section_id": "SECTION_B5",
+        "legacy_length_id": "LM_B5",
+        "legacy_ecs_id": "ECS_B5",
+        "legacy_beam_id": "B5"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "HORIZONTAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3389.595,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 100.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.837,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3289.595,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.93,
+          "derived_from": [
+            "B13",
+            "B12"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.93
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B5",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3289.595,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 12950.646,
+            "y": 41284.109
+          },
+          "end": {
+            "x": 9561.051,
+            "y": 41284.109
+          },
+          "unit_vector": {
+            "x": -1.0,
+            "y": 0.0
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B13",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "BEAM",
+          "id": "B12",
+          "distance_mm": 200.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "f1_records": [
+          {
+            "beam_id": "B5",
+            "end": "start",
+            "point": {
+              "x": 12950.646,
+              "y": 41284.109
+            },
+            "support_type": "beam",
+            "support_id": "B13",
+            "confidence": 0.88,
+            "distance_mm": 0.0
+          },
+          {
+            "beam_id": "B5",
+            "end": "end",
+            "point": {
+              "x": 9561.051,
+              "y": 41284.109
+            },
+            "support_type": "beam",
+            "support_id": "B12",
+            "confidence": 0.88,
+            "distance_mm": 200.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B5",
+        "type": "BEAM",
+        "beam_mark": "B5",
+        "section": "SECTION::B5",
+        "length_model": "LENGTH::B5",
+        "coordinate_system": "ECS_B5",
+        "supports": [
+          "B13",
+          "B12"
+        ],
+        "legacy_id": "B5"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B5",
+        "span_mm": null,
+        "origin": {
+          "x": 12950.646,
+          "y": 41284.109
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 12950.646,
+              "y": 41284.109
+            }
+          },
+          {
+            "station_mm": 822.399,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 12128.247,
+              "y": 41284.109
+            }
+          },
+          {
+            "station_mm": 1644.797,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 11305.849,
+              "y": 41284.109
+            }
+          },
+          {
+            "station_mm": 2467.196,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 10483.45,
+              "y": 41284.109
+            }
+          },
+          {
+            "station_mm": 3289.595,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 9661.051,
+              "y": 41284.109
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B5",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B12",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B5",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B12",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B5",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B13",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B5",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B13",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B5",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "B12",
+          "legacy_from": "B4",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "left",
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "right",
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B6",
+      "beam_id": "BEAM::B6",
+      "beam_mark": "B6",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B6",
+        "section_id": "SECTION::B6",
+        "length_id": "LENGTH::B6",
+        "ecs_id": "ECS::B6",
+        "context_id": "CTX::B6",
+        "legacy_section_id": "SECTION_B6",
+        "legacy_length_id": "LM_B6",
+        "legacy_ecs_id": "ECS_B6",
+        "legacy_beam_id": "B6"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2121.867,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 1659.899,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "COLUMN_5",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 190.316,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.97,
+          "derived_from": [
+            "COLUMN_5"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 271.652,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 1659.899,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "COLUMN_5",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 1659.899,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "COLUMN_5",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 1659.899,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 1659.899,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "COLUMN_5",
+            "WALL_77"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B6",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 1659.899,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 14819.463,
+            "y": 41871.066
+          },
+          "end": {
+            "x": 16908.044,
+            "y": 42245.434
+          },
+          "unit_vector": {
+            "x": 0.984313,
+            "y": 0.176433
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "COLUMN",
+          "id": "COLUMN_5",
+          "distance_mm": 334.781,
+          "source": "GEOMETRY",
+          "confidence": 0.97
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_77",
+          "distance_mm": 51.164,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B6",
+            "end": "start",
+            "point": {
+              "x": 14819.463,
+              "y": 41871.066
+            },
+            "support_type": "column",
+            "support_id": "COLUMN_5",
+            "confidence": 0.95,
+            "distance_mm": 334.781
+          },
+          {
+            "beam_id": "B6",
+            "end": "end",
+            "point": {
+              "x": 16908.044,
+              "y": 42245.434
+            },
+            "support_type": "wall",
+            "support_id": "WALL_77",
+            "confidence": 0.9,
+            "distance_mm": 51.164
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B6",
+        "type": "BEAM",
+        "beam_mark": "B6",
+        "section": "SECTION::B6",
+        "length_model": "LENGTH::B6",
+        "coordinate_system": "ECS_B6",
+        "supports": [
+          "COLUMN_5",
+          "WALL_77"
+        ],
+        "legacy_id": "B6"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B6",
+        "span_mm": null,
+        "origin": {
+          "x": 14819.463,
+          "y": 41871.066
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 14819.463,
+              "y": 41871.066
+            }
+          },
+          {
+            "station_mm": 414.975,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 15227.928,
+              "y": 41944.281
+            }
+          },
+          {
+            "station_mm": 829.949,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 15636.393,
+              "y": 42017.496
+            }
+          },
+          {
+            "station_mm": 1244.924,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 16044.858,
+              "y": 42090.712
+            }
+          },
+          {
+            "station_mm": 1659.899,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 16453.323,
+              "y": 42163.927
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B6",
+          "to": "COLUMN::5",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.97,
+          "end": "start",
+          "legacy_from": "B6",
+          "legacy_to": "COLUMN_5"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "COLUMN::5",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.97,
+          "legacy_from": "B6",
+          "legacy_to": "COLUMN_5"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "WALL::77",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B6",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "WALL::77",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B6",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B7",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B7"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B7",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B6",
+          "legacy_to": "B7"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.9797,
+          "distance_mm": 5.073,
+          "legacy_from": "B6",
+          "legacy_to": "B15"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B7",
+      "beam_id": "BEAM::B7",
+      "beam_mark": "B7",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B7",
+        "section_id": "SECTION::B7",
+        "length_id": "LENGTH::B7",
+        "ecs_id": "ECS::B7",
+        "context_id": "CTX::B7",
+        "legacy_section_id": "SECTION_B7",
+        "legacy_length_id": "LM_B7",
+        "legacy_ecs_id": "ECS_B7",
+        "legacy_beam_id": "B7"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 6924.981,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 7446.658,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 6924.981,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 6924.981,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 6924.981,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 6924.981,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B7",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 6924.981,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 17104.906,
+            "y": 42280.721
+          },
+          "end": {
+            "x": 23921.252,
+            "y": 43502.519
+          },
+          "unit_vector": {
+            "x": 0.984313,
+            "y": 0.176433
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_77",
+          "distance_mm": 51.061,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_77",
+          "distance_mm": 47.46,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B7",
+            "end": "start",
+            "point": {
+              "x": 17104.906,
+              "y": 42280.721
+            },
+            "support_type": "wall",
+            "support_id": "WALL_77",
+            "confidence": 0.9,
+            "distance_mm": 51.06
+          },
+          {
+            "beam_id": "B7",
+            "end": "end",
+            "point": {
+              "x": 23921.252,
+              "y": 43502.519
+            },
+            "support_type": "wall",
+            "support_id": "WALL_77",
+            "confidence": 0.9,
+            "distance_mm": 47.46
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B7",
+        "type": "BEAM",
+        "beam_mark": "B7",
+        "section": "SECTION::B7",
+        "length_model": "LENGTH::B7",
+        "coordinate_system": "ECS_B7",
+        "supports": [
+          "WALL_77",
+          "WALL_77"
+        ],
+        "legacy_id": "B7"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B7",
+        "span_mm": null,
+        "origin": {
+          "x": 17104.906,
+          "y": 42280.721
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 17104.906,
+              "y": 42280.721
+            }
+          },
+          {
+            "station_mm": 1731.245,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 18808.993,
+              "y": 42586.17
+            }
+          },
+          {
+            "station_mm": 3462.49,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 20513.08,
+              "y": 42891.619
+            }
+          },
+          {
+            "station_mm": 5193.736,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 22217.168,
+              "y": 43197.067
+            }
+          },
+          {
+            "station_mm": 6924.981,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 23921.255,
+              "y": 43502.516
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B7",
+          "to": "WALL::77",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B7",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "WALL::77",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B7",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B7",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B7"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B7",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B7",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B7",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B6",
+          "legacy_to": "B7"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.062,
+          "legacy_from": "B7",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B18",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B7",
+          "legacy_to": "B18"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B8",
+      "beam_id": "BEAM::B8",
+      "beam_mark": "B8",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B8",
+        "section_id": "SECTION::B8",
+        "length_id": "LENGTH::B8",
+        "ecs_id": "ECS::B8",
+        "context_id": "CTX::B8",
+        "legacy_section_id": "SECTION_B8",
+        "legacy_length_id": "LM_B8",
+        "legacy_ecs_id": "ECS_B8",
+        "legacy_beam_id": "B8"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "VERTICAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2203.115,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 2144.853,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_29",
+            "WALL_36"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_29"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 58.262,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_36"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2144.853,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_29",
+            "WALL_36"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2144.853,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_29",
+            "WALL_36"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2144.853,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2144.853,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_29",
+            "WALL_36"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B8",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2144.853,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 7451.529,
+            "y": 43657.175
+          },
+          "end": {
+            "x": 7531.91,
+            "y": 41455.527
+          },
+          "unit_vector": {
+            "x": 0.036485,
+            "y": -0.999334
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_29",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_36",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B8",
+            "end": "start",
+            "point": {
+              "x": 7451.529,
+              "y": 43657.175
+            },
+            "support_type": "wall",
+            "support_id": "WALL_29",
+            "confidence": 0.9,
+            "distance_mm": 0.0
+          },
+          {
+            "beam_id": "B8",
+            "end": "end",
+            "point": {
+              "x": 7531.91,
+              "y": 41455.527
+            },
+            "support_type": "wall",
+            "support_id": "WALL_36",
+            "confidence": 0.9,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B8",
+        "type": "BEAM",
+        "beam_mark": "B8",
+        "section": "SECTION::B8",
+        "length_model": "LENGTH::B8",
+        "coordinate_system": "ECS_B8",
+        "supports": [
+          "WALL_29",
+          "WALL_36"
+        ],
+        "legacy_id": "B8"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B8",
+        "span_mm": null,
+        "origin": {
+          "x": 7451.529,
+          "y": 43657.175
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 7451.529,
+              "y": 43657.175
+            }
+          },
+          {
+            "station_mm": 536.213,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 7471.093,
+              "y": 43121.319
+            }
+          },
+          {
+            "station_mm": 1072.427,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 7490.656,
+              "y": 42585.463
+            }
+          },
+          {
+            "station_mm": 1608.64,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 7510.22,
+              "y": 42049.607
+            }
+          },
+          {
+            "station_mm": 2144.853,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 7529.784,
+              "y": 41513.75
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B8",
+          "to": "WALL::29",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B8",
+          "legacy_to": "WALL_29"
+        },
+        {
+          "from": "BEAM::B8",
+          "to": "WALL::29",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B8",
+          "legacy_to": "WALL_29"
+        },
+        {
+          "from": "BEAM::B8",
+          "to": "WALL::36",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B8",
+          "legacy_to": "WALL_36"
+        },
+        {
+          "from": "BEAM::B8",
+          "to": "WALL::36",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B8",
+          "legacy_to": "WALL_36"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B9",
+      "beam_id": "BEAM::B9",
+      "beam_mark": "B9",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B9",
+        "section_id": "SECTION::B9",
+        "length_id": "LENGTH::B9",
+        "ecs_id": "ECS::B9",
+        "context_id": "CTX::B9",
+        "legacy_section_id": "SECTION_B9",
+        "legacy_length_id": "LM_B9",
+        "legacy_ecs_id": "ECS_B9",
+        "legacy_beam_id": "B9"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2943.651,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 2805.19,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "COLUMN_4",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 138.461,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.97,
+          "derived_from": [
+            "COLUMN_4"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.85,
+          "derived_from": [
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2805.19,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "COLUMN_4",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2805.19,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "COLUMN_4",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2805.19,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.765,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2805.19,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.85,
+          "derived_from": [
+            "COLUMN_4",
+            "FREE_END"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.85
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B9",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2805.19,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 7870.017,
+            "y": 40732.805
+          },
+          "end": {
+            "x": 10252.033,
+            "y": 39003.331
+          },
+          "unit_vector": {
+            "x": 0.809205,
+            "y": -0.587527
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "COLUMN",
+          "id": "COLUMN_4",
+          "distance_mm": 344.769,
+          "source": "GEOMETRY",
+          "confidence": 0.97
+        },
+        "right": {
+          "type": "FREE_END",
+          "id": null,
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.85
+        },
+        "f1_records": [
+          {
+            "beam_id": "B9",
+            "end": "start",
+            "point": {
+              "x": 7870.017,
+              "y": 40732.805
+            },
+            "support_type": "column",
+            "support_id": "COLUMN_4",
+            "confidence": 0.95,
+            "distance_mm": 344.769
+          },
+          {
+            "beam_id": "B9",
+            "end": "end",
+            "point": {
+              "x": 10252.033,
+              "y": 39003.331
+            },
+            "support_type": "free_end",
+            "support_id": null,
+            "confidence": 0.8,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B9",
+        "type": "BEAM",
+        "beam_mark": "B9",
+        "section": "SECTION::B9",
+        "length_model": "LENGTH::B9",
+        "coordinate_system": "ECS_B9",
+        "supports": [
+          "COLUMN_4"
+        ],
+        "legacy_id": "B9"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B9",
+        "span_mm": null,
+        "origin": {
+          "x": 7870.017,
+          "y": 40732.805
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 7870.017,
+              "y": 40732.805
+            }
+          },
+          {
+            "station_mm": 701.298,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 8437.51,
+              "y": 40320.774
+            }
+          },
+          {
+            "station_mm": 1402.595,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 9005.004,
+              "y": 39908.743
+            }
+          },
+          {
+            "station_mm": 2103.892,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 9572.497,
+              "y": 39496.711
+            }
+          },
+          {
+            "station_mm": 2805.19,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 10139.991,
+              "y": 39084.68
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B9",
+          "to": "COLUMN::4",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.97,
+          "end": "start",
+          "legacy_from": "B9",
+          "legacy_to": "COLUMN_4"
+        },
+        {
+          "from": "BEAM::B9",
+          "to": "COLUMN::4",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.97,
+          "legacy_from": "B9",
+          "legacy_to": "COLUMN_4"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B10",
+      "beam_id": "BEAM::B10",
+      "beam_mark": "B10",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B10",
+        "section_id": "SECTION::B10",
+        "length_id": "LENGTH::B10",
+        "ecs_id": "ECS::B10",
+        "context_id": "CTX::B10",
+        "legacy_section_id": "SECTION_B10",
+        "legacy_length_id": "LM_B10",
+        "legacy_ecs_id": "ECS_B10",
+        "legacy_beam_id": "B10"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 1969.82,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 1949.686,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B11",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 20.134,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B11"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.85,
+          "derived_from": [
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 1949.686,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B11",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 1949.686,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.85,
+          "derived_from": [
+            "B11",
+            "FREE_END"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 1949.686,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.765,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 1949.686,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.85,
+          "derived_from": [
+            "B11",
+            "FREE_END"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.85
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B10",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 1949.686,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 11047.921,
+            "y": 39105.604
+          },
+          "end": {
+            "x": 12950.646,
+            "y": 39615.338
+          },
+          "unit_vector": {
+            "x": 0.965938,
+            "y": 0.258772
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B11",
+          "distance_mm": 200.031,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "FREE_END",
+          "id": null,
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.85
+        },
+        "f1_records": [
+          {
+            "beam_id": "B10",
+            "end": "start",
+            "point": {
+              "x": 11047.921,
+              "y": 39105.604
+            },
+            "support_type": "beam",
+            "support_id": "B11",
+            "confidence": 0.88,
+            "distance_mm": 200.031
+          },
+          {
+            "beam_id": "B10",
+            "end": "end",
+            "point": {
+              "x": 12950.646,
+              "y": 39615.338
+            },
+            "support_type": "free_end",
+            "support_id": null,
+            "confidence": 0.8,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B10",
+        "type": "BEAM",
+        "beam_mark": "B10",
+        "section": "SECTION::B10",
+        "length_model": "LENGTH::B10",
+        "coordinate_system": "ECS_B10",
+        "supports": [
+          "B11"
+        ],
+        "legacy_id": "B10"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B10",
+        "span_mm": null,
+        "origin": {
+          "x": 11047.921,
+          "y": 39105.604
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 11047.921,
+              "y": 39105.604
+            }
+          },
+          {
+            "station_mm": 487.421,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 11518.74,
+              "y": 39231.735
+            }
+          },
+          {
+            "station_mm": 974.843,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 11989.559,
+              "y": 39357.866
+            }
+          },
+          {
+            "station_mm": 1462.264,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 12460.378,
+              "y": 39483.997
+            }
+          },
+          {
+            "station_mm": 1949.686,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 12931.197,
+              "y": 39610.128
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        },
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "BEAM::B10",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B11",
+          "legacy_to": "B10"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "BEAM::B10",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B11",
+          "legacy_to": "B10"
+        },
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.031,
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B11",
+      "beam_id": "BEAM::B11",
+      "beam_mark": "B11",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B11",
+        "section_id": "SECTION::B11",
+        "length_id": "LENGTH::B11",
+        "ecs_id": "ECS::B11",
+        "context_id": "CTX::B11",
+        "legacy_section_id": "SECTION_B11",
+        "legacy_length_id": "LM_B11",
+        "legacy_ecs_id": "ECS_B11",
+        "legacy_beam_id": "B11"
+      },
+      "beam_section": {
+        "designation": "150x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 150.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 90000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1500.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 4.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3734.798,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3400.512,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B10",
+            "WALL_45"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 198.776,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B10"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 135.51,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_45"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3400.512,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B10",
+            "WALL_45"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3400.512,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B10",
+            "WALL_45"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3400.512,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.837,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3400.512,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.93,
+          "derived_from": [
+            "B10",
+            "WALL_45"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.93
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B11",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3400.512,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 11044.701,
+            "y": 38905.599
+          },
+          "end": {
+            "x": 14321.653,
+            "y": 40697.331
+          },
+          "unit_vector": {
+            "x": 0.877411,
+            "y": 0.47974
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B10",
+          "distance_mm": 200.031,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_45",
+          "distance_mm": 2.93,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B11",
+            "end": "start",
+            "point": {
+              "x": 11044.701,
+              "y": 38905.599
+            },
+            "support_type": "beam",
+            "support_id": "B10",
+            "confidence": 0.88,
+            "distance_mm": 200.031
+          },
+          {
+            "beam_id": "B11",
+            "end": "end",
+            "point": {
+              "x": 14321.653,
+              "y": 40697.331
+            },
+            "support_type": "wall",
+            "support_id": "WALL_45",
+            "confidence": 0.9,
+            "distance_mm": 2.93
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B11",
+        "type": "BEAM",
+        "beam_mark": "B11",
+        "section": "SECTION::B11",
+        "length_model": "LENGTH::B11",
+        "coordinate_system": "ECS_B11",
+        "supports": [
+          "B10",
+          "WALL_45"
+        ],
+        "legacy_id": "B11"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B11",
+        "span_mm": null,
+        "origin": {
+          "x": 11044.701,
+          "y": 38905.599
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 11044.701,
+              "y": 38905.599
+            }
+          },
+          {
+            "station_mm": 850.128,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 11790.613,
+              "y": 39313.439
+            }
+          },
+          {
+            "station_mm": 1700.256,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 12536.524,
+              "y": 39721.28
+            }
+          },
+          {
+            "station_mm": 2550.384,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 13282.436,
+              "y": 40129.12
+            }
+          },
+          {
+            "station_mm": 3400.512,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 14028.348,
+              "y": 40536.961
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        },
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "BEAM::B10",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B11",
+          "legacy_to": "B10"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "BEAM::B10",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B11",
+          "legacy_to": "B10"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "WALL::45",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B11",
+          "legacy_to": "WALL_45"
+        },
+        {
+          "from": "BEAM::B11",
+          "to": "WALL::45",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B11",
+          "legacy_to": "WALL_45"
+        },
+        {
+          "from": "BEAM::B10",
+          "to": "BEAM::B11",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.031,
+          "legacy_from": "B10",
+          "legacy_to": "B11"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B12",
+      "beam_id": "BEAM::B12",
+      "beam_mark": "B12",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B12",
+        "section_id": "SECTION::B12",
+        "length_id": "LENGTH::B12",
+        "ecs_id": "ECS::B12",
+        "context_id": "CTX::B12",
+        "legacy_section_id": "SECTION_B12",
+        "legacy_length_id": "LM_B12",
+        "legacy_ecs_id": "ECS_B12",
+        "legacy_beam_id": "B12"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "VERTICAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2500.364,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 100.001,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.837,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.93
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B12",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2400.363,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 9361.051,
+            "y": 43784.472
+          },
+          "end": {
+            "x": 9361.051,
+            "y": 41284.109
+          },
+          "unit_vector": {
+            "x": 0.0,
+            "y": -1.0
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B4",
+          "distance_mm": 282.843,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "BEAM",
+          "id": "B5",
+          "distance_mm": 200.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "f1_records": [
+          {
+            "beam_id": "B12",
+            "end": "start",
+            "point": {
+              "x": 9361.051,
+              "y": 43784.472
+            },
+            "support_type": "beam",
+            "support_id": "B4",
+            "confidence": 0.88,
+            "distance_mm": 282.843
+          },
+          {
+            "beam_id": "B12",
+            "end": "end",
+            "point": {
+              "x": 9361.051,
+              "y": 41284.109
+            },
+            "support_type": "beam",
+            "support_id": "B5",
+            "confidence": 0.88,
+            "distance_mm": 200.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B12",
+        "type": "BEAM",
+        "beam_mark": "B12",
+        "section": "SECTION::B12",
+        "length_model": "LENGTH::B12",
+        "coordinate_system": "ECS_B12",
+        "supports": [
+          "B4",
+          "B5"
+        ],
+        "legacy_id": "B12"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B12",
+        "span_mm": null,
+        "origin": {
+          "x": 9361.051,
+          "y": 43784.472
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 9361.051,
+              "y": 43784.472
+            }
+          },
+          {
+            "station_mm": 600.091,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 9361.051,
+              "y": 43184.381
+            }
+          },
+          {
+            "station_mm": 1200.181,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 9361.051,
+              "y": 42584.291
+            }
+          },
+          {
+            "station_mm": 1800.272,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 9361.051,
+              "y": 41984.2
+            }
+          },
+          {
+            "station_mm": 2400.363,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 9361.051,
+              "y": 41384.109
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B4",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B12",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B4",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B12",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B5",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B12",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B5",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B12",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "B4",
+          "legacy_from": "B12",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B12",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "right",
+          "legacy_from": "B4",
+          "legacy_to": "B12"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B12",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "right",
+          "legacy_from": "B5",
+          "legacy_to": "B12"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B13",
+      "beam_id": "BEAM::B13",
+      "beam_mark": "B13",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B13",
+        "section_id": "SECTION::B13",
+        "length_id": "LENGTH::B13",
+        "ecs_id": "ECS::B13",
+        "context_id": "CTX::B13",
+        "legacy_section_id": "SECTION_B13",
+        "legacy_length_id": "LM_B13",
+        "legacy_ecs_id": "ECS_B13",
+        "legacy_beam_id": "B13"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "VERTICAL",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 2500.364,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 100.001,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.93,
+          "derived_from": [
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.837,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 2400.363,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.93,
+          "derived_from": [
+            "B4",
+            "B5"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.93
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B13",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 2400.363,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 12950.646,
+            "y": 43784.472
+          },
+          "end": {
+            "x": 12950.646,
+            "y": 41284.109
+          },
+          "unit_vector": {
+            "x": 0.0,
+            "y": -1.0
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "BEAM",
+          "id": "B4",
+          "distance_mm": 200.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "right": {
+          "type": "BEAM",
+          "id": "B5",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.93
+        },
+        "f1_records": [
+          {
+            "beam_id": "B13",
+            "end": "start",
+            "point": {
+              "x": 12950.646,
+              "y": 43784.472
+            },
+            "support_type": "beam",
+            "support_id": "B4",
+            "confidence": 0.88,
+            "distance_mm": 200.0
+          },
+          {
+            "beam_id": "B13",
+            "end": "end",
+            "point": {
+              "x": 12950.646,
+              "y": 41284.109
+            },
+            "support_type": "beam",
+            "support_id": "B5",
+            "confidence": 0.88,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B13",
+        "type": "BEAM",
+        "beam_mark": "B13",
+        "section": "SECTION::B13",
+        "length_model": "LENGTH::B13",
+        "coordinate_system": "ECS_B13",
+        "supports": [
+          "B4",
+          "B5"
+        ],
+        "legacy_id": "B13"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B13",
+        "span_mm": null,
+        "origin": {
+          "x": 12950.646,
+          "y": 43784.472
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 12950.646,
+              "y": 43784.472
+            }
+          },
+          {
+            "station_mm": 600.091,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 12950.646,
+              "y": 43184.381
+            }
+          },
+          {
+            "station_mm": 1200.181,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 12950.646,
+              "y": 42584.291
+            }
+          },
+          {
+            "station_mm": 1800.272,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 12950.646,
+              "y": 41984.2
+            }
+          },
+          {
+            "station_mm": 2400.363,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 12950.646,
+              "y": 41384.109
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B4",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B13",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B4",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B13",
+          "legacy_to": "B4"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B5",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "end",
+          "legacy_from": "B13",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B13",
+          "to": "BEAM::B5",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B13",
+          "legacy_to": "B5"
+        },
+        {
+          "from": "BEAM::B12",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "B4",
+          "legacy_from": "B12",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.0,
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B4",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "left",
+          "legacy_from": "B4",
+          "legacy_to": "B13"
+        },
+        {
+          "from": "BEAM::B5",
+          "to": "BEAM::B13",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.93,
+          "joint_end": "left",
+          "legacy_from": "B5",
+          "legacy_to": "B13"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B14",
+      "beam_id": "BEAM::B14",
+      "beam_mark": "B14",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B14",
+        "section_id": "SECTION::B14",
+        "length_id": "LENGTH::B14",
+        "ecs_id": "ECS::B14",
+        "context_id": "CTX::B14",
+        "legacy_section_id": "SECTION_B14",
+        "legacy_length_id": "LM_B14",
+        "legacy_ecs_id": "ECS_B14",
+        "legacy_beam_id": "B14"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 4815.667,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 4072.709,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_43",
+            "WALL_34"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 354.871,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_43"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 388.087,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_34"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 4072.709,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_43",
+            "WALL_34"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 4072.709,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_43",
+            "WALL_34"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 4072.709,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 4072.709,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_43",
+            "WALL_34"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B14",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 4072.709,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 14585.252,
+            "y": 41196.321
+          },
+          "end": {
+            "x": 13233.291,
+            "y": 45818.317
+          },
+          "unit_vector": {
+            "x": -0.280742,
+            "y": 0.959783
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_43",
+          "distance_mm": 37.236,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_34",
+          "distance_mm": 342.861,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B14",
+            "end": "start",
+            "point": {
+              "x": 14585.252,
+              "y": 41196.321
+            },
+            "support_type": "wall",
+            "support_id": "WALL_43",
+            "confidence": 0.9,
+            "distance_mm": 37.235
+          },
+          {
+            "beam_id": "B14",
+            "end": "end",
+            "point": {
+              "x": 13233.291,
+              "y": 45818.317
+            },
+            "support_type": "wall",
+            "support_id": "WALL_34",
+            "confidence": 0.9,
+            "distance_mm": 342.861
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B14",
+        "type": "BEAM",
+        "beam_mark": "B14",
+        "section": "SECTION::B14",
+        "length_model": "LENGTH::B14",
+        "coordinate_system": "ECS_B14",
+        "supports": [
+          "WALL_43",
+          "WALL_34"
+        ],
+        "legacy_id": "B14"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B14",
+        "span_mm": null,
+        "origin": {
+          "x": 14585.252,
+          "y": 41196.321
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 14585.252,
+              "y": 41196.321
+            }
+          },
+          {
+            "station_mm": 1018.177,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 14299.407,
+              "y": 42173.55
+            }
+          },
+          {
+            "station_mm": 2036.354,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 14013.562,
+              "y": 43150.779
+            }
+          },
+          {
+            "station_mm": 3054.532,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 13727.717,
+              "y": 44128.009
+            }
+          },
+          {
+            "station_mm": 4072.709,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 13441.872,
+              "y": 45105.238
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B1",
+          "to": "BEAM::B14",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.93,
+          "end": "start",
+          "legacy_from": "B1",
+          "legacy_to": "B14"
+        },
+        {
+          "from": "BEAM::B1",
+          "to": "BEAM::B14",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.93,
+          "legacy_from": "B1",
+          "legacy_to": "B14"
+        },
+        {
+          "from": "BEAM::B14",
+          "to": "WALL::43",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B14",
+          "legacy_to": "WALL_43"
+        },
+        {
+          "from": "BEAM::B14",
+          "to": "WALL::43",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B14",
+          "legacy_to": "WALL_43"
+        },
+        {
+          "from": "BEAM::B14",
+          "to": "WALL::34",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B14",
+          "legacy_to": "WALL_34"
+        },
+        {
+          "from": "BEAM::B14",
+          "to": "WALL::34",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B14",
+          "legacy_to": "WALL_34"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B15",
+      "beam_id": "BEAM::B15",
+      "beam_mark": "B15",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B15",
+        "section_id": "SECTION::B15",
+        "length_id": "LENGTH::B15",
+        "ecs_id": "ECS::B15",
+        "context_id": "CTX::B15",
+        "legacy_section_id": "SECTION_B15",
+        "legacy_length_id": "LM_B15",
+        "legacy_ecs_id": "ECS_B15",
+        "legacy_beam_id": "B15"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3404.143,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3499.997,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3404.143,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3404.143,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3404.143,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3404.143,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_74",
+            "WALL_77"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B15",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3404.143,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 16306.581,
+            "y": 45590.867
+          },
+          "end": {
+            "x": 16908.941,
+            "y": 42240.441
+          },
+          "unit_vector": {
+            "x": 0.176949,
+            "y": -0.98422
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_74",
+          "distance_mm": 49.764,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_77",
+          "distance_mm": 46.091,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B15",
+            "end": "start",
+            "point": {
+              "x": 16306.581,
+              "y": 45590.867
+            },
+            "support_type": "wall",
+            "support_id": "WALL_74",
+            "confidence": 0.9,
+            "distance_mm": 49.764
+          },
+          {
+            "beam_id": "B15",
+            "end": "end",
+            "point": {
+              "x": 16908.941,
+              "y": 42240.441
+            },
+            "support_type": "wall",
+            "support_id": "WALL_77",
+            "confidence": 0.9,
+            "distance_mm": 46.091
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B15",
+        "type": "BEAM",
+        "beam_mark": "B15",
+        "section": "SECTION::B15",
+        "length_model": "LENGTH::B15",
+        "coordinate_system": "ECS_B15",
+        "supports": [
+          "WALL_74",
+          "WALL_77"
+        ],
+        "legacy_id": "B15"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B15",
+        "span_mm": null,
+        "origin": {
+          "x": 16306.581,
+          "y": 45590.867
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 16306.581,
+              "y": 45590.867
+            }
+          },
+          {
+            "station_mm": 851.036,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 16457.171,
+              "y": 44753.261
+            }
+          },
+          {
+            "station_mm": 1702.072,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 16607.761,
+              "y": 43915.654
+            }
+          },
+          {
+            "station_mm": 2553.107,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 16758.351,
+              "y": 43078.048
+            }
+          },
+          {
+            "station_mm": 3404.143,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 16908.941,
+              "y": 42240.441
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B15",
+          "to": "WALL::74",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B15",
+          "legacy_to": "WALL_74"
+        },
+        {
+          "from": "BEAM::B15",
+          "to": "WALL::74",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B15",
+          "legacy_to": "WALL_74"
+        },
+        {
+          "from": "BEAM::B15",
+          "to": "WALL::77",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B15",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B15",
+          "to": "WALL::77",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B15",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B2",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_74",
+          "legacy_from": "B2",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B15",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B7",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B15",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B15",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B2",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.9991,
+          "distance_mm": 0.218,
+          "legacy_from": "B2",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.9797,
+          "distance_mm": 5.073,
+          "legacy_from": "B6",
+          "legacy_to": "B15"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B15",
+          "relationship": "INTERSECTS",
+          "confidence": 0.7,
+          "distance_mm": 200.062,
+          "legacy_from": "B7",
+          "legacy_to": "B15"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B16",
+      "beam_id": "BEAM::B16",
+      "beam_mark": "B16",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B16",
+        "section_id": "SECTION::B16",
+        "length_id": "LENGTH::B16",
+        "ecs_id": "ECS::B16",
+        "context_id": "CTX::B16",
+        "legacy_section_id": "SECTION_B16",
+        "legacy_length_id": "LM_B16",
+        "legacy_ecs_id": "ECS_B16",
+        "legacy_beam_id": "B16"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3400.413,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3398.699,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_58",
+            "WALL_50"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": 1.379,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_58"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.334,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_50"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3398.699,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_58",
+            "WALL_50"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3398.699,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_58",
+            "WALL_50"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3398.699,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3398.699,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_58",
+            "WALL_50"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B16",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3398.699,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 18655.273,
+            "y": 42558.155
+          },
+          "end": {
+            "x": 18053.581,
+            "y": 45904.912
+          },
+          "unit_vector": {
+            "x": -0.176947,
+            "y": 0.98422
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_58",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_50",
+          "distance_mm": 0.974,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B16",
+            "end": "start",
+            "point": {
+              "x": 18655.273,
+              "y": 42558.155
+            },
+            "support_type": "wall",
+            "support_id": "WALL_58",
+            "confidence": 0.9,
+            "distance_mm": 0.0
+          },
+          {
+            "beam_id": "B16",
+            "end": "end",
+            "point": {
+              "x": 18053.581,
+              "y": 45904.912
+            },
+            "support_type": "wall",
+            "support_id": "WALL_50",
+            "confidence": 0.9,
+            "distance_mm": 0.974
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B16",
+        "type": "BEAM",
+        "beam_mark": "B16",
+        "section": "SECTION::B16",
+        "length_model": "LENGTH::B16",
+        "coordinate_system": "ECS_B16",
+        "supports": [
+          "WALL_58",
+          "WALL_50"
+        ],
+        "legacy_id": "B16"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B16",
+        "span_mm": null,
+        "origin": {
+          "x": 18655.273,
+          "y": 42558.155
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 18655.273,
+              "y": 42558.155
+            }
+          },
+          {
+            "station_mm": 849.675,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 18504.926,
+              "y": 43394.422
+            }
+          },
+          {
+            "station_mm": 1699.35,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 18354.578,
+              "y": 44230.689
+            }
+          },
+          {
+            "station_mm": 2549.024,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 18204.231,
+              "y": 45066.956
+            }
+          },
+          {
+            "station_mm": 3398.699,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 18053.883,
+              "y": 45903.223
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B16",
+          "to": "WALL::58",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B16",
+          "legacy_to": "WALL_58"
+        },
+        {
+          "from": "BEAM::B16",
+          "to": "WALL::58",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B16",
+          "legacy_to": "WALL_58"
+        },
+        {
+          "from": "BEAM::B16",
+          "to": "WALL::50",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B16",
+          "legacy_to": "WALL_50"
+        },
+        {
+          "from": "BEAM::B16",
+          "to": "WALL::50",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B16",
+          "legacy_to": "WALL_50"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B17",
+      "beam_id": "BEAM::B17",
+      "beam_mark": "B17",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B17",
+        "section_id": "SECTION::B17",
+        "length_id": "LENGTH::B17",
+        "ecs_id": "ECS::B17",
+        "context_id": "CTX::B17",
+        "legacy_section_id": "SECTION_B17",
+        "legacy_length_id": "LM_B17",
+        "legacy_ecs_id": "ECS_B17",
+        "legacy_beam_id": "B17"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 1451.673,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 1500.038,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_47"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_47"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 1451.673,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_47"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 1451.673,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_47"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 1451.673,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 1451.673,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_47"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B17",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 1451.673,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 21062.896,
+            "y": 46447.401
+          },
+          "end": {
+            "x": 21317.261,
+            "y": 45018.186
+          },
+          "unit_vector": {
+            "x": 0.175222,
+            "y": -0.984529
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_79",
+          "distance_mm": 48.452,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_47",
+          "distance_mm": 0.0,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B17",
+            "end": "start",
+            "point": {
+              "x": 21062.896,
+              "y": 46447.401
+            },
+            "support_type": "wall",
+            "support_id": "WALL_79",
+            "confidence": 0.9,
+            "distance_mm": 48.453
+          },
+          {
+            "beam_id": "B17",
+            "end": "end",
+            "point": {
+              "x": 21317.261,
+              "y": 45018.186
+            },
+            "support_type": "wall",
+            "support_id": "WALL_47",
+            "confidence": 0.9,
+            "distance_mm": 0.0
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B17",
+        "type": "BEAM",
+        "beam_mark": "B17",
+        "section": "SECTION::B17",
+        "length_model": "LENGTH::B17",
+        "coordinate_system": "ECS_B17",
+        "supports": [
+          "WALL_79",
+          "WALL_47"
+        ],
+        "legacy_id": "B17"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B17",
+        "span_mm": null,
+        "origin": {
+          "x": 21062.896,
+          "y": 46447.401
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 21062.896,
+              "y": 46447.401
+            }
+          },
+          {
+            "station_mm": 362.918,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 21126.487,
+              "y": 46090.097
+            }
+          },
+          {
+            "station_mm": 725.837,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 21190.079,
+              "y": 45732.794
+            }
+          },
+          {
+            "station_mm": 1088.755,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 21253.67,
+              "y": 45375.49
+            }
+          },
+          {
+            "station_mm": 1451.673,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 21317.261,
+              "y": 45018.187
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B17",
+          "to": "WALL::79",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B17",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B17",
+          "to": "WALL::79",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B17",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B17",
+          "to": "WALL::47",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B17",
+          "legacy_to": "WALL_47"
+        },
+        {
+          "from": "BEAM::B17",
+          "to": "WALL::47",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B17",
+          "legacy_to": "WALL_47"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B17",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B3",
+          "legacy_to": "B17"
+        },
+        {
+          "from": "BEAM::B17",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B17",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B17",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B3",
+          "legacy_to": "B17"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    },
+    {
+      "context_id": "CTX::B18",
+      "beam_id": "BEAM::B18",
+      "beam_mark": "B18",
+      "status": "READY",
+      "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_id": "FLOOR::GROUND_FLOOR",
+      "legacy_ids": {
+        "beam_id": "BEAM::B18",
+        "section_id": "SECTION::B18",
+        "length_id": "LENGTH::B18",
+        "ecs_id": "ECS::B18",
+        "context_id": "CTX::B18",
+        "legacy_section_id": "SECTION_B18",
+        "legacy_length_id": "LM_B18",
+        "legacy_ecs_id": "ECS_B18",
+        "legacy_beam_id": "B18"
+      },
+      "beam_section": {
+        "designation": "200x600",
+        "shape": "RECTANGULAR",
+        "classification": "DEEP_SECTION",
+        "width": {
+          "value": 200.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "depth": {
+          "value": 600.0,
+          "unit": "mm",
+          "source": "LABEL",
+          "confidence": 1.0,
+          "status": "KNOWN"
+        },
+        "cross_section_area": {
+          "value": 120000.0,
+          "unit": "mm²",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "perimeter": {
+          "value": 1600.0,
+          "unit": "mm",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "aspect_ratio": {
+          "value": 3.0,
+          "unit": "ratio",
+          "status": "DERIVED",
+          "source": "ENGINEERING_MODEL",
+          "derived_from": [
+            "ENGINEERING_MODEL"
+          ]
+        },
+        "orientation": "ANGLED",
+        "source": "LABEL",
+        "confidence": 1.0
+      },
+      "engineering_length_model": {
+        "centerline_length": {
+          "value": 3402.708,
+          "unit": "mm",
+          "source": "CENTERLINE",
+          "confidence": 1.0,
+          "derived_from": [
+            "F1_CENTERLINE"
+          ],
+          "status": "KNOWN"
+        },
+        "support_face_length": {
+          "value": 3500.011,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "bearing_length_left": {
+          "value": null,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.0,
+          "derived_from": [],
+          "status": "UNKNOWN"
+        },
+        "bearing_length_right": {
+          "value": 0.0,
+          "unit": "mm",
+          "source": "GEOMETRY",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "clear_span": {
+          "value": 3402.708,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "effective_span": {
+          "value": 3402.708,
+          "unit": "mm",
+          "source": "SUPPORT_FACE",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_77"
+          ],
+          "status": "KNOWN"
+        },
+        "design_span": {
+          "value": 3402.708,
+          "unit": "mm",
+          "source": "ENGINEERING_MODEL",
+          "confidence": 0.846,
+          "derived_from": [
+            "EFFECTIVE_SPAN"
+          ],
+          "status": "ESTIMATED"
+        },
+        "governing_span": {
+          "value": 3402.708,
+          "unit": "mm",
+          "selected_from": "CLEAR_SPAN",
+          "confidence": 0.94,
+          "derived_from": [
+            "WALL_79",
+            "WALL_77"
+          ],
+          "source": "ENGINEERING_LENGTH_MODEL",
+          "status": "KNOWN"
+        },
+        "source": "FRAMING_PLAN",
+        "confidence": 0.94
+      },
+      "engineering_coordinate_system": {
+        "coordinate_system_id": "ECS::B18",
+        "local_coordinate_system": {
+          "origin": "START_SUPPORT",
+          "x_axis": "ALONG_BEAM",
+          "station_start": 0.0,
+          "station_end": 3402.708,
+          "direction": "START_TO_END"
+        },
+        "global_coordinates": {
+          "origin": {
+            "x": 23319.145,
+            "y": 46851.532
+          },
+          "end": {
+            "x": 23921.252,
+            "y": 43502.519
+          },
+          "unit_vector": {
+            "x": 0.176949,
+            "y": -0.98422
+          }
+        }
+      },
+      "support_model": {
+        "left": {
+          "type": "WALL",
+          "id": "WALL_79",
+          "distance_mm": 49.876,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "right": {
+          "type": "WALL",
+          "id": "WALL_77",
+          "distance_mm": 47.46,
+          "source": "GEOMETRY",
+          "confidence": 0.94
+        },
+        "f1_records": [
+          {
+            "beam_id": "B18",
+            "end": "start",
+            "point": {
+              "x": 23319.145,
+              "y": 46851.532
+            },
+            "support_type": "wall",
+            "support_id": "WALL_79",
+            "confidence": 0.9,
+            "distance_mm": 49.876
+          },
+          {
+            "beam_id": "B18",
+            "end": "end",
+            "point": {
+              "x": 23921.252,
+              "y": 43502.519
+            },
+            "support_type": "wall",
+            "support_id": "WALL_77",
+            "confidence": 0.9,
+            "distance_mm": 47.46
+          }
+        ]
+      },
+      "knowledge_graph_node": {
+        "id": "BEAM::B18",
+        "type": "BEAM",
+        "beam_mark": "B18",
+        "section": "SECTION::B18",
+        "length_model": "LENGTH::B18",
+        "coordinate_system": "ECS_B18",
+        "supports": [
+          "WALL_79",
+          "WALL_77"
+        ],
+        "legacy_id": "B18"
+      },
+      "rule_reference": {
+        "rule_id": "RULE::PROJECT",
+        "knowledge_id": "RULE::PROJECT",
+        "version": "1.0"
+      },
+      "estimator_rules_reference": {
+        "rule_id": "RULE::ESTIMATOR",
+        "knowledge_id": "RULE::ESTIMATOR",
+        "version": "1.0"
+      },
+      "project_defaults_reference": {
+        "knowledge_id": "KNOWLEDGE::PROJECT_DEFAULTS",
+        "version": "1.0"
+      },
+      "services": "ENGINEERING_SERVICES",
+      "station_api": {
+        "beam_id": "BEAM::B18",
+        "span_mm": null,
+        "origin": {
+          "x": 23319.145,
+          "y": 46851.532
+        },
+        "origin_label": "START_SUPPORT",
+        "unit_vector": null,
+        "stations": [
+          {
+            "station_mm": 0.0,
+            "fraction": 0.0,
+            "label": "START",
+            "global": {
+              "x": 23319.145,
+              "y": 46851.532
+            }
+          },
+          {
+            "station_mm": 850.677,
+            "fraction": 0.25,
+            "label": "0.25L",
+            "global": {
+              "x": 23469.671,
+              "y": 46014.279
+            }
+          },
+          {
+            "station_mm": 1701.354,
+            "fraction": 0.5,
+            "label": "0.50L",
+            "global": {
+              "x": 23620.198,
+              "y": 45177.025
+            }
+          },
+          {
+            "station_mm": 2552.031,
+            "fraction": 0.75,
+            "label": "0.75L",
+            "global": {
+              "x": 23770.724,
+              "y": 44339.772
+            }
+          },
+          {
+            "station_mm": 3402.708,
+            "fraction": 1.0,
+            "label": "END",
+            "global": {
+              "x": 23921.251,
+              "y": 43502.519
+            }
+          }
+        ],
+        "methods": [
+          "station_to_global",
+          "global_to_station",
+          "station_fraction"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "BEAM::B18",
+          "to": "WALL::79",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "start",
+          "legacy_from": "B18",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B18",
+          "to": "WALL::79",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B18",
+          "legacy_to": "WALL_79"
+        },
+        {
+          "from": "BEAM::B18",
+          "to": "WALL::77",
+          "relationship": "SUPPORTED_BY",
+          "confidence": 0.94,
+          "end": "end",
+          "legacy_from": "B18",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B18",
+          "to": "WALL::77",
+          "relationship": "CONNECTED_TO",
+          "confidence": 0.94,
+          "legacy_from": "B18",
+          "legacy_to": "WALL_77"
+        },
+        {
+          "from": "BEAM::B6",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B6",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B7",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B15",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_77",
+          "legacy_from": "B15",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B3",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B17",
+          "to": "BEAM::B18",
+          "relationship": "CONTINUOUS_WITH",
+          "confidence": 0.88,
+          "via_support": "WALL_79",
+          "legacy_from": "B17",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B3",
+          "to": "BEAM::B18",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B3",
+          "legacy_to": "B18"
+        },
+        {
+          "from": "BEAM::B7",
+          "to": "BEAM::B18",
+          "relationship": "INTERSECTS",
+          "confidence": 1.0,
+          "distance_mm": 0.0,
+          "legacy_from": "B7",
+          "legacy_to": "B18"
+        }
+      ],
+      "metadata": {
+        "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "phase": "Phase F.7",
+        "knowledge_references": [
+          "RULE::PROJECT",
+          "RULE::ESTIMATOR",
+          "KNOWLEDGE::PROJECT_DEFAULTS",
+          "KNOWLEDGE::GENERAL_NOTES"
+        ]
+      }
+    }
+  ]
+}

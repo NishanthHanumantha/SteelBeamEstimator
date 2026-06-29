@@ -1,0 +1,42 @@
+{
+  "phase": "Phase F.7",
+  "service_id": "ENGINEERING_SERVICES",
+  "initialized": true,
+  "service_count": 5,
+  "knowledge_references": [
+    "RULE::PROJECT",
+    "RULE::ESTIMATOR"
+  ],
+  "services": [
+    {
+      "service_id": "development_length",
+      "description": "Bar development length from General Notes tables",
+      "rule_reference": "RULE::PROJECT",
+      "status": "READY"
+    },
+    {
+      "service_id": "cover",
+      "description": "Member cover from General Notes cover table",
+      "rule_reference": "RULE::PROJECT",
+      "status": "READY"
+    },
+    {
+      "service_id": "station",
+      "description": "Beam stationing and coordinate conversion",
+      "rule_reference": null,
+      "status": "READY"
+    },
+    {
+      "service_id": "steel_weight",
+      "description": "Steel unit weight from estimator rules",
+      "rule_reference": "RULE::ESTIMATOR",
+      "status": "READY"
+    },
+    {
+      "service_id": "concrete",
+      "description": "Concrete volume from section and span",
+      "rule_reference": "RULE::PROJECT",
+      "status": "READY"
+    }
+  ]
+}

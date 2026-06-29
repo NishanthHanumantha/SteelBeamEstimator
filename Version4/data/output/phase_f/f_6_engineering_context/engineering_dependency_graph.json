@@ -1,0 +1,234 @@
+{
+  "phase": "Phase F.6",
+  "description": "Engineering computation dependency framework",
+  "computation_count": 7,
+  "edge_count": 28,
+  "computations": [
+    {
+      "id": "concrete_volume",
+      "type": "COMPUTATION",
+      "description": "Beam concrete volume",
+      "depends_on": [
+        "beam_section",
+        "engineering_length_model",
+        "project_engineering_rules"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "bottom_steel",
+      "type": "COMPUTATION",
+      "description": "Bottom longitudinal reinforcement",
+      "depends_on": [
+        "reinforcement",
+        "development_length",
+        "beam_section",
+        "engineering_length_model",
+        "estimator_rules"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "top_steel",
+      "type": "COMPUTATION",
+      "description": "Top longitudinal reinforcement",
+      "depends_on": [
+        "reinforcement",
+        "development_length",
+        "beam_section",
+        "engineering_length_model",
+        "estimator_rules"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "stirrups",
+      "type": "COMPUTATION",
+      "description": "Shear reinforcement",
+      "depends_on": [
+        "reinforcement",
+        "beam_section",
+        "engineering_length_model",
+        "project_engineering_rules",
+        "estimator_rules"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "development_length",
+      "type": "COMPUTATION",
+      "description": "Bar development length",
+      "depends_on": [
+        "project_engineering_rules",
+        "beam_section"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "beam_quantities",
+      "type": "COMPUTATION",
+      "description": "Aggregated beam quantities",
+      "depends_on": [
+        "concrete_volume",
+        "bottom_steel",
+        "top_steel",
+        "stirrups",
+        "estimator_rules"
+      ],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "boq_line_items",
+      "type": "COMPUTATION",
+      "description": "Bill of quantities line items",
+      "depends_on": [
+        "beam_quantities",
+        "estimator_rules",
+        "project_defaults"
+      ],
+      "status": "NOT_STARTED"
+    }
+  ],
+  "edges": [
+    {
+      "from": "concrete_volume",
+      "to": "beam_section",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "concrete_volume",
+      "to": "engineering_length_model",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "concrete_volume",
+      "to": "project_engineering_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "bottom_steel",
+      "to": "reinforcement",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "bottom_steel",
+      "to": "development_length",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "bottom_steel",
+      "to": "beam_section",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "bottom_steel",
+      "to": "engineering_length_model",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "bottom_steel",
+      "to": "estimator_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "top_steel",
+      "to": "reinforcement",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "top_steel",
+      "to": "development_length",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "top_steel",
+      "to": "beam_section",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "top_steel",
+      "to": "engineering_length_model",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "top_steel",
+      "to": "estimator_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "stirrups",
+      "to": "reinforcement",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "stirrups",
+      "to": "beam_section",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "stirrups",
+      "to": "engineering_length_model",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "stirrups",
+      "to": "project_engineering_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "stirrups",
+      "to": "estimator_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "development_length",
+      "to": "project_engineering_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "development_length",
+      "to": "beam_section",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "beam_quantities",
+      "to": "concrete_volume",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "beam_quantities",
+      "to": "bottom_steel",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "beam_quantities",
+      "to": "top_steel",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "beam_quantities",
+      "to": "stirrups",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "beam_quantities",
+      "to": "estimator_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "boq_line_items",
+      "to": "beam_quantities",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "boq_line_items",
+      "to": "estimator_rules",
+      "relationship": "DEPENDS_ON"
+    },
+    {
+      "from": "boq_line_items",
+      "to": "project_defaults",
+      "relationship": "DEPENDS_ON"
+    }
+  ]
+}

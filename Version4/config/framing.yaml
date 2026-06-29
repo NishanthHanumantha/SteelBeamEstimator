@@ -1,0 +1,79 @@
+# Phase F.1 — Framing Plan Intelligence Foundation
+# Phase F.2 — Dimension Resolution Engine
+
+detect_connectivity: true
+detect_supports: true
+extract_dimensions: true
+generate_debug_dxf: true
+
+beam_line_layers: STR-BEAM
+beam_label_layers: S-BEAM-IDEN
+column_layers: S-COLUMN,S-COL HATCH
+wall_layers: Wall,STR-RC WALL
+
+min_beam_segment_mm: 500
+max_label_segment_distance_mm: 3000
+support_detection_tolerance_mm: 350
+connectivity_tolerance_mm: 250
+parallel_width_min_mm: 80
+parallel_width_max_mm: 800
+orthogonal_tolerance_deg: 5
+
+dimension_resolution:
+    enable: true
+    use_label_dimensions: true
+    use_parallel_edge_measurement: true
+    use_attribute_dimensions: true
+    use_geometry_measurement: true
+    geometry_tolerance_mm: 20
+    minimum_reasonable_width: 100
+    maximum_reasonable_width: 600
+    minimum_reasonable_depth: 150
+    maximum_reasonable_depth: 1500
+    generate_debug_dimensions: true
+
+support_resolution:
+    enable: true
+    detection_tolerance_mm: 350
+    column_confidence: 0.97
+    wall_confidence: 0.94
+    beam_confidence: 0.93
+    slab_edge_confidence: 0.91
+    free_end_confidence: 0.85
+    unknown_confidence: 0.0
+    slab_edge_layers:
+    generate_debug_supports: true
+
+beam_section:
+    enable: true
+    deep_section_ratio: 2.0
+    property_tolerance: 0.5
+    generate_debug_section: true
+
+engineering_length:
+    enable: true
+    beam_half_width_fallback_mm: 100
+    effective_span_min_face_confidence: 0.85
+    generate_debug_lengths: true
+
+knowledge_graph:
+    enable: true
+    junction_tolerance_mm: 250
+    continuous_angle_tolerance_deg: 5
+    phase_e_rules_path: data/output/phase_e/general_notes_engineering_rules.json
+    generate_debug_graph: true
+
+engineering_context:
+    enable: true
+    knowledge_version: 1.0
+    generate_debug_context: true
+    generate_debug_dependencies: true
+    generate_debug_project_graph: true
+
+workspace:
+    enable: true
+    reinforcement_status: NOT_LOADED
+    generate_debug_workspace: true
+    default_floor:
+        name: Ground Floor
+        slug: GROUND_FLOOR

@@ -1,0 +1,532 @@
+{
+  "phase": "Phase F.7",
+  "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+  "root": {
+    "id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+    "type": "PROJECT"
+  },
+  "node_count": 28,
+  "edge_count": 45,
+  "nodes": [
+    {
+      "id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "type": "PROJECT",
+      "name": "SOBHA GALERA CLUBHOUSE",
+      "children": [
+        "KNOWLEDGE::GENERAL_NOTES",
+        "RULE::PROJECT",
+        "BEAMS",
+        "SUPPORTS",
+        "SECTIONS",
+        "LENGTHS",
+        "COORDINATE_SYSTEMS"
+      ]
+    },
+    {
+      "id": "KNOWLEDGE::GENERAL_NOTES",
+      "type": "GENERAL_NOTES",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "knowledge_id": "KNOWLEDGE::GENERAL_NOTES"
+    },
+    {
+      "id": "RULE::PROJECT",
+      "type": "PROJECT_RULES",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "knowledge_id": "RULE::PROJECT",
+      "version": "1.0"
+    },
+    {
+      "id": "BEAMS",
+      "type": "BEAM_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "BEAM::B1",
+        "BEAM::B2",
+        "BEAM::B3",
+        "BEAM::B4",
+        "BEAM::B5",
+        "BEAM::B6",
+        "BEAM::B7",
+        "BEAM::B8",
+        "BEAM::B9",
+        "BEAM::B10",
+        "BEAM::B11",
+        "BEAM::B12",
+        "BEAM::B13",
+        "BEAM::B14",
+        "BEAM::B15",
+        "BEAM::B16",
+        "BEAM::B17",
+        "BEAM::B18"
+      ]
+    },
+    {
+      "id": "SUPPORTS",
+      "type": "SUPPORT_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "BEAM::B10",
+        "BEAM::B11",
+        "BEAM::B12",
+        "BEAM::B13",
+        "BEAM::B14",
+        "BEAM::B4",
+        "BEAM::B5",
+        "COLUMN::4",
+        "COLUMN::5",
+        "WALL::29",
+        "WALL::34",
+        "WALL::36",
+        "WALL::43",
+        "WALL::45",
+        "WALL::47",
+        "WALL::50",
+        "WALL::58",
+        "WALL::74",
+        "WALL::77",
+        "WALL::79"
+      ]
+    },
+    {
+      "id": "SECTIONS",
+      "type": "SECTION_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "SECTION::B1",
+        "SECTION::B2",
+        "SECTION::B3",
+        "SECTION::B4",
+        "SECTION::B5",
+        "SECTION::B6",
+        "SECTION::B7",
+        "SECTION::B8",
+        "SECTION::B9",
+        "SECTION::B10",
+        "SECTION::B11",
+        "SECTION::B12",
+        "SECTION::B13",
+        "SECTION::B14",
+        "SECTION::B15",
+        "SECTION::B16",
+        "SECTION::B17",
+        "SECTION::B18"
+      ]
+    },
+    {
+      "id": "LENGTHS",
+      "type": "LENGTH_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "LENGTH::B1",
+        "LENGTH::B2",
+        "LENGTH::B3",
+        "LENGTH::B4",
+        "LENGTH::B5",
+        "LENGTH::B6",
+        "LENGTH::B7",
+        "LENGTH::B8",
+        "LENGTH::B9",
+        "LENGTH::B10",
+        "LENGTH::B11",
+        "LENGTH::B12",
+        "LENGTH::B13",
+        "LENGTH::B14",
+        "LENGTH::B15",
+        "LENGTH::B16",
+        "LENGTH::B17",
+        "LENGTH::B18"
+      ]
+    },
+    {
+      "id": "COORDINATE_SYSTEMS",
+      "type": "ECS_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "ECS::B1",
+        "ECS::B2",
+        "ECS::B3",
+        "ECS::B4",
+        "ECS::B5",
+        "ECS::B6",
+        "ECS::B7",
+        "ECS::B8",
+        "ECS::B9",
+        "ECS::B10",
+        "ECS::B11",
+        "ECS::B12",
+        "ECS::B13",
+        "ECS::B14",
+        "ECS::B15",
+        "ECS::B16",
+        "ECS::B17",
+        "ECS::B18"
+      ]
+    },
+    {
+      "id": "CONTEXTS",
+      "type": "CONTEXT_COLLECTION",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "member_ids": [
+        "CTX::B1",
+        "CTX::B2",
+        "CTX::B3",
+        "CTX::B4",
+        "CTX::B5",
+        "CTX::B6",
+        "CTX::B7",
+        "CTX::B8",
+        "CTX::B9",
+        "CTX::B10",
+        "CTX::B11",
+        "CTX::B12",
+        "CTX::B13",
+        "CTX::B14",
+        "CTX::B15",
+        "CTX::B16",
+        "CTX::B17",
+        "CTX::B18"
+      ]
+    },
+    {
+      "id": "CTX::B1",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B1"
+    },
+    {
+      "id": "CTX::B2",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B2"
+    },
+    {
+      "id": "CTX::B3",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B3"
+    },
+    {
+      "id": "CTX::B4",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B4"
+    },
+    {
+      "id": "CTX::B5",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B5"
+    },
+    {
+      "id": "CTX::B6",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B6"
+    },
+    {
+      "id": "CTX::B7",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B7"
+    },
+    {
+      "id": "CTX::B8",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B8"
+    },
+    {
+      "id": "CTX::B9",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B9"
+    },
+    {
+      "id": "CTX::B10",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B10"
+    },
+    {
+      "id": "CTX::B11",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B11"
+    },
+    {
+      "id": "CTX::B12",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B12"
+    },
+    {
+      "id": "CTX::B13",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B13"
+    },
+    {
+      "id": "CTX::B14",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B14"
+    },
+    {
+      "id": "CTX::B15",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B15"
+    },
+    {
+      "id": "CTX::B16",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B16"
+    },
+    {
+      "id": "CTX::B17",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B17"
+    },
+    {
+      "id": "CTX::B18",
+      "type": "ENGINEERING_CONTEXT",
+      "parent": "CONTEXTS",
+      "beam_id": "BEAM::B18"
+    },
+    {
+      "id": "FLOOR::GROUND_FLOOR",
+      "type": "FLOOR",
+      "parent": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "floor_name": "Ground Floor"
+    }
+  ],
+  "edges": [
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "KNOWLEDGE::GENERAL_NOTES",
+      "relationship": "HAS_GENERAL_NOTES"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "RULE::PROJECT",
+      "relationship": "HAS_RULES"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "BEAMS",
+      "relationship": "HAS_BEAMS"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "SUPPORTS",
+      "relationship": "HAS_SUPPORTS"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "SECTIONS",
+      "relationship": "HAS_SECTIONS"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "LENGTHS",
+      "relationship": "HAS_LENGTHS"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "COORDINATE_SYSTEMS",
+      "relationship": "HAS_COORDINATE_SYSTEMS"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "CONTEXTS",
+      "relationship": "HAS_CONTEXTS"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B1",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B2",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B3",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B4",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B5",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B6",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B7",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B8",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B9",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B10",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B11",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B12",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B13",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B14",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B15",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B16",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B17",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "BEAMS",
+      "to": "BEAM::B18",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B1",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B2",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B3",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B4",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B5",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B6",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B7",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B8",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B9",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B10",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B11",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B12",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B13",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B14",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B15",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B16",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B17",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "CONTEXTS",
+      "to": "CTX::B18",
+      "relationship": "MEMBER"
+    },
+    {
+      "from": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+      "to": "FLOOR::GROUND_FLOOR",
+      "relationship": "HAS_FLOOR"
+    }
+  ]
+}

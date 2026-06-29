@@ -1,0 +1,716 @@
+{
+  "phase": "Phase F.3",
+  "description": "Support node ↔ beam structural graph",
+  "node_count": 42,
+  "edge_count": 33,
+  "nodes": {
+    "beams": [
+      {
+        "id": "B1",
+        "type": "BEAM",
+        "beam_mark": "B1"
+      },
+      {
+        "id": "B2",
+        "type": "BEAM",
+        "beam_mark": "B2"
+      },
+      {
+        "id": "B3",
+        "type": "BEAM",
+        "beam_mark": "B3"
+      },
+      {
+        "id": "B4",
+        "type": "BEAM",
+        "beam_mark": "B4"
+      },
+      {
+        "id": "B5",
+        "type": "BEAM",
+        "beam_mark": "B5"
+      },
+      {
+        "id": "B6",
+        "type": "BEAM",
+        "beam_mark": "B6"
+      },
+      {
+        "id": "B7",
+        "type": "BEAM",
+        "beam_mark": "B7"
+      },
+      {
+        "id": "B8",
+        "type": "BEAM",
+        "beam_mark": "B8"
+      },
+      {
+        "id": "B9",
+        "type": "BEAM",
+        "beam_mark": "B9"
+      },
+      {
+        "id": "B10",
+        "type": "BEAM",
+        "beam_mark": "B10"
+      },
+      {
+        "id": "B11",
+        "type": "BEAM",
+        "beam_mark": "B11"
+      },
+      {
+        "id": "B12",
+        "type": "BEAM",
+        "beam_mark": "B12"
+      },
+      {
+        "id": "B13",
+        "type": "BEAM",
+        "beam_mark": "B13"
+      },
+      {
+        "id": "B14",
+        "type": "BEAM",
+        "beam_mark": "B14"
+      },
+      {
+        "id": "B15",
+        "type": "BEAM",
+        "beam_mark": "B15"
+      },
+      {
+        "id": "B16",
+        "type": "BEAM",
+        "beam_mark": "B16"
+      },
+      {
+        "id": "B17",
+        "type": "BEAM",
+        "beam_mark": "B17"
+      },
+      {
+        "id": "B18",
+        "type": "BEAM",
+        "beam_mark": "B18"
+      }
+    ],
+    "supports": [
+      {
+        "id": "B10",
+        "type": "BEAM"
+      },
+      {
+        "id": "B11",
+        "type": "BEAM"
+      },
+      {
+        "id": "B12",
+        "type": "BEAM"
+      },
+      {
+        "id": "B13",
+        "type": "BEAM"
+      },
+      {
+        "id": "B14",
+        "type": "BEAM"
+      },
+      {
+        "id": "B4",
+        "type": "BEAM"
+      },
+      {
+        "id": "B5",
+        "type": "BEAM"
+      },
+      {
+        "id": "COLUMN_1",
+        "type": "COLUMN"
+      },
+      {
+        "id": "COLUMN_2",
+        "type": "COLUMN"
+      },
+      {
+        "id": "COLUMN_3",
+        "type": "COLUMN"
+      },
+      {
+        "id": "COLUMN_4",
+        "type": "COLUMN"
+      },
+      {
+        "id": "COLUMN_5",
+        "type": "COLUMN"
+      },
+      {
+        "id": "COLUMN_6",
+        "type": "COLUMN"
+      },
+      {
+        "id": "WALL_29",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_34",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_36",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_43",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_45",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_47",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_50",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_58",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_74",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_77",
+        "type": "WALL"
+      },
+      {
+        "id": "WALL_79",
+        "type": "WALL"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "from": "B14",
+      "to": "B1",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "WALL_74",
+      "to": "B2",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B2",
+      "to": "WALL_74",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_79",
+      "to": "B3",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B3",
+      "to": "WALL_79",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B13",
+      "to": "B4",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B4",
+      "to": "B12",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B13",
+      "to": "B5",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B5",
+      "to": "B12",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "COLUMN_5",
+      "to": "B6",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "COLUMN",
+      "confidence": 0.97
+    },
+    {
+      "from": "B6",
+      "to": "WALL_77",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_77",
+      "to": "B7",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B7",
+      "to": "WALL_77",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_29",
+      "to": "B8",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B8",
+      "to": "WALL_36",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "COLUMN_4",
+      "to": "B9",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "COLUMN",
+      "confidence": 0.97
+    },
+    {
+      "from": "B11",
+      "to": "B10",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B10",
+      "to": "B11",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B11",
+      "to": "WALL_45",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B4",
+      "to": "B12",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B12",
+      "to": "B5",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B4",
+      "to": "B13",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "B13",
+      "to": "B5",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "BEAM",
+      "confidence": 0.93
+    },
+    {
+      "from": "WALL_43",
+      "to": "B14",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B14",
+      "to": "WALL_34",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_74",
+      "to": "B15",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B15",
+      "to": "WALL_77",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_58",
+      "to": "B16",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B16",
+      "to": "WALL_50",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_79",
+      "to": "B17",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B17",
+      "to": "WALL_47",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "WALL_79",
+      "to": "B18",
+      "relationship": "support_to_beam",
+      "end": "start",
+      "support_type": "WALL",
+      "confidence": 0.94
+    },
+    {
+      "from": "B18",
+      "to": "WALL_77",
+      "relationship": "beam_to_support",
+      "end": "end",
+      "support_type": "WALL",
+      "confidence": 0.94
+    }
+  ],
+  "chains": [
+    {
+      "chain": [
+        "WALL_74",
+        "B2",
+        "WALL_74"
+      ],
+      "beam_mark": "B2"
+    },
+    {
+      "chain": [
+        "WALL_79",
+        "B3",
+        "WALL_79"
+      ],
+      "beam_mark": "B3"
+    },
+    {
+      "chain": [
+        "B13",
+        "B4",
+        "B12"
+      ],
+      "beam_mark": "B4"
+    },
+    {
+      "chain": [
+        "B13",
+        "B5",
+        "B12"
+      ],
+      "beam_mark": "B5"
+    },
+    {
+      "chain": [
+        "COLUMN_5",
+        "B6",
+        "WALL_77"
+      ],
+      "beam_mark": "B6"
+    },
+    {
+      "chain": [
+        "WALL_77",
+        "B7",
+        "WALL_77"
+      ],
+      "beam_mark": "B7"
+    },
+    {
+      "chain": [
+        "WALL_29",
+        "B8",
+        "WALL_36"
+      ],
+      "beam_mark": "B8"
+    },
+    {
+      "chain": [
+        "B10",
+        "B11",
+        "WALL_45"
+      ],
+      "beam_mark": "B11"
+    },
+    {
+      "chain": [
+        "B4",
+        "B12",
+        "B5"
+      ],
+      "beam_mark": "B12"
+    },
+    {
+      "chain": [
+        "B4",
+        "B13",
+        "B5"
+      ],
+      "beam_mark": "B13"
+    },
+    {
+      "chain": [
+        "WALL_43",
+        "B14",
+        "WALL_34"
+      ],
+      "beam_mark": "B14"
+    },
+    {
+      "chain": [
+        "WALL_74",
+        "B15",
+        "WALL_77"
+      ],
+      "beam_mark": "B15"
+    },
+    {
+      "chain": [
+        "WALL_58",
+        "B16",
+        "WALL_50"
+      ],
+      "beam_mark": "B16"
+    },
+    {
+      "chain": [
+        "WALL_79",
+        "B17",
+        "WALL_47"
+      ],
+      "beam_mark": "B17"
+    },
+    {
+      "chain": [
+        "WALL_79",
+        "B18",
+        "WALL_77"
+      ],
+      "beam_mark": "B18"
+    }
+  ],
+  "adjacency": {
+    "B14": [
+      "B1",
+      "WALL_43",
+      "WALL_34"
+    ],
+    "B1": [
+      "B14"
+    ],
+    "WALL_74": [
+      "B2",
+      "B2",
+      "B15"
+    ],
+    "B2": [
+      "WALL_74",
+      "WALL_74"
+    ],
+    "WALL_79": [
+      "B3",
+      "B3",
+      "B17",
+      "B18"
+    ],
+    "B3": [
+      "WALL_79",
+      "WALL_79"
+    ],
+    "B13": [
+      "B4",
+      "B5",
+      "B4",
+      "B5"
+    ],
+    "B4": [
+      "B13",
+      "B12",
+      "B12",
+      "B13"
+    ],
+    "B12": [
+      "B4",
+      "B5",
+      "B4",
+      "B5"
+    ],
+    "B5": [
+      "B13",
+      "B12",
+      "B12",
+      "B13"
+    ],
+    "COLUMN_5": [
+      "B6"
+    ],
+    "B6": [
+      "COLUMN_5",
+      "WALL_77"
+    ],
+    "WALL_77": [
+      "B6",
+      "B7",
+      "B7",
+      "B15",
+      "B18"
+    ],
+    "B7": [
+      "WALL_77",
+      "WALL_77"
+    ],
+    "WALL_29": [
+      "B8"
+    ],
+    "B8": [
+      "WALL_29",
+      "WALL_36"
+    ],
+    "WALL_36": [
+      "B8"
+    ],
+    "COLUMN_4": [
+      "B9"
+    ],
+    "B9": [
+      "COLUMN_4"
+    ],
+    "B11": [
+      "B10",
+      "B10",
+      "WALL_45"
+    ],
+    "B10": [
+      "B11",
+      "B11"
+    ],
+    "WALL_45": [
+      "B11"
+    ],
+    "WALL_43": [
+      "B14"
+    ],
+    "WALL_34": [
+      "B14"
+    ],
+    "B15": [
+      "WALL_74",
+      "WALL_77"
+    ],
+    "WALL_58": [
+      "B16"
+    ],
+    "B16": [
+      "WALL_58",
+      "WALL_50"
+    ],
+    "WALL_50": [
+      "B16"
+    ],
+    "B17": [
+      "WALL_79",
+      "WALL_47"
+    ],
+    "WALL_47": [
+      "B17"
+    ],
+    "B18": [
+      "WALL_79",
+      "WALL_77"
+    ]
+  }
+}
