@@ -1,6 +1,6 @@
 {
   "phase": "Phase G.2.6",
-  "status": "PASS",
+  "status": "FAIL",
   "checks": [
     {
       "name": "Match Decisions Created",
@@ -57,7 +57,7 @@
     {
       "name": "No BeamContext Modification",
       "status": "PASS",
-      "invalid": []
+      "skipped": "beam_matching_applied"
     },
     {
       "name": "No Parsing",
@@ -66,8 +66,10 @@
     },
     {
       "name": "No Engineering Objects",
-      "status": "PASS",
-      "found": []
+      "status": "FAIL",
+      "found": [
+        "engineering_objects"
+      ]
     },
     {
       "name": "No Quantities",
@@ -100,8 +102,8 @@
   ],
   "summary": {
     "total_checks": 18,
-    "passed": 18,
-    "failed": 0,
+    "passed": 17,
+    "failed": 1,
     "decision_count": 16
   }
 }

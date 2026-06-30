@@ -1,0 +1,126 @@
+{
+  "phase": "Phase G.3",
+  "status": "FAIL",
+  "checks": [
+    {
+      "name": "ENGINEERING_READY Decisions Produce BeamMatch",
+      "status": "PASS",
+      "eligible": 16,
+      "matches": 16,
+      "missing": []
+    },
+    {
+      "name": "One BeamMatch Per DetailIdentity",
+      "status": "PASS",
+      "identity_count": 16,
+      "match_count": 16,
+      "duplicates": []
+    },
+    {
+      "name": "BeamMatch References DetailIdentity",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "BeamMatch References MatchDecision",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "BeamMatch References BeamContext",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "BeamContext Updated",
+      "status": "PASS",
+      "skipped": "ownership_resolver_applied"
+    },
+    {
+      "name": "DetailIdentity Updated",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "DrawingSet Updated",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Workspace Updated",
+      "status": "PASS"
+    },
+    {
+      "name": "Registry Complete",
+      "status": "PASS",
+      "expected": 16,
+      "actual": 16
+    },
+    {
+      "name": "Graph Complete",
+      "status": "PASS",
+      "node_count": 16,
+      "has_matched_to": true,
+      "has_references": true,
+      "has_targets": true,
+      "has_reinforcement_match": true
+    },
+    {
+      "name": "No Duplicate BeamMatches",
+      "status": "PASS",
+      "duplicates": []
+    },
+    {
+      "name": "No Fabricated Matches",
+      "status": "PASS",
+      "fabricated": []
+    },
+    {
+      "name": "execution_status Updated",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Beam Indices Consistent",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Namespace IDs Valid",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Backward Compatibility Maintained",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "No Ownership",
+      "status": "PASS"
+    },
+    {
+      "name": "No Reinforcement Parsing",
+      "status": "PASS",
+      "found": []
+    },
+    {
+      "name": "No Engineering Objects",
+      "status": "FAIL",
+      "found": [
+        "engineering_objects"
+      ]
+    },
+    {
+      "name": "No Quantity Computation",
+      "status": "PASS",
+      "found": []
+    }
+  ],
+  "summary": {
+    "total_checks": 21,
+    "passed": 20,
+    "failed": 1,
+    "beam_match_count": 16
+  }
+}

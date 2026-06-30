@@ -156,6 +156,10 @@ def load_framing_config(config_path: Path | str = DEFAULT_CONFIG) -> dict[str, A
             "match_decision_generate_debug": True,
             "match_decision_quality_enable": True,
             "match_decision_quality_generate_debug": True,
+            "beam_matching_enable": True,
+            "beam_matching_generate_debug": True,
+            "ownership_resolver_enable": True,
+            "ownership_resolver_generate_debug": True,
         },
     }
     path = Path(config_path)

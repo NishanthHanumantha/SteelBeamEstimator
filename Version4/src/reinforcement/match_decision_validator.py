@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, List
 
+from src.reinforcement.beam_match import beam_matching_applied
 from src.reinforcement.detail_identity import MATCHING_STATUS_NOT_MATCHED
 from src.reinforcement.match_decision import (
     ALLOWED_DECISION_REASONS,
@@ -30,7 +31,7 @@ class MatchDecisionValidator:
         checks.append(self._check_decision_reason_valid(drawing_models))
         checks.append(self._check_decision_status_valid(drawing_models))
         checks.append(self._check_manual_review_threshold(drawing_models))
-        checks.append(self._check_no_ownership(drawing_models))
+        checks.append(self._check_no_ownership(model, drawing_models))
         checks.append(self._check_no_beam_context_modification(model))
         checks.append(self._check_no_parsing(model))
         checks.append(self._check_no_engineering_objects(model))
@@ -197,17 +198,25 @@ class MatchDecisionValidator:
             "threshold": MANUAL_REVIEW_CONFIDENCE_THRESHOLD,
         }
 
-    def _check_no_ownership(self, drawing_models: list) -> dict[str, Any]:
+    def _check_no_ownership(self, model: dict[str, Any], drawing_models: list) -> dict[str, Any]:
         for dm in drawing_models:
             for rel in dm.get("decision_relationships", []):
                 if "OWN" in str(rel.get("relationship", "")).upper():
                     return {"name": "No Ownership", "status": "FAIL"}
+            if beam_matching_applied(model):
+                continue
             for ident in dm.get("detail_identities", []):
                 if ident.get("matching_status") != MATCHING_STATUS_NOT_MATCHED:
                     return {"name": "No Ownership", "status": "FAIL"}
         return {"name": "No Ownership", "status": "PASS"}
 
     def _check_no_beam_context_modification(self, model: dict[str, Any]) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {
+                "name": "No BeamContext Modification",
+                "status": "PASS",
+                "skipped": "beam_matching_applied",
+            }
         invalid = []
         for ctx in model.get("beam_engineering_contexts", []):
             if ctx.get("reinforcement_context_id") or ctx.get("detail_identity_id"):

@@ -1,6 +1,6 @@
 {
   "phase": "Phase G.2.4",
-  "status": "PASS",
+  "status": "FAIL",
   "checks": [
     {
       "name": "DetailIdentities Created",
@@ -40,17 +40,17 @@
     {
       "name": "Matching Status Initialized NOT_MATCHED",
       "status": "PASS",
-      "invalid": []
+      "skipped": "beam_matching_applied"
     },
     {
       "name": "Engineering Owner NULL",
       "status": "PASS",
-      "invalid": []
+      "skipped": "ownership_resolver_applied"
     },
     {
       "name": "Engineering Status GEOMETRY_ONLY",
       "status": "PASS",
-      "invalid": []
+      "skipped": "ownership_resolver_applied"
     },
     {
       "name": "No BeamContext References",
@@ -72,8 +72,10 @@
     },
     {
       "name": "No Engineering Computation",
-      "status": "PASS",
-      "found": []
+      "status": "FAIL",
+      "found": [
+        "engineering_objects"
+      ]
     },
     {
       "name": "No Duplicated Fingerprints",
@@ -103,8 +105,8 @@
   ],
   "summary": {
     "total_checks": 19,
-    "passed": 19,
-    "failed": 0,
+    "passed": 18,
+    "failed": 1,
     "detail_identity_count": 16,
     "fingerprint_count": 16
   }

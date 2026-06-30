@@ -1,0 +1,425 @@
+{
+  "phase": "Phase G.5.1",
+  "node_count": 16,
+  "edge_count": 64,
+  "nodes": [
+    {
+      "id": "BEAM_MATCH::001",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::001",
+      "beam_context_id": "CTX::B1"
+    },
+    {
+      "id": "BEAM_MATCH::002",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::002",
+      "beam_context_id": "CTX::B2"
+    },
+    {
+      "id": "BEAM_MATCH::003",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::003",
+      "beam_context_id": "CTX::B3"
+    },
+    {
+      "id": "BEAM_MATCH::004",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::004",
+      "beam_context_id": "CTX::B4"
+    },
+    {
+      "id": "BEAM_MATCH::005",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::005",
+      "beam_context_id": "CTX::B5"
+    },
+    {
+      "id": "BEAM_MATCH::006",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::006",
+      "beam_context_id": "CTX::B6"
+    },
+    {
+      "id": "BEAM_MATCH::007",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::007",
+      "beam_context_id": "CTX::B7"
+    },
+    {
+      "id": "BEAM_MATCH::008",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::008",
+      "beam_context_id": "CTX::B8"
+    },
+    {
+      "id": "BEAM_MATCH::009",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::009",
+      "beam_context_id": "CTX::B11"
+    },
+    {
+      "id": "BEAM_MATCH::010",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::010",
+      "beam_context_id": "CTX::B12"
+    },
+    {
+      "id": "BEAM_MATCH::011",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::011",
+      "beam_context_id": "CTX::B13"
+    },
+    {
+      "id": "BEAM_MATCH::012",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::012",
+      "beam_context_id": "CTX::B14"
+    },
+    {
+      "id": "BEAM_MATCH::013",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::013",
+      "beam_context_id": "CTX::B15"
+    },
+    {
+      "id": "BEAM_MATCH::014",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::014",
+      "beam_context_id": "CTX::B16"
+    },
+    {
+      "id": "BEAM_MATCH::015",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::015",
+      "beam_context_id": "CTX::B17"
+    },
+    {
+      "id": "BEAM_MATCH::016",
+      "type": "BEAM_MATCH",
+      "detail_identity_id": "DETAIL::016",
+      "beam_context_id": "CTX::B18"
+    }
+  ],
+  "edges": [
+    {
+      "from": "DETAIL::001",
+      "to": "BEAM_MATCH::001",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::001",
+      "to": "MATCH_DECISION::001",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::001",
+      "to": "CTX::B1",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B1",
+      "to": "BEAM_MATCH::001",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::002",
+      "to": "BEAM_MATCH::002",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::002",
+      "to": "MATCH_DECISION::002",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::002",
+      "to": "CTX::B2",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B2",
+      "to": "BEAM_MATCH::002",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::003",
+      "to": "BEAM_MATCH::003",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::003",
+      "to": "MATCH_DECISION::003",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::003",
+      "to": "CTX::B3",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B3",
+      "to": "BEAM_MATCH::003",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::004",
+      "to": "BEAM_MATCH::004",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::004",
+      "to": "MATCH_DECISION::004",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::004",
+      "to": "CTX::B4",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B4",
+      "to": "BEAM_MATCH::004",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::005",
+      "to": "BEAM_MATCH::005",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::005",
+      "to": "MATCH_DECISION::005",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::005",
+      "to": "CTX::B5",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B5",
+      "to": "BEAM_MATCH::005",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::006",
+      "to": "BEAM_MATCH::006",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::006",
+      "to": "MATCH_DECISION::006",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::006",
+      "to": "CTX::B6",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B6",
+      "to": "BEAM_MATCH::006",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::007",
+      "to": "BEAM_MATCH::007",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::007",
+      "to": "MATCH_DECISION::007",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::007",
+      "to": "CTX::B7",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B7",
+      "to": "BEAM_MATCH::007",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::008",
+      "to": "BEAM_MATCH::008",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::008",
+      "to": "MATCH_DECISION::008",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::008",
+      "to": "CTX::B8",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B8",
+      "to": "BEAM_MATCH::008",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::009",
+      "to": "BEAM_MATCH::009",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::009",
+      "to": "MATCH_DECISION::009",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::009",
+      "to": "CTX::B11",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B11",
+      "to": "BEAM_MATCH::009",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::010",
+      "to": "BEAM_MATCH::010",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::010",
+      "to": "MATCH_DECISION::010",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::010",
+      "to": "CTX::B12",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B12",
+      "to": "BEAM_MATCH::010",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::011",
+      "to": "BEAM_MATCH::011",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::011",
+      "to": "MATCH_DECISION::011",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::011",
+      "to": "CTX::B13",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B13",
+      "to": "BEAM_MATCH::011",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::012",
+      "to": "BEAM_MATCH::012",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::012",
+      "to": "MATCH_DECISION::012",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::012",
+      "to": "CTX::B14",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B14",
+      "to": "BEAM_MATCH::012",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::013",
+      "to": "BEAM_MATCH::013",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::013",
+      "to": "MATCH_DECISION::013",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::013",
+      "to": "CTX::B15",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B15",
+      "to": "BEAM_MATCH::013",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::014",
+      "to": "BEAM_MATCH::014",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::014",
+      "to": "MATCH_DECISION::014",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::014",
+      "to": "CTX::B16",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B16",
+      "to": "BEAM_MATCH::014",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::015",
+      "to": "BEAM_MATCH::015",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::015",
+      "to": "MATCH_DECISION::015",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::015",
+      "to": "CTX::B17",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B17",
+      "to": "BEAM_MATCH::015",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    },
+    {
+      "from": "DETAIL::016",
+      "to": "BEAM_MATCH::016",
+      "relationship": "MATCHED_TO"
+    },
+    {
+      "from": "BEAM_MATCH::016",
+      "to": "MATCH_DECISION::016",
+      "relationship": "REFERENCES"
+    },
+    {
+      "from": "BEAM_MATCH::016",
+      "to": "CTX::B18",
+      "relationship": "TARGETS"
+    },
+    {
+      "from": "CTX::B18",
+      "to": "BEAM_MATCH::016",
+      "relationship": "HAS_REINFORCEMENT_MATCH"
+    }
+  ]
+}

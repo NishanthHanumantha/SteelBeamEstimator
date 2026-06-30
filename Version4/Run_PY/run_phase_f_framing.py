@@ -355,6 +355,273 @@ def run() -> int:
         print(f"  Checks: {passed}/{total} PASS")
     print("=" * 52 + "\n")
 
+    print("\n" + "=" * 52)
+    print("PHASE G.3")
+    print("Beam Matching Engine")
+    print("=" * 52)
+    beam_matches = result.get("model", {}).get("beam_matches", [])
+    beam_match_validation = result.get("beam_match_validation", {})
+    matching_summary = result.get("model", {}).get("beam_matching_summary", {})
+    print(f"Beam Matches: {len(beam_matches)}")
+    print(f"Matched Beams: {matching_summary.get('matched_beam_count', 0)}")
+    print(f"Matching Progress: {matching_summary.get('matching_progress', '?')}")
+    executed = matching_summary.get("executed_decision_count", 0)
+    eligible = matching_summary.get("eligible_decision_count", 0)
+    print(f"Decisions Executed: {executed}/{eligible}")
+    sample_match = next(
+        (m for m in beam_matches if m.get("detail_identity_id") == "DETAIL::008"),
+        beam_matches[0] if beam_matches else {},
+    )
+    if sample_match:
+        print(f"\nSample BeamMatch: {sample_match.get('beam_match_id')}")
+        print(f"  detail={sample_match.get('detail_identity_id')}")
+        print(f"  decision={sample_match.get('match_decision_id')}")
+        print(f"  beam={sample_match.get('beam_context_id')} ({sample_match.get('beam_mark')})")
+        print(f"  confidence={sample_match.get('confidence')} level={sample_match.get('confidence_level')}")
+        print(f"  status={sample_match.get('match_status')} engineering={sample_match.get('engineering_status')}")
+    sample_decision_g3 = next(
+        (d for d in decisions if d.get("detail_identity_id") == "DETAIL::008"),
+        decisions[0] if decisions else {},
+    )
+    if sample_decision_g3:
+        print(f"\nDecision Execution: {sample_decision_g3.get('decision_id')}")
+        print(f"  execution_status={sample_decision_g3.get('execution_status', '?')}")
+    contexts = result.get("model", {}).get("beam_engineering_contexts", [])
+    sample_ctx = next(
+        (c for c in contexts if c.get("beam_mark") == "B8"),
+        {},
+    )
+    if sample_ctx:
+        print(f"\nBeamContext Update: {sample_ctx.get('context_id')}")
+        print(f"  beam_match_id={sample_ctx.get('beam_match_id')}")
+        print(f"  reinforcement_context_id={sample_ctx.get('reinforcement_context_id')}")
+        print(f"  reinforcement_matching_status={sample_ctx.get('reinforcement_matching_status')}")
+    print(f"G.3 Validation: {beam_match_validation.get('status', 'SKIP')}")
+    if beam_match_validation.get("checks"):
+        passed = sum(
+            1 for c in beam_match_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(beam_match_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4")
+    print("Engineering Reinforcement Context & Ownership")
+    print("=" * 52)
+    erc_validation = result.get("engineering_reinforcement_context_validation", {})
+    erc_contexts = result.get("model", {}).get("engineering_reinforcement_contexts", [])
+    ownership_summary = result.get("model", {}).get("ownership_summary", {})
+    print(f"Engineering Reinforcement Contexts: {len(erc_contexts)}")
+    print(f"Ownership Entries: {ownership_summary.get('ownership_count', 0)}")
+    print(f"Ownership Status: {ownership_summary.get('ownership_status', '?')}")
+    print(
+        f"Entities — views={ownership_summary.get('view_count', 0)} "
+        f"geometry={ownership_summary.get('geometry_count', 0)} "
+        f"text={ownership_summary.get('text_count', 0)} "
+        f"leaders={ownership_summary.get('leader_count', 0)} "
+        f"blocks={ownership_summary.get('block_count', 0)}"
+    )
+    sample_erc = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc:
+        print(f"\nSample ERC: {sample_erc.get('reinforcement_context_id')}")
+        print(f"  beam={sample_erc.get('beam_mark')} context={sample_erc.get('beam_context_id')}")
+        print(f"  match={sample_erc.get('beam_match_id')}")
+        print(f"  detail={sample_erc.get('detail_identity_id')}")
+        print(f"  ownership_status={sample_erc.get('ownership_status')}")
+        print(f"  owned_views={len(sample_erc.get('owned_views', []))}")
+        print(f"  owned_geometry={len(sample_erc.get('owned_geometry', []))}")
+    sample_ctx_g4 = next(
+        (c for c in result.get("model", {}).get("beam_engineering_contexts", []) if c.get("beam_mark") == "B8"),
+        {},
+    )
+    if sample_ctx_g4:
+        print(f"\nBeamContext ERC Link: {sample_ctx_g4.get('context_id')}")
+        print(f"  reinforcement_context_id={sample_ctx_g4.get('reinforcement_context_id')}")
+        print(f"  ownership_status={sample_ctx_g4.get('ownership_status')}")
+    print(f"G.4 Validation: {erc_validation.get('status', 'SKIP')}")
+    if erc_validation.get("checks"):
+        passed = sum(
+            1 for c in erc_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(erc_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4.1")
+    print("Engineering Reinforcement Context Enhancement")
+    print("=" * 52)
+    asset_validation = result.get("engineering_asset_validation", {})
+    lifecycle_validation = result.get("engineering_reinforcement_lifecycle_validation", {})
+    asset_registry = result.get("model", {}).get("engineering_asset_registry", {})
+    lifecycle_registry = result.get("model", {}).get("engineering_reinforcement_lifecycle_registry", {})
+    asset_summary = result.get("model", {}).get("engineering_asset_summary", {})
+    print(f"Asset Registries: {asset_registry.get('registry_count', 0)}")
+    print(f"Lifecycle State: {lifecycle_registry.get('current_state', '?')}")
+    print(
+        f"Assets — views={asset_summary.get('view_count', 0)} "
+        f"geometry={asset_summary.get('geometry_count', 0)} "
+        f"text={asset_summary.get('text_count', 0)}"
+    )
+    sample_erc_g41 = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc_g41:
+        assets = sample_erc_g41.get("engineering_assets", {})
+        lifecycle = sample_erc_g41.get("lifecycle", {})
+        print(f"\nSample ERC Assets: {assets.get('registry_id', '?')}")
+        print(f"  views={len(assets.get('views', []))} geometry={len(assets.get('geometry', []))}")
+        print(f"  lifecycle={lifecycle.get('current_state', '?')}")
+        print(f"  next_allowed={lifecycle.get('next_allowed', [])}")
+    print(f"G.4.1 Asset Validation: {asset_validation.get('status', 'SKIP')}")
+    if asset_validation.get("checks"):
+        passed = sum(
+            1 for c in asset_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(asset_validation["checks"])
+        print(f"  Asset Checks: {passed}/{total} PASS")
+    print(f"G.4.1 Lifecycle Validation: {lifecycle_validation.get('status', 'SKIP')}")
+    if lifecycle_validation.get("checks"):
+        passed = sum(
+            1 for c in lifecycle_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(lifecycle_validation["checks"])
+        print(f"  Lifecycle Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4.2")
+    print("Engineering Object Framework")
+    print("=" * 52)
+    object_validation = result.get("engineering_object_validation", {})
+    object_registry = result.get("model", {}).get("engineering_object_registry", {})
+    object_summary = result.get("model", {}).get("engineering_object_summary", {})
+    print(f"Engineering Objects: {object_registry.get('object_count', 0)}")
+    print(f"Framework Status: {object_summary.get('status', '?')}")
+    print(
+        f"Ready — registry={object_summary.get('registry_ready', False)} "
+        f"factory={object_summary.get('factory_ready', False)} "
+        f"graph={object_summary.get('graph_ready', False)}"
+    )
+    sample_erc_g42 = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc_g42:
+        eng_objs = sample_erc_g42.get("engineering_objects", {})
+        print(f"\nSample ERC Objects: {eng_objs.get('registry_id', '?')}")
+        print(f"  object_count={len(eng_objs.get('objects', []))}")
+    print(f"G.4.2 Object Validation: {object_validation.get('status', 'SKIP')}")
+    if object_validation.get("checks"):
+        passed = sum(
+            1 for c in object_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(object_validation["checks"])
+        print(f"  Object Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.0")
+    print("Engineering Semantic Role Layer")
+    print("=" * 52)
+    role_validation = result.get("engineering_semantic_role_validation", {})
+    role_registry = result.get("model", {}).get("engineering_semantic_role_registry", {})
+    role_summary = result.get("model", {}).get("engineering_semantic_role_summary", {})
+    print(f"Semantic Roles: {role_registry.get('role_count', 0)}")
+    print(f"Status: {role_summary.get('status', '?')}")
+    print(f"Roles By Type: {role_summary.get('roles_by_type', {})}")
+    sample_b1_roles = [
+        r
+        for r in role_registry.get("roles", [])
+        if r.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_roles:
+        print(f"\nBeam B1 Semantic Roles ({len(sample_b1_roles)}):")
+        for role in sample_b1_roles[:8]:
+            print(
+                f"  {role.get('semantic_role_id')} "
+                f"type={role.get('role_type')} "
+                f"conf={role.get('classification_confidence', 0)}"
+            )
+    print(f"G.5.0 Role Validation: {role_validation.get('status', 'SKIP')}")
+    if role_validation.get("checks"):
+        passed = sum(
+            1 for c in role_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(role_validation["checks"])
+        print(f"  Role Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.0.1")
+    print("Engineering Semantic Relationship Layer")
+    print("=" * 52)
+    rel_validation = result.get("engineering_semantic_relationship_validation", {})
+    rel_registry = result.get("model", {}).get("engineering_semantic_relationship_registry", {})
+    rel_summary = result.get("model", {}).get("engineering_semantic_relationship_summary", {})
+    print(f"Semantic Relationships: {rel_registry.get('relationship_count', 0)}")
+    print(f"Status: {rel_summary.get('status', '?')}")
+    print(f"Relationships By Type: {rel_summary.get('relationships_by_type', {})}")
+    sample_b1_rels = [
+        r
+        for r in rel_registry.get("relationships", [])
+        if r.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_rels:
+        print(f"\nBeam B1 Relationships ({len(sample_b1_rels)}):")
+        for rel in sample_b1_rels[:8]:
+            print(
+                f"  {rel.get('relationship_id')} "
+                f"type={rel.get('relationship_type')} "
+                f"{rel.get('source_role_id')} -> {rel.get('target_role_id')}"
+            )
+    print(f"G.5.0.1 Relationship Validation: {rel_validation.get('status', 'SKIP')}")
+    if rel_validation.get("checks"):
+        passed = sum(
+            1 for c in rel_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(rel_validation["checks"])
+        print(f"  Relationship Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.1")
+    print("Engineering Object Instantiation")
+    print("=" * 52)
+    creation_validation = result.get("engineering_object_creation_validation", {})
+    eng_objects = result.get("model", {}).get("engineering_objects", [])
+    obj_summary = result.get("model", {}).get("engineering_object_summary", {})
+    obj_stats = result.get("model", {}).get("engineering_object_statistics", {})
+    print(f"Engineering Objects: {len(eng_objects)}")
+    print(f"Status: {obj_summary.get('status', '?')}")
+    print(f"Objects By Type: {obj_stats.get('objects_by_type', {})}")
+    sample_b1_objects = [
+        o
+        for o in eng_objects
+        if o.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_objects:
+        print(f"\nBeam B1 Objects ({len(sample_b1_objects)}):")
+        for obj in sample_b1_objects:
+            print(
+                f"  {obj.get('engineering_object_id')} "
+                f"type={obj.get('object_type')} "
+                f"conf={obj.get('confidence', 0)}"
+            )
+    print(f"G.5.1 Creation Validation: {creation_validation.get('status', 'SKIP')}")
+    if creation_validation.get("checks"):
+        passed = sum(
+            1 for c in creation_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(creation_validation["checks"])
+        print(f"  Creation Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
     failed = any(
         result[k]["status"] == "FAIL"
         for k in (
@@ -387,6 +654,22 @@ def run() -> int:
     if result.get("match_decision_validation", {}).get("status") == "FAIL":
         failed = True
     if result.get("match_decision_quality_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_match_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_reinforcement_context_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_asset_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_reinforcement_lifecycle_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_object_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_semantic_role_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_semantic_relationship_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_object_creation_validation", {}).get("status") == "FAIL":
         failed = True
     return 1 if failed else 0
 

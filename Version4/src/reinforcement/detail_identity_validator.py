@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from typing import Any, List
 
+from src.reinforcement.engineering_reinforcement_context import ownership_resolver_applied
+from src.reinforcement.beam_match import beam_matching_applied
 from src.reinforcement.detail_identity import MATCHING_STATUS_NOT_MATCHED
 from src.reinforcement.reinforcement_geometry_entity import ENGINEERING_STATUS_GEOMETRY_ONLY
 
@@ -21,9 +23,9 @@ class DetailIdentityValidator:
         checks.append(self._check_fingerprint_ids_unique(drawing_models))
         checks.append(self._check_fingerprints_deterministic(model, drawing_models))
         checks.append(self._check_overall_hash_unique(drawing_models))
-        checks.append(self._check_matching_status_initialized(drawing_models))
-        checks.append(self._check_engineering_owner_null(drawing_models))
-        checks.append(self._check_engineering_status_geometry_only(drawing_models))
+        checks.append(self._check_matching_status_initialized(model, drawing_models))
+        checks.append(self._check_engineering_owner_null(model, drawing_models))
+        checks.append(self._check_engineering_status_geometry_only(model, drawing_models))
         checks.append(self._check_no_beam_context_references(model, drawing_models))
         checks.append(self._check_no_ownership(drawing_models))
         checks.append(self._check_no_parsing(drawing_models))
@@ -151,7 +153,17 @@ class DetailIdentityValidator:
             "duplicates": duplicates,
         }
 
-    def _check_matching_status_initialized(self, drawing_models: list) -> dict[str, Any]:
+    def _check_matching_status_initialized(
+        self,
+        model: dict[str, Any],
+        drawing_models: list,
+    ) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {
+                "name": "Matching Status Initialized NOT_MATCHED",
+                "status": "PASS",
+                "skipped": "beam_matching_applied",
+            }
         invalid = []
         for dm in drawing_models:
             for ident in dm.get("detail_identities", []):
@@ -163,7 +175,17 @@ class DetailIdentityValidator:
             "invalid": invalid,
         }
 
-    def _check_engineering_owner_null(self, drawing_models: list) -> dict[str, Any]:
+    def _check_engineering_owner_null(
+        self,
+        model: dict[str, Any],
+        drawing_models: list,
+    ) -> dict[str, Any]:
+        if ownership_resolver_applied(model):
+            return {
+                "name": "Engineering Owner NULL",
+                "status": "PASS",
+                "skipped": "ownership_resolver_applied",
+            }
         invalid = []
         for dm in drawing_models:
             for ident in dm.get("detail_identities", []):
@@ -175,7 +197,17 @@ class DetailIdentityValidator:
             "invalid": invalid,
         }
 
-    def _check_engineering_status_geometry_only(self, drawing_models: list) -> dict[str, Any]:
+    def _check_engineering_status_geometry_only(
+        self,
+        model: dict[str, Any],
+        drawing_models: list,
+    ) -> dict[str, Any]:
+        if ownership_resolver_applied(model):
+            return {
+                "name": "Engineering Status GEOMETRY_ONLY",
+                "status": "PASS",
+                "skipped": "ownership_resolver_applied",
+            }
         invalid = []
         for dm in drawing_models:
             for ident in dm.get("detail_identities", []):

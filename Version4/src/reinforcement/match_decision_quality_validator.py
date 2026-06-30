@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, List
 
+from src.reinforcement.beam_match import beam_matching_applied
 from src.reinforcement.detail_identity import MATCHING_STATUS_NOT_MATCHED
 from src.reinforcement.match_decision_quality import (
     ALGORITHM_VERSION,
@@ -27,7 +28,7 @@ class MatchDecisionQualityValidator:
         checks.append(self._check_drawing_set_updated(model))
         checks.append(self._check_workspace_updated(model))
         checks.append(self._check_graph_relationships(model))
-        checks.append(self._check_no_beam_matching(drawing_models))
+        checks.append(self._check_no_beam_matching(model, drawing_models))
         checks.append(self._check_no_ownership(drawing_models))
         checks.append(self._check_no_engineering_objects(model))
         checks.append(self._check_no_parsing(model))
@@ -162,7 +163,13 @@ class MatchDecisionQualityValidator:
             "has_generated_by_edge": has_generated,
         }
 
-    def _check_no_beam_matching(self, drawing_models: list) -> dict[str, Any]:
+    def _check_no_beam_matching(
+        self,
+        model: dict[str, Any],
+        drawing_models: list,
+    ) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {"name": "No Beam Matching", "status": "PASS", "skipped": "beam_matching_applied"}
         for dm in drawing_models:
             for ident in dm.get("detail_identities", []):
                 if ident.get("matching_status") != MATCHING_STATUS_NOT_MATCHED:
@@ -201,6 +208,12 @@ class MatchDecisionQualityValidator:
         }
 
     def _check_no_beam_context_modification(self, model: dict[str, Any]) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {
+                "name": "No BeamContext Modification",
+                "status": "PASS",
+                "skipped": "beam_matching_applied",
+            }
         invalid = []
         for ctx in model.get("beam_engineering_contexts", []):
             if ctx.get("reinforcement_context_id"):

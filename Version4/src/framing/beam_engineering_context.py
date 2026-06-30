@@ -26,6 +26,9 @@ class BeamEngineeringContext:
     drawing_set_id: str = ""
     reinforcement_drawing_id: Optional[str] = None
     reinforcement_context_id: Optional[str] = None
+    beam_match_id: Optional[str] = None
+    reinforcement_matching_status: Optional[str] = None
+    ownership_status: Optional[str] = None
     rule_reference: dict[str, Any] = field(default_factory=dict)
     estimator_rules_reference: dict[str, Any] = field(default_factory=dict)
     project_defaults_reference: dict[str, Any] = field(default_factory=dict)
@@ -50,6 +53,9 @@ class BeamEngineeringContext:
             "drawing_set_id": self.drawing_set_id,
             "reinforcement_drawing_id": self.reinforcement_drawing_id,
             "reinforcement_context_id": self.reinforcement_context_id,
+            "beam_match_id": self.beam_match_id,
+            "reinforcement_matching_status": self.reinforcement_matching_status,
+            "ownership_status": self.ownership_status,
             "legacy_ids": dict(self.legacy_ids),
             "beam_section": self.beam_section,
             "engineering_length_model": self.engineering_length_model,

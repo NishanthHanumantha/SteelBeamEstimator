@@ -824,6 +824,28 @@ class BeamGeometryDebugExporter:
             "DEBUG_CONFIDENCE_LEVEL",
             "DEBUG_DECISION_QUALITY",
             "DEBUG_ALGORITHM_VERSION",
+            "DEBUG_BEAM_MATCH",
+            "DEBUG_MATCH_STATUS",
+            "DEBUG_MATCH_REFERENCE",
+            "DEBUG_ERC",
+            "DEBUG_OWNERSHIP",
+            "DEBUG_OWNERSHIP_TEXT",
+            "DEBUG_OWNERSHIP_VIEW",
+            "DEBUG_ENGINEERING_ASSETS",
+            "DEBUG_ENGINEERING_RESULTS",
+            "DEBUG_ERC_LIFECYCLE",
+            "DEBUG_ENGINEERING_OBJECT",
+            "DEBUG_OBJECT_TYPE",
+            "DEBUG_OBJECT_REFERENCE",
+            "DEBUG_OBJECT_CONFIDENCE",
+            "DEBUG_SEMANTIC_ROLE",
+            "DEBUG_ROLE_TYPE",
+            "DEBUG_ROLE_ID",
+            "DEBUG_ROLE_RELATIONSHIP",
+            "DEBUG_SEMANTIC_RELATIONSHIP",
+            "DEBUG_ROLE_PRIORITY",
+            "DEBUG_RELATIONSHIP_TYPE",
+            "DEBUG_ROLE_LINKS",
         )
         for layer in layers:
             if layer not in doc.layers:
@@ -1239,6 +1261,377 @@ class BeamGeometryDebugExporter:
                     "color": 4,
                 },
             )
+
+        match_by_identity = {
+            m.get("detail_identity_id"): m
+            for m in drawing_model.get("beam_matches", [])
+        }
+        for ident in drawing_model.get("detail_identities", []):
+            ident_id = ident.get("detail_identity_id", "?")
+            match = match_by_identity.get(ident_id)
+            if not match:
+                continue
+            ctx_id = ident.get("detail_context_id", "")
+            ctx = next(
+                (
+                    c
+                    for c in drawing_model.get("detail_contexts", [])
+                    if c.get("detail_context_id") == ctx_id
+                ),
+                {},
+            )
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            if not region_box:
+                continue
+            match_y = region_box["max_y"] + 3200.0
+            msp.add_text(
+                f"{ident_id} -> {match.get('beam_match_id', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_BEAM_MATCH",
+                    "height": 170.0,
+                    "insert": (region_box["min_x"], match_y),
+                    "color": 3,
+                },
+            )
+            msp.add_text(
+                f"beam={match.get('beam_context_id', '?')} ({match.get('beam_mark', '')})",
+                dxfattribs={
+                    "layer": "DEBUG_BEAM_MATCH",
+                    "height": 150.0,
+                    "insert": (region_box["min_x"], match_y + 220),
+                    "color": 2,
+                },
+            )
+            msp.add_text(
+                f"status={match.get('match_status', '?')} eng={match.get('engineering_status', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_STATUS",
+                    "height": 140.0,
+                    "insert": (region_box["min_x"], match_y + 420),
+                    "color": 6,
+                },
+            )
+            msp.add_text(
+                f"conf={match.get('confidence', 0):.2f} level={match.get('confidence_level', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_STATUS",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], match_y + 580),
+                    "color": 5,
+                },
+            )
+            msp.add_text(
+                f"decision={match.get('match_decision_id', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_REFERENCE",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], match_y + 740),
+                    "color": 4,
+                },
+            )
+            msp.add_text(
+                f"ctx={match.get('detail_context_id', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_REFERENCE",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], match_y + 900),
+                    "color": 1,
+                },
+            )
+
+        erc_by_identity = {
+            c.get("detail_identity_id"): c
+            for c in drawing_model.get("engineering_reinforcement_contexts", [])
+        }
+        for ident in drawing_model.get("detail_identities", []):
+            ident_id = ident.get("detail_identity_id", "?")
+            erc = erc_by_identity.get(ident_id)
+            if not erc:
+                continue
+            ctx_id = ident.get("detail_context_id", "")
+            ctx = next(
+                (
+                    c
+                    for c in drawing_model.get("detail_contexts", [])
+                    if c.get("detail_context_id") == ctx_id
+                ),
+                {},
+            )
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            if not region_box:
+                continue
+            erc_y = region_box["max_y"] + 4200.0
+            erc_id = erc.get("reinforcement_context_id", "?")
+            msp.add_text(
+                f"ERC={erc_id} beam={erc.get('beam_mark', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_ERC",
+                    "height": 170.0,
+                    "insert": (region_box["min_x"], erc_y),
+                    "color": 3,
+                },
+            )
+            msp.add_text(
+                f"status={erc.get('ownership_status', '?')} views={len(erc.get('owned_views', []))}",
+                dxfattribs={
+                    "layer": "DEBUG_ERC",
+                    "height": 140.0,
+                    "insert": (region_box["min_x"], erc_y + 220),
+                    "color": 2,
+                },
+            )
+            for view_id in erc.get("owned_views", [])[:3]:
+                view = next(
+                    (
+                        v
+                        for v in drawing_model.get("detail_views", [])
+                        if v.get("view_id", v.get("geometry_id")) == view_id
+                    ),
+                    {},
+                )
+                msp.add_text(
+                    f"view={view_id} owner={view.get('ownership', {}).get('owner_id', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_OWNERSHIP_VIEW",
+                        "height": 120.0,
+                        "insert": (region_box["min_x"], erc_y + 420),
+                        "color": 5,
+                    },
+                )
+                erc_y += 160.0
+            sample_text = erc.get("owned_text", [""])[0] if erc.get("owned_text") else ""
+            if sample_text:
+                text_item = next(
+                    (
+                        t
+                        for t in drawing_model.get("text_objects", [])
+                        if t.get("geometry_id") == sample_text
+                    ),
+                    {},
+                )
+                msp.add_text(
+                    f"text={sample_text} owner={text_item.get('ownership', {}).get('owner_id', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_OWNERSHIP_TEXT",
+                        "height": 120.0,
+                        "insert": (region_box["min_x"], erc_y + 420),
+                        "color": 6,
+                    },
+                )
+            sample_sketch = erc.get("owned_geometry", [""])[0] if erc.get("owned_geometry") else ""
+            if sample_sketch:
+                msp.add_text(
+                    f"geom={sample_sketch}",
+                    dxfattribs={
+                        "layer": "DEBUG_OWNERSHIP",
+                        "height": 120.0,
+                        "insert": (region_box["min_x"], erc_y + 580),
+                        "color": 4,
+                    },
+                )
+
+            assets = erc.get("engineering_assets", {})
+            if assets:
+                msp.add_text(
+                    f"registry={assets.get('registry_id', '?')} "
+                    f"v={len(assets.get('views', []))} g={len(assets.get('geometry', []))}",
+                    dxfattribs={
+                        "layer": "DEBUG_ENGINEERING_ASSETS",
+                        "height": 130.0,
+                        "insert": (region_box["min_x"], erc_y + 760),
+                        "color": 3,
+                    },
+                )
+            lifecycle = erc.get("lifecycle", {})
+            if lifecycle:
+                msp.add_text(
+                    f"lifecycle={lifecycle.get('current_state', '?')} "
+                    f"next={lifecycle.get('next_allowed', [])}",
+                    dxfattribs={
+                        "layer": "DEBUG_ERC_LIFECYCLE",
+                        "height": 130.0,
+                        "insert": (region_box["min_x"], erc_y + 940),
+                        "color": 1,
+                    },
+                )
+            results = erc.get("engineering_results", {})
+            if results is not None:
+                msp.add_text(
+                    "results=PLACEHOLDER (all null)",
+                    dxfattribs={
+                        "layer": "DEBUG_ENGINEERING_RESULTS",
+                        "height": 130.0,
+                        "insert": (region_box["min_x"], erc_y + 1120),
+                        "color": 8,
+                    },
+                )
+
+            roles_by_id = {
+                r.get("semantic_role_id"): r
+                for r in model.get("engineering_semantic_role_registry", {}).get("roles", [])
+            }
+            role_y = erc_y + 1280.0
+            for role_ref in erc.get("semantic_roles", [])[:6]:
+                role_id = role_ref if isinstance(role_ref, str) else role_ref.get("semantic_role_id")
+                role = roles_by_id.get(role_id, {})
+                if not role:
+                    continue
+                msp.add_text(
+                    f"role={role_id} type={role.get('role_type', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_SEMANTIC_ROLE",
+                        "height": 120.0,
+                        "insert": (region_box["min_x"], role_y),
+                        "color": 4,
+                    },
+                )
+                msp.add_text(
+                    f"status={role.get('engineering_status', '?')} "
+                    f"conf={role.get('classification_confidence', 0)}",
+                    dxfattribs={
+                        "layer": "DEBUG_ROLE_TYPE",
+                        "height": 110.0,
+                        "insert": (region_box["min_x"], role_y + 140),
+                        "color": 6,
+                    },
+                )
+                msp.add_text(
+                    role_id,
+                    dxfattribs={
+                        "layer": "DEBUG_ROLE_ID",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], role_y + 260),
+                        "color": 2,
+                    },
+                )
+                ref_count = (
+                    len(role.get("geometry_asset_ids", []))
+                    + len(role.get("text_asset_ids", []))
+                    + len(role.get("leader_asset_ids", []))
+                )
+                msp.add_text(
+                    f"refs={ref_count} prio={role.get('engineering_priority', '?')} "
+                    f"lifecycle={role.get('lifecycle', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_ROLE_RELATIONSHIP",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], role_y + 360),
+                        "color": 3,
+                    },
+                )
+                msp.add_text(
+                    role.get("engineering_priority", "?"),
+                    dxfattribs={
+                        "layer": "DEBUG_ROLE_PRIORITY",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], role_y + 480),
+                        "color": 3,
+                    },
+                )
+                role_y += 620.0
+
+            rels_by_id = {
+                r.get("relationship_id"): r
+                for r in model.get("engineering_semantic_relationship_registry", {}).get(
+                    "relationships", []
+                )
+            }
+            link_y = role_y + 100.0
+            for rel_ref in erc.get("semantic_relationships", [])[:6]:
+                rel_id = rel_ref if isinstance(rel_ref, str) else rel_ref.get("relationship_id")
+                rel = rels_by_id.get(rel_id, {})
+                if not rel:
+                    continue
+                src = roles_by_id.get(rel.get("source_role_id"), {})
+                tgt = roles_by_id.get(rel.get("target_role_id"), {})
+                msp.add_text(
+                    f"rel={rel_id} {rel.get('relationship_type', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_SEMANTIC_RELATIONSHIP",
+                        "height": 110.0,
+                        "insert": (region_box["min_x"], link_y),
+                        "color": 1,
+                    },
+                )
+                msp.add_text(
+                    f"{rel.get('source_role_id', '?')} -> {rel.get('target_role_id', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_ROLE_LINKS",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], link_y + 120),
+                        "color": 5,
+                    },
+                )
+                msp.add_text(
+                    rel.get("relationship_type", "?"),
+                    dxfattribs={
+                        "layer": "DEBUG_RELATIONSHIP_TYPE",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], link_y + 230),
+                        "color": 6,
+                    },
+                )
+                link_y += 360.0
+
+            obj_ids = erc.get("engineering_objects", {}).get("objects", [])
+            objects_by_id = {
+                o.get("engineering_object_id"): o
+                for o in model.get("engineering_objects", [])
+            }
+            if not objects_by_id:
+                objects_by_id = {
+                    o.get("engineering_object_id"): o
+                    for o in model.get("engineering_object_registry", {}).get("objects", [])
+                }
+            obj_y = erc_y + 1300.0
+            for obj_ref in obj_ids[:6]:
+                obj_id = obj_ref if isinstance(obj_ref, str) else obj_ref.get("engineering_object_id")
+                obj = objects_by_id.get(obj_id, {})
+                if not obj:
+                    continue
+                msp.add_text(
+                    f"obj={obj_id} type={obj.get('object_type', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_ENGINEERING_OBJECT",
+                        "height": 120.0,
+                        "insert": (region_box["min_x"], obj_y),
+                        "color": 3,
+                    },
+                )
+                msp.add_text(
+                    f"owner={obj.get('owner_context_id', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_OBJECT_TYPE",
+                        "height": 110.0,
+                        "insert": (region_box["min_x"], obj_y + 150),
+                        "color": 5,
+                    },
+                )
+                refs = obj.get("asset_references", {})
+                ref_count = sum(len(refs.get(k, [])) for k in refs)
+                msp.add_text(
+                    f"refs={ref_count} conf={obj.get('confidence', 0)}",
+                    dxfattribs={
+                        "layer": "DEBUG_OBJECT_CONFIDENCE",
+                        "height": 110.0,
+                        "insert": (region_box["min_x"], obj_y + 280),
+                        "color": 2,
+                    },
+                )
+                sample_ref = (
+                    (refs.get("geometry") or refs.get("text") or refs.get("leaders") or [""])[0]
+                )
+                if sample_ref:
+                    msp.add_text(
+                        f"ref={sample_ref}",
+                        dxfattribs={
+                            "layer": "DEBUG_OBJECT_REFERENCE",
+                            "height": 110.0,
+                            "insert": (region_box["min_x"], obj_y + 410),
+                            "color": 4,
+                        },
+                    )
+                obj_y += 560.0
 
         for sketch in drawing_model.get("sketches", []):
             box = sketch.get("bbox", {})

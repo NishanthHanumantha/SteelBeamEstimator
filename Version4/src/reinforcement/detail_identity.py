@@ -20,6 +20,7 @@ MATCHING_STATUS_FAILED = "FAILED"
 
 MATCHING_STATE_NOT_MATCHED = "NOT_MATCHED"
 MATCHING_STATE_CANDIDATES_READY = "CANDIDATES_READY"
+MATCHING_STATE_MATCH_COMPLETED = "MATCH_COMPLETED"
 
 SOURCE_DETAIL_CONTEXT = "DETAIL_CONTEXT"
 
@@ -64,6 +65,7 @@ class EngineeringDetailIdentity:
     matching_state: str = MATCHING_STATE_NOT_MATCHED
     match_decision_id: Optional[str] = None
     decision_status: Optional[str] = None
+    beam_match_id: Optional[str] = None
     metadata: Dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -86,5 +88,6 @@ class EngineeringDetailIdentity:
             "matching_state": self.matching_state,
             "match_decision_id": self.match_decision_id,
             "decision_status": self.decision_status,
+            "beam_match_id": self.beam_match_id,
             "metadata": dict(self.metadata),
         }

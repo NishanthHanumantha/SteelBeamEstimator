@@ -1,6 +1,6 @@
 {
   "phase": "Phase G.2.7",
-  "status": "PASS",
+  "status": "FAIL",
   "checks": [
     {
       "name": "Every MatchDecision Has confidence_level",
@@ -47,7 +47,8 @@
     },
     {
       "name": "No Beam Matching",
-      "status": "PASS"
+      "status": "PASS",
+      "skipped": "beam_matching_applied"
     },
     {
       "name": "No Ownership",
@@ -55,8 +56,10 @@
     },
     {
       "name": "No Engineering Objects",
-      "status": "PASS",
-      "found": []
+      "status": "FAIL",
+      "found": [
+        "engineering_objects"
+      ]
     },
     {
       "name": "No Reinforcement Parsing",
@@ -71,7 +74,7 @@
     {
       "name": "No BeamContext Modification",
       "status": "PASS",
-      "invalid": []
+      "skipped": "beam_matching_applied"
     },
     {
       "name": "Backward Compatibility Maintained",
@@ -81,8 +84,8 @@
   ],
   "summary": {
     "total_checks": 15,
-    "passed": 15,
-    "failed": 0,
+    "passed": 14,
+    "failed": 1,
     "decision_count": 16
   }
 }

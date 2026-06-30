@@ -165,6 +165,8 @@ class ReinforcementDrawingValidator:
             "Phase G.2.5",
             "Phase G.2.6",
             "Phase G.2.7",
+            "Phase G.3",
+            "Phase G.4",
         ) and len(region_nodes) > 0
         return {
             "name": "Graph Updated",

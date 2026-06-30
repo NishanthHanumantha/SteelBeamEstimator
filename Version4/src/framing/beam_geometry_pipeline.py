@@ -160,6 +160,24 @@ class BeamGeometryPipeline:
         beam_candidate_validation = model.get("beam_candidate_validation", {})
         match_decision_validation = model.get("match_decision_validation", {})
         match_decision_quality_validation = model.get("match_decision_quality_validation", {})
+        beam_match_validation = model.get("beam_match_validation", {})
+        engineering_reinforcement_context_validation = model.get(
+            "engineering_reinforcement_context_validation", {}
+        )
+        engineering_asset_validation = model.get("engineering_asset_validation", {})
+        engineering_reinforcement_lifecycle_validation = model.get(
+            "engineering_reinforcement_lifecycle_validation", {}
+        )
+        engineering_object_validation = model.get("engineering_object_validation", {})
+        engineering_semantic_role_validation = model.get(
+            "engineering_semantic_role_validation", {}
+        )
+        engineering_semantic_relationship_validation = model.get(
+            "engineering_semantic_relationship_validation", {}
+        )
+        engineering_object_creation_validation = model.get(
+            "engineering_object_creation_validation", {}
+        )
 
         summary = self._build_summary(
             model,
@@ -573,6 +591,250 @@ class BeamGeometryPipeline:
             model.get("decision_algorithm", {}),
         )
         self._write_json(
+            self._outputs.beam_matches_export,
+            {
+                "phase": "Phase G.3",
+                "beam_matches": model.get("beam_matches", []),
+            },
+        )
+        self._write_json(
+            self._outputs.beam_match_registry_export,
+            model.get("beam_match_registry", {}),
+        )
+        self._write_json(
+            self._outputs.beam_match_validation_export,
+            beam_match_validation,
+        )
+        self._write_json(
+            self._outputs.beam_matching_summary_export,
+            model.get("beam_matching_summary", {}),
+        )
+        self._write_json(
+            self._outputs.beam_match_graph_export,
+            model.get("beam_match_graph", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_reinforcement_contexts_export,
+            {
+                "phase": "Phase G.4",
+                "contexts": model.get("engineering_reinforcement_contexts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.engineering_reinforcement_context_registry_export,
+            model.get("engineering_reinforcement_context_registry", {}),
+        )
+        self._write_json(
+            self._outputs.ownership_registry_export,
+            model.get("ownership_registry", {}),
+        )
+        self._write_json(
+            self._outputs.ownership_relationships_export,
+            {
+                "phase": "Phase G.4",
+                "relationships": model.get("ownership_relationships", []),
+            },
+        )
+        self._write_json(
+            self._outputs.ownership_summary_export,
+            model.get("ownership_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g4_validation_export,
+            engineering_reinforcement_context_validation,
+        )
+        self._write_json(
+            self._outputs.engineering_asset_registry_export,
+            model.get("engineering_asset_registry", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_reinforcement_lifecycle_registry_export,
+            model.get("engineering_reinforcement_lifecycle_registry", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_asset_validation_export,
+            engineering_asset_validation,
+        )
+        self._write_json(
+            self._outputs.engineering_reinforcement_lifecycle_validation_export,
+            engineering_reinforcement_lifecycle_validation,
+        )
+        self._write_json(
+            self._outputs.engineering_asset_summary_export,
+            model.get("engineering_asset_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_4_1_engineering_reinforcement_contexts_export,
+            {
+                "phase": model.get("phase", "Phase G.4.1"),
+                "contexts": model.get("engineering_reinforcement_contexts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_4_1_project_workspace_export,
+            model.get("project_workspace", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_4_1_drawing_set_export,
+            {
+                "phase": model.get("phase", "Phase G.4.1"),
+                "drawing_set_count": len(model.get("drawing_sets", [])),
+                "drawing_sets": model.get("drawing_sets", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_4_1_beam_engineering_context_export,
+            {
+                "phase": model.get("phase", "Phase G.4.1"),
+                "context_count": len(model.get("beam_engineering_contexts", [])),
+                "contexts": model.get("beam_engineering_contexts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_4_1_project_engineering_graph_export,
+            model.get("project_engineering_graph", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_registry_export,
+            model.get("engineering_object_registry", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_graph_export,
+            model.get("engineering_object_graph", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_relationships_export,
+            model.get("engineering_object_relationships", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_lifecycle_registry_export,
+            model.get("engineering_object_lifecycle_registry", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_summary_export,
+            model.get("engineering_object_summary", {}),
+        )
+        self._write_json(
+            self._outputs.engineering_object_validation_export,
+            engineering_object_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_engineering_semantic_roles_export,
+            {
+                "phase": "Phase G.5.0",
+                "role_count": len(
+                    model.get("engineering_semantic_role_registry", {}).get("roles", [])
+                ),
+                "roles": model.get("engineering_semantic_role_registry", {}).get("roles", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_engineering_semantic_role_registry_export,
+            model.get("engineering_semantic_role_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_engineering_semantic_role_graph_export,
+            model.get("engineering_semantic_role_graph", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_engineering_semantic_role_summary_export,
+            model.get("engineering_semantic_role_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_engineering_semantic_role_validation_export,
+            engineering_semantic_role_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_1_engineering_semantic_relationships_export,
+            {
+                "phase": "Phase G.5.0.1",
+                "relationship_count": len(
+                    model.get("engineering_semantic_relationship_registry", {}).get(
+                        "relationships", []
+                    )
+                ),
+                "relationships": model.get("engineering_semantic_relationship_registry", {}).get(
+                    "relationships", []
+                ),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_1_engineering_semantic_relationship_registry_export,
+            model.get("engineering_semantic_relationship_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_1_engineering_semantic_relationship_graph_export,
+            model.get("engineering_semantic_relationship_graph", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_1_engineering_semantic_relationship_summary_export,
+            model.get("engineering_semantic_relationship_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_0_1_engineering_semantic_relationship_validation_export,
+            engineering_semantic_relationship_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_objects_export,
+            {
+                "phase": model.get("phase", "Phase G.5.1"),
+                "object_count": len(model.get("engineering_objects", [])),
+                "objects": model.get("engineering_objects", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_registry_export,
+            model.get("engineering_object_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_classification_export,
+            model.get("engineering_object_classification", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_summary_export,
+            model.get("engineering_object_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_graph_export,
+            model.get("engineering_object_graph", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_relationships_export,
+            model.get("engineering_object_relationships", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_statistics_export,
+            model.get("engineering_object_statistics", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_1_engineering_object_creation_validation_export,
+            engineering_object_creation_validation,
+        )
+        self._write_json(
+            self._outputs.beam_engineering_context,
+            {
+                "phase": model.get("phase", "Phase G.4"),
+                "context_count": len(model.get("beam_engineering_contexts", [])),
+                "contexts": model.get("beam_engineering_contexts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.project_workspace,
+            model.get("project_workspace", {}),
+        )
+        self._write_json(
+            self._outputs.drawing_set_export,
+            {
+                "phase": model.get("phase", "Phase G.4"),
+                "drawing_set_count": len(model.get("drawing_sets", [])),
+                "drawing_sets": model.get("drawing_sets", []),
+            },
+        )
+        self._write_json(
+            self._outputs.project_engineering_graph,
+            model.get("project_engineering_graph", {}),
+        )
+        self._write_json(
             self._outputs.phase_g_2_reinforcement_workspace,
             {
                 "phase": "Phase G.2",
@@ -683,6 +945,14 @@ class BeamGeometryPipeline:
             "beam_candidate_validation": beam_candidate_validation,
             "match_decision_validation": match_decision_validation,
             "match_decision_quality_validation": match_decision_quality_validation,
+            "beam_match_validation": beam_match_validation,
+            "engineering_reinforcement_context_validation": engineering_reinforcement_context_validation,
+            "engineering_asset_validation": engineering_asset_validation,
+            "engineering_reinforcement_lifecycle_validation": engineering_reinforcement_lifecycle_validation,
+            "engineering_object_validation": engineering_object_validation,
+            "engineering_semantic_role_validation": engineering_semantic_role_validation,
+            "engineering_semantic_relationship_validation": engineering_semantic_relationship_validation,
+            "engineering_object_creation_validation": engineering_object_creation_validation,
             "summary": summary,
             "phase_g_summary": phase_g_summary,
         }
@@ -895,6 +1165,16 @@ class BeamGeometryPipeline:
             "text_count": drawing_model.get("text_count", 0),
             "leader_count": drawing_model.get("leader_count", 0),
             "block_count": drawing_model.get("block_count", 0),
+            "beam_match_count": len(model.get("beam_matches", [])),
+            "beam_match_validation_status": model.get("beam_match_validation", {}).get(
+                "status", "SKIP"
+            ),
+            "engineering_reinforcement_context_count": len(
+                model.get("engineering_reinforcement_contexts", [])
+            ),
+            "ownership_validation_status": model.get(
+                "engineering_reinforcement_context_validation", {}
+            ).get("status", "SKIP"),
             "floors_loaded": model.get("reinforcement_loading_summary", {}).get("floors_loaded", 0),
             "floor_source": model.get("workspace_manager", {}).get("floor_source"),
             "project_id": model.get("project_workspace", {}).get("project_id"),

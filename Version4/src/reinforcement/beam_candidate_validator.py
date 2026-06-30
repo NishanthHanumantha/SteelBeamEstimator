@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, List
 
+from src.reinforcement.beam_match import beam_matching_applied
 from src.reinforcement.beam_match_candidate import (
     CANDIDATE_STATUS_RANKED,
     MATCHING_STATE_CANDIDATES_READY,
@@ -28,7 +29,7 @@ class BeamCandidateValidator:
         checks.append(self._check_ranking_deterministic(model, drawing_models))
         checks.append(self._check_no_duplicate_best_candidate(drawing_models))
         checks.append(self._check_no_ownership(drawing_models))
-        checks.append(self._check_no_matching(drawing_models))
+        checks.append(self._check_no_matching(model, drawing_models))
         checks.append(self._check_no_parsing(drawing_models))
         checks.append(self._check_no_quantities(model))
         checks.append(self._check_no_beam_context_modification(model))
@@ -216,7 +217,13 @@ class BeamCandidateValidator:
                     return {"name": "No Ownership", "status": "FAIL"}
         return {"name": "No Ownership", "status": "PASS"}
 
-    def _check_no_matching(self, drawing_models: list) -> dict[str, Any]:
+    def _check_no_matching(
+        self,
+        model: dict[str, Any],
+        drawing_models: list,
+    ) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {"name": "No Final Matching", "status": "PASS", "skipped": "beam_matching_applied"}
         invalid = []
         for dm in drawing_models:
             for ident in dm.get("detail_identities", []):
@@ -248,6 +255,12 @@ class BeamCandidateValidator:
         }
 
     def _check_no_beam_context_modification(self, model: dict[str, Any]) -> dict[str, Any]:
+        if beam_matching_applied(model):
+            return {
+                "name": "No BeamContext Modification",
+                "status": "PASS",
+                "skipped": "beam_matching_applied",
+            }
         invalid = []
         for ctx in model.get("beam_engineering_contexts", []):
             if ctx.get("reinforcement_context_id"):

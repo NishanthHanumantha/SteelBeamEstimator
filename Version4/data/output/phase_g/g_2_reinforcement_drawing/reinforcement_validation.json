@@ -1,6 +1,6 @@
 {
   "phase": "Phase G.2.2",
-  "status": "PASS",
+  "status": "FAIL",
   "checks": [
     {
       "name": "ReinforcementDrawingModel Created",
@@ -35,7 +35,7 @@
     {
       "name": "Relationships Built",
       "status": "PASS",
-      "count": 757
+      "count": 821
     },
     {
       "name": "Geometry IDs Unique",
@@ -60,7 +60,7 @@
     },
     {
       "name": "Graph Updated",
-      "status": "PASS",
+      "status": "FAIL",
       "region_nodes": 16
     },
     {
@@ -78,8 +78,10 @@
     },
     {
       "name": "No Engineering Computation",
-      "status": "PASS",
-      "found": []
+      "status": "FAIL",
+      "found": [
+        "engineering_objects"
+      ]
     },
     {
       "name": "Every Region Has Sketch",
@@ -160,8 +162,8 @@
   ],
   "summary": {
     "total_checks": 30,
-    "passed": 30,
-    "failed": 0,
+    "passed": 28,
+    "failed": 2,
     "drawing_model_count": 1,
     "region_count": 16,
     "sketch_count": 58,

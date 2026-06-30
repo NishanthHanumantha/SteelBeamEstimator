@@ -55,6 +55,13 @@ PHASE_G_2_4_DETAIL_IDENTITY = "g_2_4_detail_identity"
 PHASE_G_2_5_MATCH_CANDIDATES = "g_2_5_match_candidates"
 PHASE_G_2_6_MATCH_DECISION = "g_2_6_match_decision"
 PHASE_G_2_7_MATCH_DECISION_QUALITY = "g_2_7_match_decision_quality"
+PHASE_G_3_BEAM_MATCHING = "g_3_beam_matching"
+PHASE_G_4_ENGINEERING_REINFORCEMENT_CONTEXT = "g_4_engineering_reinforcement_context"
+PHASE_G_4_1_ENGINEERING_REINFORCEMENT_CONTEXT = "g_4_1_engineering_reinforcement_context"
+PHASE_G_4_2_ENGINEERING_OBJECT_FRAMEWORK = "g_4_2_engineering_object_framework"
+PHASE_G_5_0_SEMANTIC_ROLES = "g_5_0_semantic_roles"
+PHASE_G_5_0_1_SEMANTIC_RELATIONSHIPS = "g_5_0_1_semantic_relationships"
+PHASE_G_5_1_ENGINEERING_OBJECTS = "g_5_1_engineering_objects"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -1403,6 +1410,214 @@ class OutputPaths:
         return self.phase_g_2_7_dir / "decision_algorithm.json"
 
     @property
+    def phase_g_3_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_3_BEAM_MATCHING
+
+    @property
+    def beam_matches_export(self) -> Path:
+        return self.phase_g_3_dir / "beam_matches.json"
+
+    @property
+    def beam_match_registry_export(self) -> Path:
+        return self.phase_g_3_dir / "beam_match_registry.json"
+
+    @property
+    def beam_match_validation_export(self) -> Path:
+        return self.phase_g_3_dir / "beam_matching_validation.json"
+
+    @property
+    def beam_matching_summary_export(self) -> Path:
+        return self.phase_g_3_dir / "beam_matching_summary.json"
+
+    @property
+    def beam_match_graph_export(self) -> Path:
+        return self.phase_g_3_dir / "beam_match_graph.json"
+
+    @property
+    def phase_g_4_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_4_ENGINEERING_REINFORCEMENT_CONTEXT
+
+    @property
+    def engineering_reinforcement_contexts_export(self) -> Path:
+        return self.phase_g_4_dir / "engineering_reinforcement_contexts.json"
+
+    @property
+    def engineering_reinforcement_context_registry_export(self) -> Path:
+        return self.phase_g_4_dir / "engineering_reinforcement_context_registry.json"
+
+    @property
+    def ownership_registry_export(self) -> Path:
+        return self.phase_g_4_dir / "ownership_registry.json"
+
+    @property
+    def ownership_relationships_export(self) -> Path:
+        return self.phase_g_4_dir / "ownership_relationships.json"
+
+    @property
+    def ownership_summary_export(self) -> Path:
+        return self.phase_g_4_dir / "ownership_summary.json"
+
+    @property
+    def phase_g4_validation_export(self) -> Path:
+        return self.phase_g_4_dir / "phase_g4_validation.json"
+
+    @property
+    def phase_g_4_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_4_1_ENGINEERING_REINFORCEMENT_CONTEXT
+
+    @property
+    def engineering_asset_registry_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_asset_registry.json"
+
+    @property
+    def engineering_reinforcement_lifecycle_registry_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_reinforcement_lifecycle_registry.json"
+
+    @property
+    def engineering_asset_validation_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_asset_validation.json"
+
+    @property
+    def engineering_reinforcement_lifecycle_validation_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_reinforcement_lifecycle_validation.json"
+
+    @property
+    def engineering_asset_summary_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_asset_summary.json"
+
+    @property
+    def phase_g_4_1_engineering_reinforcement_contexts_export(self) -> Path:
+        return self.phase_g_4_1_dir / "engineering_reinforcement_contexts.json"
+
+    @property
+    def phase_g_4_1_project_workspace_export(self) -> Path:
+        return self.phase_g_4_1_dir / "project_workspace.json"
+
+    @property
+    def phase_g_4_1_drawing_set_export(self) -> Path:
+        return self.phase_g_4_1_dir / "drawing_set.json"
+
+    @property
+    def phase_g_4_1_beam_engineering_context_export(self) -> Path:
+        return self.phase_g_4_1_dir / "beam_engineering_context.json"
+
+    @property
+    def phase_g_4_1_project_engineering_graph_export(self) -> Path:
+        return self.phase_g_4_1_dir / "project_engineering_graph.json"
+
+    @property
+    def phase_g_4_2_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_4_2_ENGINEERING_OBJECT_FRAMEWORK
+
+    @property
+    def engineering_object_registry_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_registry.json"
+
+    @property
+    def engineering_object_graph_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_graph.json"
+
+    @property
+    def engineering_object_relationships_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_relationships.json"
+
+    @property
+    def engineering_object_lifecycle_registry_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_lifecycle_registry.json"
+
+    @property
+    def engineering_object_summary_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_summary.json"
+
+    @property
+    def engineering_object_validation_export(self) -> Path:
+        return self.phase_g_4_2_dir / "engineering_object_validation.json"
+
+    @property
+    def phase_g_5_0_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_0_SEMANTIC_ROLES
+
+    @property
+    def phase_g_5_0_engineering_semantic_roles_export(self) -> Path:
+        return self.phase_g_5_0_dir / "engineering_semantic_roles.json"
+
+    @property
+    def phase_g_5_0_engineering_semantic_role_registry_export(self) -> Path:
+        return self.phase_g_5_0_dir / "engineering_semantic_role_registry.json"
+
+    @property
+    def phase_g_5_0_engineering_semantic_role_graph_export(self) -> Path:
+        return self.phase_g_5_0_dir / "engineering_semantic_role_graph.json"
+
+    @property
+    def phase_g_5_0_engineering_semantic_role_summary_export(self) -> Path:
+        return self.phase_g_5_0_dir / "engineering_semantic_role_summary.json"
+
+    @property
+    def phase_g_5_0_engineering_semantic_role_validation_export(self) -> Path:
+        return self.phase_g_5_0_dir / "engineering_semantic_role_validation.json"
+
+    @property
+    def phase_g_5_0_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_0_1_SEMANTIC_RELATIONSHIPS
+
+    @property
+    def phase_g_5_0_1_engineering_semantic_relationships_export(self) -> Path:
+        return self.phase_g_5_0_1_dir / "engineering_semantic_relationships.json"
+
+    @property
+    def phase_g_5_0_1_engineering_semantic_relationship_registry_export(self) -> Path:
+        return self.phase_g_5_0_1_dir / "engineering_semantic_relationship_registry.json"
+
+    @property
+    def phase_g_5_0_1_engineering_semantic_relationship_graph_export(self) -> Path:
+        return self.phase_g_5_0_1_dir / "engineering_semantic_relationship_graph.json"
+
+    @property
+    def phase_g_5_0_1_engineering_semantic_relationship_summary_export(self) -> Path:
+        return self.phase_g_5_0_1_dir / "engineering_semantic_relationship_summary.json"
+
+    @property
+    def phase_g_5_0_1_engineering_semantic_relationship_validation_export(self) -> Path:
+        return self.phase_g_5_0_1_dir / "engineering_semantic_relationship_validation.json"
+
+    @property
+    def phase_g_5_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_1_ENGINEERING_OBJECTS
+
+    @property
+    def phase_g_5_1_engineering_objects_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_objects.json"
+
+    @property
+    def phase_g_5_1_engineering_object_registry_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_registry.json"
+
+    @property
+    def phase_g_5_1_engineering_object_classification_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_classification.json"
+
+    @property
+    def phase_g_5_1_engineering_object_summary_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_summary.json"
+
+    @property
+    def phase_g_5_1_engineering_object_graph_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_graph.json"
+
+    @property
+    def phase_g_5_1_engineering_object_relationships_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_relationships.json"
+
+    @property
+    def phase_g_5_1_engineering_object_statistics_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_statistics.json"
+
+    @property
+    def phase_g_5_1_engineering_object_creation_validation_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_creation_validation.json"
+
+    @property
     def phase_g_2_reinforcement_workspace(self) -> Path:
         return self.phase_g_2_dir / "reinforcement_workspace.json"
 
@@ -1448,6 +1663,11 @@ class OutputPaths:
             PHASE_G_2_5_MATCH_CANDIDATES,
             PHASE_G_2_6_MATCH_DECISION,
             PHASE_G_2_7_MATCH_DECISION_QUALITY,
+            PHASE_G_3_BEAM_MATCHING,
+            PHASE_G_4_ENGINEERING_REINFORCEMENT_CONTEXT,
+            PHASE_G_4_1_ENGINEERING_REINFORCEMENT_CONTEXT,
+            PHASE_G_4_2_ENGINEERING_OBJECT_FRAMEWORK,
+            PHASE_G_5_1_ENGINEERING_OBJECTS,
         ):
             (self.phase_g_dir / subdir).mkdir(parents=True, exist_ok=True)
 
