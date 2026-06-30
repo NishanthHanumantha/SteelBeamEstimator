@@ -781,3 +781,578 @@ class BeamGeometryDebugExporter:
 
         doc.saveas(str(output_path))
         logger.info("Phase G.1.3 drawing set state debug appended to {}", output_path)
+
+    def export_reinforcement_geometry(
+        self,
+        model: dict[str, Any],
+        output_path: Path,
+    ) -> None:
+        """Append Phase G.2 reinforcement geometry debug layers."""
+        try:
+            doc = ezdxf.readfile(str(output_path))
+        except Exception:
+            doc = ezdxf.new("R2010")
+
+        layers = (
+            "DEBUG_REINF_REGIONS",
+            "DEBUG_REINF_SKETCHES",
+            "DEBUG_REINF_TEXT",
+            "DEBUG_REINF_LEADERS",
+            "DEBUG_REINF_BLOCKS",
+            "DEBUG_REINF_RELATIONSHIPS",
+            "DEBUG_REGION_BOUNDARY",
+            "DEBUG_REGION_CONTINUITY",
+            "DEBUG_REGION_WHITESPACE",
+            "DEBUG_REGION_GROWTH",
+            "DEBUG_REGION_SEEDS",
+            "DEBUG_DETAIL_TYPE",
+            "DEBUG_DETAIL_VIEWS",
+            "DEBUG_DUPLICATE_MARKS",
+            "DEBUG_VIEW_BOUNDARIES",
+            "DEBUG_DETAIL_CONTEXT",
+            "DEBUG_DETAIL_CONTEXT_BOUNDARY",
+            "DEBUG_DETAIL_CONTEXT_RELATIONSHIPS",
+            "DEBUG_DETAIL_IDENTITY",
+            "DEBUG_DETAIL_FINGERPRINT",
+            "DEBUG_DETAIL_STATUS",
+            "DEBUG_MATCH_CANDIDATES",
+            "DEBUG_CANDIDATE_SCORE",
+            "DEBUG_CANDIDATE_RANK",
+            "DEBUG_MATCH_DECISION",
+            "DEBUG_DECISION_REASON",
+            "DEBUG_MANUAL_REVIEW",
+            "DEBUG_CONFIDENCE_LEVEL",
+            "DEBUG_DECISION_QUALITY",
+            "DEBUG_ALGORITHM_VERSION",
+        )
+        for layer in layers:
+            if layer not in doc.layers:
+                doc.layers.add(layer)
+
+        msp = doc.modelspace()
+        drawing_model = model.get("reinforcement_drawing_model", {})
+
+        msp.add_text(
+            (
+                f"G.2.7 Reinforcement Geometry — regions={drawing_model.get('region_count', 0)} "
+                f"contexts={drawing_model.get('detail_context_count', 0)} "
+                f"identities={drawing_model.get('detail_identity_count', 0)} "
+                f"candidates={drawing_model.get('beam_match_candidate_count', 0)} "
+                f"decisions={drawing_model.get('match_decision_count', 0)} "
+                f"views={drawing_model.get('detail_view_count', 0)} "
+                f"sketches={drawing_model.get('sketch_count', 0)}"
+            ),
+            dxfattribs={
+                "layer": "DEBUG_REINF_REGIONS",
+                "height": 400.0,
+                "insert": (-28000.0, 16000.0),
+                "color": 1,
+            },
+        )
+
+        for region in drawing_model.get("regions", []):
+            box = region.get("bbox", {})
+            if not box:
+                continue
+            msp.add_lwpolyline(
+                [
+                    (box["min_x"], box["min_y"]),
+                    (box["max_x"], box["min_y"]),
+                    (box["max_x"], box["max_y"]),
+                    (box["min_x"], box["max_y"]),
+                    (box["min_x"], box["min_y"]),
+                ],
+                dxfattribs={"layer": "DEBUG_REINF_REGIONS", "color": 1},
+            )
+            msp.add_lwpolyline(
+                [
+                    (box["min_x"], box["min_y"]),
+                    (box["max_x"], box["min_y"]),
+                    (box["max_x"], box["max_y"]),
+                    (box["min_x"], box["max_y"]),
+                    (box["min_x"], box["min_y"]),
+                ],
+                dxfattribs={"layer": "DEBUG_REGION_BOUNDARY", "color": 30},
+            )
+            header = region.get("header_bbox", {})
+            if header:
+                msp.add_circle(
+                    (
+                        (header["min_x"] + header["max_x"]) / 2.0,
+                        (header["min_y"] + header["max_y"]) / 2.0,
+                    ),
+                    radius=350.0,
+                    dxfattribs={"layer": "DEBUG_REGION_SEEDS", "color": 2},
+                )
+            label = (
+                f"{region.get('geometry_id', '?')} {region.get('label', '')} "
+                f"{region.get('detail_type', '')} views={region.get('view_count', 0)} "
+                f"conf={region.get('engineering_confidence', 0):.2f}"
+            )
+            msp.add_text(
+                label,
+                dxfattribs={
+                    "layer": "DEBUG_REINF_REGIONS",
+                    "height": 220.0,
+                    "insert": (box["min_x"], box["max_y"] + 200),
+                    "color": 1,
+                },
+            )
+            msp.add_text(
+                region.get("detail_type", ""),
+                dxfattribs={
+                    "layer": "DEBUG_DETAIL_TYPE",
+                    "height": 180.0,
+                    "insert": (box["min_x"], box["max_y"] + 500),
+                    "color": 6,
+                },
+            )
+            if region.get("duplicate_mark_detected"):
+                msp.add_circle(
+                    (
+                        (box["min_x"] + box["max_x"]) / 2.0,
+                        (box["min_y"] + box["max_y"]) / 2.0,
+                    ),
+                    radius=500.0,
+                    dxfattribs={"layer": "DEBUG_DUPLICATE_MARKS", "color": 1},
+                )
+            for view_id in region.get("views", []):
+                msp.add_text(
+                    view_id,
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_VIEWS",
+                        "height": 150.0,
+                        "insert": (box["min_x"] + 200, box["min_y"] - 200),
+                        "color": 5,
+                    },
+                )
+            debug = region.get("detection_debug", {})
+            for link in debug.get("continuity_links", []):
+                mid_x = link.get("midpoint_x")
+                band = link.get("detail_band", {})
+                if mid_x is None or not band:
+                    continue
+                y = (band.get("min_y", 0) + band.get("max_y", 0)) / 2.0
+                msp.add_line(
+                    (mid_x, band.get("min_y", y)),
+                    (mid_x, band.get("max_y", y)),
+                    dxfattribs={"layer": "DEBUG_REGION_CONTINUITY", "color": 3},
+                )
+                msp.add_text(
+                    f"LINK {link.get('from_mark','?')}->{link.get('to_mark','?')} "
+                    f"score={link.get('continuity_score', 0):.2f}",
+                    dxfattribs={
+                        "layer": "DEBUG_REGION_CONTINUITY",
+                        "height": 160.0,
+                        "insert": (mid_x + 200, y),
+                        "color": 3,
+                    },
+                )
+            for split in debug.get("whitespace_splits", []):
+                mid_x = split.get("midpoint_x")
+                if mid_x is None:
+                    continue
+                msp.add_line(
+                    (mid_x, box["min_y"]),
+                    (mid_x, box["max_y"]),
+                    dxfattribs={"layer": "DEBUG_REGION_WHITESPACE", "color": 1},
+                )
+            for mark in debug.get("growth_path", []):
+                msp.add_text(
+                    mark,
+                    dxfattribs={
+                        "layer": "DEBUG_REGION_GROWTH",
+                        "height": 140.0,
+                        "insert": (box["min_x"] + 400, box["min_y"] - 400),
+                        "color": 4,
+                    },
+                )
+
+        for view in drawing_model.get("detail_views", []):
+            view_box = view.get("bbox", {})
+            if not view_box:
+                continue
+            msp.add_lwpolyline(
+                [
+                    (view_box["min_x"], view_box["min_y"]),
+                    (view_box["max_x"], view_box["min_y"]),
+                    (view_box["max_x"], view_box["max_y"]),
+                    (view_box["min_x"], view_box["max_y"]),
+                    (view_box["min_x"], view_box["min_y"]),
+                ],
+                dxfattribs={"layer": "DEBUG_VIEW_BOUNDARIES", "color": 140},
+            )
+            msp.add_text(
+                f"{view.get('view_id', '?')} {view.get('beam_mark', '')}",
+                dxfattribs={
+                    "layer": "DEBUG_DETAIL_VIEWS",
+                    "height": 140.0,
+                    "insert": (view_box["min_x"], view_box["max_y"] + 120),
+                    "color": 5,
+                },
+            )
+
+        region_bbox_by_id = {
+            r.get("geometry_id"): r.get("bbox", {})
+            for r in drawing_model.get("regions", [])
+        }
+
+        for ctx in drawing_model.get("detail_contexts", []):
+            ctx_id = ctx.get("detail_context_id", "?")
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            if region_box:
+                msp.add_lwpolyline(
+                    [
+                        (region_box["min_x"], region_box["min_y"]),
+                        (region_box["max_x"], region_box["min_y"]),
+                        (region_box["max_x"], region_box["max_y"]),
+                        (region_box["min_x"], region_box["max_y"]),
+                        (region_box["min_x"], region_box["min_y"]),
+                    ],
+                    dxfattribs={"layer": "DEBUG_DETAIL_CONTEXT_BOUNDARY", "color": 200},
+                )
+            marks = "/".join(ctx.get("beam_marks", []))
+            label = (
+                f"{ctx_id} {ctx.get('detail_type', '')} {marks} "
+                f"views={ctx.get('view_count', 0)}"
+            )
+            if region_box:
+                msp.add_text(
+                    label,
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_CONTEXT",
+                        "height": 200.0,
+                        "insert": (region_box["min_x"], region_box["max_y"] + 800),
+                        "color": 6,
+                    },
+                )
+            for view_id in ctx.get("view_ids", []):
+                msp.add_text(
+                    f"{ctx_id} -> {view_id}",
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_CONTEXT_RELATIONSHIPS",
+                        "height": 120.0,
+                        "insert": (
+                            region_box.get("min_x", 0) + 400,
+                            region_box.get("min_y", 0) - 600,
+                        ),
+                        "color": 4,
+                    },
+                )
+
+        fp_by_identity = {
+            fp.get("detail_identity_id"): fp
+            for fp in drawing_model.get("detail_fingerprints", [])
+        }
+
+        for ident in drawing_model.get("detail_identities", []):
+            ident_id = ident.get("detail_identity_id", "?")
+            ctx_id = ident.get("detail_context_id", "")
+            ctx = next(
+                (
+                    c
+                    for c in drawing_model.get("detail_contexts", [])
+                    if c.get("detail_context_id") == ctx_id
+                ),
+                {},
+            )
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            fp = fp_by_identity.get(ident_id, {})
+            short_hash = str(fp.get("overall_hash", ""))[:8]
+
+            primary = ident.get("primary_beam_mark", "")
+            secondary = "/".join(ident.get("secondary_beam_marks", []))
+            marks = primary + (f"/{secondary}" if secondary else "")
+
+            if region_box:
+                msp.add_text(
+                    f"{ident_id} {ident.get('detail_type', '')} [{marks}]",
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_IDENTITY",
+                        "height": 220.0,
+                        "insert": (region_box["min_x"], region_box["max_y"] + 1100),
+                        "color": 2,
+                    },
+                )
+                msp.add_text(
+                    f"FP:{short_hash} entities={fp.get('entity_count', 0)}",
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_FINGERPRINT",
+                        "height": 160.0,
+                        "insert": (region_box["min_x"], region_box["max_y"] + 1350),
+                        "color": 3,
+                    },
+                )
+                msp.add_text(
+                    f"STATUS:{ident.get('matching_status', '?')} state={ident.get('matching_state', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_DETAIL_STATUS",
+                        "height": 180.0,
+                        "insert": (region_box["min_x"], region_box["max_y"] + 1550),
+                        "color": 1,
+                    },
+                )
+
+        candidates_by_identity: dict[str, list] = {}
+        for cand in drawing_model.get("beam_match_candidates", []):
+            iid = cand.get("detail_identity_id", "")
+            candidates_by_identity.setdefault(iid, []).append(cand)
+
+        for ident in drawing_model.get("detail_identities", []):
+            ident_id = ident.get("detail_identity_id", "?")
+            ctx_id = ident.get("detail_context_id", "")
+            ctx = next(
+                (
+                    c
+                    for c in drawing_model.get("detail_contexts", [])
+                    if c.get("detail_context_id") == ctx_id
+                ),
+                {},
+            )
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            if not region_box:
+                continue
+            y_offset = 1800.0
+            for cand in sorted(
+                candidates_by_identity.get(ident_id, []),
+                key=lambda c: c.get("metadata", {}).get("rank", 99),
+            ):
+                rank = cand.get("metadata", {}).get("rank", "?")
+                msp.add_text(
+                    f"{ident_id} -> {cand.get('beam_context_id', '?')} ({cand.get('beam_mark', '')})",
+                    dxfattribs={
+                        "layer": "DEBUG_MATCH_CANDIDATES",
+                        "height": 150.0,
+                        "insert": (region_box["min_x"], region_box["max_y"] + y_offset),
+                        "color": 5,
+                    },
+                )
+                msp.add_text(
+                    f"score={cand.get('score', 0):.2f} conf={cand.get('confidence', 0):.2f}",
+                    dxfattribs={
+                        "layer": "DEBUG_CANDIDATE_SCORE",
+                        "height": 130.0,
+                        "insert": (region_box["min_x"] + 400, region_box["max_y"] + y_offset),
+                        "color": 3,
+                    },
+                )
+                msp.add_text(
+                    f"rank={rank}",
+                    dxfattribs={
+                        "layer": "DEBUG_CANDIDATE_RANK",
+                        "height": 130.0,
+                        "insert": (region_box["min_x"] + 900, region_box["max_y"] + y_offset),
+                        "color": 4,
+                    },
+                )
+                y_offset += 280.0
+
+        decision_by_identity = {
+            d.get("detail_identity_id"): d
+            for d in drawing_model.get("match_decisions", [])
+        }
+
+        for ident in drawing_model.get("detail_identities", []):
+            ident_id = ident.get("detail_identity_id", "?")
+            decision = decision_by_identity.get(ident_id, {})
+            if not decision:
+                continue
+            ctx_id = ident.get("detail_context_id", "")
+            ctx = next(
+                (
+                    c
+                    for c in drawing_model.get("detail_contexts", [])
+                    if c.get("detail_context_id") == ctx_id
+                ),
+                {},
+            )
+            region_box = region_bbox_by_id.get(ctx.get("region_id", ""), {})
+            if not region_box:
+                continue
+            base_y = region_box["max_y"] + 2400.0
+            msp.add_text(
+                f"{ident_id} -> {decision.get('decision_id', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_DECISION",
+                    "height": 160.0,
+                    "insert": (region_box["min_x"], base_y),
+                    "color": 6,
+                },
+            )
+            msp.add_text(
+                f"rec={decision.get('recommended_beam_context_id', '?')} "
+                f"conf={decision.get('confidence', 0):.2f}",
+                dxfattribs={
+                    "layer": "DEBUG_MATCH_DECISION",
+                    "height": 140.0,
+                    "insert": (region_box["min_x"], base_y + 200),
+                    "color": 2,
+                },
+            )
+            msp.add_text(
+                f"reason={decision.get('decision_reason', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_DECISION_REASON",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], base_y + 380),
+                    "color": 3,
+                },
+            )
+            review = "YES" if decision.get("requires_manual_review") else "NO"
+            msp.add_text(
+                f"manual_review={review} status={decision.get('decision_status', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_MANUAL_REVIEW",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], base_y + 540),
+                    "color": 1,
+                },
+            )
+            quality = decision.get("decision_quality", {})
+            level = decision.get("confidence_level", quality.get("confidence_level", "?"))
+            qstatus = quality.get("quality_status", "?")
+            algo_ver = decision.get("algorithm_info", {}).get("algorithm_version", "?")
+            msp.add_text(
+                f"level={level} conf={decision.get('confidence', 0):.2f}",
+                dxfattribs={
+                    "layer": "DEBUG_CONFIDENCE_LEVEL",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], base_y + 720),
+                    "color": 5,
+                },
+            )
+            msp.add_text(
+                f"quality={qstatus}",
+                dxfattribs={
+                    "layer": "DEBUG_DECISION_QUALITY",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], base_y + 900),
+                    "color": 6,
+                },
+            )
+            msp.add_text(
+                f"algo_v={algo_ver}",
+                dxfattribs={
+                    "layer": "DEBUG_ALGORITHM_VERSION",
+                    "height": 130.0,
+                    "insert": (region_box["min_x"], base_y + 1080),
+                    "color": 4,
+                },
+            )
+
+        for sketch in drawing_model.get("sketches", []):
+            box = sketch.get("bbox", {})
+            if not box:
+                continue
+            msp.add_lwpolyline(
+                [
+                    (box["min_x"], box["min_y"]),
+                    (box["max_x"], box["max_y"]),
+                ],
+                dxfattribs={"layer": "DEBUG_REINF_SKETCHES", "color": 3},
+            )
+            cx = (box["min_x"] + box["max_x"]) / 2.0
+            cy = (box["min_y"] + box["max_y"]) / 2.0
+            msp.add_text(
+                f"{sketch.get('geometry_id', '?')} {sketch.get('type', '')}",
+                dxfattribs={
+                    "layer": "DEBUG_REINF_SKETCHES",
+                    "height": 180.0,
+                    "insert": (cx, cy),
+                    "color": 3,
+                },
+            )
+
+        for text in drawing_model.get("text_objects", []):
+            box = text.get("bbox", {})
+            if not box:
+                continue
+            msp.add_text(
+                f"{text.get('geometry_id', '?')}",
+                dxfattribs={
+                    "layer": "DEBUG_REINF_TEXT",
+                    "height": 120.0,
+                    "insert": (box["min_x"], box["min_y"]),
+                    "color": 2,
+                },
+            )
+
+        for leader in drawing_model.get("leaders", []):
+            start = leader.get("start", {})
+            end = leader.get("end", {})
+            if start and end:
+                msp.add_line(
+                    (start.get("x", 0), start.get("y", 0)),
+                    (end.get("x", 0), end.get("y", 0)),
+                    dxfattribs={"layer": "DEBUG_REINF_LEADERS", "color": 4},
+                )
+                msp.add_text(
+                    leader.get("geometry_id", "?"),
+                    dxfattribs={
+                        "layer": "DEBUG_REINF_LEADERS",
+                        "height": 120.0,
+                        "insert": (start.get("x", 0), start.get("y", 0)),
+                        "color": 4,
+                    },
+                )
+
+        for block in drawing_model.get("blocks", []):
+            insertion = block.get("insertion", {})
+            msp.add_circle(
+                (insertion.get("x", 0), insertion.get("y", 0)),
+                radius=250.0,
+                dxfattribs={"layer": "DEBUG_REINF_BLOCKS", "color": 6},
+            )
+            msp.add_text(
+                f"{block.get('geometry_id', '?')} {block.get('name', '')}",
+                dxfattribs={
+                    "layer": "DEBUG_REINF_BLOCKS",
+                    "height": 150.0,
+                    "insert": (insertion.get("x", 0), insertion.get("y", 0) + 300),
+                    "color": 6,
+                },
+            )
+
+        for rel in drawing_model.get("relationships", [])[:200]:
+            source_id = rel.get("source_id", "")
+            target = None
+            for collection in (
+                drawing_model.get("regions", []),
+                drawing_model.get("sketches", []),
+                drawing_model.get("text_objects", []),
+            ):
+                for item in collection:
+                    if item.get("geometry_id") == source_id:
+                        box = item.get("bbox", {})
+                        if box:
+                            target = (
+                                (box["min_x"] + box["max_x"]) / 2.0,
+                                (box["min_y"] + box["max_y"]) / 2.0,
+                            )
+                        break
+                if target:
+                    break
+            if target:
+                msp.add_text(
+                    f"{rel.get('relationship', '?')}",
+                    dxfattribs={
+                        "layer": "DEBUG_REINF_RELATIONSHIPS",
+                        "height": 100.0,
+                        "insert": target,
+                        "color": 5,
+                    },
+                )
+
+        validation = model.get("reinforcement_drawing_validation", {})
+        msp.add_text(
+            f"G2_VALIDATION:{validation.get('status', '?')}",
+            dxfattribs={
+                "layer": "DEBUG_REINF_RELATIONSHIPS",
+                "height": 280.0,
+                "insert": (-28000.0, 16500.0),
+                "color": 1 if validation.get("status") == "FAIL" else 3,
+            },
+        )
+
+        doc.saveas(str(output_path))
+        logger.info("Phase G.2.1 reinforcement geometry debug appended to {}", output_path)

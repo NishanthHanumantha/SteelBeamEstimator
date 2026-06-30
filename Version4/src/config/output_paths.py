@@ -49,6 +49,12 @@ PHASE_G_1_REINFORCEMENT_LOADING = "g_1_reinforcement_loading"
 PHASE_G_1_1_DRAWING_IDENTITY = "g_1_1_drawing_identity"
 PHASE_G_1_2_DRAWING_SET = "g_1_2_drawing_set"
 PHASE_G_1_3_DRAWING_SET_STATE = "g_1_3_drawing_set_state"
+PHASE_G_2_REINFORCEMENT_DRAWING = "g_2_reinforcement_drawing"
+PHASE_G_2_3_DETAIL_CONTEXT = "g_2_3_detail_context"
+PHASE_G_2_4_DETAIL_IDENTITY = "g_2_4_detail_identity"
+PHASE_G_2_5_MATCH_CANDIDATES = "g_2_5_match_candidates"
+PHASE_G_2_6_MATCH_DECISION = "g_2_6_match_decision"
+PHASE_G_2_7_MATCH_DECISION_QUALITY = "g_2_7_match_decision_quality"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -1249,6 +1255,166 @@ class OutputPaths:
         return self.phase_g_dir / PHASE_G_1_3_DRAWING_SET_STATE
 
     @property
+    def phase_g_2_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_REINFORCEMENT_DRAWING
+
+    @property
+    def reinforcement_drawing_model_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_drawing_model.json"
+
+    @property
+    def reinforcement_regions_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_regions.json"
+
+    @property
+    def reinforcement_sketches_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_sketches.json"
+
+    @property
+    def reinforcement_text_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_text.json"
+
+    @property
+    def reinforcement_leaders_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_leaders.json"
+
+    @property
+    def reinforcement_blocks_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_blocks.json"
+
+    @property
+    def reinforcement_relationships_export(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_relationships.json"
+
+    @property
+    def reinforcement_drawing_validation(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_validation.json"
+
+    @property
+    def reinforcement_detail_views_export(self) -> Path:
+        return self.phase_g_2_dir / "detail_views.json"
+
+    @property
+    def phase_g_2_3_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_3_DETAIL_CONTEXT
+
+    @property
+    def detail_contexts_export(self) -> Path:
+        return self.phase_g_2_3_dir / "detail_contexts.json"
+
+    @property
+    def detail_context_registry_export(self) -> Path:
+        return self.phase_g_2_3_dir / "detail_context_registry.json"
+
+    @property
+    def detail_context_validation_export(self) -> Path:
+        return self.phase_g_2_3_dir / "detail_context_validation.json"
+
+    @property
+    def detail_context_relationships_export(self) -> Path:
+        return self.phase_g_2_3_dir / "detail_context_relationships.json"
+
+    @property
+    def phase_g_2_4_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_4_DETAIL_IDENTITY
+
+    @property
+    def detail_identities_export(self) -> Path:
+        return self.phase_g_2_4_dir / "detail_identity.json"
+
+    @property
+    def detail_identity_registry_export(self) -> Path:
+        return self.phase_g_2_4_dir / "detail_identity_registry.json"
+
+    @property
+    def detail_fingerprints_export(self) -> Path:
+        return self.phase_g_2_4_dir / "detail_fingerprints.json"
+
+    @property
+    def detail_fingerprint_registry_export(self) -> Path:
+        return self.phase_g_2_4_dir / "detail_fingerprint_registry.json"
+
+    @property
+    def detail_identity_validation_export(self) -> Path:
+        return self.phase_g_2_4_dir / "detail_identity_validation.json"
+
+    @property
+    def phase_g_2_5_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_5_MATCH_CANDIDATES
+
+    @property
+    def beam_match_candidates_export(self) -> Path:
+        return self.phase_g_2_5_dir / "beam_match_candidates.json"
+
+    @property
+    def beam_candidate_registry_export(self) -> Path:
+        return self.phase_g_2_5_dir / "beam_candidate_registry.json"
+
+    @property
+    def beam_candidate_ranking_export(self) -> Path:
+        return self.phase_g_2_5_dir / "beam_candidate_ranking.json"
+
+    @property
+    def beam_candidate_validation_export(self) -> Path:
+        return self.phase_g_2_5_dir / "beam_candidate_validation.json"
+
+    @property
+    def candidate_graph_export(self) -> Path:
+        return self.phase_g_2_5_dir / "candidate_graph.json"
+
+    @property
+    def phase_g_2_6_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_6_MATCH_DECISION
+
+    @property
+    def match_decisions_export(self) -> Path:
+        return self.phase_g_2_6_dir / "match_decisions.json"
+
+    @property
+    def match_decision_registry_export(self) -> Path:
+        return self.phase_g_2_6_dir / "match_decision_registry.json"
+
+    @property
+    def match_decision_validation_export(self) -> Path:
+        return self.phase_g_2_6_dir / "match_decision_validation.json"
+
+    @property
+    def match_decision_graph_export(self) -> Path:
+        return self.phase_g_2_6_dir / "match_decision_graph.json"
+
+    @property
+    def phase_g_2_7_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_2_7_MATCH_DECISION_QUALITY
+
+    @property
+    def match_decision_quality_export(self) -> Path:
+        return self.phase_g_2_7_dir / "match_decision_quality.json"
+
+    @property
+    def match_decision_quality_registry_export(self) -> Path:
+        return self.phase_g_2_7_dir / "match_decision_quality_registry.json"
+
+    @property
+    def match_decision_quality_validation_export(self) -> Path:
+        return self.phase_g_2_7_dir / "match_decision_quality_validation.json"
+
+    @property
+    def decision_algorithm_export(self) -> Path:
+        return self.phase_g_2_7_dir / "decision_algorithm.json"
+
+    @property
+    def phase_g_2_reinforcement_workspace(self) -> Path:
+        return self.phase_g_2_dir / "reinforcement_workspace.json"
+
+    @property
+    def phase_g_2_project_engineering_graph(self) -> Path:
+        return self.phase_g_2_dir / "project_engineering_graph.json"
+
+    @property
+    def phase_g_2_drawing_registry(self) -> Path:
+        return self.phase_g_2_dir / "drawing_registry.json"
+
+    @property
     def drawing_set_state_export(self) -> Path:
         return self.phase_g_1_3_dir / "drawing_set_state.json"
 
@@ -1276,6 +1442,12 @@ class OutputPaths:
             PHASE_G_1_1_DRAWING_IDENTITY,
             PHASE_G_1_2_DRAWING_SET,
             PHASE_G_1_3_DRAWING_SET_STATE,
+            PHASE_G_2_REINFORCEMENT_DRAWING,
+            PHASE_G_2_3_DETAIL_CONTEXT,
+            PHASE_G_2_4_DETAIL_IDENTITY,
+            PHASE_G_2_5_MATCH_CANDIDATES,
+            PHASE_G_2_6_MATCH_DECISION,
+            PHASE_G_2_7_MATCH_DECISION_QUALITY,
         ):
             (self.phase_g_dir / subdir).mkdir(parents=True, exist_ok=True)
 

@@ -32,6 +32,8 @@ from src.project.drawing_identity_builder import DrawingIdentityBuilder
 from src.project.drawing_set_builder import DrawingSetBuilder
 from src.project.drawing_set_lifecycle import DrawingSetLifecycleBuilder
 from src.reinforcement.reinforcement_loader import ReinforcementLoader
+from src.reinforcement.reinforcement_geometry_pipeline import ReinforcementGeometryPipeline
+from src.reinforcement.match_decision_quality_registry import MatchDecisionQualityRegistry
 
 DEFAULT_INPUT = Path("data/framing")
 
@@ -151,6 +153,14 @@ class BeamGeometryPipeline:
         model = DrawingSetLifecycleBuilder(config).build_model(model, self._outputs.root)
         drawing_set_state_validation = model.get("drawing_set_state_validation", {})
 
+        model = ReinforcementGeometryPipeline(config, project_root).build_model(model)
+        reinforcement_drawing_validation = model.get("reinforcement_drawing_validation", {})
+        detail_context_validation = model.get("detail_context_validation", {})
+        detail_identity_validation = model.get("detail_identity_validation", {})
+        beam_candidate_validation = model.get("beam_candidate_validation", {})
+        match_decision_validation = model.get("match_decision_validation", {})
+        match_decision_quality_validation = model.get("match_decision_quality_validation", {})
+
         summary = self._build_summary(
             model,
             f1_validation,
@@ -165,6 +175,7 @@ class BeamGeometryPipeline:
             drawing_identity_validation,
             drawing_set_validation,
             drawing_set_state_validation,
+            reinforcement_drawing_validation,
             resolver.stats,
             support_resolver.stats,
             section_builder.stats,
@@ -418,6 +429,171 @@ class BeamGeometryPipeline:
             model.get("project_engineering_graph", {}),
         )
 
+        drawing_model = model.get("reinforcement_drawing_model", {})
+        self._write_json(self._outputs.reinforcement_drawing_model_export, drawing_model)
+        self._write_json(
+            self._outputs.reinforcement_regions_export,
+            {"phase": "Phase G.2.2", "regions": drawing_model.get("regions", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_detail_views_export,
+            {"phase": "Phase G.2.2", "detail_views": drawing_model.get("detail_views", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_sketches_export,
+            {"phase": "Phase G.2", "sketches": drawing_model.get("sketches", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_text_export,
+            {"phase": "Phase G.2", "text_objects": drawing_model.get("text_objects", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_leaders_export,
+            {"phase": "Phase G.2", "leaders": drawing_model.get("leaders", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_blocks_export,
+            {"phase": "Phase G.2", "blocks": drawing_model.get("blocks", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_relationships_export,
+            {"phase": "Phase G.2", "relationships": drawing_model.get("relationships", [])},
+        )
+        self._write_json(
+            self._outputs.reinforcement_drawing_validation,
+            reinforcement_drawing_validation,
+        )
+        detail_context_validation = model.get("detail_context_validation", {})
+        self._write_json(
+            self._outputs.detail_contexts_export,
+            {
+                "phase": "Phase G.2.3",
+                "detail_contexts": drawing_model.get("detail_contexts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.detail_context_registry_export,
+            model.get("detail_context_registry", {}),
+        )
+        self._write_json(
+            self._outputs.detail_context_validation_export,
+            detail_context_validation,
+        )
+        self._write_json(
+            self._outputs.detail_context_relationships_export,
+            {
+                "phase": "Phase G.2.3",
+                "relationships": drawing_model.get("detail_context_relationships", []),
+            },
+        )
+        self._write_json(
+            self._outputs.detail_identities_export,
+            {
+                "phase": "Phase G.2.4",
+                "detail_identities": drawing_model.get("detail_identities", []),
+            },
+        )
+        self._write_json(
+            self._outputs.detail_identity_registry_export,
+            model.get("detail_identity_registry", {}),
+        )
+        self._write_json(
+            self._outputs.detail_fingerprints_export,
+            {
+                "phase": "Phase G.2.4",
+                "detail_fingerprints": drawing_model.get("detail_fingerprints", []),
+            },
+        )
+        self._write_json(
+            self._outputs.detail_fingerprint_registry_export,
+            model.get("detail_fingerprint_registry", {}),
+        )
+        self._write_json(
+            self._outputs.detail_identity_validation_export,
+            detail_identity_validation,
+        )
+        self._write_json(
+            self._outputs.beam_match_candidates_export,
+            {
+                "phase": "Phase G.2.5",
+                "beam_match_candidates": drawing_model.get("beam_match_candidates", []),
+            },
+        )
+        self._write_json(
+            self._outputs.beam_candidate_registry_export,
+            model.get("beam_candidate_registry", {}),
+        )
+        self._write_json(
+            self._outputs.beam_candidate_ranking_export,
+            model.get("beam_candidate_ranking", {}),
+        )
+        self._write_json(
+            self._outputs.beam_candidate_validation_export,
+            beam_candidate_validation,
+        )
+        self._write_json(
+            self._outputs.candidate_graph_export,
+            model.get("candidate_graph", {}),
+        )
+        self._write_json(
+            self._outputs.match_decisions_export,
+            {
+                "phase": "Phase G.2.6",
+                "match_decisions": drawing_model.get("match_decisions", []),
+            },
+        )
+        self._write_json(
+            self._outputs.match_decision_registry_export,
+            model.get("match_decision_registry", {}),
+        )
+        self._write_json(
+            self._outputs.match_decision_validation_export,
+            match_decision_validation,
+        )
+        self._write_json(
+            self._outputs.match_decision_graph_export,
+            model.get("match_decision_graph", {}),
+        )
+        self._write_json(
+            self._outputs.match_decision_quality_export,
+            MatchDecisionQualityRegistry.build_quality_export(
+                drawing_model.get("match_decisions", [])
+            ),
+        )
+        self._write_json(
+            self._outputs.match_decision_quality_registry_export,
+            model.get("match_decision_quality_registry", {}),
+        )
+        self._write_json(
+            self._outputs.match_decision_quality_validation_export,
+            match_decision_quality_validation,
+        )
+        self._write_json(
+            self._outputs.decision_algorithm_export,
+            model.get("decision_algorithm", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_2_reinforcement_workspace,
+            {
+                "phase": "Phase G.2",
+                "workspace_count": len(model.get("reinforcement_workspaces", [])),
+                "workspaces": model.get("reinforcement_workspaces", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_2_project_engineering_graph,
+            model.get("project_engineering_graph", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_2_drawing_registry,
+            model.get("drawing_registry", {}),
+        )
+        self._write_json(self._outputs.reinforcement_workspace_export, {
+            "phase": model.get("phase", "Phase G.2"),
+            "workspace_count": len(model.get("reinforcement_workspaces", [])),
+            "workspaces": model.get("reinforcement_workspaces", []),
+        })
+
         if config.get("generate_debug_dxf", True):
             dr = config.get("dimension_resolution", {})
             sr = config.get("support_resolution", {})
@@ -464,9 +640,15 @@ class BeamGeometryPipeline:
                     model,
                     self._outputs.phase_g_debug_dxf,
                 )
+            rg_cfg = config.get("reinforcement_geometry", {})
+            if bool(rg_cfg.get("generate_debug_reinforcement_geometry", True)):
+                BeamGeometryDebugExporter().export_reinforcement_geometry(
+                    model,
+                    self._outputs.phase_g_debug_dxf,
+                )
 
         logger.info(
-            "Phase F complete — F.1 {}, F.2 {}, F.3 support {}, F.3 section {}, F.4 {}, F.5 {}, F.6 {}, F.7 {}, G.1 {}, G.1.1 {}, G.1.2 {}, G.1.3 {}",
+            "Phase F complete — F.1 {}, F.2 {}, F.3 support {}, F.3 section {}, F.4 {}, F.5 {}, F.6 {}, F.7 {}, G.1 {}, G.1.1 {}, G.1.2 {}, G.1.3 {}, G.2 {}",
             f1_validation["status"],
             dimension_validation["status"],
             support_validation["status"],
@@ -479,6 +661,7 @@ class BeamGeometryPipeline:
             drawing_identity_validation.get("status", "SKIP"),
             drawing_set_validation.get("status", "SKIP"),
             drawing_set_state_validation.get("status", "SKIP"),
+            reinforcement_drawing_validation.get("status", "SKIP"),
         )
         return {
             "model": model,
@@ -494,6 +677,12 @@ class BeamGeometryPipeline:
             "drawing_identity_validation": drawing_identity_validation,
             "drawing_set_validation": drawing_set_validation,
             "drawing_set_state_validation": drawing_set_state_validation,
+            "reinforcement_drawing_validation": reinforcement_drawing_validation,
+            "detail_context_validation": detail_context_validation,
+            "detail_identity_validation": detail_identity_validation,
+            "beam_candidate_validation": beam_candidate_validation,
+            "match_decision_validation": match_decision_validation,
+            "match_decision_quality_validation": match_decision_quality_validation,
             "summary": summary,
             "phase_g_summary": phase_g_summary,
         }
@@ -623,6 +812,7 @@ class BeamGeometryPipeline:
         drawing_identity_validation: dict[str, Any],
         drawing_set_validation: dict[str, Any],
         drawing_set_state_validation: dict[str, Any],
+        reinforcement_drawing_validation: dict[str, Any],
         resolver_stats: dict[str, int],
         support_stats: dict[str, int],
         section_stats: dict[str, int],
@@ -656,6 +846,7 @@ class BeamGeometryPipeline:
             "drawing_identity_validation_status": drawing_identity_validation.get("status", "SKIP"),
             "drawing_set_validation_status": drawing_set_validation.get("status", "SKIP"),
             "drawing_set_state_validation_status": drawing_set_state_validation.get("status", "SKIP"),
+            "reinforcement_drawing_validation_status": reinforcement_drawing_validation.get("status", "SKIP"),
             "dimension_resolution": resolver_stats,
             "support_resolution": support_stats,
             "beam_section": section_stats,
@@ -677,10 +868,14 @@ class BeamGeometryPipeline:
         reg = model.get("reinforcement_registry", {})
         drawing_reg = model.get("drawing_registry", {})
         set_reg = model.get("drawing_set_registry", {})
+        drawing_model = model.get("reinforcement_drawing_model", {})
         return {
-            "phase": "Phase G.1.3",
-            "description": "Drawing Set Lifecycle, Beam Index & Versioning",
+            "phase": model.get("phase", "Phase G.2"),
+            "description": "Reinforcement Drawing Intelligence Foundation",
             "reinforcement_validation_status": reinforcement_validation.get("status", "SKIP"),
+            "reinforcement_drawing_validation_status": model.get(
+                "reinforcement_drawing_validation", {}
+            ).get("status", "SKIP"),
             "drawing_identity_validation_status": model.get(
                 "drawing_identity_validation", {}
             ).get("status", "SKIP"),
@@ -695,6 +890,11 @@ class BeamGeometryPipeline:
             "drawing_count": drawing_reg.get("drawing_count", 0),
             "drawing_set_count": set_reg.get("drawing_set_count", 0),
             "beam_index_count": len(model.get("beam_indices", [])),
+            "region_count": drawing_model.get("region_count", 0),
+            "sketch_count": drawing_model.get("sketch_count", 0),
+            "text_count": drawing_model.get("text_count", 0),
+            "leader_count": drawing_model.get("leader_count", 0),
+            "block_count": drawing_model.get("block_count", 0),
             "floors_loaded": model.get("reinforcement_loading_summary", {}).get("floors_loaded", 0),
             "floor_source": model.get("workspace_manager", {}).get("floor_source"),
             "project_id": model.get("project_workspace", {}).get("project_id"),
