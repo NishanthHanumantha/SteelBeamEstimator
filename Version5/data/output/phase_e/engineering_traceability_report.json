@@ -1,0 +1,183 @@
+{
+  "project": {
+    "name": "Sobha Galera Clubhouse",
+    "drawing_number": "SE-100"
+  },
+  "engineering_value_traceability": [
+    {
+      "label": "Beam Cover",
+      "value": 30,
+      "unit": "mm",
+      "chain": [
+        "General Notes",
+        "Cover Table",
+        "SH-02",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 30,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "COVER_TABLE",
+        "sheet": "SH-02",
+        "member": "BEAM"
+      }
+    },
+    {
+      "label": "Development Length",
+      "value": 910,
+      "unit": "mm",
+      "chain": [
+        "Table 1",
+        "Fe550D",
+        "M30",
+        "20 mm Bar",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 910,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "TABLE_1",
+        "sheet": "SH-02",
+        "steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550",
+        "concrete_grade": "M30",
+        "diameter_mm": 20,
+        "selection_method": "TABLE_2",
+        "physical_table_key": "Fe550",
+        "active_table_key": "Fe550"
+      }
+    },
+    {
+      "label": "Spacer Diameter (Estimator)",
+      "value": 25,
+      "unit": "mm",
+      "chain": [
+        "Estimator Rules",
+        "config\\estimator_rules.yaml",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 25,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    {
+      "label": "Spacer Diameter (Structural)",
+      "value": 20,
+      "unit": "mm",
+      "chain": [
+        "General Notes",
+        "Section 9.01",
+        "Confidence 1.0"
+      ],
+      "provenance": {
+        "value": 20,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "sheet": "SH-02",
+        "section": "9.01"
+      }
+    }
+  ],
+  "decision_trail": [
+    {
+      "decision": "Development Length Table Selection",
+      "inputs": {
+        "table2_steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550"
+      },
+      "selected": "Fe550",
+      "source": "GENERAL_NOTES_TABLE_1",
+      "reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+      "selection_method": "TABLE_2"
+    },
+    {
+      "decision": "Development Length Selection",
+      "inputs": {
+        "steel_grade": "Fe550D",
+        "concrete_grade": "M30",
+        "diameter": 20
+      },
+      "selected": 910,
+      "source": "GENERAL_NOTES_TABLE_1",
+      "reason": "Table-2 steel Fe550D uses LD table Fe550 (sourced from Fe500 grid in drawing)",
+      "provenance": {
+        "value": 910,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "TABLE_1",
+        "sheet": "SH-02",
+        "steel_grade": "Fe550D",
+        "base_steel_grade": "Fe550",
+        "concrete_grade": "M30",
+        "diameter_mm": 20,
+        "selection_method": "TABLE_2",
+        "physical_table_key": "Fe550",
+        "active_table_key": "Fe550"
+      }
+    },
+    {
+      "decision": "Default Beam Cover Selection",
+      "inputs": {
+        "member": "BEAM"
+      },
+      "selected": 30,
+      "source": "GENERAL_NOTES",
+      "reason": "Lowest normalized BEAM row in cover table",
+      "provenance": {
+        "value": 30,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "table": "COVER_TABLE",
+        "sheet": "SH-02",
+        "member": "BEAM"
+      }
+    },
+    {
+      "decision": "Estimator Spacer Diameter Selection",
+      "inputs": {
+        "methodology": "estimator_rules"
+      },
+      "selected": 25,
+      "source": "ESTIMATOR_RULES",
+      "reason": "Configured estimator business rule (not structural detailing note)",
+      "provenance": {
+        "value": 25,
+        "source": "ESTIMATOR_RULES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "config": "config\\estimator_rules.yaml"
+      }
+    },
+    {
+      "decision": "Structural Spacer Diameter Extraction",
+      "inputs": {
+        "section": "9.01"
+      },
+      "selected": 20,
+      "source": "GENERAL_NOTES",
+      "reason": "General Notes structural detailing rule",
+      "provenance": {
+        "value": 20,
+        "source": "GENERAL_NOTES",
+        "confidence": 1.0,
+        "unit": "mm",
+        "sheet": "SH-02",
+        "section": "9.01"
+      }
+    }
+  ],
+  "value_registry_summary": {
+    "entry_count": 142
+  }
+}
