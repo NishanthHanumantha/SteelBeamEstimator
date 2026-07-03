@@ -1,5 +1,5 @@
 {
-  "phase": "Phase G.5.1",
+  "phase": "Phase G.5.3.4",
   "drawing_set_count": 1,
   "drawing_sets": [
     {
@@ -1864,1628 +1864,3323 @@
         "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
         "floor_id": "FLOOR::SHR_OHT_LVL_TOP",
         "project_id": "PROJECT::SOBHA_GALERA_CLUBHOUSE",
+        "registry_id": "ENGINEERING_OBJECT_REGISTRY",
         "object_count": 60,
+        "object_ids": [
+          "ENG_OBJ::000001",
+          "ENG_OBJ::000002",
+          "ENG_OBJ::000003",
+          "ENG_OBJ::000004",
+          "ENG_OBJ::000005",
+          "ENG_OBJ::000006",
+          "ENG_OBJ::000007",
+          "ENG_OBJ::000008",
+          "ENG_OBJ::000009",
+          "ENG_OBJ::000010",
+          "ENG_OBJ::000011",
+          "ENG_OBJ::000012",
+          "ENG_OBJ::000013",
+          "ENG_OBJ::000014",
+          "ENG_OBJ::000015",
+          "ENG_OBJ::000016",
+          "ENG_OBJ::000017",
+          "ENG_OBJ::000018",
+          "ENG_OBJ::000019",
+          "ENG_OBJ::000020",
+          "ENG_OBJ::000021",
+          "ENG_OBJ::000022",
+          "ENG_OBJ::000023",
+          "ENG_OBJ::000024",
+          "ENG_OBJ::000025",
+          "ENG_OBJ::000026",
+          "ENG_OBJ::000027",
+          "ENG_OBJ::000028",
+          "ENG_OBJ::000029",
+          "ENG_OBJ::000030",
+          "ENG_OBJ::000031",
+          "ENG_OBJ::000032",
+          "ENG_OBJ::000033",
+          "ENG_OBJ::000034",
+          "ENG_OBJ::000035",
+          "ENG_OBJ::000036",
+          "ENG_OBJ::000037",
+          "ENG_OBJ::000038",
+          "ENG_OBJ::000039",
+          "ENG_OBJ::000040",
+          "ENG_OBJ::000041",
+          "ENG_OBJ::000042",
+          "ENG_OBJ::000043",
+          "ENG_OBJ::000044",
+          "ENG_OBJ::000045",
+          "ENG_OBJ::000046",
+          "ENG_OBJ::000047",
+          "ENG_OBJ::000048",
+          "ENG_OBJ::000049",
+          "ENG_OBJ::000050",
+          "ENG_OBJ::000051",
+          "ENG_OBJ::000052",
+          "ENG_OBJ::000053",
+          "ENG_OBJ::000054",
+          "ENG_OBJ::000055",
+          "ENG_OBJ::000056",
+          "ENG_OBJ::000057",
+          "ENG_OBJ::000058",
+          "ENG_OBJ::000059",
+          "ENG_OBJ::000060"
+        ],
+        "objects_by_type": {
+          "TOP_REINFORCEMENT": 16,
+          "STIRRUP": 13,
+          "BEAM_IDENTIFIER": 24,
+          "SIDE_FACE_REINFORCEMENT": 4,
+          "GENERAL_NOTE": 1,
+          "TEXT_NOTE": 2
+        },
+        "objects_by_lifecycle": {
+          "OBJECT_CREATED": 60
+        },
+        "objects_by_engineering_status": {
+          "OBJECT_CREATED": 60
+        },
+        "objects_by_confidence_bucket": {
+          "high": 49,
+          "medium": 10,
+          "low": 1
+        },
         "objects": [
           {
+            "object_id": "ENG_OBJ::000001",
             "engineering_object_id": "ENG_OBJ::000001",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B1",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B1",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::001",
-                "SKETCH::002",
-                "SKETCH::003"
-              ],
-              "text": [
-                "TXT::004",
-                "TXT::006",
-                "TXT::020",
-                "TXT::021",
-                "TXT::056",
-                "TXT::059",
-                "TXT::085",
-                "TXT::086"
-              ],
-              "leaders": [
-                "LDR::003",
-                "LDR::005",
-                "LDR::015",
-                "LDR::016",
-                "LDR::060",
-                "LDR::061"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::001",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000001",
+            "source_relationship_ids": [
+              "SEM_REL::000001",
+              "SEM_REL::000003",
+              "SEM_REL::000005",
+              "SEM_REL::000009"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8767,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000001",
+            "incoming_relationships": [
+              "SEM_REL::000001",
+              "SEM_REL::000003",
+              "SEM_REL::000005"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000009"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000001",
+              "SEM_REL::000003",
+              "SEM_REL::000005"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000009"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000002",
+              "ENG_OBJ::000003",
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000003",
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000001",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000002",
+                "SEM_ROLE::000003",
+                "SEM_ROLE::000004",
+                "SEM_ROLE::000005"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000002",
             "engineering_object_id": "ENG_OBJ::000002",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B1",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B1",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::004"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::001",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000002",
+            "source_relationship_ids": [
+              "SEM_REL::000002",
+              "SEM_REL::000004",
+              "SEM_REL::000006",
+              "SEM_REL::000009"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8833,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000002",
+            "incoming_relationships": [
+              "SEM_REL::000002",
+              "SEM_REL::000004",
+              "SEM_REL::000006",
+              "SEM_REL::000009"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000002",
+              "SEM_REL::000004",
+              "SEM_REL::000006",
+              "SEM_REL::000009"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000001",
+              "ENG_OBJ::000003",
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000003",
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000002",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000001",
+                "SEM_ROLE::000003",
+                "SEM_ROLE::000004",
+                "SEM_ROLE::000005"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000003",
             "engineering_object_id": "ENG_OBJ::000003",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B1",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B1",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::001"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
-            "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
-            "metadata": {
-              "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000003",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
-            }
-          },
-          {
-            "engineering_object_id": "ENG_OBJ::000004",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
-            "owner_context_id": "ERC::B1",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B1",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::022"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
-            "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
-            "metadata": {
-              "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000004",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
-            }
-          },
-          {
-            "engineering_object_id": "ENG_OBJ::000005",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
-            "owner_context_id": "ERC::B1",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B1",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::082"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
-            "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
-            "metadata": {
-              "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000005",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
-            }
-          },
-          {
-            "engineering_object_id": "ENG_OBJ::000006",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
-            "owner_context_id": "ERC::B2",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B2",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::005",
-                "SKETCH::006",
-                "SKETCH::008"
-              ],
-              "text": [
-                "TXT::012",
-                "TXT::014",
-                "TXT::023",
-                "TXT::024",
-                "TXT::025"
-              ],
-              "leaders": [
-                "LDR::008",
-                "LDR::009",
-                "LDR::010",
-                "LDR::017",
-                "LDR::018",
-                "LDR::019"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
+            "detail_context_id": "DETAIL_CTX::001",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000003",
+            "source_relationship_ids": [
+              "SEM_REL::000001",
+              "SEM_REL::000002",
+              "SEM_REL::000007",
+              "SEM_REL::000008"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
             "confidence": 0.89,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000003",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000001",
+              "SEM_REL::000002",
+              "SEM_REL::000007",
+              "SEM_REL::000008"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000001",
+              "SEM_REL::000002",
+              "SEM_REL::000007",
+              "SEM_REL::000008"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000001",
+              "ENG_OBJ::000002",
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000004",
+              "ENG_OBJ::000005"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000006",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000001",
+                "SEM_ROLE::000002",
+                "SEM_ROLE::000004",
+                "SEM_ROLE::000005"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000004",
+            "engineering_object_id": "ENG_OBJ::000004",
+            "object_type": "BEAM_IDENTIFIER",
+            "owner_context_id": "ERC::B1",
+            "detail_context_id": "DETAIL_CTX::001",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000004",
+            "source_relationship_ids": [
+              "SEM_REL::000003",
+              "SEM_REL::000004",
+              "SEM_REL::000007"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
+            "engineering_status": "OBJECT_CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000004",
+            "incoming_relationships": [
+              "SEM_REL::000007"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000003",
+              "SEM_REL::000004"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000007"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000003",
+              "SEM_REL::000004"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000001",
+              "ENG_OBJ::000002",
+              "ENG_OBJ::000003"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000003"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
+            "metadata": {
+              "created_phase": "G.5.1",
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000001",
+                "SEM_ROLE::000002",
+                "SEM_ROLE::000003"
+              ]
+            }
+          },
+          {
+            "object_id": "ENG_OBJ::000005",
+            "engineering_object_id": "ENG_OBJ::000005",
+            "object_type": "BEAM_IDENTIFIER",
+            "owner_context_id": "ERC::B1",
+            "detail_context_id": "DETAIL_CTX::001",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000005",
+            "source_relationship_ids": [
+              "SEM_REL::000005",
+              "SEM_REL::000006",
+              "SEM_REL::000008"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
+            "engineering_status": "OBJECT_CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000005",
+            "incoming_relationships": [
+              "SEM_REL::000008"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000005",
+              "SEM_REL::000006"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000008"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000005",
+              "SEM_REL::000006"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000001",
+              "ENG_OBJ::000002",
+              "ENG_OBJ::000003"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000003"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
+            "metadata": {
+              "created_phase": "G.5.1",
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000001",
+                "SEM_ROLE::000002",
+                "SEM_ROLE::000003"
+              ]
+            }
+          },
+          {
+            "object_id": "ENG_OBJ::000006",
+            "engineering_object_id": "ENG_OBJ::000006",
+            "object_type": "TOP_REINFORCEMENT",
+            "owner_context_id": "ERC::B2",
+            "detail_context_id": "DETAIL_CTX::002",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000006",
+            "source_relationship_ids": [
+              "SEM_REL::000010",
+              "SEM_REL::000012",
+              "SEM_REL::000015"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.864,
+            "engineering_status": "OBJECT_CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000006",
+            "incoming_relationships": [
+              "SEM_REL::000010",
+              "SEM_REL::000012"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000015"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000010",
+              "SEM_REL::000012"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000015"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000007",
+              "ENG_OBJ::000008",
+              "ENG_OBJ::000009"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000008",
+              "ENG_OBJ::000009"
+            ],
+            "metadata": {
+              "created_phase": "G.5.1",
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000007",
+                "SEM_ROLE::000008",
+                "SEM_ROLE::000009"
+              ]
+            }
+          },
+          {
+            "object_id": "ENG_OBJ::000007",
             "engineering_object_id": "ENG_OBJ::000007",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B2",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B2",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::007"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::002",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000007",
+            "source_relationship_ids": [
+              "SEM_REL::000011",
+              "SEM_REL::000013",
+              "SEM_REL::000015"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.876,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000007",
+            "incoming_relationships": [
+              "SEM_REL::000011",
+              "SEM_REL::000013",
+              "SEM_REL::000015"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000011",
+              "SEM_REL::000013",
+              "SEM_REL::000015"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000006",
+              "ENG_OBJ::000008",
+              "ENG_OBJ::000009"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000008",
+              "ENG_OBJ::000009"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000007",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000006",
+                "SEM_ROLE::000008",
+                "SEM_ROLE::000009"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000008",
             "engineering_object_id": "ENG_OBJ::000008",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B2",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B2",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::011"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::002",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000008",
+            "source_relationship_ids": [
+              "SEM_REL::000010",
+              "SEM_REL::000011",
+              "SEM_REL::000014"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000008",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000010",
+              "SEM_REL::000011",
+              "SEM_REL::000014"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000010",
+              "SEM_REL::000011",
+              "SEM_REL::000014"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000006",
+              "ENG_OBJ::000007",
+              "ENG_OBJ::000009"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000009"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000008",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000006",
+                "SEM_ROLE::000007",
+                "SEM_ROLE::000009"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000009",
             "engineering_object_id": "ENG_OBJ::000009",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B2",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B2",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::026"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::002",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000009",
+            "source_relationship_ids": [
+              "SEM_REL::000012",
+              "SEM_REL::000013",
+              "SEM_REL::000014"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000009",
+            "incoming_relationships": [
+              "SEM_REL::000014"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000012",
+              "SEM_REL::000013"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000014"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000012",
+              "SEM_REL::000013"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000006",
+              "ENG_OBJ::000007",
+              "ENG_OBJ::000008"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000008"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000009",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000006",
+                "SEM_ROLE::000007",
+                "SEM_ROLE::000008"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000010",
             "engineering_object_id": "ENG_OBJ::000010",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::009",
-                "SKETCH::010",
-                "SKETCH::011"
-              ],
-              "text": [
-                "TXT::008",
-                "TXT::027",
-                "TXT::028",
-                "TXT::029",
-                "TXT::030",
-                "TXT::049",
-                "TXT::050",
-                "TXT::071",
-                "TXT::072"
-              ],
-              "leaders": [
-                "LDR::006",
-                "LDR::020",
-                "LDR::021",
-                "LDR::022",
-                "LDR::023",
-                "LDR::034",
-                "LDR::035",
-                "LDR::064",
-                "LDR::065"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000010",
+            "source_relationship_ids": [
+              "SEM_REL::000016",
+              "SEM_REL::000017",
+              "SEM_REL::000020",
+              "SEM_REL::000023",
+              "SEM_REL::000026",
+              "SEM_REL::000032",
+              "SEM_REL::000033"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8622,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000010",
+            "incoming_relationships": [
+              "SEM_REL::000017",
+              "SEM_REL::000020",
+              "SEM_REL::000023",
+              "SEM_REL::000026"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000016",
+              "SEM_REL::000032",
+              "SEM_REL::000033"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000017",
+              "SEM_REL::000020",
+              "SEM_REL::000023",
+              "SEM_REL::000026"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000016",
+              "SEM_REL::000032",
+              "SEM_REL::000033"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000011",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015",
+              "ENG_OBJ::000016"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000010",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000011",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000013",
+                "SEM_ROLE::000014",
+                "SEM_ROLE::000015",
+                "SEM_ROLE::000016"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000011",
             "engineering_object_id": "ENG_OBJ::000011",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::012",
-                "SKETCH::013"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000011",
+            "source_relationship_ids": [
+              "SEM_REL::000018",
+              "SEM_REL::000021",
+              "SEM_REL::000024",
+              "SEM_REL::000027",
+              "SEM_REL::000032"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8886,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000011",
+            "incoming_relationships": [
+              "SEM_REL::000018",
+              "SEM_REL::000021",
+              "SEM_REL::000024",
+              "SEM_REL::000027",
+              "SEM_REL::000032"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000018",
+              "SEM_REL::000021",
+              "SEM_REL::000024",
+              "SEM_REL::000027",
+              "SEM_REL::000032"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000011",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000013",
+                "SEM_ROLE::000014",
+                "SEM_ROLE::000015"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000012",
             "engineering_object_id": "ENG_OBJ::000012",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::007"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000012",
+            "source_relationship_ids": [
+              "SEM_REL::000017",
+              "SEM_REL::000018",
+              "SEM_REL::000019",
+              "SEM_REL::000029",
+              "SEM_REL::000030",
+              "SEM_REL::000031"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8888,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000012",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000017",
+              "SEM_REL::000018",
+              "SEM_REL::000019",
+              "SEM_REL::000029",
+              "SEM_REL::000030",
+              "SEM_REL::000031"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000017",
+              "SEM_REL::000018",
+              "SEM_REL::000019",
+              "SEM_REL::000029",
+              "SEM_REL::000030",
+              "SEM_REL::000031"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000011",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015",
+              "ENG_OBJ::000016"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000012",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000011",
+                "SEM_ROLE::000013",
+                "SEM_ROLE::000014",
+                "SEM_ROLE::000015",
+                "SEM_ROLE::000016"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000013",
             "engineering_object_id": "ENG_OBJ::000013",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::010"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000013",
+            "source_relationship_ids": [
+              "SEM_REL::000020",
+              "SEM_REL::000021",
+              "SEM_REL::000022",
+              "SEM_REL::000029"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000013",
+            "incoming_relationships": [
+              "SEM_REL::000029"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000020",
+              "SEM_REL::000021",
+              "SEM_REL::000022"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000029"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000020",
+              "SEM_REL::000021",
+              "SEM_REL::000022"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000011",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000016"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000012"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000013",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000011",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000016"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000014",
             "engineering_object_id": "ENG_OBJ::000014",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::033"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000014",
+            "source_relationship_ids": [
+              "SEM_REL::000023",
+              "SEM_REL::000024",
+              "SEM_REL::000025",
+              "SEM_REL::000030"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000014",
+            "incoming_relationships": [
+              "SEM_REL::000030"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000023",
+              "SEM_REL::000024",
+              "SEM_REL::000025"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000030"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000023",
+              "SEM_REL::000024",
+              "SEM_REL::000025"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000011",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000016"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000012"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000014",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000011",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000016"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000015",
             "engineering_object_id": "ENG_OBJ::000015",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::034"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000015",
+            "source_relationship_ids": [
+              "SEM_REL::000026",
+              "SEM_REL::000027",
+              "SEM_REL::000028",
+              "SEM_REL::000031"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000015",
+            "incoming_relationships": [
+              "SEM_REL::000031"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000026",
+              "SEM_REL::000027",
+              "SEM_REL::000028"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000031"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000026",
+              "SEM_REL::000027",
+              "SEM_REL::000028"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000011",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000016"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000012"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000015",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000011",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000016"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000016",
             "engineering_object_id": "ENG_OBJ::000016",
             "object_type": "SIDE_FACE_REINFORCEMENT",
-            "object_subtype": null,
             "owner_context_id": "ERC::B3",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B3",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::088"
-              ],
-              "leaders": [
-                "LDR::011"
-              ],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::003",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000016",
+            "source_relationship_ids": [
+              "SEM_REL::000016",
+              "SEM_REL::000019",
+              "SEM_REL::000022",
+              "SEM_REL::000025",
+              "SEM_REL::000028",
+              "SEM_REL::000033"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8825,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000016",
+            "incoming_relationships": [
+              "SEM_REL::000016",
+              "SEM_REL::000019",
+              "SEM_REL::000022",
+              "SEM_REL::000025",
+              "SEM_REL::000028",
+              "SEM_REL::000033"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000016",
+              "SEM_REL::000019",
+              "SEM_REL::000022",
+              "SEM_REL::000025",
+              "SEM_REL::000028",
+              "SEM_REL::000033"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000010",
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000012",
+              "ENG_OBJ::000013",
+              "ENG_OBJ::000014",
+              "ENG_OBJ::000015"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000016",
-              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE",
+              "engineering_priority": "HIGH",
+              "connected_role_ids": [
+                "SEM_ROLE::000010",
+                "SEM_ROLE::000012",
+                "SEM_ROLE::000013",
+                "SEM_ROLE::000014",
+                "SEM_ROLE::000015"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000017",
             "engineering_object_id": "ENG_OBJ::000017",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B4",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B4",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::014",
-                "SKETCH::016",
-                "SKETCH::017"
-              ],
-              "text": [
-                "TXT::016",
-                "TXT::018",
-                "TXT::031",
-                "TXT::032"
-              ],
-              "leaders": [
-                "LDR::012",
-                "LDR::013",
-                "LDR::014",
-                "LDR::024",
-                "LDR::025"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.89,
+            "detail_context_id": "DETAIL_CTX::004",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000017",
+            "source_relationship_ids": [
+              "SEM_REL::000035",
+              "SEM_REL::000038",
+              "SEM_REL::000042",
+              "SEM_REL::000043"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8367,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000017",
+            "incoming_relationships": [
+              "SEM_REL::000035",
+              "SEM_REL::000038"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000042",
+              "SEM_REL::000043"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000035",
+              "SEM_REL::000038"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000042",
+              "SEM_REL::000043"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000018",
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020",
+              "ENG_OBJ::000021"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000017",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000018",
+                "SEM_ROLE::000019",
+                "SEM_ROLE::000020",
+                "SEM_ROLE::000021"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000018",
             "engineering_object_id": "ENG_OBJ::000018",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B4",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B4",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::015"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::004",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000018",
+            "source_relationship_ids": [
+              "SEM_REL::000034",
+              "SEM_REL::000036",
+              "SEM_REL::000039",
+              "SEM_REL::000042"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8767,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000018",
+            "incoming_relationships": [
+              "SEM_REL::000036",
+              "SEM_REL::000039",
+              "SEM_REL::000042"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000034"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000036",
+              "SEM_REL::000039",
+              "SEM_REL::000042"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000034"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000017",
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020",
+              "ENG_OBJ::000021"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000018",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000017",
+                "SEM_ROLE::000019",
+                "SEM_ROLE::000020",
+                "SEM_ROLE::000021"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000019",
             "engineering_object_id": "ENG_OBJ::000019",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B4",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B4",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::015"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::004",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000019",
+            "source_relationship_ids": [
+              "SEM_REL::000035",
+              "SEM_REL::000036",
+              "SEM_REL::000037",
+              "SEM_REL::000041"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000019",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000035",
+              "SEM_REL::000036",
+              "SEM_REL::000037",
+              "SEM_REL::000041"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000035",
+              "SEM_REL::000036",
+              "SEM_REL::000037",
+              "SEM_REL::000041"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000017",
+              "ENG_OBJ::000018",
+              "ENG_OBJ::000020",
+              "ENG_OBJ::000021"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000020"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000019",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000017",
+                "SEM_ROLE::000018",
+                "SEM_ROLE::000020",
+                "SEM_ROLE::000021"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000020",
             "engineering_object_id": "ENG_OBJ::000020",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B4",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B4",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::035"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::004",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000020",
+            "source_relationship_ids": [
+              "SEM_REL::000038",
+              "SEM_REL::000039",
+              "SEM_REL::000040",
+              "SEM_REL::000041"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000020",
+            "incoming_relationships": [
+              "SEM_REL::000041"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000038",
+              "SEM_REL::000039",
+              "SEM_REL::000040"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000041"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000038",
+              "SEM_REL::000039",
+              "SEM_REL::000040"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000017",
+              "ENG_OBJ::000018",
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000021"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000019"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000020",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000017",
+                "SEM_ROLE::000018",
+                "SEM_ROLE::000019",
+                "SEM_ROLE::000021"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000021",
             "engineering_object_id": "ENG_OBJ::000021",
             "object_type": "SIDE_FACE_REINFORCEMENT",
-            "object_subtype": null,
             "owner_context_id": "ERC::B4",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B4",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::089"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::004",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000021",
+            "source_relationship_ids": [
+              "SEM_REL::000034",
+              "SEM_REL::000037",
+              "SEM_REL::000040",
+              "SEM_REL::000043"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.87,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000021",
+            "incoming_relationships": [
+              "SEM_REL::000034",
+              "SEM_REL::000037",
+              "SEM_REL::000040",
+              "SEM_REL::000043"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000034",
+              "SEM_REL::000037",
+              "SEM_REL::000040",
+              "SEM_REL::000043"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000017",
+              "ENG_OBJ::000018",
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000019",
+              "ENG_OBJ::000020"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000021",
-              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE",
+              "engineering_priority": "HIGH",
+              "connected_role_ids": [
+                "SEM_ROLE::000017",
+                "SEM_ROLE::000018",
+                "SEM_ROLE::000019",
+                "SEM_ROLE::000020"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000022",
             "engineering_object_id": "ENG_OBJ::000022",
-            "object_type": "TOP_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B5",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B5",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::018",
-                "SKETCH::020",
-                "SKETCH::021"
-              ],
-              "text": [
-                "TXT::052",
-                "TXT::053",
-                "TXT::055",
-                "TXT::083"
-              ],
-              "leaders": [
-                "LDR::036",
-                "LDR::037",
-                "LDR::038",
-                "LDR::039",
-                "LDR::058",
-                "LDR::059"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.89,
+            "detail_context_id": "DETAIL_CTX::005",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000022",
+            "source_relationship_ids": [
+              "SEM_REL::000044",
+              "SEM_REL::000046",
+              "SEM_REL::000049"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.864,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000022",
+            "incoming_relationships": [
+              "SEM_REL::000044",
+              "SEM_REL::000046"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000049"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000044",
+              "SEM_REL::000046"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000049"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000023",
+              "ENG_OBJ::000024",
+              "ENG_OBJ::000025"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000024",
+              "ENG_OBJ::000025"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000022",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000023",
+                "SEM_ROLE::000024",
+                "SEM_ROLE::000025"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000023",
             "engineering_object_id": "ENG_OBJ::000023",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B5",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B5",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::019"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::005",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000023",
+            "source_relationship_ids": [
+              "SEM_REL::000045",
+              "SEM_REL::000047",
+              "SEM_REL::000049"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.876,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000023",
+            "incoming_relationships": [
+              "SEM_REL::000045",
+              "SEM_REL::000047",
+              "SEM_REL::000049"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000045",
+              "SEM_REL::000047",
+              "SEM_REL::000049"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000022",
+              "ENG_OBJ::000024",
+              "ENG_OBJ::000025"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000024",
+              "ENG_OBJ::000025"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000023",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000022",
+                "SEM_ROLE::000024",
+                "SEM_ROLE::000025"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000024",
             "engineering_object_id": "ENG_OBJ::000024",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B5",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B5",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::051"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::005",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000024",
+            "source_relationship_ids": [
+              "SEM_REL::000044",
+              "SEM_REL::000045",
+              "SEM_REL::000048"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000024",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000044",
+              "SEM_REL::000045",
+              "SEM_REL::000048"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000044",
+              "SEM_REL::000045",
+              "SEM_REL::000048"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000022",
+              "ENG_OBJ::000023",
+              "ENG_OBJ::000025"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000025"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000024",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000022",
+                "SEM_ROLE::000023",
+                "SEM_ROLE::000025"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000025",
             "engineering_object_id": "ENG_OBJ::000025",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B5",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B5",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::054"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::005",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000025",
+            "source_relationship_ids": [
+              "SEM_REL::000046",
+              "SEM_REL::000047",
+              "SEM_REL::000048"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000025",
+            "incoming_relationships": [
+              "SEM_REL::000048"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000046",
+              "SEM_REL::000047"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000048"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000046",
+              "SEM_REL::000047"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000022",
+              "ENG_OBJ::000023",
+              "ENG_OBJ::000024"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000024"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000025",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000022",
+                "SEM_ROLE::000023",
+                "SEM_ROLE::000024"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000026",
             "engineering_object_id": "ENG_OBJ::000026",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B6",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B6",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::022",
-                "SKETCH::024"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::006",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000026",
+            "source_relationship_ids": [
+              "SEM_REL::000050",
+              "SEM_REL::000052"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.865,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000026",
+            "incoming_relationships": [
+              "SEM_REL::000050"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000052"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000050"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000052"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000027",
+              "ENG_OBJ::000028"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000028"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000026",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000027",
+                "SEM_ROLE::000028"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000027",
             "engineering_object_id": "ENG_OBJ::000027",
-            "object_type": "TOP_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B6",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B6",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::023",
-                "SKETCH::025",
-                "SKETCH::026"
-              ],
-              "text": [
-                "TXT::058"
-              ],
-              "leaders": [
-                "LDR::040",
-                "LDR::041"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.89,
+            "detail_context_id": "DETAIL_CTX::006",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000027",
+            "source_relationship_ids": [
+              "SEM_REL::000051",
+              "SEM_REL::000052"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.85,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000027",
+            "incoming_relationships": [
+              "SEM_REL::000051",
+              "SEM_REL::000052"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000051",
+              "SEM_REL::000052"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000026",
+              "ENG_OBJ::000028"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000028"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000027",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000026",
+                "SEM_ROLE::000028"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000028",
             "engineering_object_id": "ENG_OBJ::000028",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B6",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B6",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::057"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::006",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000028",
+            "source_relationship_ids": [
+              "SEM_REL::000050",
+              "SEM_REL::000051"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.91,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000028",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000050",
+              "SEM_REL::000051"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000050",
+              "SEM_REL::000051"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000026",
+              "ENG_OBJ::000027"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000028",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000026",
+                "SEM_ROLE::000027"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000029",
             "engineering_object_id": "ENG_OBJ::000029",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B7",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B7",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::027",
-                "SKETCH::029"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::007",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000029",
+            "source_relationship_ids": [
+              "SEM_REL::000053",
+              "SEM_REL::000055",
+              "SEM_REL::000058"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.876,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000029",
+            "incoming_relationships": [
+              "SEM_REL::000053",
+              "SEM_REL::000055"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000058"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000053",
+              "SEM_REL::000055"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000058"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000030",
+              "ENG_OBJ::000031",
+              "ENG_OBJ::000032"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000031",
+              "ENG_OBJ::000032"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000029",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000030",
+                "SEM_ROLE::000031",
+                "SEM_ROLE::000032"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000030",
             "engineering_object_id": "ENG_OBJ::000030",
-            "object_type": "TOP_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B7",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B7",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::028",
-                "SKETCH::030"
-              ],
-              "text": [
-                "TXT::061",
-                "TXT::062",
-                "TXT::064",
-                "TXT::065"
-              ],
-              "leaders": [
-                "LDR::042",
-                "LDR::043",
-                "LDR::044",
-                "LDR::045"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::007",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000030",
+            "source_relationship_ids": [
+              "SEM_REL::000054",
+              "SEM_REL::000056",
+              "SEM_REL::000058"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.868,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000030",
+            "incoming_relationships": [
+              "SEM_REL::000054",
+              "SEM_REL::000056",
+              "SEM_REL::000058"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000054",
+              "SEM_REL::000056",
+              "SEM_REL::000058"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000029",
+              "ENG_OBJ::000031",
+              "ENG_OBJ::000032"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000031",
+              "ENG_OBJ::000032"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000030",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000029",
+                "SEM_ROLE::000031",
+                "SEM_ROLE::000032"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000031",
             "engineering_object_id": "ENG_OBJ::000031",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B7",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B7",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::060"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::007",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000031",
+            "source_relationship_ids": [
+              "SEM_REL::000053",
+              "SEM_REL::000054",
+              "SEM_REL::000057"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000031",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000053",
+              "SEM_REL::000054",
+              "SEM_REL::000057"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000053",
+              "SEM_REL::000054",
+              "SEM_REL::000057"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000029",
+              "ENG_OBJ::000030",
+              "ENG_OBJ::000032"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000032"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000031",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000029",
+                "SEM_ROLE::000030",
+                "SEM_ROLE::000032"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000032",
             "engineering_object_id": "ENG_OBJ::000032",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B7",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B7",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::063"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::007",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000032",
+            "source_relationship_ids": [
+              "SEM_REL::000055",
+              "SEM_REL::000056",
+              "SEM_REL::000057"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000032",
+            "incoming_relationships": [
+              "SEM_REL::000057"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000055",
+              "SEM_REL::000056"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000057"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000055",
+              "SEM_REL::000056"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000029",
+              "ENG_OBJ::000030",
+              "ENG_OBJ::000031"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000031"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000032",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000029",
+                "SEM_ROLE::000030",
+                "SEM_ROLE::000031"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000033",
             "engineering_object_id": "ENG_OBJ::000033",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::031",
-                "SKETCH::034",
-                "SKETCH::035"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000033",
+            "source_relationship_ids": [
+              "SEM_REL::000059",
+              "SEM_REL::000062",
+              "SEM_REL::000065",
+              "SEM_REL::000067",
+              "SEM_REL::000068"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8329,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000033",
+            "incoming_relationships": [
+              "SEM_REL::000059",
+              "SEM_REL::000062"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000065",
+              "SEM_REL::000067",
+              "SEM_REL::000068"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000059",
+              "SEM_REL::000062"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000065",
+              "SEM_REL::000067",
+              "SEM_REL::000068"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000034",
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036",
+              "ENG_OBJ::000037",
+              "ENG_OBJ::000039"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000033",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000034",
+                "SEM_ROLE::000035",
+                "SEM_ROLE::000036",
+                "SEM_ROLE::000037",
+                "SEM_ROLE::000039"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000034",
             "engineering_object_id": "ENG_OBJ::000034",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::032",
-                "SKETCH::033"
-              ],
-              "text": [
-                "TXT::002",
-                "TXT::003",
-                "TXT::005",
-                "TXT::009",
-                "TXT::013",
-                "TXT::017",
-                "TXT::019",
-                "TXT::038",
-                "TXT::067",
-                "TXT::068",
-                "TXT::070",
-                "TXT::073",
-                "TXT::075",
-                "TXT::076",
-                "TXT::084"
-              ],
-              "leaders": [
-                "LDR::001",
-                "LDR::002",
-                "LDR::004",
-                "LDR::007",
-                "LDR::027",
-                "LDR::046",
-                "LDR::047",
-                "LDR::048",
-                "LDR::049",
-                "LDR::050",
-                "LDR::051",
-                "LDR::052",
-                "LDR::053",
-                "LDR::062",
-                "LDR::063",
-                "LDR::066",
-                "LDR::067"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.89,
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000034",
+            "source_relationship_ids": [
+              "SEM_REL::000060",
+              "SEM_REL::000063",
+              "SEM_REL::000067"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.864,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000034",
+            "incoming_relationships": [
+              "SEM_REL::000060",
+              "SEM_REL::000063",
+              "SEM_REL::000067"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000060",
+              "SEM_REL::000063",
+              "SEM_REL::000067"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000033",
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000034",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000033",
+                "SEM_ROLE::000035",
+                "SEM_ROLE::000036"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000035",
             "engineering_object_id": "ENG_OBJ::000035",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::066"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000035",
+            "source_relationship_ids": [
+              "SEM_REL::000059",
+              "SEM_REL::000060",
+              "SEM_REL::000061",
+              "SEM_REL::000066"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000035",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000059",
+              "SEM_REL::000060",
+              "SEM_REL::000061",
+              "SEM_REL::000066"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000059",
+              "SEM_REL::000060",
+              "SEM_REL::000061",
+              "SEM_REL::000066"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000033",
+              "ENG_OBJ::000034",
+              "ENG_OBJ::000036",
+              "ENG_OBJ::000037"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000036"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000035",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000033",
+                "SEM_ROLE::000034",
+                "SEM_ROLE::000036",
+                "SEM_ROLE::000037"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000036",
             "engineering_object_id": "ENG_OBJ::000036",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::069"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000036",
+            "source_relationship_ids": [
+              "SEM_REL::000062",
+              "SEM_REL::000063",
+              "SEM_REL::000064",
+              "SEM_REL::000066"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.9017,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000036",
+            "incoming_relationships": [
+              "SEM_REL::000066"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000062",
+              "SEM_REL::000063",
+              "SEM_REL::000064"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000066"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000062",
+              "SEM_REL::000063",
+              "SEM_REL::000064"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000033",
+              "ENG_OBJ::000034",
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000037"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000035"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000036",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000033",
+                "SEM_ROLE::000034",
+                "SEM_ROLE::000035",
+                "SEM_ROLE::000037"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000037",
             "engineering_object_id": "ENG_OBJ::000037",
             "object_type": "SIDE_FACE_REINFORCEMENT",
-            "object_subtype": null,
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::087"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000037",
+            "source_relationship_ids": [
+              "SEM_REL::000061",
+              "SEM_REL::000064",
+              "SEM_REL::000068"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.868,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000037",
+            "incoming_relationships": [
+              "SEM_REL::000061",
+              "SEM_REL::000064",
+              "SEM_REL::000068"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000061",
+              "SEM_REL::000064",
+              "SEM_REL::000068"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000033",
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000035",
+              "ENG_OBJ::000036"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000037",
-              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE",
+              "engineering_priority": "HIGH",
+              "connected_role_ids": [
+                "SEM_ROLE::000033",
+                "SEM_ROLE::000035",
+                "SEM_ROLE::000036"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000038",
             "engineering_object_id": "ENG_OBJ::000038",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "GENERAL_NOTE",
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::090",
-                "TXT::091"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000038",
+            "source_relationship_ids": [],
+            "classification_source": "SEMANTIC_ROLE",
             "confidence": 0.75,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000038",
+            "incoming_relationships": [],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000038",
-              "semantic_role_type": "GENERAL_NOTE_ROLE"
+              "semantic_role_type": "GENERAL_NOTE_ROLE",
+              "engineering_priority": "LOW",
+              "connected_role_ids": []
             }
           },
           {
+            "object_id": "ENG_OBJ::000039",
             "engineering_object_id": "ENG_OBJ::000039",
-            "object_type": "UNKNOWN",
-            "object_subtype": null,
+            "object_type": "TEXT_NOTE",
             "owner_context_id": "ERC::B8",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B8",
-            "asset_references": {
-              "geometry": [],
-              "text": [],
-              "leaders": [],
-              "blocks": [
-                "BLK::001",
-                "BLK::002"
+            "detail_context_id": "DETAIL_CTX::008",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000039",
+            "source_relationship_ids": [
+              "SEM_REL::000065"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.5833,
+            "engineering_status": "OBJECT_CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000039",
+            "incoming_relationships": [
+              "SEM_REL::000065"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000065"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000033"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
+            "metadata": {
+              "created_phase": "G.5.1",
+              "semantic_role_type": "CALLOUT_ROLE",
+              "engineering_priority": "LOW",
+              "connected_role_ids": [
+                "SEM_ROLE::000033"
               ]
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.5,
-            "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
-            "metadata": {
-              "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000039",
-              "semantic_role_type": "CALLOUT_ROLE"
             }
           },
           {
+            "object_id": "ENG_OBJ::000040",
             "engineering_object_id": "ENG_OBJ::000040",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B11",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B11",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::036",
-                "SKETCH::037"
-              ],
-              "text": [
-                "TXT::037"
-              ],
-              "leaders": [
-                "LDR::026"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::009",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000040",
+            "source_relationship_ids": [
+              "SEM_REL::000069",
+              "SEM_REL::000071",
+              "SEM_REL::000074"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.868,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000040",
+            "incoming_relationships": [
+              "SEM_REL::000069",
+              "SEM_REL::000071"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000074"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000069",
+              "SEM_REL::000071"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000074"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000041",
+              "ENG_OBJ::000042",
+              "ENG_OBJ::000043"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000042",
+              "ENG_OBJ::000043"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000040",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000041",
+                "SEM_ROLE::000042",
+                "SEM_ROLE::000043"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000041",
             "engineering_object_id": "ENG_OBJ::000041",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B11",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B11",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::038"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::009",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000041",
+            "source_relationship_ids": [
+              "SEM_REL::000070",
+              "SEM_REL::000072",
+              "SEM_REL::000074"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.876,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000041",
+            "incoming_relationships": [
+              "SEM_REL::000070",
+              "SEM_REL::000072",
+              "SEM_REL::000074"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000070",
+              "SEM_REL::000072",
+              "SEM_REL::000074"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000040",
+              "ENG_OBJ::000042",
+              "ENG_OBJ::000043"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000042",
+              "ENG_OBJ::000043"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000041",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000040",
+                "SEM_ROLE::000042",
+                "SEM_ROLE::000043"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000042",
             "engineering_object_id": "ENG_OBJ::000042",
-            "object_type": "BEAM_LABEL",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B11",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B11",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::036"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::009",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000042",
+            "source_relationship_ids": [
+              "SEM_REL::000069",
+              "SEM_REL::000070",
+              "SEM_REL::000073"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000042",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000069",
+              "SEM_REL::000070",
+              "SEM_REL::000073"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000069",
+              "SEM_REL::000070",
+              "SEM_REL::000073"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000040",
+              "ENG_OBJ::000041",
+              "ENG_OBJ::000043"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000043"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000042",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000040",
+                "SEM_ROLE::000041",
+                "SEM_ROLE::000043"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000043",
             "engineering_object_id": "ENG_OBJ::000043",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B11",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B11",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::074"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::009",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000043",
+            "source_relationship_ids": [
+              "SEM_REL::000071",
+              "SEM_REL::000072",
+              "SEM_REL::000073"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000043",
+            "incoming_relationships": [
+              "SEM_REL::000073"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000071",
+              "SEM_REL::000072"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000073"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000071",
+              "SEM_REL::000072"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000040",
+              "ENG_OBJ::000041",
+              "ENG_OBJ::000042"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000042"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000043",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000040",
+                "SEM_ROLE::000041",
+                "SEM_ROLE::000042"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000044",
             "engineering_object_id": "ENG_OBJ::000044",
-            "object_type": "TOP_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B12",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B12",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::039",
-                "SKETCH::040",
-                "SKETCH::042",
-                "SKETCH::043",
-                "SKETCH::044"
-              ],
-              "text": [
-                "TXT::040",
-                "TXT::041",
-                "TXT::043",
-                "TXT::044",
-                "TXT::045",
-                "TXT::046"
-              ],
-              "leaders": [
-                "LDR::028",
-                "LDR::029",
-                "LDR::030",
-                "LDR::031",
-                "LDR::032",
-                "LDR::033"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::010",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000044",
+            "source_relationship_ids": [
+              "SEM_REL::000075",
+              "SEM_REL::000077",
+              "SEM_REL::000079",
+              "SEM_REL::000083"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8767,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000044",
+            "incoming_relationships": [
+              "SEM_REL::000075",
+              "SEM_REL::000077",
+              "SEM_REL::000079"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000083"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000075",
+              "SEM_REL::000077",
+              "SEM_REL::000079"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000083"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000045",
+              "ENG_OBJ::000046",
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000046",
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000044",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000045",
+                "SEM_ROLE::000046",
+                "SEM_ROLE::000047",
+                "SEM_ROLE::000048"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000045",
             "engineering_object_id": "ENG_OBJ::000045",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B12",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B12",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::041",
-                "SKETCH::045"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::010",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000045",
+            "source_relationship_ids": [
+              "SEM_REL::000076",
+              "SEM_REL::000078",
+              "SEM_REL::000080",
+              "SEM_REL::000083"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8833,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000045",
+            "incoming_relationships": [
+              "SEM_REL::000076",
+              "SEM_REL::000078",
+              "SEM_REL::000080",
+              "SEM_REL::000083"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000076",
+              "SEM_REL::000078",
+              "SEM_REL::000080",
+              "SEM_REL::000083"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000044",
+              "ENG_OBJ::000046",
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000046",
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000045",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000044",
+                "SEM_ROLE::000046",
+                "SEM_ROLE::000047",
+                "SEM_ROLE::000048"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000046",
             "engineering_object_id": "ENG_OBJ::000046",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B12",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B12",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::039"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::010",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000046",
+            "source_relationship_ids": [
+              "SEM_REL::000075",
+              "SEM_REL::000076",
+              "SEM_REL::000081",
+              "SEM_REL::000082"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.89,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000046",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000075",
+              "SEM_REL::000076",
+              "SEM_REL::000081",
+              "SEM_REL::000082"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000075",
+              "SEM_REL::000076",
+              "SEM_REL::000081",
+              "SEM_REL::000082"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000044",
+              "ENG_OBJ::000045",
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [
+              "ENG_OBJ::000047",
+              "ENG_OBJ::000048"
+            ],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000046",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000044",
+                "SEM_ROLE::000045",
+                "SEM_ROLE::000047",
+                "SEM_ROLE::000048"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000047",
             "engineering_object_id": "ENG_OBJ::000047",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B12",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B12",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::042"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::010",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000047",
+            "source_relationship_ids": [
+              "SEM_REL::000077",
+              "SEM_REL::000078",
+              "SEM_REL::000081"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000047",
+            "incoming_relationships": [
+              "SEM_REL::000081"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000077",
+              "SEM_REL::000078"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000081"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000077",
+              "SEM_REL::000078"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000044",
+              "ENG_OBJ::000045",
+              "ENG_OBJ::000046"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000046"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000047",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000044",
+                "SEM_ROLE::000045",
+                "SEM_ROLE::000046"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000048",
             "engineering_object_id": "ENG_OBJ::000048",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B12",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B12",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::047"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::010",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000048",
+            "source_relationship_ids": [
+              "SEM_REL::000079",
+              "SEM_REL::000080",
+              "SEM_REL::000082"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.898,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000048",
+            "incoming_relationships": [
+              "SEM_REL::000082"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000079",
+              "SEM_REL::000080"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000082"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000079",
+              "SEM_REL::000080"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000044",
+              "ENG_OBJ::000045",
+              "ENG_OBJ::000046"
+            ],
+            "parent_group_ids": [
+              "ENG_OBJ::000046"
+            ],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000048",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000044",
+                "SEM_ROLE::000045",
+                "SEM_ROLE::000046"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000049",
             "engineering_object_id": "ENG_OBJ::000049",
-            "object_type": "TOP_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B13",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B13",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::046",
-                "SKETCH::047",
-                "SKETCH::048",
-                "SKETCH::049",
-                "SKETCH::051"
-              ],
-              "text": [
-                "TXT::077",
-                "TXT::078"
-              ],
-              "leaders": [
-                "LDR::054",
-                "LDR::055"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::011",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000049",
+            "source_relationship_ids": [
+              "SEM_REL::000084",
+              "SEM_REL::000085",
+              "SEM_REL::000089",
+              "SEM_REL::000090"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8333,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000049",
+            "incoming_relationships": [
+              "SEM_REL::000085"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000084",
+              "SEM_REL::000089",
+              "SEM_REL::000090"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000085"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000084",
+              "SEM_REL::000089",
+              "SEM_REL::000090"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000050",
+              "ENG_OBJ::000051",
+              "ENG_OBJ::000053"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000051"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000049",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000050",
+                "SEM_ROLE::000051",
+                "SEM_ROLE::000053"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000050",
             "engineering_object_id": "ENG_OBJ::000050",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B13",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B13",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::050"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::011",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000050",
+            "source_relationship_ids": [
+              "SEM_REL::000086",
+              "SEM_REL::000089"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.865,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000050",
+            "incoming_relationships": [
+              "SEM_REL::000086",
+              "SEM_REL::000089"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000086",
+              "SEM_REL::000089"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000049",
+              "ENG_OBJ::000051"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000051"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000050",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000049",
+                "SEM_ROLE::000051"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000051",
             "engineering_object_id": "ENG_OBJ::000051",
-            "object_type": "REINFORCEMENT_NOTE",
-            "object_subtype": null,
+            "object_type": "BEAM_IDENTIFIER",
             "owner_context_id": "ERC::B13",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B13",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::048"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::011",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000051",
+            "source_relationship_ids": [
+              "SEM_REL::000085",
+              "SEM_REL::000086",
+              "SEM_REL::000087"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.912,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000051",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000085",
+              "SEM_REL::000086",
+              "SEM_REL::000087"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000085",
+              "SEM_REL::000086",
+              "SEM_REL::000087"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000049",
+              "ENG_OBJ::000050",
+              "ENG_OBJ::000053"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000051",
-              "semantic_role_type": "BEAM_IDENTIFIER_ROLE"
+              "semantic_role_type": "BEAM_IDENTIFIER_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000049",
+                "SEM_ROLE::000050",
+                "SEM_ROLE::000053"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000052",
             "engineering_object_id": "ENG_OBJ::000052",
-            "object_type": "UNKNOWN",
-            "object_subtype": null,
+            "object_type": "TEXT_NOTE",
             "owner_context_id": "ERC::B13",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B13",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::079",
-                "TXT::081"
-              ],
-              "leaders": [
-                "LDR::056",
-                "LDR::057"
-              ],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY_AND_TEXT",
-            "confidence": 0.68,
+            "detail_context_id": "DETAIL_CTX::011",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000052",
+            "source_relationship_ids": [
+              "SEM_REL::000088"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.7033,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000052",
+            "incoming_relationships": [
+              "SEM_REL::000088"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000088"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000053"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000052",
-              "semantic_role_type": "CALLOUT_ROLE"
+              "semantic_role_type": "CALLOUT_ROLE",
+              "engineering_priority": "LOW",
+              "connected_role_ids": [
+                "SEM_ROLE::000053"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000053",
             "engineering_object_id": "ENG_OBJ::000053",
             "object_type": "SIDE_FACE_REINFORCEMENT",
-            "object_subtype": null,
             "owner_context_id": "ERC::B13",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B13",
-            "asset_references": {
-              "geometry": [],
-              "text": [
-                "TXT::080"
-              ],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "TEXT",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::011",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000053",
+            "source_relationship_ids": [
+              "SEM_REL::000084",
+              "SEM_REL::000087",
+              "SEM_REL::000088",
+              "SEM_REL::000090"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8417,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000053",
+            "incoming_relationships": [
+              "SEM_REL::000084",
+              "SEM_REL::000087",
+              "SEM_REL::000090"
+            ],
+            "outgoing_relationships": [
+              "SEM_REL::000088"
+            ],
+            "incoming_relationship_ids": [
+              "SEM_REL::000084",
+              "SEM_REL::000087",
+              "SEM_REL::000090"
+            ],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000088"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000049",
+              "ENG_OBJ::000051",
+              "ENG_OBJ::000052"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [
+              "ENG_OBJ::000051"
+            ],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000053",
-              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "SIDE_FACE_REINFORCEMENT_ROLE",
+              "engineering_priority": "HIGH",
+              "connected_role_ids": [
+                "SEM_ROLE::000049",
+                "SEM_ROLE::000051",
+                "SEM_ROLE::000052"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000054",
             "engineering_object_id": "ENG_OBJ::000054",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B14",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B14",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::052"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
+            "detail_context_id": "DETAIL_CTX::012",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000054",
+            "source_relationship_ids": [],
+            "classification_source": "SEMANTIC_ROLE",
             "confidence": 0.9,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000054",
+            "incoming_relationships": [],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000054",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": []
             }
           },
           {
+            "object_id": "ENG_OBJ::000055",
             "engineering_object_id": "ENG_OBJ::000055",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B15",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B15",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::053"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::013",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000055",
+            "source_relationship_ids": [
+              "SEM_REL::000091"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8467,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000055",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000091"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000091"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000056"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000055",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000056"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000056",
             "engineering_object_id": "ENG_OBJ::000056",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B15",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B15",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::054"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::013",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000056",
+            "source_relationship_ids": [
+              "SEM_REL::000091"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8333,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000056",
+            "incoming_relationships": [
+              "SEM_REL::000091"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000091"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000055"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000056",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000055"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000057",
             "engineering_object_id": "ENG_OBJ::000057",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B16",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B16",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::055"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.9,
+            "detail_context_id": "DETAIL_CTX::014",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000057",
+            "source_relationship_ids": [
+              "SEM_REL::000092"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8333,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000057",
+            "incoming_relationships": [],
+            "outgoing_relationships": [
+              "SEM_REL::000092"
+            ],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [
+              "SEM_REL::000092"
+            ],
+            "connected_object_ids": [
+              "ENG_OBJ::000058"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000057",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000058"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000058",
             "engineering_object_id": "ENG_OBJ::000058",
             "object_type": "STIRRUP",
-            "object_subtype": null,
             "owner_context_id": "ERC::B16",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B16",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::056"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
-            "confidence": 0.92,
+            "detail_context_id": "DETAIL_CTX::014",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000058",
+            "source_relationship_ids": [
+              "SEM_REL::000092"
+            ],
+            "classification_source": "SEMANTIC_GRAPH",
+            "confidence": 0.8467,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000058",
+            "incoming_relationships": [
+              "SEM_REL::000092"
+            ],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [
+              "SEM_REL::000092"
+            ],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [
+              "ENG_OBJ::000057"
+            ],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000058",
-              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE"
+              "semantic_role_type": "TRANSVERSE_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": [
+                "SEM_ROLE::000057"
+              ]
             }
           },
           {
+            "object_id": "ENG_OBJ::000059",
             "engineering_object_id": "ENG_OBJ::000059",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B17",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B17",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::057"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
+            "detail_context_id": "DETAIL_CTX::015",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000059",
+            "source_relationship_ids": [],
+            "classification_source": "SEMANTIC_ROLE",
             "confidence": 0.9,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000059",
+            "incoming_relationships": [],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000059",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": []
             }
           },
           {
+            "object_id": "ENG_OBJ::000060",
             "engineering_object_id": "ENG_OBJ::000060",
-            "object_type": "BOTTOM_BAR",
-            "object_subtype": null,
+            "object_type": "TOP_REINFORCEMENT",
             "owner_context_id": "ERC::B18",
-            "owner_registry_id": "ENG_OBJ_REGISTRY::B18",
-            "asset_references": {
-              "geometry": [
-                "SKETCH::058"
-              ],
-              "text": [],
-              "leaders": [],
-              "blocks": []
-            },
-            "classification_source": "GEOMETRY",
+            "detail_context_id": "DETAIL_CTX::016",
+            "drawing_id": "DRAWING::SHR_OHT_LVL_TOP::REINFORCEMENT",
+            "drawing_set_id": "DRAWING_SET::SHR_OHT_LVL_TOP",
+            "source_role_id": "SEM_ROLE::000060",
+            "source_relationship_ids": [],
+            "classification_source": "SEMANTIC_ROLE",
             "confidence": 0.9,
             "engineering_status": "OBJECT_CREATED",
-            "lifecycle": "CREATED",
+            "lifecycle": "OBJECT_CREATED",
+            "notes": "",
+            "graph_node_id": "ENG_OBJ_NODE::ENG_OBJ::000060",
+            "incoming_relationships": [],
+            "outgoing_relationships": [],
+            "incoming_relationship_ids": [],
+            "outgoing_relationship_ids": [],
+            "connected_object_ids": [],
+            "parent_group_ids": [],
+            "child_group_ids": [],
+            "annotation_ids": [],
             "metadata": {
               "created_phase": "G.5.1",
-              "semantic_role_id": "SEM_ROLE::000060",
-              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE"
+              "semantic_role_type": "LONGITUDINAL_REINFORCEMENT_ROLE",
+              "engineering_priority": "CRITICAL",
+              "connected_role_ids": []
             }
           }
         ],
@@ -3493,120 +5188,150 @@
           {
             "reinforcement_context_id": "ERC::B1",
             "beam_mark": "B1",
-            "registry_id": "ENG_OBJ_REGISTRY::B1",
+            "registry_id": "OBJ_REGISTRY::B1",
             "object_count": 5
           },
           {
             "reinforcement_context_id": "ERC::B2",
             "beam_mark": "B2",
-            "registry_id": "ENG_OBJ_REGISTRY::B2",
+            "registry_id": "OBJ_REGISTRY::B2",
             "object_count": 4
           },
           {
             "reinforcement_context_id": "ERC::B3",
             "beam_mark": "B3",
-            "registry_id": "ENG_OBJ_REGISTRY::B3",
+            "registry_id": "OBJ_REGISTRY::B3",
             "object_count": 7
           },
           {
             "reinforcement_context_id": "ERC::B4",
             "beam_mark": "B4",
-            "registry_id": "ENG_OBJ_REGISTRY::B4",
+            "registry_id": "OBJ_REGISTRY::B4",
             "object_count": 5
           },
           {
             "reinforcement_context_id": "ERC::B5",
             "beam_mark": "B5",
-            "registry_id": "ENG_OBJ_REGISTRY::B5",
+            "registry_id": "OBJ_REGISTRY::B5",
             "object_count": 4
           },
           {
             "reinforcement_context_id": "ERC::B6",
             "beam_mark": "B6",
-            "registry_id": "ENG_OBJ_REGISTRY::B6",
+            "registry_id": "OBJ_REGISTRY::B6",
             "object_count": 3
           },
           {
             "reinforcement_context_id": "ERC::B7",
             "beam_mark": "B7",
-            "registry_id": "ENG_OBJ_REGISTRY::B7",
+            "registry_id": "OBJ_REGISTRY::B7",
             "object_count": 4
           },
           {
             "reinforcement_context_id": "ERC::B8",
             "beam_mark": "B8",
-            "registry_id": "ENG_OBJ_REGISTRY::B8",
+            "registry_id": "OBJ_REGISTRY::B8",
             "object_count": 7
           },
           {
             "reinforcement_context_id": "ERC::B11",
             "beam_mark": "B11",
-            "registry_id": "ENG_OBJ_REGISTRY::B11",
+            "registry_id": "OBJ_REGISTRY::B11",
             "object_count": 4
           },
           {
             "reinforcement_context_id": "ERC::B12",
             "beam_mark": "B12",
-            "registry_id": "ENG_OBJ_REGISTRY::B12",
+            "registry_id": "OBJ_REGISTRY::B12",
             "object_count": 5
           },
           {
             "reinforcement_context_id": "ERC::B13",
             "beam_mark": "B13",
-            "registry_id": "ENG_OBJ_REGISTRY::B13",
+            "registry_id": "OBJ_REGISTRY::B13",
             "object_count": 5
           },
           {
             "reinforcement_context_id": "ERC::B14",
             "beam_mark": "B14",
-            "registry_id": "ENG_OBJ_REGISTRY::B14",
+            "registry_id": "OBJ_REGISTRY::B14",
             "object_count": 1
           },
           {
             "reinforcement_context_id": "ERC::B15",
             "beam_mark": "B15",
-            "registry_id": "ENG_OBJ_REGISTRY::B15",
+            "registry_id": "OBJ_REGISTRY::B15",
             "object_count": 2
           },
           {
             "reinforcement_context_id": "ERC::B16",
             "beam_mark": "B16",
-            "registry_id": "ENG_OBJ_REGISTRY::B16",
+            "registry_id": "OBJ_REGISTRY::B16",
             "object_count": 2
           },
           {
             "reinforcement_context_id": "ERC::B17",
             "beam_mark": "B17",
-            "registry_id": "ENG_OBJ_REGISTRY::B17",
+            "registry_id": "OBJ_REGISTRY::B17",
             "object_count": 1
           },
           {
             "reinforcement_context_id": "ERC::B18",
             "beam_mark": "B18",
-            "registry_id": "ENG_OBJ_REGISTRY::B18",
+            "registry_id": "OBJ_REGISTRY::B18",
             "object_count": 1
           }
         ]
       },
       "engineering_object_summary": {
         "phase": "Phase G.5.1",
+        "status": "OBJECTS_CREATED",
         "context_count": 16,
-        "object_count": 60,
+        "total_objects": 60,
         "objects_by_type": {
-          "BOTTOM_BAR": 11,
+          "TOP_REINFORCEMENT": 16,
           "STIRRUP": 13,
-          "BEAM_LABEL": 6,
-          "REINFORCEMENT_NOTE": 19,
+          "BEAM_IDENTIFIER": 24,
           "SIDE_FACE_REINFORCEMENT": 4,
-          "TOP_BAR": 5,
-          "UNKNOWN": 2
+          "GENERAL_NOTE": 1,
+          "TEXT_NOTE": 2
         },
-        "registry_ready": true,
-        "factory_ready": true,
-        "lifecycle_ready": true,
-        "graph_ready": true,
-        "relationships_ready": true,
-        "status": "OBJECTS_INSTANTIATED"
+        "objects_by_erc": {
+          "ERC::B1": 5,
+          "ERC::B2": 4,
+          "ERC::B3": 7,
+          "ERC::B4": 5,
+          "ERC::B5": 4,
+          "ERC::B6": 3,
+          "ERC::B7": 4,
+          "ERC::B8": 7,
+          "ERC::B11": 4,
+          "ERC::B12": 5,
+          "ERC::B13": 5,
+          "ERC::B14": 1,
+          "ERC::B15": 2,
+          "ERC::B16": 2,
+          "ERC::B17": 1,
+          "ERC::B18": 1
+        },
+        "average_confidence": 0.87,
+        "unknown_count": 0,
+        "unknown_ratio": 0.0,
+        "unknown_below_threshold": true,
+        "registry_counts": {
+          "object_count": 60,
+          "erc_registry_count": 16
+        },
+        "graph_statistics": {
+          "node_count": 61,
+          "edge_count": 364
+        },
+        "validation_summary": {
+          "status": "PASS",
+          "passed": 12,
+          "failed": 0,
+          "total_checks": 12
+        }
       },
       "semantic_role_registry": {
         "namespace": "ENGINEERING_SEMANTIC_ROLE",

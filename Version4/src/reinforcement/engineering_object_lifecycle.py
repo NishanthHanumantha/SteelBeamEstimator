@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from typing import Any, FrozenSet, List, Optional
 
+from src.engineering_objects.engineering_object import erc_engineering_object_count
+
 STATE_NOT_CREATED = "NOT_CREATED"
 STATE_PLACEHOLDER_CREATED = "PLACEHOLDER_CREATED"
 STATE_CREATED = "CREATED"
@@ -85,7 +87,7 @@ class EngineeringObjectLifecycle:
             EngineeringObjectLifecycle.build_registry_entry(
                 c.get("reinforcement_context_id", ""),
                 str(c.get("beam_mark", "")),
-                len(c.get("engineering_objects", {}).get("objects", [])),
+                erc_engineering_object_count(c),
             )
             for c in contexts
         ]

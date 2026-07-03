@@ -73,8 +73,12 @@ def engineering_object_instantiation_applied(model: dict[str, Any]) -> bool:
         return True
     contexts = model.get("engineering_reinforcement_contexts", [])
     if contexts:
+        from src.engineering_objects.engineering_object import erc_engineering_object_count
+
+        if erc_engineering_object_count(contexts[0]) > 0:
+            return True
         section = contexts[0].get("engineering_objects", {})
-        if section.get("object_count", 0) > 0:
+        if isinstance(section, dict) and section.get("object_count", 0) > 0:
             return True
     return bool(
         model.get("workspace_manager", {}).get("engineering_object_instantiation_complete")

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, List
 
+from src.engineering_objects.engineering_object import erc_engineering_object_ids
 from src.reinforcement.engineering_object import format_engineering_object_registry_id
 from src.reinforcement.engineering_reinforcement_context import format_engineering_results_id
 
@@ -128,16 +129,20 @@ class EngineeringObjectGraph:
                 }
             )
 
-            for obj in ctx.get("engineering_objects", {}).get("objects", []):
-                if isinstance(obj, str):
-                    obj_id = obj
+            for obj_ref in erc_engineering_object_ids(ctx):
+                if isinstance(obj_ref, str):
+                    obj_id = obj_ref
                     obj_data = next(
-                        (o for o in objects or [] if o.get("engineering_object_id") == obj_id),
+                        (
+                            o
+                            for o in objects or []
+                            if (o.get("engineering_object_id") or o.get("object_id")) == obj_id
+                        ),
                         {},
                     )
                 else:
-                    obj_data = obj
-                    obj_id = obj.get("engineering_object_id")
+                    obj_data = obj_ref
+                    obj_id = obj_ref.get("engineering_object_id") or obj_ref.get("object_id")
                 if not obj_id:
                     continue
                 if obj_id not in existing_ids:

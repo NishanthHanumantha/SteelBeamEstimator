@@ -513,9 +513,19 @@ def run() -> int:
         erc_contexts[0] if erc_contexts else {},
     )
     if sample_erc_g42:
-        eng_objs = sample_erc_g42.get("engineering_objects", {})
-        print(f"\nSample ERC Objects: {eng_objs.get('registry_id', '?')}")
-        print(f"  object_count={len(eng_objs.get('objects', []))}")
+        eng_registry = sample_erc_g42.get("engineering_object_registry", {})
+        if not eng_registry:
+            eng_objs = sample_erc_g42.get("engineering_objects", {})
+            if isinstance(eng_objs, dict):
+                eng_registry = eng_objs
+        registry_id = eng_registry.get("registry_id", "?") if isinstance(eng_registry, dict) else "?"
+        object_count = len(sample_erc_g42.get("engineering_objects", []))
+        if isinstance(sample_erc_g42.get("engineering_objects"), dict):
+            object_count = len(
+                sample_erc_g42.get("engineering_objects", {}).get("objects", [])
+            )
+        print(f"\nSample ERC Objects: {registry_id}")
+        print(f"  object_count={object_count}")
     print(f"G.4.2 Object Validation: {object_validation.get('status', 'SKIP')}")
     if object_validation.get("checks"):
         passed = sum(
@@ -599,7 +609,7 @@ def run() -> int:
     obj_stats = result.get("model", {}).get("engineering_object_statistics", {})
     print(f"Engineering Objects: {len(eng_objects)}")
     print(f"Status: {obj_summary.get('status', '?')}")
-    print(f"Objects By Type: {obj_stats.get('objects_by_type', {})}")
+    print(f"Objects By Type: {obj_summary.get('objects_by_type', obj_stats.get('objects_by_type', {}))}")
     sample_b1_objects = [
         o
         for o in eng_objects
@@ -620,6 +630,132 @@ def run() -> int:
         )
         total = len(creation_validation["checks"])
         print(f"  Creation Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.2")
+    print("Engineering Property Graph")
+    print("=" * 52)
+    property_validation = result.get("property_validation", {})
+    prop_candidates = result.get("model", {}).get("property_candidates", [])
+    prop_summary = result.get("model", {}).get("property_summary", {})
+    print(f"Property Candidates: {len(prop_candidates)}")
+    print(f"Status: {prop_summary.get('status', '?')}")
+    print(f"Candidates By Type: {prop_summary.get('candidates_by_type', {})}")
+    print(f"Avg Candidates/Object: {prop_summary.get('average_candidates_per_object', 0)}")
+    print(f"Graph: {prop_summary.get('graph_nodes', 0)} nodes, {prop_summary.get('graph_edges', 0)} edges")
+    sample_b1_candidates = [
+        c
+        for c in prop_candidates
+        if c.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_candidates:
+        obj_groups: dict[str, list] = {}
+        for cand in sample_b1_candidates:
+            obj_groups.setdefault(cand.get("engineering_object_id", ""), []).append(cand)
+        print(f"\nBeam B1 Property Sources ({len(sample_b1_candidates)} candidates):")
+        for obj_id, cands in list(obj_groups.items())[:3]:
+            types = sorted({c.get("candidate_type") for c in cands})
+            sources = sorted({c.get("source_entity_id") for c in cands})
+            print(f"  {obj_id}: types={types[:6]} sources={sources[:4]}")
+    print(f"G.5.2 Property Validation: {property_validation.get('status', 'SKIP')}")
+    if property_validation.get("checks"):
+        passed = sum(
+            1 for c in property_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(property_validation["checks"])
+        print(f"  Property Checks: {passed}/{total} PASS")
+    reporting = property_validation.get("reporting_consistency", {})
+    if reporting:
+        print(f"G.5.2.1 Reporting Consistency: {reporting.get('status', 'SKIP')}")
+        if reporting.get("checks"):
+            passed = sum(
+                1 for c in reporting["checks"] if c.get("status") == "PASS"
+            )
+            total = len(reporting["checks"])
+            print(f"  Reporting Checks: {passed}/{total} PASS")
+    summary_validation = prop_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {summary_validation.get('status', '?')} "
+        f"({summary_validation.get('passed', 0)}/{summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.3.1")
+    print("Engineering Property Parser")
+    print("=" * 52)
+    parser_validation = result.get("property_parser_validation", {})
+    eng_properties = result.get("model", {}).get("engineering_properties", [])
+    parser_summary = result.get("model", {}).get("property_parser_summary", {})
+    unparsed = result.get("model", {}).get("unparsed_candidates", [])
+    print(f"Engineering Properties: {len(eng_properties)}")
+    print(f"Status: {parser_summary.get('status', '?')}")
+    print(f"Candidates Processed: {parser_summary.get('candidates_processed', 0)}")
+    print(f"Parsed: {parser_summary.get('parsed_count', 0)}  Unparsed: {parser_summary.get('unparsed_count', 0)}")
+    print(f"Properties By Type: {parser_summary.get('properties_by_type', {})}")
+    print(f"Avg Properties/Candidate: {parser_summary.get('average_properties_per_candidate', 0)}")
+    print(f"Avg Parse Confidence: {parser_summary.get('average_parse_confidence', 0)}")
+    sample_b1_props = [
+        p for p in eng_properties if p.get("owner_context_id") == "ERC::B1"
+    ][:8]
+    if sample_b1_props:
+        print(f"\nBeam B1 Sample Properties ({len(sample_b1_props)} shown):")
+        for prop in sample_b1_props:
+            print(
+                f"  {prop.get('property_id')} "
+                f"type={prop.get('property_type')} "
+                f"status={prop.get('parse_status')} "
+                f"value={prop.get('normalized_value')}"
+            )
+    print(f"G.5.3.1 Parser Validation: {parser_validation.get('status', 'SKIP')}")
+    if parser_validation.get("checks"):
+        passed = sum(
+            1 for c in parser_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(parser_validation["checks"])
+        print(f"  Parser Checks: {passed}/{total} PASS")
+    parser_summary_validation = parser_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {parser_summary_validation.get('status', '?')} "
+        f"({parser_summary_validation.get('passed', 0)}/{parser_summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print(f"Unparsed Candidate Records: {len(unparsed)}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.3.4")
+    print("Engineering Property Lifecycle & Availability")
+    print("=" * 52)
+    resolver_validation = result.get("property_resolution_validation", {})
+    resolved_properties = result.get("model", {}).get("resolved_engineering_properties", [])
+    resolver_summary = result.get("model", {}).get("property_resolution_summary", {})
+    availability_report = result.get("model", {}).get("property_availability_report", {})
+    lifecycle_reporting = result.get("model", {}).get("property_lifecycle_reporting", {})
+    conflicts = result.get("model", {}).get("property_conflicts", [])
+    print(f"Engineering Properties: {resolver_summary.get('engineering_property_count', 0)}")
+    print(f"Resolved Properties: {len(resolved_properties)}")
+    print(f"Lifecycle Distribution: {resolver_summary.get('lifecycle_distribution', {})}")
+    print(f"Status Distribution: {resolver_summary.get('status_distribution', {})}")
+    print(f"Availability: {resolver_summary.get('availability_distribution', {})}")
+    print(f"Deferred Count: {availability_report.get('deferred_count', 0)}")
+    print(f"Percentage Deferred: {availability_report.get('percentage_deferred', 0)}")
+    print(f"Genuine Unknown Count: {resolver_summary.get('status_distribution', {}).get('UNKNOWN', 0)}")
+    print(f"Engineering Roadmap: {lifecycle_reporting.get('engineering_roadmap', {})}")
+    print(f"Avg Resolution Confidence: {resolver_summary.get('average_resolution_confidence', 0)}")
+    print(f"Avg Parsed Confidence: {resolver_summary.get('average_parsed_resolution_confidence', 0)}")
+    print(f"G.5.3.4 Resolver Validation: {resolver_validation.get('status', 'SKIP')}")
+    if resolver_validation.get("checks"):
+        passed = sum(
+            1 for c in resolver_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(resolver_validation["checks"])
+        print(f"  Resolver Checks: {passed}/{total} PASS")
+    resolver_summary_validation = resolver_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {resolver_summary_validation.get('status', '?')} "
+        f"({resolver_summary_validation.get('passed', 0)}/{resolver_summary_validation.get('total_checks', 0)} PASS)"
+    )
     print("=" * 52 + "\n")
 
     failed = any(
@@ -670,6 +806,12 @@ def run() -> int:
     if result.get("engineering_semantic_relationship_validation", {}).get("status") == "FAIL":
         failed = True
     if result.get("engineering_object_creation_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_parser_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_resolution_validation", {}).get("status") == "FAIL":
         failed = True
     return 1 if failed else 0
 

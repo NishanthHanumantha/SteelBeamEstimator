@@ -838,6 +838,9 @@ class BeamGeometryDebugExporter:
             "DEBUG_OBJECT_TYPE",
             "DEBUG_OBJECT_REFERENCE",
             "DEBUG_OBJECT_CONFIDENCE",
+            "DEBUG_OBJECT_LINK",
+            "DEBUG_OBJECT_GRAPH",
+            "DEBUG_OBJECT_ID",
             "DEBUG_SEMANTIC_ROLE",
             "DEBUG_ROLE_TYPE",
             "DEBUG_ROLE_ID",
@@ -1573,9 +1576,13 @@ class BeamGeometryDebugExporter:
                 )
                 link_y += 360.0
 
-            obj_ids = erc.get("engineering_objects", {}).get("objects", [])
+            eng_objs = erc.get("engineering_objects", [])
+            if isinstance(eng_objs, dict):
+                obj_ids = eng_objs.get("objects", [])
+            else:
+                obj_ids = list(eng_objs or [])
             objects_by_id = {
-                o.get("engineering_object_id"): o
+                o.get("engineering_object_id") or o.get("object_id"): o
                 for o in model.get("engineering_objects", [])
             }
             if not objects_by_id:
@@ -1607,8 +1614,38 @@ class BeamGeometryDebugExporter:
                         "color": 5,
                     },
                 )
-                refs = obj.get("asset_references", {})
-                ref_count = sum(len(refs.get(k, [])) for k in refs)
+                msp.add_text(
+                    f"role={obj.get('source_role_id', '?')} rels={len(obj.get('source_relationship_ids', []))}",
+                    dxfattribs={
+                        "layer": "DEBUG_OBJECT_LINK",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], obj_y + 400),
+                        "color": 4,
+                    },
+                )
+                msp.add_text(
+                    obj_id,
+                    dxfattribs={
+                        "layer": "DEBUG_OBJECT_ID",
+                        "height": 100.0,
+                        "insert": (region_box["min_x"], obj_y + 520),
+                        "color": 2,
+                    },
+                )
+                for conn in obj.get("connected_object_ids", [])[:2]:
+                    msp.add_text(
+                        f"-> {conn}",
+                        dxfattribs={
+                            "layer": "DEBUG_OBJECT_GRAPH",
+                            "height": 90.0,
+                            "insert": (region_box["min_x"], obj_y + 640),
+                            "color": 6,
+                        },
+                    )
+                refs = obj.get("asset_references") or {}
+                ref_count = sum(len(refs.get(k, [])) for k in refs) if refs else len(
+                    obj.get("source_relationship_ids", [])
+                )
                 msp.add_text(
                     f"refs={ref_count} conf={obj.get('confidence', 0)}",
                     dxfattribs={

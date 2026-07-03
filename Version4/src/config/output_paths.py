@@ -62,6 +62,9 @@ PHASE_G_4_2_ENGINEERING_OBJECT_FRAMEWORK = "g_4_2_engineering_object_framework"
 PHASE_G_5_0_SEMANTIC_ROLES = "g_5_0_semantic_roles"
 PHASE_G_5_0_1_SEMANTIC_RELATIONSHIPS = "g_5_0_1_semantic_relationships"
 PHASE_G_5_1_ENGINEERING_OBJECTS = "g_5_1_engineering_objects"
+PHASE_G_5_2_PROPERTY_GRAPH = "g_5_2_property_graph"
+PHASE_G_5_3_1_PROPERTY_PARSER = "g_5_3_1_property_parser"
+PHASE_G_5_3_2_PROPERTY_RESOLVER = "g_5_3_2_property_resolver"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -1614,8 +1617,88 @@ class OutputPaths:
         return self.phase_g_5_1_dir / "engineering_object_statistics.json"
 
     @property
+    def phase_g_5_1_engineering_object_validation_export(self) -> Path:
+        return self.phase_g_5_1_dir / "engineering_object_validation.json"
+
+    @property
     def phase_g_5_1_engineering_object_creation_validation_export(self) -> Path:
         return self.phase_g_5_1_dir / "engineering_object_creation_validation.json"
+
+    @property
+    def phase_g_5_2_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_2_PROPERTY_GRAPH
+
+    @property
+    def phase_g_5_2_property_candidates_export(self) -> Path:
+        return self.phase_g_5_2_dir / "property_candidates.json"
+
+    @property
+    def phase_g_5_2_property_registry_export(self) -> Path:
+        return self.phase_g_5_2_dir / "property_registry.json"
+
+    @property
+    def phase_g_5_2_property_graph_export(self) -> Path:
+        return self.phase_g_5_2_dir / "property_graph.json"
+
+    @property
+    def phase_g_5_2_property_summary_export(self) -> Path:
+        return self.phase_g_5_2_dir / "property_summary.json"
+
+    @property
+    def phase_g_5_2_property_validation_export(self) -> Path:
+        return self.phase_g_5_2_dir / "property_validation.json"
+
+    @property
+    def phase_g_5_3_1_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_3_1_PROPERTY_PARSER
+
+    @property
+    def phase_g_5_3_1_engineering_properties_export(self) -> Path:
+        return self.phase_g_5_3_1_dir / "engineering_properties.json"
+
+    @property
+    def phase_g_5_3_1_property_parser_registry_export(self) -> Path:
+        return self.phase_g_5_3_1_dir / "property_parser_registry.json"
+
+    @property
+    def phase_g_5_3_1_property_parser_summary_export(self) -> Path:
+        return self.phase_g_5_3_1_dir / "property_parser_summary.json"
+
+    @property
+    def phase_g_5_3_1_property_parser_validation_export(self) -> Path:
+        return self.phase_g_5_3_1_dir / "property_parser_validation.json"
+
+    @property
+    def phase_g_5_3_1_unparsed_candidates_export(self) -> Path:
+        return self.phase_g_5_3_1_dir / "unparsed_candidates.json"
+
+    @property
+    def phase_g_5_3_2_dir(self) -> Path:
+        return self.phase_g_dir / PHASE_G_5_3_2_PROPERTY_RESOLVER
+
+    @property
+    def phase_g_5_3_2_resolved_engineering_properties_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "resolved_engineering_properties.json"
+
+    @property
+    def phase_g_5_3_2_property_resolution_registry_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "property_resolution_registry.json"
+
+    @property
+    def phase_g_5_3_2_property_conflicts_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "property_conflicts.json"
+
+    @property
+    def phase_g_5_3_2_property_resolution_summary_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "property_resolution_summary.json"
+
+    @property
+    def phase_g_5_3_2_property_resolution_validation_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "property_resolution_validation.json"
+
+    @property
+    def phase_g_5_3_2_property_availability_report_export(self) -> Path:
+        return self.phase_g_5_3_2_dir / "property_availability_report.json"
 
     @property
     def phase_g_2_reinforcement_workspace(self) -> Path:
@@ -1668,6 +1751,9 @@ class OutputPaths:
             PHASE_G_4_1_ENGINEERING_REINFORCEMENT_CONTEXT,
             PHASE_G_4_2_ENGINEERING_OBJECT_FRAMEWORK,
             PHASE_G_5_1_ENGINEERING_OBJECTS,
+            PHASE_G_5_2_PROPERTY_GRAPH,
+            PHASE_G_5_3_1_PROPERTY_PARSER,
+            PHASE_G_5_3_2_PROPERTY_RESOLVER,
         ):
             (self.phase_g_dir / subdir).mkdir(parents=True, exist_ok=True)
 

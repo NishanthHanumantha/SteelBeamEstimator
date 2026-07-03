@@ -43,7 +43,22 @@ from src.reinforcement.engineering_semantic_relationship_builder import (
 from src.reinforcement.engineering_semantic_relationship_validator import (
     EngineeringSemanticRelationshipValidator,
 )
-from src.reinforcement.engineering_object_instantiator import EngineeringObjectInstantiator
+from src.engineering_objects.engineering_object_builder import EngineeringObjectBuilder
+from src.property_graph.property_graph_builder import PropertyGraphBuilder
+from src.property_graph.property_graph_reporting import (
+    PropertyGraphReporting,
+    PropertyGraphReportingConsistencyValidator,
+)
+from src.property_graph.property_graph_summary import PropertyGraphSummary
+from src.property_graph.property_graph_validator import PropertyGraphValidator
+from src.property_parser.property_parser import PropertyParser
+from src.property_parser.property_parser_reporting import PropertyParserReporting
+from src.property_parser.property_parser_summary import PropertyParserSummary
+from src.property_parser.property_parser_validator import PropertyParserValidator
+from src.property_resolver.property_resolver import PropertyResolver
+from src.property_resolver.property_resolution_reporting import PropertyResolutionReporting
+from src.property_resolver.property_resolution_summary import PropertyResolutionSummary
+from src.property_resolver.property_resolution_validator import PropertyResolutionValidator
 from src.reinforcement.engineering_object_validator import EngineeringObjectValidator
 from src.reinforcement.engineering_relationships import EngineeringRelationships
 from src.reinforcement.engineering_asset_registry import EngineeringAssetRegistry
@@ -74,8 +89,8 @@ from src.reinforcement.match_decision_validator import MatchDecisionValidator
 from src.reinforcement.reinforcement_drawing_validator import ReinforcementDrawingValidator
 
 
-PHASE = "Phase G.5.1"
-MODEL_VERSION = "5.1"
+PHASE = "Phase G.5.3.4"
+MODEL_VERSION = "5.3.4"
 
 
 @dataclass
@@ -195,7 +210,34 @@ class ReinforcementDrawingBuilder:
             g2.get("engineering_semantic_relationship_enable", True)
         )
         self._engineering_object_instantiation_enabled = bool(
-            g2.get("engineering_object_instantiation_enable", True)
+            g2.get("engineering_object_enable", g2.get("engineering_object_instantiation_enable", True))
+        )
+        self._engineering_object_graph_enabled = bool(
+            g2.get("engineering_object_graph_enable", True)
+        )
+        self._engineering_object_validation_enabled = bool(
+            g2.get("engineering_object_validation_enable", True)
+        )
+        self._engineering_object_debug_enabled = bool(
+            g2.get("engineering_object_debug_enable", False)
+        )
+        self._property_graph_enabled = bool(
+            g2.get("property_graph_enable", True)
+        )
+        self._property_graph_validation_enabled = bool(
+            g2.get("property_graph_validation_enable", True)
+        )
+        self._property_parser_enabled = bool(
+            g2.get("property_parser_enable", True)
+        )
+        self._property_parser_validation_enabled = bool(
+            g2.get("property_parser_validation_enable", True)
+        )
+        self._property_resolver_enabled = bool(
+            g2.get("property_resolver_enable", True)
+        )
+        self._property_resolver_validation_enabled = bool(
+            g2.get("property_resolver_validation_enable", True)
         )
 
     def build_model(self, model: dict[str, Any]) -> dict[str, Any]:
@@ -561,32 +603,36 @@ class ReinforcementDrawingBuilder:
             self._engineering_object_instantiation_enabled
             and all_ercs
             and drawing_models
-            and all_ercs[0].get("engineering_objects") is not None
+            and all_ercs[0].get("semantic_roles")
+            and all_ercs[0].get("semantic_relationships") is not None
         ):
             primary = drawing_models[0]
             project_id = str(model.get("project_workspace", {}).get("project_id", ""))
-            semantic_registry = model.get("engineering_semantic_role_registry")
-            enriched_ercs, obj_registry, relationships, class_export, _, _ = (
-                EngineeringObjectInstantiator().build(
-                    all_ercs,
-                    primary,
-                    semantic_role_registry=semantic_registry,
-                )
+            role_list = model.get("engineering_semantic_role_registry", {}).get("roles", [])
+            rel_list = model.get("engineering_semantic_relationship_registry", {}).get(
+                "relationships", []
+            )
+            obj_builder = EngineeringObjectBuilder()
+            enriched_ercs, obj_registry, role_to_object = obj_builder.build(
+                all_ercs, role_list, rel_list
             )
             all_ercs = enriched_ercs
             model["engineering_reinforcement_contexts"] = all_ercs
             for dm in drawing_models:
                 dm["engineering_reinforcement_contexts"] = enriched_ercs
-            g51_exports = EngineeringObjectInstantiator.build_project_exports(
+            g51_exports = EngineeringObjectBuilder.build_project_exports(
                 enriched_ercs,
                 obj_registry,
-                relationships,
-                class_export,
+                role_to_object,
+                rel_list,
                 drawing_models,
                 project_id=project_id,
             )
             model.update(g51_exports)
             model["engineering_objects"] = obj_registry.all_objects()
+            model["engineering_object_creation_validation"] = g51_exports.get(
+                "engineering_object_instantiation_validation", {}
+            )
             self._enrich_drawing_sets_engineering_objects(
                 model,
                 drawing_models,
@@ -597,6 +643,93 @@ class ReinforcementDrawingBuilder:
                 model,
                 model["engineering_object_registry"],
                 model["engineering_object_summary"],
+            )
+
+        if (
+            self._property_graph_enabled
+            and all_ercs
+            and drawing_models
+            and model.get("engineering_objects")
+        ):
+            primary = drawing_models[0]
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            role_list = model.get("engineering_semantic_role_registry", {}).get("roles", [])
+            rel_list = model.get("engineering_semantic_relationship_registry", {}).get(
+                "relationships", []
+            )
+            objects = model.get("engineering_objects", [])
+            pg_builder = PropertyGraphBuilder()
+            enriched_ercs, pg_registry, pg_graph = pg_builder.build(
+                all_ercs, objects, role_list, rel_list
+            )
+            all_ercs = enriched_ercs
+            model["engineering_reinforcement_contexts"] = all_ercs
+            for dm in drawing_models:
+                dm["engineering_reinforcement_contexts"] = enriched_ercs
+            g52_exports = PropertyGraphBuilder.build_project_exports(
+                enriched_ercs,
+                pg_registry,
+                pg_graph,
+                objects,
+                drawing_models,
+                project_id=project_id,
+            )
+            model.update(g52_exports)
+            model["property_summary"] = PropertyGraphSummary.build(
+                enriched_ercs,
+                objects,
+                model.get("property_candidates", []),
+                model.get("property_registry", {}),
+                model.get("property_graph", {}),
+                {"status": "SKIP", "summary": {}},
+            )
+
+        if self._property_parser_enabled and model.get("property_candidates"):
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            candidates = model.get("property_candidates", [])
+            entity_index = PropertyParser.build_entity_text_index(model)
+            pp_parser = PropertyParser()
+            properties, pp_registry, unparsed = pp_parser.build(candidates, entity_index)
+            g531_exports = PropertyParser.build_project_exports(
+                candidates,
+                pp_registry,
+                properties,
+                unparsed,
+                drawing_models,
+                project_id=project_id,
+            )
+            model.update(g531_exports)
+            model["property_parser_summary"] = PropertyParserSummary.build(
+                candidates,
+                properties,
+                unparsed,
+                model.get("property_parser_registry", {}),
+                {"status": "SKIP", "summary": {}},
+            )
+
+        if self._property_resolver_enabled and model.get("engineering_properties"):
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            properties = model.get("engineering_properties", [])
+            objects = model.get("engineering_objects", [])
+            pr_resolver = PropertyResolver()
+            resolved, pr_registry, conflicts = pr_resolver.build(properties)
+            g532_exports = PropertyResolver.build_project_exports(
+                properties,
+                resolved,
+                pr_registry,
+                conflicts,
+                objects,
+                drawing_models,
+                project_id=project_id,
+            )
+            model.update(g532_exports)
+            model["property_resolution_summary"] = PropertyResolutionSummary.build(
+                objects,
+                properties,
+                resolved,
+                conflicts,
+                model.get("property_resolution_registry", {}),
+                {"status": "SKIP", "summary": {}},
             )
 
         self._update_project_graph(model, drawing_models)
@@ -643,6 +776,34 @@ class ReinforcementDrawingBuilder:
         g51_creation_validation = EngineeringObjectCreationValidator().validate(model)
         model["engineering_object_creation_validation"] = g51_creation_validation
 
+        g52_property_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if model.get("property_candidates"):
+            g52_property_validation = PropertyGraphValidator().validate(model)
+            PropertyGraphReporting.apply_validation(model, g52_property_validation)
+            g52_reporting_validation = PropertyGraphReportingConsistencyValidator().validate(
+                model
+            )
+            model["property_validation"] = PropertyGraphReporting.merge_reporting_checks(
+                g52_property_validation,
+                g52_reporting_validation,
+            )
+        else:
+            model["property_validation"] = g52_property_validation
+
+        g531_parser_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if model.get("property_candidates") and model.get("property_parser_registry"):
+            g531_parser_validation = PropertyParserValidator().validate(model)
+            PropertyParserReporting.apply_validation(model, g531_parser_validation)
+        else:
+            model["property_parser_validation"] = g531_parser_validation
+
+        g532_resolver_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if model.get("engineering_properties") and model.get("property_resolution_registry"):
+            g532_resolver_validation = PropertyResolutionValidator().validate(model)
+            PropertyResolutionReporting.apply_validation(model, g532_resolver_validation)
+        else:
+            model["property_resolution_validation"] = g532_resolver_validation
+
         model["phase_g"] = PHASE
         model["phase"] = PHASE
         model["model_version"] = MODEL_VERSION
@@ -676,6 +837,18 @@ class ReinforcementDrawingBuilder:
         )
         manager["engineering_object_instantiation_complete"] = (
             g51_creation_validation.get("status") == "PASS"
+        )
+        manager["property_graph_complete"] = (
+            model.get("property_validation", {}).get("status") == "PASS"
+            or model.get("property_validation", {}).get("status") == "SKIP"
+        )
+        manager["property_parser_complete"] = (
+            model.get("property_parser_validation", {}).get("status") == "PASS"
+            or model.get("property_parser_validation", {}).get("status") == "SKIP"
+        )
+        manager["property_resolver_complete"] = (
+            model.get("property_resolution_validation", {}).get("status") == "PASS"
+            or model.get("property_resolution_validation", {}).get("status") == "SKIP"
         )
         manager["beam_match_count"] = len(model.get("beam_matches", []))
         manager["engineering_reinforcement_context_count"] = len(
@@ -2091,7 +2264,13 @@ class ReinforcementDrawingBuilder:
                             }
                         )
 
-                obj_registry_id = erc.get("engineering_objects", {}).get("registry_id")
+                eng_obj_section = erc.get("engineering_object_registry", {})
+                if not eng_obj_section and isinstance(erc.get("engineering_objects"), dict):
+                    eng_obj_section = erc.get("engineering_objects", {})
+                obj_registry_id = eng_obj_section.get("registry_id")
+                obj_id_list = erc.get("engineering_objects", [])
+                if isinstance(obj_id_list, dict):
+                    obj_id_list = obj_id_list.get("objects", [])
                 if obj_registry_id and obj_registry_id not in existing_node_ids:
                     nodes.append(
                         {
@@ -2136,10 +2315,10 @@ class ReinforcementDrawingBuilder:
                     )
 
                 objects_by_id = {
-                    o.get("engineering_object_id"): o
+                    o.get("engineering_object_id") or o.get("object_id"): o
                     for o in model.get("engineering_object_registry", {}).get("objects", [])
                 }
-                for obj_ref in erc.get("engineering_objects", {}).get("objects", []):
+                for obj_ref in obj_id_list:
                     obj_id = obj_ref if isinstance(obj_ref, str) else obj_ref.get("engineering_object_id")
                     if not obj_id:
                         continue
@@ -2161,30 +2340,32 @@ class ReinforcementDrawingBuilder:
                             "relationship": "HAS_ENGINEERING_OBJECT",
                         }
                     )
-                    for geom_id in obj_data.get("asset_references", {}).get("geometry", []):
-                        add_edge(
-                            {
-                                "from": obj_id,
-                                "to": geom_id,
-                                "relationship": "REFERENCES",
-                            }
-                        )
-                    for text_id in obj_data.get("asset_references", {}).get("text", []):
-                        add_edge(
-                            {
-                                "from": obj_id,
-                                "to": text_id,
-                                "relationship": "REFERENCES",
-                            }
-                        )
-                    for leader_id in obj_data.get("asset_references", {}).get("leaders", []):
-                        add_edge(
-                            {
-                                "from": obj_id,
-                                "to": leader_id,
-                                "relationship": "REFERENCES",
-                            }
-                        )
+                    asset_refs = obj_data.get("asset_references", {})
+                    if isinstance(asset_refs, dict):
+                        for geom_id in asset_refs.get("geometry", []):
+                            add_edge(
+                                {
+                                    "from": obj_id,
+                                    "to": geom_id,
+                                    "relationship": "REFERENCES",
+                                }
+                            )
+                        for text_id in asset_refs.get("text", []):
+                            add_edge(
+                                {
+                                    "from": obj_id,
+                                    "to": text_id,
+                                    "relationship": "REFERENCES",
+                                }
+                            )
+                        for leader_id in asset_refs.get("leaders", []):
+                            add_edge(
+                                {
+                                    "from": obj_id,
+                                    "to": leader_id,
+                                    "relationship": "REFERENCES",
+                                }
+                            )
 
         graph["nodes"] = nodes
         graph["node_count"] = len(nodes)

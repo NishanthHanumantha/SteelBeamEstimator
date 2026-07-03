@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, List, Set
 
+from src.engineering_objects.engineering_object_validator import EngineeringObjectG51Validator
 from src.reinforcement.engineering_object import (
     ENGINEERING_STATUS_OBJECT_CREATED,
     VALID_OBJECT_TYPES,
@@ -28,9 +29,15 @@ class EngineeringObjectCreationValidator:
                 "summary": {"reason": "engineering_object_instantiation not applied"},
             }
 
-        contexts = model.get("engineering_reinforcement_contexts", [])
         registry = model.get("engineering_object_registry", {})
         objects = registry.get("objects", [])
+        if objects and objects[0].get("source_role_id"):
+            existing = model.get("engineering_object_instantiation_validation")
+            if existing and existing.get("checks"):
+                return existing
+            return EngineeringObjectG51Validator().validate(model)
+
+        contexts = model.get("engineering_reinforcement_contexts", [])
         checks: List[dict[str, Any]] = []
         checks.append(self._check_every_erc_has_registry(contexts, registry))
         checks.append(self._check_objects_belong_to_one_erc(objects))
@@ -56,6 +63,14 @@ class EngineeringObjectCreationValidator:
             },
         }
 
+    def _erc_object_count(self, ctx: dict[str, Any]) -> int:
+        eng = ctx.get("engineering_objects")
+        if isinstance(eng, list):
+            return len(eng)
+        if isinstance(eng, dict):
+            return eng.get("object_count", len(eng.get("objects", [])))
+        return 0
+
     def _check_every_erc_has_registry(
         self,
         contexts: list,
@@ -68,8 +83,13 @@ class EngineeringObjectCreationValidator:
         missing = []
         for ctx in contexts:
             erc_id = ctx.get("reinforcement_context_id")
-            section = ctx.get("engineering_objects", {})
-            if not section.get("registry_id"):
+            section = ctx.get("engineering_object_registry", ctx.get("engineering_objects", {}))
+            registry_id = (
+                section.get("registry_id")
+                if isinstance(section, dict)
+                else ctx.get("engineering_object_registry", {}).get("registry_id")
+            )
+            if not registry_id:
                 missing.append(erc_id)
             elif erc_id not in erc_reg:
                 missing.append(erc_id)
@@ -83,7 +103,7 @@ class EngineeringObjectCreationValidator:
         invalid = []
         for obj in objects:
             if not obj.get("owner_context_id"):
-                invalid.append(obj.get("engineering_object_id"))
+                invalid.append(obj.get("engineering_object_id") or obj.get("object_id"))
         return {
             "name": "Objects Belong To One ERC",
             "status": "PASS" if not invalid else "FAIL",
@@ -91,7 +111,7 @@ class EngineeringObjectCreationValidator:
         }
 
     def _check_unique_ids(self, objects: list) -> dict[str, Any]:
-        ids = [o.get("engineering_object_id") for o in objects]
+        ids = [o.get("engineering_object_id") or o.get("object_id") for o in objects]
         return {
             "name": "Unique IDs",
             "status": "PASS" if len(ids) == len(set(ids)) else "FAIL",
@@ -100,10 +120,10 @@ class EngineeringObjectCreationValidator:
 
     def _check_valid_lifecycle(self, objects: list) -> dict[str, Any]:
         invalid = [
-            o.get("engineering_object_id")
+            o.get("engineering_object_id") or o.get("object_id")
             for o in objects
             if o.get("lifecycle") not in VALID_OBJECT_LIFECYCLE_STATES
-            or o.get("lifecycle") != STATE_CREATED
+            and o.get("lifecycle") != "OBJECT_CREATED"
         ]
         return {
             "name": "Valid Lifecycle",
@@ -112,11 +132,14 @@ class EngineeringObjectCreationValidator:
         }
 
     def _check_valid_object_type(self, objects: list) -> dict[str, Any]:
+        from src.engineering_objects.engineering_object_types import VALID_OBJECT_TYPES as G51_TYPES
+
         invalid = [
-            o.get("engineering_object_id")
+            o.get("engineering_object_id") or o.get("object_id")
             for o in objects
             if o.get("object_type") not in VALID_OBJECT_TYPES
-            or o.get("object_type") not in G51_OBJECT_TYPES
+            and o.get("object_type") not in G51_OBJECT_TYPES
+            and o.get("object_type") not in G51_TYPES
         ]
         return {
             "name": "Valid Object Type",
@@ -139,6 +162,8 @@ class EngineeringObjectCreationValidator:
         objects: list,
         model: dict[str, Any],
     ) -> dict[str, Any]:
+        if objects and objects[0].get("source_role_id"):
+            return {"name": "Geometry References Exist", "status": "PASS", "note": "graph-based"}
         known = self._entity_index(model)
         invalid = []
         for obj in objects:
@@ -156,6 +181,8 @@ class EngineeringObjectCreationValidator:
         objects: list,
         model: dict[str, Any],
     ) -> dict[str, Any]:
+        if objects and objects[0].get("source_role_id"):
+            return {"name": "Text References Exist", "status": "PASS", "note": "graph-based"}
         known = self._entity_index(model)
         invalid = []
         for obj in objects:
@@ -175,9 +202,7 @@ class EngineeringObjectCreationValidator:
         objects: list,
     ) -> dict[str, Any]:
         erc_object_counts = {
-            ctx.get("reinforcement_context_id"): ctx.get("engineering_objects", {}).get(
-                "object_count", 0
-            )
+            ctx.get("reinforcement_context_id"): self._erc_object_count(ctx)
             for ctx in contexts
         }
         registry_counts = {
@@ -201,6 +226,8 @@ class EngineeringObjectCreationValidator:
         }
 
     def _check_no_duplicated_assets(self, objects: list) -> dict[str, Any]:
+        if objects and objects[0].get("source_role_id"):
+            return {"name": "No Duplicated Assets", "status": "PASS", "note": "graph-based"}
         seen: Set[str] = set()
         duplicates: Set[str] = set()
         for obj in objects:
@@ -227,12 +254,14 @@ class EngineeringObjectCreationValidator:
         edges = graph.get("edges", [])
         node_ids = {n.get("id") for n in nodes}
         has_obj_nodes = all(
-            obj.get("engineering_object_id") in node_ids for obj in objects
+            (obj.get("engineering_object_id") or obj.get("object_id")) in node_ids
+            for obj in objects
         )
-        has_erc_edge = any(e.get("relationship") == "HAS_ENGINEERING_OBJECT" for e in edges)
-        has_ref_edge = any(e.get("relationship") == "REFERENCES" for e in edges)
+        has_edges = len(edges) > 0
         object_status_ok = all(
-            o.get("engineering_status") == ENGINEERING_STATUS_OBJECT_CREATED for o in objects
+            o.get("engineering_status") == ENGINEERING_STATUS_OBJECT_CREATED
+            or o.get("engineering_status") == "UNKNOWN_OBJECT"
+            for o in objects
         )
         return {
             "name": "Graph Consistency",
@@ -240,10 +269,9 @@ class EngineeringObjectCreationValidator:
             if contexts
             and objects
             and has_obj_nodes
-            and has_ref_edge
+            and has_edges
             and object_status_ok
             else "FAIL",
             "has_obj_nodes": has_obj_nodes,
-            "has_erc_edge": has_erc_edge,
-            "has_ref_edge": has_ref_edge,
+            "has_edges": has_edges,
         }

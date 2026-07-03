@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
+from src.engineering_objects.engineering_object import erc_engineering_object_count
+
 from src.reinforcement.engineering_object import (
     engineering_objects_section,
     format_engineering_object_id,
@@ -66,7 +68,7 @@ class EngineeringObjectRegistry:
                 "registry_id": format_engineering_object_registry_id(
                     str(ctx.get("beam_mark", ""))
                 ),
-                "object_count": len(ctx.get("engineering_objects", {}).get("objects", [])),
+                "object_count": erc_engineering_object_count(ctx),
             }
             for ctx in contexts
         ]

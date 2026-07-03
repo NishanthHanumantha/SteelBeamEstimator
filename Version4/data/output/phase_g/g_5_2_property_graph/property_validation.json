@@ -1,0 +1,146 @@
+{
+  "phase": "Phase G.5.2",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Every Engineering Object Has Registry",
+      "status": "PASS",
+      "missing": []
+    },
+    {
+      "name": "Candidate IDs Unique",
+      "status": "PASS",
+      "count": 6397
+    },
+    {
+      "name": "Candidates Reference Valid Engineering Objects",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Every Source Entity Exists",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Registry Counts Correct",
+      "status": "PASS",
+      "mismatch": []
+    },
+    {
+      "name": "Graph Connectivity Valid",
+      "status": "PASS",
+      "missing_candidates": [],
+      "missing_objects": []
+    },
+    {
+      "name": "No Orphan Candidates",
+      "status": "PASS",
+      "orphans": []
+    },
+    {
+      "name": "Candidate Type Valid",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Discovery Method Valid",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Confidence Assigned",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Relationship Distance Valid",
+      "status": "PASS",
+      "invalid": []
+    },
+    {
+      "name": "Output JSON Generated",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total_checks": 12,
+    "passed": 12,
+    "failed": 0,
+    "candidate_count": 6397
+  },
+  "reporting_consistency": {
+    "phase": "Phase G.5.2.1",
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "Summary Status Matches Validator",
+        "status": "PASS",
+        "validator_status": "PASS",
+        "summary_status": "PASS",
+        "inconsistent_file": null
+      },
+      {
+        "name": "Passed Counts Identical",
+        "status": "PASS",
+        "validator_passed": 12,
+        "summary_passed": 12,
+        "inconsistent_file": null
+      },
+      {
+        "name": "Failed Counts Identical",
+        "status": "PASS",
+        "validator_failed": 0,
+        "summary_failed": 0,
+        "inconsistent_file": null
+      },
+      {
+        "name": "Candidate Counts Identical",
+        "status": "PASS",
+        "summary_count": 6397,
+        "registry_count": 6397,
+        "candidate_list_count": 6397,
+        "inconsistent_files": []
+      },
+      {
+        "name": "Registry Counts Identical",
+        "status": "PASS",
+        "summary_erc_count": 16,
+        "registry_erc_count": 16,
+        "inconsistent_file": null
+      },
+      {
+        "name": "Graph Statistics Identical",
+        "status": "PASS",
+        "summary_nodes": 6765,
+        "graph_nodes": 6765,
+        "summary_edges": 47960,
+        "graph_edges": 47960,
+        "inconsistent_file": null
+      },
+      {
+        "name": "Export Consistency Verified",
+        "status": "PASS",
+        "validation_snapshot": {
+          "status": "PASS",
+          "passed": 12,
+          "failed": 0,
+          "total_checks": 12
+        },
+        "summary_validation_result": {
+          "status": "PASS",
+          "passed": 12,
+          "failed": 0,
+          "total_checks": 12
+        },
+        "missing_exports": [],
+        "inconsistent_file": null
+      }
+    ],
+    "summary": {
+      "total_checks": 7,
+      "passed": 7,
+      "failed": 0
+    }
+  }
+}

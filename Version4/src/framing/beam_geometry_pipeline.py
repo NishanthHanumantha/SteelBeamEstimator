@@ -178,6 +178,9 @@ class BeamGeometryPipeline:
         engineering_object_creation_validation = model.get(
             "engineering_object_creation_validation", {}
         )
+        property_validation = model.get("property_validation", {})
+        property_parser_validation = model.get("property_parser_validation", {})
+        property_resolution_validation = model.get("property_resolution_validation", {})
 
         summary = self._build_summary(
             model,
@@ -798,17 +801,102 @@ class BeamGeometryPipeline:
             self._outputs.phase_g_5_1_engineering_object_graph_export,
             model.get("engineering_object_graph", {}),
         )
-        self._write_json(
-            self._outputs.phase_g_5_1_engineering_object_relationships_export,
-            model.get("engineering_object_relationships", {}),
+        g51_validation = model.get(
+            "engineering_object_instantiation_validation", engineering_object_creation_validation
         )
         self._write_json(
-            self._outputs.phase_g_5_1_engineering_object_statistics_export,
-            model.get("engineering_object_statistics", {}),
+            self._outputs.phase_g_5_1_engineering_object_validation_export,
+            g51_validation,
         )
         self._write_json(
             self._outputs.phase_g_5_1_engineering_object_creation_validation_export,
             engineering_object_creation_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_2_property_candidates_export,
+            {
+                "phase": "Phase G.5.2",
+                "candidate_count": len(model.get("property_candidates", [])),
+                "candidates": model.get("property_candidates", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_2_property_registry_export,
+            model.get("property_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_2_property_graph_export,
+            model.get("property_graph", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_2_property_summary_export,
+            model.get("property_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_2_property_validation_export,
+            property_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_1_engineering_properties_export,
+            {
+                "phase": "Phase G.5.3.1",
+                "property_count": len(model.get("engineering_properties", [])),
+                "properties": model.get("engineering_properties", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_1_property_parser_registry_export,
+            model.get("property_parser_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_1_property_parser_summary_export,
+            model.get("property_parser_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_1_property_parser_validation_export,
+            property_parser_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_1_unparsed_candidates_export,
+            {
+                "phase": "Phase G.5.3.1",
+                "unparsed_count": len(model.get("unparsed_candidates", [])),
+                "candidates": model.get("unparsed_candidates", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_resolved_engineering_properties_export,
+            {
+                "phase": "Phase G.5.3.4",
+                "resolved_property_count": len(
+                    model.get("resolved_engineering_properties", [])
+                ),
+                "resolved_properties": model.get("resolved_engineering_properties", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_property_resolution_registry_export,
+            model.get("property_resolution_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_property_conflicts_export,
+            {
+                "phase": "Phase G.5.3.4",
+                "conflict_count": len(model.get("property_conflicts", [])),
+                "conflicts": model.get("property_conflicts", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_property_resolution_summary_export,
+            model.get("property_resolution_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_property_resolution_validation_export,
+            property_resolution_validation,
+        )
+        self._write_json(
+            self._outputs.phase_g_5_3_2_property_availability_report_export,
+            model.get("property_availability_report", {}),
         )
         self._write_json(
             self._outputs.beam_engineering_context,
@@ -953,6 +1041,9 @@ class BeamGeometryPipeline:
             "engineering_semantic_role_validation": engineering_semantic_role_validation,
             "engineering_semantic_relationship_validation": engineering_semantic_relationship_validation,
             "engineering_object_creation_validation": engineering_object_creation_validation,
+            "property_validation": property_validation,
+            "property_parser_validation": property_parser_validation,
+            "property_resolution_validation": property_resolution_validation,
             "summary": summary,
             "phase_g_summary": phase_g_summary,
         }

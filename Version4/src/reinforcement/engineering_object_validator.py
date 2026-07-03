@@ -15,6 +15,7 @@ from src.reinforcement.engineering_object_lifecycle import (
     STATE_READY_FOR_PARSING,
     VALID_OBJECT_LIFECYCLE_STATES,
 )
+from src.engineering_objects.engineering_object import erc_engineering_object_count
 from src.reinforcement.engineering_relationships import VALID_RELATIONSHIPS
 
 
@@ -216,9 +217,7 @@ class EngineeringObjectValidator:
             r.get("relationship") in VALID_RELATIONSHIPS
             for r in relationships.get("relationships", [])
         )
-        erc_sections = all(
-            len(c.get("engineering_objects", {}).get("objects", [])) == 0 for c in contexts
-        )
+        erc_sections = all(erc_engineering_object_count(c) == 0 for c in contexts)
         ok = (
             has_registry
             and has_graph
