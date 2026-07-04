@@ -187,6 +187,20 @@ class BeamGeometryPipeline:
         calculation_context_validation = model.get("calculation_context_validation", {})
         reinforcement_validation = model.get("reinforcement_validation", {})
         reinforcement_readiness_validation = model.get("reinforcement_readiness_validation", {})
+        calculation_result_validation = model.get("calculation_result_validation", {})
+        development_length_validation = model.get("development_length_validation", {})
+        hook_length_validation = model.get("hook_length_validation", {})
+        calculation_index_validation = model.get("calculation_index_validation", {})
+        calculation_dependency_validation = model.get("calculation_dependency_validation", {})
+        lap_length_validation = model.get("lap_length_validation", {})
+        calculation_provenance_validation = model.get("calculation_provenance_validation", {})
+        cut_length_validation = model.get("cut_length_validation", {})
+        shape_code_validation = model.get("shape_code_validation", {})
+        bar_identity_validation = model.get("bar_identity_validation", {})
+        bar_group_validation = model.get("bar_group_validation", {})
+        bbs_validation = model.get("bbs_validation", {})
+        steel_weight_validation = model.get("steel_weight_validation", {})
+        beam_summary_validation = model.get("beam_summary_validation", {})
 
         summary = self._build_summary(
             model,
@@ -1009,6 +1023,330 @@ class BeamGeometryPipeline:
             reinforcement_readiness_validation,
         )
         self._write_json(
+            self._outputs.phase_i_2_2_engineering_calculation_results_export,
+            {
+                "phase": "Phase I.2.2",
+                "result_count": len(model.get("engineering_calculation_results", [])),
+                "results": model.get("engineering_calculation_results", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_i_2_2_calculation_result_registry_export,
+            model.get("calculation_result_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_2_2_calculation_result_summary_export,
+            model.get("calculation_result_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_2_2_calculation_result_validation_export,
+            calculation_result_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_3_development_length_results_export,
+            {
+                "phase": "Phase I.3",
+                "determination_count": len(model.get("development_length_results", [])),
+                "results": model.get("development_length_results", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_i_3_development_length_registry_export,
+            model.get("development_length_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_3_development_length_summary_export,
+            model.get("development_length_summary", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_3_development_length_validation_export,
+            development_length_validation,
+        )
+        hook_summary = model.get("hook_length_summary", {})
+        self._write_json(
+            self._outputs.phase_i_4_hook_results_export,
+            {
+                "phase": "Phase I.4",
+                "determination_count": len(model.get("hook_length_results", [])),
+                "results": model.get("hook_length_results", []),
+            },
+        )
+        self._write_json(
+            self._outputs.phase_i_4_hook_registry_export,
+            model.get("hook_length_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_4_hook_summary_export,
+            hook_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_4_hook_validation_export,
+            hook_length_validation,
+        )
+        from src.engineering_calculations.calculation_index.calculation_index_exporter import (
+            CalculationIndexExporter,
+        )
+        from src.engineering_calculations.hook_length_exporter import HookLengthExporter
+
+        self._write_json(
+            self._outputs.phase_i_4_hook_statistics_export,
+            HookLengthExporter.export_statistics(hook_summary),
+        )
+        index_summary = model.get("calculation_index_summary", {})
+        self._write_json(
+            self._outputs.phase_i_4_5_calculation_index_export,
+            CalculationIndexExporter.export_indexes(model.get("calculation_indexes", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_4_5_calculation_index_summary_export,
+            index_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_4_5_calculation_index_validation_export,
+            calculation_index_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_4_5_calculation_index_statistics_export,
+            CalculationIndexExporter.export_statistics(index_summary),
+        )
+        from src.engineering_calculations.calculation_dependency.dependency_exporter import (
+            CalculationDependencyExporter,
+        )
+        from src.engineering_calculations.lap_length_exporter import LapLengthExporter
+        from src.engineering_calculations.cut_length_exporter import CutLengthExporter
+        from src.engineering_calculations.shape_code_exporter import ShapeCodeExporter
+        from src.engineering_calculations.bar_identity.bar_identity_exporter import BarIdentityExporter
+        from src.engineering_calculations.bar_group.bar_group_exporter import BarGroupExporter
+        from src.engineering_calculations.bbs.bbs_exporter import BbsExporter
+
+        dependency_summary = model.get("calculation_dependency_summary", {})
+        self._write_json(
+            self._outputs.phase_i_4_6_dependency_graph_export,
+            CalculationDependencyExporter.export_graph(
+                model.get("calculation_dependency_graph", {}),
+            ),
+        )
+        self._write_json(
+            self._outputs.phase_i_4_6_dependency_summary_export,
+            dependency_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_4_6_dependency_validation_export,
+            calculation_dependency_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_4_6_dependency_statistics_export,
+            CalculationDependencyExporter.export_statistics(dependency_summary),
+        )
+        lap_summary = model.get("lap_length_summary", {})
+        self._write_json(
+            self._outputs.phase_i_5_lap_results_export,
+            LapLengthExporter.export_results(model.get("lap_length_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_5_lap_registry_export,
+            model.get("lap_length_registry", {}),
+        )
+        self._write_json(
+            self._outputs.phase_i_5_lap_summary_export,
+            lap_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_5_lap_validation_export,
+            lap_length_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_5_lap_statistics_export,
+            LapLengthExporter.export_statistics(lap_summary),
+        )
+        from src.engineering_calculations.calculation_provenance.provenance_exporter import (
+            CalculationProvenanceExporter,
+        )
+
+        provenance_summary = model.get("calculation_provenance_summary", {})
+        self._write_json(
+            self._outputs.phase_i_5_a_provenance_export,
+            CalculationProvenanceExporter.export_results(
+                model.get("engineering_calculation_results", []),
+            ),
+        )
+        self._write_json(
+            self._outputs.phase_i_5_a_provenance_validation_export,
+            calculation_provenance_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_5_a_provenance_summary_export,
+            provenance_summary,
+        )
+        cut_summary = model.get("cut_length_summary", {})
+        self._write_json(
+            self._outputs.phase_i_6_cut_results_export,
+            CutLengthExporter.export_results(model.get("cut_length_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_6_cut_registry_export,
+            CutLengthExporter.export_registry(model.get("cut_length_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_6_cut_summary_export,
+            cut_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_6_cut_validation_export,
+            cut_length_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_6_cut_statistics_export,
+            CutLengthExporter.export_statistics(cut_summary),
+        )
+        shape_summary = model.get("shape_code_summary", {})
+        self._write_json(
+            self._outputs.phase_i_7_shape_results_export,
+            ShapeCodeExporter.export_results(model.get("shape_code_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_7_shape_registry_export,
+            ShapeCodeExporter.export_registry(model.get("shape_code_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_7_shape_summary_export,
+            shape_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_7_shape_validation_export,
+            shape_code_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_7_shape_statistics_export,
+            ShapeCodeExporter.export_statistics(shape_summary),
+        )
+        bar_identity_summary = model.get("bar_identity_summary", {})
+        self._write_json(
+            self._outputs.phase_i_8_bar_identity_results_export,
+            BarIdentityExporter.export_results(model.get("bar_identity_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_8_bar_identity_registry_export,
+            BarIdentityExporter.export_registry(model.get("bar_identity_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_8_bar_identity_summary_export,
+            bar_identity_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_8_bar_identity_validation_export,
+            bar_identity_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_8_bar_identity_statistics_export,
+            BarIdentityExporter.export_statistics(bar_identity_summary),
+        )
+        bar_group_summary = model.get("bar_group_summary", {})
+        self._write_json(
+            self._outputs.phase_i_9_bar_group_results_export,
+            BarGroupExporter.export_results(model.get("bar_group_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_9_bar_group_registry_export,
+            BarGroupExporter.export_registry(model.get("bar_group_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_9_bar_group_summary_export,
+            bar_group_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_9_bar_group_validation_export,
+            bar_group_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_9_bar_group_statistics_export,
+            BarGroupExporter.export_statistics(bar_group_summary),
+        )
+        bbs_summary = model.get("bbs_summary", {})
+        bbs_reporting = model.get("bbs_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_10_bbs_results_export,
+            BbsExporter.export_results(model.get("bbs_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_10_bbs_registry_export,
+            BbsExporter.export_registry(model.get("bbs_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_10_bbs_summary_export,
+            bbs_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_10_bbs_validation_export,
+            bbs_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_10_bbs_report_export,
+            BbsExporter.export_report(bbs_reporting),
+        )
+        self._write_json(
+            self._outputs.phase_i_10_bbs_statistics_export,
+            BbsExporter.export_statistics(bbs_summary),
+        )
+        from src.engineering_calculations.steel_weight.steel_weight_exporter import SteelWeightExporter
+
+        steel_weight_summary = model.get("steel_weight_summary", {})
+        steel_weight_reporting = model.get("steel_weight_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_11_steel_weight_results_export,
+            SteelWeightExporter.export_results(model.get("steel_weight_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_11_steel_weight_registry_export,
+            SteelWeightExporter.export_registry(model.get("steel_weight_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_11_steel_weight_summary_export,
+            steel_weight_summary,
+        )
+        self._write_json(
+            self._outputs.phase_i_11_steel_weight_validation_export,
+            steel_weight_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_11_steel_weight_statistics_export,
+            SteelWeightExporter.export_statistics(steel_weight_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_11_engineering_weight_report_export,
+            SteelWeightExporter.export_engineering_weight_report(
+                steel_weight_summary,
+                steel_weight_reporting,
+            ),
+        )
+        from src.engineering_calculations.beam_summary.beam_summary_exporter import BeamSummaryExporter
+
+        beam_summary_summary = model.get("beam_summary_summary", {})
+        beam_summary_reporting = model.get("beam_summary_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_12_beam_summary_results_export,
+            BeamSummaryExporter.export_results(model.get("beam_summary_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_12_beam_summary_registry_export,
+            BeamSummaryExporter.export_registry(model.get("beam_summary_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_12_beam_summary_statistics_export,
+            BeamSummaryExporter.export_statistics(beam_summary_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_12_beam_summary_validation_export,
+            beam_summary_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_12_beam_summary_report_export,
+            BeamSummaryExporter.export_engineering_beam_summary_report(
+                beam_summary_summary,
+                beam_summary_reporting,
+            ),
+        )
+        self._write_json(
             self._outputs.beam_engineering_context,
             {
                 "phase": model.get("phase", "Phase G.4"),
@@ -1160,6 +1498,20 @@ class BeamGeometryPipeline:
             "calculation_context_validation": calculation_context_validation,
             "reinforcement_validation": reinforcement_validation,
             "reinforcement_readiness_validation": reinforcement_readiness_validation,
+            "calculation_result_validation": calculation_result_validation,
+            "development_length_validation": development_length_validation,
+            "hook_length_validation": hook_length_validation,
+            "calculation_index_validation": calculation_index_validation,
+            "calculation_dependency_validation": calculation_dependency_validation,
+            "lap_length_validation": lap_length_validation,
+            "calculation_provenance_validation": calculation_provenance_validation,
+            "cut_length_validation": cut_length_validation,
+            "shape_code_validation": shape_code_validation,
+            "bar_identity_validation": bar_identity_validation,
+            "bar_group_validation": bar_group_validation,
+            "bbs_validation": bbs_validation,
+            "steel_weight_validation": steel_weight_validation,
+            "beam_summary_validation": beam_summary_validation,
             "summary": summary,
             "phase_g_summary": phase_g_summary,
         }

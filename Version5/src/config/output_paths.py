@@ -72,6 +72,20 @@ PHASE_I = "phase_i"
 PHASE_I_1_CALCULATION_CONTEXT = "i_1_calculation_context"
 PHASE_I_2_REINFORCEMENT_ENGINE = "i_2_reinforcement_engine"
 PHASE_I_2_1_CALCULATION_READINESS = "i_2_1_calculation_readiness"
+PHASE_I_2_2_CALCULATION_RESULT_FRAMEWORK = "i_2_2_calculation_result_framework"
+PHASE_I_3_DEVELOPMENT_LENGTH = "i_3_development_length"
+PHASE_I_4_HOOK_LENGTH = "i_4_hook_length"
+PHASE_I_4_5_CALCULATION_INDEX = "i_4_5_calculation_index"
+PHASE_I_4_6_CALCULATION_DEPENDENCY = "i_4_6_calculation_dependency"
+PHASE_I_5_LAP_LENGTH = "i_5_lap_length"
+PHASE_I_5_A_CALCULATION_PROVENANCE = "i_5_a_calculation_provenance"
+PHASE_I_6_CUT_LENGTH = "i_6_cut_length"
+PHASE_I_7_SHAPE_CODE = "i_7_shape_code"
+PHASE_I_8_BAR_IDENTITY = "i_8_bar_identity"
+PHASE_I_9_BAR_GROUP = "i_9_bar_group"
+PHASE_I_10_BBS = "i_10_bbs"
+PHASE_I_11_STEEL_WEIGHT = "i_11_steel_weight"
+PHASE_I_12_BEAM_SUMMARY = "i_12_beam_summary"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -1820,6 +1834,326 @@ class OutputPaths:
         return self.phase_i_2_1_dir / "reinforcement_readiness_validation.json"
 
     @property
+    def phase_i_2_2_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_2_2_CALCULATION_RESULT_FRAMEWORK
+
+    @property
+    def phase_i_2_2_engineering_calculation_results_export(self) -> Path:
+        return self.phase_i_2_2_dir / "engineering_calculation_results.json"
+
+    @property
+    def phase_i_2_2_calculation_result_registry_export(self) -> Path:
+        return self.phase_i_2_2_dir / "calculation_result_registry.json"
+
+    @property
+    def phase_i_2_2_calculation_result_summary_export(self) -> Path:
+        return self.phase_i_2_2_dir / "calculation_result_summary.json"
+
+    @property
+    def phase_i_2_2_calculation_result_validation_export(self) -> Path:
+        return self.phase_i_2_2_dir / "calculation_result_validation.json"
+
+    @property
+    def phase_i_3_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_3_DEVELOPMENT_LENGTH
+
+    @property
+    def phase_i_3_development_length_results_export(self) -> Path:
+        return self.phase_i_3_dir / "development_length_results.json"
+
+    @property
+    def phase_i_3_development_length_registry_export(self) -> Path:
+        return self.phase_i_3_dir / "development_length_registry.json"
+
+    @property
+    def phase_i_3_development_length_summary_export(self) -> Path:
+        return self.phase_i_3_dir / "development_length_summary.json"
+
+    @property
+    def phase_i_3_development_length_validation_export(self) -> Path:
+        return self.phase_i_3_dir / "development_length_validation.json"
+
+    @property
+    def phase_i_4_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_4_HOOK_LENGTH
+
+    @property
+    def phase_i_4_hook_results_export(self) -> Path:
+        return self.phase_i_4_dir / "hook_results.json"
+
+    @property
+    def phase_i_4_hook_registry_export(self) -> Path:
+        return self.phase_i_4_dir / "hook_registry.json"
+
+    @property
+    def phase_i_4_hook_summary_export(self) -> Path:
+        return self.phase_i_4_dir / "hook_summary.json"
+
+    @property
+    def phase_i_4_hook_validation_export(self) -> Path:
+        return self.phase_i_4_dir / "hook_validation.json"
+
+    @property
+    def phase_i_4_hook_statistics_export(self) -> Path:
+        return self.phase_i_4_dir / "hook_statistics.json"
+
+    @property
+    def phase_i_4_5_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_4_5_CALCULATION_INDEX
+
+    @property
+    def phase_i_4_5_calculation_index_export(self) -> Path:
+        return self.phase_i_4_5_dir / "calculation_index.json"
+
+    @property
+    def phase_i_4_5_calculation_index_summary_export(self) -> Path:
+        return self.phase_i_4_5_dir / "calculation_index_summary.json"
+
+    @property
+    def phase_i_4_5_calculation_index_validation_export(self) -> Path:
+        return self.phase_i_4_5_dir / "calculation_index_validation.json"
+
+    @property
+    def phase_i_4_5_calculation_index_statistics_export(self) -> Path:
+        return self.phase_i_4_5_dir / "calculation_index_statistics.json"
+
+    @property
+    def phase_i_4_6_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_4_6_CALCULATION_DEPENDENCY
+
+    @property
+    def phase_i_4_6_dependency_graph_export(self) -> Path:
+        return self.phase_i_4_6_dir / "dependency_graph.json"
+
+    @property
+    def phase_i_4_6_dependency_summary_export(self) -> Path:
+        return self.phase_i_4_6_dir / "dependency_summary.json"
+
+    @property
+    def phase_i_4_6_dependency_validation_export(self) -> Path:
+        return self.phase_i_4_6_dir / "dependency_validation.json"
+
+    @property
+    def phase_i_4_6_dependency_statistics_export(self) -> Path:
+        return self.phase_i_4_6_dir / "dependency_statistics.json"
+
+    @property
+    def phase_i_5_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_5_LAP_LENGTH
+
+    @property
+    def phase_i_5_lap_results_export(self) -> Path:
+        return self.phase_i_5_dir / "lap_results.json"
+
+    @property
+    def phase_i_5_lap_registry_export(self) -> Path:
+        return self.phase_i_5_dir / "lap_registry.json"
+
+    @property
+    def phase_i_5_lap_summary_export(self) -> Path:
+        return self.phase_i_5_dir / "lap_summary.json"
+
+    @property
+    def phase_i_5_lap_validation_export(self) -> Path:
+        return self.phase_i_5_dir / "lap_validation.json"
+
+    @property
+    def phase_i_5_lap_statistics_export(self) -> Path:
+        return self.phase_i_5_dir / "lap_statistics.json"
+
+    @property
+    def phase_i_5_a_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_5_A_CALCULATION_PROVENANCE
+
+    @property
+    def phase_i_5_a_provenance_export(self) -> Path:
+        return self.phase_i_5_a_dir / "calculation_provenance.json"
+
+    @property
+    def phase_i_5_a_provenance_validation_export(self) -> Path:
+        return self.phase_i_5_a_dir / "calculation_provenance_validation.json"
+
+    @property
+    def phase_i_5_a_provenance_summary_export(self) -> Path:
+        return self.phase_i_5_a_dir / "calculation_provenance_summary.json"
+
+    @property
+    def phase_i_6_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_6_CUT_LENGTH
+
+    @property
+    def phase_i_6_cut_results_export(self) -> Path:
+        return self.phase_i_6_dir / "cut_length_results.json"
+
+    @property
+    def phase_i_6_cut_registry_export(self) -> Path:
+        return self.phase_i_6_dir / "cut_length_registry.json"
+
+    @property
+    def phase_i_6_cut_summary_export(self) -> Path:
+        return self.phase_i_6_dir / "cut_length_summary.json"
+
+    @property
+    def phase_i_6_cut_validation_export(self) -> Path:
+        return self.phase_i_6_dir / "cut_length_validation.json"
+
+    @property
+    def phase_i_6_cut_statistics_export(self) -> Path:
+        return self.phase_i_6_dir / "cut_length_statistics.json"
+
+    @property
+    def phase_i_7_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_7_SHAPE_CODE
+
+    @property
+    def phase_i_7_shape_results_export(self) -> Path:
+        return self.phase_i_7_dir / "shape_code_results.json"
+
+    @property
+    def phase_i_7_shape_registry_export(self) -> Path:
+        return self.phase_i_7_dir / "shape_code_registry.json"
+
+    @property
+    def phase_i_7_shape_summary_export(self) -> Path:
+        return self.phase_i_7_dir / "shape_code_summary.json"
+
+    @property
+    def phase_i_7_shape_validation_export(self) -> Path:
+        return self.phase_i_7_dir / "shape_code_validation.json"
+
+    @property
+    def phase_i_7_shape_statistics_export(self) -> Path:
+        return self.phase_i_7_dir / "shape_code_statistics.json"
+
+    @property
+    def phase_i_8_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_8_BAR_IDENTITY
+
+    @property
+    def phase_i_8_bar_identity_results_export(self) -> Path:
+        return self.phase_i_8_dir / "bar_identity_results.json"
+
+    @property
+    def phase_i_8_bar_identity_registry_export(self) -> Path:
+        return self.phase_i_8_dir / "bar_identity_registry.json"
+
+    @property
+    def phase_i_8_bar_identity_summary_export(self) -> Path:
+        return self.phase_i_8_dir / "bar_identity_summary.json"
+
+    @property
+    def phase_i_8_bar_identity_validation_export(self) -> Path:
+        return self.phase_i_8_dir / "bar_identity_validation.json"
+
+    @property
+    def phase_i_8_bar_identity_statistics_export(self) -> Path:
+        return self.phase_i_8_dir / "bar_identity_statistics.json"
+
+    @property
+    def phase_i_9_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_9_BAR_GROUP
+
+    @property
+    def phase_i_9_bar_group_results_export(self) -> Path:
+        return self.phase_i_9_dir / "bar_group_results.json"
+
+    @property
+    def phase_i_9_bar_group_registry_export(self) -> Path:
+        return self.phase_i_9_dir / "bar_group_registry.json"
+
+    @property
+    def phase_i_9_bar_group_summary_export(self) -> Path:
+        return self.phase_i_9_dir / "bar_group_summary.json"
+
+    @property
+    def phase_i_9_bar_group_validation_export(self) -> Path:
+        return self.phase_i_9_dir / "bar_group_validation.json"
+
+    @property
+    def phase_i_9_bar_group_statistics_export(self) -> Path:
+        return self.phase_i_9_dir / "bar_group_statistics.json"
+
+    @property
+    def phase_i_10_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_10_BBS
+
+    @property
+    def phase_i_10_bbs_results_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_results.json"
+
+    @property
+    def phase_i_10_bbs_registry_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_registry.json"
+
+    @property
+    def phase_i_10_bbs_summary_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_summary.json"
+
+    @property
+    def phase_i_10_bbs_validation_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_validation.json"
+
+    @property
+    def phase_i_10_bbs_report_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_report.json"
+
+    @property
+    def phase_i_10_bbs_statistics_export(self) -> Path:
+        return self.phase_i_10_dir / "bbs_statistics.json"
+
+    @property
+    def phase_i_11_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_11_STEEL_WEIGHT
+
+    @property
+    def phase_i_11_steel_weight_results_export(self) -> Path:
+        return self.phase_i_11_dir / "steel_weight_results.json"
+
+    @property
+    def phase_i_11_steel_weight_registry_export(self) -> Path:
+        return self.phase_i_11_dir / "steel_weight_registry.json"
+
+    @property
+    def phase_i_11_steel_weight_summary_export(self) -> Path:
+        return self.phase_i_11_dir / "steel_weight_summary.json"
+
+    @property
+    def phase_i_11_steel_weight_validation_export(self) -> Path:
+        return self.phase_i_11_dir / "steel_weight_validation.json"
+
+    @property
+    def phase_i_11_steel_weight_statistics_export(self) -> Path:
+        return self.phase_i_11_dir / "steel_weight_statistics.json"
+
+    @property
+    def phase_i_11_engineering_weight_report_export(self) -> Path:
+        return self.phase_i_11_dir / "engineering_weight_report.json"
+
+    @property
+    def phase_i_12_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_12_BEAM_SUMMARY
+
+    @property
+    def phase_i_12_beam_summary_results_export(self) -> Path:
+        return self.phase_i_12_dir / "beam_summary_results.json"
+
+    @property
+    def phase_i_12_beam_summary_registry_export(self) -> Path:
+        return self.phase_i_12_dir / "beam_summary_registry.json"
+
+    @property
+    def phase_i_12_beam_summary_statistics_export(self) -> Path:
+        return self.phase_i_12_dir / "beam_summary_statistics.json"
+
+    @property
+    def phase_i_12_beam_summary_validation_export(self) -> Path:
+        return self.phase_i_12_dir / "beam_summary_validation.json"
+
+    @property
+    def phase_i_12_beam_summary_report_export(self) -> Path:
+        return self.phase_i_12_dir / "beam_summary_report.json"
+
+    @property
     def phase_g_2_reinforcement_workspace(self) -> Path:
         return self.phase_g_2_dir / "reinforcement_workspace.json"
 
@@ -1892,6 +2226,10 @@ class OutputPaths:
             PHASE_I_1_CALCULATION_CONTEXT,
             PHASE_I_2_REINFORCEMENT_ENGINE,
             PHASE_I_2_1_CALCULATION_READINESS,
+            PHASE_I_2_2_CALCULATION_RESULT_FRAMEWORK,
+            PHASE_I_3_DEVELOPMENT_LENGTH,
+            PHASE_I_4_HOOK_LENGTH,
+            PHASE_I_4_5_CALCULATION_INDEX,
         ):
             (self.phase_i_dir / subdir).mkdir(parents=True, exist_ok=True)
 

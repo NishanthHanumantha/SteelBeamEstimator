@@ -44,6 +44,63 @@ from src.reinforcement.engineering_semantic_relationship_validator import (
     EngineeringSemanticRelationshipValidator,
 )
 from src.calculation_context.context_builder import CalculationContextBuilder
+from src.engineering_calculations.calculation_result_factory import CalculationResultFactory
+from src.engineering_calculations.calculation_result_reporting import CalculationResultReporting
+from src.engineering_calculations.calculation_result_validator import CalculationResultValidator
+from src.engineering_calculations.development_length_engine import DevelopmentLengthEngine
+from src.engineering_calculations.development_length_reporting import DevelopmentLengthReporting
+from src.engineering_calculations.development_length_validator import DevelopmentLengthValidator
+from src.engineering_calculations.hook_length_engine import HookLengthEngine
+from src.engineering_calculations.hook_length_reporting import HookLengthReporting
+from src.engineering_calculations.hook_length_validator import HookLengthValidator
+from src.engineering_calculations.calculation_index.calculation_index_builder import (
+    CalculationIndexBuilder,
+)
+from src.engineering_calculations.calculation_index.calculation_index_reporting import (
+    CalculationIndexReporting,
+)
+from src.engineering_calculations.calculation_index.calculation_index_validator import (
+    CalculationIndexValidator,
+)
+from src.engineering_calculations.calculation_dependency.dependency_builder import (
+    CalculationDependencyBuilder,
+)
+from src.engineering_calculations.calculation_dependency.dependency_graph import (
+    CalculationDependencyGraph,
+)
+from src.engineering_calculations.calculation_dependency.dependency_reporting import (
+    CalculationDependencyReporting,
+)
+from src.engineering_calculations.calculation_dependency.dependency_validator import (
+    CalculationDependencyValidator,
+)
+from src.engineering_calculations.lap_length_engine import LapLengthEngine
+from src.engineering_calculations.lap_length_reporting import LapLengthReporting
+from src.engineering_calculations.lap_length_validator import LapLengthValidator
+from src.engineering_calculations.cut_length_engine import CutLengthEngine
+from src.engineering_calculations.cut_length_reporting import CutLengthReporting
+from src.engineering_calculations.cut_length_validator import CutLengthValidator
+from src.engineering_calculations.shape_code_engine import ShapeCodeEngine
+from src.engineering_calculations.shape_code_reporting import ShapeCodeReporting
+from src.engineering_calculations.shape_code_validator import ShapeCodeValidator
+from src.engineering_calculations.bar_identity.bar_identity_engine import BarIdentityEngine
+from src.engineering_calculations.bar_identity.bar_identity_reporting import BarIdentityReporting
+from src.engineering_calculations.bar_identity.bar_identity_validator import BarIdentityValidator
+from src.engineering_calculations.bar_group.bar_group_engine import BarGroupEngine
+from src.engineering_calculations.bar_group.bar_group_reporting import BarGroupReporting
+from src.engineering_calculations.bar_group.bar_group_validator import BarGroupValidator
+from src.engineering_calculations.bbs.bbs_engine import BbsEngine
+from src.engineering_calculations.bbs.bbs_reporting import BbsReporting
+from src.engineering_calculations.bbs.bbs_validator import BbsValidator
+from src.engineering_calculations.steel_weight.steel_weight_engine import SteelWeightEngine
+from src.engineering_calculations.steel_weight.steel_weight_reporting import SteelWeightReporting
+from src.engineering_calculations.steel_weight.steel_weight_validator import SteelWeightValidator
+from src.engineering_calculations.beam_summary.beam_summary_engine import BeamSummaryEngine
+from src.engineering_calculations.beam_summary.beam_summary_reporting import BeamSummaryReporting
+from src.engineering_calculations.beam_summary.beam_summary_validator import BeamSummaryValidator
+from src.engineering_calculations.calculation_provenance.provenance_validator import (
+    CalculationProvenanceValidator,
+)
 from src.reinforcement_calculation.reinforcement_builder import ReinforcementBuilder
 from src.reinforcement_calculation.reinforcement_exporter import ReinforcementExporter
 from src.reinforcement_calculation.reinforcement_readiness_validator import (
@@ -116,8 +173,8 @@ from src.reinforcement.match_decision_validator import MatchDecisionValidator
 from src.reinforcement.reinforcement_drawing_validator import ReinforcementDrawingValidator
 
 
-PHASE = "Phase I.2.1"
-MODEL_VERSION = "5.8.1"
+PHASE = "Phase I.12.1"
+MODEL_VERSION = "5.16.1"
 
 
 @dataclass
@@ -295,6 +352,95 @@ class ReinforcementDrawingBuilder:
         )
         self._reinforcement_readiness_validation_enabled = bool(
             g2.get("reinforcement_readiness_validation_enable", True)
+        )
+        self._calculation_result_framework_enabled = bool(
+            g2.get("calculation_result_framework_enable", True)
+        )
+        self._calculation_result_framework_validation_enabled = bool(
+            g2.get("calculation_result_framework_validation_enable", True)
+        )
+        self._development_length_enabled = bool(
+            g2.get("development_length_enable", True)
+        )
+        self._development_length_validation_enabled = bool(
+            g2.get("development_length_validation_enable", True)
+        )
+        self._hook_length_enabled = bool(
+            g2.get("hook_length_enable", True)
+        )
+        self._hook_length_validation_enabled = bool(
+            g2.get("hook_length_validation_enable", True)
+        )
+        self._calculation_index_enabled = bool(
+            g2.get("calculation_index_enable", True)
+        )
+        self._calculation_index_validation_enabled = bool(
+            g2.get("calculation_index_validation_enable", True)
+        )
+        self._calculation_dependency_enabled = bool(
+            g2.get("calculation_dependency_enable", True)
+        )
+        self._calculation_dependency_validation_enabled = bool(
+            g2.get("calculation_dependency_validation_enable", True)
+        )
+        self._lap_length_enabled = bool(
+            g2.get("lap_length_enable", True)
+        )
+        self._lap_length_validation_enabled = bool(
+            g2.get("lap_length_validation_enable", True)
+        )
+        self._calculation_provenance_enabled = bool(
+            g2.get("calculation_provenance_enable", True)
+        )
+        self._calculation_provenance_validation_enabled = bool(
+            g2.get("calculation_provenance_validation_enable", True)
+        )
+        self._cut_length_enabled = bool(
+            g2.get("cut_length_enable", True)
+        )
+        self._cut_length_validation_enabled = bool(
+            g2.get("cut_length_validation_enable", True)
+        )
+        self._shape_code_enabled = bool(
+            g2.get("shape_code_enable", True)
+        )
+        self._shape_code_validation_enabled = bool(
+            g2.get("shape_code_validation_enable", True)
+        )
+        self._bar_identity_enabled = bool(
+            g2.get("bar_identity_enable", True)
+        )
+        self._bar_identity_validation_enabled = bool(
+            g2.get("bar_identity_validation_enable", True)
+        )
+        self._bar_group_enabled = bool(
+            g2.get("bar_group_enable", True)
+        )
+        self._bar_group_validation_enabled = bool(
+            g2.get("bar_group_validation_enable", True)
+        )
+        self._bbs_enabled = bool(
+            g2.get("bbs_enable", True)
+        )
+        self._bbs_validation_enabled = bool(
+            g2.get("bbs_validation_enable", True)
+        )
+        self._steel_weight_enabled = bool(
+            g2.get("steel_weight_enable", True)
+        )
+        self._steel_weight_validation_enabled = bool(
+            g2.get("steel_weight_validation_enable", True)
+        )
+        self._beam_summary_enabled = bool(
+            g2.get("beam_summary_enable", True)
+        )
+        self._beam_summary_validation_enabled = bool(
+            g2.get("beam_summary_validation_enable", True)
+        )
+        kg = config.get("knowledge_graph", {})
+        self._phase_e_rules_path = kg.get(
+            "phase_e_rules_path",
+            "data/output/phase_e/general_notes_engineering_rules.json",
         )
 
     def build_model(self, model: dict[str, Any]) -> dict[str, Any]:
@@ -889,6 +1035,22 @@ class ReinforcementDrawingBuilder:
                 {"status": "SKIP", "summary": {}},
             )
 
+        if self._calculation_result_framework_enabled and model.get("reinforcement_bars"):
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            factory = CalculationResultFactory()
+            _, i22_exports = factory.initialize_framework(
+                model.get("reinforcement_bars", []),
+                model.get("reinforcement_groups", []),
+                model.get("calculation_contexts", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            model.update(i22_exports)
+            model["calculation_result_summary"] = {
+                "phase": "Phase I.2.2",
+                "status": "PENDING_VALIDATION",
+            }
+
         self._update_project_graph(model, drawing_models)
 
         g22_validation = ReinforcementDrawingValidator().validate(model, drawing_models)
@@ -1022,6 +1184,517 @@ class ReinforcementDrawingBuilder:
         else:
             model["reinforcement_readiness_validation"] = g_i21_readiness_validation
 
+        g_i22_result_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._calculation_result_framework_enabled
+            and model.get("calculation_result_registry")
+            and model.get("engineering_calculation_results") is not None
+        ):
+            if self._calculation_result_framework_validation_enabled:
+                g_i22_result_validation = CalculationResultValidator().validate(model)
+                CalculationResultReporting.apply_validation(model, g_i22_result_validation)
+            else:
+                model["calculation_result_validation"] = g_i22_result_validation
+        else:
+            model["calculation_result_validation"] = g_i22_result_validation
+
+        g_i3_dev_length_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._development_length_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            engine = DevelopmentLengthEngine(Path(self._phase_e_rules_path))
+            _, i3_exports = engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = DevelopmentLengthEngine.build_project_exports(
+                i3_exports["engineering_calculation_results"],
+                i3_exports["development_length_results"],
+                i3_exports["development_length_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["development_length_summary"] = {
+                "phase": "Phase I.3",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._development_length_validation_enabled:
+                g_i3_dev_length_validation = DevelopmentLengthValidator().validate(model)
+                DevelopmentLengthReporting.apply_validation(model, g_i3_dev_length_validation)
+            else:
+                model["development_length_validation"] = g_i3_dev_length_validation
+        else:
+            model["development_length_validation"] = g_i3_dev_length_validation
+
+        g_i4_hook_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._hook_length_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            hook_engine = HookLengthEngine(Path(self._phase_e_rules_path))
+            _, i4_exports = hook_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                model.get("engineering_specifications", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = HookLengthEngine.build_project_exports(
+                i4_exports["engineering_calculation_results"],
+                i4_exports["hook_length_results"],
+                i4_exports["hook_length_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["hook_length_summary"] = {
+                "phase": "Phase I.4",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._hook_length_validation_enabled:
+                g_i4_hook_validation = HookLengthValidator().validate(model)
+                HookLengthReporting.apply_validation(model, g_i4_hook_validation)
+            else:
+                model["hook_length_validation"] = g_i4_hook_validation
+        else:
+            model["hook_length_validation"] = g_i4_hook_validation
+
+        g_i45_index_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._calculation_index_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("reinforcement_bars")
+        ):
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            builder = CalculationIndexBuilder()
+            updated_bars, index_exports = builder.build(
+                model.get("reinforcement_bars", []),
+                model.get("engineering_calculation_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            model["reinforcement_bars"] = updated_bars
+            model.update(index_exports)
+            model["calculation_index_summary"] = {
+                "phase": "Phase I.4.5",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._calculation_index_validation_enabled:
+                g_i45_index_validation = CalculationIndexValidator().validate(model)
+                CalculationIndexReporting.apply_validation(model, g_i45_index_validation)
+            else:
+                model["calculation_index_validation"] = g_i45_index_validation
+        else:
+            model["calculation_index_validation"] = g_i45_index_validation
+
+        g_i46_dependency_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if self._calculation_dependency_enabled:
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_builder = CalculationDependencyBuilder()
+            _, dependency_exports = dependency_builder.build(
+                drawing_models,
+                project_id=project_id,
+            )
+            model.update(dependency_exports)
+            model["calculation_dependency_summary"] = {
+                "phase": "Phase I.4.6",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._calculation_dependency_validation_enabled:
+                g_i46_dependency_validation = CalculationDependencyValidator().validate(model)
+                CalculationDependencyReporting.apply_validation(
+                    model,
+                    g_i46_dependency_validation,
+                )
+            else:
+                model["calculation_dependency_validation"] = g_i46_dependency_validation
+        else:
+            model["calculation_dependency_validation"] = g_i46_dependency_validation
+
+        g_i5_lap_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._lap_length_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            lap_engine = LapLengthEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i5_exports = lap_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = LapLengthEngine.build_project_exports(
+                i5_exports["engineering_calculation_results"],
+                i5_exports["lap_length_results"],
+                i5_exports["lap_length_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["lap_length_summary"] = {
+                "phase": "Phase I.5",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._lap_length_validation_enabled:
+                g_i5_lap_validation = LapLengthValidator().validate(model)
+                LapLengthReporting.apply_validation(model, g_i5_lap_validation)
+            else:
+                model["lap_length_validation"] = g_i5_lap_validation
+        else:
+            model["lap_length_validation"] = g_i5_lap_validation
+
+        g_provenance_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._calculation_provenance_enabled
+            and model.get("engineering_calculation_results")
+        ):
+            if self._calculation_provenance_validation_enabled:
+                g_provenance_validation = CalculationProvenanceValidator().validate(model)
+            model["calculation_provenance_validation"] = g_provenance_validation
+            model["calculation_provenance_summary"] = {
+                "phase": "Phase I.5.A",
+                "status": g_provenance_validation.get("status", "SKIP"),
+                "provenance_count": sum(
+                    1
+                    for item in model.get("engineering_calculation_results", [])
+                    if item.get("calculation_provenance")
+                ),
+            }
+        else:
+            model["calculation_provenance_validation"] = g_provenance_validation
+
+        g_i6_cut_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._cut_length_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            cut_engine = CutLengthEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i6_exports = cut_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = CutLengthEngine.build_project_exports(
+                i6_exports["engineering_calculation_results"],
+                i6_exports["cut_length_results"],
+                i6_exports["cut_length_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["cut_length_summary"] = {
+                "phase": "Phase I.6",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._cut_length_validation_enabled:
+                g_i6_cut_validation = CutLengthValidator().validate(model)
+                CutLengthReporting.apply_validation(model, g_i6_cut_validation)
+            else:
+                model["cut_length_validation"] = g_i6_cut_validation
+        else:
+            model["cut_length_validation"] = g_i6_cut_validation
+
+        g_i7_shape_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._shape_code_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            shape_engine = ShapeCodeEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i7_exports = shape_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = ShapeCodeEngine.build_project_exports(
+                i7_exports["engineering_calculation_results"],
+                i7_exports["shape_code_results"],
+                i7_exports["shape_code_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["shape_code_summary"] = {
+                "phase": "Phase I.7",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._shape_code_validation_enabled:
+                g_i7_shape_validation = ShapeCodeValidator().validate(model)
+                ShapeCodeReporting.apply_validation(model, g_i7_shape_validation)
+            else:
+                model["shape_code_validation"] = g_i7_shape_validation
+        else:
+            model["shape_code_validation"] = g_i7_shape_validation
+
+        g_i8_identity_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._bar_identity_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            identity_engine = BarIdentityEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i8_exports = identity_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = BarIdentityEngine.build_project_exports(
+                i8_exports["engineering_calculation_results"],
+                i8_exports["bar_identity_results"],
+                i8_exports["bar_identity_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["bar_identity_summary"] = {
+                "phase": "Phase I.8",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._bar_identity_validation_enabled:
+                g_i8_identity_validation = BarIdentityValidator().validate(model)
+                BarIdentityReporting.apply_validation(model, g_i8_identity_validation)
+            else:
+                model["bar_identity_validation"] = g_i8_identity_validation
+        else:
+            model["bar_identity_validation"] = g_i8_identity_validation
+
+        g_i9_group_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._bar_group_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+            and model.get("bar_identity_results")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            group_engine = BarGroupEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i9_exports = group_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                model.get("bar_identity_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = BarGroupEngine.build_project_exports(
+                i9_exports["engineering_calculation_results"],
+                i9_exports["bar_group_results"],
+                i9_exports["bar_group_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["bar_group_summary"] = {
+                "phase": "Phase I.9",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._bar_group_validation_enabled:
+                g_i9_group_validation = BarGroupValidator().validate(model)
+                BarGroupReporting.apply_validation(model, g_i9_group_validation)
+            else:
+                model["bar_group_validation"] = g_i9_group_validation
+        else:
+            model["bar_group_validation"] = g_i9_group_validation
+
+        g_i10_bbs_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._bbs_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+            and model.get("bar_group_results")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            bbs_engine = BbsEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i10_exports = bbs_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                model.get("bar_group_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = BbsEngine.build_project_exports(
+                i10_exports["engineering_calculation_results"],
+                i10_exports["bbs_results"],
+                i10_exports["bbs_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["bbs_summary"] = {
+                "phase": "Phase I.10",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._bbs_validation_enabled:
+                g_i10_bbs_validation = BbsValidator().validate(model)
+                BbsReporting.apply_validation(model, g_i10_bbs_validation)
+            else:
+                model["bbs_validation"] = g_i10_bbs_validation
+        else:
+            model["bbs_validation"] = g_i10_bbs_validation
+
+        g_i11_steel_weight_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._steel_weight_enabled
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+            and model.get("bbs_results")
+            and model.get("bar_identity_results")
+            and model.get("bar_group_results")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            steel_weight_engine = SteelWeightEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            _, i11_exports = steel_weight_engine.determine(
+                model.get("engineering_calculation_results", []),
+                model.get("calculation_contexts", []),
+                model.get("reinforcement_bars", []),
+                model.get("bar_identity_results", []),
+                model.get("bar_group_results", []),
+                model.get("bbs_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            calc_registry = model.get("calculation_result_registry", {})
+            merged = SteelWeightEngine.build_project_exports(
+                i11_exports["engineering_calculation_results"],
+                i11_exports["steel_weight_results"],
+                i11_exports["steel_weight_registry"],
+                calc_registry,
+            )
+            model.update(merged)
+            model["steel_weight_summary"] = {
+                "phase": "Phase I.11",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._steel_weight_validation_enabled:
+                g_i11_steel_weight_validation = SteelWeightValidator().validate(model)
+                SteelWeightReporting.apply_validation(model, g_i11_steel_weight_validation)
+            else:
+                model["steel_weight_validation"] = g_i11_steel_weight_validation
+        else:
+            model["steel_weight_validation"] = g_i11_steel_weight_validation
+
+        g_i12_beam_summary_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._beam_summary_enabled
+            and model.get("beams")
+            and model.get("steel_weight_results")
+            and model.get("engineering_calculation_results")
+            and model.get("calculation_contexts")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            beam_summary_engine = BeamSummaryEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            summary_records, i12_exports = beam_summary_engine.determine(
+                model.get("beams", []),
+                model.get("reinforcement_bars", []),
+                model.get("steel_weight_results", []),
+                model.get("bbs_results", []),
+                model.get("bar_group_results", []),
+                model.get("bar_identity_results", []),
+                model.get("calculation_contexts", []),
+                model.get("engineering_calculation_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            merged = BeamSummaryEngine.build_project_exports(
+                i12_exports["beam_summary_results"],
+                i12_exports["beam_summary_registry"],
+            )
+            model.update(merged)
+            model["beam_summary_summary"] = {
+                "phase": "Phase I.12.1",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._beam_summary_validation_enabled:
+                g_i12_beam_summary_validation = BeamSummaryValidator().validate(model)
+                BeamSummaryReporting.apply_validation(model, g_i12_beam_summary_validation)
+            else:
+                model["beam_summary_validation"] = g_i12_beam_summary_validation
+        else:
+            model["beam_summary_validation"] = g_i12_beam_summary_validation
+
         model["phase_g"] = PHASE
         model["phase"] = PHASE
         model["model_version"] = MODEL_VERSION
@@ -1087,6 +1760,62 @@ class ReinforcementDrawingBuilder:
         manager["reinforcement_readiness_complete"] = (
             model.get("reinforcement_readiness_validation", {}).get("status") == "PASS"
             or model.get("reinforcement_readiness_validation", {}).get("status") == "SKIP"
+        )
+        manager["calculation_result_framework_complete"] = (
+            model.get("calculation_result_validation", {}).get("status") == "PASS"
+            or model.get("calculation_result_validation", {}).get("status") == "SKIP"
+        )
+        manager["development_length_complete"] = (
+            model.get("development_length_validation", {}).get("status") == "PASS"
+            or model.get("development_length_validation", {}).get("status") == "SKIP"
+        )
+        manager["hook_length_complete"] = (
+            model.get("hook_length_validation", {}).get("status") == "PASS"
+            or model.get("hook_length_validation", {}).get("status") == "SKIP"
+        )
+        manager["calculation_index_complete"] = (
+            model.get("calculation_index_validation", {}).get("status") == "PASS"
+            or model.get("calculation_index_validation", {}).get("status") == "SKIP"
+        )
+        manager["calculation_dependency_complete"] = (
+            model.get("calculation_dependency_validation", {}).get("status") == "PASS"
+            or model.get("calculation_dependency_validation", {}).get("status") == "SKIP"
+        )
+        manager["lap_length_complete"] = (
+            model.get("lap_length_validation", {}).get("status") == "PASS"
+            or model.get("lap_length_validation", {}).get("status") == "SKIP"
+        )
+        manager["calculation_provenance_complete"] = (
+            model.get("calculation_provenance_validation", {}).get("status") == "PASS"
+            or model.get("calculation_provenance_validation", {}).get("status") == "SKIP"
+        )
+        manager["cut_length_complete"] = (
+            model.get("cut_length_validation", {}).get("status") == "PASS"
+            or model.get("cut_length_validation", {}).get("status") == "SKIP"
+        )
+        manager["shape_code_complete"] = (
+            model.get("shape_code_validation", {}).get("status") == "PASS"
+            or model.get("shape_code_validation", {}).get("status") == "SKIP"
+        )
+        manager["bar_identity_complete"] = (
+            model.get("bar_identity_validation", {}).get("status") == "PASS"
+            or model.get("bar_identity_validation", {}).get("status") == "SKIP"
+        )
+        manager["bar_group_complete"] = (
+            model.get("bar_group_validation", {}).get("status") == "PASS"
+            or model.get("bar_group_validation", {}).get("status") == "SKIP"
+        )
+        manager["bbs_complete"] = (
+            model.get("bbs_validation", {}).get("status") == "PASS"
+            or model.get("bbs_validation", {}).get("status") == "SKIP"
+        )
+        manager["steel_weight_complete"] = (
+            model.get("steel_weight_validation", {}).get("status") == "PASS"
+            or model.get("steel_weight_validation", {}).get("status") == "SKIP"
+        )
+        manager["beam_summary_complete"] = (
+            model.get("beam_summary_validation", {}).get("status") == "PASS"
+            or model.get("beam_summary_validation", {}).get("status") == "SKIP"
         )
         manager["beam_match_count"] = len(model.get("beam_matches", []))
         manager["engineering_reinforcement_context_count"] = len(
