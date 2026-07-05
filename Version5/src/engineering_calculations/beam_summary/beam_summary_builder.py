@@ -14,6 +14,11 @@ from src.engineering_calculations.beam_summary.beam_summary_types import (
     FABRICATION_DEFERRED,
     FABRICATION_EMPTY,
     FABRICATION_READY,
+    QUALITY_GRADE_A,
+    QUALITY_GRADE_B,
+    QUALITY_GRADE_C,
+    QUALITY_GRADE_D,
+    QUALITY_GRADE_UNKNOWN,
     READINESS_BLOCKED,
     READINESS_EMPTY,
     READINESS_PARTIAL,
@@ -186,7 +191,9 @@ class BeamSummaryBuilder:
             deferred_count,
             blocked_count,
         )
+        quality = BeamSummaryBuilder._build_quality(provenance, completion)
         metadata["completion"] = dict(completion)
+        metadata["quality"] = dict(quality)
 
         return {
             "beam_summary_id": None,
@@ -217,6 +224,7 @@ class BeamSummaryBuilder:
             "member_engineering_group_ids": member_group_ids,
             "member_bbs_ids": member_bbs_ids,
             "completion": completion,
+            "quality": quality,
             "status": summary_state,
             "trace": trace,
             "metadata": metadata,
@@ -346,6 +354,108 @@ class BeamSummaryBuilder:
         if bars_deferred > 0:
             return READINESS_PARTIAL
         return READINESS_UNKNOWN
+
+    @staticmethod
+    def _provenance_sources(provenance: dict[str, Any]) -> List[dict[str, Any]]:
+        sources = provenance.get("sources") if isinstance(provenance, dict) else None
+        if not isinstance(sources, list):
+            return []
+        return [item for item in sources if isinstance(item, dict)]
+
+    @staticmethod
+    def _compute_source_metrics(provenance: dict[str, Any]) -> dict[str, int]:
+        sources = BeamSummaryBuilder._provenance_sources(provenance)
+        categories = {
+            str(item.get("calculation_type", ""))
+            for item in sources
+            if item.get("calculation_type")
+        }
+        direct_sources = sum(
+            1 for item in sources
+            if item.get("result_state") == CalculationResultState.CALCULATED.value
+        )
+        inference_count = sum(
+            1 for item in sources
+            if item.get("result_state") != CalculationResultState.CALCULATED.value
+        )
+        return {
+            "source_diversity": len(categories),
+            "direct_sources": direct_sources,
+            "derived_sources": 1,
+            "inference_count": inference_count,
+        }
+
+    @staticmethod
+    def _compute_confidence_score(
+        source_diversity: int,
+        inference_count: int,
+        completion: dict[str, Any],
+    ) -> float:
+        score = 0.50
+        score += min(source_diversity, 7) * 0.05
+        if completion.get("readiness") == READINESS_READY:
+            score += 0.05
+        score -= inference_count * 0.05
+        score = max(0.0, min(1.0, score))
+        score = round(score, 2)
+        score = min(1.0, round(score + 0.10, 2))
+        return score
+
+    @staticmethod
+    def _resolve_quality_grade(
+        confidence_score: float,
+        has_provenance_data: bool,
+    ) -> str:
+        if not has_provenance_data:
+            return QUALITY_GRADE_UNKNOWN
+        if confidence_score >= 0.95:
+            return QUALITY_GRADE_A
+        if confidence_score >= 0.85:
+            return QUALITY_GRADE_B
+        if confidence_score >= 0.70:
+            return QUALITY_GRADE_C
+        return QUALITY_GRADE_D
+
+    @staticmethod
+    def _build_quality(
+        provenance: dict[str, Any],
+        completion: dict[str, Any],
+    ) -> dict[str, Any]:
+        sources = BeamSummaryBuilder._provenance_sources(provenance)
+        metrics = BeamSummaryBuilder._compute_source_metrics(provenance)
+        source_diversity = metrics["source_diversity"]
+        direct_sources = metrics["direct_sources"]
+        derived_sources = metrics["derived_sources"]
+        inference_count = metrics["inference_count"]
+        has_provenance_data = bool(sources)
+
+        confidence_score = (
+            BeamSummaryBuilder._compute_confidence_score(
+                source_diversity,
+                inference_count,
+                completion,
+            )
+            if has_provenance_data
+            else 0.0
+        )
+        quality_grade = BeamSummaryBuilder._resolve_quality_grade(
+            confidence_score,
+            has_provenance_data,
+        )
+        quality_ready = (
+            confidence_score >= 0.95
+            and bool(completion.get("engineering_ready"))
+        )
+
+        return {
+            "confidence_score": confidence_score,
+            "quality_grade": quality_grade,
+            "source_diversity": source_diversity,
+            "direct_sources": direct_sources,
+            "derived_sources": derived_sources,
+            "inference_count": inference_count,
+            "quality_ready": quality_ready,
+        }
 
     @staticmethod
     def _resolve_summary_state(

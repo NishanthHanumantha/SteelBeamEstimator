@@ -7,6 +7,12 @@ from typing import Any, List
 from src.engineering_calculations.beam_summary.beam_summary_types import (
     COMPLETION_REFINEMENT_PHASE,
     CREATED_PHASE,
+    QUALITY_GRADE_A,
+    QUALITY_GRADE_B,
+    QUALITY_GRADE_C,
+    QUALITY_GRADE_D,
+    QUALITY_GRADE_UNKNOWN,
+    QUALITY_REFINEMENT_PHASE,
     READINESS_BLOCKED,
     READINESS_EMPTY,
     READINESS_PARTIAL,
@@ -112,10 +118,58 @@ class BeamSummarySummary:
             else 0.0
         )
 
+        quality_grade_distribution = {
+            QUALITY_GRADE_A: 0,
+            QUALITY_GRADE_B: 0,
+            QUALITY_GRADE_C: 0,
+            QUALITY_GRADE_D: 0,
+            QUALITY_GRADE_UNKNOWN: 0,
+        }
+        confidence_scores: list[float] = []
+        quality_ready_beams = 0
+        beam_quality_report: list[dict[str, Any]] = []
+        highest_confidence_beam = None
+        lowest_confidence_beam = None
+
+        for record in summary_records:
+            quality = record.get("quality") or {}
+            confidence_score = float(quality.get("confidence_score") or 0.0)
+            quality_grade = str(quality.get("quality_grade", QUALITY_GRADE_UNKNOWN))
+            confidence_scores.append(confidence_score)
+            quality_grade_distribution[quality_grade] = (
+                quality_grade_distribution.get(quality_grade, 0) + 1
+            )
+            if quality.get("quality_ready"):
+                quality_ready_beams += 1
+            beam_quality_report.append({
+                "beam_id": record.get("beam_id"),
+                "beam_mark": record.get("beam_mark"),
+                "confidence_score": confidence_score,
+                "quality_grade": quality_grade,
+                "quality_ready": bool(quality.get("quality_ready")),
+                "source_diversity": quality.get("source_diversity", 0),
+                "inference_count": quality.get("inference_count", 0),
+            })
+            if highest_confidence_beam is None or confidence_score > float(
+                (highest_confidence_beam.get("quality") or {}).get("confidence_score") or 0.0
+            ):
+                highest_confidence_beam = record
+            if lowest_confidence_beam is None or confidence_score < float(
+                (lowest_confidence_beam.get("quality") or {}).get("confidence_score") or 0.0
+            ):
+                lowest_confidence_beam = record
+
+        average_confidence_score = (
+            round(sum(confidence_scores) / len(confidence_scores), 2)
+            if confidence_scores
+            else 0.0
+        )
+
         return {
-            "phase": "Phase I.12.1",
+            "phase": "Phase I.12.2",
             "framework_phase": CREATED_PHASE,
             "completion_refinement_phase": COMPLETION_REFINEMENT_PHASE,
+            "quality_refinement_phase": QUALITY_REFINEMENT_PHASE,
             "total_beams": len(beams),
             "total_summaries": beam_count,
             "total_bars": total_bars,
@@ -152,6 +206,12 @@ class BeamSummarySummary:
             "empty_beams": empty_beams,
             "average_completion_percent": average_completion_percent,
             "beam_completion_report": beam_completion_report,
+            "average_confidence_score": average_confidence_score,
+            "quality_grade_distribution": quality_grade_distribution,
+            "quality_ready_beams": quality_ready_beams,
+            "highest_confidence_beam": highest_confidence_beam,
+            "lowest_confidence_beam": lowest_confidence_beam,
+            "beam_quality_report": beam_quality_report,
             "registry_statistics": {
                 "namespace": registry.get("namespace"),
                 "determination_count": registry.get("determination_count", 0),

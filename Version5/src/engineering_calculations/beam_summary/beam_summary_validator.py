@@ -12,6 +12,11 @@ from src.engineering_calculations.beam_summary.beam_summary_types import (
     ENGINEERING_COMPLETE,
     FABRICATION_READY,
     NAMESPACE_BEAM_SUMMARY,
+    QUALITY_GRADE_A,
+    QUALITY_GRADE_B,
+    QUALITY_GRADE_C,
+    QUALITY_GRADE_D,
+    QUALITY_GRADE_UNKNOWN,
     READINESS_BLOCKED,
     READINESS_EMPTY,
     READINESS_PARTIAL,
@@ -40,7 +45,7 @@ class BeamSummaryValidator:
     def validate(self, model: dict[str, Any]) -> dict[str, Any]:
         if not beam_summary_applied(model) and not model.get("beam_summary_results"):
             return {
-                "phase": "Phase I.12.1",
+                "phase": "Phase I.12.2",
                 "status": "SKIP",
                 "checks": [],
                 "summary": {"reason": "Beam summary not applied"},
@@ -266,6 +271,20 @@ class BeamSummaryValidator:
             self._check_blocked_requires_blocked,
             self._check_empty_requires_zero_bars,
             self._check_average_completion_in_range,
+            self._check_every_summary_has_quality,
+            self._check_confidence_in_range,
+            self._check_quality_grade_consistent,
+            self._check_quality_grade_thresholds,
+            self._check_quality_ready_requires_grade_a_and_engineering_ready,
+            self._check_source_diversity_matches_provenance,
+            self._check_inference_count_correct,
+            self._check_direct_sources_correct,
+            self._check_derived_sources_at_least_one,
+            self._check_confidence_formula_correct,
+            self._check_average_confidence_in_range,
+            self._check_quality_distribution_sums_correctly,
+            self._check_quality_does_not_modify_completion,
+            self._check_quality_object_schema_complete,
             self._check_no_existing_validation_regression,
         ]
 
@@ -283,7 +302,7 @@ class BeamSummaryValidator:
 
         failed = [check for check in checks if check["status"] == "FAIL"]
         return {
-            "phase": "Phase I.12.1",
+            "phase": "Phase I.12.2",
             "status": "PASS" if not failed else "FAIL",
             "checks": checks,
             "summary": {
@@ -1699,9 +1718,263 @@ class BeamSummaryValidator:
             "Weight Totals Equal Members",
             "Registry Integrity",
             "Beam Summary Depends On Steel Weight",
+            "Every Summary Has Completion",
+            "Completion Percent Formula Correct",
+            "Engineering Ready Only When READY",
         ]
         return {
             "name": "No Existing Validation Regression",
             "status": "PASS",
             "preserved_checks": prior_checks,
+        }
+
+    @staticmethod
+    def _check_every_summary_has_quality(**kwargs) -> dict[str, Any]:
+        missing = [
+            item.get("beam_summary_id")
+            for item in kwargs["summary_records"]
+            if not isinstance(item.get("quality"), dict)
+        ]
+        return {
+            "name": "Every Summary Has Quality",
+            "status": "PASS" if not missing else "FAIL",
+            "missing_count": len(missing),
+        }
+
+    @staticmethod
+    def _check_confidence_in_range(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            score = quality.get("confidence_score")
+            if score is None or not (0.0 <= float(score) <= 1.0):
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Confidence In Range",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_quality_grade_consistent(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            provenance = item.get("calculation_provenance") or item.get("provenance") or {}
+            expected = BeamSummaryBuilder._build_quality(
+                provenance,
+                item.get("completion") or {},
+            )
+            if quality.get("quality_grade") != expected.get("quality_grade"):
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Quality Grade Consistent",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_quality_grade_thresholds(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            score = float(quality.get("confidence_score") or 0.0)
+            grade = str(quality.get("quality_grade", ""))
+            sources = BeamSummaryBuilder._provenance_sources(
+                item.get("calculation_provenance") or item.get("provenance") or {}
+            )
+            if not sources and grade != QUALITY_GRADE_UNKNOWN:
+                invalid.append(item.get("beam_summary_id"))
+                continue
+            if sources:
+                if score >= 0.95 and grade != QUALITY_GRADE_A:
+                    invalid.append(item.get("beam_summary_id"))
+                elif 0.85 <= score < 0.95 and grade != QUALITY_GRADE_B:
+                    invalid.append(item.get("beam_summary_id"))
+                elif 0.70 <= score < 0.85 and grade != QUALITY_GRADE_C:
+                    invalid.append(item.get("beam_summary_id"))
+                elif score < 0.70 and grade != QUALITY_GRADE_D:
+                    invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Quality Grade Thresholds Correct",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_quality_ready_requires_grade_a_and_engineering_ready(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            completion = item.get("completion") or {}
+            score = float(quality.get("confidence_score") or 0.0)
+            grade = str(quality.get("quality_grade", ""))
+            engineering_ready = bool(completion.get("engineering_ready"))
+            quality_ready = bool(quality.get("quality_ready"))
+            if quality_ready and not (
+                score >= 0.95 and grade == QUALITY_GRADE_A and engineering_ready
+            ):
+                invalid.append(item.get("beam_summary_id"))
+            if not quality_ready and score >= 0.95 and grade == QUALITY_GRADE_A and engineering_ready:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Quality Ready Requires Grade A And Engineering Ready",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_source_diversity_matches_provenance(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            provenance = item.get("calculation_provenance") or item.get("provenance") or {}
+            expected = BeamSummaryBuilder._compute_source_metrics(provenance)["source_diversity"]
+            if quality.get("source_diversity") != expected:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Source Diversity Matches Provenance Categories",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_inference_count_correct(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            provenance = item.get("calculation_provenance") or item.get("provenance") or {}
+            expected = BeamSummaryBuilder._compute_source_metrics(provenance)["inference_count"]
+            if quality.get("inference_count") != expected:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Inference Count Correct",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_direct_sources_correct(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            provenance = item.get("calculation_provenance") or item.get("provenance") or {}
+            expected = BeamSummaryBuilder._compute_source_metrics(provenance)["direct_sources"]
+            if quality.get("direct_sources") != expected:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Direct Sources Correct",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_derived_sources_at_least_one(**kwargs) -> dict[str, Any]:
+        invalid = [
+            item.get("beam_summary_id")
+            for item in kwargs["summary_records"]
+            if int((item.get("quality") or {}).get("derived_sources") or 0) < 1
+        ]
+        return {
+            "name": "Derived Sources At Least One",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_confidence_formula_correct(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            provenance = item.get("calculation_provenance") or item.get("provenance") or {}
+            completion = item.get("completion") or {}
+            expected = BeamSummaryBuilder._build_quality(provenance, completion)
+            if quality.get("confidence_score") != expected.get("confidence_score"):
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Confidence Formula Correct",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_average_confidence_in_range(**kwargs) -> dict[str, Any]:
+        scores = [
+            float((item.get("quality") or {}).get("confidence_score") or 0.0)
+            for item in kwargs["summary_records"]
+        ]
+        if not scores:
+            return {"name": "Average Confidence In Range", "status": "PASS"}
+        average = round(sum(scores) / len(scores), 2)
+        ok = 0.0 <= average <= 1.0 and all(0.0 <= value <= 1.0 for value in scores)
+        return {
+            "name": "Average Confidence In Range",
+            "status": "PASS" if ok else "FAIL",
+            "average_confidence_score": average,
+        }
+
+    @staticmethod
+    def _check_quality_distribution_sums_correctly(**kwargs) -> dict[str, Any]:
+        distribution = {
+            QUALITY_GRADE_A: 0,
+            QUALITY_GRADE_B: 0,
+            QUALITY_GRADE_C: 0,
+            QUALITY_GRADE_D: 0,
+            QUALITY_GRADE_UNKNOWN: 0,
+        }
+        for item in kwargs["summary_records"]:
+            grade = str((item.get("quality") or {}).get("quality_grade", QUALITY_GRADE_UNKNOWN))
+            distribution[grade] = distribution.get(grade, 0) + 1
+        total = sum(distribution.values())
+        ok = total == len(kwargs["summary_records"])
+        return {
+            "name": "Quality Distribution Sums Correctly",
+            "status": "PASS" if ok else "FAIL",
+            "distribution_total": total,
+            "summary_count": len(kwargs["summary_records"]),
+            "quality_grade_distribution": distribution,
+        }
+
+    @staticmethod
+    def _check_quality_does_not_modify_completion(**kwargs) -> dict[str, Any]:
+        invalid = []
+        for item in kwargs["summary_records"]:
+            completion = item.get("completion") or {}
+            expected = BeamSummaryBuilder._build_completion(
+                int(item.get("bar_count") or 0),
+                int(item.get("calculated_bars") or 0),
+                int(item.get("deferred_bars") or 0),
+                int(item.get("blocked_bars") or 0),
+            )
+            if completion != expected:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Quality Does Not Modify Completion",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
+        }
+
+    @staticmethod
+    def _check_quality_object_schema_complete(**kwargs) -> dict[str, Any]:
+        required_keys = {
+            "confidence_score",
+            "quality_grade",
+            "source_diversity",
+            "direct_sources",
+            "derived_sources",
+            "inference_count",
+            "quality_ready",
+        }
+        invalid = []
+        for item in kwargs["summary_records"]:
+            quality = item.get("quality") or {}
+            metadata_quality = (item.get("metadata") or {}).get("quality") or {}
+            if set(quality.keys()) != required_keys:
+                invalid.append(item.get("beam_summary_id"))
+            elif quality != metadata_quality:
+                invalid.append(item.get("beam_summary_id"))
+        return {
+            "name": "Quality Object Schema Complete",
+            "status": "PASS" if not invalid else "FAIL",
+            "invalid_count": len(invalid),
         }

@@ -86,6 +86,11 @@ PHASE_I_9_BAR_GROUP = "i_9_bar_group"
 PHASE_I_10_BBS = "i_10_bbs"
 PHASE_I_11_STEEL_WEIGHT = "i_11_steel_weight"
 PHASE_I_12_BEAM_SUMMARY = "i_12_beam_summary"
+PHASE_I_13_QUANTITY = "i_13_quantity"
+PHASE_I_14_MATERIAL = "i_14_material_quantification"
+PHASE_I_15_BEAM_SCHEDULE = "i_15_beam_schedule"
+PHASE_I_16_ENGINEERING_REPORT = "i_16_engineering_report"
+PHASE_I_17_EXCEL_EXPORT = "i_17_excel_export"
 
 
 def phase_dir(root: Path, phase: str) -> Path:
@@ -2152,6 +2157,126 @@ class OutputPaths:
     @property
     def phase_i_12_beam_summary_report_export(self) -> Path:
         return self.phase_i_12_dir / "beam_summary_report.json"
+
+    @property
+    def phase_i_13_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_13_QUANTITY
+
+    @property
+    def phase_i_13_quantity_results_export(self) -> Path:
+        return self.phase_i_13_dir / "quantity_results.json"
+
+    @property
+    def phase_i_13_quantity_registry_export(self) -> Path:
+        return self.phase_i_13_dir / "quantity_registry.json"
+
+    @property
+    def phase_i_13_quantity_statistics_export(self) -> Path:
+        return self.phase_i_13_dir / "quantity_statistics.json"
+
+    @property
+    def phase_i_13_quantity_validation_export(self) -> Path:
+        return self.phase_i_13_dir / "quantity_validation.json"
+
+    @property
+    def phase_i_13_quantity_report_export(self) -> Path:
+        return self.phase_i_13_dir / "quantity_report.json"
+
+    @property
+    def phase_i_14_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_14_MATERIAL
+
+    @property
+    def phase_i_14_material_results_export(self) -> Path:
+        return self.phase_i_14_dir / "material_results.json"
+
+    @property
+    def phase_i_14_material_registry_export(self) -> Path:
+        return self.phase_i_14_dir / "material_registry.json"
+
+    @property
+    def phase_i_14_material_statistics_export(self) -> Path:
+        return self.phase_i_14_dir / "material_statistics.json"
+
+    @property
+    def phase_i_14_material_validation_export(self) -> Path:
+        return self.phase_i_14_dir / "material_validation.json"
+
+    @property
+    def phase_i_14_material_report_export(self) -> Path:
+        return self.phase_i_14_dir / "material_report.json"
+
+    @property
+    def phase_i_15_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_15_BEAM_SCHEDULE
+
+    @property
+    def phase_i_15_beam_schedule_results_export(self) -> Path:
+        return self.phase_i_15_dir / "beam_schedule_results.json"
+
+    @property
+    def phase_i_15_beam_schedule_registry_export(self) -> Path:
+        return self.phase_i_15_dir / "beam_schedule_registry.json"
+
+    @property
+    def phase_i_15_beam_schedule_statistics_export(self) -> Path:
+        return self.phase_i_15_dir / "beam_schedule_statistics.json"
+
+    @property
+    def phase_i_15_beam_schedule_validation_export(self) -> Path:
+        return self.phase_i_15_dir / "beam_schedule_validation.json"
+
+    @property
+    def phase_i_15_beam_schedule_report_export(self) -> Path:
+        return self.phase_i_15_dir / "beam_schedule_report.json"
+
+    @property
+    def phase_i_16_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_16_ENGINEERING_REPORT
+
+    @property
+    def phase_i_16_engineering_reports_export(self) -> Path:
+        return self.phase_i_16_dir / "engineering_reports.json"
+
+    @property
+    def phase_i_16_engineering_report_registry_export(self) -> Path:
+        return self.phase_i_16_dir / "engineering_report_registry.json"
+
+    @property
+    def phase_i_16_engineering_report_statistics_export(self) -> Path:
+        return self.phase_i_16_dir / "engineering_report_statistics.json"
+
+    @property
+    def phase_i_16_engineering_report_validation_export(self) -> Path:
+        return self.phase_i_16_dir / "engineering_report_validation.json"
+
+    @property
+    def phase_i_16_engineering_report_report_export(self) -> Path:
+        return self.phase_i_16_dir / "engineering_report_report.json"
+
+    @property
+    def phase_i_17_dir(self) -> Path:
+        return self.phase_i_dir / PHASE_I_17_EXCEL_EXPORT
+
+    @property
+    def phase_i_17_excel_workbook_export(self) -> Path:
+        return self.phase_i_17_dir / "Beam_Reinforcement_Schedule.xlsx"
+
+    @property
+    def phase_i_17_excel_export_registry_export(self) -> Path:
+        return self.phase_i_17_dir / "excel_export_registry.json"
+
+    @property
+    def phase_i_17_excel_export_statistics_export(self) -> Path:
+        return self.phase_i_17_dir / "excel_export_statistics.json"
+
+    @property
+    def phase_i_17_excel_export_validation_export(self) -> Path:
+        return self.phase_i_17_dir / "excel_export_validation.json"
+
+    @property
+    def phase_i_17_excel_export_report_export(self) -> Path:
+        return self.phase_i_17_dir / "excel_export_report.json"
 
     @property
     def phase_g_2_reinforcement_workspace(self) -> Path:

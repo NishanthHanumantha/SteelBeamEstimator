@@ -150,7 +150,10 @@ class CalculationDependencyValidator:
             "STEEL_WEIGHT",
             "BEAM_SUMMARY",
             "QUANTITY",
-            "BOQ",
+            "MATERIAL",
+            "BEAM_SCHEDULE",
+            "ENGINEERING_REPORT",
+            "EXCEL_EXPORT",
         }
         missing = sorted(future - set(nodes.keys()))
         return {

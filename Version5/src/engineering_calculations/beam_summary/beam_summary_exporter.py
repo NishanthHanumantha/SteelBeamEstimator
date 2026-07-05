@@ -11,7 +11,7 @@ class BeamSummaryExporter:
     @staticmethod
     def export_results(records: List[dict[str, Any]]) -> dict[str, Any]:
         return {
-            "phase": "Phase I.12.1",
+            "phase": "Phase I.12.2",
             "determination_count": len(records),
             "results": records,
         }
@@ -23,7 +23,7 @@ class BeamSummaryExporter:
     @staticmethod
     def export_statistics(summary: dict[str, Any]) -> dict[str, Any]:
         return {
-            "phase": "Phase I.12.1",
+            "phase": "Phase I.12.2",
             "total_beams": summary.get("total_beams", 0),
             "total_summaries": summary.get("total_summaries", 0),
             "total_bars": summary.get("total_bars", 0),
@@ -45,6 +45,12 @@ class BeamSummaryExporter:
             "empty_beams": summary.get("empty_beams", 0),
             "average_completion_percent": summary.get("average_completion_percent", 0.0),
             "beam_completion_report": summary.get("beam_completion_report", []),
+            "average_confidence_score": summary.get("average_confidence_score", 0.0),
+            "quality_grade_distribution": summary.get("quality_grade_distribution", {}),
+            "quality_ready_beams": summary.get("quality_ready_beams", 0),
+            "highest_confidence_beam": summary.get("highest_confidence_beam"),
+            "lowest_confidence_beam": summary.get("lowest_confidence_beam"),
+            "beam_quality_report": summary.get("beam_quality_report", []),
         }
 
     @staticmethod
@@ -57,7 +63,7 @@ class BeamSummaryExporter:
         reporting: dict[str, Any],
     ) -> dict[str, Any]:
         return {
-            "phase": "Phase I.12.1",
+            "phase": "Phase I.12.2",
             "title": "Engineering Beam Summary Report",
             "summary": summary,
             "reporting": reporting,

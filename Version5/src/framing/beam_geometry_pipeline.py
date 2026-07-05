@@ -108,9 +108,11 @@ class BeamGeometryPipeline:
         context_builder = EngineeringContextBuilder(config, self._outputs.root)
         model = context_builder.build_model(model)
         model["source_files"] = [str(p) for p in source_files]
+        model["pipeline_output_root"] = str(self._outputs.root)
         context_validation = EngineeringContextValidator().validate(model)
 
         project_root = self._outputs.root.parent.parent
+        model["pipeline_project_root"] = str(project_root)
         reinforcement_cfg = dict(config.get("reinforcement_drawings", {}))
         reinforcement_paths = [
             (project_root / path_str).resolve()
@@ -201,6 +203,11 @@ class BeamGeometryPipeline:
         bbs_validation = model.get("bbs_validation", {})
         steel_weight_validation = model.get("steel_weight_validation", {})
         beam_summary_validation = model.get("beam_summary_validation", {})
+        quantity_validation = model.get("quantity_validation", {})
+        material_validation = model.get("material_validation", {})
+        beam_schedule_validation = model.get("beam_schedule_validation", {})
+        engineering_report_validation = model.get("engineering_report_validation", {})
+        excel_export_validation = model.get("excel_export_validation", {})
 
         summary = self._build_summary(
             model,
@@ -1346,6 +1353,143 @@ class BeamGeometryPipeline:
                 beam_summary_reporting,
             ),
         )
+        from src.engineering_calculations.quantity.quantity_exporter import QuantityExporter
+
+        quantity_summary = model.get("quantity_summary", {})
+        quantity_reporting = model.get("quantity_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_13_quantity_results_export,
+            QuantityExporter.export_results(model.get("quantity_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_13_quantity_registry_export,
+            QuantityExporter.export_registry(model.get("quantity_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_13_quantity_statistics_export,
+            QuantityExporter.export_statistics(quantity_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_13_quantity_validation_export,
+            quantity_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_13_quantity_report_export,
+            QuantityExporter.export_engineering_quantity_report(
+                quantity_summary,
+                quantity_reporting,
+            ),
+        )
+        from src.engineering_calculations.material_quantification.material_exporter import (
+            MaterialExporter,
+        )
+
+        material_summary = model.get("material_summary", {})
+        material_reporting = model.get("material_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_14_material_results_export,
+            MaterialExporter.export_results(model.get("material_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_14_material_registry_export,
+            MaterialExporter.export_registry(model.get("material_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_14_material_statistics_export,
+            MaterialExporter.export_statistics(material_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_14_material_validation_export,
+            material_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_14_material_report_export,
+            MaterialExporter.export_engineering_material_report(
+                material_summary,
+                material_reporting,
+            ),
+        )
+        from src.engineering_calculations.beam_schedule.beam_schedule_exporter import (
+            BeamScheduleExporter,
+        )
+
+        beam_schedule_summary = model.get("beam_schedule_summary", {})
+        beam_schedule_reporting = model.get("beam_schedule_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_15_beam_schedule_results_export,
+            BeamScheduleExporter.export_results(model.get("beam_schedule_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_15_beam_schedule_registry_export,
+            BeamScheduleExporter.export_registry(model.get("beam_schedule_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_15_beam_schedule_statistics_export,
+            BeamScheduleExporter.export_statistics(beam_schedule_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_15_beam_schedule_validation_export,
+            beam_schedule_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_15_beam_schedule_report_export,
+            BeamScheduleExporter.export_engineering_beam_schedule_report(
+                beam_schedule_summary,
+                beam_schedule_reporting,
+            ),
+        )
+        from src.engineering_reports.engineering_report_exporter import (
+            EngineeringReportExporter,
+        )
+
+        engineering_report_summary = model.get("engineering_report_summary", {})
+        engineering_report_reporting = model.get("engineering_report_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_16_engineering_reports_export,
+            EngineeringReportExporter.export_results(model.get("engineering_report_results", [])),
+        )
+        self._write_json(
+            self._outputs.phase_i_16_engineering_report_registry_export,
+            EngineeringReportExporter.export_registry(model.get("engineering_report_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_16_engineering_report_statistics_export,
+            EngineeringReportExporter.export_statistics(engineering_report_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_16_engineering_report_validation_export,
+            engineering_report_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_16_engineering_report_report_export,
+            EngineeringReportExporter.export_engineering_report_bundle(
+                engineering_report_summary,
+                engineering_report_reporting,
+            ),
+        )
+        from src.excel_export.excel_export_exporter import ExcelExportExporter
+
+        excel_export_summary = model.get("excel_export_summary", {})
+        excel_export_reporting = model.get("excel_export_reporting", {})
+        self._write_json(
+            self._outputs.phase_i_17_excel_export_registry_export,
+            ExcelExportExporter.export_registry(model.get("excel_export_registry", {})),
+        )
+        self._write_json(
+            self._outputs.phase_i_17_excel_export_statistics_export,
+            ExcelExportExporter.export_statistics(excel_export_summary),
+        )
+        self._write_json(
+            self._outputs.phase_i_17_excel_export_validation_export,
+            excel_export_validation,
+        )
+        self._write_json(
+            self._outputs.phase_i_17_excel_export_report_export,
+            ExcelExportExporter.export_report_bundle(
+                excel_export_summary,
+                excel_export_reporting,
+            ),
+        )
         self._write_json(
             self._outputs.beam_engineering_context,
             {
@@ -1512,6 +1656,11 @@ class BeamGeometryPipeline:
             "bbs_validation": bbs_validation,
             "steel_weight_validation": steel_weight_validation,
             "beam_summary_validation": beam_summary_validation,
+            "quantity_validation": quantity_validation,
+            "material_validation": material_validation,
+            "beam_schedule_validation": beam_schedule_validation,
+            "engineering_report_validation": engineering_report_validation,
+            "excel_export_validation": excel_export_validation,
             "summary": summary,
             "phase_g_summary": phase_g_summary,
         }

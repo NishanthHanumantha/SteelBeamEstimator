@@ -1218,8 +1218,8 @@ def run() -> int:
     print("=" * 52 + "\n")
 
     print("\n" + "=" * 52)
-    print("PHASE I.12.1")
-    print("Beam Summary Completeness & Engineering Readiness Metrics")
+    print("PHASE I.12.2")
+    print("Beam Quality Indicator Engine (Metadata Refinement)")
     print("=" * 52)
     beam_summary_validation = result.get("beam_summary_validation", {})
     beam_summary_summary = result.get("model", {}).get("beam_summary_summary", {})
@@ -1232,12 +1232,139 @@ def run() -> int:
     print(f"Blocked Beams: {beam_summary_summary.get('blocked_beams', 0)}")
     print(f"Empty Beams: {beam_summary_summary.get('empty_beams', 0)}")
     print(f"Average Completion %: {beam_summary_summary.get('average_completion_percent', 0.0)}")
-    print(f"I.12.1 Beam Summary Validation: {beam_summary_validation.get('status', 'SKIP')}")
+    print(f"Average Confidence: {beam_summary_summary.get('average_confidence_score', 0.0)}")
+    print(f"Quality Ready Beams: {beam_summary_summary.get('quality_ready_beams', 0)}")
+    print(f"Quality Grade Distribution: {beam_summary_summary.get('quality_grade_distribution', {})}")
+    highest = beam_summary_summary.get("highest_confidence_beam") or {}
+    lowest = beam_summary_summary.get("lowest_confidence_beam") or {}
+    print(
+        "Highest Confidence Beam: "
+        f"{highest.get('beam_mark', 'N/A')} "
+        f"({(highest.get('quality') or {}).get('confidence_score', 0.0)})"
+    )
+    print(
+        "Lowest Confidence Beam: "
+        f"{lowest.get('beam_mark', 'N/A')} "
+        f"({(lowest.get('quality') or {}).get('confidence_score', 0.0)})"
+    )
+    print(f"I.12.2 Beam Summary Validation: {beam_summary_validation.get('status', 'SKIP')}")
     if beam_summary_validation.get("checks"):
         passed = sum(1 for c in beam_summary_validation["checks"] if c.get("status") == "PASS")
         total = len(beam_summary_validation["checks"])
         print(f"  Beam Summary Checks: {passed}/{total} PASS")
     print(f"Registry Statistics: {beam_summary_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.13")
+    print("Quantity Engine (Engineering Aggregation)")
+    print("=" * 52)
+    quantity_validation = result.get("quantity_validation", {})
+    quantity_summary = result.get("model", {}).get("quantity_summary", {})
+    quantity_reporting = result.get("model", {}).get("quantity_reporting", {})
+    print(f"Total Quantities: {quantity_summary.get('total_quantities', 0)}")
+    print(f"Ready Quantities: {quantity_summary.get('ready_quantities', 0)}")
+    print(f"Deferred Quantities: {quantity_summary.get('deferred_quantities', 0)}")
+    print(f"Blocked Quantities: {quantity_summary.get('blocked_quantities', 0)}")
+    print(f"Empty Quantities: {quantity_summary.get('empty_quantities', 0)}")
+    print(f"Unknown Quantities: {quantity_summary.get('unknown_quantities', 0)}")
+    print(f"Total Steel Weight (kg): {quantity_summary.get('total_steel_weight_kg', 0.0)}")
+    print(f"Total Cut Length (mm): {quantity_summary.get('total_cut_length_mm', 0)}")
+    print(f"Total Bars: {quantity_summary.get('total_bars', 0)}")
+    print(f"Average Steel Weight (kg): {quantity_summary.get('average_steel_weight_kg', 0.0)}")
+    print(f"I.13 Quantity Validation: {quantity_validation.get('status', 'SKIP')}")
+    if quantity_validation.get("checks"):
+        passed = sum(1 for c in quantity_validation["checks"] if c.get("status") == "PASS")
+        total = len(quantity_validation["checks"])
+        print(f"  Quantity Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {quantity_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.14")
+    print("Material Quantification Engine")
+    print("=" * 52)
+    material_validation = result.get("material_validation", {})
+    material_summary = result.get("model", {}).get("material_summary", {})
+    material_reporting = result.get("model", {}).get("material_reporting", {})
+    print(f"Total Material Records: {material_summary.get('total_material_records', 0)}")
+    print(f"Material Types: {material_summary.get('material_types', [])}")
+    print(f"Steel Grades: {material_summary.get('steel_grades', [])}")
+    print(f"Diameters (mm): {material_summary.get('diameters_mm', [])}")
+    print(f"Ready Materials: {material_summary.get('ready_materials', 0)}")
+    print(f"Deferred Materials: {material_summary.get('deferred_materials', 0)}")
+    print(f"Blocked Materials: {material_summary.get('blocked_materials', 0)}")
+    print(f"Empty Materials: {material_summary.get('empty_materials', 0)}")
+    print(f"Unknown Materials: {material_summary.get('unknown_materials', 0)}")
+    print(f"Total Steel Weight (kg): {material_summary.get('total_steel_weight_kg', 0.0)}")
+    print(f"Total Cut Length (mm): {material_summary.get('total_cut_length_mm', 0)}")
+    print(f"Total Bars: {material_summary.get('total_bars', 0)}")
+    print(f"Average Weight per Material (kg): {material_summary.get('average_weight_per_material_kg', 0.0)}")
+    print(f"I.14 Material Validation: {material_validation.get('status', 'SKIP')}")
+    if material_validation.get("checks"):
+        passed = sum(1 for c in material_validation["checks"] if c.get("status") == "PASS")
+        total = len(material_validation["checks"])
+        print(f"  Material Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {material_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.15")
+    print("Beam Reinforcement Schedule Engine")
+    print("=" * 52)
+    beam_schedule_validation = result.get("beam_schedule_validation", {})
+    beam_schedule_summary = result.get("model", {}).get("beam_schedule_summary", {})
+    beam_schedule_reporting = result.get("model", {}).get("beam_schedule_reporting", {})
+    print(f"Total Schedules: {beam_schedule_summary.get('total_schedules', 0)}")
+    print(f"Total Rows: {beam_schedule_summary.get('total_rows', 0)}")
+    print(f"Rows By Role: {beam_schedule_summary.get('rows_by_role', {})}")
+    print(f"Rows By Diameter: {beam_schedule_summary.get('rows_by_diameter', {})}")
+    print(f"Average Rows Per Beam: {beam_schedule_summary.get('average_rows_per_beam', 0.0)}")
+    print(f"Average Weight Per Beam (kg): {beam_schedule_summary.get('average_weight_per_beam_kg', 0.0)}")
+    print(f"Average Cut Length Per Beam (mm): {beam_schedule_summary.get('average_cut_length_per_beam_mm', 0.0)}")
+    print(f"I.15 Beam Schedule Validation: {beam_schedule_validation.get('status', 'SKIP')}")
+    if beam_schedule_validation.get("checks"):
+        passed = sum(1 for c in beam_schedule_validation["checks"] if c.get("status") == "PASS")
+        total = len(beam_schedule_validation["checks"])
+        print(f"  Beam Schedule Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {beam_schedule_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.16")
+    print("Engineering Report Model Engine")
+    print("=" * 52)
+    engineering_report_validation = result.get("engineering_report_validation", {})
+    engineering_report_summary = result.get("model", {}).get("engineering_report_summary", {})
+    engineering_report_reporting = result.get("model", {}).get("engineering_report_reporting", {})
+    print(f"Total Reports: {engineering_report_summary.get('total_reports', 0)}")
+    print(f"Total Rows: {engineering_report_summary.get('total_rows', 0)}")
+    print(f"Average Rows Per Report: {engineering_report_summary.get('average_rows_per_report', 0.0)}")
+    print(f"I.16 Engineering Report Validation: {engineering_report_validation.get('status', 'SKIP')}")
+    if engineering_report_validation.get("checks"):
+        passed = sum(1 for c in engineering_report_validation["checks"] if c.get("status") == "PASS")
+        total = len(engineering_report_validation["checks"])
+        print(f"  Engineering Report Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {engineering_report_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.17")
+    print("Template-Based Excel Export Engine")
+    print("=" * 52)
+    excel_export_validation = result.get("excel_export_validation", {})
+    excel_export_summary = result.get("model", {}).get("excel_export_summary", {})
+    excel_export_reporting = result.get("model", {}).get("excel_export_reporting", {})
+    print(f"Workbook Count: {excel_export_summary.get('workbook_count', 0)}")
+    print(f"Rows Written: {excel_export_summary.get('rows_written', 0)}")
+    print(f"Cells Written: {excel_export_summary.get('cells_written', 0)}")
+    print(f"Template Used: {excel_export_summary.get('template_used', False)}")
+    print(f"I.17 Excel Export Validation: {excel_export_validation.get('status', 'SKIP')}")
+    if excel_export_validation.get("checks"):
+        passed = sum(1 for c in excel_export_validation["checks"] if c.get("status") == "PASS")
+        total = len(excel_export_validation["checks"])
+        print(f"  Excel Export Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {excel_export_reporting.get('registry_statistics', {})}")
     print("=" * 52 + "\n")
 
     failed = any(
@@ -1334,6 +1461,16 @@ def run() -> int:
     if result.get("steel_weight_validation", {}).get("status") == "FAIL":
         failed = True
     if result.get("beam_summary_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("quantity_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("material_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_schedule_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_report_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("excel_export_validation", {}).get("status") == "FAIL":
         failed = True
     return 1 if failed else 0
 

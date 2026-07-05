@@ -98,6 +98,27 @@ from src.engineering_calculations.steel_weight.steel_weight_validator import Ste
 from src.engineering_calculations.beam_summary.beam_summary_engine import BeamSummaryEngine
 from src.engineering_calculations.beam_summary.beam_summary_reporting import BeamSummaryReporting
 from src.engineering_calculations.beam_summary.beam_summary_validator import BeamSummaryValidator
+from src.engineering_calculations.quantity.quantity_engine import QuantityEngine
+from src.engineering_calculations.quantity.quantity_reporting import QuantityReporting
+from src.engineering_calculations.quantity.quantity_validator import QuantityValidator
+from src.engineering_calculations.material_quantification.material_engine import (
+    MaterialQuantificationEngine,
+)
+from src.engineering_calculations.material_quantification.material_reporting import (
+    MaterialReporting,
+)
+from src.engineering_calculations.material_quantification.material_validator import (
+    MaterialValidator,
+)
+from src.engineering_calculations.beam_schedule.beam_schedule_engine import BeamScheduleEngine
+from src.engineering_calculations.beam_schedule.beam_schedule_reporting import BeamScheduleReporting
+from src.engineering_calculations.beam_schedule.beam_schedule_validator import BeamScheduleValidator
+from src.engineering_reports.engineering_report_engine import EngineeringReportEngine
+from src.engineering_reports.engineering_report_reporting import EngineeringReportReporting
+from src.engineering_reports.engineering_report_validator import EngineeringReportValidator
+from src.excel_export.excel_export_engine import ExcelExportEngine
+from src.excel_export.excel_export_reporting import ExcelExportReporting
+from src.excel_export.excel_export_validator import ExcelExportValidator
 from src.engineering_calculations.calculation_provenance.provenance_validator import (
     CalculationProvenanceValidator,
 )
@@ -173,8 +194,8 @@ from src.reinforcement.match_decision_validator import MatchDecisionValidator
 from src.reinforcement.reinforcement_drawing_validator import ReinforcementDrawingValidator
 
 
-PHASE = "Phase I.12.1"
-MODEL_VERSION = "5.16.1"
+PHASE = "Phase I.17"
+MODEL_VERSION = "5.21.0"
 
 
 @dataclass
@@ -436,6 +457,36 @@ class ReinforcementDrawingBuilder:
         )
         self._beam_summary_validation_enabled = bool(
             g2.get("beam_summary_validation_enable", True)
+        )
+        self._quantity_enabled = bool(
+            g2.get("quantity_enable", True)
+        )
+        self._quantity_validation_enabled = bool(
+            g2.get("quantity_validation_enable", True)
+        )
+        self._material_quantification_enabled = bool(
+            g2.get("material_quantification_enable", True)
+        )
+        self._material_validation_enabled = bool(
+            g2.get("material_validation_enable", True)
+        )
+        self._beam_schedule_enabled = bool(
+            g2.get("beam_schedule_enable", True)
+        )
+        self._beam_schedule_validation_enabled = bool(
+            g2.get("beam_schedule_validation_enable", True)
+        )
+        self._engineering_report_enabled = bool(
+            g2.get("engineering_report_enable", True)
+        )
+        self._engineering_report_validation_enabled = bool(
+            g2.get("engineering_report_validation_enable", True)
+        )
+        self._excel_export_enabled = bool(
+            g2.get("excel_export_enable", True)
+        )
+        self._excel_export_validation_enabled = bool(
+            g2.get("excel_export_validation_enable", True)
         )
         kg = config.get("knowledge_graph", {})
         self._phase_e_rules_path = kg.get(
@@ -1684,7 +1735,7 @@ class ReinforcementDrawingBuilder:
             )
             model.update(merged)
             model["beam_summary_summary"] = {
-                "phase": "Phase I.12.1",
+                "phase": "Phase I.12.2",
                 "status": "PENDING_VALIDATION",
             }
             if self._beam_summary_validation_enabled:
@@ -1694,6 +1745,218 @@ class ReinforcementDrawingBuilder:
                 model["beam_summary_validation"] = g_i12_beam_summary_validation
         else:
             model["beam_summary_validation"] = g_i12_beam_summary_validation
+
+        g_i13_quantity_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._quantity_enabled
+            and model.get("beam_summary_results")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            quantity_engine = QuantityEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            quantity_records, i13_exports = quantity_engine.determine(
+                model.get("beam_summary_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            merged = QuantityEngine.build_project_exports(
+                i13_exports["quantity_results"],
+                i13_exports["quantity_registry"],
+            )
+            model.update(merged)
+            model["quantity_summary"] = {
+                "phase": "Phase I.13",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._quantity_validation_enabled:
+                g_i13_quantity_validation = QuantityValidator().validate(model)
+                QuantityReporting.apply_validation(model, g_i13_quantity_validation)
+            else:
+                model["quantity_validation"] = g_i13_quantity_validation
+        else:
+            model["quantity_validation"] = g_i13_quantity_validation
+
+        g_i14_material_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._material_quantification_enabled
+            and model.get("quantity_results")
+            and model.get("quantity_registry")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            material_engine = MaterialQuantificationEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            material_records, i14_exports = material_engine.determine(
+                model.get("quantity_results", []),
+                model.get("quantity_registry", {}),
+                drawing_models,
+                project_id=project_id,
+            )
+            merged = MaterialQuantificationEngine.build_project_exports(
+                i14_exports["material_results"],
+                i14_exports["material_registry"],
+            )
+            model.update(merged)
+            model["material_summary"] = {
+                "phase": "Phase I.14",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._material_validation_enabled:
+                g_i14_material_validation = MaterialValidator().validate(model)
+                MaterialReporting.apply_validation(model, g_i14_material_validation)
+            else:
+                model["material_validation"] = g_i14_material_validation
+        else:
+            model["material_validation"] = g_i14_material_validation
+
+        g_i15_beam_schedule_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._beam_schedule_enabled
+            and model.get("material_results")
+            and model.get("material_registry")
+            and model.get("quantity_results")
+            and model.get("beam_summary_results")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            schedule_engine = BeamScheduleEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            schedule_records, i15_exports = schedule_engine.determine(
+                model.get("beam_summary_results", []),
+                model.get("quantity_results", []),
+                model.get("material_results", []),
+                model.get("quantity_registry", {}),
+                model.get("material_registry", {}),
+                model.get("beam_summary_registry", {}),
+                model.get("steel_weight_results", []),
+                model.get("bar_group_results", []),
+                drawing_models,
+                project_id=project_id,
+            )
+            merged = BeamScheduleEngine.build_project_exports(
+                i15_exports["beam_schedule_results"],
+                i15_exports["beam_schedule_registry"],
+            )
+            model.update(merged)
+            model["beam_schedule_summary"] = {
+                "phase": "Phase I.15",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._beam_schedule_validation_enabled:
+                g_i15_beam_schedule_validation = BeamScheduleValidator().validate(model)
+                BeamScheduleReporting.apply_validation(model, g_i15_beam_schedule_validation)
+            else:
+                model["beam_schedule_validation"] = g_i15_beam_schedule_validation
+        else:
+            model["beam_schedule_validation"] = g_i15_beam_schedule_validation
+
+        g_i16_engineering_report_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._engineering_report_enabled
+            and model.get("beam_schedule_results")
+            and model.get("beam_schedule_registry")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            report_engine = EngineeringReportEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+            )
+            report_records, i16_exports = report_engine.determine(
+                model.get("beam_schedule_results", []),
+                model.get("beam_schedule_registry", {}),
+                model.get("quantity_results", []),
+                model.get("project_workspace", {}),
+                drawing_models,
+                project_id=project_id,
+            )
+            merged = EngineeringReportEngine.build_project_exports(
+                i16_exports["engineering_report_results"],
+                i16_exports["engineering_report_registry"],
+            )
+            model.update(merged)
+            model["engineering_report_summary"] = {
+                "phase": "Phase I.16",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._engineering_report_validation_enabled:
+                g_i16_engineering_report_validation = EngineeringReportValidator().validate(model)
+                EngineeringReportReporting.apply_validation(model, g_i16_engineering_report_validation)
+            else:
+                model["engineering_report_validation"] = g_i16_engineering_report_validation
+        else:
+            model["engineering_report_validation"] = g_i16_engineering_report_validation
+
+        g_i17_excel_export_validation: dict[str, Any] = {"status": "SKIP", "checks": [], "summary": {}}
+        if (
+            self._excel_export_enabled
+            and model.get("engineering_report_results")
+            and model.get("engineering_report_registry")
+            and model.get("calculation_dependency_graph")
+        ):
+            from pathlib import Path
+
+            from src.config.output_paths import OutputPaths
+            from src.excel_export.excel_export_types import default_template_path
+
+            project_id = str(model.get("project_workspace", {}).get("project_id", ""))
+            dependency_graph = CalculationDependencyGraph.from_spec()
+            output_root = Path(str(model.get("pipeline_output_root", "data/output")))
+            output_dir = OutputPaths(output_root).phase_i_17_dir
+            template_path = default_template_path(Path(str(model.get("pipeline_project_root", Path.cwd()))))
+            export_engine = ExcelExportEngine(
+                Path(self._phase_e_rules_path),
+                dependency_graph=dependency_graph,
+                template_path=template_path,
+                output_dir=output_dir,
+            )
+            export_records, i17_exports = export_engine.determine(
+                model.get("engineering_report_results", []),
+                model.get("engineering_report_registry", {}),
+                drawing_models,
+                project_id=project_id,
+                output_dir=output_dir,
+                template_path=template_path,
+            )
+            merged = ExcelExportEngine.build_project_exports(
+                i17_exports["excel_export_results"],
+                i17_exports["excel_export_registry"],
+            )
+            model.update(merged)
+            model["excel_export_summary"] = {
+                "phase": "Phase I.17",
+                "status": "PENDING_VALIDATION",
+            }
+            if self._excel_export_validation_enabled:
+                g_i17_excel_export_validation = ExcelExportValidator().validate(model)
+                ExcelExportReporting.apply_validation(model, g_i17_excel_export_validation)
+                if model.get("excel_export_results"):
+                    model["excel_export_results"][0]["validation_status"] = g_i17_excel_export_validation.get(
+                        "status", "SKIP"
+                    )
+            else:
+                model["excel_export_validation"] = g_i17_excel_export_validation
+        else:
+            model["excel_export_validation"] = g_i17_excel_export_validation
 
         model["phase_g"] = PHASE
         model["phase"] = PHASE
@@ -1816,6 +2079,26 @@ class ReinforcementDrawingBuilder:
         manager["beam_summary_complete"] = (
             model.get("beam_summary_validation", {}).get("status") == "PASS"
             or model.get("beam_summary_validation", {}).get("status") == "SKIP"
+        )
+        manager["quantity_complete"] = (
+            model.get("quantity_validation", {}).get("status") == "PASS"
+            or model.get("quantity_validation", {}).get("status") == "SKIP"
+        )
+        manager["material_quantification_complete"] = (
+            model.get("material_validation", {}).get("status") == "PASS"
+            or model.get("material_validation", {}).get("status") == "SKIP"
+        )
+        manager["beam_schedule_complete"] = (
+            model.get("beam_schedule_validation", {}).get("status") == "PASS"
+            or model.get("beam_schedule_validation", {}).get("status") == "SKIP"
+        )
+        manager["engineering_report_complete"] = (
+            model.get("engineering_report_validation", {}).get("status") == "PASS"
+            or model.get("engineering_report_validation", {}).get("status") == "SKIP"
+        )
+        manager["excel_export_complete"] = (
+            model.get("excel_export_validation", {}).get("status") == "PASS"
+            or model.get("excel_export_validation", {}).get("status") == "SKIP"
         )
         manager["beam_match_count"] = len(model.get("beam_matches", []))
         manager["engineering_reinforcement_context_count"] = len(

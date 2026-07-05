@@ -22,7 +22,10 @@ CATEGORY_BBS = "BBS"
 CATEGORY_STEEL_WEIGHT = "STEEL_WEIGHT"
 CATEGORY_BEAM_SUMMARY = "BEAM_SUMMARY"
 CATEGORY_QUANTITY = "QUANTITY"
-CATEGORY_BOQ = "BOQ"
+CATEGORY_MATERIAL = "MATERIAL"
+CATEGORY_BEAM_SCHEDULE = "BEAM_SCHEDULE"
+CATEGORY_ENGINEERING_REPORT = "ENGINEERING_REPORT"
+CATEGORY_EXCEL_EXPORT = "EXCEL_EXPORT"
 
 
 class DependencyNodeSpec(TypedDict):
@@ -106,14 +109,32 @@ DEPENDENCY_NODE_SPECS: Dict[str, DependencyNodeSpec] = {
     CATEGORY_QUANTITY: {
         "sequence": 11,
         "depends_on": [CATEGORY_BEAM_SUMMARY],
-        "calculation_type": "BOQ",
+        "calculation_type": "QUANTITY",
         "index_category": CATEGORY_QUANTITY,
     },
-    CATEGORY_BOQ: {
+    CATEGORY_MATERIAL: {
         "sequence": 12,
         "depends_on": [CATEGORY_QUANTITY],
-        "calculation_type": "BOQ",
-        "index_category": CATEGORY_BOQ,
+        "calculation_type": "MATERIAL",
+        "index_category": CATEGORY_MATERIAL,
+    },
+    CATEGORY_BEAM_SCHEDULE: {
+        "sequence": 13,
+        "depends_on": [CATEGORY_MATERIAL],
+        "calculation_type": "BEAM_SCHEDULE",
+        "index_category": CATEGORY_BEAM_SCHEDULE,
+    },
+    CATEGORY_ENGINEERING_REPORT: {
+        "sequence": 14,
+        "depends_on": [CATEGORY_BEAM_SCHEDULE],
+        "calculation_type": "ENGINEERING_REPORT",
+        "index_category": CATEGORY_ENGINEERING_REPORT,
+    },
+    CATEGORY_EXCEL_EXPORT: {
+        "sequence": 15,
+        "depends_on": [CATEGORY_ENGINEERING_REPORT],
+        "calculation_type": "EXCEL_EXPORT",
+        "index_category": CATEGORY_EXCEL_EXPORT,
     },
 }
 
