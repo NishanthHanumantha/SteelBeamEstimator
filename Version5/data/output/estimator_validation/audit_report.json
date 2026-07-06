@@ -1,0 +1,432 @@
+{
+  "phase": "Phase QA.1",
+  "summary": {
+    "phase": "Phase QA.1",
+    "audit_version": "1.0.0",
+    "generated_workbook": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_17_excel_export\\Beam_Reinforcement_Schedule.xlsx",
+    "estimator_workbook": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\Estimator_Validated_Output\\Galera_SteelBeamEst_SHR&OHT_TopFramingPan _EstimatorValidated.xlsx",
+    "total_beams_estimator": 18,
+    "total_beams_generated": 18,
+    "matching_beams": 1,
+    "missing_beams": 0,
+    "missing_rows": 59,
+    "extra_rows": 0,
+    "different_cells": 37,
+    "engineering_differences": 122,
+    "presentation_differences": 3,
+    "root_cause_distribution": {
+      "UNKNOWN": 41,
+      "ENGINEERING_REPORT": 38,
+      "BEAM_SCHEDULE": 43,
+      "TEMPLATE_LAYOUT": 5
+    },
+    "confidence": "HIGH",
+    "discrepancy_count": 127,
+    "recommendation_count": 107,
+    "engineering_pipeline_frozen": true,
+    "engineering_code_modified": false
+  },
+  "top_discrepancies": [
+    {
+      "type": "missing_row",
+      "beam_mark": "B1",
+      "description": "SFR",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B1",
+        "description": "SFR",
+        "role_hint": "SFR",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3393
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B1",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B1",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3393
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B1",
+      "description": "Top bars - Extra",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B1",
+        "description": "Top bars - Extra",
+        "role_hint": "TOP_EXTRA",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3393
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B1",
+      "description": "Top bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B1",
+        "description": "Top bars",
+        "role_hint": "TOP_MAIN",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3393
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B2",
+      "description": "Spacer bars",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B2",
+        "description": "Spacer bars",
+        "role_hint": "SPACER_BAR",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 2448
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B2",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B2",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 2448
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B2",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B2",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 2448
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B2",
+      "description": "Top bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B2",
+        "description": "Top bars",
+        "role_hint": "TOP_MAIN",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 2448
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B4",
+      "description": "Spacer bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B4",
+        "description": "Spacer bars",
+        "role_hint": "SPACER_BAR",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B4",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B4",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B4",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B4",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B4",
+      "description": "Top bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B4",
+        "description": "Top bars",
+        "role_hint": "TOP_MAIN",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B4",
+      "description": "Top bars -extra",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B4",
+        "description": "Top bars -extra",
+        "role_hint": "UNKNOWN",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Spacer bars",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Spacer bars",
+        "role_hint": "SPACER_BAR",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Spacer bars",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Spacer bars",
+        "role_hint": "SPACER_BAR",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Stirupps",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Stirupps",
+        "role_hint": "STIRRUP",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Top bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Top bars",
+        "role_hint": "TOP_MAIN",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B5",
+      "description": "Top bars -extra",
+      "root_cause": "ENGINEERING_REPORT",
+      "trace": {
+        "beam_mark": "B5",
+        "description": "Top bars -extra",
+        "role_hint": "UNKNOWN",
+        "layers": {
+          "engineering_report": "missing",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "engineering_report",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 3289
+      },
+      "severity": "CRITICAL"
+    },
+    {
+      "type": "missing_row",
+      "beam_mark": "B6",
+      "description": "Top bars",
+      "root_cause": "BEAM_SCHEDULE",
+      "trace": {
+        "beam_mark": "B6",
+        "description": "Top bars",
+        "role_hint": "TOP_MAIN",
+        "layers": {
+          "engineering_report": "present",
+          "beam_schedule": "missing",
+          "excel": "missing"
+        },
+        "first_missing_layer": "beam_schedule",
+        "present_in_estimator_only": true,
+        "engineering_report_clear_span_mm": 1659
+      },
+      "severity": "CRITICAL"
+    }
+  ],
+  "validation_status": "PASS"
+}
