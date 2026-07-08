@@ -1,0 +1,53 @@
+{
+  "title": "Current Prototype Coverage",
+  "dashboard_title": "Engineering Coverage Dashboard",
+  "beam_coverage_percent": 100.0,
+  "schedule_coverage_percent": 30.59,
+  "steel_quantity_coverage_percent": 12.9,
+  "official_steel_quantity": {
+    "estimator_kg": 1423.606,
+    "generated_kg": 183.386,
+    "coverage_percent": 12.88,
+    "quantity_source": "OFFICIAL_WORKBOOK_SUMMARY"
+  },
+  "diameter_wise_steel_coverage": {
+    "best_performing_diameter_mm": 20,
+    "best_performing_coverage_percent": 26.47,
+    "worst_performing_diameter_mm": 8,
+    "worst_performing_coverage_percent": 0.0,
+    "largest_quantity_gap": {
+      "diameter_mm": 16,
+      "difference_kg": 438.176
+    },
+    "primary_improvement_area": "\u00d88 Stirrups",
+    "diameter_coverage": {
+      "8": 0.0,
+      "10": 0.0,
+      "12": 0.0,
+      "16": 11.42,
+      "20": 26.47,
+      "25": 0.0,
+      "32": "N/A"
+    }
+  },
+  "major_improvement_opportunity": "Reinforcement Interpretation",
+  "major_cause": "Missing reinforcement interpretation",
+  "management_note": "This dashboard measures engineering coverage of the current prototype. Coverage indicates how much of the estimator's engineering schedule has been successfully generated. It does not evaluate the correctness of engineering calculations already produced. Engineering calculation modules remain deterministic and validated.",
+  "project_status": {
+    "engineering_status": "Prototype",
+    "description": "Engineering interpretation under active development.",
+    "current_priority": "Improve reinforcement interpretation and schedule completeness.",
+    "do_not_recommend_excel_improvements": true
+  },
+  "excel_export_status": "Working correctly",
+  "engineering_report_status": "Working correctly",
+  "pipeline_stage_requiring_improvement": "Bar Identity / Engineering Interpretation",
+  "metrics": {
+    "beam_coverage": "18 / 18",
+    "schedule_coverage": "26 / 85",
+    "missing_rows": 59,
+    "missing_values": 37,
+    "generated_steel_kg": 183.386,
+    "estimator_steel_kg": 1423.606
+  }
+}

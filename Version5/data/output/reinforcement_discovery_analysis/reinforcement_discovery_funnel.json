@@ -1,0 +1,168 @@
+{
+  "baseline_count": 67,
+  "stage_counts": {
+    "drawing_callouts": 67,
+    "detected": 67,
+    "classified": 64,
+    "associated": 64,
+    "engineering_objects": 50,
+    "normalized": 50,
+    "ready": 50,
+    "calculated": 50,
+    "written_to_bbs": 50,
+    "written_to_excel": 50
+  },
+  "stages": [
+    {
+      "stage": "drawing_callouts",
+      "label": "Drawing Callouts",
+      "count": 67
+    },
+    {
+      "stage": "detected",
+      "label": "Detected",
+      "count": 67
+    },
+    {
+      "stage": "classified",
+      "label": "Classified",
+      "count": 64
+    },
+    {
+      "stage": "associated",
+      "label": "Associated",
+      "count": 64
+    },
+    {
+      "stage": "engineering_objects",
+      "label": "Engineering Objects",
+      "count": 50
+    },
+    {
+      "stage": "normalized",
+      "label": "Normalized",
+      "count": 50
+    },
+    {
+      "stage": "ready",
+      "label": "READY",
+      "count": 50
+    },
+    {
+      "stage": "calculated",
+      "label": "Calculated",
+      "count": 50
+    },
+    {
+      "stage": "written_to_bbs",
+      "label": "Written to BBS",
+      "count": 50
+    },
+    {
+      "stage": "written_to_excel",
+      "label": "Written to Excel",
+      "count": 50
+    }
+  ],
+  "transitions": [
+    {
+      "from_stage": "drawing_callouts",
+      "to_stage": "detected",
+      "from_label": "Drawing Callouts",
+      "to_label": "Detected",
+      "from_count": 67,
+      "to_count": 67,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "detected",
+      "to_stage": "classified",
+      "from_label": "Detected",
+      "to_label": "Classified",
+      "from_count": 67,
+      "to_count": 64,
+      "loss": 3,
+      "loss_percent": 4.48,
+      "survival_percent": 95.52
+    },
+    {
+      "from_stage": "classified",
+      "to_stage": "associated",
+      "from_label": "Classified",
+      "to_label": "Associated",
+      "from_count": 64,
+      "to_count": 64,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "associated",
+      "to_stage": "engineering_objects",
+      "from_label": "Associated",
+      "to_label": "Engineering Objects",
+      "from_count": 64,
+      "to_count": 50,
+      "loss": 14,
+      "loss_percent": 21.88,
+      "survival_percent": 78.12
+    },
+    {
+      "from_stage": "engineering_objects",
+      "to_stage": "normalized",
+      "from_label": "Engineering Objects",
+      "to_label": "Normalized",
+      "from_count": 50,
+      "to_count": 50,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "normalized",
+      "to_stage": "ready",
+      "from_label": "Normalized",
+      "to_label": "READY",
+      "from_count": 50,
+      "to_count": 50,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "ready",
+      "to_stage": "calculated",
+      "from_label": "READY",
+      "to_label": "Calculated",
+      "from_count": 50,
+      "to_count": 50,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "calculated",
+      "to_stage": "written_to_bbs",
+      "from_label": "Calculated",
+      "to_label": "Written to BBS",
+      "from_count": 50,
+      "to_count": 50,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "written_to_bbs",
+      "to_stage": "written_to_excel",
+      "from_label": "Written to BBS",
+      "to_label": "Written to Excel",
+      "from_count": 50,
+      "to_count": 50,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    }
+  ]
+}

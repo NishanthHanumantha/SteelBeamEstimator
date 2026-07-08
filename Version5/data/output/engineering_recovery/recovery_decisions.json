@@ -1,0 +1,1897 @@
+{
+  "decision_count": 8,
+  "decisions": [
+    {
+      "discovery_id": "CALL::000007",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 78.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B8",
+      "signature": "B8|2Y20|20.0|TOP_MAIN",
+      "group_id": "B8|2Y20|20.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000007",
+        "geometry_id": "TXT::009",
+        "original_text": "2-Y20",
+        "coordinates": {
+          "x": 23099.603,
+          "y": 21905.758
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B8",
+        "beam_association": "B8",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 20.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 20.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y20"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B8|2Y20|20.0|TOP_MAIN",
+        "signature": "B8|2Y20|20.0|TOP_MAIN",
+        "beam_id": "B8",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 78.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000007",
+        "original_text": "2-Y20",
+        "beam": "B8",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925674+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000007",
+        "original_text": "2-Y20",
+        "beam_association": "B8",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B8"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 20.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000007",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B8|2Y20|20.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000029",
+      "recover": false,
+      "recovery_status": "REJECTED",
+      "confidence_score": 78.08,
+      "legitimacy_class": "TOP_BOTTOM_VARIANT",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [
+        "Legitimacy class TOP_BOTTOM_VARIANT not recoverable"
+      ],
+      "recovery_reason": "Classification passed; Association passed; Geometry available; Specification available; Engineering rule consistent",
+      "beam_id": "B12",
+      "signature": "B12|2Y16|16.0|TOP_MAIN",
+      "group_id": "B12|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000029",
+        "geometry_id": "TXT::041",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 5767.087,
+          "y": 11337.168
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B12",
+        "beam_association": "B12",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B12|2Y16|16.0|TOP_MAIN",
+        "signature": "B12|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B12",
+        "legitimacy_class": "TOP_BOTTOM_VARIANT",
+        "should_suppression_occur": false,
+        "confidence_score": 78.08,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000029",
+        "original_text": "2-Y16",
+        "beam": "B12",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925770+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000029",
+        "original_text": "2-Y16",
+        "beam_association": "B12",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B12"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000029",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.75,
+          "information_lost": true,
+          "shared_bar_ids": [
+            "REBAR::000022"
+          ],
+          "signature": "B12|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000039",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 72.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B1",
+      "signature": "B1|2Y16|16.0|TOP_MAIN",
+      "group_id": "B1|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000039",
+        "geometry_id": "TXT::056",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 7277.315,
+          "y": 15050.374
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B1",
+        "beam_association": "B1",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B1|2Y16|16.0|TOP_MAIN",
+        "signature": "B1|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B1",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 72.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000039",
+        "original_text": "2-Y16",
+        "beam": "B1",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925823+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000039",
+        "original_text": "2-Y16",
+        "beam_association": "B1",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B1"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000039",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B1|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000041",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 72.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B1",
+      "signature": "B1|2Y16|16.0|TOP_MAIN",
+      "group_id": "B1|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000041",
+        "geometry_id": "TXT::059",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 10766.112,
+          "y": 15050.374
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B1",
+        "beam_association": "B1",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B1|2Y16|16.0|TOP_MAIN",
+        "signature": "B1|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B1",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 72.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000041",
+        "original_text": "2-Y16",
+        "beam": "B1",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925833+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000041",
+        "original_text": "2-Y16",
+        "beam_association": "B1",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B1"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000041",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B1|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000043",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 72.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B7",
+      "signature": "B7|2Y16|16.0|TOP_MAIN",
+      "group_id": "B7|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000043",
+        "geometry_id": "TXT::062",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 14966.926,
+          "y": 15050.374
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B7",
+        "beam_association": "B7",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B7|2Y16|16.0|TOP_MAIN",
+        "signature": "B7|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B7",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 72.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000043",
+        "original_text": "2-Y16",
+        "beam": "B7",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925845+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000043",
+        "original_text": "2-Y16",
+        "beam_association": "B7",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B7"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000043",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B7|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000045",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 72.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B7",
+      "signature": "B7|2Y16|16.0|TOP_MAIN",
+      "group_id": "B7|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000045",
+        "geometry_id": "TXT::065",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 17320.96,
+          "y": 15050.374
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B7",
+        "beam_association": "B7",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B7|2Y16|16.0|TOP_MAIN",
+        "signature": "B7|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B7",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 72.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000045",
+        "original_text": "2-Y16",
+        "beam": "B7",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925856+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000045",
+        "original_text": "2-Y16",
+        "beam_association": "B7",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B7"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000045",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B7|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000046",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 78.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B8",
+      "signature": "B8|2Y20|20.0|TOP_MAIN",
+      "group_id": "B8|2Y20|20.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000046",
+        "geometry_id": "TXT::067",
+        "original_text": "2-Y20",
+        "coordinates": {
+          "x": 20820.568,
+          "y": 13657.131
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B8",
+        "beam_association": "B8",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 20.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 20.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y20"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B8|2Y20|20.0|TOP_MAIN",
+        "signature": "B8|2Y20|20.0|TOP_MAIN",
+        "beam_id": "B8",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 78.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000046",
+        "original_text": "2-Y20",
+        "beam": "B8",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925861+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000046",
+        "original_text": "2-Y20",
+        "beam_association": "B8",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B8"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 20.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000046",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B8|2Y20|20.0|TOP_MAIN"
+        }
+      }
+    },
+    {
+      "discovery_id": "CALL::000061",
+      "recover": true,
+      "recovery_status": "APPROVED",
+      "confidence_score": 72.75,
+      "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+      "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+      "approval_reasons": [
+        "Classification passed",
+        "Association passed",
+        "Geometry available",
+        "Specification available",
+        "Engineering rule consistent"
+      ],
+      "blocking_reasons": [],
+      "recovery_reason": "Independent reinforcement region",
+      "beam_id": "B1",
+      "signature": "B1|2Y16|16.0|TOP_MAIN",
+      "group_id": "B1|2Y16|16.0|TOP_MAIN",
+      "inventory": {
+        "discovery_id": "CALL::000061",
+        "geometry_id": "TXT::085",
+        "original_text": "2-Y16",
+        "coordinates": {
+          "x": 5895.942,
+          "y": 17162.833
+        },
+        "layer": "-STR-TEXT",
+        "block": null,
+        "region": "ERC::B1",
+        "beam_association": "B1",
+        "section": null,
+        "leader": null,
+        "text_source": "MTEXT",
+        "callout_confidence": 0.95,
+        "classification": "TOP_MAIN",
+        "role": "TOP_MAIN",
+        "category": "Top Main",
+        "diameter_mm": 16.0,
+        "quantity": 2.0,
+        "spacing_mm": null,
+        "classified": true,
+        "ambiguous": false,
+        "multiple_interpretations": false,
+        "unknown": false,
+        "interpretations": [
+          {
+            "role": "TOP_MAIN",
+            "diameter_mm": 16.0,
+            "quantity": 2.0,
+            "spacing_mm": null,
+            "pattern": "2Y16"
+          }
+        ],
+        "association_confidence": 1.0,
+        "association_source": "BEAM_MATCH",
+        "associated": true,
+        "engineering_object_id": null,
+        "engineering_status": "GEOMETRY_ONLY",
+        "normalized_bar_id": null,
+        "calculation_state": null,
+        "bbs_row_id": null,
+        "excel_row_number": null,
+        "failure_stage": "normalization",
+        "failure_reason": "Engineering bar not created",
+        "current_status": "NORMALIZATION_FAILED",
+        "pipeline_trace": {
+          "text_detected": true,
+          "classified": true,
+          "associated": true,
+          "engineering_object_created": false,
+          "normalized": false,
+          "ready": false,
+          "calculated": false,
+          "written_to_bbs": false,
+          "written_to_excel": false
+        }
+      },
+      "legitimacy": {
+        "group_id": "B1|2Y16|16.0|TOP_MAIN",
+        "signature": "B1|2Y16|16.0|TOP_MAIN",
+        "beam_id": "B1",
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR",
+        "should_suppression_occur": false,
+        "confidence_score": 72.75,
+        "confidence_band": "Moderate",
+        "suppressed": true
+      },
+      "decision": {
+        "discovery_id": "CALL::000061",
+        "original_text": "2-Y16",
+        "beam": "B1",
+        "category": "Top Main",
+        "geometry_ready": false,
+        "specification_ready": false,
+        "role_ready": false,
+        "position_ready": false,
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "secondary_codes": [],
+        "readiness_score": 100.0,
+        "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+        "decision_timestamp": "2026-07-08T09:31:28.925951+00:00"
+      },
+      "audit": {
+        "discovery_id": "CALL::000061",
+        "original_text": "2-Y16",
+        "beam_association": "B1",
+        "stages": [
+          {
+            "stage": "classification",
+            "status": "SUCCESS"
+          },
+          {
+            "stage": "beam_association",
+            "status": "SUCCESS",
+            "beam": "B1"
+          },
+          {
+            "stage": "geometry_available",
+            "status": "NO"
+          },
+          {
+            "stage": "engineering_specification",
+            "status": "NO"
+          },
+          {
+            "stage": "position",
+            "status": true,
+            "value": "TOP_MAIN"
+          },
+          {
+            "stage": "diameter",
+            "status": true,
+            "value": 16.0
+          },
+          {
+            "stage": "quantity",
+            "status": true,
+            "value": 2.0
+          },
+          {
+            "stage": "engineering_object",
+            "status": "FAILED",
+            "engineering_object_id": null,
+            "normalized_bar_id": null
+          },
+          {
+            "stage": "rejection",
+            "status": "FAILED",
+            "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+            "secondary_codes": []
+          }
+        ],
+        "engineering_object_created": false,
+        "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+        "readiness_score": 100.0,
+        "secondary_codes": [],
+        "blocking_stage": "duplicate_resolution",
+        "decision": {
+          "engineering_object_created": false,
+          "primary_rejection_code": "DUPLICATE_SUPPRESSED",
+          "secondary_codes": [],
+          "blocking_stage": "duplicate_resolution"
+        },
+        "dependencies": {
+          "discovery_id": "CALL::000061",
+          "components": {
+            "geometry": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "beam": {
+              "present": true,
+              "source": "beam_association"
+            },
+            "section": {
+              "present": true,
+              "source": "calculation_context"
+            },
+            "role": {
+              "present": true,
+              "source": "classification"
+            },
+            "position": {
+              "present": true,
+              "source": "classification"
+            },
+            "specification": {
+              "present": true,
+              "source": "engineering_properties"
+            }
+          },
+          "first_missing_dependency": null,
+          "dependency_graph": [
+            {
+              "dependency": "geometry",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "beam",
+              "present": true,
+              "source": "beam_association"
+            },
+            {
+              "dependency": "section",
+              "present": true,
+              "source": "calculation_context"
+            },
+            {
+              "dependency": "role",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "position",
+              "present": true,
+              "source": "classification"
+            },
+            {
+              "dependency": "specification",
+              "present": true,
+              "source": "engineering_properties"
+            }
+          ]
+        },
+        "duplicate_info": {
+          "duplicate_type": "SUSPICIOUS_DUPLICATE",
+          "duplicate_confidence": 0.6,
+          "information_lost": false,
+          "shared_bar_ids": [],
+          "signature": "B1|2Y16|16.0|TOP_MAIN"
+        }
+      }
+    }
+  ]
+}

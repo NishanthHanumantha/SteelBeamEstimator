@@ -1,0 +1,567 @@
+{
+  "gaps": [
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Bottom Main",
+      "category": "Bottom Main",
+      "count": 18,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Top Main",
+      "category": "Top Main",
+      "count": 2,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 11.11,
+      "details": {
+        "found_in_pipeline": 16,
+        "written_to_schedule": 11
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Top Extra",
+      "category": "Top Extra",
+      "count": 18,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Bottom Extra",
+      "category": "Bottom Extra",
+      "count": 18,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "deferred_calculations",
+      "title": "Missing specification",
+      "count": 7,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 21.21,
+      "details": {
+        "top_reason": {
+          "reason": "Missing specification",
+          "count": 7,
+          "examples": [
+            {
+              "bar_id": "REBAR::000027",
+              "beam_id": "B14",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000028",
+              "beam_id": "B15",
+              "role": "STIRRUP",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000029",
+              "beam_id": "B15",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000030",
+              "beam_id": "B16",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000031",
+              "beam_id": "B16",
+              "role": "STIRRUP",
+              "diameter_mm": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Support Bars",
+      "category": "Support Bars",
+      "count": 18,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at Beam Objects",
+      "count": 7627,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 99.76,
+      "details": {
+        "from_stage": "drawing_parser",
+        "to_stage": "engineering_objects",
+        "from_label": "Drawing Objects",
+        "to_label": "Beam Objects",
+        "from_count": 7645,
+        "to_count": 18,
+        "loss": 7627,
+        "loss_percent": 99.76,
+        "survival_percent": 0.24
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at Specifications",
+      "count": 1095,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 97.07,
+      "details": {
+        "from_stage": "property_graph",
+        "to_stage": "specifications",
+        "from_label": "Property Graph Nodes",
+        "to_label": "Specifications",
+        "from_count": 1128,
+        "to_count": 33,
+        "loss": 1095,
+        "loss_percent": 97.07,
+        "survival_percent": 2.93
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Side Face Bars",
+      "category": "Side Face Bars",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 77.78,
+      "details": {
+        "found_in_pipeline": 4,
+        "written_to_schedule": 4
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Stirrups",
+      "category": "Stirrups",
+      "count": 5,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 27.78,
+      "details": {
+        "found_in_pipeline": 13,
+        "written_to_schedule": 11
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at READY",
+      "count": 7,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 21.21,
+      "details": {
+        "from_stage": "normalized_bars",
+        "to_stage": "ready_for_calculation",
+        "from_label": "Normalized Bars",
+        "to_label": "READY",
+        "from_count": 33,
+        "to_count": 26,
+        "loss": 7,
+        "loss_percent": 21.21,
+        "survival_percent": 78.79
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Curtailment Bars",
+      "category": "Curtailment Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Lap Bars",
+      "category": "Lap Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Hooks",
+      "category": "Hooks",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Anchorage",
+      "category": "Anchorage",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Spacer Bars",
+      "category": "Spacer Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Chair Bars",
+      "category": "Chair Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Distribution Bars",
+      "category": "Distribution Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Other",
+      "category": "Other",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    }
+  ],
+  "category_gaps": [
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Top Main",
+      "category": "Top Main",
+      "count": 2,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 11.11,
+      "details": {
+        "found_in_pipeline": 16,
+        "written_to_schedule": 11
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Bottom Main",
+      "category": "Bottom Main",
+      "count": 18,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Top Extra",
+      "category": "Top Extra",
+      "count": 18,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Bottom Extra",
+      "category": "Bottom Extra",
+      "count": 18,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Support Bars",
+      "category": "Support Bars",
+      "count": 18,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Curtailment Bars",
+      "category": "Curtailment Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Lap Bars",
+      "category": "Lap Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Hooks",
+      "category": "Hooks",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Anchorage",
+      "category": "Anchorage",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Stirrups",
+      "category": "Stirrups",
+      "count": 5,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 27.78,
+      "details": {
+        "found_in_pipeline": 13,
+        "written_to_schedule": 11
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Spacer Bars",
+      "category": "Spacer Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Chair Bars",
+      "category": "Chair Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Side Face Bars",
+      "category": "Side Face Bars",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 77.78,
+      "details": {
+        "found_in_pipeline": 4,
+        "written_to_schedule": 4
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Distribution Bars",
+      "category": "Distribution Bars",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    },
+    {
+      "gap_type": "missing_reinforcement_category",
+      "title": "Missing Other",
+      "category": "Other",
+      "count": 18,
+      "estimated_impact": "Low",
+      "estimated_downstream_effect_percent": 100.0,
+      "details": {
+        "found_in_pipeline": 0,
+        "written_to_schedule": 0
+      }
+    }
+  ],
+  "process_gaps": [
+    {
+      "gap_type": "deferred_calculations",
+      "title": "Missing specification",
+      "count": 7,
+      "estimated_impact": "High",
+      "estimated_downstream_effect_percent": 21.21,
+      "details": {
+        "top_reason": {
+          "reason": "Missing specification",
+          "count": 7,
+          "examples": [
+            {
+              "bar_id": "REBAR::000027",
+              "beam_id": "B14",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000028",
+              "beam_id": "B15",
+              "role": "STIRRUP",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000029",
+              "beam_id": "B15",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000030",
+              "beam_id": "B16",
+              "role": "TOP_MAIN",
+              "diameter_mm": null
+            },
+            {
+              "bar_id": "REBAR::000031",
+              "beam_id": "B16",
+              "role": "STIRRUP",
+              "diameter_mm": null
+            }
+          ]
+        }
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at Beam Objects",
+      "count": 7627,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 99.76,
+      "details": {
+        "from_stage": "drawing_parser",
+        "to_stage": "engineering_objects",
+        "from_label": "Drawing Objects",
+        "to_label": "Beam Objects",
+        "from_count": 7645,
+        "to_count": 18,
+        "loss": 7627,
+        "loss_percent": 99.76,
+        "survival_percent": 0.24
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at Specifications",
+      "count": 1095,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 97.07,
+      "details": {
+        "from_stage": "property_graph",
+        "to_stage": "specifications",
+        "from_label": "Property Graph Nodes",
+        "to_label": "Specifications",
+        "from_count": 1128,
+        "to_count": 33,
+        "loss": 1095,
+        "loss_percent": 97.07,
+        "survival_percent": 2.93
+      }
+    },
+    {
+      "gap_type": "pipeline_transition_loss",
+      "title": "Loss at READY",
+      "count": 7,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 21.21,
+      "details": {
+        "from_stage": "normalized_bars",
+        "to_stage": "ready_for_calculation",
+        "from_label": "Normalized Bars",
+        "to_label": "READY",
+        "from_count": 33,
+        "to_count": 26,
+        "loss": 7,
+        "loss_percent": 21.21,
+        "survival_percent": 78.79
+      }
+    }
+  ],
+  "total_gaps": 19
+}

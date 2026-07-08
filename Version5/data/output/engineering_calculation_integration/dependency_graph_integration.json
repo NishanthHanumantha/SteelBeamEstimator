@@ -1,0 +1,186 @@
+{
+  "source": "EXISTING_PRODUCTION_GRAPH",
+  "dependency_graph": {
+    "phase": "Phase I.4.6",
+    "graph_id": "CALC_DEPENDENCY_GRAPH",
+    "node_count": 15,
+    "graph": {
+      "graph_id": "CALC_DEPENDENCY_GRAPH",
+      "nodes": {
+        "DEVELOPMENT_LENGTH": {
+          "category": "DEVELOPMENT_LENGTH",
+          "sequence": 1,
+          "depends_on": [],
+          "calculation_type": "DEVELOPMENT_LENGTH",
+          "index_category": "DEVELOPMENT_LENGTH",
+          "metadata_only": true
+        },
+        "HOOK_LENGTH": {
+          "category": "HOOK_LENGTH",
+          "sequence": 2,
+          "depends_on": [],
+          "calculation_type": "HOOK",
+          "index_category": "HOOK_LENGTH",
+          "metadata_only": true
+        },
+        "LAP_LENGTH": {
+          "category": "LAP_LENGTH",
+          "sequence": 3,
+          "depends_on": [
+            "DEVELOPMENT_LENGTH"
+          ],
+          "calculation_type": "LAP_LENGTH",
+          "index_category": "LAP_LENGTH",
+          "metadata_only": true
+        },
+        "CUT_LENGTH": {
+          "category": "CUT_LENGTH",
+          "sequence": 4,
+          "depends_on": [
+            "DEVELOPMENT_LENGTH",
+            "HOOK_LENGTH",
+            "LAP_LENGTH"
+          ],
+          "calculation_type": "CUT_LENGTH",
+          "index_category": "CUT_LENGTH",
+          "metadata_only": true
+        },
+        "SHAPE_CODE": {
+          "category": "SHAPE_CODE",
+          "sequence": 5,
+          "depends_on": [
+            "CUT_LENGTH"
+          ],
+          "calculation_type": "UNKNOWN",
+          "index_category": "SHAPE_CODE",
+          "metadata_only": true
+        },
+        "BAR_IDENTITY": {
+          "category": "BAR_IDENTITY",
+          "sequence": 6,
+          "depends_on": [
+            "CUT_LENGTH",
+            "SHAPE_CODE",
+            "HOOK_LENGTH",
+            "DEVELOPMENT_LENGTH",
+            "LAP_LENGTH"
+          ],
+          "calculation_type": "BAR_IDENTITY",
+          "index_category": "BAR_IDENTITY",
+          "metadata_only": true
+        },
+        "BAR_GROUP": {
+          "category": "BAR_GROUP",
+          "sequence": 7,
+          "depends_on": [
+            "BAR_IDENTITY"
+          ],
+          "calculation_type": "BAR_GROUP",
+          "index_category": "BAR_GROUP",
+          "metadata_only": true
+        },
+        "BBS": {
+          "category": "BBS",
+          "sequence": 8,
+          "depends_on": [
+            "BAR_GROUP"
+          ],
+          "calculation_type": "BBS",
+          "index_category": "BBS",
+          "metadata_only": true
+        },
+        "STEEL_WEIGHT": {
+          "category": "STEEL_WEIGHT",
+          "sequence": 9,
+          "depends_on": [
+            "BBS"
+          ],
+          "calculation_type": "STEEL_WEIGHT",
+          "index_category": "STEEL_WEIGHT",
+          "metadata_only": true
+        },
+        "BEAM_SUMMARY": {
+          "category": "BEAM_SUMMARY",
+          "sequence": 10,
+          "depends_on": [
+            "STEEL_WEIGHT"
+          ],
+          "calculation_type": "UNKNOWN",
+          "index_category": "BEAM_SUMMARY",
+          "metadata_only": true
+        },
+        "QUANTITY": {
+          "category": "QUANTITY",
+          "sequence": 11,
+          "depends_on": [
+            "BEAM_SUMMARY"
+          ],
+          "calculation_type": "QUANTITY",
+          "index_category": "QUANTITY",
+          "metadata_only": true
+        },
+        "MATERIAL": {
+          "category": "MATERIAL",
+          "sequence": 12,
+          "depends_on": [
+            "QUANTITY"
+          ],
+          "calculation_type": "MATERIAL",
+          "index_category": "MATERIAL",
+          "metadata_only": true
+        },
+        "BEAM_SCHEDULE": {
+          "category": "BEAM_SCHEDULE",
+          "sequence": 13,
+          "depends_on": [
+            "MATERIAL"
+          ],
+          "calculation_type": "BEAM_SCHEDULE",
+          "index_category": "BEAM_SCHEDULE",
+          "metadata_only": true
+        },
+        "ENGINEERING_REPORT": {
+          "category": "ENGINEERING_REPORT",
+          "sequence": 14,
+          "depends_on": [
+            "BEAM_SCHEDULE"
+          ],
+          "calculation_type": "ENGINEERING_REPORT",
+          "index_category": "ENGINEERING_REPORT",
+          "metadata_only": true
+        },
+        "EXCEL_EXPORT": {
+          "category": "EXCEL_EXPORT",
+          "sequence": 15,
+          "depends_on": [
+            "ENGINEERING_REPORT"
+          ],
+          "calculation_type": "EXCEL_EXPORT",
+          "index_category": "EXCEL_EXPORT",
+          "metadata_only": true
+        }
+      },
+      "ordered_categories": [
+        "DEVELOPMENT_LENGTH",
+        "HOOK_LENGTH",
+        "LAP_LENGTH",
+        "CUT_LENGTH",
+        "SHAPE_CODE",
+        "BAR_IDENTITY",
+        "BAR_GROUP",
+        "BBS",
+        "STEEL_WEIGHT",
+        "BEAM_SUMMARY",
+        "QUANTITY",
+        "MATERIAL",
+        "BEAM_SCHEDULE",
+        "ENGINEERING_REPORT",
+        "EXCEL_EXPORT"
+      ],
+      "metadata_only": true
+    }
+  },
+  "dependency_registry": {},
+  "recovered_bars_indexed": 13,
+  "recovered_bar_count": 13
+}

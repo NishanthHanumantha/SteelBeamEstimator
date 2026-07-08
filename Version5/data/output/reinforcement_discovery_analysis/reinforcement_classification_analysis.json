@@ -1,0 +1,143 @@
+{
+  "total_callouts": 67,
+  "successfully_classified": 64,
+  "unknown": 3,
+  "ambiguous": 4,
+  "multiple_interpretations": 4,
+  "classification_success_percent": 95.52,
+  "average_confidence": 0.928,
+  "top_unknown_patterns": [
+    {
+      "pattern": "S.F.R.\nON BOTH FACE",
+      "count": 1,
+      "examples": [
+        {
+          "discovery_id": "CALL::000056",
+          "beam": "B13",
+          "coordinates": {
+            "x": 18895.391,
+            "y": 9159.142
+          }
+        }
+      ]
+    },
+    {
+      "pattern": "SHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "count": 1,
+      "examples": [
+        {
+          "discovery_id": "CALL::000066",
+          "beam": "B8",
+          "coordinates": {
+            "x": 13546.903,
+            "y": 4135.882
+          }
+        }
+      ]
+    },
+    {
+      "pattern": "TYPICAL STIRRUP DETAILS",
+      "count": 1,
+      "examples": [
+        {
+          "discovery_id": "CALL::000067",
+          "beam": "B8",
+          "coordinates": {
+            "x": 28861.224,
+            "y": 2870.037
+          }
+        }
+      ]
+    }
+  ],
+  "top_ambiguous_patterns": [
+    {
+      "pattern": "4-Y8,  SIDE FACE REINF. ON BOTH FACES\n(2-Y8 ON ONE FACE)",
+      "count": 3,
+      "examples": [
+        {
+          "discovery_id": "CALL::000063",
+          "interpretations": [
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 4.0,
+              "spacing_mm": null,
+              "pattern": "4Y8"
+            },
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 2.0,
+              "spacing_mm": null,
+              "pattern": "2Y8 "
+            }
+          ]
+        },
+        {
+          "discovery_id": "CALL::000064",
+          "interpretations": [
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 4.0,
+              "spacing_mm": null,
+              "pattern": "4Y8"
+            },
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 2.0,
+              "spacing_mm": null,
+              "pattern": "2Y8 "
+            }
+          ]
+        },
+        {
+          "discovery_id": "CALL::000065",
+          "interpretations": [
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 4.0,
+              "spacing_mm": null,
+              "pattern": "4Y8"
+            },
+            {
+              "role": "SIDE_BAR",
+              "diameter_mm": 8.0,
+              "quantity": 2.0,
+              "spacing_mm": null,
+              "pattern": "2Y8 "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pattern": "S.F.R.- 2-Y10",
+      "count": 1,
+      "examples": [
+        {
+          "discovery_id": "CALL::000058",
+          "interpretations": [
+            {
+              "role": "TOP_MAIN",
+              "diameter_mm": 2.0,
+              "quantity": null,
+              "spacing_mm": null,
+              "pattern": " 2"
+            },
+            {
+              "role": "TOP_MAIN",
+              "diameter_mm": 10.0,
+              "quantity": null,
+              "spacing_mm": null,
+              "pattern": "Y10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

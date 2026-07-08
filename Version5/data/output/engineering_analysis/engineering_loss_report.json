@@ -1,0 +1,60 @@
+{
+  "transitions": [
+    {
+      "transition": "Calculation Readiness",
+      "from_stage": "normalized_bars",
+      "to_stage": "ready_for_calculation",
+      "from_count": 33,
+      "to_count": 26,
+      "lost": 7,
+      "loss_percent": 21.21,
+      "reasons": [
+        {
+          "reason": "Missing specification",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "transition": "Engineering Calculations",
+      "from_stage": "ready_for_calculation",
+      "to_stage": "calculated_bars",
+      "from_count": 26,
+      "to_count": 26,
+      "lost": 0,
+      "loss_percent": 0.0,
+      "reasons": []
+    },
+    {
+      "transition": "BBS Generation",
+      "from_stage": "calculated_bars",
+      "to_stage": "bbs_rows_written",
+      "from_count": 26,
+      "to_count": 26,
+      "lost": 0,
+      "loss_percent": 0.0,
+      "reasons": []
+    },
+    {
+      "transition": "Beam Schedule Aggregation",
+      "from_stage": "bbs_rows_written",
+      "to_stage": "beam_schedule_rows",
+      "from_count": 26,
+      "to_count": 26,
+      "lost": 0,
+      "loss_percent": 0.0,
+      "reasons": []
+    },
+    {
+      "transition": "Excel Export",
+      "from_stage": "beam_schedule_rows",
+      "to_stage": "excel_rows_written",
+      "from_count": 26,
+      "to_count": 26,
+      "lost": 0,
+      "loss_percent": 0.0,
+      "reasons": []
+    }
+  ],
+  "total_lost_to_excel": 7
+}

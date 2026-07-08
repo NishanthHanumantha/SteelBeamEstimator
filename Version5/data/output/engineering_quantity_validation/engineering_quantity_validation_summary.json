@@ -1,0 +1,79 @@
+{
+  "recovered_objects": 7,
+  "recovered_steel_contributors": 0,
+  "recovered_bbs_contributors": 0,
+  "recovered_excel_contributors": 0,
+  "current_quantity_states": {
+    "BLOCKED": 7
+  },
+  "first_failure_distribution": {
+    "calculation": 7
+  },
+  "top_blocking_reasons": [
+    {
+      "reason": "BAR_IDENTITY DEPENDENCY_BLOCKED",
+      "count": 7
+    },
+    {
+      "reason": "Missing cut length",
+      "count": 7
+    },
+    {
+      "reason": "Recovered bar missing from calculation readiness registry",
+      "count": 7
+    },
+    {
+      "reason": "geometry dependency missing",
+      "count": 7
+    },
+    {
+      "reason": "length dependency missing",
+      "count": 7
+    }
+  ],
+  "integration_health": {
+    "recovery_integration_health": 100.0,
+    "steel_integration_health": 0.0,
+    "bbs_integration_health": 0.0,
+    "excel_integration_health": 0.0,
+    "qa_integration_health": 0.0,
+    "overall_quantity_integration_health": 20.0,
+    "evidence": {
+      "steel_deferred_count": 7,
+      "bbs_absent_count": 7,
+      "excel_absent_count": 7
+    }
+  },
+  "recovery_contribution": {
+    "steel_contributors": 0,
+    "bbs_contributors": 0,
+    "excel_contributors": 0,
+    "qa_contributors": 0,
+    "none_classification": 7,
+    "partial_classification": 0,
+    "full_classification": 0
+  },
+  "engineering_recommendations": [
+    {
+      "observation": "Recovered bars have BAR_IDENTITY DEPENDENCY_BLOCKED calculation results.",
+      "recommendation": "Review bar identity integration for recovered reinforcement objects appended after initial calculation pass.",
+      "evidence": "Production calculation results show BAR_IDENTITY DEPENDENCY_BLOCKED for all recovered bars."
+    },
+    {
+      "observation": "Recovered bars have no cut length results in production outputs.",
+      "recommendation": "Inspect cut length registration for recovered bars before steel aggregation.",
+      "evidence": "7 recovered bars missing cut length results."
+    },
+    {
+      "observation": "Recovered bars are absent from the calculation readiness registry.",
+      "recommendation": "Review calculation readiness registration when recovery merges new normalized bars.",
+      "evidence": "7 recovered bars missing from readiness registry."
+    },
+    {
+      "observation": "Recovered objects fail at the calculation integration stage before quantity generation.",
+      "recommendation": "Review downstream calculation dependency chain for append-only recovered bars.",
+      "evidence": "7 recovered objects fail at calculation stage."
+    }
+  ],
+  "no_regression_status": "PASS"
+}

@@ -1,0 +1,54 @@
+{
+  "recommendations": [
+    {
+      "root_cause": "DUPLICATE_SUPPRESSED",
+      "recommendation": "Review duplicate callout collapse rules to avoid suppressing unique reinforcement.",
+      "expected_impact": "High",
+      "affected_callouts": 8,
+      "potential_steel_recovery": "Medium",
+      "example_discovery_ids": [
+        "CALL::000007",
+        "CALL::000029",
+        "CALL::000039",
+        "CALL::000041",
+        "CALL::000043"
+      ]
+    },
+    {
+      "root_cause": "MISSING_GEOMETRY",
+      "recommendation": "Resolve beam geometry and association before creating engineering objects.",
+      "expected_impact": "High",
+      "affected_callouts": 5,
+      "potential_steel_recovery": "Medium",
+      "example_discovery_ids": [
+        "CALL::000010",
+        "CALL::000014",
+        "CALL::000019",
+        "CALL::000037",
+        "CALL::000062"
+      ]
+    },
+    {
+      "root_cause": "UNSUPPORTED_NOTATION",
+      "recommendation": "Extend notation support before engineering object creation.",
+      "expected_impact": "Low",
+      "affected_callouts": 3,
+      "potential_steel_recovery": "Low",
+      "example_discovery_ids": [
+        "CALL::000056",
+        "CALL::000066",
+        "CALL::000067"
+      ]
+    },
+    {
+      "root_cause": "AMBIGUOUS_CALLOUT",
+      "recommendation": "Clarify ambiguous callout interpretation before object creation.",
+      "expected_impact": "Low",
+      "affected_callouts": 1,
+      "potential_steel_recovery": "Low",
+      "example_discovery_ids": [
+        "CALL::000058"
+      ]
+    }
+  ]
+}

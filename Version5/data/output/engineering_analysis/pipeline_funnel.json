@@ -1,0 +1,205 @@
+{
+  "stages": [
+    {
+      "stage": "drawing_parser",
+      "label": "Drawing Objects",
+      "count": 7645
+    },
+    {
+      "stage": "engineering_objects",
+      "label": "Beam Objects",
+      "count": 18
+    },
+    {
+      "stage": "property_graph",
+      "label": "Property Graph Nodes",
+      "count": 1128
+    },
+    {
+      "stage": "specifications",
+      "label": "Specifications",
+      "count": 33
+    },
+    {
+      "stage": "geometry_association",
+      "label": "Geometry Associations",
+      "count": 33
+    },
+    {
+      "stage": "calculation_context",
+      "label": "Calculation Contexts",
+      "count": 33
+    },
+    {
+      "stage": "reinforcement_groups",
+      "label": "Reinforcement Groups",
+      "count": 33
+    },
+    {
+      "stage": "normalized_bars",
+      "label": "Normalized Bars",
+      "count": 33
+    },
+    {
+      "stage": "ready_for_calculation",
+      "label": "READY",
+      "count": 26
+    },
+    {
+      "stage": "calculated_bars",
+      "label": "CALCULATED",
+      "count": 26
+    },
+    {
+      "stage": "bbs_rows_written",
+      "label": "Written to BBS",
+      "count": 26
+    },
+    {
+      "stage": "beam_schedule_rows",
+      "label": "Written to Beam Schedule",
+      "count": 26
+    },
+    {
+      "stage": "excel_rows_written",
+      "label": "Written to Excel",
+      "count": 26
+    }
+  ],
+  "transitions": [
+    {
+      "from_stage": "drawing_parser",
+      "to_stage": "engineering_objects",
+      "from_label": "Drawing Objects",
+      "to_label": "Beam Objects",
+      "from_count": 7645,
+      "to_count": 18,
+      "loss": 7627,
+      "loss_percent": 99.76,
+      "survival_percent": 0.24
+    },
+    {
+      "from_stage": "engineering_objects",
+      "to_stage": "property_graph",
+      "from_label": "Beam Objects",
+      "to_label": "Property Graph Nodes",
+      "from_count": 18,
+      "to_count": 1128,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "property_graph",
+      "to_stage": "specifications",
+      "from_label": "Property Graph Nodes",
+      "to_label": "Specifications",
+      "from_count": 1128,
+      "to_count": 33,
+      "loss": 1095,
+      "loss_percent": 97.07,
+      "survival_percent": 2.93
+    },
+    {
+      "from_stage": "specifications",
+      "to_stage": "geometry_association",
+      "from_label": "Specifications",
+      "to_label": "Geometry Associations",
+      "from_count": 33,
+      "to_count": 33,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "geometry_association",
+      "to_stage": "calculation_context",
+      "from_label": "Geometry Associations",
+      "to_label": "Calculation Contexts",
+      "from_count": 33,
+      "to_count": 33,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "calculation_context",
+      "to_stage": "reinforcement_groups",
+      "from_label": "Calculation Contexts",
+      "to_label": "Reinforcement Groups",
+      "from_count": 33,
+      "to_count": 33,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "reinforcement_groups",
+      "to_stage": "normalized_bars",
+      "from_label": "Reinforcement Groups",
+      "to_label": "Normalized Bars",
+      "from_count": 33,
+      "to_count": 33,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "normalized_bars",
+      "to_stage": "ready_for_calculation",
+      "from_label": "Normalized Bars",
+      "to_label": "READY",
+      "from_count": 33,
+      "to_count": 26,
+      "loss": 7,
+      "loss_percent": 21.21,
+      "survival_percent": 78.79
+    },
+    {
+      "from_stage": "ready_for_calculation",
+      "to_stage": "calculated_bars",
+      "from_label": "READY",
+      "to_label": "CALCULATED",
+      "from_count": 26,
+      "to_count": 26,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "calculated_bars",
+      "to_stage": "bbs_rows_written",
+      "from_label": "CALCULATED",
+      "to_label": "Written to BBS",
+      "from_count": 26,
+      "to_count": 26,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "bbs_rows_written",
+      "to_stage": "beam_schedule_rows",
+      "from_label": "Written to BBS",
+      "to_label": "Written to Beam Schedule",
+      "from_count": 26,
+      "to_count": 26,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    },
+    {
+      "from_stage": "beam_schedule_rows",
+      "to_stage": "excel_rows_written",
+      "from_label": "Written to Beam Schedule",
+      "to_label": "Written to Excel",
+      "from_count": 26,
+      "to_count": 26,
+      "loss": 0,
+      "loss_percent": 0.0,
+      "survival_percent": 100.0
+    }
+  ],
+  "starting_count": 7645,
+  "ending_count": 26
+}

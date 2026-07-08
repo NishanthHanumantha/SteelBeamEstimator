@@ -1,0 +1,129 @@
+{
+  "gaps": [
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: S.F.R.\nON BOTH FACE",
+      "pattern": "S.F.R.\nON BOTH FACE",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000056",
+          "beam": "B13",
+          "coordinates": {
+            "x": 18895.391,
+            "y": 9159.142
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: SHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "pattern": "SHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000066",
+          "beam": "B8",
+          "coordinates": {
+            "x": 13546.903,
+            "y": 4135.882
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: TYPICAL STIRRUP DETAILS",
+      "pattern": "TYPICAL STIRRUP DETAILS",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000067",
+          "beam": "B8",
+          "coordinates": {
+            "x": 28861.224,
+            "y": 2870.037
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "discovery_transition_loss",
+      "title": "Loss at Engineering Objects",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 21.88,
+      "details": {
+        "from_stage": "associated",
+        "to_stage": "engineering_objects",
+        "from_label": "Associated",
+        "to_label": "Engineering Objects",
+        "from_count": 64,
+        "to_count": 50,
+        "loss": 14,
+        "loss_percent": 21.88,
+        "survival_percent": 78.12
+      }
+    },
+    {
+      "gap_type": "normalization_failure",
+      "title": "Multiple bars unresolved",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 20.9,
+      "examples": [
+        {
+          "discovery_id": "CALL::000007",
+          "original_text": "2-Y20",
+          "beam": "B8"
+        },
+        {
+          "discovery_id": "CALL::000010",
+          "original_text": "2-Y12",
+          "beam": "B2"
+        },
+        {
+          "discovery_id": "CALL::000014",
+          "original_text": "2-Y12",
+          "beam": "B8"
+        },
+        {
+          "discovery_id": "CALL::000019",
+          "original_text": "2-Y16",
+          "beam": "B2"
+        },
+        {
+          "discovery_id": "CALL::000029",
+          "original_text": "2-Y16",
+          "beam": "B12"
+        }
+      ]
+    },
+    {
+      "gap_type": "discovery_transition_loss",
+      "title": "Loss at Classified",
+      "count": 3,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 4.48,
+      "details": {
+        "from_stage": "detected",
+        "to_stage": "classified",
+        "from_label": "Detected",
+        "to_label": "Classified",
+        "from_count": 67,
+        "to_count": 64,
+        "loss": 3,
+        "loss_percent": 4.48,
+        "survival_percent": 95.52
+      }
+    }
+  ],
+  "total_gaps": 6
+}

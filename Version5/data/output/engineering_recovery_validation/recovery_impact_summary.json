@@ -1,0 +1,472 @@
+{
+  "engineering_objects": {
+    "before": 60,
+    "after": 67,
+    "delta": 7
+  },
+  "normalized_bars": {
+    "before": 33,
+    "after": 40,
+    "delta": 7
+  },
+  "calculated_bars": {
+    "before": 26,
+    "after": 33,
+    "delta": 7
+  },
+  "steel_weight_kg": {
+    "before": 0.0,
+    "after": 0.0,
+    "delta": 0.0
+  },
+  "beam_schedule_rows": {
+    "before": 18,
+    "after": 18,
+    "delta": 0
+  },
+  "excel_rows": {
+    "before": 152,
+    "after": 152,
+    "delta": 0
+  },
+  "inventory_coverage_percent": {
+    "before": 49.25,
+    "after": 59.7,
+    "delta": 10.45
+  },
+  "qa_dashboard_impact": {
+    "normalization_coverage": {
+      "before": 49.25,
+      "after": 59.7,
+      "delta": 10.45
+    },
+    "beam_coverage": {
+      "before": 100.0,
+      "after": 100.0,
+      "delta": 0.0
+    },
+    "schedule_coverage": {
+      "before": 30.59,
+      "after": 30.59,
+      "delta": 0.0,
+      "note": "Accuracy dashboard reflects last published run; normalization coverage captures recovery impact."
+    },
+    "steel_quantity_coverage": {
+      "before": 12.88,
+      "after": 12.88,
+      "delta": 0.0
+    },
+    "highlights": [
+      "Normalization coverage improved by 10.45%",
+      "Recovered 7 normalized bars"
+    ]
+  },
+  "recovery_roi": 9.14,
+  "contribution_score": 59.07,
+  "engineering_value": 73.15,
+  "top_contributors": {
+    "top_recovery_candidates": [
+      {
+        "recovery_id": "RECOVERY::000001",
+        "discovery_id": "CALL::000007",
+        "bar_id": "REBAR::000034",
+        "beam_id": "B8",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 20.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 78.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000006",
+        "discovery_id": "CALL::000046",
+        "bar_id": "REBAR::000039",
+        "beam_id": "B8",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 20.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 78.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000002",
+        "discovery_id": "CALL::000039",
+        "bar_id": "REBAR::000035",
+        "beam_id": "B1",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000003",
+        "discovery_id": "CALL::000041",
+        "bar_id": "REBAR::000036",
+        "beam_id": "B1",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000004",
+        "discovery_id": "CALL::000043",
+        "bar_id": "REBAR::000037",
+        "beam_id": "B7",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      }
+    ],
+    "top_beams": [
+      {
+        "beam_id": "B1",
+        "engineering_objects": {
+          "before": 0,
+          "after": 0,
+          "delta": 0
+        },
+        "bars": {
+          "before": 2,
+          "after": 5,
+          "delta": 3
+        },
+        "steel_kg": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        },
+        "recovered_bar_ids": [
+          "REBAR::000035",
+          "REBAR::000036",
+          "REBAR::000040"
+        ],
+        "improvement": {
+          "engineering_objects_delta": 0,
+          "bars_delta": 3,
+          "steel_kg_delta": 0.0,
+          "recovered_bars_added": 3
+        }
+      },
+      {
+        "beam_id": "B7",
+        "engineering_objects": {
+          "before": 0,
+          "after": 0,
+          "delta": 0
+        },
+        "bars": {
+          "before": 2,
+          "after": 4,
+          "delta": 2
+        },
+        "steel_kg": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        },
+        "recovered_bar_ids": [
+          "REBAR::000037",
+          "REBAR::000038"
+        ],
+        "improvement": {
+          "engineering_objects_delta": 0,
+          "bars_delta": 2,
+          "steel_kg_delta": 0.0,
+          "recovered_bars_added": 2
+        }
+      },
+      {
+        "beam_id": "B8",
+        "engineering_objects": {
+          "before": 0,
+          "after": 0,
+          "delta": 0
+        },
+        "bars": {
+          "before": 3,
+          "after": 5,
+          "delta": 2
+        },
+        "steel_kg": {
+          "before": 0.0,
+          "after": 0.0,
+          "delta": 0.0
+        },
+        "recovered_bar_ids": [
+          "REBAR::000034",
+          "REBAR::000039"
+        ],
+        "improvement": {
+          "engineering_objects_delta": 0,
+          "bars_delta": 2,
+          "steel_kg_delta": 0.0,
+          "recovered_bars_added": 2
+        }
+      }
+    ],
+    "top_diameters": [
+      {
+        "diameter_mm": 16,
+        "before": 11,
+        "after": 16,
+        "delta": 5,
+        "recovered_bars": 5,
+        "contribution_percent": 100.0,
+        "steel_kg_delta": 0.0
+      },
+      {
+        "diameter_mm": 20,
+        "before": 15,
+        "after": 17,
+        "delta": 2,
+        "recovered_bars": 2,
+        "contribution_percent": 100.0,
+        "steel_kg_delta": 0.0
+      }
+    ],
+    "top_categories": [
+      {
+        "category": "Top Main",
+        "before": 16,
+        "after": 23,
+        "delta": 7
+      }
+    ],
+    "highest_steel_contribution": [
+      {
+        "recovery_id": "RECOVERY::000001",
+        "discovery_id": "CALL::000007",
+        "bar_id": "REBAR::000034",
+        "beam_id": "B8",
+        "diameter_mm": 20.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000002",
+        "discovery_id": "CALL::000039",
+        "bar_id": "REBAR::000035",
+        "beam_id": "B1",
+        "diameter_mm": 16.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000003",
+        "discovery_id": "CALL::000041",
+        "bar_id": "REBAR::000036",
+        "beam_id": "B1",
+        "diameter_mm": 16.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000004",
+        "discovery_id": "CALL::000043",
+        "bar_id": "REBAR::000037",
+        "beam_id": "B7",
+        "diameter_mm": 16.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000005",
+        "discovery_id": "CALL::000045",
+        "bar_id": "REBAR::000038",
+        "beam_id": "B7",
+        "diameter_mm": 16.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000006",
+        "discovery_id": "CALL::000046",
+        "bar_id": "REBAR::000039",
+        "beam_id": "B8",
+        "diameter_mm": 20.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      },
+      {
+        "recovery_id": "RECOVERY::000007",
+        "discovery_id": "CALL::000061",
+        "bar_id": "REBAR::000040",
+        "beam_id": "B1",
+        "diameter_mm": 16.0,
+        "steel_kg": 0.0,
+        "weight_status": "DEFERRED"
+      }
+    ],
+    "highest_schedule_contribution": [],
+    "highest_qa_improvement": [
+      {
+        "recovery_id": "RECOVERY::000001",
+        "discovery_id": "CALL::000007",
+        "bar_id": "REBAR::000034",
+        "beam_id": "B8",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 20.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 78.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000002",
+        "discovery_id": "CALL::000039",
+        "bar_id": "REBAR::000035",
+        "beam_id": "B1",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000003",
+        "discovery_id": "CALL::000041",
+        "bar_id": "REBAR::000036",
+        "beam_id": "B1",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000004",
+        "discovery_id": "CALL::000043",
+        "bar_id": "REBAR::000037",
+        "beam_id": "B7",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000005",
+        "discovery_id": "CALL::000045",
+        "bar_id": "REBAR::000038",
+        "beam_id": "B7",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000006",
+        "discovery_id": "CALL::000046",
+        "bar_id": "REBAR::000039",
+        "beam_id": "B8",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 20.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 78.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      },
+      {
+        "recovery_id": "RECOVERY::000007",
+        "discovery_id": "CALL::000061",
+        "bar_id": "REBAR::000040",
+        "beam_id": "B1",
+        "role": "TOP_MAIN",
+        "added_to_bbs": false,
+        "added_steel": false,
+        "added_diameter_mm": 16.0,
+        "excel_row": false,
+        "normalized": true,
+        "engineering_contribution": "MEDIUM",
+        "impact_score": 2,
+        "confidence": 72.75,
+        "legitimacy_class": "LIKELY_ENGINEERING_BAR"
+      }
+    ]
+  },
+  "overall_engineering_improvement_percent": 10.45,
+  "no_regression_status": "PASS",
+  "append_only_growth": true,
+  "recovery_effectiveness": {
+    "recovery_candidates": 8,
+    "recovered": 7,
+    "rejected": 1,
+    "recovery_success_percent": 100.0,
+    "recovered_bars": 7,
+    "recovered_steel_kg": 0.0,
+    "recovered_beams": {
+      "B1": 3,
+      "B7": 2,
+      "B8": 2
+    },
+    "recovered_categories": {
+      "TOP_MAIN": 7
+    },
+    "recovered_diameters": {
+      "16": 5,
+      "20": 2
+    },
+    "contribution_score": 59.07,
+    "engineering_value": 73.15,
+    "recovery_roi": 9.14
+  }
+}

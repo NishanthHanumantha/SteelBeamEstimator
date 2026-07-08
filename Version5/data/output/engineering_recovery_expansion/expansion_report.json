@@ -1,0 +1,169 @@
+{
+  "phase": "Phase J.2",
+  "model_version": "5.28.0",
+  "engine_version": "1.0.0",
+  "run_timestamp": "2026-07-08T12:53:29.442721+00:00",
+  "summary": {
+    "objects_evaluated": 10,
+    "expansion_candidates": 10,
+    "recovered": 6,
+    "rejected": 10,
+    "approved": 0,
+    "coverage_before_percent": 68.66,
+    "coverage_after_percent": 68.66,
+    "coverage_before_bars": 46,
+    "coverage_after_bars": 46,
+    "inventory_count": 67,
+    "recovery_improvement_percent": 0.0,
+    "expansion_classes": {
+      "ALREADY_RECOVERED": 6,
+      "UNRECOVERABLE": 4
+    },
+    "decisions": {
+      "ALREADY_EXISTS": 6,
+      "REJECT": 4
+    },
+    "validation_status": "PASS",
+    "expansion_health": {
+      "expansion_recovery_rate": 600.0,
+      "candidate_success_rate": 0.0,
+      "coverage_gain_percent": 0.0,
+      "overall_expansion_health": 100.0
+    },
+    "integration_success_percent": 100.0
+  },
+  "statistics": {
+    "objects_evaluated": 10,
+    "expansion_candidates": 10,
+    "recovered": 6,
+    "rejected": 10,
+    "approved": 0,
+    "coverage_before_percent": 68.66,
+    "coverage_after_percent": 68.66,
+    "coverage_before_bars": 46,
+    "coverage_after_bars": 46,
+    "inventory_count": 67,
+    "recovery_improvement_percent": 0.0,
+    "expansion_classes": {
+      "ALREADY_RECOVERED": 6,
+      "UNRECOVERABLE": 4
+    },
+    "decisions": {
+      "ALREADY_EXISTS": 6,
+      "REJECT": 4
+    }
+  },
+  "health": {
+    "expansion_recovery_rate": 600.0,
+    "candidate_success_rate": 0.0,
+    "coverage_gain_percent": 0.0,
+    "overall_expansion_health": 100.0
+  },
+  "validation": {
+    "status": "PASS",
+    "checks": [
+      {
+        "name": "Model Version 5.28.0",
+        "status": "PASS"
+      },
+      {
+        "name": "Every Candidate Classified",
+        "status": "PASS"
+      },
+      {
+        "name": "Every Candidate Evaluated",
+        "status": "PASS"
+      },
+      {
+        "name": "Every Decision Deterministic",
+        "status": "PASS"
+      },
+      {
+        "name": "No Duplicate Recoveries",
+        "status": "PASS"
+      },
+      {
+        "name": "Existing Production Preserved",
+        "status": "PASS"
+      },
+      {
+        "name": "Append-Only Verified",
+        "status": "PASS"
+      },
+      {
+        "name": "Traceability Complete",
+        "status": "PASS"
+      },
+      {
+        "name": "Recovery Registry Valid",
+        "status": "PASS"
+      },
+      {
+        "name": "Statistics Internally Consistent",
+        "status": "PASS"
+      },
+      {
+        "name": "Health Score Generated",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000010",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000014",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000019",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000029",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000037",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000056",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000058",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000062",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000066",
+        "status": "PASS"
+      },
+      {
+        "name": "Decision Exists CALL::000067",
+        "status": "PASS"
+      }
+    ],
+    "summary": {
+      "total_checks": 21,
+      "passed": 21,
+      "failed": 0
+    }
+  },
+  "production_integration": {
+    "status": "IDEMPOTENT_SKIP",
+    "reason": "Existing expansion recoveries preserved",
+    "production_merge": {
+      "status": "SUCCESS",
+      "reason": null
+    },
+    "calculation_integration": {
+      "status": "SUCCESS",
+      "validation": "FAIL",
+      "integration_mode": "REPAIR"
+    }
+  }
+}

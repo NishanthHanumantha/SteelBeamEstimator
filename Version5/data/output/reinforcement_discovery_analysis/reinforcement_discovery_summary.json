@@ -1,0 +1,170 @@
+{
+  "total_annotations": 67,
+  "funnel_ending_count": 50,
+  "parser_health": {
+    "detection_success_percent": 100.0,
+    "classification_success_percent": 95.52,
+    "association_success_percent": 95.52,
+    "normalization_success_percent": 74.63,
+    "calculation_success_percent": 74.63,
+    "export_success_percent": 74.63,
+    "overall_discovery_success_percent": 85.82,
+    "method": "reinforcement_discovery_only",
+    "baseline_callouts": 67,
+    "stage_counts": {
+      "drawing_callouts": 67,
+      "detected": 67,
+      "classified": 64,
+      "associated": 64,
+      "engineering_objects": 50,
+      "normalized": 50,
+      "ready": 50,
+      "calculated": 50,
+      "written_to_bbs": 50,
+      "written_to_excel": 50
+    }
+  },
+  "status_distribution": {
+    "WRITTEN_TO_EXCEL": 50,
+    "NORMALIZATION_FAILED": 14,
+    "DISCOVERY_FAILED": 3
+  },
+  "top_discovery_losses": [
+    {
+      "transition": "Engineering Objects",
+      "loss": 14,
+      "loss_percent": 21.88
+    },
+    {
+      "transition": "Classified",
+      "loss": 3,
+      "loss_percent": 4.48
+    }
+  ],
+  "top_gaps": [
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: S.F.R.\nON BOTH FACE",
+      "pattern": "S.F.R.\nON BOTH FACE",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000056",
+          "beam": "B13",
+          "coordinates": {
+            "x": 18895.391,
+            "y": 9159.142
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: SHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "pattern": "SHR & OHT LVL TOP BEAM REINFORCEMENT GFC DETAILS",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000066",
+          "beam": "B8",
+          "coordinates": {
+            "x": 13546.903,
+            "y": 4135.882
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "unsupported_notation",
+      "title": "Unsupported notation: TYPICAL STIRRUP DETAILS",
+      "pattern": "TYPICAL STIRRUP DETAILS",
+      "count": 1,
+      "estimated_impact": "Very High",
+      "estimated_downstream_effect_percent": 1.49,
+      "examples": [
+        {
+          "discovery_id": "CALL::000067",
+          "beam": "B8",
+          "coordinates": {
+            "x": 28861.224,
+            "y": 2870.037
+          }
+        }
+      ]
+    },
+    {
+      "gap_type": "discovery_transition_loss",
+      "title": "Loss at Engineering Objects",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 21.88,
+      "details": {
+        "from_stage": "associated",
+        "to_stage": "engineering_objects",
+        "from_label": "Associated",
+        "to_label": "Engineering Objects",
+        "from_count": 64,
+        "to_count": 50,
+        "loss": 14,
+        "loss_percent": 21.88,
+        "survival_percent": 78.12
+      }
+    },
+    {
+      "gap_type": "normalization_failure",
+      "title": "Multiple bars unresolved",
+      "count": 14,
+      "estimated_impact": "Medium",
+      "estimated_downstream_effect_percent": 20.9,
+      "examples": [
+        {
+          "discovery_id": "CALL::000007",
+          "original_text": "2-Y20",
+          "beam": "B8"
+        },
+        {
+          "discovery_id": "CALL::000010",
+          "original_text": "2-Y12",
+          "beam": "B2"
+        },
+        {
+          "discovery_id": "CALL::000014",
+          "original_text": "2-Y12",
+          "beam": "B8"
+        },
+        {
+          "discovery_id": "CALL::000019",
+          "original_text": "2-Y16",
+          "beam": "B2"
+        },
+        {
+          "discovery_id": "CALL::000029",
+          "original_text": "2-Y16",
+          "beam": "B12"
+        }
+      ]
+    }
+  ],
+  "unsupported_pattern_count": 3,
+  "valid_statuses": [
+    "NOT_DETECTED",
+    "TEXT_DETECTED",
+    "CLASSIFIED",
+    "ASSOCIATED",
+    "ENGINEERING_OBJECT_CREATED",
+    "NORMALIZED",
+    "READY",
+    "CALCULATED",
+    "WRITTEN_TO_BBS",
+    "WRITTEN_TO_EXCEL",
+    "DISCOVERY_FAILED",
+    "ASSOCIATION_FAILED",
+    "NORMALIZATION_FAILED",
+    "CALCULATION_DEFERRED",
+    "EXPORT_SKIPPED"
+  ]
+}
