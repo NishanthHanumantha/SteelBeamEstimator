@@ -1,0 +1,94 @@
+{
+  "phase": "Phase J.2.1",
+  "model_version": "5.28.1",
+  "engine_version": "1.0.0",
+  "run_timestamp": "2026-07-09T04:59:17.882260+00:00",
+  "read_only_analysis": true,
+  "summary": {
+    "metrics_verified": 10,
+    "artifacts_compared": [
+      "accuracy_report",
+      "accuracy_statistics",
+      "bbs_results",
+      "beam_schedule_results",
+      "engineering_objects",
+      "engineering_reports",
+      "excel_export_registry",
+      "excel_export_statistics",
+      "expansion_registry",
+      "expansion_statistics",
+      "expansion_summary",
+      "expansion_validation",
+      "management_summary",
+      "recovery_health",
+      "recovery_impact_summary",
+      "recovery_registry",
+      "recovery_statistics",
+      "recovery_summary",
+      "recovery_validation",
+      "reinforcement_inventory",
+      "reinforcement_objects",
+      "steel_weight_results"
+    ],
+    "consistency_checks": 10,
+    "pass_count": 10,
+    "fail_count": 0,
+    "authoritative_normalization_coverage_percent": 68.66,
+    "authoritative_total_production_bars": 46,
+    "authoritative_j1_recovered_bars": 7,
+    "authoritative_j2_recovered_bars": 6,
+    "consistency_health": {
+      "statistics_consistency": 100.0,
+      "artifact_consistency": 100.0,
+      "registry_consistency": 100.0,
+      "dashboard_consistency": 100.0,
+      "reporting_consistency": 100.0,
+      "traceability_consistency": 100.0,
+      "overall_consistency_health": 100.0
+    },
+    "validation_status": "PASS",
+    "top_mismatches": [],
+    "root_cause_count": 2,
+    "engineering_recommendation": "Use authoritative total_production_bars and normalization_coverage_percent from production_snapshot.json"
+  },
+  "authoritative_sources": {
+    "j1_recovered_count": "recovery_registry.json",
+    "j2_recovered_count": "expansion_registry.json",
+    "total_production_bars": "reinforcement_objects.json",
+    "native_bars": "reinforcement_objects.json (no recovery_source)",
+    "normalization_coverage_percent": "reinforcement_objects.json + reinforcement_inventory.json",
+    "pre_j1_coverage_percent": "reinforcement_objects.json (native) + inventory",
+    "post_j1_coverage_percent": "reinforcement_objects.json (native+j1) + inventory",
+    "steel_weight": "steel_weight_results.json",
+    "bbs_rows": "beam_schedule_results.json",
+    "excel_rows": "excel_export_registry.json"
+  },
+  "health": {
+    "statistics_consistency": 100.0,
+    "artifact_consistency": 100.0,
+    "registry_consistency": 100.0,
+    "dashboard_consistency": 100.0,
+    "reporting_consistency": 100.0,
+    "traceability_consistency": 100.0,
+    "overall_consistency_health": 100.0
+  },
+  "validation": null,
+  "root_causes": [
+    {
+      "issue": "Coverage semantic ambiguity",
+      "source_artifact": "expansion_statistics.json",
+      "incorrect_consumer": "Console interpretation",
+      "root_cause": "WRONG_BASELINE",
+      "evidence": "recovered=6 is cumulative registry count, coverage_before/after bars=46\u219246 are production totals; adding recovered to coverage_before is invalid",
+      "resolution": "Use authoritative total_production_bars and normalization_coverage_percent from production_snapshot.json"
+    },
+    {
+      "issue": "Scoped coverage metric divergence",
+      "source_artifact": "recovery_summary.json",
+      "incorrect_consumer": "Cross-phase comparison without scope",
+      "root_cause": "INCORRECT_AGGREGATION",
+      "evidence": "J.1 scoped coverage after=59.7% differs from total normalization coverage=68.66% because J.1 reports native+J.1 only",
+      "resolution": "Label J.1 coverage as post_j1_coverage_percent; use total normalization coverage for all-recovery state"
+    }
+  ]
+}

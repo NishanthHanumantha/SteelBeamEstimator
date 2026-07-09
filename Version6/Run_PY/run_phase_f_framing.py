@@ -1,0 +1,1479 @@
+"""Phase F — Framing Plan Intelligence (F.1–F.7) and G.1 runner."""
+
+import _bootstrap  # noqa: F401
+
+import argparse
+import sys
+from pathlib import Path
+
+from loguru import logger
+
+from src.config.output_paths import OutputPaths, OUTPUT_ROOT
+from src.framing.beam_geometry_pipeline import BeamGeometryPipeline
+
+DEFAULT_INPUT = Path("data/framing")
+DEFAULT_CONFIG = Path("config/framing.yaml")
+
+
+def configure_logging(verbose: bool) -> None:
+    logger.remove()
+    level = "DEBUG" if verbose else "INFO"
+    logger.add(sys.stderr, level=level)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Phase F (F.1–F.7) and Phase G.1 reinforcement loading.",
+    )
+    parser.add_argument(
+        "-o",
+        "--output-dir",
+        type=str,
+        default=str(OUTPUT_ROOT),
+        help="Output root (default: data/output)",
+    )
+    parser.add_argument(
+        "--input",
+        type=str,
+        default=str(DEFAULT_INPUT),
+        help="Framing plan DXF file or directory",
+    )
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=str(DEFAULT_CONFIG),
+        help="Framing config YAML path",
+    )
+    parser.add_argument("-v", "--verbose", action="store_true")
+    return parser.parse_args()
+
+
+def run() -> int:
+    args = parse_args()
+    configure_logging(args.verbose)
+    result = BeamGeometryPipeline(
+        OutputPaths(Path(args.output_dir)),
+        input_path=args.input,
+        config_path=args.config,
+    ).run()
+    workspace_validation = result["workspace_validation"]
+    reinforcement_validation = result.get("reinforcement_validation", {})
+    drawing_identity_validation = result.get("drawing_identity_validation", {})
+    drawing_set_validation = result.get("drawing_set_validation", {})
+    drawing_set_state_validation = result.get("drawing_set_state_validation", {})
+    reinforcement_drawing_validation = result.get("reinforcement_drawing_validation", {})
+    model = result["model"]
+    svc = model.get("engineering_services_registry", {})
+
+    print("\n" + "=" * 52)
+    print("PHASE F.7")
+    print("Project Workspace & Engineering Services")
+    print("=" * 52)
+    print(f"Projects: {1 if model.get('project_workspace') else 0}")
+    print(f"General Notes: {1 if model.get('project_workspace', {}).get('general_notes') else 0}")
+    print(f"Floors: {model.get('floor_registry', {}).get('floor_count', 0)}")
+    print(f"Beam Contexts: {len(model.get('beam_engineering_contexts', []))}")
+    print(f"Engineering Services: {svc.get('service_count', 0)}")
+    print(f"Validation: {workspace_validation['status']}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1")
+    print("Floor Reinforcement Loading")
+    print("=" * 52)
+    reg = model.get("reinforcement_registry", {})
+    print(f"Reinforcement Workspaces: {len(model.get('reinforcement_workspaces', []))}")
+    print(f"Documents Loaded: {reg.get('document_count', 0)}")
+    print(f"Validation: {reinforcement_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.1")
+    print("Drawing Identity & Floor Detection")
+    print("=" * 52)
+    drawing_reg = model.get("drawing_registry", {})
+    ws_mgr = model.get("workspace_manager", {})
+    print(f"Drawings Identified: {drawing_reg.get('drawing_count', 0)}")
+    print(f"Floor Source: {ws_mgr.get('floor_source', '?')}")
+    floors = model.get("project_workspace", {}).get("floors", [])
+    if floors:
+        print(f"Detected Floor: {floors[0].get('floor_name', '?')} ({floors[0].get('floor_id', '?')})")
+    print(f"Validation: {drawing_identity_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.2")
+    print("Drawing Set Architecture")
+    print("=" * 52)
+    set_reg = model.get("drawing_set_registry", {})
+    print(f"Drawing Sets: {set_reg.get('drawing_set_count', 0)}")
+    for ds in model.get("drawing_sets", []):
+        print(f"  {ds.get('drawing_set_id')} — {ds.get('floor_name')} ({ds.get('status')})")
+    print(f"Validation: {drawing_set_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.1.3")
+    print("Drawing Set Lifecycle & Beam Index")
+    print("=" * 52)
+    indices = model.get("beam_indices", [])
+    total_beams = sum(i.get("beam_count", 0) for i in indices)
+    print(f"Drawing Sets: {len(model.get('drawing_sets', []))}")
+    print(f"Beams Indexed: {total_beams}")
+    for ds in model.get("drawing_sets", []):
+        ver = ds.get("drawing_set_version", {})
+        print(
+            f"  {ds.get('drawing_set_id')} v{ver.get('drawing_set_version', '?')} "
+            f"loading={ds.get('loading_state', '?')}"
+        )
+    print(f"Validation: {drawing_set_state_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.2")
+    print("Engineering Detail Classification & Multi-View Recognition")
+    print("=" * 52)
+    dm = model.get("reinforcement_drawing_model", {})
+    regions = dm.get("regions", [])
+    single = sum(1 for r in regions if r.get("detail_type") == "SINGLE_BEAM")
+    multiview = sum(1 for r in regions if r.get("detail_type") == "MULTI_VIEW_SINGLE_BEAM")
+    continuous = sum(1 for r in regions if r.get("detail_type") == "CONTINUOUS_MULTI_SPAN")
+    print(f"Drawing Models: {len(model.get('reinforcement_drawing_models', []))}")
+    print(f"Regions: {dm.get('region_count', 0)}")
+    print(f"  SINGLE_BEAM: {single}")
+    print(f"  MULTI_VIEW_SINGLE_BEAM: {multiview}")
+    print(f"  CONTINUOUS_MULTI_SPAN: {continuous}")
+    print(f"Detail Views: {dm.get('detail_view_count', 0)}")
+    print(f"Sketches: {dm.get('sketch_count', 0)}")
+    print(f"Text Objects: {dm.get('text_count', 0)}")
+    print(f"Leaders: {dm.get('leader_count', 0)}")
+    print(f"Blocks: {dm.get('block_count', 0)}")
+    print(f"Relationships: {dm.get('relationship_count', 0)}")
+    print(f"Validation: {reinforcement_drawing_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.3")
+    print("Engineering Detail Context Layer")
+    print("=" * 52)
+    detail_context_validation = result.get("detail_context_validation", {})
+    contexts = dm.get("detail_contexts", [])
+    print(f"Detail Contexts: {dm.get('detail_context_count', 0)}")
+    for ctx in contexts:
+        marks = "/".join(ctx.get("beam_marks", []))
+        print(
+            f"  {ctx.get('detail_context_id')} — {ctx.get('detail_type')} "
+            f"[{marks}] views={ctx.get('view_count', 0)}"
+        )
+    print(f"G.2.2 Validation: {reinforcement_drawing_validation.get('status', 'SKIP')}")
+    print(f"G.2.3 Validation: {detail_context_validation.get('status', 'SKIP')}")
+    print("=" * 52)
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.4")
+    print("Engineering Detail Identity & Fingerprinting")
+    print("=" * 52)
+    detail_identity_validation = result.get("detail_identity_validation", {})
+    identities = dm.get("detail_identities", [])
+    fingerprints = dm.get("detail_fingerprints", [])
+    print(f"Detail Identities: {dm.get('detail_identity_count', 0)}")
+    print(f"Detail Fingerprints: {dm.get('detail_fingerprint_count', 0)}")
+    status_counts: dict[str, int] = {}
+    for ident in identities:
+        ms = ident.get("matching_status", "?")
+        status_counts[ms] = status_counts.get(ms, 0) + 1
+        marks = ident.get("primary_beam_mark", "")
+        sec = ident.get("secondary_beam_marks", [])
+        if sec:
+            marks += "/" + "/".join(sec)
+        print(
+            f"  {ident.get('detail_identity_id')} — {ident.get('detail_type')} "
+            f"[{marks}] views={ident.get('view_count', 0)} "
+            f"status={ms}"
+        )
+    print("Matching Status Summary:")
+    for ms, count in sorted(status_counts.items()):
+        print(f"  {ms}: {count}")
+    if identities and fingerprints:
+        sample_ident = next(
+            (i for i in identities if i.get("detail_identity_id") == "DETAIL::008"),
+            identities[0],
+        )
+        sample_fp = next(
+            (
+                f
+                for f in fingerprints
+                if f.get("detail_identity_id") == sample_ident.get("detail_identity_id")
+            ),
+            fingerprints[0],
+        )
+        print(f"\nSample Identity: {sample_ident.get('detail_identity_id')}")
+        print(f"  primary={sample_ident.get('primary_beam_mark')} "
+              f"secondary={sample_ident.get('secondary_beam_marks')}")
+        print(f"Sample Fingerprint overall_hash: {str(sample_fp.get('overall_hash', ''))[:16]}...")
+    print(f"G.2.4 Validation: {detail_identity_validation.get('status', 'SKIP')}")
+    if detail_identity_validation.get("checks"):
+        passed = sum(
+            1 for c in detail_identity_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(detail_identity_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.5")
+    print("Beam Match Candidate Engine")
+    print("=" * 52)
+    beam_candidate_validation = result.get("beam_candidate_validation", {})
+    candidates = dm.get("beam_match_candidates", [])
+    print(f"Beam Match Candidates: {dm.get('beam_match_candidate_count', 0)}")
+    state_counts: dict[str, int] = {}
+    for ident in identities:
+        ms = ident.get("matching_state", "?")
+        state_counts[ms] = state_counts.get(ms, 0) + 1
+    print("Matching State Summary:")
+    for ms, count in sorted(state_counts.items()):
+        print(f"  {ms}: {count}")
+    for ident in identities:
+        iid = ident.get("detail_identity_id", "")
+        icands = [c for c in candidates if c.get("detail_identity_id") == iid]
+        if not icands:
+            continue
+        marks = ident.get("primary_beam_mark", "")
+        sec = ident.get("secondary_beam_marks", [])
+        if sec:
+            marks += "/" + "/".join(sec)
+        cand_str = ", ".join(
+            f"{c.get('beam_context_id')}({c.get('score', 0):.2f})" for c in icands
+        )
+        print(f"  {iid} [{marks}] -> {cand_str}")
+    ranking = result.get("model", {}).get("beam_candidate_ranking", {})
+    sample_rank = next(
+        (r for r in ranking.get("rankings", []) if r.get("detail_identity_id") == "DETAIL::008"),
+        ranking.get("rankings", [{}])[0] if ranking.get("rankings") else {},
+    )
+    if sample_rank:
+        print(f"\nSample Ranking: {sample_rank.get('detail_identity_id')}")
+        print(f"  best={sample_rank.get('best_candidate_id')}")
+    if candidates:
+        sample_cand = next(
+            (c for c in candidates if c.get("detail_identity_id") == "DETAIL::001"),
+            candidates[0],
+        )
+        print(f"Sample Candidate: {sample_cand.get('candidate_id')}")
+        print(f"  beam={sample_cand.get('beam_context_id')} score={sample_cand.get('score')}")
+    print(f"G.2.5 Validation: {beam_candidate_validation.get('status', 'SKIP')}")
+    if beam_candidate_validation.get("checks"):
+        passed = sum(
+            1 for c in beam_candidate_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(beam_candidate_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.6")
+    print("Match Decision Layer")
+    print("=" * 52)
+    match_decision_validation = result.get("match_decision_validation", {})
+    decisions = dm.get("match_decisions", [])
+    print(f"Match Decisions: {dm.get('match_decision_count', 0)}")
+    status_counts: dict[str, int] = {}
+    reason_counts: dict[str, int] = {}
+    review_count = 0
+    for decision in decisions:
+        st = decision.get("decision_status", "?")
+        status_counts[st] = status_counts.get(st, 0) + 1
+        reason = decision.get("decision_reason", "?")
+        reason_counts[reason] = reason_counts.get(reason, 0) + 1
+        if decision.get("requires_manual_review"):
+            review_count += 1
+    print("Decision Status Summary:")
+    for st, count in sorted(status_counts.items()):
+        print(f"  {st}: {count}")
+    print("Decision Reason Summary:")
+    for reason, count in sorted(reason_counts.items()):
+        print(f"  {reason}: {count}")
+    print(f"Manual Review Required: {review_count}/{len(decisions)}")
+    sample_decision = next(
+        (d for d in decisions if d.get("detail_identity_id") == "DETAIL::008"),
+        decisions[0] if decisions else {},
+    )
+    if sample_decision:
+        print(f"\nSample Decision: {sample_decision.get('decision_id')}")
+        print(f"  recommended={sample_decision.get('recommended_candidate_id')}")
+        print(f"  beam={sample_decision.get('recommended_beam_context_id')}")
+        print(f"  reason={sample_decision.get('decision_reason')}")
+        print(f"  confidence={sample_decision.get('confidence')}")
+    print(f"G.2.6 Validation: {match_decision_validation.get('status', 'SKIP')}")
+    if match_decision_validation.get("checks"):
+        passed = sum(
+            1 for c in match_decision_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(match_decision_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.2.7")
+    print("Match Decision Quality & Versioning")
+    print("=" * 52)
+    match_decision_quality_validation = result.get("match_decision_quality_validation", {})
+    level_counts: dict[str, int] = {}
+    quality_counts: dict[str, int] = {}
+    for decision in decisions:
+        level = decision.get("confidence_level", "?")
+        level_counts[level] = level_counts.get(level, 0) + 1
+        qstatus = decision.get("decision_quality", {}).get("quality_status", "?")
+        quality_counts[qstatus] = quality_counts.get(qstatus, 0) + 1
+    print("Confidence Level Summary:")
+    for level, count in sorted(level_counts.items()):
+        print(f"  {level}: {count}")
+    print("Quality Status Summary:")
+    for qstatus, count in sorted(quality_counts.items()):
+        print(f"  {qstatus}: {count}")
+    algo = result.get("model", {}).get("decision_algorithm", {})
+    if algo.get("algorithms"):
+        node = algo["algorithms"][0]
+        print(f"\nAlgorithm: {node.get('name')} v{node.get('version')} ({node.get('family')})")
+    sample = next(
+        (d for d in decisions if d.get("detail_identity_id") == "DETAIL::008"),
+        decisions[0] if decisions else {},
+    )
+    if sample:
+        print(f"\nSample Decision Quality: {sample.get('decision_id')}")
+        print(f"  confidence_level={sample.get('confidence_level')}")
+        print(f"  quality_status={sample.get('decision_quality', {}).get('quality_status')}")
+        print(f"  algorithm={sample.get('algorithm_info', {}).get('algorithm_name')} "
+              f"v{sample.get('algorithm_info', {}).get('algorithm_version')}")
+    print(f"G.2.7 Validation: {match_decision_quality_validation.get('status', 'SKIP')}")
+    if match_decision_quality_validation.get("checks"):
+        passed = sum(
+            1 for c in match_decision_quality_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(match_decision_quality_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.3")
+    print("Beam Matching Engine")
+    print("=" * 52)
+    beam_matches = result.get("model", {}).get("beam_matches", [])
+    beam_match_validation = result.get("beam_match_validation", {})
+    matching_summary = result.get("model", {}).get("beam_matching_summary", {})
+    print(f"Beam Matches: {len(beam_matches)}")
+    print(f"Matched Beams: {matching_summary.get('matched_beam_count', 0)}")
+    print(f"Matching Progress: {matching_summary.get('matching_progress', '?')}")
+    executed = matching_summary.get("executed_decision_count", 0)
+    eligible = matching_summary.get("eligible_decision_count", 0)
+    print(f"Decisions Executed: {executed}/{eligible}")
+    sample_match = next(
+        (m for m in beam_matches if m.get("detail_identity_id") == "DETAIL::008"),
+        beam_matches[0] if beam_matches else {},
+    )
+    if sample_match:
+        print(f"\nSample BeamMatch: {sample_match.get('beam_match_id')}")
+        print(f"  detail={sample_match.get('detail_identity_id')}")
+        print(f"  decision={sample_match.get('match_decision_id')}")
+        print(f"  beam={sample_match.get('beam_context_id')} ({sample_match.get('beam_mark')})")
+        print(f"  confidence={sample_match.get('confidence')} level={sample_match.get('confidence_level')}")
+        print(f"  status={sample_match.get('match_status')} engineering={sample_match.get('engineering_status')}")
+    sample_decision_g3 = next(
+        (d for d in decisions if d.get("detail_identity_id") == "DETAIL::008"),
+        decisions[0] if decisions else {},
+    )
+    if sample_decision_g3:
+        print(f"\nDecision Execution: {sample_decision_g3.get('decision_id')}")
+        print(f"  execution_status={sample_decision_g3.get('execution_status', '?')}")
+    contexts = result.get("model", {}).get("beam_engineering_contexts", [])
+    sample_ctx = next(
+        (c for c in contexts if c.get("beam_mark") == "B8"),
+        {},
+    )
+    if sample_ctx:
+        print(f"\nBeamContext Update: {sample_ctx.get('context_id')}")
+        print(f"  beam_match_id={sample_ctx.get('beam_match_id')}")
+        print(f"  reinforcement_context_id={sample_ctx.get('reinforcement_context_id')}")
+        print(f"  reinforcement_matching_status={sample_ctx.get('reinforcement_matching_status')}")
+    print(f"G.3 Validation: {beam_match_validation.get('status', 'SKIP')}")
+    if beam_match_validation.get("checks"):
+        passed = sum(
+            1 for c in beam_match_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(beam_match_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4")
+    print("Engineering Reinforcement Context & Ownership")
+    print("=" * 52)
+    erc_validation = result.get("engineering_reinforcement_context_validation", {})
+    erc_contexts = result.get("model", {}).get("engineering_reinforcement_contexts", [])
+    ownership_summary = result.get("model", {}).get("ownership_summary", {})
+    print(f"Engineering Reinforcement Contexts: {len(erc_contexts)}")
+    print(f"Ownership Entries: {ownership_summary.get('ownership_count', 0)}")
+    print(f"Ownership Status: {ownership_summary.get('ownership_status', '?')}")
+    print(
+        f"Entities — views={ownership_summary.get('view_count', 0)} "
+        f"geometry={ownership_summary.get('geometry_count', 0)} "
+        f"text={ownership_summary.get('text_count', 0)} "
+        f"leaders={ownership_summary.get('leader_count', 0)} "
+        f"blocks={ownership_summary.get('block_count', 0)}"
+    )
+    sample_erc = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc:
+        print(f"\nSample ERC: {sample_erc.get('reinforcement_context_id')}")
+        print(f"  beam={sample_erc.get('beam_mark')} context={sample_erc.get('beam_context_id')}")
+        print(f"  match={sample_erc.get('beam_match_id')}")
+        print(f"  detail={sample_erc.get('detail_identity_id')}")
+        print(f"  ownership_status={sample_erc.get('ownership_status')}")
+        print(f"  owned_views={len(sample_erc.get('owned_views', []))}")
+        print(f"  owned_geometry={len(sample_erc.get('owned_geometry', []))}")
+    sample_ctx_g4 = next(
+        (c for c in result.get("model", {}).get("beam_engineering_contexts", []) if c.get("beam_mark") == "B8"),
+        {},
+    )
+    if sample_ctx_g4:
+        print(f"\nBeamContext ERC Link: {sample_ctx_g4.get('context_id')}")
+        print(f"  reinforcement_context_id={sample_ctx_g4.get('reinforcement_context_id')}")
+        print(f"  ownership_status={sample_ctx_g4.get('ownership_status')}")
+    print(f"G.4 Validation: {erc_validation.get('status', 'SKIP')}")
+    if erc_validation.get("checks"):
+        passed = sum(
+            1 for c in erc_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(erc_validation["checks"])
+        print(f"  Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4.1")
+    print("Engineering Reinforcement Context Enhancement")
+    print("=" * 52)
+    asset_validation = result.get("engineering_asset_validation", {})
+    lifecycle_validation = result.get("engineering_reinforcement_lifecycle_validation", {})
+    asset_registry = result.get("model", {}).get("engineering_asset_registry", {})
+    lifecycle_registry = result.get("model", {}).get("engineering_reinforcement_lifecycle_registry", {})
+    asset_summary = result.get("model", {}).get("engineering_asset_summary", {})
+    print(f"Asset Registries: {asset_registry.get('registry_count', 0)}")
+    print(f"Lifecycle State: {lifecycle_registry.get('current_state', '?')}")
+    print(
+        f"Assets — views={asset_summary.get('view_count', 0)} "
+        f"geometry={asset_summary.get('geometry_count', 0)} "
+        f"text={asset_summary.get('text_count', 0)}"
+    )
+    sample_erc_g41 = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc_g41:
+        assets = sample_erc_g41.get("engineering_assets", {})
+        lifecycle = sample_erc_g41.get("lifecycle", {})
+        print(f"\nSample ERC Assets: {assets.get('registry_id', '?')}")
+        print(f"  views={len(assets.get('views', []))} geometry={len(assets.get('geometry', []))}")
+        print(f"  lifecycle={lifecycle.get('current_state', '?')}")
+        print(f"  next_allowed={lifecycle.get('next_allowed', [])}")
+    print(f"G.4.1 Asset Validation: {asset_validation.get('status', 'SKIP')}")
+    if asset_validation.get("checks"):
+        passed = sum(
+            1 for c in asset_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(asset_validation["checks"])
+        print(f"  Asset Checks: {passed}/{total} PASS")
+    print(f"G.4.1 Lifecycle Validation: {lifecycle_validation.get('status', 'SKIP')}")
+    if lifecycle_validation.get("checks"):
+        passed = sum(
+            1 for c in lifecycle_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(lifecycle_validation["checks"])
+        print(f"  Lifecycle Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.4.2")
+    print("Engineering Object Framework")
+    print("=" * 52)
+    object_validation = result.get("engineering_object_validation", {})
+    object_registry = result.get("model", {}).get("engineering_object_registry", {})
+    object_summary = result.get("model", {}).get("engineering_object_summary", {})
+    print(f"Engineering Objects: {object_registry.get('object_count', 0)}")
+    print(f"Framework Status: {object_summary.get('status', '?')}")
+    print(
+        f"Ready — registry={object_summary.get('registry_ready', False)} "
+        f"factory={object_summary.get('factory_ready', False)} "
+        f"graph={object_summary.get('graph_ready', False)}"
+    )
+    sample_erc_g42 = next(
+        (c for c in erc_contexts if c.get("beam_mark") == "B8"),
+        erc_contexts[0] if erc_contexts else {},
+    )
+    if sample_erc_g42:
+        eng_registry = sample_erc_g42.get("engineering_object_registry", {})
+        if not eng_registry:
+            eng_objs = sample_erc_g42.get("engineering_objects", {})
+            if isinstance(eng_objs, dict):
+                eng_registry = eng_objs
+        registry_id = eng_registry.get("registry_id", "?") if isinstance(eng_registry, dict) else "?"
+        object_count = len(sample_erc_g42.get("engineering_objects", []))
+        if isinstance(sample_erc_g42.get("engineering_objects"), dict):
+            object_count = len(
+                sample_erc_g42.get("engineering_objects", {}).get("objects", [])
+            )
+        print(f"\nSample ERC Objects: {registry_id}")
+        print(f"  object_count={object_count}")
+    print(f"G.4.2 Object Validation: {object_validation.get('status', 'SKIP')}")
+    if object_validation.get("checks"):
+        passed = sum(
+            1 for c in object_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(object_validation["checks"])
+        print(f"  Object Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.0")
+    print("Engineering Semantic Role Layer")
+    print("=" * 52)
+    role_validation = result.get("engineering_semantic_role_validation", {})
+    role_registry = result.get("model", {}).get("engineering_semantic_role_registry", {})
+    role_summary = result.get("model", {}).get("engineering_semantic_role_summary", {})
+    print(f"Semantic Roles: {role_registry.get('role_count', 0)}")
+    print(f"Status: {role_summary.get('status', '?')}")
+    print(f"Roles By Type: {role_summary.get('roles_by_type', {})}")
+    sample_b1_roles = [
+        r
+        for r in role_registry.get("roles", [])
+        if r.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_roles:
+        print(f"\nBeam B1 Semantic Roles ({len(sample_b1_roles)}):")
+        for role in sample_b1_roles[:8]:
+            print(
+                f"  {role.get('semantic_role_id')} "
+                f"type={role.get('role_type')} "
+                f"conf={role.get('classification_confidence', 0)}"
+            )
+    print(f"G.5.0 Role Validation: {role_validation.get('status', 'SKIP')}")
+    if role_validation.get("checks"):
+        passed = sum(
+            1 for c in role_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(role_validation["checks"])
+        print(f"  Role Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.0.1")
+    print("Engineering Semantic Relationship Layer")
+    print("=" * 52)
+    rel_validation = result.get("engineering_semantic_relationship_validation", {})
+    rel_registry = result.get("model", {}).get("engineering_semantic_relationship_registry", {})
+    rel_summary = result.get("model", {}).get("engineering_semantic_relationship_summary", {})
+    print(f"Semantic Relationships: {rel_registry.get('relationship_count', 0)}")
+    print(f"Status: {rel_summary.get('status', '?')}")
+    print(f"Relationships By Type: {rel_summary.get('relationships_by_type', {})}")
+    sample_b1_rels = [
+        r
+        for r in rel_registry.get("relationships", [])
+        if r.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_rels:
+        print(f"\nBeam B1 Relationships ({len(sample_b1_rels)}):")
+        for rel in sample_b1_rels[:8]:
+            print(
+                f"  {rel.get('relationship_id')} "
+                f"type={rel.get('relationship_type')} "
+                f"{rel.get('source_role_id')} -> {rel.get('target_role_id')}"
+            )
+    print(f"G.5.0.1 Relationship Validation: {rel_validation.get('status', 'SKIP')}")
+    if rel_validation.get("checks"):
+        passed = sum(
+            1 for c in rel_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(rel_validation["checks"])
+        print(f"  Relationship Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.1")
+    print("Engineering Object Instantiation")
+    print("=" * 52)
+    creation_validation = result.get("engineering_object_creation_validation", {})
+    eng_objects = result.get("model", {}).get("engineering_objects", [])
+    obj_summary = result.get("model", {}).get("engineering_object_summary", {})
+    obj_stats = result.get("model", {}).get("engineering_object_statistics", {})
+    print(f"Engineering Objects: {len(eng_objects)}")
+    print(f"Status: {obj_summary.get('status', '?')}")
+    print(f"Objects By Type: {obj_summary.get('objects_by_type', obj_stats.get('objects_by_type', {}))}")
+    sample_b1_objects = [
+        o
+        for o in eng_objects
+        if o.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_objects:
+        print(f"\nBeam B1 Objects ({len(sample_b1_objects)}):")
+        for obj in sample_b1_objects:
+            print(
+                f"  {obj.get('engineering_object_id')} "
+                f"type={obj.get('object_type')} "
+                f"conf={obj.get('confidence', 0)}"
+            )
+    print(f"G.5.1 Creation Validation: {creation_validation.get('status', 'SKIP')}")
+    if creation_validation.get("checks"):
+        passed = sum(
+            1 for c in creation_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(creation_validation["checks"])
+        print(f"  Creation Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.2")
+    print("Engineering Property Graph")
+    print("=" * 52)
+    property_validation = result.get("property_validation", {})
+    prop_candidates = result.get("model", {}).get("property_candidates", [])
+    prop_summary = result.get("model", {}).get("property_summary", {})
+    print(f"Property Candidates: {len(prop_candidates)}")
+    print(f"Status: {prop_summary.get('status', '?')}")
+    print(f"Candidates By Type: {prop_summary.get('candidates_by_type', {})}")
+    print(f"Avg Candidates/Object: {prop_summary.get('average_candidates_per_object', 0)}")
+    print(f"Graph: {prop_summary.get('graph_nodes', 0)} nodes, {prop_summary.get('graph_edges', 0)} edges")
+    sample_b1_candidates = [
+        c
+        for c in prop_candidates
+        if c.get("owner_context_id") == "ERC::B1"
+    ]
+    if sample_b1_candidates:
+        obj_groups: dict[str, list] = {}
+        for cand in sample_b1_candidates:
+            obj_groups.setdefault(cand.get("engineering_object_id", ""), []).append(cand)
+        print(f"\nBeam B1 Property Sources ({len(sample_b1_candidates)} candidates):")
+        for obj_id, cands in list(obj_groups.items())[:3]:
+            types = sorted({c.get("candidate_type") for c in cands})
+            sources = sorted({c.get("source_entity_id") for c in cands})
+            print(f"  {obj_id}: types={types[:6]} sources={sources[:4]}")
+    print(f"G.5.2 Property Validation: {property_validation.get('status', 'SKIP')}")
+    if property_validation.get("checks"):
+        passed = sum(
+            1 for c in property_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(property_validation["checks"])
+        print(f"  Property Checks: {passed}/{total} PASS")
+    reporting = property_validation.get("reporting_consistency", {})
+    if reporting:
+        print(f"G.5.2.1 Reporting Consistency: {reporting.get('status', 'SKIP')}")
+        if reporting.get("checks"):
+            passed = sum(
+                1 for c in reporting["checks"] if c.get("status") == "PASS"
+            )
+            total = len(reporting["checks"])
+            print(f"  Reporting Checks: {passed}/{total} PASS")
+    summary_validation = prop_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {summary_validation.get('status', '?')} "
+        f"({summary_validation.get('passed', 0)}/{summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.3.1")
+    print("Engineering Property Parser")
+    print("=" * 52)
+    parser_validation = result.get("property_parser_validation", {})
+    eng_properties = result.get("model", {}).get("engineering_properties", [])
+    parser_summary = result.get("model", {}).get("property_parser_summary", {})
+    unparsed = result.get("model", {}).get("unparsed_candidates", [])
+    print(f"Engineering Properties: {len(eng_properties)}")
+    print(f"Status: {parser_summary.get('status', '?')}")
+    print(f"Candidates Processed: {parser_summary.get('candidates_processed', 0)}")
+    print(f"Parsed: {parser_summary.get('parsed_count', 0)}  Unparsed: {parser_summary.get('unparsed_count', 0)}")
+    print(f"Properties By Type: {parser_summary.get('properties_by_type', {})}")
+    print(f"Avg Properties/Candidate: {parser_summary.get('average_properties_per_candidate', 0)}")
+    print(f"Avg Parse Confidence: {parser_summary.get('average_parse_confidence', 0)}")
+    sample_b1_props = [
+        p for p in eng_properties if p.get("owner_context_id") == "ERC::B1"
+    ][:8]
+    if sample_b1_props:
+        print(f"\nBeam B1 Sample Properties ({len(sample_b1_props)} shown):")
+        for prop in sample_b1_props:
+            print(
+                f"  {prop.get('property_id')} "
+                f"type={prop.get('property_type')} "
+                f"status={prop.get('parse_status')} "
+                f"value={prop.get('normalized_value')}"
+            )
+    print(f"G.5.3.1 Parser Validation: {parser_validation.get('status', 'SKIP')}")
+    if parser_validation.get("checks"):
+        passed = sum(
+            1 for c in parser_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(parser_validation["checks"])
+        print(f"  Parser Checks: {passed}/{total} PASS")
+    parser_summary_validation = parser_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {parser_summary_validation.get('status', '?')} "
+        f"({parser_summary_validation.get('passed', 0)}/{parser_summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print(f"Unparsed Candidate Records: {len(unparsed)}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE G.5.3.4")
+    print("Engineering Property Lifecycle & Availability")
+    print("=" * 52)
+    resolver_validation = result.get("property_resolution_validation", {})
+    resolved_properties = result.get("model", {}).get("resolved_engineering_properties", [])
+    resolver_summary = result.get("model", {}).get("property_resolution_summary", {})
+    availability_report = result.get("model", {}).get("property_availability_report", {})
+    lifecycle_reporting = result.get("model", {}).get("property_lifecycle_reporting", {})
+    conflicts = result.get("model", {}).get("property_conflicts", [])
+    print(f"Engineering Properties: {resolver_summary.get('engineering_property_count', 0)}")
+    print(f"Resolved Properties: {len(resolved_properties)}")
+    print(f"Lifecycle Distribution: {resolver_summary.get('lifecycle_distribution', {})}")
+    print(f"Status Distribution: {resolver_summary.get('status_distribution', {})}")
+    print(f"Availability: {resolver_summary.get('availability_distribution', {})}")
+    print(f"Deferred Count: {availability_report.get('deferred_count', 0)}")
+    print(f"Percentage Deferred: {availability_report.get('percentage_deferred', 0)}")
+    print(f"Genuine Unknown Count: {resolver_summary.get('status_distribution', {}).get('UNKNOWN', 0)}")
+    print(f"Engineering Roadmap: {lifecycle_reporting.get('engineering_roadmap', {})}")
+    print(f"Avg Resolution Confidence: {resolver_summary.get('average_resolution_confidence', 0)}")
+    print(f"Avg Parsed Confidence: {resolver_summary.get('average_parsed_resolution_confidence', 0)}")
+    print(f"G.5.3.4 Resolver Validation: {resolver_validation.get('status', 'SKIP')}")
+    if resolver_validation.get("checks"):
+        passed = sum(
+            1 for c in resolver_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(resolver_validation["checks"])
+        print(f"  Resolver Checks: {passed}/{total} PASS")
+    resolver_summary_validation = resolver_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {resolver_summary_validation.get('status', '?')} "
+        f"({resolver_summary_validation.get('passed', 0)}/{resolver_summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE H.1")
+    print("Engineering Specification Builder")
+    print("=" * 52)
+    spec_validation = result.get("specification_validation", {})
+    specifications = result.get("model", {}).get("engineering_specifications", [])
+    spec_summary = result.get("model", {}).get("specification_summary", {})
+    spec_reporting = result.get("model", {}).get("specification_reporting", {})
+    print(f"Engineering Objects: {spec_summary.get('engineering_object_count', 0)}")
+    print(f"Specifications Created: {len(specifications)}")
+    print(f"Specifications by Type: {spec_summary.get('specifications_by_type', {})}")
+    print(f"Specification Status: {spec_summary.get('specification_status', {})}")
+    print(
+        f"Avg Resolved Properties: {spec_summary.get('average_resolved_properties', 0)}"
+    )
+    print(
+        f"Avg Deferred Properties: {spec_summary.get('average_deferred_properties', 0)}"
+    )
+    print(f"Lifecycle Distribution: {spec_summary.get('lifecycle_distribution', {})}")
+    print(f"H.1 Specification Validation: {spec_validation.get('status', 'SKIP')}")
+    if spec_validation.get("checks"):
+        passed = sum(
+            1 for c in spec_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(spec_validation["checks"])
+        print(f"  Specification Checks: {passed}/{total} PASS")
+    spec_summary_validation = spec_summary.get("validation_result", {})
+    print(
+        f"Summary Validation: {spec_summary_validation.get('status', '?')} "
+        f"({spec_summary_validation.get('passed', 0)}/{spec_summary_validation.get('total_checks', 0)} PASS)"
+    )
+    print(f"Top Incomplete: {len(spec_reporting.get('top_incomplete_specifications', []))}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE H.1.1")
+    print("Engineering Reference Integrity")
+    print("=" * 52)
+    ref_validation = result.get("specification_reference_validation", {})
+    ref_contract = result.get("model", {}).get("reference_contract", {})
+    print(f"Reference Contract Version: {ref_contract.get('contract_version', '?')}")
+    print(f"Reference Flow: {' -> '.join(ref_contract.get('reference_flow', []))}")
+    print(f"H.1.1 Reference Validation: {ref_validation.get('status', 'SKIP')}")
+    if ref_validation.get("checks"):
+        passed = sum(
+            1 for c in ref_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(ref_validation["checks"])
+        print(f"  Reference Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE H.2")
+    print("Engineering Geometry Association")
+    print("=" * 52)
+    geom_validation = result.get("geometry_validation", {})
+    associations = result.get("model", {}).get("geometry_associations", [])
+    geom_summary = result.get("model", {}).get("geometry_summary", {})
+    geom_reporting = result.get("model", {}).get("geometry_reporting", {})
+    print(f"Specifications Evaluated: {geom_summary.get('specifications_evaluated', 0)}")
+    print(f"Associations Created: {len(associations)}")
+    print(f"Association Success Rate: {geom_summary.get('association_success_rate', 0)}")
+    print(f"Association Status: {geom_summary.get('association_status', {})}")
+    print(f"Beam Coverage: {geom_summary.get('beam_coverage', {})}")
+    print(f"Missing Beam: {geom_summary.get('missing_beam_count', 0)}")
+    print(f"Missing Geometry: {geom_summary.get('missing_geometry_count', 0)}")
+    print(f"Avg References/Association: {geom_summary.get('average_references_per_association', 0)}")
+    print(f"H.2 Geometry Validation: {geom_validation.get('status', 'SKIP')}")
+    if geom_validation.get("checks"):
+        passed = sum(
+            1 for c in geom_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(geom_validation["checks"])
+        print(f"  Geometry Checks: {passed}/{total} PASS")
+    print(f"Graph Coverage: {geom_reporting.get('coverage', {}).get('knowledge_graph_coverage', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.1")
+    print("Engineering Calculation Context")
+    print("=" * 52)
+    ctx_validation = result.get("calculation_context_validation", {})
+    contexts = result.get("model", {}).get("calculation_contexts", [])
+    ctx_summary = result.get("model", {}).get("calculation_context_summary", {})
+    ctx_reporting = result.get("model", {}).get("calculation_context_reporting", {})
+    print(f"Total Specifications: {ctx_summary.get('total_specifications', 0)}")
+    print(f"Contexts Created: {ctx_summary.get('contexts_created', len(contexts))}")
+    print(f"Contexts Missing: {ctx_summary.get('contexts_missing', 0)}")
+    print(f"Context Status: {ctx_summary.get('context_status', {})}")
+    print(f"Material Coverage: {ctx_summary.get('material_coverage', {})}")
+    print(f"Geometry Coverage: {ctx_summary.get('geometry_coverage', {})}")
+    print(f"Rule Coverage: {ctx_summary.get('rule_coverage', {})}")
+    print(f"Avg Context Completeness: {ctx_summary.get('average_context_completeness', 0)}")
+    print(f"Context Version: {ctx_summary.get('context_version', '?')}")
+    print(f"I.1 Context Validation: {ctx_validation.get('status', 'SKIP')}")
+    if ctx_validation.get("checks"):
+        passed = sum(
+            1 for c in ctx_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(ctx_validation["checks"])
+        print(f"  Context Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {ctx_reporting.get('registry_summary', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.2")
+    print("Engineering Reinforcement Calculation")
+    print("=" * 52)
+    rebar_validation = result.get("reinforcement_validation", {})
+    bars = result.get("model", {}).get("reinforcement_bars", [])
+    groups = result.get("model", {}).get("reinforcement_groups", [])
+    rebar_summary = result.get("model", {}).get("reinforcement_summary", {})
+    rebar_reporting = result.get("model", {}).get("reinforcement_reporting", {})
+    print(f"Specifications Processed: {rebar_summary.get('specifications_processed', 0)}")
+    print(f"Bars Created: {rebar_summary.get('bars_created', len(bars))}")
+    print(f"Groups Created: {rebar_summary.get('groups_created', len(groups))}")
+    print(f"Role Distribution: {rebar_summary.get('role_distribution', {})}")
+    print(f"Diameter Distribution: {rebar_summary.get('diameter_distribution', {})}")
+    print(f"Steel Grade Distribution: {rebar_summary.get('steel_grade_distribution', {})}")
+    print(f"Coverage: {rebar_summary.get('coverage', {})}")
+    print(f"I.2 Reinforcement Validation: {rebar_validation.get('status', 'SKIP')}")
+    if rebar_validation.get("checks"):
+        passed = sum(
+            1 for c in rebar_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(rebar_validation["checks"])
+        print(f"  Reinforcement Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {rebar_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.2.1")
+    print("Calculation Readiness")
+    print("=" * 52)
+    readiness_validation = result.get("reinforcement_readiness_validation", {})
+    readiness_summary = result.get("model", {}).get("reinforcement_readiness_summary", {})
+    readiness_reporting = result.get("model", {}).get("reinforcement_readiness_reporting", {})
+    print(f"READY Count: {readiness_summary.get('ready_count', 0)}")
+    print(f"DEFERRED Count: {readiness_summary.get('deferred_count', 0)}")
+    print(f"BLOCKED Count: {readiness_summary.get('blocked_count', 0)}")
+    print(f"Defer Reasons: {readiness_summary.get('defer_reasons', {})}")
+    print(f"Readiness Coverage: {readiness_summary.get('readiness_coverage', {})}")
+    print(f"I.2.1 Readiness Validation: {readiness_validation.get('status', 'SKIP')}")
+    if readiness_validation.get("checks"):
+        passed = sum(
+            1 for c in readiness_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(readiness_validation["checks"])
+        print(f"  Readiness Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {readiness_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.2.2")
+    print("Engineering Calculation Result Framework")
+    print("=" * 52)
+    result_validation = result.get("calculation_result_validation", {})
+    result_summary = result.get("model", {}).get("calculation_result_summary", {})
+    result_reporting = result.get("model", {}).get("calculation_result_reporting", {})
+    print(f"Results Created: {result_summary.get('result_count', 0)}")
+    print(f"Results By State: {result_summary.get('results_by_state', {})}")
+    print(f"State Summary: {result_summary.get('state_summary', {})}")
+    print(f"Results By Calculation Type: {result_summary.get('results_by_calculation_type', {})}")
+    print(f"Coverage: {result_summary.get('coverage', {})}")
+    print(f"I.2.2 Result Validation: {result_validation.get('status', 'SKIP')}")
+    if result_validation.get("checks"):
+        passed = sum(
+            1 for c in result_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(result_validation["checks"])
+        print(f"  Result Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {result_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.3")
+    print("Development Length Determination Engine")
+    print("=" * 52)
+    dev_validation = result.get("development_length_validation", {})
+    dev_summary = result.get("model", {}).get("development_length_summary", {})
+    dev_reporting = result.get("model", {}).get("development_length_reporting", {})
+    print(f"Determinations: {dev_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {dev_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {dev_summary.get('deferred_results', 0)}")
+    print(f"Development Length Distribution: {dev_summary.get('development_length_distribution', {})}")
+    print(f"Diameter Distribution: {dev_summary.get('diameter_distribution', {})}")
+    print(f"Steel Grade Distribution: {dev_summary.get('steel_grade_distribution', {})}")
+    print(f"Concrete Grade Distribution: {dev_summary.get('concrete_grade_distribution', {})}")
+    print(f"Lookup Table Usage: {dev_summary.get('lookup_table_usage', {})}")
+    print(f"Average Development Length: {dev_summary.get('average_development_length_mm', 0)} mm")
+    print(f"I.3 Development Length Validation: {dev_validation.get('status', 'SKIP')}")
+    if dev_validation.get("checks"):
+        passed = sum(
+            1 for c in dev_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(dev_validation["checks"])
+        print(f"  Development Length Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {dev_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.4")
+    print("Hook Length Determination Engine")
+    print("=" * 52)
+    hook_validation = result.get("hook_length_validation", {})
+    hook_summary = result.get("model", {}).get("hook_length_summary", {})
+    hook_reporting = result.get("model", {}).get("hook_length_reporting", {})
+    print(f"Determinations: {hook_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {hook_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {hook_summary.get('deferred_results', 0)}")
+    print(f"Hook Length Distribution: {hook_summary.get('hook_length_distribution', {})}")
+    print(f"Hook Angle Distribution: {hook_summary.get('hook_angle_distribution', {})}")
+    print(f"Diameter Distribution: {hook_summary.get('diameter_distribution', {})}")
+    print(f"Multiplier Distribution: {hook_summary.get('multiplier_distribution', {})}")
+    print(f"Rule Source Distribution: {hook_summary.get('rule_source_distribution', {})}")
+    print(f"Average Hook Length: {hook_summary.get('average_hook_length_mm', 0)} mm")
+    print(f"I.4 Hook Length Validation: {hook_validation.get('status', 'SKIP')}")
+    if hook_validation.get("checks"):
+        passed = sum(
+            1 for c in hook_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(hook_validation["checks"])
+        print(f"  Hook Length Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {hook_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.4.5")
+    print("Calculation Index Enhancement")
+    print("=" * 52)
+    index_validation = result.get("calculation_index_validation", {})
+    index_summary = result.get("model", {}).get("calculation_index_summary", {})
+    index_reporting = result.get("model", {}).get("calculation_index_reporting", {})
+    print(f"Bars Indexed: {index_summary.get('bar_count', 0)}")
+    print(f"Total Calculation Results: {index_summary.get('total_calculation_results', 0)}")
+    print(f"Indexed Calculations: {index_summary.get('indexed_calculations', 0)}")
+    print(f"Category Counts: {index_summary.get('category_counts', {})}")
+    print(f"Development Length Count: {index_summary.get('development_length_count', 0)}")
+    print(f"Hook Length Count: {index_summary.get('hook_length_count', 0)}")
+    print(f"Average Calculations Per Bar: {index_summary.get('average_calculations_per_bar', 0)}")
+    print(f"I.4.5 Calculation Index Validation: {index_validation.get('status', 'SKIP')}")
+    if index_validation.get("checks"):
+        passed = sum(
+            1 for c in index_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(index_validation["checks"])
+        print(f"  Calculation Index Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {index_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.4.6")
+    print("Engineering Calculation Dependency Graph")
+    print("=" * 52)
+    dependency_validation = result.get("calculation_dependency_validation", {})
+    dependency_summary = result.get("model", {}).get("calculation_dependency_summary", {})
+    dependency_reporting = result.get("model", {}).get("calculation_dependency_reporting", {})
+    print(f"Node Count: {dependency_summary.get('node_count', 0)}")
+    print(f"Ordered Categories: {dependency_summary.get('ordered_categories', [])}")
+    print(f"Metadata Only: {dependency_summary.get('metadata_only', True)}")
+    print(f"I.4.6 Dependency Graph Validation: {dependency_validation.get('status', 'SKIP')}")
+    if dependency_validation.get("checks"):
+        passed = sum(
+            1 for c in dependency_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(dependency_validation["checks"])
+        print(f"  Dependency Graph Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {dependency_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.5")
+    print("Lap Length Determination Engine")
+    print("=" * 52)
+    lap_validation = result.get("lap_length_validation", {})
+    lap_summary = result.get("model", {}).get("lap_length_summary", {})
+    lap_reporting = result.get("model", {}).get("lap_length_reporting", {})
+    print(f"Determinations: {lap_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {lap_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {lap_summary.get('deferred_results', 0)}")
+    print(f"Lap Length Distribution: {lap_summary.get('lap_length_distribution', {})}")
+    print(f"Diameter Distribution: {lap_summary.get('diameter_distribution', {})}")
+    print(f"Lap Factor Distribution: {lap_summary.get('lap_factor_distribution', {})}")
+    print(f"Steel Grade Distribution: {lap_summary.get('steel_grade_distribution', {})}")
+    print(f"Concrete Grade Distribution: {lap_summary.get('concrete_grade_distribution', {})}")
+    print(f"Rule Source Distribution: {lap_summary.get('rule_source_distribution', {})}")
+    print(f"Average Lap Length: {lap_summary.get('average_lap_length_mm', 0)} mm")
+    print(f"I.5 Lap Length Validation: {lap_validation.get('status', 'SKIP')}")
+    if lap_validation.get("checks"):
+        passed = sum(
+            1 for c in lap_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(lap_validation["checks"])
+        print(f"  Lap Length Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {lap_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.5.A")
+    print("Calculation Provenance Framework")
+    print("=" * 52)
+    provenance_validation = result.get("calculation_provenance_validation", {})
+    provenance_summary = result.get("model", {}).get("calculation_provenance_summary", {})
+    print(f"Provenance Records: {provenance_summary.get('provenance_count', 0)}")
+    print(f"I.5.A Provenance Validation: {provenance_validation.get('status', 'SKIP')}")
+    if provenance_validation.get("checks"):
+        passed = sum(
+            1 for c in provenance_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(provenance_validation["checks"])
+        print(f"  Provenance Checks: {passed}/{total} PASS")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.6")
+    print("Cut Length Determination Engine")
+    print("=" * 52)
+    cut_validation = result.get("cut_length_validation", {})
+    cut_summary = result.get("model", {}).get("cut_length_summary", {})
+    cut_reporting = result.get("model", {}).get("cut_length_reporting", {})
+    print(f"Determinations: {cut_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {cut_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {cut_summary.get('deferred_results', 0)}")
+    print(f"Cut Length Distribution: {cut_summary.get('cut_length_distribution', {})}")
+    print(f"Role Distribution: {cut_summary.get('role_distribution', {})}")
+    print(f"Diameter Distribution: {cut_summary.get('diameter_distribution', {})}")
+    print(f"Beam Distribution: {cut_summary.get('beam_distribution', {})}")
+    print(f"Rule Source Distribution: {cut_summary.get('rule_source_distribution', {})}")
+    print(f"Average Cut Length: {cut_summary.get('average_cut_length_mm', 0)} mm")
+    print(f"Min Cut Length: {cut_summary.get('min_cut_length_mm')} mm")
+    print(f"Max Cut Length: {cut_summary.get('max_cut_length_mm')} mm")
+    print(f"I.6 Cut Length Validation: {cut_validation.get('status', 'SKIP')}")
+    if cut_validation.get("checks"):
+        passed = sum(
+            1 for c in cut_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(cut_validation["checks"])
+        print(f"  Cut Length Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {cut_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.7")
+    print("Shape Code Determination Engine")
+    print("=" * 52)
+    shape_validation = result.get("shape_code_validation", {})
+    shape_summary = result.get("model", {}).get("shape_code_summary", {})
+    shape_reporting = result.get("model", {}).get("shape_code_reporting", {})
+    print(f"Determinations: {shape_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {shape_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {shape_summary.get('deferred_results', 0)}")
+    print(f"Shape Code Distribution: {shape_summary.get('shape_code_distribution', {})}")
+    print(f"Shape Family Distribution: {shape_summary.get('shape_family_distribution', {})}")
+    print(f"Role Distribution: {shape_summary.get('role_distribution', {})}")
+    print(f"Diameter Distribution: {shape_summary.get('diameter_distribution', {})}")
+    print(f"Rule Source Distribution: {shape_summary.get('rule_source_distribution', {})}")
+    print(f"Average Cut Length By Shape: {shape_summary.get('average_cut_length_by_shape', {})}")
+    print(f"I.7 Shape Code Validation: {shape_validation.get('status', 'SKIP')}")
+    if shape_validation.get("checks"):
+        passed = sum(
+            1 for c in shape_validation["checks"] if c.get("status") == "PASS"
+        )
+        total = len(shape_validation["checks"])
+        print(f"  Shape Code Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {shape_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.8")
+    print("Bar Identity Determination Engine")
+    print("=" * 52)
+    identity_validation = result.get("bar_identity_validation", {})
+    identity_summary = result.get("model", {}).get("bar_identity_summary", {})
+    identity_reporting = result.get("model", {}).get("bar_identity_reporting", {})
+    print(f"Determinations: {identity_summary.get('determination_count', 0)}")
+    print(f"Results Calculated: {identity_summary.get('results_calculated', 0)}")
+    print(f"Deferred Results: {identity_summary.get('deferred_results', 0)}")
+    print(f"Unique Groups: {identity_summary.get('unique_groups', 0)}")
+    print(f"Unique Engineering Identities: {identity_summary.get('unique_engineering_identities', 0)}")
+    print(f"Duplicate Bars: {identity_summary.get('duplicate_bars', 0)}")
+    print(f"Role Distribution: {identity_summary.get('role_distribution', {})}")
+    print(f"Shape Code Distribution: {identity_summary.get('shape_code_distribution', {})}")
+    print(f"I.8 Bar Identity Validation: {identity_validation.get('status', 'SKIP')}")
+    if identity_validation.get("checks"):
+        passed = sum(1 for c in identity_validation["checks"] if c.get("status") == "PASS")
+        total = len(identity_validation["checks"])
+        print(f"  Bar Identity Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {identity_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.9")
+    print("Engineering Bar Group Aggregation Engine")
+    print("=" * 52)
+    group_validation = result.get("bar_group_validation", {})
+    group_summary = result.get("model", {}).get("bar_group_summary", {})
+    group_reporting = result.get("model", {}).get("bar_group_reporting", {})
+    print(f"Total Bars: {group_summary.get('bar_count', 0)}")
+    print(f"Calculated Identities: {group_summary.get('calculated_identities', 0)}")
+    print(f"Total Groups: {group_summary.get('total_groups', 0)}")
+    print(f"Duplicate Groups: {group_summary.get('duplicate_groups', 0)}")
+    print(f"Largest Group Size: {group_summary.get('largest_group_size', 0)}")
+    print(f"Average Group Size: {group_summary.get('average_group_size', 0)}")
+    print(f"Unique Engineering Signatures: {group_summary.get('unique_engineering_signatures', 0)}")
+    print(f"Role Distribution: {group_summary.get('role_distribution', {})}")
+    print(f"Shape Distribution: {group_summary.get('shape_distribution', {})}")
+    print(f"I.9 Bar Group Validation: {group_validation.get('status', 'SKIP')}")
+    if group_validation.get("checks"):
+        passed = sum(1 for c in group_validation["checks"] if c.get("status") == "PASS")
+        total = len(group_validation["checks"])
+        print(f"  Bar Group Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {group_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.10")
+    print("Bar Bending Schedule Foundation")
+    print("=" * 52)
+    bbs_validation = result.get("bbs_validation", {})
+    bbs_summary = result.get("model", {}).get("bbs_summary", {})
+    bbs_reporting = result.get("model", {}).get("bbs_reporting", {})
+    print(f"Total Bars: {bbs_summary.get('bar_count', 0)}")
+    print(f"Calculated Groups: {bbs_summary.get('calculated_groups', 0)}")
+    print(f"BBS Records: {bbs_summary.get('bbs_records', 0)}")
+    print(f"Unique Fabrication Marks: {bbs_summary.get('unique_fabrication_marks', 0)}")
+    print(f"Fabrication State Distribution: {bbs_summary.get('fabrication_state_distribution', {})}")
+    print(f"Role Distribution: {bbs_summary.get('role_distribution', {})}")
+    print(f"Shape Distribution: {bbs_summary.get('shape_distribution', {})}")
+    print(f"I.10 BBS Validation: {bbs_validation.get('status', 'SKIP')}")
+    if bbs_validation.get("checks"):
+        passed = sum(1 for c in bbs_validation["checks"] if c.get("status") == "PASS")
+        total = len(bbs_validation["checks"])
+        print(f"  BBS Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {bbs_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.11")
+    print("Steel Weight Calculation Engine")
+    print("=" * 52)
+    steel_weight_validation = result.get("steel_weight_validation", {})
+    steel_weight_summary = result.get("model", {}).get("steel_weight_summary", {})
+    steel_weight_reporting = result.get("model", {}).get("steel_weight_reporting", {})
+    print(f"Total Bars: {steel_weight_summary.get('bar_count', 0)}")
+    print(f"Calculated: {steel_weight_summary.get('calculated', 0)}")
+    print(f"Deferred: {steel_weight_summary.get('deferred', 0)}")
+    print(f"Blocked: {steel_weight_summary.get('blocked', 0)}")
+    print(f"Total Steel Weight (kg): {steel_weight_summary.get('total_steel_weight_kg', 0.0)}")
+    print(f"Average Bar Weight (kg): {steel_weight_summary.get('average_bar_weight_kg', 0.0)}")
+    print(f"Weight By Diameter: {steel_weight_summary.get('weight_by_diameter', {})}")
+    print(f"Weight By Role: {steel_weight_summary.get('weight_by_role', {})}")
+    print(f"I.11 Steel Weight Validation: {steel_weight_validation.get('status', 'SKIP')}")
+    if steel_weight_validation.get("checks"):
+        passed = sum(1 for c in steel_weight_validation["checks"] if c.get("status") == "PASS")
+        total = len(steel_weight_validation["checks"])
+        print(f"  Steel Weight Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {steel_weight_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.12.2")
+    print("Beam Quality Indicator Engine (Metadata Refinement)")
+    print("=" * 52)
+    beam_summary_validation = result.get("beam_summary_validation", {})
+    beam_summary_summary = result.get("model", {}).get("beam_summary_summary", {})
+    beam_summary_reporting = result.get("model", {}).get("beam_summary_reporting", {})
+    print(f"Total Beams: {beam_summary_summary.get('total_beams', 0)}")
+    print(f"Total Summaries: {beam_summary_summary.get('total_summaries', 0)}")
+    print(f"Total Bars: {beam_summary_summary.get('total_bars', 0)}")
+    print(f"Engineering Ready Beams: {beam_summary_summary.get('engineering_ready_beams', 0)}")
+    print(f"Partial Beams: {beam_summary_summary.get('partial_beams', 0)}")
+    print(f"Blocked Beams: {beam_summary_summary.get('blocked_beams', 0)}")
+    print(f"Empty Beams: {beam_summary_summary.get('empty_beams', 0)}")
+    print(f"Average Completion %: {beam_summary_summary.get('average_completion_percent', 0.0)}")
+    print(f"Average Confidence: {beam_summary_summary.get('average_confidence_score', 0.0)}")
+    print(f"Quality Ready Beams: {beam_summary_summary.get('quality_ready_beams', 0)}")
+    print(f"Quality Grade Distribution: {beam_summary_summary.get('quality_grade_distribution', {})}")
+    highest = beam_summary_summary.get("highest_confidence_beam") or {}
+    lowest = beam_summary_summary.get("lowest_confidence_beam") or {}
+    print(
+        "Highest Confidence Beam: "
+        f"{highest.get('beam_mark', 'N/A')} "
+        f"({(highest.get('quality') or {}).get('confidence_score', 0.0)})"
+    )
+    print(
+        "Lowest Confidence Beam: "
+        f"{lowest.get('beam_mark', 'N/A')} "
+        f"({(lowest.get('quality') or {}).get('confidence_score', 0.0)})"
+    )
+    print(f"I.12.2 Beam Summary Validation: {beam_summary_validation.get('status', 'SKIP')}")
+    if beam_summary_validation.get("checks"):
+        passed = sum(1 for c in beam_summary_validation["checks"] if c.get("status") == "PASS")
+        total = len(beam_summary_validation["checks"])
+        print(f"  Beam Summary Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {beam_summary_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.13")
+    print("Quantity Engine (Engineering Aggregation)")
+    print("=" * 52)
+    quantity_validation = result.get("quantity_validation", {})
+    quantity_summary = result.get("model", {}).get("quantity_summary", {})
+    quantity_reporting = result.get("model", {}).get("quantity_reporting", {})
+    print(f"Total Quantities: {quantity_summary.get('total_quantities', 0)}")
+    print(f"Ready Quantities: {quantity_summary.get('ready_quantities', 0)}")
+    print(f"Deferred Quantities: {quantity_summary.get('deferred_quantities', 0)}")
+    print(f"Blocked Quantities: {quantity_summary.get('blocked_quantities', 0)}")
+    print(f"Empty Quantities: {quantity_summary.get('empty_quantities', 0)}")
+    print(f"Unknown Quantities: {quantity_summary.get('unknown_quantities', 0)}")
+    print(f"Total Steel Weight (kg): {quantity_summary.get('total_steel_weight_kg', 0.0)}")
+    print(f"Total Cut Length (mm): {quantity_summary.get('total_cut_length_mm', 0)}")
+    print(f"Total Bars: {quantity_summary.get('total_bars', 0)}")
+    print(f"Average Steel Weight (kg): {quantity_summary.get('average_steel_weight_kg', 0.0)}")
+    print(f"I.13 Quantity Validation: {quantity_validation.get('status', 'SKIP')}")
+    if quantity_validation.get("checks"):
+        passed = sum(1 for c in quantity_validation["checks"] if c.get("status") == "PASS")
+        total = len(quantity_validation["checks"])
+        print(f"  Quantity Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {quantity_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.14")
+    print("Material Quantification Engine")
+    print("=" * 52)
+    material_validation = result.get("material_validation", {})
+    material_summary = result.get("model", {}).get("material_summary", {})
+    material_reporting = result.get("model", {}).get("material_reporting", {})
+    print(f"Total Material Records: {material_summary.get('total_material_records', 0)}")
+    print(f"Material Types: {material_summary.get('material_types', [])}")
+    print(f"Steel Grades: {material_summary.get('steel_grades', [])}")
+    print(f"Diameters (mm): {material_summary.get('diameters_mm', [])}")
+    print(f"Ready Materials: {material_summary.get('ready_materials', 0)}")
+    print(f"Deferred Materials: {material_summary.get('deferred_materials', 0)}")
+    print(f"Blocked Materials: {material_summary.get('blocked_materials', 0)}")
+    print(f"Empty Materials: {material_summary.get('empty_materials', 0)}")
+    print(f"Unknown Materials: {material_summary.get('unknown_materials', 0)}")
+    print(f"Total Steel Weight (kg): {material_summary.get('total_steel_weight_kg', 0.0)}")
+    print(f"Total Cut Length (mm): {material_summary.get('total_cut_length_mm', 0)}")
+    print(f"Total Bars: {material_summary.get('total_bars', 0)}")
+    print(f"Average Weight per Material (kg): {material_summary.get('average_weight_per_material_kg', 0.0)}")
+    print(f"I.14 Material Validation: {material_validation.get('status', 'SKIP')}")
+    if material_validation.get("checks"):
+        passed = sum(1 for c in material_validation["checks"] if c.get("status") == "PASS")
+        total = len(material_validation["checks"])
+        print(f"  Material Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {material_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.15")
+    print("Beam Reinforcement Schedule Engine")
+    print("=" * 52)
+    beam_schedule_validation = result.get("beam_schedule_validation", {})
+    beam_schedule_summary = result.get("model", {}).get("beam_schedule_summary", {})
+    beam_schedule_reporting = result.get("model", {}).get("beam_schedule_reporting", {})
+    print(f"Total Schedules: {beam_schedule_summary.get('total_schedules', 0)}")
+    print(f"Total Rows: {beam_schedule_summary.get('total_rows', 0)}")
+    print(f"Rows By Role: {beam_schedule_summary.get('rows_by_role', {})}")
+    print(f"Rows By Diameter: {beam_schedule_summary.get('rows_by_diameter', {})}")
+    print(f"Average Rows Per Beam: {beam_schedule_summary.get('average_rows_per_beam', 0.0)}")
+    print(f"Average Weight Per Beam (kg): {beam_schedule_summary.get('average_weight_per_beam_kg', 0.0)}")
+    print(f"Average Cut Length Per Beam (mm): {beam_schedule_summary.get('average_cut_length_per_beam_mm', 0.0)}")
+    print(f"I.15 Beam Schedule Validation: {beam_schedule_validation.get('status', 'SKIP')}")
+    if beam_schedule_validation.get("checks"):
+        passed = sum(1 for c in beam_schedule_validation["checks"] if c.get("status") == "PASS")
+        total = len(beam_schedule_validation["checks"])
+        print(f"  Beam Schedule Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {beam_schedule_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.16")
+    print("Engineering Report Model Engine")
+    print("=" * 52)
+    engineering_report_validation = result.get("engineering_report_validation", {})
+    engineering_report_summary = result.get("model", {}).get("engineering_report_summary", {})
+    engineering_report_reporting = result.get("model", {}).get("engineering_report_reporting", {})
+    print(f"Total Reports: {engineering_report_summary.get('total_reports', 0)}")
+    print(f"Total Rows: {engineering_report_summary.get('total_rows', 0)}")
+    print(f"Average Rows Per Report: {engineering_report_summary.get('average_rows_per_report', 0.0)}")
+    print(f"I.16 Engineering Report Validation: {engineering_report_validation.get('status', 'SKIP')}")
+    if engineering_report_validation.get("checks"):
+        passed = sum(1 for c in engineering_report_validation["checks"] if c.get("status") == "PASS")
+        total = len(engineering_report_validation["checks"])
+        print(f"  Engineering Report Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {engineering_report_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    print("\n" + "=" * 52)
+    print("PHASE I.17")
+    print("Template-Based Excel Export Engine")
+    print("=" * 52)
+    excel_export_validation = result.get("excel_export_validation", {})
+    excel_export_summary = result.get("model", {}).get("excel_export_summary", {})
+    excel_export_reporting = result.get("model", {}).get("excel_export_reporting", {})
+    print(f"Workbook Count: {excel_export_summary.get('workbook_count', 0)}")
+    print(f"Rows Written: {excel_export_summary.get('rows_written', 0)}")
+    print(f"Cells Written: {excel_export_summary.get('cells_written', 0)}")
+    print(f"Template Used: {excel_export_summary.get('template_used', False)}")
+    print(f"I.17 Excel Export Validation: {excel_export_validation.get('status', 'SKIP')}")
+    if excel_export_validation.get("checks"):
+        passed = sum(1 for c in excel_export_validation["checks"] if c.get("status") == "PASS")
+        total = len(excel_export_validation["checks"])
+        print(f"  Excel Export Checks: {passed}/{total} PASS")
+    print(f"Registry Statistics: {excel_export_reporting.get('registry_statistics', {})}")
+    print("=" * 52 + "\n")
+
+    failed = any(
+        result[k]["status"] == "FAIL"
+        for k in (
+            "f1_validation",
+            "dimension_validation",
+            "support_validation",
+            "section_validation",
+            "length_validation",
+            "graph_validation",
+            "context_validation",
+            "workspace_validation",
+        )
+    )
+    if reinforcement_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_identity_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_set_validation.get("status") == "FAIL":
+        failed = True
+    if drawing_set_state_validation.get("status") == "FAIL":
+        failed = True
+    if reinforcement_drawing_validation.get("status") == "FAIL":
+        failed = True
+    if result.get("detail_context_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("detail_identity_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_candidate_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("match_decision_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("match_decision_quality_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_match_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_reinforcement_context_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_asset_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_reinforcement_lifecycle_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_object_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_semantic_role_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_semantic_relationship_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_object_creation_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_parser_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("property_resolution_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("specification_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("specification_reference_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("geometry_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("calculation_context_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("reinforcement_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("reinforcement_readiness_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("calculation_result_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("development_length_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("hook_length_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("calculation_index_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("calculation_dependency_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("lap_length_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("calculation_provenance_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("cut_length_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("shape_code_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("bar_identity_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("bar_group_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("bbs_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("steel_weight_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_summary_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("quantity_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("material_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("beam_schedule_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("engineering_report_validation", {}).get("status") == "FAIL":
+        failed = True
+    if result.get("excel_export_validation", {}).get("status") == "FAIL":
+        failed = True
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(run())

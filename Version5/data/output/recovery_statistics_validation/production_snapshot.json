@@ -1,0 +1,72 @@
+{
+  "inventory_count": 67,
+  "total_production_bars": 46,
+  "native_bars": 33,
+  "j1_recovered_bars": 7,
+  "j2_recovered_bars": 6,
+  "total_recovered_bars": 13,
+  "j1_registry_count": 7,
+  "j2_registry_count": 6,
+  "engineering_object_count": 73,
+  "pre_j1_bars": 33,
+  "post_j1_bars": 40,
+  "post_all_recovery_bars": 46,
+  "normalization_coverage_percent": 68.66,
+  "pre_j1_coverage_percent": 49.25,
+  "post_j1_coverage_percent": 59.7,
+  "j1_delta_bars": 7,
+  "j2_delta_bars": 6,
+  "j1_discovery_ids": [
+    "CALL::000007",
+    "CALL::000039",
+    "CALL::000041",
+    "CALL::000043",
+    "CALL::000045",
+    "CALL::000046",
+    "CALL::000061"
+  ],
+  "j2_discovery_ids": [
+    "CALL::000010",
+    "CALL::000014",
+    "CALL::000019",
+    "CALL::000029",
+    "CALL::000037",
+    "CALL::000062"
+  ],
+  "bar_discovery_ids": [
+    "CALL::000007",
+    "CALL::000010",
+    "CALL::000014",
+    "CALL::000019",
+    "CALL::000029",
+    "CALL::000037",
+    "CALL::000039",
+    "CALL::000041",
+    "CALL::000043",
+    "CALL::000045",
+    "CALL::000046",
+    "CALL::000061",
+    "CALL::000062"
+  ],
+  "steel_weight_results_count": 46,
+  "bbs_results_count": 20,
+  "beam_schedule_results_count": 18,
+  "authoritative_sources": {
+    "j1_recovered_count": "recovery_registry.json",
+    "j2_recovered_count": "expansion_registry.json",
+    "total_production_bars": "reinforcement_objects.json",
+    "native_bars": "reinforcement_objects.json (no recovery_source)",
+    "normalization_coverage_percent": "reinforcement_objects.json + reinforcement_inventory.json",
+    "pre_j1_coverage_percent": "reinforcement_objects.json (native) + inventory",
+    "post_j1_coverage_percent": "reinforcement_objects.json (native+j1) + inventory",
+    "steel_weight": "steel_weight_results.json",
+    "bbs_rows": "beam_schedule_results.json",
+    "excel_rows": "excel_export_registry.json"
+  },
+  "internal_consistency": {
+    "native_plus_j1_plus_j2_equals_total": true,
+    "j1_registry_matches_production": true,
+    "j2_registry_matches_production": true,
+    "registry_discovery_subset_of_bars": true
+  }
+}

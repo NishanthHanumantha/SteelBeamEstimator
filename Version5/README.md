@@ -1,29 +1,23 @@
 # Steel Beam Estimator — Version 5
 
-Active development branch continuing from **Version 4** through Phase G.5.3.4 (Property Lifecycle & Availability).
+**FROZEN** at Phase J.2.1 (5.28.1). Do not modify.
 
-**Version 4 is frozen** at Phase G.5.3.4. All new model development happens here.
+Active development continues in **Version6/**.
 
-## What is included
+## Historical status
 
-Copied from Version4 (runtime essentials only):
+Version 5 continued from **Version 4** through Phase J.2.1 — recovery integration, expansion, and statistics validation.
 
-| Area | Purpose |
-|------|---------|
-| `src/` | Full pipeline through Phase G.5.3.4 |
-| `config/` | Framing, general notes, estimator rules |
-| `Run_PY/` | Phase E and Phase F+G runners |
-| `data/framing/` | Framing plan + reinforcement DXF inputs |
-| `data/general_notes/` | General Notes DXF input |
-| `data/output/phase_e/` | Phase E engineering knowledge baseline (JSON) |
+| Phase | Version | Package |
+|-------|---------|---------|
+| J.1 | 5.26.0 | `engineering_recovery` |
+| J.1.1 | 5.26.1 | `engineering_recovery_validation` |
+| J.1.2 | 5.26.2 | `engineering_quantity_validation` |
+| J.1.3 | 5.27.0 | `engineering_calculation_integration` |
+| J.2 | 5.28.0 | `engineering_recovery_expansion` |
+| J.2.1 | 5.28.1 | `recovery_statistics_validation` |
 
-**Not copied** (regenerate locally):
-
-- `data/output/phase_f/` — framing geometry outputs
-- `data/output/phase_g/` — reinforcement / property pipeline outputs
-- Debug DXF files, temp run logs, `__pycache__`
-
-## Setup
+## Setup (archival reference only)
 
 ```powershell
 pip install -r requirements.txt
@@ -31,37 +25,9 @@ cd Version5
 $env:PYTHONPATH="."
 ```
 
-## Run Phase E (refresh engineering knowledge)
+## Run core pipeline
 
 ```powershell
 python Run_PY/run_phase_e_general_notes.py
-```
-
-## Run Phase F + G pipeline
-
-```powershell
 python Run_PY/run_phase_f_framing.py
-```
-
-Regenerates outputs under `data/output/phase_f/` and `data/output/phase_g/`.
-
-## Current pipeline status (inherited from V4)
-
-- Phase F — Framing plan intelligence
-- Phase G.1–G.3 — Reinforcement loading through beam matching
-- Phase G.4–G.5.0.1 — Engineering objects, semantic roles/relationships
-- Phase G.5.1–G.5.3.4 — Property graph, parser, resolver, confidence, lifecycle
-
-## Folder structure
-
-```
-Version5/
-├── Run_PY/
-├── config/
-├── data/
-│   ├── framing/
-│   ├── general_notes/
-│   └── output/
-│       └── phase_e/     # Baseline only; phase_f/phase_g generated on run
-└── src/
 ```

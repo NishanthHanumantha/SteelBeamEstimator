@@ -1,0 +1,21 @@
+{
+  "root_cause_count": 2,
+  "root_causes": [
+    {
+      "issue": "Coverage semantic ambiguity",
+      "source_artifact": "expansion_statistics.json",
+      "incorrect_consumer": "Console interpretation",
+      "root_cause": "WRONG_BASELINE",
+      "evidence": "recovered=6 is cumulative registry count, coverage_before/after bars=46\u219246 are production totals; adding recovered to coverage_before is invalid",
+      "resolution": "Use authoritative total_production_bars and normalization_coverage_percent from production_snapshot.json"
+    },
+    {
+      "issue": "Scoped coverage metric divergence",
+      "source_artifact": "recovery_summary.json",
+      "incorrect_consumer": "Cross-phase comparison without scope",
+      "root_cause": "INCORRECT_AGGREGATION",
+      "evidence": "J.1 scoped coverage after=59.7% differs from total normalization coverage=68.66% because J.1 reports native+J.1 only",
+      "resolution": "Label J.1 coverage as post_j1_coverage_percent; use total normalization coverage for all-recovery state"
+    }
+  ]
+}
