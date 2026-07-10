@@ -67,6 +67,50 @@ python Run_PY/run_engineering_intent.py
 
 Outputs under `data/output/engineering_intent/`.
 
+## Run Engineering Intent Resolution (Phase K.1.1 — MODEL_VERSION 6.0.1)
+
+After K.1 intent reconstruction completes:
+
+```powershell
+python Run_PY/run_engineering_intent_resolution.py
+```
+
+Resolves overlapping intents into deterministic Engineering Decisions.
+Priority table: `config/engineering_intent_priority.yaml`
+Outputs under `data/output/engineering_intent_resolution/`.
+
+## Run Engineering Decision Validation (Phase K.2.1 — MODEL_VERSION 6.2.0)
+
+After K.1.1 and before K.2 execution:
+
+```powershell
+python Run_PY/run_phase_k2_1_engineering_decision_validation.py
+```
+
+Validates every Engineering Decision (read-only). Only VALID decisions may enter K.2.
+
+- Source: `src/PhaseK.2.1 - engineering_decision_validation/`
+- Config: `config/engineering_decision_validation.yaml`
+- Outputs: `data/output/PhaseK.2.1 - engineering_decision_validation/`
+
+When `enable: false`, Phase K.2 behaves exactly as MODEL_VERSION 6.1.0.
+
+## Run Engineering Decision Execution (Phase K.2 — MODEL_VERSION 6.1.0)
+
+After K.2.1 validation (or with validation `enable: false` for 6.1.0 passthrough):
+
+```powershell
+python Run_PY/run_phase_k2_engineering_decision_execution.py
+```
+
+Only VALIDATED decisions from `validated_decision_registry.json` may execute when K.2.1 is enabled.
+Engineering Decisions become the authoritative execution objects for the production pipeline.
+Existing calculation/steel/BBS/Excel engines are reused — formulas are not modified.
+
+- Source: `src/PhaseK.2 - engineering_decision_execution/`
+- Config: `config/engineering_decision_execution.yaml`
+- Outputs: `data/output/PhaseK.2 - engineering_decision_execution/`
+
 ## LLM Provider (Phase LLM.1 — MODEL_VERSION 6.1.0)
 
 Anthropic Claude is the only supported LLM. All requests go through `src/llm/`.
@@ -194,6 +238,9 @@ Outputs are written only to:
 - Phase I — Calculations through I.17 Excel export
 - Phase J — Recovery (J.1), expansion (J.2), integration (J.1.3), statistics validation (J.2.1)
 - Phase K.1 (6.0.0) — Engineering Intent Reconstruction
+- **Phase K.1.1 (6.0.1)** — Engineering Intent Resolution
+- **Phase K.2 (6.1.0)** — Engineering Decision Execution
+- **Phase K.2.1 (6.2.0)** — Engineering Decision Validation
 - Phase LLM.1 (6.1.0) — Anthropic Claude Standardization
 - **Phase LLM.1.1 (6.1.1)** — Prompt Management & Template Engine
 - **Phase LLM.2 (6.2.0)** — Structured JSON Response Engine
