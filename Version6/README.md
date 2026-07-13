@@ -290,7 +290,8 @@ modified. No engineering rules implemented. Observations only.
 **Results:** 53 bars extracted, 13 beams, 100% completeness. Validation: 21/21 PASS.
 
 **Note:** After Phase L.2.2 runs, L.2.1 is re-triggered and processes all 18 beams
-(68 features, 100% completeness, all B1–B18 covered).
+(68 features, 100% completeness, all B1–B18 covered). Phase L.3 then consumes these
+features to produce deterministic structural engineering patterns for each beam.
 
 ## Run Engineering Geometry Recovery (Phase L.2.2 — MODEL_VERSION 6.4.2)
 
@@ -345,6 +346,82 @@ Geometry recovery only runs when geometry is missing.
 - Geometry Objects: 18 (13 ORIGINAL + 5 RECOVERED) | Engineering Features: 18
 - Recovered: B14, B15, B16, B17, B18 — all RECOVERED (0 FAILED)
 - Coverage: 100% | Pipeline Validation: PASS
+
+## Run Beam Reinforcement Pattern Recognition (Phase L.3 — MODEL_VERSION 6.5.0)
+
+```powershell
+cd Version6/Run_PY
+python run_phase_l3_beam_pattern_recognition.py
+```
+
+**Prerequisites:** Phase L.2, Phase L.2.2, Phase L.2.1 must be run first.
+
+Converts engineering features (L.2.1) into deterministic structural engineering patterns.
+Acts as the semantic intelligence layer between feature extraction and future AI reasoning.
+NO LLM. NO probabilistic heuristics. Deterministic engineering rules only.
+
+**What this phase does:**
+
+1. **SpanPatternDetector** — classifies each beam as SIMPLY_SUPPORTED,
+   CONTINUOUS_END_SPAN, CONTINUOUS_INTERIOR_SPAN, DEEP_BEAM, TRANSFER_BEAM, or CANTILEVER.
+   Uses support zones from L.2 + depth/span ratios.
+
+2. **ContinuityDetector** — identifies SINGLE_BEAM, MULTI_BEAM_CONTINUOUS,
+   CONTINUOUS_CHAIN (B8–B10 3-span group), or DISCONTINUOUS.
+
+3. **ReinforcementPatternDetector** — compares top vs bottom steel area (proportional):
+   TOP_REINFORCEMENT_DOMINANT, BOTTOM_REINFORCEMENT_DOMINANT, BALANCED_REINFORCEMENT,
+   TOP_HEAVY, BOTTOM_HEAVY. Produces top_bottom_balance and dominant_reinforcement.
+
+4. **SupportPatternDetector** — identifies BOTH_SIDE_REINFORCEMENT,
+   ONE_SIDE_REINFORCEMENT, INTERMEDIATE_SUPPORT_REINFORCEMENT, SUPPORT_CONGESTION,
+   LONG_SUPPORT_ZONE, SHORT_SUPPORT_ZONE.
+
+5. **StructuralBehaviorDetector** — infers expected behaviour from reinforcement
+   distribution: SAGGING_BEAM, HOGGING_BEAM, SAGGING_AND_HOGGING,
+   SUPPORT_MOMENT_DOMINANT, MIDSPAN_MOMENT_DOMINANT, SYMMETRIC, ASYMMETRIC.
+
+6. **PatternConfidence** — 5-component confidence score (feature completeness,
+   geometry quality, bar classification, support data, continuity data).
+
+7. **EngineeringPatternBuilder** — combines all detectors into a single
+   `EngineeringPattern` per beam with full traceability.
+
+8. **Validator** — 4 rules: Pattern Count == Feature Beams == Geometry Count
+   == Engineering Objects; no duplicate beam IDs.
+
+**Non-negotiable constraints:** No modifications to Phase L.2, L.2.1, or L.2.2.
+Read-only inputs. Deterministic rules only.
+
+**Outputs (6 artefacts):**
+`engineering_patterns.json`, `engineering_pattern_registry.json`,
+`pattern_summary.json`, `beam_pattern_matrix.json`,
+`pattern_validation_report.json`, `pattern_statistics.json`
+
+**Results (18 beams):**
+
+| Category | Count |
+|----------|-------|
+| Simply Supported | 10 |
+| Deep Beam | 5 |
+| Continuous End Span (B8, B10) | 2 |
+| Continuous Interior Span (B9) | 1 |
+| Top Reinforcement Dominant | 6 |
+| Bottom Reinforcement Dominant | 4 |
+| Balanced Reinforcement | 3 |
+| Minimal (recovered beams) | 5 |
+| Confidence HIGH | 11 |
+| Confidence MEDIUM | 7 |
+| Mean Confidence | 0.84 |
+
+**Sample — Beam B8:**
+- Span Pattern: CONTINUOUS_END_SPAN
+- Continuity: CONTINUOUS_CHAIN
+- Reinforcement Pattern: BALANCED_REINFORCEMENT
+- Support Pattern: INTERMEDIATE_SUPPORT_REINFORCEMENT
+- Structural Behavior: SAGGING_AND_HOGGING
+- Midspan Reinforcement: HEAVY | Top/Bottom Balance: BALANCED
+- Dominant Reinforcement: STIRRUPS | Confidence: 0.948 (HIGH)
 
 ## Run Engineering Reinforcement Interpretation (Phase L.2 — MODEL_VERSION 6.4.0)
 
