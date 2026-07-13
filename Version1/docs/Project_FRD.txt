@@ -1,11 +1,12 @@
 # Steel Beam Estimation Automation
 
 Objective:
-Read DXF files and estimate beam steel quantity in KG and MT.
+Read DXF files and estimate beam steel quantity in KG and MT using Cursor Pro.
 
-Inputs:
+Inputs:(1 set of drawing - 3 drawings Below)
 1. General Notes DXF
-2. Beam Framing + Reinforcement DXF
+2. Beam Framing Plan/Drawing
+3. Beam Reinforcement Plan/Drawing
 
 Outputs:
 1. Beam-wise Steel Quantity
@@ -13,10 +14,6 @@ Outputs:
 3. Total Steel KG
 4. Total Steel MT
 
-Business Rules:
-- Extract Development Length from General Notes
-- Extract Cover from General Notes
-- Extract Beam Geometry from Framing Plan
-- Extract Reinforcement from GFC Drawings
-- Calculate Cutting Length
-- Calculate Steel Weight
+Current Status:
+Have built the steel estimation model in Cursor but its not accurate yet. Main issue is reading the reinforcement plan and identifying the different types of Bars in the beams. 
+
