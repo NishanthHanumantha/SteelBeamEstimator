@@ -249,6 +249,45 @@ Outputs are written only to:
 - **Phase L.1 (6.3.0)** — Accuracy Sprint 1 — Estimator Gap Closure
 - **Phase L.2 (6.4.0)** — Engineering Rule Audit Engine
 - **Phase L.2 (6.4.0)** — Engineering Reinforcement Interpretation Engine
+- **Phase L.2.1 (6.4.1)** — Engineering Feature Extraction Engine
+
+## Run Engineering Feature Extraction (Phase L.2.1 — MODEL_VERSION 6.4.1)
+
+```powershell
+cd Version6
+python Run_PY/run_phase_l2_1_engineering_feature_extraction.py
+```
+
+Deterministic engineering feature extraction layer that separates OBSERVATION from
+INTERPRETATION. Produces an `EngineeringFeatureModel` for every reinforcement bar
+containing pure engineering observations — no semantic role assignment.
+
+**Architecture introduced by L.2.1:**
+```
+Drawing → Parser → Engineering Geometry
+  → Engineering Feature Extraction (L.2.1)  ← this phase
+  → Engineering Reinforcement Interpretation (L.2)
+  → BeamReinforcementModel → Rules → Calculation → Steel → BBS → Excel
+```
+
+**Why this matters:** A structural engineer never classifies reinforcement immediately.
+They first observe: "uppermost bar, continuous, crosses both supports, 97% span coverage."
+These observations (features) then inform the classification (TOP_MAIN).
+
+**Feature groups extracted per bar (16 fields each):**
+- **Geometry**: start/end/midpoint, length, bbox, angle, is_closed, crosses_beam_axis
+- **Position**: vertical_rank, depth_ratio, distances from top/bottom/left/right, position_zone
+- **Continuity**: is_continuous, is_multi_span, crosses_support, beam_sequence, termination_points
+- **Support**: left/right/intermediate overlap, support_zone_ratio, region_type
+- **Extent**: full_span/left_only/right_only/both_supports, coverage_ratio, extent_type
+- **Orientation**: LONGITUDINAL/TRANSVERSE, angle, parallel/perpendicular
+- **Annotation**: callout, diameter, quantity, spacing, leader_count, priority
+- **Topology**: connected_objects, adjacent_beams, support_connections, region_membership
+
+**Non-negotiable constraints:** No semantic roles assigned. No BeamReinforcementModel
+modified. No engineering rules implemented. Observations only.
+
+**Results:** 53 bars extracted, 13 beams, 100% completeness. Validation: 21/21 PASS.
 
 ## Run Engineering Reinforcement Interpretation (Phase L.2 — MODEL_VERSION 6.4.0)
 
