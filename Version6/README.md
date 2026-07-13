@@ -246,6 +246,42 @@ Outputs are written only to:
 - **Phase LLM.2 (6.2.0)** — Structured JSON Response Engine
 - **Phase LLM.3 (6.3.0)** — Engineering Knowledge & Context Builder
 - **Phase AI.1 (6.4.0)** — Engineering Reasoning Engine
+- **Phase L.1 (6.3.0)** — Accuracy Sprint 1 — Estimator Gap Closure
+- **Phase L.2 (6.4.0)** — Engineering Rule Audit Engine
+
+## Run Engineering Rule Audit (Phase L.2 — MODEL_VERSION 6.4.0)
+
+```powershell
+cd Version6/Run_PY
+python run_phase_l2_engineering_rule_audit.py
+```
+
+Deterministic engineering rule audit that traces every reinforcement role
+(Top Main, Bottom Main, Top Extra, Bottom Extra, Stirrups, Side Face,
+Development Length, Hook, Lap Splice, Curtailment, Bent Bar, Cranked Bar, Chair Bar)
+through the complete Version6 engineering pipeline.
+
+**What this phase does (read-only diagnostic):**
+- Discovers every engineering rule implemented in Version6 source
+- Traces each role through all 17+ pipeline stages
+- Classifies where execution stops (GEOMETRY_STOP, QUANTITY_STOP, EXPORT_STOP, etc.)
+- Assigns implementation status to each capability
+- Builds dependency graph for each role
+- Generates the authoritative Implementation Matrix for Phase L.3+
+
+**Key findings from audit:**
+
+| Role | Status | Break Stage |
+|------|--------|-------------|
+| Top Main | PARTIALLY_EXECUTED | BEAM_SCHEDULE (all DEFERRED in V6) |
+| Bottom Main | IMPLEMENTED_NOT_EXECUTED | ENGINEERING_OBJECT_CREATION |
+| Top Extra | PARTIALLY_IMPLEMENTED | ENGINEERING_OBJECT_CREATION |
+| Stirrup | EXECUTED_NOT_EXPORTED | STEEL_WEIGHT (all DEFERRED) |
+| Side Face | EXECUTED_NOT_EXPORTED | BEAM_SCHEDULE (excluded from schedule) |
+| Chair Bar | NOT_IMPLEMENTED | DRAWING_DETECTION |
+
+Outputs saved to:
+`Version6/data/output/PhaseL.2 - engineering_rule_audit/`
 
 ## Folder structure
 
