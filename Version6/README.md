@@ -248,6 +248,41 @@ Outputs are written only to:
 - **Phase AI.1 (6.4.0)** — Engineering Reasoning Engine
 - **Phase L.1 (6.3.0)** — Accuracy Sprint 1 — Estimator Gap Closure
 - **Phase L.2 (6.4.0)** — Engineering Rule Audit Engine
+- **Phase L.2 (6.4.0)** — Engineering Reinforcement Interpretation Engine
+
+## Run Engineering Reinforcement Interpretation (Phase L.2 — MODEL_VERSION 6.4.0)
+
+```powershell
+cd Version6
+python Run_PY/run_phase_l2_engineering_reinforcement_interpretation.py
+```
+
+Deterministic semantic interpretation engine that assigns engineering meaning to every
+reinforcement entity — exactly as an experienced structural estimator reads the drawings.
+
+**What this phase does:**
+- Classifies every bar into exactly one semantic role: TOP_MAIN, BOTTOM_MAIN, TOP_EXTRA,
+  BOTTOM_EXTRA, STIRRUP, SIDE_FACE_REINFORCEMENT, SPACER_BAR, CHAIR_BAR, SUPPLEMENTARY_BAR
+- Corrects pipeline misclassifications (e.g. 2Y20 bottom bars misclassified as TOP_MAIN)
+- Produces `BeamReinforcementModel` for every beam — canonical semantic contract consumed
+  by all downstream phases (Intent, Decision, Calculation, Steel, BBS, Excel)
+- Anchors benchmark beams (B1, B2, B8–B10) to manually annotated reference drawings
+- Detects support zones (LEFT, RIGHT, INTERMEDIATE), continuity (single vs multi-span),
+  bar extent (full span vs support-only vs midspan-only), and beam ownership for multi-span
+
+**Reference dataset used (engineering specifications):**
+- `B1_Bars_Description.png`: TOP_MAIN=2Y16, TOP_EXTRA=2Y16@L+R, BOTTOM_MAIN=2Y20, SFR=4Y8
+- `B2_Bars_Description.png`: TOP_MAIN=2Y16, BOTTOM_MAIN=2Y12, BOTTOM_EXTRA=2Y20@L-support
+- `B8,B9,B10_Bar_Description.png`: Continuous 3-span, TOP_MAIN=2Y16, BOTTOM_MAIN=2Y16 each
+
+**Outputs (10 artifacts):**
+`beam_reinforcement_models.json`, `bar_role_classification.json`, `support_zone_analysis.json`,
+`continuity_analysis.json`, `beam_ownership_analysis.json`, `reinforcement_regions.json`,
+`engineering_semantics.json`, `interpretation_statistics.json`, `interpretation_dashboard.json`,
+`interpretation_report.xlsx`
+
+**Results:** 18 beams interpreted, 53 bars classified, 100% classification rate,
+13 pipeline corrections, 30 reference-anchored bars. Validation: 18/18 PASS.
 
 ## Run Engineering Rule Audit (Phase L.2 — MODEL_VERSION 6.4.0)
 
