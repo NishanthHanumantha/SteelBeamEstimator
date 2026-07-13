@@ -289,6 +289,63 @@ modified. No engineering rules implemented. Observations only.
 
 **Results:** 53 bars extracted, 13 beams, 100% completeness. Validation: 21/21 PASS.
 
+**Note:** After Phase L.2.2 runs, L.2.1 is re-triggered and processes all 18 beams
+(68 features, 100% completeness, all B1–B18 covered).
+
+## Run Engineering Geometry Recovery (Phase L.2.2 — MODEL_VERSION 6.4.2)
+
+```powershell
+cd Version6/Run_PY
+python run_phase_l2_2_geometry_recovery.py
+```
+
+**CRITICAL pre-requisite for Phase L.2.1 full coverage.**
+
+Investigates the pipeline consistency gap where B14–B18 exist in drawing,
+engineering objects, and specifications but lack bars in the Engineering Feature Model.
+
+**What this phase does:**
+
+1. **Geometry Recovery Engine** — detects gap beams (in L.2 models with 0 bars),
+   reconstructs `EngineeringGeometry` objects from L.2 geometry blocks, V5 beam
+   schedule, and V5 engineering objects. Marks each as `ORIGINAL` or `RECOVERED`.
+
+2. **Geometry Registry** — canonical `geometry_registry.json` with geometry_id,
+   source, confidence, bounding_box, beam_axis, start_node, end_node, support_locations
+   for every beam.
+
+3. **Beam Coverage Validator** — collects beam IDs from Drawing Parser, Engineering
+   Objects, Specifications, Geometry Registry, and Engineering Features. Produces the
+   full Coverage Matrix (PASS/FAIL per beam × stage).
+
+4. **Pipeline Consistency Validator** — 4 rules:
+   - Feature Beam Count == Geometry Beam Count
+   - Geometry Beam Count == Specification Beam Count
+   - Specification Beam Count == Engineering Object Count
+   - Engineering Object Count == Detected Beam Count
+   Any violation raises `PIPELINE_COVERAGE_ERROR` (fail-fast).
+
+5. **L.2.1 Re-trigger** — after recovery injects placeholder bars for B14–B18 into
+   an extended beam model, Phase L.2.1 is re-run, producing features for all 18 beams.
+
+6. **Geometry Traceability** — every beam carries `geometry_id`, `geometry_source`
+   (ORIGINAL/RECOVERED), `creation_stage`, and `beam_validation_status`.
+
+**Non-negotiable constraints:** No engineering calculations modified. No BBS generation
+changed. No cut length or steel weight engine touched. Integrate before L.2.1 only.
+Geometry recovery only runs when geometry is missing.
+
+**Outputs (6 artifacts):**
+`geometry_registry.json`, `geometry_recovery_report.json`, `beam_coverage_matrix.json`,
+`pipeline_validation_report.json`, `geometry_traceability_map.json`,
+`extended_beam_reinforcement_models.json`
+
+**Results:**
+- Detected Beams: 18 | Engineering Objects: 18 | Specifications: 18
+- Geometry Objects: 18 (13 ORIGINAL + 5 RECOVERED) | Engineering Features: 18
+- Recovered: B14, B15, B16, B17, B18 — all RECOVERED (0 FAILED)
+- Coverage: 100% | Pipeline Validation: PASS
+
 ## Run Engineering Reinforcement Interpretation (Phase L.2 — MODEL_VERSION 6.4.0)
 
 ```powershell
