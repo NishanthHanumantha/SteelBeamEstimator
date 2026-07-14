@@ -68,8 +68,13 @@ class PhaseVB1Orchestrator:
         "RULE_7": "Workbook validation passes",
     }
 
-    def __init__(self, output_dir: Optional[pathlib.Path] = None) -> None:
+    def __init__(
+        self,
+        output_dir: Optional[pathlib.Path] = None,
+        l2_path: Optional[pathlib.Path] = None,
+    ) -> None:
         self.output_dir = output_dir or _OUTPUT_DIR
+        self.l2_path    = l2_path or _L2_MODEL_PATH
         self.start_time = time.time()
         self.result = ProductionOutputResult()
         self._stats_collector = ProductionStatisticsCollector()
@@ -181,11 +186,12 @@ class PhaseVB1Orchestrator:
         return report
 
     def _step_steel_weight(self):
-        if not _L2_MODEL_PATH.exists():
+        l2_path = self.l2_path
+        if not l2_path.exists():
             raise PRODUCTION_OUTPUT_ERROR(
-                f"L.2 model file not found: {_L2_MODEL_PATH}"
+                f"L.2 model file not found: {l2_path}"
             )
-        engine = SteelWeightCompletion(_L2_MODEL_PATH)
+        engine = SteelWeightCompletion(l2_path)
         summary = engine.compute()
         if summary.total_weight_kg <= 0:
             raise PRODUCTION_OUTPUT_ERROR(
