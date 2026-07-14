@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SampleResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["result", "confidence"],
+  "properties": {
+    "result": {
+      "type": "string"
+    },
+    "template_name": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    }
+  }
+}

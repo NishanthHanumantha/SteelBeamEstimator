@@ -1,0 +1,69 @@
+# Phase QA.1 — Engineering Accuracy Benchmark & Validation Framework
+# MODEL_VERSION: 6.5.1
+# This config is read-only. It does not modify any pipeline output.
+
+benchmark:
+  benchmark_file: "Version7/data/benchmarks/benchmark_drawing_1.json"
+  output_dir: "Version7/data/output/PhaseQA.1_engineering_accuracy_validation"
+
+# KPI Weights (must sum to 100)
+weights:
+  beam_detection:     10.0
+  beam_assignment:    15.0
+  geometry:           10.0
+  feature_extraction: 10.0
+  top_bottom:         15.0
+  diameter:            5.0
+  quantity:            5.0
+  pattern_recognition: 10.0
+  bbs:                10.0
+  steel_weight:        5.0
+  cut_length:          5.0
+
+# Classification thresholds
+classification:
+  EXCELLENT: 98.0
+  VERY_GOOD: 95.0
+  GOOD:      90.0
+  FAIR:      80.0
+  # below 80 → POOR
+
+# Geometry tolerance
+geometry:
+  tolerance_mm: 2.0
+
+# Cut length tolerance
+cut_length:
+  tolerance_mm: 10.0
+
+# Phase input paths (read-only)
+inputs:
+  phase_l2:   "Version7/data/output/PhaseL.2 - engineering_reinforcement_interpretation"
+  phase_l21:  "Version7/data/output/PhaseL.2.1 - engineering_feature_extraction"
+  phase_l22:  "Version7/data/output/PhaseL.2.2_geometry_recovery"
+  phase_l3:   "Version7/data/output/PhaseL.3_beam_pattern_recognition"
+  v5_bbs:     "Version5/data/output/phase_i/i_10_bbs"
+  v5_cut:     "Version5/data/output/phase_i/i_6_cut_length"
+  v5_weight:  "Version5/data/output/phase_i/i_11_steel_weight"
+
+# Validation rules
+validation_rules:
+  RULE_1_GROUND_TRUTH_EXISTS: true
+  RULE_2_ALL_BEAMS_COMPARED: true
+  RULE_3_ALL_BARS_COMPARED: true
+  RULE_4_EVERY_KPI_CALCULATED: true
+  RULE_5_OVERALL_SCORE_PRODUCED: true
+
+# Export configuration
+export:
+  files:
+    - engineering_accuracy_report.json
+    - engineering_accuracy_summary.json
+    - beam_accuracy_report.json
+    - reinforcement_accuracy_report.json
+    - pattern_accuracy_report.json
+    - bbs_accuracy_report.json
+    - steel_weight_accuracy_report.json
+    - confusion_matrices.json
+    - engineering_score.json
+    - error_analysis.json

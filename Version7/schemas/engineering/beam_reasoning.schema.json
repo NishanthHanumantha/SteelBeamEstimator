@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BeamReasoning",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["beam_id", "reasoning", "confidence"],
+  "properties": {
+    "beam_id": {
+      "type": "string"
+    },
+    "beam_name": {
+      "type": "string"
+    },
+    "reasoning": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
