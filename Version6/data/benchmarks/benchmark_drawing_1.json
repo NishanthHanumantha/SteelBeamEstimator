@@ -1,0 +1,142 @@
+{
+  "benchmark_id": "BENCHMARK::DRAWING_1_V6",
+  "drawing_name": "SHR_OHT_LVL_TOP_REINFORCEMENT",
+  "drawing_number": "SHR-OHT-001",
+  "benchmark_version": "1.0",
+  "model_version_when_created": "6.5.1",
+  "reference_source": "Reference images: B1_Bars_Description.png, B2_Bars_Description.png, B8_B9_B10_Bars.png; V5 computed values; Engineering judgement for B3-B13",
+  "ground_truth_confidence": "HIGH",
+  "notes": "Ground truth manually compiled from reference images and V5 pipeline outputs. B14-B18 recovered by L.2.2.",
+
+  "beam_detection": {
+    "expected_beam_ids": ["B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12","B13","B14","B15","B16","B17","B18"],
+    "expected_beam_count": 18,
+    "reference": "Drawing legend, V5 engineering objects, L.2 models"
+  },
+
+  "reinforcement": {
+    "expected_original_bar_count": 53,
+    "expected_total_bar_count_after_recovery": 68,
+    "expected_bars_per_beam": {
+      "B1":  {"total": 7,  "TOP_MAIN": 1, "BOTTOM_MAIN": 2, "TOP_EXTRA": 2, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B2":  {"total": 5,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 1, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B3":  {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 0, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B4":  {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 0, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B5":  {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B6":  {"total": 2,  "TOP_MAIN": 1, "BOTTOM_MAIN": 0, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B7":  {"total": 4,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 1, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B8":  {"total": 6,  "TOP_MAIN": 2, "BOTTOM_MAIN": 2, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B9":  {"total": 6,  "TOP_MAIN": 2, "BOTTOM_MAIN": 2, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B10": {"total": 6,  "TOP_MAIN": 2, "BOTTOM_MAIN": 2, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B11": {"total": 2,  "TOP_MAIN": 1, "BOTTOM_MAIN": 0, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B12": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": false},
+      "B13": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 0, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 1, "recovered": false},
+      "B14": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": true},
+      "B15": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": true},
+      "B16": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": true},
+      "B17": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": true},
+      "B18": {"total": 3,  "TOP_MAIN": 1, "BOTTOM_MAIN": 1, "TOP_EXTRA": 0, "BOTTOM_EXTRA": 0, "STIRRUP": 1, "SIDE_FACE_REINFORCEMENT": 0, "recovered": true}
+    }
+  },
+
+  "geometry": {
+    "expected_spans_mm": {
+      "B1":  5570.0, "B2": 4280.0, "B3": 2292.0, "B4": 3289.0,
+      "B5":  3289.0, "B6": 1659.0, "B7": 6924.0, "B8": 2240.0,
+      "B9":  3020.0, "B10": 3910.0, "B11": 3400.0, "B12": 2400.0,
+      "B13": 2400.0, "B14": 4072.0, "B15": 3404.0, "B16": 3398.0,
+      "B17": 1451.0, "B18": 3402.0
+    },
+    "expected_depths_mm": {
+      "B1": 600.0, "B2": 600.0, "B8": 600.0, "B9": 600.0, "B10": 600.0
+    },
+    "expected_widths_mm": {
+      "B1": 200.0, "B2": 200.0, "B8": 200.0, "B9": 200.0, "B10": 200.0
+    },
+    "tolerance_mm": 2.0
+  },
+
+  "top_bottom_classification": {
+    "expected_per_beam": {
+      "B1":  {"top_main_diameter": 16, "bottom_main_diameter": 20, "has_top_extra": true,  "has_bottom_extra": false},
+      "B2":  {"top_main_diameter": 16, "bottom_main_diameter": 12, "has_top_extra": false, "has_bottom_extra": true},
+      "B3":  {"top_main_diameter": 16, "bottom_main_diameter": null,"has_top_extra": false,"has_bottom_extra": false},
+      "B4":  {"top_main_diameter": 16, "bottom_main_diameter": null,"has_top_extra": false,"has_bottom_extra": false},
+      "B5":  {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B6":  {"top_main_diameter": 16, "bottom_main_diameter": null,"has_top_extra": false,"has_bottom_extra": false},
+      "B7":  {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": true,  "has_bottom_extra": false},
+      "B8":  {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B9":  {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B10": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B11": {"top_main_diameter": 16, "bottom_main_diameter": null,"has_top_extra": false,"has_bottom_extra": false},
+      "B12": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B13": {"top_main_diameter": 16, "bottom_main_diameter": null,"has_top_extra": false,"has_bottom_extra": false},
+      "B14": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B15": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B16": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B17": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false},
+      "B18": {"top_main_diameter": 16, "bottom_main_diameter": 16, "has_top_extra": false, "has_bottom_extra": false}
+    },
+    "expected_correct_count": 51,
+    "expected_total_classifiable": 53,
+    "notes": "B14-B18 recovered beams use placeholder diameters; slight uncertainty in B2 bottom_extra classification"
+  },
+
+  "patterns": {
+    "expected_per_beam": {
+      "B1":  {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B2":  {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B3":  {"span_pattern": "DEEP_BEAM",              "continuity": "SINGLE_BEAM",       "structural_behavior": "HOGGING_BEAM"},
+      "B4":  {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "HOGGING_BEAM"},
+      "B5":  {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "MIDSPAN_MOMENT_DOMINANT"},
+      "B6":  {"span_pattern": "DEEP_BEAM",              "continuity": "SINGLE_BEAM",       "structural_behavior": "HOGGING_BEAM"},
+      "B7":  {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B8":  {"span_pattern": "CONTINUOUS_END_SPAN",    "continuity": "CONTINUOUS_CHAIN",  "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B9":  {"span_pattern": "CONTINUOUS_INTERIOR_SPAN","continuity": "CONTINUOUS_CHAIN", "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B10": {"span_pattern": "CONTINUOUS_END_SPAN",    "continuity": "CONTINUOUS_CHAIN",  "structural_behavior": "SAGGING_AND_HOGGING"},
+      "B11": {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "HOGGING_BEAM"},
+      "B12": {"span_pattern": "DEEP_BEAM",              "continuity": "SINGLE_BEAM",       "structural_behavior": "MIDSPAN_MOMENT_DOMINANT"},
+      "B13": {"span_pattern": "DEEP_BEAM",              "continuity": "SINGLE_BEAM",       "structural_behavior": "HOGGING_BEAM"},
+      "B14": {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "UNKNOWN"},
+      "B15": {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "UNKNOWN"},
+      "B16": {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "UNKNOWN"},
+      "B17": {"span_pattern": "DEEP_BEAM",              "continuity": "SINGLE_BEAM",       "structural_behavior": "UNKNOWN"},
+      "B18": {"span_pattern": "SIMPLY_SUPPORTED",       "continuity": "SINGLE_BEAM",       "structural_behavior": "UNKNOWN"}
+    },
+    "expected_correct_span_pattern": 18,
+    "expected_correct_continuity": 18,
+    "expected_correct_structural_behavior": 14,
+    "notes": "B14-B18 structural behavior UNKNOWN is acceptable for recovered beams"
+  },
+
+  "cut_lengths": {
+    "source": "V5 phase_i i_6_cut_length (computed)",
+    "available_count": 13,
+    "expected_per_beam_role": {
+      "B8_TOP_MAIN":    {"diameter_mm": 20, "cut_length_mm": null, "note": "V5 partial data"},
+      "B8_BOTTOM_MAIN": {"diameter_mm": 16, "cut_length_mm": null, "note": "V5 partial data"}
+    },
+    "notes": "V5 cut lengths available for 13 bars only; steel weight DEFERRED in V5"
+  },
+
+  "bbs": {
+    "source": "V5 phase_i i_10_bbs",
+    "expected_count": 20,
+    "notes": "V5 BBS groups available; diameter and shape code comparison applicable"
+  },
+
+  "steel_weight": {
+    "source": "V5 phase_i i_11_steel_weight",
+    "available": false,
+    "notes": "V5 steel weights are DEFERRED/DEPENDENCY_BLOCKED; steel weight KPI will be marked NOT_AVAILABLE"
+  },
+
+  "features": {
+    "expected_feature_count": 18,
+    "expected_has_top_bars": ["B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12","B13","B14","B15","B16","B17","B18"],
+    "expected_has_bottom_bars": ["B1","B2","B5","B7","B8","B9","B10","B12","B14","B15","B16","B17","B18"],
+    "expected_has_stirrups": ["B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12","B13","B14","B15","B16","B17","B18"],
+    "expected_has_side_face": ["B1","B3","B4","B8","B9","B10","B13"],
+    "expected_continuity_beams": ["B8","B9","B10"]
+  }
+}
