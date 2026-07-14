@@ -1,0 +1,90 @@
+################################################################################
+# Phase QA.1.1 — Engineering Error Diagnostics & Root Cause Analysis Engine
+# MODEL_VERSION: 6.5.2
+################################################################################
+
+model_version: "6.5.2"
+phase: "QA.1.1"
+phase_name: "Engineering Error Diagnostics & Root Cause Analysis Engine"
+mode: "READ_ONLY"
+deterministic: true
+no_llm: true
+no_automatic_corrections: true
+
+# ── Input Paths (all read-only) ───────────────────────────────────────────────
+inputs:
+  qa1_output_dir: "Version6/data/output/PhaseQA.1_engineering_accuracy_validation"
+  l2_output_dir:  "Version6/data/output/PhaseL.2 - engineering_reinforcement_interpretation"
+  l21_output_dir: "Version6/data/output/PhaseL.2.1 - engineering_feature_extraction"
+  l22_output_dir: "Version6/data/output/PhaseL.2.2_geometry_recovery"
+  l3_output_dir:  "Version6/data/output/PhaseL.3_beam_pattern_recognition"
+  benchmark_dir:  "Version6/data/benchmarks"
+  ground_truth_file: "benchmark_drawing_1.json"
+
+# ── Output Path ────────────────────────────────────────────────────────────────
+output:
+  output_dir: "Version6/data/output/PhaseQA.1.1_engineering_error_diagnostics"
+
+# ── Pipeline Stage Order ──────────────────────────────────────────────────────
+pipeline_stages:
+  - DRAWING_PARSER
+  - GEOMETRY_ENGINE
+  - REINFORCEMENT_INTERPRETATION
+  - GEOMETRY_RECOVERY
+  - FEATURE_EXTRACTION
+  - PATTERN_RECOGNITION
+  - BBS_GENERATION
+  - STEEL_CALCULATION
+
+# ── Root Cause Categories ─────────────────────────────────────────────────────
+root_causes:
+  - DRAWING_ERROR
+  - PARSER_ERROR
+  - GEOMETRY_ERROR
+  - ASSOCIATION_ERROR
+  - FEATURE_ERROR
+  - PATTERN_ERROR
+  - BBS_ERROR
+  - CALCULATION_ERROR
+  - REFERENCE_DATA_ERROR
+  - UNKNOWN
+
+# ── Impact Levels ─────────────────────────────────────────────────────────────
+impact_levels:
+  CRITICAL: {min_score: 8.0}
+  HIGH:     {min_score: 6.0}
+  MEDIUM:   {min_score: 3.0}
+  LOW:      {min_score: 0.0}
+
+# ── Priority Scoring ──────────────────────────────────────────────────────────
+priority:
+  formula: "severity_score × impact_score × frequency"
+  severity_scores:
+    CRITICAL: 4.0
+    HIGH:     3.0
+    MEDIUM:   2.0
+    LOW:      1.0
+
+# ── Exports (12 files) ────────────────────────────────────────────────────────
+exports:
+  - engineering_diagnostics_report.json
+  - engineering_diagnostics_summary.json
+  - root_cause_analysis.json
+  - pipeline_stage_analysis.json
+  - impact_assessment.json
+  - engineering_recommendations.json
+  - diagnostic_statistics.json
+  - priority_fix_list.json
+  - beam_diagnostics.json
+  - feature_diagnostics.json
+  - pattern_diagnostics.json
+  - bbs_diagnostics.json
+
+# ── Validation Rules ──────────────────────────────────────────────────────────
+validation_rules:
+  RULE_1: "Every QA.1 error has a diagnostic"
+  RULE_2: "Every diagnostic has one root cause"
+  RULE_3: "Every diagnostic has one pipeline stage"
+  RULE_4: "Every diagnostic has one recommendation"
+  RULE_5: "Every recommendation has priority"
+  error_class: "ENGINEERING_DIAGNOSTICS_ERROR"

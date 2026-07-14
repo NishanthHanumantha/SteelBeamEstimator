@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
 PHASE = "Phase L.2.1"
-MODEL_VERSION = "6.5.1"
+MODEL_VERSION = "6.5.2"
 ENGINE_VERSION = "1.0.0"
 
 # ── Position zones (observational only, no semantic meaning) ─────────────────
