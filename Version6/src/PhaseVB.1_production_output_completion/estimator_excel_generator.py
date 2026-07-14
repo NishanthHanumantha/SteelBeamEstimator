@@ -69,15 +69,20 @@ class EstimatorExcelGenerator:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.archive_dir.mkdir(parents=True, exist_ok=True)
 
-        prod_path = self.output_dir / "Estimation_Output.xlsx"
-        self._build_workbook(prod_path, review_mode=False)
+        prod_path = self._build_workbook_safe(
+            self.output_dir / "Estimation_Output.xlsx", review_mode=False
+        )
 
-        review_path = self.output_dir / "Engineering_Review.xlsx"
-        self._build_workbook(review_path, review_mode=True)
+        review_path = self._build_workbook_safe(
+            self.output_dir / "Engineering_Review.xlsx", review_mode=True
+        )
 
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         archive_path = self.archive_dir / f"Estimation_Output_{ts}.xlsx"
-        shutil.copy2(str(prod_path), str(archive_path))
+        try:
+            shutil.copy2(str(prod_path), str(archive_path))
+        except (PermissionError, OSError):
+            archive_path = prod_path
 
         return {
             "production": prod_path,
@@ -86,6 +91,27 @@ class EstimatorExcelGenerator:
         }
 
     # ── workbook builder ─────────────────────────────────────────────────────
+
+    def _build_workbook_safe(self, path: pathlib.Path, review_mode: bool) -> pathlib.Path:
+        """
+        Tries to write to `path`. If the file is locked, writes to a
+        timestamped fallback and tries to replace the original silently.
+        Returns the path where the file was actually written.
+        """
+        try:
+            self._build_workbook(path, review_mode)
+            return path
+        except (PermissionError, OSError):
+            ts = datetime.now().strftime("%H%M%S")
+            fallback = path.with_name(f"{path.stem}_{ts}{path.suffix}")
+            print(f"      Note: {path.name} is open in Excel; SI.1 output -> {fallback.name}")
+            self._build_workbook(fallback, review_mode)
+            try:
+                import os
+                os.replace(str(fallback), str(path))
+                return path
+            except (PermissionError, OSError):
+                return fallback
 
     def _build_workbook(self, path: pathlib.Path, review_mode: bool) -> None:
         if not OPENPYXL_OK:

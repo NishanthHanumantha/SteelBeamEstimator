@@ -1,29 +1,29 @@
 """
 Steel Weight Completion — Phase V.B.1 MODULE 2
+Updated: Phase SI.1 integration (MODEL_VERSION 6.6.1)
 
 Deterministic steel weight calculation from L.2 engineering data.
-Formula (IS 456 / IS 2502):
-  Bar Area  = pi * d^2 / 4   [mm^2]
-  Density   = 7850 kg/m^3
-  Weight    = Area * cut_length_mm * quantity * 7850 / 1e9  [kg]
-
-Cut length derivation (IS 456 standard allowances):
-  Main bars (TOP/BOTTOM/SFR/EXTRA):
-    cut_length = span_mm + 2 * development_length
-    development_length = 40 * diameter_mm  (Fe415 / IS 456 Table 65)
-
-  Stirrups:
-    perimeter = 2*(W - 2*cover) + 2*(D - 2*cover)
-    hook = 2 * 10 * diameter_mm  (standard 135-degree hook)
-    cut_length_per_stirrup = perimeter + hook
-    number_of_stirrups = calculated from spacing & span
-
-  When no span/geometry available: uses IS 456 minimum cut length estimate.
+STIRRUP quantities now use Phase SI.1 StirrupImprover (zone-based).
+All other bar types unchanged.
 """
 import math
+import sys
 import json
 import pathlib
 from typing import Dict, List, Optional, Any
+
+# ── SI.1 integration ─────────────────────────────────────────────────────────
+_SI1_SRC = pathlib.Path(__file__).parents[1] / "PhaseSI.1_stirrup_improvement"
+if str(_SI1_SRC) not in sys.path:
+    sys.path.insert(0, str(_SI1_SRC))
+
+try:
+    from phase_si1_orchestrator import StirrupImprover as _SI1Improver
+    _STIRRUP_IMPROVER = _SI1Improver()
+    _SI1_AVAILABLE = True
+except Exception:
+    _STIRRUP_IMPROVER = None
+    _SI1_AVAILABLE = False
 
 from production_output_models import (
     BarSteelWeight, BeamSteelWeight, DiameterSummary, ProjectSteelSummary
@@ -145,6 +145,43 @@ class SteelWeightCompletion:
             for bar in bars_list:
                 if not isinstance(bar, dict):
                     continue
+
+                # ── SI.1: STIRRUP quantities via zone engine ─────────────────
+                if role == "STIRRUP" and _SI1_AVAILABLE and _STIRRUP_IMPROVER:
+                    si1_rows = _STIRRUP_IMPROVER.compute_beam(
+                        bar=bar,
+                        beam_id=beam_id,
+                        span_mm=span_mm,
+                        depth_mm=depth_mm,
+                        width_mm=width_mm,
+                    )
+                    d_mm = float(bar.get("diameter_mm") or 8)
+                    for row_d in si1_rows:
+                        qty    = int(row_d.get("quantity") or 0)
+                        cut_mm = float(row_d.get("cut_length_m") or 0) * 1000
+                        area   = math.pi * d_mm ** 2 / 4.0
+                        w_per  = area * cut_mm * _DENSITY_KG_M3 / 1e9
+                        w_tot  = w_per * qty
+                        bsw = BarSteelWeight(
+                            bar_id=str(bar.get("bar_id") or ""),
+                            beam_id=beam_id,
+                            role="STIRRUP",
+                            bar_label=str(bar.get("bar_label") or ""),
+                            diameter_mm=d_mm,
+                            quantity=qty,
+                            steel_grade=str(bar.get("steel_grade") or "Y"),
+                            cut_length_mm=cut_mm,
+                            cut_length_source="SI1_zone_engine",
+                            area_mm2=area,
+                            weight_per_bar_kg=w_per,
+                            total_weight_kg=w_tot,
+                            formula_used=f"SI.1: W=(pi*{d_mm}^2/4)*{cut_mm:.0f}*{qty}*7850/1e9",
+                        )
+                        bar_weights.append(bsw)
+                        d_key = int(d_mm)
+                        weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + w_tot
+                    continue
+                # ── All other roles: original logic ──────────────────────────
                 bw = self._compute_bar(bar, beam_id, role, span_mm, depth_mm, width_mm)
                 bar_weights.append(bw)
                 d_key = int(bw.diameter_mm)
