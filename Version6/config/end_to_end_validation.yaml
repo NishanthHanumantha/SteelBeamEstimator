@@ -1,0 +1,57 @@
+################################################################################
+# Phase V.A.1 — End-to-End Validation
+# MODEL_VERSION: 6.5.3
+################################################################################
+
+model_version: "6.5.3"
+phase: "V.A.1"
+phase_name: "End-to-End Engineering Validation"
+mode: "READ_ONLY"
+no_modifications: true
+purely_observational: true
+
+# ── Production Pipeline Stages ────────────────────────────────────────────────
+pipeline_stages:
+  - name: "Phase L.2 — Engineering Reinforcement Interpretation"
+    script: "run_phase_l2_engineering_reinforcement_interpretation.py"
+  - name: "Phase L.2.2 — Geometry Recovery"
+    script: "run_phase_l2_2_geometry_recovery.py"
+  - name: "Phase L.2.1 — Feature Extraction"
+    script: "run_phase_l2_1_engineering_feature_extraction.py"
+  - name: "Phase L.3 — Pattern Recognition"
+    script: "run_phase_l3_beam_pattern_recognition.py"
+  - name: "Phase I — Steel/BBS/Excel"
+    script: "run_engineering_calculation_integration.py"
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+paths:
+  generated_workbook: "Version6/data/output/phase_i/i_17_excel_export/Beam_Reinforcement_Schedule.xlsx"
+  reference_workbook: "Version6/data/Excel_Presentation_Format/Galera_SteelBeamEst_SHR&OHT_TopFramingPan_OutputFormat.xlsx"
+  output_dir: "Version6/data/output/PhaseVA.1_end_to_end_validation"
+
+# ── Benchmark ─────────────────────────────────────────────────────────────────
+benchmark:
+  id: "BENCHMARK::DRAWING_1_V6"
+  drawing_name: "SHR_OHT_LVL_TOP_REINFORCEMENT"
+  reference_workbook_sheets: ["Beam - Clubhouse"]
+  expected_minimum_rows: 100
+  expected_minimum_size_bytes: 100000
+
+# ── Validation Rules ──────────────────────────────────────────────────────────
+validation_rules:
+  RULE_1: "Pipeline executed successfully"
+  RULE_2: "Workbook generated successfully"
+  RULE_3: "All expected worksheets created"
+  RULE_4: "Workbook comparison completed"
+  RULE_5: "Validation report generated"
+  error_class: "END_TO_END_VALIDATION_ERROR"
+
+# ── Exports ────────────────────────────────────────────────────────────────────
+exports:
+  - end_to_end_validation_report.json
+  - pipeline_execution_report.json
+  - workbook_validation_report.json
+  - worksheet_validation_report.json
+  - workbook_comparison_report.json
+  - validation_statistics.json
+  - engineering_difference_report.json
