@@ -1,10 +1,10 @@
 """
 Steel Weight Completion — Phase V.B.1 MODULE 2
-Updated: Phase SI.1 integration (MODEL_VERSION 6.6.1)
+Updated: Phase R.2B — EngineeringContext consumption (MODEL_VERSION 7.6.0)
 
 Deterministic steel weight calculation from L.2 engineering data.
-STIRRUP quantities now use Phase SI.1 StirrupImprover (zone-based).
-All other bar types unchanged.
+Engineering parameters (Ld, cover, hook, density) sourced from
+EngineeringContextLoader when provided.
 """
 import math
 import sys
@@ -19,23 +19,21 @@ if str(_SI1_SRC) not in sys.path:
 
 try:
     from phase_si1_orchestrator import StirrupImprover as _SI1Improver
-    _STIRRUP_IMPROVER = _SI1Improver()
     _SI1_AVAILABLE = True
 except Exception:
-    _STIRRUP_IMPROVER = None
+    _SI1Improver = None
     _SI1_AVAILABLE = False
 
 from production_output_models import (
     BarSteelWeight, BeamSteelWeight, DiameterSummary, ProjectSteelSummary
 )
 
+# Legacy fallbacks when no EngineeringContextLoader is provided
 _DENSITY_KG_M3 = 7850.0
-_DEVELOPMENT_LENGTH_FACTOR = 40          # ld = 40d (IS 456, Fe415, M25)
-_COVER_MM = 40.0                         # nominal clear cover
-_HOOK_MULTIPLE = 10                      # 10d hook allowance each end
+_DEVELOPMENT_LENGTH_FACTOR = 40
+_COVER_MM = 40.0
+_HOOK_MULTIPLE = 10
 _SUPPORTED_DIAMETERS = [8, 10, 12, 16, 20, 25, 32]
-
-_BASE = pathlib.Path(__file__).parent
 
 _ROLE_LABELS = {
     "TOP_MAIN":          "Top Main Bars",
@@ -68,13 +66,53 @@ _L2_ROLE_MAP = {
 
 class SteelWeightCompletion:
     """
-    Reads L.2 beam reinforcement models and computes deterministic steel weights
-    without modifying any upstream pipeline phase.
+    Reads L.2 beam reinforcement models and computes deterministic steel weights.
+    When loader is provided, all engineering parameters come from EngineeringContext.
     """
 
-    def __init__(self, l2_models_path: pathlib.Path) -> None:
+    def __init__(
+        self,
+        l2_models_path: pathlib.Path,
+        loader: Optional[Any] = None,
+    ) -> None:
         self.l2_path = l2_models_path
+        self._loader = loader
         self._models: List[Dict[str, Any]] = []
+        self._improver = (
+            _SI1Improver(loader) if (_SI1_AVAILABLE and _SI1Improver and loader)
+            else (_SI1Improver() if (_SI1_AVAILABLE and _SI1Improver) else None)
+        )
+
+    # ── engineering parameter accessors ─────────────────────────────────────
+
+    def _density(self) -> float:
+        return self._loader.get_steel_density() if self._loader else _DENSITY_KG_M3
+
+    def _cover_mm(self) -> float:
+        return float(self._loader.get_cover("BEAM")) if self._loader else _COVER_MM
+
+    def _hook_multiple(self) -> int:
+        return self._loader.get_hook_multiple(135) if self._loader else _HOOK_MULTIPLE
+
+    def _concrete_grade(self) -> str:
+        return self._loader.get_concrete_grade("BEAM") if self._loader else "M30"
+
+    def _steel_grade(self) -> str:
+        return self._loader.get_steel_grade() if self._loader else "Fe415"
+
+    def _development_length_mm(self, diameter_mm: float) -> int:
+        if self._loader:
+            return self._loader.get_development_length_mm(
+                int(diameter_mm),
+                self._concrete_grade(),
+                self._steel_grade(),
+            )
+        return int(_DEVELOPMENT_LENGTH_FACTOR * diameter_mm)
+
+    def _minimum_lap_mm(self, diameter_mm: float) -> int:
+        if self._loader:
+            return self._loader.get_lap_rule(int(diameter_mm))
+        return int(_DEVELOPMENT_LENGTH_FACTOR * diameter_mm)
 
     # ── public ──────────────────────────────────────────────────────────────
 
@@ -82,6 +120,7 @@ class SteelWeightCompletion:
         self._load_l2()
         beam_weights: List[BeamSteelWeight] = []
         diameter_totals: Dict[int, float] = {d: 0.0 for d in _SUPPORTED_DIAMETERS}
+        density = self._density()
 
         for model in self._models:
             bw = self._compute_beam(model)
@@ -99,9 +138,8 @@ class SteelWeightCompletion:
         for d in _SUPPORTED_DIAMETERS:
             w = diameter_totals.get(d, 0.0)
             if w > 0:
-                # total length from area (reverse): L = W / (Area/1e6 * density)
                 area_mm2 = math.pi * d ** 2 / 4
-                total_len = w / (area_mm2 * _DENSITY_KG_M3 / 1e9) if area_mm2 > 0 else 0.0
+                total_len = w / (area_mm2 * density / 1e9) if area_mm2 > 0 else 0.0
                 diameter_summary.append(DiameterSummary(
                     diameter_mm=d,
                     total_bars=sum(
@@ -137,6 +175,7 @@ class SteelWeightCompletion:
 
         bar_weights: List[BarSteelWeight] = []
         weight_by_diam: Dict[int, float] = {}
+        density = self._density()
 
         for l2_key, role in _L2_ROLE_MAP.items():
             bars_list = model.get(l2_key) or []
@@ -146,9 +185,8 @@ class SteelWeightCompletion:
                 if not isinstance(bar, dict):
                     continue
 
-                # ── SI.1: STIRRUP quantities via zone engine ─────────────────
-                if role == "STIRRUP" and _SI1_AVAILABLE and _STIRRUP_IMPROVER:
-                    si1_rows = _STIRRUP_IMPROVER.compute_beam(
+                if role == "STIRRUP" and self._improver:
+                    si1_rows = self._improver.compute_beam(
                         bar=bar,
                         beam_id=beam_id,
                         span_mm=span_mm,
@@ -160,7 +198,7 @@ class SteelWeightCompletion:
                         qty    = int(row_d.get("quantity") or 0)
                         cut_mm = float(row_d.get("cut_length_m") or 0) * 1000
                         area   = math.pi * d_mm ** 2 / 4.0
-                        w_per  = area * cut_mm * _DENSITY_KG_M3 / 1e9
+                        w_per  = area * cut_mm * density / 1e9
                         w_tot  = w_per * qty
                         bsw = BarSteelWeight(
                             bar_id=str(bar.get("bar_id") or ""),
@@ -175,13 +213,16 @@ class SteelWeightCompletion:
                             area_mm2=area,
                             weight_per_bar_kg=w_per,
                             total_weight_kg=w_tot,
-                            formula_used=f"SI.1: W=(pi*{d_mm}^2/4)*{cut_mm:.0f}*{qty}*7850/1e9",
+                            formula_used=(
+                                f"SI.1: W=(pi*{d_mm}^2/4)*{cut_mm:.0f}*{qty}*"
+                                f"{density:.0f}/1e9"
+                            ),
                         )
                         bar_weights.append(bsw)
                         d_key = int(d_mm)
                         weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + w_tot
                     continue
-                # ── All other roles: original logic ──────────────────────────
+
                 bw = self._compute_bar(bar, beam_id, role, span_mm, depth_mm, width_mm)
                 bar_weights.append(bw)
                 d_key = int(bw.diameter_mm)
@@ -216,13 +257,13 @@ class SteelWeightCompletion:
         spacing_mm = bar.get("spacing_mm")
 
         area_mm2 = math.pi * diameter_mm ** 2 / 4.0
+        density = self._density()
 
         cut_length_mm, source = self._derive_cut_length(
             role, diameter_mm, span_mm, depth_mm, width_mm, spacing_mm, quantity
         )
 
-        # Weight per single bar × quantity
-        weight_per_bar = area_mm2 * cut_length_mm * _DENSITY_KG_M3 / 1e9
+        weight_per_bar = area_mm2 * cut_length_mm * density / 1e9
         total_weight = weight_per_bar * quantity
 
         return BarSteelWeight(
@@ -238,7 +279,10 @@ class SteelWeightCompletion:
             area_mm2=area_mm2,
             weight_per_bar_kg=weight_per_bar,
             total_weight_kg=total_weight,
-            formula_used=f"W = (pi*{diameter_mm}^2/4)*{cut_length_mm:.0f}*{quantity}*7850/1e9",
+            formula_used=(
+                f"W = (pi*{diameter_mm}^2/4)*{cut_length_mm:.0f}*{quantity}*"
+                f"{density:.0f}/1e9"
+            ),
         )
 
     def _derive_cut_length(
@@ -253,38 +297,48 @@ class SteelWeightCompletion:
     ) -> tuple:
         """
         Returns (cut_length_mm, source_description).
-        cut_length_mm is the length of ONE bar for longitudinal bars,
-        or ONE stirrup for transverse bars.
+        Formula unchanged — only Ld/cover/hook parameter sources change.
         """
+        ld_source = "EngineeringContext" if self._loader else "IS456_40d_development"
+
         if role in ("TOP_MAIN", "BOTTOM_MAIN", "TOP_EXTRA", "BOTTOM_EXTRA",
-                    "SIDE_FACE", "BENT", "CRANKED", "DEVELOPMENT", "LAP", "SPACER"):
+                    "SIDE_FACE", "BENT", "CRANKED", "DEVELOPMENT", "SPACER"):
             if span_mm > 0:
-                ld = _DEVELOPMENT_LENGTH_FACTOR * d
+                ld = self._development_length_mm(d)
                 cut_length = span_mm + 2 * ld
-                return cut_length, "IS456_40d_development"
+                return cut_length, ld_source
             else:
-                cut_length = 40 * d * 2  # minimum: 2 × lap length
-                return cut_length, "IS456_minimum_fallback"
+                cut_length = 2 * self._development_length_mm(d)
+                return cut_length, f"{ld_source}_minimum_fallback"
+
+        if role == "LAP":
+            if span_mm > 0:
+                ld = self._development_length_mm(d)
+                return span_mm + 2 * ld, ld_source
+            lap_mm = self._minimum_lap_mm(d)
+            return float(lap_mm * 2), "EngineeringContext_lap_rule" if self._loader else "IS456_minimum_fallback"
 
         if role == "STIRRUP":
-            # Perimeter of rectangular stirrup
             D_eff = float(depth_mm) if depth_mm else 600.0
             W_eff = float(width_mm) if width_mm else 200.0
-            perimeter = 2 * (W_eff - 2 * _COVER_MM) + 2 * (D_eff - 2 * _COVER_MM)
-            hook = 2 * _HOOK_MULTIPLE * d  # 135-degree hook both ends
+            cover = self._cover_mm()
+            hook_mult = self._hook_multiple()
+            perimeter = 2 * (W_eff - 2 * cover) + 2 * (D_eff - 2 * cover)
+            hook = 2 * hook_mult * d
             cut_length = perimeter + hook
-            return cut_length, "IS2502_stirrup_perimeter"
+            src = "EngineeringContext_stirrup" if self._loader else "IS2502_stirrup_perimeter"
+            return cut_length, src
 
-        # Default: treat as longitudinal
         if span_mm > 0:
-            return span_mm + 2 * _DEVELOPMENT_LENGTH_FACTOR * d, "IS456_default"
+            ld = self._development_length_mm(d)
+            return span_mm + 2 * ld, ld_source
         return 1000.0, "DEFAULT_FALLBACK"
 
     @staticmethod
     def area_mm2(diameter_mm: float) -> float:
         return math.pi * diameter_mm ** 2 / 4.0
 
-    @staticmethod
-    def weight_kg(diameter_mm: float, length_mm: float, quantity: int = 1) -> float:
+    def weight_kg(self, diameter_mm: float, length_mm: float, quantity: int = 1) -> float:
         area = math.pi * diameter_mm ** 2 / 4.0
-        return area * length_mm * quantity * _DENSITY_KG_M3 / 1e9
+        density = self._density()
+        return area * length_mm * quantity * density / 1e9

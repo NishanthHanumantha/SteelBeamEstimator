@@ -27,6 +27,7 @@ from excel_structure_builder import (
     BBS_COLUMNS, BEAM_SUMMARY_COLUMNS, DIAM_SUMMARY_COLUMNS,
     STEEL_SUMMARY_COLUMNS, PROJECT_TOTALS_COLUMNS,
     PROJECT_HEADER_DATA, GENERAL_NOTES,
+    build_project_header_data, build_general_notes,
     ALL_WORKSHEETS,
 )
 from worksheet_formatter import (
@@ -49,12 +50,16 @@ class EstimatorExcelGenerator:
         bbs_rows: List[BBSRow],
         steel_summary: ProjectSteelSummary,
         output_dir: pathlib.Path,
+        loader_summary: Optional[dict] = None,
     ) -> None:
         self.bbs_rows = bbs_rows
         self.steel_summary = steel_summary
         self.output_dir = output_dir
         self.archive_dir = output_dir / "Archive"
         self.fmt = WorksheetFormatter()
+        self._loader_summary = loader_summary
+        self._header_data = build_project_header_data(loader_summary)
+        self._general_notes = build_general_notes(loader_summary)
 
     # ── public ──────────────────────────────────────────────────────────────
 
@@ -139,10 +144,10 @@ class EstimatorExcelGenerator:
         ncols = 2
         self.fmt.write_title(ws, "ESTIMATION OUTPUT — PROJECT HEADER", ncols, row=1)
         self.fmt.write_header_row(ws, ["Field", "Value"], row=2)
-        for ri, (k, v) in enumerate(PROJECT_HEADER_DATA.items(), start=3):
+        for ri, (k, v) in enumerate(self._header_data.items(), start=3):
             _apply_cell(ws, ri, 1, value=k, bold=True, align_h="left")
             _apply_cell(ws, ri, 2, value=v, align_h="left")
-        ts_row = len(PROJECT_HEADER_DATA) + 3
+        ts_row = len(self._header_data) + 3
         _apply_cell(ws, ts_row, 1, value="Generated At", bold=True, align_h="left")
         _apply_cell(ws, ts_row, 2,
                     value=datetime.now().strftime("%Y-%m-%d %H:%M:%S"), align_h="left")
@@ -153,7 +158,7 @@ class EstimatorExcelGenerator:
         ws = wb.create_sheet(WS_GENERAL_NOTES)
         ws.column_dimensions["A"].width = 80
         self.fmt.write_title(ws, "GENERAL NOTES — ENGINEERING ASSUMPTIONS", 1, row=1)
-        self.fmt.write_notes_block(ws, GENERAL_NOTES, start_row=2, ncols=1)
+        self.fmt.write_notes_block(ws, self._general_notes, start_row=2, ncols=1)
 
     # ── WORKSHEET 3 — Beam Summary ───────────────────────────────────────────
 
@@ -327,13 +332,18 @@ class EstimatorExcelGenerator:
         self.fmt.write_title(ws, title, ncols, row=1)
         self.fmt.write_header_row(ws, headers, row=2, col_widths=widths)
 
+        ls = self._loader_summary or {}
+        density = ls.get("steel_density", 7850.0)
+        cover = ls.get("cover_beam_mm", 40)
+        dl_factor = ls.get("dev_length_factor", 40)
+        sg = ls.get("primary_steel_grade", "Fe415")
         totals_data = [
             ("Total Beams",            self.steel_summary.total_beams,        "beams"),
             ("Total Bars",             self.steel_summary.total_bars,         "bars"),
             ("Total Steel Weight",     round(self.steel_summary.total_weight_kg, 3), "kg"),
-            ("Steel Density",          7850.0,                                "kg/m³"),
-            ("Development Length",     "40d (IS 456:2000)",                   ""),
-            ("Cover",                  40,                                    "mm"),
+            ("Steel Density",          density,                               "kg/m³"),
+            ("Development Length",     f"GN table ({sg}, ~{dl_factor}d)",     ""),
+            ("Cover",                  cover,                                 "mm"),
         ]
         for d in self.steel_summary.diameter_summary:
             totals_data.append((

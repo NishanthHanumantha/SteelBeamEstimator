@@ -23,8 +23,11 @@ from datetime import datetime
 from typing import Optional, Dict, Any
 
 _SRC = pathlib.Path(__file__).parent
+_V7_SRC = _SRC.parents[1]
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
+if str(_V7_SRC) not in sys.path:
+    sys.path.insert(0, str(_V7_SRC))
 
 from production_output_models import ProductionOutputResult
 from integration_engine_validator import IntegrationEngineValidator
@@ -35,6 +38,43 @@ from workbook_validator import WorkbookValidator
 from production_statistics import ProductionStatisticsCollector
 from production_reporter import ProductionReporter
 from production_export import ProductionExport
+
+try:
+    import importlib
+    import types
+    import importlib.util as _ilu
+
+    def _bootstrap_r2a_for_vb1():
+        _v7_src = _V7_SRC
+        r2a_dir = _v7_src / "PhaseR.2A_engineering_context"
+        if "PhaseR2A.engineering_context_parser" in sys.modules:
+            return
+        pkg = types.ModuleType("PhaseR2A")
+        pkg.__path__ = [str(r2a_dir)]
+        sys.modules["PhaseR2A"] = pkg
+        for sub in [
+            "__init__", "engineering_context_model", "engineering_context_cache",
+            "engineering_context_loader", "general_notes_text_extractor",
+            "development_length_parser", "cover_parser", "steel_grade_parser",
+            "concrete_grade_parser", "hook_rule_parser", "lap_rule_parser",
+            "general_notes_classifier", "engineering_context_builder",
+            "engineering_context_validator", "engineering_context_factory",
+            "engineering_context_parser",
+        ]:
+            spec = _ilu.spec_from_file_location(f"PhaseR2A.{sub}", r2a_dir / f"{sub}.py")
+            mod = _ilu.module_from_spec(spec)
+            mod.__package__ = "PhaseR2A"
+            sys.modules[f"PhaseR2A.{sub}"] = mod
+            spec.loader.exec_module(mod)
+
+    _bootstrap_r2a_for_vb1()
+    parse_engineering_context = sys.modules[
+        "PhaseR2A.engineering_context_parser"
+    ].parse_engineering_context
+    _R2A_AVAILABLE = True
+except Exception:
+    parse_engineering_context = None
+    _R2A_AVAILABLE = False
 
 _BASE = pathlib.Path(__file__).parents[3]
 _V6 = _BASE / "Version7"
@@ -53,7 +93,7 @@ class PRODUCTION_OUTPUT_ERROR(Exception):
 class PhaseVB1Orchestrator:
     """Orchestrates all Phase V.B.1 production output completion tasks."""
 
-    MODEL_VERSION = "6.6.0"
+    MODEL_VERSION = "7.6.0"
     PHASE_ID = "VB.1"
 
     # ── 7 validation rules ────────────────────────────────────────────────────
@@ -72,9 +112,15 @@ class PhaseVB1Orchestrator:
         self,
         output_dir: Optional[pathlib.Path] = None,
         l2_path: Optional[pathlib.Path] = None,
+        loader=None,
+        v7_root: Optional[pathlib.Path] = None,
     ) -> None:
         self.output_dir = output_dir or _OUTPUT_DIR
         self.l2_path    = l2_path or _L2_MODEL_PATH
+        self._v7_root   = v7_root or _V6
+        self._loader    = loader
+        if self._loader is None and _R2A_AVAILABLE and parse_engineering_context:
+            self._loader, _, _ = parse_engineering_context(self._v7_root)
         self.start_time = time.time()
         self.result = ProductionOutputResult()
         self._stats_collector = ProductionStatisticsCollector()
@@ -191,7 +237,7 @@ class PhaseVB1Orchestrator:
             raise PRODUCTION_OUTPUT_ERROR(
                 f"L.2 model file not found: {l2_path}"
             )
-        engine = SteelWeightCompletion(l2_path)
+        engine = SteelWeightCompletion(l2_path, loader=self._loader)
         summary = engine.compute()
         if summary.total_weight_kg <= 0:
             raise PRODUCTION_OUTPUT_ERROR(
@@ -201,10 +247,12 @@ class PhaseVB1Orchestrator:
         return summary
 
     def _step_excel_generation(self, bbs_rows, steel_summary) -> Dict:
+        loader_summary = self._loader.summary() if self._loader else None
         generator = EstimatorExcelGenerator(
             bbs_rows=bbs_rows,
             steel_summary=steel_summary,
             output_dir=self.output_dir,
+            loader_summary=loader_summary,
         )
         paths = generator.generate()
         for key, path in paths.items():

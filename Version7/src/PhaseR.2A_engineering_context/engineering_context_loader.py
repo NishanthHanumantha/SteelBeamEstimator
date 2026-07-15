@@ -126,6 +126,10 @@ class EngineeringContextLoader:
         self._warn("get_primary_steel_grade(): GN not found -> Fe415")
         return _IS456_PRIMARY_STEEL
 
+    def get_steel_grade(self) -> str:
+        """Alias for get_primary_steel_grade()."""
+        return self.get_primary_steel_grade()
+
     def get_steel_grades(self) -> List[str]:
         return list(self._ctx.steel_grades) or [_IS456_PRIMARY_STEEL]
 
@@ -175,6 +179,21 @@ class EngineeringContextLoader:
                 return rule.value_mm
         self._warn("get_minimum_lap_mm(): GN not found -> 300mm")
         return 300
+
+    def get_lap_rule(
+        self,
+        bar_diameter_mm: Optional[int] = None,
+        location: str = "",
+    ) -> int:
+        """Minimum lap length in mm from GN DXF lap rules."""
+        _ = bar_diameter_mm, location
+        return self.get_minimum_lap_mm()
+
+    def get_spacer_rule(self) -> str:
+        """Spacer bar rule from GN DXF."""
+        if self._ctx.spacer_rules:
+            return self._ctx.spacer_rules[0].description
+        return "20 mm or largest bar diameter (GN default)"
 
     # ------------------------------------------------------------------
     # Helpers

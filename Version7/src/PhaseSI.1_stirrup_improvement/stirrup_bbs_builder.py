@@ -18,6 +18,7 @@ def group_to_bbs_dict(
     group: StirrupGroup,
     beam_id: str,
     frame_type: str = "TF",
+    hook_multiple: int = 10,
 ) -> Dict[str, Any]:
     """
     Converts one StirrupGroup to a BBS row dictionary matching
@@ -30,7 +31,7 @@ def group_to_bbs_dict(
 
     # Development length = cut_length - effective span (estimator style)
     # For stirrups: dvlp = hook allowance (2 × 10d)
-    hook_mm = 2 * 10 * group.diameter_mm
+    hook_mm = 2 * hook_multiple * group.diameter_mm
     dvlp_m = round(hook_mm / 1000, 3)
 
     cut_m = round(group.cut_length_mm / 1000, 3)

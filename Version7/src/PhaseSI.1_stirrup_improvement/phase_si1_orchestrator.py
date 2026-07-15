@@ -65,13 +65,17 @@ class StirrupImprover:
         # bbs_dicts is a list of one or more BBSRow-compatible dicts
     """
 
-    def __init__(self) -> None:
+    def __init__(self, loader=None) -> None:
+        self._loader = loader
         self._parser  = StirrupNotationParser()
         self._zones   = StirrupZoneBuilder()
         self._dist    = StirrupDistributionEngine()
         self._qty     = StirrupQuantityEngine()
-        self._weight  = StirrupWeightEngine()
+        self._weight  = StirrupWeightEngine(loader)
         self._bbs     = StirrupBBSBuilder()
+        self._hook_multiple = (
+            loader.get_hook_multiple(135) if loader else 10
+        )
 
     def compute_beam(
         self,
@@ -140,7 +144,9 @@ class StirrupImprover:
                 is_merged=is_merged,
                 merge_note=merge_note,
             )
-            bbs_rows.append(group_to_bbs_dict(group, beam_id))
+            bbs_rows.append(group_to_bbs_dict(
+                group, beam_id, hook_multiple=self._hook_multiple
+            ))
 
         return bbs_rows
 
@@ -179,7 +185,7 @@ class StirrupImprover:
             "diameter_mm": d_mm,
             "spacing_m": None,
             "quantity": qty,
-            "dvlp_length_m": round(2*10*d_mm/1000, 3),
+            "dvlp_length_m": round(2 * self._hook_multiple * d_mm / 1000, 3),
             "cut_length_m": round(cut_mm/1000, 3),
             "total_length_m": round(cut_mm*qty/1000, 3),
             **dw,
