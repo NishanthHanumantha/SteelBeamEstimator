@@ -1,0 +1,52 @@
+# Phase R.1 — Generalized Reinforcement Discovery Configuration
+# MODEL_VERSION: 7.3.0
+
+model_version: "7.3.0"
+phase_id: "R.1"
+
+# ── Spatial search parameters ─────────────────────────────────────────────────
+geometry:
+  # Max DXF-unit radius for assigning an annotation to a beam
+  annotation_search_radius: 5000
+  # Annotations closer than this to the centroid Y are in the "neutral" zone
+  neutral_zone_half_height: 200
+  # Annotations further than this dy are considered remote (possible non-reinforcement)
+  max_dy_for_rebar: 6000
+
+# ── Reinforcement annotation classification ──────────────────────────────────
+classification:
+  # Diameter thresholds (mm) for role hints
+  stirrup_max_diameter: 12
+  main_bar_min_diameter: 12
+  spacer_bar_max_diameter: 12
+  # Minimum bar quantity to be counted as a group
+  min_quantity: 1
+  # Confidence thresholds
+  high_confidence_min: 0.80
+  medium_confidence_min: 0.50
+
+# ── Beam detail discovery ─────────────────────────────────────────────────────
+discovery:
+  # Re-read beam_registry from V.ROOT.1 output
+  beam_registry_path: "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+  reinforcement_dxf_key: "reinforcement"      # key in drawing_path dict
+
+# ── Export paths ──────────────────────────────────────────────────────────────
+export:
+  output_dir: "data/output/PhaseR.1_generalized_reinforcement_discovery"
+  artefacts:
+    - beam_details.json
+    - reinforcement_annotations.json
+    - reinforcement_groups.json
+    - beam_reinforcement_models.json
+    - engineering_relationships.json
+    - reinforcement_statistics.json
+    - reinforcement_validation_report.json
+    - generalized_reinforcement_report.json
+
+# ── Validation ────────────────────────────────────────────────────────────────
+validation:
+  raise_on_failure: false
+  min_coverage_pct_warning: 30.0
+  min_beams_with_top_main: 50
+  min_beams_with_bottom_main: 50
