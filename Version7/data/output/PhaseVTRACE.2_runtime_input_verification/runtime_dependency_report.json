@@ -1,0 +1,275 @@
+{
+  "total_findings": 38,
+  "critical_findings": 4,
+  "critical": [
+    {
+      "file": "interpretation_collector.py",
+      "line": 35,
+      "category": "HARDCODED_V5_PATH",
+      "snippet": "v5_out = project_root.parent / \"Version5/data/output\"",
+      "critical": true
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 35,
+      "category": "PARENT_RELATIVE_PATH",
+      "snippet": "v5_out = project_root.parent / \"Version5/data/output\"",
+      "critical": true
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 40,
+      "category": "PARENT_RELATIVE_PATH",
+      "snippet": "\"reference_images\": project_root.parent / REFERENCE_IMAGES_FOLDER,",
+      "critical": true
+    },
+    {
+      "file": "validation.py",
+      "line": 87,
+      "category": "HARDCODED_V5_PATH",
+      "snippet": "_c(\"Version5 untouched\", True),",
+      "critical": true
+    }
+  ],
+  "non_critical": [
+    {
+      "file": "bar_role_classifier.py",
+      "line": 39,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B1\": [",
+      "critical": false
+    },
+    {
+      "file": "bar_role_classifier.py",
+      "line": 82,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B2\": [",
+      "critical": false
+    },
+    {
+      "file": "bar_role_classifier.py",
+      "line": 114,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B8\": [",
+      "critical": false
+    },
+    {
+      "file": "bar_role_classifier.py",
+      "line": 152,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B9\": [",
+      "critical": false
+    },
+    {
+      "file": "bar_role_classifier.py",
+      "line": 190,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B10\": [",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 12,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B1\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 13,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B2\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 14,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B8\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 15,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B9\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 16,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B10\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 21,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B1\": 5570.0,   # 5.57m",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 22,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B2\": 4280.0,   # 4.28m",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 23,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B8\": 2240.0,   # 2.24m",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 24,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B9\": 3020.0,   # 3.02m",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 25,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B10\": 3910.0,  # 3.91m",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 101,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "beams = {\"B1\", \"B2\", \"B3\", \"B4\", \"B5\", \"B6\", \"B7\", \"B8\", \"B9\", \"B10\",",
+      "critical": false
+    },
+    {
+      "file": "beam_context_builder.py",
+      "line": 102,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B11\", \"B12\", \"B13\", \"B14\", \"B15\", \"B16\", \"B17\", \"B18\"}",
+      "critical": false
+    },
+    {
+      "file": "beam_ownership_engine.py",
+      "line": 14,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B8\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "beam_ownership_engine.py",
+      "line": 15,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B9\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "beam_ownership_engine.py",
+      "line": 16,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B10\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "continuity_analyzer.py",
+      "line": 16,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B8\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "continuity_analyzer.py",
+      "line": 17,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B9\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "continuity_analyzer.py",
+      "line": 18,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"B10\": [\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "continuity_analyzer.py",
+      "line": 49,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "for group in [[\"B8\", \"B9\", \"B10\"]]:",
+      "critical": false
+    },
+    {
+      "file": "export.py",
+      "line": 45,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"is_multi_span\": m.beam_id in {\"B8\", \"B9\", \"B10\"},",
+      "critical": false
+    },
+    {
+      "file": "export.py",
+      "line": 58,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "for b in [\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"]",
+      "critical": false
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 41,
+      "category": "HARDCODED_FILENAME",
+      "snippet": "\"v5_engineering_objects\": v5_out / \"phase_g/g_5_1_engineering_objects/engineering_objects.json\",",
+      "critical": false
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 42,
+      "category": "HARDCODED_FILENAME",
+      "snippet": "\"v5_reinforcement_objects\": v5_i / \"i_2_reinforcement_engine/reinforcement_objects.json\",",
+      "critical": false
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 43,
+      "category": "HARDCODED_FILENAME",
+      "snippet": "\"v5_beam_schedule\": v5_i / \"i_15_beam_schedule/beam_schedule_results.json\",",
+      "critical": false
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 44,
+      "category": "HARDCODED_FILENAME",
+      "snippet": "\"v5_recovery\": v5_out / \"engineering_recovery/recovered_engineering_objects.json\",",
+      "critical": false
+    },
+    {
+      "file": "interpretation_collector.py",
+      "line": 87,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "\"benchmark_beams\": [\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "semantic_validator.py",
+      "line": 13,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "BENCHMARK_BEAMS = {\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"}",
+      "critical": false
+    },
+    {
+      "file": "support_zone_detector.py",
+      "line": 13,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "[\"B8\", \"B9\", \"B10\"],",
+      "critical": false
+    },
+    {
+      "file": "validation.py",
+      "line": 9,
+      "category": "HARDCODED_BEAM_ID",
+      "snippet": "BENCHMARK_BEAMS = {\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"}",
+      "critical": false
+    }
+  ],
+  "summary": "4 critical hardcoded dependency/path reference(s) found in L.2 source files."
+}

@@ -1,0 +1,4 @@
+{
+  "root_cause": "DETERMINISTIC ROOT CAUSE: Phase L.2's InterpretationCollector reads the V5 adapter files which contain ALL 65 Benchmark Set 2 beams. BeamContextBuilder._discover_beams() returns 65 beams from beam_schedule.results. HOWEVER, the L.2 output artefact (beam_reinforcement_models.json) contains only 0 beams — this artefact is STALE. It was generated BEFORE V.ROOT.1 updated the V5 adapter files (adapter last written at 2026-07-15T05:38:35.458799+00:00). 54 output files across stage(s) ['L2', 'L21', 'L22', 'L3', 'SI0', 'SI1', 'VB1'] are stale. L.2 has NOT been re-executed since V.ROOT.1 ran. The input is correct (65 beams); the output is old (18 beams from Benchmark Set 1).",
+  "recommendation": "Re-execute Phase L.2 using: python Version7/Run_PY/run_phase_l2_engineering_reinforcement_interpretation.py Then continue: SI.0 -> SI.1 -> L.2.2 -> L.2.1 -> L.3 -> V.B.1. No code changes required. The V5 adapter files are ready with 65 Benchmark Set 2 beams."
+}

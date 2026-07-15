@@ -1,0 +1,1667 @@
+{
+  "phase": "V.TRACE.2",
+  "title": "Runtime Input Verification",
+  "model_version": "7.1.3",
+  "generated_at": "2026-07-15T06:31:39.192280+00:00",
+  "sections": {
+    "1_executive_summary": {
+      "input_beam_count": 65,
+      "output_beam_count": 0,
+      "net_loss": 65,
+      "stale_files": 54,
+      "stale_stages": [
+        "L2",
+        "L21",
+        "L22",
+        "L3",
+        "SI0",
+        "SI1",
+        "VB1"
+      ],
+      "validation_pass": 10,
+      "validation_fail": 0,
+      "overall_verdict": "PASS",
+      "root_cause_summary": "DETERMINISTIC ROOT CAUSE: Phase L.2's InterpretationCollector reads the V5 adapter files which contain ALL 65 Benchmark Set 2 beams. BeamContextBuilder._discover_beams() returns 65 beams from beam_schedule.results. HOWEVER, the L.2 output artefact (beam_reinforcement_models.json) contains only 0 beams — this artefact is STALE. It was generated BEFORE V.ROOT.1 updated the V5 adapter files (adapter last written at 2026-07-15T05:38:35.458799+00:00). 54 output files across stage(s) ['L2', 'L21', 'L22', 'L3', 'SI0', 'SI1', 'VB1'] are stale. L.2 has NOT been re-executed since V.ROOT.1 ran. The input is correct (65 beams); the output is old (18 beams from Benchmark Set 1)."
+    },
+    "2_files_loaded_by_l2": [
+      {
+        "key": "v5_engineering_objects",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_g\\g_5_1_engineering_objects\\engineering_objects.json",
+        "version": "Version5",
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+        "beam_count": 65,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_reinforcement_objects",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_2_reinforcement_engine\\reinforcement_objects.json",
+        "version": "Version5",
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.411673+00:00",
+        "beam_count": 65,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_beam_schedule",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.json",
+        "version": "Version5",
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.374333+00:00",
+        "beam_count": 65,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_recovery",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\engineering_recovery\\recovered_engineering_objects.json",
+        "version": "Version5",
+        "benchmark_id": "UNKNOWN",
+        "model_version": null,
+        "mtime_iso": "2026-07-08T10:12:56.884876+00:00",
+        "beam_count": 7,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_general_notes",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_e\\general_notes.json",
+        "version": "Version5",
+        "benchmark_id": null,
+        "model_version": null,
+        "mtime_iso": null,
+        "beam_count": 0,
+        "load_status": "MISSING"
+      },
+      {
+        "key": "v5_steel_weight",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_11_steel_weight\\steel_weight_results.json",
+        "version": "Version5",
+        "benchmark_id": "UNKNOWN",
+        "model_version": null,
+        "mtime_iso": "2026-07-08T12:53:28.511855+00:00",
+        "beam_count": 46,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_beam_geometry",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_f\\beam_geometry_model.json",
+        "version": "Version5",
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.513573+00:00",
+        "beam_count": 65,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "v5_engineering_gap",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\engineering_analysis\\engineering_gap_analysis.json",
+        "version": "Version5",
+        "benchmark_id": "UNKNOWN",
+        "model_version": null,
+        "mtime_iso": "2026-07-08T08:58:52.754148+00:00",
+        "beam_count": 0,
+        "load_status": "LOADED"
+      },
+      {
+        "key": "l1_role_gap",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.1 - accuracy_sprint_1_estimator_gap_closure\\reinforcement_role_gap_analysis.json",
+        "version": "Version7",
+        "benchmark_id": null,
+        "model_version": null,
+        "mtime_iso": null,
+        "beam_count": 0,
+        "load_status": "MISSING"
+      },
+      {
+        "key": "l2_audit",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_rule_audit\\role_audit.json",
+        "version": "Version7",
+        "benchmark_id": null,
+        "model_version": null,
+        "mtime_iso": null,
+        "beam_count": 0,
+        "load_status": "MISSING"
+      }
+    ],
+    "3_beam_counts": {
+      "per_file": {
+        "v5_engineering_objects": {
+          "beam_count": 65,
+          "beam_ids": []
+        },
+        "v5_reinforcement_objects": {
+          "beam_count": 65,
+          "beam_ids": [
+            "B1",
+            "B10",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B14A",
+            "B15",
+            "B16",
+            "B17"
+          ]
+        },
+        "v5_beam_schedule": {
+          "beam_count": 65,
+          "beam_ids": [
+            "B1",
+            "B10",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B14A",
+            "B15",
+            "B16",
+            "B17"
+          ]
+        },
+        "v5_recovery": {
+          "beam_count": 7,
+          "beam_ids": []
+        },
+        "v5_general_notes": {
+          "beam_count": 0,
+          "beam_ids": []
+        },
+        "v5_steel_weight": {
+          "beam_count": 46,
+          "beam_ids": [
+            "B1",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B15",
+            "B16",
+            "B17",
+            "B18",
+            "B2"
+          ]
+        },
+        "v5_beam_geometry": {
+          "beam_count": 65,
+          "beam_ids": [
+            "B1",
+            "B10",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B14A",
+            "B15",
+            "B16",
+            "B17"
+          ]
+        },
+        "v5_engineering_gap": {
+          "beam_count": 0,
+          "beam_ids": []
+        },
+        "l1_role_gap": {
+          "beam_count": 0,
+          "beam_ids": []
+        },
+        "l2_audit": {
+          "beam_count": 0,
+          "beam_ids": []
+        }
+      },
+      "discover_beams_count": 65,
+      "discover_beams_source": "beam_schedule.results",
+      "discover_beams_ids": [
+        "B1",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B14A",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B2",
+        "B20",
+        "B20A",
+        "B21",
+        "B22",
+        "B23",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B29A",
+        "B3",
+        "B30",
+        "B31",
+        "B31A",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B35A",
+        "B36",
+        "B38",
+        "B39",
+        "B39A",
+        "B40",
+        "B41",
+        "B42",
+        "B43",
+        "B45",
+        "B46",
+        "B47",
+        "B48",
+        "B48A",
+        "B49",
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B58",
+        "B59",
+        "B6",
+        "B60",
+        "B61",
+        "B63",
+        "B7",
+        "B8",
+        "B9",
+        "BR1"
+      ],
+      "fallback_triggered": false
+    },
+    "4_runtime_load_sequence": [
+      {
+        "sequence": 1,
+        "key": "stream",
+        "absolute_path": "stream",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "yaml.safe_load",
+        "note": "size=0B"
+      },
+      {
+        "sequence": 2,
+        "key": "engineering_objects.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_g\\g_5_1_engineering_objects\\engineering_objects.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=64653B"
+      },
+      {
+        "sequence": 3,
+        "key": "reinforcement_objects.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_2_reinforcement_engine\\reinforcement_objects.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=20025B"
+      },
+      {
+        "sequence": 4,
+        "key": "beam_schedule_results.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=59395B"
+      },
+      {
+        "sequence": 5,
+        "key": "recovered_engineering_objects.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\engineering_recovery\\recovered_engineering_objects.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=5612B"
+      },
+      {
+        "sequence": 6,
+        "key": "steel_weight_results.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_11_steel_weight\\steel_weight_results.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=118889B"
+      },
+      {
+        "sequence": 7,
+        "key": "beam_geometry_model.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_f\\beam_geometry_model.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=17464B"
+      },
+      {
+        "sequence": 8,
+        "key": "engineering_gap_analysis.json",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\engineering_analysis\\engineering_gap_analysis.json",
+        "beam_count": null,
+        "beam_ids": [],
+        "load_status": "LOADED",
+        "caller": "pathlib.Path.read_text",
+        "note": "size=15643B"
+      }
+    ],
+    "5_adapter_verification": [
+      {
+        "key": "v5_engineering_objects",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_g\\g_5_1_engineering_objects\\engineering_objects.json",
+        "exists": true,
+        "beam_count": 65,
+        "expected_count": 65,
+        "count_match": true,
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+        "missing_ids": [
+          "IDs not enumerable"
+        ],
+        "unexpected_ids": [],
+        "status": "PASS",
+        "note": "Adapter contains 65/65 beams."
+      },
+      {
+        "key": "v5_reinforcement_objects",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_2_reinforcement_engine\\reinforcement_objects.json",
+        "exists": true,
+        "beam_count": 65,
+        "expected_count": 65,
+        "count_match": true,
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.411673+00:00",
+        "missing_ids": [],
+        "unexpected_ids": [],
+        "status": "PASS",
+        "note": "Adapter contains 65/65 beams."
+      },
+      {
+        "key": "v5_beam_schedule",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.json",
+        "exists": true,
+        "beam_count": 65,
+        "expected_count": 65,
+        "count_match": true,
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.374333+00:00",
+        "missing_ids": [],
+        "unexpected_ids": [],
+        "status": "PASS",
+        "note": "Adapter contains 65/65 beams."
+      },
+      {
+        "key": "v5_beam_geometry",
+        "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_f\\beam_geometry_model.json",
+        "exists": true,
+        "beam_count": 65,
+        "expected_count": 65,
+        "count_match": true,
+        "benchmark_id": "Benchmark_Set_2",
+        "model_version": "7.1.0",
+        "mtime_iso": "2026-07-15T05:38:35.513573+00:00",
+        "missing_ids": [],
+        "unexpected_ids": [],
+        "status": "PASS",
+        "note": "Adapter contains 65/65 beams."
+      }
+    ],
+    "6_filtering_analysis": {
+      "stages": [
+        {
+          "label": "0_adapter_input",
+          "description": "V5 beam_schedule adapter (what L.2 reads)",
+          "beam_count": 65,
+          "beam_ids": [
+            "B1",
+            "B10",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B14A",
+            "B15",
+            "B16",
+            "B17",
+            "B18",
+            "B19",
+            "B2",
+            "B20",
+            "B20A",
+            "B21",
+            "B22",
+            "B23",
+            "B25",
+            "B26",
+            "B27",
+            "B28",
+            "B29",
+            "B29A",
+            "B3",
+            "B30",
+            "B31",
+            "B31A",
+            "B32",
+            "B33",
+            "B34",
+            "B35",
+            "B35A",
+            "B36",
+            "B38",
+            "B39",
+            "B39A",
+            "B40",
+            "B41",
+            "B42",
+            "B43",
+            "B45",
+            "B46",
+            "B47",
+            "B48",
+            "B48A",
+            "B49",
+            "B50",
+            "B51",
+            "B52",
+            "B53",
+            "B54",
+            "B55",
+            "B56",
+            "B57",
+            "B58",
+            "B59",
+            "B6",
+            "B60",
+            "B61",
+            "B63",
+            "B7",
+            "B8",
+            "B9",
+            "BR1"
+          ],
+          "source_file": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.json",
+          "note": "Written by V.ROOT.1 engineering_object_initializer.py"
+        },
+        {
+          "label": "1_discover_beams_output",
+          "description": "BeamContextBuilder._discover_beams() result (simulated)",
+          "beam_count": 65,
+          "beam_ids": [
+            "B1",
+            "B10",
+            "B11",
+            "B12",
+            "B13",
+            "B14",
+            "B14A",
+            "B15",
+            "B16",
+            "B17",
+            "B18",
+            "B19",
+            "B2",
+            "B20",
+            "B20A",
+            "B21",
+            "B22",
+            "B23",
+            "B25",
+            "B26",
+            "B27",
+            "B28",
+            "B29",
+            "B29A",
+            "B3",
+            "B30",
+            "B31",
+            "B31A",
+            "B32",
+            "B33",
+            "B34",
+            "B35",
+            "B35A",
+            "B36",
+            "B38",
+            "B39",
+            "B39A",
+            "B40",
+            "B41",
+            "B42",
+            "B43",
+            "B45",
+            "B46",
+            "B47",
+            "B48",
+            "B48A",
+            "B49",
+            "B50",
+            "B51",
+            "B52",
+            "B53",
+            "B54",
+            "B55",
+            "B56",
+            "B57",
+            "B58",
+            "B59",
+            "B6",
+            "B60",
+            "B61",
+            "B63",
+            "B7",
+            "B8",
+            "B9",
+            "BR1"
+          ],
+          "source_file": "beam_context_builder.py",
+          "note": "Beam IDs extracted from beam_schedule.results[].beam_mark — all 65 IDs present."
+        },
+        {
+          "label": "2_l2_output_artefact",
+          "description": "L.2 beam_reinforcement_models.json (existing artefact)",
+          "beam_count": 0,
+          "beam_ids": [],
+          "source_file": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\beam_reinforcement_models.json",
+          "note": "Artefact contains 18 beams. model_version=?. run_timestamp=?"
+        },
+        {
+          "label": "3_l2_statistics",
+          "description": "L.2 interpretation_statistics.json (reported beam count)",
+          "beam_count": 18,
+          "beam_ids": [
+            "BEAM_0",
+            "BEAM_1",
+            "BEAM_10",
+            "BEAM_11",
+            "BEAM_12",
+            "BEAM_13",
+            "BEAM_14",
+            "BEAM_15",
+            "BEAM_16",
+            "BEAM_17",
+            "BEAM_2",
+            "BEAM_3",
+            "BEAM_4",
+            "BEAM_5",
+            "BEAM_6",
+            "BEAM_7",
+            "BEAM_8",
+            "BEAM_9"
+          ],
+          "source_file": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\interpretation_statistics.json",
+          "note": "Reported total_beams=18"
+        }
+      ],
+      "first_drop_stage": "2_l2_output_artefact",
+      "first_drop_delta": -65,
+      "input_count": 65,
+      "output_count": 0,
+      "net_loss": 65,
+      "lost_ids": [
+        "B1",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B14A",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B2",
+        "B20",
+        "B20A",
+        "B21",
+        "B22",
+        "B23",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B29A",
+        "B3",
+        "B30",
+        "B31",
+        "B31A",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B35A",
+        "B36",
+        "B38",
+        "B39",
+        "B39A",
+        "B40",
+        "B41",
+        "B42",
+        "B43",
+        "B45",
+        "B46",
+        "B47",
+        "B48",
+        "B48A",
+        "B49",
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B58",
+        "B59",
+        "B6",
+        "B60",
+        "B61",
+        "B63",
+        "B7",
+        "B8",
+        "B9",
+        "BR1"
+      ]
+    },
+    "7_version_analysis": {
+      "version_distribution": {
+        "Version5": 8,
+        "Version6": 0,
+        "Version7": 2,
+        "UNKNOWN": 0
+      },
+      "files_by_version": {
+        "Version5": [
+          "v5_engineering_objects",
+          "v5_reinforcement_objects",
+          "v5_beam_schedule",
+          "v5_recovery",
+          "v5_general_notes",
+          "v5_steel_weight",
+          "v5_beam_geometry",
+          "v5_engineering_gap"
+        ],
+        "Version6": [],
+        "Version7": [
+          "l1_role_gap",
+          "l2_audit"
+        ],
+        "UNKNOWN": []
+      },
+      "dominant_version": "Version5",
+      "l2_reads_from_version5": true,
+      "v5_files": [
+        "v5_engineering_objects",
+        "v5_reinforcement_objects",
+        "v5_beam_schedule",
+        "v5_recovery",
+        "v5_general_notes",
+        "v5_steel_weight",
+        "v5_beam_geometry",
+        "v5_engineering_gap"
+      ],
+      "note": "All primary input files are read from Version5/data/output (V5 adapter layer). This is the expected design for backward compatibility."
+    },
+    "8_benchmark_analysis": {
+      "benchmark_distribution": {
+        "Benchmark_Set_2": 4,
+        "UNKNOWN": 6
+      },
+      "note": "Adapter files contain Benchmark_Set_2 data — correct."
+    },
+    "9_cache_analysis": {
+      "adapter_write_time_iso": "2026-07-15T05:38:35.458799+00:00",
+      "total_output_files": 54,
+      "stale_files": 54,
+      "current_files": 0,
+      "stale_stages": [
+        "L2",
+        "L21",
+        "L22",
+        "L3",
+        "SI0",
+        "SI1",
+        "VB1"
+      ],
+      "stale_details": [
+        {
+          "stage": "L2",
+          "file": "bar_role_classification.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\bar_role_classification.json",
+          "mtime_iso": "2026-07-14T12:05:48.291967+00:00",
+          "mtime_epoch": 1784030748.2919674,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.2
+        },
+        {
+          "stage": "L2",
+          "file": "beam_ownership_analysis.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\beam_ownership_analysis.json",
+          "mtime_iso": "2026-07-14T12:05:48.344266+00:00",
+          "mtime_epoch": 1784030748.3442664,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "L2",
+          "file": "beam_reinforcement_models.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\beam_reinforcement_models.json",
+          "mtime_iso": "2026-07-14T12:05:48.268193+00:00",
+          "mtime_epoch": 1784030748.2681935,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.2
+        },
+        {
+          "stage": "L2",
+          "file": "continuity_analysis.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\continuity_analysis.json",
+          "mtime_iso": "2026-07-14T12:05:48.325824+00:00",
+          "mtime_epoch": 1784030748.3258243,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "L2",
+          "file": "engineering_semantics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\engineering_semantics.json",
+          "mtime_iso": "2026-07-14T12:05:48.383678+00:00",
+          "mtime_epoch": 1784030748.3836777,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "L2",
+          "file": "interpretation_dashboard.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\interpretation_dashboard.json",
+          "mtime_iso": "2026-07-14T12:05:48.417473+00:00",
+          "mtime_epoch": 1784030748.417473,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.0
+        },
+        {
+          "stage": "L2",
+          "file": "interpretation_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\interpretation_statistics.json",
+          "mtime_iso": "2026-07-14T12:05:48.400178+00:00",
+          "mtime_epoch": 1784030748.4001777,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "L2",
+          "file": "reinforcement_regions.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\reinforcement_regions.json",
+          "mtime_iso": "2026-07-14T12:05:48.364171+00:00",
+          "mtime_epoch": 1784030748.3641708,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "L2",
+          "file": "support_zone_analysis.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2 - engineering_reinforcement_interpretation\\support_zone_analysis.json",
+          "mtime_iso": "2026-07-14T12:05:48.309291+00:00",
+          "mtime_epoch": 1784030748.309291,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63167.1
+        },
+        {
+          "stage": "SI0",
+          "file": "beam_reinforcement_models.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\beam_reinforcement_models.json",
+          "mtime_iso": "2026-07-14T12:06:04.195174+00:00",
+          "mtime_epoch": 1784030764.1951735,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.3
+        },
+        {
+          "stage": "SI0",
+          "file": "beam_updates.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\beam_updates.json",
+          "mtime_iso": "2026-07-14T12:06:04.122541+00:00",
+          "mtime_epoch": 1784030764.122541,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.3
+        },
+        {
+          "stage": "SI0",
+          "file": "candidate_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\candidate_report.json",
+          "mtime_iso": "2026-07-14T12:06:04.094604+00:00",
+          "mtime_epoch": 1784030764.0946043,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.4
+        },
+        {
+          "stage": "SI0",
+          "file": "phase_si0_summary.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\phase_si0_summary.json",
+          "mtime_iso": "2026-07-14T12:06:04.156146+00:00",
+          "mtime_epoch": 1784030764.1561456,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.3
+        },
+        {
+          "stage": "SI0",
+          "file": "quality_validation.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\quality_validation.json",
+          "mtime_iso": "2026-07-14T12:06:04.058314+00:00",
+          "mtime_epoch": 1784030764.0583143,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.4
+        },
+        {
+          "stage": "SI0",
+          "file": "recovered_stirrups.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\recovered_stirrups.json",
+          "mtime_iso": "2026-07-14T12:06:03.995574+00:00",
+          "mtime_epoch": 1784030763.995574,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.5
+        },
+        {
+          "stage": "SI0",
+          "file": "recovery_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\recovery_report.json",
+          "mtime_iso": "2026-07-14T12:06:04.027966+00:00",
+          "mtime_epoch": 1784030764.0279665,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.4
+        },
+        {
+          "stage": "SI0",
+          "file": "recovery_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.0_stirrup_recovery\\recovery_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:04.078257+00:00",
+          "mtime_epoch": 1784030764.078257,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63151.4
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_bbs_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_bbs_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.129151+00:00",
+          "mtime_epoch": 1784030765.129151,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.3
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_distribution_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_distribution_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.055544+00:00",
+          "mtime_epoch": 1784030765.055544,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.4
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_full_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_full_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.241966+00:00",
+          "mtime_epoch": 1784030765.2419662,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.2
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_quantity_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_quantity_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.091227+00:00",
+          "mtime_epoch": 1784030765.0912266,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.4
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:05.183566+00:00",
+          "mtime_epoch": 1784030765.183566,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.3
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_validation_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_validation_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.215338+00:00",
+          "mtime_epoch": 1784030765.2153375,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.2
+        },
+        {
+          "stage": "SI1",
+          "file": "stirrup_weight_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseSI.1_stirrup_improvement\\stirrup_weight_report.json",
+          "mtime_iso": "2026-07-14T12:06:05.161612+00:00",
+          "mtime_epoch": 1784030765.1616116,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63150.3
+        },
+        {
+          "stage": "L22",
+          "file": "beam_coverage_matrix.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\beam_coverage_matrix.json",
+          "mtime_iso": "2026-07-14T12:05:55.567083+00:00",
+          "mtime_epoch": 1784030755.5670826,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63159.9
+        },
+        {
+          "stage": "L22",
+          "file": "extended_beam_reinforcement_models.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\extended_beam_reinforcement_models.json",
+          "mtime_iso": "2026-07-14T12:05:50.432937+00:00",
+          "mtime_epoch": 1784030750.4329374,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63165.0
+        },
+        {
+          "stage": "L22",
+          "file": "geometry_recovery_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\geometry_recovery_report.json",
+          "mtime_iso": "2026-07-14T12:05:55.544315+00:00",
+          "mtime_epoch": 1784030755.5443149,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63159.9
+        },
+        {
+          "stage": "L22",
+          "file": "geometry_registry.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\geometry_registry.json",
+          "mtime_iso": "2026-07-14T12:05:55.511207+00:00",
+          "mtime_epoch": 1784030755.5112069,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63159.9
+        },
+        {
+          "stage": "L22",
+          "file": "geometry_traceability_map.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\geometry_traceability_map.json",
+          "mtime_iso": "2026-07-14T12:05:55.604705+00:00",
+          "mtime_epoch": 1784030755.604705,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63159.9
+        },
+        {
+          "stage": "L22",
+          "file": "pipeline_validation_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.2_geometry_recovery\\pipeline_validation_report.json",
+          "mtime_iso": "2026-07-14T12:05:55.585710+00:00",
+          "mtime_epoch": 1784030755.5857096,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63159.9
+        },
+        {
+          "stage": "L21",
+          "file": "annotation_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\annotation_features.json",
+          "mtime_iso": "2026-07-14T12:06:00.025308+00:00",
+          "mtime_epoch": 1784030760.0253081,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.4
+        },
+        {
+          "stage": "L21",
+          "file": "continuity_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\continuity_features.json",
+          "mtime_iso": "2026-07-14T12:05:59.968270+00:00",
+          "mtime_epoch": 1784030759.9682698,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.5
+        },
+        {
+          "stage": "L21",
+          "file": "engineering_feature_database.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\engineering_feature_database.json",
+          "mtime_iso": "2026-07-14T12:05:59.891750+00:00",
+          "mtime_epoch": 1784030759.8917503,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.6
+        },
+        {
+          "stage": "L21",
+          "file": "extent_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\extent_features.json",
+          "mtime_iso": "2026-07-14T12:05:59.991778+00:00",
+          "mtime_epoch": 1784030759.9917784,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.5
+        },
+        {
+          "stage": "L21",
+          "file": "feature_dashboard.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\feature_dashboard.json",
+          "mtime_iso": "2026-07-14T12:06:00.088952+00:00",
+          "mtime_epoch": 1784030760.088952,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.4
+        },
+        {
+          "stage": "L21",
+          "file": "feature_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\feature_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:00.071067+00:00",
+          "mtime_epoch": 1784030760.0710669,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.4
+        },
+        {
+          "stage": "L21",
+          "file": "geometry_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\geometry_features.json",
+          "mtime_iso": "2026-07-14T12:05:59.931149+00:00",
+          "mtime_epoch": 1784030759.9311492,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.5
+        },
+        {
+          "stage": "L21",
+          "file": "orientation_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\orientation_features.json",
+          "mtime_iso": "2026-07-14T12:06:00.018081+00:00",
+          "mtime_epoch": 1784030760.0180807,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.4
+        },
+        {
+          "stage": "L21",
+          "file": "position_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\position_features.json",
+          "mtime_iso": "2026-07-14T12:05:59.957208+00:00",
+          "mtime_epoch": 1784030759.957208,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.5
+        },
+        {
+          "stage": "L21",
+          "file": "support_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\support_features.json",
+          "mtime_iso": "2026-07-14T12:05:59.983129+00:00",
+          "mtime_epoch": 1784030759.9831293,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.5
+        },
+        {
+          "stage": "L21",
+          "file": "topology_features.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.2.1 - engineering_feature_extraction\\topology_features.json",
+          "mtime_iso": "2026-07-14T12:06:00.047047+00:00",
+          "mtime_epoch": 1784030760.0470471,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63155.4
+        },
+        {
+          "stage": "L3",
+          "file": "beam_pattern_matrix.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\beam_pattern_matrix.json",
+          "mtime_iso": "2026-07-14T12:06:01.880765+00:00",
+          "mtime_epoch": 1784030761.8807652,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.6
+        },
+        {
+          "stage": "L3",
+          "file": "engineering_pattern_registry.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\engineering_pattern_registry.json",
+          "mtime_iso": "2026-07-14T12:06:01.828721+00:00",
+          "mtime_epoch": 1784030761.8287206,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.6
+        },
+        {
+          "stage": "L3",
+          "file": "engineering_patterns.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\engineering_patterns.json",
+          "mtime_iso": "2026-07-14T12:06:01.781404+00:00",
+          "mtime_epoch": 1784030761.7814045,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.7
+        },
+        {
+          "stage": "L3",
+          "file": "pattern_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\pattern_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:01.940822+00:00",
+          "mtime_epoch": 1784030761.9408216,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.5
+        },
+        {
+          "stage": "L3",
+          "file": "pattern_summary.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\pattern_summary.json",
+          "mtime_iso": "2026-07-14T12:06:01.855043+00:00",
+          "mtime_epoch": 1784030761.8550434,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.6
+        },
+        {
+          "stage": "L3",
+          "file": "pattern_validation_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\PhaseL.3_beam_pattern_recognition\\pattern_validation_report.json",
+          "mtime_iso": "2026-07-14T12:06:01.913434+00:00",
+          "mtime_epoch": 1784030761.9134338,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63153.5
+        },
+        {
+          "stage": "VB1",
+          "file": "bbs_summary.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\bbs_summary.json",
+          "mtime_iso": "2026-07-14T12:06:14.546216+00:00",
+          "mtime_epoch": 1784030774.546216,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        },
+        {
+          "stage": "VB1",
+          "file": "engineering_totals.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\engineering_totals.json",
+          "mtime_iso": "2026-07-14T12:06:14.580081+00:00",
+          "mtime_epoch": 1784030774.580081,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        },
+        {
+          "stage": "VB1",
+          "file": "production_output_report.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\production_output_report.json",
+          "mtime_iso": "2026-07-14T12:06:14.498314+00:00",
+          "mtime_epoch": 1784030774.4983137,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63141.0
+        },
+        {
+          "stage": "VB1",
+          "file": "production_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\production_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:14.596122+00:00",
+          "mtime_epoch": 1784030774.5961218,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        },
+        {
+          "stage": "VB1",
+          "file": "steel_weight_summary.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\steel_weight_summary.json",
+          "mtime_iso": "2026-07-14T12:06:14.529662+00:00",
+          "mtime_epoch": 1784030774.529662,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        },
+        {
+          "stage": "VB1",
+          "file": "workbook_statistics.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\workbook_statistics.json",
+          "mtime_iso": "2026-07-14T12:06:14.563154+00:00",
+          "mtime_epoch": 1784030774.5631537,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        },
+        {
+          "stage": "VB1",
+          "file": "workbook_validation.json",
+          "absolute_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version7\\data\\output\\Production_Output\\workbook_validation.json",
+          "mtime_iso": "2026-07-14T12:06:14.513402+00:00",
+          "mtime_epoch": 1784030774.5134015,
+          "adapter_mtime_iso": "2026-07-15T05:38:35.458799+00:00",
+          "is_stale": true,
+          "age_vs_adapter_s": 63140.9
+        }
+      ],
+      "current_details": [],
+      "summary": "54 output file(s) across stages ['L2', 'L21', 'L22', 'L3', 'SI0', 'SI1', 'VB1'] were generated BEFORE V.ROOT.1 updated the adapter files (adapter written at 2026-07-15T05:38:35.458799+00:00). These are STALE."
+    },
+    "10_dependency_analysis": {
+      "total_findings": 38,
+      "critical_findings": 4,
+      "critical": [
+        {
+          "file": "interpretation_collector.py",
+          "line": 35,
+          "category": "HARDCODED_V5_PATH",
+          "snippet": "v5_out = project_root.parent / \"Version5/data/output\"",
+          "critical": true
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 35,
+          "category": "PARENT_RELATIVE_PATH",
+          "snippet": "v5_out = project_root.parent / \"Version5/data/output\"",
+          "critical": true
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 40,
+          "category": "PARENT_RELATIVE_PATH",
+          "snippet": "\"reference_images\": project_root.parent / REFERENCE_IMAGES_FOLDER,",
+          "critical": true
+        },
+        {
+          "file": "validation.py",
+          "line": 87,
+          "category": "HARDCODED_V5_PATH",
+          "snippet": "_c(\"Version5 untouched\", True),",
+          "critical": true
+        }
+      ],
+      "non_critical": [
+        {
+          "file": "bar_role_classifier.py",
+          "line": 39,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B1\": [",
+          "critical": false
+        },
+        {
+          "file": "bar_role_classifier.py",
+          "line": 82,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B2\": [",
+          "critical": false
+        },
+        {
+          "file": "bar_role_classifier.py",
+          "line": 114,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B8\": [",
+          "critical": false
+        },
+        {
+          "file": "bar_role_classifier.py",
+          "line": 152,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B9\": [",
+          "critical": false
+        },
+        {
+          "file": "bar_role_classifier.py",
+          "line": 190,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B10\": [",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 12,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B1\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 13,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B2\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 14,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B8\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 15,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B9\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 16,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B10\": {\"width_mm\": 200.0, \"depth_mm\": 600.0, \"top_cover_mm\": 25.0, \"bottom_cover_mm\": 25.0},",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 21,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B1\": 5570.0,   # 5.57m",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 22,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B2\": 4280.0,   # 4.28m",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 23,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B8\": 2240.0,   # 2.24m",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 24,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B9\": 3020.0,   # 3.02m",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 25,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B10\": 3910.0,  # 3.91m",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 101,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "beams = {\"B1\", \"B2\", \"B3\", \"B4\", \"B5\", \"B6\", \"B7\", \"B8\", \"B9\", \"B10\",",
+          "critical": false
+        },
+        {
+          "file": "beam_context_builder.py",
+          "line": 102,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B11\", \"B12\", \"B13\", \"B14\", \"B15\", \"B16\", \"B17\", \"B18\"}",
+          "critical": false
+        },
+        {
+          "file": "beam_ownership_engine.py",
+          "line": 14,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B8\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "beam_ownership_engine.py",
+          "line": 15,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B9\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "beam_ownership_engine.py",
+          "line": 16,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B10\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "continuity_analyzer.py",
+          "line": 16,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B8\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "continuity_analyzer.py",
+          "line": 17,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B9\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "continuity_analyzer.py",
+          "line": 18,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"B10\": [\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "continuity_analyzer.py",
+          "line": 49,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "for group in [[\"B8\", \"B9\", \"B10\"]]:",
+          "critical": false
+        },
+        {
+          "file": "export.py",
+          "line": 45,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"is_multi_span\": m.beam_id in {\"B8\", \"B9\", \"B10\"},",
+          "critical": false
+        },
+        {
+          "file": "export.py",
+          "line": 58,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "for b in [\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"]",
+          "critical": false
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 41,
+          "category": "HARDCODED_FILENAME",
+          "snippet": "\"v5_engineering_objects\": v5_out / \"phase_g/g_5_1_engineering_objects/engineering_objects.json\",",
+          "critical": false
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 42,
+          "category": "HARDCODED_FILENAME",
+          "snippet": "\"v5_reinforcement_objects\": v5_i / \"i_2_reinforcement_engine/reinforcement_objects.json\",",
+          "critical": false
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 43,
+          "category": "HARDCODED_FILENAME",
+          "snippet": "\"v5_beam_schedule\": v5_i / \"i_15_beam_schedule/beam_schedule_results.json\",",
+          "critical": false
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 44,
+          "category": "HARDCODED_FILENAME",
+          "snippet": "\"v5_recovery\": v5_out / \"engineering_recovery/recovered_engineering_objects.json\",",
+          "critical": false
+        },
+        {
+          "file": "interpretation_collector.py",
+          "line": 87,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "\"benchmark_beams\": [\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "semantic_validator.py",
+          "line": 13,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "BENCHMARK_BEAMS = {\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"}",
+          "critical": false
+        },
+        {
+          "file": "support_zone_detector.py",
+          "line": 13,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "[\"B8\", \"B9\", \"B10\"],",
+          "critical": false
+        },
+        {
+          "file": "validation.py",
+          "line": 9,
+          "category": "HARDCODED_BEAM_ID",
+          "snippet": "BENCHMARK_BEAMS = {\"B1\", \"B2\", \"B8\", \"B9\", \"B10\"}",
+          "critical": false
+        }
+      ],
+      "summary": "4 critical hardcoded dependency/path reference(s) found in L.2 source files."
+    },
+    "11_root_cause": "DETERMINISTIC ROOT CAUSE: Phase L.2's InterpretationCollector reads the V5 adapter files which contain ALL 65 Benchmark Set 2 beams. BeamContextBuilder._discover_beams() returns 65 beams from beam_schedule.results. HOWEVER, the L.2 output artefact (beam_reinforcement_models.json) contains only 0 beams — this artefact is STALE. It was generated BEFORE V.ROOT.1 updated the V5 adapter files (adapter last written at 2026-07-15T05:38:35.458799+00:00). 54 output files across stage(s) ['L2', 'L21', 'L22', 'L3', 'SI0', 'SI1', 'VB1'] are stale. L.2 has NOT been re-executed since V.ROOT.1 ran. The input is correct (65 beams); the output is old (18 beams from Benchmark Set 1).",
+    "12_engineering_recommendation": "Re-execute Phase L.2 using: python Version7/Run_PY/run_phase_l2_engineering_reinforcement_interpretation.py Then continue: SI.0 -> SI.1 -> L.2.2 -> L.2.1 -> L.3 -> V.B.1. No code changes required. The V5 adapter files are ready with 65 Benchmark Set 2 beams."
+  },
+  "validation": [
+    {
+      "rule_id": "RULE_1",
+      "name": "Every runtime file captured",
+      "status": "PASS",
+      "detail": "10 input files captured in inventory."
+    },
+    {
+      "rule_id": "RULE_2",
+      "name": "Every JSON counted",
+      "status": "PASS",
+      "detail": "10 JSON files with beam counts extracted."
+    },
+    {
+      "rule_id": "RULE_3",
+      "name": "Every loaded beam registry identified",
+      "status": "PASS",
+      "detail": "2 beam-related registries identified."
+    },
+    {
+      "rule_id": "RULE_4",
+      "name": "Every Version identified",
+      "status": "PASS",
+      "detail": "Versions detected: {'Version5': 8, 'Version6': 0, 'Version7': 2, 'UNKNOWN': 0}"
+    },
+    {
+      "rule_id": "RULE_5",
+      "name": "Every Benchmark identified",
+      "status": "PASS",
+      "detail": "Benchmarks detected: 1. Distribution: {'UNKNOWN': 3, 'Benchmark_Set_2': 4}"
+    },
+    {
+      "rule_id": "RULE_6",
+      "name": "Every adapter verified",
+      "status": "PASS",
+      "detail": "4/4 adapter checks PASS."
+    },
+    {
+      "rule_id": "RULE_7",
+      "name": "Every runtime path absolute",
+      "status": "PASS",
+      "detail": "All 10 registered paths are absolute."
+    },
+    {
+      "rule_id": "RULE_8",
+      "name": "Every filtering stage counted",
+      "status": "PASS",
+      "detail": "4 pipeline filter stages documented."
+    },
+    {
+      "rule_id": "RULE_9",
+      "name": "Every hardcoded dependency reported",
+      "status": "PASS",
+      "detail": "38 total / 4 critical hardcoded findings."
+    },
+    {
+      "rule_id": "RULE_10",
+      "name": "Exactly ONE root cause produced",
+      "status": "PASS",
+      "detail": "Root cause determination complete."
+    }
+  ],
+  "statistics": {
+    "files_total": 10,
+    "files_loaded": 7,
+    "files_missing": 3,
+    "unique_json_files": 8,
+    "version_distribution": {
+      "Version5": 8,
+      "Version7": 2
+    },
+    "benchmark_distribution": {
+      "Benchmark_Set_2": 4,
+      "UNKNOWN": 6
+    },
+    "adapter_checks_pass": 4,
+    "adapter_checks_total": 4,
+    "input_beam_count": 65,
+    "output_beam_count": 0,
+    "beam_loss_count": 65,
+    "beam_loss_pct": 100.0,
+    "stale_files": 54,
+    "stale_stages": [
+      "L2",
+      "L21",
+      "L22",
+      "L3",
+      "SI0",
+      "SI1",
+      "VB1"
+    ],
+    "critical_dependencies": 4
+  }
+}
