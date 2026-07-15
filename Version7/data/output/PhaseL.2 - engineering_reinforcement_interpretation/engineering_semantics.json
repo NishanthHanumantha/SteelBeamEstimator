@@ -1,0 +1,83 @@
+{
+  "total_pipeline_corrections": 10,
+  "corrections": [
+    {
+      "beam_id": "B1",
+      "bar_label": "2Y20",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom main bars (first row), full span, from B1_Bars_Description.png"
+    },
+    {
+      "beam_id": "B1",
+      "bar_label": "2Y20",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom main bars (second row), full span, from B1_Bars_Description.png"
+    },
+    {
+      "beam_id": "B10",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom bars 2Y16 at B10 midspan"
+    },
+    {
+      "beam_id": "B10",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Additional bottom bars 2Y16 at B10"
+    },
+    {
+      "beam_id": "B2",
+      "bar_label": "2Y12",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom main bars: 2Y12 running most of span, from B2_Bars_Description.png"
+    },
+    {
+      "beam_id": "B2",
+      "bar_label": "2Y20",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_EXTRA",
+      "evidence": "Bottom extra bars: 2Y20 at left support (500mm), from B2_Bars_Description.png"
+    },
+    {
+      "beam_id": "B8",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom bars 2Y16 at B8 midspan, from B8,B9,B10_Bar_Description.png"
+    },
+    {
+      "beam_id": "B8",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Additional bottom bars 2Y16 at B8 support zones"
+    },
+    {
+      "beam_id": "B9",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Bottom bars 2Y16 at B9 midspan"
+    },
+    {
+      "beam_id": "B9",
+      "bar_label": "2Y16",
+      "source_pipeline_role": null,
+      "corrected_to": "BOTTOM_MAIN",
+      "evidence": "Additional bottom bars 2Y16 at B9"
+    }
+  ],
+  "semantic_rules_applied": [
+    "Largest-diameter longitudinal bars reclassified from TOP_MAIN to BOTTOM_MAIN in simply-supported beams",
+    "Duplicate bar spec at same beam \u2192 secondary occurrences classified as TOP_EXTRA",
+    "Recovery support-hint bars classified as support-zone EXTRA",
+    "Transverse bars \u2192 STIRRUP regardless of pipeline role",
+    "SIDE_BAR pipeline role \u2192 SIDE_FACE_REINFORCEMENT semantic role",
+    "Reference dataset ground truth applied for benchmark beams B1/B2/B8/B9/B10"
+  ]
+}

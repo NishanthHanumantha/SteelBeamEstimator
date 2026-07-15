@@ -1,0 +1,133 @@
+{
+  "summary": {
+    "phase": "Phase L.2",
+    "model_version": "6.4.0",
+    "run_timestamp": "2026-07-15T06:48:36.065305+00:00",
+    "validation_status": "FAIL",
+    "total_beams": 65,
+    "total_bars": 30,
+    "classification_rate_percent": 100.0,
+    "pipeline_corrections": 10,
+    "benchmark_beams_complete": 5,
+    "roles_distribution": {
+      "TOP_MAIN": 8,
+      "BOTTOM_MAIN": 9,
+      "TOP_EXTRA": 2,
+      "BOTTOM_EXTRA": 1,
+      "STIRRUP": 5,
+      "SIDE_FACE_REINFORCEMENT": 4,
+      "SPACER_BAR": 1,
+      "CHAIR_BAR": 0,
+      "SUPPLEMENTARY_BAR": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "validation": {
+    "status": "FAIL",
+    "checks": [
+      {
+        "name": "Model Version 6.4.0",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Phase L.2 identification",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Every beam has BeamReinforcementModel",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Benchmark beams B1 B2 B8 B9 B10 complete",
+        "status": "PASS",
+        "detail": "Missing: set()"
+      },
+      {
+        "name": "Every reinforcement annotation classified",
+        "status": "PASS",
+        "detail": "Rate: 100.0%"
+      },
+      {
+        "name": "Every reinforcement has exactly one semantic role",
+        "status": "PASS",
+        "detail": "Unclassified: 0"
+      },
+      {
+        "name": "TOP_MAIN classification complete",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "BOTTOM_MAIN classification complete",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Extra reinforcement identified",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Stirrups identified",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Side face reinforcement identified",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Support zones detected",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Continuity analysis complete",
+        "status": "FAIL",
+        "detail": ""
+      },
+      {
+        "name": "Beam ownership resolved",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Traceability complete",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Export completeness",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Idempotent execution",
+        "status": "PASS",
+        "detail": ""
+      },
+      {
+        "name": "Version5 untouched",
+        "status": "PASS",
+        "detail": ""
+      }
+    ],
+    "summary": {
+      "total_checks": 18,
+      "passed": 17,
+      "failed": 1
+    }
+  },
+  "benchmark_coverage": {
+    "B1": true,
+    "B2": true,
+    "B8": true,
+    "B9": true,
+    "B10": true
+  },
+  "classification_rate_percent": 100.0
+}

@@ -1,0 +1,64 @@
+{
+  "phase": "L.2.2",
+  "model_version": "6.4.2",
+  "report_type": "pipeline_validation_report",
+  "run_timestamp": "2026-07-15T06:48:48.792240+00:00",
+  "pipeline_status": "PASS",
+  "counts": {
+    "detected_beams": 65,
+    "engineering_objects": 65,
+    "specifications": 65,
+    "geometry_objects": 65,
+    "feature_beams": 65
+  },
+  "coverage_percent": 100.0,
+  "consistency_rules": [
+    {
+      "rule_id": "RULE_1",
+      "description": "Feature Beam Count == Geometry Beam Count",
+      "expected_count": 65,
+      "actual_count": 65,
+      "passed": true
+    },
+    {
+      "rule_id": "RULE_2",
+      "description": "Geometry Beam Count == Specification Beam Count",
+      "expected_count": 65,
+      "actual_count": 65,
+      "passed": true
+    },
+    {
+      "rule_id": "RULE_3",
+      "description": "Specification Beam Count == Engineering Object Count",
+      "expected_count": 65,
+      "actual_count": 65,
+      "passed": true
+    },
+    {
+      "rule_id": "RULE_4",
+      "description": "Engineering Object Count == Detected Beam Count",
+      "expected_count": 65,
+      "actual_count": 65,
+      "passed": true
+    }
+  ],
+  "failed_rules": [],
+  "traceability_summary": {
+    "total_beams_traced": 65,
+    "original_geometry_beams": 5,
+    "recovered_geometry_beams": 60,
+    "beams_validation_pass": 65,
+    "beams_validation_fail": 0,
+    "coverage_percent": 100.0
+  },
+  "validation_details": {
+    "detected_beams": 65,
+    "engineering_objects": 65,
+    "specifications": 65,
+    "geometry_objects": 65,
+    "feature_beams": 65,
+    "coverage_percent": 100.0,
+    "recovered_count": 60,
+    "failed_count": 0
+  }
+}

@@ -1,0 +1,5396 @@
+{
+  "model_count": 65,
+  "models": [
+    {
+      "model_id": "BRM::B1::L2",
+      "beam_id": "B1",
+      "beam_name": "B1",
+      "is_benchmark_beam": true,
+      "interpretation_confidence": "HIGH",
+      "geometry": {
+        "beam_id": "B1",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "clear_span_mm": 5570.0,
+        "effective_span_mm": 5570.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0001",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B1",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0002",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B1",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 1,
+        "BOTTOM_MAIN": 2,
+        "TOP_EXTRA": 2,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 1,
+        "SIDE_FACE_REINFORCEMENT": 1,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [
+        {
+          "bar_id": "BAR::L2::0001",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Uppermost continuous top bars, full span, from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_main_bars": [
+        {
+          "bar_id": "BAR::L2::0004",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y20",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom main bars (first row), full span, from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0005",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y20",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom main bars (second row), full span, from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "top_extra_bars": [
+        {
+          "bar_id": "BAR::L2::0002",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "LEFT_SUPPORT_ONLY",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": "LEFT_SUPPORT",
+          "coverage_ratio": 0.34,
+          "spacing_mm": null,
+          "classification_evidence": "Short top bars at left support (1900mm), from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0003",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "RIGHT_SUPPORT_ONLY",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": "RIGHT_SUPPORT",
+          "coverage_ratio": 0.34,
+          "spacing_mm": null,
+          "classification_evidence": "Short top bars at right support (1900mm), from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [
+        {
+          "bar_id": "BAR::L2::0006",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "SIDE_FACE_REINFORCEMENT",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y8",
+          "position_zone": "SIDE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Side face reinforcement: 4Y8 total, 2Y8 per face. Annotation: '4-Y8, SIDE FACE REINF, ON BOTH FACES (2-Y8 ON ONE FACE)'",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "stirrups": [
+        {
+          "bar_id": "BAR::L2::0007",
+          "source_bar_id": null,
+          "beam_id": "B1",
+          "semantic_role": "STIRRUP",
+          "diameter_mm": 10.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2L-Y10@100",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 100,
+          "classification_evidence": "Closed stirrups: 2L-Y10@100C/C, from B1_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [
+        {
+          "region_id": "DL::L2::0001",
+          "beam_id": "B1",
+          "bar_id": "BAR::L2::0004",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0002",
+          "beam_id": "B1",
+          "bar_id": "BAR::L2::0005",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0003",
+          "beam_id": "B1",
+          "bar_id": "BAR::L2::0001",
+          "location": "left_support",
+          "ld_mm": null
+        }
+      ],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: True"
+      ],
+      "total_classified_bars": 7,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B1",
+        "source_bars": 0,
+        "classified_bars": 7,
+        "is_reference_anchored": true
+      }
+    },
+    {
+      "model_id": "BRM::B10::L2",
+      "beam_id": "B10",
+      "beam_name": "B10",
+      "is_benchmark_beam": true,
+      "interpretation_confidence": "HIGH",
+      "geometry": {
+        "beam_id": "B10",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "clear_span_mm": 3910.0,
+        "effective_span_mm": 3910.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0003",
+          "support_type": "INTERMEDIATE_SUPPORT",
+          "beam_id": "B10",
+          "adjacent_beam_id": "B9",
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0004",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B10",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 2,
+        "BOTTOM_MAIN": 2,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 1,
+        "SIDE_FACE_REINFORCEMENT": 1,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [
+        {
+          "bar_id": "BAR::L2::0008",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Top bars 2Y16 running through B10 span",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0009",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional top bars 2Y16 at B10 support zone",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_main_bars": [
+        {
+          "bar_id": "BAR::L2::0010",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom bars 2Y16 at B10 midspan",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0011",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional bottom bars 2Y16 at B10",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [
+        {
+          "bar_id": "BAR::L2::0012",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "SIDE_FACE_REINFORCEMENT",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y8",
+          "position_zone": "SIDE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Side face reinforcement 4Y8 total, 2Y8 per face",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "stirrups": [
+        {
+          "bar_id": "BAR::L2::0013",
+          "source_bar_id": null,
+          "beam_id": "B10",
+          "semantic_role": "STIRRUP",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2L-Y8@100",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 100,
+          "classification_evidence": "Stirrups: 2L-Y8@100C/C at B10",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [
+        {
+          "region_id": "DL::L2::0004",
+          "beam_id": "B10",
+          "bar_id": "BAR::L2::0010",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0005",
+          "beam_id": "B10",
+          "bar_id": "BAR::L2::0011",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0006",
+          "beam_id": "B10",
+          "bar_id": "BAR::L2::0008",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0007",
+          "beam_id": "B10",
+          "bar_id": "BAR::L2::0009",
+          "location": "left_support",
+          "ld_mm": null
+        }
+      ],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: True"
+      ],
+      "total_classified_bars": 6,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B10",
+        "source_bars": 0,
+        "classified_bars": 6,
+        "is_reference_anchored": true
+      }
+    },
+    {
+      "model_id": "BRM::B11::L2",
+      "beam_id": "B11",
+      "beam_name": "B11",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B11",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0005",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B11",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0006",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B11",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B11",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B12::L2",
+      "beam_id": "B12",
+      "beam_name": "B12",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B12",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0007",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B12",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0008",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B12",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B12",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B13::L2",
+      "beam_id": "B13",
+      "beam_name": "B13",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B13",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0009",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B13",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0010",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B13",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B13",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B14::L2",
+      "beam_id": "B14",
+      "beam_name": "B14",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B14",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0011",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B14",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0012",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B14",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B14",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B14A::L2",
+      "beam_id": "B14A",
+      "beam_name": "B14A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B14A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0013",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B14A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0014",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B14A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B14A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B15::L2",
+      "beam_id": "B15",
+      "beam_name": "B15",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B15",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0015",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B15",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0016",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B15",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B15",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B16::L2",
+      "beam_id": "B16",
+      "beam_name": "B16",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B16",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0017",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B16",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0018",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B16",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B16",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B17::L2",
+      "beam_id": "B17",
+      "beam_name": "B17",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B17",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0019",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B17",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0020",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B17",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B17",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B18::L2",
+      "beam_id": "B18",
+      "beam_name": "B18",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B18",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0021",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B18",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0022",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B18",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B18",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B19::L2",
+      "beam_id": "B19",
+      "beam_name": "B19",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B19",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0023",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B19",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0024",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B19",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B19",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B2::L2",
+      "beam_id": "B2",
+      "beam_name": "B2",
+      "is_benchmark_beam": true,
+      "interpretation_confidence": "HIGH",
+      "geometry": {
+        "beam_id": "B2",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "clear_span_mm": 4280.0,
+        "effective_span_mm": 4280.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0025",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B2",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0026",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B2",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 1,
+        "BOTTOM_MAIN": 1,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 1,
+        "STIRRUP": 1,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 1,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [
+        {
+          "bar_id": "BAR::L2::0014",
+          "source_bar_id": null,
+          "beam_id": "B2",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Top bars: 2Y16 continuous full span, from B2_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_main_bars": [
+        {
+          "bar_id": "BAR::L2::0015",
+          "source_bar_id": null,
+          "beam_id": "B2",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 12.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y12",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom main bars: 2Y12 running most of span, from B2_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [
+        {
+          "bar_id": "BAR::L2::0016",
+          "source_bar_id": null,
+          "beam_id": "B2",
+          "semantic_role": "BOTTOM_EXTRA",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y20",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "LEFT_SUPPORT_ONLY",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": "LEFT_SUPPORT",
+          "coverage_ratio": 0.12,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom extra bars: 2Y20 at left support (500mm), from B2_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "side_face_reinforcement": [],
+      "stirrups": [
+        {
+          "bar_id": "BAR::L2::0017",
+          "source_bar_id": null,
+          "beam_id": "B2",
+          "semantic_role": "STIRRUP",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2L-Y8@100/200/100",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 100,
+          "classification_evidence": "Stirrups: 2L-Y8@100/200/100C/C variable spacing, from B2_Bars_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "spacer_bars": [
+        {
+          "bar_id": "BAR::L2::0018",
+          "source_bar_id": null,
+          "beam_id": "B2",
+          "semantic_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 1,
+          "steel_grade": "Y",
+          "bar_label": "25T12@1000",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 1000,
+          "classification_evidence": "Spacer bars: 25mm dia @ 1m c/c, from B2_Est.png",
+          "classification_confidence": "MEDIUM",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [
+        {
+          "region_id": "DL::L2::0008",
+          "beam_id": "B2",
+          "bar_id": "BAR::L2::0015",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0009",
+          "beam_id": "B2",
+          "bar_id": "BAR::L2::0014",
+          "location": "left_support",
+          "ld_mm": null
+        }
+      ],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: True"
+      ],
+      "total_classified_bars": 5,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B2",
+        "source_bars": 0,
+        "classified_bars": 5,
+        "is_reference_anchored": true
+      }
+    },
+    {
+      "model_id": "BRM::B20::L2",
+      "beam_id": "B20",
+      "beam_name": "B20",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B20",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0027",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B20",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0028",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B20",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B20",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B20A::L2",
+      "beam_id": "B20A",
+      "beam_name": "B20A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B20A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0029",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B20A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0030",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B20A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B20A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B21::L2",
+      "beam_id": "B21",
+      "beam_name": "B21",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B21",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0031",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B21",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0032",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B21",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B21",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B22::L2",
+      "beam_id": "B22",
+      "beam_name": "B22",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B22",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0033",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B22",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0034",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B22",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B22",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B23::L2",
+      "beam_id": "B23",
+      "beam_name": "B23",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B23",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0035",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B23",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0036",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B23",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B23",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B25::L2",
+      "beam_id": "B25",
+      "beam_name": "B25",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B25",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0037",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B25",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0038",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B25",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B25",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B26::L2",
+      "beam_id": "B26",
+      "beam_name": "B26",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B26",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0039",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B26",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0040",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B26",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B26",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B27::L2",
+      "beam_id": "B27",
+      "beam_name": "B27",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B27",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0041",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B27",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0042",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B27",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B27",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B28::L2",
+      "beam_id": "B28",
+      "beam_name": "B28",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B28",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0043",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B28",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0044",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B28",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B28",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B29::L2",
+      "beam_id": "B29",
+      "beam_name": "B29",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B29",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0045",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B29",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0046",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B29",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B29",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B29A::L2",
+      "beam_id": "B29A",
+      "beam_name": "B29A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B29A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0047",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B29A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0048",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B29A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B29A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B3::L2",
+      "beam_id": "B3",
+      "beam_name": "B3",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B3",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0049",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B3",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0050",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B3",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B3",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B30::L2",
+      "beam_id": "B30",
+      "beam_name": "B30",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B30",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0051",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B30",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0052",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B30",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B30",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B31::L2",
+      "beam_id": "B31",
+      "beam_name": "B31",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B31",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0053",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B31",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0054",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B31",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B31",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B31A::L2",
+      "beam_id": "B31A",
+      "beam_name": "B31A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B31A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0055",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B31A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0056",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B31A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B31A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B32::L2",
+      "beam_id": "B32",
+      "beam_name": "B32",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B32",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0057",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B32",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0058",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B32",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B32",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B33::L2",
+      "beam_id": "B33",
+      "beam_name": "B33",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B33",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0059",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B33",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0060",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B33",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B33",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B34::L2",
+      "beam_id": "B34",
+      "beam_name": "B34",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B34",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0061",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B34",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0062",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B34",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B34",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B35::L2",
+      "beam_id": "B35",
+      "beam_name": "B35",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B35",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0063",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B35",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0064",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B35",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B35",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B35A::L2",
+      "beam_id": "B35A",
+      "beam_name": "B35A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B35A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0065",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B35A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0066",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B35A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B35A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B36::L2",
+      "beam_id": "B36",
+      "beam_name": "B36",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B36",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0067",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B36",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0068",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B36",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B36",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B38::L2",
+      "beam_id": "B38",
+      "beam_name": "B38",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B38",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0069",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B38",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0070",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B38",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B38",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B39::L2",
+      "beam_id": "B39",
+      "beam_name": "B39",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B39",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0071",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B39",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0072",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B39",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B39",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B39A::L2",
+      "beam_id": "B39A",
+      "beam_name": "B39A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B39A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0073",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B39A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0074",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B39A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B39A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B40::L2",
+      "beam_id": "B40",
+      "beam_name": "B40",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B40",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0075",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B40",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0076",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B40",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B40",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B41::L2",
+      "beam_id": "B41",
+      "beam_name": "B41",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B41",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0077",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B41",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0078",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B41",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B41",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B42::L2",
+      "beam_id": "B42",
+      "beam_name": "B42",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B42",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0079",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B42",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0080",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B42",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B42",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B43::L2",
+      "beam_id": "B43",
+      "beam_name": "B43",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B43",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0081",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B43",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0082",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B43",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B43",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B45::L2",
+      "beam_id": "B45",
+      "beam_name": "B45",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B45",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0083",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B45",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0084",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B45",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B45",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B46::L2",
+      "beam_id": "B46",
+      "beam_name": "B46",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B46",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0085",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B46",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0086",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B46",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B46",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B47::L2",
+      "beam_id": "B47",
+      "beam_name": "B47",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B47",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0087",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B47",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0088",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B47",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B47",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B48::L2",
+      "beam_id": "B48",
+      "beam_name": "B48",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B48",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0089",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B48",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0090",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B48",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B48",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B48A::L2",
+      "beam_id": "B48A",
+      "beam_name": "B48A",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B48A",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0091",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B48A",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0092",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B48A",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B48A",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B49::L2",
+      "beam_id": "B49",
+      "beam_name": "B49",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B49",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0093",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B49",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0094",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B49",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B49",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B50::L2",
+      "beam_id": "B50",
+      "beam_name": "B50",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B50",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0095",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B50",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0096",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B50",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B50",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B51::L2",
+      "beam_id": "B51",
+      "beam_name": "B51",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B51",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0097",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B51",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0098",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B51",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B51",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B52::L2",
+      "beam_id": "B52",
+      "beam_name": "B52",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B52",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0099",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B52",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0100",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B52",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B52",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B53::L2",
+      "beam_id": "B53",
+      "beam_name": "B53",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B53",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0101",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B53",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0102",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B53",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B53",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B54::L2",
+      "beam_id": "B54",
+      "beam_name": "B54",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B54",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0103",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B54",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0104",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B54",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B54",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B55::L2",
+      "beam_id": "B55",
+      "beam_name": "B55",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B55",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0105",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B55",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0106",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B55",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B55",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B56::L2",
+      "beam_id": "B56",
+      "beam_name": "B56",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B56",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0107",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B56",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0108",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B56",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B56",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B57::L2",
+      "beam_id": "B57",
+      "beam_name": "B57",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B57",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0109",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B57",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0110",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B57",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B57",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B58::L2",
+      "beam_id": "B58",
+      "beam_name": "B58",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B58",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0111",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B58",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0112",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B58",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B58",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B59::L2",
+      "beam_id": "B59",
+      "beam_name": "B59",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B59",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0113",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B59",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0114",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B59",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B59",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B6::L2",
+      "beam_id": "B6",
+      "beam_name": "B6",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B6",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0115",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B6",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0116",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B6",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B6",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B60::L2",
+      "beam_id": "B60",
+      "beam_name": "B60",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B60",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0117",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B60",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0118",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B60",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B60",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B61::L2",
+      "beam_id": "B61",
+      "beam_name": "B61",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B61",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0119",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B61",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0120",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B61",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B61",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B63::L2",
+      "beam_id": "B63",
+      "beam_name": "B63",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B63",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0121",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B63",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0122",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B63",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B63",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B7::L2",
+      "beam_id": "B7",
+      "beam_name": "B7",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "B7",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0123",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B7",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0124",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "B7",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B7",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    },
+    {
+      "model_id": "BRM::B8::L2",
+      "beam_id": "B8",
+      "beam_name": "B8",
+      "is_benchmark_beam": true,
+      "interpretation_confidence": "HIGH",
+      "geometry": {
+        "beam_id": "B8",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "clear_span_mm": 2240.0,
+        "effective_span_mm": 2240.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0125",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "B8",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0126",
+          "support_type": "INTERMEDIATE_SUPPORT",
+          "beam_id": "B8",
+          "adjacent_beam_id": "B9",
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 2,
+        "BOTTOM_MAIN": 2,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 1,
+        "SIDE_FACE_REINFORCEMENT": 1,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [
+        {
+          "bar_id": "BAR::L2::0019",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Top bars 2Y16 running through B8 span, from B8,B9,B10_Bar_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0020",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional top bars 2Y16 at B8 support zones",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_main_bars": [
+        {
+          "bar_id": "BAR::L2::0021",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom bars 2Y16 at B8 midspan, from B8,B9,B10_Bar_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0022",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional bottom bars 2Y16 at B8 support zones",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [
+        {
+          "bar_id": "BAR::L2::0023",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "SIDE_FACE_REINFORCEMENT",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y8",
+          "position_zone": "SIDE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Side face reinforcement: 4Y8 total, 2Y8 per face, continuous",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "stirrups": [
+        {
+          "bar_id": "BAR::L2::0024",
+          "source_bar_id": null,
+          "beam_id": "B8",
+          "semantic_role": "STIRRUP",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2L-Y8@100",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 100,
+          "classification_evidence": "Stirrups: 2L-Y8@100C/C, from B8,B9,B10_Bar_Description.png",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [
+        {
+          "region_id": "DL::L2::0010",
+          "beam_id": "B8",
+          "bar_id": "BAR::L2::0021",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0011",
+          "beam_id": "B8",
+          "bar_id": "BAR::L2::0022",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0012",
+          "beam_id": "B8",
+          "bar_id": "BAR::L2::0019",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0013",
+          "beam_id": "B8",
+          "bar_id": "BAR::L2::0020",
+          "location": "left_support",
+          "ld_mm": null
+        }
+      ],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: True"
+      ],
+      "total_classified_bars": 6,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B8",
+        "source_bars": 0,
+        "classified_bars": 6,
+        "is_reference_anchored": true
+      }
+    },
+    {
+      "model_id": "BRM::B9::L2",
+      "beam_id": "B9",
+      "beam_name": "B9",
+      "is_benchmark_beam": true,
+      "interpretation_confidence": "HIGH",
+      "geometry": {
+        "beam_id": "B9",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "clear_span_mm": 3020.0,
+        "effective_span_mm": 3020.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0127",
+          "support_type": "INTERMEDIATE_SUPPORT",
+          "beam_id": "B9",
+          "adjacent_beam_id": "B8",
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0128",
+          "support_type": "INTERMEDIATE_SUPPORT",
+          "beam_id": "B9",
+          "adjacent_beam_id": "B10",
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 2,
+        "BOTTOM_MAIN": 2,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 1,
+        "SIDE_FACE_REINFORCEMENT": 1,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [
+        {
+          "bar_id": "BAR::L2::0025",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Top bars 2Y16 running through B9 span",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0026",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "TOP_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional top bars 2Y16 at B9 support zone",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "bottom_main_bars": [
+        {
+          "bar_id": "BAR::L2::0027",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Bottom bars 2Y16 at B9 midspan",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        },
+        {
+          "bar_id": "BAR::L2::0028",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y16",
+          "position_zone": "BOTTOM_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "MULTI_BEAM_CONTINUOUS",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Additional bottom bars 2Y16 at B9",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": true,
+          "is_reference_anchored": true
+        }
+      ],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [
+        {
+          "bar_id": "BAR::L2::0029",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "SIDE_FACE_REINFORCEMENT",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2Y8",
+          "position_zone": "SIDE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": null,
+          "classification_evidence": "Side face reinforcement 4Y8 total, 2Y8 per face",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "stirrups": [
+        {
+          "bar_id": "BAR::L2::0030",
+          "source_bar_id": null,
+          "beam_id": "B9",
+          "semantic_role": "STIRRUP",
+          "diameter_mm": 8.0,
+          "quantity": 2,
+          "steel_grade": "Y",
+          "bar_label": "2L-Y8@100",
+          "position_zone": "TRANSVERSE_ZONE",
+          "extent": "FULL_SPAN",
+          "continuity": "SINGLE_BEAM",
+          "support_zone": null,
+          "coverage_ratio": null,
+          "spacing_mm": 100,
+          "classification_evidence": "Stirrups: 2L-Y8@100C/C at B9",
+          "classification_confidence": "HIGH",
+          "source_pipeline_role": null,
+          "is_corrected": false,
+          "is_reference_anchored": true
+        }
+      ],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [
+        {
+          "region_id": "DL::L2::0014",
+          "beam_id": "B9",
+          "bar_id": "BAR::L2::0027",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0015",
+          "beam_id": "B9",
+          "bar_id": "BAR::L2::0028",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0016",
+          "beam_id": "B9",
+          "bar_id": "BAR::L2::0025",
+          "location": "left_support",
+          "ld_mm": null
+        },
+        {
+          "region_id": "DL::L2::0017",
+          "beam_id": "B9",
+          "bar_id": "BAR::L2::0026",
+          "location": "left_support",
+          "ld_mm": null
+        }
+      ],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: True"
+      ],
+      "total_classified_bars": 6,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "B9",
+        "source_bars": 0,
+        "classified_bars": 6,
+        "is_reference_anchored": true
+      }
+    },
+    {
+      "model_id": "BRM::BR1::L2",
+      "beam_id": "BR1",
+      "beam_name": "BR1",
+      "is_benchmark_beam": false,
+      "interpretation_confidence": "LOW",
+      "geometry": {
+        "beam_id": "BR1",
+        "width_mm": null,
+        "depth_mm": null,
+        "clear_span_mm": 8821.0,
+        "effective_span_mm": 8821.0,
+        "top_cover_mm": 25.0,
+        "bottom_cover_mm": 25.0
+      },
+      "support_zones": [
+        {
+          "support_id": "SUP::L2::0129",
+          "support_type": "LEFT_SUPPORT",
+          "beam_id": "BR1",
+          "adjacent_beam_id": null,
+          "position_fraction": 0.0,
+          "support_width_mm": 200.0
+        },
+        {
+          "support_id": "SUP::L2::0130",
+          "support_type": "RIGHT_SUPPORT",
+          "beam_id": "BR1",
+          "adjacent_beam_id": null,
+          "position_fraction": 1.0,
+          "support_width_mm": 200.0
+        }
+      ],
+      "bar_count_by_role": {
+        "TOP_MAIN": 0,
+        "BOTTOM_MAIN": 0,
+        "TOP_EXTRA": 0,
+        "BOTTOM_EXTRA": 0,
+        "STIRRUP": 0,
+        "SIDE_FACE_REINFORCEMENT": 0,
+        "SPACER_BAR": 0,
+        "CHAIR_BAR": 0,
+        "SUPPLEMENTARY_BAR": 0
+      },
+      "top_main_bars": [],
+      "bottom_main_bars": [],
+      "top_extra_bars": [],
+      "bottom_extra_bars": [],
+      "side_face_reinforcement": [],
+      "stirrups": [],
+      "spacer_bars": [],
+      "chair_bars": [],
+      "supplementary_bars": [],
+      "development_length_regions": [],
+      "continuity_regions": [],
+      "engineering_notes": [
+        "Interpreted by Phase L.2 Engineering Reinforcement Interpretation Engine",
+        "Reference dataset anchored: False"
+      ],
+      "total_classified_bars": 0,
+      "unclassified_bar_count": 0,
+      "classification_complete": true,
+      "traceability": {
+        "phase": "Phase L.2",
+        "model_version": "6.4.0",
+        "beam_id": "BR1",
+        "source_bars": 0,
+        "classified_bars": 0,
+        "is_reference_anchored": false
+      }
+    }
+  ]
+}

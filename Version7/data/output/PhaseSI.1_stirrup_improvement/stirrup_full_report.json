@@ -1,0 +1,292 @@
+{
+  "phase": "SI.1",
+  "model_version": "6.6.1",
+  "generated_at": "2026-07-15T12:18:44.971604",
+  "sections": {
+    "1_executive_summary": {
+      "phase_id": "SI.1",
+      "model_version": "6.6.1",
+      "objective": "Improved stirrup distribution & quantity calculation",
+      "beams_with_stirrups": 5,
+      "uniform_beams": 4,
+      "variable_beams": 1,
+      "total_stirrup_qty": 186,
+      "new_total_weight_kg": 124.965,
+      "old_total_weight_kg": 128.942,
+      "weight_improvement_kg": -3.977,
+      "validation_passed": true
+    },
+    "2_engineering_distribution": {
+      "total_beams_with_stirrups": 5,
+      "uniform_stirrup_beams": 4,
+      "variable_stirrup_beams": 1,
+      "total_support_zones": 2,
+      "total_midspan_zones": 5,
+      "total_merged_rows": 1,
+      "total_engineering_bbs_rows": 6,
+      "total_stirrup_quantity": 186,
+      "total_stirrup_weight_kg": 124.965,
+      "old_engine_weight_kg": 128.942,
+      "weight_change_kg": -3.977,
+      "diameter_totals_kg": {
+        "Y8": 73.866,
+        "Y10": 51.099
+      }
+    },
+    "3_zone_calculations": [
+      {
+        "beam_id": "B1",
+        "span_mm": 5570.0,
+        "stirrup_type": "UNIFORM",
+        "zones": [
+          {
+            "zone_id": "ZONE_FULL",
+            "role": "MIDSPAN",
+            "start_mm": 0.0,
+            "end_mm": 5570.0,
+            "length_mm": 5570.0,
+            "spacing_mm": 100
+          }
+        ]
+      },
+      {
+        "beam_id": "B10",
+        "span_mm": 3910.0,
+        "stirrup_type": "UNIFORM",
+        "zones": [
+          {
+            "zone_id": "ZONE_FULL",
+            "role": "MIDSPAN",
+            "start_mm": 0.0,
+            "end_mm": 3910.0,
+            "length_mm": 3910.0,
+            "spacing_mm": 100
+          }
+        ]
+      },
+      {
+        "beam_id": "B2",
+        "span_mm": 4280.0,
+        "stirrup_type": "VARIABLE",
+        "zones": [
+          {
+            "zone_id": "ZONE_0",
+            "role": "LEFT_SUPPORT",
+            "start_mm": 0.0,
+            "end_mm": 1426.7,
+            "length_mm": 1426.7,
+            "spacing_mm": 100
+          },
+          {
+            "zone_id": "ZONE_2",
+            "role": "RIGHT_SUPPORT",
+            "start_mm": 2853.3,
+            "end_mm": 4280.0,
+            "length_mm": 1426.7,
+            "spacing_mm": 100
+          },
+          {
+            "zone_id": "ZONE_1",
+            "role": "MIDSPAN",
+            "start_mm": 1426.7,
+            "end_mm": 2853.3,
+            "length_mm": 1426.7,
+            "spacing_mm": 200
+          }
+        ]
+      },
+      {
+        "beam_id": "B8",
+        "span_mm": 2240.0,
+        "stirrup_type": "UNIFORM",
+        "zones": [
+          {
+            "zone_id": "ZONE_FULL",
+            "role": "MIDSPAN",
+            "start_mm": 0.0,
+            "end_mm": 2240.0,
+            "length_mm": 2240.0,
+            "spacing_mm": 100
+          }
+        ]
+      },
+      {
+        "beam_id": "B9",
+        "span_mm": 3020.0,
+        "stirrup_type": "UNIFORM",
+        "zones": [
+          {
+            "zone_id": "ZONE_FULL",
+            "role": "MIDSPAN",
+            "start_mm": 0.0,
+            "end_mm": 3020.0,
+            "length_mm": 3020.0,
+            "spacing_mm": 100
+          }
+        ]
+      }
+    ],
+    "4_quantity_calculations": [
+      {
+        "beam_id": "B1",
+        "stirrup_type": "UNIFORM",
+        "old_quantity": 56,
+        "new_quantity": 56,
+        "quantity_change": 0,
+        "groups": [
+          {
+            "group_id": "B1_STIRRUP_0",
+            "spacing_mm": 100,
+            "quantity": 56,
+            "is_merged": false,
+            "merge_note": "",
+            "weight_kg": 51.099
+          }
+        ]
+      },
+      {
+        "beam_id": "B10",
+        "stirrup_type": "UNIFORM",
+        "old_quantity": 40,
+        "new_quantity": 40,
+        "quantity_change": 0,
+        "groups": [
+          {
+            "group_id": "B10_STIRRUP_0",
+            "spacing_mm": 100,
+            "quantity": 40,
+            "is_merged": false,
+            "merge_note": "",
+            "weight_kg": 22.728
+          }
+        ]
+      },
+      {
+        "beam_id": "B2",
+        "stirrup_type": "VARIABLE",
+        "old_quantity": 43,
+        "new_quantity": 36,
+        "quantity_change": -7,
+        "groups": [
+          {
+            "group_id": "B2_STIRRUP_0",
+            "spacing_mm": 100,
+            "quantity": 29,
+            "is_merged": true,
+            "merge_note": "Left+Right support merged",
+            "weight_kg": 16.478
+          },
+          {
+            "group_id": "B2_STIRRUP_1",
+            "spacing_mm": 200,
+            "quantity": 7,
+            "is_merged": false,
+            "merge_note": "",
+            "weight_kg": 3.977
+          }
+        ]
+      },
+      {
+        "beam_id": "B8",
+        "stirrup_type": "UNIFORM",
+        "old_quantity": 23,
+        "new_quantity": 23,
+        "quantity_change": 0,
+        "groups": [
+          {
+            "group_id": "B8_STIRRUP_0",
+            "spacing_mm": 100,
+            "quantity": 23,
+            "is_merged": false,
+            "merge_note": "",
+            "weight_kg": 13.069
+          }
+        ]
+      },
+      {
+        "beam_id": "B9",
+        "stirrup_type": "UNIFORM",
+        "old_quantity": 31,
+        "new_quantity": 31,
+        "quantity_change": 0,
+        "groups": [
+          {
+            "group_id": "B9_STIRRUP_0",
+            "spacing_mm": 100,
+            "quantity": 31,
+            "is_merged": false,
+            "merge_note": "",
+            "weight_kg": 17.614
+          }
+        ]
+      }
+    ],
+    "5_bbs_summary": {
+      "total_bbs_rows": 6,
+      "merged_support_rows": 1,
+      "midspan_rows": 5,
+      "format": "Estimator-style per-zone rows"
+    },
+    "6_steel_weight_summary": {
+      "new_total_weight_kg": 124.965,
+      "old_total_weight_kg": 128.942,
+      "change_kg": -3.977,
+      "diameter_totals_kg": {
+        "Y10": 51.099,
+        "Y8": 73.866
+      }
+    },
+    "7_validation_summary": {
+      "passed": true,
+      "errors": [],
+      "rules_checked": 6
+    },
+    "8_comparison_with_old_engine": [
+      {
+        "beam_id": "B1",
+        "old_quantity": 56,
+        "new_quantity": 56,
+        "quantity_delta": 0,
+        "old_weight_kg": 51.099,
+        "new_weight_kg": 51.099,
+        "weight_delta_kg": 0.0
+      },
+      {
+        "beam_id": "B10",
+        "old_quantity": 40,
+        "new_quantity": 40,
+        "quantity_delta": 0,
+        "old_weight_kg": 22.728,
+        "new_weight_kg": 22.728,
+        "weight_delta_kg": 0.0
+      },
+      {
+        "beam_id": "B2",
+        "old_quantity": 43,
+        "new_quantity": 36,
+        "quantity_delta": -7,
+        "old_weight_kg": 24.433,
+        "new_weight_kg": 20.455,
+        "weight_delta_kg": -3.977
+      },
+      {
+        "beam_id": "B8",
+        "old_quantity": 23,
+        "new_quantity": 23,
+        "quantity_delta": 0,
+        "old_weight_kg": 13.069,
+        "new_weight_kg": 13.069,
+        "weight_delta_kg": 0.0
+      },
+      {
+        "beam_id": "B9",
+        "old_quantity": 31,
+        "new_quantity": 31,
+        "quantity_delta": 0,
+        "old_weight_kg": 17.614,
+        "new_weight_kg": 17.614,
+        "weight_delta_kg": 0.0
+      }
+    ]
+  }
+}
