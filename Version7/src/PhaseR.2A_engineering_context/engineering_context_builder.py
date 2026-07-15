@@ -185,3 +185,8 @@ class EngineeringContextBuilder:
         ]
         score = sum(checks) / len(checks)
         return round(score, 3)
+
+    @property
+    def dl_audit(self) -> dict:
+        """Development-length parse audit metadata from the last build()."""
+        return getattr(self, "_dl_audit", {})

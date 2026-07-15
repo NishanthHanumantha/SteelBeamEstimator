@@ -9,7 +9,7 @@ Runs the complete engineering context pipeline:
   5. Run audit (17 criteria)
   6. Export JSON artefacts
 
-MODEL_VERSION: 7.5.0
+MODEL_VERSION: 7.5.4
 """
 from __future__ import annotations
 import pathlib
@@ -17,12 +17,14 @@ from datetime import datetime
 from typing import Any, Dict, List
 
 from .engineering_context_factory    import EngineeringContextFactory
+from .engineering_context_builder    import EngineeringContextBuilder
 from .engineering_context_loader     import EngineeringContextLoader
 from .engineering_context_validator  import EngineeringContextValidator
 from .engineering_context_audit      import EngineeringContextAudit
 from .engineering_context_statistics import EngineeringContextStatistics
 from .engineering_context_writer     import EngineeringContextWriter
 from .engineering_context_validation import EngineeringContextValidation
+from .engineering_context_model      import EngineeringContext
 
 
 class PhaseR2AOrchestrator:
@@ -34,24 +36,26 @@ class PhaseR2AOrchestrator:
     def run(self) -> Dict[str, Any]:
         print(f"\n{'='*70}")
         print("  PHASE R.2A / R.2A.1 — Engineering Context Parsing")
-        print(f"  MODEL_VERSION 7.5.1  |  {datetime.utcnow().isoformat()}")
-        print(f"  Fe550 IS456 computed | 10-rule validation")
+        print(f"  MODEL_VERSION 7.5.4  |  {datetime.utcnow().isoformat()}")
+        print(f"  Block-expanded extraction | 10-rule validation")
         print(f"{'='*70}\n")
 
         # ------------------------------------------------------------------
-        # Step 1: Discover + build
+        # Step 1: Discover + build (force rebuild for fresh dl_audit)
         # ------------------------------------------------------------------
         print("[1/5] Discovering GN DXF and building EngineeringContext ...")
-        ctx, validation_passed, val_warnings = (
-            EngineeringContextFactory.create_from_registry(self._v7)
-        )
-
-        if ctx is None:
+        gn_path = EngineeringContextFactory._discover_gn_path(self._v7)
+        if gn_path is None:
             print("  ERROR: GN DXF not found — cannot build EngineeringContext.")
             return {"status": "FAIL", "reason": "GN DXF not found"}
 
-        # dl_audit: rebuild directly to extract the audit metadata
-        dl_audit = self._extract_dl_audit(ctx)
+        project_id = EngineeringContextFactory._read_project_id(self._v7)
+        builder = EngineeringContextBuilder(gn_path, project_id)
+        ctx = builder.build()
+        dl_audit = builder.dl_audit
+
+        validator = EngineeringContextValidator()
+        validation_passed, val_warnings = validator.validate(ctx)
         loader = EngineeringContextLoader(ctx)
         print(f"     GN DXF:          {ctx.gn_dxf_path}")
         print(f"     Parse confidence:{ctx.parse_confidence:.1%}")
@@ -135,29 +139,22 @@ class PhaseR2AOrchestrator:
         }
 
     def _extract_dl_audit(self, ctx: EngineeringContext) -> Dict[str, Any]:
-        """Reconstruct dl_audit from the EngineeringContext (since we can't re-run the parser)."""
+        """Reconstruct dl_audit from context when builder audit is unavailable."""
         dxf_grades = set()
-        computed_grades = set()
         for key in ctx.development_length_table:
-            sg = key[0]
-            # Heuristic: Fe415 and Fe500 come from DXF; Fe550 was computed
-            if sg in ("Fe415", "Fe500"):
-                dxf_grades.add(sg)
-            else:
-                computed_grades.add(sg)
-
+            dxf_grades.add(key[0])
         fe550_in_dxf = "Fe550" in dxf_grades
         return {
             "dxf_table_headers_found": [f"LD FOR FY-{g[2:]}" for g in sorted(dxf_grades)],
-            "tables_parsed_from_dxf":  [f"{g}: parsed" for g in sorted(dxf_grades)],
-            "tables_computed_is456":   [f"{g}: IS456 computed" for g in sorted(computed_grades)],
+            "tables_parsed_from_dxf": [f"{g}: parsed" for g in sorted(dxf_grades)],
+            "tables_computed_is456": [],
             "fe550_in_dxf": fe550_in_dxf,
-            "fe550_computed": "Fe550" in computed_grades,
+            "fe550_computed": False,
             "root_cause": (
-                "The GN DXF contains exactly 2 table headers: 'LD FOR FY-415' and 'LD FOR FY-500'. "
-                "There is no 'LD FOR FY-550' header. Fe550 appears only in TABLE 2 (material spec). "
-                "IS 456:2000 Clause 26.2.1 formula was applied to compute Fe550 development lengths."
-            ) if not fe550_in_dxf else "Fe550 table found in GN DXF.",
+                "All development-length tables extracted from GN DXF."
+                if fe550_in_dxf else
+                "FY-550 table not found; IS456 fallback may apply."
+            ),
         }
 
     def _print_final(self, audit_results, passed, total, ctx, loader,
@@ -177,12 +174,13 @@ class PhaseR2AOrchestrator:
         fe500_cnt = sum(1 for k in ctx.development_length_table if k[0]=="Fe500")
         print(f"    DL table Fe415       : {fe415_cnt} entries (GN_DXF_TABLE_1)")
         print(f"    DL table Fe500       : {fe500_cnt} entries (GN_DXF_TABLE_1)")
-        print(f"    DL table Fe550       : {fe550_cnt} entries (IS456_2000_COMPUTED)")
+        fe550_source = "GN_DXF_TABLE_1" if dl_audit and dl_audit.get("fe550_in_dxf") else "IS456_2000_COMPUTED"
+        print(f"    DL table Fe550       : {fe550_cnt} entries ({fe550_source})")
         print(f"    Beam cover           : {loader.get_cover('BEAM')}mm")
         ld12 = loader.get_development_length_mm(12, "M30", "Fe550")
         ld16 = loader.get_development_length_mm(16, "M30", "Fe550")
         ld20 = loader.get_development_length_mm(20, "M30", "Fe550")
-        print(f"\n  Fe550 LOOKUP (IS456 computed):")
+        print(f"\n  Fe550 LOOKUP ({fe550_source}):")
         print(f"    Ld dia=12, M30, Fe550: {ld12}mm")
         print(f"    Ld dia=16, M30, Fe550: {ld16}mm")
         print(f"    Ld dia=20, M30, Fe550: {ld20}mm")

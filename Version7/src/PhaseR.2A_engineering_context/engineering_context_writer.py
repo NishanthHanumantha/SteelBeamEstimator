@@ -172,7 +172,7 @@ class EngineeringContextWriter:
         # (We track this via the IS456_2000_COMPUTED tag in entries)
         # Since we can't access entry sources from the frozen dict, use dl_audit
         fe550_in_dxf   = dl_audit.get("fe550_in_dxf", False) if dl_audit else False
-        fe550_computed = dl_audit.get("fe550_computed", True) if dl_audit else True
+        fe550_computed = dl_audit.get("fe550_computed", False) if dl_audit else False
 
         comparison: Dict[str, Any] = {}
         for (sg, dia, cg), val in fe550_keys.items():
@@ -182,20 +182,20 @@ class EngineeringContextWriter:
                 "Fe415_mm": ctx.development_length_table.get(k415),
                 "Fe500_mm": ctx.development_length_table.get(k500),
                 "Fe550_mm": val,
-                "Fe550_source": "IS456_2000_COMPUTED" if (not fe550_in_dxf) else "GN_DXF_TABLE_1",
+                "Fe550_source": "GN_DXF_TABLE_1" if fe550_in_dxf else "IS456_2000_COMPUTED",
             }
 
         p = _save(self._out, "fe550_parsing_report.json", {
             "generated": ts,
-            "model_version": "7.5.1",
+            "model_version": "7.5.4",
             "audit_finding": (
                 dl_audit.get("root_cause", "")
                 if dl_audit else
-                "Fe550 not found in GN DXF; IS456:2000 formula used."
+                "Fe550 development-length table status unknown."
             ),
             "fe550_in_gn_dxf": fe550_in_dxf,
             "fe550_computed_from_is456": fe550_computed,
-            "is456_formula": "Ld = (phi * fy/1.15) / (4 * tau_bd)",
+            "is456_formula": "Ld = (phi * fy/1.15) / (4 * tau_bd) — fallback only",
             "bond_stresses": {
                 "M20": "1.2 * 1.6 = 1.92 N/mm2",
                 "M25": "1.4 * 1.6 = 2.24 N/mm2",
@@ -205,7 +205,10 @@ class EngineeringContextWriter:
             },
             "fe550_entry_count": len(fe550_keys),
             "previous_fallback_behaviour": "get_development_length_mm(Fe550) silently returned Fe415 value",
-            "corrected_behaviour": "get_development_length_mm(Fe550) returns IS456-computed Fe550 value directly",
+            "corrected_behaviour": (
+                "get_development_length_mm(Fe550) returns DXF-parsed Fe550 value "
+                "when FY-550 table is extracted via block expansion (R.2A.2+)"
+            ),
             "tables_in_gn_dxf": dl_audit.get("dxf_table_headers_found", []) if dl_audit else [],
             "validation_score": f"{v_passed}/{len(vresults)}",
             "lookup_comparison_sample": dict(list(comparison.items())[:5]),

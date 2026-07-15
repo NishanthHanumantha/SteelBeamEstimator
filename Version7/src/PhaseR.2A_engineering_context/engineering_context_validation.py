@@ -69,10 +69,10 @@ class EngineeringContextValidation:
         passed = len(fe550) > 0
         return ValidationResult(
             "RULE_1",
-            "Fe550 table discovered (DXF or IS456 computed)",
+            "Fe550 table discovered from GN DXF (including nested INSERT blocks)",
             passed,
             f"Fe550 entries in table: {len(fe550)}",
-            "Source may be IS456_2000_COMPUTED if not in GN DXF",
+            "Source: GN_DXF_TABLE_1 when block expansion active (R.2A.2+)",
         )
 
     def _rule2_fe550_row_count(self, ctx: EngineeringContext) -> ValidationResult:

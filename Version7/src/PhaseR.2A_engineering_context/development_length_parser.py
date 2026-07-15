@@ -1,35 +1,26 @@
 """
-Development Length Table Parser — MODEL_VERSION 7.5.1
+Development Length Table Parser — MODEL_VERSION 7.5.4
 
-AUDIT FINDING (Phase R.2A.1):
-The GN DXF contains exactly TWO table headers:
-    y=861.6  "LD FOR FY-415"
-    y=817.7  "LD FOR FY-500"
-There is NO "LD FOR FY-550" header in the drawing.
-Fe550 appears only as the "Grade of Steel" column value in TABLE 2 (material spec).
+Parses all "LD FOR FY/FE-NNN" development-length tables from the General Notes DXF.
 
-FIX:
-1. Generalised header detection — all "LD FOR FY/FE-NNN" variations.
-2. Extended Y-scan so every table's data rows are fully captured (no 60-unit cutoff).
-3. IS 456:2000 Clause 26.2.1 computed Fe550 entries added when the DXF table is absent,
-   flagged source = "IS456_2000_COMPUTED" so consumers know the origin.
-4. Full table captured:
-      Fe415: 6 diameters × 5 grades = 30 entries  (DXF TABLE 1)
-      Fe500: 6 diameters × 5 grades = 30 entries  (DXF TABLE 1)
-      Fe550: 6 diameters × 5 grades = 30 entries  (IS456 formula)
-   Total: 90 entries.
+Since Phase R.2A.2, the text extractor recursively expands INSERT blocks, so tables
+embedded in block definitions (e.g. FY-550 inside block A$C15514357) are discovered
+alongside top-level modelspace tables.
 
-IS 456:2000 Clause 26.2.1 formula:
-    Ld = (phi × sigma_s) / (4 × tau_bd)
-    sigma_s = fy / 1.15   (partial safety factor for steel)
-    tau_bd  = IS456 Table 26 basic bond stress × 1.6 for deformed bars
+Behaviour:
+1. Dynamic header detection — all "LD FOR FY/FE-NNN" variations.
+2. Extended Y-scan so every table's data rows are fully captured.
+3. IS 456:2000 Clause 26.2.1 fallback only when a project steel grade has no DXF table.
+4. Full table captured when all three headers are present:
+      Fe415: 7 diameters x 5 grades = 35 entries  (DXF TABLE 1)
+      Fe500: 7 diameters x 5 grades = 35 entries  (DXF TABLE 1)
+      Fe550: 7 diameters x 5 grades = 35 entries  (DXF TABLE 1 / nested block)
+   Total: 105 entries.
 
-Bond stresses (IS456:2000 Table 26) for deformed bars:
-    M20 -> 1.2 × 1.6 = 1.92 N/mm²
-    M25 -> 1.4 × 1.6 = 2.24 N/mm²
-    M30 -> 1.5 × 1.6 = 2.40 N/mm²
-    M35 -> 1.7 × 1.6 = 2.72 N/mm²
-    M40 -> 1.9 × 1.6 = 3.04 N/mm²
+IS 456:2000 Clause 26.2.1 formula (fallback only):
+    Ld = (phi x sigma_s) / (4 x tau_bd)
+    sigma_s = fy / 1.15
+    tau_bd  = IS456 Table 26 basic bond stress x 1.6 for deformed bars
 """
 from __future__ import annotations
 import math
@@ -192,10 +183,13 @@ class DevelopmentLengthParser:
 
         if not fe550_in_dxf:
             audit_info["root_cause"] = (
-                "The GN DXF contains exactly 2 table headers: 'LD FOR FY-415' and 'LD FOR FY-500'. "
-                "There is no 'LD FOR FY-550' header. Fe550 appears only in TABLE 2 (material spec) "
-                "as the Grade of Steel for structural elements. "
-                "IS 456:2000 Clause 26.2.1 formula is applied to compute Fe550 development lengths."
+                "FY-550 development-length table not found in extracted GN DXF text. "
+                "IS 456:2000 Clause 26.2.1 formula will be applied as fallback."
+            )
+        else:
+            audit_info["root_cause"] = (
+                "All three development-length tables (FY-415, FY-500, FY-550) "
+                "extracted from GN DXF including nested INSERT blocks."
             )
 
         # ── Step 4: compute IS 456 values for any missing project grade ────
