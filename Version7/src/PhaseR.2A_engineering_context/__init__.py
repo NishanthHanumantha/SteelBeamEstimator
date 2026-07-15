@@ -9,6 +9,6 @@ project-specific engineering parameter used by the pipeline.
 No engineering calculations are modified in this phase.
 """
 
-MODEL_VERSION = "7.5.0"
+MODEL_VERSION = "7.5.1"
 PHASE_TAG = "R.2A"
 PHASE_NAME = "General Notes Runtime Parsing & Engineering Context Injection"

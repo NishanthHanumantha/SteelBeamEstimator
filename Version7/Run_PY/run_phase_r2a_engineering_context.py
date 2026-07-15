@@ -55,6 +55,7 @@ for _sub in [
     "engineering_context_loader",
     "engineering_context_cache",
     "engineering_context_factory",
+    "engineering_context_validation",
     "engineering_context_writer",
     "engineering_context_statistics",
     "engineering_context_audit",
@@ -73,12 +74,13 @@ result = orchestrator.run()
 score   = result.get("audit_score", "0/0")
 status  = result.get("status", "FAIL")
 
-print(f"\n  PHASE R.2A RESULT")
-print(f"  Status       : {status}")
-print(f"  Audit score  : {score}")
-print(f"  Steel grade  : {result.get('primary_steel_grade')}")
-print(f"  Beam cover   : {result.get('cover_beam_mm')}mm")
-print(f"  DL entries   : {result.get('dl_table_entries')}")
-print(f"  Artefacts    : {len(result.get('export_paths', {}))}")
+print(f"\n  PHASE R.2A.1 RESULT")
+print(f"  Status             : {status}")
+print(f"  17-criteria audit  : {score}")
+print(f"  10-rule Fe550 val  : {result.get('fe550_validation_score', '?')}")
+print(f"  Steel grade        : {result.get('primary_steel_grade')}")
+print(f"  Beam cover         : {result.get('cover_beam_mm')}mm")
+print(f"  DL entries (total) : {result.get('dl_table_entries')}")
+print(f"  Artefacts          : {len(result.get('export_paths', {}))}")
 
 sys.exit(0 if status in ("PASS", "PARTIAL") else 1)

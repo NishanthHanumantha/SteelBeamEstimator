@@ -84,21 +84,16 @@ class EngineeringContextLoader:
         key = (sg, diameter_mm, cg)
         if key in self._ctx.development_length_table:
             return self._ctx.development_length_table[key]
-        # Try alternate steel grade (Fe415)
-        for sg_try in self._ctx.steel_grades:
-            k2 = (sg_try, diameter_mm, cg)
-            if k2 in self._ctx.development_length_table:
-                self._warn(
-                    f"get_development_length_mm(dia={diameter_mm}, cg={cg}): "
-                    f"used {sg_try} instead of {sg}"
-                )
-                return self._ctx.development_length_table[k2]
-        # Fallback: factor x diameter
+        # Grade-exact miss: emit deterministic warning, DO NOT silently substitute
+        self._warn(
+            f"get_development_length_mm(dia={diameter_mm}, sg={sg}, cg={cg}): "
+            f"exact key not found in development_length_table."
+        )
+        # Fallback: factor x diameter (preserves backward compatibility)
         factor = self._ctx.fallback_dev_length_factor or _IS456_DEV_LENGTH_FACTOR
         fb = factor * diameter_mm
         self._warn(
-            f"get_development_length_mm(dia={diameter_mm}, cg={cg}): "
-            f"GN table miss -> factor {factor}x{diameter_mm} = {fb}mm"
+            f"  -> using factor {factor}x{diameter_mm} = {fb}mm as absolute fallback."
         )
         return fb
 
@@ -107,18 +102,18 @@ class EngineeringContextLoader:
         concrete_grade: Optional[str] = None,
         steel_grade: Optional[str] = None,
     ) -> int:
-        """Return Ld/d ratio for dia=12 (representative beam bar)."""
+        """Return Ld/d ratio for dia=12 (representative beam bar) for the project steel grade."""
         sg = steel_grade or self._ctx.primary_steel_grade
         cg = concrete_grade or self._ctx.fallback_concrete_grade
-        for dia in [12, 16, 10, 20, 8]:
+        for dia in [12, 16, 10, 20, 8, 25, 32]:
             key = (sg, dia, cg)
             if key in self._ctx.development_length_table:
-                factor = round(self._ctx.development_length_table[key] / dia)
-                return factor
+                return round(self._ctx.development_length_table[key] / dia)
+        # Grade exact miss
         fb = self._ctx.fallback_dev_length_factor or _IS456_DEV_LENGTH_FACTOR
         self._warn(
             f"get_development_length_factor(sg={sg}, cg={cg}): "
-            f"GN table miss -> fallback {fb}d"
+            f"not in table -> fallback {fb}d"
         )
         return fb
 

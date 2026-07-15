@@ -42,19 +42,25 @@ class EngineeringContextBuilder:
         extractor = GeneralNotesTextExtractor(self._path)
         _ = extractor.extract()     # warm up
 
-        # --- Individual parsers ---
-        dl_parser    = DevelopmentLengthParser(extractor)
+        # --- Run steel parser first so we can pass project grade to DL parser ---
         cover_parser = CoverParser(extractor)
         steel_parser = SteelGradeParser(extractor)
         conc_parser  = ConcreteGradeParser(extractor)
         hook_parser  = HookRuleParser(extractor)
         lap_parser   = LapRuleParser(extractor)
 
-        # --- Parse ---
-        dl_entries, dl_warn   = dl_parser.parse()
-        cover_rules, cv_warn  = cover_parser.parse()
         steel_grades, primary_steel, sg_warn = steel_parser.parse()
-        conc_grades, elem_map, cg_warn       = conc_parser.parse()
+
+        # Pass project primary steel grade so IS456 values are computed for it
+        dl_parser = DevelopmentLengthParser(
+            extractor, project_steel_grades=[primary_steel]
+        )
+
+        # --- Parse ---
+        dl_entries, dl_warn, dl_audit   = dl_parser.parse()
+        self._dl_audit = dl_audit        # store for orchestrator
+        cover_rules, cv_warn            = cover_parser.parse()
+        conc_grades, elem_map, cg_warn = conc_parser.parse()
         hook_rules, hk_warn   = hook_parser.parse()
         lap_rules, lp_warn    = lap_parser.parse()
 
