@@ -1,0 +1,78 @@
+# Phase V.ROOT.1 -- Dynamic Pipeline Initialization Configuration
+# MODEL_VERSION: 7.1.0
+
+project_discovery:
+  # Search paths relative to Version7 root (checked in order)
+  search_paths:
+    - "data/Benchmark_Set_2"
+    - "data/Benchmark_Set_1"
+    - "data/input"
+  # Accept these DXF file extensions
+  dxf_extensions: [".dxf", ".DXF"]
+
+beam_discovery:
+  # Regex patterns for beam label detection (case-insensitive)
+  # Ordered from most-specific to least-specific
+  label_patterns:
+    - '^B\d{1,3}[A-Z]?$'           # B1, B2, B18, B1A
+    - '^B-\d{1,3}[A-Z]?$'          # B-1, B-18
+    - '^GB[-_]?\d{1,3}[A-Z]?$'     # GB01, GB-01, GB_01
+    - '^BM[-_]?\d{1,3}[A-Z]?$'     # BM01, BM-01
+    - '^RB[-_]?\d{1,3}[A-Z]?$'     # RB01, RB-01
+    - '^[A-Z]{1,3}[-_]?\d{1,4}$'   # Generic: any 1-3 letter prefix + digits
+  # Minimum text height to consider for beam labels (drawing units)
+  min_text_height: 0.0
+  # Patterns that EXCLUDE a text from being a beam label
+  exclude_patterns:
+    - '^\d+[YT]\d+'            # 2Y16, 3T20 (bar designations)
+    - '^[YT]\d+[@-]\d+'        # T10@150 (stirrup designations)
+    - '^\d+\.\d+'              # 1.5, 200.0 (numeric values)
+    - '^(TYP|NTS|EXP|RHS|SHS|UB|UC|CHS)' # structural abbreviations
+    - '^(GL|EL|FL|RL|FFL|SFL|RFL)' # level abbreviations
+    - '^(TOP|BOT|MID|CL|NA|TOS|BOS)' # positional abbreviations
+  # Spatial clustering: max distance to group nearby beam labels
+  cluster_radius: 500.0  # drawing units
+
+  # Section geometry extraction
+  section_patterns:
+    # Matches: 200x600, 200X600, (200x600), 200×600
+    - '(\d{2,4})\s*[xX\u00d7]\s*(\d{2,4})'
+  # Default geometry when none detected (width x depth, mm)
+  default_width_mm: 200
+  default_depth_mm: 600
+  default_cover_mm: 25
+
+drawing_classifier:
+  # Keywords to classify DXF files by their filename/content
+  reinforcement_keywords:
+    - "reinforcement"
+    - "rebar"
+    - "detailing"
+    - "bar"
+    - "bending"
+  framing_keywords:
+    - "framing"
+    - "framingplan"
+    - "framing_plan"
+    - "structural_plan"
+    - "floor_plan"
+  general_notes_keywords:
+    - "general_notes"
+    - "general notes"
+    - "notes"
+    - "specification"
+    - "spec"
+
+engineering_objects:
+  # When generating dynamic engineering objects
+  default_material_grade: "Grade 460"
+  default_concrete_grade: "C30/37"
+  default_cover_mm: 25
+  default_link_diameter_mm: 8
+  default_link_spacing_mm: 150
+
+adapter:
+  # Write L.2-compatible stubs to Version5 data paths
+  write_v5_adapters: true
+  # Create backup of existing V5 data before overwriting
+  backup_v5_data: true
