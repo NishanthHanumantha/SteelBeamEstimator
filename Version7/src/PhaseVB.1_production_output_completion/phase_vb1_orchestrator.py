@@ -93,7 +93,7 @@ class PRODUCTION_OUTPUT_ERROR(Exception):
 class PhaseVB1Orchestrator:
     """Orchestrates all Phase V.B.1 production output completion tasks."""
 
-    MODEL_VERSION = "7.6.0"
+    MODEL_VERSION = "7.8.0"
     PHASE_ID = "VB.1"
 
     # ── 7 validation rules ────────────────────────────────────────────────────
@@ -114,16 +114,135 @@ class PhaseVB1Orchestrator:
         l2_path: Optional[pathlib.Path] = None,
         loader=None,
         v7_root: Optional[pathlib.Path] = None,
+        use_r13_integration: bool = True,
+        use_r14_validation: bool = True,
     ) -> None:
         self.output_dir = output_dir or _OUTPUT_DIR
-        self.l2_path    = l2_path or _L2_MODEL_PATH
         self._v7_root   = v7_root or _V6
         self._loader    = loader
         if self._loader is None and _R2A_AVAILABLE and parse_engineering_context:
             self._loader, _, _ = parse_engineering_context(self._v7_root)
+        self._reinforcement_source = "REFERENCE_CLASSIFICATION_LEGACY"
+        self._use_r14_validation = use_r14_validation
+        self._r14_result = None
+        if l2_path is not None:
+            self.l2_path = l2_path
+        elif use_r13_integration:
+            self.l2_path, self._reinforcement_source = (
+                self._resolve_r13_reinforcement_path()
+            )
+        else:
+            self.l2_path = _L2_MODEL_PATH
         self.start_time = time.time()
         self.result = ProductionOutputResult()
         self._stats_collector = ProductionStatisticsCollector()
+
+    def _resolve_r13_reinforcement_path(self):
+        """Resolve EngineeringBarModel path via Phase R.1.3 integration."""
+        try:
+            import types
+            import importlib.util as _ilu
+
+            r13_dir = self._v7_root / "src/PhaseR1.3_pipeline_integration"
+            if "PhaseR13.production_pipeline_rewire" not in sys.modules:
+                pkg = types.ModuleType("PhaseR13")
+                pkg.__path__ = [str(r13_dir)]
+                sys.modules["PhaseR13"] = pkg
+                for sub, fname in [
+                    ("reinforcement_source_selector", "reinforcement_source_selector"),
+                    ("engineering_bar_model", "engineering_bar_model"),
+                    ("engineering_bar_builder", "engineering_bar_builder"),
+                    ("reinforcement_pipeline_adapter", "reinforcement_pipeline_adapter"),
+                    ("l2_engineering_processor", "l2_engineering_processor"),
+                    ("pipeline_integration_manager", "pipeline_integration_manager"),
+                    ("production_pipeline_rewire", "production_pipeline_rewire"),
+                ]:
+                    spec = _ilu.spec_from_file_location(
+                        f"PhaseR13.{sub}", r13_dir / f"{fname}.py"
+                    )
+                    mod = _ilu.module_from_spec(spec)
+                    mod.__package__ = "PhaseR13"
+                    sys.modules[f"PhaseR13.{sub}"] = mod
+                    spec.loader.exec_module(mod)
+
+            rewire = sys.modules[
+                "PhaseR13.production_pipeline_rewire"
+            ].ProductionPipelineRewire(self._v7_root, auto_build=True)
+            path, source = rewire.resolve_models_path()
+            print(f"      Reinforcement source: {source}")
+            print(f"      Models path: {path.name}")
+            return path, source
+        except Exception as exc:
+            print(f"      R.1.3 integration unavailable ({exc}), using L.2 fallback")
+            return _L2_MODEL_PATH, "REFERENCE_CLASSIFICATION_LEGACY"
+
+    def _bootstrap_r14(self):
+        """Bootstrap Phase R.1.4 integrity validation package."""
+        import types
+        import importlib.util as _ilu
+
+        r14_dir = self._v7_root / "src/PhaseR1.4_integrity_validation"
+        if "PhaseR14.reinforcement_integrity_validator" in sys.modules:
+            return
+        pkg = types.ModuleType("PhaseR14")
+        pkg.__path__ = [str(r14_dir)]
+        sys.modules["PhaseR14"] = pkg
+        modules = [
+            "validation_models", "pipeline_data_loader", "coverage_analyzer",
+            "beam_consistency_checker", "engineering_bar_validator",
+            "pipeline_dependency_validator", "coverage_classifier",
+            "integrity_quality_gate", "validation_statistics",
+            "reinforcement_integrity_validator", "validation_reporter",
+            "validation_export", "phase_r14_orchestrator",
+        ]
+        for name in modules:
+            spec = _ilu.spec_from_file_location(
+                f"PhaseR14.{name}", r14_dir / f"{name}.py"
+            )
+            mod = _ilu.module_from_spec(spec)
+            mod.__package__ = "PhaseR14"
+            sys.modules[f"PhaseR14.{name}"] = mod
+            spec.loader.exec_module(mod)
+
+    def _step_r14_integrity_validation(self) -> Dict[str, Any]:
+        """Phase R.1.4 — validate reinforcement integrity before steel weight."""
+        self._bootstrap_r14()
+        PhaseR14Orchestrator = sys.modules[
+            "PhaseR14.phase_r14_orchestrator"
+        ].PhaseR14Orchestrator
+
+        r14_out = (
+            self._v7_root / "data/output/PhaseR1.4_integrity_validation"
+        )
+        orch = PhaseR14Orchestrator(
+            v7_root=self._v7_root,
+            output_dir=r14_out,
+            reinforcement_source=self._reinforcement_source,
+            production_models_path=str(self.l2_path),
+            export=True,
+        )
+        result = orch.run()
+        vr = result["validation_result"]
+        self._r14_result = vr
+
+        if not vr.production_allowed:
+            raise PRODUCTION_OUTPUT_ERROR(
+                f"R.1.4 Quality Gate FAIL (strict_mode): "
+                f"{'; '.join(vr.errors)}"
+            )
+
+        for w in vr.warnings:
+            self.result.warnings.append(f"R.1.4 WARNING: {w}")
+
+        return {
+            "integrity_score": vr.integrity_score,
+            "pipeline_health_score": vr.pipeline_health_score,
+            "quality_gate_status": vr.quality_gate_status,
+            "rules_passed": sum(
+                1 for r in vr.rules.values() if r.status == "PASS"
+            ),
+            "rules_total": len(vr.rules),
+        }
 
     # ── public entry point ────────────────────────────────────────────────────
 
@@ -136,42 +255,50 @@ class PhaseVB1Orchestrator:
 
         try:
             # Step 1 — Integration engine validation
-            print("\n[1/8] Integration Engine Validation")
+            print("\n[1/9] Integration Engine Validation")
             int_report = self._step_integration_validation()
 
-            # Step 2 — Steel weight completion
-            print("[2/8] Steel Weight Calculation")
+            # Step 2 — R.1.4 Reinforcement integrity validation
+            r14_report = None
+            if self._use_r14_validation:
+                print("[2/9] Phase R.1.4 Integrity Validation")
+                r14_report = self._step_r14_integrity_validation()
+            else:
+                print("[2/9] Phase R.1.4 Integrity Validation — SKIPPED")
+
+            # Step 3 — Steel weight completion
+            print("[3/9] Steel Weight Calculation")
             steel_summary = self._step_steel_weight()
             self.result.steel_weight_kg = steel_summary.total_weight_kg
             print(f"      Total steel weight: {steel_summary.total_weight_kg:.3f} kg")
 
-            # Step 3 — BBS generation
-            print("[3/8] BBS Completion Engine")
+            # Step 4 — BBS generation
+            print("[4/9] BBS Completion Engine")
             bbs_engine = BBSCompletionEngine(steel_summary)
             bbs_rows = bbs_engine.generate()
             print(f"      BBS rows generated: {len(bbs_rows)}")
 
-            # Step 4 — Excel workbook generation
-            print("[4/8] Estimator Excel Generator")
+            # Step 5 — Excel workbook generation
+            print("[5/9] Estimator Excel Generator")
             paths = self._step_excel_generation(bbs_rows, steel_summary)
             self.result.workbook_path = str(paths["production"])
             self.result.engineering_review_path = str(paths["engineering_review"])
             self.result.archive_path = str(paths["archive"])
             print(f"      Output: {paths['production'].name}")
 
-            # Step 5 — Workbook validation
-            print("[5/8] Workbook Validation")
+            # Step 6 — Workbook validation
+            print("[6/9] Workbook Validation")
             val_result = self._step_workbook_validation(paths["production"], steel_summary)
             self.result.workbook_validated = val_result.validation_passed
             self.result.validation_result = val_result
 
-            # Step 6 — Production statistics
-            print("[6/8] Production Statistics")
+            # Step 7 — Production statistics
+            print("[7/9] Production Statistics")
             statistics = self._stats_collector.collect(bbs_rows, steel_summary, paths)
             self.result.statistics = statistics
 
-            # Step 7 — Production reporter
-            print("[7/8] Production Reporter")
+            # Step 8 — Production reporter
+            print("[8/9] Production Reporter")
             reporter = ProductionReporter(
                 result=self.result,
                 steel_summary=steel_summary,
@@ -182,8 +309,8 @@ class PhaseVB1Orchestrator:
             )
             report = reporter.build()
 
-            # Step 8 — Export
-            print("[8/8] Exporting JSON artefacts")
+            # Step 9 — Export
+            print("[9/9] Exporting JSON artefacts")
             exporter = ProductionExport(self.output_dir)
             exported = exporter.export_all(
                 report=report,
@@ -232,12 +359,13 @@ class PhaseVB1Orchestrator:
         return report
 
     def _step_steel_weight(self):
-        l2_path = self.l2_path
-        if not l2_path.exists():
+        models_path = self.l2_path
+        if not models_path.exists():
             raise PRODUCTION_OUTPUT_ERROR(
-                f"L.2 model file not found: {l2_path}"
+                f"Reinforcement model file not found: {models_path}"
             )
-        engine = SteelWeightCompletion(l2_path, loader=self._loader)
+        print(f"      Source: {self._reinforcement_source}")
+        engine = SteelWeightCompletion(models_path, loader=self._loader)
         summary = engine.compute()
         if summary.total_weight_kg <= 0:
             raise PRODUCTION_OUTPUT_ERROR(
