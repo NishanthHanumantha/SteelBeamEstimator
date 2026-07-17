@@ -8,8 +8,9 @@ import json
 import logging
 import pathlib
 from dataclasses import asdict
-from typing import Dict, List
+from typing import Dict, List, Optional
 
+from .adaptive_association_engine import AdaptiveAssociationEngine
 from .reinforcement_models import (
     BeamDetail,
     ReinforcementAnnotation,
@@ -33,6 +34,7 @@ class ReinforcementExport:
             "output_dir", "data/output/PhaseR.1_generalized_reinforcement_discovery"
         )
         self._out_dir = project_root / out_rel
+        self._project_root = project_root
         self._out_dir.mkdir(parents=True, exist_ok=True)
 
     # ──────────────────────────────────────────────────────────────────────────
@@ -46,6 +48,7 @@ class ReinforcementExport:
         statistics:    dict,
         validation:    ValidationReport,
         report:        dict,
+        association_engine: Optional[AdaptiveAssociationEngine] = None,
     ) -> Dict[str, str]:
         """Write all 8 artefacts.  Returns {filename: path_str}."""
         written: Dict[str, str] = {}
@@ -91,6 +94,10 @@ class ReinforcementExport:
                             "bar_label":        a.bar_label,
                             "confidence":       a.confidence,
                             "is_reinforcement": a.is_reinforcement,
+                            "association_score": a.association_score,
+                            "association_method": a.association_method,
+                            "association_confidence": a.association_confidence,
+                            "association_evidence": a.association_evidence,
                         }
                         for a in anns
                     ]
@@ -124,7 +131,7 @@ class ReinforcementExport:
         written["beam_reinforcement_models.json"] = self._write(
             "beam_reinforcement_models.json",
             {
-                "model_version":  "7.3.0",
+                "model_version":  "8.2.0",
                 "phase":          "R.1",
                 "total_models":   len(models),
                 "models": {
@@ -155,8 +162,110 @@ class ReinforcementExport:
             "generalized_reinforcement_report.json", report
         )
 
+        if association_engine is not None:
+            r11a_dir = self._project_root / "data/output/PhaseR1_1A_annotation_coverage"
+            r11a_dir.mkdir(parents=True, exist_ok=True)
+            self._export_r11a_artefacts(r11a_dir, association_engine, details, annotations)
+
         log.info("ReinforcementExport: %d artefacts written to %s", len(written), self._out_dir)
         return written
+
+    def _export_r11a_artefacts(
+        self,
+        out_dir: pathlib.Path,
+        engine: AdaptiveAssociationEngine,
+        details: List[BeamDetail],
+        annotations: Dict[str, List[ReinforcementAnnotation]],
+    ) -> None:
+        beam_ids = {d.beam_id for d in details}
+        beams_with_reinf = sum(
+            1 for bid, anns in annotations.items()
+            if any(a.is_reinforcement for a in anns)
+        )
+        total_anns = sum(len(v) for v in annotations.values())
+        recovered = sum(1 for o in engine.orphan_recoveries if o.get("beam_id"))
+        leader_assoc = sum(
+            1 for s in engine.association_scores
+            if s.get("association_method") == "leader"
+        )
+        cluster_assoc = sum(
+            1 for s in engine.association_scores
+            if s.get("association_method") in ("cluster", "hybrid")
+        )
+        confidences = [
+            s.get("association_confidence", 0.0)
+            for s in engine.association_scores
+        ]
+        avg_conf = round(sum(confidences) / len(confidences), 4) if confidences else 0.0
+
+        payloads = {
+            "beam_detail_clusters.json": {
+                "total_clusters": len(engine.clusters),
+                "clusters": [
+                    {
+                        "cluster_id": c.cluster_id,
+                        "beam_id": c.beam_id,
+                        "center_x": c.center_x,
+                        "center_y": c.center_y,
+                        "member_count": c.member_count,
+                        "has_beam_mark": c.has_beam_mark,
+                        "leader_count": c.leader_count,
+                    }
+                    for c in engine.clusters
+                ],
+            },
+            "adaptive_search_regions.json": {
+                "total_regions": len(engine.search_regions),
+                "regions": [
+                    {
+                        "beam_id": r.beam_id,
+                        "center_x": r.center_x,
+                        "center_y": r.center_y,
+                        "radius": r.radius,
+                        "span_mm": r.span_mm,
+                        "depth_mm": r.depth_mm,
+                        "width_mm": r.width_mm,
+                        "anchor_sources": r.anchor_sources,
+                    }
+                    for r in engine.search_regions
+                ],
+            },
+            "annotation_association_scores.json": {
+                "total_scores": len(engine.association_scores),
+                "scores": engine.association_scores,
+            },
+            "orphan_annotation_recovery.json": {
+                "total_orphans": len(engine.orphan_recoveries),
+                "recovered": recovered,
+                "unrecovered": len(engine.orphan_recoveries) - recovered,
+                "records": engine.orphan_recoveries,
+            },
+            "beam_annotation_coverage.json": {
+                "total_beams": len(details),
+                "beams_with_reinforcement": beams_with_reinf,
+                "beams_without_reinforcement": len(details) - beams_with_reinf,
+                "total_annotations": total_anns,
+                "by_beam": {
+                    d.beam_id: {
+                        "annotation_count": len(annotations.get(d.beam_id, [])),
+                        "rebar_count": sum(
+                            1 for a in annotations.get(d.beam_id, [])
+                            if a.is_reinforcement
+                        ),
+                        "detail_radius": d.detail_radius,
+                    }
+                    for d in details
+                },
+            },
+            "engineering_confidence_summary.json": {
+                "average_confidence": avg_conf,
+                "leader_associations": leader_assoc,
+                "cluster_associations": cluster_assoc,
+                "score_count": len(engine.association_scores),
+            },
+        }
+        for name, data in payloads.items():
+            (out_dir / name).write_text(_json(data), encoding="utf-8")
 
     # ──────────────────────────────────────────────────────────────────────────
     def _write(self, filename: str, data: object) -> str:

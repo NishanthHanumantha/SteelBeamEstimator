@@ -85,37 +85,45 @@ def _load_config(config_path: pathlib.Path) -> dict:
 
 
 def _resolve_dxf_path(project_root: pathlib.Path, config: dict) -> Optional[pathlib.Path]:
-    """Resolve the reinforcement DXF path from the beam_registry."""
+    """Resolve the reinforcement DXF path from V.ROOT.1 artefacts."""
     import json
     registry_rel = config.get("discovery", {}).get(
         "beam_registry_path",
         "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json",
     )
     registry_path = project_root / registry_rel
-    if not registry_path.exists():
-        log.error("beam_registry not found: %s", registry_path)
-        return None
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        drawing_paths = registry.get("drawing_paths", {})
+        reinforcement_key = config.get("discovery", {}).get("reinforcement_dxf_key", "reinforcement")
+        dxf_rel = drawing_paths.get(reinforcement_key)
+        if dxf_rel:
+            p = project_root / dxf_rel
+            if p.exists():
+                return p
 
-    registry = json.loads(registry_path.read_text(encoding="utf-8"))
-    drawing_paths = registry.get("drawing_paths", {})
+        top_path = registry.get("drawing_path")
+        if top_path:
+            p = pathlib.Path(top_path)
+            if p.exists():
+                return p
 
-    # Try "reinforcement" key first
-    reinforcement_key = config.get("discovery", {}).get("reinforcement_dxf_key", "reinforcement")
-    dxf_rel = drawing_paths.get(reinforcement_key)
-    if dxf_rel:
-        return project_root / dxf_rel
-
-    # Fallback: search for first .dxf containing "Beam" in name
-    for key, rel in drawing_paths.items():
-        if rel and "beam" in rel.lower() and rel.lower().endswith(".dxf"):
-            return project_root / rel
-
-    # Last resort: scan data/Benchmark_Set_2/reinforcement
-    rein_dir = project_root / "data" / "Benchmark_Set_2" / "reinforcement"
-    if rein_dir.exists():
-        dxf_files = list(rein_dir.glob("*.dxf"))
-        if dxf_files:
-            return dxf_files[0]
+    manifest_path = project_root / "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/drawing_manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        primary = manifest.get("primary_reinforcement_drawing")
+        if primary:
+            p = pathlib.Path(primary)
+            if p.exists():
+                return p
+        source = manifest.get("source_folder")
+        for drawing in manifest.get("drawings", []):
+            if drawing.get("drawing_type") == "BEAM_REINFORCEMENT":
+                rel = drawing.get("relative_path")
+                if source and rel:
+                    p = pathlib.Path(source) / rel
+                    if p.exists():
+                        return p
 
     log.error("Cannot locate reinforcement DXF file")
     return None
@@ -132,13 +140,14 @@ class PhaseR1Orchestrator:
     def run(self) -> dict:
         t0 = time.perf_counter()
         log.info("=" * 72)
-        log.info("Phase R.1 — Generalized Reinforcement Discovery  MODEL_VERSION 7.3.0")
+        log.info("Phase R.1 — Generalized Reinforcement Discovery  MODEL_VERSION 8.2.0")
         log.info("=" * 72)
 
         # ── Step 1: Beam detail discovery ─────────────────────────────────────
         log.info("[1/9] Beam Detail Discovery ...")
         discoverer = BeamDetailDiscovery(self.project_root, self.config)
         details    = discoverer.discover()
+        registry   = discoverer.registry
         if not details:
             log.error("No beam details discovered — aborting")
             return {"status": "FAILED", "reason": "No beam details discovered"}
@@ -155,8 +164,9 @@ class PhaseR1Orchestrator:
         doc = ezdxf.readfile(str(dxf_path))
         msp = doc.modelspace()
 
-        segmenter = BeamDetailSegmenter(self.config)
-        beam_map  = segmenter.segment(msp, details)
+        segmenter = BeamDetailSegmenter(self.config, self.project_root)
+        beam_map  = segmenter.segment(msp, details, registry)
+        assoc_engine = segmenter.association_engine
 
         # ── Step 3: Annotation discovery ──────────────────────────────────────
         log.info("[3/9] Annotation Discovery ...")
@@ -216,6 +226,7 @@ class PhaseR1Orchestrator:
         artefacts = exporter.export_all(
             details, beam_annotations, beam_groups, models,
             relationships, statistics, validation, report,
+            association_engine=assoc_engine,
         )
 
         elapsed = round(time.perf_counter() - t0, 2)
@@ -232,7 +243,7 @@ class PhaseR1Orchestrator:
 
         return {
             "status":          validation.overall,
-            "model_version":   "7.3.0",
+            "model_version":   "8.2.0",
             "phase":           "R.1",
             "elapsed_s":       elapsed,
             "total_beams":     len(details),

@@ -1,6 +1,6 @@
 """
-reinforcement_models.py — Data models for Phase R.1.
-MODEL_VERSION: 7.3.0
+reinforcement_models.py — Data models for Phase R.1 / R.1.1A.
+MODEL_VERSION: 8.2.0
 """
 
 from __future__ import annotations
@@ -66,6 +66,10 @@ class ReinforcementAnnotation:
     bar_label:        str  = ""
     confidence:       str  = "LOW"
     is_reinforcement: bool = False
+    association_score: float = 0.0
+    association_method: str = ""
+    association_confidence: float = 0.0
+    association_evidence: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -91,7 +95,7 @@ class R1BeamReinforcementModel:
     all_annotations:  List[ReinforcementAnnotation]
     coverage_pct:     float    # % annotations classified (not UNKNOWN)
     classification_complete: bool
-    model_version:    str = "7.3.0"
+    model_version:    str = "8.2.0"
     phase:            str = "R.1"
 
     def to_dict(self) -> dict:

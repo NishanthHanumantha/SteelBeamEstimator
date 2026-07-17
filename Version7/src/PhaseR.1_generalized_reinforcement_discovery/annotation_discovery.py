@@ -160,6 +160,10 @@ class AnnotationDiscovery:
             position_zone    = zone,
             is_reinforcement = False,
             confidence       = "LOW",
+            association_score = float(rec.get("association_score", 0)),
+            association_method = rec.get("association_method", ""),
+            association_confidence = float(rec.get("association_confidence", 0)),
+            association_evidence = list(rec.get("association_evidence", [])),
         )
         return [ann]
 
@@ -186,6 +190,10 @@ class AnnotationDiscovery:
             bar_label        = label,
             confidence       = _confidence(qty, dia, True),
             is_reinforcement = True,
+            association_score = float(rec.get("association_score", 0)),
+            association_method = rec.get("association_method", ""),
+            association_confidence = float(rec.get("association_confidence", 0)),
+            association_evidence = list(rec.get("association_evidence", [])),
         )
 
     def _build_stirrup(self, m, clean, rec, detail, dy) -> ReinforcementAnnotation:
@@ -213,6 +221,10 @@ class AnnotationDiscovery:
             bar_label        = label,
             confidence       = "HIGH",
             is_reinforcement = True,
+            association_score = float(rec.get("association_score", 0)),
+            association_method = rec.get("association_method", ""),
+            association_confidence = float(rec.get("association_confidence", 0)),
+            association_evidence = list(rec.get("association_evidence", [])),
         )
 
     def _parse_composite(self, m, clean, rec, detail, dy, zone) -> List[ReinforcementAnnotation]:
@@ -241,6 +253,10 @@ class AnnotationDiscovery:
                 bar_label        = label,
                 confidence       = _confidence(qty, dia, True),
                 is_reinforcement = True,
+                association_score = float(rec.get("association_score", 0)),
+                association_method = rec.get("association_method", ""),
+                association_confidence = float(rec.get("association_confidence", 0)),
+                association_evidence = list(rec.get("association_evidence", [])),
             )
             anns.append(ann)
         return anns

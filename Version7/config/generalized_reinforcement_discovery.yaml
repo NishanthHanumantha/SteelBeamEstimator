@@ -1,35 +1,40 @@
 # Phase R.1 — Generalized Reinforcement Discovery Configuration
-# MODEL_VERSION: 7.3.0
+# MODEL_VERSION: 8.2.0
 
-model_version: "7.3.0"
+model_version: "8.2.0"
 phase_id: "R.1"
 
 # ── Spatial search parameters ─────────────────────────────────────────────────
 geometry:
-  # Max DXF-unit radius for assigning an annotation to a beam
+  # Legacy fixed radius (used when r11a.enabled is false)
   annotation_search_radius: 5000
-  # Annotations closer than this to the centroid Y are in the "neutral" zone
+  min_search_radius: 8000
+  max_search_radius: 25000
   neutral_zone_half_height: 200
-  # Annotations further than this dy are considered remote (possible non-reinforcement)
   max_dy_for_rebar: 6000
+
+# ── Phase R.1.1A — Adaptive association & coverage recovery ─────────────────────
+r11a:
+  enabled: true
+  min_search_radius: 8000
+  max_search_radius: 25000
+  leader_tail_tolerance: 500
+  association_score_threshold: 0.25
+  orphan_radius_multiplier: 1.35
 
 # ── Reinforcement annotation classification ──────────────────────────────────
 classification:
-  # Diameter thresholds (mm) for role hints
   stirrup_max_diameter: 12
   main_bar_min_diameter: 12
   spacer_bar_max_diameter: 12
-  # Minimum bar quantity to be counted as a group
   min_quantity: 1
-  # Confidence thresholds
   high_confidence_min: 0.80
   medium_confidence_min: 0.50
 
 # ── Beam detail discovery ─────────────────────────────────────────────────────
 discovery:
-  # Re-read beam_registry from V.ROOT.1 output
   beam_registry_path: "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
-  reinforcement_dxf_key: "reinforcement"      # key in drawing_path dict
+  reinforcement_dxf_key: "reinforcement"
 
 # ── Export paths ──────────────────────────────────────────────────────────────
 export:

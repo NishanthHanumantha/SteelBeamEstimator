@@ -50,6 +50,8 @@ class EngineeringBarBuilder:
         reg_data = json.loads(self._registry_path.read_text(encoding="utf-8"))
         r1_models = r1_data.get("models", {})
         beam_records = reg_data.get("beams", {})
+        # GeometryProvider catalog (Phase R.1.2A) — preferred production geometry
+        geo_catalog = self._load_geometry_catalog()
 
         beam_models: List[BeamEngineeringModel] = []
         stats = {
@@ -58,14 +60,33 @@ class EngineeringBarBuilder:
             "beams_empty": 0,
             "total_bars": 0,
             "empty_beam_ids": [],
+            "geometry_source": "GeometryProvider" if geo_catalog else "beam_registry",
         }
 
         for beam_id, r1_model in sorted(r1_models.items()):
             reg_beam = beam_records.get(beam_id, {})
             section = r1_model.get("section") or reg_beam.get("section") or {}
-            span_mm = float(reg_beam.get("clear_span_mm") or 0)
-            depth_mm = float(section.get("depth_mm") or 750.0)
-            width_mm = float(section.get("width_mm") or 300.0)
+            gprov = geo_catalog.get(beam_id) or {}
+            # Prefer GeometryProvider. Never fall back to a rejected constant
+            # registry span (e.g. 8775) when the provider marked the beam MISSING.
+            if gprov:
+                span_raw = gprov.get("clear_span_mm")
+                if span_raw is None and gprov.get("source") == "MISSING":
+                    span_mm = 0.0
+                else:
+                    span_mm = float(span_raw or reg_beam.get("clear_span_mm") or 0)
+            else:
+                span_mm = float(reg_beam.get("clear_span_mm") or 0)
+            depth_mm = float(
+                gprov.get("depth_mm")
+                or section.get("depth_mm")
+                or 750.0
+            )
+            width_mm = float(
+                gprov.get("width_mm")
+                or section.get("width_mm")
+                or 300.0
+            )
             groups = r1_model.get("groups") or {}
 
             bars: List[EngineeringBarModel] = []
@@ -89,12 +110,35 @@ class EngineeringBarBuilder:
                     "depth_mm": depth_mm,
                     "clear_span_mm": span_mm,
                     "effective_span_mm": span_mm,
+                    "geometry_source": gprov.get("source") or "beam_registry",
+                    "geometry_confidence": gprov.get("confidence"),
                 },
                 source_phase="R.1.3",
                 classification_complete=bool(groups),
             ))
 
         return beam_models, stats
+
+    def _load_geometry_catalog(self) -> Dict[str, Any]:
+        """Load validated geometry from GeometryProvider if available."""
+        try:
+            v7 = self._registry_path.parents[3]  # .../Version7
+            catalog = (
+                v7 / "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
+            )
+            if not catalog.exists():
+                # registry path is Version7/data/output/PhaseVROOT.../beam_registry.json
+                # parents[2] = Version7/data, parents[3] = Version7 — verify
+                alt = self._r1_path.parents[3] / (
+                    "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
+                )
+                catalog = alt if alt.exists() else catalog
+            if not catalog.exists():
+                return {}
+            data = json.loads(catalog.read_text(encoding="utf-8"))
+            return data.get("geometries") or {}
+        except Exception:
+            return {}
 
     def _expand_group(
         self, beam_id: str, role: str, group: dict

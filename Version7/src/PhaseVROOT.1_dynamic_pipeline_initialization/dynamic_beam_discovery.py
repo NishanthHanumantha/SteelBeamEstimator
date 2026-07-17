@@ -84,16 +84,35 @@ def _extract_section(texts: List[str]) -> Tuple[Optional[float], Optional[float]
 
 
 def _extract_span(texts: List[str], exclude: List[str]) -> Optional[float]:
-    """Extract a likely span value (3000-15000 mm) from annotation texts."""
-    candidates = []
+    """
+    Extract a likely span value (1500-15000 mm) from nearby annotation texts.
+
+    Prefer DIMENSION measurements over bare numeric text. Never select a
+    global drawing-wide maximum — callers must pass spatially filtered texts.
+    """
+    dim_candidates: List[float] = []
+    text_candidates: List[float] = []
     for t in texts:
         if t in exclude:
+            continue
+        # Positioned records may arrive as "DIM:8775.2"
+        if isinstance(t, str) and t.startswith("DIM:"):
+            try:
+                val = float(t.split(":", 1)[1])
+                if 1500.0 <= val <= 15000.0:
+                    dim_candidates.append(val)
+            except Exception:
+                pass
             continue
         for m in _SPAN_RE.finditer(t):
             val = float(m.group(1))
             if 1500.0 <= val <= 15000.0:
-                candidates.append(val)
-    return max(candidates) if candidates else None
+                text_candidates.append(val)
+    pool = dim_candidates or text_candidates
+    if not pool:
+        return None
+    # Among local candidates choose the largest (typical clear-span dimension)
+    return max(pool)
 
 
 def _cluster_labels(
@@ -160,10 +179,11 @@ class DynamicBeamDiscovery:
 
         msp    = doc.modelspace()
         labels = self._extract_labels(msp)
-        all_texts = self._extract_all_texts(msp)
+        all_texts = self._extract_all_texts(msp)  # positioned records
 
         clusters  = _cluster_labels(labels, self._cluster_radius)
         beams     = self._build_beams(clusters, all_texts)
+        beams     = self._reject_constant_span(beams)
 
         elapsed = round(time.perf_counter() - t0, 2)
         return {
@@ -304,34 +324,68 @@ class DynamicBeamDiscovery:
             '_section_hint': section_hint,
         }
 
-    def _extract_all_texts(self, msp: Any) -> List[str]:
-        """Extract every text string in the drawing for annotation mining."""
-        texts: List[str] = []
+    def _extract_all_texts(self, msp: Any) -> List[Dict[str, Any]]:
+        """
+        Extract every text/dimension with its DXF position for spatial filtering.
+
+        Returns list of records:
+          {text, x, y, kind: 'TEXT'|'DIMENSION', measurement: Optional[float]}
+        """
+        records: List[Dict[str, Any]] = []
         for ent in msp.query('TEXT MTEXT'):
             try:
                 if ent.dxftype() == 'MTEXT':
                     raw = ent.plain_mtext() if hasattr(ent, 'plain_mtext') else ''
                     cleaned = self._clean_mtext(raw).strip()
+                    ins = ent.dxf.insert
                 else:
                     raw = ent.dxf.text or ''
                     cleaned = self._clean_text_entity(raw).strip()
+                    ins = ent.dxf.insert
                 if cleaned:
-                    texts.append(cleaned)
+                    records.append({
+                        'text': cleaned,
+                        'x': float(ins.x),
+                        'y': float(ins.y),
+                        'kind': 'TEXT',
+                        'measurement': None,
+                    })
             except Exception:
                 continue
-        # Also extract from DIMENSION entities (for span values)
         for ent in msp.query('DIMENSION'):
             try:
-                mtext = ent.dxf.get('text', '') or ''
-                if mtext and mtext.strip():
-                    texts.append(mtext.strip())
-                # Actual measurement
                 meas = ent.dxf.get('actual_measurement', None)
-                if meas is not None:
-                    texts.append(str(round(abs(meas), 1)))
+                meas_f = abs(float(meas)) if meas is not None else None
+                pts = []
+                for attr in ('defpoint', 'defpoint2', 'defpoint3', 'text_midpoint'):
+                    try:
+                        pt = getattr(ent.dxf, attr, None)
+                        if pt is not None:
+                            pts.append((float(pt.x), float(pt.y)))
+                    except Exception:
+                        pass
+                if not pts:
+                    continue
+                mx = sum(p[0] for p in pts) / len(pts)
+                my = sum(p[1] for p in pts) / len(pts)
+                mtext = (ent.dxf.get('text', '') or '').strip()
+                if mtext:
+                    records.append({
+                        'text': mtext,
+                        'x': mx, 'y': my,
+                        'kind': 'DIMENSION',
+                        'measurement': meas_f,
+                    })
+                if meas_f is not None:
+                    records.append({
+                        'text': f'DIM:{round(meas_f, 1)}',
+                        'x': mx, 'y': my,
+                        'kind': 'DIMENSION',
+                        'measurement': meas_f,
+                    })
             except Exception:
                 continue
-        return texts
+        return records
 
     @staticmethod
     def _clean_mtext(raw: str) -> str:
@@ -354,7 +408,7 @@ class DynamicBeamDiscovery:
     def _build_beams(
         self,
         clusters: List[List[Dict[str, Any]]],
-        all_texts: List[str],
+        all_texts: List[Dict[str, Any]],
     ) -> List[Dict[str, Any]]:
         """Build a beam record for each unique label cluster."""
         seen: Dict[str, Dict[str, Any]] = {}
@@ -389,8 +443,11 @@ class DynamicBeamDiscovery:
                 width_mm, depth_mm = _extract_section(nearby)
                 inferred = width_mm is None
 
-            nearby   = self._nearby_texts(cx, cy, all_texts, radius=600.0)
-            span_mm  = _extract_span(nearby, [label])
+            # Span search uses a larger adaptive radius (detail drawings place
+            # clear-span dimensions farther from the beam mark than section notes)
+            nearby_span = self._nearby_texts(cx, cy, all_texts, radius=2500.0)
+            span_mm = _extract_span(nearby_span, [label])
+            nearby = self._nearby_texts(cx, cy, all_texts, radius=600.0)
 
             seen[label] = {
                 'beam_id':        label,
@@ -429,19 +486,50 @@ class DynamicBeamDiscovery:
         self,
         cx: float,
         cy: float,
-        all_texts: List[str],
+        all_texts: List[Dict[str, Any]],
         radius: float = 600.0,
     ) -> List[str]:
+        """Return text strings whose DXF position is within radius of (cx, cy)."""
+        if not all_texts:
+            return []
+        # Backward-compatible: plain string list (legacy callers)
+        if isinstance(all_texts[0], str):
+            return list(all_texts)
+
+        nearby: List[str] = []
+        for rec in all_texts:
+            try:
+                dx = float(rec.get('x', 0)) - cx
+                dy = float(rec.get('y', 0)) - cy
+                if math.hypot(dx, dy) <= radius:
+                    nearby.append(str(rec.get('text', '')))
+            except Exception:
+                continue
+        return nearby
+
+    @staticmethod
+    def _reject_constant_span(beams: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
-        Return texts that are 'near' a location.
-        Since we don't have positions for all texts, we return a sample
-        of texts that could plausibly be near this beam.
-        In a full implementation this would use spatial indexing.
+        If the majority of beams share an identical span, that value is almost
+        certainly a global drawing-wide dimension wrongly assigned to every beam.
+        Clear those spans so GeometryProvider can re-resolve them.
         """
-        # We return all texts here since we can't spatially filter without
-        # recording text positions. The section/span extractors are robust
-        # enough to handle false positives.
-        return all_texts
+        if len(beams) < 3:
+            return beams
+        from collections import Counter
+        spans = [b.get('clear_span_mm') for b in beams if b.get('clear_span_mm')]
+        if not spans:
+            return beams
+        rounded = [round(float(s), 0) for s in spans]
+        most_common, count = Counter(rounded).most_common(1)[0]
+        if count / len(beams) >= 0.5:
+            for b in beams:
+                s = b.get('clear_span_mm')
+                if s is not None and round(float(s), 0) == most_common:
+                    b['clear_span_mm'] = None
+                    b['span_rejected_constant'] = True
+                    b['span_rejected_value'] = most_common
+        return beams
 
     @staticmethod
     def _fallback_result(dxf_path: pathlib.Path, error: str) -> Dict[str, Any]:

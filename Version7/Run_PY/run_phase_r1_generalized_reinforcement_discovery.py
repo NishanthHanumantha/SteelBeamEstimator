@@ -53,7 +53,9 @@ def _load_sub(name: str):
 for _sub in [
     "__init__",
     "reinforcement_models",
+    "dxf_text_utils",
     "beam_detail_discovery",
+    "adaptive_association_engine",
     "beam_detail_segmenter",
     "annotation_discovery",
     "reinforcement_annotation_classifier",

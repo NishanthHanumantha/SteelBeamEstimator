@@ -38,6 +38,10 @@ class BeamDetailDiscovery:
             config.get("geometry", {}).get("annotation_search_radius", self.DEFAULT_RADIUS)
         )
 
+    @property
+    def registry(self) -> dict:
+        return self._load_registry()
+
     # ──────────────────────────────────────────────────────────────────────────
     def discover(self) -> List[BeamDetail]:
         """Return one BeamDetail per beam in the registry."""
