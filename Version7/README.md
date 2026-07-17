@@ -1,8 +1,11 @@
 # Steel Beam Estimator — Version 7
 
-Active development branch continuing from **Version 6** (frozen at MODEL_VERSION 6.6.3 / Phase V.A.1.1).
+> **FROZEN (2026-07-17) at MODEL_VERSION 8.3.0.**  
+> Active development continues in **`Version8/`**. See `VERSION_FREEZE.md`.
 
-**Version 6 is frozen.** All new model development and Benchmark Set 2 testing happens here.
+Historical development branch continuing from **Version 6** (frozen at MODEL_VERSION 6.6.3 / Phase V.A.1.1).
+
+**Version 6 is frozen. Version 7 is frozen.** Do not add new features here.
 
 ## Production Pipeline (MODEL_VERSION 6.6.3 baseline)
 
