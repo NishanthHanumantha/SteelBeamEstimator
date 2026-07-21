@@ -1,6 +1,6 @@
 # Steel Beam Estimator — Version 8
 
-**Active development branch.** Continues from frozen **Version 7** at MODEL_VERSION **8.3.0**.
+**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.0**.
 
 **Version 7 is frozen.** Do not add new features there. All new work starts here.
 
@@ -21,8 +21,14 @@ Version 7 accumulated many forensic / audit / legacy packages and regenerated ou
 | 3 | R.3 / R.3.1 | geometry + relationships (leaders) | `run_phase_r3_*.py` / `run_phase_r31_*.py` |
 | 4 | R.1 (+ R.1.1A) | annotation discovery | `run_phase_r1_generalized_reinforcement_discovery.py` |
 | 5 | R.1.2A | GeometryProvider / span fix | `run_phase_r12a_geometry_accuracy.py` |
-| 6 | R.1.3 | EngineeringBarModels | `run_phase_r13_pipeline_integration.py` |
-| 7 | V.B.1 | Steel / BBS / Excel | `run_phase_vb1_production_output_completion.py` |
+| 6 | R.1.2C | Engineering Intent | `run_phase_r12c_engineering_intent_resolution.py` |
+| 7 | R.1.2D | Reinforcement Detailing | `run_phase_r12d_reinforcement_detailing.py` |
+| 8 | R.1.3 | Reinforcement Piece Generation | `run_phase_r13_reinforcement_piece_generation.py` |
+| 9 | R.1.3-PI | EngineeringBarModels (+ R.1.2B) | `run_phase_r13_pipeline_integration.py` |
+| 10 | V.B.1 | Steel / BBS / Excel | `run_phase_vb1_production_output_completion.py` |
+| 11 | R.1.4 | Production Accuracy Benchmark | `run_phase_r14_production_accuracy_benchmark.py` |
+| 12 | R.1.5 | Engineering Error Intelligence | `run_phase_r15_engineering_error_intelligence.py` |
+| 13 | R.1.6 | Engineering Rule Synthesis | `run_phase_r16_engineering_rule_synthesis.py` |
 
 Supporting / validation (as needed):
 
@@ -31,9 +37,17 @@ Supporting / validation (as needed):
 - `PhaseR1.4_integrity_validation` — called from V.B.1
 - `PhaseSI.0` / `PhaseSI.1` — stirrup path used by V.B.1
 - `PhaseL.2` — legacy fallback only (not primary)
-- `PhaseVTEST3*` / `PhaseVA.2` — benchmark comparison
+- `PhaseVTEST3*` / `PhaseVA.2` — legacy workbook comparison helpers
 
-**Next planned phase:** R.1.2B — EngineeringBar Deduplication & Consolidation Engine
+**Production architecture:** Facts → Intent → Detail → **Piece** → EngineeringBar → Steel → BBS
+
+**Benchmark architecture:** Official Estimator Workbook → Interpretation Engine → Official Engineering Model → Production Snapshot → KPIs / Root Cause
+
+**Intelligence architecture:** R.1.4 Findings → Error Clustering → Engineering Issues → Ranked Root Causes → Improvement Backlog
+
+**Rule architecture:** Engineering Issues → Deterministic Engineering Rule Library → Gap Resolution Plan → Implementation Roadmap
+
+**Next planned phase:** R.1.7 — Deterministic Engineering Correction Engine
 
 ---
 
