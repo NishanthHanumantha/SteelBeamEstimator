@@ -1,6 +1,6 @@
 # Steel Beam Estimator — Version 8
 
-**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.1**.
+**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.2**.
 
 **Version 7 is frozen.** Do not add new features there. All new work starts here.
 
@@ -30,6 +30,7 @@ Version 7 accumulated many forensic / audit / legacy packages and regenerated ou
 | 12 | R.1.5 | Engineering Error Intelligence | `run_phase_r15_engineering_error_intelligence.py` |
 | 13 | R.1.6 | Engineering Rule Synthesis | `run_phase_r16_engineering_rule_synthesis.py` |
 | 14 | R.1.6.1 | Estimator Stirrup Computation | `run_phase_r161_estimator_stirrup_computation.py` |
+| 15 | R.1.6.2 | RULE-012 Stirrup Coverage Validation | `run_phase_r162_stirrup_coverage_validation.py` |
 
 Supporting / validation (as needed):
 
@@ -50,7 +51,9 @@ Supporting / validation (as needed):
 
 **Stirrup architecture:** Notation → Equal Zones → Quantity → Perimeter → GN Hooks → Cut Length → Weight → EngineeringBars
 
-**Next planned phase:** R.1.7 — Deterministic Engineering Correction Engine
+**Coverage architecture:** Beam Registry → RULE-012 Validation → Coverage Report → Missing Stirrup Diagnostics → Production Continues (detection only)
+
+**Next planned phase:** R.1.7 — Deterministic Engineering Correction Engine (after mandatory stirrup coverage failures are resolved)
 
 ---
 

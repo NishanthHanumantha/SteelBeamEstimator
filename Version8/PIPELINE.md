@@ -13,6 +13,7 @@
 12. R.1.5       Engineering Error Intelligence (clustered issues + backlog)
 13. R.1.6       Engineering Rule Synthesis (deterministic rule library)
 14. R.1.6.1     Estimator Stirrup Computation Engine
+15. R.1.6.2     RULE-012 Mandatory Stirrup Coverage Validation
 ```
 
 ## Commands
@@ -33,6 +34,7 @@ python Run_PY/run_phase_r14_production_accuracy_benchmark.py
 python Run_PY/run_phase_r15_engineering_error_intelligence.py
 python Run_PY/run_phase_r16_engineering_rule_synthesis.py
 python Run_PY/run_phase_r161_estimator_stirrup_computation.py
+python Run_PY/run_phase_r162_stirrup_coverage_validation.py
 ```
 
 ## Architecture
@@ -53,4 +55,5 @@ Official Estimator Workbook
   → Engineering Error Intelligence (issues, rankings, backlog)
   → Engineering Rule Library (gap resolution + roadmap)
   → Estimator Stirrup Computation (equal zones + GN hooks)
+  → RULE-012 Mandatory Stirrup Coverage Validation (detection only)
 ```
