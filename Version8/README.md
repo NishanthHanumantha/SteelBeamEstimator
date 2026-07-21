@@ -1,6 +1,6 @@
 # Steel Beam Estimator — Version 8
 
-**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.0**.
+**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.1**.
 
 **Version 7 is frozen.** Do not add new features there. All new work starts here.
 
@@ -29,6 +29,7 @@ Version 7 accumulated many forensic / audit / legacy packages and regenerated ou
 | 11 | R.1.4 | Production Accuracy Benchmark | `run_phase_r14_production_accuracy_benchmark.py` |
 | 12 | R.1.5 | Engineering Error Intelligence | `run_phase_r15_engineering_error_intelligence.py` |
 | 13 | R.1.6 | Engineering Rule Synthesis | `run_phase_r16_engineering_rule_synthesis.py` |
+| 14 | R.1.6.1 | Estimator Stirrup Computation | `run_phase_r161_estimator_stirrup_computation.py` |
 
 Supporting / validation (as needed):
 
@@ -46,6 +47,8 @@ Supporting / validation (as needed):
 **Intelligence architecture:** R.1.4 Findings → Error Clustering → Engineering Issues → Ranked Root Causes → Improvement Backlog
 
 **Rule architecture:** Engineering Issues → Deterministic Engineering Rule Library → Gap Resolution Plan → Implementation Roadmap
+
+**Stirrup architecture:** Notation → Equal Zones → Quantity → Perimeter → GN Hooks → Cut Length → Weight → EngineeringBars
 
 **Next planned phase:** R.1.7 — Deterministic Engineering Correction Engine
 

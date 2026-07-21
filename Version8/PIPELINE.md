@@ -12,6 +12,7 @@
 11. R.1.4       Production Accuracy Benchmark (official workbook interpretation)
 12. R.1.5       Engineering Error Intelligence (clustered issues + backlog)
 13. R.1.6       Engineering Rule Synthesis (deterministic rule library)
+14. R.1.6.1     Estimator Stirrup Computation Engine
 ```
 
 ## Commands
@@ -31,6 +32,7 @@ python Run_PY/run_phase_vb1_production_output_completion.py
 python Run_PY/run_phase_r14_production_accuracy_benchmark.py
 python Run_PY/run_phase_r15_engineering_error_intelligence.py
 python Run_PY/run_phase_r16_engineering_rule_synthesis.py
+python Run_PY/run_phase_r161_estimator_stirrup_computation.py
 ```
 
 ## Architecture
@@ -50,4 +52,5 @@ Official Estimator Workbook
   → Production Snapshot + Benchmark KPIs / Root Cause
   → Engineering Error Intelligence (issues, rankings, backlog)
   → Engineering Rule Library (gap resolution + roadmap)
+  → Estimator Stirrup Computation (equal zones + GN hooks)
 ```
