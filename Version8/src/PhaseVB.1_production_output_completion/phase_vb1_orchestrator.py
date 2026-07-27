@@ -6,7 +6,7 @@ Orchestration sequence:
   1. Integration Engine Validation (locate / remove false positives)
   2. Steel Weight Completion (deterministic, IS 456)
   3. BBS Generation (estimator-style per-bar rows)
-  4. Excel Workbook Generation (7 worksheets)
+  4. Excel Workbook Generation (5 worksheets — Project Header / General Notes omitted)
   5. Workbook Validation (7 rules)
   6. Production Statistics
   7. Production Report (9 sections)

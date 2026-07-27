@@ -125,8 +125,7 @@ class EstimatorExcelGenerator:
         wb = openpyxl.Workbook()
         wb.remove(wb.active)  # remove default sheet
 
-        self._ws_project_header(wb)
-        self._ws_general_notes(wb)
+        # Revised production format: omit Project Header + General Notes
         self._ws_beam_summary(wb)
         self._ws_bbs(wb)
         self._ws_steel_summary(wb)

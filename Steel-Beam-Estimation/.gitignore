@@ -1,0 +1,46 @@
+# Steel-Beam-Estimation
+
+# Secrets / env
+.env
+.env.local
+*.pem
+*.key
+
+# Local engine pointer (monorepo only — never commit machine-specific paths)
+current_model/config/engine_root.path
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.envrc
+
+# Runtime artefacts under current_model
+current_model/logs/*
+!current_model/logs/.gitkeep
+current_model/temp/*
+!current_model/temp/.gitkeep
+current_model/outputs/*
+!current_model/outputs/.gitkeep
+current_model/inputs/*
+!current_model/inputs/.gitkeep
+*.xlsx
+!~sample*
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Deploy archives
+*.tar.gz
+*.zip
+!docs/**

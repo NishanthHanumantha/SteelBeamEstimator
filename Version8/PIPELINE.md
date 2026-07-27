@@ -1,8 +1,8 @@
 ```text
 1. V.ROOT.1     Beam registry + drawing manifest
-2. R.2A         Engineering context (Ld, cover, grades)
-3. R.3 / R.3.1  Geometry context + leader relationships
-4. R.1          Reinforcement annotation discovery
+2. R.1          Reinforcement annotation discovery
+3. R.2A         Engineering context (Ld, cover, grades)
+4. R.3 / R.3.1  Geometry context + leader relationships
 5. R.1.2A       GeometryProvider — per-beam spans
 6. R.1.2C       Engineering Intent Resolution
 7. R.1.2D       Reinforcement Detailing
@@ -15,16 +15,17 @@
 14. R.1.6.1     Estimator Stirrup Computation Engine
 15. R.1.6.2     RULE-012 Mandatory Stirrup Coverage Validation
 16. R.1.6.3     Annotation Discovery Analysis & Engineering Review
+17. UI.1        Steel Beam Estimation Web Application (upload → run → download)
 ```
 
 ## Commands
 
 ```powershell
 python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py
+python Run_PY/run_phase_r1_generalized_reinforcement_discovery.py
 python Run_PY/run_phase_r2a_engineering_context.py
 python Run_PY/run_phase_r3_geometry_context_engine.py
 python Run_PY/run_phase_r31_engineering_relationship_engine.py
-python Run_PY/run_phase_r1_generalized_reinforcement_discovery.py
 python Run_PY/run_phase_r12a_geometry_accuracy.py
 python Run_PY/run_phase_r12c_engineering_intent_resolution.py
 python Run_PY/run_phase_r12d_reinforcement_detailing.py
@@ -37,7 +38,15 @@ python Run_PY/run_phase_r16_engineering_rule_synthesis.py
 python Run_PY/run_phase_r161_estimator_stirrup_computation.py
 python Run_PY/run_phase_r162_stirrup_coverage_validation.py
 python Run_PY/run_phase_r163_annotation_discovery_analysis.py
+
+# Web application (presentation layer)
+cd webapp
+python app.py
 ```
+
+Note: R.3 also requires prior `EngineeringFacts.json` (R.2.1D) and
+`geometry_registry.json` (L.2.2). The UI.1 webapp seeds these from Version7
+when missing.
 
 ## Architecture
 

@@ -9,8 +9,9 @@ from dataclasses import dataclass, field
 from typing import List, Tuple, Optional
 
 # ── Worksheet names (matching estimator) ────────────────────────────────────
-WS_PROJECT_HEADER = "Project Header"
-WS_GENERAL_NOTES  = "General Notes"
+# Project Header / General Notes omitted from revised production format (UI.1).
+WS_PROJECT_HEADER = "Project Header"   # retained for legacy helpers only
+WS_GENERAL_NOTES  = "General Notes"    # retained for legacy helpers only
 WS_BEAM_SUMMARY   = "Beam Summary"
 WS_BBS            = "Bar Bending Schedule"
 WS_STEEL_SUMMARY  = "Steel Summary"
@@ -18,8 +19,6 @@ WS_DIAM_SUMMARY   = "Diameter Summary"
 WS_PROJECT_TOTALS = "Project Totals"
 
 ALL_WORKSHEETS = [
-    WS_PROJECT_HEADER,
-    WS_GENERAL_NOTES,
     WS_BEAM_SUMMARY,
     WS_BBS,
     WS_STEEL_SUMMARY,

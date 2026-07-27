@@ -46,11 +46,15 @@ Calculate Quantities
 
 
 
-**Machine Learning can be introduced to try to improve perception tasks such as annotation recognition and pattern classification. We have tried this in Concrete Estimation.** 
-
-**-But we have raw drawings and not tagged drawings as teaching sets so ML approach is not reliable.**
 
 
+**Claude LLM can be used as an engineering reasoning and explanation assistant so as to identify the bars and subcomponents correctly when the knowledge-based system fails.**
 
-**Claude LLM can be used as an engineering reasoning and explanation assistant so as to identify the bars and subcomponents correctly when the knowledge-based system fails.**  
+
+
+**Machine Learning can be introduced to try to improve perception tasks such as annotation recognition and pattern classification.**
+
+**-But we have raw drawings and not labelled/tagged drawings as teaching sets so ML approach is not reliable.**
+
+
 
