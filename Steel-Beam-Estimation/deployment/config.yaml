@@ -1,0 +1,20 @@
+# Phase D.4 — deployment parameters (placeholders only — do not commit secrets)
+# Operators edit this file before running scripts on a Lightsail host.
+# Scripts read these values via deployment/scripts/_common.sh
+
+server_ip: "0.0.0.0"                          # Lightsail public IP (fill before deploy)
+ssh_user: "ubuntu"                            # SSH login user on the instance
+application_directory: "/opt/steel-beam-estimation"
+github_repository: "https://github.com/NishanthHanumantha/SteelBeamEstimator.git"
+branch: "main"
+python_version: "3.12"
+virtual_environment_name: ".venv"
+gunicorn_service_name: "steel-beam-estimator"
+nginx_site_name: "steel-beam-estimator"
+
+# Optional runtime (referenced by gunicorn / nginx / systemd templates)
+gunicorn_bind: "127.0.0.1:8000"
+gunicorn_workers: 2
+gunicorn_timeout: 3600
+app_subdirectory: "Steel-Beam-Estimation"     # path inside the cloned repo
+model_subdirectory: "current_model"           # version-agnostic model slot

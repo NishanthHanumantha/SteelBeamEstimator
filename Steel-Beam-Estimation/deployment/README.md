@@ -1,31 +1,41 @@
 # Deployment assets
 
-This folder holds **infrastructure configuration only**.
+Infrastructure configuration and host scripts only.
 
-It must not contain estimation / engineering logic.
+**No estimation / engineering logic lives here.**
 
 ---
 
-## Layout
+## Layout (Phase D.4)
 
-| Path | Purpose | Status |
-|------|---------|--------|
-| `gunicorn/` | Gunicorn config | Placeholder (use `current_model/wsgi.py` later) |
-| `nginx/` | Nginx site / upstream config | Placeholder |
-| `systemd/` | systemd unit files | Placeholder |
-| `scripts/validate_packaging.py` | Local packaging checklist | **Ready (D.3)** |
+| Path | Purpose |
+|------|---------|
+| `config.yaml` | Deploy parameters (IP, paths, repo, service names) |
+| `gunicorn/gunicorn.conf.py` | Gunicorn workers / timeouts |
+| `nginx/steel-beam-estimator.conf` | Reverse proxy site template |
+| `systemd/steel-beam-estimator.service` | systemd unit template |
+| `scripts/_common.sh` | Shared loader for `config.yaml` |
+| `scripts/01`…`10_*.sh` | Idempotent host setup / update scripts |
+| `scripts/validate_packaging.py` | Packaging health contract check |
 
 ---
 
 ## Rules
 
-1. Reference the application as **`../current_model/`** (or an absolute path ending in `current_model`).
-2. Do **not** hardcode model version directory names.
-3. Keep this package independent from the Concrete & Shuttering Estimator deployment.
-4. Prefer environment variables for ports, workers, and secrets.
+1. Always target **`current_model/`** — never hardcode model version folder names.
+2. Keep this package independent from the Concrete & Shuttering Estimator.
+3. Prefer `config.yaml` + environment variables over hardcoded host paths in scripts.
+4. Scripts must be idempotent and fail safely (`set -euo pipefail`).
 
 ---
 
-## Next phases
+## Usage
 
-Concrete files will be added in later deployment phases (see `docs/DeploymentGuide.md`).
+See [../docs/DeploymentGuide.md](../docs/DeploymentGuide.md) for:
+
+- Script purposes  
+- Deployment sequence  
+- GitHub update procedure  
+- Rollback procedure  
+
+**D.4 generates assets only — it does not SSH or deploy.**

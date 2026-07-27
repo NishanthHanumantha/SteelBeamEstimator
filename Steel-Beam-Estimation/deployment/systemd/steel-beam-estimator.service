@@ -1,0 +1,44 @@
+# systemd unit — Steel Beam Reinforcement Estimation (Phase D.4)
+#
+# Install (later, on server):
+#   sudo cp steel-beam-estimator.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now steel-beam-estimator
+#
+# Placeholders replaced by scripts/08 or operators:
+#   __APP_USER__
+#   __MODEL_ROOT__          absolute path to .../current_model
+#   __VENV_BIN__            absolute path to .../current_model/.venv/bin
+#   __GUNICORN_CONF__       absolute path to .../deployment/gunicorn/gunicorn.conf.py
+#   __GUNICORN_BIND__
+
+[Unit]
+Description=Steel Beam Reinforcement Estimation (Gunicorn)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+User=__APP_USER__
+Group=__APP_USER__
+WorkingDirectory=__MODEL_ROOT__
+Environment=FLASK_ENV=production
+EnvironmentFile=-__MODEL_ROOT__/.env
+Environment=PYTHONUNBUFFERED=1
+Environment=GUNICORN_BIND=__GUNICORN_BIND__
+ExecStart=__VENV_BIN__/gunicorn \
+    --config __GUNICORN_CONF__ \
+    --bind __GUNICORN_BIND__ \
+    "wsgi:app"
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=60
+Restart=on-failure
+RestartSec=5
+
+# Hardening (safe defaults; adjust if engine needs broader FS access)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

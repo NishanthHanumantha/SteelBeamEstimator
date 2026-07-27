@@ -13,8 +13,9 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 |-------|--------|--------|
 | D.1 | Project foundation & folder structure | Complete |
 | D.2 | Application foundation & local execution | Complete |
-| **D.3** | Production packaging & deployment readiness | **Complete** |
-| D.4+ | Gunicorn, Nginx, systemd, AWS Lightsail | Planned |
+| D.3 | Production packaging & deployment readiness | Complete |
+| **D.4** | Generate gunicorn/nginx/systemd + deploy scripts | **Complete** |
+| D.5+ | Execute Lightsail cutover / TLS | Planned |
 
 ---
 
