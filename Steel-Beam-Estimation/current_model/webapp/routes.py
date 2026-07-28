@@ -26,9 +26,13 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "steel-beam-estimation",
-        "phase": "D.3",
+        "phase": "D.4.2",
         "model_version": current_app.config.get("MODEL_VERSION"),
         "engine_ready": bool(current_app.config.get("ENGINE_READY")),
+        "ezdxf_available": bool(current_app.config.get("EZDXF_AVAILABLE")),
+        "engine_root": current_app.config.get("ENGINE_ROOT"),
+        "web_runs_root": current_app.config.get("WEB_RUNS_ROOT"),
+        "upload_folder": current_app.config.get("UPLOAD_FOLDER"),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 

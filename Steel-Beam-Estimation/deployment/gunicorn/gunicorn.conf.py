@@ -8,7 +8,6 @@ systemd unit. Do not hardcode model version directory names.
 """
 from __future__ import annotations
 
-import multiprocessing
 import os
 
 # ── Bind / process ───────────────────────────────────────────────────────────
@@ -19,10 +18,11 @@ _workers = os.environ.get("GUNICORN_WORKERS")
 if _workers:
     workers = int(_workers)
 else:
-    # Conservative default for Lightsail sizing; override via env in production
-    workers = max(2, min(4, (multiprocessing.cpu_count() or 2)))
+    # In-memory job store (_JOBS) is per-process. Multiple sync workers cause
+    # /api/status/<run_id> 404 when the poll hits a different worker than /api/estimate.
+    workers = 1
 
-threads = int(os.environ.get("GUNICORN_THREADS", "2"))
+threads = int(os.environ.get("GUNICORN_THREADS", "4"))
 timeout = int(os.environ.get("GUNICORN_TIMEOUT", "3600"))
 graceful_timeout = int(os.environ.get("GUNICORN_GRACEFUL_TIMEOUT", "60"))
 keepalive = int(os.environ.get("GUNICORN_KEEPALIVE", "5"))

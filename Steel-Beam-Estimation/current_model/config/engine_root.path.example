@@ -2,9 +2,13 @@
 # One path per file (absolute, or relative to current_model/).
 #
 # Prefer STEEL_ENGINE_ROOT in .env for all environments.
-# Example:
-#   /opt/steel-beam-estimation/current_model
-#   ../../active_engine
+# Mode B monorepo example (Lightsail):
+#   /opt/steel-beam-estimation/SteelBeamEstimator/Version8
 #
-# Leave this file absent when the engine is packaged into current_model/
-# (Run_PY present) or when STEEL_ENGINE_ROOT is set.
+# Relative example:
+#   ../../Version8
+#
+# Leave this file absent when:
+#   - STEEL_ENGINE_ROOT is set, or
+#   - the engine is packaged into current_model/ (Run_PY present), or
+#   - a sibling Version8/ exists (auto-discovered by config/paths.py)

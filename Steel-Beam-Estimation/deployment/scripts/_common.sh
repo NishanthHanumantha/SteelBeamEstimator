@@ -65,7 +65,7 @@ yaml_get() {
 # ── Config load (no paths yet) ───────────────────────────────────────────────
 
 load_config_keys() {
-  DEPLOYMENT_PACKAGE_VERSION="$(yaml_get deployment_package_version "D.4.1")"
+  DEPLOYMENT_PACKAGE_VERSION="$(yaml_get deployment_package_version "D.4.2")"
   SERVER_IP="$(yaml_get server_ip "0.0.0.0")"
   SSH_USER="$(yaml_get ssh_user "ubuntu")"
   APPLICATION_DIRECTORY="$(yaml_get application_directory "/opt/steel-beam-estimation")"
@@ -76,7 +76,7 @@ load_config_keys() {
   GUNICORN_SERVICE_NAME="$(yaml_get gunicorn_service_name "steel-beam-estimator")"
   NGINX_SITE_NAME="$(yaml_get nginx_site_name "steel-beam-estimator")"
   GUNICORN_BIND="$(yaml_get gunicorn_bind "127.0.0.1:8000")"
-  GUNICORN_WORKERS="$(yaml_get gunicorn_workers "2")"
+  GUNICORN_WORKERS="$(yaml_get gunicorn_workers "1")"
   GUNICORN_TIMEOUT="$(yaml_get gunicorn_timeout "3600")"
 
   # Preferred D.4.1 keys
@@ -219,6 +219,12 @@ _finalize_derived_paths() {
   REPO_ROOT="${REPOSITORY_ROOT}"
   MODEL_SUBDIRECTORY="${MODEL_DIRECTORY}"
   APP_SUBDIRECTORY="${PROJECT_DIRECTORY}"
+
+  # Mode B: export engine root for install / validation scripts
+  if [[ -z "${STEEL_ENGINE_ROOT:-}" && -d "${REPOSITORY_ROOT}/Version8/Run_PY" ]]; then
+    STEEL_ENGINE_ROOT="${REPOSITORY_ROOT}/Version8"
+    export STEEL_ENGINE_ROOT
+  fi
 }
 
 _diagnose_missing_model() {

@@ -1,8 +1,8 @@
-# Phase D.4.1 — deployment parameters (placeholders only — do not commit secrets)
+# Phase D.4.2 — deployment parameters (placeholders only — do not commit secrets)
 # Operators edit this file before running scripts on a Lightsail host.
 # Scripts read these values via deployment/scripts/_common.sh
 
-deployment_package_version: "D.4.1"
+deployment_package_version: "D.4.2"
 
 server_ip: "0.0.0.0"                          # Lightsail public IP (fill before deploy)
 ssh_user: "ubuntu"                            # SSH login user on the instance
@@ -28,5 +28,6 @@ nginx_site_name: "steel-beam-estimator"
 
 # Optional runtime (referenced by gunicorn / nginx / systemd templates)
 gunicorn_bind: "127.0.0.1:8000"
-gunicorn_workers: 2
+# Keep at 1 while jobs are stored in-process memory (see gunicorn.conf.py)
+gunicorn_workers: 1
 gunicorn_timeout: 3600

@@ -1,5 +1,30 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.4.2 — Lightsail upload / engine wiring fix (2026-07-28)
+
+### Root cause addressed
+
+- Deployed app is `current_model` (gunicorn), **not** `Version8/webapp`
+- Uploads stage to `{STEEL_ENGINE_ROOT}/data/web_runs/<run_id>/`, audit copies to `current_model/uploads/`
+- Empty `Version8/webapp/uploads` and `current_model/data/web_runs` after Generate were expected (wrong folders + post-run cleanup)
+- VROOT1 `0 text / 0 beams` matched missing `ezdxf` in the app venv (`04` never read `.env` / sibling Version8)
+
+### Fixed
+
+- Auto-discover monorepo sibling `Version8` in `config/paths.py`
+- `.env.example` restored; `05` upserts absolute `STEEL_ENGINE_ROOT`
+- `04` installs `Version8/requirements.txt` from `.env` or sibling engine
+- Upload byte-size verification + absolute staging path for VROOT1
+- Keep `web_runs` / `uploads` on failure (and when `STEEL_KEEP_WEB_RUNS=1`)
+- Gunicorn default workers = 1 (in-memory job store)
+- `/health` reports `engine_root`, `web_runs_root`, `upload_folder`, `ezdxf_available`
+
+### Deployment package version
+
+`D.4.2`
+
+---
+
 ## D.4.1 — Path abstraction & existing-install support (2026-07-28)
 
 ### Changed

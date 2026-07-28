@@ -26,18 +26,21 @@ from config.settings import (
     ALLOWED_EXTENSIONS,
     ARTEFACT_SEED_ROOT,
     ENGINE_ROOT,
+    KEEP_WEB_RUNS,
     OUTPUT_FOLDER,
     PRODUCTION_EXCEL,
     PRODUCTION_STAGES,
     R2A_GN_POINTER,
     R3_PREREQUISITES,
-    TEMP_FOLDER,
+    UPLOAD_FOLDER,
     WEB_RUNS_ROOT,
+    ezdxf_is_available,
 )
 from config.paths import ensure_runtime_dirs
 
 ensure_runtime_dirs()
 WEB_RUNS_ROOT.mkdir(parents=True, exist_ok=True)
+UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
 
 logger = logging.getLogger("steel_beam.estimation")
 
@@ -133,12 +136,21 @@ def start_estimation(
             "Estimation engine is not configured. Set STEEL_ENGINE_ROOT "
             "or package runners under current_model/Run_PY."
         )
+    if not ezdxf_is_available():
+        raise EstimationError(
+            "DXF parser dependency 'ezdxf' is not installed in the application "
+            "virtualenv. On the server run: "
+            f"'{sys.executable} -m pip install -r "
+            f"{ENGINE_ROOT / 'requirements.txt'}' "
+            "then restart the service."
+        )
 
     validate_uploads(general_notes, framing, reinforcement)
 
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S") + "_" + uuid.uuid4().hex[:8]
-    upload_dir = TEMP_FOLDER / run_id
-    staging = WEB_RUNS_ROOT / run_id
+    # Absolute paths — required under gunicorn (cwd is current_model, not Version8)
+    upload_dir = (UPLOAD_FOLDER / run_id).resolve()
+    staging = (WEB_RUNS_ROOT / run_id).resolve()
     for sub in ("general_notes", "framing", "reinforcement"):
         (staging / sub).mkdir(parents=True, exist_ok=True)
     upload_dir.mkdir(parents=True, exist_ok=True)
@@ -158,9 +170,20 @@ def start_estimation(
     fr_path = staging / "framing" / fr_name
     re_path = staging / "reinforcement" / re_name
 
-    general_notes.save(gn_path)
-    framing.save(fr_path)
-    reinforcement.save(re_path)
+    general_notes.save(str(gn_path))
+    framing.save(str(fr_path))
+    reinforcement.save(str(re_path))
+
+    for label, path in (
+        ("General Notes", gn_path),
+        ("Beam Framing Plan", fr_path),
+        ("Beam Reinforcement Plan", re_path),
+    ):
+        if not path.is_file() or path.stat().st_size <= 0:
+            raise EstimationError(
+                f"{label} upload was not saved to disk (empty or missing). "
+                f"Expected path: {path}"
+            )
 
     shutil.copy2(gn_path, upload_dir / gn_name)
     shutil.copy2(fr_path, upload_dir / fr_name)
@@ -179,7 +202,19 @@ def start_estimation(
     with _LOCK:
         _JOBS[run_id] = job
 
-    logger.info("Upload received run_id=%s files=%s", run_id, job.filenames)
+    logger.info(
+        "Upload received run_id=%s engine_root=%s staging=%s upload_dir=%s files=%s sizes=%s",
+        run_id,
+        ENGINE_ROOT,
+        staging,
+        upload_dir,
+        job.filenames,
+        {
+            "general_notes": gn_path.stat().st_size,
+            "framing": fr_path.stat().st_size,
+            "reinforcement": re_path.stat().st_size,
+        },
+    )
     logger.info("Processing started run_id=%s", run_id)
 
     thread = threading.Thread(
@@ -245,11 +280,18 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
     if stage["id"] == "R3":
         _ensure_r3_prerequisites()
 
+    # Always pass absolute staging so VROOT1 does not depend on gunicorn cwd
+    staging_abs = staging.resolve()
     cmd = [sys.executable, str(script)]
     if stage.get("uses_input_folder"):
-        cmd.append(str(staging))
+        cmd.append(str(staging_abs))
 
-    logger.info("Runner start stage=%s", stage["id"])
+    logger.info(
+        "Runner start stage=%s cwd=%s input=%s",
+        stage["id"],
+        ENGINE_ROOT,
+        staging_abs if stage.get("uses_input_folder") else "-",
+    )
     t0 = time.perf_counter()
     proc = subprocess.run(
         cmd,
@@ -290,6 +332,7 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
 
 def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
     t0 = time.perf_counter()
+    succeeded = False
     try:
         _set_job(run_id, status="running", message="Preparing estimation...")
         _write_r2a_gn_pointer(gn_path)
@@ -317,6 +360,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             workbook_path=str(out_path),
             duration_s=duration,
         )
+        succeeded = True
         logger.info(
             "Processing completed run_id=%s path=%s duration_s=%s",
             run_id,
@@ -352,9 +396,23 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
         )
     finally:
         _clear_r2a_gn_pointer()
-        for path in (TEMP_FOLDER / run_id, staging):
-            try:
-                if path.exists():
-                    shutil.rmtree(path, ignore_errors=True)
-            except Exception:
-                logger.warning("Cleanup failed for %s", path)
+        # Keep staging on failure (or when STEEL_KEEP_WEB_RUNS=1) so ops can
+        # inspect Version8/data/web_runs/<run_id> after a Lightsail failure.
+        should_clean = succeeded and not KEEP_WEB_RUNS
+        if should_clean:
+            for path in (UPLOAD_FOLDER / run_id, staging):
+                try:
+                    if path.exists():
+                        shutil.rmtree(path, ignore_errors=True)
+                except Exception:
+                    logger.warning("Cleanup failed for %s", path)
+        else:
+            logger.info(
+                "Keeping runtime folders run_id=%s staging=%s upload=%s "
+                "(succeeded=%s keep_flag=%s)",
+                run_id,
+                staging,
+                UPLOAD_FOLDER / run_id,
+                succeeded,
+                KEEP_WEB_RUNS,
+            )

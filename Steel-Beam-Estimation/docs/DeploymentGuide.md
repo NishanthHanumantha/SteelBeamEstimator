@@ -1,8 +1,8 @@
 # Deployment Guide — Steel Beam Reinforcement Estimation
 
-**Phase:** D.4.1 (path abstraction & existing-install support)  
+**Phase:** D.4.2 (upload / engine wiring fix)  
 **Target:** AWS Lightsail (independent of Concrete Estimator)  
-**Deployment package version:** D.4.1
+**Deployment package version:** D.4.2
 
 ---
 
@@ -201,6 +201,34 @@ Always use `03_create_venv.sh` after pulling D.4.1 — it creates/reuses `${MODE
 
 ---
 
+## Upload & runtime paths (D.4.2)
+
+Lightsail runs **`current_model` via gunicorn**, not `Version8/webapp`.
+
+| Role | Path |
+|------|------|
+| Upload audit copies | `{MODEL_ROOT}/uploads/<run_id>/` |
+| VROOT1 staging | `{STEEL_ENGINE_ROOT}/data/web_runs/<run_id>/{general_notes,framing,reinforcement}/` |
+| Workbooks | `{MODEL_ROOT}/outputs/` |
+| App logs | `{MODEL_ROOT}/logs/application.log` |
+
+**Do not expect files in** `Version8/webapp/uploads` or `current_model/data/web_runs` — those are not used by the deployed app.
+
+After a failed run, staging is **kept** for inspection. On success it is cleaned unless `STEEL_KEEP_WEB_RUNS=1`.
+
+`/health` reports `engine_root`, `web_runs_root`, `upload_folder`, and `ezdxf_available`.
+
+If VROOT1 shows `0 text entities`, verify:
+
+```bash
+{MODEL_ROOT}/.venv/bin/python -c "import ezdxf; print(ezdxf.__version__)"
+# If missing:
+bash deployment/scripts/04_install_requirements.sh
+sudo systemctl restart steel-beam-estimator
+```
+
+---
+
 ## Local packaging checklist (D.3)
 
 Still valid for laptop validation — see earlier checklist in ReleaseNotes. Use `python run.py` under `current_model/` with `.env` configured.
@@ -213,7 +241,8 @@ Still valid for laptop validation — see earlier checklist in ReleaseNotes. Use
 |-------|--------|
 | D.1–D.3 | Done |
 | D.4 | Done (assets) |
-| **D.4.1** | **Done** (layout-independent paths) |
+| D.4.1 | Done (layout-independent paths) |
+| **D.4.2** | **Done** (upload / engine wiring) |
 | D.5+ | Lightsail cutover / TLS (planned) |
 
 ---

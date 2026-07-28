@@ -22,6 +22,7 @@ from config.paths import (
     LOGS_DIR,
     OUTPUTS_DIR,
     TEMP_DIR,
+    UPLOADS_DIR,
     ensure_runtime_dirs,
     resolve_engine_root,
 )
@@ -63,8 +64,10 @@ def _resolve_secret_key(flask_env: str) -> str:
 MODEL_INFO = _load_model_info()
 MODEL_VERSION = str(MODEL_INFO.get("model_version") or "unknown")
 
-# ── Folders (relative to current_model/) ─────────────────────────────────────
-UPLOAD_FOLDER = TEMP_DIR
+# ── Folders (absolute; under current_model/) ─────────────────────────────────
+# Upload audit copies live under uploads/ (parity with Version8/webapp/uploads).
+# VROOT1 staging lives under ENGINE_ROOT/data/web_runs — never current_model/data.
+UPLOAD_FOLDER = UPLOADS_DIR
 OUTPUT_FOLDER = OUTPUTS_DIR
 TEMP_FOLDER = TEMP_DIR
 LOG_FOLDER = LOGS_DIR
@@ -88,6 +91,11 @@ ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 # ── Engine (version-agnostic) ────────────────────────────────────────────────
 ENGINE_ROOT = resolve_engine_root()
 WEB_RUNS_ROOT = ENGINE_ROOT / "data" / "web_runs"
+KEEP_WEB_RUNS = (os.environ.get("STEEL_KEEP_WEB_RUNS") or "").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+}
 PRODUCTION_EXCEL = (
     ENGINE_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
 )
@@ -200,17 +208,36 @@ def engine_is_ready() -> bool:
     return (ENGINE_ROOT / "Run_PY").is_dir()
 
 
+def ezdxf_is_available() -> bool:
+    try:
+        import ezdxf  # noqa: F401
+
+        return True
+    except ImportError:
+        return False
+
+
 def apply_flask_config(app) -> None:
     """Push settings into a Flask app instance."""
     ensure_runtime_dirs()
+    WEB_RUNS_ROOT.mkdir(parents=True, exist_ok=True)
     app.config["SECRET_KEY"] = SECRET_KEY
     app.config["MAX_CONTENT_LENGTH"] = MAX_CONTENT_LENGTH
     app.config["MODEL_VERSION"] = MODEL_VERSION
     app.config["MODEL_INFO"] = MODEL_INFO
-    app.config["UPLOAD_FOLDER"] = str(UPLOAD_FOLDER)
-    app.config["OUTPUT_FOLDER"] = str(OUTPUT_FOLDER)
-    app.config["TEMP_FOLDER"] = str(TEMP_FOLDER)
-    app.config["LOG_FOLDER"] = str(LOG_FOLDER)
-    app.config["ENGINE_ROOT"] = str(ENGINE_ROOT)
+    app.config["UPLOAD_FOLDER"] = str(UPLOAD_FOLDER.resolve())
+    app.config["OUTPUT_FOLDER"] = str(OUTPUT_FOLDER.resolve())
+    app.config["TEMP_FOLDER"] = str(TEMP_FOLDER.resolve())
+    app.config["LOG_FOLDER"] = str(LOG_FOLDER.resolve())
+    app.config["ENGINE_ROOT"] = str(ENGINE_ROOT.resolve())
+    app.config["WEB_RUNS_ROOT"] = str(WEB_RUNS_ROOT.resolve())
     app.config["FLASK_ENV"] = FLASK_ENV
     app.config["ENGINE_READY"] = engine_is_ready()
+    app.config["EZDXF_AVAILABLE"] = ezdxf_is_available()
+    if engine_is_ready() and not ezdxf_is_available():
+        _log.warning(
+            "Engine is ready at %s but ezdxf is not installed in this venv. "
+            "VROOT1 will report 0 text entities / 0 beams. "
+            "Install Version8/requirements.txt into the application virtualenv.",
+            ENGINE_ROOT,
+        )
