@@ -1,5 +1,5 @@
 """
-Estimation service wrapper — Phase D.5.2.
+Estimation service wrapper — Phase D.5.3.
 
 Invokes existing production runners under ENGINE_ROOT via subprocess.
 Does not modify engineering / estimation logic.
@@ -27,6 +27,7 @@ from config.settings import (
     ALLOWED_EXTENSIONS,
     ENGINE_ROOT,
     KEEP_WEB_RUNS,
+    L22_REGISTRY_REL,
     PRODUCTION_STAGES,
     R21C_FACTS_REL,
     R21D_FACTS_REL,
@@ -300,6 +301,14 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
                 stage["id"],
                 "\n".join(err_tail.splitlines()[-40:]),
             )
+        if stage["id"] == "L22":
+            reg = staging / L22_REGISTRY_REL
+            if reg.exists():
+                logger.warning(
+                    "Stage L22 exit=%s with geometry_registry present — soft success",
+                    proc.returncode,
+                )
+                return
         if stage["id"] == "R21D":
             facts = staging / R21D_FACTS_REL
             if facts.exists():
@@ -341,10 +350,16 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             _run_stage(stage, staging)
 
         facts = staging / R21D_FACTS_REL
+        registry = staging / L22_REGISTRY_REL
         if not facts.exists():
             raise EstimationError(
-                "Evidence & Hypothesis Engine completed but EngineeringFacts.json "
-                f"was not generated at {facts}."
+                "Pipeline completed but EngineeringFacts.json was not generated "
+                f"at {facts}."
+            )
+        if not registry.exists():
+            raise EstimationError(
+                "Geometry registry stage completed but geometry_registry.json "
+                f"was not generated at {registry}."
             )
 
         duration = round(time.perf_counter() - t0, 2)
@@ -352,7 +367,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             run_id,
             status="success",
             message=(
-                "Evidence & Hypothesis Engine completed (through R.2.1D). "
+                "Geometry registry completed (through L.2.2). "
                 "Excel workbook generation arrives in a later phase."
             ),
             workbook_name=None,
@@ -360,9 +375,10 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             duration_s=duration,
         )
         logger.info(
-            "D.5.2 R.2.1D complete run_id=%s facts=%s duration_s=%s",
+            "D.5.3 L.2.2 complete run_id=%s facts=%s registry=%s duration_s=%s",
             run_id,
             facts,
+            registry,
             duration,
         )
     except subprocess.TimeoutExpired:

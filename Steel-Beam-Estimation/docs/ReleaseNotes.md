@@ -1,5 +1,29 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.3 — Web-enable L.2.2 Geometry Registry (2026-07-28)
+
+### Added
+
+- Version8 `PhaseL.2.2_geometry_recovery` (RunContext; VROOT1 → registry)
+- Production stages extended through L.2.2 (stop; R.3 / Excel deferred)
+- Success artefacts: R.2.1D `EngineeringFacts.json` **and**
+  `PhaseL.2.2_.../geometry_registry.json` under the run tree
+
+### Changed
+
+- L.2.2 input wiring uses VROOT1 (R-spine), not L.2 / L.2.1 / Version5
+- Registry schema / axis / default supports preserved for R.3 consumers
+
+### MODEL_VERSION
+
+`8.9.2`
+
+### Docs
+
+See [Phase_D.5.3_Web_Pipeline_Completion.md](Phase_D.5.3_Web_Pipeline_Completion.md)
+
+---
+
 ## D.5.2 — Web-enable R.2.1D Evidence & Hypothesis Engine (2026-07-28)
 
 ### Added

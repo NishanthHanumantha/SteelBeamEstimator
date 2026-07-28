@@ -18,8 +18,9 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 | **D.4.1** | Path abstraction & existing-install support | Complete |
 | **D.4.2** | Lightsail upload / engine wiring fix | Complete |
 | **D.5.1** | Per-run web pipeline (R.2.1B + R.2.1C) | Complete |
-| **D.5.2** | Web-enable R.2.1D (Evidence & Hypothesis) | **Complete** |
-| D.5.3+ | L.2.2 / R.3 / Excel | Planned |
+| **D.5.2** | Web-enable R.2.1D (Evidence & Hypothesis) | Complete |
+| **D.5.3** | Web-enable L.2.2 (Geometry Registry) | **Complete** |
+| D.5.4+ | R.3 / Excel | Planned |
 | D.5+ | Lightsail TLS cutover | Planned |
 
 ---

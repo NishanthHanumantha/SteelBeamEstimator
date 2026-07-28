@@ -116,16 +116,19 @@ R2A_GN_POINTER = (
     / "beam_registry.json"
 )
 
-# D.5.1 / D.5.2 success artefacts (per-run tree under web_runs/<run_id>/)
+# D.5.1–D.5.3 success artefacts (per-run tree under web_runs/<run_id>/)
 R21C_FACTS_REL = (
     "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
 )
 R21D_FACTS_REL = (
     "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json"
 )
+L22_REGISTRY_REL = (
+    "data/output/PhaseL.2.2_geometry_recovery/geometry_registry.json"
+)
 
-# D.5.2 production pipeline — stops after Evidence & Hypothesis Engine (R.2.1D).
-# L.2.2 / R.3 / Excel deferred.
+# D.5.3 production pipeline — stops after Geometry Registry (L.2.2).
+# R.3 / Excel deferred.
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {
         "id": "VROOT1",
@@ -168,6 +171,13 @@ PRODUCTION_STAGES: List[Dict[str, Any]] = [
         "script": "Run_PY/run_phase_r21d_evidence_hypothesis_engine.py",
         "uses_input_folder": False,
         "timeout_s": 600,
+    },
+    {
+        "id": "L22",
+        "label": "Building geometry registry...",
+        "script": "Run_PY/run_phase_l2_2_geometry_recovery.py",
+        "uses_input_folder": False,
+        "timeout_s": 300,
     },
 ]
 

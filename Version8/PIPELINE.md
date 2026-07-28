@@ -5,21 +5,22 @@
 4. R.2.1B       Engineering semantic objects (web-capable, D.5.1)
 5. R.2.1C       Engineering fact normalization (web-capable, D.5.1)
 6. R.2.1D       Evidence / hypotheses → EngineeringFacts (web-capable, D.5.2)
---- stop (D.5.2) ---
-7. L.2.2        geometry_registry (later — D.5.3)
-8. R.3 / R.3.1  Geometry context + leader relationships (later)
+7. L.2.2        geometry_registry (web-capable, D.5.3)
+--- stop (D.5.3) ---
+8. R.3 / R.3.1  Geometry context + leader relationships (later — D.5.4)
 9. R.1.2A–R.1.3-PI / V.B.1  Piece pipeline + Excel (later)
 ```
 
-MODEL_VERSION: 8.9.1
+MODEL_VERSION: 8.9.2
 
-## Web production pipeline (D.5.2)
+## Web production pipeline (D.5.3)
 
 ```text
 Upload DXFs
   → Version8/data/web_runs/<run_id>/{general_notes,framing,reinforcement}/
-  → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D
+  → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2
   → <run_id>/data/output/PhaseR2.1D_.../EngineeringFacts.json
+  → <run_id>/data/output/PhaseL.2.2_geometry_recovery/geometry_registry.json
 ```
 
 All stage JSON is written under the **per-run** tree  
@@ -40,6 +41,7 @@ python Run_PY/run_phase_r2a_engineering_context.py <run_root>
 python Run_PY/run_phase_r21b_semantic_interpreter.py <run_root>
 python Run_PY/run_phase_r21c_engineering_fact_normalization.py <run_root>
 python Run_PY/run_phase_r21d_evidence_hypothesis_engine.py <run_root>
+python Run_PY/run_phase_l2_2_geometry_recovery.py <run_root>
 
 # Web application
 cd webapp
@@ -49,9 +51,9 @@ python app.py
 ## Architecture
 
 ```text
-Evidence & Hypothesis Engine (D.5.2)
-  R.2.1C facts → R.2.1D EngineeringFacts (run-scoped)
+Geometry Registry (D.5.3)
+  VROOT1 beam_registry → L.2.2 geometry_registry.json (run-scoped)
 
 Later milestones
-  → L.2.2 → R.3 → … → V.B.1 Excel
+  → R.3 (RunContext) → … → V.B.1 Excel
 ```
