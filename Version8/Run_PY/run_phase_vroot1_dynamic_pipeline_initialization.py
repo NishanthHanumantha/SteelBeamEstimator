@@ -1,66 +1,66 @@
 """
 Runner -- Phase V.ROOT.1 Dynamic DXF Discovery & Pipeline Initialization
-MODEL_VERSION : 7.1.0
+MODEL_VERSION : 8.9.0
 
 Usage:
     cd Version8
-    # Default (auto-detects input folder):
-    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py
+    # Offline (writes Version8/data/output/...):
+    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py [input_folder]
 
-    # Specify input folder explicitly:
-    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py <folder>
-
-    # Examples:
-    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py data/Benchmark_Set_2
-    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py data/Benchmark_Set_1
+    # Web / per-run (STEEL_RUN_ROOT or argv = web_runs/<run_id>):
+    python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py <run_root>
 """
 from __future__ import annotations
 
-import sys
 import os
+import sys
 from pathlib import Path
 
 # ---- Environment bootstrap --------------------------------------------------
 _RUNNER_DIR = Path(__file__).resolve().parent
-_V7         = _RUNNER_DIR.parent
-_VROOT1_SRC = _V7 / "src/PhaseVROOT.1_dynamic_pipeline_initialization"
+_ENGINE     = _RUNNER_DIR.parent
+_VROOT1_SRC = _ENGINE / "src/PhaseVROOT.1_dynamic_pipeline_initialization"
+_SRC        = _ENGINE / "src"
 
-for _p in [str(_VROOT1_SRC), str(_V7)]:
+for _p in [str(_VROOT1_SRC), str(_SRC), str(_ENGINE)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-os.chdir(_V7)
+os.chdir(_ENGINE)
 # -----------------------------------------------------------------------------
 
 
 def main() -> None:
+    from config.run_context import PHASE_VROOT1, resolve_run_context, run_root_from_argv
     from phase_vroot1_orchestrator import (
         PhaseVROOT1Orchestrator,
         MODEL_VERSION,
     )
     from initialization_validator import PIPELINE_INITIALIZATION_ERROR
 
-    # Resolve input folder from CLI argument or auto-detect
-    input_folder = None
-    if len(sys.argv) > 1:
-        arg = sys.argv[1]
-        p = Path(arg)
-        if not p.is_absolute():
-            p = _V7 / p
-        if not p.exists():
-            print(f"[ERROR] Input folder not found: {p}")
-            sys.exit(1)
-        input_folder = p
+    arg = run_root_from_argv(sys.argv, 1)
+    # Web passes the staging folder as argv[1] — that IS the run_root / input_root
+    ctx = resolve_run_context(run_root_arg=arg, engine_root=_ENGINE)
+    os.environ.setdefault("STEEL_ENGINE_ROOT", str(ctx.engine_root))
+    os.environ.setdefault("STEEL_RUN_ROOT", str(ctx.run_root))
+    os.environ.setdefault("STEEL_OUTPUT_ROOT", str(ctx.output_root))
+
+    input_folder = ctx.input_root if arg is not None else None
+    output_dir = ctx.artefact(PHASE_VROOT1)
+
+    print(f"[VROOT1] engine_root={ctx.engine_root}")
+    print(f"[VROOT1] run_root={ctx.run_root}")
+    print(f"[VROOT1] output_dir={output_dir}")
 
     try:
         orchestrator = PhaseVROOT1Orchestrator(
             input_folder=input_folder,
             write_adapters=True,
-            raise_on_failure=False,   # Report failures without crashing
+            raise_on_failure=False,
+            output_dir=output_dir,
         )
         result = orchestrator.run()
 
-        # Final delivery summary
         print()
         print("=" * 72)
         print("FINAL DELIVERY SUMMARY -- Phase V.ROOT.1")
@@ -93,10 +93,6 @@ def main() -> None:
         print(f"  Exports              : {ev.get('passed', 0)}/{ev.get('total', 0)} OK")
         print()
         print(f"  Output dir           : {ev.get('output_dir', '?')}")
-        print()
-        print(f"  NEXT STEP: Run the full pipeline:")
-        print(f"    python Run_PY/run_phase_l2_engineering_reinforcement_interpretation.py")
-        print(f"    (then L.2.2, L.2.1, L.3, SI.0 as before)")
         print()
 
         if result.get('initialization_passed'):

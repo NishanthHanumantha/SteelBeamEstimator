@@ -57,10 +57,12 @@ class PhaseVROOT1Orchestrator:
         input_folder: Optional[pathlib.Path] = None,
         write_adapters: bool = True,
         raise_on_failure: bool = True,
+        output_dir: Optional[pathlib.Path] = None,
     ) -> None:
         self._input = input_folder or self._default_input()
         self._write_adapters  = write_adapters
         self._raise_on_failure = raise_on_failure
+        self._output_dir = output_dir
 
     # ------------------------------------------------------------------
     def run(self) -> Dict[str, Any]:
@@ -218,7 +220,7 @@ class PhaseVROOT1Orchestrator:
 
         # STEP 11 — Export
         print("\n[STEP 11] Exporting artefacts ...")
-        exporter = InitializationExport()
+        exporter = InitializationExport(output_dir=self._output_dir)
         export_status = exporter.export_all(
             project_manifest=project_manifest,
             drawing_manifest=drawing_manifest,

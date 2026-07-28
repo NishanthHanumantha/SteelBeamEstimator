@@ -52,11 +52,11 @@ from .semantic_validation import SemanticValidation
 
 log = logging.getLogger(__name__)
 
-# ── Paths ────────────────────────────────────────────────────────────────────
-_R1_ANN_REL   = "data/output/PhaseR.1_generalized_reinforcement_discovery/reinforcement_annotations.json"
-_R1_MODEL_REL = "data/output/PhaseR.1_generalized_reinforcement_discovery/beam_reinforcement_models.json"
-_REG_REL      = "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
-_OUT_REL      = "data/output/PhaseR2.1B_engineering_semantic_interpreter"
+# ── Paths (relative to output_root) ───────────────────────────────────────────
+_R1_ANN_REL   = "PhaseR.1_generalized_reinforcement_discovery/reinforcement_annotations.json"
+_R1_MODEL_REL = "PhaseR.1_generalized_reinforcement_discovery/beam_reinforcement_models.json"
+_REG_REL      = "PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+_OUT_NAME     = "PhaseR2.1B_engineering_semantic_interpreter"
 
 
 class PhaseR21BOrchestratorError(Exception):
@@ -65,17 +65,26 @@ class PhaseR21BOrchestratorError(Exception):
 
 class PhaseR21BOrchestrator:
 
-    MODEL_VERSION = "7.11.0"
+    MODEL_VERSION = "8.9.0"
     PHASE_ID      = "R.2.1B"
 
     def __init__(
         self,
-        v7_root: pathlib.Path,
+        engine_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
         output_dir: Optional[pathlib.Path] = None,
+        # Back-compat alias used by older callers
+        v7_root: Optional[pathlib.Path] = None,
     ):
-        self._v7  = v7_root
-        self._out = output_dir or (v7_root / _OUT_REL)
+        root = engine_root if engine_root is not None else v7_root
+        if root is None:
+            raise ValueError("engine_root (or v7_root) is required")
+        self._engine = pathlib.Path(root)
+        self._output_root = pathlib.Path(output_root) if output_root else (self._engine / "data" / "output")
+        self._out = pathlib.Path(output_dir) if output_dir else (self._output_root / _OUT_NAME)
         self._out.mkdir(parents=True, exist_ok=True)
+        # Alias for any remaining internal references during transition
+        self._v7 = self._engine
 
     # ── Public entry point ───────────────────────────────────────────────────
 
@@ -178,7 +187,7 @@ class PhaseR21BOrchestrator:
     # ── Load helpers ─────────────────────────────────────────────────────────
 
     def _load_annotations(self) -> Dict[str, List[Dict[str, Any]]]:
-        ann_path = self._v7 / _R1_ANN_REL
+        ann_path = self._output_root / _R1_ANN_REL
         if not ann_path.exists():
             raise PhaseR21BOrchestratorError(f"Annotations not found: {ann_path}")
         data = json.loads(ann_path.read_text(encoding="utf-8"))
@@ -186,7 +195,7 @@ class PhaseR21BOrchestrator:
 
     def _load_semantic_dictionary(self) -> Tuple[Dict[str, Any], Dict[str, str]]:
         """Bootstrap R.2.1A semantic dictionary loader."""
-        r21a_dir = self._v7 / "src/PhaseR2.1A_engineering_semantic_dictionary"
+        r21a_dir = self._engine / "src/PhaseR2.1A_engineering_semantic_dictionary"
         if not r21a_dir.exists():
             log.warning("R.2.1A not found — using empty dictionary")
             return {}, {}
@@ -223,7 +232,7 @@ class PhaseR21BOrchestrator:
         if loader_mod is None:
             return {}, {}
 
-        loader = loader_mod.SemanticDictionaryLoader(self._v7)
+        loader = loader_mod.SemanticDictionaryLoader(self._engine)
         try:
             dictionary = loader.load()
         except Exception as exc:
@@ -265,7 +274,7 @@ class PhaseR21BOrchestrator:
           - Remove the bar label from the current (incorrect) group
           - Add it to the semantically-correct group (creating if needed)
         """
-        r1_path = self._v7 / _R1_MODEL_REL
+        r1_path = self._output_root / _R1_MODEL_REL
         if not r1_path.exists():
             raise PhaseR21BOrchestratorError(f"R.1 models not found: {r1_path}")
 
@@ -377,7 +386,7 @@ class PhaseR21BOrchestrator:
           4. Bootstrap VB1 with that JSON
         """
         try:
-            reg_path = self._v7 / _REG_REL
+            reg_path = self._output_root / _REG_REL
             l2_path  = self._out / "beam_reinforcement_models_semantic_l2.json"
 
             # Bootstrap R.1.3 EngineeringBarBuilder

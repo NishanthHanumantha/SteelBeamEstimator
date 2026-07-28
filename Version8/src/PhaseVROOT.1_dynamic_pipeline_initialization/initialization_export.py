@@ -1,24 +1,33 @@
 """
 Phase V.ROOT.1 -- initialization_export.py
 Export 8 JSON artefacts for Phase V.ROOT.1.
-MODEL_VERSION: 7.1.0
+MODEL_VERSION: 8.9.0
 """
 from __future__ import annotations
 
 import json
 import pathlib
-from typing import Any, Dict, List
+import sys
+from typing import Any, Dict, List, Optional
 
-_ROOT   = pathlib.Path(__file__).resolve().parents[3]
-_V7     = _ROOT / "Version8"
-_OUTPUT = _V7   / "data/output/PhaseVROOT.1_dynamic_pipeline_initialization"
+# Allow import of run_context when cwd/sys.path is Version8 or PhaseVROOT1 src
+_SRC = pathlib.Path(__file__).resolve().parents[1]  # Version8/src
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
+
+from config.run_context import PHASE_VROOT1, resolve_run_context  # noqa: E402
+
+
+def _default_output_dir() -> pathlib.Path:
+    ctx = resolve_run_context()
+    return ctx.artefact(PHASE_VROOT1)
 
 
 class InitializationExport:
     """Export all V.ROOT.1 artefacts to JSON."""
 
-    def __init__(self, output_dir: pathlib.Path = _OUTPUT) -> None:
-        self._out = output_dir
+    def __init__(self, output_dir: Optional[pathlib.Path] = None) -> None:
+        self._out = pathlib.Path(output_dir) if output_dir else _default_output_dir()
         self._out.mkdir(parents=True, exist_ok=True)
 
     def export_all(
@@ -39,52 +48,39 @@ class InitializationExport:
             ("drawing_manifest.json",           drawing_manifest,
              "All DXF drawings discovered and classified"),
             ("beam_registry.json",              beam_registry,
-             "Canonical beam registry from DXF discovery"),
-            ("engineering_objects.json",        eng_obj_result.get('payloads', {}).get(
-                'engineering_objects', {}),
-             "Engineering objects generated from DXF"),
+             "Dynamically discovered beam schedule"),
+            ("engineering_objects.json",        eng_obj_result,
+             "Initialized engineering object collection"),
             ("pipeline_context.json",           pipeline_context,
-             "Complete pipeline context for downstream phases"),
+             "Downstream pipeline configuration"),
             ("dependency_analysis.json",        dep_check,
              "Version5 and Benchmark Set 1 dependency analysis"),
             ("initialization_statistics.json",  stats,
-             "Initialization timing and counts"),
+             "Initialization performance and coverage stats"),
             ("initialization_report.json",      report,
-             "Complete 8-section initialization report"),
+             "Full V.ROOT.1 initialization report"),
         ]
 
-        export_status = []
-        for filename, data, desc in artefacts:
+        status: List[Dict[str, Any]] = []
+        for filename, payload, description in artefacts:
             path = self._out / filename
-            try:
-                path.write_text(
-                    json.dumps(data, indent=2, default=str),
-                    encoding='utf-8'
-                )
-                export_status.append({
-                    'file':   filename,
-                    'status': 'OK',
-                    'path':   str(path),
-                    'description': desc,
-                })
-                print(f"  [OK]  {filename}")
-            except Exception as exc:
-                export_status.append({
-                    'file':   filename,
-                    'status': 'FAIL',
-                    'error':  str(exc),
-                })
-                print(f"  [FAIL] {filename}: {exc}")
-
-        return export_status
+            path.write_text(
+                json.dumps(payload, indent=2, ensure_ascii=False, default=str),
+                encoding="utf-8",
+            )
+            status.append({
+                "file": filename,
+                "path": str(path),
+                "description": description,
+                "ok": path.exists(),
+            })
+        return status
 
     def validate_exports(self, export_status: List[Dict[str, Any]]) -> Dict[str, Any]:
-        passed = sum(1 for e in export_status if e['status'] == 'OK')
+        passed = sum(1 for e in export_status if e.get("ok"))
         return {
-            'status':  'PASS' if passed == len(export_status) else 'PARTIAL',
-            'total':   len(export_status),
-            'passed':  passed,
-            'failed':  len(export_status) - passed,
-            'output_dir': str(self._out),
-            'files':   export_status,
+            "passed": passed,
+            "total": len(export_status),
+            "output_dir": str(self._out),
+            "files": export_status,
         }

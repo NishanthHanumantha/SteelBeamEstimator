@@ -16,8 +16,10 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 | D.3 | Production packaging & deployment readiness | Complete |
 | D.4 | Generate gunicorn/nginx/systemd + deploy scripts | Complete |
 | **D.4.1** | Path abstraction & existing-install support | Complete |
-| **D.4.2** | Lightsail upload / engine wiring fix | **Complete** |
-| D.5+ | Execute Lightsail cutover / TLS | Planned |
+| **D.4.2** | Lightsail upload / engine wiring fix | Complete |
+| **D.5.1** | Per-run web pipeline (R.2.1B + R.2.1C) | **Complete** |
+| D.5.2+ | R.2.1D / L.2.2 / R.3 / Excel | Planned |
+| D.5+ | Lightsail TLS cutover | Planned |
 
 ---
 

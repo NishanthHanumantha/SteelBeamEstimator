@@ -116,17 +116,13 @@ R2A_GN_POINTER = (
     / "beam_registry.json"
 )
 
-R3_PREREQUISITES: List[Dict[str, str]] = [
-    {
-        "rel": "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json",
-        "label": "EngineeringFacts.json (R.2.1D)",
-    },
-    {
-        "rel": "data/output/PhaseL.2.2_geometry_recovery/geometry_registry.json",
-        "label": "geometry_registry.json (L.2.2)",
-    },
-]
+# D.5.1 success artefact (per-run tree under web_runs/<run_id>/)
+R21C_FACTS_REL = (
+    "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
+)
 
+# D.5.1 production pipeline — stops after Engineering Semantic Engine (R.2.1B→R.2.1C).
+# R.2.1D / L.2.2 / R.3+ deferred.
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {
         "id": "VROOT1",
@@ -150,58 +146,16 @@ PRODUCTION_STAGES: List[Dict[str, Any]] = [
         "timeout_s": 300,
     },
     {
-        "id": "R3",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r3_geometry_context_engine.py",
+        "id": "R21B",
+        "label": "Running engineering semantic engine...",
+        "script": "Run_PY/run_phase_r21b_semantic_interpreter.py",
         "uses_input_folder": False,
-        "timeout_s": 600,
+        "timeout_s": 900,
     },
     {
-        "id": "R31",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r31_engineering_relationship_engine.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "R12A",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r12a_geometry_accuracy.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "R12C",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r12c_engineering_intent_resolution.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "R12D",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r12d_reinforcement_detailing.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "R13",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r13_reinforcement_piece_generation.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "R13PI",
-        "label": "Running engineering pipeline...",
-        "script": "Run_PY/run_phase_r13_pipeline_integration.py",
-        "uses_input_folder": False,
-        "timeout_s": 600,
-    },
-    {
-        "id": "VB1",
-        "label": "Generating workbook...",
-        "script": "Run_PY/run_phase_vb1_production_output_completion.py",
+        "id": "R21C",
+        "label": "Normalizing engineering facts...",
+        "script": "Run_PY/run_phase_r21c_engineering_fact_normalization.py",
         "uses_input_folder": False,
         "timeout_s": 600,
     },

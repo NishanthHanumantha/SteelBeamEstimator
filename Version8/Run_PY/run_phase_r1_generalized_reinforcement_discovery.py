@@ -73,13 +73,27 @@ for _sub in [
     _load_sub(_sub)
 
 # ── Run ────────────────────────────────────────────────────────────────────────
+import os
+
+from config.run_context import resolve_run_context, run_root_from_argv
+
 orchestrator_mod = sys.modules[f"{pkg_name}.phase_r1_orchestrator"]
 run_phase_r1     = orchestrator_mod.run_phase_r1
 
-version7_root    = PROJECT_ROOT / "Version8"
-config_path      = version7_root / "config" / "generalized_reinforcement_discovery.yaml"
+engine_root = PROJECT_ROOT / "Version8"
+arg = run_root_from_argv(sys.argv, 1)
+ctx = resolve_run_context(run_root_arg=arg, engine_root=engine_root)
+os.environ.setdefault("STEEL_ENGINE_ROOT", str(ctx.engine_root))
+os.environ.setdefault("STEEL_RUN_ROOT", str(ctx.run_root))
+os.environ.setdefault("STEEL_OUTPUT_ROOT", str(ctx.output_root))
 
-result = run_phase_r1(version7_root, config_path)
+config_path = ctx.engine_root / "config" / "generalized_reinforcement_discovery.yaml"
+# Artefacts (data/output/...) live under run_root; config lives under engine_root
+print(f"[R1] engine_root={ctx.engine_root}")
+print(f"[R1] run_root={ctx.run_root}")
+print(f"[R1] output_root={ctx.output_root}")
+
+result = run_phase_r1(ctx.run_root, config_path, engine_root=ctx.engine_root)
 
 # ── Exit code ─────────────────────────────────────────────────────────────────
 if result.get("status") in ("PASS", "SUCCESS"):

@@ -257,10 +257,19 @@ class PhaseR1Orchestrator:
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
-def run_phase_r1(project_root: pathlib.Path, config_path: Optional[pathlib.Path] = None) -> dict:
+def run_phase_r1(
+    project_root: pathlib.Path,
+    config_path: Optional[pathlib.Path] = None,
+    engine_root: Optional[pathlib.Path] = None,
+) -> dict:
+    """
+    project_root : root for data/output artefacts (run_root in web mode).
+    engine_root  : Version8 root for config YAML (defaults to project_root).
+    """
     _setup_logging()
+    eng = engine_root or project_root
     if config_path is None:
-        config_path = project_root / "config" / "generalized_reinforcement_discovery.yaml"
+        config_path = eng / "config" / "generalized_reinforcement_discovery.yaml"
     config = _load_config(config_path)
     orch   = PhaseR1Orchestrator(project_root, config)
     return orch.run()

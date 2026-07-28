@@ -1,5 +1,24 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.1 — Web Pipeline Completion Foundation (2026-07-28)
+
+### Added
+
+- Per-run output tree under `Version8/data/web_runs/<run_id>/data/output/`
+- Shared `RunContext` (`STEEL_ENGINE_ROOT` / `STEEL_RUN_ROOT` / `STEEL_OUTPUT_ROOT`)
+- Web-capable R.2.1B + R.2.1C (I/O only; engineering logic unchanged)
+- Production stages truncated at R.2.1C (Excel deferred)
+
+### MODEL_VERSION
+
+`8.9.0`
+
+### Docs
+
+See [Phase_D.5.1_Web_Pipeline_Completion.md](Phase_D.5.1_Web_Pipeline_Completion.md)
+
+---
+
 ## D.4.2.1 — Restore Version7 R.3 artefact seeding (2026-07-28)
 
 ### Fixed

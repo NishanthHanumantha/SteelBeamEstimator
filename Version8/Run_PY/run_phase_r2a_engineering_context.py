@@ -64,23 +64,44 @@ for _sub in [
 ]:
     _load_sub(_sub)
 
-OUTPUT_DIR   = VERSION7_ROOT / "data" / "output" / "PhaseR.2A_engineering_context"
+OUTPUT_DIR   = None  # set in main after RunContext
 orch_mod     = sys.modules[f"{pkg_name}.phase_r2a_orchestrator"]
 Orchestrator = orch_mod.PhaseR2AOrchestrator
 
-orchestrator = Orchestrator(v7_root=VERSION7_ROOT, output_dir=OUTPUT_DIR)
-result = orchestrator.run()
 
-score   = result.get("audit_score", "0/0")
-status  = result.get("status", "FAIL")
+def main() -> int:
+    import os
+    from config.run_context import PHASE_R2A, resolve_run_context, run_root_from_argv
 
-print(f"\n  PHASE R.2A.1 RESULT")
-print(f"  Status             : {status}")
-print(f"  17-criteria audit  : {score}")
-print(f"  10-rule Fe550 val  : {result.get('fe550_validation_score', '?')}")
-print(f"  Steel grade        : {result.get('primary_steel_grade')}")
-print(f"  Beam cover         : {result.get('cover_beam_mm')}mm")
-print(f"  DL entries (total) : {result.get('dl_table_entries')}")
-print(f"  Artefacts          : {len(result.get('export_paths', {}))}")
+    arg = run_root_from_argv(sys.argv, 1)
+    ctx = resolve_run_context(run_root_arg=arg, engine_root=VERSION7_ROOT)
+    os.environ.setdefault("STEEL_ENGINE_ROOT", str(ctx.engine_root))
+    os.environ.setdefault("STEEL_RUN_ROOT", str(ctx.run_root))
+    os.environ.setdefault("STEEL_OUTPUT_ROOT", str(ctx.output_root))
 
-sys.exit(0 if status in ("PASS", "PARTIAL") else 1)
+    output_dir = ctx.artefact(PHASE_R2A)
+    print(f"[R2A] engine_root={ctx.engine_root}")
+    print(f"[R2A] run_root={ctx.run_root}")
+    print(f"[R2A] output_dir={output_dir}")
+
+    # Factory/code still use engine_root; artefacts go to run-scoped output_dir
+    orchestrator = Orchestrator(v7_root=ctx.engine_root, output_dir=output_dir)
+    result = orchestrator.run()
+
+    score   = result.get("audit_score", "0/0")
+    status  = result.get("status", "FAIL")
+
+    print(f"\n  PHASE R.2A.1 RESULT")
+    print(f"  Status             : {status}")
+    print(f"  17-criteria audit  : {score}")
+    print(f"  10-rule Fe550 val  : {result.get('fe550_validation_score', '?')}")
+    print(f"  Steel grade        : {result.get('primary_steel_grade')}")
+    print(f"  Beam cover         : {result.get('cover_beam_mm')}mm")
+    print(f"  DL entries (total) : {result.get('dl_table_entries')}")
+    print(f"  Artefacts          : {len(result.get('export_paths', {}))}")
+
+    return 0 if status in ("PASS", "PARTIAL") else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

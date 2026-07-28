@@ -1,12 +1,13 @@
 """
-Phase UI.1 — Estimation service wrapper.
+Phase UI.1 / D.5.1 — Estimation service wrapper.
 Invokes existing Version8 production runners without modifying engineering logic.
-MODEL_VERSION: 8.8.3
+MODEL_VERSION: 8.9.0
 """
 from __future__ import annotations
 
 import json
 import logging
+import os
 import shutil
 import subprocess
 import sys
@@ -24,13 +25,10 @@ from werkzeug.utils import secure_filename
 from config import (
     ALLOWED_EXTENSIONS,
     LOG_ROOT,
-    OUTPUT_ROOT,
-    PRODUCTION_EXCEL,
     PRODUCTION_STAGES,
+    R21C_FACTS_REL,
     R2A_GN_POINTER,
-    R3_PREREQUISITES,
     UPLOAD_ROOT,
-    V7_ROOT,
     V8_ROOT,
     WEB_RUNS_ROOT,
 )
@@ -223,29 +221,16 @@ def _clear_r2a_gn_pointer() -> None:
 
 
 def _ensure_r3_prerequisites() -> None:
-    """
-    R.3 requires EngineeringFacts (R.2.1D) and geometry_registry (L.2.2).
-    Version8 web runs do not yet regenerate those stages (legacy hardcoded
-    DXF paths). Seed from Version7 artefacts when missing — no eng changes.
-    """
-    missing: list[str] = []
-    for item in R3_PREREQUISITES:
-        dest = V8_ROOT / item["rel"]
-        if dest.exists():
-            continue
-        src = V7_ROOT / item["rel"]
-        if src.exists():
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dest)
-            logger.info("Seeded R.3 prerequisite from Version7: %s", item["rel"])
-        else:
-            missing.append(item["label"])
-    if missing:
-        raise EstimationError(
-            "Engineering pipeline is missing required artefacts: "
-            + ", ".join(missing)
-            + ". Re-run the R.2.1D / L.2.2 stages offline, then try again."
-        )
+    """Removed from D.5.1 hot path — R.3 is not in PRODUCTION_STAGES."""
+    return
+
+
+def _stage_env(staging: Path) -> dict:
+    env = os.environ.copy()
+    env["STEEL_ENGINE_ROOT"] = str(V8_ROOT.resolve())
+    env["STEEL_RUN_ROOT"] = str(staging.resolve())
+    env["STEEL_OUTPUT_ROOT"] = str((staging / "data" / "output").resolve())
+    return env
 
 
 def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
@@ -253,18 +238,16 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
     if not script.exists():
         raise EstimationError(f"Production runner not found: {stage['script']}")
 
-    if stage["id"] == "R3":
-        _ensure_r3_prerequisites()
-
     cmd = [sys.executable, str(script)]
-    if stage.get("uses_input_folder"):
-        cmd.append(str(staging))
+    # Pass run_root so runners resolve per-run output even if env is stripped
+    cmd.append(str(staging.resolve()))
 
     logger.info("Runner start stage=%s cmd=%s", stage["id"], " ".join(cmd))
     t0 = time.perf_counter()
     proc = subprocess.run(
         cmd,
         cwd=str(V8_ROOT),
+        env=_stage_env(staging),
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -286,14 +269,23 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
                 stage["id"],
                 "\n".join(err_tail.splitlines()[-40:]),
             )
-        # R.1.3-PI exits 1 when its 10-rule check is not 10/10 (e.g. Set 3 has
-        # 61 beams vs hardcoded 62), but still chains V.B.1 and writes Excel.
-        if stage["id"] == "R13PI" and PRODUCTION_EXCEL.exists():
-            logger.warning(
-                "Stage R13PI exit=%s with workbook present — treating as soft success",
-                proc.returncode,
-            )
-            return
+        # Soft-success for R.2.1C when EngineeringFacts.json was written
+        if stage["id"] == "R21C":
+            facts = staging / R21C_FACTS_REL
+            if facts.exists():
+                logger.warning(
+                    "Stage R21C exit=%s with EngineeringFacts present — soft success",
+                    proc.returncode,
+                )
+                return
+        if stage["id"] == "R21B":
+            eso = staging / "data/output/PhaseR2.1B_engineering_semantic_interpreter/engineering_semantic_objects.json"
+            if eso.exists():
+                logger.warning(
+                    "Stage R21B exit=%s with ESO present — soft success",
+                    proc.returncode,
+                )
+                return
         raise EstimationError(
             f"Engineering pipeline failed during stage {stage['id']}. "
             "Check webapp/logs/webapp.log for details, then try again."
@@ -310,29 +302,29 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             _set_job(run_id, message=stage["label"])
             _run_stage(stage, staging)
 
-        _set_job(run_id, message="Preparing download...")
-        if not PRODUCTION_EXCEL.exists():
+        facts = staging / R21C_FACTS_REL
+        if not facts.exists():
             raise EstimationError(
-                "Estimation completed but the production Excel workbook was not generated."
+                "Semantic engine completed but EngineeringFacts.json was not generated "
+                f"at {facts}."
             )
-
-        out_name = f"Estimation_Output_{run_id}.xlsx"
-        out_path = OUTPUT_ROOT / out_name
-        shutil.copy2(PRODUCTION_EXCEL, out_path)
 
         duration = round(time.perf_counter() - t0, 2)
         _set_job(
             run_id,
             status="success",
-            message="Steel Estimation Completed Successfully",
-            workbook_name=out_name,
-            workbook_path=str(out_path),
+            message=(
+                "Engineering Semantic Engine completed (R.2.1B–R.2.1C). "
+                "Excel workbook generation arrives in a later phase."
+            ),
+            workbook_name=None,
+            workbook_path=None,
             duration_s=duration,
         )
         logger.info(
-            "Workbook generated run_id=%s path=%s duration_s=%s",
+            "D.5.1 semantic engine complete run_id=%s facts=%s duration_s=%s",
             run_id,
-            out_path,
+            facts,
             duration,
         )
     except subprocess.TimeoutExpired:
@@ -364,10 +356,11 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
         )
     finally:
         _clear_r2a_gn_pointer()
-        # Clean temporary uploads / staging after completion
-        for path in (UPLOAD_ROOT / run_id, staging):
-            try:
-                if path.exists():
-                    shutil.rmtree(path, ignore_errors=True)
-            except Exception:
-                logger.warning("Cleanup failed for %s", path)
+        # Keep web_runs/<run_id>/ artefacts for inspection (D.5.1 per-run tree).
+        # Only remove the webapp uploads audit copy.
+        upload_copy = UPLOAD_ROOT / run_id
+        try:
+            if upload_copy.exists():
+                shutil.rmtree(upload_copy, ignore_errors=True)
+        except Exception:
+            logger.warning("Cleanup failed for %s", upload_copy)

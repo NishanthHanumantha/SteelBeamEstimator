@@ -1,6 +1,6 @@
 """
 phase_r21c_orchestrator.py — Master orchestrator for Phase R.2.1C.
-MODEL_VERSION: 7.12.0
+MODEL_VERSION: 8.9.0
 
 Execution sequence:
   1. Load R.2.1B EngineeringSemanticObjects
@@ -10,10 +10,7 @@ Execution sequence:
   5. Generate report
   6. Export all artefacts
 
-This phase is entirely additive:
-  - No existing production modules are modified.
-  - No existing output files are overwritten.
-  - Pipeline compatibility is verified (RULE_12).
+I/O is run-scoped via RunContext (Phase D.5.1). Engineering logic unchanged.
 """
 from __future__ import annotations
 
@@ -29,20 +26,12 @@ from .fact_reporter import FactReporter
 from .fact_statistics import FactStatistics
 from .fact_validation import FactValidation
 
-MODEL_VERSION = "7.12.0"
+MODEL_VERSION = "8.9.0"
 PHASE_ID = "R.2.1C"
 
-# ── Default paths (relative to Version7 root) ────────────────────────────────
-_V7  = pathlib.Path(__file__).parent.parent.parent          # …/Version7
-_ESO_PATH = (
-    _V7 / "data/output/PhaseR2.1B_engineering_semantic_interpreter"
-    / "engineering_semantic_objects.json"
-)
-_OUTPUT_DIR = _V7 / "data/output/PhaseR2.1C_engineering_fact_normalization"
-
-# Production workbook verification path
+_ESO_REL = "PhaseR2.1B_engineering_semantic_interpreter/engineering_semantic_objects.json"
+_OUT_NAME = "PhaseR2.1C_engineering_fact_normalization"
 _WORKBOOK_GLOB_PATTERN = "*.xlsx"
-_VB1_OUTPUT_DIR = _V7 / "data/output/PhaseVB.1_production_output_completion"
 
 
 class PhaseR21COrchestrator:
@@ -52,19 +41,40 @@ class PhaseR21COrchestrator:
 
     def __init__(
         self,
-        eso_path:   Optional[pathlib.Path] = None,
+        eso_path: Optional[pathlib.Path] = None,
         output_dir: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+        engine_root: Optional[pathlib.Path] = None,
     ):
-        self.eso_path   = pathlib.Path(eso_path)   if eso_path   else _ESO_PATH
-        self.output_dir = pathlib.Path(output_dir) if output_dir else _OUTPUT_DIR
+        self._output_root = (
+            pathlib.Path(output_root)
+            if output_root
+            else (
+                pathlib.Path(engine_root) / "data" / "output"
+                if engine_root
+                else None
+            )
+        )
+        if eso_path is not None:
+            self.eso_path = pathlib.Path(eso_path)
+        elif self._output_root is not None:
+            self.eso_path = self._output_root / _ESO_REL
+        else:
+            raise ValueError("eso_path or output_root/engine_root required")
 
-        self._builder   = EngineeringFactBuilder()
+        if output_dir is not None:
+            self.output_dir = pathlib.Path(output_dir)
+        elif self._output_root is not None:
+            self.output_dir = self._output_root / _OUT_NAME
+        else:
+            raise ValueError("output_dir or output_root/engine_root required")
+
+        self._engine_root = pathlib.Path(engine_root) if engine_root else None
+        self._builder = EngineeringFactBuilder()
         self._validator = FactValidation()
-        self._statter   = FactStatistics()
-        self._reporter  = FactReporter()
-        self._exporter  = FactExport()
-
-    # ── Public entry point ────────────────────────────────────────────────────
+        self._statter = FactStatistics()
+        self._reporter = FactReporter()
+        self._exporter = FactExport()
 
     def run(self) -> Dict[str, Any]:
         start = datetime.now()
@@ -74,35 +84,31 @@ class PhaseR21COrchestrator:
         print(f"[R.2.1C] Output: {self.output_dir}")
         print()
 
-        # Step 1: Load R.2.1B semantic objects
         esos_by_beam = self._load_esos()
         total_esos = sum(len(v) for v in esos_by_beam.values())
         print(f"[R.2.1C] Loaded {total_esos} semantic objects from {len(esos_by_beam)} beams")
 
-        # Step 2: Build EngineeringFacts
         facts_by_beam = self._builder.build_all(esos_by_beam)
-        total_facts   = sum(len(v) for v in facts_by_beam.values())
+        total_facts = sum(len(v) for v in facts_by_beam.values())
         print(f"[R.2.1C] Built {total_facts} EngineeringFacts")
 
-        # Step 3: Validate
         workbook_path = self._find_production_workbook()
-        validation    = self._validator.validate(facts_by_beam, esos_by_beam, workbook_path)
-        v_summary     = validation.get("summary", "")
-        v_all_pass    = validation.get("all_pass", False)
-        status_icon   = "OK" if v_all_pass else "FAIL"
+        validation = self._validator.validate(facts_by_beam, esos_by_beam, workbook_path)
+        v_summary = validation.get("summary", "")
+        v_all_pass = validation.get("all_pass", False)
+        status_icon = "OK" if v_all_pass else "FAIL"
         print(f"[R.2.1C] Validation: [{status_icon}] {v_summary}")
 
-        # Step 4: Statistics
         stats = self._statter.compute(facts_by_beam)
-        print(f"[R.2.1C] Intent UNKNOWN: {stats['intent_unknown_count']}/{total_facts} "
-              f"({stats['intent_unknown_pct']}%)")
+        print(
+            f"[R.2.1C] Intent UNKNOWN: {stats['intent_unknown_count']}/{total_facts} "
+            f"({stats['intent_unknown_pct']}%)"
+        )
         print(f"[R.2.1C] Role coverage:  {stats['role_coverage_pct']}%")
         print(f"[R.2.1C] Placement cov:  {stats['placement_coverage_pct']}%")
 
-        # Step 5: Report
         report_md = self._reporter.generate(facts_by_beam, stats, validation)
 
-        # Step 6: Export
         self.output_dir.mkdir(parents=True, exist_ok=True)
         exported_paths = self._exporter.export_all(
             facts_by_beam, stats, validation, report_md, self.output_dir
@@ -111,15 +117,15 @@ class PhaseR21COrchestrator:
 
         elapsed = (datetime.now() - start).total_seconds()
         result = {
-            "phase_id":           PHASE_ID,
-            "model_version":      MODEL_VERSION,
-            "beam_count":         len(facts_by_beam),
-            "total_facts":        total_facts,
-            "validation":         validation,
-            "statistics":         stats,
+            "phase_id": PHASE_ID,
+            "model_version": MODEL_VERSION,
+            "beam_count": len(facts_by_beam),
+            "total_facts": total_facts,
+            "validation": validation,
+            "statistics": stats,
             "exported_artefacts": {k: str(v) for k, v in exported_paths.items()},
-            "elapsed_seconds":    round(elapsed, 2),
-            "success":            v_all_pass,
+            "elapsed_seconds": round(elapsed, 2),
+            "success": v_all_pass,
         }
 
         print()
@@ -129,34 +135,42 @@ class PhaseR21COrchestrator:
 
         return result
 
-    # ── Private helpers ───────────────────────────────────────────────────────
-
     def _load_esos(self) -> Dict[str, List[Dict[str, Any]]]:
-        """Load EngineeringSemanticObjects from R.2.1B output JSON."""
         if not self.eso_path.exists():
             raise FileNotFoundError(
                 f"R.2.1B output not found: {self.eso_path}\n"
-                "Run Phase R.2.1B first: python Version7/Run_PY/run_phase_r21b_semantic_interpreter.py"
+                "Run Phase R.2.1B first for this run_root "
+                "(Run_PY/run_phase_r21b_semantic_interpreter.py)."
             )
         with self.eso_path.open(encoding="utf-8") as f:
             data = json.load(f)
 
-        # Support both {"by_beam": {...}} and raw dict structures
         if isinstance(data, dict) and "by_beam" in data:
             return data["by_beam"]
         if isinstance(data, dict):
-            # Assume top-level keys are beam IDs
             return data
         raise ValueError(f"Unexpected ESO JSON structure in {self.eso_path}")
 
     def _find_production_workbook(self) -> Optional[pathlib.Path]:
-        """Find the production workbook to validate pipeline compatibility."""
-        # Check multiple known output locations
-        candidates = [
-            _VB1_OUTPUT_DIR,
-            _V7 / "data/output/Production_Output",
-            _V7 / "data/output/PhaseR.1.1_production_validation",
-        ]
+        """Optional workbook probe for RULE_12 — run-scoped then engine-scoped."""
+        candidates: List[pathlib.Path] = []
+        if self._output_root is not None:
+            candidates.extend(
+                [
+                    self._output_root / "PhaseVB.1_production_output_completion",
+                    self._output_root / "Production_Output",
+                    self._output_root / "PhaseR.1.1_production_validation",
+                ]
+            )
+        if self._engine_root is not None:
+            eng_out = self._engine_root / "data" / "output"
+            candidates.extend(
+                [
+                    eng_out / "PhaseVB.1_production_output_completion",
+                    eng_out / "Production_Output",
+                    eng_out / "PhaseR.1.1_production_validation",
+                ]
+            )
         for candidate_dir in candidates:
             if candidate_dir.exists():
                 xlsx_files = sorted(candidate_dir.glob(_WORKBOOK_GLOB_PATTERN))
