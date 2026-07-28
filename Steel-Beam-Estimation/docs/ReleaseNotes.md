@@ -1,5 +1,28 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.4.1 — Path abstraction & existing-install support (2026-07-28)
+
+### Changed
+
+- `_common.sh` is the single path-resolution layer (config + auto-discovery)
+- `config.yaml` adds `repository_directory`, `project_directory`, `model_directory`
+- Scripts `01`–`10` no longer hardcode `Steel-Beam-Estimation/current_model`
+- Clone script supports pull / clone / unrelated-dir abort / remote mismatch
+- Venv script reuses existing venv at resolved `MODEL_ROOT`
+- Deployment summary printed before each script
+- Actionable diagnostics when `current_model` cannot be located
+
+### Compatibility
+
+- Legacy `app_subdirectory` / `model_subdirectory` still accepted
+- Existing Lightsail layout `…/SteelBeamEstimator/Steel-Beam-Estimation/current_model` works via config or auto-detect
+
+### Deployment package version
+
+`D.4.1` (see `deployment/config.yaml` → `deployment_package_version`)
+
+---
+
 ## D.4 — Production deployment assets (2026-07-27)
 
 ### Added

@@ -1,205 +1,220 @@
 # Deployment Guide — Steel Beam Reinforcement Estimation
 
-**Phase:** D.4 (production deployment assets generated)  
+**Phase:** D.4.1 (path abstraction & existing-install support)  
 **Target:** AWS Lightsail (independent of Concrete Estimator)  
-**Status:** Assets only — this phase does **not** SSH or deploy.
+**Deployment package version:** D.4.1
 
 ---
 
-## Folder overview
+## Supported installation layouts
+
+### Mode A — Fresh / flat package
 
 ```text
-Steel-Beam-Estimation/
-├── current_model/                 # Application package (version-agnostic)
-├── deployment/
-│   ├── config.yaml                # Deploy parameters (edit before go-live)
-│   ├── gunicorn/gunicorn.conf.py
-│   ├── nginx/steel-beam-estimator.conf
-│   ├── systemd/steel-beam-estimator.service
-│   └── scripts/                   # 01–10 + _common.sh + validate_packaging.py
-└── docs/
+/opt/steel-beam-estimation/                  # application_directory
+└── Steel-Beam-Estimation/                   # project_directory
+    └── current_model/                       # model_directory
 ```
 
-Process managers always target **`current_model/`**, never a version-named folder.
+`repository_directory` may be left empty. The git root is typically
+`application_directory` itself (or the project root).
+
+### Mode B — Existing monorepo checkout (common on Lightsail)
+
+```text
+/opt/steel-beam-estimation/                  # application_directory
+└── SteelBeamEstimator/                      # repository_directory
+    └── Steel-Beam-Estimation/               # project_directory
+        └── current_model/                   # model_directory
+```
+
+Both modes work without editing shell scripts. Configure `deployment/config.yaml`
+or rely on **automatic discovery**.
 
 ---
 
-## Local packaging checklist (from D.3)
+## Path resolution (single source of truth)
 
-1. [ ] `cd current_model`  
-2. [ ] Create venv + `pip install -r requirements.txt`  
-3. [ ] Copy `.env.example` → `.env` and set secrets  
-4. [ ] Set `STEEL_ENGINE_ROOT` if the engine is external  
-5. [ ] `python run.py` → http://127.0.0.1:5000  
-6. [ ] `GET /health` returns `status`, `model_version`, `timestamp`  
-7. [ ] `python ../deployment/scripts/validate_packaging.py`
+All scripts source `deployment/scripts/_common.sh`.
 
----
+That file is the **only** place paths are calculated. It exports:
 
-## Required environment variables
+| Variable | Meaning |
+|----------|---------|
+| `APPLICATION_DIRECTORY` | Install root from config |
+| `REPOSITORY_ROOT` | Git clone root |
+| `PROJECT_ROOT` | `Steel-Beam-Estimation/` package (has `deployment/` + `current_model/`) |
+| `MODEL_ROOT` | `current_model/` |
+| `VENV_DIR` / `VENV_BIN` | Virtualenv under model root |
+| `DEPLOYMENT_MODE` | Fresh / Existing / auto-detected |
 
-| Variable | Required | Purpose |
-|----------|----------|---------|
-| `SECRET_KEY` | **Yes in production** | Flask security |
-| `FLASK_ENV` | Recommended | `production` on server |
-| `STEEL_ENGINE_ROOT` | If engine not inside `current_model/` | Absolute engine path |
-| `MAX_UPLOAD_MB` | Optional | Upload limit (default 256) |
-| `ANTHROPIC_API_KEY` | Optional | Placeholder only |
+### Resolution order
 
-Never commit `.env`.
+1. Build paths from `config.yaml`  
+2. If configured `MODEL_ROOT` exists and is valid → use it  
+3. Else search `application_directory` for a single `current_model` → derive parents  
+4. Else try the package that contains the running scripts  
+5. Else keep configured paths for **fresh install** (clone next)
 
----
+If multiple `current_model` directories are found → **fail with diagnostics**.
 
-## Deployment assets (Phase D.4)
-
-### `deployment/config.yaml`
-
-Central placeholders used by scripts:
-
-| Key | Meaning |
-|-----|---------|
-| `server_ip` | Lightsail public IP (documentation / future use) |
-| `ssh_user` | OS user that owns the app (e.g. `ubuntu`) |
-| `application_directory` | Install root (e.g. `/opt/steel-beam-estimation`) |
-| `github_repository` | Git clone URL |
-| `branch` | Git branch to deploy |
-| `python_version` | Preferred Python (e.g. `3.12`) |
-| `virtual_environment_name` | Venv folder under `current_model/` |
-| `gunicorn_service_name` | systemd unit name |
-| `nginx_site_name` | Nginx site filename stem |
-
-Edit this file on the server (or before packaging) — scripts read it via `_common.sh`.
-
-### Process / proxy configs
-
-| File | Purpose |
-|------|---------|
-| `gunicorn/gunicorn.conf.py` | Workers, timeout, logging (env-overridable) |
-| `nginx/steel-beam-estimator.conf` | Reverse proxy + `/static/` + `/health` |
-| `systemd/steel-beam-estimator.service` | Gunicorn under systemd (`wsgi:app`) |
+Every script prints a configuration summary before running.
 
 ---
 
-## Purpose of every deployment script
+## Configuration (`deployment/config.yaml`)
 
-| Script | Purpose |
-|--------|---------|
-| `_common.sh` | Shared config loader + helpers (sourced by other scripts) |
-| `01_server_setup.sh` | Install OS packages (git, python, nginx, build tools) |
-| `02_clone_project.sh` | Clone or fast-forward update the GitHub repo |
-| `03_create_venv.sh` | Create `current_model/.venv` if missing |
-| `04_install_requirements.sh` | `pip install -r requirements.txt` (+ optional engine deps) |
-| `05_configure_environment.sh` | Create `.env` from `.env.example` **only if absent** |
-| `06_validate_application.sh` | Run packaging / health contract checks |
-| `07_install_gunicorn.sh` | Install gunicorn in venv + render/enable systemd unit |
-| `08_install_nginx.sh` | Render nginx site, enable it, `nginx -t`, reload |
-| `09_restart_services.sh` | Restart gunicorn + reload nginx + probe `/health` |
-| `10_update_application.sh` | `git pull --ff-only`, reinstall deps, validate, restart |
-| `validate_packaging.py` | Local/CI packaging validator (from D.3) |
+```yaml
+application_directory: "/opt/steel-beam-estimation"
+repository_directory: "SteelBeamEstimator"   # empty for Mode A
+project_directory: "Steel-Beam-Estimation"
+model_directory: "current_model"
+```
 
-All bash scripts are intended to be **idempotent**, **fail-safe** (`set -euo pipefail`), and driven by **`config.yaml` variables**.
+### Backwards compatibility
+
+Legacy keys still work:
+
+- `app_subdirectory` → treated as `project_directory`
+- `model_subdirectory` → treated as `model_directory`
+
+If optional fields are missing, automatic discovery is attempted.
 
 ---
 
-## Deployment sequence (on the Lightsail host)
-
-> Do not run these until an operator is ready. Phase D.4 only generates assets.
+## Fresh deployment sequence
 
 ```bash
-# 0) Edit deployment/config.yaml (paths, repo URL, branch, user)
-
 cd /path/to/Steel-Beam-Estimation/deployment/scripts
 chmod +x *.sh
 
+# Edit ../config.yaml first (repo URL, branch, directories)
 sudo ./01_server_setup.sh
 ./02_clone_project.sh
 ./03_create_venv.sh
 ./04_install_requirements.sh
 ./05_configure_environment.sh
-# >>> edit current_model/.env  (SECRET_KEY, FLASK_ENV=production, STEEL_ENGINE_ROOT)
+# edit MODEL_ROOT/.env
 ./06_validate_application.sh
 sudo ./07_install_gunicorn.sh
 sudo ./08_install_nginx.sh
 sudo ./09_restart_services.sh
 ```
 
-Expected result: Nginx on port 80 proxies to Gunicorn; `GET /health` returns JSON.
+---
+
+## Existing deployment (already cloned)
+
+If the tree already looks like Mode B:
+
+1. Pull latest deployment package (or `./10_update_application.sh`)  
+2. Ensure `config.yaml` has `repository_directory: SteelBeamEstimator` **or** leave discovery to auto-detect  
+3. Run:
+
+```bash
+./03_create_venv.sh          # reuses venv if present
+./04_install_requirements.sh
+./06_validate_application.sh
+sudo ./09_restart_services.sh
+```
+
+`03_create_venv.sh` no longer fails when the old flat path is absent — it uses the resolved `MODEL_ROOT`.
+
+---
+
+## Clone script behaviour (`02_clone_project.sh`)
+
+| Case | Behaviour |
+|------|-----------|
+| Git repo already at `REPOSITORY_ROOT` | `git pull --ff-only` |
+| Path missing / empty | `git clone` |
+| Non-empty unrelated files | Abort safely |
+| Different `origin` remote | Warn and exit |
 
 ---
 
 ## GitHub update procedure
 
-On the server:
-
 ```bash
-cd /path/to/Steel-Beam-Estimation/deployment/scripts
 ./10_update_application.sh
 ```
 
-What it does:
-
-1. `git fetch` + checkout configured `branch`  
-2. `git pull --ff-only` (aborts on divergent local commits)  
-3. Re-run requirements install  
-4. Validate packaging  
-5. Restart gunicorn + reload nginx  
-
-If fast-forward fails: resolve/stash server-side changes, then re-run.
+Updates `REPOSITORY_ROOT` (not a hardcoded folder name), reinstalls requirements, validates, restarts services.
 
 ---
 
 ## Rollback procedure
 
-1. Identify last known-good commit SHA (GitHub / `git log`).  
-2. On the server:
-
 ```bash
-cd /opt/steel-beam-estimation   # application_directory from config.yaml
+cd "$REPOSITORY_ROOT"    # from the summary printed by scripts
 git fetch --all
 git checkout <known-good-sha>
-```
-
-3. Reinstall deps and restart:
-
-```bash
-cd Steel-Beam-Estimation/deployment/scripts   # or flat layout path
+cd Steel-Beam-Estimation/deployment/scripts   # or your project_directory/deployment/scripts
 ./04_install_requirements.sh
 sudo ./09_restart_services.sh
 ```
 
-4. Confirm `curl -fsS http://127.0.0.1:8000/health` (or your `gunicorn_bind`).  
-5. Optionally create a git tag for known-good releases before updates.
+---
 
-**Do not** force-push from the server. Prefer ff-only updates + checkout for rollback.
+## Troubleshooting
+
+### `Model root not found` / unable to locate `current_model`
+
+1. Run any script and read the **Deployment Configuration** summary.  
+2. Confirm a single `current_model` exists under `application_directory`.  
+3. Set explicit path segments in `config.yaml`:
+
+```yaml
+application_directory: "/opt/steel-beam-estimation"
+repository_directory: "SteelBeamEstimator"
+project_directory: "Steel-Beam-Estimation"
+model_directory: "current_model"
+```
+
+4. Or remove duplicate `current_model` trees so auto-discovery can pick one.
+
+### Virtualenv path wrong
+
+Always use `03_create_venv.sh` after pulling D.4.1 — it creates/reuses `${MODEL_ROOT}/.venv`.
+
+### Nginx static files 404
+
+`08_install_nginx.sh` renders `__APP_ROOT__` as `PROJECT_ROOT`. Re-run 08 after path fixes.
 
 ---
 
-## Health check
+## Script catalogue
 
-`GET /health` should return:
+| Script | Purpose |
+|--------|---------|
+| `_common.sh` | Config + path resolution + summary (only path calculator) |
+| `01_server_setup.sh` | OS packages |
+| `02_clone_project.sh` | Clone / pull repository |
+| `03_create_venv.sh` | Create or reuse venv at `MODEL_ROOT` |
+| `04_install_requirements.sh` | pip install |
+| `05_configure_environment.sh` | `.env` from example if missing |
+| `06_validate_application.sh` | Packaging checks |
+| `07_install_gunicorn.sh` | gunicorn + systemd unit |
+| `08_install_nginx.sh` | nginx site |
+| `09_restart_services.sh` | Restart + `/health` |
+| `10_update_application.sh` | Pull + refresh + restart |
 
-```json
-{
-  "status": "ok",
-  "service": "steel-beam-estimation",
-  "phase": "D.3",
-  "model_version": "...",
-  "engine_ready": true,
-  "timestamp": "..."
-}
-```
+---
+
+## Local packaging checklist (D.3)
+
+Still valid for laptop validation — see earlier checklist in ReleaseNotes. Use `python run.py` under `current_model/` with `.env` configured.
 
 ---
 
 ## Phase roadmap
 
-| Phase | Work | Status |
-|-------|------|--------|
-| D.1 | Folder foundation | Done |
-| D.2 | Flask application foundation | Done |
-| D.3 | Production packaging readiness | Done |
-| **D.4** | Generate gunicorn/nginx/systemd + deploy scripts | **Done** |
-| D.5+ | Execute Lightsail cutover / TLS / monitoring | Planned |
+| Phase | Status |
+|-------|--------|
+| D.1–D.3 | Done |
+| D.4 | Done (assets) |
+| **D.4.1** | **Done** (layout-independent paths) |
+| D.5+ | Lightsail cutover / TLS (planned) |
 
 ---
 
