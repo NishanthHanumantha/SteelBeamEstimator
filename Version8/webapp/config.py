@@ -1,6 +1,6 @@
 """
-Phase UI.1 / D.5.1 — Flask web application configuration.
-MODEL_VERSION: 8.9.0
+Phase UI.1 / D.5.2 — Flask web application configuration.
+MODEL_VERSION: 8.9.1
 """
 from __future__ import annotations
 
@@ -16,15 +16,15 @@ UPLOAD_ROOT = WEBAPP_ROOT / "uploads"
 OUTPUT_ROOT = WEBAPP_ROOT / "outputs"
 LOG_ROOT = WEBAPP_ROOT / "logs"
 
-# Per-run staging + artefacts (Phase D.5.1)
+# Per-run staging + artefacts (Phase D.5.1+)
 WEB_RUNS_ROOT = V8_ROOT / "data" / "web_runs"
 
 MAX_CONTENT_LENGTH = int(os.environ.get("STEEL_WEB_MAX_UPLOAD_MB", "256")) * 1024 * 1024
 ALLOWED_EXTENSIONS = {".dxf"}
 SECRET_KEY = os.environ.get("STEEL_WEB_SECRET_KEY", "steel-beam-estimation-ui1-dev")
 
-# D.5.1 production pipeline — Engineering Semantic Engine (stops after R.2.1C).
-# R.2.1D / L.2.2 / R.3+ deferred to later milestones.
+# D.5.2 production pipeline — Evidence & Hypothesis Engine (stops after R.2.1D).
+# L.2.2 / R.3 / Excel deferred to later milestones.
 PRODUCTION_STAGES = [
     {
         "id": "VROOT1",
@@ -61,6 +61,13 @@ PRODUCTION_STAGES = [
         "uses_input_folder": False,
         "timeout_s": 600,
     },
+    {
+        "id": "R21D",
+        "label": "Building evidence and hypotheses...",
+        "script": "Run_PY/run_phase_r21d_evidence_hypothesis_engine.py",
+        "uses_input_folder": False,
+        "timeout_s": 600,
+    },
 ]
 
 # Excel deferred until later phases re-enable VB.1
@@ -68,6 +75,9 @@ PRODUCTION_EXCEL = V8_ROOT / "data" / "output" / "Production_Output" / "Estimati
 
 R21C_FACTS_REL = (
     "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
+)
+R21D_FACTS_REL = (
+    "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json"
 )
 
 # Path used by existing R.2A factory discovery (do not change engineering code).

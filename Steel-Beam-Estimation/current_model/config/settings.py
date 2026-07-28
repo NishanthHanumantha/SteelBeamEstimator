@@ -116,13 +116,16 @@ R2A_GN_POINTER = (
     / "beam_registry.json"
 )
 
-# D.5.1 success artefact (per-run tree under web_runs/<run_id>/)
+# D.5.1 / D.5.2 success artefacts (per-run tree under web_runs/<run_id>/)
 R21C_FACTS_REL = (
     "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
 )
+R21D_FACTS_REL = (
+    "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json"
+)
 
-# D.5.1 production pipeline — stops after Engineering Semantic Engine (R.2.1B→R.2.1C).
-# R.2.1D / L.2.2 / R.3+ deferred.
+# D.5.2 production pipeline — stops after Evidence & Hypothesis Engine (R.2.1D).
+# L.2.2 / R.3 / Excel deferred.
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {
         "id": "VROOT1",
@@ -156,6 +159,13 @@ PRODUCTION_STAGES: List[Dict[str, Any]] = [
         "id": "R21C",
         "label": "Normalizing engineering facts...",
         "script": "Run_PY/run_phase_r21c_engineering_fact_normalization.py",
+        "uses_input_folder": False,
+        "timeout_s": 600,
+    },
+    {
+        "id": "R21D",
+        "label": "Building evidence and hypotheses...",
+        "script": "Run_PY/run_phase_r21d_evidence_hypothesis_engine.py",
         "uses_input_folder": False,
         "timeout_s": 600,
     },

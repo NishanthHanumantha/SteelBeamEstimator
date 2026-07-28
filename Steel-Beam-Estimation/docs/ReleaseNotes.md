@@ -1,5 +1,28 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.2 — Web-enable R.2.1D Evidence & Hypothesis Engine (2026-07-28)
+
+### Added
+
+- Run-scoped Phase R.2.1D via `RunContext` / `PHASE_R21D`
+- Production stages extended through R.2.1D (stop; L.2.2 / R.3 / Excel deferred)
+- Success artefact: `web_runs/<run_id>/data/output/PhaseR2.1D_.../EngineeringFacts.json`
+
+### Changed
+
+- R.2.1D I/O only — evidence / hypothesis engineering logic unchanged
+- Removed Version7 / shared-output hardcodes from R.2.1D orchestrator
+
+### MODEL_VERSION
+
+`8.9.1`
+
+### Docs
+
+See [Phase_D.5.2_Web_Pipeline_Completion.md](Phase_D.5.2_Web_Pipeline_Completion.md)
+
+---
+
 ## D.5.1 — Web Pipeline Completion Foundation (2026-07-28)
 
 ### Added

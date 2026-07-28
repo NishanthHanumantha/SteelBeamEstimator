@@ -1,6 +1,6 @@
 """
 PhaseR2.1D — Evidence & Intent Hypothesis Engine
-MODEL_VERSION: 7.12.1
+MODEL_VERSION: 8.9.1
 
 Upgrades Phase R.2.1C EngineeringFacts with two new deterministic concepts:
 
@@ -11,22 +11,13 @@ Upgrades Phase R.2.1C EngineeringFacts with two new deterministic concepts:
                         intent_candidates list. Priority is sequential ordering,
                         NOT probability or confidence.
 
-Philosophy:
-  Observable Evidence → Engineering Facts → Ranked Intent Hypotheses → R.3 Geometry
-
-This phase is the final geometry-independent stage before Phase R.3.
-No geometry, support locations, span continuity, development length,
-or engineering calculations are introduced here.
-
-Pipeline position:
+Pipeline position (web D.5.2):
   R.2.1C Engineering Fact Normalization
   ↓
   R.2.1D Evidence & Intent Hypothesis Engine  ← this phase
   ↓
-  R.3 Geometry Context Engine (future)
-  ↓
-  Engineering Intent Resolver (future)
+  L.2.2 / R.3 (later milestones)
 """
 
-MODEL_VERSION = "7.12.1"
-PHASE_ID      = "R.2.1D"
+MODEL_VERSION = "8.9.1"
+PHASE_ID = "R.2.1D"

@@ -1,5 +1,5 @@
 """
-Estimation service wrapper — Phase D.5.1.
+Estimation service wrapper — Phase D.5.2.
 
 Invokes existing production runners under ENGINE_ROOT via subprocess.
 Does not modify engineering / estimation logic.
@@ -29,6 +29,7 @@ from config.settings import (
     KEEP_WEB_RUNS,
     PRODUCTION_STAGES,
     R21C_FACTS_REL,
+    R21D_FACTS_REL,
     R2A_GN_POINTER,
     UPLOAD_FOLDER,
     WEB_RUNS_ROOT,
@@ -299,6 +300,14 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
                 stage["id"],
                 "\n".join(err_tail.splitlines()[-40:]),
             )
+        if stage["id"] == "R21D":
+            facts = staging / R21D_FACTS_REL
+            if facts.exists():
+                logger.warning(
+                    "Stage R21D exit=%s with EngineeringFacts present — soft success",
+                    proc.returncode,
+                )
+                return
         if stage["id"] == "R21C":
             facts = staging / R21C_FACTS_REL
             if facts.exists():
@@ -331,11 +340,11 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             _set_job(run_id, message=stage["label"])
             _run_stage(stage, staging)
 
-        facts = staging / R21C_FACTS_REL
+        facts = staging / R21D_FACTS_REL
         if not facts.exists():
             raise EstimationError(
-                "Semantic engine completed but EngineeringFacts.json was not generated "
-                f"at {facts}."
+                "Evidence & Hypothesis Engine completed but EngineeringFacts.json "
+                f"was not generated at {facts}."
             )
 
         duration = round(time.perf_counter() - t0, 2)
@@ -343,7 +352,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             run_id,
             status="success",
             message=(
-                "Engineering Semantic Engine completed (R.2.1B–R.2.1C). "
+                "Evidence & Hypothesis Engine completed (through R.2.1D). "
                 "Excel workbook generation arrives in a later phase."
             ),
             workbook_name=None,
@@ -351,7 +360,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             duration_s=duration,
         )
         logger.info(
-            "D.5.1 semantic engine complete run_id=%s facts=%s duration_s=%s",
+            "D.5.2 R.2.1D complete run_id=%s facts=%s duration_s=%s",
             run_id,
             facts,
             duration,

@@ -1,6 +1,6 @@
 """
 Phase UI.1 — Steel Beam Estimation Web Application
-MODEL_VERSION: 8.9.0
+MODEL_VERSION: 8.9.1
 
 Presentation layer only. Invokes existing Version8 production runners.
 Does not modify engineering logic.
@@ -21,7 +21,7 @@ from flask import Flask
 import config
 from routes import bp
 
-MODEL_VERSION = "8.9.0"
+MODEL_VERSION = "8.9.1"
 
 
 def create_app() -> Flask:
