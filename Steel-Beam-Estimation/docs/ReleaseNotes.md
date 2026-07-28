@@ -1,5 +1,16 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.4.2.1 — Restore Version7 R.3 artefact seeding (2026-07-28)
+
+### Fixed
+
+- `_ensure_r3_prerequisites()` in `current_model/webapp/services.py` now matches
+  the local `Version8/webapp` behaviour: copy missing
+  `EngineeringFacts.json` / `geometry_registry.json` from sibling `Version7/`
+  into `Version8/data/output/...` (no `STEEL_ARTEFACT_SEED_ROOT` required).
+
+---
+
 ## D.4.2 — Lightsail upload / engine wiring fix (2026-07-28)
 
 ### Root cause addressed

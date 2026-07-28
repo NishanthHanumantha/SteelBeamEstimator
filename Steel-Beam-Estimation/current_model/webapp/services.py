@@ -24,7 +24,6 @@ from werkzeug.utils import secure_filename
 
 from config.settings import (
     ALLOWED_EXTENSIONS,
-    ARTEFACT_SEED_ROOT,
     ENGINE_ROOT,
     KEEP_WEB_RUNS,
     OUTPUT_FOLDER,
@@ -33,6 +32,7 @@ from config.settings import (
     R2A_GN_POINTER,
     R3_PREREQUISITES,
     UPLOAD_FOLDER,
+    V7_ROOT,
     WEB_RUNS_ROOT,
     ezdxf_is_available,
 )
@@ -249,26 +249,30 @@ def _clear_r2a_gn_pointer() -> None:
 
 
 def _ensure_r3_prerequisites() -> None:
+    """
+    R.3 requires EngineeringFacts (R.2.1D) and geometry_registry (L.2.2).
+    Version8 web runs do not yet regenerate those stages (legacy hardcoded
+    DXF paths). Seed from Version7 artefacts when missing — no eng changes.
+
+    Strategy matches Version8/webapp/services/estimation_service.py exactly.
+    """
     missing: list[str] = []
     for item in R3_PREREQUISITES:
         dest = ENGINE_ROOT / item["rel"]
         if dest.exists():
             continue
-        seeded = False
-        if ARTEFACT_SEED_ROOT is not None:
-            src = ARTEFACT_SEED_ROOT / item["rel"]
-            if src.exists():
-                dest.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(src, dest)
-                logger.info("Seeded R.3 prerequisite from STEEL_ARTEFACT_SEED_ROOT: %s", item["rel"])
-                seeded = True
-        if not seeded:
+        src = V7_ROOT / item["rel"]
+        if src.exists():
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            logger.info("Seeded R.3 prerequisite from Version7: %s", item["rel"])
+        else:
             missing.append(item["label"])
     if missing:
         raise EstimationError(
             "Engineering pipeline is missing required artefacts: "
             + ", ".join(missing)
-            + ". Provide STEEL_ARTEFACT_SEED_ROOT or generate them offline, then try again."
+            + ". Re-run the R.2.1D / L.2.2 stages offline, then try again."
         )
 
 

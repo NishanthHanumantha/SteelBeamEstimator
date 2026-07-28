@@ -100,6 +100,10 @@ PRODUCTION_EXCEL = (
     ENGINE_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
 )
 
+# Same layout as Version8/webapp/config.py:
+#   V8_ROOT.parent / "Version7"  (monorepo sibling of the engine)
+V7_ROOT = ENGINE_ROOT.parent / "Version7"
+
 _seed = (os.environ.get("STEEL_ARTEFACT_SEED_ROOT") or "").strip()
 ARTEFACT_SEED_ROOT: Optional[Path] = (
     Path(_seed).expanduser().resolve() if _seed else None
