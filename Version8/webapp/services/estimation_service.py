@@ -1,7 +1,7 @@
 """
-Phase UI.1 / D.5.3 — Estimation service wrapper.
+Phase UI.1 / D.5.4 — Estimation service wrapper.
 Invokes existing Version8 production runners without modifying engineering logic.
-MODEL_VERSION: 8.9.2
+MODEL_VERSION: 8.9.3
 """
 from __future__ import annotations
 
@@ -30,6 +30,7 @@ from config import (
     PRODUCTION_STAGES,
     R21C_FACTS_REL,
     R21D_FACTS_REL,
+    R3_CONTEXTS_REL,
     R2A_GN_POINTER,
     UPLOAD_ROOT,
     V8_ROOT,
@@ -273,6 +274,14 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
                 "\n".join(err_tail.splitlines()[-40:]),
             )
         # Soft-success when expected stage artefacts were written
+        if stage["id"] == "R3":
+            contexts = staging / R3_CONTEXTS_REL
+            if contexts.exists():
+                logger.warning(
+                    "Stage R3 exit=%s with GeometryContexts present — soft success",
+                    proc.returncode,
+                )
+                return
         if stage["id"] == "L22":
             reg = staging / L22_REGISTRY_REL
             if reg.exists():
@@ -323,6 +332,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
 
         facts = staging / R21D_FACTS_REL
         registry = staging / L22_REGISTRY_REL
+        contexts = staging / R3_CONTEXTS_REL
         if not facts.exists():
             raise EstimationError(
                 "Pipeline completed but EngineeringFacts.json was not generated "
@@ -330,8 +340,13 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             )
         if not registry.exists():
             raise EstimationError(
-                "Geometry registry stage completed but geometry_registry.json "
-                f"was not generated at {registry}."
+                "Pipeline completed but geometry_registry.json was not generated "
+                f"at {registry}."
+            )
+        if not contexts.exists():
+            raise EstimationError(
+                "Geometry Context Engine completed but GeometryContexts.json "
+                f"was not generated at {contexts}."
             )
 
         duration = round(time.perf_counter() - t0, 2)
@@ -339,7 +354,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             run_id,
             status="success",
             message=(
-                "Geometry registry completed (through L.2.2). "
+                "Geometry Context Engine completed (through R.3). "
                 "Excel workbook generation arrives in a later phase."
             ),
             workbook_name=None,
@@ -347,10 +362,11 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             duration_s=duration,
         )
         logger.info(
-            "D.5.3 L.2.2 complete run_id=%s facts=%s registry=%s duration_s=%s",
+            "D.5.4 R.3 complete run_id=%s facts=%s registry=%s contexts=%s duration_s=%s",
             run_id,
             facts,
             registry,
+            contexts,
             duration,
         )
     except subprocess.TimeoutExpired:

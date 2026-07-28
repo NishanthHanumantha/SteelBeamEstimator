@@ -1,5 +1,28 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.4 — Web-enable R.3 Geometry Context Engine (2026-07-28)
+
+### Added
+
+- Run-scoped Phase R.3 via `RunContext` / `PHASE_R3`
+- Production stages extended through R.3 (stop; R.3.1 / Excel deferred)
+- Success artefact: `PhaseR3_geometry_context_engine/GeometryContexts.json`
+
+### Changed
+
+- R.3 I/O only — geometry context engineering logic unchanged
+- Removed `_find_output()`, `version7_root`, shared workbook search from R.3
+
+### MODEL_VERSION
+
+`8.9.3`
+
+### Docs
+
+See [Phase_D.5.4_Web_Pipeline_Completion.md](Phase_D.5.4_Web_Pipeline_Completion.md)
+
+---
+
 ## D.5.3 — Web-enable L.2.2 Geometry Registry (2026-07-28)
 
 ### Added

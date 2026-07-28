@@ -1,6 +1,6 @@
 """
-Phase UI.1 / D.5.3 — Flask web application configuration.
-MODEL_VERSION: 8.9.2
+Phase UI.1 / D.5.4 — Flask web application configuration.
+MODEL_VERSION: 8.9.3
 """
 from __future__ import annotations
 
@@ -23,8 +23,8 @@ MAX_CONTENT_LENGTH = int(os.environ.get("STEEL_WEB_MAX_UPLOAD_MB", "256")) * 102
 ALLOWED_EXTENSIONS = {".dxf"}
 SECRET_KEY = os.environ.get("STEEL_WEB_SECRET_KEY", "steel-beam-estimation-ui1-dev")
 
-# D.5.3 production pipeline — Geometry Registry (stops after L.2.2).
-# R.3 / Excel deferred to later milestones.
+# D.5.4 production pipeline — Geometry Context Engine (stops after R.3).
+# R.3.1 / Excel deferred to later milestones.
 PRODUCTION_STAGES = [
     {
         "id": "VROOT1",
@@ -75,6 +75,13 @@ PRODUCTION_STAGES = [
         "uses_input_folder": False,
         "timeout_s": 300,
     },
+    {
+        "id": "R3",
+        "label": "Building geometry context...",
+        "script": "Run_PY/run_phase_r3_geometry_context_engine.py",
+        "uses_input_folder": False,
+        "timeout_s": 900,
+    },
 ]
 
 # Excel deferred until later phases re-enable VB.1
@@ -88,6 +95,9 @@ R21D_FACTS_REL = (
 )
 L22_REGISTRY_REL = (
     "data/output/PhaseL.2.2_geometry_recovery/geometry_registry.json"
+)
+R3_CONTEXTS_REL = (
+    "data/output/PhaseR3_geometry_context_engine/GeometryContexts.json"
 )
 
 # Path used by existing R.2A factory discovery (do not change engineering code).
