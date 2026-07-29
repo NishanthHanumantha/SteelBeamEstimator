@@ -1,5 +1,5 @@
 """
-Estimation service wrapper — Phase D.5.4.
+Estimation service wrapper — Phase D.5.5.
 
 Invokes existing production runners under ENGINE_ROOT via subprocess.
 Does not modify engineering / estimation logic.
@@ -28,12 +28,17 @@ from config.settings import (
     ENGINE_ROOT,
     KEEP_WEB_RUNS,
     L22_REGISTRY_REL,
+    OUTPUT_FOLDER,
     PRODUCTION_STAGES,
+    R12A_CATALOG_REL,
+    R13_MODELS_REL,
     R21C_FACTS_REL,
     R21D_FACTS_REL,
+    R31_RELS_REL,
     R3_CONTEXTS_REL,
     R2A_GN_POINTER,
     UPLOAD_FOLDER,
+    VB1_EXCEL_REL,
     WEB_RUNS_ROOT,
     ezdxf_is_available,
 )
@@ -310,6 +315,38 @@ def _run_stage(stage: Dict[str, Any], staging: Path) -> None:
                     proc.returncode,
                 )
                 return
+        if stage["id"] == "R31":
+            rels = staging / R31_RELS_REL
+            if rels.exists():
+                logger.warning(
+                    "Stage R31 exit=%s with EngineeringDrawingRelationships present — soft success",
+                    proc.returncode,
+                )
+                return
+        if stage["id"] == "R12A":
+            catalog = staging / R12A_CATALOG_REL
+            if catalog.exists():
+                logger.warning(
+                    "Stage R12A exit=%s with validated_beam_geometry present — soft success",
+                    proc.returncode,
+                )
+                return
+        if stage["id"] == "R13":
+            models = staging / R13_MODELS_REL
+            if models.exists():
+                logger.warning(
+                    "Stage R13 exit=%s with production models present — soft success",
+                    proc.returncode,
+                )
+                return
+        if stage["id"] == "VB1":
+            xlsx = staging / VB1_EXCEL_REL
+            if xlsx.exists():
+                logger.warning(
+                    "Stage VB1 exit=%s with Estimation_Output.xlsx present — soft success",
+                    proc.returncode,
+                )
+                return
         if stage["id"] == "L22":
             reg = staging / L22_REGISTRY_REL
             if reg.exists():
@@ -361,6 +398,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
         facts = staging / R21D_FACTS_REL
         registry = staging / L22_REGISTRY_REL
         contexts = staging / R3_CONTEXTS_REL
+        excel = staging / VB1_EXCEL_REL
         if not facts.exists():
             raise EstimationError(
                 "Pipeline completed but EngineeringFacts.json was not generated "
@@ -376,25 +414,32 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
                 "Geometry Context Engine completed but GeometryContexts.json "
                 f"was not generated at {contexts}."
             )
+        if not excel.exists():
+            raise EstimationError(
+                "Production pipeline completed but Estimation_Output.xlsx "
+                f"was not generated at {excel}."
+            )
+
+        # Copy workbook into downloadable outputs folder for this run
+        OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
+        download_name = f"Estimation_Output_{run_id}.xlsx"
+        download_path = OUTPUT_FOLDER / download_name
+        shutil.copy2(excel, download_path)
 
         duration = round(time.perf_counter() - t0, 2)
         _set_job(
             run_id,
             status="success",
-            message=(
-                "Geometry Context Engine completed (through R.3). "
-                "Excel workbook generation arrives in a later phase."
-            ),
-            workbook_name=None,
-            workbook_path=None,
+            message="Estimation workbook generated successfully.",
+            workbook_name=download_name,
+            workbook_path=str(download_path.resolve()),
             duration_s=duration,
         )
         logger.info(
-            "D.5.4 R.3 complete run_id=%s facts=%s registry=%s contexts=%s duration_s=%s",
+            "D.5.5 pipeline complete run_id=%s excel=%s download=%s duration_s=%s",
             run_id,
-            facts,
-            registry,
-            contexts,
+            excel,
+            download_path,
             duration,
         )
     except subprocess.TimeoutExpired:

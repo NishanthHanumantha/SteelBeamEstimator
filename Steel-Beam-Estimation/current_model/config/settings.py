@@ -129,9 +129,20 @@ L22_REGISTRY_REL = (
 R3_CONTEXTS_REL = (
     "data/output/PhaseR3_geometry_context_engine/GeometryContexts.json"
 )
+R31_RELS_REL = (
+    "data/output/PhaseR3.1_engineering_relationship_engine/"
+    "EngineeringDrawingRelationships.json"
+)
+R12A_CATALOG_REL = (
+    "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
+)
+R13_MODELS_REL = (
+    "data/output/PhaseR1.3_pipeline_integration/"
+    "beam_reinforcement_models_production.json"
+)
+VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
 
-# D.5.4 production pipeline — stops after Geometry Context Engine (R.3).
-# R.3.1 / Excel deferred.
+# D.5.5 production pipeline — upload through Excel (VB.1).
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {
         "id": "VROOT1",
@@ -186,6 +197,34 @@ PRODUCTION_STAGES: List[Dict[str, Any]] = [
         "id": "R3",
         "label": "Building geometry context...",
         "script": "Run_PY/run_phase_r3_geometry_context_engine.py",
+        "uses_input_folder": False,
+        "timeout_s": 900,
+    },
+    {
+        "id": "R31",
+        "label": "Building drawing relationships...",
+        "script": "Run_PY/run_phase_r31_engineering_relationship_engine.py",
+        "uses_input_folder": False,
+        "timeout_s": 900,
+    },
+    {
+        "id": "R12A",
+        "label": "Resolving beam geometry...",
+        "script": "Run_PY/run_phase_r12a_geometry_accuracy.py",
+        "uses_input_folder": False,
+        "timeout_s": 600,
+    },
+    {
+        "id": "R13",
+        "label": "Integrating reinforcement models...",
+        "script": "Run_PY/run_phase_r13_pipeline_integration.py",
+        "uses_input_folder": False,
+        "timeout_s": 1200,
+    },
+    {
+        "id": "VB1",
+        "label": "Generating estimation workbook...",
+        "script": "Run_PY/run_phase_vb1_production_output_completion.py",
         "uses_input_folder": False,
         "timeout_s": 900,
     },

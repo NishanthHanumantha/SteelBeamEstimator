@@ -1,6 +1,7 @@
 """Build EngineeringBarModel from R.1 reinforcement discovery."""
 from __future__ import annotations
 import json
+import os
 import pathlib
 import re
 import uuid
@@ -57,6 +58,18 @@ class EngineeringBarBuilder:
         self._details_by_beam: Dict[str, list] = {}
         self._piece_payload: Dict[str, Any] = {}
         self._pieces_by_beam: Dict[str, list] = {}
+
+    def _engine_and_run(self) -> Tuple[pathlib.Path, pathlib.Path]:
+        """engine_root for src packages; run_root for data/output (RunContext)."""
+        run_root = self._registry_path.parents[3]
+        env = (os.environ.get("STEEL_ENGINE_ROOT") or "").strip()
+        if env:
+            engine = pathlib.Path(env).expanduser().resolve()
+        elif (run_root / "src").is_dir():
+            engine = run_root
+        else:
+            engine = pathlib.Path(__file__).resolve().parents[2]
+        return engine, run_root
 
     def build_all(self) -> Tuple[List[BeamEngineeringModel], Dict[str, Any]]:
         r1_data = json.loads(self._r1_path.read_text(encoding="utf-8"))
@@ -172,8 +185,8 @@ class EngineeringBarBuilder:
             import sys
             import types
 
-            v7 = self._registry_path.parents[3]
-            pkg_dir = v7 / "src/PhaseR1_2C_engineering_intent_resolution"
+            engine_root, run_root = self._engine_and_run()
+            pkg_dir = engine_root / "src/PhaseR1_2C_engineering_intent_resolution"
             if not pkg_dir.exists():
                 return {}, {}
             pkg_name = "PhaseR12C"
@@ -202,7 +215,7 @@ class EngineeringBarBuilder:
             Engine = sys.modules[
                 f"{pkg_name}.engineering_intent_resolution_engine"
             ].EngineeringIntentResolutionEngine
-            engine = Engine(v7)
+            engine = Engine(run_root)
             intents, payload = engine.resolve_all(beam_ids)
             by_beam: Dict[str, list] = {}
             for it in intents:
@@ -222,8 +235,8 @@ class EngineeringBarBuilder:
             import sys
             import types
 
-            v7 = self._registry_path.parents[3]
-            pkg_dir = v7 / "src/PhaseR1_2D_reinforcement_detailing"
+            engine_root, run_root = self._engine_and_run()
+            pkg_dir = engine_root / "src/PhaseR1_2D_reinforcement_detailing"
             if not pkg_dir.exists():
                 return {}, {}
             pkg_name = "PhaseR12D"
@@ -259,7 +272,7 @@ class EngineeringBarBuilder:
             Engine = sys.modules[
                 f"{pkg_name}.reinforcement_detail_engine"
             ].ReinforcementDetailEngine
-            engine = Engine(v7, self._ctx)
+            engine = Engine(run_root, self._ctx)
             return engine.build_from_intents_by_beam(intents_by_beam)
         except Exception as exc:
             return {}, {"status": "SKIPPED", "error": str(exc)}
@@ -275,8 +288,8 @@ class EngineeringBarBuilder:
             import sys
             import types
 
-            v7 = self._registry_path.parents[3]
-            pkg_dir = v7 / "src/PhaseR1_3_reinforcement_piece_generation"
+            engine_root, run_root = self._engine_and_run()
+            pkg_dir = engine_root / "src/PhaseR1_3_reinforcement_piece_generation"
             if not pkg_dir.exists():
                 return {}, {}
             pkg_name = "PhaseR13Piece"
@@ -307,7 +320,7 @@ class EngineeringBarBuilder:
                 spec.loader.exec_module(mod)
 
             Builder = sys.modules[f"{pkg_name}.piece_builder"].PieceBuilder
-            return Builder(v7, self._ctx).build_by_beam(details_by_beam)
+            return Builder(run_root, self._ctx).build_by_beam(details_by_beam)
         except Exception as exc:
             return {}, {"status": "SKIPPED", "error": str(exc)}
 
@@ -496,17 +509,11 @@ class EngineeringBarBuilder:
     def _load_geometry_catalog(self) -> Dict[str, Any]:
         """Load validated geometry from GeometryProvider if available."""
         try:
-            v7 = self._registry_path.parents[3]  # .../Version8
+            _, run_root = self._engine_and_run()
             catalog = (
-                v7 / "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
+                run_root
+                / "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
             )
-            if not catalog.exists():
-                # registry path is Version8/data/output/PhaseVROOT.../beam_registry.json
-                # parents[2] = Version8/data, parents[3] = Version8 — verify
-                alt = self._r1_path.parents[3] / (
-                    "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
-                )
-                catalog = alt if alt.exists() else catalog
             if not catalog.exists():
                 return {}
             data = json.loads(catalog.read_text(encoding="utf-8"))

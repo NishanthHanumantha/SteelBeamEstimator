@@ -20,8 +20,9 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 | **D.5.1** | Per-run web pipeline (R.2.1B + R.2.1C) | Complete |
 | **D.5.2** | Web-enable R.2.1D (Evidence & Hypothesis) | Complete |
 | **D.5.3** | Web-enable L.2.2 (Geometry Registry) | Complete |
-| **D.5.4** | Web-enable R.3 (Geometry Context) | **Complete** |
-| D.5.5+ | R.3.1 / downstream / Excel | Planned |
+| **D.5.4** | Web-enable R.3 (Geometry Context) | Complete |
+| **D.5.5** | Downstream through Excel (R.3.1→VB.1) | **Complete** |
+| D.5.6 | Production validation & cleanup | Planned |
 | D.5+ | Lightsail TLS cutover | Planned |
 
 ---

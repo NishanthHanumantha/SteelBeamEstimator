@@ -1,5 +1,5 @@
 """
-Flask-facing config re-exports (Phase D.5.4).
+Flask-facing config re-exports (Phase D.5.5).
 
 Canonical settings live in config.settings — keep this module thin.
 """
@@ -30,6 +30,10 @@ R21C_FACTS_REL = _settings.R21C_FACTS_REL
 R21D_FACTS_REL = _settings.R21D_FACTS_REL
 L22_REGISTRY_REL = _settings.L22_REGISTRY_REL
 R3_CONTEXTS_REL = _settings.R3_CONTEXTS_REL
+R31_RELS_REL = _settings.R31_RELS_REL
+R12A_CATALOG_REL = _settings.R12A_CATALOG_REL
+R13_MODELS_REL = _settings.R13_MODELS_REL
+VB1_EXCEL_REL = _settings.VB1_EXCEL_REL
 ARTEFACT_SEED_ROOT = _settings.ARTEFACT_SEED_ROOT
 HOST = _settings.HOST
 PORT = _settings.PORT

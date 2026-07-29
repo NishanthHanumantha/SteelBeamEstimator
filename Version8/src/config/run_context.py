@@ -1,7 +1,7 @@
 """
-Run context for web / offline pipeline execution (Phase D.5.1–D.5.4).
+Run context for web / offline pipeline execution (Phase D.5.1–D.5.5).
 
-MODEL_VERSION: 8.9.3
+MODEL_VERSION: 8.9.4
 
 Every production stage should resolve paths through RunContext instead of
 hardcoding Version8/data/output or Benchmark_Set_* folders.
@@ -32,6 +32,10 @@ PHASE_R21C = "PhaseR2.1C_engineering_fact_normalization"
 PHASE_R21D = "PhaseR2.1D_evidence_hypothesis_engine"
 PHASE_L22 = "PhaseL.2.2_geometry_recovery"
 PHASE_R3 = "PhaseR3_geometry_context_engine"
+PHASE_R31 = "PhaseR3.1_engineering_relationship_engine"
+PHASE_R12A = "PhaseR1_2A_geometry_accuracy"
+PHASE_R13 = "PhaseR1.3_pipeline_integration"
+PHASE_VB1 = "Production_Output"
 
 
 @dataclass(frozen=True)

@@ -76,8 +76,8 @@ except Exception:
     parse_engineering_context = None
     _R2A_AVAILABLE = False
 
-_BASE = pathlib.Path(__file__).parents[3]
-_V6 = _BASE / "Version8"
+# Offline defaults only (engine_root = Version8/); runners pass explicit paths.
+_V6 = pathlib.Path(__file__).resolve().parents[2]  # Version8/
 
 _L2_MODEL_PATH = (
     _V6 / "data/output/PhaseL.2 - engineering_reinforcement_interpretation"
@@ -114,12 +114,15 @@ class PhaseVB1Orchestrator:
         l2_path: Optional[pathlib.Path] = None,
         loader=None,
         v7_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
         use_r13_integration: bool = True,
         use_r14_validation: bool = True,
     ) -> None:
+        # v7_root = engine_root (src packages); run_root = data/output host
+        self._v7_root = v7_root or _V6
+        self._run_root = pathlib.Path(run_root) if run_root is not None else self._v7_root
         self.output_dir = output_dir or _OUTPUT_DIR
-        self._v7_root   = v7_root or _V6
-        self._loader    = loader
+        self._loader = loader
         if self._loader is None and _R2A_AVAILABLE and parse_engineering_context:
             self._loader, _, _ = parse_engineering_context(self._v7_root)
         self._reinforcement_source = "REFERENCE_CLASSIFICATION_LEGACY"
@@ -167,7 +170,12 @@ class PhaseVB1Orchestrator:
 
             rewire = sys.modules[
                 "PhaseR13.production_pipeline_rewire"
-            ].ProductionPipelineRewire(self._v7_root, auto_build=True)
+            ].ProductionPipelineRewire(
+                self._v7_root,
+                auto_build=True,
+                engine_root=self._v7_root,
+                run_root=self._run_root,
+            )
             path, source = rewire.resolve_models_path()
             print(f"      Reinforcement source: {source}")
             print(f"      Models path: {path.name}")
@@ -211,9 +219,8 @@ class PhaseVB1Orchestrator:
             "PhaseR14.phase_r14_orchestrator"
         ].PhaseR14Orchestrator
 
-        r14_out = (
-            self._v7_root / "data/output/PhaseR1.4_integrity_validation"
-        )
+        data_root = self._run_root or self._v7_root
+        r14_out = data_root / "data/output/PhaseR1.4_integrity_validation"
         orch = PhaseR14Orchestrator(
             v7_root=self._v7_root,
             output_dir=r14_out,

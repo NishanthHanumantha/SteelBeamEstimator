@@ -7,24 +7,26 @@
 6. R.2.1D       Evidence / hypotheses → EngineeringFacts (web-capable, D.5.2)
 7. L.2.2        geometry_registry (web-capable, D.5.3)
 8. R.3          Geometry context (web-capable, D.5.4)
---- stop (D.5.4) ---
-9. R.3.1 / R.1.2–R.1.3 / V.B.1  Downstream + Excel (later — D.5.5)
+9. R.3.1        Drawing relationships (web-capable, D.5.5)
+10. R.1.2A      Geometry catalog (web catalog-only, D.5.5)
+11. R.1.3       EngineeringBarModel integration (web build-only, D.5.5)
+12. V.B.1       Steel / BBS / Excel (web-capable, D.5.5)
 ```
 
-MODEL_VERSION: 8.9.3
+MODEL_VERSION: 8.9.4
 
-## Web production pipeline (D.5.4)
+## Web production pipeline (D.5.5)
 
 ```text
 Upload DXFs
   → Version8/data/web_runs/<run_id>/{general_notes,framing,reinforcement}/
   → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2 → R.3
-  → <run_id>/data/output/PhaseR2.1D_.../EngineeringFacts.json
-  → <run_id>/data/output/PhaseL.2.2_.../geometry_registry.json
-  → <run_id>/data/output/PhaseR3_geometry_context_engine/GeometryContexts.json
+  → R.3.1 → R.1.2A → R.1.3 → VB.1
+  → <run_id>/data/output/Production_Output/Estimation_Output.xlsx
+  → download Estimation_Output_<run_id>.xlsx
 ```
 
-All stage JSON is written under the **per-run** tree  
+All stage JSON / Excel is written under the **per-run** tree  
 `web_runs/<run_id>/data/output/<Phase...>/`  
 (not shared `Version8/data/output/` for web runs).
 
@@ -44,6 +46,10 @@ python Run_PY/run_phase_r21c_engineering_fact_normalization.py <run_root>
 python Run_PY/run_phase_r21d_evidence_hypothesis_engine.py <run_root>
 python Run_PY/run_phase_l2_2_geometry_recovery.py <run_root>
 python Run_PY/run_phase_r3_geometry_context_engine.py <run_root>
+python Run_PY/run_phase_r31_engineering_relationship_engine.py <run_root>
+python Run_PY/run_phase_r12a_geometry_accuracy.py <run_root>
+python Run_PY/run_phase_r13_pipeline_integration.py <run_root>
+python Run_PY/run_phase_vb1_production_output_completion.py <run_root>
 
 # Web application
 cd webapp
@@ -53,9 +59,9 @@ python app.py
 ## Architecture
 
 ```text
-Geometry Context Engine (D.5.4)
-  R.2.1D facts + L.2.2 registry (+ VROOT1/R1) → R.3 GeometryContexts (run-scoped)
+Full engineering pipeline (D.5.5)
+  Upload → … → R.3 → R.3.1 → R.1.2A → R.1.3 → VB.1 Excel (run-scoped)
 
-Later milestones
-  → R.3.1 → … → V.B.1 Excel
+Next milestone
+  D.5.6 — Lightsail E2E validation & cleanup
 ```

@@ -1,6 +1,6 @@
 """
 phase_r31_orchestrator.py — Master orchestrator for Phase R.3.1.
-MODEL_VERSION: 8.1.0
+MODEL_VERSION: 8.9.4
 
 Pipeline:
   1.  Load R.2.1D EngineeringFacts + R.3 GeometryContexts + BeamAxis + SupportLocations
@@ -20,18 +20,18 @@ Pipeline:
  15.  Export 12 artefacts
 
 Design invariant: Intent remains UNKNOWN throughout.
+
+I/O is run-scoped via RunContext (Phase D.5.4). Engineering logic unchanged.
 """
 from __future__ import annotations
 
 import json
 import pathlib
-from collections import defaultdict
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 import ezdxf
 
-from . import MODEL_VERSION, PHASE_ID
 from .annotation_relationship_builder import AnnotationRelationshipBuilder
 from .arrow_detector import ArrowDetector
 from .extent_builder import ExtentBuilder
@@ -46,18 +46,99 @@ from .relationship_statistics import RelationshipStatistics
 from .relationship_validator import RelationshipValidator
 from .support_crossing_builder import SupportCrossingBuilder
 
+MODEL_VERSION = "8.9.4"
+PHASE_ID = "R.3.1"
+
 _OUT_DIR_NAME = "PhaseR3.1_engineering_relationship_engine"
+_R21D_FACTS_REL = "PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json"
+_R3_AXIS_REL = "PhaseR3_geometry_context_engine/BeamAxis.json"
+_R3_SUP_REL = "PhaseR3_geometry_context_engine/SupportLocations.json"
+_R3_GEO_REL = "PhaseR3_geometry_context_engine/GeometryContexts.json"
+_R1_ANN_REL = "PhaseR.1_generalized_reinforcement_discovery/reinforcement_annotations.json"
+_VROOT1_BEAM_REL = "PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
 
 
 class PhaseR31Orchestrator:
 
-    def __init__(self, version7_root: pathlib.Path):
-        self._root    = pathlib.Path(version7_root)
-        self._out_dir = self._root / "data" / "output" / _OUT_DIR_NAME
+    def __init__(
+        self,
+        output_root: Optional[pathlib.Path] = None,
+        output_dir: Optional[pathlib.Path] = None,
+        facts_path: Optional[pathlib.Path] = None,
+        beam_axis_path: Optional[pathlib.Path] = None,
+        supports_path: Optional[pathlib.Path] = None,
+        geo_contexts_path: Optional[pathlib.Path] = None,
+        annotations_path: Optional[pathlib.Path] = None,
+        beam_registry_path: Optional[pathlib.Path] = None,
+        engine_root: Optional[pathlib.Path] = None,
+    ):
+        self._output_root = (
+            pathlib.Path(output_root)
+            if output_root
+            else (
+                pathlib.Path(engine_root) / "data" / "output"
+                if engine_root
+                else None
+            )
+        )
+        if self._output_root is None and any(
+            p is None
+            for p in (
+                facts_path,
+                beam_axis_path,
+                supports_path,
+                geo_contexts_path,
+                annotations_path,
+                beam_registry_path,
+                output_dir,
+            )
+        ):
+            raise ValueError(
+                "output_root/engine_root or explicit artefact paths + output_dir required"
+            )
+
+        self.facts_path = pathlib.Path(facts_path) if facts_path else (
+            self._output_root / _R21D_FACTS_REL
+        )
+        self.beam_axis_path = (
+            pathlib.Path(beam_axis_path)
+            if beam_axis_path
+            else self._output_root / _R3_AXIS_REL
+        )
+        self.supports_path = (
+            pathlib.Path(supports_path)
+            if supports_path
+            else self._output_root / _R3_SUP_REL
+        )
+        self.geo_contexts_path = (
+            pathlib.Path(geo_contexts_path)
+            if geo_contexts_path
+            else self._output_root / _R3_GEO_REL
+        )
+        self.annotations_path = (
+            pathlib.Path(annotations_path)
+            if annotations_path
+            else self._output_root / _R1_ANN_REL
+        )
+        self.beam_registry_path = (
+            pathlib.Path(beam_registry_path)
+            if beam_registry_path
+            else self._output_root / _VROOT1_BEAM_REL
+        )
+        self._out_dir = (
+            pathlib.Path(output_dir)
+            if output_dir
+            else self._output_root / _OUT_DIR_NAME
+        )
+        # run_root ≈ output_root/../..  (…/<run>/data/output → <run>)
+        self._run_root: Optional[pathlib.Path] = None
+        if self._output_root is not None and len(self._output_root.parents) >= 2:
+            self._run_root = self._output_root.parents[1]
 
     def run(self) -> Dict[str, Any]:
         print(f"[R.3.1] Phase R.3.1 — Engineering Drawing Relationship Engine  (MODEL_VERSION: {MODEL_VERSION})")
-        print(f"[R.3.1] Root: {self._root}")
+        print(f"[R.3.1] output_root: {self._output_root}")
+        print(f"[R.3.1] output_dir: {self._out_dir}")
 
         # ── 1. Load inputs ─────────────────────────────────────────────────────
         facts_list   = self._load_facts()
@@ -154,7 +235,7 @@ class PhaseR31Orchestrator:
         print(f"[R.3.1]   Relationships built: {len(relationships)}")
 
         # ── 12. Validation ────────────────────────────────────────────────────
-        prod_wb    = self._find_production_workbook()
+        # Excel is owned by VB.1 under RunContext — do not search shared dirs
         validator  = RelationshipValidator()
         validation = validator.validate(
             relationships     = relationships,
@@ -162,7 +243,7 @@ class PhaseR31Orchestrator:
             leaders           = leaders,
             arrows            = arrows,
             r21d_facts        = facts_list,
-            production_workbook = prod_wb,
+            production_workbook = None,
             graph_exported    = False,  # will be set True after export
         )
         print(f"[R.3.1] Validation: {validation['summary']}")
@@ -226,27 +307,28 @@ class PhaseR31Orchestrator:
             "statistics":      stats,
             "output_dir":      str(self._out_dir),
             "artefacts":       {k: str(v) for k, v in paths.items()},
+            "success": bool((self._out_dir / "EngineeringDrawingRelationships.json").exists()),
         }
 
     # ── Loaders ───────────────────────────────────────────────────────────────
 
     def _load_facts(self) -> List[Dict]:
-        p = self._find_output("PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json")
+        p = self._require(self.facts_path, "R.2.1D EngineeringFacts.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         return raw.get("all") or raw.get("facts") or (raw if isinstance(raw, list) else [])
 
     def _load_beam_axes(self) -> Dict[str, Any]:
-        p = self._find_output("PhaseR3_geometry_context_engine/BeamAxis.json")
+        p = self._require(self.beam_axis_path, "R.3 BeamAxis.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         return raw.get("axes") or {}
 
     def _load_supports(self) -> Dict[str, List[Dict]]:
-        p = self._find_output("PhaseR3_geometry_context_engine/SupportLocations.json")
+        p = self._require(self.supports_path, "R.3 SupportLocations.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         return raw.get("supports") or {}
 
     def _load_geo_contexts(self) -> Dict[str, Any]:
-        p = self._find_output("PhaseR3_geometry_context_engine/GeometryContexts.json")
+        p = self._require(self.geo_contexts_path, "R.3 GeometryContexts.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         by_beam = raw.get("contexts_by_beam") or {}
         result = {}
@@ -258,9 +340,7 @@ class PhaseR31Orchestrator:
         return result
 
     def _load_annotations(self) -> Dict[str, Any]:
-        p = self._find_output(
-            "PhaseR.1_generalized_reinforcement_discovery/reinforcement_annotations.json"
-        )
+        p = self._require(self.annotations_path, "R.1 reinforcement_annotations.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         by_beam = raw.get("by_beam") or {}
         result = {}
@@ -272,41 +352,42 @@ class PhaseR31Orchestrator:
         return result
 
     def _load_beam_registry(self) -> Dict[str, Any]:
-        p = self._find_output(
-            "PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
-        )
+        p = self._require(self.beam_registry_path, "VROOT1 beam_registry.json")
         raw = json.loads(p.read_text(encoding="utf-8"))
         return raw.get("beams") or {}
 
     def _find_dxf(self) -> pathlib.Path:
-        """Find the DXF drawing file dynamically from beam_registry."""
-        reg_path = self._find_output(
-            "PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
-        )
+        """Resolve DXF from beam_registry drawing_path; fallback under run_root only."""
+        reg_path = self._require(self.beam_registry_path, "VROOT1 beam_registry.json")
         reg = json.loads(reg_path.read_text(encoding="utf-8"))
         dxf_str = reg.get("drawing_path") or ""
         if dxf_str:
             dxf_p = pathlib.Path(dxf_str)
             if dxf_p.exists():
                 return dxf_p
-        # Fallback: search
-        for hit in self._root.rglob("*.dxf"):
+
+        # Fallback: search ONLY under run_root (never engine-wide / Version7 / Benchmark)
+        search_root = self._run_root
+        if search_root is None and self._output_root is not None:
+            if len(self._output_root.parents) >= 2:
+                search_root = self._output_root.parents[1]
+            else:
+                search_root = self._output_root
+        if search_root is None:
+            raise FileNotFoundError(
+                "[R.3.1] No DXF file found (no drawing_path and no run_root/output_root to search)"
+            )
+        for hit in search_root.rglob("*.dxf"):
             return hit
-        raise FileNotFoundError("[R.3.1] No DXF file found")
+        raise FileNotFoundError(
+            f"[R.3.1] No DXF file found under run search root: {search_root}"
+        )
 
-    def _find_output(self, rel: str) -> pathlib.Path:
-        p = self._root / "data" / "output" / rel
-        if not p.exists():
-            raise FileNotFoundError(f"[R.3.1] Required file not found: {p}")
-        return p
-
-    def _find_production_workbook(self) -> Optional[pathlib.Path]:
-        for d in [
-            self._root / "data" / "output" / "Production_Output",
-            self._root / "data" / "output" / "PhaseR.1.1_production_validation",
-        ]:
-            if d.exists():
-                hits = list(d.glob("*.xlsx"))
-                if hits:
-                    return hits[0]
-        return None
+    @staticmethod
+    def _require(path: pathlib.Path, label: str) -> pathlib.Path:
+        if not path.exists():
+            raise FileNotFoundError(
+                f"[R.3.1] Required {label} not found: {path}\n"
+                "Ensure prior phases wrote artefacts under this run's output_root."
+            )
+        return path

@@ -1,6 +1,6 @@
 """
 PhaseR3.1 — Engineering Drawing Relationship Engine
-MODEL_VERSION: 8.1.0
+MODEL_VERSION: 8.9.4
 
 Bridges the remaining gap between Geometry Context (R.3) and
 Engineering Intent Resolution (R.4).
@@ -32,7 +32,7 @@ Pipeline position:
   R.4 Engineering Intent Resolver (future)
 """
 
-MODEL_VERSION = "8.1.0"
+MODEL_VERSION = "8.9.4"
 PHASE_ID      = "R.3.1"
 
 # DXF layer constants (drawing-convention, not beam-specific)

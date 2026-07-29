@@ -3,14 +3,31 @@ from __future__ import annotations
 
 import json
 import pathlib
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 class GeometryReportExporter:
 
-    def __init__(self, v7_root: pathlib.Path):
-        self._out = v7_root / "data/output/PhaseR1_2A_geometry_accuracy"
+    def __init__(
+        self,
+        v7_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
+    ):
+        if output_root is not None:
+            out_base = pathlib.Path(output_root)
+        elif run_root is not None:
+            out_base = pathlib.Path(run_root) / "data" / "output"
+        elif v7_root is not None:
+            out_base = pathlib.Path(v7_root) / "data" / "output"
+        else:
+            raise ValueError("output_root, run_root, or v7_root required")
+        self._out = out_base / "PhaseR1_2A_geometry_accuracy"
         self._out.mkdir(parents=True, exist_ok=True)
+
+    @property
+    def output_dir(self) -> pathlib.Path:
+        return self._out
 
     def export_all(self, result: Dict[str, Any], report_md: str) -> Dict[str, str]:
         written = {}
@@ -35,6 +52,28 @@ class GeometryReportExporter:
         written["geometry_accuracy_report.md"] = str(md_path)
         return written
 
+    def export_stubs(self, provider_summary: Optional[Dict[str, Any]] = None) -> Dict[str, str]:
+        """Minimal artefacts for catalog-only production path."""
+        stub_result: Dict[str, Any] = {
+            "trace": {},
+            "provider_summary": provider_summary or {},
+            "source_validation": {},
+            "propagation_audit": {},
+            "consistency": {},
+            "span_validation": {},
+            "cut_validation": {},
+            "bbs_validation": {},
+            "regression": {"summary": "catalog_only — forensic validators skipped"},
+            "validation": {"passed": 0, "total": 0, "rules": []},
+            "recommendation": "A",
+        }
+        report_md = (
+            "# Phase R.1.2A — Geometry Accuracy (catalog-only)\n\n"
+            "**MODE:** catalog_only — GeometryProvider resolve + validated_beam_geometry.json\n"
+            "Forensic rebuild / validators skipped (web + offline production path).\n"
+        )
+        return self.export_all(stub_result, report_md)
+
     def generate_report(self, result: Dict[str, Any]) -> str:
         val = result.get("validation", {})
         cons = result.get("consistency", {})
@@ -48,7 +87,7 @@ class GeometryReportExporter:
         lines = [
             "# Phase R.1.2A — Geometry Accuracy & Span Propagation Engine",
             "",
-            "**MODEL_VERSION:** 8.3.0",
+            "**MODEL_VERSION:** 8.9.4",
             f"**Validation:** {val.get('passed', 0)}/{val.get('total', 8)} rules passed",
             "",
             "## 1. Executive Summary",
@@ -134,7 +173,7 @@ class GeometryReportExporter:
             "",
             "## 11. Exported Artefacts",
             "",
-            "All artefacts under `Version8/data/output/PhaseR1_2A_geometry_accuracy/`",
+            "All artefacts under `PhaseR1_2A_geometry_accuracy/` (output_root)",
             "",
             "## 12. Validation Summary",
             "",

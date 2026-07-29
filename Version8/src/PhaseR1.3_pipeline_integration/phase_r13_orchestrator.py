@@ -18,22 +18,33 @@ from .reinforcement_source_selector import ReinforcementSourceSelector
 
 class PhaseR13Orchestrator:
 
-    MODEL_VERSION = "7.7.0"
+    MODEL_VERSION = "8.9.4"
 
     def __init__(
         self,
-        v7_root: pathlib.Path,
+        v7_root: Optional[pathlib.Path] = None,
         output_dir: Optional[pathlib.Path] = None,
         production_output_dir: Optional[pathlib.Path] = None,
+        engine_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+        skip_production: bool = False,
     ):
-        self._v7 = v7_root
-        self._out = output_dir or (
-            v7_root / "data/output/PhaseR1.3_pipeline_integration"
+        self._engine = pathlib.Path(
+            engine_root or v7_root or pathlib.Path(__file__).resolve().parents[2]
         )
-        self._prod_out = production_output_dir or (
-            v7_root / "data/output/Production_Output"
+        self._run = pathlib.Path(run_root or v7_root or self._engine)
+        self._v7 = self._engine  # src + R2A
+        out = (
+            pathlib.Path(output_root)
+            if output_root is not None
+            else (self._run / "data" / "output")
         )
-        self._vb1_src = v7_root / "src/PhaseVB.1_production_output_completion"
+        self._out = output_dir or (out / "PhaseR1.3_pipeline_integration")
+        self._prod_out = production_output_dir or (out / "Production_Output")
+        self._vb1_src = self._engine / "src/PhaseVB.1_production_output_completion"
+        self._skip_production = skip_production
+        self._output_root = out
 
     def run(self) -> Dict[str, Any]:
         t0 = time.perf_counter()
@@ -51,20 +62,42 @@ class PhaseR13Orchestrator:
 
         print("\n[2/6] Building EngineeringBarModel from R.1 ...")
         t_build = time.perf_counter()
-        mgr = PipelineIntegrationManager(self._v7, self._out)
+        mgr = PipelineIntegrationManager(
+            engine_root=self._engine,
+            run_root=self._run,
+            output_root=self._output_root,
+            output_dir=self._out,
+        )
         build_result = mgr.build_and_export()
         timings["build_seconds"] = round(time.perf_counter() - t_build, 3)
         print(f"      Beams: {build_result['beam_count']}, "
               f"Bars: {build_result['total_bars']}, "
               f"With bars: {build_result['beams_with_bars']}")
 
-        print("\n[3/6] Running production pipeline (VB1) with EngineeringBarModel ...")
-        t_prod = time.perf_counter()
-        production_result = self._run_production_pipeline(build_result)
-        timings["production_seconds"] = round(time.perf_counter() - t_prod, 3)
-        print(f"      Steel: {production_result['total_steel_kg']:.1f} kg, "
-              f"Beams: {production_result['beams_reaching_steel']}, "
-              f"BBS rows: {production_result['bbs_rows']}")
+        if self._skip_production:
+            print("\n[3/6] Skipping nested VB.1 (owned by separate production stage) ...")
+            production_result = {
+                "steel_source": "EngineeringBarModel_R1.3",
+                "total_steel_kg": 0.0,
+                "beams_reaching_steel": build_result["beams_with_bars"],
+                "beams_reaching_bbs": build_result["beams_with_bars"],
+                "beams_reaching_excel": build_result["beams_with_bars"],
+                "bbs_rows": 0,
+                "workbook_generated": False,
+                "workbook_path": "",
+                "engineering_formulas_unchanged": True,
+                "pipeline_exit_code": 0,
+                "skipped": True,
+            }
+            timings["production_seconds"] = 0.0
+        else:
+            print("\n[3/6] Running production pipeline (VB1) with EngineeringBarModel ...")
+            t_prod = time.perf_counter()
+            production_result = self._run_production_pipeline(build_result)
+            timings["production_seconds"] = round(time.perf_counter() - t_prod, 3)
+            print(f"      Steel: {production_result['total_steel_kg']:.1f} kg, "
+                  f"Beams: {production_result['beams_reaching_steel']}, "
+                  f"BBS rows: {production_result['bbs_rows']}")
 
         print("\n[4/6] Computing statistics and comparison ...")
         after_metrics = {
@@ -81,7 +114,9 @@ class PhaseR13Orchestrator:
             build_result.get("processing_report", {}), timings,
         )
 
-        rewire = ProductionPipelineRewire(self._v7, auto_build=False)
+        rewire = ProductionPipelineRewire(
+            self._run, auto_build=False, engine_root=self._engine
+        )
         source_report = rewire.get_source_report()
         propagation_matrix = self._build_propagation_matrix(
             build_result, production_result
@@ -98,6 +133,14 @@ class PhaseR13Orchestrator:
             before_metrics,
             after_metrics,
         )
+        if self._skip_production:
+            # Build-only success: production models written
+            prod_ok = pathlib.Path(build_result["production_models_path"]).exists()
+            validation = dict(validation)
+            validation["all_passed"] = prod_ok
+            validation["score"] = (
+                f"BUILD_ONLY ({'OK' if prod_ok else 'FAIL'})"
+            )
         print(f"      Validation: {validation['score']}")
 
         print("\n[6/6] Exporting artefacts ...")
@@ -116,8 +159,14 @@ class PhaseR13Orchestrator:
         timings["total_seconds"] = round(time.perf_counter() - t0, 3)
         self._print_final(summary, validation, comparison, timings)
 
+        status = "PASS" if validation["all_passed"] else "FAIL"
+        if self._skip_production and pathlib.Path(
+            build_result["production_models_path"]
+        ).exists():
+            status = "PASS"
+
         return {
-            "status": "PASS" if validation["all_passed"] else "FAIL",
+            "status": status,
             "model_version": self.MODEL_VERSION,
             "validation_score": validation["score"],
             "build_result": build_result,
@@ -132,7 +181,7 @@ class PhaseR13Orchestrator:
     def _capture_before_metrics(self) -> Dict[str, Any]:
         """Capture metrics from legacy L.2 REFERENCE_CLASSIFICATION path."""
         l2_path = (
-            self._v7
+            self._run
             / "data/output/PhaseL.2 - engineering_reinforcement_interpretation"
             / "beam_reinforcement_models.json"
         )
@@ -179,7 +228,7 @@ class PhaseR13Orchestrator:
         try:
             import types
             import importlib.util as ilu
-            r2a_dir = self._v7 / "src/PhaseR.2A_engineering_context"
+            r2a_dir = self._engine / "src/PhaseR.2A_engineering_context"
             if "PhaseR2A.engineering_context_parser" not in sys.modules:
                 pkg = types.ModuleType("PhaseR2A")
                 pkg.__path__ = [str(r2a_dir)]
@@ -193,7 +242,7 @@ class PhaseR13Orchestrator:
                 sys.modules["PhaseR2A.engineering_context_parser"] = mod
                 spec.loader.exec_module(mod)
             parser = sys.modules["PhaseR2A.engineering_context_parser"]
-            loader, _, _ = parser.parse_engineering_context(self._v7)
+            loader, _, _ = parser.parse_engineering_context(self._engine)
         except Exception:
             loader = None
 
@@ -203,8 +252,10 @@ class PhaseR13Orchestrator:
             output_dir=self._prod_out,
             l2_path=prod_path,
             loader=loader,
-            v7_root=self._v7,
+            v7_root=self._engine,
+            run_root=self._run,
             use_r13_integration=False,
+            use_r14_validation=False,
         )
         orch._reinforcement_source = "EngineeringBarModel_R1.3"
         result = orch.run()

@@ -10,15 +10,29 @@ from .reinforcement_source_selector import ReinforcementSourceSelector
 class ProductionPipelineRewire:
     """Rewires VB1 to consume EngineeringBarModel instead of REFERENCE_CLASSIFICATION."""
 
-    def __init__(self, v7_root: pathlib.Path, auto_build: bool = True):
-        self._v7 = v7_root
-        self._selector = ReinforcementSourceSelector(v7_root)
+    def __init__(
+        self,
+        v7_root: pathlib.Path,
+        auto_build: bool = True,
+        engine_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+    ):
+        self._run = pathlib.Path(run_root or v7_root)
+        self._engine = pathlib.Path(engine_root or v7_root)
+        self._v7 = self._run  # data root for selector
+        self._selector = ReinforcementSourceSelector(
+            run_root=self._run, output_root=output_root
+        )
         self._auto_build = auto_build
 
     def resolve_models_path(self) -> Tuple[pathlib.Path, str]:
         if self._auto_build and not self._selector.engineering_bar_models_exist():
             if self._selector.r1_models_path().exists():
-                mgr = PipelineIntegrationManager(self._v7)
+                mgr = PipelineIntegrationManager(
+                    engine_root=self._engine,
+                    run_root=self._run,
+                )
                 mgr.build_and_export()
         return self._selector.select()
 

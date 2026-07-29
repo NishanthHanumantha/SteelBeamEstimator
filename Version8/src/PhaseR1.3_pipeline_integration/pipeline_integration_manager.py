@@ -26,12 +26,28 @@ class PipelineIntegrationManager:
 
     MODEL_VERSION = "8.5.0"
 
-    def __init__(self, v7_root: pathlib.Path, output_dir: Optional[pathlib.Path] = None):
-        self._v7 = v7_root
-        self._selector = ReinforcementSourceSelector(v7_root)
-        self._out = output_dir or (
-            v7_root / "data/output/PhaseR1.3_pipeline_integration"
+    def __init__(
+        self,
+        v7_root: Optional[pathlib.Path] = None,
+        output_dir: Optional[pathlib.Path] = None,
+        engine_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+    ):
+        # engine_root: Version8 (src packages + R2A GN pointer)
+        # run_root: web_runs/<id> or Version8 offline (data/output)
+        self._engine = pathlib.Path(
+            engine_root or v7_root or pathlib.Path(__file__).resolve().parents[2]
         )
+        self._run = pathlib.Path(run_root or v7_root or self._engine)
+        self._v7 = self._engine  # backward-compat: src loads use engine
+        out = (
+            pathlib.Path(output_root)
+            if output_root is not None
+            else (self._run / "data" / "output")
+        )
+        self._selector = ReinforcementSourceSelector(output_root=out)
+        self._out = output_dir or (out / "PhaseR1.3_pipeline_integration")
         self._out.mkdir(parents=True, exist_ok=True)
         self._ctx: Dict[str, Any] = {}
         self._loader = None
@@ -43,7 +59,7 @@ class PipelineIntegrationManager:
             import types
             import importlib.util as ilu
 
-            r2a_dir = self._v7 / "src/PhaseR.2A_engineering_context"
+            r2a_dir = self._engine / "src/PhaseR.2A_engineering_context"
             if "PhaseR2A.engineering_context_parser" not in sys.modules:
                 pkg = types.ModuleType("PhaseR2A")
                 pkg.__path__ = [str(r2a_dir)]
@@ -57,7 +73,8 @@ class PipelineIntegrationManager:
                 sys.modules["PhaseR2A.engineering_context_parser"] = mod
                 spec.loader.exec_module(mod)
             parser = sys.modules["PhaseR2A.engineering_context_parser"]
-            self._loader, _, _ = parser.parse_engineering_context(self._v7)
+            # GN pointer lives under engine_root/src/...
+            self._loader, _, _ = parser.parse_engineering_context(self._engine)
             if self._loader:
                 self._ctx = self._loader.summary() or {}
         except Exception:
@@ -128,7 +145,7 @@ class PipelineIntegrationManager:
     ) -> Tuple[List[BeamEngineeringModel], Dict[str, Any]]:
         """Run R.1.2B consolidator; on failure return originals unchanged."""
         try:
-            pkg_dir = self._v7 / "src/PhaseR1_2B_engineeringbar_consolidation"
+            pkg_dir = self._engine / "src/PhaseR1_2B_engineeringbar_consolidation"
             pkg_name = "PhaseR12B"
             if pkg_name not in sys.modules:
                 pkg = types.ModuleType(pkg_name)

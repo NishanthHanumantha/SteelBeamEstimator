@@ -56,18 +56,32 @@ class GeometryProvider:
       3. Beam registry (only if span is unique / not a constant-span anomaly)
     """
 
-    REGISTRY_REL = "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
-    MANIFEST_REL = "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/drawing_manifest.json"
-    CATALOG_REL = "data/output/PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
+    REGISTRY_REL = "PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+    MANIFEST_REL = "PhaseVROOT.1_dynamic_pipeline_initialization/drawing_manifest.json"
+    CATALOG_REL = "PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json"
 
-    def __init__(self, v7_root: pathlib.Path):
-        self._v7 = v7_root
+    def __init__(
+        self,
+        v7_root: Optional[pathlib.Path] = None,
+        output_root: Optional[pathlib.Path] = None,
+        run_root: Optional[pathlib.Path] = None,
+    ):
+        # Prefer explicit output_root; else run_root/data/output; else legacy v7_root/data/output
+        if output_root is not None:
+            self._out = pathlib.Path(output_root)
+        elif run_root is not None:
+            self._out = pathlib.Path(run_root) / "data" / "output"
+        elif v7_root is not None:
+            self._out = pathlib.Path(v7_root) / "data" / "output"
+        else:
+            raise ValueError("output_root, run_root, or v7_root required")
+        self._v7 = self._out  # backward-compat alias for path joins below
         self._geometries: Dict[str, BeamGeometry] = {}
         self._source_audit: Dict[str, Any] = {}
         self._loaded = False
 
     def load(self, force_resolve: bool = True) -> "GeometryProvider":
-        registry = self._read_json(self._v7 / self.REGISTRY_REL)
+        registry = self._read_json(self._out / self.REGISTRY_REL)
         beams = registry.get("beams", {})
         if isinstance(beams, list):
             beams = {b.get("beam_id"): b for b in beams}
@@ -187,7 +201,7 @@ class GeometryProvider:
         }
 
     def export_catalog(self) -> pathlib.Path:
-        out = self._v7 / self.CATALOG_REL
+        out = self._out / self.CATALOG_REL
         out.parent.mkdir(parents=True, exist_ok=True)
         payload = {
             "model_version": MODEL_VERSION,
@@ -205,7 +219,7 @@ class GeometryProvider:
         Always clears previously rejected constant-span placeholders so
         downstream modules cannot fall back to 8775 mm.
         """
-        path = self._v7 / self.REGISTRY_REL
+        path = self._out / self.REGISTRY_REL
         if not path.exists():
             return 0
         data = self._read_json(path)
@@ -259,7 +273,7 @@ class GeometryProvider:
         return None
 
     def _extract_framing_spans(self) -> Dict[str, Tuple[float, float, List[str]]]:
-        manifest = self._read_json(self._v7 / self.MANIFEST_REL)
+        manifest = self._read_json(self._out / self.MANIFEST_REL)
         framing = manifest.get("primary_framing_drawing")
         if not framing or not pathlib.Path(framing).exists():
             return {}
@@ -299,7 +313,7 @@ class GeometryProvider:
     def _extract_reinforcement_spans(
         self, beams: Dict[str, Any]
     ) -> Dict[str, Tuple[float, float, List[str]]]:
-        manifest = self._read_json(self._v7 / self.MANIFEST_REL)
+        manifest = self._read_json(self._out / self.MANIFEST_REL)
         reinf = manifest.get("primary_reinforcement_drawing")
         if not reinf or not pathlib.Path(reinf).exists():
             return {}

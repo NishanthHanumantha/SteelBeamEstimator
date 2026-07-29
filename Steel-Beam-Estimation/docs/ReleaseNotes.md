@@ -1,5 +1,29 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.5 — Downstream Pipeline through Excel (2026-07-29)
+
+### Added
+
+- Run-scoped R.3.1, R.1.2A (catalog-only), R.1.3 (build-only), VB.1
+- Production stages extended through Excel generation
+- Download restores `Estimation_Output.xlsx` from the same uploaded run
+
+### Changed
+
+- Downstream I/O only — steel / BBS / Excel engineering logic unchanged
+- Removed nested VB.1 from web R.1.3; removed R13/VB1 rebuild from web R.1.2A
+- Success means run-scoped workbook exists (not R.3-only soft stop)
+
+### MODEL_VERSION
+
+`8.9.4`
+
+### Docs
+
+See [Phase_D.5.5_Web_Pipeline_Completion.md](Phase_D.5.5_Web_Pipeline_Completion.md)
+
+---
+
 ## D.5.4 — Web-enable R.3 Geometry Context Engine (2026-07-28)
 
 ### Added

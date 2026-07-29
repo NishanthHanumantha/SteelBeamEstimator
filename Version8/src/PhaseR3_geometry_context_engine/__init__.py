@@ -15,7 +15,7 @@ Pipeline position (web D.5.4):
   ↓
   R.3 Geometry Context Engine  ← this phase
   ↓
-  R.3.1 / downstream (later — D.5.5)
+  R.3.1 → R.1.2A → R.1.3 → VB.1 Excel (D.5.5)
 """
 
 MODEL_VERSION = "8.9.3"
