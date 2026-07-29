@@ -15,7 +15,10 @@
 
 MODEL_VERSION: 8.9.4
 
-## Web production pipeline (D.5.5)
+**Status:** Production pipeline complete — web-native, run-scoped end-to-end
+(upload → Excel). Migration from offline / benchmark-dependent execution is done.
+
+## Web production pipeline (D.5.5 / 8.9.4)
 
 ```text
 Upload DXFs

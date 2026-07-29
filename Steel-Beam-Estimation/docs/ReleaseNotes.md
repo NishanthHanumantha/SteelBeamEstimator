@@ -1,5 +1,31 @@
 # Release Notes — Steel-Beam-Estimation
 
+## 8.9.4 — Production Pipeline Complete (2026-07-29)
+
+### Milestone
+
+Marks completion of the migration from an offline, benchmark-dependent workflow
+to a **web-native, run-scoped** production pipeline.
+
+Upload → VROOT1 → … → R.3.1 → R.1.2A → R.1.3 → VB.1 → Excel download
+executes on Lightsail using only the uploaded drawing set and the current
+`RunContext`.
+
+### Includes
+
+- D.5.1–D.5.5 RunContext stage migration through Excel
+- R.3.1 bootstrap fix so package threshold constants resolve under alias load
+
+### MODEL_VERSION
+
+`8.9.4`
+
+### Docs
+
+See [Production_Pipeline_Complete_8.9.4.md](Production_Pipeline_Complete_8.9.4.md)
+
+---
+
 ## D.5.5 — Downstream Pipeline through Excel (2026-07-29)
 
 ### Added
