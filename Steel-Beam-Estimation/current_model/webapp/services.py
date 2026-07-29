@@ -1,5 +1,5 @@
 """
-Estimation service wrapper — Phase D.5.5.
+Estimation service wrapper — production pipeline (MODEL 8.9.5).
 
 Invokes existing production runners under ENGINE_ROOT via subprocess.
 Does not modify engineering / estimation logic.
@@ -254,11 +254,6 @@ def _clear_r2a_gn_pointer() -> None:
         logger.warning("Could not clear R.2A GN pointer file")
 
 
-def _ensure_r3_prerequisites() -> None:
-    """Removed from D.5.1 hot path — R.3 is not in PRODUCTION_STAGES."""
-    return
-
-
 def _stage_env(staging: Path) -> dict:
     env = os.environ.copy()
     env["STEEL_ENGINE_ROOT"] = str(ENGINE_ROOT.resolve())
@@ -436,7 +431,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             duration_s=duration,
         )
         logger.info(
-            "D.5.5 pipeline complete run_id=%s excel=%s download=%s duration_s=%s",
+            "Pipeline complete run_id=%s excel=%s download=%s duration_s=%s",
             run_id,
             excel,
             download_path,
@@ -471,14 +466,11 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
         )
     finally:
         _clear_r2a_gn_pointer()
-        # Always keep per-run web_runs tree for D.5.1 inspection.
+        # Retain per-run web_runs tree for artefact inspection / support.
         upload_copy = UPLOAD_FOLDER / run_id
         try:
             if upload_copy.exists() and not KEEP_WEB_RUNS:
                 shutil.rmtree(upload_copy, ignore_errors=True)
         except Exception:
             logger.warning("Cleanup failed for %s", upload_copy)
-        logger.info(
-            "Keeping run tree staging=%s (D.5.1 per-run artefacts)",
-            staging,
-        )
+        logger.info("Run artefacts retained staging=%s", staging)

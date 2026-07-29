@@ -1,4 +1,8 @@
-# Phase D.5.4 — Web Pipeline Completion (R.3)
+﻿> **Historical Migration Record (D.5.x)** — retained for migration history.
+> Production baseline is **MODEL_VERSION 8.9.5**. See
+> [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md) and
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md).
+# Phase D.5.4 â€” Web Pipeline Completion (R.3)
 
 **MODEL_VERSION:** 8.9.3  
 **Date:** 2026-07-28  
@@ -29,7 +33,7 @@ Production pipeline stops after R.3 (R.3.1 / Excel deferred to D.5.5).
 ## 2. Updated pipeline diagram
 
 ```text
-Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2 → R.3 → SUCCESS
+Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R.2.1B â†’ R.2.1C â†’ R.2.1D â†’ L.2.2 â†’ R.3 â†’ SUCCESS
 ```
 
 ---
@@ -41,7 +45,7 @@ Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2 → 
 | Constant | `PHASE_R3 = "PhaseR3_geometry_context_engine"` |
 | Env | `STEEL_ENGINE_ROOT` / `STEEL_RUN_ROOT` / `STEEL_OUTPUT_ROOT` |
 | Runner | `run_phase_r3_geometry_context_engine.py [<run_root>]` |
-| Offline default | `run_root = engine_root` → `Version8/data/output/...` |
+| Offline default | `run_root = engine_root` â†’ `Version8/data/output/...` |
 
 ---
 
@@ -85,7 +89,7 @@ not a short `PhaseR3/` alias.
 
 | Before | After |
 |--------|-------|
-| `_find_output(rel)` → `self._root / "data/output" / rel` | Explicit paths from `RunContext.artefact(...)` / constructor args |
+| `_find_output(rel)` â†’ `self._root / "data/output" / rel` | Explicit paths from `RunContext.artefact(...)` / constructor args |
 | `_find_production_workbook()` searched shared Production_Output | Removed; validator receives `production_workbook=None` (Excel deferred) |
 
 ---
@@ -96,7 +100,7 @@ not a short `PhaseR3/` alias.
 - [x] Success requires facts + registry + `GeometryContexts.json`
 - [x] Orchestrator has no `_find_output` / `version7_root`
 - [x] Grep R.3 package + runner: no `_find_output` / `version7_root` / Benchmark_Set
-- [x] Synthetic run-scoped smoke: same-run facts+registry → 12 artefacts, 12/12 rules, exit 0
+- [x] Synthetic run-scoped smoke: same-run facts+registry â†’ 12 artefacts, 12/12 rules, exit 0
 - [ ] End-to-end upload smoke (operator)
 
 ---
@@ -113,7 +117,7 @@ not a short `PhaseR3/` alias.
 
 ## 10. MODEL_VERSION
 
-`8.9.2` → **`8.9.3`**
+`8.9.2` â†’ **`8.9.3`**
 
 ---
 
@@ -132,7 +136,8 @@ extend production pipeline through R.3; leave R.3.1/Excel for D.5.5.
 
 | Capability | Ready? |
 |------------|--------|
-| Upload → … → L.2.2 → R.3 | **Yes** (architecture) |
-| Same-run facts + registry → GeometryContexts | **Yes** |
+| Upload â†’ â€¦ â†’ L.2.2 â†’ R.3 | **Yes** (architecture) |
+| Same-run facts + registry â†’ GeometryContexts | **Yes** |
 | No Benchmark / Version7 / shared-output for R.3 | **Yes** |
-| R.3.1 / Excel | **Not ready** — D.5.5 |
+| R.3.1 / Excel | **Not ready** â€” D.5.5 |
+

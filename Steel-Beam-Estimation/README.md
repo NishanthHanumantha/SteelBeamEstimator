@@ -22,14 +22,14 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 | **D.5.3** | Web-enable L.2.2 (Geometry Registry) | Complete |
 | **D.5.4** | Web-enable R.3 (Geometry Context) | Complete |
 | **D.5.5** | Downstream through Excel (R.3.1→VB.1) | Complete |
-| **8.9.4** | **Production pipeline complete** (web-native, run-scoped) | **Complete** |
-| D.5.6 | Residual cleanup / multi-set hardening | Planned |
-| D.5+ | Lightsail TLS cutover | Planned |
+| **D.5.6** | Production validation & cleanup | **Complete** |
+| **8.9.5** | **Stable production baseline** | **Certified** |
+| Future | Accuracy / performance / TLS cutover | Planned (separate) |
 
-**Milestone:** MODEL_VERSION **8.9.4** completes the migration from an offline,
-benchmark-dependent workflow to a web-native, run-scoped production pipeline
-(upload → Excel download on the current `RunContext` only).
-See [docs/Production_Pipeline_Complete_8.9.4.md](docs/Production_Pipeline_Complete_8.9.4.md).
+**Production baseline:** MODEL_VERSION **8.9.5** — web-native, run-scoped
+pipeline (upload → Excel). Architecture:
+[docs/Production_Architecture_8.9.5.md](docs/Production_Architecture_8.9.5.md).  
+Cleanup record: [docs/Phase_D.5.6_Production_Validation_Cleanup.md](docs/Phase_D.5.6_Production_Validation_Cleanup.md).
 
 ---
 

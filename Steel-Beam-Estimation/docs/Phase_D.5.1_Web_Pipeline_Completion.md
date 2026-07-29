@@ -1,4 +1,8 @@
-# Phase D.5.1 — Web Pipeline Completion Foundation
+﻿> **Historical Migration Record (D.5.x)** — retained for migration history.
+> Production baseline is **MODEL_VERSION 8.9.5**. See
+> [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md) and
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md).
+# Phase D.5.1 â€” Web Pipeline Completion Foundation
 
 **MODEL_VERSION:** 8.9.0  
 **Date:** 2026-07-28  
@@ -30,38 +34,38 @@ Production pipeline stops after R.2.1C (Excel / R.3 deferred).
 ## 2. Data flow diagram
 
 ```text
-Browser upload (3× DXF)
-        │
-        ▼
+Browser upload (3Ã— DXF)
+        â”‚
+        â–¼
 web_runs/<run_id>/  (DXF staging)
-        │
-        ▼
-   ┌─────────┐   beam_registry, drawing_manifest
-   │ VROOT1  │ ──────────────────────────────────┐
-   └─────────┘                                   │
-        │                                        │
-        ▼                                        ▼
-   ┌─────────┐   reinforcement_annotations.json  │
-   │   R1    │ ◄─────────────────────────────────┘
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐   engineering_context.json
-   │  R2A    │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐   engineering_semantic_objects.json
-   │ R.2.1B  │ ◄── reads R1 + VROOT1 under same run output_root
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐   EngineeringFacts.json (+ stats/reports)
-   │ R.2.1C  │
-   └─────────┘
-        │
-        ▼
-   SUCCESS (D.5.1) — workbook later
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   beam_registry, drawing_manifest
+   â”‚ VROOT1  â”‚ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜                                   â”‚
+        â”‚                                        â”‚
+        â–¼                                        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   reinforcement_annotations.json  â”‚
+   â”‚   R1    â”‚ â—„â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   engineering_context.json
+   â”‚  R2A    â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   engineering_semantic_objects.json
+   â”‚ R.2.1B  â”‚ â—„â”€â”€ reads R1 + VROOT1 under same run output_root
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   EngineeringFacts.json (+ stats/reports)
+   â”‚ R.2.1C  â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   SUCCESS (D.5.1) â€” workbook later
 ```
 
 ---
@@ -85,8 +89,8 @@ web_runs/<run_id>/  (DXF staging)
 ## 4. Pipeline diagram
 
 ```text
-BEFORE:  Upload → VROOT1 → R1 → R2A → R3 → … → VB1
-AFTER:   Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C   [STOP]
+BEFORE:  Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R3 â†’ â€¦ â†’ VB1
+AFTER:   Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R.2.1B â†’ R.2.1C   [STOP]
 ```
 
 ---
@@ -114,7 +118,7 @@ Env: `STEEL_ENGINE_ROOT`, `STEEL_RUN_ROOT`, `STEEL_OUTPUT_ROOT`.
 | R.2.1B | R1 annotations/models + registry | `PhaseR2.1B_.../engineering_semantic_objects.json` |
 | R.2.1C | R.2.1B ESO | `PhaseR2.1C_.../EngineeringFacts.json` |
 
-Engineering calculations unchanged — path injection only.
+Engineering calculations unchanged â€” path injection only.
 
 ---
 
@@ -130,7 +134,7 @@ Engineering calculations unchanged — path injection only.
 ## 8. Validation checklist
 
 - [ ] Fresh `web_runs/<id>/` with 3 DXFs
-- [ ] Set `STEEL_RUN_ROOT` / run stages VROOT1→R21C
+- [ ] Set `STEEL_RUN_ROOT` / run stages VROOT1â†’R21C
 - [ ] Artefacts appear only under that run's `data/output/`
 - [ ] `EngineeringFacts.json` present after R.2.1C
 - [ ] Web UI reports success without Excel
@@ -140,7 +144,7 @@ Engineering calculations unchanged — path injection only.
 
 ## 9. MODEL_VERSION
 
-**8.9.0** — R.2.1B/C packages, webapp, `model_info.yaml`, PIPELINE.md
+**8.9.0** â€” R.2.1B/C packages, webapp, `model_info.yaml`, PIPELINE.md
 
 ---
 
@@ -160,9 +164,10 @@ R.2.1B+R.2.1C I/O; truncate PRODUCTION_STAGES after the semantic engine.
 | Item | Status |
 |------|--------|
 | Per-run isolation | Ready (D.5.1) |
-| Semantic engine on upload | Ready (R.2.1B→R.2.1C) |
+| Semantic engine on upload | Ready (R.2.1Bâ†’R.2.1C) |
 | Fresh clone without leftover artefacts | Ready for semantic stages |
-| R.3 / Excel workbook | **Not ready** — requires D.5.2+ (R.2.1D, L.2.2, R.3, VB.1) |
+| R.3 / Excel workbook | **Not ready** â€” requires D.5.2+ (R.2.1D, L.2.2, R.3, VB.1) |
 | Lightsail full estimate download | **Blocked** until later milestones |
 
 D.5.1 is production-ready for the **Engineering Semantic Engine** only.
+

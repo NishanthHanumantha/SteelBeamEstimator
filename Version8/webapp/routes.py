@@ -1,6 +1,6 @@
 """
-Phase UI.1 — Flask routes.
-MODEL_VERSION: 8.8.3
+Flask routes — production web application.
+MODEL_VERSION: 8.9.5
 """
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ from flask import (
     send_file,
 )
 
+import config
 from services.estimation_service import (
     EstimationError,
     get_job,
@@ -22,6 +23,31 @@ from services.estimation_service import (
 )
 
 bp = Blueprint("ui", __name__)
+
+
+@bp.get("/health")
+def health():
+    from datetime import datetime, timezone
+
+    engine_root = str(config.V8_ROOT.resolve())
+    web_runs = str(config.WEB_RUNS_ROOT.resolve())
+    return jsonify({
+        "status": "ok",
+        "service": "steel-beam-estimation",
+        "phase": "Production Ready",
+        "production_status": "stable_baseline",
+        "model_version": current_app.config.get("MODEL_VERSION"),
+        "engine_ready": (config.V8_ROOT / "Run_PY").is_dir(),
+        "engine_root": engine_root,
+        "web_runs_root": web_runs,
+        "upload_folder": str(config.UPLOAD_ROOT.resolve()),
+        "run_context": {
+            "STEEL_ENGINE_ROOT": engine_root,
+            "STEEL_RUN_ROOT": "<web_runs>/<run_id>",
+            "STEEL_OUTPUT_ROOT": "<web_runs>/<run_id>/data/output",
+        },
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    })
 
 
 @bp.get("/")

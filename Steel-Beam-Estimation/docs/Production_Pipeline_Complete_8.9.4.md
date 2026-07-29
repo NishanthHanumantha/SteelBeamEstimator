@@ -1,13 +1,18 @@
 # Production Pipeline Complete — MODEL_VERSION 8.9.4
 
+> **Historical Migration Record** — functional certification of upload→Excel
+> on Lightsail. Stable baseline is now **MODEL_VERSION 8.9.5**
+> ([Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md),
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md)).
+
 **Date:** 2026-07-29  
-**Status:** Complete
+**Status:** Historical (superseded by 8.9.5 baseline)
 
 ---
 
 ## Milestone
 
-This release marks completion of the migration from an **offline, benchmark-dependent**
+This release marked completion of the migration from an **offline, benchmark-dependent**
 engineering workflow to a **web-native, run-scoped** production pipeline.
 
 Upload → full estimation → Excel download now executes using only:

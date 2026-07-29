@@ -4,7 +4,8 @@ Infrastructure configuration and host scripts only.
 
 **No estimation / engineering logic lives here.**
 
-**Package version:** D.4.2
+**Package version:** D.4.2 (packaging layout)  
+**Runtime baseline:** MODEL_VERSION 8.9.5 — Production Ready
 
 ---
 

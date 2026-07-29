@@ -96,14 +96,18 @@ KEEP_WEB_RUNS = (os.environ.get("STEEL_KEEP_WEB_RUNS") or "").strip().lower() in
     "true",
     "yes",
 }
+# Offline/shared Excel path (not used by web PRODUCTION_STAGES — web uses
+# web_runs/<run_id>/data/output/Production_Output/Estimation_Output.xlsx).
 PRODUCTION_EXCEL = (
     ENGINE_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
 )
 
-# Same layout as Version8/webapp/config.py:
-#   V8_ROOT.parent / "Version7"  (monorepo sibling of the engine)
+# Historical monorepo sibling path. NOT used by PRODUCTION_STAGES (8.9.5+).
+# Retained only for offline tooling / migration documentation.
 V7_ROOT = ENGINE_ROOT.parent / "Version7"
 
+# Optional offline seed root (STEEL_ARTEFACT_SEED_ROOT). NOT used by web
+# production pipeline after D.5.x RunContext migration.
 _seed = (os.environ.get("STEEL_ARTEFACT_SEED_ROOT") or "").strip()
 ARTEFACT_SEED_ROOT: Optional[Path] = (
     Path(_seed).expanduser().resolve() if _seed else None
@@ -116,7 +120,7 @@ R2A_GN_POINTER = (
     / "beam_registry.json"
 )
 
-# D.5.1–D.5.4 success artefacts (per-run tree under web_runs/<run_id>/)
+# Per-run success artefacts under web_runs/<run_id>/
 R21C_FACTS_REL = (
     "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
 )
@@ -142,7 +146,7 @@ R13_MODELS_REL = (
 )
 VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
 
-# D.5.5 production pipeline — upload through Excel (VB.1).
+# Production pipeline — upload through Excel (VB.1). Stable baseline 8.9.5.
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {
         "id": "VROOT1",

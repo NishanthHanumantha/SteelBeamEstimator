@@ -1,8 +1,12 @@
-# Phase D.5.5 — Downstream Production Pipeline Completion
+﻿> **Historical Migration Record (D.5.x)** — retained for migration history.
+> Production baseline is **MODEL_VERSION 8.9.5**. See
+> [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md) and
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md).
+# Phase D.5.5 â€” Downstream Production Pipeline Completion
 
 **MODEL_VERSION:** 8.9.4  
 **Date:** 2026-07-29  
-**Scope:** Web-enable R.3.1 → R.1.2A → R.1.3 → VB.1 (Excel) on RunContext
+**Scope:** Web-enable R.3.1 â†’ R.1.2A â†’ R.1.3 â†’ VB.1 (Excel) on RunContext
 
 ---
 
@@ -15,15 +19,15 @@ using **only** the current `RunContext`.
 Contract (every stage):
 
 ```text
-INPUT → Current RunContext → Previous phase outputs only
-      → Current phase processing → Current phase output folder only
+INPUT â†’ Current RunContext â†’ Previous phase outputs only
+      â†’ Current phase processing â†’ Current phase output folder only
 ```
 
 No stage may search Version7, Benchmark folders, shared
 `Version8/data/output`, or historical artefacts for production execution.
 
 Engineering algorithms (relationships, geometry catalog, bar models, steel
-weight, BBS, Excel layout) are unchanged — only I/O, path resolution, and
+weight, BBS, Excel layout) are unchanged â€” only I/O, path resolution, and
 pipeline wiring were migrated.
 
 ---
@@ -32,19 +36,19 @@ pipeline wiring were migrated.
 
 ```text
 Upload DXFs
-  → VROOT1
-  → R1
-  → R2A
-  → R.2.1B
-  → R.2.1C
-  → R.2.1D
-  → L.2.2
-  → R.3
-  → R.3.1
-  → R.1.2A   (catalog-only)
-  → R.1.3    (build-only; nested VB.1 skipped)
-  → VB.1     (Excel + workbook mapping inside VB.1)
-  → SUCCESS + download Estimation_Output.xlsx
+  â†’ VROOT1
+  â†’ R1
+  â†’ R2A
+  â†’ R.2.1B
+  â†’ R.2.1C
+  â†’ R.2.1D
+  â†’ L.2.2
+  â†’ R.3
+  â†’ R.3.1
+  â†’ R.1.2A   (catalog-only)
+  â†’ R.1.3    (build-only; nested VB.1 skipped)
+  â†’ VB.1     (Excel + workbook mapping inside VB.1)
+  â†’ SUCCESS + download Estimation_Output.xlsx
 ```
 
 **Workbook Mapping** is not a separate runner. Column/worksheet mapping lives
@@ -64,9 +68,9 @@ its own `PRODUCTION_STAGES` entry would duplicate Excel generation.
 
 Env (unchanged from D.5.1+):
 
-- `STEEL_ENGINE_ROOT` → Version8 (src packages)
-- `STEEL_RUN_ROOT` → `web_runs/<run_id>/`
-- `STEEL_OUTPUT_ROOT` → `web_runs/<run_id>/data/output`
+- `STEEL_ENGINE_ROOT` â†’ Version8 (src packages)
+- `STEEL_RUN_ROOT` â†’ `web_runs/<run_id>/`
+- `STEEL_OUTPUT_ROOT` â†’ `web_runs/<run_id>/data/output`
 
 Dual-root rule for R.1.3 / VB.1:
 
@@ -84,7 +88,7 @@ Dual-root rule for R.1.3 / VB.1:
 | R.1.3 | `run_phase_r13_pipeline_integration.py` | `beam_reinforcement_models_production.json` | `skip_production=True` (VB.1 owns Excel) |
 | VB.1 | `run_phase_vb1_production_output_completion.py` | `Estimation_Output.xlsx` | Explicit R13 models path; `use_r14_validation=False` on web |
 
-Soft-success: non-zero exit is accepted when the stage’s primary artefact exists
+Soft-success: non-zero exit is accepted when the stageâ€™s primary artefact exists
 (same pattern as R.3 / L.2.2).
 
 ---
@@ -150,11 +154,11 @@ or resolve Version7 trees. Parameter name `v7_root` remains in some APIs as a
 
 Downstream production stages do not read `Benchmark_Set_*` folders.
 
-Remaining (documented debt — not on D.5.5 hot path):
+Remaining (documented debt â€” not on D.5.5 hot path):
 
 - R.2A `EngineeringContextFactory` offline GN fallback under
   `data/Benchmark_Set_2/general_notes` (web uses GN pointer file)
-- Cosmetic Excel header strings mentioning “Benchmark Set” in
+- Cosmetic Excel header strings mentioning â€œBenchmark Setâ€ in
   `excel_structure_builder.py` (labels only)
 
 ---
@@ -164,7 +168,7 @@ Remaining (documented debt — not on D.5.5 hot path):
 | Check | Result |
 |-------|--------|
 | `py_compile` on all D.5.5 changed modules / runners / webapps | PASS |
-| Production stages list includes R31 → R12A → R13 → VB1 | PASS |
+| Production stages list includes R31 â†’ R12A â†’ R13 â†’ VB1 | PASS |
 | Success requires run-scoped `Estimation_Output.xlsx` | PASS |
 | Download copies workbook from same run into webapp outputs | PASS |
 | Full end-to-end upload on clean Lightsail | Deferred to **D.5.6** |
@@ -200,7 +204,7 @@ Remaining (documented debt — not on D.5.5 hot path):
 3. R.1.2A `--full` forensic mode still rebuilds R13/VB1 via subprocess (not used
    in production stages).
 4. Some internal APIs retain `v7_root` naming (Version8 alias).
-5. Cosmetic “Benchmark Set” strings in Excel headers.
+5. Cosmetic â€œBenchmark Setâ€ strings in Excel headers.
 
 ---
 
@@ -215,7 +219,7 @@ Remaining (documented debt — not on D.5.5 hot path):
 ```text
 feat(D.5.5): complete downstream web pipeline through Excel (MODEL_VERSION 8.9.4)
 
-Run-scoped R.3.1 → R.1.2A → R.1.3 → VB.1; restore workbook download
+Run-scoped R.3.1 â†’ R.1.2A â†’ R.1.3 â†’ VB.1; restore workbook download
 from the current upload via RunContext.
 ```
 
@@ -223,9 +227,10 @@ from the current upload via RunContext.
 
 ## Next phase (do not implement here)
 
-**D.5.6 — Production Validation & Cleanup**
+**D.5.6 â€” Production Validation & Cleanup**
 
 - Clean Lightsail E2E on multiple drawing sets
 - Remove temporary migration compatibility leftovers
 - Performance profiling
 - Final production readiness certification
+

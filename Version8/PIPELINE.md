@@ -2,23 +2,21 @@
 1. V.ROOT.1     Beam registry + drawing manifest
 2. R.1          Reinforcement annotation discovery
 3. R.2A         Engineering context (Ld, cover, grades)
-4. R.2.1B       Engineering semantic objects (web-capable, D.5.1)
-5. R.2.1C       Engineering fact normalization (web-capable, D.5.1)
-6. R.2.1D       Evidence / hypotheses → EngineeringFacts (web-capable, D.5.2)
-7. L.2.2        geometry_registry (web-capable, D.5.3)
-8. R.3          Geometry context (web-capable, D.5.4)
-9. R.3.1        Drawing relationships (web-capable, D.5.5)
-10. R.1.2A      Geometry catalog (web catalog-only, D.5.5)
-11. R.1.3       EngineeringBarModel integration (web build-only, D.5.5)
-12. V.B.1       Steel / BBS / Excel (web-capable, D.5.5)
+4. R.2.1B       Engineering semantic objects
+5. R.2.1C       Engineering fact normalization
+6. R.2.1D       Evidence / hypotheses → EngineeringFacts
+7. L.2.2        geometry_registry
+8. R.3          Geometry context
+9. R.3.1        Drawing relationships
+10. R.1.2A      Geometry catalog (web: catalog-only)
+11. R.1.3       EngineeringBarModel integration (web: build-only)
+12. V.B.1       Steel / BBS / Excel
 ```
 
-MODEL_VERSION: 8.9.4
+MODEL_VERSION: 8.9.5  
+**Status:** Stable Production Baseline — web-native, run-scoped end-to-end.
 
-**Status:** Production pipeline complete — web-native, run-scoped end-to-end
-(upload → Excel). Migration from offline / benchmark-dependent execution is done.
-
-## Web production pipeline (D.5.5 / 8.9.4)
+## Web production pipeline
 
 ```text
 Upload DXFs
@@ -30,13 +28,15 @@ Upload DXFs
 ```
 
 All stage JSON / Excel is written under the **per-run** tree  
-`web_runs/<run_id>/data/output/<Phase...>/`  
-(not shared `Version8/data/output/` for web runs).
+`web_runs/<run_id>/data/output/<Phase...>/`.
 
 Env for every stage subprocess:
 - `STEEL_ENGINE_ROOT` = Version8
 - `STEEL_RUN_ROOT` = web_runs/<run_id>
 - `STEEL_OUTPUT_ROOT` = web_runs/<run_id>/data/output
+
+Permanent reference:  
+`Steel-Beam-Estimation/docs/Production_Architecture_8.9.5.md`
 
 ## Commands (offline / CLI)
 
@@ -57,14 +57,4 @@ python Run_PY/run_phase_vb1_production_output_completion.py <run_root>
 # Web application
 cd webapp
 python app.py
-```
-
-## Architecture
-
-```text
-Full engineering pipeline (D.5.5)
-  Upload → … → R.3 → R.3.1 → R.1.2A → R.1.3 → VB.1 Excel (run-scoped)
-
-Next milestone
-  D.5.6 — Lightsail E2E validation & cleanup
 ```

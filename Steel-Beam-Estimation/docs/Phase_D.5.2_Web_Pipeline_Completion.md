@@ -1,4 +1,8 @@
-# Phase D.5.2 — Web Pipeline Completion (R.2.1D)
+﻿> **Historical Migration Record (D.5.x)** — retained for migration history.
+> Production baseline is **MODEL_VERSION 8.9.5**. See
+> [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md) and
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md).
+# Phase D.5.2 â€” Web Pipeline Completion (R.2.1D)
 
 **MODEL_VERSION:** 8.9.1  
 **Date:** 2026-07-28  
@@ -29,43 +33,43 @@ Production pipeline now stops after R.2.1D (L.2.2 / R.3 / Excel deferred).
 ## 2. Updated pipeline diagram
 
 ```text
-Browser upload (3× DXF)
-        │
-        ▼
+Browser upload (3Ã— DXF)
+        â”‚
+        â–¼
 web_runs/<run_id>/  (DXF staging)
-        │
-        ▼
-   ┌─────────┐
-   │ VROOT1  │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐
-   │   R1    │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐
-   │  R2A    │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐
-   │ R.2.1B  │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐   EngineeringFacts.json (normalized)
-   │ R.2.1C  │
-   └─────────┘
-        │
-        ▼
-   ┌─────────┐   EngineeringFacts.json (evidence + hypotheses)
-   │ R.2.1D  │
-   └─────────┘
-        │
-        ▼
-   SUCCESS (D.5.2) — geometry / Excel later
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â”‚ VROOT1  â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â”‚   R1    â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â”‚  R2A    â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+   â”‚ R.2.1B  â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   EngineeringFacts.json (normalized)
+   â”‚ R.2.1C  â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”   EngineeringFacts.json (evidence + hypotheses)
+   â”‚ R.2.1D  â”‚
+   â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+        â”‚
+        â–¼
+   SUCCESS (D.5.2) â€” geometry / Excel later
 ```
 
 ---
@@ -77,7 +81,7 @@ web_runs/<run_id>/  (DXF staging)
 | Constant | `PHASE_R21D = "PhaseR2.1D_evidence_hypothesis_engine"` |
 | Env | `STEEL_ENGINE_ROOT`, `STEEL_RUN_ROOT`, `STEEL_OUTPUT_ROOT` (unchanged from D.5.1) |
 | Runner argv | `run_phase_r21d_...py [<run_root>]` |
-| Offline default | `run_root = engine_root` → `Version8/data/output/...` |
+| Offline default | `run_root = engine_root` â†’ `Version8/data/output/...` |
 
 ---
 
@@ -113,7 +117,7 @@ Removed:
 - No `Benchmark_Set_*` path usage in R.2.1D
 - No Version7 path hardcoded for R.2.1D input
 - No seed / copy of `EngineeringFacts.json` in the D.5.2 hot path
-- No offline prerequisite outside the current run’s R.2.1C output
+- No offline prerequisite outside the current runâ€™s R.2.1C output
 
 ---
 
@@ -125,8 +129,8 @@ Checklist for a fresh clone / clean deploy:
 - [x] Success criterion = `PhaseR2.1D_.../EngineeringFacts.json` under run tree
 - [x] R.2.1D orchestrator accepts `output_root` / explicit paths (no `_V7`)
 - [x] Grep R.2.1D package + runner: no Benchmark_Set / Version7 path deps
-- [x] Synthetic run-scoped smoke: R.2.1C facts under `web_runs/_d52_smoke` → R.2.1D wrote `EngineeringFacts.json` (exit 0 soft-success)
-- [ ] End-to-end upload smoke (operator): Upload → … → R.2.1D artefact present
+- [x] Synthetic run-scoped smoke: R.2.1C facts under `web_runs/_d52_smoke` â†’ R.2.1D wrote `EngineeringFacts.json` (exit 0 soft-success)
+- [ ] End-to-end upload smoke (operator): Upload â†’ â€¦ â†’ R.2.1D artefact present
 
 CLI smoke (when a run with R.2.1C facts exists):
 
@@ -141,13 +145,13 @@ python Version8/Run_PY/run_phase_r21d_evidence_hypothesis_engine.py <web_runs/<r
 | Blocker | Notes |
 |---------|--------|
 | `geometry_registry.json` | Still not generated in web pipeline (L.2.2 offline / Version7 assumptions) |
-| R.3 | Still resolves artefacts via `version7_root/data/output/...` (`_find_output`) — **not** RunContext |
+| R.3 | Still resolves artefacts via `version7_root/data/output/...` (`_find_output`) â€” **not** RunContext |
 | R.3.1 | Same shared-output assumption as R.3 |
 | Excel / VB.1 | Intentionally out of scope |
 
 ---
 
-## 9. Backward compatibility — `EngineeringFacts.json` callers
+## 9. Backward compatibility â€” `EngineeringFacts.json` callers
 
 | Consumer | Current assumption | D.5.4 / later action |
 |----------|--------------------|----------------------|
@@ -162,7 +166,7 @@ Do **not** modify R.3 in D.5.2.
 
 ## 10. MODEL_VERSION
 
-`8.9.0` → `8.9.1`
+`8.9.0` â†’ `8.9.1`
 
 ---
 
@@ -181,7 +185,8 @@ extend production pipeline through R.2.1D; leave L.2.2/R.3 for later.
 
 | Capability | Ready? |
 |------------|--------|
-| Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D | **Yes** (architecture) |
+| Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R.2.1B â†’ R.2.1C â†’ R.2.1D | **Yes** (architecture) |
 | Dynamic `EngineeringFacts.json` (hypothesis-enriched) per run | **Yes** |
 | No Benchmark / Version7 / seed for R.2.1D | **Yes** |
-| R.3 / Excel workbook | **Not ready** — needs D.5.3 (L.2.2) then R.3 RunContext (D.5.4+) |
+| R.3 / Excel workbook | **Not ready** â€” needs D.5.3 (L.2.2) then R.3 RunContext (D.5.4+) |
+

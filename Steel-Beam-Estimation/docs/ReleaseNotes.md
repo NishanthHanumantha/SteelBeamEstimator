@@ -1,6 +1,37 @@
 # Release Notes — Steel-Beam-Estimation
 
+## D.5.6 / 8.9.5 — Production Validation & Cleanup (2026-07-29)
+
+### Milestone
+
+**MODEL_VERSION 8.9.5** is the official **stable production baseline**.
+
+Cleanup only — estimation logic and Excel behaviour unchanged from 8.9.4.
+
+### Changed
+
+- Health endpoint: `phase` → `Production Ready` (+ RunContext summary)
+- Removed dead migration stubs (`_ensure_r3_prerequisites`)
+- Production docs / logs no longer imply Benchmark or Version7 execution
+- Permanent architecture reference and technical debt register published
+
+### MODEL_VERSION
+
+`8.9.5`
+
+### Docs
+
+- [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md)
+- [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md)
+- [Technical_Debt_Register_8.9.5.md](Technical_Debt_Register_8.9.5.md)
+
+---
+
 ## 8.9.4 — Production Pipeline Complete (2026-07-29)
+
+> **Historical Migration Record** — functional Lightsail certification of
+> upload→Excel. Superseded as baseline by **8.9.5** (cleanup / docs freeze).
+
 
 ### Milestone
 

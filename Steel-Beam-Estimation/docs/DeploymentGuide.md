@@ -1,6 +1,6 @@
 # Deployment Guide — Steel Beam Reinforcement Estimation
 
-**Phase:** D.4.2 (upload / engine wiring fix)  
+**Phase:** Production Ready (MODEL 8.9.5 baseline; packaging roots from D.4.2)  
 **Target:** AWS Lightsail (independent of Concrete Estimator)  
 **Deployment package version:** D.4.2
 

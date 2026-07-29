@@ -1,5 +1,5 @@
 """
-Flask-facing config re-exports (Phase D.5.5).
+Flask-facing config re-exports (production baseline 8.9.5).
 
 Canonical settings live in config.settings — keep this module thin.
 """
@@ -21,9 +21,7 @@ LOG_FOLDER = _settings.LOG_FOLDER
 INPUTS_FOLDER = _settings.INPUTS_FOLDER
 
 ENGINE_ROOT = _settings.ENGINE_ROOT
-V7_ROOT = _settings.V7_ROOT
 WEB_RUNS_ROOT = _settings.WEB_RUNS_ROOT
-PRODUCTION_EXCEL = _settings.PRODUCTION_EXCEL
 PRODUCTION_STAGES = _settings.PRODUCTION_STAGES
 R2A_GN_POINTER = _settings.R2A_GN_POINTER
 R21C_FACTS_REL = _settings.R21C_FACTS_REL
@@ -34,6 +32,5 @@ R31_RELS_REL = _settings.R31_RELS_REL
 R12A_CATALOG_REL = _settings.R12A_CATALOG_REL
 R13_MODELS_REL = _settings.R13_MODELS_REL
 VB1_EXCEL_REL = _settings.VB1_EXCEL_REL
-ARTEFACT_SEED_ROOT = _settings.ARTEFACT_SEED_ROOT
 HOST = _settings.HOST
 PORT = _settings.PORT

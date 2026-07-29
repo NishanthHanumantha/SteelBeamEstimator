@@ -1,5 +1,5 @@
 """
-Path resolution for current_model (Phase D.4.2).
+Path resolution for current_model (production baseline).
 
 Deployment and app code must reference these helpers — never hardcode
 model version directory names.

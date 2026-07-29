@@ -1,6 +1,6 @@
 """
-Phase UI.1 / D.5.5 — Flask web application configuration.
-MODEL_VERSION: 8.9.4
+Flask web application configuration — production baseline.
+MODEL_VERSION: 8.9.5
 """
 from __future__ import annotations
 
@@ -16,14 +16,14 @@ UPLOAD_ROOT = WEBAPP_ROOT / "uploads"
 OUTPUT_ROOT = WEBAPP_ROOT / "outputs"
 LOG_ROOT = WEBAPP_ROOT / "logs"
 
-# Per-run staging + artefacts (Phase D.5.1+)
+# Per-run staging + artefacts
 WEB_RUNS_ROOT = V8_ROOT / "data" / "web_runs"
 
 MAX_CONTENT_LENGTH = int(os.environ.get("STEEL_WEB_MAX_UPLOAD_MB", "256")) * 1024 * 1024
 ALLOWED_EXTENSIONS = {".dxf"}
 SECRET_KEY = os.environ.get("STEEL_WEB_SECRET_KEY", "steel-beam-estimation-ui1-dev")
 
-# D.5.5 production pipeline — upload through Excel (VB.1).
+# Production pipeline — upload through Excel (VB.1).
 PRODUCTION_STAGES = [
     {
         "id": "VROOT1",
@@ -111,7 +111,7 @@ PRODUCTION_STAGES = [
     },
 ]
 
-# Prefer per-run Excel under web_runs; this shared path is legacy offline only.
+# Offline/shared Excel path only — web uses VB1_EXCEL_REL under the run tree.
 PRODUCTION_EXCEL = V8_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
 
 R21C_FACTS_REL = (

@@ -1,7 +1,7 @@
 """
-Run context for web / offline pipeline execution (Phase D.5.1–D.5.5).
+Run context for web / offline pipeline execution (production baseline).
 
-MODEL_VERSION: 8.9.4
+MODEL_VERSION: 8.9.5
 
 Every production stage should resolve paths through RunContext instead of
 hardcoding Version8/data/output or Benchmark_Set_* folders.

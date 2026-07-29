@@ -23,16 +23,24 @@ bp = Blueprint("ui", __name__)
 def health():
     from datetime import datetime, timezone
 
+    engine_root = current_app.config.get("ENGINE_ROOT")
+    web_runs = current_app.config.get("WEB_RUNS_ROOT")
     return jsonify({
         "status": "ok",
         "service": "steel-beam-estimation",
-        "phase": "D.4.2",
+        "phase": "Production Ready",
+        "production_status": "stable_baseline",
         "model_version": current_app.config.get("MODEL_VERSION"),
         "engine_ready": bool(current_app.config.get("ENGINE_READY")),
         "ezdxf_available": bool(current_app.config.get("EZDXF_AVAILABLE")),
-        "engine_root": current_app.config.get("ENGINE_ROOT"),
-        "web_runs_root": current_app.config.get("WEB_RUNS_ROOT"),
+        "engine_root": engine_root,
+        "web_runs_root": web_runs,
         "upload_folder": current_app.config.get("UPLOAD_FOLDER"),
+        "run_context": {
+            "STEEL_ENGINE_ROOT": engine_root,
+            "STEEL_RUN_ROOT": "<web_runs>/<run_id>",
+            "STEEL_OUTPUT_ROOT": "<web_runs>/<run_id>/data/output",
+        },
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 

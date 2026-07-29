@@ -1,4 +1,8 @@
-# Phase D.5.3 — Web Pipeline Completion (L.2.2)
+﻿> **Historical Migration Record (D.5.x)** — retained for migration history.
+> Production baseline is **MODEL_VERSION 8.9.5**. See
+> [Production_Architecture_8.9.5.md](Production_Architecture_8.9.5.md) and
+> [Phase_D.5.6_Production_Validation_Cleanup.md](Phase_D.5.6_Production_Validation_Cleanup.md).
+# Phase D.5.3 â€” Web Pipeline Completion (L.2.2)
 
 **MODEL_VERSION:** 8.9.2  
 **Date:** 2026-07-28  
@@ -9,7 +13,7 @@
 ## 1. Architecture summary
 
 D.5.2 delivered run-scoped R.2.1D `EngineeringFacts.json`. D.5.3 adds L.2.2 so
-`geometry_registry.json` is generated from the **current run’s VROOT1**
+`geometry_registry.json` is generated from the **current runâ€™s VROOT1**
 `beam_registry.json` (optional: `dynamic_beam_geometry.json`).
 
 Output path (R.3 contract preserved):
@@ -35,9 +39,9 @@ Production pipeline stops after L.2.2 (R.3 deferred to D.5.4).
 ## 2. Updated pipeline diagram
 
 ```text
-Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2 → SUCCESS
-                                                              │
-                                                              ▼
+Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R.2.1B â†’ R.2.1C â†’ R.2.1D â†’ L.2.2 â†’ SUCCESS
+                                                              â”‚
+                                                              â–¼
                                          geometry_registry.json (run-scoped)
 ```
 
@@ -50,7 +54,7 @@ Upload → VROOT1 → R1 → R2A → R.2.1B → R.2.1C → R.2.1D → L.2.2 → 
 | Constant | `PHASE_L22 = "PhaseL.2.2_geometry_recovery"` |
 | Env | `STEEL_ENGINE_ROOT` / `STEEL_RUN_ROOT` / `STEEL_OUTPUT_ROOT` |
 | Runner | `run_phase_l2_2_geometry_recovery.py [<run_root>]` |
-| Offline default | `run_root = engine_root` → `Version8/data/output/...` |
+| Offline default | `run_root = engine_root` â†’ `Version8/data/output/...` |
 
 ---
 
@@ -99,19 +103,19 @@ Removed / not used:
 - [x] Success requires R.2.1D facts **and** L.2.2 `geometry_registry.json`
 - [x] Package folder name matches R.3 expectation (`PhaseL.2.2_geometry_recovery`)
 - [x] No Benchmark_Set / Version7 path deps in L.2.2 code (comments only)
-- [x] Synthetic run-scoped smoke: VROOT1 `beam_registry` → L.2.2 wrote registry (exit 0)
+- [x] Synthetic run-scoped smoke: VROOT1 `beam_registry` â†’ L.2.2 wrote registry (exit 0)
 - [ ] End-to-end upload smoke (operator)
 
 ---
 
-## 8. R3 migration readiness (D.5.4 — do not implement here)
+## 8. R3 migration readiness (D.5.4 â€” do not implement here)
 
 | Consumer assumption today | Required change in D.5.4 |
 |---------------------------|--------------------------|
 | `PhaseR3Orchestrator(version7_root=...)` | Accept `RunContext` / `output_root` |
-| `_find_output(rel)` → `self._root / "data/output" / rel` | `ctx.artefact(...)` under **same** run |
-| Reads `PhaseR2.1D_.../EngineeringFacts.json` | Already correct relative name — path root must be run `output_root` |
-| Reads `PhaseL.2.2_geometry_recovery/geometry_registry.json` | Same — now produced in-run by D.5.3 |
+| `_find_output(rel)` â†’ `self._root / "data/output" / rel` | `ctx.artefact(...)` under **same** run |
+| Reads `PhaseR2.1D_.../EngineeringFacts.json` | Already correct relative name â€” path root must be run `output_root` |
+| Reads `PhaseL.2.2_geometry_recovery/geometry_registry.json` | Same â€” now produced in-run by D.5.3 |
 | Also loads VROOT1 `beam_registry` + R1 annotations | Same relative names under run tree |
 | Shared / Version7 seeding helpers in webapp | Remove when R.3 is web-enabled |
 
@@ -136,7 +140,7 @@ Both critical artefacts for R.3 are now produced per run:
 
 ## 10. MODEL_VERSION
 
-`8.9.1` → **`8.9.2`**
+`8.9.1` â†’ **`8.9.2`**
 
 ---
 
@@ -155,7 +159,8 @@ extend production pipeline through L.2.2; leave R.3 for D.5.4.
 
 | Capability | Ready? |
 |------------|--------|
-| Upload → … → R.2.1D → L.2.2 | **Yes** (architecture) |
+| Upload â†’ â€¦ â†’ R.2.1D â†’ L.2.2 | **Yes** (architecture) |
 | Dynamic `EngineeringFacts.json` + `geometry_registry.json` | **Yes** |
 | No Benchmark / Version7 / seed for L.2.2 | **Yes** |
-| R.3 / Excel | **Not ready** — D.5.4+ |
+| R.3 / Excel | **Not ready** â€” D.5.4+ |
+
