@@ -23,8 +23,9 @@ Uses a **version-agnostic** `current_model/` slot so engine upgrades do not chan
 | **D.5.4** | Web-enable R.3 (Geometry Context) | Complete |
 | **D.5.5** | Downstream through Excel (R.3.1→VB.1) | Complete |
 | **D.5.6** | Production validation & cleanup | **Complete** |
-| **8.9.5** | **Stable production baseline** | **Certified** |
-| Future | Accuracy / performance / TLS cutover | Planned (separate) |
+| **8.9.5** | **Stable production baseline** (`Version8/`, tag `v8.9.5`) | **Frozen** |
+| **Version9** | Accuracy: reinforcement ID & interpretation | **Active** |
+| Future | Performance / TLS cutover | Planned (separate) |
 
 **Production baseline:** MODEL_VERSION **8.9.5** — web-native, run-scoped
 pipeline (upload → Excel). Architecture:

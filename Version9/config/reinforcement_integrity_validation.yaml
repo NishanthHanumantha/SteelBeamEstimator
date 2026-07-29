@@ -1,0 +1,30 @@
+phase: "R.1.4"
+model_version: "7.8.0"
+phase_name: "Reinforcement Integrity & Coverage Validation"
+
+input:
+  beam_registry: "Version8/data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+  engineering_bar_models: "Version8/data/output/PhaseR1.3_pipeline_integration/engineering_bar_models.json"
+  r1_models: "Version8/data/output/PhaseR.1_generalized_reinforcement_discovery/beam_reinforcement_models.json"
+  production_models: "Version8/data/output/PhaseR1.3_pipeline_integration/beam_reinforcement_models_production.json"
+
+output:
+  base_dir: "Version8/data/output/PhaseR1.4_integrity_validation"
+
+quality_gate:
+  minimum_beam_coverage: 0.0
+  minimum_bar_coverage: 0.0
+  maximum_orphans: 0
+  maximum_duplicates: 0
+  allow_empty_beams: true
+  strict_mode: false
+  warning_mode: true
+
+validation:
+  valid_roles:
+    - TOP_MAIN
+    - TOP_EXTRA
+    - BOTTOM_MAIN
+    - BOTTOM_EXTRA
+    - STIRRUP
+    - SPACER_BAR

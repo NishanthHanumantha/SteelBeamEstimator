@@ -1,0 +1,97 @@
+# Phase V.TRACE.1 — Pipeline Traceability Configuration
+# MODEL_VERSION: 7.1.2
+# READ-ONLY: This file configures the traceability framework only.
+# No engineering logic is modified.
+
+model_version: "7.1.2"
+phase_id: "V.TRACE.1"
+
+workspace_root: "C:/Users/nishanth.h/SteelBeamEstimator"
+
+# V5 adapter paths (written by V.ROOT.1, consumed by L.2)
+v5_adapter_paths:
+  beam_schedule:           "Version5/data/output/phase_i/i_15_beam_schedule/beam_schedule_results.json"
+  reinforcement_objects:   "Version5/data/output/phase_i/i_2_reinforcement_engine/reinforcement_objects.json"
+  engineering_objects:     "Version5/data/output/phase_g/g_5_1_engineering_objects/engineering_objects.json"
+  beam_geometry:           "Version5/data/output/phase_f/beam_geometry_model.json"
+
+# Stage artefact map — keys used for beam-count extraction
+pipeline_stages:
+  - id: "VROOT1"
+    name: "Phase V.ROOT.1 — Dynamic DXF Discovery"
+    output_dir: "Version8/data/output/PhaseVROOT.1_dynamic_pipeline_initialization"
+    primary_artefact: "beam_registry.json"
+    beam_id_path: ["beams"]          # keys of this dict = beam IDs
+    beam_count_path: ["beam_count"]
+
+  - id: "V5_ADAPTER"
+    name: "V5 Adapter Layer (V.ROOT.1 → L.2 bridge)"
+    output_dir: "Version5/data/output"
+    primary_artefact: "phase_g/g_5_1_engineering_objects/engineering_objects.json"
+    beam_id_path: ["objects"]        # list — extract beam_id from each entry
+    beam_count_path: ["object_count"]
+
+  - id: "L2"
+    name: "Phase L.2 — Engineering Reinforcement Interpretation"
+    output_dir: "Version8/data/output/PhaseL.2 - engineering_reinforcement_interpretation"
+    primary_artefact: "beam_reinforcement_models.json"
+    beam_id_path: ["models"]         # keys of dict
+    beam_count_path: ["model_count"]
+
+  - id: "SI0"
+    name: "Phase SI.0 — Stirrup Recovery"
+    output_dir: "Version8/data/output/PhaseSI.0_stirrup_recovery"
+    primary_artefact: "beam_reinforcement_models.json"
+    beam_id_path: ["models"]
+    beam_count_path: ["model_count"]
+
+  - id: "SI1"
+    name: "Phase SI.1 — Stirrup Improvement"
+    output_dir: "Version8/data/output/PhaseSI.1_stirrup_improvement"
+    primary_artefact: "stirrup_full_report.json"
+    beam_id_path: ["sections", "3_zone_calculations"]   # list of {beam_id,...}
+    beam_count_path: []              # derive from list length
+
+  - id: "L22"
+    name: "Phase L.2.2 — Geometry Recovery"
+    output_dir: "Version8/data/output/PhaseL.2.2_geometry_recovery"
+    primary_artefact: "extended_beam_reinforcement_models.json"
+    beam_id_path: ["models"]
+    beam_count_path: ["model_count"]
+
+  - id: "L21"
+    name: "Phase L.2.1 — Engineering Feature Extraction"
+    output_dir: "Version8/data/output/PhaseL.2.1 - engineering_feature_extraction"
+    primary_artefact: "engineering_feature_database.json"
+    beam_id_path: []                 # uses total_features scalar
+    beam_count_path: ["total_features"]
+
+  - id: "L3"
+    name: "Phase L.3 — Beam Pattern Recognition"
+    output_dir: "Version8/data/output/PhaseL.3_beam_pattern_recognition"
+    primary_artefact: "beam_pattern_matrix.json"
+    beam_id_path: ["matrix"]
+    beam_count_path: ["total_beams"]
+
+  - id: "VB1"
+    name: "Phase V.B.1 — Production Output (Excel)"
+    output_dir: "Version8/data/output/Production_Output"
+    primary_artefact: "Estimation_Output.xlsx"
+    beam_id_path: []                 # read from Excel
+    beam_count_path: []
+
+# Loss categories
+loss_categories:
+  - NOT_CREATED
+  - FILTERED
+  - EMPTY_OBJECT
+  - PIPELINE_SKIP
+  - STALE_OUTPUT       # stage output from prior run on different dataset
+  - VALIDATION_DROP
+  - UNKNOWN
+
+# Reported beam count from V.ROOT.1 delivery
+delivered_beam_count: 65
+
+# Output directory for trace reports
+output_dir: "Version8/data/output/PhaseVTRACE.1_pipeline_traceability"

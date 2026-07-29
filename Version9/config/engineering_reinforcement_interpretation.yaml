@@ -1,0 +1,57 @@
+# Phase L.2 — Engineering Reinforcement Interpretation Engine
+# MODEL_VERSION: 6.4.0
+# ─────────────────────────────────────────────────────────────────────────────
+
+enable: true
+
+# Reference dataset: benchmark beams with manually annotated engineering drawings
+use_reference_dataset: true
+reference_dataset_path: "../BeamReinforcement_Bars_Identification"
+benchmark_beams:
+  - B1    # B1_Bars_Description.png  — TOP_MAIN=2Y16, TOP_EXTRA=2Y16, BOTTOM_MAIN=2Y20, SFR=4Y8
+  - B2    # B2_Bars_Description.png  — TOP_MAIN=2Y16, BOTTOM_MAIN=2Y12, BOTTOM_EXTRA=2Y20
+  - B8    # B8,B9,B10_Bar_Description.png — continuous 3-span, TOP+BOTTOM=2Y16 each
+  - B9
+  - B10
+
+# Interpret all beams found in available pipeline data
+interpret_all_beams: true
+
+# Classification rules
+classification:
+  min_coverage_ratio_for_main: 0.65    # bars spanning >= 65% of clear span → MAIN
+  max_coverage_ratio_for_extra: 0.50   # bars spanning <= 50% of clear span → EXTRA
+  dia_split_threshold_mm: 4.0          # minimum diameter difference to trigger top/bottom split
+  support_zone_fraction: 0.25          # fraction of span considered "support zone"
+
+# Engineering defaults
+engineering:
+  default_top_cover_mm: 25
+  default_bottom_cover_mm: 25
+  default_side_cover_mm: 25
+  default_support_width_mm: 200
+
+# Outputs
+generate_excel_report: true
+strict_validation: true
+
+# Data sources — priority order (v6 first, fallback v5)
+data_sources:
+  engineering_objects: "phase_g/g_5_1_engineering_objects/engineering_objects.json"
+  reinforcement_objects: "phase_i/i_2_reinforcement_engine/reinforcement_objects.json"
+  beam_schedule: "phase_i/i_15_beam_schedule/beam_schedule_results.json"
+  recovery: "engineering_recovery/recovered_engineering_objects.json"
+  general_notes: "phase_e/general_notes.json"
+
+# Output files
+outputs:
+  - beam_reinforcement_models.json
+  - bar_role_classification.json
+  - support_zone_analysis.json
+  - continuity_analysis.json
+  - beam_ownership_analysis.json
+  - reinforcement_regions.json
+  - engineering_semantics.json
+  - interpretation_statistics.json
+  - interpretation_dashboard.json
+  - interpretation_report.xlsx

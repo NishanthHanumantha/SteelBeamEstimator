@@ -1,8 +1,12 @@
 # Steel Beam Estimator — Version 8
 
-**Active development branch.** Continues from frozen **Version 7**. Current MODEL_VERSION **8.8.3**.
+> **FROZEN** as of 2026-07-29 — **MODEL_VERSION 8.9.5** (`git tag v8.9.5`).  
+> Do **not** add features here. Continue accuracy / engineering work in **`Version9/`**.  
+> See [`VERSION_FREEZE.md`](VERSION_FREEZE.md).
 
-**Version 7 is frozen.** Do not add new features there. All new work starts here.
+**Production baseline.** Web-native RunContext pipeline (upload → Excel).
+
+**Prior freeze:** Version 7 remains a historical archive.
 
 ---
 

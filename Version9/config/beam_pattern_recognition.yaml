@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase L.3 — Beam Reinforcement Pattern Recognition Engine
+# MODEL_VERSION: 6.5.0
+# ─────────────────────────────────────────────────────────────────────────────
+
+enable: true
+
+# Span pattern detection
+span_detection:
+  deep_beam_threshold: 0.25        # depth/span ratio threshold
+  transfer_beam_span_mm: 8000.0    # minimum span for transfer beam
+  transfer_beam_depth_mm: 800.0    # minimum depth for transfer beam
+  multi_span_group:
+    - [B8, B9, B10]
+
+# Reinforcement pattern detection
+reinforcement_pattern:
+  top_dominant_ratio: 1.50         # top_area/bot_area > this → TOP_DOMINANT
+  top_heavy_ratio: 1.15            # top_area/bot_area > this → TOP_HEAVY
+  bottom_dominant_ratio: 0.67      # top_area/bot_area < this → BOTTOM_DOMINANT
+  bottom_heavy_ratio: 0.87         # top_area/bot_area < this → BOTTOM_HEAVY
+
+# Support pattern detection
+support_pattern:
+  congestion_threshold: 3          # >N bars at support → CONGESTED
+  long_zone_ratio: 0.30            # avg ratio >= this → LONG_ZONE
+  short_zone_ratio: 0.12           # avg ratio < this → SHORT_ZONE
+
+# Structural behavior detection
+structural_behavior:
+  hogging_ratio: 1.40              # top/bottom ratio > this → HOGGING
+  sagging_ratio: 0.70              # top/bottom ratio < this → SAGGING
+
+# Confidence scoring
+confidence:
+  high_threshold: 0.80
+  medium_threshold: 0.55
+
+# Validation
+validation:
+  strict_mode: false               # raise PatternValidationError on failure
+  expected_beam_count: 18
+
+# Output files
+output:
+  engineering_patterns: engineering_patterns.json
+  pattern_registry: engineering_pattern_registry.json
+  pattern_summary: pattern_summary.json
+  beam_pattern_matrix: beam_pattern_matrix.json
+  validation_report: pattern_validation_report.json
+  statistics: pattern_statistics.json
