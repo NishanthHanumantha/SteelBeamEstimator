@@ -26,6 +26,12 @@ import types
 
 
 def _bootstrap_package(pkg_dir: pathlib.Path, alias: str, pkg_name: str) -> None:
+    """Load dotted folder as alias package; always exec __init__.py first.
+
+    Package-level constants (e.g. LEADER_TAIL_TO_ANN_MAX_MM) live in __init__.py.
+    Submodules import them via ``from . import ...`` — so __init__ must be
+    executed into the registered package module, not skipped.
+    """
     pkg_dir = pathlib.Path(pkg_dir)
     if not pkg_dir.exists():
         raise FileNotFoundError(f"Package directory not found: {pkg_dir}")
@@ -34,22 +40,44 @@ def _bootstrap_package(pkg_dir: pathlib.Path, alias: str, pkg_name: str) -> None
     if src_dir not in sys.path:
         sys.path.insert(0, src_dir)
 
+    init_py = pkg_dir / "__init__.py"
     if alias not in sys.modules:
-        virtual_pkg = types.ModuleType(alias)
-        virtual_pkg.__path__ = [str(pkg_dir)]
-        virtual_pkg.__package__ = alias
-        virtual_pkg.__spec__ = importlib.util.spec_from_file_location(
-            alias, str(pkg_dir / "__init__.py")
+        pkg = types.ModuleType(alias)
+        pkg.__path__ = [str(pkg_dir)]
+        pkg.__package__ = alias
+        pkg.__file__ = str(init_py) if init_py.exists() else None
+        sys.modules[alias] = pkg
+    else:
+        pkg = sys.modules[alias]
+        if not getattr(pkg, "__path__", None):
+            pkg.__path__ = [str(pkg_dir)]
+        pkg.__package__ = alias
+
+    # Exec package __init__ into the registered module (constants / exports).
+    # Guard: empty ModuleType placeholder has no MODEL_VERSION until __init__ runs.
+    if init_py.exists() and not hasattr(pkg, "MODEL_VERSION"):
+        spec = importlib.util.spec_from_file_location(
+            alias,
+            str(init_py),
+            submodule_search_locations=[str(pkg_dir)],
         )
-        sys.modules[alias] = virtual_pkg
+        if spec is None or spec.loader is None:
+            raise RuntimeError(f"Failed to create spec for {init_py}")
+        pkg.__spec__ = spec
+        try:
+            spec.loader.exec_module(pkg)
+        except Exception as exc:
+            raise RuntimeError(f"Failed to load {init_py}: {exc}") from exc
 
     for py_file in sorted(pkg_dir.glob("*.py")):
+        if py_file.name == "__init__.py":
+            continue
         mod_name = py_file.stem
-        full_name = alias if mod_name == "__init__" else f"{alias}.{mod_name}"
+        full_name = f"{alias}.{mod_name}"
         if full_name in sys.modules:
             continue
         spec = importlib.util.spec_from_file_location(full_name, str(py_file))
-        if spec is None:
+        if spec is None or spec.loader is None:
             continue
         module = importlib.util.module_from_spec(spec)
         module.__package__ = alias
