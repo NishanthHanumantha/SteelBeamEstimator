@@ -1,0 +1,89 @@
+{
+  "generated": "2026-07-30T07:18:04.300688",
+  "phase": "R.2A.1",
+  "model_version": "7.5.1",
+  "validation_score": "10/10",
+  "all_pass": true,
+  "rules": [
+    {
+      "rule_id": "RULE_1",
+      "description": "Fe550 table discovered from GN DXF (including nested INSERT blocks)",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Fe550 entries in table: 35",
+      "detail": "Source: GN_DXF_TABLE_1 when block expansion active (R.2A.2+)"
+    },
+    {
+      "rule_id": "RULE_2",
+      "description": "Fe550 row count correct (same diameters as Fe415)",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Expected diameters: 7, Fe550 diameters: 7",
+      "detail": "[8, 10, 12, 16, 20, 25, 32]"
+    },
+    {
+      "rule_id": "RULE_3",
+      "description": "Fe550 column count correct (same concrete grades as Fe415)",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Expected concrete grades: 5, Fe550 grades: 5",
+      "detail": "['M20', 'M25', 'M30', 'M35', 'M40']"
+    },
+    {
+      "rule_id": "RULE_4",
+      "description": "All standard diameters parsed for Fe550",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Found: [8, 10, 12, 16, 20, 25, 32] | Missing: []",
+      "detail": ""
+    },
+    {
+      "rule_id": "RULE_5",
+      "description": "All standard concrete grades parsed for Fe550",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Found: ['M20', 'M25', 'M30', 'M35', 'M40'] | Missing: []",
+      "detail": ""
+    },
+    {
+      "rule_id": "RULE_6",
+      "description": "No empty/zero lookup values for Fe550",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Invalid entries: 0 | Total Fe550: 35",
+      "detail": ""
+    },
+    {
+      "rule_id": "RULE_7",
+      "description": "Loader returns Fe550 values when steel_grade=Fe550 requested",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "dia=8, cg=M20: expected=500mm, got=500mm",
+      "detail": ""
+    },
+    {
+      "rule_id": "RULE_8",
+      "description": "No Fe415 substitution when Fe550 requested",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Fe415-substitution events: 0",
+      "detail": "[]"
+    },
+    {
+      "rule_id": "RULE_9",
+      "description": "Engineering context updated: Fe550 in steel_grades and dev_table",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Fe550 in steel_grades: True | in dev_table: True",
+      "detail": "All steel grades: ['Fe415', 'Fe500', 'Fe550']"
+    },
+    {
+      "rule_id": "RULE_10",
+      "description": "No regression: Fe415 and Fe500 tables still fully present",
+      "passed": true,
+      "status": "PASS",
+      "evidence": "Fe415: 35 entries | Fe500: 35 entries",
+      "detail": "Expected >=30 each (6 diameters x 5 grades)"
+    }
+  ]
+}

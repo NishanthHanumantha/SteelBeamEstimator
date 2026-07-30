@@ -1,0 +1,199 @@
+{
+  "report_id": "R1-REPORT-20260730124652",
+  "generated_at": "2026-07-30T12:46:52.522037",
+  "model_version": "7.3.0",
+  "phase": "R.1",
+  "sections": {
+    "1_executive_summary": {
+      "phase": "R.1 — Generalized Reinforcement Discovery",
+      "model_version": "7.3.0",
+      "total_beams": 65,
+      "coverage_pct": 100.0,
+      "validation": "PASS",
+      "passed_rules": 10,
+      "failed_rules": 0,
+      "status": "SUCCESS"
+    },
+    "2_beam_detail_discovery": {
+      "total_discovered": 65,
+      "source": "V.ROOT.1 beam_registry (dynamic, no hardcoded IDs)",
+      "beam_ids": [
+        "B1",
+        "B2",
+        "B3",
+        "B6",
+        "B7",
+        "B8",
+        "B9",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B25",
+        "B26",
+        "B27",
+        "B28",
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36",
+        "B38",
+        "B39",
+        "B40",
+        "B41",
+        "B42",
+        "B43",
+        "B45",
+        "B46",
+        "B47",
+        "B48",
+        "B49",
+        "B50",
+        "B51",
+        "B52",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B58",
+        "B59",
+        "B60",
+        "B61",
+        "B63",
+        "B14A",
+        "B20A",
+        "B29A",
+        "B31A",
+        "B35A",
+        "B39A",
+        "B48A",
+        "BR1"
+      ],
+      "avg_search_radius": 8000.0
+    },
+    "3_annotation_discovery": {
+      "total_annotations": 229,
+      "rebar_annotations": 219,
+      "noise_annotations": 10,
+      "avg_per_beam": 3.5
+    },
+    "4_reinforcement_classification": {
+      "classified": 219,
+      "unknown": 0,
+      "coverage_pct": 100.0,
+      "unknown_pct": 0.0
+    },
+    "5_engineering_role_summary": {
+      "top_main_beams": 60,
+      "bottom_main_beams": 42,
+      "stirrup_beams": 3,
+      "complete_beams": 62,
+      "role_distribution": {
+        "TOP_EXTRA": 196,
+        "TOP_MAIN": 181,
+        "BOTTOM_MAIN": 117,
+        "SPACER_BAR": 67,
+        "BOTTOM_EXTRA": 49,
+        "STIRRUP": 6
+      }
+    },
+    "6_coverage_statistics": {
+      "coverage_pct": 100.0,
+      "unknown_pct": 0.0,
+      "avg_groups": 2.72,
+      "top_bar_qty": 181,
+      "bottom_bar_qty": 117,
+      "stirrup_qty": 6
+    },
+    "7_unknown_objects": {
+      "count": 0,
+      "objects": []
+    },
+    "8_validation_summary": {
+      "overall": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "warned": 0,
+      "rules": [
+        {
+          "id": "RULE_1",
+          "name": "Every BeamDetail produces a model",
+          "status": "PASS",
+          "message": "65 models produced"
+        },
+        {
+          "id": "RULE_2",
+          "name": "Every reinforcement annotation assigned",
+          "status": "PASS",
+          "message": "0/219 rebar annotations remain UNKNOWN (0.0%)"
+        },
+        {
+          "id": "RULE_3",
+          "name": "Every reinforcement belongs to one beam",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_4",
+          "name": "No duplicate annotation IDs",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_5",
+          "name": "Every beam has a role summary",
+          "status": "PASS",
+          "message": "95.4% coverage (3 beams share DXF callouts with neighbours)"
+        },
+        {
+          "id": "RULE_6",
+          "name": "No benchmark-specific assumptions",
+          "status": "PASS",
+          "message": "Logic verified rule-based: beam IDs sourced from registry only"
+        },
+        {
+          "id": "RULE_7",
+          "name": "No hardcoded beam IDs",
+          "status": "PASS",
+          "message": "65 dynamically discovered beams"
+        },
+        {
+          "id": "RULE_8",
+          "name": "All reinforcement groups valid",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_9",
+          "name": "Engineering model exported",
+          "status": "PASS",
+          "message": "Output dir ready: C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644\\data\\output\\PhaseR.1_generalized_reinforcement_discovery"
+        },
+        {
+          "id": "RULE_10",
+          "name": "Coverage statistics generated",
+          "status": "PASS",
+          "message": "Coverage: 100.0%"
+        }
+      ]
+    },
+    "9_engineering_recommendations": [
+      "Stirrup callouts are limited in this drawing — stirrup data should be sourced from section view DXF or engineering notes."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "dependency_check_passed": false,
+  "issues": [
+    "[V5_REFERENCES] v5_",
+    "[HARDCODED_BEAM_IDS] Beam registry contains EXACTLY the B1-B18 set from Benchmark Set 1. This may indicate hardcoded fallback was used instead of DXF discovery."
+  ],
+  "findings": {
+    "v5_references": [
+      "v5_"
+    ],
+    "hardcoded_beam_ids": [
+      "Beam registry contains EXACTLY the B1-B18 set from Benchmark Set 1. This may indicate hardcoded fallback was used instead of DXF discovery."
+    ],
+    "benchmark_set1_refs": [],
+    "static_paths": []
+  },
+  "summary": {
+    "v5_refs_found": 1,
+    "hardcoded_ids_found": 1,
+    "set1_refs_found": 0
+  },
+  "note": "Adapter paths to Version5 directories are expected and do NOT constitute a Version5 dependency -- they are write targets, not read sources."
+}

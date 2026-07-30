@@ -1,0 +1,122 @@
+{
+  "model_version": "7.11.0",
+  "phase": "R.2.1B",
+  "statistics": {
+    "total_semantic_objects": 65,
+    "beams_covered": 18,
+    "role_distribution": {
+      "EXTRA_BAR": 31,
+      "MAIN_BAR": 29,
+      "SPACER_BAR": 2,
+      "SIDE_FACE": 2,
+      "UNKNOWN": 1
+    },
+    "meaning_distribution": {
+      "TOP_EXTRA": 21,
+      "TOP_MAIN": 18,
+      "BOTTOM_MAIN": 11,
+      "BOTTOM_EXTRA": 10,
+      "SPACER": 2,
+      "SIDE_FACE_REINFORCEMENT": 2,
+      "UNKNOWN": 1
+    },
+    "modifier_distribution": {
+      "BOTH_FACES": 4,
+      "SIDE_FACE_REINFORCEMENT": 2
+    },
+    "placement_distribution": {
+      "TOP": 39,
+      "BOTTOM": 21,
+      "BOTH_FACE": 5
+    },
+    "confidence_distribution": {
+      "MEDIUM": 63,
+      "HIGH": 2
+    },
+    "source_distribution": {
+      "REGEX_GUESS": 63,
+      "EXPLICIT_MODIFIER": 2
+    },
+    "unknown_count": 1,
+    "role_overrides": 2,
+    "objects_with_modifiers": 5,
+    "semantic_coverage_pct": 98.46,
+    "dictionary_coverage_pct": 3.08,
+    "semantic_confidence_pct": 3.08
+  },
+  "validation": {
+    "rules": {
+      "RULE_1": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "65/65 annotations produced semantic objects"
+      },
+      "RULE_2": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 objects missing engineering_meaning"
+      },
+      "RULE_3": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 dictionary-covered reinforcement bars still UNKNOWN"
+      },
+      "RULE_4": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 quantity mismatches"
+      },
+      "RULE_5": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 diameter mismatches"
+      },
+      "RULE_6": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 stirrups lost spacing"
+      },
+      "RULE_7": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "S.F.R.: 2/1 detected; O.E.F.: 0/0 detected"
+      },
+      "RULE_8": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 objects missing placement"
+      },
+      "RULE_9": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Semantic interpreter uses no hardcoded beam IDs (verified by code review)"
+      },
+      "RULE_10": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Backward compatible: 2 role overrides applied, 63 preserved"
+      },
+      "RULE_11": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "No engineering equations modified (forbidden files untouched: steel_weight_completion.py, bbs_completion_engine.py, estimator_excel_generator.py)"
+      },
+      "RULE_12": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Production workbook generated"
+      }
+    },
+    "passed": 12,
+    "total": 12,
+    "all_pass": true,
+    "summary": "12/12 validation rules passed"
+  },
+  "production": {
+    "total_steel_kg": 1633.0278445070498,
+    "beams_reaching_steel": 18,
+    "beams_reaching_bbs": 98,
+    "bbs_rows": 98,
+    "workbook_generated": true
+  }
+}

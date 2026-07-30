@@ -1,0 +1,742 @@
+{
+  "phase": "V.ROOT.1",
+  "phase_name": "Dynamic DXF Discovery & Pipeline Initialization",
+  "model_version": "7.1.0",
+  "generated_at": "2026-07-30T12:46:47.738860",
+  "validation_passed": true,
+  "1_executive_summary": {
+    "model_version": "7.1.0",
+    "phase": "V.ROOT.1",
+    "status": "PASS",
+    "project_id": "GALERA_GF::UNKNOWN_BUILDING::UNKNOWN_FLOOR::2026",
+    "total_drawings": 3,
+    "beams_discovered": 65,
+    "engineering_objects": 65,
+    "adapters_written": 4,
+    "v5_dependency": false,
+    "hardcoded_beams": false,
+    "rules_passed": "9/9",
+    "l2_ready": true,
+    "key_achievement": "Dynamically discovered 65 beams from DXF drawing without any hardcoded IDs or Version5 dependencies. Pipeline is ready for L.2 execution."
+  },
+  "2_project_summary": {
+    "project_id": "GALERA_GF::UNKNOWN_BUILDING::UNKNOWN_FLOOR::2026",
+    "project_name": "Galera_GF",
+    "building": "UNKNOWN_BUILDING",
+    "floor": "UNKNOWN_FLOOR",
+    "discipline": "STRUCTURAL",
+    "revision": "R0",
+    "drawing_set_id": "GALERA_GF::UNKNOWN_BUILDING::UNKNOWN_FLOOR",
+    "source_folder": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644",
+    "dxf_count": 6
+  },
+  "3_drawing_summary": {
+    "total_drawings": 3,
+    "type_breakdown": {
+      "BEAM_REINFORCEMENT": 1,
+      "FRAMING_PLAN": 1,
+      "GENERAL_NOTES": 1
+    },
+    "has_reinforcement": true,
+    "has_framing": true,
+    "primary_reinforcement": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644\\reinforcement\\Galera_GF_BeamReinforcementDetails.dxf",
+    "primary_framing": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644\\framing\\Galera_GF_FramingPlan.dxf",
+    "drawings": [
+      {
+        "filename": "Galera_GF_BeamReinforcementDetails.dxf",
+        "type": "BEAM_REINFORCEMENT",
+        "size_kb": 1797.7
+      },
+      {
+        "filename": "Galera_GF_FramingPlan.dxf",
+        "type": "FRAMING_PLAN",
+        "size_kb": 688.5
+      },
+      {
+        "filename": "SE-100-R0-SH-01&SH-02(GENERAL NOTES).dxf",
+        "type": "GENERAL_NOTES",
+        "size_kb": 2476.4
+      }
+    ]
+  },
+  "4_beam_discovery_summary": {
+    "dxf_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644\\reinforcement\\Galera_GF_BeamReinforcementDetails.dxf",
+    "beam_count": 65,
+    "beam_ids": [
+      "B1",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B14A",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B19",
+      "B2",
+      "B20",
+      "B20A",
+      "B21",
+      "B22",
+      "B23",
+      "B25",
+      "B26",
+      "B27",
+      "B28",
+      "B29",
+      "B29A",
+      "B3",
+      "B30",
+      "B31",
+      "B31A",
+      "B32",
+      "B33",
+      "B34",
+      "B35",
+      "B35A",
+      "B36",
+      "B38",
+      "B39",
+      "B39A",
+      "B40",
+      "B41",
+      "B42",
+      "B43",
+      "B45",
+      "B46",
+      "B47",
+      "B48",
+      "B48A",
+      "B49",
+      "B50",
+      "B51",
+      "B52",
+      "B53",
+      "B54",
+      "B55",
+      "B56",
+      "B57",
+      "B58",
+      "B59",
+      "B6",
+      "B60",
+      "B61",
+      "B63",
+      "B7",
+      "B8",
+      "B9",
+      "BR1"
+    ],
+    "label_entities": 66,
+    "total_text_ents": 448,
+    "sections_extracted": 65,
+    "sections_inferred": 0,
+    "spans_found": 59,
+    "parse_time_s": 2.24,
+    "source": "DYNAMIC_DXF_DISCOVERY",
+    "error": null,
+    "beam_details": [
+      {
+        "beam_id": "B1",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 4158.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B10",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 2656.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B11",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 7858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B12",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 7858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B13",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 4759.9,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B14",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 7806.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B14A",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 1808.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B15",
+        "width_mm": 300.0,
+        "depth_mm": 500.0,
+        "span_mm": 5958.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B16",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 1700.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B17",
+        "width_mm": 200.0,
+        "depth_mm": 400.0,
+        "span_mm": 1700.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B18",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 1825.7,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B19",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 2150.0,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B2",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B20",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 7806.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B20A",
+        "width_mm": 200.0,
+        "depth_mm": 500.0,
+        "span_mm": 1821.8,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B21",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 5821.0,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B22",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 7966.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B23",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 7800.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B25",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 6647.8,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B26",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 3784.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B27",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 3259.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B28",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B29",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 3418.7,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B29A",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 1551.0,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B3",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B30",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B31",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 2890.0,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B31A",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 2801.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B32",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 3935.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B33",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 4021.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B34",
+        "width_mm": 200.0,
+        "depth_mm": 1000.0,
+        "span_mm": 4021.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B35",
+        "width_mm": 150.0,
+        "depth_mm": 600.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B35A",
+        "width_mm": 200.0,
+        "depth_mm": 1000.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B36",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B38",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": null,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B39",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 2801.5,
+        "inferred": false,
+        "occurrences": 2
+      },
+      {
+        "beam_id": "B39A",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 2908.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B40",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 3810.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B41",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 2801.5,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B42",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 2476.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B43",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 2476.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B45",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 2693.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B46",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 2908.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B47",
+        "width_mm": 400.0,
+        "depth_mm": 750.0,
+        "span_mm": 3589.8,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B48",
+        "width_mm": 750.0,
+        "depth_mm": 750.0,
+        "span_mm": 8821.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B48A",
+        "width_mm": 200.0,
+        "depth_mm": 1250.0,
+        "span_mm": 1773.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B49",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 7405.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B50",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 6582.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B51",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4006.6,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B52",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 2842.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B53",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 6687.5,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B54",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 6036.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B55",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4014.2,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B56",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 1714.5,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B57",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 2891.1,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B58",
+        "width_mm": 200.0,
+        "depth_mm": 400.0,
+        "span_mm": 2084.4,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B59",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 6590.5,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B6",
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "span_mm": 7858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B60",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 5919.9,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B61",
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "span_mm": 1821.8,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B63",
+        "width_mm": 200.0,
+        "depth_mm": 600.0,
+        "span_mm": 1564.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B7",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B8",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 2149.9,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "B9",
+        "width_mm": 300.0,
+        "depth_mm": 750.0,
+        "span_mm": 4858.3,
+        "inferred": false,
+        "occurrences": 1
+      },
+      {
+        "beam_id": "BR1",
+        "width_mm": 150.0,
+        "depth_mm": 600.0,
+        "span_mm": 1564.3,
+        "inferred": false,
+        "occurrences": 1
+      }
+    ]
+  },
+  "5_engineering_object_summary": {
+    "project_id": "GALERA_GF::UNKNOWN_BUILDING::UNKNOWN_FLOOR::2026",
+    "beam_count": 65,
+    "objects_generated": {
+      "beam_schedule": 65,
+      "reinforcement_objects": 65,
+      "engineering_objects": 65
+    },
+    "adapter_paths": {
+      "beam_schedule": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.json",
+      "reinforcement_objects": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_2_reinforcement_engine\\reinforcement_objects.json",
+      "engineering_objects": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_g\\g_5_1_engineering_objects\\engineering_objects.json",
+      "beam_geometry": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_f\\beam_geometry_model.json"
+    },
+    "backups_created": {
+      "beam_schedule": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_15_beam_schedule\\beam_schedule_results.vroot1_backup",
+      "reinforcement_objects": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_i\\i_2_reinforcement_engine\\reinforcement_objects.vroot1_backup",
+      "engineering_objects": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_g\\g_5_1_engineering_objects\\engineering_objects.vroot1_backup",
+      "beam_geometry": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version5\\data\\output\\phase_f\\beam_geometry_model.vroot1_backup"
+    },
+    "v5_dependency": false,
+    "hardcoded_beams": false
+  },
+  "6_dependency_analysis": {
+    "passed": false,
+    "issues": [
+      "[V5_REFERENCES] v5_"
+    ],
+    "findings": {
+      "v5_references": [
+        "v5_"
+      ],
+      "hardcoded_beam_ids": [],
+      "benchmark_set1_refs": [],
+      "static_paths": []
+    },
+    "summary": {
+      "v5_refs_found": 1,
+      "hardcoded_ids_found": 0,
+      "set1_refs_found": 0
+    },
+    "note": "Adapter paths to Version5 directories are expected and do NOT constitute a Version5 dependency -- they are write targets, not read sources."
+  },
+  "7_initialization_validation": {
+    "validation_passed": true,
+    "rules_passed": {
+      "RULE_1": true,
+      "RULE_2": true,
+      "RULE_3": true,
+      "RULE_4": true,
+      "RULE_5": true,
+      "RULE_6": true,
+      "RULE_7": true,
+      "RULE_8": true,
+      "RULE_9": true
+    },
+    "rules_detail": {
+      "RULE_1": "Project discovered with valid project_id",
+      "RULE_2": "3/3 drawings classified (UNKNOWN: 0)",
+      "RULE_3": "Primary beam reinforcement drawing identified",
+      "RULE_4": "Beam registry built: 65 beams discovered",
+      "RULE_5": "Engineering objects created: 65",
+      "RULE_6": "Pipeline context generated with beam registry and project context",
+      "RULE_7": "Pipeline context reports no Version5 dependency",
+      "RULE_8": "Beam registry is dynamically sourced (not hardcoded)",
+      "RULE_9": "Dynamic initialization complete and L.2 ready"
+    },
+    "passed_count": 9,
+    "failed_count": 0,
+    "failed_rules": [],
+    "failed_reasons": {}
+  },
+  "8_readiness_for_l2": {
+    "l2_ready": true,
+    "beam_count_ready": 65,
+    "adapter_note": "V.ROOT.1 has written dynamic engineering objects to the Version5 adapter paths. All downstream phases (L.2 onwards) will use the dynamically discovered beam data.",
+    "pipeline_ready": true,
+    "next_step": "Run L.2 -> SI.0 -> SI.1 -> V.B.1 as normal"
+  }
+}

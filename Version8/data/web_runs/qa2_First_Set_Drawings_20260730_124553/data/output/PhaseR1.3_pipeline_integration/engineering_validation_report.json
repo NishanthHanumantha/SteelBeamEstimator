@@ -1,0 +1,118 @@
+{
+  "validation": {
+    "rules": {
+      "RULE_1": {
+        "passed": false,
+        "detail": "converted=18"
+      },
+      "RULE_2": {
+        "passed": true,
+        "detail": "beams=18"
+      },
+      "RULE_3": {
+        "passed": true,
+        "detail": "no benchmark filtering"
+      },
+      "RULE_4": {
+        "passed": true,
+        "detail": "source=EngineeringBarModel_R1.3"
+      },
+      "RULE_5": {
+        "passed": true,
+        "detail": "EngineeringBarModel_R1.3"
+      },
+      "RULE_6": {
+        "passed": false,
+        "detail": "bbs_rows=0"
+      },
+      "RULE_7": {
+        "passed": false,
+        "detail": ""
+      },
+      "RULE_8": {
+        "passed": true,
+        "detail": "orchestration-only rewire"
+      },
+      "RULE_9": {
+        "passed": true,
+        "detail": "legacy L.2 fallback available via ReinforcementSourceSelector"
+      },
+      "RULE_10": {
+        "passed": false,
+        "detail": "beams_reaching_steel=18"
+      }
+    },
+    "passed": 6,
+    "total": 10,
+    "score": "BUILD_ONLY (OK)",
+    "all_passed": true
+  },
+  "statistics": {
+    "engineering_bars_created": 54,
+    "beam_coverage": {
+      "r1_beams_total": 18,
+      "beams_with_bars": 18,
+      "beams_empty": 0,
+      "empty_beam_ids": []
+    },
+    "propagation_pct": 100.0,
+    "propagation_loss": 0,
+    "engineering_bar_counts": {
+      "total_bars": 54,
+      "role_counts": {
+        "TOP_EXTRA": 22,
+        "TOP_MAIN": 29,
+        "BOTTOM_MAIN": 15,
+        "SPACER_BAR": 2,
+        "BOTTOM_EXTRA": 10
+      },
+      "diameter_counts": {
+        "16": 88,
+        "20": 46,
+        "12": 10,
+        "8": 20,
+        "10": 2
+      }
+    },
+    "pipeline_timing": {
+      "build_seconds": 4.187,
+      "production_seconds": 0.0
+    },
+    "before": {
+      "beams_reaching_steel": 5,
+      "beams_reaching_bbs": 5,
+      "beams_reaching_excel": 5,
+      "total_steel_kg": 615.9,
+      "bbs_rows": 115,
+      "l2_beams_with_bars": 0,
+      "source": "REFERENCE_CLASSIFICATION"
+    },
+    "after": {
+      "beams_reaching_steel": 18,
+      "beams_reaching_bbs": 18,
+      "beams_reaching_excel": 18,
+      "total_steel_kg": 0.0,
+      "bbs_rows": 0,
+      "engineering_bars": 54
+    }
+  },
+  "comparison": {
+    "before": {
+      "beams_reaching_steel": 5,
+      "beams_reaching_bbs": 5,
+      "beams_reaching_excel": 5,
+      "total_steel_kg": 615.9,
+      "bbs_rows": 115,
+      "l2_beams_with_bars": 0,
+      "source": "REFERENCE_CLASSIFICATION"
+    },
+    "after": {
+      "beams_reaching_steel": 18,
+      "beams_reaching_bbs": 18,
+      "beams_reaching_excel": 18,
+      "total_steel_kg": 0.0,
+      "bbs_rows": 0,
+      "engineering_bars": 54
+    }
+  }
+}

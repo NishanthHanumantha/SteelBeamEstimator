@@ -1,4 +1,4 @@
-**Our model is a deterministic Knowledge-Based Engineering system that encodes structural engineering rules and estimator practices to create engineering objects, decisions, and quantities.**
+**Deterministic Knowledge-Based Engineering system that encodes structural engineering rules and estimator practices to create engineering objects, decisions, and quantities.**
 
 
 
@@ -55,6 +55,4 @@ Calculate Quantities
 **Machine Learning can be introduced to try to improve perception tasks such as annotation recognition and pattern classification.**
 
 **-But we have raw drawings and not labelled/tagged drawings as teaching sets so ML approach is not reliable.**
-
-
 

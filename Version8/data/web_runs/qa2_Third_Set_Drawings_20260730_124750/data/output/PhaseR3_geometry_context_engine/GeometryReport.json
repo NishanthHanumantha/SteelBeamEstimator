@@ -1,0 +1,162 @@
+{
+  "phase_id": "R.3",
+  "model_version": "8.9.3",
+  "generated_at": "2026-07-30T07:18:17Z",
+  "statistics": {
+    "beam_count": 61,
+    "context_count": 277,
+    "beam_axis": {
+      "count": 61,
+      "min_length_mm": 1500.0,
+      "max_length_mm": 8775.2,
+      "mean_length_mm": 4943.5,
+      "orientations": {
+        "HORIZONTAL": 61
+      },
+      "geometry_sources": {
+        "ORIGINAL": 51,
+        "RECOVERED": 10
+      }
+    },
+    "support": {
+      "total_supports": 122,
+      "type_distribution": {
+        "LEFT_SUPPORT": 61,
+        "RIGHT_SUPPORT": 61
+      },
+      "avg_support_width_mm": 382.8,
+      "beams_with_supports": 61
+    },
+    "projection": {
+      "confidence_distribution": {
+        "HIGH": 277
+      },
+      "position_source_distribution": {
+        "REINFORCEMENT_ANNOTATIONS_DXF": 277
+      },
+      "min_projection_mm": -1622.1,
+      "max_projection_mm": 11904.6,
+      "mean_projection_mm": 3168.2
+    },
+    "normalized_position_histogram": {
+      "0.0-0.1": 12,
+      "0.1-0.2": 7,
+      "0.2-0.3": 7,
+      "0.3-0.4": 21,
+      "0.4-0.5": 33,
+      "0.5-0.6": 37,
+      "0.6-0.7": 58,
+      "0.7-0.8": 33,
+      "0.8-0.9": 25,
+      "0.9-1.0": 44
+    },
+    "support_zone_distribution": {
+      "NONE": 231,
+      "RIGHT_SUPPORT_ZONE": 36,
+      "LEFT_SUPPORT_ZONE": 10
+    },
+    "span_zone_distribution": {
+      "MIDSPAN_ZONE": 182,
+      "RIGHT_SUPPORT_ZONE": 36,
+      "RIGHT_TRANSITION_ZONE": 38,
+      "LEFT_TRANSITION_ZONE": 11,
+      "LEFT_SUPPORT_ZONE": 10
+    },
+    "extent_distribution": {
+      "MIDSPAN_ONLY": 182,
+      "RIGHT_SUPPORT_ONLY": 34,
+      "RIGHT_TRANSITION": 38,
+      "FULL_SPAN": 4,
+      "LEFT_TRANSITION": 10,
+      "LEFT_SUPPORT_ONLY": 9
+    },
+    "geometry_confidence_distribution": {
+      "HIGH": 231,
+      "MEDIUM": 46
+    },
+    "intent_check": {
+      "all_intent_unknown": true,
+      "note": "Intent remains UNKNOWN — R.3 produces geometry evidence only"
+    }
+  },
+  "validation": {
+    "rules": {
+      "RULE_1": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "277/277 facts have GeometryContext"
+      },
+      "RULE_2": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 contexts missing beam_id"
+      },
+      "RULE_3": {
+        "passed": false,
+        "status": "FAIL",
+        "detail": "19 projections outside beam axis (tolerance=500.0mm)"
+      },
+      "RULE_4": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 contexts with normalized_position outside [0.0, 1.0]"
+      },
+      "RULE_5": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 beams missing BeamAxis: []"
+      },
+      "RULE_6": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 beams missing SupportLocation"
+      },
+      "RULE_7": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 duplicate annotation_ids in contexts"
+      },
+      "RULE_8": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Geometry engine uses no hardcoded beam IDs (verified by architecture)"
+      },
+      "RULE_9": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 facts with non-UNKNOWN intent"
+      },
+      "RULE_10": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Phase R.3 is additive: no steel/BBS/Excel equations modified"
+      },
+      "RULE_11": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "R.3 reads R.2.1D facts without modification; backward compatible"
+      },
+      "RULE_12": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Production pipeline unchanged (R.3 is additive)"
+      }
+    },
+    "passed": 11,
+    "total": 12,
+    "all_pass": false,
+    "summary": "11/12 validation rules passed"
+  },
+  "artefacts": [
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\GeometryContexts.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\BeamAxis.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\SupportLocations.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\ProjectionData.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\NormalizedPositions.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\SupportZones.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\SpanZones.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\ExtentEvidence.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\GeometryStatistics.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Third_Set_Drawings_20260730_124750\\data\\output\\PhaseR3_geometry_context_engine\\GeometryValidation.json"
+  ]
+}

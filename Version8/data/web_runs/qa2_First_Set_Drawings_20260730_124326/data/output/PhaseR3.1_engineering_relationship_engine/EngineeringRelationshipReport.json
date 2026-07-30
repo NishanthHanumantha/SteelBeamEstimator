@@ -1,0 +1,156 @@
+{
+  "phase_id": "R.3.1",
+  "model_version": "8.9.4",
+  "generated_at": "2026-07-30T07:14:06Z",
+  "statistics": {
+    "total_annotations": 65,
+    "total_leaders": 67,
+    "total_arrows": 67,
+    "total_physical_bars": 64,
+    "total_crossings": 128,
+    "leader_statistics": {
+      "by_beam_sample": {
+        "B1": 8,
+        "B2": 5,
+        "B4": 5,
+        "B8": 5,
+        "B9": 5
+      },
+      "direction_distribution": {
+        "DOWN": 36,
+        "UP": 31
+      },
+      "min_length_mm": 311.8,
+      "max_length_mm": 1571.1,
+      "mean_length_mm": 683.8
+    },
+    "arrow_statistics": {
+      "total": 67,
+      "direction_distribution": {
+        "DOWN": 36,
+        "UP": 31
+      }
+    },
+    "physical_bar_statistics": {
+      "by_entity_type": {
+        "LINE": 64
+      },
+      "placement_distribution": {
+        "TOP_FACE": 53,
+        "BOTTOM_FACE": 11
+      },
+      "min_length_mm": 1730.5,
+      "max_length_mm": 11488.9,
+      "mean_length_mm": 4578.5
+    },
+    "relationship_confidence_distribution": {
+      "MEDIUM": 40,
+      "LOW": 8,
+      "HIGH": 17
+    },
+    "extent_distribution": {
+      "UNKNOWN": 48,
+      "FULL_SPAN": 17
+    },
+    "support_crossing_distribution": {
+      "0": 50,
+      "2": 5,
+      "1": 10
+    },
+    "support_crossing_summary": {
+      "left_support_reached": 17,
+      "right_support_reached": 17,
+      "both_supports_reached": 17
+    },
+    "bar_placement_distribution": {
+      "UNKNOWN": 48,
+      "TOP_FACE": 14,
+      "BOTTOM_FACE": 3
+    },
+    "convention_statistics": {
+      "total_conventions_observed": 74,
+      "annotations_with_arrow_evidence": 57,
+      "annotations_with_bar_placement_evidence": 17
+    }
+  },
+  "validation": {
+    "rules": {
+      "RULE_1": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "65/65 annotations have relationships"
+      },
+      "RULE_2": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "56/67 leaders linked to relationships (11 unlinked — may be non-reinforcement leaders)"
+      },
+      "RULE_3": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "56/67 arrows resolved in relationships"
+      },
+      "RULE_4": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 relationships with missing/UNKNOWN beam_id"
+      },
+      "RULE_5": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 relationships missing extent label"
+      },
+      "RULE_6": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 relationships with invalid support_crossings"
+      },
+      "RULE_7": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 duplicate annotation_ids in relationships"
+      },
+      "RULE_8": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Engine uses dynamic beam IDs from beam_registry — no hardcoded names"
+      },
+      "RULE_9": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "0 facts with non-UNKNOWN intent"
+      },
+      "RULE_10": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Phase R.3.1 is additive — no estimator/BBS/Excel equations modified"
+      },
+      "RULE_11": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "Production pipeline unchanged"
+      },
+      "RULE_12": {
+        "passed": true,
+        "status": "PASS",
+        "detail": "RelationshipGraph.json will be exported"
+      }
+    },
+    "passed": 12,
+    "total": 12,
+    "all_pass": true,
+    "summary": "12/12 validation rules passed"
+  },
+  "artefacts": [
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\EngineeringDrawingRelationships.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\LeaderInventory.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\ArrowInventory.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\RelationshipGraph.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\RelationshipStatistics.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\ConventionEvidence.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\SupportCrossings.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\ExtentEvidence.json",
+    "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR3.1_engineering_relationship_engine\\RelationshipValidation.json"
+  ]
+}

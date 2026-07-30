@@ -1,0 +1,151 @@
+{
+  "report_id": "R1-REPORT-20260730124343",
+  "generated_at": "2026-07-30T12:43:43.477296",
+  "model_version": "7.3.0",
+  "phase": "R.1",
+  "sections": {
+    "1_executive_summary": {
+      "phase": "R.1 — Generalized Reinforcement Discovery",
+      "model_version": "7.3.0",
+      "total_beams": 18,
+      "coverage_pct": 100.0,
+      "validation": "PASS",
+      "passed_rules": 10,
+      "failed_rules": 0,
+      "status": "SUCCESS"
+    },
+    "2_beam_detail_discovery": {
+      "total_discovered": 18,
+      "source": "V.ROOT.1 beam_registry (dynamic, no hardcoded IDs)",
+      "beam_ids": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7",
+        "B8",
+        "B9",
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18"
+      ],
+      "avg_search_radius": 8000.0
+    },
+    "3_annotation_discovery": {
+      "total_annotations": 65,
+      "rebar_annotations": 63,
+      "noise_annotations": 2,
+      "avg_per_beam": 3.6
+    },
+    "4_reinforcement_classification": {
+      "classified": 63,
+      "unknown": 0,
+      "coverage_pct": 100.0,
+      "unknown_pct": 0.0
+    },
+    "5_engineering_role_summary": {
+      "top_main_beams": 18,
+      "bottom_main_beams": 11,
+      "stirrup_beams": 0,
+      "complete_beams": 18,
+      "role_distribution": {
+        "TOP_EXTRA": 42,
+        "TOP_MAIN": 40,
+        "BOTTOM_MAIN": 24,
+        "BOTTOM_EXTRA": 20,
+        "SPACER_BAR": 6
+      }
+    },
+    "6_coverage_statistics": {
+      "coverage_pct": 100.0,
+      "unknown_pct": 0.0,
+      "avg_groups": 2.94,
+      "top_bar_qty": 40,
+      "bottom_bar_qty": 24,
+      "stirrup_qty": 0
+    },
+    "7_unknown_objects": {
+      "count": 0,
+      "objects": []
+    },
+    "8_validation_summary": {
+      "overall": "PASS",
+      "passed": 10,
+      "failed": 0,
+      "warned": 0,
+      "rules": [
+        {
+          "id": "RULE_1",
+          "name": "Every BeamDetail produces a model",
+          "status": "PASS",
+          "message": "18 models produced"
+        },
+        {
+          "id": "RULE_2",
+          "name": "Every reinforcement annotation assigned",
+          "status": "PASS",
+          "message": "0/63 rebar annotations remain UNKNOWN (0.0%)"
+        },
+        {
+          "id": "RULE_3",
+          "name": "Every reinforcement belongs to one beam",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_4",
+          "name": "No duplicate annotation IDs",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_5",
+          "name": "Every beam has a role summary",
+          "status": "PASS",
+          "message": "All 18 beams have groups"
+        },
+        {
+          "id": "RULE_6",
+          "name": "No benchmark-specific assumptions",
+          "status": "PASS",
+          "message": "Logic verified rule-based: beam IDs sourced from registry only"
+        },
+        {
+          "id": "RULE_7",
+          "name": "No hardcoded beam IDs",
+          "status": "PASS",
+          "message": "18 dynamically discovered beams"
+        },
+        {
+          "id": "RULE_8",
+          "name": "All reinforcement groups valid",
+          "status": "PASS",
+          "message": ""
+        },
+        {
+          "id": "RULE_9",
+          "name": "Engineering model exported",
+          "status": "PASS",
+          "message": "Output dir ready: C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_First_Set_Drawings_20260730_124326\\data\\output\\PhaseR.1_generalized_reinforcement_discovery"
+        },
+        {
+          "id": "RULE_10",
+          "name": "Coverage statistics generated",
+          "status": "PASS",
+          "message": "Coverage: 100.0%"
+        }
+      ]
+    },
+    "9_engineering_recommendations": [
+      "Stirrup callouts are limited in this drawing — stirrup data should be sourced from section view DXF or engineering notes."
+    ]
+  }
+}

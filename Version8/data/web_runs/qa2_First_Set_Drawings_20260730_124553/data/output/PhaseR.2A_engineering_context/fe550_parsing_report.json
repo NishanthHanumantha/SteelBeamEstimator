@@ -1,0 +1,56 @@
+{
+  "generated": "2026-07-30T07:16:07.828496",
+  "model_version": "7.5.4",
+  "audit_finding": "All three development-length tables (FY-415, FY-500, FY-550) extracted from GN DXF including nested INSERT blocks.",
+  "fe550_in_gn_dxf": true,
+  "fe550_computed_from_is456": false,
+  "is456_formula": "Ld = (phi * fy/1.15) / (4 * tau_bd) — fallback only",
+  "bond_stresses": {
+    "M20": "1.2 * 1.6 = 1.92 N/mm2",
+    "M25": "1.4 * 1.6 = 2.24 N/mm2",
+    "M30": "1.5 * 1.6 = 2.40 N/mm2",
+    "M35": "1.7 * 1.6 = 2.72 N/mm2",
+    "M40": "1.9 * 1.6 = 3.04 N/mm2"
+  },
+  "fe550_entry_count": 35,
+  "previous_fallback_behaviour": "get_development_length_mm(Fe550) silently returned Fe415 value",
+  "corrected_behaviour": "get_development_length_mm(Fe550) returns DXF-parsed Fe550 value when FY-550 table is extracted via block expansion (R.2A.2+)",
+  "tables_in_gn_dxf": [
+    "LD FOR FY-415 @ y=861.6",
+    "LD FOR FY-500 @ y=817.7",
+    "LD FOR FY-550 @ y=774.2"
+  ],
+  "validation_score": "10/10",
+  "lookup_comparison_sample": {
+    "dia8_M20": {
+      "Fe415_mm": 400,
+      "Fe500_mm": 455,
+      "Fe550_mm": 500,
+      "Fe550_source": "GN_DXF_TABLE_1"
+    },
+    "dia8_M25": {
+      "Fe415_mm": 350,
+      "Fe500_mm": 385,
+      "Fe550_mm": 425,
+      "Fe550_source": "GN_DXF_TABLE_1"
+    },
+    "dia8_M30": {
+      "Fe415_mm": 300,
+      "Fe500_mm": 365,
+      "Fe550_mm": 400,
+      "Fe550_source": "GN_DXF_TABLE_1"
+    },
+    "dia8_M35": {
+      "Fe415_mm": 275,
+      "Fe500_mm": 325,
+      "Fe550_mm": 350,
+      "Fe550_source": "GN_DXF_TABLE_1"
+    },
+    "dia8_M40": {
+      "Fe415_mm": 250,
+      "Fe500_mm": 285,
+      "Fe550_mm": 325,
+      "Fe550_source": "GN_DXF_TABLE_1"
+    }
+  }
+}

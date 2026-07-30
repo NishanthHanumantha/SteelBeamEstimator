@@ -1,0 +1,103 @@
+{
+  "phase": "R.1.3",
+  "title": "Generalized Reinforcement Pipeline Integration",
+  "model_version": "7.7.0",
+  "timestamp": "2026-07-30T07:17:23.446661",
+  "status": "PASS",
+  "validation_score": "BUILD_ONLY (OK)",
+  "source": {
+    "models_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version8\\data\\web_runs\\qa2_Second_Set_Drawings_20260730_124644\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+    "source": "EngineeringBarModel_R1.3",
+    "reference_classification_in_path": false,
+    "engineering_bar_model_in_path": true
+  },
+  "statistics": {
+    "engineering_bars_created": 226,
+    "beam_coverage": {
+      "r1_beams_total": 65,
+      "beams_with_bars": 62,
+      "beams_empty": 3,
+      "empty_beam_ids": [
+        "B34",
+        "B35",
+        "B43"
+      ]
+    },
+    "propagation_pct": 100.0,
+    "propagation_loss": 0,
+    "engineering_bar_counts": {
+      "total_bars": 226,
+      "role_counts": {
+        "TOP_MAIN": 78,
+        "TOP_EXTRA": 112,
+        "BOTTOM_MAIN": 53,
+        "SPACER_BAR": 12,
+        "BOTTOM_EXTRA": 18,
+        "STIRRUP": 3
+      },
+      "diameter_counts": {
+        "20": 205,
+        "16": 442,
+        "12": 115,
+        "25": 30,
+        "8": 117,
+        "10": 2
+      }
+    },
+    "pipeline_timing": {
+      "build_seconds": 4.296,
+      "production_seconds": 0.0
+    },
+    "before": {
+      "beams_reaching_steel": 5,
+      "beams_reaching_bbs": 5,
+      "beams_reaching_excel": 5,
+      "total_steel_kg": 615.9,
+      "bbs_rows": 115,
+      "l2_beams_with_bars": 0,
+      "source": "REFERENCE_CLASSIFICATION"
+    },
+    "after": {
+      "beams_reaching_steel": 62,
+      "beams_reaching_bbs": 62,
+      "beams_reaching_excel": 62,
+      "total_steel_kg": 0.0,
+      "bbs_rows": 0,
+      "engineering_bars": 226
+    }
+  },
+  "comparison": {
+    "before": {
+      "beams_reaching_steel": 5,
+      "beams_reaching_bbs": 5,
+      "beams_reaching_excel": 5,
+      "total_steel_kg": 615.9,
+      "bbs_rows": 115,
+      "l2_beams_with_bars": 0,
+      "source": "REFERENCE_CLASSIFICATION"
+    },
+    "after": {
+      "beams_reaching_steel": 62,
+      "beams_reaching_bbs": 62,
+      "beams_reaching_excel": 62,
+      "total_steel_kg": 0.0,
+      "bbs_rows": 0,
+      "engineering_bars": 226
+    }
+  },
+  "architecture": {
+    "pipeline": [
+      "DXF",
+      "V.ROOT.1",
+      "R.1 Discovery",
+      "R.1.1 Adapter",
+      "EngineeringBarModel",
+      "L.2 Engineering Processing",
+      "Steel Weight",
+      "BBS",
+      "Excel"
+    ],
+    "reinforcement_source": "EngineeringBarModel (R.1.3)",
+    "reference_classification_removed": true
+  }
+}
