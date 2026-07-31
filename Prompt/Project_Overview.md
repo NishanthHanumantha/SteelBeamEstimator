@@ -76,7 +76,7 @@ Final Output → Beam Steel Excel Sheet
 
 
 
-Calculations             LLM Reasoning 
+Calculations             LLM Reasoning
 
 
 

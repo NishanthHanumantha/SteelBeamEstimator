@@ -1,0 +1,1765 @@
+Phase M.1 — Engineering Vision Dataset Generator
+MODEL_VERSION: 9.0.0 | Status: Implementation complete, smoke-tested
+
+1. Architecture Summary
+DXF
+ ↓
+Engineering Pipeline (existing — unchanged)
+ ↓  ↓  ↓  ↓
+VROOT1  R.1  R.3  R.1.3
+ ↓
+Phase M.1 — Vision Dataset Generator
+ ├─ dxf_renderer.py       — vector render via ezdxf matplotlib backend
+ ├─ beam_cropper.py        — per-beam DXF bbox → pixel crop via PIL
+ ├─ annotation_builder.py — deterministic labels from R.1 / R.1.3
+ ├─ metadata_builder.py   — beam metadata
+ ├─ preview_generator.py  — quality-inspection overlays
+ ├─ manifest_builder.py   — dataset_manifest.json
+ └─ dataset_validator.py  — dataset_validation.json
+ ↓
+data/vision_dataset/run_<timestamp>/
+2. Dataset Directory Structure
+Version9/
+  data/
+    vision_dataset/
+      run_20260729_123456/         ← unique per execution
+        images/
+          Beam_B1.png              ← clean crop (no overlays)
+          Beam_B2.png
+        annotations/
+          Beam_B1.json             ← deterministic labels
+          Beam_B2.json
+        metadata/
+          Beam_B1_meta.json
+          Beam_B2_meta.json
+        previews/
+          Beam_B1_preview.png      ← quality-inspection only
+          Beam_B2_preview.png
+        dataset_manifest.json
+        dataset_validation.json
+        _full_render.png           ← full 6000×4400 px DXF rendering
+3. Rendering Pipeline
+Backend: ezdxf.addons.drawing.matplotlib.MatplotlibBackend — true vector rendering
+Resolution: 200 DPI at 30″×22″ → 6000×4400 px PNG (confirmed in smoke test)
+Coordinate transform: linear DXF model-space ↔ pixel map (CoordTransform.dxf_to_pixel)
+Smoke test result: Benchmark Set 2 DXF rendered in ~30 s, 197 KB output, DXF extents correctly captured
+4. Beam Cropping Strategy
+Source: BeamAxis.json (R.3) → dxf_centroid_x/y ± beam_length_mm/2
+Fallback: beam_registry.json → centroid_x/y + clear_span_mm
+Padding: configurable, default 3 000 mm (3 m) around beam on all sides
+Ensures leaders, annotations, support zones, stirrup callouts are never clipped
+PIL Image.crop() with Y-axis flip correction
+5. Annotation JSON Schema
+{
+  "schema_version": "M.1.0",
+  "model_version": "9.0.0",
+  "beam_id": "B17",
+  "drawing_file": "Galera_GF_BeamReinforcementDetails.dxf",
+  "image_file": "Beam_B17.png",
+  "bbox_dxf": [x1, y1, x2, y2],
+  "bbox_pixels": [left, upper, right, lower],
+  "annotation_count": 6,
+  "data_source": "R.1.3_production",
+  "annotations": [
+    {
+      "annotation_id": "ANN::B17::...",
+      "text": "2Y20",
+      "role": "TOP_MAIN",
+      "role_display": "Top Main",
+      "quantity": 2,
+      "diameter_mm": 20.0,
+      "steel_grade": "Y460",
+      "spacing_mm": null,
+      "position_dxf": [x, y],
+      "position_pixels": [px, py],
+      "position_zone": "TOP_ZONE",
+      "is_reinforcement": true,
+      "source": "Deterministic",
+      "source_phase": "R.1.3",
+      "source_object": "beam_reinforcement_models_production.json::B17::top_main_bars",
+      "engineering_confidence": 0.95
+    }
+  ]
+}
+6. Metadata Schema
+Each Beam_<ID>_meta.json contains: beam_id, beam_mark, drawing_file, dxf_source, image_file, beam_dimensions (width/depth/span mm), beam_orientation, bbox_dxf, bbox_pixels, image_size_pixels, annotation_count, roles_discovered, diameters_mm, stirrup_present, engineering_phases, generation_timestamp, model_version.
+
+7. Dataset Manifest Structure
+{
+  "dataset_version": "9.0.0",
+  "model_version": "9.0.0",
+  "beam_count": 65,
+  "image_count": 65,
+  "annotation_count": 412,
+  "roles": { "TOP_MAIN": 80, "BOTTOM_MAIN": 78, "STIRRUP": 132, ... },
+  "statistics": {
+    "avg_annotations_per_beam": 6.3,
+    "beams_with_stirrups": 58,
+    "diameter_distribution_mm": { "12": 45, "16": 120, "20": 80 }
+  },
+  "future_format_compatibility": {
+    "YOLO": "planned — Phase M.2",
+    "COCO": "planned — Phase M.2", ...
+  }
+}
+8. Validation Methodology (dataset_validation.json)
+Seven checks — fails fast with full error list:
+
+Every expected beam has an image
+Every image has a JSON
+Every JSON references a valid beam ID
+No duplicate beam IDs
+No orphan annotations (missing annotation_id)
+No missing metadata files
+No empty image files (0 bytes)
+9. Files Modified / Created
+File	Change
+Version9/src/PhaseM.1_engineering_vision_dataset/__init__.py
+New — package root
+Version9/src/PhaseM.1_engineering_vision_dataset/pipeline_reader.py
+New — reads R.1/R.3/R.1.3 outputs
+Version9/src/PhaseM.1_engineering_vision_dataset/dxf_renderer.py
+New — vector DXF→PNG
+Version9/src/PhaseM.1_engineering_vision_dataset/beam_cropper.py
+New — per-beam crop
+Version9/src/PhaseM.1_engineering_vision_dataset/annotation_builder.py
+New — deterministic labels
+Version9/src/PhaseM.1_engineering_vision_dataset/metadata_builder.py
+New — beam metadata
+Version9/src/PhaseM.1_engineering_vision_dataset/preview_generator.py
+New — QA previews
+Version9/src/PhaseM.1_engineering_vision_dataset/manifest_builder.py
+New — manifest
+Version9/src/PhaseM.1_engineering_vision_dataset/dataset_validator.py
+New — validation
+Version9/src/PhaseM.1_engineering_vision_dataset/dataset_exporter.py
+New — file I/O
+Version9/src/PhaseM.1_engineering_vision_dataset/phase_m1_orchestrator.py
+New — orchestrator
+Version9/Run_PY/run_phase_m1_vision_dataset_generator.py
+New — CLI runner
+Version9/requirements.txt
+Updated — added matplotlib>=3.7.0, Pillow>=10.0.0
+Version9/.gitignore
+Updated — ignores data/vision_dataset/run_*/
+Version9/data/vision_dataset/.gitkeep
+New — placeholder
+10. MODEL_VERSION
+Phase M.1 uses 9.0.0 in all generated artefacts (dataset_manifest.json, annotation JSON, metadata). The production run_context.py MODEL_VERSION remains at 8.9.5 — unchanged. The next production bump to 9.0.0 is reserved for a certified accuracy milestone in Version9.
+
+11. Git Commit Message
+feat(Version9): Phase M.1 — Engineering Vision Dataset Generator (9.0.0)
+Generate structured engineering vision dataset directly from deterministic
+pipeline outputs (R.1 / R.1.3 / R.3), with no manual annotation required.
+Produces per-beam PNG crops, annotation JSON, metadata, quality-inspection
+previews, dataset_manifest.json and dataset_validation.json under
+data/vision_dataset/run_<timestamp>/.
+Uses ezdxf matplotlib backend for vector-quality DXF rendering (6000×4400 px).
+All labels sourced exclusively from the deterministic engineering pipeline.
+Full traceability: source_phase, source_object, engineering_confidence on
+every annotation.
+Dataset schema designed for future YOLO / COCO / Vision LLM export (Phase M.2).
+Production pipeline (Version 8.9.5) and engineering rules are NOT modified.
+12. Running Phase M.1
+cd Version9
+# Run against Benchmark Set 2 (after pipeline has run)
+python Run_PY/run_phase_m1_vision_dataset_generator.py `
+    --output-root data/output `
+    --dxf-path data/Benchmark_Set_2/reinforcement/Galera_GF_BeamReinforcementDetails.dxf
+# Or with custom padding
+python Run_PY/run_phase_m1_vision_dataset_generator.py --padding-mm 4000
+13. Phase M.2 Roadmap (Not Implemented)
+Phase M.2 — Engineering Vision Benchmark
+
+Load M.1 dataset as the ground truth
+Run OpenCV contour detection on beam crops → extract candidate text regions
+Run YOLO (pre-trained) on beam crops → detect annotation boxes
+Run Vision LLM (e.g., GPT-4V / Claude Vision) on beam crops → extract roles and text
+Compare each model's output against M.1 annotation JSON labels
+Compute: precision, recall, F1 per role; character-level text accuracy; position error in mm
+Produce vision_benchmark_report.json with per-model, per-role KPIs
+Build comparison dashboard for engineering team review
+Save all . Commit & push to GIT 
+
+Committed and pushed successfully.
+
+Commit a342491 — acf4863..a342491 main -> main
+
+15 files changed, 1964 insertions:
+
+File	Action
+Version9/src/PhaseM.1_engineering_vision_dataset/__init__.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/pipeline_reader.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/dxf_renderer.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/beam_cropper.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/annotation_builder.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/metadata_builder.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/preview_generator.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/manifest_builder.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/dataset_validator.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/dataset_exporter.py
+Added
+Version9/src/PhaseM.1_engineering_vision_dataset/phase_m1_orchestrator.py
+Added
+Version9/Run_PY/run_phase_m1_vision_dataset_generator.py
+Added
+Version9/data/vision_dataset/.gitkeep
+Added
+Version9/requirements.txt
+Updated
+Version9/.gitignore
+Updated
+Phase M.1 is now live on main. The research foundation for AI-assisted reinforcement interpretation is in place — ready to generate beam images, annotation JSON, metadata, previews, manifest, and validation report from any completed pipeline run.
+
+# =================================================================================================
+
+# PHASE QA.2 — MULTI-DRAWING ACCURACY & ERROR BENCHMARKING FRAMEWORK
+
+# MODEL_VERSION: 8.9.0
+
+# ACTIVE_BRANCH: Version8
+
+# STATUS: IMPLEMENTATION PROMPT
+
+# =================================================================================================
+
+
+
+You are implementing Phase QA.2 of the Version8 Steel Beam Estimation System.
+
+
+
+Read this specification completely before writing code.
+
+
+
+====================================================================================================
+
+CURRENT STATUS
+
+====================================================================================================
+
+
+
+The complete deterministic engineering pipeline is already implemented.
+
+
+
+Completed Phases include
+
+
+
+✓ Annotation Discovery
+
+
+
+✓ Engineering Intent Resolution
+
+
+
+✓ Reinforcement Detail Generation
+
+
+
+✓ Reinforcement Piece Generation
+
+
+
+✓ EngineeringBar Generation
+
+
+
+✓ Steel Quantity Calculation
+
+
+
+✓ Production Excel Generation
+
+
+
+✓ RULE-012 Stirrup Coverage Validation
+
+
+
+✓ Engineering Investigation (R.1.6.3)
+
+
+
+✓ Production Web Application
+
+
+
+DO NOT modify any existing engineering logic.
+
+
+
+DO NOT modify any production outputs.
+
+
+
+DO NOT modify EngineeringBars.
+
+
+
+DO NOT modify Excel generation.
+
+
+
+This phase is a completely independent Benchmark & Validation Framework.
+
+
+
+====================================================================================================
+
+OBJECTIVE
+
+====================================================================================================
+
+
+
+Build a complete benchmarking framework capable of automatically evaluating
+
+multiple Beam Drawing Sets against Estimator-generated Excel sheets.
+
+
+
+The objective is to generate
+
+
+
+• Drawing-wise Accuracy Report
+
+
+
+• Beam-wise Accuracy Report
+
+
+
+• Bar-wise Accuracy Report
+
+
+
+• Diameter-wise Accuracy Report
+
+
+
+• Steel Quantity Comparison
+
+
+
+• Overall Compiled Benchmark Report
+
+
+
+This framework is for internal engineering validation only.
+
+
+
+====================================================================================================
+
+INPUT DIRECTORY
+
+====================================================================================================
+
+
+
+Root Folder
+
+
+
+C:\Users\nishanth.h\SteelBeamEstimator\Test_Input
+
+
+
+Inside this folder there are multiple Drawing Sets.
+
+
+
+Each Drawing Set contains exactly
+
+
+
+1.
+
+General Notes DXF
+
+
+
+2.
+
+Beam Framing Plan DXF
+
+
+
+3.
+
+Beam Reinforcement Plan DXF
+
+
+
+4.
+
+Estimator Computed Steel Estimation Excel
+
+
+
+Example
+
+
+
+Test_Input
+
+
+
+    Drawing_Set_1
+
+
+
+        General Notes.dxf
+
+
+
+        Beam Framing.dxf
+
+
+
+        Beam Reinforcement.dxf
+
+
+
+        Estimator_Output.xlsx
+
+
+
+    Drawing_Set_2
+
+
+
+    Drawing_Set_3
+
+
+
+The framework shall automatically discover every Drawing Set.
+
+
+
+No hardcoded folder names.
+
+
+
+====================================================================================================
+
+PROCESSING WORKFLOW
+
+====================================================================================================
+
+
+
+For every Drawing Set
+
+
+
+Step 1
+
+
+
+Identify
+
+
+
+General Notes
+
+
+
+Framing Plan
+
+
+
+Reinforcement Plan
+
+
+
+Estimator Excel
+
+
+
+Step 2
+
+
+
+Run the existing Production Steel Estimation Pipeline.
+
+
+
+Generate Model Output Excel.
+
+
+
+Step 3
+
+
+
+Compare
+
+
+
+Model Output
+
+
+
+vs
+
+
+
+Estimator Output
+
+
+
+Step 4
+
+
+
+Generate Accuracy Metrics.
+
+
+
+Repeat for every Drawing Set.
+
+
+
+Finally
+
+
+
+Generate a Compiled Benchmark Report.
+
+
+
+====================================================================================================
+
+IMPORTANT
+
+====================================================================================================
+
+
+
+Reuse the existing production runner.
+
+
+
+DO NOT
+
+
+
+change
+
+
+
+modify
+
+
+
+or duplicate
+
+
+
+the estimation engine.
+
+
+
+Only consume its outputs.
+
+
+
+====================================================================================================
+
+METRIC 1
+
+====================================================================================================
+
+
+
+Beam Detection Accuracy
+
+
+
+Calculate
+
+
+
+Total Beams
+
+
+
+Detected Beams
+
+
+
+Undetected Beams
+
+
+
+Detection %
+
+
+
+Formula
+
+
+
+Detected Beams
+
+
+
+/
+
+
+
+Total Estimator Beams
+
+
+
+×
+
+
+
+100
+
+
+
+====================================================================================================
+
+METRIC 2
+
+====================================================================================================
+
+
+
+Correct Beam Identification
+
+
+
+Among detected beams
+
+
+
+Determine
+
+
+
+Correctly Matched Beam IDs
+
+
+
+Incorrect Beam IDs
+
+
+
+Accuracy %
+
+
+
+Formula
+
+
+
+Correctly Matched
+
+
+
+/
+
+
+
+Detected Beams
+
+
+
+×
+
+
+
+100
+
+
+
+====================================================================================================
+
+METRIC 3
+
+====================================================================================================
+
+
+
+Detected Reinforcement Bars
+
+
+
+For every beam
+
+
+
+Compare
+
+
+
+Estimator
+
+
+
+vs
+
+
+
+Model
+
+
+
+Calculate
+
+
+
+Estimator Bars
+
+
+
+Detected Bars
+
+
+
+Detection %
+
+
+
+Generate
+
+
+
+Beam-wise table
+
+
+
+====================================================================================================
+
+METRIC 4
+
+====================================================================================================
+
+
+
+Correctly Detected Bars
+
+
+
+For every beam
+
+
+
+Compare
+
+
+
+Bar Role
+
+
+
+Diameter
+
+
+
+Quantity
+
+
+
+Position
+
+
+
+Classification
+
+
+
+Determine
+
+
+
+Correct Bars
+
+
+
+Incorrect Bars
+
+
+
+Accuracy %
+
+
+
+Formula
+
+
+
+Correct Bars
+
+
+
+/
+
+
+
+Detected Bars
+
+
+
+×
+
+
+
+100
+
+
+
+====================================================================================================
+
+METRIC 5
+
+====================================================================================================
+
+
+
+Undetected Bars
+
+
+
+For every beam
+
+
+
+Identify
+
+
+
+Bars existing in Estimator
+
+
+
+but
+
+
+
+missing from Model.
+
+
+
+Generate
+
+
+
+Beam-wise Missing Bar Report.
+
+
+
+Calculate
+
+
+
+Undetected %
+
+
+
+====================================================================================================
+
+METRIC 6
+
+====================================================================================================
+
+
+
+Diameter-wise Comparison
+
+
+
+Compare every diameter
+
+
+
+Examples
+
+
+
+Y8
+
+
+
+Y10
+
+
+
+Y12
+
+
+
+Y16
+
+
+
+Y20
+
+
+
+Y25
+
+
+
+etc.
+
+
+
+For every diameter calculate
+
+
+
+Estimator Quantity
+
+
+
+Model Quantity
+
+
+
+Difference
+
+
+
+Difference %
+
+
+
+Correct Detection
+
+
+
+Incorrect Detection
+
+
+
+Generate complete diameter comparison.
+
+
+
+====================================================================================================
+
+METRIC 7
+
+====================================================================================================
+
+
+
+Diameter-wise Steel Quantity
+
+
+
+Compare
+
+
+
+Total Steel Quantity
+
+
+
+for every diameter.
+
+
+
+Example
+
+
+
+Diameter
+
+
+
+Estimator KG
+
+
+
+Model KG
+
+
+
+Difference
+
+
+
+Difference %
+
+
+
+Absolute Error
+
+
+
+Generate
+
+
+
+Chart-ready tables.
+
+
+
+====================================================================================================
+
+METRIC 8
+
+====================================================================================================
+
+
+
+Overall Steel Quantity Comparison
+
+
+
+Compare
+
+
+
+Estimator Total KG
+
+
+
+Model Total KG
+
+
+
+Difference KG
+
+
+
+Difference %
+
+
+
+Accuracy %
+
+
+
+Metric Ton Comparison
+
+
+
+Generate
+
+
+
+Overall Summary.
+
+
+
+====================================================================================================
+
+BEAM LEVEL REPORT
+
+====================================================================================================
+
+
+
+Generate
+
+
+
+One row per beam.
+
+
+
+Columns
+
+
+
+Drawing Set
+
+
+
+Beam ID
+
+
+
+Detected
+
+
+
+Matched
+
+
+
+Estimator Bars
+
+
+
+Detected Bars
+
+
+
+Correct Bars
+
+
+
+Missing Bars
+
+
+
+Detection %
+
+
+
+Accuracy %
+
+
+
+Steel Difference
+
+
+
+Status
+
+
+
+====================================================================================================
+
+BAR LEVEL REPORT
+
+====================================================================================================
+
+
+
+Generate
+
+
+
+One row per reinforcement bar.
+
+
+
+Columns
+
+
+
+Drawing Set
+
+
+
+Beam
+
+
+
+Bar Role
+
+
+
+Diameter
+
+
+
+Estimator Qty
+
+
+
+Model Qty
+
+
+
+Matched
+
+
+
+Difference
+
+
+
+Status
+
+
+
+====================================================================================================
+
+DIAMETER REPORT
+
+====================================================================================================
+
+
+
+Generate
+
+
+
+One row per diameter.
+
+
+
+Columns
+
+
+
+Diameter
+
+
+
+Estimator KG
+
+
+
+Model KG
+
+
+
+Difference
+
+
+
+Difference %
+
+
+
+Correct Count
+
+
+
+Incorrect Count
+
+
+
+====================================================================================================
+
+DRAWING SET REPORT
+
+====================================================================================================
+
+
+
+Generate one report per Drawing Set.
+
+
+
+Include
+
+
+
+Executive Summary
+
+
+
+Beam Detection
+
+
+
+Beam Accuracy
+
+
+
+Bar Detection
+
+
+
+Bar Accuracy
+
+
+
+Diameter Comparison
+
+
+
+Steel Comparison
+
+
+
+Major Errors
+
+
+
+Observations
+
+
+
+====================================================================================================
+
+COMPILED REPORT
+
+====================================================================================================
+
+
+
+After processing all Drawing Sets
+
+
+
+Generate
+
+
+
+Overall Benchmark Report.
+
+
+
+Include
+
+
+
+Total Drawing Sets
+
+
+
+Total Beams
+
+
+
+Detected Beams
+
+
+
+Correct Beams
+
+
+
+Total Bars
+
+
+
+Detected Bars
+
+
+
+Correct Bars
+
+
+
+Missing Bars
+
+
+
+Diameter Accuracy
+
+
+
+Steel Quantity Accuracy
+
+
+
+Overall Accuracy
+
+
+
+====================================================================================================
+
+VISUAL DASHBOARD TABLES
+
+====================================================================================================
+
+
+
+Generate summary tables suitable for Excel.
+
+
+
+Examples
+
+
+
+Drawing Set Accuracy
+
+
+
+Beam Detection %
+
+
+
+Beam Accuracy %
+
+
+
+Bar Detection %
+
+
+
+Bar Accuracy %
+
+
+
+Diameter Accuracy %
+
+
+
+Steel Accuracy %
+
+
+
+====================================================================================================
+
+ERROR CLASSIFICATION
+
+====================================================================================================
+
+
+
+Automatically classify errors.
+
+
+
+Examples
+
+
+
+Beam Missing
+
+
+
+Beam Mismatch
+
+
+
+Bar Missing
+
+
+
+Bar Misclassification
+
+
+
+Wrong Diameter
+
+
+
+Wrong Quantity
+
+
+
+Wrong Steel Weight
+
+
+
+Generate
+
+
+
+Error Frequency Table.
+
+
+
+====================================================================================================
+
+EXPORTS
+
+====================================================================================================
+
+
+
+Create
+
+
+
+Version8/data/output/QA2_MultiDrawingBenchmark/
+
+
+
+For every Drawing Set
+
+
+
+drawing_summary.json
+
+
+
+beam_accuracy.json
+
+
+
+bar_accuracy.json
+
+
+
+diameter_accuracy.json
+
+
+
+steel_quantity_comparison.json
+
+
+
+error_summary.json
+
+
+
+For Compiled Results
+
+
+
+compiled_benchmark.json
+
+
+
+compiled_statistics.json
+
+
+
+compiled_error_summary.json
+
+
+
+compiled_accuracy_dashboard.json
+
+
+
+phase_qa2_summary.md
+
+
+
+====================================================================================================
+
+EXCEL OUTPUT
+
+====================================================================================================
+
+
+
+Generate
+
+
+
+Engineering_Benchmark_Report.xlsx
+
+
+
+Sheets
+
+
+
+1 Executive Summary
+
+
+
+2 Drawing Set Summary
+
+
+
+3 Beam Detection
+
+
+
+4 Beam Accuracy
+
+
+
+5 Bar Detection
+
+
+
+6 Bar Accuracy
+
+
+
+7 Missing Bars
+
+
+
+8 Diameter Comparison
+
+
+
+9 Diameter Steel Quantity
+
+
+
+10 Steel Quantity Comparison
+
+
+
+11 Error Classification
+
+
+
+12 Compiled Statistics
+
+
+
+13 Overall Benchmark
+
+
+
+Workbook shall be suitable for sharing directly with Management
+
+and Estimation Team.
+
+
+
+====================================================================================================
+
+VALIDATION
+
+====================================================================================================
+
+
+
+Validate
+
+
+
+Every Drawing Set processed
+
+
+
+Every Estimator Excel compared
+
+
+
+Every Beam included
+
+
+
+Every Bar included
+
+
+
+No Production Outputs Modified
+
+
+
+No Engineering Logic Modified
+
+
+
+No Excel Generator Modified
+
+
+
+====================================================================================================
+
+SUCCESS CRITERIA
+
+====================================================================================================
+
+
+
+The framework shall automatically process every Drawing Set inside
+
+
+
+C:\Users\nishanth.h\SteelBeamEstimator\Test_Input
+
+
+
+and generate
+
+
+
+✓ Drawing-wise Benchmark
+
+
+
+✓ Beam-wise Benchmark
+
+
+
+✓ Bar-wise Benchmark
+
+
+
+✓ Diameter-wise Benchmark
+
+
+
+✓ Steel Quantity Benchmark
+
+
+
+✓ Error Classification
+
+
+
+✓ Overall Compiled Benchmark
+
+
+
+without requiring any manual intervention.
+
+
+
+====================================================================================================
+
+FINAL DELIVERY REPORT
+
+====================================================================================================
+
+
+
+Provide
+
+
+
+MODEL_VERSION: 8.9.0
+
+
+
+Validation Status
+
+
+
+Architecture Summary
+
+
+
+Drawing Sets Processed
+
+
+
+Beam Benchmark Summary
+
+
+
+Bar Benchmark Summary
+
+
+
+Diameter Benchmark Summary
+
+
+
+Steel Quantity Benchmark Summary
+
+
+
+Compiled Accuracy Summary
+
+
+
+Top Error Categories
+
+
+
+Generated Excel Workbook
+
+
+
+Exported JSON Artefacts
+
+
+
+Execution Time
+
+
+
+Regression Results
+
+
+
+Recommendation
+
+
+
+Commit all changes to Version8 following the existing project architecture and coding standards.

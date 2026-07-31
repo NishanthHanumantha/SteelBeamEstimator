@@ -1,0 +1,649 @@
+# ============================================================================
+# VERSION9 — PHASE M.1
+# ENGINEERING VISION DATASET GENERATOR
+# TARGET MODEL_VERSION: 9.0.0
+#
+# OBJECTIVE
+# Establish the foundation for AI-assisted reinforcement interpretation by
+# generating a high-quality Engineering Vision Dataset directly from the
+# deterministic engineering pipeline.
+#
+# IMPORTANT
+#
+# This is a RESEARCH FOUNDATION phase.
+#
+# It is NOT intended to improve estimation accuracy yet.
+#
+# Do NOT modify any engineering logic, reinforcement interpretation,
+# calculations, Excel generation, or production pipeline.
+#
+# Version8.9.5 remains the production baseline.
+#
+# Version9 is the research branch where multimodal AI capabilities will be
+# developed and evaluated.
+# ============================================================================
+
+# ============================================================================
+# BACKGROUND
+# ============================================================================
+
+Version8.9.5 has been frozen.
+
+Production pipeline is complete.
+
+Upload
+    ↓
+Engineering Pipeline
+    ↓
+Excel
+
+works successfully.
+
+Version9 begins a new research roadmap:
+
+DXF
+
+↓
+
+Engineering Vision Dataset
+
+↓
+
+Vision Benchmark
+
+↓
+
+Hybrid Interpretation Engine
+
+↓
+
+Confidence Fusion
+
+↓
+
+Future Accuracy Improvements
+
+The first milestone is NOT OCR.
+
+The first milestone is creating a reusable engineering vision dataset.
+
+============================================================================
+OBJECTIVE
+============================================================================
+
+Generate a structured dataset that can later be used for
+
+• OpenCV experiments
+
+• YOLO training
+
+• Vision LLM benchmarking
+
+• Reinforcement interpretation research
+
+• Dataset visualization
+
+• Future fine-tuning
+
+The dataset shall be generated automatically from the deterministic engineering
+pipeline.
+
+No manual annotation required.
+
+============================================================================
+DESIGN PRINCIPLE
+============================================================================
+
+The deterministic engineering pipeline is the SOURCE OF TRUTH.
+
+Vision models are NOT replacing engineering rules.
+
+Instead
+
+Engineering Pipeline
+
+↓
+
+Generate labelled dataset
+
+↓
+
+Evaluate vision models
+
+↓
+
+Compare results
+
+↓
+
+Future confidence fusion
+
+The deterministic outputs become labels for future AI models.
+
+============================================================================
+SCOPE
+============================================================================
+
+Implement ONLY
+
+Phase M.1
+
+Engineering Vision Dataset Generator
+
+Do NOT implement
+
+OCR
+
+OpenCV
+
+YOLO
+
+Vision LLM
+
+Hybrid interpretation
+
+Confidence fusion
+
+Accuracy improvements
+
+Those belong to later milestones.
+
+============================================================================
+ARCHITECTURE
+============================================================================
+
+Current
+
+DXF
+
+↓
+
+Engineering Pipeline
+
+↓
+
+Excel
+
+New
+
+DXF
+
+↓
+
+Engineering Pipeline
+
+↓
+
+Vision Dataset Generator
+
+↓
+
+Beam Images
+
++
+
+Annotation JSON
+
++
+
+Metadata
+
+↓
+
+Dataset Folder
+
+============================================================================
+REQUIREMENTS
+============================================================================
+
+----------------------------------------------------------------------------
+1. DATASET ROOT
+----------------------------------------------------------------------------
+
+Create a new dataset structure.
+
+Example
+
+Version9/
+
+    data/
+
+        vision_dataset/
+
+            run_<timestamp>/
+
+                images/
+
+                annotations/
+
+                metadata/
+
+                previews/
+
+                dataset_manifest.json
+
+Each execution generates a complete reusable dataset.
+
+No dependency on production web_runs.
+
+Research dataset remains separate.
+
+----------------------------------------------------------------------------
+2. DXF RENDERING
+----------------------------------------------------------------------------
+
+Render the framing/reinforcement drawing into clean images.
+
+Use vector rendering.
+
+Do NOT use screenshots.
+
+Maintain high resolution.
+
+Rendering should preserve
+
+beam lines
+
+text
+
+leaders
+
+dimensions
+
+reinforcement callouts
+
+symbols
+
+Generate
+
+PNG
+
+(or another lossless format)
+
+for downstream AI models.
+
+----------------------------------------------------------------------------
+3. AUTOMATIC BEAM CROPPING
+----------------------------------------------------------------------------
+
+For every discovered beam
+
+Generate
+
+Beam_B1.png
+
+Beam_B2.png
+
+Beam_B3.png
+
+...
+
+Cropping should include
+
+beam geometry
+
+nearby annotations
+
+leader lines
+
+support regions
+
+stirrups
+
+development bars
+
+curtailments
+
+with configurable padding.
+
+Do NOT crop text away.
+
+The crop should represent what a human estimator would inspect.
+
+----------------------------------------------------------------------------
+4. ANNOTATION JSON
+----------------------------------------------------------------------------
+
+For every beam image
+
+Generate
+
+Beam_B17.json
+
+using deterministic engineering outputs.
+
+Example
+
+{
+    "beam_id": "B17",
+
+    "drawing": "Framing",
+
+    "bbox": [...],
+
+    "annotations": [
+
+        {
+            "text": "2Y20",
+
+            "role": "Top Main",
+
+            "source": "Deterministic",
+
+            "confidence": 1.0
+        },
+
+        {
+            "text": "8Ø@100",
+
+            "role": "Support Stirrup",
+
+            "source": "Deterministic",
+
+            "confidence": 1.0
+        }
+
+    ]
+}
+
+Do NOT invent labels.
+
+Only export labels already known by the deterministic pipeline.
+
+----------------------------------------------------------------------------
+5. METADATA EXPORT
+----------------------------------------------------------------------------
+
+Generate metadata for every beam.
+
+Include
+
+beam id
+
+drawing name
+
+beam dimensions
+
+beam orientation
+
+bounding box
+
+engineering phases used
+
+number of annotations
+
+roles discovered
+
+diameters
+
+stirrup presence
+
+generation timestamp
+
+MODEL_VERSION
+
+This metadata will later support benchmarking.
+
+----------------------------------------------------------------------------
+6. DATASET MANIFEST
+----------------------------------------------------------------------------
+
+Generate
+
+dataset_manifest.json
+
+containing
+
+dataset version
+
+generation date
+
+drawing names
+
+number of beams
+
+number of annotations
+
+roles exported
+
+image resolution
+
+dataset statistics
+
+Example
+
+{
+
+    "dataset_version": "9.0.0",
+
+    "beams": 65,
+
+    "images": 65,
+
+    "annotations": 412,
+
+    "roles": {
+
+        "Top Main": 80,
+
+        "Bottom Main": 78,
+
+        "Stirrup": 132
+
+    }
+
+}
+
+----------------------------------------------------------------------------
+7. VISUAL PREVIEW
+----------------------------------------------------------------------------
+
+Generate preview images.
+
+Example
+
+Beam_B17_preview.png
+
+showing
+
+beam crop
+
+annotation boxes
+
+beam id
+
+role labels
+
+This is for dataset quality inspection only.
+
+Do NOT generate training labels visually.
+
+Keep original images clean.
+
+----------------------------------------------------------------------------
+8. ENGINEERING TRACEABILITY
+----------------------------------------------------------------------------
+
+Every annotation shall contain
+
+where it came from
+
+Example
+
+{
+
+    "source_phase": "R3",
+
+    "source_object": "...",
+
+    "engineering_confidence": 0.97
+
+}
+
+Maintain complete traceability back to the deterministic pipeline.
+
+----------------------------------------------------------------------------
+9. DATASET QUALITY CHECK
+----------------------------------------------------------------------------
+
+Generate validation report.
+
+Verify
+
+Every beam has image
+
+Every image has JSON
+
+Every JSON references valid beam
+
+No duplicate beam ids
+
+No orphan annotations
+
+No missing metadata
+
+Produce
+
+dataset_validation.json
+
+----------------------------------------------------------------------------
+10. FUTURE COMPATIBILITY
+----------------------------------------------------------------------------
+
+Design the dataset so it can later support
+
+YOLO
+
+COCO
+
+Pascal VOC
+
+Vision LLM
+
+OpenCV
+
+without redesign.
+
+Keep exporter modular.
+
+Do NOT implement these formats yet.
+
+Only prepare architecture.
+
+============================================================================
+DO NOT IMPLEMENT
+============================================================================
+
+No OCR.
+
+No OpenCV detection.
+
+No YOLO.
+
+No Vision LLM.
+
+No reinforcement interpretation changes.
+
+No engineering rule changes.
+
+No confidence fusion.
+
+No production pipeline modifications.
+
+No web application modifications.
+
+============================================================================
+SUCCESS CRITERIA
+============================================================================
+
+Running Phase M.1 shall automatically produce
+
+Beam images
+
+↓
+
+Annotation JSON
+
+↓
+
+Metadata
+
+↓
+
+Preview images
+
+↓
+
+Manifest
+
+↓
+
+Validation report
+
+using only deterministic engineering outputs.
+
+The resulting dataset shall be reusable for future
+
+YOLO
+
+Vision LLM
+
+OpenCV
+
+benchmarking
+
+without requiring manual annotation.
+
+============================================================================
+EXPECTED DELIVERABLES
+============================================================================
+
+Provide
+
+1. Architecture summary
+
+2. Dataset directory structure
+
+3. Rendering pipeline
+
+4. Beam cropping strategy
+
+5. Annotation JSON schema
+
+6. Metadata schema
+
+7. Dataset manifest structure
+
+8. Validation methodology
+
+9. Dataset statistics generated from a benchmark drawing
+
+10. Files modified
+
+11. MODEL_VERSION update
+
+12. Git commit message
+
+13. Future roadmap for
+
+    Phase M.2 – Engineering Vision Benchmark
+
+============================================================================
+NEXT PHASE (DO NOT IMPLEMENT)
+============================================================================
+
+Phase M.2 — Engineering Vision Benchmark
+
+Objectives
+
+• Benchmark deterministic parser vs Vision AI
+
+• Evaluate OpenCV, YOLO and Vision LLMs using the generated dataset
+
+• Define engineering accuracy KPIs
+
+• Build comparison framework
+
+Do NOT implement Phase M.2.
+
+Complete ONLY Phase M.1.

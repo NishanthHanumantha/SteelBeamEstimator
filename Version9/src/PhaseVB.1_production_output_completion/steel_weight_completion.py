@@ -259,8 +259,16 @@ class SteelWeightCompletion:
         area_mm2 = math.pi * diameter_mm ** 2 / 4.0
         density = self._density()
 
+        # Prefer explicit cut from upstream (Phase M.2 SpacerRuleEngine sets cut_length_mm)
+        provided_cut = bar.get("cut_length_mm")
+        try:
+            provided_cut_f = float(provided_cut) if provided_cut is not None else None
+        except (TypeError, ValueError):
+            provided_cut_f = None
+
         cut_length_mm, source = self._derive_cut_length(
-            role, diameter_mm, span_mm, depth_mm, width_mm, spacing_mm, quantity
+            role, diameter_mm, span_mm, depth_mm, width_mm, spacing_mm, quantity,
+            provided_cut_mm=provided_cut_f,
         )
 
         weight_per_bar = area_mm2 * cut_length_mm * density / 1e9
@@ -294,15 +302,29 @@ class SteelWeightCompletion:
         width_mm: Optional[float],
         spacing_mm: Optional[float],
         quantity: int,
+        provided_cut_mm: Optional[float] = None,
     ) -> tuple:
         """
         Returns (cut_length_mm, source_description).
         Formula unchanged — only Ld/cover/hook parameter sources change.
+
+        Phase M.2: SPACER uses width − 2×cover (or explicit cut_length_mm from
+        SpacerRuleEngine). It must NOT use span + 2×Ld (longitudinal formula).
         """
         ld_source = "EngineeringContext" if self._loader else "IS456_40d_development"
 
+        if role == "SPACER":
+            if provided_cut_mm is not None and provided_cut_mm > 0:
+                return float(provided_cut_mm), "SpacerRuleEngine_M.2"
+            cover = self._cover_mm()
+            if width_mm and float(width_mm) > 0:
+                cut = float(width_mm) - 2.0 * float(cover)
+                if cut > 0:
+                    return cut, "spacer_width_minus_2cover"
+            return 150.0, "spacer_default_150mm"
+
         if role in ("TOP_MAIN", "BOTTOM_MAIN", "TOP_EXTRA", "BOTTOM_EXTRA",
-                    "SIDE_FACE", "BENT", "CRANKED", "DEVELOPMENT", "SPACER"):
+                    "SIDE_FACE", "BENT", "CRANKED", "DEVELOPMENT"):
             if span_mm > 0:
                 ld = self._development_length_mm(d)
                 cut_length = span_mm + 2 * ld

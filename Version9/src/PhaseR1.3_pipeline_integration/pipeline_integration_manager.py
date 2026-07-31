@@ -104,6 +104,20 @@ class PipelineIntegrationManager:
         adapter_stats["beams_with_bars"] = sum(1 for bm in beam_models if bm.bars)
         self._last_consolidation = consol_payload
 
+        # Phase M.2 — Deterministic Spacer Bar Rule Engine (additive, config-flagged)
+        spacer_report: Dict[str, Any] = {"enabled": False}
+        beam_models, spacer_report = self._apply_spacer_rule(beam_models)
+        bars_after_spacer = sum(len(bm.bars) for bm in beam_models)
+        adapter_stats["total_bars"] = bars_after_spacer
+        adapter_stats["beams_with_bars"] = sum(1 for bm in beam_models if bm.bars)
+        adapter_stats["spacer_rule"] = {
+            k: spacer_report.get(k)
+            for k in (
+                "enabled", "rows_emitted", "beams_skipped",
+                "extent_fallback_rows", "cover_fallback", "cover_mm_used",
+            )
+        }
+
         builder = EngineeringBarBuilder(
             self._selector.r1_models_path(),
             self._selector.beam_registry_path(),
@@ -113,11 +127,12 @@ class PipelineIntegrationManager:
 
         canonical = {
             "model_version": self.MODEL_VERSION,
-            "source": "Phase R.1.3 EngineeringBarModel + R.1.2B Consolidation",
+            "source": "Phase R.1.3 EngineeringBarModel + R.1.2B Consolidation + M.2 SpacerRule",
             "beam_count": len(beam_models),
             "total_bars": adapter_stats["total_bars"],
             "total_bars_before_consolidation": bars_before,
             "consolidation": (consol_payload.get("report") or {}),
+            "spacer_rule": spacer_report,
             "beams": [bm.to_dict() for bm in beam_models],
         }
 
@@ -133,12 +148,73 @@ class PipelineIntegrationManager:
             "adapter_stats": adapter_stats,
             "processing_report": processing_report,
             "consolidation": consol_payload.get("report") or {},
+            "spacer_rule": spacer_report,
             "beam_count": len(beam_models),
             "beams_with_bars": adapter_stats["beams_with_bars"],
             "total_bars": adapter_stats["total_bars"],
             "elapsed_seconds": round(elapsed, 3),
             "timestamp": datetime.utcnow().isoformat(),
         }
+
+    def _apply_spacer_rule(
+        self, beam_models: List[BeamEngineeringModel]
+    ) -> Tuple[List[BeamEngineeringModel], Dict[str, Any]]:
+        """Phase M.2 — inject SPACER_BAR rows behind enable_spacer_rule."""
+        disabled = {"enabled": False, "rows_emitted": 0, "reason": "flag_off_or_unavailable"}
+        try:
+            pkg_dir = self._engine / "src" / "PhaseV9_spacer_rule"
+            if not pkg_dir.is_dir():
+                return beam_models, {**disabled, "reason": "package_missing"}
+
+            pkg_name = "PhaseV9_spacer_rule"
+            if pkg_name not in sys.modules:
+                pkg = types.ModuleType(pkg_name)
+                pkg.__path__ = [str(pkg_dir)]
+                pkg.__package__ = pkg_name
+                sys.modules[pkg_name] = pkg
+
+            for sub in ("spacer_models", "spacer_engine", "r13_injector"):
+                key = f"{pkg_name}.{sub}"
+                if key in sys.modules:
+                    continue
+                spec = importlib.util.spec_from_file_location(key, pkg_dir / f"{sub}.py")
+                mod = importlib.util.module_from_spec(spec)
+                mod.__package__ = pkg_name
+                sys.modules[key] = mod
+                spec.loader.exec_module(mod)
+
+            injector = sys.modules[f"{pkg_name}.r13_injector"]
+            enabled = injector.load_enable_flag(self._engine)
+            if not enabled:
+                return beam_models, {**disabled, "reason": "enable_spacer_rule=false"}
+
+            cover = self._ctx.get("cover_beam_mm")
+            try:
+                cover_f = float(cover) if cover is not None else None
+            except (TypeError, ValueError):
+                cover_f = None
+
+            updated, report = injector.inject_spacers(
+                beam_models,
+                cover_f,
+                bar_model_cls=EngineeringBarModel,
+            )
+            # Persist spacer report alongside other R.1.3 artefacts
+            try:
+                spacer_path = self._out / "spacer_rule_report.json"
+                spacer_path.write_text(
+                    json.dumps(report, indent=2), encoding="utf-8"
+                )
+                report["report_path"] = str(spacer_path)
+            except Exception:
+                pass
+            return updated, report
+        except Exception as exc:
+            return beam_models, {
+                **disabled,
+                "reason": "exception",
+                "error": str(exc),
+            }
 
     def _apply_consolidation(
         self, beam_models: List[BeamEngineeringModel]
