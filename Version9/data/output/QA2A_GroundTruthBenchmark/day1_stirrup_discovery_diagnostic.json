@@ -1,0 +1,605 @@
+{
+  "model_version": "9.1.0",
+  "diagnostic": "Day-1 Stirrup Discovery vs Association",
+  "read_only": true,
+  "code_modified": false,
+  "config_modified": false,
+  "pipeline_artefacts_modified": false,
+  "stages_rerun": [],
+  "step1_regex_scan": {
+    "First Set Drawings": {
+      "total_annotations_scanned": 65,
+      "type2_count": 0,
+      "type3_count": 0,
+      "strict_total": 0,
+      "loose_yd_at_s_count": 0,
+      "r1_role_stirrup_count": 0,
+      "sample_strict": [],
+      "sample_loose": [],
+      "near_miss_count": 0,
+      "near_misses": [],
+      "artefact": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+      "dxf_corroboration": {
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657\\reinforcement\\SampleBeam_Reinforcement&StirrupsDetials_DXF.dxf",
+        "msp_loose_stirrup_texts": 0,
+        "msp_samples": [],
+        "insert_virtual_loose_stirrup_texts": 0,
+        "virtual_samples": [],
+        "block_def_stirrup_texts": 1,
+        "block_def_samples": [
+          "A$C01067336:2L-Y10@100C/C"
+        ],
+        "note": "R.1 adaptive_association_engine._collect_entities only reads modelspace TEXT/MTEXT \u2014 not INSERT.virtual_entities()."
+      }
+    },
+    "Second Set Drawings": {
+      "total_annotations_scanned": 229,
+      "type2_count": 0,
+      "type3_count": 0,
+      "strict_total": 0,
+      "loose_yd_at_s_count": 3,
+      "r1_role_stirrup_count": 3,
+      "sample_strict": [],
+      "sample_loose": [
+        "Y8@100C/C",
+        "Y8@150C/C",
+        "Y8@150C/C"
+      ],
+      "near_miss_count": 1,
+      "near_misses": [
+        {
+          "beam_id": "BR1",
+          "text": "2L-Y8,3 NO'S",
+          "role": "UNKNOWN"
+        }
+      ],
+      "artefact": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+      "dxf_corroboration": {
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739\\reinforcement\\Galera_GF_BeamReinforcementDetails.dxf",
+        "msp_loose_stirrup_texts": 3,
+        "msp_samples": [
+          "Y8@100C/C",
+          "Y8@150C/C",
+          "Y8@150C/C"
+        ],
+        "insert_virtual_loose_stirrup_texts": 7,
+        "virtual_samples": [
+          "Y8@200C/C",
+          "Y8@200C/C",
+          "Y8@100C/C",
+          "Y10@200C/C",
+          "Y8@100C/C",
+          "Y10@200C/C",
+          "Y8@150C/C"
+        ],
+        "block_def_stirrup_texts": 5,
+        "block_def_samples": [
+          "TTRT:Y8@200C/C",
+          "A$C0dac4173:Y8@200C/C",
+          "A$Ca7480f11:Y8@100C/C",
+          "A$Ca7480f11:Y10@200C/C",
+          "A$C073c8a09:Y8@150C/C"
+        ],
+        "note": "R.1 adaptive_association_engine._collect_entities only reads modelspace TEXT/MTEXT \u2014 not INSERT.virtual_entities()."
+      }
+    },
+    "Third Set Drawings": {
+      "total_annotations_scanned": 277,
+      "type2_count": 2,
+      "type3_count": 0,
+      "strict_total": 2,
+      "loose_yd_at_s_count": 17,
+      "r1_role_stirrup_count": 17,
+      "sample_strict": [
+        "2L-Y8@200C/C",
+        "4L-Y8@100C/C"
+      ],
+      "sample_loose": [
+        "Y8@100C/C",
+        "Y8@100C/C",
+        "Y8@150C/C",
+        "Y8@150C/C",
+        "Y8@150C/C"
+      ],
+      "near_miss_count": 1,
+      "near_misses": [
+        {
+          "beam_id": "B56",
+          "text": "TYPICAL STIRRUP DETAILS",
+          "role": "UNKNOWN"
+        }
+      ],
+      "artefact": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+      "dxf_corroboration": {
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835\\reinforcement\\Galera_TF_BeamReinforcementDetails.dxf",
+        "msp_loose_stirrup_texts": 17,
+        "msp_samples": [
+          "Y8@150C/C",
+          "Y8@100C/C",
+          "Y8@100C/C",
+          "Y8@150C/C",
+          "Y8@100C/C",
+          "Y8@200C/C",
+          "Y8@100C/C",
+          "Y8@150C/C",
+          "2L-Y8@200C/C",
+          "Y8@200C/C"
+        ],
+        "insert_virtual_loose_stirrup_texts": 3,
+        "virtual_samples": [
+          "Y8@200C/C",
+          "Y8@200C/C",
+          "Y8@200C/C"
+        ],
+        "block_def_stirrup_texts": 3,
+        "block_def_samples": [
+          "A$C8b08e43e:Y8@200C/C",
+          "A$C8b08e43e:Y8@200C/C",
+          "A$C8b08e43e:Y8@200C/C"
+        ],
+        "note": "R.1 adaptive_association_engine._collect_entities only reads modelspace TEXT/MTEXT \u2014 not INSERT.virtual_entities()."
+      }
+    }
+  },
+  "step2_discovery_vs_gt": [
+    {
+      "set": "First Set Drawings",
+      "gt_stirrup_rows": 23,
+      "r1_stirrup_annotations_found_loose": 0,
+      "r1_strict_type2_type3": 0,
+      "r1_role_stirrup": 0,
+      "dxf_msp_loose": 0,
+      "dxf_insert_virtual_loose": 0,
+      "discovery_ratio_pct_vs_gt": 0.0,
+      "gt_status_breakdown": {
+        "PARTIAL_MATCH": 3,
+        "MISSING": 20
+      },
+      "artefacts": {
+        "r1_annotations": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+        "qa_bar_matching": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\output\\QA2A_GroundTruthBenchmark\\First_Set_Drawings\\bar_matching.json",
+        "run_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657",
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657\\reinforcement\\SampleBeam_Reinforcement&StirrupsDetials_DXF.dxf"
+      }
+    },
+    {
+      "set": "Second Set Drawings",
+      "gt_stirrup_rows": 90,
+      "r1_stirrup_annotations_found_loose": 3,
+      "r1_strict_type2_type3": 0,
+      "r1_role_stirrup": 3,
+      "dxf_msp_loose": 3,
+      "dxf_insert_virtual_loose": 7,
+      "discovery_ratio_pct_vs_gt": 3.3,
+      "gt_status_breakdown": {
+        "MISSING": 81,
+        "WRONG_DIAMETER": 1,
+        "PARTIAL_MATCH": 6,
+        "WRONG_QUANTITY": 2
+      },
+      "artefacts": {
+        "r1_annotations": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+        "qa_bar_matching": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\output\\QA2A_GroundTruthBenchmark\\Second_Set_Drawings\\bar_matching.json",
+        "run_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739",
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739\\reinforcement\\Galera_GF_BeamReinforcementDetails.dxf"
+      }
+    },
+    {
+      "set": "Third Set Drawings",
+      "gt_stirrup_rows": 96,
+      "r1_stirrup_annotations_found_loose": 17,
+      "r1_strict_type2_type3": 2,
+      "r1_role_stirrup": 17,
+      "dxf_msp_loose": 17,
+      "dxf_insert_virtual_loose": 3,
+      "discovery_ratio_pct_vs_gt": 17.7,
+      "gt_status_breakdown": {
+        "PARTIAL_MATCH": 3,
+        "MISSING": 81,
+        "WRONG_QUANTITY": 9,
+        "WRONG_DIAMETER": 1,
+        "MATCH": 2
+      },
+      "artefacts": {
+        "r1_annotations": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835\\data\\output\\PhaseR.1_generalized_reinforcement_discovery\\reinforcement_annotations.json",
+        "qa_bar_matching": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\output\\QA2A_GroundTruthBenchmark\\Third_Set_Drawings\\bar_matching.json",
+        "run_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835",
+        "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835\\reinforcement\\Galera_TF_BeamReinforcementDetails.dxf"
+      }
+    }
+  ],
+  "step2_volume": {
+    "gt_stirrup_rows_all_sets": 209,
+    "r1_loose_discovered": 20,
+    "dxf_msp_loose": 20,
+    "dxf_insert_virtual_additional": 10,
+    "r1_equals_msp": true,
+    "plausible_missing_rows_explained_by_absent_text": 189,
+    "plausible_recoverable_by_INSERT_explode_only": 10,
+    "section2_baseline_production": "182 missing / 12 partial / 11 wrong-qty / 2 matched"
+  },
+  "step3_beam_traces": [
+    {
+      "beam_id": "B1",
+      "set": "First Set Drawings",
+      "gt_stirrup_statuses": [
+        "PARTIAL_MATCH"
+      ],
+      "gt_qty_sum": 57.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "TOP_EXTRA"
+      ],
+      "r1_found": false,
+      "r1_matched_strings": [],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": false,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_MAIN",
+        "BOTTOM_MAIN",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "PARTIAL/misfile vs GT",
+      "loss_stage": "DISCOVERY + QA false-PARTIAL (no stirrup text; model SFR/spacer matched to GT stirrup)",
+      "loss_class": "DISCOVERY (with QA role-mismatch artefact)"
+    },
+    {
+      "beam_id": "B9",
+      "set": "First Set Drawings",
+      "gt_stirrup_statuses": [
+        "PARTIAL_MATCH"
+      ],
+      "gt_qty_sum": 31.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "TOP_EXTRA"
+      ],
+      "r1_found": false,
+      "r1_matched_strings": [],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": false,
+      "final_roles": [
+        "TOP_MAIN",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "PARTIAL/misfile vs GT",
+      "loss_stage": "DISCOVERY + QA false-PARTIAL (no stirrup text; model SFR/spacer matched to GT stirrup)",
+      "loss_class": "DISCOVERY (with QA role-mismatch artefact)"
+    },
+    {
+      "beam_id": "B10",
+      "set": "First Set Drawings",
+      "gt_stirrup_statuses": [
+        "PARTIAL_MATCH"
+      ],
+      "gt_qty_sum": 40.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "SPACER_BAR"
+      ],
+      "r1_found": false,
+      "r1_matched_strings": [],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": false,
+      "final_roles": [
+        "BOTTOM_MAIN",
+        "TOP_MAIN",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "PARTIAL/misfile vs GT",
+      "loss_stage": "DISCOVERY + QA false-PARTIAL (no stirrup text; model SFR/spacer matched to GT stirrup)",
+      "loss_class": "DISCOVERY (with QA role-mismatch artefact)"
+    },
+    {
+      "beam_id": "B2",
+      "set": "First Set Drawings",
+      "gt_stirrup_statuses": [
+        "MISSING",
+        "MISSING"
+      ],
+      "gt_qty_sum": 36.0,
+      "qa_model_roles_on_gt_stirrup_rows": [],
+      "r1_found": false,
+      "r1_matched_strings": [],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": false,
+      "final_roles": [
+        "TOP_MAIN",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "BOTTOM_MAIN",
+        "BOTTOM_EXTRA",
+        "BOTTOM_EXTRA",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "MISSING",
+      "loss_stage": "R.1 discovery (stirrup text never in R.1)",
+      "loss_class": "DISCOVERY"
+    },
+    {
+      "beam_id": "B6",
+      "set": "Second Set Drawings",
+      "gt_stirrup_statuses": [
+        "WRONG_DIAMETER",
+        "MISSING"
+      ],
+      "gt_qty_sum": 38.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@100C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_MAIN",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "BOTTOM_MAIN",
+        "SPACER_BAR",
+        "STIRRUP",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B36",
+      "set": "Second Set Drawings",
+      "gt_stirrup_statuses": [
+        "WRONG_QUANTITY"
+      ],
+      "gt_qty_sum": 15.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@150C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_MAIN",
+        "STIRRUP"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B38",
+      "set": "Second Set Drawings",
+      "gt_stirrup_statuses": [
+        "WRONG_QUANTITY"
+      ],
+      "gt_qty_sum": 15.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@150C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_MAIN",
+        "STIRRUP",
+        "BOTTOM_MAIN"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B1",
+      "set": "Second Set Drawings",
+      "gt_stirrup_statuses": [
+        "MISSING"
+      ],
+      "gt_qty_sum": 22.0,
+      "qa_model_roles_on_gt_stirrup_rows": [],
+      "r1_found": false,
+      "r1_matched_strings": [],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": false,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_MAIN",
+        "BOTTOM_MAIN",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "MISSING",
+      "loss_stage": "R.1 discovery (stirrup text never in R.1)",
+      "loss_class": "DISCOVERY"
+    },
+    {
+      "beam_id": "B16",
+      "set": "Third Set Drawings",
+      "gt_stirrup_statuses": [],
+      "gt_qty_sum": 0,
+      "qa_model_roles_on_gt_stirrup_rows": [],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@100C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "STIRRUP",
+        "BOTTOM_MAIN",
+        "TOP_MAIN",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B19",
+      "set": "Third Set Drawings",
+      "gt_stirrup_statuses": [
+        "WRONG_DIAMETER",
+        "MISSING",
+        "MISSING",
+        "MISSING",
+        "MISSING"
+      ],
+      "gt_qty_sum": 156.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@150C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_MAIN",
+        "BOTTOM_MAIN",
+        "STIRRUP",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B38",
+      "set": "Third Set Drawings",
+      "gt_stirrup_statuses": [
+        "MATCH"
+      ],
+      "gt_qty_sum": 22.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "Y8@150C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_MAIN",
+        "STIRRUP",
+        "BOTTOM_MAIN",
+        "BOTTOM_EXTRA",
+        "BOTTOM_EXTRA",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    },
+    {
+      "beam_id": "B42",
+      "set": "Third Set Drawings",
+      "gt_stirrup_statuses": [
+        "WRONG_QUANTITY"
+      ],
+      "gt_qty_sum": 10.0,
+      "qa_model_roles_on_gt_stirrup_rows": [
+        "STIRRUP"
+      ],
+      "r1_found": true,
+      "r1_matched_strings": [
+        "2L-Y8@200C/C"
+      ],
+      "r11a_beam_present": true,
+      "r31_explicit_stirrup": false,
+      "final_has_stirrup": true,
+      "final_roles": [
+        "TOP_EXTRA",
+        "TOP_EXTRA",
+        "TOP_MAIN",
+        "STIRRUP",
+        "BOTTOM_EXTRA",
+        "BOTTOM_EXTRA",
+        "BOTTOM_MAIN",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR",
+        "SPACER_BAR"
+      ],
+      "final_status_summary": "STIRRUP present",
+      "loss_stage": "none \u2014 survived R.1 to final as STIRRUP",
+      "loss_class": "NO_LOSS_ON_DISCOVERED_TEXT"
+    }
+  ],
+  "step4_outcome": {
+    "discovery_ratio_overall_pct": 9.6,
+    "traced_beams": 12,
+    "discovery_loss_beams": 5,
+    "no_loss_discovered_beams": 7,
+    "association_or_role_loss_beams": 0,
+    "dominant_failure_mode": "DISCOVERY",
+    "fix_class": "Primary: GEOMETRIC EVIDENCE ENGINE / typical-detail inference (~weeks) \u2014 Track 1 CONFIRMED for volume. Secondary cheap TEXT FIX (~days): explode INSERT.virtual_entities in R.1 _collect_entities to recover ~10 block-nested callouts. Association/R.3.1 is NOT the dominant loss path for texts that R.1 already finds.",
+    "decision_table_row": "R.1 count << GT count AND stirrup never appears even in R.1 for the bulk of missing beams; when R.1 does find text, final keeps STIRRUP.",
+    "plan_assumption_check": "Plan T1.3 claim 'annotation exists but never associated' is FALSIFIED for the dominant volume: annotations mostly do not exist as per-beam MSP text. Association loss volume on discovered texts = 0 in this sample."
+  },
+  "step5_recommendation": {
+    "track1_plan": "CONFIRM (for volume) \u2014 with nuance",
+    "nuance": [
+      "Bulk gap is absent per-beam stirrup text in DXF modelspace (and GT still has rows).",
+      "Geometry / typical-detail / schedule inference is required \u2014 Track 1 vector-space detector is the right class of fix.",
+      "Do NOT prioritize R.1.1A/R.3.1 association tuning as the first lever.",
+      "Optional Track-0-class micro-fix: collect INSERT.virtual_entities text in adaptive_association_engine._collect_entities (approx line 168-190) \u2014 recovers ~10 additional callouts on Sets 2/3 only.",
+      "Set1 B1/B9/B10 PARTIAL_MATCH is QA matching SFR/spacer Y8/Y10 to GT STIRRUP \u2014 not evidence that stirrup text was mis-roled after discovery."
+    ],
+    "effort_class_dominant": "GEOMETRIC EVIDENCE ENGINE (~weeks)",
+    "effort_class_secondary": "TEXT/RULE FIX (~days) for INSERT explode",
+    "file_pointers": [
+      "Version9/src/PhaseR.1_generalized_reinforcement_discovery/adaptive_association_engine.py:_collect_entities (~L168) \u2014 TEXT/MTEXT only, skips INSERT",
+      "Version9/src/PhaseR.1_generalized_reinforcement_discovery/annotation_discovery.py:_RE_STIRRUP (~L47) \u2014 already accepts Y8@150C/C",
+      "Version9/src/PhaseR.1_generalized_reinforcement_discovery/reinforcement_role_classifier.py \u2014 not the dominant loss path for missing rows"
+    ]
+  },
+  "runs_used": {
+    "First Set Drawings": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260731_154657",
+    "Second Set Drawings": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260731_154739",
+    "Third Set Drawings": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260731_154835"
+  }
+}

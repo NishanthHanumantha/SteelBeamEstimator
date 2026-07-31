@@ -1,0 +1,232 @@
+{
+  "model_version": "9.1.0",
+  "phase": "M.2",
+  "purpose": "Track SPACER_BAR MISSING rows confirmed to lack a MAIN+EXTRA pair on either face. When extra-bar recovery (Track 2 / RC-4) lands, re-run QA.2A and verify these exact beams leave MISSING without re-deriving the list.",
+  "baseline_run": "QA2A_GroundTruthBenchmark after M.2 (9.1.0)",
+  "source": "m2_followup_net_y25_and_residuals.json",
+  "criterion": "absent_pair_confirmed = no (TOP_MAIN+TOP_EXTRA) and no (BOTTOM_MAIN+BOTTOM_EXTRA) in model engineering_bar_models for that beam",
+  "summary": {
+    "spacer_missing_total": 33,
+    "absent_pair_confirmed_rows": 19,
+    "absent_pair_confirmed_unique_beams": 15,
+    "remaining_missing_with_pair_on_at_least_one_face": 14
+  },
+  "unique_beams": [
+    {"drawing_set": "Second Set Drawings", "beam_id": "B12", "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B18", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B23", "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B26", "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B39", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B41", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B42", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B43", "model_roles": []},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B45", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Second Set Drawings", "beam_id": "B52", "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"]},
+    {"drawing_set": "Third Set Drawings", "beam_id": "B30", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Third Set Drawings", "beam_id": "B31", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Third Set Drawings", "beam_id": "B33", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Third Set Drawings", "beam_id": "B34", "model_roles": ["TOP_MAIN"]},
+    {"drawing_set": "Third Set Drawings", "beam_id": "B43", "model_roles": ["TOP_MAIN"]}
+  ],
+  "missing_rows": [
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B12",
+      "estimator_qty": 9.0,
+      "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B12",
+      "estimator_qty": 4.0,
+      "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B18",
+      "estimator_qty": 2.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B23",
+      "estimator_qty": 4.0,
+      "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B26",
+      "estimator_qty": 4.0,
+      "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B39",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B41",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B42",
+      "estimator_qty": 4.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B43",
+      "estimator_qty": 2.0,
+      "model_roles": [],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B45",
+      "estimator_qty": 4.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B52",
+      "estimator_qty": 2.0,
+      "model_roles": ["BOTTOM_MAIN", "TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B39",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "note": "second GT spacer row on same beam",
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "beam_id": "B39",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "note": "third GT spacer row on same beam",
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B30",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B31",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B33",
+      "estimator_qty": 3.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B34",
+      "estimator_qty": 5.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B34",
+      "estimator_qty": 2.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "note": "second GT spacer row on same beam",
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "beam_id": "B43",
+      "estimator_qty": 6.0,
+      "model_roles": ["TOP_MAIN"],
+      "top_main_extra_pair": false,
+      "bottom_main_extra_pair": false,
+      "absent_pair_confirmed": true,
+      "expected_after_extra_recovery": "SPACER_BAR status leaves MISSING (MATCH / WRONG_QUANTITY / ACCEPTABLE_EXTRA acceptable)"
+    }
+  ],
+  "verification_howto": [
+    "1. After extra-bar recovery lands, re-run Version9 QA.2A on all 3 sets.",
+    "2. For each entry in missing_rows[], look up bar_matching.json for that drawing_set + beam_id + role=SPACER_BAR.",
+    "3. Pass if status is no longer MISSING (MATCH, WRONG_QUANTITY, or ACCEPTABLE_EXTRA are acceptable).",
+    "4. Also confirm unique_beams[] each gain TOP_MAIN+TOP_EXTRA and/or BOTTOM_MAIN+BOTTOM_EXTRA in the model."
+  ]
+}
