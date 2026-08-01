@@ -1,16 +1,22 @@
 """
 Stirrup zone interpreter — multi-spacing segmentation.
-MODEL_VERSION: 8.4.0
+MODEL_VERSION: 9.3.0
+
+Track 1 note: Type3 full-pattern (`@100/200/100`) zone quantities are owned by
+Phase SI.1 (equal-N / T1.4-refined). This module must NOT expand Type3 into
+per-intent full segment sets — that double-counts through R.1.3 + SI.1.
+R12D keeps the 9.2.0 / V8 path (bar_label + spacing_mm only).
 """
 from __future__ import annotations
 
 import math
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
-MODEL_VERSION = "8.4.0"
+MODEL_VERSION = "9.3.0"
 
 _SPACING_RE = re.compile(r"@\s*(\d+)", re.I)
+_TYPE3_RE = re.compile(r"@\s*(\d+(?:\s*/\s*\d+)+)", re.I)
 _LEGS_RE = re.compile(r"(\d+)\s*L", re.I)
 _DENSITY = 7850.0
 
@@ -22,6 +28,17 @@ def parse_spacing(label: str, spacing_field: Optional[float] = None) -> Optional
         return None
     m = _SPACING_RE.search(label)
     return float(m.group(1)) if m else None
+
+
+def parse_type3_spacings(label: str) -> List[float]:
+    """Parse Type3 pattern for SI.1 / T1 label repair (not used for R12D expansion)."""
+    if not label:
+        return []
+    cleaned = label.replace("\\P", "").replace(" ", "")
+    m = _TYPE3_RE.search(cleaned)
+    if not m:
+        return []
+    return [float(x) for x in re.findall(r"\d+", m.group(1))]
 
 
 def parse_legs(label: str) -> int:
@@ -49,20 +66,16 @@ class StirrupZoneInterpreter:
         depth_mm: float = 450.0,
         width_mm: float = 230.0,
     ) -> Dict[str, Any]:
-        """
-        Returns {
-          intent_id: {segments, spacing_pattern, zone_count, evidence, confidence},
-          ...
-          "_beam_pattern": ...
-        }
-        """
         if not stirrup_intents:
             return {}
 
-        # Collect unique spacings with representative intents
+        # 9.2.0 / V8 path — bar_label + spacing_mm only (R4/R6 safe)
         by_spacing: Dict[float, List[Any]] = {}
         for it in stirrup_intents:
-            sp = parse_spacing(str(getattr(it, "bar_label", "") or ""), getattr(it, "spacing_mm", None))
+            sp = parse_spacing(
+                str(getattr(it, "bar_label", "") or ""),
+                getattr(it, "spacing_mm", None),
+            )
             if sp is None:
                 continue
             by_spacing.setdefault(sp, []).append(it)
@@ -103,10 +116,8 @@ class StirrupZoneInterpreter:
             result["_beam_pattern"] = pattern
             return result
 
-        # Multi-spacing: tighter at supports, looser at mid
         tight = min(spacings)
         loose = max(spacings)
-        # Optional middle spacing
         mid_sp = None
         if len(spacings) == 3:
             mid_sp = spacings[1]
@@ -116,11 +127,12 @@ class StirrupZoneInterpreter:
         if mid_sp is not None:
             pattern = f"{int(tight)}-{int(mid_sp)}-{int(tight)}"
             segs = self._three_zone(span, tight, mid_sp, depth_mm, width_mm)
+            evidence_extra = ["0.25L_support_split"]
         else:
             pattern = f"{int(tight)}-{int(loose)}-{int(tight)}"
             segs = self._three_zone(span, tight, loose, depth_mm, width_mm)
+            evidence_extra = ["0.25L_support_split"]
 
-        # Map each intent to the segment matching its spacing
         for sp, intents in by_spacing.items():
             matching = [s for s in segs if abs(s["spacing_mm"] - sp) < 0.5]
             if not matching:
@@ -138,6 +150,7 @@ class StirrupZoneInterpreter:
                         f"pattern={pattern}",
                         f"assigned_spacing={sp}",
                         "tighter_at_supports_convention",
+                        *evidence_extra,
                     ],
                 }
         result["_beam_pattern"] = pattern
@@ -183,7 +196,6 @@ class StirrupZoneInterpreter:
     ) -> List[Dict[str, Any]]:
         if span <= 0:
             return []
-        # Support zones ~0.25L each side, mid remainder (generalized)
         left_end = span * 0.25
         right_start = span * 0.75
         cut = self._stirrup_cut(depth, width, 8.0)
@@ -211,7 +223,6 @@ class StirrupZoneInterpreter:
 
     @staticmethod
     def _stirrup_cut(depth: float, width: float, dia: float) -> float:
-        # Approximate closed stirrup perimeter + hooks
         return 2.0 * (depth + width) + 20.0 * dia
 
     @staticmethod

@@ -687,19 +687,47 @@ class EngineeringBarBuilder:
                     "coverage_ratio": None,
                     "spacing_mm": bar.spacing_mm,
                     "classification_evidence": (
-                        f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
-                        if meta.get("piece_id")
+                        (
+                            "SYNTHESIZED_GEOMETRY|GEOMETRY_ONLY|"
+                            + (
+                                f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
+                                if meta.get("piece_id")
+                                else (
+                                    f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
+                                    if meta.get("detail_id")
+                                    else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
+                                )
+                            )
+                        )
+                        if (
+                            str(bar.bar_label or "").upper().startswith("SYNTH:")
+                            or "SYNTHESIZED_GEOMETRY"
+                            in " ".join(str(x) for x in (meta.get("engineering_notes") or [])).upper()
+                            or "GEOMETRY_STIRRUP" in str(meta.get("source") or "").upper()
+                        )
                         else (
-                            f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
-                            if meta.get("detail_id")
-                            else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
+                            f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
+                            if meta.get("piece_id")
+                            else (
+                                f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
+                                if meta.get("detail_id")
+                                else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
+                            )
                         )
                     ),
-                    "classification_confidence": str(
-                        meta.get("piece_confidence")
-                        or meta.get("detail_confidence")
-                        or meta.get("intent_confidence")
-                        or "HIGH"
+                    "classification_confidence": (
+                        "WARN"
+                        if (
+                            str(bar.bar_label or "").upper().startswith("SYNTH:")
+                            or "SYNTHESIZED_GEOMETRY"
+                            in " ".join(str(x) for x in (meta.get("engineering_notes") or [])).upper()
+                        )
+                        else str(
+                            meta.get("piece_confidence")
+                            or meta.get("detail_confidence")
+                            or meta.get("intent_confidence")
+                            or "HIGH"
+                        )
                     ),
                     "source_pipeline_role": "R.1.3+PIECE",
                     "is_corrected": False,

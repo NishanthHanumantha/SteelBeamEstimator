@@ -1,0 +1,39 @@
+# T1.1 Renderer Validation
+
+**MODEL_VERSION:** 9.3.0
+**DXF:** `C:\Users\nishanth.h\SteelBeamEstimator\Version9\data\web_runs\qa2_Third_Set_Drawings_20260801_124856\reinforcement\Galera_TF_BeamReinforcementDetails.dxf`
+**ALL PASS:** True
+
+## a_coordinate_round_trip
+- **PASS:** True
+- tolerance_mm_documented: `1e-06`
+- practical_pass_threshold_mm: `0.001`
+- max_observed_error_mm: `0.0`
+- n_points: `5`
+- dpi: `200`
+- fig_in: `[30.0, 22.0]`
+- img_size: `[6000, 4400]`
+- note: `Affine map exact aside from float error; edges + center tested.`
+
+## b_layer_completeness
+- **PASS:** True
+- all_layers_count: `25`
+- stirrup_related_layers_present: `['-S-DIM', '-S-STIRUP', '-STR-BEAM', '-STR-COLUMN', '-STR-REINF', '-STR-RF-DIM', '-STR-TEXT', 'Dimension', 'STR-BEAM', 'dim']`
+- requested_target_layers_present: `['-STR-RF-DIM', '-S-STIRUP']`
+- requested_target_layers_missing: `['S- Structural']`
+- note: `Default render draws full modelspace (no layer drop). Track 1 added include_layers/exclude_layers + render_text.`
+
+## c_line_weight
+- **PASS:** True
+- scale: `30.0x22.0in @ 200dpi`
+- min_measured_ink_run_px: `1`
+- median_thin_run_px: `3`
+- samples: `1467`
+
+## d_text_toggle
+- **PASS:** True
+- render_text_true_ink_px: `238986`
+- render_text_false_ink_px: `0`
+- ink_delta_px: `238986`
+- img_size_text_off: `[6000, 4400]`
+- note: `render_text=False suppresses TEXT/MTEXT/DIMENSION/LEADER.`

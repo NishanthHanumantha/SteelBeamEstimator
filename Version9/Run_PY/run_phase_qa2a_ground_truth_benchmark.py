@@ -2,7 +2,7 @@
 """
 run_phase_qa2a_ground_truth_benchmark.py
 Phase QA.2A — Ground Truth Benchmark Comparison Engine
-MODEL_VERSION: 9.2.0  (Version9 + DIMENSION discovery + M.2 ACCEPTABLE_EXTRA)
+MODEL_VERSION: 9.3.0  (Version9 + Track 1 geometric stirrup evidence)
 
 For every Drawing Set under Test_Input:
   1. Run the Version9 production pipeline → Model Estimation_Output.xlsx

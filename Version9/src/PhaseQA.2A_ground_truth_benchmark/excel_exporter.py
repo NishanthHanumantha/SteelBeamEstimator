@@ -11,7 +11,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
-MODEL_VERSION = "9.1.0"
+MODEL_VERSION = "9.3.0"
 
 _HDR = PatternFill("solid", fgColor="1F4E79")
 _HFONT = Font(bold=True, color="FFFFFF", size=11)
@@ -266,6 +266,7 @@ class ExcelExporter:
         statuses = [
             "MATCH", "PARTIAL_MATCH", "MISSING", "EXTRA", "ACCEPTABLE_EXTRA",
             "WRONG_DIAMETER", "WRONG_QUANTITY", "WRONG_ROLE",
+            "SYNTHESIZED_GEOMETRY",  # Track 1 visibility column (not a match status)
         ]
         headers = ["Drawing Set", "Role"] + statuses
         rows = []

@@ -23,7 +23,7 @@ from metrics_engine import MetricsEngine
 from report_compiler import compile_results
 from workbook_normalizer import WorkbookNormalizer
 
-MODEL_VERSION = "9.1.0"
+MODEL_VERSION = "9.3.0"
 PHASE_ID = "QA.2A"
 
 

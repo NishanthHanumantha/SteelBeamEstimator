@@ -32,7 +32,7 @@ from .hypothesis_reporter import HypothesisReporter
 from .hypothesis_statistics import HypothesisStatistics
 from .hypothesis_validation import HypothesisValidation
 
-MODEL_VERSION = "8.9.1"
+MODEL_VERSION = "9.3.0"
 PHASE_ID = "R.2.1D"
 
 _R21C_FACTS_REL = "PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
@@ -94,6 +94,16 @@ class PhaseR21DOrchestrator:
         print(f"[R.2.1D] Loaded {total_in} R.2.1C facts from {len(facts_raw_by_beam)} beams")
 
         enriched_by_beam, rules_log = self._build_all(facts_raw_by_beam)
+        t1_fusion = self._apply_t1_geometry_fusion(enriched_by_beam)
+        if t1_fusion:
+            print(
+                f"[R.2.1D] T1 GEOMETRY_STIRRUP fusion: "
+                f"agree={t1_fusion.get('agree')} "
+                f"conflict={t1_fusion.get('conflict')} "
+                f"synth={t1_fusion.get('geometry_only_synthesized')} "
+                f"text_only={t1_fusion.get('text_only')}"
+            )
+
         total_out = sum(len(v) for v in enriched_by_beam.values())
         total_hyp = sum(
             len(f.intent_hypotheses)
@@ -132,6 +142,7 @@ class PhaseR21DOrchestrator:
             "exported_artefacts": {k: str(v) for k, v in exported.items()},
             "elapsed_seconds": round(elapsed, 2),
             "success": v_all_pass,
+            "t1_geometry_fusion": t1_fusion,
         }
 
         print()
@@ -140,6 +151,125 @@ class PhaseR21DOrchestrator:
             self._print_failures(validation)
 
         return result
+
+    def _apply_t1_geometry_fusion(
+        self, enriched_by_beam: Dict[str, List[Any]]
+    ) -> Optional[Dict[str, Any]]:
+        """Additive T1.3 fusion — residual beams only; soft-skip if disabled/missing."""
+        try:
+            import importlib.util
+            import sys
+            import types
+
+            if self._output_root is None:
+                return None
+            import os
+            candidates = []
+            env_eng = (os.environ.get("STEEL_ENGINE_ROOT") or "").strip()
+            if env_eng:
+                candidates.append(pathlib.Path(env_eng))
+            # __file__ = .../src/PhaseR2.1D_.../phase_r21d_orchestrator.py → parents[2]=engine
+            candidates.append(pathlib.Path(__file__).resolve().parents[2])
+            # offline: output_root = <engine>/data/output
+            candidates.append(self._output_root.parent.parent)
+            engine_root = None
+            for c in candidates:
+                cfg = c / "config" / "geometric_stirrup_evidence.yaml"
+                if cfg.exists():
+                    engine_root = c
+                    break
+            if engine_root is None:
+                return {"enabled": True, "soft_skip": True, "reason": "engine_root_not_found"}
+
+            pkg_dir = engine_root / "src" / "PhaseT1_geometric_stirrup_evidence"
+            if not pkg_dir.exists():
+                return None
+
+            alias = "PhaseT1"
+            if alias not in sys.modules:
+                pkg = types.ModuleType(alias)
+                pkg.__path__ = [str(pkg_dir)]
+                pkg.__package__ = alias
+                sys.modules[alias] = pkg
+            for sub in (
+                "config_loader",
+                "residual_targets",
+                "r21d_fusion",
+            ):
+                key = f"{alias}.{sub}"
+                if key in sys.modules:
+                    continue
+                spec = importlib.util.spec_from_file_location(key, pkg_dir / f"{sub}.py")
+                if spec is None or spec.loader is None:
+                    continue
+                mod = importlib.util.module_from_spec(spec)
+                mod.__package__ = alias
+                sys.modules[key] = mod
+                spec.loader.exec_module(mod)
+
+            cfg_loader = sys.modules[f"{alias}.config_loader"]
+            if not cfg_loader.is_enabled(engine_root):
+                return {"enabled": False, "soft_skip": True}
+
+            cfg = cfg_loader.load_config(engine_root)
+            residual_mod = sys.modules[f"{alias}.residual_targets"]
+            fusion_mod = sys.modules[f"{alias}.r21d_fusion"]
+
+            from . import evidence_models as models
+
+            targets = residual_mod.load_residual_targets(
+                engine_root, cfg.get("residual_targets_path")
+            )
+            set_id = residual_mod.infer_set_id_from_run_root(
+                self._output_root.parent.parent
+                if (self._output_root.parent.name == "data")
+                else self._output_root
+            )
+            # run_root inference: output_root = <run_root>/data/output
+            run_root = self._output_root.parent.parent
+            set_id = residual_mod.infer_set_id_from_run_root(run_root)
+
+            residual_ids = residual_mod.included_beam_ids_for_set(targets, set_id)
+            missing_ids = {
+                r["beam_id"]
+                for r in (targets.get("rows") or [])
+                if r.get("included")
+                and r.get("set_id") == set_id
+                and r.get("target_group") == "TARGET_MISSING"
+            }
+
+            ev_path = (
+                self._output_root
+                / "PhaseT1_geometric_stirrup_evidence"
+                / "stirrup_geometry_evidence.json"
+            )
+            if not ev_path.exists():
+                return {"enabled": True, "soft_skip": True, "reason": "no_t1_artefact"}
+
+            payload = json.loads(ev_path.read_text(encoding="utf-8"))
+            if payload.get("enabled") is False:
+                return {"enabled": False, "soft_skip": True}
+            geometry_by_beam = payload.get("by_beam") or {}
+
+            summary = fusion_mod.fuse_geometry_into_facts(
+                enriched_by_beam,
+                geometry_by_beam,
+                residual_ids,
+                models=models,
+                fusion_cfg=cfg.get("fusion") or {},
+                target_missing_ids=missing_ids,
+            )
+            summary["enabled"] = True
+            summary["set_id"] = set_id
+            # mkdir before write — fusion runs before exporter creates output_dir
+            self.output_dir.mkdir(parents=True, exist_ok=True)
+            (self.output_dir / "t1_geometry_fusion_summary.json").write_text(
+                json.dumps(summary, indent=2), encoding="utf-8"
+            )
+            return summary
+        except Exception as exc:
+            print(f"[R.2.1D] T1 fusion soft-skip: {exc}")
+            return {"enabled": True, "soft_skip": True, "error": str(exc)}
 
     def _load_r21c_facts(self) -> Dict[str, List[Dict[str, Any]]]:
         if not self.r21c_facts_path.exists():

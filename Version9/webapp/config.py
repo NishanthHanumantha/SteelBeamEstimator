@@ -42,6 +42,13 @@ PRODUCTION_STAGES = [
         "timeout_s": 900,
     },
     {
+        "id": "T1",
+        "label": "Running geometric stirrup evidence...",
+        "script": "Run_PY/run_phase_t1_geometric_stirrup_evidence.py",
+        "uses_input_folder": False,
+        "timeout_s": 1200,
+    },
+    {
         "id": "R2A",
         "label": "Running engineering pipeline...",
         "script": "Run_PY/run_phase_r2a_engineering_context.py",

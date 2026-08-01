@@ -29,10 +29,14 @@ class StirrupZoneBuilder:
         self,
         parsed: ParsedStirrupNotation,
         span_mm: float,
+        beam_id: str = "",
     ) -> List[StirrupZone]:
         """
         Returns a list of StirrupZone objects.
         Returns [] if parsed.is_parseable is False or spacings are empty.
+
+        T1.4: when residual geometry gives confident pitch-change boundaries,
+        use those instead of equal-N fallback.
         """
         if not parsed.is_parseable or not parsed.spacings_mm or span_mm <= 0:
             return []
@@ -52,11 +56,38 @@ class StirrupZoneBuilder:
                 )
             ]
 
-        zone_length = span_mm / n
+        # T1.4 pitch-change boundaries (residual only; soft-fallback to equal-N)
+        bounds = None
+        if beam_id:
+            try:
+                import importlib.util
+                import os
+                from pathlib import Path
+                eng = (os.environ.get("STEEL_ENGINE_ROOT") or "").strip()
+                if eng:
+                    tpath = (
+                        Path(eng) / "src" / "PhaseT1_geometric_stirrup_evidence"
+                        / "type3_label_repair.py"
+                    )
+                    if tpath.exists():
+                        spec = importlib.util.spec_from_file_location(
+                            "t1_type3_zb", tpath
+                        )
+                        mod = importlib.util.module_from_spec(spec)
+                        assert spec and spec.loader
+                        spec.loader.exec_module(mod)
+                        bounds = mod.load_t14_boundaries(beam_id, n)
+            except Exception:
+                bounds = None
+
         zones: List[StirrupZone] = []
         for i, spacing in enumerate(parsed.spacings_mm):
-            start = i * zone_length
-            end   = (i + 1) * zone_length
+            if bounds is not None:
+                start, end = bounds[i]
+            else:
+                zone_length = span_mm / n
+                start = i * zone_length
+                end = (i + 1) * zone_length
 
             if i == 0:
                 role = ZoneRole.LEFT_SUPPORT
@@ -65,13 +96,14 @@ class StirrupZoneBuilder:
             else:
                 role = ZoneRole.MIDSPAN
 
+            length = max(0.0, end - start)
             zones.append(StirrupZone(
                 zone_id=f"ZONE_{i}",
                 zone_index=i,
                 role=role,
                 start_mm=round(start, 1),
                 end_mm=round(end, 1),
-                length_mm=round(zone_length, 1),
+                length_mm=round(length, 1),
                 spacing_mm=spacing,
             ))
 

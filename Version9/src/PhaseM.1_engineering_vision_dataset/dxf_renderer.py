@@ -7,21 +7,28 @@ Preserves: beam lines, text, leaders, dimensions, callouts, symbols.
 Returns a CoordTransform that maps DXF model-space coordinates to image pixels,
 enabling precise beam cropping from the rendered image.
 
-MODEL_VERSION: 9.0.0
+Track 1 (9.3.0): optional layer filter, text on/off, DPI override — additive;
+default call remains full-drawing text-on render (M.1 training behaviour).
+
+MODEL_VERSION: 9.3.0
 """
 from __future__ import annotations
 
 import math
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Tuple
+from typing import Iterable, Optional, Sequence, Set, Tuple
 
-MODEL_VERSION = "9.0.0"
+MODEL_VERSION = "9.3.0"
 
 # ── Rendering configuration ───────────────────────────────────────────────────
 _FIG_W_IN = 30.0    # figure width  (inches)
 _FIG_H_IN = 22.0    # figure height (inches)
 _DPI      = 200     # rendering resolution — yields 6000 × 4400 px
+
+_TEXT_TYPES = frozenset({
+    "TEXT", "MTEXT", "ATTRIB", "ATTDEF", "DIMENSION", "MULTILEADER", "LEADER",
+})
 
 
 @dataclass
@@ -37,17 +44,17 @@ class CoordTransform:
     img_w:    int                   # image width  (pixels)
     img_h:    int                   # image height (pixels)
 
-    def dxf_to_pixel(self, dxf_x: float, dxf_y: float) -> Tuple[int, int]:
-        """Convert DXF model-space coordinates to image pixel coordinates."""
+    def dxf_to_pixel(self, dxf_x: float, dxf_y: float) -> Tuple[float, float]:
+        """Convert DXF model-space coordinates to image pixel coordinates (float)."""
         x_range = self.dxf_xlim[1] - self.dxf_xlim[0]
         y_range = self.dxf_ylim[1] - self.dxf_ylim[0]
         if x_range == 0 or y_range == 0:
-            return 0, 0
+            return 0.0, 0.0
         px = (dxf_x - self.dxf_xlim[0]) / x_range * self.img_w
         py = self.img_h - (dxf_y - self.dxf_ylim[0]) / y_range * self.img_h
-        return int(px), int(py)
+        return px, py
 
-    def pixel_to_dxf(self, px: int, py: int) -> Tuple[float, float]:
+    def pixel_to_dxf(self, px: float, py: float) -> Tuple[float, float]:
         """Convert image pixel coordinates back to DXF model-space."""
         x_range = self.dxf_xlim[1] - self.dxf_xlim[0]
         y_range = self.dxf_ylim[1] - self.dxf_ylim[0]
@@ -60,36 +67,46 @@ class CoordTransform:
         return self.img_w, self.img_h
 
 
-def render_dxf_to_png(dxf_path: Path, output_path: Path) -> CoordTransform:
+def _normalize_layers(layers: Optional[Sequence[str]]) -> Optional[Set[str]]:
+    if not layers:
+        return None
+    return {str(x).strip().upper() for x in layers if str(x).strip()}
+
+
+def render_dxf_to_png(
+    dxf_path: Path,
+    output_path: Path,
+    *,
+    dpi: Optional[int] = None,
+    fig_w_in: Optional[float] = None,
+    fig_h_in: Optional[float] = None,
+    include_layers: Optional[Sequence[str]] = None,
+    exclude_layers: Optional[Sequence[str]] = None,
+    render_text: bool = True,
+) -> CoordTransform:
     """
     Render *dxf_path* to *output_path* (PNG) using ezdxf's matplotlib backend.
 
-    The rendering is vector-quality:
-      - No screenshot or rasterisation of the screen.
-      - All DXF layers / entities are processed by ezdxf's frontend.
-      - Background is white; linework is rendered at full DXF fidelity.
-
     Parameters
     ----------
-    dxf_path    : path to the DXF file to render.
-    output_path : destination PNG file path (parent directory is created).
+    dxf_path       : path to the DXF file to render.
+    output_path    : destination PNG file path (parent directory is created).
+    dpi            : override default DPI (200).
+    fig_w_in/h_in  : override figure size inches.
+    include_layers : if set, only entities on these layers are drawn.
+    exclude_layers : layers to skip (applied after include filter).
+    render_text    : False → suppress TEXT/MTEXT/DIMENSION/LEADER etc. (geometry-only).
 
     Returns
     -------
-    CoordTransform — use .dxf_to_pixel() to convert any DXF coordinate
-                     to the corresponding pixel in the saved image.
-
-    Raises
-    ------
-    ImportError      — if matplotlib is not installed.
-    FileNotFoundError— if dxf_path does not exist.
+    CoordTransform — use .dxf_to_pixel() / .pixel_to_dxf() for round-trip mapping.
     """
     try:
         import ezdxf
         from ezdxf.addons.drawing import RenderContext, Frontend
         from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
         import matplotlib
-        matplotlib.use("Agg")   # non-interactive backend (no GUI window)
+        matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError as exc:
         raise ImportError(
@@ -102,30 +119,56 @@ def render_dxf_to_png(dxf_path: Path, output_path: Path) -> CoordTransform:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
+    use_dpi = int(dpi or _DPI)
+    use_w = float(fig_w_in or _FIG_W_IN)
+    use_h = float(fig_h_in or _FIG_H_IN)
+
     doc = ezdxf.readfile(str(dxf_path))
     msp = doc.modelspace()
 
-    # Fill the entire figure with the axes (no whitespace margins)
-    fig = plt.figure(figsize=(_FIG_W_IN, _FIG_H_IN))
-    ax  = fig.add_axes([0.0, 0.0, 1.0, 1.0])
+    inc = _normalize_layers(include_layers)
+    exc_layers = _normalize_layers(exclude_layers)
+
+    def _entity_ok(entity) -> bool:
+        dxftype = entity.dxftype()
+        if not render_text and dxftype in _TEXT_TYPES:
+            return False
+        layer = str(entity.dxf.layer or "").upper()
+        if inc is not None and layer not in inc:
+            return False
+        if exc_layers is not None and layer in exc_layers:
+            return False
+        return True
+
+    fig = plt.figure(figsize=(use_w, use_h))
+    ax = fig.add_axes([0.0, 0.0, 1.0, 1.0])
     ax.set_aspect("equal")
     ax.set_axis_off()
 
-    ctx     = RenderContext(doc)
+    ctx = RenderContext(doc)
     backend = MatplotlibBackend(ax)
-    Frontend(ctx, backend).draw_layout(msp, finalize=True)
+    frontend = Frontend(ctx, backend)
 
-    # Capture DXF-space limits BEFORE saving (these are the data coordinates
-    # visible in the axes, matching the rendered DXF content extents)
+    if inc is None and exc_layers is None and render_text:
+        frontend.draw_layout(msp, finalize=True)
+    else:
+        # Selective draw — preserve layer completeness control for Track 1
+        for entity in msp:
+            if _entity_ok(entity):
+                try:
+                    frontend.draw_entity(entity)
+                except Exception:
+                    continue
+        backend.finalize()
+
     xlim: Tuple[float, float] = ax.get_xlim()
     ylim: Tuple[float, float] = ax.get_ylim()
 
-    fig.savefig(str(output_path), dpi=_DPI, facecolor="white")
+    fig.savefig(str(output_path), dpi=use_dpi, facecolor="white")
     plt.close(fig)
 
-    # Exact pixel dimensions of the saved figure
-    img_w = int(math.ceil(_FIG_W_IN * _DPI))
-    img_h = int(math.ceil(_FIG_H_IN * _DPI))
+    img_w = int(math.ceil(use_w * use_dpi))
+    img_h = int(math.ceil(use_h * use_dpi))
 
     return CoordTransform(
         dxf_xlim=xlim,

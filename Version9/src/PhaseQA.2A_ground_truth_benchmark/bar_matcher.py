@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from gt_models import BarRecord, BeamRecord
 
-MODEL_VERSION = "9.1.0"
+MODEL_VERSION = "9.3.0"
 
 _SPACER_ROLE = "SPACER_BAR"
 
@@ -145,13 +145,21 @@ class BarMatcher:
             r for r in all_rows if r["status"] == "ACCEPTABLE_EXTRA"
         ]
 
-        # Role × status matrix (includes ACCEPTABLE_EXTRA column)
+        # Role × status matrix (includes ACCEPTABLE_EXTRA + SYNTHESIZED_GEOMETRY columns)
+        # SYNTHESIZED_GEOMETRY is a visibility column (Track 1): counts rows whose
+        # model bar is geometry-only synthesis; status scoring remains MATCH/etc.
         role_status: Dict[str, Dict[str, int]] = {}
         for r in all_rows:
             role = (r.get("bar_role") or r.get("model_role") or "UNKNOWN").upper()
             st = r.get("status") or "UNKNOWN"
             role_status.setdefault(role, {})
             role_status[role][st] = role_status[role].get(st, 0) + 1
+            if r.get("is_synthesized_geometry"):
+                role_status[role]["SYNTHESIZED_GEOMETRY"] = (
+                    role_status[role].get("SYNTHESIZED_GEOMETRY", 0) + 1
+                )
+
+        synth_detail = [r for r in all_rows if r.get("is_synthesized_geometry")]
 
         return {
             "model_version": MODEL_VERSION,
@@ -161,6 +169,7 @@ class BarMatcher:
             "correct_bars": cor_total,
             "missing_bars": miss_total,
             "acceptable_extra_bars": len(acceptable_extra_detail),
+            "synthesized_geometry_bars": len(synth_detail),
             "detection_pct": round(100.0 * det_total / est_total, 2) if est_total else 0.0,
             "accuracy_pct": round(100.0 * cor_total / det_total, 2) if det_total else 0.0,
             "undetected_pct": round(100.0 * miss_total / est_total, 2) if est_total else 0.0,
@@ -168,6 +177,7 @@ class BarMatcher:
             "rows": all_rows,
             "missing_detail": missing_detail,
             "acceptable_extra_detail": acceptable_extra_detail,
+            "synthesized_geometry_detail": synth_detail,
             "role_status_matrix": role_status,
         }
 
@@ -220,6 +230,24 @@ class BarMatcher:
         return best_i, best_status, best_score
 
     @staticmethod
+    def _is_synthesized(mod: Optional[BarRecord]) -> bool:
+        """True only for GEOMETRY_ONLY synthesis (not TEXT+GEOMETRY agree/conflict)."""
+        if mod is None:
+            return False
+        blob = " ".join(
+            [
+                str(getattr(mod, "bar_label", "") or ""),
+                str(getattr(mod, "source_description", "") or ""),
+                str(getattr(mod, "classification_evidence", "") or ""),
+            ]
+        ).upper()
+        return (
+            "SYNTH:" in blob
+            or "SYNTHESIZED_GEOMETRY" in blob
+            or ("GEOMETRY_ONLY" in blob and "GEOMETRY_STIRRUP" in blob)
+        )
+
+    @staticmethod
     def _row(
         drawing_set: str,
         beam_id: str,
@@ -242,6 +270,7 @@ class BarMatcher:
             "cut_length_model": mod.cut_length if mod else None,
             "status": status,
             "matched": status not in ("MISSING", "EXTRA", "ACCEPTABLE_EXTRA"),
+            "is_synthesized_geometry": BarMatcher._is_synthesized(mod),
             "difference_qty": round(
                 (mod.quantity if mod else 0.0) - (est.quantity if est else 0.0), 2
             ),

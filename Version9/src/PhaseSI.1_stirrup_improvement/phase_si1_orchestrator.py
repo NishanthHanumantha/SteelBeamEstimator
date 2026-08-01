@@ -76,6 +76,8 @@ class StirrupImprover:
         self._hook_multiple = (
             loader.get_hook_multiple(135) if loader else 10
         )
+        # Track 1: Type3 repair expands once per (beam, diameter)
+        self._type3_expanded_keys: set = set()
 
     def compute_beam(
         self,
@@ -101,6 +103,41 @@ class StirrupImprover:
         D = float(depth_mm or 600)
         W = float(width_mm or 200)
 
+        # T1: residual Type3 label repair (truncated @100 → @100/200/100)
+        repaired_spacings = None
+        try:
+            import importlib.util
+            import os
+            from pathlib import Path
+            eng = (os.environ.get("STEEL_ENGINE_ROOT") or "").strip()
+            if eng:
+                tpath = (
+                    Path(eng) / "src" / "PhaseT1_geometric_stirrup_evidence"
+                    / "type3_label_repair.py"
+                )
+                if tpath.exists():
+                    spec = importlib.util.spec_from_file_location("t1_type3", tpath)
+                    mod = importlib.util.module_from_spec(spec)
+                    assert spec and spec.loader
+                    spec.loader.exec_module(mod)
+                    label, repaired_spacings = mod.repair_bar_label(
+                        beam_id, label, d_mm
+                    )
+        except Exception:
+            repaired_spacings = None
+
+        if repaired_spacings and len(repaired_spacings) >= 2:
+            t3_key = (beam_id, int(round(d_mm)))
+            if t3_key in self._type3_expanded_keys:
+                # Same beam+diameter already Type3-expanded — keep this bar as
+                # legacy (original label/qty). Do not expand Type3 again, and do
+                # not drop the bar (Set3 steel regression from return []).
+                return self._legacy_row(
+                    bar, beam_id, d_mm, D, W, span_mm,
+                    str(bar.get("bar_label") or label), grade,
+                )
+            self._type3_expanded_keys.add(t3_key)
+
         parsed = self._parser.parse(
             label,
             fallback_spacing_mm=spc_mm,
@@ -113,7 +150,7 @@ class StirrupImprover:
         if not parsed.is_parseable or not parsed.spacings_mm:
             return self._legacy_row(bar, beam_id, d_mm, D, W, span_mm, label, grade)
 
-        zones  = self._zones.build(parsed, span_mm)
+        zones  = self._zones.build(parsed, span_mm, beam_id=beam_id)
         groups = self._dist.distribute(zones, parsed.stirrup_type)
         cut_mm = self._weight.cut_length_mm(d_mm, W, D)
 
@@ -144,9 +181,15 @@ class StirrupImprover:
                 is_merged=is_merged,
                 merge_note=merge_note,
             )
-            bbs_rows.append(group_to_bbs_dict(
+            row = group_to_bbs_dict(
                 group, beam_id, hook_multiple=self._hook_multiple
-            ))
+            )
+            # R3: surface GEOMETRY_ONLY synthesis in Excel Description
+            if str(label).upper().startswith("SYNTH:"):
+                row["description"] = (
+                    f"{row.get('description') or 'Stirrups'} [SYNTHESIZED_GEOMETRY]"
+                )
+            bbs_rows.append(row)
 
         return bbs_rows
 

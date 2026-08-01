@@ -25,6 +25,7 @@ MODEL_VERSION = "8.9.0"
 PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {"id": "VROOT1", "script": "Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py", "timeout_s": 300},
     {"id": "R1",     "script": "Run_PY/run_phase_r1_generalized_reinforcement_discovery.py", "timeout_s": 900},
+    {"id": "T1",     "script": "Run_PY/run_phase_t1_geometric_stirrup_evidence.py", "timeout_s": 1200},
     {"id": "R2A",    "script": "Run_PY/run_phase_r2a_engineering_context.py", "timeout_s": 300},
     {"id": "R21B",   "script": "Run_PY/run_phase_r21b_semantic_interpreter.py", "timeout_s": 900},
     {"id": "R21C",   "script": "Run_PY/run_phase_r21c_engineering_fact_normalization.py", "timeout_s": 600},
@@ -49,6 +50,7 @@ _SOFT_ARTEFACTS = {
     "L22":  "data/output/PhaseL.2.2_geometry_recovery/geometry_registry.json",
     "R21D": "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json",
     "R21C": "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json",
+    "T1":   "data/output/PhaseT1_geometric_stirrup_evidence/stirrup_geometry_evidence.json",
 }
 
 
