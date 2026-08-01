@@ -1,7 +1,7 @@
 # Phase R.1 — Generalized Reinforcement Discovery Configuration
-# MODEL_VERSION: 8.2.0
+# MODEL_VERSION: 9.2.0  (Version9 — DIMENSION text-override scan)
 
-model_version: "8.2.0"
+model_version: "9.2.0"
 phase_id: "R.1"
 
 # ── Spatial search parameters ─────────────────────────────────────────────────
@@ -35,6 +35,9 @@ classification:
 discovery:
   beam_registry_path: "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
   reinforcement_dxf_key: "reinforcement"
+  # 9.2.0 — include DIMENSION text overrides (e.g. stirrup callouts on -STR-RF-DIM).
+  # false → pre-patch TEXT/MTEXT-only behavior (flag-off equivalence).
+  enable_dimension_text_scan: true
 
 # ── Export paths ──────────────────────────────────────────────────────────────
 export:

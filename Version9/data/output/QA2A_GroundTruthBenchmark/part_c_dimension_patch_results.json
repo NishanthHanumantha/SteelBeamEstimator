@@ -1,0 +1,398 @@
+{
+  "discovery": [
+    {
+      "set": "First Set Drawings",
+      "gt": 23,
+      "pre": 0,
+      "post": 24,
+      "ratio_pre": 0.0,
+      "ratio_post": 104.3,
+      "total_annos": 97,
+      "role_dist": {
+        "STIRRUP": 24,
+        "TOP_EXTRA": 21,
+        "UNKNOWN": 10,
+        "BOTTOM_MAIN": 11,
+        "TOP_MAIN": 18,
+        "SPACER_BAR": 3,
+        "BOTTOM_EXTRA": 10
+      },
+      "beams_with_stirrup": 18
+    },
+    {
+      "set": "Second Set Drawings",
+      "gt": 90,
+      "pre": 3,
+      "post": 64,
+      "ratio_pre": 3.3,
+      "ratio_post": 71.1,
+      "total_annos": 302,
+      "role_dist": {
+        "TOP_MAIN": 60,
+        "TOP_EXTRA": 60,
+        "STIRRUP": 64,
+        "BOTTOM_MAIN": 42,
+        "SPACER_BAR": 35,
+        "UNKNOWN": 22,
+        "BOTTOM_EXTRA": 19
+      },
+      "beams_with_stirrup": 61
+    },
+    {
+      "set": "Third Set Drawings",
+      "gt": 96,
+      "pre": 17,
+      "post": 69,
+      "ratio_pre": 17.7,
+      "ratio_post": 71.9,
+      "total_annos": 344,
+      "role_dist": {
+        "TOP_EXTRA": 90,
+        "STIRRUP": 69,
+        "TOP_MAIN": 61,
+        "UNKNOWN": 37,
+        "BOTTOM_MAIN": 39,
+        "BOTTOM_EXTRA": 31,
+        "SPACER_BAR": 17
+      },
+      "beams_with_stirrup": 60
+    }
+  ],
+  "stirrup_qa": [
+    {
+      "set": "First Set Drawings",
+      "gt_rows": 23,
+      "status": {
+        "WRONG_DIAMETER": 1,
+        "WRONG_QUANTITY": 15,
+        "MISSING": 5,
+        "MATCH": 2
+      },
+      "model_role_STIRRUP_statuses": {
+        "WRONG_DIAMETER": 1,
+        "WRONG_QUANTITY": 15,
+        "MATCH": 2,
+        "EXTRA": 2
+      }
+    },
+    {
+      "set": "Second Set Drawings",
+      "gt_rows": 90,
+      "status": {
+        "MATCH": 15,
+        "WRONG_QUANTITY": 45,
+        "MISSING": 27,
+        "PARTIAL_MATCH": 2,
+        "WRONG_DIAMETER": 1
+      },
+      "model_role_STIRRUP_statuses": {
+        "MATCH": 15,
+        "WRONG_QUANTITY": 45,
+        "WRONG_DIAMETER": 2,
+        "EXTRA": 2
+      }
+    },
+    {
+      "set": "Third Set Drawings",
+      "gt_rows": 96,
+      "status": {
+        "MATCH": 14,
+        "WRONG_QUANTITY": 41,
+        "MISSING": 41
+      },
+      "model_role_STIRRUP_statuses": {
+        "MATCH": 14,
+        "WRONG_QUANTITY": 41,
+        "PARTIAL_MATCH": 2,
+        "EXTRA": 2,
+        "WRONG_DIAMETER": 1
+      }
+    }
+  ],
+  "role_matrix": {
+    "First Set Drawings": {
+      "BOTTOM_EXTRA": {
+        "WRONG_DIAMETER": 1,
+        "EXTRA": 4,
+        "WRONG_ROLE": 2
+      },
+      "BOTTOM_MAIN": {
+        "WRONG_DIAMETER": 6,
+        "MISSING": 12,
+        "MATCH": 4,
+        "WRONG_ROLE": 1
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "WRONG_ROLE": 3,
+        "MISSING": 2
+      },
+      "SPACER_BAR": {
+        "ACCEPTABLE_EXTRA": 15,
+        "WRONG_QUANTITY": 4,
+        "MISSING": 1
+      },
+      "STIRRUP": {
+        "WRONG_DIAMETER": 1,
+        "WRONG_QUANTITY": 15,
+        "MISSING": 5,
+        "MATCH": 2,
+        "EXTRA": 2
+      },
+      "TOP_EXTRA": {
+        "MATCH": 2,
+        "EXTRA": 8,
+        "WRONG_DIAMETER": 1,
+        "WRONG_ROLE": 1
+      },
+      "TOP_MAIN": {
+        "WRONG_DIAMETER": 6,
+        "MATCH": 12,
+        "WRONG_ROLE": 2,
+        "MISSING": 2
+      }
+    },
+    "Second Set Drawings": {
+      "BOTTOM_EXTRA": {
+        "EXTRA": 15,
+        "MISSING": 8,
+        "WRONG_ROLE": 4,
+        "MATCH": 1
+      },
+      "BOTTOM_MAIN": {
+        "WRONG_DIAMETER": 27,
+        "MATCH": 5,
+        "MISSING": 33,
+        "WRONG_ROLE": 14,
+        "WRONG_QUANTITY": 8
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "MISSING": 3
+      },
+      "SPACER_BAR": {
+        "WRONG_QUANTITY": 16,
+        "ACCEPTABLE_EXTRA": 45,
+        "MATCH": 13,
+        "MISSING": 19
+      },
+      "STIRRUP": {
+        "MATCH": 15,
+        "WRONG_QUANTITY": 45,
+        "MISSING": 27,
+        "PARTIAL_MATCH": 2,
+        "WRONG_DIAMETER": 1,
+        "EXTRA": 2
+      },
+      "STIRRUP_HOOK": {
+        "WRONG_DIAMETER": 1,
+        "MISSING": 19,
+        "PARTIAL_MATCH": 1
+      },
+      "TOP_EXTRA": {
+        "WRONG_QUANTITY": 4,
+        "EXTRA": 42,
+        "MISSING": 10,
+        "MATCH": 9,
+        "WRONG_DIAMETER": 9,
+        "PARTIAL_MATCH": 1,
+        "WRONG_ROLE": 1
+      },
+      "TOP_MAIN": {
+        "WRONG_DIAMETER": 23,
+        "WRONG_QUANTITY": 5,
+        "WRONG_ROLE": 11,
+        "PARTIAL_MATCH": 4,
+        "MATCH": 32,
+        "MISSING": 14
+      },
+      "UNKNOWN": {
+        "EXTRA": 1,
+        "MISSING": 1
+      }
+    },
+    "Third Set Drawings": {
+      "BOTTOM_EXTRA": {
+        "WRONG_QUANTITY": 1,
+        "EXTRA": 22,
+        "WRONG_ROLE": 8,
+        "WRONG_DIAMETER": 3,
+        "MISSING": 7
+      },
+      "BOTTOM_MAIN": {
+        "WRONG_DIAMETER": 29,
+        "WRONG_QUANTITY": 6,
+        "WRONG_ROLE": 5,
+        "PARTIAL_MATCH": 4,
+        "MISSING": 41
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "WRONG_ROLE": 3,
+        "MISSING": 8,
+        "PARTIAL_MATCH": 2
+      },
+      "SPACER_BAR": {
+        "MATCH": 8,
+        "ACCEPTABLE_EXTRA": 58,
+        "WRONG_QUANTITY": 33,
+        "WRONG_DIAMETER": 1,
+        "MISSING": 13
+      },
+      "STIRRUP": {
+        "MATCH": 14,
+        "WRONG_QUANTITY": 41,
+        "MISSING": 41,
+        "EXTRA": 2
+      },
+      "STIRRUP_HOOK": {
+        "PARTIAL_MATCH": 2,
+        "MISSING": 59,
+        "WRONG_DIAMETER": 1
+      },
+      "TOP_EXTRA": {
+        "MATCH": 16,
+        "EXTRA": 68,
+        "WRONG_DIAMETER": 14,
+        "MISSING": 12,
+        "WRONG_ROLE": 1,
+        "PARTIAL_MATCH": 2,
+        "WRONG_QUANTITY": 1
+      },
+      "TOP_MAIN": {
+        "WRONG_DIAMETER": 46,
+        "WRONG_ROLE": 6,
+        "MATCH": 11,
+        "MISSING": 17,
+        "PARTIAL_MATCH": 2
+      },
+      "UNKNOWN": {
+        "MISSING": 8
+      }
+    }
+  },
+  "r1_noise": {
+    "Second Set Drawings": {
+      "dimension_entities": 306,
+      "with_override": 193,
+      "stirrup_callouts": 61,
+      "non_callout_overrides": 132
+    },
+    "Third Set Drawings": {
+      "dimension_entities": 313,
+      "with_override": 191,
+      "stirrup_callouts": 52,
+      "non_callout_overrides": 139
+    },
+    "First Set Drawings": {
+      "dimension_entities": 88,
+      "with_override": 81,
+      "stirrup_callouts": 24,
+      "non_callout_overrides": 57
+    }
+  },
+  "r2_dup": {
+    "First Set Drawings": {
+      "duplicate_exact_keys": 0,
+      "examples": []
+    },
+    "Second Set Drawings": {
+      "duplicate_exact_keys": 0,
+      "examples": []
+    },
+    "Third Set Drawings": {
+      "duplicate_exact_keys": 0,
+      "examples": []
+    }
+  },
+  "r5": {},
+  "day1_gt_status": {
+    "First Set Drawings": {
+      "PARTIAL_MATCH": 3,
+      "MISSING": 20
+    },
+    "Second Set Drawings": {
+      "MISSING": 81,
+      "WRONG_DIAMETER": 1,
+      "PARTIAL_MATCH": 6,
+      "WRONG_QUANTITY": 2
+    },
+    "Third Set Drawings": {
+      "PARTIAL_MATCH": 3,
+      "MISSING": 81,
+      "WRONG_QUANTITY": 9,
+      "WRONG_DIAMETER": 1,
+      "MATCH": 2
+    }
+  },
+  "post_dashboard": {
+    "drawing_sets": [
+      {
+        "drawing_set": "First Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 53.33,
+        "beam_detection_pct": 100.0,
+        "beam_matching_pct": 100.0,
+        "bar_detection_pct": 74.12,
+        "bar_accuracy_pct": 31.75,
+        "steel_accuracy_pct": 99.94,
+        "overall_accuracy_pct": 76.45,
+        "error_count": 79,
+        "rank": 1
+      },
+      {
+        "drawing_set": "Second Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 50.37,
+        "beam_detection_pct": 95.52,
+        "beam_matching_pct": 95.52,
+        "bar_detection_pct": 65.28,
+        "bar_accuracy_pct": 29.76,
+        "steel_accuracy_pct": 87.16,
+        "overall_accuracy_pct": 69.43,
+        "error_count": 367,
+        "rank": 2
+      },
+      {
+        "drawing_set": "Third Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 70.07,
+        "beam_detection_pct": 90.48,
+        "beam_matching_pct": 90.48,
+        "bar_detection_pct": 55.79,
+        "bar_accuracy_pct": 18.85,
+        "steel_accuracy_pct": 87.61,
+        "overall_accuracy_pct": 63.18,
+        "error_count": 508,
+        "rank": 3
+      }
+    ]
+  },
+  "pre_m2_dashboard": {
+    "overall": 60.79,
+    "bar_det": 48.99,
+    "bar_acc": 25.05,
+    "steel": 75.2,
+    "beam": 93.92,
+    "per_set": [
+      {
+        "set": "First",
+        "overall": 66.5,
+        "bar_det": 55.29,
+        "bar_acc": 38.3,
+        "steel": 72.4
+      },
+      {
+        "set": "Second",
+        "overall": 64.8,
+        "bar_det": 51.04,
+        "bar_acc": 30.46,
+        "steel": 82.16
+      },
+      {
+        "set": "Third",
+        "overall": 56.22,
+        "bar_det": 46.14,
+        "bar_acc": 17.21,
+        "steel": 71.05
+      }
+    ]
+  }
+}

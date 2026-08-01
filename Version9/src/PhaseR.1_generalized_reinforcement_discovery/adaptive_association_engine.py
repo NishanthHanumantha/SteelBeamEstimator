@@ -1,6 +1,6 @@
 """
 adaptive_association_engine.py — Phase R.1.1A multi-evidence beam-detail association.
-MODEL_VERSION: 8.2.0
+MODEL_VERSION: 9.2.0
 
 Replaces fixed-radius nearest-centroid assignment with:
   • adaptive per-beam search regions
@@ -8,6 +8,8 @@ Replaces fixed-radius nearest-centroid assignment with:
   • leader-driven association (DXF + optional R.3.1)
   • multi-evidence scoring
   • orphan annotation recovery
+
+9.2.0: optionally collect DIMENSION text overrides (discovery.enable_dimension_text_scan).
 """
 from __future__ import annotations
 
@@ -20,7 +22,12 @@ import uuid
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
-from .dxf_text_utils import entity_position, entity_raw_text, strip_mtext as _strip_mtext
+from .dxf_text_utils import (
+    entity_position,
+    entity_raw_text,
+    is_dimension_entity,
+    strip_mtext as _strip_mtext,
+)
 from .reinforcement_models import BeamDetail
 
 log = logging.getLogger(__name__)
@@ -76,12 +83,18 @@ class AdaptiveAssociationEngine:
     def __init__(self, config: dict, project_root: pathlib.Path):
         geo = config.get("geometry", {})
         r11a = config.get("r11a", {})
+        disc = config.get("discovery", {})
         self._min_radius = float(r11a.get("min_search_radius", geo.get("min_search_radius", 8000.0)))
         self._max_radius = float(r11a.get("max_search_radius", geo.get("max_search_radius", 25000.0)))
         self._legacy_radius = float(geo.get("annotation_search_radius", 5000.0))
         self._leader_tail_tol = float(r11a.get("leader_tail_tolerance", 500.0))
         self._score_threshold = float(r11a.get("association_score_threshold", 0.25))
         self._orphan_expand = float(r11a.get("orphan_radius_multiplier", 1.35))
+        # Widen discovery to DIMENSION text overrides (Set 1–3 stirrup channel).
+        # Flag false → pre-9.2.0 TEXT/MTEXT-only behavior.
+        self._enable_dimension_text_scan = bool(
+            disc.get("enable_dimension_text_scan", False)
+        )
         self._project_root = project_root
         self._registry: Dict[str, Any] = {}
 
@@ -165,10 +178,27 @@ class AdaptiveAssociationEngine:
         )
         return beam_map
 
+    def _entity_allowed(self, entity) -> bool:
+        dtype = entity.dxftype()
+        if dtype in ("TEXT", "MTEXT"):
+            return True
+        if self._enable_dimension_text_scan and is_dimension_entity(entity):
+            return True
+        return False
+
     def _collect_entities(self, msp) -> List[dict]:
+        """Collect annotation-bearing entities from modelspace.
+
+        TEXT/MTEXT always. DIMENSION text overrides when
+        discovery.enable_dimension_text_scan is true. Same record shape
+        for all sources so downstream classification is unchanged.
+        Nesting/INSERT handling matches existing TEXT/MTEXT traversal
+        (modelspace iteration only — no parallel DIMENSION path).
+        """
         out: List[dict] = []
+        n_dim = 0
         for entity in msp:
-            if entity.dxftype() not in ("TEXT", "MTEXT"):
+            if not self._entity_allowed(entity):
                 continue
             pos = entity_position(entity)
             if pos is None:
@@ -178,14 +208,24 @@ class AdaptiveAssociationEngine:
             clean = _strip_mtext(raw)
             if not clean:
                 continue
+            et = entity.dxftype()
+            if is_dimension_entity(entity):
+                n_dim += 1
             out.append(
                 {
                     "x": x,
                     "y": y,
                     "raw_text": raw,
                     "clean_text": clean,
-                    "entity_type": entity.dxftype(),
+                    "entity_type": et,
                 }
+            )
+        if self._enable_dimension_text_scan:
+            log.info(
+                "AdaptiveAssociationEngine: collected %d entities "
+                "(%d DIMENSION text overrides)",
+                len(out),
+                n_dim,
             )
         return out
 

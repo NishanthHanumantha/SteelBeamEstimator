@@ -140,7 +140,7 @@ class PhaseR1Orchestrator:
     def run(self) -> dict:
         t0 = time.perf_counter()
         log.info("=" * 72)
-        log.info("Phase R.1 — Generalized Reinforcement Discovery  MODEL_VERSION 8.2.0")
+        log.info("Phase R.1 — Generalized Reinforcement Discovery  MODEL_VERSION 9.2.0")
         log.info("=" * 72)
 
         # ── Step 1: Beam detail discovery ─────────────────────────────────────
@@ -243,7 +243,7 @@ class PhaseR1Orchestrator:
 
         return {
             "status":          validation.overall,
-            "model_version":   "8.2.0",
+            "model_version":   "9.2.0",
             "phase":           "R.1",
             "elapsed_s":       elapsed,
             "total_beams":     len(details),

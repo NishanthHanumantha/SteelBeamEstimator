@@ -1,4 +1,4 @@
-"""Shared DXF TEXT/MTEXT parsing helpers for Phase R.1."""
+"""Shared DXF TEXT/MTEXT/DIMENSION parsing helpers for Phase R.1."""
 
 from __future__ import annotations
 
@@ -25,7 +25,26 @@ def strip_mtext(raw: str) -> str:
     return cleaned.strip()
 
 
+def is_dimension_entity(entity) -> bool:
+    """True for DIMENSION and specialized dimension subtypes."""
+    try:
+        return "DIMENSION" in entity.dxftype()
+    except Exception:
+        return False
+
+
 def entity_position(entity) -> Optional[Tuple[float, float]]:
+    # DIMENSION: prefer text_midpoint / defpoint. Many dim subtypes expose a
+    # spurious insert at (0,0) which must not win over real geometry.
+    if is_dimension_entity(entity):
+        for attr in ("text_midpoint", "defpoint"):
+            try:
+                if entity.dxf.hasattr(attr):
+                    p = getattr(entity.dxf, attr)
+                    return (float(p[0]), float(p[1]))
+            except Exception:
+                continue
+        return None
     try:
         pt = entity.dxf.insert
         return (float(pt.x), float(pt.y))
@@ -34,11 +53,22 @@ def entity_position(entity) -> Optional[Tuple[float, float]]:
 
 
 def entity_raw_text(entity) -> str:
-    if entity.dxftype() == "TEXT":
+    dtype = entity.dxftype()
+    if dtype == "TEXT":
         return entity.dxf.text or ""
-    if entity.dxftype() == "MTEXT":
+    if dtype == "MTEXT":
         try:
             return entity.plain_mtext()
         except Exception:
             return entity.text or ""
+    if is_dimension_entity(entity):
+        # Text override only — "<>" means "use measured value" (not stirrup text)
+        try:
+            text = str(entity.dxf.text or "")
+        except Exception:
+            return ""
+        stripped = text.strip()
+        if not stripped or stripped == "<>":
+            return ""
+        return text
     return ""
