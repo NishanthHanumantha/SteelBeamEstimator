@@ -105,6 +105,7 @@ class StirrupImprover:
 
         # T1: residual Type3 label repair (truncated @100 → @100/200/100)
         repaired_spacings = None
+        t1_mod = None
         try:
             import importlib.util
             import os
@@ -120,11 +121,33 @@ class StirrupImprover:
                     mod = importlib.util.module_from_spec(spec)
                     assert spec and spec.loader
                     spec.loader.exec_module(mod)
+                    t1_mod = mod
                     label, repaired_spacings = mod.repair_bar_label(
                         beam_id, label, d_mm
                     )
         except Exception:
             repaired_spacings = None
+
+        # R3 propagation: T1.3 GEOMETRY_STIRRUP fusion outcome for this beam
+        # (AGREE/CONFLICT tag an existing text-based row; read-only, no qty
+        # change). Looked up once so both the parsed and legacy-row exits below
+        # can attach the same Excel-visible marker.
+        _t1_case = None
+        if t1_mod is not None:
+            try:
+                _t1_case = t1_mod.geometry_fusion_case(beam_id)
+            except Exception:
+                _t1_case = None
+
+        def _tag_description(row: Dict[str, Any]) -> Dict[str, Any]:
+            base = row.get("description") or "Stirrups"
+            if str(label).upper().startswith("SYNTH:"):
+                row["description"] = f"{base} [SYNTHESIZED_GEOMETRY]"
+            elif _t1_case is not None and _t1_case.get("case") == "CONFLICT":
+                row["description"] = f"{base} [GEOMETRY_TEXT_CONFLICT]"
+            elif _t1_case is not None and _t1_case.get("case") == "AGREE":
+                row["description"] = f"{base} [GEOMETRY_TEXT_AGREE]"
+            return row
 
         if repaired_spacings and len(repaired_spacings) >= 2:
             t3_key = (beam_id, int(round(d_mm)))
@@ -132,10 +155,13 @@ class StirrupImprover:
                 # Same beam+diameter already Type3-expanded — keep this bar as
                 # legacy (original label/qty). Do not expand Type3 again, and do
                 # not drop the bar (Set3 steel regression from return []).
-                return self._legacy_row(
-                    bar, beam_id, d_mm, D, W, span_mm,
-                    str(bar.get("bar_label") or label), grade,
-                )
+                return [
+                    _tag_description(r)
+                    for r in self._legacy_row(
+                        bar, beam_id, d_mm, D, W, span_mm,
+                        str(bar.get("bar_label") or label), grade,
+                    )
+                ]
             self._type3_expanded_keys.add(t3_key)
 
         parsed = self._parser.parse(
@@ -148,7 +174,10 @@ class StirrupImprover:
 
         # Not parseable / no spacing → legacy fallback
         if not parsed.is_parseable or not parsed.spacings_mm:
-            return self._legacy_row(bar, beam_id, d_mm, D, W, span_mm, label, grade)
+            return [
+                _tag_description(r)
+                for r in self._legacy_row(bar, beam_id, d_mm, D, W, span_mm, label, grade)
+            ]
 
         zones  = self._zones.build(parsed, span_mm, beam_id=beam_id)
         groups = self._dist.distribute(zones, parsed.stirrup_type)
@@ -184,11 +213,8 @@ class StirrupImprover:
             row = group_to_bbs_dict(
                 group, beam_id, hook_multiple=self._hook_multiple
             )
-            # R3: surface GEOMETRY_ONLY synthesis in Excel Description
-            if str(label).upper().startswith("SYNTH:"):
-                row["description"] = (
-                    f"{row.get('description') or 'Stirrups'} [SYNTHESIZED_GEOMETRY]"
-                )
+            # R3: surface GEOMETRY_ONLY synthesis / AGREE / CONFLICT in Excel
+            row = _tag_description(row)
             bbs_rows.append(row)
 
         return bbs_rows

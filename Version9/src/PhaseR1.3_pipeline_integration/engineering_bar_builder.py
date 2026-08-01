@@ -622,6 +622,39 @@ class EngineeringBarBuilder:
             return factor * dia
         return None
 
+    @staticmethod
+    def _t1_fusion_case(beam_id: str) -> Optional[Dict[str, Any]]:
+        """
+        R3 propagation (read-only) — look up the T1.3 GEOMETRY_STIRRUP fusion
+        outcome for *beam_id* from R.2.1D's t1_geometry_fusion_summary.json.
+        Never raises; returns None if T1 is off/unavailable/no artefact.
+        Does NOT read or alter any qty/dia/cut-length value.
+        """
+        try:
+            import importlib.util
+            import sys
+            import types
+
+            eng = (os.environ.get("STEEL_ENGINE_ROOT") or "").strip()
+            if not eng:
+                return None
+            tpath = (
+                pathlib.Path(eng) / "src" / "PhaseT1_geometric_stirrup_evidence"
+                / "type3_label_repair.py"
+            )
+            if not tpath.exists():
+                return None
+            alias = "t1_type3_ebb"
+            if alias not in sys.modules:
+                spec = importlib.util.spec_from_file_location(alias, tpath)
+                mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)  # type: ignore[union-attr]
+                sys.modules[alias] = mod
+            mod = sys.modules[alias]
+            return mod.geometry_fusion_case(beam_id)
+        except Exception:
+            return None
+
     def to_l2_compatible(
         self, beam_models: List[BeamEngineeringModel]
     ) -> Dict[str, Any]:
@@ -664,9 +697,46 @@ class EngineeringBarBuilder:
                     "source_phase": "ReinforcementPiece",
                 },
             }
+            # R3 (read-only, additive): T1.3 GEOMETRY_STIRRUP fusion outcome for
+            # this beam, if any. Only used to tag evidence-source visibility on
+            # rows already produced above — never changes qty/dia/cut_length.
+            t1_case = self._t1_fusion_case(bm.beam_id)
             for bar in bm.bars:
                 meta = bar.engineering_metadata or {}
                 l2_key = _ROLE_TO_L2_KEY.get(bar.bar_role, "supplementary_bars")
+                _base_evidence = (
+                    f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
+                    if meta.get("piece_id")
+                    else (
+                        f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
+                        if meta.get("detail_id")
+                        else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
+                    )
+                )
+                _is_synth_labelled = (
+                    str(bar.bar_label or "").upper().startswith("SYNTH:")
+                    or "SYNTHESIZED_GEOMETRY"
+                    in " ".join(str(x) for x in (meta.get("engineering_notes") or [])).upper()
+                    or "GEOMETRY_STIRRUP" in str(meta.get("source") or "").upper()
+                )
+                # R3 propagation: T1.3 fusion tagged this beam's STIRRUP evidence
+                # (AGREE = text-confirmed by geometry; CONFLICT = geometry disagrees
+                # with text). Additive evidence-source tag only — no value change.
+                _t1_tag = None
+                if bar.bar_role == "STIRRUP" and t1_case is not None:
+                    _t1_tag = t1_case.get("case")
+                if _is_synth_labelled:
+                    _evidence = "SYNTHESIZED_GEOMETRY|GEOMETRY_ONLY|" + _base_evidence
+                    _confidence = "WARN"
+                elif _t1_tag == "CONFLICT":
+                    _evidence = "GEOMETRY_TEXT_CONFLICT|GEOMETRY_STIRRUP|" + _base_evidence
+                    _confidence = "WARN"
+                elif _t1_tag == "AGREE":
+                    _evidence = "GEOMETRY_TEXT_AGREE|GEOMETRY_STIRRUP|" + _base_evidence
+                    _confidence = None  # fall through to normal confidence below
+                else:
+                    _evidence = _base_evidence
+                    _confidence = None
                 l2_bar = {
                     "bar_id": f"R13-{bar.beam_id}-{bar.bar_role}-{uuid.uuid4().hex[:6]}",
                     "source_bar_id": (
@@ -686,42 +756,10 @@ class EngineeringBarBuilder:
                     "support_zone": meta.get("support_type") or meta.get("support_region"),
                     "coverage_ratio": None,
                     "spacing_mm": bar.spacing_mm,
-                    "classification_evidence": (
-                        (
-                            "SYNTHESIZED_GEOMETRY|GEOMETRY_ONLY|"
-                            + (
-                                f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
-                                if meta.get("piece_id")
-                                else (
-                                    f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
-                                    if meta.get("detail_id")
-                                    else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
-                                )
-                            )
-                        )
-                        if (
-                            str(bar.bar_label or "").upper().startswith("SYNTH:")
-                            or "SYNTHESIZED_GEOMETRY"
-                            in " ".join(str(x) for x in (meta.get("engineering_notes") or [])).upper()
-                            or "GEOMETRY_STIRRUP" in str(meta.get("source") or "").upper()
-                        )
-                        else (
-                            f"R.1.3 Piece {meta.get('piece_id')}: {bar.bar_label}"
-                            if meta.get("piece_id")
-                            else (
-                                f"R.1.2D Detail {meta.get('detail_id')}: {bar.bar_label}"
-                                if meta.get("detail_id")
-                                else f"R.1.3 EngineeringBarModel: {bar.bar_label}"
-                            )
-                        )
-                    ),
+                    "classification_evidence": _evidence,
                     "classification_confidence": (
-                        "WARN"
-                        if (
-                            str(bar.bar_label or "").upper().startswith("SYNTH:")
-                            or "SYNTHESIZED_GEOMETRY"
-                            in " ".join(str(x) for x in (meta.get("engineering_notes") or [])).upper()
-                        )
+                        _confidence
+                        if _confidence is not None
                         else str(
                             meta.get("piece_confidence")
                             or meta.get("detail_confidence")
@@ -742,6 +780,23 @@ class EngineeringBarBuilder:
                     l2[l2_key].append(l2_bar)
                 l2["bar_count_by_role"][bar.bar_role] = (
                     l2["bar_count_by_role"].get(bar.bar_role, 0) + 1
+                )
+            # R3 propagation: GEOMETRY_ONLY synthesis produced no text-based
+            # STIRRUP bar for this beam (R.1.2C found none), so there is no row
+            # to tag. Surface the unconfirmed geometry evidence as a beam-level
+            # advisory note instead of fabricating a quantity — materializing an
+            # actual bar/qty from geometry alone is Track 2 (VLM arbiter) scope,
+            # not this propagation fix. No value is added to any total here.
+            if (
+                t1_case is not None
+                and t1_case.get("case") == "GEOMETRY_ONLY_SYNTH"
+                and not l2["bar_count_by_role"].get("STIRRUP")
+            ):
+                l2["engineering_notes"].append(
+                    "SYNTHESIZED_GEOMETRY (advisory, not counted): T1 geometry "
+                    "evidence suggests a STIRRUP pattern with no text callout on "
+                    "this beam; NOT included in quantity/steel totals pending "
+                    "Track 2 VLM confirmation."
                 )
             l2_models.append(l2)
 

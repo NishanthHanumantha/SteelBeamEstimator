@@ -134,6 +134,47 @@ def repair_bar_label(beam_id: str, label: str, diameter_mm: float = 8.0) -> Tupl
     return new_label, spacings
 
 
+_FUSION_CACHE: Dict[str, Any] = {}
+
+
+def geometry_fusion_case(beam_id: str) -> Optional[Dict[str, Any]]:
+    """
+    R3 propagation helper — look up the T1.3 fusion outcome (AGREE / CONFLICT /
+    GEOMETRY_ONLY_SYNTH / TEXT_ONLY) for *beam_id* from the already-written
+    ``t1_geometry_fusion_summary.json`` (R.2.1D output).
+
+    Read-only; does NOT recompute anything and does NOT touch fusion logic.
+    Used only to attach an evidence-source visibility flag onto rows that the
+    production pipeline (R.1.2C/R.1.2D/R.1.3+PIECE) already produced — no
+    quantity/diameter/cut-length is read or changed here.
+    """
+    root = _engine_root()
+    if not root or not _t1_enabled(root):
+        return None
+    out_env = (os.environ.get("STEEL_OUTPUT_ROOT") or "").strip()
+    if not out_env:
+        return None
+    cache_key = out_env
+    if cache_key not in _FUSION_CACHE:
+        path = (
+            Path(out_env)
+            / "PhaseR2.1D_evidence_hypothesis_engine"
+            / "t1_geometry_fusion_summary.json"
+        )
+        by_beam: Dict[str, Dict[str, Any]] = {}
+        if path.exists():
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                for a in data.get("actions") or []:
+                    bid = str(a.get("beam_id") or "")
+                    if bid:
+                        by_beam[bid] = a
+            except Exception:
+                by_beam = {}
+        _FUSION_CACHE[cache_key] = by_beam
+    return _FUSION_CACHE[cache_key].get(beam_id)
+
+
 def load_t14_boundaries(beam_id: str, n_zones: int) -> Optional[List[Tuple[float, float]]]:
     """Return [(start,end), ...] from T1.2 pitch_change refinement, else None."""
     if n_zones < 2 or not is_residual_beam(beam_id):
