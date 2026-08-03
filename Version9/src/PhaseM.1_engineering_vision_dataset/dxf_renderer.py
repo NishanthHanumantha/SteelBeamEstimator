@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Optional, Sequence, Set, Tuple
 
-MODEL_VERSION = "9.3.0"
+MODEL_VERSION = "9.3.2"
 
 # ── Rendering configuration ───────────────────────────────────────────────────
 _FIG_W_IN = 30.0    # figure width  (inches)
@@ -149,17 +149,11 @@ def render_dxf_to_png(
     backend = MatplotlibBackend(ax)
     frontend = Frontend(ctx, backend)
 
-    if inc is None and exc_layers is None and render_text:
-        frontend.draw_layout(msp, finalize=True)
-    else:
-        # Selective draw — preserve layer completeness control for Track 1
-        for entity in msp:
-            if _entity_ok(entity):
-                try:
-                    frontend.draw_entity(entity)
-                except Exception:
-                    continue
-        backend.finalize()
+    # Always use draw_layout + filter_func. The per-entity draw_entity loop
+    # (pre-9.3.2) left geometry-only renders blank (no ink / collapsed axes),
+    # which made the OpenCV fallback receive empty PNGs. filter_func is the
+    # supported ezdxf path for layer/text suppression.
+    frontend.draw_layout(msp, finalize=True, filter_func=_entity_ok)
 
     xlim: Tuple[float, float] = ax.get_xlim()
     ylim: Tuple[float, float] = ax.get_ylim()
@@ -167,12 +161,21 @@ def render_dxf_to_png(
     fig.savefig(str(output_path), dpi=use_dpi, facecolor="white")
     plt.close(fig)
 
-    img_w = int(math.ceil(use_w * use_dpi))
-    img_h = int(math.ceil(use_h * use_dpi))
+    # Prefer actual PNG pixel size over figsize*dpi — matplotlib may write a
+    # different raster size depending on backend/aspect; OpenCV crop + mm/px
+    # scale must match the file on disk or pitch extraction is meaningless.
+    try:
+        from PIL import Image as _PILImage
+
+        with _PILImage.open(output_path) as _im:
+            img_w, img_h = _im.size
+    except Exception:
+        img_w = int(math.ceil(use_w * use_dpi))
+        img_h = int(math.ceil(use_h * use_dpi))
 
     return CoordTransform(
         dxf_xlim=xlim,
         dxf_ylim=ylim,
-        img_w=img_w,
-        img_h=img_h,
+        img_w=int(img_w),
+        img_h=int(img_h),
     )

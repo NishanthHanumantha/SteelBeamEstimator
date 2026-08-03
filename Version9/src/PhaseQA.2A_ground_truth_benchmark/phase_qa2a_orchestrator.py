@@ -23,7 +23,7 @@ from metrics_engine import MetricsEngine
 from report_compiler import compile_results
 from workbook_normalizer import WorkbookNormalizer
 
-MODEL_VERSION = "9.3.1"  # Track 1 closure: CLOSE-4 R3 propagation patch (see Track1_geometric_evidence/CLOSURE_REPORT.md)
+MODEL_VERSION = "9.3.2"  # Track 1 OpenCV fallback activation + renderer geometry-only fix
 PHASE_ID = "QA.2A"
 
 

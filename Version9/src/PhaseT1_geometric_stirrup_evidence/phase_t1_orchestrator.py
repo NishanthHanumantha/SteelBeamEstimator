@@ -24,7 +24,7 @@ from .residual_targets import (
 from .vector_stirrup_detector import detect_elevation_ticks, detect_section_rectangles
 from .zone_boundary_refiner import parse_type3_spacings, refine_zone_boundaries
 
-MODEL_VERSION = "9.3.0"
+MODEL_VERSION = "9.3.2"
 PHASE_ID = "T1"
 _OUT_NAME = "PhaseT1_geometric_stirrup_evidence"
 

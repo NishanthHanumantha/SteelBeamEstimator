@@ -9,7 +9,7 @@ import statistics
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-MODEL_VERSION = "9.3.0"
+MODEL_VERSION = "9.3.2"
 
 
 def detect_ticks_opencv(
@@ -65,10 +65,17 @@ def detect_ticks_opencv(
         base["reject_reason"] = "no_hough_lines"
         return base
 
+    # OpenCV 4 returns (N,1,4); OpenCV 5 may return (N,4). Normalize either.
+    arr = lines
+    if getattr(arr, "ndim", 0) == 3:
+        segs = arr[:, 0, :]
+    else:
+        segs = arr.reshape(-1, 4)
+
     scale = float(mm_per_px or 1.0)
     xs = []
-    for line in lines[:, 0]:
-        x1, y1, x2, y2 = map(float, line)
+    for seg in segs:
+        x1, y1, x2, y2 = (float(seg[0]), float(seg[1]), float(seg[2]), float(seg[3]))
         dx, dy = abs(x2 - x1), abs(y2 - y1)
         if dy < 5 or (dx / max(dy, 1e-6)) > 0.4:
             continue

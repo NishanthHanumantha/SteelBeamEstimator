@@ -1,0 +1,16 @@
+{
+  "model_version": "9.3.2",
+  "newly_accepted_count": 7,
+  "fusion_retag_count": 0,
+  "fusion_actions": [],
+  "accepted_but_below_fusion_threshold": [
+    {"set": "Set3", "beam_id": "B17", "median_pitch_mm": 63.47, "confidence": 0.45, "target_groups": ["TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B19A", "median_pitch_mm": 63.47, "confidence": 0.45, "target_groups": ["TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B28", "median_pitch_mm": 111.06, "confidence": 0.45, "target_groups": ["TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B48", "median_pitch_mm": 174.54, "confidence": 0.45, "target_groups": ["TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B54", "median_pitch_mm": 63.47, "confidence": 0.45, "target_groups": ["TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B56", "median_pitch_mm": 63.47, "confidence": 0.45, "target_groups": ["TARGET_MISSING", "TARGET_WRONG_QTY"]},
+    {"set": "Set3", "beam_id": "B59", "median_pitch_mm": 63.47, "confidence": 0.45, "target_groups": ["TARGET_MISSING", "TARGET_WRONG_QTY"]}
+  ],
+  "note": "Existing fusion (r21d_fusion.py) requires geo confidence >= 0.55 for AGREE/CONFLICT/GEOMETRY_ONLY_SYNTH. OpenCV fallback hardcodes confidence=0.45, so all 7 newly-accepted detections are treated as weak geometry (TEXT_ONLY) — no fusion retag under unmodified rules. This is intentional existing design, not changed in 9.3.2."
+}
