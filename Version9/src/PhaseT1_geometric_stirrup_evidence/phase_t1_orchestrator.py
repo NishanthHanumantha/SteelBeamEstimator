@@ -1,8 +1,15 @@
 """
 Phase T1 orchestrator — residual-scoped geometric stirrup evidence.
-MODEL_VERSION: 9.3.0
+MODEL_VERSION: 9.3.3
 
 Soft-exit when enable_geometry_stirrup_evidence is false.
+
+9.3.3: OpenCV fallback crop generation now uses beam_extent's beam-
+scoped extent + dxf_renderer's local-extent render (see _opencv_for_beam)
+instead of a full-sheet render + coarse ±1500mm pixel crop. Adds a
+notext-crop ink-density gate (`crop_invalid`) so a starved/blank crop is
+never silently fed to OpenCV as a "genuinely no ticks" result. No T1.2
+threshold, T1.3 fusion, or T1.4 zone-refinement changes.
 """
 from __future__ import annotations
 
@@ -12,6 +19,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from .beam_extent import compute_extents_for_beams
 from .config_loader import is_enabled, load_config
 from .opencv_fallback import detect_ticks_opencv
 from .renderer_validation import validate_renderer, write_report
@@ -24,9 +32,16 @@ from .residual_targets import (
 from .vector_stirrup_detector import detect_elevation_ticks, detect_section_rectangles
 from .zone_boundary_refiner import parse_type3_spacings, refine_zone_boundaries
 
-MODEL_VERSION = "9.3.2"
+MODEL_VERSION = "9.3.3"
 PHASE_ID = "T1"
 _OUT_NAME = "PhaseT1_geometric_stirrup_evidence"
+# Below this % of non-background pixels, a rendered notext crop is treated
+# as `crop_invalid` (starved geometry / render failure) rather than fed to
+# OpenCV as if it were a genuine "no ticks visible" result — the two
+# failure modes must not be conflated (Track 1 9.3.3 success criteria #5).
+# Valid Set1 test-set crops measured 1.1%-2.5% ink; pre-9.3.3 blank/near-
+# blank crops measured well under 0.2%.
+_CROP_INK_INVALID_THRESHOLD_PCT = 0.2
 
 
 class PhaseT1Orchestrator:
@@ -130,6 +145,19 @@ class PhaseT1Orchestrator:
         import ezdxf
         msp = ezdxf.readfile(str(dxf)).modelspace() if dxf else None
 
+        # 9.3.3: beam-scoped crop extents (local-extent render, replaces
+        # coarse ±1500mm blanket pad) — computed once for ALL beams with
+        # R.1 annotations (not just the residual scope) so neighbor-aware
+        # pad shrinking sees beams outside this run's residual target list
+        # too (R4: this must not change which beams are targeted, only how
+        # their crops are rendered).
+        annotations_by_beam = self._load_annotations_by_beam()
+        beam_extents: Dict[str, Dict[str, Any]] = {}
+        if msp is not None and annotations_by_beam:
+            beam_extents = compute_extents_for_beams(
+                list(annotations_by_beam.keys()), annotations_by_beam, msp
+            )
+
         det_cfg = self.cfg.get("detection") or {}
         evidence_by_beam: Dict[str, Dict[str, Any]] = {}
         timings: Dict[str, float] = {}
@@ -172,10 +200,10 @@ class PhaseT1Orchestrator:
                     sec["target_groups"] = elev["target_groups"]
                     evidence_by_beam[beam_id] = sec
                 elif det_cfg.get("enable_opencv_fallback", True) and dxf:
-                    # Render geometry-only crop region approx via full render once cached
                     fb = self._opencv_for_beam(
                         dxf, beam_id, bbox, det_cfg, text_sp,
                         reason=elev.get("reject_reason") or "vector_rejected",
+                        extent_info=beam_extents.get(beam_id),
                     )
                     fb["beam_id"] = beam_id
                     fb["target_groups"] = elev["target_groups"]
@@ -388,6 +416,20 @@ class PhaseT1Orchestrator:
                     consider(str(k), v.get("geometry") or v)
         return out
 
+    def _load_annotations_by_beam(self) -> Dict[str, List[Dict[str, Any]]]:
+        ann_path = (
+            self.output_root
+            / "PhaseR.1_generalized_reinforcement_discovery"
+            / "reinforcement_annotations.json"
+        )
+        if not ann_path.exists():
+            return {}
+        try:
+            anns = json.loads(ann_path.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+        return {str(k): list(v or []) for k, v in (anns.get("by_beam") or {}).items()}
+
     def _load_text_spacings(self) -> Dict[str, float]:
         out: Dict[str, float] = {}
         ann_path = (
@@ -442,6 +484,39 @@ class PhaseT1Orchestrator:
             return {str(k): list(v or []) for k, v in supports.items()}
         return {}
 
+    def _load_dxf_renderer_module(self):
+        if getattr(self, "_dxf_renderer_mod", None) is not None:
+            return self._dxf_renderer_mod
+        import importlib.util
+        import sys
+
+        renderer_path = (
+            self.engine_root
+            / "src"
+            / "PhaseM.1_engineering_vision_dataset"
+            / "dxf_renderer.py"
+        )
+        spec = importlib.util.spec_from_file_location("dxf_renderer_t1", renderer_path)
+        mod = importlib.util.module_from_spec(spec)
+        assert spec.loader
+        sys.modules["dxf_renderer_t1"] = mod
+        spec.loader.exec_module(mod)
+        self._dxf_renderer_mod = mod
+        return mod
+
+    @staticmethod
+    def _ink_density_pct(png_path: Path) -> float:
+        try:
+            import numpy as np
+            from PIL import Image
+
+            img = np.array(Image.open(png_path).convert("L"))
+            if img.size == 0:
+                return 0.0
+            return round(100.0 * float((img < 250).sum()) / float(img.size), 4)
+        except Exception:
+            return 0.0
+
     def _opencv_for_beam(
         self,
         dxf: Path,
@@ -450,51 +525,72 @@ class PhaseT1Orchestrator:
         det_cfg: Dict[str, Any],
         text_sp: Optional[float],
         reason: str,
+        extent_info: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
-        import importlib.util
-        from PIL import Image
+        """
+        Track 1 (9.3.3): local-extent render — renders ONLY the beam-scoped
+        extent (extent_info, from beam_extent.compute_extents_for_beams;
+        reuses R.1's existing per-beam annotation association, plus the
+        beam-mark label found nearest that annotation cluster) directly to
+        a fixed-max-dimension canvas, instead of rendering the full sheet
+        and pixel-cropping afterward. This decouples crop resolution from
+        sheet size and eliminates the coarse ±1500mm blanket-pad
+        neighbor bleed found in the 9.3.2-era diagnostic.
 
-        renderer_path = (
-            self.engine_root
-            / "src"
-            / "PhaseM.1_engineering_vision_dataset"
-            / "dxf_renderer.py"
-        )
-        import sys
-        spec = importlib.util.spec_from_file_location("dxf_renderer_t1", renderer_path)
-        mod = importlib.util.module_from_spec(spec)
-        assert spec.loader
-        sys.modules["dxf_renderer_t1"] = mod
-        spec.loader.exec_module(mod)
+        A beam with no R.1 annotations (extent_info is None/empty) falls
+        back to rendering its bbox directly — still a local-extent render
+        (an improvement over the old full-sheet approach), just without
+        the beam-scoped tightening.
+        """
+        mod = self._load_dxf_renderer_module()
 
-        png = self.out_dir / "opencv_renders" / f"{beam_id}_notext.png"
-        xf = mod.render_dxf_to_png(dxf, png, render_text=False)
-        # Crop to beam bbox in pixel space
-        x0, y0, x1, y1 = bbox
-        corners = [
-            xf.dxf_to_pixel(x0, y0), xf.dxf_to_pixel(x1, y0),
-            xf.dxf_to_pixel(x0, y1), xf.dxf_to_pixel(x1, y1),
-        ]
-        pxs = [c[0] for c in corners]
-        pys = [c[1] for c in corners]
-        left, right = int(max(0, min(pxs))), int(min(xf.img_w, max(pxs)))
-        top, bottom = int(max(0, min(pys))), int(min(xf.img_h, max(pys)))
-        if right - left < 10 or bottom - top < 10:
-            return detect_ticks_opencv(
-                png, cfg=det_cfg, text_spacing_mm=text_sp,
-                mm_per_px=None, fallback_reason=reason,
-            )
-        img = Image.open(png)
-        crop = img.crop((left, top, right, bottom))
-        crop_path = self.out_dir / "opencv_renders" / f"{beam_id}_crop.png"
-        crop_path.parent.mkdir(parents=True, exist_ok=True)
-        crop.save(crop_path)
-        x_range = xf.dxf_xlim[1] - xf.dxf_xlim[0]
-        mm_per_px = x_range / max(xf.img_w, 1)
-        return detect_ticks_opencv(
-            crop_path,
+        extent = None
+        if extent_info and extent_info.get("extent"):
+            extent = tuple(extent_info["extent"])
+        if extent is None:
+            extent = tuple(bbox)
+
+        render_dir = self.out_dir / "opencv_renders"
+        render_dir.mkdir(parents=True, exist_ok=True)
+        crop_path = render_dir / f"{beam_id}_crop.png"
+        notext_path = render_dir / f"{beam_id}_notext.png"
+
+        # Purge before regenerate (R4/9.3.3 Part B discipline) — a stale
+        # crop from a prior model version must never be mistaken for a
+        # fresh one.
+        for p in (crop_path, notext_path):
+            if p.exists():
+                p.unlink()
+
+        mod.render_dxf_region_to_png(dxf, crop_path, extent, render_text=True)
+        xf_notext = mod.render_dxf_region_to_png(dxf, notext_path, extent, render_text=False)
+
+        ink_pct = self._ink_density_pct(notext_path)
+        if ink_pct < _CROP_INK_INVALID_THRESHOLD_PCT:
+            return {
+                "detection_method": "opencv_crop_invalid",
+                "accepted": False,
+                "reject_reason": "crop_invalid",
+                "tick_positions_mm": [],
+                "measured_pitch_mm": [],
+                "zone_count_estimate": 0,
+                "text_spacing_agreement": "no_text_to_compare",
+                "confidence": 0.0,
+                "source_entities": [],
+                "fallback_reason": reason,
+                "crop_ink_pct": ink_pct,
+                "crop_extent_mm": list(extent),
+            }
+
+        x_range = xf_notext.dxf_xlim[1] - xf_notext.dxf_xlim[0]
+        mm_per_px = x_range / max(xf_notext.img_w, 1)
+        result = detect_ticks_opencv(
+            notext_path,
             cfg=det_cfg,
             text_spacing_mm=text_sp,
             mm_per_px=mm_per_px,
             fallback_reason=reason,
         )
+        result["crop_ink_pct"] = ink_pct
+        result["crop_extent_mm"] = list(extent)
+        return result

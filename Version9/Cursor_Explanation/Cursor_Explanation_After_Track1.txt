@@ -1,0 +1,328 @@
+Track 1 in one sentence
+Track 1 is a geometry evidence engine that looks at residual stirrup-problem beams only, measures ticks/spacing from DXF (and OpenCV as fallback), feeds that into R.2.1D as GEOMETRY_STIRRUP, and optionally refines Type3 zone splits — without rewriting the V8 production spine.
+
+What we planned (the 4 stages)
+T1.1 Renderer validation
+   → T1.2 Vector detector (+ OpenCV fallback)
+      → T1.3 Fuse into R.2.1D
+         → T1.4 Type3 zone refinement
+Config flag: enable_geometry_stirrup_evidence in Version9/config/geometric_stirrup_evidence.yaml.
+Scope: only beams in residual_target_beams.json (172 included rows: 73 MISSING + 99 WRONG_QTY at baseline).
+
+What we have done (by stage)
+Stage	Status	What shipped
+T1.1 Renderer validation
+Done
+Validates DXF→PNG coordinate round-trip, layer completeness, line weight, text on/off. Latest report: ALL PASS
+T1.2 Vector detector
+Done
+Elevation tick trains + section rectangles from DXF entities; OpenCV contour/Hough fallback if vector finds nothing
+T1.3 Fusion into R.2.1D
+Done
+Cases: AGREE, CONFLICT, TEXT_ONLY, GEOMETRY_ONLY_SYNTH
+T1.4 Type3 zone refinement
+Done
+Prefer measured pitch-change boundaries, else supports, else legacy equal-N
+Closure (R4/R6/R3)
+Done (9.3.1)
+Scope-leakage clean, flag-off ≡ 9.2.0, confidence tags visible in JSON/Excel for AGREE/CONFLICT
+Code lives in Version9/src/PhaseT1_geometric_stirrup_evidence/.
+
+How it is done (pipeline)
+DXF reinforcement drawing
+        │
+        ▼
+T1.1  Validate renderer (pixel ↔ mm map is trustworthy)
+        │
+        ▼
+T1.2  For residual beams only:
+        • Vector: short vertical LINE clusters → tick count + measured pitch
+        • Section: closed rectangles ≈ stirrup shape
+        • If weak/empty → OpenCV on rendered tile
+        → stirrup_geometry_evidence.json
+        │
+        ▼
+T1.3  R.2.1D fusion (additive evidence, not a direct qty rewriter):
+        text + geometry agree     → AGREE (HIGH)
+        text + geometry disagree  → CONFLICT (WARN)
+        text only / weak geometry → TEXT_ONLY (leave text alone)
+        no text, strong geometry  → GEOMETRY_ONLY_SYNTH (WARN, for VLM later)
+        │
+        ▼
+T1.4  If Type3 label (@100/200/100): place zones from pitch changes / supports
+        │
+        ▼
+Downstream production (R.1.x → Excel)
+        • Existing text-based bars get tagged (AGREE/CONFLICT visibility)
+        • Pure geometry-only hypotheses are NOT auto-counted as steel
+          (advisory note only — Track 2’s job to confirm)
+Hard safety rules that were proven in closure:
+
+Residual scope only → out-of-scope beams unchanged (R4 clean: 35/35)
+Flag off → byte-identical to 9.2.0 (R6 clean: 144/144)
+No silent value rewrite from geometry alone for unconfirmed synth cases
+Performance improvement
+Against the Track 1 residual baseline (after 9.2.0 discovery, before geometry engine):
+
+STIRRUP metric	Before Track 1	After Track 1 (now)	Change
+MISSING
+73
+31
+−57%
+WRONG_QUANTITY
+100
+113
++13 (explained, not leakage)
+MATCH
+—
+63
+recovered detections
+Current STIRRUP breakdown across 3 sets: Missing 31 · Wrong qty 113 · Match 63 · Extra 31.
+
+Overall QA.2A context (whole Version9 journey, not Track 1 alone):
+Overall 58% → 70%, steel KG 73% → 91%, bar detection 42% → 69%.
+
+How to read the WRONG_QTY rise:
+
+81/113 were already wrong before Track 1 (zone split changed, still not GT-perfect)
+30/113 were MISSING→nonzero (partial detection; taxonomy can’t call that “improved”)
+2/113 out-of-scope labels were already wrong and untouched (R4 proved no leakage)
+So Track 1’s real win is finding missing stirrups; qty perfection was never fully solved here.
+
+Further improvement needed here?
+Not as a blocking Track 1 reopen. Track 1 is closed and safe.
+
+Useful further gains exist, but they are not Track 1 detector rewrites:
+
+Gap	Why Track 1 alone can’t finish it	Better owner
+Remaining 31 MISSING
+Often no reliable text association, or geometry alone not strong enough to count
+Track 2 (T2.3 orphan confirm) + maybe later discovery
+113 WRONG_QTY
+Zone/qty still not GT-matching even when detection exists
+Track 2 arbitration + better zone/qty rules, not more OpenCV
+2 GEOMETRY_ONLY_SYNTH beams
+Deliberately not materialized into counted bars
+Track 2 confirm → then count
+STIRRUP_HOOK still missing
+Hooks depend on parent stirrups existing cleanly
+Track 0.2 (hooks), after stirrups stabilize
+Bar accuracy still ~27%
+Mostly face/dia/extra errors, not stirrup geometry
+Track 2.1 / 2.2
+Reopening T1.2/T1.3/T1.4 algorithms now would burn time with low ROI versus starting Track 2.
+
+Blockers?
+No open Track 1 blockers.
+
+Closed cleanly:
+
+R4 scope leakage — clean
+R6 flag-off rollback — clean
+R3 confidence visibility — fixed for AGREE/CONFLICT rows
+WRONG_QTY regression — attributed, accepted
+Known non-blocking carve-out (documented, intentional):
+
+QA.2A SYNTHESIZED_GEOMETRY column stays 0 because pure-geometry bars are not counted yet (2 beams). That is Track 2, not a Track 1 defect.
+Bottom line
+Track 1 did what it was supposed to do: add geometric evidence for residual stirrup failures, cut MISSING roughly in half, keep non-target beams untouched, and stay fully flag-gated.
+
+It did not finish stirrup qty perfection or face/extra/main-bar accuracy — those were never Track 1’s job.
+
+Next move: leave Track 1 as-is and start Track 2 (Vision LLM arbiter), especially T2.3 for orphan geometry confirm and T2.1/T2.2 for the big remaining accuracy gap.
+
+Detailed Output:
+End-to-end picture
+Load residual beam list
+   → load beam_bbox (DXF mm)
+   → T1.1 validate renderer once (gate)
+   → for each residual beam:
+        T1.2a vector elevation ticks
+           else T1.2b vector section rectangles
+              else T1.2c OpenCV on rendered crop
+        T1.4 zone refine (WRONG_QTY + Type3 only)
+   → write stirrup_geometry_evidence.json
+   → R.2.1D reads it and runs T1.3 fusion
+Main code: Version9/src/PhaseT1_geometric_stirrup_evidence/
+Main output: <web_run>/data/output/PhaseT1_geometric_stirrup_evidence/stirrup_geometry_evidence.json
+
+1. Where does beam_bbox come from? (not rendered first)
+Important distinction: bbox is geometry data in DXF mm, not a rendered image.
+
+Loaded by _load_beam_bboxes() in this order:
+
+PhaseR1_2A_geometry_accuracy/validated_beam_geometry.json
+PhaseR3_geometry_context_engine/GeometryContexts.json
+PhaseR.1_.../beam_reinforcement_models.json
+Fallback: annotation centroids from reinforcement_annotations.json ± 1500 mm pad
+Shape: (xmin, ymin, xmax, ymax) in model space.
+
+That bbox is then used as a spatial filter for vector queries, and later converted to pixels only if OpenCV fallback runs.
+
+2. T1.1 — Renderer validation (gate, not per-beam crop)
+Code: renderer_validation.py → uses M.1 dxf_renderer.py
+Logic: render full DXF once and check 4 things before detectors run.
+
+Check	Meaning
+a Coordinate round-trip
+DXF → pixel → DXF error ≤ 0.001 mm at corners/center
+b Layer completeness
+structural/stirrup layers present
+c Line weight
+thin lines still inked (not dropped)
+d Text toggle
+render_text=False removes TEXT/MTEXT/DIM
+Renderer itself (dxf_renderer.py):
+
+ezdxf matplotlib backend
+fixed canvas: 30×22 in @ 200 DPI → 6000×4400 px
+returns CoordTransform with dxf_to_pixel / pixel_to_dxf
+Output: t1_1_renderer_validation.json (+ .md)
+If all_pass=false, T1 stops — detectors do not run.
+
+3. T1.2 — Vector-space detection (primary path)
+“Vector space” means: read DXF entities directly (LINE / LWPOLYLINE), no pixels. That is what detection_method records.
+
+Method A — vector_elevation_ticks (main)
+Code: detect_elevation_ticks() in vector_stirrup_detector.py
+
+Logic:
+
+Pad bbox (~5% X, ~15% Y)
+Query all LINE entities whose midpoint falls in bbox
+Keep only short nearly-vertical lines (stirrup tick marks)
+Cluster by Y-band → densest elevation row
+Sort by X → tick positions → pitches between ticks
+Accept if:
+≥ 3 ticks
+pitch mostly in 50–400 mm
+pitch CV not too high (unless multi-zone)
+Compare median pitch vs text spacing (±15 mm) → text_spacing_agreement
+Confidence ~0.55–0.95 (fusion later requires ≥0.55 to act)
+Real Set3 sample (B1):
+
+{
+  "detection_method": "vector_elevation_ticks",
+  "accepted": true,
+  "median_pitch_mm": 200.0,
+  "confidence": 0.4,
+  "text_spacing_agreement": false,
+  "tick_positions_mm": [0.0, 200.0, 499.99, 699.99, 5394.2, ...]
+}
+Here geometry was found, but confidence 0.4 & disagreement with text → fusion treats as weak (TEXT_ONLY).
+
+Method B — vector_section (secondary)
+Code: detect_section_rectangles()
+
+Looks for closed LWPOLYLINE rectangles ~20–400 mm near the beam (section stirrup symbols).
+No pitch train → confidence capped at ~0.5. Used only if elevation ticks fail.
+
+Method C — opencv_fallback (last resort)
+Only if both vector paths fail and enable_opencv_fallback: true.
+
+Code path: _opencv_for_beam() → detect_ticks_opencv()
+
+How render/crop works:
+
+Render full DXF with text OFF → {beam_id}_notext.png
+Map bbox corners through CoordTransform.dxf_to_pixel
+Crop that pixel rectangle → {beam_id}_crop.png
+OpenCV: Canny → HoughLinesP → keep near-vertical segments → pitch stats
+Scale pixels→mm via mm_per_px = dxf_x_range / img_w
+Important practical note from current runs: OpenCV often shows
+"reject_reason": "opencv_not_installed"
+so today’s gains are almost entirely from vector detection, not OpenCV.
+
+Decision order in orchestrator:
+
+elevation ticks accepted?
+  → use it
+else section rectangles accepted?
+  → use it
+else OpenCV fallback
+  → use it / record reject
+4. T1.3 — Fusion into R.2.1D
+Code: r21d_fusion.py (fuse_geometry_into_facts)
+Input: stirrup_geometry_evidence.json
+Output: t1_geometry_fusion_summary.json + annotated R.2.1D facts
+
+Fusion is evidence tagging / limited synthesis, not a direct BBS qty rewrite.
+
+Case	Condition	Action
+AGREE
+text stirrup exists + geo strong (accepted & conf≥0.55) + pitch agrees
+tag GEOMETRY_TEXT_AGREE, confidence HIGH
+CONFLICT
+text exists + geo strong + pitch disagrees
+tag GEOMETRY_TEXT_CONFLICT, WARN
+TEXT_ONLY
+text exists but geo weak/missing/inconclusive
+leave text alone
+GEOMETRY_ONLY_SYNTH
+no text stirrup + geo strong + beam in TARGET_MISSING
+create synthetic fact SYNTH:2L-Y8@pitch, flagged for Track 2
+Set3 latest fusion mix example:
+TEXT_ONLY=39, AGREE=5, CONFLICT=1, GEOMETRY_ONLY_SYNTH=1
+
+That matches the design: most residual beams keep text; geometry only “wins” when strong enough.
+
+Downstream (9.3.1 closure): AGREE/CONFLICT tags are also mirrored into:
+
+JSON classification_evidence
+Excel description markers like [GEOMETRY_TEXT_AGREE]
+Pure synth still does not auto-enter counted steel totals (Track 2).
+
+5. T1.4 — Type3 zone refinement
+Code: zone_boundary_refiner.py
+Runs only when:
+
+beam is in residual WRONG_QTY, and
+label parses as Type3 multi-spacing (e.g. @100/200/100)
+Priority:
+
+pitch_change — use measured zone boundaries from tick pitch changes (if conf≥0.55 and zone count matches)
+support_locations — left/right support fractions from SupportLocations.json
+equal_n_fallback — split span into N equal parts (legacy)
+Real sample (B11) often falls back:
+
+{
+  "method": "equal_n_fallback",
+  "segments": [
+    {"zone_name": "Zone_A", "start_mm": 0.0, "end_mm": 1477.6, "spacing_mm": 100},
+    {"zone_name": "Zone_B", "start_mm": 1477.6, "end_mm": 2955.2, "spacing_mm": 200},
+    {"zone_name": "Zone_C", "start_mm": 2955.2, "end_mm": 4432.8, "spacing_mm": 100}
+  ],
+  "fallback_used": true
+}
+So Type3 refinement is implemented, but when geometry confidence/zone-count doesn’t line up with the label, it still uses equal thirds — one reason WRONG_QTY didn’t fully disappear.
+
+Separately, Type3 label repair (type3_label_repair.py) can expand truncated labels like @100 → @100/200/100 for residual beams (SI.1 path).
+
+6. Outputs you can open
+Artefact	Path
+Renderer gate
+.../PhaseT1_.../t1_1_renderer_validation.json
+Per-beam evidence
+.../PhaseT1_.../stirrup_geometry_evidence.json
+Run summary
+.../PhaseT1_.../t1_run_summary.json
+OpenCV crops (if used)
+.../PhaseT1_.../opencv_renders/{beam}_crop.png
+Fusion cases
+.../PhaseR2.1D_.../t1_geometry_fusion_summary.json
+Closure report
+Version9/data/output/Track1_geometric_evidence/CLOSURE_REPORT.md
+Key fields in evidence JSON:
+
+detection_method: vector_elevation_ticks | vector_section | opencv_fallback | none
+accepted, confidence, median_pitch_mm
+text_spacing_agreement
+zone_refinement (Type3 WRONG_QTY beams)
+Mental model (short)
+bbox = “where on the drawing is this beam?” (mm rectangle from prior geometry phases)
+T1.1 = “can we trust DXF→PNG mapping?” (gate)
+vector detection = “count stirrup ticks from LINE geometry inside that bbox”
+OpenCV = “if vector fails, render text-off image, crop bbox, find ticks in pixels”
+fusion = “does geometry confirm/deny/replace text?” (AGREE/CONFLICT/TEXT_ONLY/SYNTH)
+Type3 refine = “where do 100/200/100 zones start/end along the span?”
+If you want, next we can walk one specific beam (e.g. Set3 B5 AGREE vs B7 CONFLICT vs B11 Type3 fallback) field-by-field through evidence → fusion → Excel.

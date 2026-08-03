@@ -1,7 +1,7 @@
 # T1.1 Renderer Validation
 
 **MODEL_VERSION:** 9.3.0
-**DXF:** `C:\Users\nishanth.h\SteelBeamEstimator\Version9\data\web_runs\qa2_Third_Set_Drawings_20260801_153937\reinforcement\Galera_TF_BeamReinforcementDetails.dxf`
+**DXF:** `C:\Users\nishanth.h\SteelBeamEstimator\Version9\data\web_runs\qa2_Third_Set_Drawings_20260803_132502\reinforcement\Galera_TF_BeamReinforcementDetails.dxf`
 **ALL PASS:** True
 
 ## a_coordinate_round_trip
@@ -12,7 +12,7 @@
 - n_points: `5`
 - dpi: `200`
 - fig_in: `[30.0, 22.0]`
-- img_size: `[6000, 4400]`
+- img_size: `[2214, 960]`
 - note: `Affine map exact aside from float error; edges + center tested.`
 
 ## b_layer_completeness
@@ -33,7 +33,7 @@
 ## d_text_toggle
 - **PASS:** True
 - render_text_true_ink_px: `238986`
-- render_text_false_ink_px: `0`
-- ink_delta_px: `238986`
-- img_size_text_off: `[6000, 4400]`
+- render_text_false_ink_px: `180791`
+- ink_delta_px: `58195`
+- img_size_text_off: `[2558, 960]`
 - note: `render_text=False suppresses TEXT/MTEXT/DIMENSION/LEADER.`
