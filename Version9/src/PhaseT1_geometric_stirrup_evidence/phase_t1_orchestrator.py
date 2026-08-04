@@ -1,15 +1,14 @@
 """
 Phase T1 orchestrator — residual-scoped geometric stirrup evidence.
-MODEL_VERSION: 9.3.3
+MODEL_VERSION: 9.3.6
 
 Soft-exit when enable_geometry_stirrup_evidence is false.
 
-9.3.3: OpenCV fallback crop generation now uses beam_extent's beam-
-scoped extent + dxf_renderer's local-extent render (see _opencv_for_beam)
-instead of a full-sheet render + coarse ±1500mm pixel crop. Adds a
-notext-crop ink-density gate (`crop_invalid`) so a starved/blank crop is
-never silently fed to OpenCV as a "genuinely no ticks" result. No T1.2
-threshold, T1.3 fusion, or T1.4 zone-refinement changes.
+9.3.3: OpenCV fallback crop generation uses local-extent render + ink gate.
+9.3.5 (T1.5): crop window from Geometry Envelope Builder.
+9.3.6 (T1.6): when PhaseT16 ownership artefacts exist, OpenCV crops are
+rendered from HIGH-ownership entities only (not every entity intersecting
+the envelope). T1.5 envelope math is unchanged.
 """
 from __future__ import annotations
 
@@ -21,6 +20,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from .beam_extent import compute_extents_for_beams
 from .config_loader import is_enabled, load_config
+from .geometry_envelope import (
+    MODEL_VERSION as T15_MODEL_VERSION,
+    compute_geometry_envelopes,
+    envelopes_to_extent_info,
+)
 from .opencv_fallback import detect_ticks_opencv
 from .renderer_validation import validate_renderer, write_report
 from .residual_targets import (
@@ -32,7 +36,7 @@ from .residual_targets import (
 from .vector_stirrup_detector import detect_elevation_ticks, detect_section_rectangles
 from .zone_boundary_refiner import parse_type3_spacings, refine_zone_boundaries
 
-MODEL_VERSION = "9.3.3"
+MODEL_VERSION = "9.3.6"
 PHASE_ID = "T1"
 _OUT_NAME = "PhaseT1_geometric_stirrup_evidence"
 # Below this % of non-background pixels, a rendered notext crop is treated
@@ -145,17 +149,31 @@ class PhaseT1Orchestrator:
         import ezdxf
         msp = ezdxf.readfile(str(dxf)).modelspace() if dxf else None
 
-        # 9.3.3: beam-scoped crop extents (local-extent render, replaces
-        # coarse ±1500mm blanket pad) — computed once for ALL beams with
-        # R.1 annotations (not just the residual scope) so neighbor-aware
-        # pad shrinking sees beams outside this run's residual target list
-        # too (R4: this must not change which beams are targeted, only how
-        # their crops are rendered).
+        # 9.3.5 / T1.5: geometry envelopes replace annotation-cloud extents
+        # for OpenCV crop windows. Annotation extents are still computed for
+        # QA comparison only (annotation_extent_mm in evidence records).
         annotations_by_beam = self._load_annotations_by_beam()
+        annotation_extents: Dict[str, Dict[str, Any]] = {}
         beam_extents: Dict[str, Dict[str, Any]] = {}
+        geometry_envelopes: Dict[str, Dict[str, Any]] = {}
         if msp is not None and annotations_by_beam:
-            beam_extents = compute_extents_for_beams(
+            annotation_extents = compute_extents_for_beams(
                 list(annotations_by_beam.keys()), annotations_by_beam, msp
+            )
+            axes = self._load_beam_axes()
+            geometries = self._load_validated_geometries()
+            physical_bars = self._load_physical_bars()
+            geometry_envelopes = compute_geometry_envelopes(
+                list(annotations_by_beam.keys()),
+                msp,
+                annotations_by_beam=annotations_by_beam,
+                axes_by_beam=axes,
+                geometries_by_beam=geometries,
+                physical_bars=physical_bars,
+            )
+            beam_extents = envelopes_to_extent_info(geometry_envelopes)
+            self._write_geometry_envelopes(
+                geometry_envelopes, annotation_extents
             )
 
         det_cfg = self.cfg.get("detection") or {}
@@ -528,19 +546,9 @@ class PhaseT1Orchestrator:
         extent_info: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         """
-        Track 1 (9.3.3): local-extent render — renders ONLY the beam-scoped
-        extent (extent_info, from beam_extent.compute_extents_for_beams;
-        reuses R.1's existing per-beam annotation association, plus the
-        beam-mark label found nearest that annotation cluster) directly to
-        a fixed-max-dimension canvas, instead of rendering the full sheet
-        and pixel-cropping afterward. This decouples crop resolution from
-        sheet size and eliminates the coarse ±1500mm blanket-pad
-        neighbor bleed found in the 9.3.2-era diagnostic.
-
-        A beam with no R.1 annotations (extent_info is None/empty) falls
-        back to rendering its bbox directly — still a local-extent render
-        (an improvement over the old full-sheet approach), just without
-        the beam-scoped tightening.
+        Track 1 (9.3.6): local-extent window from T1.5 geometry envelope.
+        When T1.6 ownership artefacts exist for this beam, render ONLY
+        HIGH-ownership entity handles (ownership-driven, not crop-driven).
         """
         mod = self._load_dxf_renderer_module()
 
@@ -562,8 +570,32 @@ class PhaseT1Orchestrator:
             if p.exists():
                 p.unlink()
 
-        mod.render_dxf_region_to_png(dxf, crop_path, extent, render_text=True)
-        xf_notext = mod.render_dxf_region_to_png(dxf, notext_path, extent, render_text=False)
+        owned_handles = self._load_high_ownership_handles(beam_id)
+        if owned_handles:
+            from PhaseT16_entity_ownership.ownership_renderer import (
+                render_owned_entities_to_png,
+            )
+
+            render_owned_entities_to_png(
+                dxf, crop_path, extent, owned_handles, render_text=True
+            )
+            info_nt = render_owned_entities_to_png(
+                dxf, notext_path, extent, owned_handles, render_text=False
+            )
+
+            class _XF:
+                pass
+
+            xf_notext = _XF()
+            xf_notext.dxf_xlim = tuple(info_nt["dxf_xlim"])
+            xf_notext.dxf_ylim = tuple(info_nt["dxf_ylim"])
+            xf_notext.img_w = int(info_nt["img_w"])
+            xf_notext.img_h = int(info_nt["img_h"])
+        else:
+            mod.render_dxf_region_to_png(dxf, crop_path, extent, render_text=True)
+            xf_notext = mod.render_dxf_region_to_png(
+                dxf, notext_path, extent, render_text=False
+            )
 
         ink_pct = self._ink_density_pct(notext_path)
         if ink_pct < _CROP_INK_INVALID_THRESHOLD_PCT:
@@ -593,4 +625,109 @@ class PhaseT1Orchestrator:
         )
         result["crop_ink_pct"] = ink_pct
         result["crop_extent_mm"] = list(extent)
+        if extent_info and extent_info.get("source"):
+            result["crop_extent_source"] = extent_info["source"]
+        if owned_handles:
+            result["crop_extent_source"] = "T1.6_ownership_filtered"
+            result["ownership_high_count"] = len(owned_handles)
+        if extent_info and extent_info.get("geometry_envelope"):
+            ge = extent_info["geometry_envelope"]
+            result["geometry_envelope"] = {
+                "signals_used": ge.get("signals_used"),
+                "geometry_confidence": ge.get("geometry_confidence"),
+                "fallbacks_used": ge.get("fallbacks_used"),
+            }
         return result
+
+    def _load_high_ownership_handles(self, beam_id: str) -> List[str]:
+        """Return HIGH-ownership handles from T1.6 artefacts, if present."""
+        path = self.output_root / "PhaseT16_entity_ownership" / "beam_entity_ownership.json"
+        if not path.exists():
+            return []
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return []
+        rows = (data.get("by_beam") or {}).get(beam_id) or []
+        return [
+            str(r["handle"])
+            for r in rows
+            if r.get("ownership") == "HIGH" and r.get("handle")
+        ]
+
+    def _load_beam_axes(self) -> Dict[str, Dict[str, Any]]:
+        path = (
+            self.output_root
+            / "PhaseR3_geometry_context_engine"
+            / "BeamAxis.json"
+        )
+        if not path.exists():
+            return {}
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+        axes = data.get("axes") or {}
+        return {str(k): dict(v) for k, v in axes.items() if isinstance(v, dict)}
+
+    def _load_validated_geometries(self) -> Dict[str, Dict[str, Any]]:
+        path = (
+            self.output_root
+            / "PhaseR1_2A_geometry_accuracy"
+            / "validated_beam_geometry.json"
+        )
+        if not path.exists():
+            return {}
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+        geoms = data.get("geometries") or {}
+        return {str(k): dict(v) for k, v in geoms.items() if isinstance(v, dict)}
+
+    def _load_physical_bars(self) -> List[Dict[str, Any]]:
+        path = (
+            self.output_root
+            / "PhaseR3.1_engineering_relationship_engine"
+            / "PhysicalBars.json"
+        )
+        if not path.exists():
+            return []
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            return []
+        bars = data.get("bars") or []
+        return [b for b in bars if isinstance(b, dict)]
+
+    def _write_geometry_envelopes(
+        self,
+        envelopes: Dict[str, Dict[str, Any]],
+        annotation_extents: Dict[str, Dict[str, Any]],
+    ) -> None:
+        payload = {
+            "phase_id": "T1.5",
+            "model_version": T15_MODEL_VERSION,
+            "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "beam_count": len(envelopes),
+            "by_beam": envelopes,
+            "annotation_extent_comparison": {
+                bid: {
+                    "annotation_extent": (
+                        list(annotation_extents[bid]["extent"])
+                        if annotation_extents.get(bid)
+                        and annotation_extents[bid].get("extent")
+                        else None
+                    ),
+                    "geometry_extent": list(env["extent"])
+                    if env.get("extent")
+                    else None,
+                    "signals_used": env.get("signals_used"),
+                    "geometry_confidence": env.get("geometry_confidence"),
+                }
+                for bid, env in envelopes.items()
+            },
+        }
+        (self.out_dir / "geometry_envelopes.json").write_text(
+            json.dumps(payload, indent=2), encoding="utf-8"
+        )

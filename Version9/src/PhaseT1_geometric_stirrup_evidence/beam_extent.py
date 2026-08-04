@@ -1,5 +1,5 @@
 """
-Beam-scoped crop extent (Track 1, 9.3.3).
+Beam-scoped crop extent (Track 1, 9.3.4).
 
 Replaces the coarse ±1500mm blanket pad (pre-9.3.3) with a tight bounding
 union of:
@@ -11,9 +11,16 @@ union of:
     diagnostic — plan/schedule marks sat ~25-29m away from the real
     elevation for every Set1 test beam)
   - a small fixed padding margin (default 350mm), shrunk (never below a
-    floor) when it would otherwise overlap a neighboring beam's extent.
+    floor) when it would otherwise overlap a neighboring beam's extent
 
-MODEL_VERSION: 9.3.3
+9.3.4: after per-side pad shrink, apply a hard NON-OVERLAP split between
+beams that share an elevation row (same Y-band of beam-mark labels).
+Adjacent extents are pinned to a shared X boundary at the mark-midpoint
+(with asymmetric widening if that midpoint would cut a beam's own R.1
+annotation anchors). This fixes the B8 bleed-over / B9–B10 truncation
+failure mode that pad-shrinking alone could not resolve.
+
+MODEL_VERSION: 9.3.4
 """
 from __future__ import annotations
 
@@ -21,10 +28,17 @@ import math
 import re
 from typing import Any, Dict, List, Optional, Tuple
 
-MODEL_VERSION = "9.3.3"
+MODEL_VERSION = "9.3.4"
 
 DEFAULT_PAD_MM = 350.0
 MIN_PAD_MM = 50.0
+# Beams whose marks sit within this Y distance are treated as one
+# elevation row for the hard non-overlap split (B8/B9/B10 share y≈16081).
+ROW_Y_BAND_MM = 2000.0
+# Extra margin past a beam's own R.1 annotation anchors so glyph extents
+# just beyond the anchor aren't treated as "neighbor bleed" when deciding
+# asymmetric split widening. Kept small so it cannot recreate ±1500mm bleed.
+OWN_CONTENT_GLYPH_MARGIN_MM = 200.0
 
 
 def find_beam_mark(
@@ -255,6 +269,148 @@ def _per_side_pads(
     return pads, notes
 
 
+def _own_content_x_span(
+    annotation_items: List[Dict[str, Any]],
+    mark: Optional[Dict[str, Any]],
+    *,
+    glyph_margin_mm: float = OWN_CONTENT_GLYPH_MARGIN_MM,
+) -> Optional[Tuple[float, float]]:
+    """X-span of this beam's OWN R.1 anchors + mark (not bloated bbox union).
+
+    Used by the row non-overlap split to decide asymmetric widening: a
+    midpoint that sits past this span is safe to clip to; one that cuts
+    inside it must be pushed outward so real callout anchors aren't lost.
+    Deliberately ignores the resolved-entity bbox union (which can suck in
+    a neighbor fragment via an oversized DIMENSION match — the B8 bleed
+    root cause under 9.3.3).
+    """
+    xs = [
+        float(a["x"])
+        for a in annotation_items
+        if a.get("x") is not None
+    ]
+    if mark is not None:
+        xs.append(float(mark["x"]))
+    if not xs:
+        return None
+    return (min(xs) - glyph_margin_mm, max(xs) + glyph_margin_mm)
+
+
+def _apply_row_nonoverlap_splits(
+    extents: Dict[str, Dict[str, Any]],
+    own_x_spans: Dict[str, Tuple[float, float]],
+    *,
+    row_y_band_mm: float = ROW_Y_BAND_MM,
+) -> None:
+    """In-place: pin adjacent same-row extents to a shared X boundary.
+
+    For each elevation row (beams whose marks share a Y-band), sort by
+    mark X and for every adjacent pair (L, R):
+      1. Prefer split = midpoint of the two mark X positions.
+      2. If that midpoint would cut L's own-content xmax, widen L's share
+         (split := own_xmax_L) — and symmetrically for R's own-content xmin.
+      3. If both own-content spans cross (true content collision), fall
+         back to the midpoint of the own-content overlap zone.
+      4. Set L.extent.xmax = R.extent.xmin = split (no gap, no overlap).
+
+    Handles the middle beam of a 3+ pack (B9 bounded on BOTH sides) by
+    applying the rule pairwise left-then-right in mark-X order.
+    """
+    # Group beams that have both an extent and a mark into Y-band rows.
+    marked = [
+        (bid, info)
+        for bid, info in extents.items()
+        if info.get("extent") is not None and info.get("mark") is not None
+    ]
+    if len(marked) < 2:
+        return
+
+    # Greedy clustering by mark Y (sort then chain within band).
+    marked.sort(key=lambda t: t[1]["mark"]["y"])
+    rows: List[List[str]] = []
+    current: List[str] = []
+    current_y: Optional[float] = None
+    for bid, info in marked:
+        y = float(info["mark"]["y"])
+        if current_y is None or abs(y - current_y) <= row_y_band_mm:
+            current.append(bid)
+            if current_y is None:
+                current_y = y
+            else:
+                # keep running mean so a slow drift doesn't chain forever
+                current_y = (current_y * (len(current) - 1) + y) / len(current)
+        else:
+            if len(current) >= 2:
+                rows.append(current)
+            current = [bid]
+            current_y = y
+    if len(current) >= 2:
+        rows.append(current)
+
+    for row in rows:
+        row_sorted = sorted(row, key=lambda b: float(extents[b]["mark"]["x"]))
+        for i in range(len(row_sorted) - 1):
+            left_id = row_sorted[i]
+            right_id = row_sorted[i + 1]
+            left = extents[left_id]
+            right = extents[right_id]
+            mark_mid = 0.5 * (
+                float(left["mark"]["x"]) + float(right["mark"]["x"])
+            )
+
+            left_own = own_x_spans.get(left_id)
+            right_own = own_x_spans.get(right_id)
+            split = mark_mid
+            asymmetric_notes: List[str] = []
+
+            if left_own is not None and right_own is not None:
+                left_own_xmax = left_own[1]
+                right_own_xmin = right_own[0]
+                if left_own_xmax <= right_own_xmin:
+                    # Own-content spans do not collide — clamp mark mid
+                    # into the gap so neither beam loses its own anchors.
+                    split = min(max(mark_mid, left_own_xmax), right_own_xmin)
+                    if split > mark_mid + 1e-6:
+                        asymmetric_notes.append(
+                            f"row_split_asymmetric_widen_left={left_id} "
+                            f"mark_mid={mark_mid:.1f} -> {split:.1f} "
+                            f"(own_xmax={left_own_xmax:.1f})"
+                        )
+                    elif split < mark_mid - 1e-6:
+                        asymmetric_notes.append(
+                            f"row_split_asymmetric_widen_right={right_id} "
+                            f"mark_mid={mark_mid:.1f} -> {split:.1f} "
+                            f"(own_xmin={right_own_xmin:.1f})"
+                        )
+                else:
+                    # Own-content spans overlap — split the overlap zone.
+                    if right_own_xmin <= mark_mid <= left_own_xmax:
+                        split = mark_mid
+                    else:
+                        split = 0.5 * (right_own_xmin + left_own_xmax)
+                    asymmetric_notes.append(
+                        f"row_split_own_content_overlap {left_id}/{right_id} "
+                        f"overlap=[{right_own_xmin:.1f},{left_own_xmax:.1f}] "
+                        f"split={split:.1f}"
+                    )
+
+            lx0, ly0, lx1, ly1 = left["extent"]
+            rx0, ry0, rx1, ry1 = right["extent"]
+            prev_l_xmax, prev_r_xmin = lx1, rx0
+            left["extent"] = (lx0, ly0, split, ly1)
+            right["extent"] = (split, ry0, rx1, ry1)
+            note = (
+                f"row_split_{left_id}_{right_id} x={split:.1f} "
+                f"(was L.xmax={prev_l_xmax:.1f} R.xmin={prev_r_xmin:.1f}; "
+                f"mark_mid={mark_mid:.1f})"
+            )
+            left.setdefault("notes", []).append(note)
+            right.setdefault("notes", []).append(note)
+            for n in asymmetric_notes:
+                left["notes"].append(n)
+                right["notes"].append(n)
+
+
 def compute_beam_scoped_extent(
     beam_id: str,
     annotation_items: List[Dict[str, Any]],
@@ -268,6 +424,9 @@ def compute_beam_scoped_extent(
     Returns dict with:
       beam_id, extent (xmin,ymin,xmax,ymax) or None, core (unpadded union),
       mark (beam-mark match or None), pad_used_mm, notes (list[str]).
+
+    Note: single-beam call cannot apply the 9.3.4 row non-overlap split
+    (needs sibling marks). Prefer compute_extents_for_beams for production.
     """
     points = [
         (float(a["x"]), float(a["y"]))
@@ -326,10 +485,14 @@ def compute_extents_for_beams(
     drawn from `annotations_by_beam` in full so an out-of-scope neighbor
     (e.g. a beam not in this phase's residual target list) still prevents
     bleed-over.
+
+    9.3.4: after pad-aware extents are built, applies a hard non-overlap
+    X-split between beams sharing an elevation row (mark Y-band).
     """
     index = build_label_entity_index(msp)
     all_cores: Dict[str, Tuple[float, float, float, float]] = {}
     all_marks: Dict[str, Optional[Dict[str, Any]]] = {}
+    all_own_x: Dict[str, Tuple[float, float]] = {}
     for bid, items in annotations_by_beam.items():
         points = [
             (float(a["x"]), float(a["y"]))
@@ -342,23 +505,18 @@ def compute_extents_for_beams(
         cy = sum(p[1] for p in points) / len(points)
         mark = find_beam_mark(msp, bid, (cx, cy))
         all_marks[bid] = mark
+        own = _own_content_x_span(items, mark)
+        if own is not None:
+            all_own_x[bid] = own
         if mark is not None:
             points = points + [(mark["x"], mark["y"])]
         all_cores[bid] = _points_and_bboxes_to_bounds(points, index)
 
-    out: Dict[str, Dict[str, Any]] = {}
-    for bid in beam_ids:
-        core = all_cores.get(bid)
-        if core is None:
-            out[bid] = {
-                "beam_id": bid,
-                "extent": None,
-                "core": None,
-                "mark": None,
-                "pad_used_mm": None,
-                "notes": ["no_annotations_for_beam"],
-            }
-            continue
+    # Build extents for EVERY beam with a core (not just beam_ids) so the
+    # row-split sees full-row neighbors even when the caller only asked
+    # for a subset.
+    all_out: Dict[str, Dict[str, Any]] = {}
+    for bid, core in all_cores.items():
         others = {k: v for k, v in all_cores.items() if k != bid}
         pads, notes = _per_side_pads(bid, core, others, pad_mm, min_pad_mm)
         extent = (
@@ -367,7 +525,7 @@ def compute_extents_for_beams(
             core[2] + pads["right"],
             core[3] + pads["top"],
         )
-        out[bid] = {
+        all_out[bid] = {
             "beam_id": bid,
             "extent": extent,
             "core": core,
@@ -375,4 +533,20 @@ def compute_extents_for_beams(
             "pad_used_mm": {k: round(v, 1) for k, v in pads.items()},
             "notes": notes,
         }
+
+    _apply_row_nonoverlap_splits(all_out, all_own_x)
+
+    out: Dict[str, Dict[str, Any]] = {}
+    for bid in beam_ids:
+        if bid in all_out:
+            out[bid] = all_out[bid]
+        else:
+            out[bid] = {
+                "beam_id": bid,
+                "extent": None,
+                "core": None,
+                "mark": None,
+                "pad_used_mm": None,
+                "notes": ["no_annotations_for_beam"],
+            }
     return out
