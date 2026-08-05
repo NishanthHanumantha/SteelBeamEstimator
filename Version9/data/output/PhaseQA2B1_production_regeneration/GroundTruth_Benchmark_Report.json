@@ -1,0 +1,270 @@
+{
+  "phase_id": "QA.2B.1",
+  "model_version": "9.6.1",
+  "generated_at": "2026-08-05T12:01:28.721553+00:00",
+  "reuse_existing_model": false,
+  "benchmark": {
+    "model_version": "9.1.0",
+    "phase": "QA.2A",
+    "total_drawing_sets": 3,
+    "production_runs_completed": 3,
+    "model_workbooks_generated": 3,
+    "total_beams": 148,
+    "detected_beams": 139,
+    "correct_beams": 139,
+    "total_bars": 937,
+    "detected_bars": 642,
+    "correct_bars": 176,
+    "missing_bars": 295,
+    "beam_detection_pct": 93.92,
+    "bar_detection_pct": 68.52,
+    "bar_accuracy_pct": 27.41,
+    "steel_accuracy_pct": 91.07,
+    "diameter_accuracy_pct": 27.41,
+    "overall_accuracy_pct": 70.23,
+    "average_pipeline_runtime_s": 1003.28,
+    "validation_status": "PASS",
+    "recommendation": "A \u2014 Ground-truth framework operational; prioritize top error categories for Version9 accuracy work."
+  },
+  "statistics": {
+    "drawing_sets": 3,
+    "pipelines_ok": 3,
+    "avg_runtime_s": 1003.28,
+    "overall_accuracy_pct": 70.23,
+    "total_errors": 949
+  },
+  "dashboard": {
+    "drawing_sets": [
+      {
+        "drawing_set": "First Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 447.3,
+        "beam_detection_pct": 100.0,
+        "beam_matching_pct": 100.0,
+        "bar_detection_pct": 81.18,
+        "bar_accuracy_pct": 34.78,
+        "steel_accuracy_pct": 99.83,
+        "overall_accuracy_pct": 78.95,
+        "error_count": 84,
+        "rank": 1
+      },
+      {
+        "drawing_set": "Second Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 1147.01,
+        "beam_detection_pct": 95.52,
+        "beam_matching_pct": 95.52,
+        "bar_detection_pct": 71.76,
+        "bar_accuracy_pct": 35.74,
+        "steel_accuracy_pct": 85.5,
+        "overall_accuracy_pct": 72.13,
+        "error_count": 359,
+        "rank": 2
+      },
+      {
+        "drawing_set": "Third Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 1415.52,
+        "beam_detection_pct": 90.48,
+        "beam_matching_pct": 90.48,
+        "bar_detection_pct": 63.52,
+        "bar_accuracy_pct": 17.91,
+        "steel_accuracy_pct": 87.89,
+        "overall_accuracy_pct": 64.95,
+        "error_count": 506,
+        "rank": 3
+      }
+    ]
+  },
+  "errors": {
+    "frequency": {
+      "Missing Bar": 295,
+      "Wrong Quantity": 215,
+      "Extra Bar": 192,
+      "Wrong Diameter": 170,
+      "Wrong Role": 62,
+      "Beam Missing": 9,
+      "Beam Mismatch": 4,
+      "Steel Difference": 2
+    },
+    "total_errors": 949,
+    "affected_drawing_sets": [
+      "First Set Drawings",
+      "Second Set Drawings",
+      "Third Set Drawings"
+    ]
+  },
+  "drawing_sets": [
+    {
+      "drawing_set": "First Set Drawings",
+      "compared": true,
+      "drawing_summary": {
+        "drawing_set": "First Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 447.3,
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_First_Set_Drawings_20260805_164023\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "estimator_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\First Set Drawings\\Estimator_Output\\Galera_SteelBeamEst_SHR&OHT_TopFramingPan.xlsx",
+        "beam_detection_pct": 100.0,
+        "beam_matching_pct": 100.0,
+        "bar_detection_pct": 81.18,
+        "bar_accuracy_pct": 34.78,
+        "steel_accuracy_pct": 99.83,
+        "estimator_kg": 1423.606,
+        "model_kg": 1421.211,
+        "error_count": 84
+      },
+      "model_summary": {
+        "beams": 18,
+        "bars": 108,
+        "kg": 1421.211
+      },
+      "estimator_summary": {
+        "beams": 18,
+        "bars": 85,
+        "kg": 1423.606
+      },
+      "beam_matching": {
+        "detection_pct": 100.0,
+        "matching_pct": 100.0,
+        "estimator_beams": 18,
+        "detected_beams": 18,
+        "missing_ids": []
+      },
+      "bar_matching": {
+        "detection_pct": 81.18,
+        "accuracy_pct": 34.78,
+        "missing_bars": 16,
+        "extra_bars": null,
+        "matched_bars": null
+      },
+      "steel": {
+        "estimator_total_kg": 1423.606,
+        "model_total_kg": 1421.211,
+        "difference_kg": -2.395,
+        "difference_pct": 0.17,
+        "accuracy_pct": 99.83,
+        "estimator_total_mt": 1.4236,
+        "model_total_mt": 1.4212,
+        "difference_mt": -0.0024
+      }
+    },
+    {
+      "drawing_set": "Second Set Drawings",
+      "compared": true,
+      "drawing_summary": {
+        "drawing_set": "Second Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 1147.01,
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "estimator_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Second Set Drawings\\Estimator_Output\\EstimatorOutput_GF Beam BBS.xlsx",
+        "beam_detection_pct": 95.52,
+        "beam_matching_pct": 95.52,
+        "bar_detection_pct": 71.76,
+        "bar_accuracy_pct": 35.74,
+        "steel_accuracy_pct": 85.5,
+        "estimator_kg": 10419.298,
+        "model_kg": 11930.01,
+        "error_count": 359
+      },
+      "model_summary": {
+        "beams": 64,
+        "bars": 397,
+        "kg": 11930.01
+      },
+      "estimator_summary": {
+        "beams": 67,
+        "bars": 381,
+        "kg": 10419.298
+      },
+      "beam_matching": {
+        "detection_pct": 95.52,
+        "matching_pct": 95.52,
+        "estimator_beams": 67,
+        "detected_beams": 64,
+        "missing_ids": [
+          "B4",
+          "B5",
+          "B39"
+        ]
+      },
+      "bar_matching": {
+        "detection_pct": 71.76,
+        "accuracy_pct": 35.74,
+        "missing_bars": 109,
+        "extra_bars": null,
+        "matched_bars": null
+      },
+      "steel": {
+        "estimator_total_kg": 10419.298,
+        "model_total_kg": 11930.01,
+        "difference_kg": 1510.712,
+        "difference_pct": 14.5,
+        "accuracy_pct": 85.5,
+        "estimator_total_mt": 10.4193,
+        "model_total_mt": 11.93,
+        "difference_mt": 1.5107
+      }
+    },
+    {
+      "drawing_set": "Third Set Drawings",
+      "compared": true,
+      "drawing_summary": {
+        "drawing_set": "Third Set Drawings",
+        "pipeline_success": true,
+        "pipeline_elapsed_s": 1415.52,
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "estimator_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Third Set Drawings\\Estimator_Output_3rdSet\\EstimatorOutput_OnlyTF_Beam BBS.xlsx",
+        "beam_detection_pct": 90.48,
+        "beam_matching_pct": 90.48,
+        "bar_detection_pct": 63.52,
+        "bar_accuracy_pct": 17.91,
+        "steel_accuracy_pct": 87.89,
+        "estimator_kg": 16046.15,
+        "model_kg": 14103.297,
+        "error_count": 506
+      },
+      "model_summary": {
+        "beams": 61,
+        "bars": 464,
+        "kg": 14103.297
+      },
+      "estimator_summary": {
+        "beams": 63,
+        "bars": 446,
+        "kg": 16046.15
+      },
+      "beam_matching": {
+        "detection_pct": 90.48,
+        "matching_pct": 90.48,
+        "estimator_beams": 63,
+        "detected_beams": 57,
+        "missing_ids": [
+          "B15",
+          "B19",
+          "B22",
+          "B23",
+          "B24",
+          "B44"
+        ]
+      },
+      "bar_matching": {
+        "detection_pct": 63.52,
+        "accuracy_pct": 17.91,
+        "missing_bars": 170,
+        "extra_bars": null,
+        "matched_bars": null
+      },
+      "steel": {
+        "estimator_total_kg": 16046.15,
+        "model_total_kg": 14103.297,
+        "difference_kg": -1942.853,
+        "difference_pct": 12.11,
+        "accuracy_pct": 87.89,
+        "estimator_total_mt": 16.0462,
+        "model_total_mt": 14.1033,
+        "difference_mt": -1.9429
+      }
+    }
+  ],
+  "elapsed_s": 53.17
+}

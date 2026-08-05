@@ -36,6 +36,8 @@ PRODUCTION_STAGES: List[Dict[str, Any]] = [
     {"id": "R12A",   "script": "Run_PY/run_phase_r12a_geometry_accuracy.py", "timeout_s": 600},
     {"id": "R13",    "script": "Run_PY/run_phase_r13_pipeline_integration.py", "timeout_s": 1200},
     {"id": "VB1",    "script": "Run_PY/run_phase_vb1_production_output_completion.py", "timeout_s": 900},
+    # QA.2B.0 — latest ownership / adaptive render / shared-scope chain (post-engineering)
+    {"id": "T16CHAIN", "script": "Run_PY/run_phase_track1_visual_chain.py", "timeout_s": 7200},
 ]
 
 VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
@@ -51,6 +53,7 @@ _SOFT_ARTEFACTS = {
     "R21D": "data/output/PhaseR2.1D_evidence_hypothesis_engine/EngineeringFacts.json",
     "R21C": "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json",
     "T1":   "data/output/PhaseT1_geometric_stirrup_evidence/stirrup_geometry_evidence.json",
+    "T16CHAIN": "data/output/PhaseT182_adaptive_render_extent/RenderedBeams",
 }
 
 
