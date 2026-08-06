@@ -1,0 +1,238 @@
+{
+  "phase_id": "QA.3.0",
+  "model_version": "10.0.0",
+  "generated_at": "2026-08-06T15:04:23.033357+00:00",
+  "type": "unseen_drawing_generalization_benchmark",
+  "estimator_excel_usage": "benchmark_only",
+  "reuse_detected_any": false,
+  "overall_metrics": {
+    "beam_detection_pct": 82.95,
+    "bar_detection_pct": 46.04,
+    "bar_matching_pct": 36.74,
+    "steel_accuracy_pct": 72.21,
+    "overall_accuracy_pct": 59.48,
+    "total_beams": 475,
+    "total_bars": 3317,
+    "total_drawing_sets": 3
+  },
+  "drawing_set_results": [
+    {
+      "drawing_set": "Fourth Set Drawings",
+      "pipeline_success": true,
+      "pipeline_elapsed_s": 1.32,
+      "beam_detection_pct": 78.32,
+      "beam_matching_pct": 78.32,
+      "bar_detection_pct": 39.89,
+      "bar_accuracy_pct": 37.33,
+      "steel_accuracy_pct": 58.39,
+      "overall_accuracy_pct": 53.48,
+      "error_count": 878,
+      "rank": 2
+    },
+    {
+      "drawing_set": "Fifth Set Drawings",
+      "pipeline_success": true,
+      "pipeline_elapsed_s": 9979.18,
+      "beam_detection_pct": 76.47,
+      "beam_matching_pct": 76.47,
+      "bar_detection_pct": 40.25,
+      "bar_accuracy_pct": 34.3,
+      "steel_accuracy_pct": 61.69,
+      "overall_accuracy_pct": 53.18,
+      "error_count": 1400,
+      "rank": 3
+    },
+    {
+      "drawing_set": "Sixth Set Drawings",
+      "pipeline_success": true,
+      "pipeline_elapsed_s": 1137.86,
+      "beam_detection_pct": 95.86,
+      "beam_matching_pct": 95.86,
+      "bar_detection_pct": 61.45,
+      "bar_accuracy_pct": 38.87,
+      "steel_accuracy_pct": 96.54,
+      "overall_accuracy_pct": 73.18,
+      "error_count": 767,
+      "rank": 1
+    }
+  ],
+  "errors": {
+    "frequency": {
+      "Missing Bar": 1790,
+      "Wrong Quantity": 445,
+      "Wrong Diameter": 356,
+      "Extra Bar": 255,
+      "Wrong Role": 105,
+      "Beam Missing": 81,
+      "Beam Mismatch": 10,
+      "Steel Difference": 3
+    },
+    "total_errors": 3045,
+    "affected_drawing_sets": [
+      "Fourth Set Drawings",
+      "Fifth Set Drawings",
+      "Sixth Set Drawings"
+    ]
+  },
+  "engineering_error_summary": {
+    "phase_id": "QA.3.0",
+    "model_version": "10.0.0",
+    "generated_at": "2026-08-06T15:04:23.026587+00:00",
+    "raw_error_frequency": {
+      "Missing Bar": 1790,
+      "Wrong Quantity": 445,
+      "Wrong Diameter": 356,
+      "Extra Bar": 255,
+      "Wrong Role": 105,
+      "Beam Missing": 81,
+      "Beam Mismatch": 10,
+      "Steel Difference": 3
+    },
+    "engineering_categories": {
+      "Missing bars": 2235,
+      "Diameter mismatch": 356,
+      "Extra bars": 255,
+      "Ownership issues": 105,
+      "Missing beams": 81,
+      "Extra beams": 10,
+      "Rendering mismatch": 3,
+      "Stirrup mismatch": 0,
+      "Side-face reinforcement mismatch": 0,
+      "Development Length mismatch": 0
+    },
+    "top_error_categories": [
+      {
+        "category": "Missing bars",
+        "count": 2235
+      },
+      {
+        "category": "Diameter mismatch",
+        "count": 356
+      },
+      {
+        "category": "Extra bars",
+        "count": 255
+      },
+      {
+        "category": "Ownership issues",
+        "count": 105
+      },
+      {
+        "category": "Missing beams",
+        "count": 81
+      },
+      {
+        "category": "Extra beams",
+        "count": 10
+      },
+      {
+        "category": "Rendering mismatch",
+        "count": 3
+      },
+      {
+        "category": "Stirrup mismatch",
+        "count": 0
+      },
+      {
+        "category": "Side-face reinforcement mismatch",
+        "count": 0
+      },
+      {
+        "category": "Development Length mismatch",
+        "count": 0
+      }
+    ],
+    "total_errors": 3045,
+    "notes": [
+      "Categories derived from unmodified QA.2A error_classifier frequency.",
+      "Stirrup / side-face / development-length buckets remain 0 unless future classifiers emit dedicated types (formulas unchanged)."
+    ]
+  },
+  "generalization_assessment": {
+    "engineering_strengths": [
+      "Pipeline completes end-to-end on completely unseen DXF sets"
+    ],
+    "engineering_weaknesses": [
+      "Beam detection drops on unseen projects",
+      "Steel accuracy degrades on unseen projects",
+      "Bar matching is the primary generalization gap",
+      "Bar detection incomplete on unseen reinforcement plans"
+    ],
+    "largest_failure_modes": [
+      "Missing bars (2235)",
+      "Diameter mismatch (356)",
+      "Extra bars (255)",
+      "Ownership issues (105)",
+      "Missing beams (81)"
+    ],
+    "recommended_engineering_improvements": [
+      "Improve bar-role / diameter matching on unfamiliar annotation styles",
+      "Harden beam discovery for novel mark naming / framing conventions",
+      "Review ownership / shared-scope edge cases that drive Missing Bar / Extra Bar",
+      "Investigate diameter mismatches before changing weight formulas",
+      "Keep production DXF-only; use these GT gaps to prioritize Version10 engineering work"
+    ]
+  },
+  "production": {
+    "elapsed_s": 1146.47,
+    "sets": [
+      {
+        "drawing_set": "Fourth Set Drawings",
+        "set_key": "Fourth",
+        "success": true,
+        "reuse_detected": false,
+        "pipeline_elapsed_s": 1.32,
+        "run_id": "qa2_Fourth_Set_Drawings_20260806_121946",
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      },
+      {
+        "drawing_set": "Fifth Set Drawings",
+        "set_key": "Fifth",
+        "success": true,
+        "reuse_detected": false,
+        "pipeline_elapsed_s": 9979.18,
+        "run_id": "qa2_Fifth_Set_Drawings_20260806_142822",
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      },
+      {
+        "drawing_set": "Sixth Set Drawings",
+        "set_key": "Sixth",
+        "success": true,
+        "reuse_detected": false,
+        "pipeline_elapsed_s": 1137.86,
+        "run_id": "qa2_Sixth_Set_Drawings_20260806_171449",
+        "model_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      }
+    ]
+  },
+  "benchmark": {
+    "model_version": "9.1.0",
+    "phase": "QA.2A",
+    "total_drawing_sets": 3,
+    "production_runs_completed": 3,
+    "model_workbooks_generated": 3,
+    "total_beams": 475,
+    "detected_beams": 394,
+    "correct_beams": 394,
+    "total_bars": 3317,
+    "detected_bars": 1527,
+    "correct_bars": 561,
+    "missing_bars": 1790,
+    "beam_detection_pct": 82.95,
+    "bar_detection_pct": 46.04,
+    "bar_accuracy_pct": 36.74,
+    "steel_accuracy_pct": 72.21,
+    "diameter_accuracy_pct": 36.74,
+    "overall_accuracy_pct": 59.48,
+    "average_pipeline_runtime_s": 3706.12,
+    "validation_status": "PASS",
+    "recommendation": "A \u2014 Ground-truth framework operational; prioritize top error categories for Version9 accuracy work."
+  },
+  "statistics": {
+    "drawing_sets": 3,
+    "pipelines_ok": 3,
+    "avg_runtime_s": 3706.12,
+    "overall_accuracy_pct": 59.48,
+    "total_errors": 3045
+  }
+}

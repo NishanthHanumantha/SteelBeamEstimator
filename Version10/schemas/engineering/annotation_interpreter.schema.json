@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnnotationInterpreter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["annotation_id", "region_id", "interpretation", "confidence"],
+  "properties": {
+    "annotation_id": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string"
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    }
+  }
+}

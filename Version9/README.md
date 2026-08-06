@@ -1,6 +1,8 @@
+> **FROZEN.** Do **not** add features here. Continue work in **`Version10/`**. See `VERSION_FREEZE.md`.
+
 # Steel Beam Estimator — Version 9
 
-**Active development branch.** Forked from frozen **Version 8** (`v8.9.5`).
+**FROZEN.** Successor is **Version10**. Originally forked from frozen **Version 8** (`v8.9.5`).
 
 **Purpose:** Improve estimation **accuracy** by improving reinforcement
 identification and interpretation — without changing the certified Version 8

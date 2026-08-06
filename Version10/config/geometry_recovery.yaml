@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase L.2.2 — Engineering Geometry Recovery & Beam Coverage Validation
+# MODEL_VERSION: 6.4.2
+# ─────────────────────────────────────────────────────────────────────────────
+
+enable: true
+
+# Recovery engine settings
+recovery:
+  # Attempt geometry recovery for beams with zero bars
+  recover_missing_bars: true
+  # Minimum confidence required to mark a beam as RECOVERED (vs FAILED)
+  min_confidence_threshold: 0.50
+  # Use V5 beam schedule as primary geometry source
+  use_beam_schedule: true
+  # Use V5 engineering objects as geometry source
+  use_engineering_objects: true
+  # Generate placeholder reinforcement bars for recovered beams
+  generate_placeholder_bars: true
+  # Default bar diameter for placeholder bottom main bars (mm)
+  default_bottom_dia_mm: 20.0
+  # Default bar diameter for placeholder top main bars (mm)
+  default_top_dia_mm: 16.0
+  # Default stirrup diameter (mm)
+  default_stirrup_dia_mm: 8.0
+  # Default stirrup spacing (mm)
+  default_stirrup_spacing_mm: 150.0
+
+# Coverage validator settings
+coverage:
+  # Fail if coverage drops below this percentage after recovery
+  minimum_coverage_percent: 100.0
+  # Include V5 engineering objects as a coverage source
+  include_engineering_objects: true
+  # Include V5 beam schedule as a coverage source
+  include_specifications: true
+
+# Pipeline consistency settings
+consistency:
+  # Raise PIPELINE_COVERAGE_ERROR on any rule failure (post-recovery)
+  strict_mode: true
+  # Expected total beam count for this drawing
+  expected_beam_count: 18
+
+# Retrigger Phase L.2.1 after recovery
+retrigger_l21: true
+
+# Output files
+output:
+  geometry_registry: geometry_registry.json
+  recovery_report: geometry_recovery_report.json
+  coverage_matrix: beam_coverage_matrix.json
+  pipeline_validation: pipeline_validation_report.json
+  traceability_map: geometry_traceability_map.json
+  extended_models: extended_beam_reinforcement_models.json
+
+# Reporting
+reporting:
+  verbose: true
+  include_pre_recovery_state: true
+  include_traceability_map: true

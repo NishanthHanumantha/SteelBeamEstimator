@@ -1,0 +1,267 @@
+# Phase R.2.1A — Engineering Semantic Dictionary Engine
+# MODEL_VERSION: 7.10.0
+# TYPE: READ-ONLY ENGINEERING KNOWLEDGE FOUNDATION
+# Configuration-driven vocabulary — no Python code changes for new conventions
+
+model_version: "7.10.0"
+phase: "R.2.1A"
+dictionary_version: "1.0.0"
+
+paths:
+  inventory: "data/output/PhaseR2.0.1_engineering_notation_inventory/engineering_notation_inventory.json"
+  priorities: "data/output/PhaseR2.0.1_engineering_notation_inventory/implementation_priority.json"
+  output_dir: "data/output/PhaseR2.1A_engineering_semantic_dictionary"
+
+source: "R2.0.1_INVENTORY"
+future_phase_default: "R.2.1B"
+
+# ---------------------------------------------------------------------------
+# Engineering vocabulary: alias patterns -> canonical engineering_meaning
+# Aliases are matched case-insensitively after normalization.
+# ---------------------------------------------------------------------------
+vocabulary:
+  SIDE_FACE_REINFORCEMENT:
+    aliases: ["S.F.R.", "SFR", "S.F.R", "SIDE FACE REINF", "SIDE FACE REINFORCEMENT"]
+    category: REINFORCEMENT_ROLE
+    engineering_role: SIDE_FACE
+    position: BOTH_FACES
+    quantity_multiplier: 1
+    priority: HIGH
+    description: "Side Face Reinforcement"
+    future_phase: R.2.1B
+
+  ONE_EACH_FACE:
+    aliases: ["O.E.F.", "OEF", "O.E.F", "(O.E.F)", "(O.E.F.)", "ONE EACH FACE", "ONE EACH FACE"]
+    category: MODIFIER
+    engineering_role: null
+    position: EACH_FACE
+    quantity_multiplier: 1
+    priority: HIGH
+    description: "One bar each face (quantity/face modifier)"
+    future_phase: R.2.1B
+
+  BOTH_FACE:
+    aliases: ["BOTH FACE", "BOTH FACES", "ON BOTH FACE", "ON BOTH FACES"]
+    category: POSITION
+    engineering_role: null
+    position: BOTH_FACES
+    quantity_multiplier: 2
+    priority: HIGH
+    description: "Reinforcement on both faces"
+    future_phase: R.2.1B
+
+  NEAR_FACE:
+    aliases: ["NEAR FACE", "N.F.", "NF", "N.F"]
+    category: POSITION
+    engineering_role: null
+    position: NEAR_FACE
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Near face position"
+    future_phase: R.2.1B
+
+  FAR_FACE:
+    aliases: ["FAR FACE", "F.F.", "FF", "F.F"]
+    category: POSITION
+    engineering_role: null
+    position: FAR_FACE
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Far face position"
+    future_phase: R.2.1B
+
+  TOP:
+    aliases: ["TOP"]
+    category: POSITION
+    engineering_role: null
+    position: TOP
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Top position"
+    future_phase: R.2.1B
+
+  BOTTOM:
+    aliases: ["BOT", "BOTTOM"]
+    category: POSITION
+    engineering_role: null
+    position: BOTTOM
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Bottom position"
+    future_phase: R.2.1B
+
+  U_BAR:
+    aliases: ["U-BAR", "UBAR", "(U-BAR)", "U BAR"]
+    category: REINFORCEMENT_ROLE
+    engineering_role: U_BAR
+    position: null
+    quantity_multiplier: 1
+    priority: HIGH
+    description: "U-bar reinforcement"
+    future_phase: R.2.1B
+
+  TYPICAL:
+    aliases: ["TYP.", "TYP", "(TYP)", "TYPICAL"]
+    category: DRAWING
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Typical detail annotation"
+    future_phase: R.2.1B
+
+  CONTINUOUS:
+    aliases: ["CONT", "CONT.", "CONTINUOUS"]
+    category: DRAWING
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Continuous annotation"
+    future_phase: R.2.1B
+
+  DEVELOPMENT_LENGTH:
+    aliases: ["Ld", "LD", "DEV", "DEVELOPMENT"]
+    category: DEVELOPMENT
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Development length notation"
+    future_phase: R.2.1B
+
+  LAP:
+    aliases: ["Lap", "LAP"]
+    category: DEVELOPMENT
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Lap splice notation"
+    future_phase: R.2.1B
+
+  HOOK:
+    aliases: ["Hook", "HOOK"]
+    category: DEVELOPMENT
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Hook detailing"
+    future_phase: R.2.1B
+
+  ANCHORAGE:
+    aliases: ["Anchor", "ANCHOR", "ANCHORAGE"]
+    category: DEVELOPMENT
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Anchorage notation"
+    future_phase: R.2.1B
+
+  CRANK:
+    aliases: ["Crank", "CRANK"]
+    category: DEVELOPMENT
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Crank detailing"
+    future_phase: R.2.1B
+
+  SPACER:
+    aliases: ["Spacer", "SPACER", "S.P."]
+    category: REINFORCEMENT_ROLE
+    engineering_role: SPACER
+    position: null
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Spacer / support bar"
+    future_phase: R.2.1B
+
+  FACE:
+    aliases: ["FACE"]
+    category: POSITION
+    engineering_role: null
+    position: FACE
+    quantity_multiplier: 1
+    priority: MEDIUM
+    description: "Generic face position"
+    future_phase: R.2.1B
+
+  T_AND_B:
+    aliases: ["T&B", "T & B"]
+    category: POSITION
+    engineering_role: null
+    position: TOP_AND_BOTTOM
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Top and bottom"
+    future_phase: R.2.1B
+
+# Pattern-based meanings for callouts (regex against normalized notation)
+pattern_meanings:
+  - pattern: "^\\d+L-[YyRrTt]\\d+@\\d+"
+    engineering_meaning: STIRRUP
+    category: SPACING
+    engineering_role: STIRRUP
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Multi-leg stirrup callout"
+
+  - pattern: "^[YyRrTt]\\d+@\\d+"
+    engineering_meaning: STIRRUP
+    category: SPACING
+    engineering_role: STIRRUP
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Stirrup spacing callout"
+
+  - pattern: "^\\d+-[YyRrTt]\\d+\\+\\d+[YyRrTt]\\d+"
+    engineering_meaning: TOP_MAIN
+    category: QUANTITY
+    engineering_role: MAIN_BAR
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Composite bar callout (regex-supported)"
+
+  - pattern: "^\\d+-[YyRrTt]\\d+$"
+    engineering_meaning: TOP_MAIN
+    category: QUANTITY
+    engineering_role: MAIN_BAR
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Standard N-YD bar callout (regex-supported)"
+
+  - pattern: "^[YyRrTt]\\d+$"
+    engineering_meaning: TOP_MAIN
+    category: QUANTITY
+    engineering_role: MAIN_BAR
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Grade-diameter notation"
+
+  - pattern: "^\\(\\d+[xX~]\\d+\\)$"
+    engineering_meaning: UNKNOWN
+    category: GEOMETRY
+    engineering_role: null
+    position: null
+    quantity_multiplier: 1
+    priority: LOW
+    description: "Beam section geometry label"
+
+defaults:
+  engineering_meaning: UNKNOWN
+  engineering_role: null
+  position: null
+  quantity_multiplier: 1
+  priority: LOW
+  confidence: MEDIUM
+  future_phase: R.2.1B
+  description: "Unmapped engineering notation"

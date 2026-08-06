@@ -1,0 +1,64 @@
+QA.3.0 — STATUS AS OF 2026-08-06 EVENING
+MODEL_VERSION: 10.0.0
+
+PHASE STATUS: COMPLETE (success=True, QA overall_pass=True)
+
+SAVED ON DISK (safe to sleep / shut down)
+----------------------------------------
+Folder:
+  Version10/data/output/PhaseQA30_unseen_benchmark/
+
+Key reports:
+  - Generalization_Benchmark_Report.xlsx / .json
+  - GeneralizationSummary.md
+  - QA30Validation.json
+  - EngineeringErrorSummary.json
+  - ExecutionSummary.md
+  - PhaseQA30_result.json
+
+Per-set production artefacts:
+  - Fourth_Set_Drawings/  workbook + 76 crops
+  - Fifth_Set_Drawings/   workbook + 143 crops
+  - Sixth_Set_Drawings/   workbook + 143 crops
+
+Web runs (do not delete):
+  - qa2_Fourth_Set_Drawings_20260806_121946
+  - qa2_Fifth_Set_Drawings_20260806_142822
+  - qa2_Sixth_Set_Drawings_20260806_171449
+
+Headline metrics
+----------------
+  Beam Detection : 82.95%
+  Bar Detection  : 46.04%
+  Bar Matching   : 36.74%
+  Steel Accuracy : 72.21%
+  Overall        : 59.48%
+  Beams (GT)     : 475
+
+BEFORE YOU LEAVE TODAY
+----------------------
+1. Close Cursor if you want.
+2. Sleep or shut down the laptop — OK.
+3. Do NOT delete Version10/data/output/PhaseQA30_unseen_benchmark/
+4. Do NOT delete Version10/data/web_runs/qa2_* folders
+5. Optional: ask the agent to git-commit Version10 QA.3.0 package/code
+   (outputs under data/ are usually gitignored)
+
+TOMORROW — RESUME
+-----------------
+QA.3.0 itself does NOT need to be re-run.
+
+Suggested start:
+1. Open Cursor → SteelBeamEstimator
+2. Read:
+   Version10/data/output/PhaseQA30_unseen_benchmark/GeneralizationSummary.md
+3. Decide next Version10 engineering work from failure categories:
+   - Missing bars
+   - Diameter mismatch
+   - Extra bars
+   - Ownership issues
+   - Missing beams
+
+Only re-run QA.3.0 if you intentionally want a fresh full benchmark:
+  cd Version10
+  python Run_PY/run_phase_qa30_unseen_benchmark.py

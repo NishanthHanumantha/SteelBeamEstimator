@@ -1,0 +1,60 @@
+# Phase R.1 — Generalized Reinforcement Discovery Configuration
+# MODEL_VERSION: 9.2.0  (Version9 — DIMENSION text-override scan)
+
+model_version: "9.2.0"
+phase_id: "R.1"
+
+# ── Spatial search parameters ─────────────────────────────────────────────────
+geometry:
+  # Legacy fixed radius (used when r11a.enabled is false)
+  annotation_search_radius: 5000
+  min_search_radius: 8000
+  max_search_radius: 25000
+  neutral_zone_half_height: 200
+  max_dy_for_rebar: 6000
+
+# ── Phase R.1.1A — Adaptive association & coverage recovery ─────────────────────
+r11a:
+  enabled: true
+  min_search_radius: 8000
+  max_search_radius: 25000
+  leader_tail_tolerance: 500
+  association_score_threshold: 0.25
+  orphan_radius_multiplier: 1.35
+
+# ── Reinforcement annotation classification ──────────────────────────────────
+classification:
+  stirrup_max_diameter: 12
+  main_bar_min_diameter: 12
+  spacer_bar_max_diameter: 12
+  min_quantity: 1
+  high_confidence_min: 0.80
+  medium_confidence_min: 0.50
+
+# ── Beam detail discovery ─────────────────────────────────────────────────────
+discovery:
+  beam_registry_path: "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+  reinforcement_dxf_key: "reinforcement"
+  # 9.2.0 — include DIMENSION text overrides (e.g. stirrup callouts on -STR-RF-DIM).
+  # false → pre-patch TEXT/MTEXT-only behavior (flag-off equivalence).
+  enable_dimension_text_scan: true
+
+# ── Export paths ──────────────────────────────────────────────────────────────
+export:
+  output_dir: "data/output/PhaseR.1_generalized_reinforcement_discovery"
+  artefacts:
+    - beam_details.json
+    - reinforcement_annotations.json
+    - reinforcement_groups.json
+    - beam_reinforcement_models.json
+    - engineering_relationships.json
+    - reinforcement_statistics.json
+    - reinforcement_validation_report.json
+    - generalized_reinforcement_report.json
+
+# ── Validation ────────────────────────────────────────────────────────────────
+validation:
+  raise_on_failure: false
+  min_coverage_pct_warning: 30.0
+  min_beams_with_top_main: 50
+  min_beams_with_bottom_main: 50

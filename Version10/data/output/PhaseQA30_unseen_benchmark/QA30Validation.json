@@ -1,0 +1,85 @@
+{
+  "phase_id": "QA.3.0",
+  "model_version": "10.0.0",
+  "generated_at": "2026-08-06T15:04:26.693339+00:00",
+  "overall_pass": true,
+  "checks": [
+    {
+      "check": "all_three_unseen_sets_completed",
+      "pass": true,
+      "detail": "keys=['Fifth', 'Fourth', 'Sixth'] success=[True, True, True]"
+    },
+    {
+      "check": "fresh_production_executed",
+      "pass": true,
+      "detail": "n=3"
+    },
+    {
+      "check": "no_workbook_reuse",
+      "pass": true,
+      "detail": "reuse_detected_any=False"
+    },
+    {
+      "check": "estimator_excel_only_during_benchmark",
+      "pass": true,
+      "detail": "production=False benchmark=True"
+    },
+    {
+      "check": "version10_execution",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10"
+    },
+    {
+      "check": "production_pipeline_unchanged",
+      "pass": true,
+      "detail": "uses existing ProductionPipelineRunner (orchestration-only phase)"
+    },
+    {
+      "check": "generalization_report_generated",
+      "pass": true,
+      "detail": "{'json': 'C:\\\\Users\\\\nishanth.h\\\\SteelBeamEstimator\\\\Version10\\\\data\\\\output\\\\PhaseQA30_unseen_benchmark\\\\Generalization_Benchmark_Report.json', 'xlsx': 'C:\\\\Users\\\\nishanth.h\\\\SteelBeamEstimator\\\\Version10\\\\data\\\\output\\\\PhaseQA30_unseen_benchmark\\\\Generalization_Benchmark_Report.xlsx', 'md': 'C:\\\\Users\\\\nishanth.h\\\\SteelBeamEstimator\\\\Version10\\\\data\\\\output\\\\PhaseQA30_unseen_benchmark\\\\GeneralizationSummary.md'}"
+    },
+    {
+      "check": "discovery_complete",
+      "pass": true,
+      "detail": "['Fifth Set Drawings', 'Fourth Set Drawings', 'Sixth Set Drawings']"
+    },
+    {
+      "check": "benchmark_success",
+      "pass": true,
+      "detail": "compared=3"
+    },
+    {
+      "check": "fresh_workbook_Fourth",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\Estimation_Output.xlsx"
+    },
+    {
+      "check": "fresh_crops_Fourth",
+      "pass": true,
+      "detail": "pngs=76"
+    },
+    {
+      "check": "fresh_workbook_Fifth",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\Estimation_Output.xlsx"
+    },
+    {
+      "check": "fresh_crops_Fifth",
+      "pass": true,
+      "detail": "pngs=143"
+    },
+    {
+      "check": "fresh_workbook_Sixth",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\Estimation_Output.xlsx"
+    },
+    {
+      "check": "fresh_crops_Sixth",
+      "pass": true,
+      "detail": "pngs=143"
+    }
+  ],
+  "pass_count": 15,
+  "fail_count": 0
+}

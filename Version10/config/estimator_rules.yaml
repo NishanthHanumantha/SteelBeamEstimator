@@ -1,0 +1,16 @@
+# Phase E.2 — Estimator methodology defaults (independent of General Notes)
+# enable_spacer_rule is the only runtime switch read from this file for M.2.
+
+spacer:
+  enable_spacer_rule: true
+  # INFORMATIONAL ONLY — the engine HARDCODES dia=25 / spacing=1000
+  # per estimation-team ruling (SpacerBar_Computation). Editing these
+  # values has NO EFFECT. Do not wire them into the engine.
+  diameter_mm: 25
+  spacing_mm: 1000
+
+steel:
+  unit_weight_formula: "d2/162"
+
+rounding:
+  precision: 3

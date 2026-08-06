@@ -30,3 +30,7 @@ local webapp `logs/` / `uploads/` / `outputs/`, Version8-only docs recaps,
 
 - `Steel-Beam-Estimation/docs/Production_Architecture_8.9.5.md`
 - `Steel-Beam-Estimation/docs/Phase_D.5.6_Production_Validation_Cleanup.md`
+
+## Later successor
+
+Accuracy work moved from Version9 to **Version10** (2026-08-06). Version8 remains the certified production baseline; Version9 remains the completed 9.x accuracy branch.
