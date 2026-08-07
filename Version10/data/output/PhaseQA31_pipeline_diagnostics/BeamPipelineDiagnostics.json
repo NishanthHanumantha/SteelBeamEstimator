@@ -1,0 +1,3641 @@
+{
+  "phase_id": "QA.3.1",
+  "model_version": "10.0.1",
+  "generated_at": "2026-08-07T05:42:13.733227+00:00",
+  "engine_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10",
+  "drawing_set": "Fourth Set Drawings",
+  "set_key": "Fourth",
+  "run_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946",
+  "reinforcement_dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\reinforcement\\SE-204_BASEMENT-01 FLOOR BEAM REINFORCEMENT DETAILS(SH-01 TO 03).dxf",
+  "beam_ids": [
+    "B14",
+    "B15",
+    "B16",
+    "B18",
+    "B19",
+    "B22",
+    "B23",
+    "B29",
+    "B42A",
+    "B45",
+    "B46"
+  ],
+  "production_regenerated": false,
+  "estimator_used_for_ownership": false,
+  "engineering_modules_modified": false,
+  "read_only": true,
+  "beams": [
+    {
+      "beam_id": "B14",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B14",
+          "detected_beam_label": "B14",
+          "geometry_found": true,
+          "beam_length": 3865.34,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31645069.84,
+            -21126388.47,
+            31648469.84,
+            -21122523.13
+          ],
+          "expanded_extents": {
+            "x0": 31645069.84,
+            "x1": 31648469.84,
+            "y0": -21124182.283,
+            "y1": -21122631.378
+          },
+          "final_crop_window": [
+            31643191.30068,
+            -21126726.182873327,
+            31665238.75832,
+            -21121829.346210063
+          ],
+          "crop_padding": {
+            "horizontal_mm": 1520.514319999814,
+            "vertical_mm": 337.7128733286262,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 34,
+          "bars": 8,
+          "leaders": 6,
+          "annotations": 7,
+          "polylines": 0,
+          "lines": 18,
+          "mtext": 2,
+          "text": 4,
+          "dimensions": 4,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 52.94,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31643191.30068,
+            -21126726.182873327,
+            31665238.75832,
+            -21121829.346210063
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 8,
+          "rejected_bars": 0,
+          "owned_leaders": 11,
+          "rejected_leaders": 2,
+          "owned_annotations": 6,
+          "rejected_annotations": 1,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 85.71,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-1ccca39c",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y16"
+            },
+            {
+              "entity_id": "ANN-1ccca39c",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::FC909F97",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234484",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344D4",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11C8901",
+              "entity_type": "MTEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123448D",
+              "entity_type": "DIMENSION",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,layer_stirup,dimension_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "121366C",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,annotation_text_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344D3",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "121366B",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.82,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12135CA",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234477",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.65,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234497",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240D04",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.34,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234487",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.31,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234476",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234479",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234488",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.23,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344D0",
+              "entity_type": "DIMENSION",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,dimension_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 6,
+            "shared": 0,
+            "effective": 6
+          },
+          "notes": "rejected_ann=1 rejected_bars=0 rejected_leaders=2"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4L-Y10@100/175/100C/C",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "2-Y16",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "2-Y16",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "2-Y12",
+              "leader_target": null,
+              "associated_beam": "B14",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y16",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 1,
+          "accepted_count": 6,
+          "rejected_count": 1,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 20,
+          "rendered_entities_count": 6,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B14_render.png"
+          ],
+          "rejected_annotation_count": 1,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=1 rejected_bars=0 rejected_leaders=2",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B14_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B14_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B14_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B15",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B15",
+          "detected_beam_label": "B15",
+          "geometry_found": true,
+          "beam_length": 3400.0,
+          "beam_width": 2539.83,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31651830.34,
+            -21125930.92,
+            31655230.34,
+            -21123391.09
+          ],
+          "expanded_extents": {
+            "x0": 31651830.34,
+            "x1": 31655230.34,
+            "y0": -21123611.378,
+            "y1": -21123431.378
+          },
+          "final_crop_window": [
+            31643388.02308,
+            -21126134.1064,
+            31665157.79992,
+            -21123187.9036
+          ],
+          "crop_padding": {
+            "horizontal_mm": 1501.3639200001955,
+            "vertical_mm": 203.18640000015498,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 15,
+          "bars": 3,
+          "leaders": 6,
+          "annotations": 7,
+          "polylines": 0,
+          "lines": 7,
+          "mtext": 1,
+          "text": 3,
+          "dimensions": 1,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 60.0,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31643388.02308,
+            -21126134.1064,
+            31665157.79992,
+            -21123187.9036
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 3,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 8,
+          "owned_annotations": 3,
+          "rejected_annotations": 4,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 42.86,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-9d3b965f",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y20"
+            },
+            {
+              "entity_id": "ANN-d910b071",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "2-Y16"
+            },
+            {
+              "entity_id": "ANN-66b919f1",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-c569e3e8",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "7-Y20"
+            },
+            {
+              "entity_id": "ANN-9d3b965f",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-d910b071",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-66b919f1",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-c569e3e8",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::798CE590",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::749B70DC",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::8534C4B8",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::167CC70D",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344CF",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234482",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.49,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344CE",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449A",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.75,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234476",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234479",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=4 rejected_bars=0 rejected_leaders=8"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y8@100/125/100C/C",
+              "leader_target": null,
+              "associated_beam": "B15",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B15",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "2-Y12",
+              "leader_target": null,
+              "associated_beam": "B15",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "2-Y16",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "7-Y20",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 4,
+          "accepted_count": 3,
+          "rejected_count": 4,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 9,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B15_render.png"
+          ],
+          "rejected_annotation_count": 4,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=4 rejected_bars=0 rejected_leaders=8",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B15_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B15_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B15_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B16",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B16",
+          "detected_beam_label": "B16",
+          "geometry_found": true,
+          "beam_length": 3808.83,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31658475.34,
+            -21126331.96,
+            31661875.34,
+            -21122523.13
+          ],
+          "expanded_extents": {
+            "x0": 31658475.34,
+            "x1": 31661875.34,
+            "y0": -21123611.378,
+            "y1": -21122631.378
+          },
+          "final_crop_window": [
+            31643258.878439996,
+            -21126665.15207333,
+            31665233.75256,
+            -21121833.86701006
+          ],
+          "crop_padding": {
+            "horizontal_mm": 1515.508560000062,
+            "vertical_mm": 333.1920733287931,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 38,
+          "bars": 8,
+          "leaders": 8,
+          "annotations": 9,
+          "polylines": 0,
+          "lines": 20,
+          "mtext": 2,
+          "text": 6,
+          "dimensions": 2,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 50.0,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31643258.878439996,
+            -21126665.15207333,
+            31665233.75256,
+            -21121833.86701006
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 8,
+          "rejected_bars": 0,
+          "owned_leaders": 10,
+          "rejected_leaders": 7,
+          "owned_annotations": 6,
+          "rejected_annotations": 3,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 66.67,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-26e9834b",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y20"
+            },
+            {
+              "entity_id": "ANN-9cfeb712",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-b98a0bbe",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "2-Y16"
+            },
+            {
+              "entity_id": "ANN-26e9834b",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-9cfeb712",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-b98a0bbe",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::7A1FFD68",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::50092321",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::DE845955",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::49842AC8",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11C8925",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.14,distance_to_axis=564.1mm,parallel_to_axis,inside_bottom_bar_band,inside_stirrup_band",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344C6",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344E5",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240D46",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240D42",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.61,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123447E",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.58,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11C8932",
+              "entity_type": "MTEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234489",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.45,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344C5",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344C7",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240CCB",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240D45",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1240CCA",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.82,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344D9",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.51,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449E",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.45,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344B8",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234480",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.27,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449F",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344E2",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.28,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 6,
+            "shared": 0,
+            "effective": 6
+          },
+          "notes": "rejected_ann=3 rejected_bars=0 rejected_leaders=7"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4L-Y10@100C/C",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "2-Y12",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "2-Y16+2-Y20",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "describes_owned_bar_in_reach"
+            },
+            {
+              "annotation_text": "2-Y16",
+              "leader_target": null,
+              "associated_beam": "B16",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "2-Y16",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 3,
+          "accepted_count": 6,
+          "rejected_count": 3,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 20,
+          "rendered_entities_count": 6,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B16_render.png"
+          ],
+          "rejected_annotation_count": 3,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=3 rejected_bars=0 rejected_leaders=7",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B16_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B16_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B16_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B18",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B18",
+          "detected_beam_label": "B18",
+          "geometry_found": true,
+          "beam_length": 3287.25,
+          "beam_width": 3240.54,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31666306.62,
+            -21126331.63,
+            31669593.87,
+            -21123091.09
+          ],
+          "expanded_extents": {
+            "x0": 31666306.62,
+            "x1": 31669593.87,
+            "y0": -21123311.378,
+            "y1": -21123131.378
+          },
+          "final_crop_window": [
+            31663639.599600002,
+            -21126590.8732,
+            31671473.2304,
+            -21122831.8468
+          ],
+          "crop_padding": {
+            "horizontal_mm": 540.2503999999166,
+            "vertical_mm": 259.2431999999285,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 18,
+          "bars": 5,
+          "leaders": 6,
+          "annotations": 7,
+          "polylines": 0,
+          "lines": 8,
+          "mtext": 1,
+          "text": 3,
+          "dimensions": 2,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 55.56,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31663639.599600002,
+            -21126590.8732,
+            31671473.2304,
+            -21122831.8468
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 1,
+          "rejected_bars": 4,
+          "owned_leaders": 5,
+          "rejected_leaders": 8,
+          "owned_annotations": 3,
+          "rejected_annotations": 4,
+          "owned_bar_pct": 20.0,
+          "rejected_bar_pct": 80.0,
+          "annotation_ownership_pct": 42.86,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-897214b9",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y20"
+            },
+            {
+              "entity_id": "ANN-12d3dba4",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "2-Y25"
+            },
+            {
+              "entity_id": "ANN-bcae4d6e",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "2-Y25"
+            },
+            {
+              "entity_id": "ANN-9d3c42f8",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y20"
+            },
+            {
+              "entity_id": "ANN-897214b9",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-12d3dba4",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-bcae4d6e",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-9d3c42f8",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "BAR::59B0AF37",
+              "entity_type": "bar",
+              "distance_from_beam": null,
+              "reason_rejected": "bar_y_outside_reinforcement_elevation",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "BAR::A5E16B4D",
+              "entity_type": "bar",
+              "distance_from_beam": null,
+              "reason_rejected": "bar_y_outside_reinforcement_elevation",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "BAR::7CD782B5",
+              "entity_type": "bar",
+              "distance_from_beam": null,
+              "reason_rejected": "bar_y_outside_reinforcement_elevation",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "BAR::1D706A9A",
+              "entity_type": "bar",
+              "distance_from_beam": null,
+              "reason_rejected": "bar_y_outside_reinforcement_elevation",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::0A172EB7",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::FCC2C11A",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::77270BAC",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::1EDDB869",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344CA",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344C9",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344CB",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344B7",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.79,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449D",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.78,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1234480",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.26,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449F",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.26,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344E2",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.27,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=4 rejected_bars=4 rejected_leaders=8"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B18",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4L-Y10@100/150/100C/C",
+              "leader_target": null,
+              "associated_beam": "B18",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y16",
+              "leader_target": null,
+              "associated_beam": "B18",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "2-Y25",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "2-Y25",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 1,
+          "accepted_count": 3,
+          "rejected_count": 4,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 7,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B18_render.png"
+          ],
+          "rejected_annotation_count": 4,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=4 rejected_bars=4 rejected_leaders=8",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B18_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B18_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B18_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B19",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B19",
+          "detected_beam_label": "B19",
+          "geometry_found": true,
+          "beam_length": 5391.36,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31648280.77,
+            -21131172.28,
+            31651680.77,
+            -21125780.92
+          ],
+          "expanded_extents": {
+            "x0": 31648280.77,
+            "x1": 31651680.77,
+            "y0": -21126277.51,
+            "y1": -21126097.51
+          },
+          "final_crop_window": [
+            31643941.9442,
+            -21131603.588800002,
+            31656772.5708,
+            -21125349.6112
+          ],
+          "crop_padding": {
+            "horizontal_mm": 884.8707999998331,
+            "vertical_mm": 431.3087999999523,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 18,
+          "bars": 3,
+          "leaders": 7,
+          "annotations": 9,
+          "polylines": 0,
+          "lines": 8,
+          "mtext": 0,
+          "text": 5,
+          "dimensions": 1,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 50.0,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31643941.9442,
+            -21131603.588800002,
+            31656772.5708,
+            -21125349.6112
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 3,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 11,
+          "owned_annotations": 3,
+          "rejected_annotations": 6,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 33.33,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-ceb59daf",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN",
+              "text": "7-Y20"
+            },
+            {
+              "entity_id": "ANN-2be5bdb3",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4L-Y10@100/150/100C/C"
+            },
+            {
+              "entity_id": "ANN-200a87b5",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-ebe65b4a",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-828063a0",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-8e4c4205",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "2-Y20"
+            },
+            {
+              "entity_id": "ANN-ceb59daf",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "no_owned_leader_bar_chain",
+              "ownership_rule_responsible": "R3_ANNOTATION_VIA_CHAIN",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-2be5bdb3",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-200a87b5",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-ebe65b4a",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-828063a0",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "ANN-8e4c4205",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::4D6F2B85",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::056CE421",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::1EE8C99E",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::027AB042",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::C82E1DB9",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C01",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C3B",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_text_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C00",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C3A",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "123449C",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.77,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BDF",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C38",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.23,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BA4",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.15,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BA7",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.16,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=6 rejected_bars=0 rejected_leaders=11"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y10@100/150/100C/C",
+              "leader_target": null,
+              "associated_beam": "B19",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "7-Y20",
+              "leader_target": null,
+              "associated_beam": "B19",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "6-Y25",
+              "leader_target": null,
+              "associated_beam": "B19",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "7-Y20",
+              "leader_target": null,
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "no_owned_leader_bar_chain"
+            },
+            {
+              "annotation_text": "4L-Y10@100/150/100C/C",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            },
+            {
+              "annotation_text": "2-Y20",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 5,
+          "accepted_count": 3,
+          "rejected_count": 6,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 9,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B19_render.png"
+          ],
+          "rejected_annotation_count": 6,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=6 rejected_bars=0 rejected_leaders=11",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B19_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B19_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B19_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B22",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B22",
+          "detected_beam_label": "B22",
+          "geometry_found": true,
+          "beam_length": 5391.36,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31659632.97,
+            -21131172.28,
+            31663032.97,
+            -21125780.92
+          ],
+          "expanded_extents": {
+            "x0": 31659632.97,
+            "x1": 31663032.97,
+            "y0": -21126127.51,
+            "y1": -21125947.51
+          },
+          "final_crop_window": [
+            31656511.799080003,
+            -21131603.588800002,
+            31670973.48892,
+            -21125349.6112
+          ],
+          "crop_padding": {
+            "horizontal_mm": 997.3579199999571,
+            "vertical_mm": 431.3087999999523,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 14,
+          "bars": 3,
+          "leaders": 3,
+          "annotations": 4,
+          "polylines": 0,
+          "lines": 6,
+          "mtext": 0,
+          "text": 4,
+          "dimensions": 1,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 64.29,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31656511.799080003,
+            -21131603.588800002,
+            31670973.48892,
+            -21125349.6112
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 3,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 2,
+          "owned_annotations": 3,
+          "rejected_annotations": 1,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 75.0,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-bf887457",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y25"
+            },
+            {
+              "entity_id": "ANN-bf887457",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::11835717",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C05",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239C04",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BDD",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.52,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BA4",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.15,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BA7",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.16,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=1 rejected_bars=0 rejected_leaders=2"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y10@100/125/100C/C",
+              "leader_target": null,
+              "associated_beam": "B22",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B22",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B22",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 1,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 9,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B22_render.png"
+          ],
+          "rejected_annotation_count": 1,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=1 rejected_bars=0 rejected_leaders=2",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B22_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B22_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B22_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B23",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B23",
+          "detected_beam_label": "B23",
+          "geometry_found": true,
+          "beam_length": 5658.16,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31665525.97,
+            -21131172.28,
+            31668925.97,
+            -21125514.12
+          ],
+          "expanded_extents": {
+            "x0": 31665525.97,
+            "x1": 31668925.97,
+            "y0": -21126127.51,
+            "y1": -21125464.12
+          },
+          "final_crop_window": [
+            31656372.799080003,
+            -21131628.6616,
+            31671037.48892,
+            -21125011.1284
+          ],
+          "crop_padding": {
+            "horizontal_mm": 1011.3579199999571,
+            "vertical_mm": 456.38159999996424,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 15,
+          "bars": 6,
+          "leaders": 2,
+          "annotations": 2,
+          "polylines": 0,
+          "lines": 9,
+          "mtext": 0,
+          "text": 2,
+          "dimensions": 2,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 73.33,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31656372.799080003,
+            -21131628.6616,
+            31671037.48892,
+            -21125011.1284
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "PASS",
+          "owned_bars": 6,
+          "rejected_bars": 0,
+          "owned_leaders": 3,
+          "rejected_leaders": 0,
+          "owned_annotations": 2,
+          "rejected_annotations": 0,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 100.0,
+          "rejected_entities": [
+            {
+              "entity_id": "12344BA",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.18,distance_to_axis=523.8mm,parallel_to_axis,inside_top_bar_band,inside_stirrup_band",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12344C9",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.11,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BDC",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.32,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1241225",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.23,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 2,
+            "shared": 0,
+            "effective": 2
+          },
+          "notes": "rejected_ann=0 rejected_bars=0 rejected_leaders=0"
+        },
+        "Annotation Association": {
+          "status": "PASS",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y8@100/125/100C/C",
+              "leader_target": null,
+              "associated_beam": "B23",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B23",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 0,
+          "accepted_count": 2,
+          "rejected_count": 0,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 10,
+          "rendered_entities_count": 2,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B23_render.png"
+          ],
+          "rejected_annotation_count": 0,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "None",
+        "first_failing_stage": null,
+        "confidence": "Medium",
+        "confidence_score": 0.6,
+        "evidence_summary": [
+          "No FAIL stages detected in available artefacts"
+        ],
+        "secondary_contributors": [],
+        "all_pass": true
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B23_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B23_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B23_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B29",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B29",
+          "detected_beam_label": "B29",
+          "geometry_found": true,
+          "beam_length": 6324.52,
+          "beam_width": 3400.0,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31662793.47,
+            -21137096.8,
+            31666193.47,
+            -21130772.28
+          ],
+          "expanded_extents": {
+            "x0": 31662793.47,
+            "x1": 31666193.47,
+            "y0": -21132062.281,
+            "y1": -21130832.281
+          },
+          "final_crop_window": [
+            31642852.16396,
+            -21137635.2341202,
+            31668242.72304,
+            -21129827.939377278
+          ],
+          "crop_padding": {
+            "horizontal_mm": 1751.0730399999022,
+            "vertical_mm": 538.4341202017665,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 26,
+          "bars": 7,
+          "leaders": 3,
+          "annotations": 5,
+          "polylines": 0,
+          "lines": 20,
+          "mtext": 0,
+          "text": 1,
+          "dimensions": 3,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 38.46,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31642852.16396,
+            -21137635.2341202,
+            31668242.72304,
+            -21129827.939377278
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "PASS",
+          "owned_bars": 7,
+          "rejected_bars": 0,
+          "owned_leaders": 6,
+          "rejected_leaders": 2,
+          "owned_annotations": 5,
+          "rejected_annotations": 0,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 100.0,
+          "rejected_entities": [
+            {
+              "entity_id": "LDR::58F9C249",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::F05FF82C",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1239BA4",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "beam_window_x_overlap=0.15,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "124123F",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "overlap_pct=0.62,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12446F9",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.67,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC81D",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC81E",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12446F8",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC824",
+              "entity_type": "DIMENSION",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,layer_stirup,dimension_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "12446FB",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC873",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC828",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC839",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC820",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.20,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC822",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.20,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC81F",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.17,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC837",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.15,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CC838",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.17,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 5,
+            "shared": 0,
+            "effective": 5
+          },
+          "notes": "rejected_ann=0 rejected_bars=0 rejected_leaders=2"
+        },
+        "Annotation Association": {
+          "status": "PASS",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y10@100/150/100C/C",
+              "leader_target": null,
+              "associated_beam": "B29",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y25",
+              "leader_target": null,
+              "associated_beam": "B29",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "describes_owned_bar_in_reach"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B29",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "describes_owned_bar_in_reach"
+            },
+            {
+              "annotation_text": "4-Y25+2-Y16",
+              "leader_target": null,
+              "associated_beam": "B29",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4L-Y12@100C/C",
+              "leader_target": null,
+              "associated_beam": "B29",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            }
+          ],
+          "unattached_annotations": 1,
+          "unresolved_leaders": 0,
+          "accepted_count": 5,
+          "rejected_count": 0,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 17,
+          "rendered_entities_count": 5,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B29_render.png"
+          ],
+          "rejected_annotation_count": 0,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "None",
+        "first_failing_stage": null,
+        "confidence": "Medium",
+        "confidence_score": 0.6,
+        "evidence_summary": [
+          "No FAIL stages detected in available artefacts"
+        ],
+        "secondary_contributors": [],
+        "all_pass": true
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B29_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B29_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B29_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B42A",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B42A",
+          "detected_beam_label": "B42A",
+          "geometry_found": true,
+          "beam_length": 3400.0,
+          "beam_width": 2632.18,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31671934.23,
+            -21125155.31,
+            31675334.23,
+            -21122523.13
+          ],
+          "expanded_extents": {
+            "x0": 31671934.23,
+            "x1": 31675334.23,
+            "y0": -21123696.0825,
+            "y1": -21122631.378
+          },
+          "final_crop_window": [
+            31671068.5108,
+            -21125391.21160738,
+            31677339.1692,
+            -21121970.638300348
+          ],
+          "crop_padding": {
+            "horizontal_mm": 432.4592000001669,
+            "vertical_mm": 235.90160738140344,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 14,
+          "bars": 6,
+          "leaders": 2,
+          "annotations": 3,
+          "polylines": 0,
+          "lines": 7,
+          "mtext": 0,
+          "text": 3,
+          "dimensions": 2,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 92.86,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31671068.5108,
+            -21125391.21160738,
+            31677339.1692,
+            -21121970.638300348
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "PASS",
+          "owned_bars": 6,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 0,
+          "owned_annotations": 3,
+          "rejected_annotations": 0,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 100.0,
+          "rejected_entities": [
+            {
+              "entity_id": "1230CCE",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,distance_to_axis=706.4mm,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=0 rejected_bars=0 rejected_leaders=0"
+        },
+        "Annotation Association": {
+          "status": "PASS",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y8@1100C/C",
+              "leader_target": null,
+              "associated_beam": "B42A",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y16",
+              "leader_target": null,
+              "associated_beam": "B42A",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y16",
+              "leader_target": null,
+              "associated_beam": "B42A",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            }
+          ],
+          "unattached_annotations": 0,
+          "unresolved_leaders": 0,
+          "accepted_count": 3,
+          "rejected_count": 0,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 12,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B42A_render.png"
+          ],
+          "rejected_annotation_count": 0,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "None",
+        "first_failing_stage": null,
+        "confidence": "Medium",
+        "confidence_score": 0.6,
+        "evidence_summary": [
+          "No FAIL stages detected in available artefacts"
+        ],
+        "secondary_contributors": [],
+        "all_pass": true
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B42A_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B42A_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B42A_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B45",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B45",
+          "detected_beam_label": "B45",
+          "geometry_found": true,
+          "beam_length": 3974.18,
+          "beam_width": 3356.1,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31671842.21,
+            -21139984.85,
+            31675198.31,
+            -21136010.67
+          ],
+          "expanded_extents": {
+            "x0": 31671842.21,
+            "x1": 31675198.31,
+            "y0": -21137783.506,
+            "y1": -21136118.923
+          },
+          "final_crop_window": [
+            31671531.995360002,
+            -21140328.111216504,
+            31676030.10764,
+            -21135350.8235772
+          ],
+          "crop_padding": {
+            "horizontal_mm": 310.2146399998665,
+            "vertical_mm": 343.2612165039778,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 31,
+          "bars": 6,
+          "leaders": 3,
+          "annotations": 3,
+          "polylines": 0,
+          "lines": 20,
+          "mtext": 0,
+          "text": 3,
+          "dimensions": 3,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 54.84,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31671531.995360002,
+            -21140328.111216504,
+            31676030.10764,
+            -21135350.8235772
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "PASS",
+          "owned_bars": 6,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 0,
+          "owned_annotations": 3,
+          "rejected_annotations": 0,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 100.0,
+          "rejected_entities": [
+            {
+              "entity_id": "11CCBA6",
+              "entity_type": "ARC",
+              "distance_from_beam": null,
+              "reason_rejected": "inside_envelope,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDDFD",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDDFF",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.46,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE0C",
+              "entity_type": "DIMENSION",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,layer_stirup,dimension_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCBB7",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1246747",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCBB6",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.67,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE07",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE11",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE15",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.56,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDDFC",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.43,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE0D",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.43,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE0E",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.43,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "1246746",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.42,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=0 rejected_bars=0 rejected_leaders=0"
+        },
+        "Annotation Association": {
+          "status": "PASS",
+          "annotations": [
+            {
+              "annotation_text": "3L-Y10@100C/C",
+              "leader_target": null,
+              "associated_beam": "B45",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "3-Y25",
+              "leader_target": null,
+              "associated_beam": "B45",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "3-Y25",
+              "leader_target": null,
+              "associated_beam": "B45",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            }
+          ],
+          "unattached_annotations": 0,
+          "unresolved_leaders": 0,
+          "accepted_count": 3,
+          "rejected_count": 0,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 12,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B45_render.png"
+          ],
+          "rejected_annotation_count": 0,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "None",
+        "first_failing_stage": null,
+        "confidence": "Medium",
+        "confidence_score": 0.6,
+        "evidence_summary": [
+          "No FAIL stages detected in available artefacts"
+        ],
+        "secondary_contributors": [],
+        "all_pass": true
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B45_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B45_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B45_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    },
+    {
+      "beam_id": "B46",
+      "drawing_set": "Fourth Set Drawings",
+      "set_key": "Fourth",
+      "stages": {
+        "Beam Discovery": {
+          "status": "PASS",
+          "detected": true,
+          "expected_beam_label": "B46",
+          "detected_beam_label": "B46",
+          "geometry_found": true,
+          "beam_length": 4001.58,
+          "beam_width": 3356.11,
+          "beam_orientation": "HORIZONTAL",
+          "discovery_confidence": "MEDIUM",
+          "notes": ""
+        },
+        "Beam Extent": {
+          "status": "PASS",
+          "original_extents": [
+            31675198.31,
+            -21140012.25,
+            31678554.42,
+            -21136010.67
+          ],
+          "expanded_extents": {
+            "x0": 31675198.31,
+            "x1": 31678554.42,
+            "y0": -21137529.7365,
+            "y1": -21136168.923
+          },
+          "final_crop_window": [
+            31671577.243959997,
+            -21140332.3764,
+            31680024.58204,
+            -21135690.5436
+          ],
+          "crop_padding": {
+            "horizontal_mm": 582.5750400000811,
+            "vertical_mm": 320.126399999857,
+            "frac_x": 0.08,
+            "frac_y": 0.08,
+            "min_margin_mm": 80.0
+          },
+          "crop_clipping": {
+            "annotation_clipped": false,
+            "leader_clipped": false
+          },
+          "extent_source": "T182_RenderExtentQA",
+          "null_extent": false,
+          "notes": ""
+        },
+        "Crop Window": {
+          "status": "PASS",
+          "total_entities": 52,
+          "bars": 9,
+          "leaders": 4,
+          "annotations": 4,
+          "polylines": 0,
+          "lines": 35,
+          "mtext": 0,
+          "text": 4,
+          "dimensions": 5,
+          "blocks": 0,
+          "crop_excludes_required_entities": false,
+          "crop_utilisation_pct": 65.38,
+          "comparison_render_available": true,
+          "final_crop_window": [
+            31671577.243959997,
+            -21140332.3764,
+            31680024.58204,
+            -21135690.5436
+          ],
+          "notes": ""
+        },
+        "Ownership": {
+          "status": "FAIL",
+          "owned_bars": 9,
+          "rejected_bars": 0,
+          "owned_leaders": 5,
+          "rejected_leaders": 2,
+          "owned_annotations": 3,
+          "rejected_annotations": 1,
+          "owned_bar_pct": 100.0,
+          "rejected_bar_pct": 0.0,
+          "annotation_ownership_pct": 75.0,
+          "rejected_entities": [
+            {
+              "entity_id": "ANN-3aa2fdac",
+              "entity_type": "annotation",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN",
+              "text": "4-Y20"
+            },
+            {
+              "entity_id": "ANN-3aa2fdac",
+              "entity_type": "leader_chain",
+              "distance_from_beam": null,
+              "reason_rejected": "annotation_on_neighbour_side_of_mark",
+              "ownership_rule_responsible": "R5_NEIGHBOUR_REJECT",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "LDR::FE5B8017",
+              "entity_type": "leader",
+              "distance_from_beam": null,
+              "reason_rejected": "tip_outside_envelope_and_supports",
+              "ownership_rule_responsible": "R2_LEADER_TIP",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCD98",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "inside_envelope,distance_to_axis=183.8mm,tall_vertical_not_at_support,inside_stirrup_band",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCC75",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "overlap_pct=0.80,distance_to_axis=229.9mm,tall_vertical_not_at_support,inside_stirrup_band",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCC78",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis,inside_stirrup_band",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE46",
+              "entity_type": "TEXT",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,annotation_anchor_match,annotation_reference",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE3C",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.80,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE3A",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.78,parallel_to_axis,layer_reinf",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE49",
+              "entity_type": "DIMENSION",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,layer_stirup,dimension_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE45",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE47",
+              "entity_type": "LEADER",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.44,leader_tip_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE39",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE4A",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE4B",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE52",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE44",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE4E",
+              "entity_type": "LINE",
+              "distance_from_beam": null,
+              "reason_rejected": "in_envelope_outside_body,short_vertical_in_envelope",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CDE15",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.45,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCDA8",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            },
+            {
+              "entity_id": "11CCE1C",
+              "entity_type": "LWPOLYLINE",
+              "distance_from_beam": null,
+              "reason_rejected": "weak_overlap=0.00,parallel_to_axis",
+              "ownership_rule_responsible": "T16_LOW",
+              "rejection_expected": "UNKNOWN"
+            }
+          ],
+          "merged_counts": {
+            "owned": 3,
+            "shared": 0,
+            "effective": 3
+          },
+          "notes": "rejected_ann=1 rejected_bars=0 rejected_leaders=2"
+        },
+        "Annotation Association": {
+          "status": "FAIL",
+          "annotations": [
+            {
+              "annotation_text": "4L-Y10@\\X100/150/100C/C",
+              "leader_target": null,
+              "associated_beam": "B46",
+              "association_confidence": 0.6,
+              "rejected": false,
+              "reason": "stirrup_in_stirrup_region"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B46",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": null,
+              "associated_beam": "B46",
+              "association_confidence": 0.65,
+              "rejected": false,
+              "reason": "leader_bar_chain_owned"
+            },
+            {
+              "annotation_text": "4-Y20",
+              "leader_target": "BELOW_MARK_NEIGHBOUR",
+              "associated_beam": null,
+              "association_confidence": 0.0,
+              "rejected": true,
+              "reason": "annotation_on_neighbour_side_of_mark"
+            }
+          ],
+          "unattached_annotations": 0,
+          "unresolved_leaders": 1,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "notes": ""
+        },
+        "Rendering": {
+          "status": "PASS",
+          "owned_entities_count": 15,
+          "rendered_entities_count": 3,
+          "missing_rendered_entities": [],
+          "unexpected_rendered_entities": [],
+          "rendering_mismatch": "NO",
+          "render_utilisation_pct": 100.0,
+          "render_paths": [
+            "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B46_render.png"
+          ],
+          "rejected_annotation_count": 1,
+          "notes": ""
+        }
+      },
+      "root_cause": {
+        "primary_category": "Ownership",
+        "first_failing_stage": "Ownership",
+        "confidence": "High",
+        "confidence_score": 0.9,
+        "evidence_summary": [
+          "Ownership: FAIL rejected_ann=1 rejected_bars=0 rejected_leaders=2",
+          "Annotation Association: FAIL"
+        ],
+        "secondary_contributors": [
+          "Annotation Association"
+        ],
+        "all_pass": false
+      },
+      "artefacts": {
+        "comparison_pngs": {
+          "manual": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B46_manual.png",
+          "render": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B46_render.png",
+          "side_by_side": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseT182_adaptive_render_extent\\Comparison\\B46_side_by_side.png"
+        },
+        "has_geometry_envelope": true,
+        "has_beam_ownership": true,
+        "has_render_extent_qa": true,
+        "has_render_validation": true
+      },
+      "qa30_crosscheck": {
+        "listed_as_missing_beam": false
+      }
+    }
+  ],
+  "aggregate": {
+    "beams_analysed": 11,
+    "beams_diagnosable": 11,
+    "beams_with_missing_artefacts": 0,
+    "failure_frequency": {
+      "Beam Discovery": 0,
+      "Beam Extents": 0,
+      "Crop Window": 0,
+      "Ownership": 7,
+      "Annotation Association": 0,
+      "Rendering": 0,
+      "Mixed": 0,
+      "None (no stage FAIL)": 4
+    },
+    "averages": {
+      "average_owned_bar_pct": 92.73,
+      "average_rejected_bar_pct": 7.27,
+      "average_annotation_ownership_pct": 74.68,
+      "average_crop_utilisation_pct": 59.79,
+      "average_render_utilisation_pct": 100.0
+    },
+    "hypothesis": {
+      "ownership_or_scoping_before_render_is_dominant": true,
+      "renderer_mostly_faithful_to_owned_set": true,
+      "evidence_confidence": "High",
+      "ownership_fail_render_pass_count": 7
+    },
+    "top_primary_root_cause": "Ownership"
+  }
+}

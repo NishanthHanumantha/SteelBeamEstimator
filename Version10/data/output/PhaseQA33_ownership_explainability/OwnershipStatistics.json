@@ -1,0 +1,189 @@
+{
+  "phase_id": "QA.3.3",
+  "model_version": "10.0.3",
+  "generated_at": "2026-08-07T09:13:28.359421+00:00",
+  "engine_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10",
+  "drawing_set": "Fourth Set Drawings",
+  "set_key": "Fourth",
+  "run_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946",
+  "beam_ids": [
+    "B14",
+    "B15",
+    "B16",
+    "B18",
+    "B19",
+    "B22",
+    "B23",
+    "B29",
+    "B42A",
+    "B45",
+    "B46"
+  ],
+  "production_regenerated": false,
+  "engineering_modules_modified": false,
+  "ownership_decisions_mutated": false,
+  "estimation_rerun": false,
+  "read_only": true,
+  "rule_catalogue_exposed": true,
+  "aggregate": {
+    "beams_analysed": 11,
+    "candidate_discovery_rate": 189.3801,
+    "candidate_rejection_rate": 16.735,
+    "ownership_acceptance_rate": 58.1142,
+    "conflict_frequency": 16.3627,
+    "average_competing_beams_per_entity": 1.0,
+    "multi_beam_entity_count": 0,
+    "multi_beam_annotation_text_count": 17,
+    "average_ownership_score": 0.6427,
+    "average_rejection_score": 0.0,
+    "average_score_margin": 0.0,
+    "failure_frequency_by_category": {
+      "Conflict Resolution": 7,
+      "Mixed": 4
+    },
+    "most_common_rejection_reason": [
+      "annotation_on_neighbour_side_of_mark",
+      28
+    ],
+    "most_common_competing_beam_scenario": [
+      "3L-Y10@100C/C::B100+B101+B102+B103",
+      1
+    ],
+    "most_common_filtering_rule": [
+      "R5_NEIGHBOUR_REJECT",
+      32
+    ],
+    "top_rejection_reasons": [
+      [
+        "annotation_on_neighbour_side_of_mark",
+        28
+      ],
+      [
+        "tip_outside_envelope_and_supports",
+        22
+      ],
+      [
+        "no_owned_leader_bar_chain",
+        12
+      ],
+      [
+        "bar_y_outside_reinforcement_elevation",
+        4
+      ]
+    ],
+    "top_filtering_rules": [
+      [
+        "R5_NEIGHBOUR_REJECT",
+        32
+      ],
+      [
+        "R2_LEADER_TIP",
+        22
+      ],
+      [
+        "R3_ANNOTATION_VIA_CHAIN",
+        12
+      ]
+    ],
+    "top_competing_scenarios": [
+      [
+        "3L-Y10@100C/C::B100+B101+B102+B103",
+        1
+      ],
+      [
+        "4L-Y10@100/150/100C/C::B100A+B101A+B126+B136",
+        1
+      ],
+      [
+        "4-Y25::B100A+B101A+B122+B130",
+        1
+      ],
+      [
+        "3-Y25::B119+B120+B128+B130",
+        1
+      ],
+      [
+        "4-Y20::B120+B121+B122+B123",
+        1
+      ],
+      [
+        "2-Y16::B120+B129+B133+B133A",
+        1
+      ],
+      [
+        "4L-Y12@100C/C::B121+B122+B148+B165",
+        1
+      ],
+      [
+        "4L-Y10@100/125/100C/C::B123+B134A+B22+B78",
+        1
+      ],
+      [
+        "2-Y25::B123+B18+B51+B52",
+        1
+      ],
+      [
+        "4L-Y8@100/125/100C/C::B133+B134+B15+B152",
+        1
+      ]
+    ],
+    "top_failure_categories": [
+      [
+        "Conflict Resolution",
+        7
+      ],
+      [
+        "Mixed",
+        4
+      ]
+    ]
+  },
+  "recommendations": {
+    "priorities": [
+      {
+        "priority": 1,
+        "title": "Neighbour / conflict resolution rules (R5)",
+        "recommendation": "Most ownership shortfalls are neighbour-side rejects or multi-beam competition. QA.4.0 should focus on R5_NEIGHBOUR_REJECT / side_of_mark logic using these decision traces \u2014 without guessing.",
+        "engineering_impact": "High",
+        "expected_benchmark_improvement": "Expected: reduce false neighbour rejects; improve bar/annotation match on stacked beams",
+        "evidence": {
+          "top_failure_category": [
+            "Conflict Resolution",
+            7
+          ],
+          "most_common_rejection_reason": [
+            "annotation_on_neighbour_side_of_mark",
+            28
+          ],
+          "most_common_filtering_rule": [
+            "R5_NEIGHBOUR_REJECT",
+            32
+          ],
+          "ownership_acceptance_rate": 58.1142
+        }
+      },
+      {
+        "priority": 2,
+        "title": "Preserve decision-trace regression gates in QA.4.0",
+        "recommendation": "Any ownership change must keep EntityDecisionTrace outcomes explainable and must not silently alter decisions without a before/after trace diff.",
+        "engineering_impact": "Medium",
+        "expected_benchmark_improvement": "Process quality; prevents opaque regressions",
+        "evidence": {
+          "beams_analysed": 11
+        }
+      },
+      {
+        "priority": 3,
+        "title": "Separate Manual-crop GT issues (QA.3.2) from Ownership defects",
+        "recommendation": "QA.3.2 showed Manual crops are unreliable. Ownership improvements should be validated against decision traces and entity registries, not Manual PNG IoU alone.",
+        "engineering_impact": "Medium",
+        "expected_benchmark_improvement": "Cleaner measurement of true ownership gains",
+        "evidence": {
+          "conflict_frequency": 16.3627,
+          "average_score_margin": 0.0
+        }
+      }
+    ],
+    "summary": "top_fail=('Conflict Resolution', 7); top_reject=('annotation_on_neighbour_side_of_mark', 28); top_rule=('R5_NEIGHBOUR_REJECT', 32); accept_rate=58.1142"
+  }
+}

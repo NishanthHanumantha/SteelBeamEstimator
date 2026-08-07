@@ -1,0 +1,79 @@
+{
+  "phase_id": "QA.3.2",
+  "model_version": "10.0.2",
+  "generated_at": "2026-08-07T06:40:12.051310+00:00",
+  "aggregate": {
+    "beams_analysed": 11,
+    "manual_crops_fully_correct": 0,
+    "manual_crops_partially_correct": 4,
+    "manual_crops_incorrect": 7,
+    "category_counts": {
+      "A": 0,
+      "B": 4,
+      "C": 7
+    },
+    "status_counts": {
+      "VALID": 0,
+      "PARTIALLY VALID": 4,
+      "INVALID": 7
+    },
+    "average_crop_overlap": 100.0,
+    "average_iou": 0.3466,
+    "average_alignment_error": 2885.6845,
+    "average_centroid_error": 2885.6845,
+    "average_padding_error": 4667.8498,
+    "average_completeness_pct": 38.8036,
+    "average_beam_centering_pct": 100.0,
+    "average_whitespace_pct": 0.0,
+    "average_clipping_pct": 0.0,
+    "average_neighbour_intrusion_pct": 45.4545,
+    "regenerated_manual_crops": 11,
+    "qa31_trustworthy_beam_count": 0,
+    "baseline_trustworthy": false,
+    "dominant_finding": "manual_crops_are_regenerated_tight_envelopes_not_true_autocad_gt"
+  },
+  "recommendations": {
+    "priorities": [
+      {
+        "priority": 1,
+        "title": "Correct Manual Comparison Crop generation before Ownership work",
+        "recommendation": "Manual crops for unseen sets are regenerated from T1 geometry envelopes (tight beam bbox), not true AutoCAD ground-truth crops. Ownership investigation should be postponed until crop generation is corrected or a verified GT crop source is established.",
+        "evidence": {
+          "category_C": 7,
+          "category_B": 4,
+          "regenerated": 11,
+          "average_iou": 0.3466,
+          "average_completeness_pct": 38.8036
+        }
+      },
+      {
+        "priority": 2,
+        "title": "Coordinate / extent mismatch between Manual and Owned Render",
+        "recommendation": "Documented divergence: Manual uses geometry_envelopes.extent; Owned Render uses T182 computed_render_bbox. Align comparison baseline extent with the reinforcement context under evaluation.",
+        "evidence": {
+          "average_centroid_error": 2885.6845,
+          "average_padding_error": 4667.8498
+        }
+      },
+      {
+        "priority": 3,
+        "title": "Resume Ownership Engine investigation after GT baseline fix",
+        "recommendation": "Once Manual crops are trustworthy (Category A), re-run QA.3.1-style ownership diagnostics. Until then, QA.3.1 Ownership FAIL counts may mix true ownership defects with baseline crop defects.",
+        "evidence": {
+          "qa31_trustworthy_beam_count": 0
+        }
+      }
+    ],
+    "summary": "A=0 B=4 C=7; regenerated_manual=11/11; avg_iou=0.3466; avg_completeness=38.8036"
+  },
+  "answers": {
+    "1_correct_reinforcement_dxf_used": "11/11",
+    "2_correct_beam_located": "11/11",
+    "3_manual_crop_geometrically_correct": "1/11 fully match reconstructed",
+    "4_manual_contains_all_expected_entities": "0/11",
+    "5_coordinate_or_transform_error": "0/11 with notes/issues",
+    "6_manual_crop_trustworthy_ground_truth": false,
+    "7_qa31_ownership_diagnosis_can_be_trusted": false,
+    "8_pipeline_divergence": "manual_crops_are_regenerated_tight_envelopes_not_true_autocad_gt"
+  }
+}

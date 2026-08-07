@@ -1,0 +1,76 @@
+{
+  "phase_id": "QA.3.4",
+  "model_version": "10.0.4",
+  "generated_at": "2026-08-07T09:45:44.551959+00:00",
+  "statistics": {
+    "total_rejected": 123,
+    "owned_elsewhere": 19,
+    "dropped": 104,
+    "leader_failures": 23,
+    "geometry_failures": 4,
+    "envelope_failures": 77,
+    "conflict_failures": 0,
+    "owned_elsewhere_category_count": 19,
+    "unknown": 0,
+    "average_ownership_margin": 0.0,
+    "median_ownership_margin": 0.0,
+    "maximum_competition_margin": 0.0,
+    "minimum_competition_margin": 0.0,
+    "average_competing_beams_per_entity": 0.6895,
+    "maximum_competing_beams": 1,
+    "dropped_fraction_of_rejects": 0.8455,
+    "owned_elsewhere_fraction_of_rejects": 0.1545
+  },
+  "recommendations": {
+    "priorities": [
+      {
+        "priority": 1,
+        "title": "Target disappearing entities (Dropped), not only R5",
+        "recommendation": "A large share of rejects are Owned nowhere (Dropped). QA.4.0 must not assume neighbour ownership transfers \u2014 many entities simply disappear. Focus root-cause work on DroppedEntities.json (leader=23, geometry=4, envelope=77, conflict-marked-dropped subset inside conflict_failures=0).",
+        "qa40_target": "dropped_entity_recovery",
+        "engineering_impact": "High",
+        "expected_benchmark_improvement": "Recover callouts/bars that currently vanish from all beam ownership sets",
+        "evidence": {
+          "dropped": 104,
+          "owned_elsewhere": 19,
+          "dropped_fraction": 0.8455
+        }
+      },
+      {
+        "priority": 2,
+        "title": "Secondary target: search_envelope",
+        "recommendation": "Among Dropped/failure subtypes, `search_envelope` leads with 77 cases. Instrument QA.4.0 changes against EntityDecisionTrace + this competition registry.",
+        "qa40_target": "search_envelope",
+        "engineering_impact": "Medium-High",
+        "expected_benchmark_improvement": "Reduce search_envelope driven drops",
+        "evidence": {
+          "subtype_counts": {
+            "leader": 23,
+            "geometry": 4,
+            "envelope": 77
+          }
+        }
+      },
+      {
+        "priority": 3,
+        "title": "Keep competition regression gates",
+        "recommendation": "Any QA.4.0 ownership change must re-run QA.3.4 and show an intentional diff in Dropped vs OwnedElsewhere \u2014 never silent decision changes.",
+        "qa40_target": "process_gate",
+        "engineering_impact": "Medium",
+        "expected_benchmark_improvement": "Prevents opaque ownership regressions",
+        "evidence": {
+          "total_rejected": 123
+        }
+      }
+    ],
+    "dominant_qa40_target": "dropped_entity_recovery",
+    "summary": "rejected=123 owned_elsewhere=19 dropped=104 leader=23 geometry=4 envelope=77 conflict=0; dominant=dropped_entity_recovery",
+    "mode_scores": {
+      "neighbour_ownership_or_conflict": 19,
+      "leader_association": 23,
+      "geometry": 4,
+      "search_envelope": 77,
+      "dropped_disappearance": 104
+    }
+  }
+}

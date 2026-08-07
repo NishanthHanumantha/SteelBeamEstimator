@@ -1,0 +1,68 @@
+{
+  "phase_id": "QA.3.4",
+  "model_version": "10.0.4",
+  "success": true,
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation",
+  "elapsed_s": 13.49,
+  "statistics": {
+    "total_rejected": 123,
+    "owned_elsewhere": 19,
+    "dropped": 104,
+    "leader_failures": 23,
+    "geometry_failures": 4,
+    "envelope_failures": 77,
+    "conflict_failures": 0,
+    "owned_elsewhere_category_count": 19,
+    "unknown": 0,
+    "average_ownership_margin": 0.0,
+    "median_ownership_margin": 0.0,
+    "maximum_competition_margin": 0.0,
+    "minimum_competition_margin": 0.0,
+    "average_competing_beams_per_entity": 0.6895,
+    "maximum_competing_beams": 1,
+    "dropped_fraction_of_rejects": 0.8455,
+    "owned_elsewhere_fraction_of_rejects": 0.1545
+  },
+  "dominant_qa40_target": "dropped_entity_recovery",
+  "priority_1": {
+    "priority": 1,
+    "title": "Target disappearing entities (Dropped), not only R5",
+    "recommendation": "A large share of rejects are Owned nowhere (Dropped). QA.4.0 must not assume neighbour ownership transfers \u2014 many entities simply disappear. Focus root-cause work on DroppedEntities.json (leader=23, geometry=4, envelope=77, conflict-marked-dropped subset inside conflict_failures=0).",
+    "qa40_target": "dropped_entity_recovery",
+    "engineering_impact": "High",
+    "expected_benchmark_improvement": "Recover callouts/bars that currently vanish from all beam ownership sets",
+    "evidence": {
+      "dropped": 104,
+      "owned_elsewhere": 19,
+      "dropped_fraction": 0.8455
+    }
+  },
+  "regression_pass": true,
+  "validation_overall_pass": true,
+  "paths": {
+    "OwnershipCompetitionRegistry.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\OwnershipCompetitionRegistry.json",
+    "CompetitionMatrix.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\CompetitionMatrix.json",
+    "OwnershipMigration.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\OwnershipMigration.json",
+    "DroppedEntities.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\DroppedEntities.json",
+    "BeamCompetitionSummary.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\BeamCompetitionSummary.json",
+    "GlobalCompetitionStatistics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\GlobalCompetitionStatistics.json",
+    "CompetitionValidation.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\CompetitionValidation.json",
+    "RegressionReport.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\RegressionReport.json",
+    "ArchitectureSummary.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\ArchitectureSummary.md",
+    "ValidationSummary.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\ValidationSummary.md",
+    "DroppedEntities.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\DroppedEntities.md",
+    "EngineeringRecommendations.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\EngineeringRecommendations.md",
+    "README.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\README.md"
+  },
+  "visual_paths": {
+    "sankey": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Sankey_ownership_flow.png",
+    "competition_matrix": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Beam_competition_matrix.png",
+    "network": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Competition_network.png",
+    "dropped_heatmap": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Dropped_entity_heatmap.png",
+    "margin_hist": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Ownership_margin_histogram.png",
+    "scatter": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Winner_vs_loser_scatter.png",
+    "top20_dropped": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Top20_disappearing_entities.png",
+    "beam_summary": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA34_ownership_competition_validation\\Visualisations\\Beam_competition_summary.png"
+  },
+  "generated_at": "2026-08-07T09:45:44.922966+00:00"
+}

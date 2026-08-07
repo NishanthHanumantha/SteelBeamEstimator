@@ -1,0 +1,46 @@
+{
+  "phase_id": "QA.3.2",
+  "model_version": "10.0.2",
+  "success": true,
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation",
+  "elapsed_s": 136.74,
+  "beams_analysed": 11,
+  "category_counts": {
+    "A": 0,
+    "B": 4,
+    "C": 7
+  },
+  "dominant_finding": "manual_crops_are_regenerated_tight_envelopes_not_true_autocad_gt",
+  "baseline_trustworthy": false,
+  "average_iou": 0.3466,
+  "priority_1": {
+    "priority": 1,
+    "title": "Correct Manual Comparison Crop generation before Ownership work",
+    "recommendation": "Manual crops for unseen sets are regenerated from T1 geometry envelopes (tight beam bbox), not true AutoCAD ground-truth crops. Ownership investigation should be postponed until crop generation is corrected or a verified GT crop source is established.",
+    "evidence": {
+      "category_C": 7,
+      "category_B": 4,
+      "regenerated": 11,
+      "average_iou": 0.3466,
+      "average_completeness_pct": 38.8036
+    }
+  },
+  "validation_overall_pass": true,
+  "paths": {
+    "GroundTruthCropValidation.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthCropValidation.json",
+    "GroundTruthCropValidation.xlsx": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthCropValidation.xlsx",
+    "GroundTruthBeamRegistry.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthBeamRegistry.json",
+    "CropAlignmentMetrics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\CropAlignmentMetrics.json",
+    "CoordinateValidation.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\CoordinateValidation.json",
+    "EntityCompleteness.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\EntityCompleteness.json",
+    "BeamAlignmentDiagnostics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\BeamAlignmentDiagnostics.json",
+    "GroundTruthDecisionMatrix.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthDecisionMatrix.json",
+    "GroundTruthSummary.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthSummary.json",
+    "GroundTruthDiagnosticCards.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthDiagnosticCards.md",
+    "GroundTruthOverlayReport.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthOverlayReport.md",
+    "GroundTruthHeatmap.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthHeatmap.md",
+    "GroundTruthRecommendations.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\GroundTruthRecommendations.md",
+    "README.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA32_ground_truth_crop_validation\\README.md"
+  },
+  "generated_at": "2026-08-07T06:40:14.019381+00:00"
+}

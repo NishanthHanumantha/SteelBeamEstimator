@@ -1,0 +1,59 @@
+{
+  "phase_id": "QA.3.3",
+  "model_version": "10.0.3",
+  "success": true,
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability",
+  "elapsed_s": 40.23,
+  "beams_analysed": 11,
+  "failure_frequency": {
+    "Conflict Resolution": 7,
+    "Mixed": 4
+  },
+  "most_common_rejection_reason": [
+    "annotation_on_neighbour_side_of_mark",
+    28
+  ],
+  "most_common_filtering_rule": [
+    "R5_NEIGHBOUR_REJECT",
+    32
+  ],
+  "priority_1": {
+    "priority": 1,
+    "title": "Neighbour / conflict resolution rules (R5)",
+    "recommendation": "Most ownership shortfalls are neighbour-side rejects or multi-beam competition. QA.4.0 should focus on R5_NEIGHBOUR_REJECT / side_of_mark logic using these decision traces \u2014 without guessing.",
+    "engineering_impact": "High",
+    "expected_benchmark_improvement": "Expected: reduce false neighbour rejects; improve bar/annotation match on stacked beams",
+    "evidence": {
+      "top_failure_category": [
+        "Conflict Resolution",
+        7
+      ],
+      "most_common_rejection_reason": [
+        "annotation_on_neighbour_side_of_mark",
+        28
+      ],
+      "most_common_filtering_rule": [
+        "R5_NEIGHBOUR_REJECT",
+        32
+      ],
+      "ownership_acceptance_rate": 58.1142
+    }
+  },
+  "validation_overall_pass": true,
+  "paths": {
+    "CandidateDiscovery.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\CandidateDiscovery.json",
+    "CandidateDiscovery.xlsx": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\CandidateDiscovery.xlsx",
+    "OwnershipScores.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipScores.json",
+    "ConflictResolution.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\ConflictResolution.json",
+    "EntityDecisionTrace.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\EntityDecisionTrace.json",
+    "OwnershipCoverage.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipCoverage.json",
+    "OwnershipFailureClassification.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipFailureClassification.json",
+    "OwnershipStatistics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipStatistics.json",
+    "BeamOwnershipCards.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\BeamOwnershipCards.md",
+    "OwnershipDecisionTrees.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipDecisionTrees.md",
+    "OwnershipHeatmaps.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\OwnershipHeatmaps.md",
+    "EngineeringRecommendations.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\EngineeringRecommendations.md",
+    "README.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA33_ownership_explainability\\README.md"
+  },
+  "generated_at": "2026-08-07T09:13:29.795589+00:00"
+}

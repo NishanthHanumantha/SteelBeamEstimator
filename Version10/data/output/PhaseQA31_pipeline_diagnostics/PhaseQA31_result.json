@@ -1,0 +1,59 @@
+{
+  "phase_id": "QA.3.1",
+  "model_version": "10.0.1",
+  "success": true,
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics",
+  "elapsed_s": 3.37,
+  "beams_analysed": 11,
+  "failure_frequency": {
+    "Beam Discovery": 0,
+    "Beam Extents": 0,
+    "Crop Window": 0,
+    "Ownership": 7,
+    "Annotation Association": 0,
+    "Rendering": 0,
+    "Mixed": 0,
+    "None (no stage FAIL)": 4
+  },
+  "hypothesis": {
+    "ownership_or_scoping_before_render_is_dominant": true,
+    "renderer_mostly_faithful_to_owned_set": true,
+    "evidence_confidence": "High",
+    "ownership_fail_render_pass_count": 7
+  },
+  "top_primary_root_cause": "Ownership",
+  "priority_1": {
+    "priority": 1,
+    "target_stage": "Ownership",
+    "supporting_beam_ids": [
+      "B14",
+      "B15",
+      "B16",
+      "B18",
+      "B19",
+      "B22",
+      "B46"
+    ],
+    "frequency": 7,
+    "recommendation": "Priority confirmed by diagnostics: ownership/scoping fails before render on multiple beams. Investigate Ownership failures first (n=7).",
+    "estimated_impact": "High",
+    "deferred_note": "Deferred to next engineering phase"
+  },
+  "validation_overall_pass": true,
+  "paths": {
+    "BeamPipelineDiagnostics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\BeamPipelineDiagnostics.json",
+    "BeamStageComparison.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\BeamStageComparison.json",
+    "OwnershipRejectionLog.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\OwnershipRejectionLog.json",
+    "CropDiagnostics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\CropDiagnostics.json",
+    "AnnotationDiagnostics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\AnnotationDiagnostics.json",
+    "RenderDiagnostics.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\RenderDiagnostics.json",
+    "RootCauseSummary.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\RootCauseSummary.json",
+    "FailureFrequency.json": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\FailureFrequency.json",
+    "BeamDiagnosticCards.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\BeamDiagnosticCards.md",
+    "PipelineStageHeatmap.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\PipelineStageHeatmap.md",
+    "EngineeringRecommendations.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\EngineeringRecommendations.md",
+    "BeamPipelineDiagnostics.xlsx": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\BeamPipelineDiagnostics.xlsx",
+    "README.md": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA31_pipeline_diagnostics\\README.md"
+  },
+  "generated_at": "2026-08-07T05:42:16.828077+00:00"
+}
