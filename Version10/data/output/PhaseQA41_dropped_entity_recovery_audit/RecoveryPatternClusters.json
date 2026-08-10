@@ -1,0 +1,312 @@
+{
+  "phase_id": "QA.4.1",
+  "patterns": [
+    {
+      "pattern_id": "PATTERN-01B",
+      "description": "Envelope never-candidate (other spatial band)",
+      "entity_count": 61,
+      "percentage_of_dropped": 58.65,
+      "affected_beams": [
+        "B14",
+        "B15",
+        "B16",
+        "B18",
+        "B19",
+        "B22",
+        "B23",
+        "B29",
+        "B42A",
+        "B45",
+        "B46"
+      ],
+      "primary_failure_category": "ENVELOPE_NEVER_CANDIDATE",
+      "recovery_potential": "HIGH",
+      "potential_breakdown": {
+        "HIGH": 48,
+        "MEDIUM": 13
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B14",
+          "entity_id": "ARR::30F41150",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B14",
+          "entity_id": "LTGT::LDR::1CF838FB",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B14",
+          "entity_id": "ARR::C998927C",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B14",
+          "entity_id": "LTGT::LDR::498FFA19",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B14",
+          "entity_id": "ARR::A8F7EF15",
+          "text": null,
+          "recovery_potential": "HIGH"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "candidate_search_envelope_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-02",
+      "description": "Leader-chain failure with directional/context evidence",
+      "entity_count": 22,
+      "percentage_of_dropped": 21.15,
+      "affected_beams": [
+        "B14",
+        "B15",
+        "B16",
+        "B18",
+        "B19",
+        "B22",
+        "B29",
+        "B46"
+      ],
+      "primary_failure_category": "LEADER_CHAIN_FAILURE",
+      "recovery_potential": "LOW",
+      "potential_breakdown": {
+        "LOW": 17,
+        "MEDIUM": 4,
+        "UNKNOWN": 1
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B14",
+          "entity_id": "LDR::FC909F97",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B15",
+          "entity_id": "LDR::798CE590",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B15",
+          "entity_id": "LDR::749B70DC",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B15",
+          "entity_id": "LDR::8534C4B8",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B15",
+          "entity_id": "LDR::167CC70D",
+          "text": null,
+          "recovery_potential": "LOW"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "leader_chain_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-06",
+      "description": "Entity lies between / closer to neighbouring beams",
+      "entity_count": 9,
+      "percentage_of_dropped": 8.65,
+      "affected_beams": [
+        "B16",
+        "B18",
+        "B22"
+      ],
+      "primary_failure_category": "ENVELOPE_NEVER_CANDIDATE",
+      "recovery_potential": "MEDIUM",
+      "potential_breakdown": {
+        "MEDIUM": 7,
+        "LOW": 2
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B16",
+          "entity_id": "ARR::C8E02F8F",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        },
+        {
+          "beam_id": "B16",
+          "entity_id": "LTGT::LDR::50092321",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        },
+        {
+          "beam_id": "B16",
+          "entity_id": "ARR::84161DFC",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        },
+        {
+          "beam_id": "B16",
+          "entity_id": "LTGT::LDR::49842AC8",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        },
+        {
+          "beam_id": "B18",
+          "entity_id": "BEAM::B18",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "candidate_search_envelope_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-05B",
+      "description": "Degenerate / zero-dimension geometry",
+      "entity_count": 4,
+      "percentage_of_dropped": 3.85,
+      "affected_beams": [
+        "B18"
+      ],
+      "primary_failure_category": "GEOMETRY_FAILURE",
+      "recovery_potential": "LOW",
+      "potential_breakdown": {
+        "MEDIUM": 1,
+        "LOW": 3
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B18",
+          "entity_id": "BAR::59B0AF37",
+          "text": null,
+          "recovery_potential": "MEDIUM"
+        },
+        {
+          "beam_id": "B18",
+          "entity_id": "BAR::A5E16B4D",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B18",
+          "entity_id": "BAR::7CD782B5",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B18",
+          "entity_id": "BAR::1D706A9A",
+          "text": null,
+          "recovery_potential": "LOW"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "geometry_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-08",
+      "description": "Entity far outside target beam context",
+      "entity_count": 4,
+      "percentage_of_dropped": 3.85,
+      "affected_beams": [
+        "B19"
+      ],
+      "primary_failure_category": "ENVELOPE_NEVER_CANDIDATE",
+      "recovery_potential": "LOW",
+      "potential_breakdown": {
+        "LOW": 4
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B19",
+          "entity_id": "ARR::21BB26CB",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B19",
+          "entity_id": "LTGT::LDR::056CE421",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B19",
+          "entity_id": "ARR::93413CE3",
+          "text": null,
+          "recovery_potential": "LOW"
+        },
+        {
+          "beam_id": "B19",
+          "entity_id": "LTGT::LDR::027AB042",
+          "text": null,
+          "recovery_potential": "LOW"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "candidate_search_envelope_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-01",
+      "description": "Entity barely outside production envelope (NEAR_OUTSIDE, HIGH potential)",
+      "entity_count": 3,
+      "percentage_of_dropped": 2.88,
+      "affected_beams": [
+        "B14",
+        "B42A",
+        "B45"
+      ],
+      "primary_failure_category": "ENVELOPE_NEVER_CANDIDATE",
+      "recovery_potential": "HIGH",
+      "potential_breakdown": {
+        "HIGH": 3
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B14",
+          "entity_id": "BEAM::B14",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B42A",
+          "entity_id": "BEAM::B42A",
+          "text": null,
+          "recovery_potential": "HIGH"
+        },
+        {
+          "beam_id": "B45",
+          "entity_id": "BEAM::B45",
+          "text": null,
+          "recovery_potential": "HIGH"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "candidate_search_envelope_recovery"
+    },
+    {
+      "pattern_id": "PATTERN-03",
+      "description": "Leader tip outside envelope while near production zone",
+      "entity_count": 1,
+      "percentage_of_dropped": 0.96,
+      "affected_beams": [
+        "B16"
+      ],
+      "primary_failure_category": "LEADER_CHAIN_FAILURE",
+      "recovery_potential": "HIGH",
+      "potential_breakdown": {
+        "HIGH": 1
+      },
+      "representative_entities": [
+        {
+          "beam_id": "B16",
+          "entity_id": "LDR::7A1FFD68",
+          "text": null,
+          "recovery_potential": "HIGH"
+        }
+      ],
+      "recommended_future_recovery_mechanism": "leader_chain_recovery"
+    }
+  ]
+}

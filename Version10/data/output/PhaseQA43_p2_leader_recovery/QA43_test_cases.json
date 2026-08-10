@@ -1,0 +1,121 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test_id": "TEST_01",
+      "name": "Valid P2 leader candidate identified",
+      "pass": true,
+      "detail": 22
+    },
+    {
+      "test_id": "TEST_02",
+      "name": "Leader already accepted in T18",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_03",
+      "name": "Valid leader with target-beam context eligible",
+      "pass": true,
+      "detail": 5
+    },
+    {
+      "test_id": "TEST_03b",
+      "name": "HIGH leader eligible",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "test_id": "TEST_04",
+      "name": "Boundary/near classification deterministic",
+      "pass": true,
+      "detail": {
+        "boundary": 0,
+        "near": 1,
+        "categories": [
+          "LEADER_FAR_OUTSIDE",
+          "LEADER_NEAR_OUTSIDE",
+          "LEADER_NEIGHBOUR_AMBIGUITY",
+          "LEADER_NEVER_CANDIDATE",
+          "LEADER_OUTSIDE_PRODUCTION_ENVELOPE"
+        ]
+      }
+    },
+    {
+      "test_id": "TEST_05",
+      "name": "Near-outside leader classified",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "test_id": "TEST_06",
+      "name": "Neighbour ambiguity never illegally added",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_07",
+      "name": "Inside other beam never recovered",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_08",
+      "name": "Far-outside diagnostic/excluded",
+      "pass": true,
+      "detail": {
+        "far": 7,
+        "illegally_added": 0
+      }
+    },
+    {
+      "test_id": "TEST_09",
+      "name": "Duplicate stable key",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_10",
+      "name": "Already-present / scored entities yield zero new production candidates",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_11",
+      "name": "Fifth Set isolation",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_12",
+      "name": "Sixth Set isolation",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_13",
+      "name": "Repeated identical execution",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "test_id": "TEST_14",
+      "name": "QA.4.2 regression",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "test_id": "TEST_15",
+      "name": "T18 production ownership regression",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "test_id": "TEST_07b",
+      "name": "Owned-elsewhere not newly added",
+      "pass": true,
+      "detail": 0
+    }
+  ],
+  "failed": []
+}

@@ -1,0 +1,113 @@
+{
+  "phase_id": "QA.4.2",
+  "model_version": "10.5.1",
+  "overall_pass": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "gate": "GATE_1_baseline_population",
+      "pass": true,
+      "detail": 104
+    },
+    {
+      "gate": "GATE_2_envelope_population",
+      "pass": true,
+      "detail": 77
+    },
+    {
+      "gate": "GATE_3_high_population",
+      "pass": true,
+      "detail": 51
+    },
+    {
+      "gate": "GATE_4_recovery_accounting",
+      "pass": true,
+      "detail": {
+        "examined": 51,
+        "accounted": 51
+      }
+    },
+    {
+      "gate": "GATE_5_stable_keys",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_6_cross_beam_contamination",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_7_existing_ownership_engine",
+      "pass": true,
+      "detail": "generated candidates have engine path / decision"
+    },
+    {
+      "gate": "GATE_8_ownership_safety",
+      "pass": true,
+      "detail": "qa42_assigned_ownership all False"
+    },
+    {
+      "gate": "GATE_9_regression",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_10_fifth_sixth_isolation",
+      "pass": true,
+      "detail": {
+        "fifth": 0,
+        "sixth": 0
+      }
+    },
+    {
+      "gate": "GATE_11_determinism",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_12_reconciliation",
+      "pass": true,
+      "detail": {
+        "accounted": 51,
+        "unresolved": 0
+      }
+    },
+    {
+      "gate": "TEST_CASES",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "failed_gates": [],
+  "summary": {
+    "phase_id": "QA.4.2",
+    "model_version": "10.5.1",
+    "status": "PASS",
+    "generated_at": "2026-08-10T05:56:06.173958+00:00",
+    "original_dropped": 104,
+    "envelope_population": 77,
+    "high_potential_population": 51,
+    "recovery_examined": 51,
+    "recovery_eligible": 51,
+    "recovery_excluded": 0,
+    "recovery_candidate_added": 0,
+    "recovery_candidate_generated": 51,
+    "already_in_production_pool": 51,
+    "existing_engine_rejected": 0,
+    "existing_engine_accepted": 51,
+    "ownership_decisions_changed": 0,
+    "cross_beam_contamination_count": 0,
+    "duplicate_count": 0,
+    "fourth_set_count": 51,
+    "fifth_set_count": 0,
+    "sixth_set_count": 0,
+    "regression_status": "PASS",
+    "determinism_status": "PASS",
+    "final_gate_status": "PASS",
+    "principle": "Recover candidates first. Let the existing ownership engine decide.",
+    "production_envelope_semantics": "UNCHANGED",
+    "qa42_assigns_ownership": false
+  },
+  "elapsed_s": 0.474
+}

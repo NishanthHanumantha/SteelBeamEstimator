@@ -1,0 +1,113 @@
+{
+  "phase_id": "QA.4.3",
+  "model_version": "10.5.2",
+  "overall_pass": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "gate": "GATE_leader_population_23",
+      "pass": true,
+      "detail": 23
+    },
+    {
+      "gate": "GATE_dropped_104",
+      "pass": true,
+      "detail": 104
+    },
+    {
+      "gate": "GATE_accounting",
+      "pass": true,
+      "detail": {
+        "examined": 23,
+        "accounted": 23
+      }
+    },
+    {
+      "gate": "GATE_stable_keys",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_contamination",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_engine_path",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_ownership_safety",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_regression",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_fifth_sixth",
+      "pass": true,
+      "detail": {
+        "fifth": 0,
+        "sixth": 0
+      }
+    },
+    {
+      "gate": "GATE_determinism",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_unresolved_zero",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_tests",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "failed_gates": [],
+  "summary": {
+    "phase_id": "QA.4.3",
+    "model_version": "10.5.2",
+    "status": "PASS",
+    "generated_at": "2026-08-10T06:19:40.290344+00:00",
+    "total_dropped_leaders_inspected": 23,
+    "original_dropped": 104,
+    "p2_candidates_generated": 5,
+    "high_count": 1,
+    "medium_count": 4,
+    "low_count": 17,
+    "unknown_count": 1,
+    "recovery_eligible": 5,
+    "excluded_count": 18,
+    "already_in_production_count": 0,
+    "newly_added_count": 0,
+    "t18_accepted_count": 0,
+    "t18_rejected_count": 23,
+    "neighbour_ambiguity_count": 5,
+    "inside_other_beam_count": 1,
+    "far_outside_count": 7,
+    "duplicate_stable_keys": 0,
+    "cross_beam_contamination": 0,
+    "fifth_set_count": 0,
+    "sixth_set_count": 0,
+    "production_ownership_changed": false,
+    "production_envelope_changed": false,
+    "qa42_regression": "PASS",
+    "t18_regression": "PASS",
+    "regression_status": "PASS",
+    "determinism_status": "PASS",
+    "overall_gate": "PASS",
+    "principle": "Detect \u2192 Validate \u2192 Deduplicate \u2192 Defer ownership to T18 \u2192 Audit \u2192 Regress",
+    "qa43_assigns_ownership": false,
+    "p3_geometry_recovery_implemented": false,
+    "note": "Zero newly-added candidates is a valid PASS when T18 already rejected the P2 leaders. Do not claim ownership improvement."
+  },
+  "elapsed_s": 0.353
+}

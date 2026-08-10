@@ -1,0 +1,94 @@
+{
+  "phase_id": "QA.4.1",
+  "rows": [
+    {
+      "failure_category": "ENVELOPE_NEVER_CANDIDATE",
+      "label": "Candidate / Search Envelope",
+      "entity_count": 77,
+      "pct_of_dropped": 74.04,
+      "high_potential": 51,
+      "medium_potential": 20,
+      "low_potential": 6,
+      "unknown_potential": 0,
+      "representative_cases": [
+        "B14:BEAM::B14",
+        "B14:ARR::30F41150",
+        "B14:LTGT::LDR::1CF838FB",
+        "B14:ARR::C998927C",
+        "B14:LTGT::LDR::498FFA19"
+      ],
+      "expected_recovery_opportunity": "High",
+      "engineering_complexity": "Medium",
+      "risk_of_neighbour_contamination": "Medium \u2014 near-neighbour entities must stay filtered",
+      "recommended_mechanism": "candidate_search_envelope_recovery",
+      "priority": "P1"
+    },
+    {
+      "failure_category": "LEADER_CHAIN_FAILURE",
+      "label": "Leader Chain",
+      "entity_count": 23,
+      "pct_of_dropped": 22.12,
+      "high_potential": 1,
+      "medium_potential": 4,
+      "low_potential": 17,
+      "unknown_potential": 1,
+      "representative_cases": [
+        "B14:LDR::FC909F97",
+        "B15:LDR::798CE590",
+        "B15:LDR::749B70DC",
+        "B15:LDR::8534C4B8",
+        "B15:LDR::167CC70D"
+      ],
+      "expected_recovery_opportunity": "Medium",
+      "engineering_complexity": "Medium-High",
+      "risk_of_neighbour_contamination": "Medium \u2014 tip may point at neighbour reinforcement",
+      "recommended_mechanism": "leader_chain_recovery",
+      "priority": "P2"
+    },
+    {
+      "failure_category": "GEOMETRY_FAILURE",
+      "label": "Geometry",
+      "entity_count": 4,
+      "pct_of_dropped": 3.85,
+      "high_potential": 0,
+      "medium_potential": 1,
+      "low_potential": 3,
+      "unknown_potential": 0,
+      "representative_cases": [
+        "B18:BAR::59B0AF37",
+        "B18:BAR::A5E16B4D",
+        "B18:BAR::7CD782B5",
+        "B18:BAR::1D706A9A"
+      ],
+      "expected_recovery_opportunity": "Low",
+      "engineering_complexity": "High",
+      "risk_of_neighbour_contamination": "Low-Medium \u2014 small population",
+      "recommended_mechanism": "geometry_recovery",
+      "priority": "P3"
+    },
+    {
+      "failure_category": "OTHER_UNKNOWN",
+      "label": "Other / Unknown",
+      "entity_count": 0,
+      "pct_of_dropped": 0.0,
+      "high_potential": 0,
+      "medium_potential": 0,
+      "low_potential": 0,
+      "unknown_potential": 0,
+      "representative_cases": [],
+      "expected_recovery_opportunity": "Low",
+      "engineering_complexity": "Unknown",
+      "risk_of_neighbour_contamination": "Unknown",
+      "recommended_mechanism": "investigate_further",
+      "priority": "P-"
+    }
+  ],
+  "recommended_sequence": [
+    "candidate_search_envelope_recovery",
+    "leader_chain_recovery",
+    "geometry_recovery",
+    "full_qa4_recovery_benchmark",
+    "fifth_sixth_set_generalization_validation"
+  ],
+  "evidence_driven_p1": "ENVELOPE_NEVER_CANDIDATE"
+}

@@ -1,0 +1,88 @@
+{
+  "phase_id": "QA.4.1",
+  "model_version": "10.5.0",
+  "overall_pass": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "priority_beams",
+      "expected": 11,
+      "actual": 11,
+      "pass": true
+    },
+    {
+      "check": "rejected",
+      "expected": 123,
+      "actual": 123,
+      "pass": true
+    },
+    {
+      "check": "owned_elsewhere",
+      "expected": 19,
+      "actual": 19,
+      "pass": true
+    },
+    {
+      "check": "dropped_stat",
+      "expected": 104,
+      "actual": 104,
+      "pass": true
+    },
+    {
+      "check": "audit_population",
+      "expected": 104,
+      "actual": 104,
+      "pass": true
+    },
+    {
+      "check": "owned_elsewhere_excluded_from_dropped",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "check": "category_breakdown_observed",
+      "expected": {
+        "SEARCH_ENVELOPE_FAILURE": 77,
+        "LEADER_FAILURE": 23,
+        "GEOMETRY_FAILURE": 4
+      },
+      "actual": {
+        "LEADER_FAILURE": 23,
+        "SEARCH_ENVELOPE_FAILURE": 77,
+        "GEOMETRY_FAILURE": 4
+      },
+      "pass": true,
+      "note": "Evidence-derived; mismatch is reported"
+    }
+  ],
+  "proceed_to_audit": true,
+  "fourth_set_entities_in_scope": 104,
+  "fifth_set_entities_excluded": 0,
+  "sixth_set_entities_excluded": 0,
+  "note": "QA.4.1 controlled population is Fourth Set priority beams only. Fifth/Sixth are out of scope.",
+  "priority_beams": [
+    "B14",
+    "B15",
+    "B16",
+    "B18",
+    "B19",
+    "B22",
+    "B23",
+    "B29",
+    "B42A",
+    "B45",
+    "B46"
+  ],
+  "priority_beam_count": 11,
+  "rejected": 123,
+  "owned_elsewhere": 19,
+  "dropped": 104,
+  "audit_population": 104,
+  "duplicates_detected": [],
+  "category_counts_raw": {
+    "LEADER_FAILURE": 23,
+    "SEARCH_ENVELOPE_FAILURE": 77,
+    "GEOMETRY_FAILURE": 4
+  }
+}

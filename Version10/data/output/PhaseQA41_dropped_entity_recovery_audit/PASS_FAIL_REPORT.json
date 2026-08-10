@@ -1,0 +1,134 @@
+{
+  "phase_id": "QA.4.1",
+  "model_version": "10.5.0",
+  "status": "PASS",
+  "overall_pass": true,
+  "validation": {
+    "phase_id": "QA.4.1",
+    "model_version": "10.5.0",
+    "overall_pass": true,
+    "status": "PASS",
+    "checks": [
+      {
+        "check": "baseline_pass",
+        "pass": true,
+        "detail": "PASS"
+      },
+      {
+        "check": "priority_beams_11",
+        "pass": true,
+        "detail": {
+          "expected": 11,
+          "got": 11
+        }
+      },
+      {
+        "check": "dropped_population_104",
+        "pass": true,
+        "detail": 104
+      },
+      {
+        "check": "audit_records_104",
+        "pass": true,
+        "detail": 104
+      },
+      {
+        "check": "owned_elsewhere_excluded",
+        "pass": true,
+        "detail": {
+          "owned_elsewhere_baseline": 19,
+          "audits_with_owned_elsewhere": 0
+        }
+      },
+      {
+        "check": "fifth_sixth_excluded",
+        "pass": true,
+        "detail": {
+          "fourth": 104,
+          "fifth": 0,
+          "sixth": 0
+        }
+      },
+      {
+        "check": "regression_pass",
+        "pass": true,
+        "detail": "PASS"
+      },
+      {
+        "check": "categories_evidence_derived",
+        "pass": true,
+        "detail": {
+          "LEADER_CHAIN_FAILURE": 23,
+          "ENVELOPE_NEVER_CANDIDATE": 77,
+          "GEOMETRY_FAILURE": 4
+        }
+      },
+      {
+        "check": "all_have_recovery_potential",
+        "pass": true,
+        "detail": {
+          "LOW": 26,
+          "HIGH": 52,
+          "MEDIUM": 25,
+          "UNKNOWN": 1
+        }
+      },
+      {
+        "check": "patterns_identified",
+        "pass": true,
+        "detail": 7
+      },
+      {
+        "check": "representatives_selected",
+        "pass": true,
+        "detail": {
+          "envelope_high": 5,
+          "envelope_medium": 5,
+          "envelope_low": 5,
+          "leader_high": 1,
+          "leader_medium_low": 5,
+          "geometry_all": 4,
+          "counts": {
+            "envelope_high": 5,
+            "envelope_medium": 5,
+            "envelope_low": 5,
+            "leader_high": 1,
+            "leader_medium_low": 5,
+            "geometry_all": 4
+          },
+          "note": "If fewer than requested, all available cases are included."
+        }
+      },
+      {
+        "check": "priority_matrix_present",
+        "pass": true,
+        "detail": "ENVELOPE_NEVER_CANDIDATE"
+      },
+      {
+        "check": "no_engineering_logic_modified",
+        "pass": true,
+        "detail": "diagnostic-only package; no ownership/envelope/leader/geometry recovery applied"
+      }
+    ],
+    "failed_checks": []
+  },
+  "baseline_status": "PASS",
+  "regression_status": "PASS",
+  "category_counts": {
+    "LEADER_CHAIN_FAILURE": 23,
+    "ENVELOPE_NEVER_CANDIDATE": 77,
+    "GEOMETRY_FAILURE": 4
+  },
+  "potential_counts": {
+    "LOW": 26,
+    "HIGH": 52,
+    "MEDIUM": 25,
+    "UNKNOWN": 1
+  },
+  "evidence_driven_p1": "ENVELOPE_NEVER_CANDIDATE",
+  "fourth_set_entities_in_scope": 104,
+  "fifth_set_entities_excluded": 0,
+  "sixth_set_entities_excluded": 0,
+  "generated_at": "2026-08-10T05:30:11.404411+00:00",
+  "elapsed_s": 9.242
+}

@@ -1,0 +1,130 @@
+{
+  "all_pass": true,
+  "tests": [
+    {
+      "test_id": "TEST_01",
+      "name": "Boundary envelope case",
+      "pass": true,
+      "detail": 48
+    },
+    {
+      "test_id": "TEST_02",
+      "name": "Near-outside HIGH case",
+      "pass": true,
+      "detail": 3
+    },
+    {
+      "test_id": "TEST_03",
+      "name": "Target-beam-context HIGH case",
+      "pass": true,
+      "detail": 51
+    },
+    {
+      "test_id": "TEST_04",
+      "name": "Neighbour ambiguity case not newly added",
+      "pass": true,
+      "detail": {
+        "diagnostic_nbr": 9,
+        "illegally_added": 0
+      }
+    },
+    {
+      "test_id": "TEST_05",
+      "name": "Inside-other-beam-envelope case",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_06",
+      "name": "Far-outside LOW case diagnostic only",
+      "pass": true,
+      "detail": {
+        "far_low": 6,
+        "illegally_added": 0
+      }
+    },
+    {
+      "test_id": "TEST_07",
+      "name": "Owned-elsewhere entity not recovered",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_08",
+      "name": "Duplicate stable key",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_09",
+      "name": "Entity already present in production candidate pool",
+      "pass": true,
+      "detail": 51
+    },
+    {
+      "test_id": "TEST_10",
+      "name": "Fifth Set entity",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_11",
+      "name": "Sixth Set entity",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "test_id": "TEST_12",
+      "name": "Repeated identical run for determinism",
+      "pass": true,
+      "detail": {
+        "determinism_status": "PASS",
+        "checks": [
+          {
+            "check": "recovery_candidate_hash",
+            "pass": true,
+            "a": "d84a447381697be4366c866f1e44abae2efc98c7eb29fbefa41fa59a37392fc2",
+            "b": "d84a447381697be4366c866f1e44abae2efc98c7eb29fbefa41fa59a37392fc2"
+          },
+          {
+            "check": "audit_hash",
+            "pass": true,
+            "a": "d84a447381697be4366c866f1e44abae2efc98c7eb29fbefa41fa59a37392fc2",
+            "b": "d84a447381697be4366c866f1e44abae2efc98c7eb29fbefa41fa59a37392fc2"
+          },
+          {
+            "check": "reconciliation_hash",
+            "pass": true,
+            "a": "48586df06685245d91e2cedc51c92114c918fa956bd57e30dca2ba006a8f1d08",
+            "b": "48586df06685245d91e2cedc51c92114c918fa956bd57e30dca2ba006a8f1d08"
+          },
+          {
+            "check": "baseline_owned_hash",
+            "pass": true,
+            "a": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841",
+            "b": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841"
+          },
+          {
+            "check": "baseline_rejected_hash",
+            "pass": true,
+            "a": "143ea019f11809a3acbd989c397c52b4e2067cc912e32401a15bcfce6569e91c",
+            "b": "143ea019f11809a3acbd989c397c52b4e2067cc912e32401a15bcfce6569e91c"
+          },
+          {
+            "check": "baseline_migration_hash",
+            "pass": true,
+            "a": "33349c9fa764d5803ad1a2db4da25b2d3d40a0c6406a786dabe50d4a22a5e495",
+            "b": "33349c9fa764d5803ad1a2db4da25b2d3d40a0c6406a786dabe50d4a22a5e495"
+          },
+          {
+            "check": "baseline_dropped_hash",
+            "pass": true,
+            "a": "8fcd0d6963939ca0e36e09b95edcfb8c4222a9f294b20b0a0e250614a3b40915",
+            "b": "8fcd0d6963939ca0e36e09b95edcfb8c4222a9f294b20b0a0e250614a3b40915"
+          }
+        ]
+      }
+    }
+  ],
+  "failed": []
+}
