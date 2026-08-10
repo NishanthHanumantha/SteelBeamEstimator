@@ -1,0 +1,85 @@
+{
+  "phase_id": "P2.2",
+  "model_version": "10.5.4",
+  "overall_pass": true,
+  "regression_status": "PASS",
+  "baseline_owned_hash": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841",
+  "current_owned_hash": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841",
+  "baseline_rejected_hash": "143ea019f11809a3acbd989c397c52b4e2067cc912e32401a15bcfce6569e91c",
+  "current_rejected_hash": "143ea019f11809a3acbd989c397c52b4e2067cc912e32401a15bcfce6569e91c",
+  "baseline_migration_hash": "33349c9fa764d5803ad1a2db4da25b2d3d40a0c6406a786dabe50d4a22a5e495",
+  "current_migration_hash": "33349c9fa764d5803ad1a2db4da25b2d3d40a0c6406a786dabe50d4a22a5e495",
+  "baseline_dropped_hash": "8fcd0d6963939ca0e36e09b95edcfb8c4222a9f294b20b0a0e250614a3b40915",
+  "current_dropped_hash": "8fcd0d6963939ca0e36e09b95edcfb8c4222a9f294b20b0a0e250614a3b40915",
+  "baseline_t18_hash": "d2febaee927fee32458d443ff0d066855dabe6ce5f960c3059ad02094442931c",
+  "current_t18_hash": "d2febaee927fee32458d443ff0d066855dabe6ce5f960c3059ad02094442931c",
+  "analysis_trace_hash": "760b9d421e507ededb8c8f6af6193be47f190a6bcdc96cc6f7591ef6b690e1d8",
+  "analysis_policy_hash": "9d692e5ffd8c685e7e102ecbc3fca473614b7731764b50412b2f0da9e93c0004",
+  "analysis_root_hash": "26874ea3f82c23f149e153712e45b61405577de56d94ef3c8af38b7236b9df61",
+  "analysis_candidate_hash": "f0c6408a91dc5c26e36c5170c4a66d573679b179804fae29150e97677fc16f0c",
+  "checks": [
+    {
+      "check": "qa33_owned",
+      "pass": true
+    },
+    {
+      "check": "qa33_rejected",
+      "pass": true
+    },
+    {
+      "check": "qa34_migration",
+      "pass": true
+    },
+    {
+      "check": "qa34_dropped",
+      "pass": true
+    },
+    {
+      "check": "t18_ownership",
+      "pass": true
+    },
+    {
+      "check": "owned_hash_unchanged",
+      "pass": true
+    },
+    {
+      "check": "t18_hash_unchanged",
+      "pass": true
+    },
+    {
+      "check": "qa41_baseline",
+      "pass": true
+    },
+    {
+      "check": "qa42_baseline",
+      "pass": true
+    },
+    {
+      "check": "qa43_baseline",
+      "pass": true
+    },
+    {
+      "check": "p21_baseline",
+      "pass": true
+    },
+    {
+      "check": "no_production_ownership_change",
+      "pass": true,
+      "detail": "P2.2 diagnostic mode does not write BeamOwnership"
+    },
+    {
+      "check": "no_production_envelope_change",
+      "pass": true,
+      "detail": "tip_in_envelope / envelopes used read-only via P2.1 path"
+    },
+    {
+      "check": "t18_rules_unchanged",
+      "pass": true,
+      "detail": "no ownership_rules.py / R2_LEADER_TIP mutation"
+    },
+    {
+      "check": "production_policy_is_E",
+      "pass": true
+    }
+  ]
+}

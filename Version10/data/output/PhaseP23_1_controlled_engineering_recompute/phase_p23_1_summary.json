@@ -1,0 +1,43 @@
+{
+  "phase_id": "P2.3.1",
+  "model_version": "10.5.6",
+  "status": "PASS",
+  "decision": "ENGINEERING IMPACT NEUTRAL",
+  "broader_e_validation": "NOT READY",
+  "recommendation": "Keep E_STRONG_COMBINED controlled/diagnostic only; do not broaden yet. Recovered leader does not change R1.3/VB1 steel quantities in the current architecture (ownership is applied after Excel generation).",
+  "baseline": {
+    "ownership": {
+      "beams": 11,
+      "accepted_node_total": 288,
+      "accepted_leaders": 25,
+      "accepted_annotations": 40,
+      "accepted_physical_bars": 60,
+      "accepted_semantic_annotations": 40
+    },
+    "steel_kg": 21690.436,
+    "steel_accuracy_pct": 58.39,
+    "overall_accuracy_pct": 53.48
+  },
+  "controlled": {
+    "ownership": {
+      "beams": 11,
+      "accepted_node_total": 291,
+      "accepted_leaders": 26,
+      "accepted_annotations": 40,
+      "accepted_physical_bars": 60,
+      "accepted_semantic_annotations": 40
+    },
+    "steel_kg": 21690.436,
+    "steel_accuracy_pct": 58.39,
+    "overall_accuracy_pct": 53.48
+  },
+  "delta": {
+    "steel_kg": 0.0,
+    "steel_accuracy_pp": 0.0,
+    "overall_accuracy_pp": 0.0
+  },
+  "b16_effect_class": "A_changes_nothing_downstream_for_steel",
+  "workbook_identical": true,
+  "vb1_consumes_beam_ownership": false,
+  "remaining_blocker": "Production architecture generates Estimation_Output.xlsx from R1.3 before T18 ownership. Recovering B16::LDR::7A1FFD68 changes effective ownership/render but has no path into VB1 steel quantities without a new ownership->R1.3 engineering bridge."
+}

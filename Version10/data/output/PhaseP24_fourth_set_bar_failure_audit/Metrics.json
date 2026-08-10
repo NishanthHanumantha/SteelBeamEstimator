@@ -1,0 +1,68 @@
+{
+  "gt_total_bars": 907,
+  "matched_bars": 136,
+  "partially_matched_bars": 227,
+  "unmatched_gt_bars": 544,
+  "extra_model_bars": 51,
+  "acceptable_extra_bars": 58,
+  "physical_bar_detection_pct": 78.61,
+  "correct_beam_ownership_pct": 78.61,
+  "annotation_association_pct": 64.39,
+  "leader_chain_success_pct": 56.12,
+  "leader_relevant_count": 715,
+  "role_accuracy_pct": 58.88,
+  "diameter_accuracy_pct": 48.51,
+  "quantity_accuracy_pct": 29.22,
+  "engineering_object_propagation_pct": 62.18,
+  "vb1_consumption_pct": 40.02,
+  "final_steel_contribution_accuracy_pct": 2.09,
+  "first_failure_counts": {
+    "DIAMETER_RESOLUTION": 111,
+    "NO_FAILURE": 136,
+    "ROLE_RESOLUTION": 144,
+    "LEADER_CHAIN": 107,
+    "QUANTITY_RESOLUTION": 185,
+    "DXF_GEOMETRY": 87,
+    "PHYSICAL_BAR_DETECTION": 106,
+    "VB1_INTEGRATION": 29,
+    "ANNOTATION_ASSOCIATION": 2
+  },
+  "first_failure_distribution_pct": {
+    "QUANTITY_RESOLUTION": 23.99,
+    "ROLE_RESOLUTION": 18.68,
+    "DIAMETER_RESOLUTION": 14.4,
+    "LEADER_CHAIN": 13.88,
+    "PHYSICAL_BAR_DETECTION": 13.75,
+    "DXF_GEOMETRY": 11.28,
+    "VB1_INTEGRATION": 3.76,
+    "ANNOTATION_ASSOCIATION": 0.26
+  },
+  "questions": {
+    "Q1_missing_at_physical_detection": 106,
+    "Q2_wrong_beam_ownership": 0,
+    "Q3_annotation_association_fail": 2,
+    "Q4_role_diameter_quantity_fail": 213,
+    "Q5_engineering_or_vb1_fail": 29,
+    "Q6_largest_first_fail": "QUANTITY_RESOLUTION",
+    "Q7_second_largest_first_fail": "ROLE_RESOLUTION"
+  },
+  "recommended_next_phase": "QUANTITY INTERPRETATION ENHANCEMENT",
+  "top3_root_causes": [
+    {
+      "stage": "QUANTITY_RESOLUTION",
+      "count": 185,
+      "pct_of_failures": 23.99
+    },
+    {
+      "stage": "ROLE_RESOLUTION",
+      "count": 144,
+      "pct_of_failures": 18.68
+    },
+    {
+      "stage": "DIAMETER_RESOLUTION",
+      "count": 111,
+      "pct_of_failures": 14.4
+    }
+  ],
+  "gt_registry_count": 907
+}

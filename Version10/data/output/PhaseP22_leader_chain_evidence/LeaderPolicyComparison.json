@@ -1,0 +1,48 @@
+{
+  "phase_id": "P2.2",
+  "model_version": "10.5.4",
+  "policy_definitions": {
+    "A_CURRENT": {
+      "label": "CURRENT - exact T18 behaviour",
+      "description": "Reproduce existing T18 / R2_LEADER_TIP outcome",
+      "production_eligible": "false"
+    },
+    "B_CHAIN_EVIDENCE": {
+      "label": "CHAIN EVIDENCE",
+      "description": "continuity AND bar proximity AND target beam context",
+      "production_eligible": "false"
+    },
+    "C_CHAIN_ENDPOINT": {
+      "label": "CHAIN + ENDPOINT",
+      "description": "B plus endpoint near envelope",
+      "production_eligible": "false"
+    },
+    "D_CHAIN_GEOMETRIC": {
+      "label": "CHAIN + GEOMETRIC ALIGNMENT",
+      "description": "continuity + context + long/transverse + no neighbour risk (diagnostic only)",
+      "production_eligible": "false"
+    },
+    "E_STRONG_COMBINED": {
+      "label": "STRONG COMBINED EVIDENCE",
+      "description": "chain+context+bar AND (endpoint OR long overlap) AND no neighbour risk AND not inside other beam",
+      "production_eligible": "true"
+    }
+  },
+  "accepted_count_all_23": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 5,
+    "E_STRONG_COMBINED": 1
+  },
+  "accepted_count_among_5_eligible": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 4,
+    "E_STRONG_COMBINED": 1
+  },
+  "production_policy": "E_STRONG_COMBINED",
+  "production_candidate_count": 1,
+  "note": "Diagnostic / production-candidate counts only \u2014 BeamOwnership not written in DIAGNOSTIC_ONLY mode"
+}

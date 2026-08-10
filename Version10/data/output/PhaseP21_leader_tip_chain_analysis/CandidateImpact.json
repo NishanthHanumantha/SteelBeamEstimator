@@ -1,0 +1,131 @@
+{
+  "phase_id": "P2.1",
+  "model_version": "10.5.3",
+  "label": "COUNTERFACTUAL IMPACT \u2014 NOT PRODUCTION",
+  "potentially_recovered_leaders_by_policy_safe_only": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 4,
+    "E_STRONG_COMBINED": 1
+  },
+  "leader_ids_by_policy_safe_only": {
+    "A_CURRENT": [],
+    "B_CHAIN_EVIDENCE": [
+      "B16::LDR::7A1FFD68"
+    ],
+    "C_CHAIN_ENDPOINT": [
+      "B16::LDR::7A1FFD68"
+    ],
+    "D_CHAIN_GEOMETRIC": [
+      "B18::LDR::0A172EB7",
+      "B18::LDR::77270BAC",
+      "B18::LDR::FCC2C11A",
+      "B19::LDR::4D6F2B85"
+    ],
+    "E_STRONG_COMBINED": [
+      "B16::LDR::7A1FFD68"
+    ]
+  },
+  "potentially_recovered_annotations_reachable": [
+    "ANN-12d3dba4",
+    "ANN-62d4cbc2",
+    "ANN-897214b9",
+    "ANN-bcae4d6e",
+    "ANN-ceb59daf"
+  ],
+  "potentially_recovered_annotation_count": 5,
+  "potentially_recovered_bars": [
+    "BAR::59B0AF37",
+    "BAR::SYN::B16::1213781"
+  ],
+  "potentially_recovered_bar_count": 2,
+  "note": "Do not convert to steel-quantity accuracy. Annotations become reachable only if a future production rule accepts the leader.",
+  "candidate_details": [
+    {
+      "beam_id": "B16",
+      "leader_id": "LDR::7A1FFD68",
+      "stable_key": "B16::LDR::7A1FFD68",
+      "associated_bar": "BAR::SYN::B16::1213781",
+      "associated_annotations": [
+        "ANN-62d4cbc2"
+      ],
+      "contamination_risk": "SAFE",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": true,
+        "C_CHAIN_ENDPOINT": true,
+        "D_CHAIN_GEOMETRIC": false,
+        "E_STRONG_COMBINED": true
+      }
+    },
+    {
+      "beam_id": "B18",
+      "leader_id": "LDR::0A172EB7",
+      "stable_key": "B18::LDR::0A172EB7",
+      "associated_bar": "BAR::59B0AF37",
+      "associated_annotations": [
+        "ANN-897214b9"
+      ],
+      "contamination_risk": "SAFE",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": false,
+        "C_CHAIN_ENDPOINT": false,
+        "D_CHAIN_GEOMETRIC": true,
+        "E_STRONG_COMBINED": false
+      }
+    },
+    {
+      "beam_id": "B18",
+      "leader_id": "LDR::77270BAC",
+      "stable_key": "B18::LDR::77270BAC",
+      "associated_bar": "BAR::59B0AF37",
+      "associated_annotations": [
+        "ANN-bcae4d6e"
+      ],
+      "contamination_risk": "SAFE",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": false,
+        "C_CHAIN_ENDPOINT": false,
+        "D_CHAIN_GEOMETRIC": true,
+        "E_STRONG_COMBINED": false
+      }
+    },
+    {
+      "beam_id": "B18",
+      "leader_id": "LDR::FCC2C11A",
+      "stable_key": "B18::LDR::FCC2C11A",
+      "associated_bar": "BAR::59B0AF37",
+      "associated_annotations": [
+        "ANN-12d3dba4"
+      ],
+      "contamination_risk": "SAFE",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": false,
+        "C_CHAIN_ENDPOINT": false,
+        "D_CHAIN_GEOMETRIC": true,
+        "E_STRONG_COMBINED": false
+      }
+    },
+    {
+      "beam_id": "B19",
+      "leader_id": "LDR::4D6F2B85",
+      "stable_key": "B19::LDR::4D6F2B85",
+      "associated_bar": null,
+      "associated_annotations": [
+        "ANN-ceb59daf"
+      ],
+      "contamination_risk": "SAFE",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": false,
+        "C_CHAIN_ENDPOINT": false,
+        "D_CHAIN_GEOMETRIC": true,
+        "E_STRONG_COMBINED": false
+      }
+    }
+  ]
+}

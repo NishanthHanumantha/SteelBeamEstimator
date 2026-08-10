@@ -1,0 +1,48 @@
+{
+  "phase_id": "P2.1",
+  "model_version": "10.5.3",
+  "policy_definitions": {
+    "A_CURRENT": {
+      "label": "CURRENT \u2014 exact T18 behaviour",
+      "description": "Reproduce existing T18 / R2_LEADER_TIP outcome"
+    },
+    "B_CHAIN_EVIDENCE": {
+      "label": "CHAIN EVIDENCE",
+      "description": "continuity AND bar proximity AND target beam context"
+    },
+    "C_CHAIN_ENDPOINT": {
+      "label": "CHAIN + ENDPOINT",
+      "description": "B plus endpoint near envelope"
+    },
+    "D_CHAIN_GEOMETRIC": {
+      "label": "CHAIN + GEOMETRIC ALIGNMENT",
+      "description": "continuity + context + long/transverse + no neighbour risk"
+    },
+    "E_STRONG_COMBINED": {
+      "label": "STRONG COMBINED EVIDENCE",
+      "description": "chain+context+bar AND (endpoint OR long overlap) AND no neighbour risk"
+    }
+  },
+  "accepted_count_all_23": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 5,
+    "E_STRONG_COMBINED": 1
+  },
+  "accepted_count_among_5_eligible": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 4,
+    "E_STRONG_COMBINED": 1
+  },
+  "delta_vs_policy_A": {
+    "A_CURRENT": 0,
+    "B_CHAIN_EVIDENCE": 1,
+    "C_CHAIN_ENDPOINT": 1,
+    "D_CHAIN_GEOMETRIC": 5,
+    "E_STRONG_COMBINED": 1
+  },
+  "note": "Diagnostic counts only \u2014 not production ownership changes"
+}

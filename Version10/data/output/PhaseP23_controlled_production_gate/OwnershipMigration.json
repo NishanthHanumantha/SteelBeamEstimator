@@ -1,0 +1,61 @@
+{
+  "phase_id": "P2.3",
+  "count": 3,
+  "rows": [
+    {
+      "entity_id": "ARR::4C3D2D29",
+      "entity_type": "LeaderArrow",
+      "beam_id": "B16",
+      "stable_key": "B16::ARR::4C3D2D29",
+      "baseline_status": "REJECTED",
+      "controlled_status": "ACCEPTED",
+      "source": "P2.2",
+      "recovery_policy": "E_STRONG_COMBINED",
+      "reason": "graph_propagation_from_LDR::7A1FFD68_via_HAS_ARROW",
+      "contamination_checks": {
+        "parent_leader": "LDR::7A1FFD68",
+        "relationship": "HAS_ARROW",
+        "edge_id": "E::002827"
+      },
+      "confidence": "GRAPH_SUPPORTED"
+    },
+    {
+      "entity_id": "LDR::7A1FFD68",
+      "entity_type": "Leader",
+      "beam_id": "B16",
+      "stable_key": "B16::LDR::7A1FFD68",
+      "baseline_status": "REJECTED",
+      "controlled_status": "ACCEPTED",
+      "source": "P2.2",
+      "recovery_policy": "E_STRONG_COMBINED",
+      "reason": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence",
+      "contamination_checks": {
+        "neighbour_ambiguity": false,
+        "inside_other_beam_envelope": false,
+        "chain_continuity": true,
+        "bar_proximity": true,
+        "target_beam_context": true,
+        "endpoint_near_envelope": true,
+        "longitudinal_overlap": false
+      },
+      "confidence": "HIGH"
+    },
+    {
+      "entity_id": "LTGT::LDR::7A1FFD68",
+      "entity_type": "LeaderTarget",
+      "beam_id": "B16",
+      "stable_key": "B16::LTGT::LDR::7A1FFD68",
+      "baseline_status": "REJECTED",
+      "controlled_status": "ACCEPTED",
+      "source": "P2.2",
+      "recovery_policy": "E_STRONG_COMBINED",
+      "reason": "graph_propagation_from_LDR::7A1FFD68_via_TARGETS",
+      "contamination_checks": {
+        "parent_leader": "LDR::7A1FFD68",
+        "relationship": "TARGETS",
+        "edge_id": "E::002828"
+      },
+      "confidence": "GRAPH_SUPPORTED"
+    }
+  ]
+}

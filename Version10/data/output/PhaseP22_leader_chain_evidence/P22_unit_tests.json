@@ -1,0 +1,126 @@
+{
+  "phase_id": "P2.2",
+  "model_version": "10.5.4",
+  "overall_pass": true,
+  "passed": 14,
+  "failed": 0,
+  "total": 14,
+  "tests": [
+    {
+      "test_id": "UT_01",
+      "name": "all E_STRONG_COMBINED conditions true -> ACCEPT_CANDIDATE",
+      "pass": true,
+      "detail": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence"
+    },
+    {
+      "test_id": "UT_02",
+      "name": "missing chain continuity -> reject",
+      "pass": true,
+      "detail": "reject_missing_chain_continuity"
+    },
+    {
+      "test_id": "UT_03",
+      "name": "missing bar proximity -> reject",
+      "pass": true,
+      "detail": "reject_missing_bar_proximity"
+    },
+    {
+      "test_id": "UT_04",
+      "name": "missing target beam context -> reject",
+      "pass": true,
+      "detail": "reject_missing_target_beam_context"
+    },
+    {
+      "test_id": "UT_05",
+      "name": "no endpoint/longitudinal evidence -> reject",
+      "pass": true,
+      "detail": "reject_missing_endpoint_or_longitudinal_evidence"
+    },
+    {
+      "test_id": "UT_06",
+      "name": "neighbour ambiguity -> reject",
+      "pass": true,
+      "detail": "reject_neighbour_ambiguity"
+    },
+    {
+      "test_id": "UT_07",
+      "name": "inside other beam envelope -> reject",
+      "pass": true,
+      "detail": "reject_inside_other_beam_envelope"
+    },
+    {
+      "test_id": "UT_08",
+      "name": "endpoint OR longitudinal overlap behaviour",
+      "pass": true,
+      "detail": {
+        "endpoint_only": true,
+        "longitudinal_only": true,
+        "neither": false
+      }
+    },
+    {
+      "test_id": "UT_09",
+      "name": "deterministic decision output",
+      "pass": true,
+      "detail": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence"
+    },
+    {
+      "test_id": "UT_10",
+      "name": "B16 reference evidence pattern -> ACCEPT_CANDIDATE",
+      "pass": true,
+      "detail": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence"
+    },
+    {
+      "test_id": "UT_11",
+      "name": "known contamination / geometry-only cases rejected",
+      "pass": true,
+      "detail": {
+        "neighbour": {
+          "decision": "REJECT",
+          "reason": "reject_neighbour_ambiguity",
+          "pass": true
+        },
+        "inside": {
+          "decision": "REJECT",
+          "reason": "reject_inside_other_beam_envelope",
+          "pass": true
+        },
+        "both": {
+          "decision": "REJECT",
+          "reason": "reject_neighbour_ambiguity",
+          "pass": true
+        },
+        "geometry_only_no_bar": {
+          "decision": "REJECT",
+          "reason": "reject_missing_bar_proximity",
+          "pass": true
+        }
+      }
+    },
+    {
+      "test_id": "UT_12",
+      "name": "Policy D geometric hit without bar proximity is not Policy E",
+      "pass": true,
+      "detail": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": false,
+        "C_CHAIN_ENDPOINT": false,
+        "D_CHAIN_GEOMETRIC": true,
+        "E_STRONG_COMBINED": false
+      }
+    },
+    {
+      "test_id": "UT_13",
+      "name": "diagnostic mode never writes ownership",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "test_id": "UT_14",
+      "name": "policy_e_reason accept string",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "failed_ids": []
+}

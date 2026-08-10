@@ -1,0 +1,51 @@
+{
+  "phase_id": "P2.3",
+  "accepted_count": 1,
+  "accepted_keys": [
+    "B16::LDR::7A1FFD68"
+  ],
+  "accepted": [
+    {
+      "phase_id": "P2.2",
+      "model_version": "10.5.4",
+      "beam_id": "B16",
+      "leader_id": "LDR::7A1FFD68",
+      "stable_key": "B16::LDR::7A1FFD68",
+      "current_t18_decision": "REJECTED",
+      "current_rejection_rule": "R2_LEADER_TIP",
+      "chain_continuity": true,
+      "bar_proximity": true,
+      "target_beam_context": true,
+      "endpoint_near_envelope": true,
+      "longitudinal_overlap": false,
+      "neighbour_ambiguity": false,
+      "inside_other_beam_envelope": false,
+      "enhanced_policy": "E_STRONG_COMBINED",
+      "enhanced_decision": "ACCEPT_CANDIDATE",
+      "enhanced_reason": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence",
+      "recovery_eligible": true,
+      "recovery_potential": "HIGH",
+      "policy_results": {
+        "A_CURRENT": false,
+        "B_CHAIN_EVIDENCE": true,
+        "C_CHAIN_ENDPOINT": true,
+        "D_CHAIN_GEOMETRIC": false,
+        "E_STRONG_COMBINED": true
+      },
+      "evidence_details": {
+        "distance_tip_to_envelope_mm": 202.823,
+        "distance_tip_to_support_mm": 52.823,
+        "bar_distance_mm": 298.727,
+        "J_distance_from_envelope_mm": 202.823,
+        "contamination_risk": "SAFE"
+      },
+      "production_gate": "DIAGNOSTIC_ONLY",
+      "beam_ownership_written": false,
+      "label": "DIAGNOSTIC / PRODUCTION-CANDIDATE ONLY",
+      "gate_accepted": true,
+      "gate_reason": "ok",
+      "source": "P2.2",
+      "recovery_policy": "E_STRONG_COMBINED"
+    }
+  ]
+}

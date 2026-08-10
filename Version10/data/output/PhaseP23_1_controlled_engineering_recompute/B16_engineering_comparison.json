@@ -1,0 +1,168 @@
+{
+  "phase_id": "P2.3.1",
+  "model_version": "10.5.6",
+  "stable_key": "B16::LDR::7A1FFD68",
+  "expected_migrated_entities": [
+    "LDR::7A1FFD68",
+    "ARR::4C3D2D29",
+    "LTGT::LDR::7A1FFD68"
+  ],
+  "stages": [
+    {
+      "stage": "leader",
+      "entity_id": "LDR::7A1FFD68",
+      "baseline_owned": false,
+      "controlled_owned": true,
+      "changed": true
+    },
+    {
+      "stage": "graph_child",
+      "entity_id": "ARR::4C3D2D29",
+      "baseline_owned": false,
+      "controlled_owned": true,
+      "changed": true
+    },
+    {
+      "stage": "graph_child",
+      "entity_id": "LTGT::LDR::7A1FFD68",
+      "baseline_owned": false,
+      "controlled_owned": true,
+      "changed": true
+    },
+    {
+      "stage": "annotation",
+      "entity_id": "ANN-62d4cbc2",
+      "baseline_owned": true,
+      "controlled_owned": true,
+      "changed": false,
+      "note": "Already T18-owned in P2.3 analysis"
+    },
+    {
+      "stage": "physical_bar",
+      "entity_id": "BAR::SYN::B16::1213781",
+      "baseline_owned": true,
+      "controlled_owned": true,
+      "changed": false,
+      "note": "Already T18-owned in P2.3 analysis"
+    },
+    {
+      "stage": "physical_bar",
+      "entity_id": "BAR::SYN::B16::11C88F6",
+      "baseline_owned": true,
+      "controlled_owned": true,
+      "changed": false,
+      "note": "Already T18-owned in P2.3 analysis"
+    },
+    {
+      "stage": "r13_reinforcement_model",
+      "entity_id": "B16",
+      "model_present": true,
+      "references_recovered_leader": false,
+      "references_ann_62d4": false,
+      "total_classified_bars": 16,
+      "bar_count_by_role": {
+        "TOP_MAIN": 1,
+        "TOP_EXTRA": 4,
+        "STIRRUP": 1,
+        "BOTTOM_EXTRA": 4,
+        "BOTTOM_MAIN": 1,
+        "SPACER_BAR": 5
+      },
+      "changed_by_ownership": false,
+      "note": "R1.3 models are built before T18 ownership and do not reference LDR::7A1FFD68; ownership injection cannot alter this artefact."
+    },
+    {
+      "stage": "excel_steel",
+      "entity_id": "B16",
+      "baseline_steel_kg": 532.849,
+      "controlled_steel_kg": 532.849,
+      "baseline_bar_count": 16,
+      "controlled_bar_count": 16,
+      "baseline_bbs_rows": 1,
+      "controlled_bbs_rows": 1,
+      "changed": false
+    }
+  ],
+  "effect_class": "A_changes_nothing_downstream_for_steel",
+  "effect_meaning": "Leader/ARR/LTGT ownership recovered, but annotation/bars already owned and R1.3/Excel unchanged \u2014 no steel quantity effect.",
+  "p23_propagation": {
+    "phase_id": "P2.3",
+    "count": 1,
+    "rows": [
+      {
+        "recovered_leader": "LDR::7A1FFD68",
+        "beam_id": "B16",
+        "stable_key": "B16::LDR::7A1FFD68",
+        "linked_annotations": [
+          "ANN-62d4cbc2"
+        ],
+        "linked_physical_bars": [
+          "BAR::SYN::B16::11C88F6",
+          "BAR::SYN::B16::1213781"
+        ],
+        "propagated_graph_children": [
+          "ARR::4C3D2D29",
+          "LTGT::LDR::7A1FFD68"
+        ],
+        "annotation_baseline_owned": {
+          "ANN-62d4cbc2": true
+        },
+        "bar_baseline_owned": {
+          "BAR::SYN::B16::11C88F6": true,
+          "BAR::SYN::B16::1213781": true
+        },
+        "nodes": [
+          {
+            "entity_id": "LDR::7A1FFD68",
+            "entity_type": "Leader",
+            "previous_ownership": "REJECTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "P2.2",
+            "relationship_source": "E_STRONG_COMBINED"
+          },
+          {
+            "entity_id": "ARR::4C3D2D29",
+            "entity_type": "LeaderArrow",
+            "previous_ownership": "REJECTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "P2.2",
+            "relationship_source": "HAS_ARROW"
+          },
+          {
+            "entity_id": "LTGT::LDR::7A1FFD68",
+            "entity_type": "LeaderTarget",
+            "previous_ownership": "REJECTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "P2.2",
+            "relationship_source": "TARGETS"
+          },
+          {
+            "entity_id": "ANN-62d4cbc2",
+            "entity_type": "Annotation",
+            "previous_ownership": "ACCEPTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "T18_existing",
+            "relationship_source": "accepted_chain_via_leader"
+          },
+          {
+            "entity_id": "BAR::SYN::B16::11C88F6",
+            "entity_type": "PhysicalBar",
+            "previous_ownership": "ACCEPTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "T18_existing",
+            "relationship_source": "accepted_chain_describes"
+          },
+          {
+            "entity_id": "BAR::SYN::B16::1213781",
+            "entity_type": "PhysicalBar",
+            "previous_ownership": "ACCEPTED",
+            "new_ownership": "ACCEPTED",
+            "evidence_source": "T18_existing",
+            "relationship_source": "accepted_chain_describes"
+          }
+        ]
+      }
+    ]
+  },
+  "architectural_note": "Production pipeline order: R1.3 -> VB1 Excel -> Track1/T18 ownership. Controlled BeamOwnership cannot feed Excel without a new ownership->R1.3 bridge."
+}

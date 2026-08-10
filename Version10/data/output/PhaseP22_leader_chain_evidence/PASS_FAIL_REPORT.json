@@ -1,0 +1,116 @@
+{
+  "phase_id": "P2.2",
+  "model_version": "10.5.4",
+  "overall_pass": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "gate": "GATE_23_leaders",
+      "pass": true,
+      "detail": 23
+    },
+    {
+      "gate": "GATE_5_eligible",
+      "pass": true,
+      "detail": 5
+    },
+    {
+      "gate": "GATE_policy_E_count_all",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "gate": "GATE_policy_E_count_eligible",
+      "pass": true,
+      "detail": 1
+    },
+    {
+      "gate": "GATE_policy_A_zero",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "gate": "GATE_B16_reference_accept_candidate",
+      "pass": true,
+      "detail": {
+        "present": true,
+        "decision": "ACCEPT_CANDIDATE",
+        "reason": "strong_chain_bar_context_with_endpoint_or_longitudinal_evidence"
+      }
+    },
+    {
+      "gate": "GATE_known_negatives_rejected",
+      "pass": true,
+      "detail": {
+        "checked": [
+          "B16::LDR::49842AC8",
+          "B16::LDR::50092321",
+          "B18::LDR::1EDDB869",
+          "B19::LDR::027AB042",
+          "B19::LDR::056CE421",
+          "B29::LDR::58F9C249",
+          "B46::LDR::FE5B8017"
+        ],
+        "failed": []
+      }
+    },
+    {
+      "gate": "GATE_contamination_not_accepted",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "gate": "GATE_production_policy_is_E_not_D",
+      "pass": true,
+      "detail": "E_STRONG_COMBINED"
+    },
+    {
+      "gate": "GATE_diagnostic_gate",
+      "pass": true,
+      "detail": "DIAGNOSTIC_ONLY"
+    },
+    {
+      "gate": "GATE_regression",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_owned_hash_unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_t18_hash_unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_determinism",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_unit_tests",
+      "pass": true,
+      "detail": {
+        "passed": 14,
+        "failed": 0
+      }
+    },
+    {
+      "gate": "GATE_fifth_sixth",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_complete_decisions",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "failed_gates": [],
+  "ready_for_controlled_production_gate": true,
+  "label": "DIAGNOSTIC / PRODUCTION-CANDIDATE ONLY",
+  "generated_at": null,
+  "elapsed_s": 0.692
+}

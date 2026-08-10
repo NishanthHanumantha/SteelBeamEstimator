@@ -1,0 +1,66 @@
+{
+  "phase_id": "P2.1",
+  "model_version": "10.5.3",
+  "overall_pass": true,
+  "status": "PASS",
+  "checks": [
+    {
+      "gate": "GATE_23_leaders",
+      "pass": true,
+      "detail": 23
+    },
+    {
+      "gate": "GATE_5_eligible",
+      "pass": true,
+      "detail": 5
+    },
+    {
+      "gate": "GATE_complete_records",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_policy_A_matches_t18_rejects",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_regression",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_determinism",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_fifth_sixth",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_root_cause_present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_safe_cases_uncontaminated",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "gate": "GATE_diagnostic_only",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "failed_gates": [],
+  "generated_at": null,
+  "elapsed_s": 1.154,
+  "root_recommendation": {
+    "option": "OPTION 2 - Leader-chain evidence enhancement",
+    "option_id": "OPTION_2",
+    "rationale": "Strong chain+bar+context evidence (Policy E/C) can safely recover at least the HIGH candidate without global envelope expansion. Geometric-only Policy D recovers more volume (4 SAFE) but lacks bar proximity and should not be used alone."
+  }
+}

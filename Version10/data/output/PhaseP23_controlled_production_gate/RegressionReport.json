@@ -1,0 +1,79 @@
+{
+  "phase_id": "P2.3",
+  "model_version": "10.5.5",
+  "overall_pass": true,
+  "regression_status": "PASS",
+  "baseline_owned_hash": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841",
+  "current_owned_hash": "a45850e37122af11f68dc76bdd02fe759b5a2edcceb188b8671282de3ce39841",
+  "baseline_t18_hash": "d2febaee927fee32458d443ff0d066855dabe6ce5f960c3059ad02094442931c",
+  "current_t18_hash": "d2febaee927fee32458d443ff0d066855dabe6ce5f960c3059ad02094442931c",
+  "historical_t18_file_hash": "11bf394d9c734a10363275bd5415d1b28074126e99ac9a8a0415a0e35de1b285",
+  "effective_ownership_hash": "5d1f194331a2ca52c8b2411be9f832a2bc86cd0c41eed5f3d1aa4bffd56c0a5d",
+  "migration_hash": "5155784492de55905fd91208f442326261ce32a09e0d600c1dc6bb79d12728b5",
+  "recovery_propagation_hash": "e69ee0023de368b5a45e5468ccd6d1ad5f367d277b899b7ca448bf98475399f1",
+  "render_manifest_hash": "2c5d1503cb928e304f3431b55b1c85f9316be4918e6dad19ed52f37996737774",
+  "benchmark_output_hash": "06dcb50cd65484c1546691450a54904748b4158e6465ce17cca5df85c8446441",
+  "checks": [
+    {
+      "check": "qa33_owned",
+      "pass": true
+    },
+    {
+      "check": "qa33_rejected",
+      "pass": true
+    },
+    {
+      "check": "qa34_migration",
+      "pass": true
+    },
+    {
+      "check": "qa34_dropped",
+      "pass": true
+    },
+    {
+      "check": "historical_t18_stable",
+      "pass": true
+    },
+    {
+      "check": "historical_t18_file_not_mutated",
+      "pass": true,
+      "detail": {
+        "before": "11bf394d9c734a10363275bd5415d1b28074126e99ac9a8a0415a0e35de1b285",
+        "after": "11bf394d9c734a10363275bd5415d1b28074126e99ac9a8a0415a0e35de1b285"
+      }
+    },
+    {
+      "check": "baseline_t18_hash_matches_snapshot",
+      "pass": true
+    },
+    {
+      "check": "qa41_baseline",
+      "pass": true
+    },
+    {
+      "check": "qa42_baseline",
+      "pass": true
+    },
+    {
+      "check": "qa43_baseline",
+      "pass": true
+    },
+    {
+      "check": "p21_baseline",
+      "pass": true
+    },
+    {
+      "check": "p22_baseline",
+      "pass": true
+    },
+    {
+      "check": "no_envelope_expansion",
+      "pass": true,
+      "detail": "P2.3 overlay does not modify production envelopes"
+    },
+    {
+      "check": "production_policy_is_E",
+      "pass": true
+    }
+  ]
+}

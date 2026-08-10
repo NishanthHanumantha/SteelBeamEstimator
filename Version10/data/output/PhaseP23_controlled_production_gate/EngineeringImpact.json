@@ -1,0 +1,23 @@
+{
+  "delta_leaders": 1,
+  "newly_owned_entities": [
+    "ARR::4C3D2D29",
+    "LDR::7A1FFD68",
+    "LTGT::LDR::7A1FFD68"
+  ],
+  "annotation_newly_owned": [],
+  "bar_newly_owned": [],
+  "render_improved": true,
+  "b16_questions": {
+    "did_missing_leader_appear": true,
+    "did_associated_annotation_appear": false,
+    "did_associated_bar_appear": false,
+    "did_unrelated_neighbour_annotations_appear": false,
+    "did_crop_improve": true,
+    "did_crop_become_worse": false
+  },
+  "bottleneck": "Recovered leader/annotation chain already partially owned; Estimation_Output.xlsx not regenerated in P2.3 controlled experiment, so steel accuracy formulas cannot reflect visual ownership recovery yet.",
+  "causal_break": "Leader (+ARR/LTGT) recovered into effective ownership, but linked annotation ANN-62d4cbc2 / bars were already T18-accepted \u2014 steel estimation path likely unchanged without Excel regeneration.",
+  "causal_chain_summary": "P2.2 E candidate -> effective ownership overlay -> graph ARR/LTGT propagation -> adaptive render comparison. Steel Excel not regenerated.",
+  "recommendation": "Do not broaden Policy E yet. Ownership/render recovery is safe for B16::LDR::7A1FFD68. Next step: regenerate Estimation_Output.xlsx under controlled ownership to measure steel accuracy, or investigate whether already-owned annotation already feeds estimation."
+}

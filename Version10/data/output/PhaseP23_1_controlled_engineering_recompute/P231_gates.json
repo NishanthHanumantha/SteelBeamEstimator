@@ -1,0 +1,120 @@
+{
+  "phase_id": "P2.3.1",
+  "model_version": "10.5.6",
+  "overall_pass": true,
+  "status": "PASS",
+  "decision": "ENGINEERING IMPACT NEUTRAL",
+  "checks": [
+    {
+      "gate": "GATE_01_baseline_reproduces_P23",
+      "pass": true,
+      "detail": {
+        "beams": 11,
+        "accepted_node_total": 288,
+        "accepted_leaders": 25,
+        "accepted_annotations": 40,
+        "accepted_physical_bars": 60,
+        "accepted_semantic_annotations": 40
+      }
+    },
+    {
+      "gate": "GATE_02_controlled_uses_only_E_STRONG_COMBINED",
+      "pass": true,
+      "detail": {
+        "policy": "E_STRONG_COMBINED",
+        "migrations": 3
+      }
+    },
+    {
+      "gate": "GATE_03_expected_B16_chain_present",
+      "pass": true,
+      "detail": [
+        "ARR::4C3D2D29",
+        "LDR::7A1FFD68",
+        "LTGT::LDR::7A1FFD68"
+      ]
+    },
+    {
+      "gate": "GATE_04_no_policy_D",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_05_no_unexpected_ownership_migration",
+      "pass": true,
+      "detail": {
+        "unexpected": [],
+        "counts": {
+          "beams": 11,
+          "accepted_node_total": 291,
+          "accepted_leaders": 26,
+          "accepted_annotations": 40,
+          "accepted_physical_bars": 60,
+          "accepted_semantic_annotations": 40
+        }
+      }
+    },
+    {
+      "gate": "GATE_06_no_unexpected_engineering_migration",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "gate": "GATE_07_baseline_engineering_output_generated",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP23_1_controlled_engineering_recompute\\Estimation_Output_baseline.xlsx"
+    },
+    {
+      "gate": "GATE_08_controlled_engineering_output_generated",
+      "pass": true,
+      "detail": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP23_1_controlled_engineering_recompute\\Estimation_Output_controlled.xlsx"
+    },
+    {
+      "gate": "GATE_09_B16_downstream_trace_complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_10_QA3_benchmark_completed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_11_baseline_vs_controlled_comparison_completed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_12_no_historical_T18_regression",
+      "pass": true,
+      "detail": {
+        "before": "11bf394d9c734a10363275bd5415d1b28074126e99ac9a8a0415a0e35de1b285",
+        "after": "11bf394d9c734a10363275bd5415d1b28074126e99ac9a8a0415a0e35de1b285"
+      }
+    },
+    {
+      "gate": "GATE_13_determinism",
+      "pass": true,
+      "detail": "PASS"
+    },
+    {
+      "gate": "GATE_14_no_contamination",
+      "pass": true,
+      "detail": false
+    },
+    {
+      "gate": "GATE_15_output_integrity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "gate": "GATE_unit_tests",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "failed_gates": [],
+  "broader_e_validation": "NOT READY",
+  "recommendation": "Keep E_STRONG_COMBINED controlled/diagnostic only; do not broaden yet. Recovered leader does not change R1.3/VB1 steel quantities in the current architecture (ownership is applied after Excel generation).",
+  "elapsed_s": 80.328
+}

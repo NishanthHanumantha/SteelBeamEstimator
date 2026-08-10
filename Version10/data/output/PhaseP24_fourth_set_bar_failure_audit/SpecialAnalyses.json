@@ -1,0 +1,271 @@
+{
+  "top_reinforcement": {
+    "gt_top_bars": 248,
+    "matched": 99,
+    "unmatched": 96,
+    "first_failure_all": {
+      "DIAMETER_RESOLUTION": 45,
+      "NO_FAILURE": 99,
+      "LEADER_CHAIN": 10,
+      "DXF_GEOMETRY": 49,
+      "VB1_INTEGRATION": 10,
+      "ROLE_RESOLUTION": 26,
+      "QUANTITY_RESOLUTION": 4,
+      "PHYSICAL_BAR_DETECTION": 5
+    },
+    "first_failure_failures_only": {
+      "DIAMETER_RESOLUTION": 45,
+      "LEADER_CHAIN": 10,
+      "DXF_GEOMETRY": 49,
+      "VB1_INTEGRATION": 10,
+      "ROLE_RESOLUTION": 26,
+      "QUANTITY_RESOLUTION": 4,
+      "PHYSICAL_BAR_DETECTION": 5
+    },
+    "dominant_failure": "DXF_GEOMETRY",
+    "conclusion": "Missing/failing top bars are dominated by DXF_GEOMETRY (49/149 = 32.9%)."
+  },
+  "problem_beams_b10_b12_b13": {
+    "B10": {
+      "present_in_fourth_set_gt": false,
+      "gt_bars": 0,
+      "note": "Beam ID not present in Fourth Set estimator/model registries.",
+      "first_failure_distribution": {},
+      "conclusion": "NOT_A_FOURTH_SET_BEAM \u2014 cannot attribute Fourth Set render failure to this ID."
+    },
+    "B12": {
+      "present_in_fourth_set_gt": false,
+      "gt_bars": 0,
+      "note": "Beam ID not present in Fourth Set estimator/model registries.",
+      "first_failure_distribution": {},
+      "conclusion": "NOT_A_FOURTH_SET_BEAM \u2014 cannot attribute Fourth Set render failure to this ID."
+    },
+    "B13": {
+      "present_in_fourth_set_gt": false,
+      "gt_bars": 0,
+      "note": "Beam ID not present in Fourth Set estimator/model registries.",
+      "first_failure_distribution": {},
+      "conclusion": "NOT_A_FOURTH_SET_BEAM \u2014 cannot attribute Fourth Set render failure to this ID."
+    }
+  },
+  "shared_beams_b8_b9_b10": {
+    "B8": {
+      "present_in_fourth_set_gt": false,
+      "note": "B8/B9/B10 are not Fourth Set basement beam IDs in the estimator GT."
+    },
+    "B9": {
+      "present_in_fourth_set_gt": false,
+      "note": "B8/B9/B10 are not Fourth Set basement beam IDs in the estimator GT."
+    },
+    "B10": {
+      "present_in_fourth_set_gt": false,
+      "note": "B8/B9/B10 are not Fourth Set basement beam IDs in the estimator GT."
+    },
+    "fourth_set_shared_scopes": [
+      {
+        "scope_id": "SCOPE::SFR::ANN-2a029aa5",
+        "scope_type": "SIDE_FACE_REINFORCEMENT",
+        "member_beams": [
+          "B96A",
+          "B97A",
+          "B98A",
+          "B99A",
+          "B100A",
+          "B101A"
+        ],
+        "member_annotations": [
+          "ANN-2a029aa5"
+        ],
+        "confidence": 0.92,
+        "reason": "collinear_continuous_framing;mark_y_tol=150.0;gap<1000.0;leader_tip_in_group;sfr_text",
+        "shared": true,
+        "primary_beam": "B96A",
+        "annotation_text": "SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM",
+        "rules_passed": [
+          "R1_COLLINEAR",
+          "R2_GAP",
+          "R3_DEPTH",
+          "R4_LEADER_TIP",
+          "R5_SFR_TEXT",
+          "R6_NO_EXCLUSIVE_CONFLICT"
+        ],
+        "dedup_key": [
+          "SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM",
+          [
+            "B100A",
+            "B101A",
+            "B96A",
+            "B97A",
+            "B98A",
+            "B99A"
+          ],
+          "SIDE_FACE_REINFORCEMENT"
+        ],
+        "deduplicated": false
+      }
+    ],
+    "shared_annotation_count": 1,
+    "shared_beams_observed": [
+      "B100A",
+      "B101A",
+      "B96A",
+      "B97A",
+      "B98A",
+      "B99A"
+    ],
+    "conclusion": "Fourth Set shared-beam case is SIDE_FACE_REINFORCEMENT scope on ['B100A', 'B101A', 'B96A', 'B97A', 'B98A', 'B99A'], not B8/B9/B10."
+  },
+  "priority_beams": {
+    "B14": {
+      "gt_bars": 10,
+      "matched": 3,
+      "unmatched": 3,
+      "partial": 4,
+      "first_failure_distribution": {
+        "NO_FAILURE": 3,
+        "DIAMETER_RESOLUTION": 1,
+        "ROLE_RESOLUTION": 1,
+        "QUANTITY_RESOLUTION": 2,
+        "LEADER_CHAIN": 3
+      },
+      "dominant_first_fail": "NO_FAILURE",
+      "top_missing": 0
+    },
+    "B15": {
+      "gt_bars": 9,
+      "matched": 2,
+      "unmatched": 3,
+      "partial": 4,
+      "first_failure_distribution": {
+        "NO_FAILURE": 2,
+        "QUANTITY_RESOLUTION": 3,
+        "DIAMETER_RESOLUTION": 1,
+        "LEADER_CHAIN": 3
+      },
+      "dominant_first_fail": "QUANTITY_RESOLUTION",
+      "top_missing": 0
+    },
+    "B16": {
+      "gt_bars": 7,
+      "matched": 2,
+      "unmatched": 0,
+      "partial": 5,
+      "first_failure_distribution": {
+        "NO_FAILURE": 2,
+        "DIAMETER_RESOLUTION": 3,
+        "QUANTITY_RESOLUTION": 2
+      },
+      "dominant_first_fail": "DIAMETER_RESOLUTION",
+      "top_missing": 0
+    },
+    "B18": {
+      "gt_bars": 10,
+      "matched": 1,
+      "unmatched": 3,
+      "partial": 6,
+      "first_failure_distribution": {
+        "DIAMETER_RESOLUTION": 3,
+        "NO_FAILURE": 1,
+        "ROLE_RESOLUTION": 1,
+        "QUANTITY_RESOLUTION": 2,
+        "LEADER_CHAIN": 3
+      },
+      "dominant_first_fail": "DIAMETER_RESOLUTION",
+      "top_missing": 0
+    },
+    "B19": {
+      "gt_bars": 9,
+      "matched": 0,
+      "unmatched": 3,
+      "partial": 6,
+      "first_failure_distribution": {
+        "DIAMETER_RESOLUTION": 4,
+        "QUANTITY_RESOLUTION": 2,
+        "LEADER_CHAIN": 3
+      },
+      "dominant_first_fail": "DIAMETER_RESOLUTION",
+      "top_missing": 0
+    },
+    "B22": {
+      "gt_bars": 10,
+      "matched": 1,
+      "unmatched": 7,
+      "partial": 2,
+      "first_failure_distribution": {
+        "NO_FAILURE": 1,
+        "ROLE_RESOLUTION": 2,
+        "LEADER_CHAIN": 5,
+        "DIAMETER_RESOLUTION": 1,
+        "QUANTITY_RESOLUTION": 1
+      },
+      "dominant_first_fail": "LEADER_CHAIN",
+      "top_missing": 1
+    },
+    "B23": {
+      "gt_bars": 8,
+      "matched": 1,
+      "unmatched": 6,
+      "partial": 1,
+      "first_failure_distribution": {
+        "NO_FAILURE": 1,
+        "ROLE_RESOLUTION": 2,
+        "QUANTITY_RESOLUTION": 1,
+        "LEADER_CHAIN": 4
+      },
+      "dominant_first_fail": "LEADER_CHAIN",
+      "top_missing": 1
+    },
+    "B29": {
+      "gt_bars": 7,
+      "matched": 1,
+      "unmatched": 0,
+      "partial": 6,
+      "first_failure_distribution": {
+        "NO_FAILURE": 1,
+        "DIAMETER_RESOLUTION": 2,
+        "ROLE_RESOLUTION": 2,
+        "QUANTITY_RESOLUTION": 2
+      },
+      "dominant_first_fail": "DIAMETER_RESOLUTION",
+      "top_missing": 0
+    },
+    "B42A": {
+      "gt_bars": 4,
+      "matched": 1,
+      "unmatched": 2,
+      "partial": 1,
+      "first_failure_distribution": {
+        "NO_FAILURE": 1,
+        "ROLE_RESOLUTION": 1,
+        "QUANTITY_RESOLUTION": 2
+      },
+      "dominant_first_fail": "QUANTITY_RESOLUTION",
+      "top_missing": 0
+    },
+    "B45": {
+      "gt_bars": 4,
+      "matched": 2,
+      "unmatched": 2,
+      "partial": 0,
+      "first_failure_distribution": {
+        "NO_FAILURE": 2,
+        "ROLE_RESOLUTION": 1,
+        "VB1_INTEGRATION": 1
+      },
+      "dominant_first_fail": "NO_FAILURE",
+      "top_missing": 0
+    },
+    "B46": {
+      "gt_bars": 6,
+      "matched": 2,
+      "unmatched": 4,
+      "partial": 0,
+      "first_failure_distribution": {
+        "NO_FAILURE": 2,
+        "ROLE_RESOLUTION": 4
+      },
+      "dominant_first_fail": "ROLE_RESOLUTION",
+      "top_missing": 0
+    }
+  }
+}

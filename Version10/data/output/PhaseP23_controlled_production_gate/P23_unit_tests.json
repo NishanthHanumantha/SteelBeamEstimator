@@ -1,0 +1,114 @@
+{
+  "phase_id": "P2.3",
+  "model_version": "10.5.5",
+  "overall_pass": true,
+  "passed": 15,
+  "failed": 0,
+  "total": 15,
+  "tests": [
+    {
+      "test_id": "UT_01",
+      "name": "P2.2 E candidate is accepted",
+      "pass": true,
+      "detail": [
+        "B16::LDR::7A1FFD68"
+      ]
+    },
+    {
+      "test_id": "UT_02",
+      "name": "Policy D cannot enter production",
+      "pass": true,
+      "detail": "policy_not_E_STRONG_COMBINED"
+    },
+    {
+      "test_id": "UT_03",
+      "name": "B16 candidate is accepted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "test_id": "UT_04",
+      "name": "neighbour ambiguity rejected",
+      "pass": true,
+      "detail": "neighbour_ambiguity"
+    },
+    {
+      "test_id": "UT_05",
+      "name": "inside-other-beam rejected",
+      "pass": true,
+      "detail": "inside_other_beam_envelope"
+    },
+    {
+      "test_id": "UT_06",
+      "name": "missing bar proximity rejected",
+      "pass": true,
+      "detail": "missing_bar_proximity"
+    },
+    {
+      "test_id": "UT_07",
+      "name": "missing target context rejected",
+      "pass": true,
+      "detail": "missing_target_beam_context"
+    },
+    {
+      "test_id": "UT_08",
+      "name": "missing chain continuity rejected",
+      "pass": true,
+      "detail": "missing_chain_continuity"
+    },
+    {
+      "test_id": "UT_09",
+      "name": "no unexplained ownership migration",
+      "pass": true,
+      "detail": {
+        "pass": true,
+        "violations": [],
+        "migration_count": 3
+      }
+    },
+    {
+      "test_id": "UT_10",
+      "name": "downstream propagation has provenance",
+      "pass": true,
+      "detail": [
+        "ARR::4C3D2D29",
+        "LTGT::LDR::7A1FFD68"
+      ]
+    },
+    {
+      "test_id": "UT_11",
+      "name": "deterministic migration",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "test_id": "UT_12",
+      "name": "baseline mode reproduces existing ownership exactly",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "test_id": "UT_13",
+      "name": "controlled mode differs only by valid P2.2 candidates",
+      "pass": true,
+      "detail": [
+        "ARR::4C3D2D29",
+        "LDR::7A1FFD68",
+        "LTGT::LDR::7A1FFD68"
+      ]
+    },
+    {
+      "test_id": "UT_14",
+      "name": "no global envelope expansion occurs",
+      "pass": true,
+      "detail": true
+    },
+    {
+      "test_id": "UT_15",
+      "name": "gate OFF rejects all",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "failed_ids": []
+}

@@ -1,0 +1,98 @@
+{
+  "phase_id": "P2.1",
+  "model_version": "10.5.3",
+  "answers": {
+    "1_is_r2_leader_tip_too_strict": "YES",
+    "2_is_problem_the_leader_tip_rule": "YES",
+    "3_is_problem_the_production_envelope": "PARTIAL",
+    "4_can_chain_evidence_safely_recover_any_of_5": "YES",
+    "5_best_policy_without_contamination": "E_STRONG_COMBINED",
+    "5b_highest_volume_safe_policy": "D_CHAIN_GEOMETRIC",
+    "6_additional_leaders_each_policy": {
+      "A_CURRENT": 0,
+      "B_CHAIN_EVIDENCE": 1,
+      "C_CHAIN_ENDPOINT": 1,
+      "D_CHAIN_GEOMETRIC": 5,
+      "E_STRONG_COMBINED": 1
+    },
+    "6b_additional_among_eligible_safe": {
+      "A_CURRENT": 0,
+      "B_CHAIN_EVIDENCE": 1,
+      "C_CHAIN_ENDPOINT": 1,
+      "D_CHAIN_GEOMETRIC": 4,
+      "E_STRONG_COMBINED": 1
+    },
+    "7_additional_annotations_reachable": 5,
+    "8_evidence_to_incorporate_in_future_rule": [
+      "leader_chain_continuity",
+      "leader_to_bar_proximity",
+      "target_beam_context",
+      "endpoint_near_envelope OR longitudinal_overlap",
+      "explicit neighbour_ambiguity == FALSE",
+      "inside_other_beam_envelope == FALSE"
+    ],
+    "9_evidence_not_to_use_alone": [
+      "distance_to_envelope alone (arbitrary expansion)",
+      "neighbour_ambiguity cases",
+      "inside_other_beam_envelope",
+      "far_outside spatial class",
+      "points_toward_target_beam without bar proximity"
+    ]
+  },
+  "statistics": {
+    "leaders_with_r2_rejection": 22,
+    "tip_in_envelope_false": 23,
+    "contamination_counts": {
+      "AMBIGUOUS": 12,
+      "SAFE": 10,
+      "UNSAFE": 1
+    },
+    "eligible_strong_policy_hits": [
+      "B16::LDR::7A1FFD68"
+    ]
+  },
+  "case_taxonomy_for_5_candidates": [
+    {
+      "stable_key": "B16::LDR::7A1FFD68",
+      "beam_id": "B16",
+      "leader_id": "LDR::7A1FFD68",
+      "case": "B",
+      "case_meaning": "Associated with beam but rejected because R2 tip test is strict"
+    },
+    {
+      "stable_key": "B18::LDR::0A172EB7",
+      "beam_id": "B18",
+      "leader_id": "LDR::0A172EB7",
+      "case": "B",
+      "case_meaning": "Associated with beam but rejected because R2 tip test is strict"
+    },
+    {
+      "stable_key": "B18::LDR::77270BAC",
+      "beam_id": "B18",
+      "leader_id": "LDR::77270BAC",
+      "case": "B",
+      "case_meaning": "Associated with beam but rejected because R2 tip test is strict"
+    },
+    {
+      "stable_key": "B18::LDR::FCC2C11A",
+      "beam_id": "B18",
+      "leader_id": "LDR::FCC2C11A",
+      "case": "B",
+      "case_meaning": "Associated with beam but rejected because R2 tip test is strict"
+    },
+    {
+      "stable_key": "B19::LDR::4D6F2B85",
+      "beam_id": "B19",
+      "leader_id": "LDR::4D6F2B85",
+      "case": "B",
+      "case_meaning": "Associated with beam but rejected because R2 tip test is strict"
+    }
+  ],
+  "recommended_next_phase": {
+    "option": "OPTION 2 - Leader-chain evidence enhancement",
+    "option_id": "OPTION_2",
+    "rationale": "Strong chain+bar+context evidence (Policy E/C) can safely recover at least the HIGH candidate without global envelope expansion. Geometric-only Policy D recovers more volume (4 SAFE) but lacks bar proximity and should not be used alone."
+  },
+  "production_fix_implemented": false,
+  "label": "DIAGNOSTIC CONCLUSION \u2014 NOT A PRODUCTION RULE CHANGE"
+}

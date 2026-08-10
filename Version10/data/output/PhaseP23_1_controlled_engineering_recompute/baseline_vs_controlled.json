@@ -1,0 +1,115 @@
+{
+  "phase_id": "P2.3.1",
+  "model_version": "10.5.6",
+  "ownership": {
+    "baseline": {
+      "beams": 11,
+      "accepted_node_total": 288,
+      "accepted_leaders": 25,
+      "accepted_annotations": 40,
+      "accepted_physical_bars": 60,
+      "accepted_semantic_annotations": 40
+    },
+    "controlled": {
+      "beams": 11,
+      "accepted_node_total": 291,
+      "accepted_leaders": 26,
+      "accepted_annotations": 40,
+      "accepted_physical_bars": 60,
+      "accepted_semantic_annotations": 40
+    },
+    "delta_nodes": 3,
+    "delta_leaders": 1
+  },
+  "workbook": {
+    "baseline_sha256": "4d28d67b24c79eabbd7b14e38c2e05c0ceb19405bc2be19123e0db78f38edb42",
+    "controlled_sha256": "37bf54968465e52b1e9f71d6b4ed37852152dfe902cb21a344d4480ea074423c",
+    "baseline_content_fingerprint": "72408746ab9d872798847f5b4887946423d8a49ae1271318c7a67d0f8855d774",
+    "controlled_content_fingerprint": "72408746ab9d872798847f5b4887946423d8a49ae1271318c7a67d0f8855d774",
+    "identical_bytes": false,
+    "identical_engineering_content": true,
+    "steel_kg": {
+      "baseline": 21690.436,
+      "controlled": 21690.436,
+      "delta": 0.0,
+      "unit": "kg",
+      "label": "21690.436 -> 21690.436 (+0.0 kg)"
+    },
+    "bar_count": {
+      "baseline": 623,
+      "controlled": 623,
+      "delta": 0.0,
+      "unit": "bars",
+      "label": "623 -> 623 (+0.0 bars)"
+    },
+    "beam_count": {
+      "baseline": 119,
+      "controlled": 119,
+      "delta": 0.0,
+      "unit": "beams",
+      "label": "119 -> 119 (+0.0 beams)"
+    },
+    "b16_steel_kg": {
+      "baseline": 532.849,
+      "controlled": 532.849,
+      "delta": 0.0,
+      "unit": "kg",
+      "label": "532.849 -> 532.849 (+0.0 kg)"
+    },
+    "b16_bar_count": {
+      "baseline": 16,
+      "controlled": 16,
+      "delta": 0.0,
+      "unit": "bars",
+      "label": "16 -> 16 (+0.0 bars)"
+    }
+  },
+  "qa30_fourth": {
+    "Beam Detection": {
+      "baseline": 78.32,
+      "controlled": 78.32,
+      "delta_pp": 0.0,
+      "label": "78.32% -> 78.32% (+0.0 percentage points)"
+    },
+    "Bar Detection": {
+      "baseline": 39.89,
+      "controlled": 39.89,
+      "delta_pp": 0.0,
+      "label": "39.89% -> 39.89% (+0.0 percentage points)"
+    },
+    "Bar Matching": {
+      "baseline": 37.33,
+      "controlled": 37.33,
+      "delta_pp": 0.0,
+      "label": "37.33% -> 37.33% (+0.0 percentage points)"
+    },
+    "Steel Accuracy": {
+      "baseline": 58.39,
+      "controlled": 58.39,
+      "delta_pp": 0.0,
+      "label": "58.39% -> 58.39% (+0.0 percentage points)"
+    },
+    "Overall Accuracy": {
+      "baseline": 53.48,
+      "controlled": 53.48,
+      "delta_pp": 0.0,
+      "label": "53.48% -> 53.48% (+0.0 percentage points)"
+    },
+    "estimator_kg": {
+      "baseline": 37144.855,
+      "controlled": 37144.855,
+      "delta": 0.0,
+      "unit": "kg",
+      "label": "37144.855 -> 37144.855 (+0.0 kg)"
+    },
+    "model_kg": {
+      "baseline": 21688.797,
+      "controlled": 21688.797,
+      "delta": 0.0,
+      "unit": "kg",
+      "label": "21688.797 -> 21688.797 (+0.0 kg)"
+    }
+  },
+  "b16_effect_class": "A_changes_nothing_downstream_for_steel",
+  "architectural_note": "Production pipeline order: R1.3 -> VB1 Excel -> Track1/T18 ownership. Controlled BeamOwnership cannot feed Excel without a new ownership->R1.3 bridge."
+}

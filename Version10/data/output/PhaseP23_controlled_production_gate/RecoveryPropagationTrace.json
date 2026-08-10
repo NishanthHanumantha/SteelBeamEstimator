@@ -1,0 +1,79 @@
+{
+  "phase_id": "P2.3",
+  "count": 1,
+  "rows": [
+    {
+      "recovered_leader": "LDR::7A1FFD68",
+      "beam_id": "B16",
+      "stable_key": "B16::LDR::7A1FFD68",
+      "linked_annotations": [
+        "ANN-62d4cbc2"
+      ],
+      "linked_physical_bars": [
+        "BAR::SYN::B16::11C88F6",
+        "BAR::SYN::B16::1213781"
+      ],
+      "propagated_graph_children": [
+        "ARR::4C3D2D29",
+        "LTGT::LDR::7A1FFD68"
+      ],
+      "annotation_baseline_owned": {
+        "ANN-62d4cbc2": true
+      },
+      "bar_baseline_owned": {
+        "BAR::SYN::B16::11C88F6": true,
+        "BAR::SYN::B16::1213781": true
+      },
+      "nodes": [
+        {
+          "entity_id": "LDR::7A1FFD68",
+          "entity_type": "Leader",
+          "previous_ownership": "REJECTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "P2.2",
+          "relationship_source": "E_STRONG_COMBINED"
+        },
+        {
+          "entity_id": "ARR::4C3D2D29",
+          "entity_type": "LeaderArrow",
+          "previous_ownership": "REJECTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "P2.2",
+          "relationship_source": "HAS_ARROW"
+        },
+        {
+          "entity_id": "LTGT::LDR::7A1FFD68",
+          "entity_type": "LeaderTarget",
+          "previous_ownership": "REJECTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "P2.2",
+          "relationship_source": "TARGETS"
+        },
+        {
+          "entity_id": "ANN-62d4cbc2",
+          "entity_type": "Annotation",
+          "previous_ownership": "ACCEPTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "T18_existing",
+          "relationship_source": "accepted_chain_via_leader"
+        },
+        {
+          "entity_id": "BAR::SYN::B16::11C88F6",
+          "entity_type": "PhysicalBar",
+          "previous_ownership": "ACCEPTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "T18_existing",
+          "relationship_source": "accepted_chain_describes"
+        },
+        {
+          "entity_id": "BAR::SYN::B16::1213781",
+          "entity_type": "PhysicalBar",
+          "previous_ownership": "ACCEPTED",
+          "new_ownership": "ACCEPTED",
+          "evidence_source": "T18_existing",
+          "relationship_source": "accepted_chain_describes"
+        }
+      ]
+    }
+  ]
+}
