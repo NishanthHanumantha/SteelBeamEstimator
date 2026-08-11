@@ -1,0 +1,68 @@
+{
+  "phase_id": "P2.5.0",
+  "phase_name": "Beam Evidence Rendering & Crop QA",
+  "model_version": "10.6.0",
+  "scope": "FOURTH_SET_ONLY",
+  "mode": "DIAGNOSTIC_ONLY",
+  "engineering_changes": "NONE",
+  "generated_at_utc": "2026-08-11T11:30:55.534449+00:00",
+  "fourth_set_web_run": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946",
+  "dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\reinforcement\\SE-204_BASEMENT-01 FLOOR BEAM REINFORCEMENT DETAILS(SH-01 TO 03).dxf",
+  "beams_processed": 118,
+  "gt_beams_in_excel": 134,
+  "gt_bars": 907,
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa",
+  "unit_tests_passed": true,
+  "metrics": {
+    "model_version": "10.6.0",
+    "beams_processed": 118,
+    "successful_renders": 118,
+    "failed_renders": 0,
+    "crop_qa_pass_pct": 77.12,
+    "crop_qa_partial_pct": 22.88,
+    "crop_qa_fail_pct": 0.0,
+    "crop_qa_pass": 91,
+    "crop_qa_partial": 27,
+    "crop_qa_fail": 0,
+    "beam_presence_pct": 100.0,
+    "reinforcement_evidence_coverage_pct": 99.15,
+    "annotation_evidence_coverage_pct": 99.15,
+    "leader_evidence_coverage_pct": 99.15,
+    "leader_chain_completeness_pct": 77.12,
+    "beams_requiring_crop_expansion": 116,
+    "clipped_evidence_cases": 0,
+    "neighbor_ambiguity_cases": 0,
+    "rendering_failures": 0,
+    "top_crop_evidence_failure_causes": [
+      [
+        "COMPLETE_LEADER_CHAIN",
+        26
+      ],
+      [
+        "RELEVANT_REINFORCEMENT_PRESENT",
+        1
+      ],
+      [
+        "RELEVANT_ANNOTATION_PRESENT",
+        1
+      ]
+    ],
+    "avg_pipeline_annotation_coverage_pct": 100.0,
+    "avg_pipeline_leader_coverage_pct": 100.0,
+    "avg_pipeline_reinforcement_coverage_pct": 100.0,
+    "gt_verified": {
+      "beams_with_gt_bars": 112,
+      "beams_with_reinforcement_evidence": 111,
+      "gt_reinforcement_presence_pct": 99.11,
+      "note": "GT annotation/leader recall not claimed \u2014 estimator GT lacks annotation/leader entity IDs."
+    }
+  },
+  "determinism": {
+    "determinism_status": "PASS",
+    "beams_compared": 118,
+    "mismatches": [],
+    "mismatch_count": 0,
+    "note": "Compared evidence IDs, crop bounds, expansion, and QA gates across two builds. Image binary hashes are not required for PASS."
+  },
+  "regression_unchanged": true
+}

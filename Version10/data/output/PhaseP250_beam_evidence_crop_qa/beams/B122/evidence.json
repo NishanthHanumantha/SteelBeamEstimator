@@ -1,0 +1,460 @@
+{
+  "model_version": "10.6.0",
+  "phase_id": "P2.5.0",
+  "beam_id": "B122",
+  "target_beam": {
+    "beam_id": "B122",
+    "bbox": [
+      31650231.6,
+      -21176335.07,
+      31654131.6,
+      -21172811.05
+    ],
+    "envelope_extent": [
+      31650481.6,
+      -21176085.07,
+      31653881.6,
+      -21173061.05
+    ],
+    "crop_extent_t18": [
+      31650481.6,
+      -21176085.07,
+      31653881.6,
+      -21173061.05
+    ],
+    "orientation": "HORIZONTAL",
+    "depth_mm": 600.0,
+    "in_ownership": true,
+    "in_envelope": true
+  },
+  "evidence_window": {
+    "bbox": [
+      31644534.93,
+      -21176455.07,
+      31663635.523,
+      -21172261.05280044
+    ],
+    "base_bbox": [
+      31650231.6,
+      -21176335.07,
+      31654131.6,
+      -21172811.05
+    ],
+    "expansion": {
+      "expansions": 1,
+      "clipped_before_count": 5,
+      "still_clipped_count": 0,
+      "border_touch_count": 0,
+      "expanded": true
+    },
+    "coordinate_space": "DXF_MODEL_MM"
+  },
+  "annotations": [
+    {
+      "annotation_id": "ANN-2c570d23",
+      "raw_text": "4L-Y12@100C/C",
+      "normalized_text": "4L-Y12@100C/C",
+      "position": {
+        "x": 31652569.11791128,
+        "y": -21173836.60154765
+      },
+      "bbox": [
+        31652257.11791128,
+        -21173875.10154765,
+        31652881.11791128,
+        -21173566.60154765
+      ],
+      "source": "T18.accepted_annotations"
+    },
+    {
+      "annotation_id": "ANN-0b62504e",
+      "raw_text": "4-Y20",
+      "normalized_text": "4-Y20",
+      "position": {
+        "x": 31652411.10130454,
+        "y": -21173581.06675947
+      },
+      "bbox": [
+        31652291.10130454,
+        -21173619.56675947,
+        31652531.10130454,
+        -21173311.06675947
+      ],
+      "source": "T18.accepted_annotations"
+    }
+  ],
+  "leaders": [
+    {
+      "leader_id": "LDR::6EFC52FE",
+      "geometry": {
+        "tip_x": 31652286.45930281,
+        "tip_y": -21172711.05280043,
+        "tail_x": 31652368.83996903,
+        "tail_y": -21172411.05280044
+      },
+      "bbox": [
+        31652256.45930281,
+        -21172741.05280043,
+        31652398.83996903,
+        -21172381.05280044
+      ],
+      "source": "AnnotationGraph+T18"
+    },
+    {
+      "leader_id": "LDR::4660769E",
+      "geometry": {
+        "tip_x": 31652311.02530838,
+        "tip_y": -21173213.76760605,
+        "tail_x": 31652414.45648146,
+        "tail_y": -21173513.76760606
+      },
+      "bbox": [
+        31652281.02530838,
+        -21173543.76760606,
+        31652444.45648146,
+        -21173183.76760605
+      ],
+      "source": "AnnotationGraph+T18"
+    },
+    {
+      "leader_id": "LDR::DD1F984B",
+      "geometry": {
+        "tip_x": 31654163.55717575,
+        "tip_y": -21172760.53555976,
+        "tail_x": 31654365.22618815,
+        "tail_y": -21172411.24562956
+      },
+      "bbox": [
+        31654133.55717575,
+        -21172790.53555976,
+        31654395.22618815,
+        -21172381.24562956
+      ],
+      "source": "AnnotationGraph+T18"
+    }
+  ],
+  "reinforcement": [
+    {
+      "reinforcement_id": "BAR::SYN::B122::11D2740",
+      "entity_handle": "11D2740",
+      "entity_type": "LINE",
+      "geometry": {
+        "start_x": 31644674.93,
+        "end_x": 31663495.523,
+        "y_position": -21173211.053,
+        "vertical_placement": "TOP_FACE"
+      },
+      "bbox": [
+        31644654.93,
+        -21173231.053,
+        31663515.523,
+        -21173191.053
+      ],
+      "candidate_role": "TOP_FACE",
+      "diameter": "UNKNOWN",
+      "source": "T1.6_synthetic"
+    },
+    {
+      "reinforcement_id": "BAR::SYN::B122::11D27DD",
+      "entity_handle": "11D27DD",
+      "entity_type": "LINE",
+      "geometry": {
+        "start_x": 31649359.92,
+        "end_x": 31655359.914,
+        "y_position": -21173261.053,
+        "vertical_placement": "TOP_FACE"
+      },
+      "bbox": [
+        31649339.92,
+        -21173281.053,
+        31655379.914,
+        -21173241.053
+      ],
+      "candidate_role": "TOP_FACE",
+      "diameter": "UNKNOWN",
+      "source": "T1.6_synthetic"
+    },
+    {
+      "reinforcement_id": "BAR::SYN::B122::11D27EC",
+      "entity_handle": "11D27EC",
+      "entity_type": "LINE",
+      "geometry": {
+        "start_x": 31655359.914,
+        "end_x": 31649359.92,
+        "y_position": -21173261.053,
+        "vertical_placement": "TOP_FACE"
+      },
+      "bbox": [
+        31649339.92,
+        -21173281.053,
+        31655379.914,
+        -21173241.053
+      ],
+      "candidate_role": "TOP_FACE",
+      "diameter": "UNKNOWN",
+      "source": "T1.6_synthetic"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "beam_owns_reinforcement",
+      "beam_id": "B122",
+      "reinforcement_id": "BAR::SYN::B122::11D2740",
+      "basis": "AnnotationGraph.beam_id / ownership.bar_results"
+    },
+    {
+      "type": "beam_owns_reinforcement",
+      "beam_id": "B122",
+      "reinforcement_id": "BAR::SYN::B122::11D27DD",
+      "basis": "AnnotationGraph.beam_id / ownership.bar_results"
+    },
+    {
+      "type": "beam_owns_reinforcement",
+      "beam_id": "B122",
+      "reinforcement_id": "BAR::SYN::B122::11D27EC",
+      "basis": "AnnotationGraph.beam_id / ownership.bar_results"
+    },
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B122",
+      "annotation_id": "ANN-2c570d23",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B122",
+      "annotation_id": "ANN-0b62504e",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "leader_to_annotation",
+      "leader_id": "LDR::4660769E",
+      "annotation_id": "ANN-2c570d23",
+      "basis": "T18.accepted_chains"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::4660769E",
+      "reinforcement_id": "BAR::SYN::B122::11D2740",
+      "basis": "T18.accepted_chains.describes"
+    },
+    {
+      "type": "leader_to_annotation",
+      "leader_id": "LDR::4660769E",
+      "annotation_id": "ANN-0b62504e",
+      "basis": "T18.accepted_chains"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::4660769E",
+      "reinforcement_id": "BAR::SYN::B122::11D2740",
+      "basis": "T18.accepted_chains.describes"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::4660769E",
+      "reinforcement_id": "BAR::SYN::B122::11D27DD",
+      "basis": "T18.accepted_chains.describes"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::4660769E",
+      "reinforcement_id": "BAR::SYN::B122::11D2740",
+      "basis": "graph:leader_tip_to_bar_dist=2.7mm"
+    }
+  ],
+  "leader_chains": {
+    "accepted": [
+      {
+        "annotation_id": "ANN-2c570d23",
+        "text": "4L-Y12@100C/C",
+        "leaders": [
+          "LDR::4660769E"
+        ],
+        "describes": [
+          "BAR::SYN::B122::11D2740"
+        ],
+        "semantic_id": "SEM::ANN-2c570d23",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      },
+      {
+        "annotation_id": "ANN-0b62504e",
+        "text": "4-Y20",
+        "leaders": [
+          "LDR::4660769E"
+        ],
+        "describes": [
+          "LDR::4660769E",
+          "BAR::SYN::B122::11D2740",
+          "BAR::SYN::B122::11D27DD"
+        ],
+        "semantic_id": "SEM::ANN-0b62504e",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      }
+    ],
+    "rejected": [
+      {
+        "annotation_id": "ANN-0f354cce",
+        "text": "4-Y20",
+        "leaders": [
+          "LDR::6EFC52FE"
+        ],
+        "describes": [
+          "LDR::6EFC52FE"
+        ],
+        "semantic_id": "SEM::ANN-0f354cce",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R3_ANNOTATION_VIA_CHAIN",
+        "ownership_reason": "no_owned_leader_bar_chain",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": null
+      },
+      {
+        "annotation_id": "ANN-aff7bebd",
+        "text": "4-Y25",
+        "leaders": [
+          "LDR::DD1F984B"
+        ],
+        "describes": [
+          "LDR::DD1F984B"
+        ],
+        "semantic_id": "SEM::ANN-aff7bebd",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R3_ANNOTATION_VIA_CHAIN",
+        "ownership_reason": "no_owned_leader_bar_chain",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": null
+      }
+    ],
+    "complete_count": 2,
+    "incomplete_count": 0,
+    "complete": [
+      {
+        "annotation_id": "ANN-2c570d23",
+        "text": "4L-Y12@100C/C",
+        "leaders": [
+          "LDR::4660769E"
+        ],
+        "describes": [
+          "BAR::SYN::B122::11D2740"
+        ],
+        "semantic_id": "SEM::ANN-2c570d23",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      },
+      {
+        "annotation_id": "ANN-0b62504e",
+        "text": "4-Y20",
+        "leaders": [
+          "LDR::4660769E"
+        ],
+        "describes": [
+          "LDR::4660769E",
+          "BAR::SYN::B122::11D2740",
+          "BAR::SYN::B122::11D27DD"
+        ],
+        "semantic_id": "SEM::ANN-0b62504e",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      }
+    ],
+    "incomplete": []
+  },
+  "neighbours": [
+    "B100",
+    "B100A",
+    "B101",
+    "B101A",
+    "B102",
+    "B103",
+    "B119",
+    "B120"
+  ],
+  "shared_scopes": [],
+  "counts": {
+    "annotations": 2,
+    "leaders": 3,
+    "reinforcement": 3,
+    "relationships": 11,
+    "complete_chains": 2
+  },
+  "gt_bar_count": 7,
+  "gt_verified_recall": {
+    "gt_reinforcement_evidence_present": true,
+    "gt_bar_count": 7,
+    "gt_reinforcement_recall_pct": 100.0,
+    "gt_annotation_recall_pct": null,
+    "gt_leader_recall_pct": null,
+    "note": "GT annotation/leader IDs unavailable in estimator workbook; only reinforcement presence vs GT bar existence is reported.",
+    "gt_roles": []
+  },
+  "pipeline_coverage": {
+    "pipeline_annotation_coverage_pct": 100.0,
+    "pipeline_leader_coverage_pct": 100.0,
+    "pipeline_reinforcement_coverage_pct": 100.0,
+    "denominator_source": "pipeline_owned_evidence",
+    "annotation_denom": 2,
+    "leader_denom": 3,
+    "reinforcement_denom": 3
+  },
+  "render": {
+    "engineering": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B122\\engineering_crop.png",
+      "extent": [
+        31644534.93,
+        -21176455.07,
+        31663635.523,
+        -21172261.05280044
+      ],
+      "img_w": 1200,
+      "img_h": 400,
+      "dxf_xlim": [
+        31644534.93,
+        31663635.523
+      ],
+      "dxf_ylim": [
+        -21176455.07,
+        -21172261.05280044
+      ]
+    },
+    "overlay": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B122\\evidence_overlay.png",
+      "img_w": 1200,
+      "img_h": 400
+    }
+  }
+}

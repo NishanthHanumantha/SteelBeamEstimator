@@ -1,0 +1,467 @@
+{
+  "model_version": "10.6.0",
+  "phase_id": "P2.5.0",
+  "beam_id": "B159",
+  "target_beam": {
+    "beam_id": "B159",
+    "bbox": [
+      31664260.78,
+      -21184238.42,
+      31668160.78,
+      -21181150.43
+    ],
+    "envelope_extent": [
+      31664510.78,
+      -21183988.42,
+      31667910.78,
+      -21181400.43
+    ],
+    "crop_extent_t18": [
+      31664510.78,
+      -21183988.42,
+      31667910.78,
+      -21181400.43
+    ],
+    "orientation": "HORIZONTAL",
+    "depth_mm": 600.0,
+    "in_ownership": true,
+    "in_envelope": true
+  },
+  "evidence_window": {
+    "bbox": [
+      31662353.7,
+      -21184358.42,
+      31670596.03,
+      -21180600.42916777
+    ],
+    "base_bbox": [
+      31664260.78,
+      -21184238.42,
+      31668160.78,
+      -21181150.43
+    ],
+    "expansion": {
+      "expansions": 1,
+      "clipped_before_count": 5,
+      "still_clipped_count": 0,
+      "border_touch_count": 0,
+      "expanded": true
+    },
+    "coordinate_space": "DXF_MODEL_MM"
+  },
+  "annotations": [
+    {
+      "annotation_id": "ANN-b2d0804e",
+      "raw_text": "3L-Y12@100C/C",
+      "normalized_text": "3L-Y12@100C/C",
+      "position": {
+        "x": 31666583.31403495,
+        "y": -21182175.97791499
+      },
+      "bbox": [
+        31666271.31403495,
+        -21182214.47791499,
+        31666895.31403495,
+        -21181905.97791499
+      ],
+      "source": "T18.accepted_annotations"
+    },
+    {
+      "annotation_id": "ANN-e0a652c7",
+      "raw_text": "5-Y20",
+      "normalized_text": "5-Y20",
+      "position": {
+        "x": 31666545.26315046,
+        "y": -21181920.44312682
+      },
+      "bbox": [
+        31666425.26315046,
+        -21181958.94312682,
+        31666665.26315046,
+        -21181650.44312682
+      ],
+      "source": "T18.accepted_annotations"
+    }
+  ],
+  "leaders": [
+    {
+      "leader_id": "LDR::67F0834B",
+      "geometry": {
+        "tip_x": 31666723.98338095,
+        "tip_y": -21181050.42916777,
+        "tail_x": 31666806.36404716,
+        "tail_y": -21180750.42916777
+      },
+      "bbox": [
+        31666693.98338095,
+        -21181080.42916777,
+        31666836.36404716,
+        -21180720.42916777
+      ],
+      "source": "AnnotationGraph+T18"
+    },
+    {
+      "leader_id": "LDR::61CE4DCF",
+      "geometry": {
+        "tip_x": 31666445.18715431,
+        "tip_y": -21181553.14397339,
+        "tail_x": 31666548.61832738,
+        "tail_y": -21181853.1439734
+      },
+      "bbox": [
+        31666415.18715431,
+        -21181883.1439734,
+        31666578.61832738,
+        -21181523.14397339
+      ],
+      "source": "AnnotationGraph+T18"
+    },
+    {
+      "leader_id": "LDR::566FE0DE",
+      "geometry": {
+        "tip_x": 31663458.37116692,
+        "tip_y": -21182888.41873575,
+        "tail_x": 31663540.75183314,
+        "tail_y": -21182588.41873574
+      },
+      "bbox": [
+        31663428.37116692,
+        -21182918.41873575,
+        31663570.75183314,
+        -21182558.41873574
+      ],
+      "source": "AnnotationGraph+T18"
+    },
+    {
+      "leader_id": "LDR::5F9FDD16",
+      "geometry": {
+        "tip_x": 31664287.71842175,
+        "tip_y": -21182937.36900208,
+        "tail_x": 31664497.38743415,
+        "tail_y": -21182597.34995501
+      },
+      "bbox": [
+        31664257.71842175,
+        -21182967.36900208,
+        31664527.38743415,
+        -21182567.34995501
+      ],
+      "source": "AnnotationGraph+T18"
+    }
+  ],
+  "reinforcement": [
+    {
+      "reinforcement_id": "BAR::CD4248B1",
+      "entity_handle": null,
+      "entity_type": "LINE",
+      "geometry": {
+        "start_x": 31662493.7,
+        "end_x": 31670456.03,
+        "y_position": -21181050.43,
+        "vertical_placement": "TOP_FACE"
+      },
+      "bbox": [
+        31662473.7,
+        -21181070.43,
+        31670476.03,
+        -21181030.43
+      ],
+      "candidate_role": "TOP_FACE",
+      "diameter": "UNKNOWN",
+      "source": "R.3.1"
+    },
+    {
+      "reinforcement_id": "BAR::027D09BC",
+      "entity_handle": null,
+      "entity_type": "LINE",
+      "geometry": {
+        "start_x": 31662493.7,
+        "end_x": 31670456.03,
+        "y_position": -21181550.43,
+        "vertical_placement": "TOP_FACE"
+      },
+      "bbox": [
+        31662473.7,
+        -21181570.43,
+        31670476.03,
+        -21181530.43
+      ],
+      "candidate_role": "TOP_FACE",
+      "diameter": "UNKNOWN",
+      "source": "R.3.1"
+    }
+  ],
+  "relationships": [
+    {
+      "type": "beam_owns_reinforcement",
+      "beam_id": "B159",
+      "reinforcement_id": "BAR::CD4248B1",
+      "basis": "AnnotationGraph.beam_id / ownership.bar_results"
+    },
+    {
+      "type": "beam_owns_reinforcement",
+      "beam_id": "B159",
+      "reinforcement_id": "BAR::027D09BC",
+      "basis": "AnnotationGraph.beam_id / ownership.bar_results"
+    },
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B159",
+      "annotation_id": "ANN-b2d0804e",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B159",
+      "annotation_id": "ANN-e0a652c7",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "leader_to_annotation",
+      "leader_id": "LDR::61CE4DCF",
+      "annotation_id": "ANN-b2d0804e",
+      "basis": "T18.accepted_chains"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::61CE4DCF",
+      "reinforcement_id": "BAR::027D09BC",
+      "basis": "T18.accepted_chains.describes"
+    },
+    {
+      "type": "leader_to_annotation",
+      "leader_id": "LDR::61CE4DCF",
+      "annotation_id": "ANN-e0a652c7",
+      "basis": "T18.accepted_chains"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::61CE4DCF",
+      "reinforcement_id": "BAR::027D09BC",
+      "basis": "T18.accepted_chains.describes"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::67F0834B",
+      "reinforcement_id": "BAR::CD4248B1",
+      "basis": "graph:leader_tip_to_bar_dist=0.0mm"
+    },
+    {
+      "type": "leader_to_reinforcement",
+      "leader_id": "LDR::61CE4DCF",
+      "reinforcement_id": "BAR::027D09BC",
+      "basis": "graph:leader_tip_to_bar_dist=2.7mm"
+    }
+  ],
+  "leader_chains": {
+    "accepted": [
+      {
+        "annotation_id": "ANN-b2d0804e",
+        "text": "3L-Y12@100C/C",
+        "leaders": [
+          "LDR::61CE4DCF"
+        ],
+        "describes": [
+          "BAR::027D09BC"
+        ],
+        "semantic_id": "SEM::ANN-b2d0804e",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      },
+      {
+        "annotation_id": "ANN-e0a652c7",
+        "text": "5-Y20",
+        "leaders": [
+          "LDR::61CE4DCF"
+        ],
+        "describes": [
+          "LDR::61CE4DCF",
+          "BAR::027D09BC"
+        ],
+        "semantic_id": "SEM::ANN-e0a652c7",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      }
+    ],
+    "rejected": [
+      {
+        "annotation_id": "ANN-9c56f372",
+        "text": "5-Y20",
+        "leaders": [
+          "LDR::67F0834B"
+        ],
+        "describes": [
+          "LDR::67F0834B",
+          "BAR::CD4248B1"
+        ],
+        "semantic_id": "SEM::ANN-9c56f372",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R3_ANNOTATION_VIA_CHAIN",
+        "ownership_reason": "no_owned_leader_bar_chain",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": null
+      },
+      {
+        "annotation_id": "ANN-007b7e57",
+        "text": "5-Y20",
+        "leaders": [
+          "LDR::566FE0DE"
+        ],
+        "describes": [
+          "LDR::566FE0DE"
+        ],
+        "semantic_id": "SEM::ANN-007b7e57",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-1dd8069f",
+        "text": "5-Y16",
+        "leaders": [
+          "LDR::5F9FDD16"
+        ],
+        "describes": [
+          "LDR::5F9FDD16"
+        ],
+        "semantic_id": "SEM::ANN-1dd8069f",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      }
+    ],
+    "complete_count": 2,
+    "incomplete_count": 0,
+    "complete": [
+      {
+        "annotation_id": "ANN-b2d0804e",
+        "text": "3L-Y12@100C/C",
+        "leaders": [
+          "LDR::61CE4DCF"
+        ],
+        "describes": [
+          "BAR::027D09BC"
+        ],
+        "semantic_id": "SEM::ANN-b2d0804e",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      },
+      {
+        "annotation_id": "ANN-e0a652c7",
+        "text": "5-Y20",
+        "leaders": [
+          "LDR::61CE4DCF"
+        ],
+        "describes": [
+          "LDR::61CE4DCF",
+          "BAR::027D09BC"
+        ],
+        "semantic_id": "SEM::ANN-e0a652c7",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      }
+    ],
+    "incomplete": []
+  },
+  "neighbours": [
+    "B100",
+    "B100A",
+    "B101",
+    "B101A",
+    "B102",
+    "B103",
+    "B119",
+    "B120"
+  ],
+  "shared_scopes": [],
+  "counts": {
+    "annotations": 2,
+    "leaders": 4,
+    "reinforcement": 2,
+    "relationships": 10,
+    "complete_chains": 2
+  },
+  "gt_bar_count": 14,
+  "gt_verified_recall": {
+    "gt_reinforcement_evidence_present": true,
+    "gt_bar_count": 14,
+    "gt_reinforcement_recall_pct": 100.0,
+    "gt_annotation_recall_pct": null,
+    "gt_leader_recall_pct": null,
+    "note": "GT annotation/leader IDs unavailable in estimator workbook; only reinforcement presence vs GT bar existence is reported.",
+    "gt_roles": []
+  },
+  "pipeline_coverage": {
+    "pipeline_annotation_coverage_pct": 100.0,
+    "pipeline_leader_coverage_pct": 100.0,
+    "pipeline_reinforcement_coverage_pct": 100.0,
+    "denominator_source": "pipeline_owned_evidence",
+    "annotation_denom": 2,
+    "leader_denom": 4,
+    "reinforcement_denom": 2
+  },
+  "render": {
+    "engineering": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B159\\engineering_crop.png",
+      "extent": [
+        31662353.7,
+        -21184358.42,
+        31670596.03,
+        -21180600.42916777
+      ],
+      "img_w": 1200,
+      "img_h": 547,
+      "dxf_xlim": [
+        31662353.7,
+        31670596.03
+      ],
+      "dxf_ylim": [
+        -21184358.42,
+        -21180600.42916777
+      ]
+    },
+    "overlay": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B159\\evidence_overlay.png",
+      "img_w": 1200,
+      "img_h": 547
+    }
+  }
+}
