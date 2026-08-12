@@ -1,0 +1,70 @@
+{
+  "candidate_id": "VC::B47::ANN-f268d884",
+  "beam_id": "B47",
+  "raw_text": "4L-Y10@\\X100/150/100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 4,
+    "diameter_mm": 10.0,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "quantity": null,
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "raw_text": "4L-Y10@\\X100/150/100C/C",
+    "cleaned_text": "4L-Y10@100/150/100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' normalized to '@' based on visual evidence and standard notation format"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B47::ANN-f268d884",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "100/150/100C/C",
+      "normalized_notation": "4L-Y10@100/150/100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '4L-Y10@' followed by spacing pattern",
+        "Text reads '100/150/100C/C' indicating variable spacing pattern",
+        "Notation positioned with horizontal dimension arrows indicating stirrup spacing",
+        "Green rectangular outline in drawing shows stirrup configuration",
+        "Red dots at corners indicate stirrup leg positions",
+        "4L prefix indicates 4-legged stirrup configuration",
+        "Y10 indicates 10mm diameter reinforcement bar",
+        "C/C suffix confirms center-to-center spacing measurement"
+      ],
+      "reasoning_summary": "The notation '4L-Y10@100/150/100C/C' is clearly visible in magenta text. This is a standard stirrup notation where: 4L = 4 legs, Y10 = 10mm diameter bar, @ indicates spacing follows, 100/150/100 = variable spacing pattern in mm, C/C = center-to-center. The visual evidence shows this is associated with a rectangular stirrup configuration (green outline with red corner dots). The upstream OCR captured this correctly with only a minor '\\X' artifact that can be normalized to '@'. This is definitively a stirrup notation, not longitudinal reinforcement, so quantity field remains null per instructions.",
+      "warnings": [
+        "OCR artifact '\\X' normalized to '@' based on visual evidence and standard notation format"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

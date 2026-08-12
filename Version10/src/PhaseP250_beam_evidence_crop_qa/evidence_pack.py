@@ -1,6 +1,6 @@
 """
 Build deterministic Beam Evidence Packages from existing artefacts.
-MODEL_VERSION: 10.6.0
+MODEL_VERSION: 10.6.2
 """
 from __future__ import annotations
 
@@ -14,8 +14,12 @@ from .evidence_window import (
     expand_window_to_evidence,
     object_bbox_from_node,
 )
+from .owned_geometry import (
+    collect_accepted_owned_geometry,
+    owned_geometry_bboxes,
+)
 
-MODEL_VERSION = "10.6.0"
+MODEL_VERSION = "10.6.2"
 
 
 def _graph_nodes_for_beam(bundle: Any, beam_id: str) -> Dict[str, List[Dict[str, Any]]]:
@@ -65,14 +69,23 @@ def _accepted_annotation_ids(own: Dict[str, Any]) -> Set[str]:
 
 
 def _leader_ids_from_ownership(own: Dict[str, Any]) -> Set[str]:
+    """Accepted leaders only — rejected T18 leaders must not expand the crop."""
     ids: Set[str] = set()
-    for lid in own.get("leader_results") or []:
-        if isinstance(lid, str):
-            ids.add(lid)
-        elif isinstance(lid, dict):
-            i = lid.get("id") or lid.get("leader_id")
-            if i:
-                ids.add(str(i))
+    raw = own.get("leader_results") or {}
+    if isinstance(raw, dict):
+        for lid, res in raw.items():
+            if isinstance(res, dict) and res.get("accepted"):
+                ids.add(str(lid))
+            elif not isinstance(res, dict):
+                ids.add(str(lid))
+    else:
+        for lid in raw:
+            if isinstance(lid, str):
+                ids.add(lid)
+            elif isinstance(lid, dict):
+                i = lid.get("id") or lid.get("leader_id")
+                if i and lid.get("accepted", True):
+                    ids.add(str(i))
     for ch in own.get("accepted_chains") or []:
         for lid in ch.get("leaders") or []:
             ids.add(str(lid))
@@ -80,19 +93,56 @@ def _leader_ids_from_ownership(own: Dict[str, Any]) -> Set[str]:
 
 
 def _bar_ids_from_ownership(own: Dict[str, Any]) -> Set[str]:
+    """
+    Accepted bars only.
+
+    T18 stores all candidate bars in bar_results, including those rejected by
+    R5 (e.g. bar_y_outside_reinforcement_elevation). Including rejected bars
+    in the evidence window caused extreme crop expansion (P2.5.0.1 / B97A,B98A).
+    """
     ids: Set[str] = set()
-    for bid in own.get("bar_results") or []:
-        if isinstance(bid, str):
-            ids.add(bid)
-        elif isinstance(bid, dict):
-            i = bid.get("id") or bid.get("bar_id")
-            if i:
-                ids.add(str(i))
+    raw = own.get("bar_results") or {}
+    if isinstance(raw, dict):
+        for bid, res in raw.items():
+            if isinstance(res, dict) and res.get("accepted"):
+                ids.add(str(bid))
+            elif not isinstance(res, dict):
+                ids.add(str(bid))
+    else:
+        for bid in raw:
+            if isinstance(bid, str):
+                ids.add(bid)
+            elif isinstance(bid, dict):
+                i = bid.get("id") or bid.get("bar_id")
+                if i and bid.get("accepted", True):
+                    ids.add(str(i))
     for ch in own.get("accepted_chains") or []:
         for d in ch.get("describes") or []:
             if str(d).startswith("BAR::"):
                 ids.add(str(d))
     return ids
+
+
+def _rejected_bar_ids(own: Dict[str, Any]) -> Set[str]:
+    raw = own.get("bar_results") or {}
+    if not isinstance(raw, dict):
+        return set()
+    return {
+        str(bid)
+        for bid, res in raw.items()
+        if isinstance(res, dict) and not res.get("accepted")
+    }
+
+
+def _rejected_leader_ids(own: Dict[str, Any]) -> Set[str]:
+    raw = own.get("leader_results") or {}
+    if not isinstance(raw, dict):
+        return set()
+    return {
+        str(lid)
+        for lid, res in raw.items()
+        if isinstance(res, dict) and not res.get("accepted")
+    }
 
 
 def _build_relationships(
@@ -101,6 +151,7 @@ def _build_relationships(
     annotations: List[Dict[str, Any]],
     leaders: List[Dict[str, Any]],
     bars: List[Dict[str, Any]],
+    owned: List[Dict[str, Any]],
     chains: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     rels: List[Dict[str, Any]] = []
@@ -113,6 +164,36 @@ def _build_relationships(
                 "basis": "AnnotationGraph.beam_id / ownership.bar_results",
             }
         )
+    for og in owned:
+        rels.append(
+            {
+                "type": "beam_owns_owned_geometry",
+                "beam_id": beam_id,
+                "ownership_id": og.get("ownership_id"),
+                "evidence_id": og.get("evidence_id"),
+                "basis": "T18.accepted_chains→OWN visual evidence (P2.5.0.3)",
+            }
+        )
+        if og.get("annotation_id") and og.get("leader_id"):
+            rels.append(
+                {
+                    "type": "annotation_leader_owned_geometry",
+                    "annotation_id": og.get("annotation_id"),
+                    "leader_id": og.get("leader_id"),
+                    "ownership_id": og.get("ownership_id"),
+                    "source_entity_handle": og.get("source_handle"),
+                    "basis": "accepted_chain describes OWN",
+                }
+            )
+        if og.get("leader_id"):
+            rels.append(
+                {
+                    "type": "leader_to_owned_geometry",
+                    "leader_id": og.get("leader_id"),
+                    "ownership_id": og.get("ownership_id"),
+                    "basis": "T18.accepted_chains.describes",
+                }
+            )
     for a in annotations:
         rels.append(
             {
@@ -146,7 +227,6 @@ def _build_relationships(
                     )
             if str(d).startswith("ANN"):
                 continue
-    # Graph POINTS_TO / DESCRIBES on selected leaders
     leader_ids = {l.get("id") for l in leaders}
     for l in leaders:
         for r in l.get("relationships") or []:
@@ -174,6 +254,8 @@ def build_beam_evidence_pack(
     base_margin_mm: float = BASE_MARGIN_MM,
     evidence_pad_mm: float = EVIDENCE_PAD_MM,
     max_expand_iters: int = MAX_EXPAND_ITERS,
+    msp: Any = None,
+    handle_index: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     own = (bundle.beam_ownership.get("by_beam") or {}).get(beam_id) or {}
     env = {}
@@ -193,29 +275,24 @@ def build_beam_evidence_pack(
     accepted_ann_ids = _accepted_annotation_ids(own)
     leader_ids = _leader_ids_from_ownership(own)
     bar_ids = _bar_ids_from_ownership(own)
+    rejected_bar_ids = _rejected_bar_ids(own)
+    rejected_leader_ids = _rejected_leader_ids(own)
 
-    # Select graph nodes that are owned / accepted
-    bars = [
-        n
-        for n in g["PhysicalBar"]
-        if (not bar_ids) or (n.get("id") in bar_ids) or True
-    ]
-    # Prefer owned bars when available
+    # Accepted-only reinforcement. Never fall back to all graph bars for the beam —
+    # that pulled in T18-rejected far-elevation bars and exploded the crop.
     if bar_ids:
-        owned_bars = [n for n in g["PhysicalBar"] if n.get("id") in bar_ids]
-        if owned_bars:
-            bars = owned_bars
-        else:
-            bars = list(g["PhysicalBar"])
+        bars = [n for n in g["PhysicalBar"] if n.get("id") in bar_ids]
+    else:
+        bars = []
 
-    leaders = [n for n in g["Leader"] if (not leader_ids) or n.get("id") in leader_ids]
     if leader_ids:
-        owned_leaders = [n for n in g["Leader"] if n.get("id") in leader_ids]
-        leaders = owned_leaders if owned_leaders else leaders
-
-    # Annotations: prefer accepted ownership records joined to graph nodes
+        leaders = [n for n in g["Leader"] if n.get("id") in leader_ids]
+    else:
+        leaders = []
     graph_anns_by_id = {
-        n.get("id"): n for n in (bundle.annotation_graph.get("nodes") or []) if n.get("type") == "Annotation"
+        n.get("id"): n
+        for n in (bundle.annotation_graph.get("nodes") or [])
+        if n.get("type") == "Annotation"
     }
     annotations: List[Dict[str, Any]] = []
     for a in own.get("accepted_annotations") or []:
@@ -240,24 +317,34 @@ def build_beam_evidence_pack(
     chains = list(own.get("accepted_chains") or [])
     rejected_chains = list(own.get("rejected_chains") or [])
 
-    # Leader-chain completeness: accepted chain with annotation + leader + bar target
+    owned = collect_accepted_owned_geometry(
+        beam_id=beam_id,
+        ownership=own,
+        annotation_graph=bundle.annotation_graph or {},
+        msp=msp,
+        handle_index=handle_index,
+    )
+
+    # Leader-chain completeness: annotation + leader + (PhysicalBar OR OWN geometry)
     complete_chains = []
     incomplete_chains = []
     for ch in chains:
         lids = ch.get("leaders") or []
         describes = ch.get("describes") or []
         has_bar = any(str(d).startswith("BAR::") for d in describes)
-        if lids and ch.get("annotation_id") and has_bar:
+        has_own = any(str(d).startswith("OWN::") for d in describes)
+        if lids and ch.get("annotation_id") and (has_bar or has_own):
             complete_chains.append(ch)
         else:
             incomplete_chains.append(ch)
 
     eboxes = evidence_bboxes(bars=bars, leaders=leaders, annotations=annotations)
-    # Also include ownership-accepted annotation graph nodes that have coords
     for a in annotations:
         bb = object_bbox_from_node(a)
         if bb:
             eboxes.append(bb)
+    # P2.5.0.3: accepted OWN TOP_BAR geometry expands the window (not rejected BARs)
+    eboxes.extend(owned_geometry_bboxes(owned))
 
     expansion = {
         "expansions": 0,
@@ -280,11 +367,11 @@ def build_beam_evidence_pack(
         annotations=annotations,
         leaders=leaders,
         bars=bars,
+        owned=owned,
         chains=chains,
     )
 
     neighbours = list(neighbour_beam_ids or [])
-    # Shared SFR scope membership
     shared_scopes = []
     for sc in (bundle.engineering_scopes.get("scopes") or []):
         members = sc.get("member_beams") or []
@@ -298,6 +385,8 @@ def build_beam_evidence_pack(
                     "shared": True,
                 }
             )
+
+    _ = accepted_ann_ids
 
     return {
         "model_version": MODEL_VERSION,
@@ -367,6 +456,7 @@ def build_beam_evidence_pack(
             }
             for b in bars
         ],
+        "owned_geometry": owned,
         "relationships": relationships,
         "leader_chains": {
             "accepted": chains,
@@ -382,7 +472,23 @@ def build_beam_evidence_pack(
             "annotations": len(annotations),
             "leaders": len(leaders),
             "reinforcement": len(bars),
+            "owned_geometry": len(owned),
+            "owned_top_bar": sum(
+                1 for o in owned if o.get("evidence_type") == "OWN_TOP_BAR"
+            ),
             "relationships": len(relationships),
             "complete_chains": len(complete_chains),
+            "rejected_bars_excluded": len(rejected_bar_ids),
+            "rejected_leaders_excluded": len(rejected_leader_ids),
+        },
+        "excluded_rejected_evidence": {
+            "bars": sorted(rejected_bar_ids),
+            "leaders": sorted(rejected_leader_ids),
+            "basis": (
+                "T18 bar_results/leader_results with accepted=false are diagnostic "
+                "candidates only and must not expand the P2.5.0 evidence window "
+                "(P2.5.0.1 fix). Accepted OWN::TOP_BAR geometry is separate visual "
+                "evidence (P2.5.0.3) and does not re-include rejected PhysicalBars."
+            ),
         },
     }

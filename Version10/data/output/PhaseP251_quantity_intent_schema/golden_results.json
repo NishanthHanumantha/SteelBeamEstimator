@@ -1,0 +1,122 @@
+{
+  "b97a_4y25": {
+    "pass": true,
+    "intent": {
+      "intent_id": "QI::B97A::ANN-d7128f62",
+      "beam_id": "B97A",
+      "annotation_id": "ANN-d7128f62",
+      "raw_text": "4-Y25",
+      "normalized_text": "4-Y25",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "reinforcement_role": "TOP_BAR",
+      "quantity_expression": "4-Y25",
+      "quantity_value": 4,
+      "quantity_status": "EXPLICIT",
+      "quantity_source": "ANNOTATION_TEXT",
+      "diameter_expression": "Y25",
+      "diameter_value_mm": 25.0,
+      "spacing_expression": null,
+      "spacing_value_mm": null,
+      "spacing_values_mm": [],
+      "leg_expression": null,
+      "leg_count": null,
+      "unit": "COUNT",
+      "components": [
+        {
+          "quantity_expression": "4-Y25",
+          "quantity_value": 4,
+          "diameter_expression": "Y25",
+          "diameter_value_mm": 25.0,
+          "parse_ok": true
+        }
+      ],
+      "evidence_links": {
+        "beam_id": "B97A",
+        "annotation_id": "ANN-d7128f62",
+        "leader_id": "LDR::E83C245B",
+        "ownership_id": "OWN::B97A::1247FFF",
+        "source_handle": "1247FFF",
+        "evidence_id": "OWNGEO::B97A::1247FFF",
+        "chain_semantic_type": "BarCallout"
+      },
+      "confidence": 0.99,
+      "validation_status": "PASS",
+      "validation_reasons": [],
+      "accepted": true,
+      "provenance": {
+        "phase": "P2.5.1",
+        "parse_note": "longitudinal_explicit",
+        "ambiguous": false,
+        "source_evidence_phase": "P2.5.0",
+        "leader_id": "LDR::E83C245B",
+        "ownership_id": "OWN::B97A::1247FFF",
+        "source_handle": "1247FFF",
+        "evidence_id": "OWNGEO::B97A::1247FFF"
+      }
+    },
+    "expected": {
+      "beam_id": "B97A",
+      "annotation_id": "ANN-d7128f62",
+      "raw_text": "4-Y25",
+      "quantity_value": 4,
+      "diameter_value_mm": 25.0,
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "leader_id": "LDR::E83C245B",
+      "ownership_id": "OWN::B97A::1247FFF"
+    }
+  },
+  "stirrup": {
+    "pass": true,
+    "expression": "4L-Y8@100/125/100C/C",
+    "intent": {
+      "intent_id": "QI::B133::ANN-539e6c5f",
+      "beam_id": "B133",
+      "annotation_id": "ANN-539e6c5f",
+      "raw_text": "4L-Y8@100/125/100C/C",
+      "normalized_text": "4L-Y8@100/125/100C/C",
+      "semantic_type": "STIRRUP",
+      "reinforcement_role": "STIRRUP",
+      "quantity_expression": "4L-Y8@100/125/100C/C",
+      "quantity_value": null,
+      "quantity_status": "SPACING_BASED",
+      "quantity_source": "STIRRUP_PATTERN",
+      "diameter_expression": "Y8",
+      "diameter_value_mm": 8.0,
+      "spacing_expression": "100/125/100",
+      "spacing_value_mm": null,
+      "spacing_values_mm": [
+        100.0,
+        125.0,
+        100.0
+      ],
+      "leg_expression": "4L",
+      "leg_count": 4,
+      "unit": "SPACING_MM",
+      "components": [],
+      "evidence_links": {
+        "beam_id": "B133",
+        "annotation_id": "ANN-539e6c5f",
+        "leader_id": "LDR::12AD900D",
+        "ownership_id": null,
+        "source_handle": null,
+        "evidence_id": null,
+        "chain_semantic_type": "StirrupNote"
+      },
+      "confidence": 0.99,
+      "validation_status": "PASS",
+      "validation_reasons": [],
+      "accepted": true,
+      "provenance": {
+        "phase": "P2.5.1",
+        "parse_note": "stirrup_parsed",
+        "ambiguous": false,
+        "source_evidence_phase": "P2.5.0",
+        "leader_id": "LDR::12AD900D",
+        "ownership_id": null,
+        "source_handle": null,
+        "evidence_id": null
+      }
+    }
+  }
+}

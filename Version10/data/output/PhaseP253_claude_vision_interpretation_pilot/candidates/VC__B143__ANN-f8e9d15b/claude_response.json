@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B143::ANN-f8e9d15b\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 3,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"normalized_notation\": \"3L-Y10@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Annotation clearly shows '3L-Y10@' followed by spacing notation\",\n    \"The '3L' prefix indicates 3 legs of stirrups\",\n    \"Y10 indicates 10mm diameter reinforcement bars\",\n    \"The '@100C/C' indicates uniform spacing at 100mm centers\",\n    \"Visual context shows this is a stirrup notation for beam B143(450X600)\",\n    \"The backslash in raw OCR '3L-Y10@\\\\X100C/C' appears to be OCR corruption of the @ symbol or spacing notation, corrected to standard format\"\n  ],\n  \"reasoning_summary\": \"The notation 3L-Y10@100C/C is a standard stirrup specification. The '3L' clearly indicates 3 legs, 'Y10' specifies 10mm diameter bars, and '@100C/C' indicates uniform spacing at 100mm center-to-center. The OCR corruption '\\\\X' in the raw text is visually confirmed to represent the spacing notation. This is applied to beam B143 with dimensions 450x600mm. As this is stirrup notation, no longitudinal quantity is populated per the rules.\",\n  \"warnings\": [\n    \"OCR corruption '\\\\X' in raw text normalized to standard spacing notation based on visual evidence\"\n  ]\n}\n```",
+  "latency_s": 10.345146199979354,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3071,
+    "output_tokens": 445
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 346,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B143::ANN-f8e9d15b",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "57f76d7a7be5df73f9e5667ae460b0fa43a38f2384d4af2c9666b20a7e666d0f",
+  "timestamp_utc": "2026-08-12T12:32:57.040306+00:00"
+}

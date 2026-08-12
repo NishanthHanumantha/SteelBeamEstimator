@@ -1,0 +1,72 @@
+{
+  "applied": true,
+  "description": "P2.5.0 evidence_pack now includes only T18-accepted bars/leaders (accepted_chains still contribute). Rejected candidates recorded under excluded_rejected_evidence. MODEL_VERSION 10.6.1.",
+  "files": [
+    "Version10/src/PhaseP250_beam_evidence_crop_qa/evidence_pack.py",
+    "Version10/src/PhaseP250_beam_evidence_crop_qa/config.py"
+  ],
+  "after_fix_metrics": {
+    "B97A": {
+      "ratios": {
+        "beam_width_mm": 3585.39,
+        "beam_height_mm": 2979.22,
+        "crop_width_mm": 4999.893,
+        "crop_height_mm": 3219.22,
+        "crop_width_to_beam_width_ratio": 1.3945,
+        "crop_height_to_beam_height_ratio": 1.0806,
+        "crop_area_to_beam_area_ratio": 1.5069,
+        "crop_aspect_wh": 1.5531
+      },
+      "max_y_gap_mm": 0.0,
+      "reinforcement_count": 0,
+      "excluded_rejected": {
+        "bars": [
+          "BAR::2B7B3233",
+          "BAR::5B1BFCC2"
+        ],
+        "leaders": [],
+        "basis": "T18 bar_results/leader_results with accepted=false are diagnostic candidates only and must not expand the P2.5.0 evidence window (P2.5.0.1 fix)."
+      },
+      "crop_bbox": [
+        31646955.30694844,
+        -21211038.03,
+        31651955.2,
+        -21207818.81
+      ],
+      "render_success": true,
+      "vision_crop_status": "VISION_CROP_HEALTHY"
+    },
+    "B98A": {
+      "ratios": {
+        "beam_width_mm": 3585.4,
+        "beam_height_mm": 3048.94,
+        "crop_width_mm": 3585.4,
+        "crop_height_mm": 3048.94,
+        "crop_width_to_beam_width_ratio": 1.0,
+        "crop_height_to_beam_height_ratio": 1.0,
+        "crop_area_to_beam_area_ratio": 1.0,
+        "crop_aspect_wh": 1.1759
+      },
+      "max_y_gap_mm": 0.0,
+      "reinforcement_count": 0,
+      "excluded_rejected": {
+        "bars": [
+          "BAR::4D469A4E",
+          "BAR::E6591903"
+        ],
+        "leaders": [
+          "LDR::53A6EF71"
+        ],
+        "basis": "T18 bar_results/leader_results with accepted=false are diagnostic candidates only and must not expand the P2.5.0 evidence window (P2.5.0.1 fix)."
+      },
+      "crop_bbox": [
+        31651335.2,
+        -21210918.03,
+        31654920.6,
+        -21207869.09
+      ],
+      "render_success": true,
+      "vision_crop_status": "VISION_CROP_HEALTHY"
+    }
+  }
+}

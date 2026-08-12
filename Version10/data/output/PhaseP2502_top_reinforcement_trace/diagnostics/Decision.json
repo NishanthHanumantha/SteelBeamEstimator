@@ -1,0 +1,10 @@
+{
+  "decision": "FIX_EVIDENCE_LAYER",
+  "rationale": "Rejected BAR::* are FALSE_CANDIDATE far-elevation lines (T18 rejection correct). Actual top reinforcement is OWN::* LWPOLYLINE on -STR-BEAM, already owned by T16 and referenced by accepted 4-Y25 chains, but P2.5.0 evidence_pack does not emit OwnedEntity into reinforcement[]. Do NOT re-include rejected bars (recreates huge crops). Optionally later extend R.3.1 to -STR-BEAM, but immediate safe path is evidence-layer packaging of accepted-chain OWN:: TOP_BAR geometry.",
+  "do_not": [
+    "Do not re-include T18-rejected BAR::* into crop expansion",
+    "Do not change T18 acceptance rules for these bars",
+    "Do not hardcode B97A/B98A"
+  ],
+  "secondary_note": "R.3.1 PhysicalBarDetector only scans -STR-REINF/-rein layers, so it never emits PhysicalBar for -STR-BEAM top LWPOLYLINEs \u2014 secondary upstream gap."
+}

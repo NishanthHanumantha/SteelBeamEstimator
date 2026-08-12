@@ -1,0 +1,76 @@
+{
+  "phase_id": "P2.5.2.2",
+  "model_version": "10.6.7",
+  "scope": "FOURTH_SET_ONLY",
+  "pass_fail": "PASS",
+  "decision": "READY_FOR_VISUAL_INSPECTION",
+  "metrics": {
+    "TOTAL_ACTIVE_CANDIDATES": 14,
+    "GEOMETRIC_CONTAINMENT_PASS": 14,
+    "RENDER_SAFE_PASS": 14,
+    "ANNOTATION_CLIPPING_COUNT": 0,
+    "ANNOTATION_EDGE_RISK_COUNT": 0,
+    "LEADER_EDGE_RISK_COUNT": 0,
+    "TOP_ANNOTATION_EDGE_RISK_COUNT": 0,
+    "BOTTOM_ANNOTATION_EDGE_RISK_COUNT": 0,
+    "RENDER_SAFETY_REFINEMENT_COUNT": 1,
+    "MAX_ITERATION_HITS": 0,
+    "READABILITY_PASS": 14,
+    "READABILITY_PARTIAL": 0,
+    "READABILITY_REVIEW": 0,
+    "READABILITY_FAIL": 0,
+    "EXTREME_CROP_COUNT": 0,
+    "MISSING_TARGET_BEAM_COUNT": 0,
+    "MISSING_ANNOTATION_COUNT": 0,
+    "REJECTED_EVIDENCE_INCLUDED_COUNT": 0,
+    "DETERMINISM_PASS": true,
+    "CLAUDE_CALLS": 0,
+    "ENGINEERING_CHANGES": "NONE",
+    "MAX_SIDE_EXPANSION_MM": 249.3
+  },
+  "golden": {
+    "ocr_stirrup": {
+      "pass": true,
+      "candidate_id": "VC::B129::ANN-7aec78cb"
+    },
+    "b97a_not_active": {
+      "pass": true
+    },
+    "all_pass": true
+  },
+  "invariants_ok": true,
+  "determinism": {
+    "fingerprint": "ccb4a026c9b863a4b13942f110b43cb5f65f66e99e4c0db094a470c0a9ba7394",
+    "determinism_status": "PASS",
+    "prior_fingerprint": "ccb4a026c9b863a4b13942f110b43cb5f65f66e99e4c0db094a470c0a9ba7394"
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "visual_inspection": {
+    "local_contact_sheet": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\contact_sheets\\contact_sheet_local_render_safe.png",
+      "tile_count": 14,
+      "cols": 4,
+      "rows": 4
+    },
+    "beam_context_contact_sheet": {
+      "success": true,
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\contact_sheets\\contact_sheet_beam_context_render_safe.png",
+      "tile_count": 14,
+      "cols": 4,
+      "rows": 4
+    },
+    "individual_crops_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\candidates"
+  },
+  "manual_review": [],
+  "claude_calls": 0,
+  "engineering_changes": "NONE",
+  "unit_tests": {
+    "success": true,
+    "passed": 0,
+    "total": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B139::ANN-211806ab\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly shows '2L-Y8@' followed by '100C/C'\",\n    \"The '2L' prefix indicates 2-legged stirrup configuration\",\n    \"Y8 indicates 8mm diameter reinforcement bar\",\n    \"@ symbol followed by spacing value is standard stirrup notation\",\n    \"100C/C indicates 100mm center-to-center spacing\",\n    \"Drawing shows green rectangular stirrup outline with red dots at corners\",\n    \"Notation positioned at stirrup level, not at longitudinal reinforcement locations\",\n    \"Additional longitudinal bar notations visible separately (5-Y20, 5-Y16)\"\n  ],\n  \"reasoning_summary\": \"The notation '2L-Y8@100C/C' is clearly visible in magenta text. The '2L' prefix definitively indicates a 2-legged stirrup. Y8 specifies 8mm diameter bars. The '@100C/C' indicates stirrups spaced at 100mm center-to-center intervals. The visual context shows this annotation positioned at the stirrup/shear reinforcement level of beam B139 (500x1200mm), distinct from the longitudinal bar callouts. The OCR corruption in the metadata ('\\\\X' instead of proper spacing) is corrected based on clear visual evidence showing '100C/C'.\",\n  \"warnings\": []\n}\n```",
+  "latency_s": 11.73986510001123,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3857,
+    "output_tokens": 453
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 362,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B139::ANN-211806ab",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "e3d18adcb855ce6f93b3f08050450c94e99ac645c21b3b40343dc3a826a7713f",
+  "timestamp_utc": "2026-08-12T12:32:33.796404+00:00"
+}

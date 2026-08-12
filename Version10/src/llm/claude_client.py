@@ -141,3 +141,97 @@ class ClaudeClient:
         if isinstance(last_error, ClaudeResponseFormatError):
             raise last_error
         raise last_error
+
+    def generate_vision_response(
+        self,
+        *,
+        prompt: str,
+        images: list[dict[str, Any]],
+        system_prompt: str | None = None,
+    ) -> dict[str, Any]:
+        """
+        Execute a Claude vision request with image content blocks.
+
+        Each image dict:
+          { "media_type": "image/png", "data_base64": "...", "label": optional }
+
+        Returns dict with text, usage, model, latency_s, retry_count.
+        """
+        content: list[dict[str, Any]] = []
+        for img in images:
+            content.append(
+                {
+                    "type": "image",
+                    "source": {
+                        "type": "base64",
+                        "media_type": img.get("media_type") or "image/png",
+                        "data": img["data_base64"],
+                    },
+                }
+            )
+        content.append({"type": "text", "text": prompt})
+        messages: list[dict[str, Any]] = [{"role": "user", "content": content}]
+        prompt_length = len(prompt)
+        estimated_input_tokens = _estimate_tokens(prompt) + _estimate_tokens(system_prompt or "")
+
+        last_error: Exception | None = None
+        for attempt in range(1, self._config.MAX_RETRIES + 1):
+            started = time.perf_counter()
+            try:
+                kwargs: dict[str, Any] = {
+                    "model": self._config.MODEL_NAME,
+                    "max_tokens": self._config.MAX_OUTPUT_TOKENS,
+                    "temperature": self._config.TEMPERATURE,
+                    "messages": messages,
+                }
+                if system_prompt:
+                    kwargs["system"] = system_prompt
+
+                response = self._client.messages.create(**kwargs)
+                text = extract_text(response)
+                elapsed = time.perf_counter() - started
+                usage = getattr(response, "usage", None)
+                usage_dict = None
+                if usage is not None:
+                    usage_dict = {
+                        "input_tokens": getattr(usage, "input_tokens", None),
+                        "output_tokens": getattr(usage, "output_tokens", None),
+                    }
+                logger.info(
+                    "Claude vision success model={} prompt_length={} "
+                    "n_images={} execution_time_s={:.3f} retry_count={}",
+                    self._config.MODEL_NAME,
+                    prompt_length,
+                    len(images),
+                    elapsed,
+                    attempt - 1,
+                )
+                return {
+                    "text": text,
+                    "model": self._config.MODEL_NAME,
+                    "latency_s": elapsed,
+                    "retry_count": attempt - 1,
+                    "usage": usage_dict,
+                    "estimated_input_tokens": estimated_input_tokens,
+                    "estimated_output_tokens": _estimate_tokens(text),
+                    "success": True,
+                }
+            except Exception as exc:
+                elapsed = time.perf_counter() - started
+                mapped = map_sdk_exception(exc)
+                last_error = mapped
+                logger.warning(
+                    "Claude vision failure model={} prompt_length={} "
+                    "execution_time_s={:.3f} retry_count={} error_type={}",
+                    self._config.MODEL_NAME,
+                    prompt_length,
+                    elapsed,
+                    attempt,
+                    type(mapped).__name__,
+                )
+                if attempt >= self._config.MAX_RETRIES:
+                    break
+                time.sleep(min(2 ** (attempt - 1), 8))
+
+        assert last_error is not None
+        raise last_error

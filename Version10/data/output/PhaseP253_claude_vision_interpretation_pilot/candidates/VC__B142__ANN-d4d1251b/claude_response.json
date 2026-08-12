@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B142::ANN-d4d1251b\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"100C/C\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text '2L-Y8@100C/C' clearly visible in both images\",\n    \"Text positioned with horizontal dimension line indicating stirrup spacing\",\n    \"Notation follows standard stirrup format: [legs]L-Y[diameter]@[spacing]C/C\",\n    \"Associated with beam B142(400X600) as shown in cyan text\",\n    \"Visual context shows rectangular beam cross-section with corner reinforcement dots\"\n  ],\n  \"reasoning_summary\": \"The notation '2L-Y8@100C/C' is clearly legible in the images. This follows standard stirrup notation format: 2L indicates 2-legged stirrups, Y8 indicates 8mm diameter bars, @100C/C indicates spacing of 100mm center-to-center. The OCR text '2L-Y8@\\\\X100C/C' contains corruption ('\\\\X' instead of '@') but the visual evidence clearly shows '@100C/C'. The notation is associated with beam B142 and positioned along a horizontal dimension line indicating stirrup spacing pattern.\",\n  \"warnings\": [\n    \"OCR text contained '\\\\X' corruption which was corrected to '@' based on clear visual evidence\"\n  ]\n}\n```",
+  "latency_s": 9.752207400044426,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2810,
+    "output_tokens": 424
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 333,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B142::ANN-d4d1251b",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "37abe8543c06be6287c951bdad2433a6ab4f1cd78f88b8658f7e05eecb0b8e3d",
+  "timestamp_utc": "2026-08-12T12:32:44.446041+00:00"
+}

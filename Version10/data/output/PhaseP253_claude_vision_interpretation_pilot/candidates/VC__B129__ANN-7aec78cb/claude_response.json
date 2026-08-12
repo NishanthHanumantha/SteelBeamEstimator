@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B129::ANN-7aec78cb\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 12,\n  \"legs\": 4,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"normalized_notation\": \"4L-Y12@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text '4L-Y12@100C/C' clearly visible in both images pointing to horizontal stirrup reinforcement\",\n    \"Text positioned with leader line pointing to green stirrup lines shown in the beam cross-section\",\n    \"The '4L' prefix indicates 4-legged stirrups\",\n    \"Y12 indicates 12mm diameter reinforcement bars\",\n    \"@100C/C indicates spacing of 100mm center-to-center\",\n    \"Visual context shows rectangular beam section B129(400X1100) with green stirrup outlines matching 4-leg configuration\",\n    \"Red dots at corners of beam section consistent with longitudinal bar positions\",\n    \"Separate notation '4-Y20 2-Y16' visible for longitudinal reinforcement, confirming this is stirrup notation\"\n  ],\n  \"reasoning_summary\": \"The notation '4L-Y12@100C/C' is clearly visible in magenta text with a leader pointing to the stirrup reinforcement shown in green. The '4L' indicates 4 legs, 'Y12' indicates 12mm diameter bars, and '@100C/C' indicates 100mm center-to-center spacing. The OCR corruption '\\\\X' in the metadata appears to be a misread of the '@' symbol. The visual evidence strongly supports this is stirrup reinforcement, not longitudinal bars. The beam section shows the characteristic 4-legged stirrup configuration with corner bars indicated by red dots.\",\n  \"warnings\": [\n    \"OCR metadata contained '\\\\X' which appears to be corruption of '@' symbol, corrected based on visual evidence\"\n  ]\n}\n```",
+  "latency_s": 12.898350600036792,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3851,
+    "output_tokens": 514
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 434,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B129::ANN-7aec78cb",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "3c6d9c051f8b4d6906cbdda375568e9f5fd4bc9977c4c114396e641a5de0634e",
+  "timestamp_utc": "2026-08-12T12:32:20.921607+00:00"
+}

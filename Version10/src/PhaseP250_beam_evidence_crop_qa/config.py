@@ -8,13 +8,21 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Tuple
 
-MODEL_VERSION = "10.6.0"
+MODEL_VERSION = "10.6.3"
 PHASE_ID = "P2.5.0"
 PHASE_NAME = "Beam Evidence Rendering & Crop QA"
 OUTPUT_DIRNAME = "PhaseP250_beam_evidence_crop_qa"
 SCOPE = "FOURTH_SET_ONLY"
 MODE = "DIAGNOSTIC_ONLY"
 ENGINEERING_CHANGES = "NONE"
+# 10.6.1: exclude T18-rejected bars/leaders from evidence-window expansion (P2.5.0.1)
+# 10.6.2: package accepted OWN::TOP_BAR DXF geometry as visual evidence (P2.5.0.3)
+# 10.6.3: render accepted OWN::TOP_BAR on engineering crop (P2.5.0.4)
+
+# Engineering-crop stroke for accepted OWN TOP_BAR (no diagnostic labels).
+# Source entities are BYLAYER color 7 (white) → invisible on white PNG background.
+OWN_TOP_BAR_ENGINEERING_COLOR = "#C00080"  # reinforcement magenta family
+OWN_TOP_BAR_ENGINEERING_LINEWIDTH = 2.0
 
 # Base margin around beam geometry before evidence expansion (mm)
 BASE_MARGIN_MM = 250.0

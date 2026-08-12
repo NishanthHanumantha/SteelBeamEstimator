@@ -1,7 +1,7 @@
 # T1.1 Renderer Validation
 
 **MODEL_VERSION:** 9.3.0
-**DXF:** `C:\Users\nishanth.h\SteelBeamEstimator\Version9\data\web_runs\qa2_Third_Set_Drawings_20260803_132502\reinforcement\Galera_TF_BeamReinforcementDetails.dxf`
+**DXF:** `C:\Users\nishanth.h\SteelBeamEstimator\Version9\data\web_runs\qa2_Third_Set_Drawings_20260805_170657\reinforcement\Galera_TF_BeamReinforcementDetails.dxf`
 **ALL PASS:** True
 
 ## a_coordinate_round_trip

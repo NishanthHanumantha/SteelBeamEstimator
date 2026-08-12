@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B74::ANN-5a3a4c53\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 4,\n  \"spacing_mm\": [100, 125, 100],\n  \"spacing_pattern\": \"100/125/100C/C\",\n  \"normalized_notation\": \"4L-Y10@100/125/100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Text clearly shows '4L-Y10@' indicating 4-leg stirrups with Y10 (10mm diameter) bars\",\n    \"Spacing pattern '100/125/100C/C' is visible, indicating variable spacing: 100mm, 125mm, 100mm center-to-center\",\n    \"The notation is positioned within a beam section labeled B74(400X1100)\",\n    \"Visual context shows this is stirrup reinforcement notation for the beam, with longitudinal bars (4-Y20, 2-Y16) shown separately\",\n    \"The '4L' prefix clearly indicates 4 legs of stirrups\",\n    \"OCR corruption '\\\\X' in upstream text is corrected to '@' based on visual evidence and standard notation conventions\"\n  ],\n  \"reasoning_summary\": \"The notation 4L-Y10@100/125/100C/C represents stirrup reinforcement with 4 legs of Y10 (10mm diameter) bars at variable spacing. The upstream OCR captured '\\\\X' which is visually confirmed to be '@' (standard stirrup spacing indicator). The spacing pattern 100/125/100C/C indicates three zones with center-to-center spacing of 100mm, 125mm, and 100mm respectively. This is standard stirrup notation for beam B74. No longitudinal quantity is populated as this is stirrup reinforcement.\",\n  \"warnings\": [\n    \"OCR corruption corrected: '\\\\X' interpreted as '@' based on visual evidence and standard notation\"\n  ]\n}\n```",
+  "latency_s": 13.117422600043938,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3777,
+    "output_tokens": 509
+  },
+  "estimated_input_tokens": 626,
+  "estimated_output_tokens": 400,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B74::ANN-5a3a4c53",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "356d27166e40fd6a138992d94b929d8e8b6b7b84f7e0849e246dbe5466b3e60c",
+  "timestamp_utc": "2026-08-12T12:34:42.827342+00:00"
+}

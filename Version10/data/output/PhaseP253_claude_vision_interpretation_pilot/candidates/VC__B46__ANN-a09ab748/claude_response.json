@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B46::ANN-a09ab748\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 4,\n  \"spacing_mm\": [100, 150, 100],\n  \"spacing_pattern\": \"100/150/100C/C\",\n  \"normalized_notation\": \"4L-Y10@100/150/100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Annotation clearly shows '4L-Y10@' indicating 4-legged stirrups with Y10 (10mm diameter) bars\",\n    \"Spacing pattern '100/150/100C/C' is visible, indicating variable spacing: 100mm, then 150mm, then 100mm center-to-center\",\n    \"The notation is positioned centrally on a beam element labeled B46(400X500)\",\n    \"Visual context shows a rectangular beam cross-section with green reinforcement outline and red dots at corners indicating stirrup positions\",\n    \"The '4-Y20' notations above and below refer to longitudinal bars (4 bars of Y20), separate from this stirrup notation\"\n  ],\n  \"reasoning_summary\": \"The notation '4L-Y10@100/150/100C/C' is a standard stirrup specification. '4L' indicates 4 legs, 'Y10' indicates 10mm diameter bars, and '100/150/100C/C' indicates a variable spacing pattern with 100mm spacing at ends and 150mm in the middle, all measured center-to-center. The upstream flagged '\\\\X' appears to be OCR corruption of the '@' symbol, which is clearly visible in the image. This is stirrup reinforcement, so longitudinal quantity is correctly left null. The visual evidence strongly supports this interpretation with clear text and contextual beam drawing.\",\n  \"warnings\": [\n    \"Upstream OCR detected '\\\\X' which appears to be corruption of '@' symbol - corrected based on visual evidence\"\n  ]\n}\n```",
+  "latency_s": 11.779189100023359,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3856,
+    "output_tokens": 511
+  },
+  "estimated_input_tokens": 626,
+  "estimated_output_tokens": 418,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B46::ANN-a09ab748",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "c607c52f13b4975cb14d11cf93fbe722201a38ca00faae45a454b50436638022",
+  "timestamp_utc": "2026-08-12T12:33:42.103161+00:00"
+}

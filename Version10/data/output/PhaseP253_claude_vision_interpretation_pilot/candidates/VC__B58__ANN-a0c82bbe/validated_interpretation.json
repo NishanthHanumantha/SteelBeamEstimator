@@ -1,0 +1,66 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B58::ANN-a0c82bbe",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "normalized_notation": "3L-Y12@100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Text '3L-Y12@100C/C' clearly visible in magenta annotation pointing to beam B58(300X800)",
+      "Notation positioned horizontally along the beam span with bidirectional arrow indicating stirrup spacing",
+      "The '3L' prefix indicates 3-legged stirrups",
+      "Y12 indicates 12mm diameter reinforcement bars",
+      "@100C/C indicates spacing of 100mm center-to-center",
+      "Visual context shows this is stirrup notation for the beam, not longitudinal reinforcement",
+      "The annotation is associated with beam B58 which has dimensions 300X800mm"
+    ],
+    "reasoning_summary": "The notation '3L-Y12@100C/C' is clearly visible in the image. The '3L' prefix definitively indicates 3-legged stirrups (not longitudinal bars), Y12 specifies 12mm diameter bars, and @100C/C indicates 100mm center-to-center spacing. The OCR text '3L-Y12@\\X100C/C' contains a corruption where '\\X' should be '@', which is confirmed by the visual evidence showing '@' in the image. This is standard stirrup notation format. As this is stirrup reinforcement, the quantity field is correctly left null per the instructions.",
+    "warnings": [
+      "OCR corruption corrected: '\\X' normalized to '@' based on visual evidence"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption corrected: '\\X' normalized to '@' based on visual evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B58::ANN-a0c82bbe",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Text '3L-Y12@100C/C' clearly visible in magenta annotation pointing to beam B58(300X800)",
+        "Notation positioned horizontally along the beam span with bidirectional arrow indicating stirrup spacing",
+        "The '3L' prefix indicates 3-legged stirrups",
+        "Y12 indicates 12mm diameter reinforcement bars",
+        "@100C/C indicates spacing of 100mm center-to-center",
+        "Visual context shows this is stirrup notation for the beam, not longitudinal reinforcement",
+        "The annotation is associated with beam B58 which has dimensions 300X800mm"
+      ],
+      "reasoning_summary": "The notation '3L-Y12@100C/C' is clearly visible in the image. The '3L' prefix definitively indicates 3-legged stirrups (not longitudinal bars), Y12 specifies 12mm diameter bars, and @100C/C indicates 100mm center-to-center spacing. The OCR text '3L-Y12@\\X100C/C' contains a corruption where '\\X' should be '@', which is confirmed by the visual evidence showing '@' in the image. This is standard stirrup notation format. As this is stirrup reinforcement, the quantity field is correctly left null per the instructions.",
+      "warnings": [
+        "OCR corruption corrected: '\\X' normalized to '@' based on visual evidence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

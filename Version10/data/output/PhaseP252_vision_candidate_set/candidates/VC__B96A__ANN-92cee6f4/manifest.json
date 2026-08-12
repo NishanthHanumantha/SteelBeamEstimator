@@ -1,0 +1,118 @@
+{
+  "candidate_id": "VC::B96A::ANN-92cee6f4",
+  "beam_id": "B96A",
+  "annotation_id": "ANN-92cee6f4",
+  "raw_text": "Ld+10bd+10db",
+  "normalized_text": "LD+10BD+10DB",
+  "quantity_status": "UNRESOLVED",
+  "quantity_value": null,
+  "diameter_value_mm": null,
+  "semantic_type": "UNKNOWN",
+  "reinforcement_role": "UNKNOWN",
+  "outcome": "DEFERRED",
+  "candidate_priority": "P3",
+  "candidate_reason_codes": [
+    "DEFER_ENGINEERING_RULE",
+    "NON_QUANTITY_NOTE"
+  ],
+  "candidate_reason_text": "Development-length / engineering note \u2014 not a Vision quantity case",
+  "candidate_normalization_hint": null,
+  "leader_id": null,
+  "ownership_id": null,
+  "source_handle": null,
+  "evidence_id": null,
+  "crop_local_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B96A__ANN-92cee6f4\\local_crop.png",
+  "crop_beam_context_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B96A__ANN-92cee6f4\\beam_context_crop.png",
+  "crop_bounds": [
+    31644411.00098632,
+    -21215763.98690961,
+    31649242.14367726,
+    -21139018.42
+  ],
+  "crop_dimensions_mm": {
+    "w_mm": 4831.142690941691,
+    "h_mm": 76745.5669096075
+  },
+  "image_dimensions_px": {
+    "w": 400,
+    "h": 1200
+  },
+  "crop_qa_status": "FAIL",
+  "crop_qa": {
+    "overall": "FAIL",
+    "gates": {
+      "TARGET_BEAM_PRESENT": "PASS",
+      "TARGET_ANNOTATION_PRESENT": "PASS",
+      "LEADER_PRESENT_WHEN_EXPECTED": "PASS",
+      "RELEVANT_REINFORCEMENT_PRESENT_WHEN_EXPECTED": "NOT_APPLICABLE",
+      "NO_REJECTED_PHYSICAL_BAR": "PASS",
+      "NO_EXTREME_EXPANSION": "FAIL",
+      "NO_CLIPPED_SELECTED_EVIDENCE": "PASS",
+      "VALID_IMAGE": "PASS",
+      "READABLE_DIMENSIONS": "PASS"
+    },
+    "hard_fails": [
+      "NO_EXTREME_EXPANSION"
+    ],
+    "soft_fails": [],
+    "flags": [
+      "EXTREME_ASPECT_RATIO",
+      "EXTREME_CROP_HEIGHT"
+    ],
+    "image_width_px": 400,
+    "image_height_px": 1200,
+    "crop_width_mm": 4831.142690941691,
+    "crop_height_mm": 76745.5669096075,
+    "beam_width_mm": 3900.0,
+    "beam_height_mm": 7148.879999998957,
+    "crop_to_beam_ratio": 13.2984,
+    "annotation_bbox_size": [
+      576.0,
+      308.5
+    ],
+    "annotation_visibility_status": "PRESENT",
+    "rejected_bars_in_reinforcement": [],
+    "excluded_rejected_bars_count": 0
+  },
+  "excluded_evidence_summary": {
+    "rejected_bars": [],
+    "rejected_leaders": [],
+    "basis": null
+  },
+  "deterministic_intent": {
+    "intent_id": "QI::B96A::ANN-92cee6f4",
+    "raw_text": "Ld+10bd+10db",
+    "normalized_text": "LD+10BD+10DB",
+    "quantity_status": "UNRESOLVED",
+    "quantity_value": null,
+    "diameter_value_mm": null,
+    "semantic_type": "UNKNOWN",
+    "reinforcement_role": "UNKNOWN",
+    "leg_count": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "validation_status": "PASS",
+    "evidence_links": {
+      "beam_id": "B96A",
+      "annotation_id": "ANN-92cee6f4",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "DevelopmentLength"
+    },
+    "confidence": 0.45
+  },
+  "vision_candidate_context": {
+    "local_crop": "P2.5.0 engineering_crop (accepted-evidence window)",
+    "beam_context_crop": "Same verified evidence window (LEVEL B == LEVEL A source)",
+    "note": "No new coordinate system; rejected PhysicalBars excluded upstream"
+  },
+  "provenance": {
+    "phase": "P2.5.2",
+    "source_quantity_intent": "QI::B96A::ANN-92cee6f4",
+    "source_evidence_beam": "B96A",
+    "p250_evidence_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B96A\\evidence.json"
+  },
+  "future_vision_status": "PENDING"
+}

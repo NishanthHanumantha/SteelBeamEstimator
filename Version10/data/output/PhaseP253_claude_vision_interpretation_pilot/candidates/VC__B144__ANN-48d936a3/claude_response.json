@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B144::ANN-48d936a3\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 12,\n  \"legs\": 3,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"normalized_notation\": \"3L-Y12@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly shows '3L-Y12@100C/C' in both images\",\n    \"The '3L' prefix indicates 3 legs of stirrup reinforcement\",\n    \"Y12 indicates 12mm diameter bars\",\n    \"@100C/C indicates spacing of 100mm center-to-center\",\n    \"The notation is positioned within a beam cross-section showing stirrup configuration with dashed lines representing the stirrup shape\",\n    \"Red dots at corners indicate stirrup positions\",\n    \"Green lines show the stirrup outline in the cross-section\",\n    \"The OCR text '3L-Y12@\\\\X100C/C' contains corruption ('\\\\X') which is visually corrected to '@100C/C' based on clear image evidence\"\n  ],\n  \"reasoning_summary\": \"The notation 3L-Y12@100C/C is clearly visible in magenta text on both images. This is standard stirrup notation where 3L indicates 3-legged stirrups, Y12 indicates 12mm diameter bars, and @100C/C indicates 100mm center-to-center spacing. The visual context shows a beam cross-section with stirrup configuration. The OCR corruption '\\\\X' is corrected to '@' based on clear visual evidence. As this is stirrup notation, the quantity field is correctly left null per the instructions.\",\n  \"warnings\": [\n    \"OCR corruption '\\\\X' corrected to '@' based on visual evidence\"\n  ]\n}\n```",
+  "latency_s": 10.692524999962188,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3851,
+    "output_tokens": 483
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 388,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B144::ANN-48d936a3",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "b6221a66783fdfae9dcdc33e3965d42e9647793e1dee53a24f0b4da50f6c318e",
+  "timestamp_utc": "2026-08-12T12:33:08.604639+00:00"
+}

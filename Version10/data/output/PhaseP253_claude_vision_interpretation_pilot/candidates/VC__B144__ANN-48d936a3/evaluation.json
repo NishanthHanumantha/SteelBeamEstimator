@@ -1,0 +1,66 @@
+{
+  "candidate_id": "VC::B144::ANN-48d936a3",
+  "beam_id": "B144",
+  "raw_text": "3L-Y12@\\X100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 3,
+    "diameter_mm": 12.0,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "quantity": null,
+    "normalized_notation": "3L-Y12@100C/C",
+    "raw_text": "3L-Y12@\\X100C/C",
+    "cleaned_text": "3L-Y12@100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' corrected to '@' based on visual evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B144::ANN-48d936a3",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '3L-Y12@100C/C' in both images",
+        "The '3L' prefix indicates 3 legs of stirrup reinforcement",
+        "Y12 indicates 12mm diameter bars",
+        "@100C/C indicates spacing of 100mm center-to-center",
+        "The notation is positioned within a beam cross-section showing stirrup configuration with dashed lines representing the stirrup shape",
+        "Red dots at corners indicate stirrup positions",
+        "Green lines show the stirrup outline in the cross-section",
+        "The OCR text '3L-Y12@\\X100C/C' contains corruption ('\\X') which is visually corrected to '@100C/C' based on clear image evidence"
+      ],
+      "reasoning_summary": "The notation 3L-Y12@100C/C is clearly visible in magenta text on both images. This is standard stirrup notation where 3L indicates 3-legged stirrups, Y12 indicates 12mm diameter bars, and @100C/C indicates 100mm center-to-center spacing. The visual context shows a beam cross-section with stirrup configuration. The OCR corruption '\\X' is corrected to '@' based on clear visual evidence. As this is stirrup notation, the quantity field is correctly left null per the instructions.",
+      "warnings": [
+        "OCR corruption '\\X' corrected to '@' based on visual evidence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

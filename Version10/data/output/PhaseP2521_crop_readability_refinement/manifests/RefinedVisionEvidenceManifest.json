@@ -1,0 +1,5100 @@
+[
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B129::ANN-7aec78cb",
+    "beam_id": "B129",
+    "annotation_id": "ANN-7aec78cb",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31672348.02,
+      -21171128.77,
+      31676248.02,
+      -21166242.36
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31672786.21,
+        -21169654.04659144,
+        31676428.02,
+        -21166352.406
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31672786.21,
+          -21169654.04659144,
+          31676428.02,
+          -21166352.406
+        ],
+        "dxf_xlim": [
+          31672786.21,
+          31676428.02
+        ],
+        "dxf_ylim": [
+          -21169654.04659144,
+          -21166352.406
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31672348.02,
+          -21171128.77,
+          31676248.02,
+          -21166242.36
+        ],
+        "annotation_bbox": [
+          31674540.15142707,
+          -21168312.54659144,
+          31675260.15142707,
+          -21168004.04659144
+        ],
+        "evidence_bbox": [
+          31672966.21,
+          -21168312.54659144,
+          31675898.885,
+          -21166532.406
+        ],
+        "crop_bbox": [
+          31672786.21,
+          -21169654.04659144,
+          31676428.02,
+          -21166352.406
+        ],
+        "crop_area": 12023947.722303526,
+        "crop_width_mm": 3641.809999998659,
+        "crop_height_mm": 3301.6405914388597,
+        "aspect_ratio": 1.10303041749664,
+        "target_beam_occupancy": 0.9505740277499193,
+        "annotation_occupancy": 0.01847313420932328,
+        "evidence_occupancy": 0.4341813462242113,
+        "whitespace_ratio": 0.04942597225008072,
+        "target_to_crop_area_ratio": 1.5849203140372332,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31672348.02,
+            -21171128.77,
+            31676248.02,
+            -21166242.36
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31672786.21,
+            -21169654.04659144,
+            31676428.02,
+            -21166352.406
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31672620.15142707,
+            -21170054.04659144,
+            31676528.02,
+            -21166252.406
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31672026.02,
+            -21170516.04659144,
+            31676570.02,
+            -21166032.04659144
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 1088,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31674540.15142707,
+          -21168312.54659144,
+          31675260.15142707,
+          -21168004.04659144
+        ],
+        "beam_bbox": [
+          31672348.02,
+          -21171128.77,
+          31676248.02,
+          -21166242.36
+        ],
+        "evidence_core_bbox": [
+          31672966.21,
+          -21168312.54659144,
+          31675898.885,
+          -21166532.406
+        ],
+        "leader_bboxes": [
+          [
+            31674832.59404471,
+            -21167926.18928904,
+            31675102.26305711,
+            -21167526.17024197
+          ]
+        ],
+        "center_x": 31674900.15142707,
+        "center_y": -21168274.04659144,
+        "described_ids": [
+          "BAR::SYN::B129::1246BAE"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31672028.02,
+        -21170994.04659144,
+        31676568.02,
+        -21165922.36
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31672028.02,
+          -21170994.04659144,
+          31676568.02,
+          -21165922.36
+        ],
+        "dxf_xlim": [
+          31672028.02,
+          31676568.02
+        ],
+        "dxf_ylim": [
+          -21170994.04659144,
+          -21165922.36
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31672348.02,
+          -21171128.77,
+          31676248.02,
+          -21166242.36
+        ],
+        "annotation_bbox": [
+          31674540.15142707,
+          -21168312.54659144,
+          31675260.15142707,
+          -21168004.04659144
+        ],
+        "evidence_bbox": [
+          31672966.21,
+          -21168312.54659144,
+          31675898.885,
+          -21166532.406
+        ],
+        "crop_bbox": [
+          31672028.02,
+          -21170994.04659144,
+          31676568.02,
+          -21165922.36
+        ],
+        "crop_area": 23025457.12513283,
+        "crop_width_mm": 4540.0,
+        "crop_height_mm": 5071.686591438949,
+        "aspect_ratio": 0.8951657240933537,
+        "target_beam_occupancy": 0.8048299586801362,
+        "annotation_occupancy": 0.009646714017136746,
+        "evidence_occupancy": 0.22673051747150352,
+        "whitespace_ratio": 0.19517004131986382,
+        "target_to_crop_area_ratio": 0.8276491057890624,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31672348.02,
+            -21171128.77,
+            31676248.02,
+            -21166242.36
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31672028.02,
+            -21170994.04659144,
+            31676568.02,
+            -21165922.36
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31671898.02,
+            -21171578.77,
+            31676698.02,
+            -21165792.36
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31671830.52,
+            -21171646.27,
+            31676765.52,
+            -21165724.86
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\beam_context_refined.png",
+        "img_w": 1074,
+        "img_h": 1200,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31674540.15142707,
+          -21168312.54659144,
+          31675260.15142707,
+          -21168004.04659144
+        ],
+        "beam_bbox": [
+          31672348.02,
+          -21171128.77,
+          31676248.02,
+          -21166242.36
+        ],
+        "evidence_core_bbox": [
+          31672966.21,
+          -21168312.54659144,
+          31675898.885,
+          -21166532.406
+        ],
+        "leader_bboxes": [
+          [
+            31674832.59404471,
+            -21167926.18928904,
+            31675102.26305711,
+            -21167526.17024197
+          ]
+        ],
+        "center_x": 31674900.15142707,
+        "center_y": -21168274.04659144,
+        "described_ids": [
+          "BAR::SYN::B129::1246BAE"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B129__ANN-7aec78cb\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B139::ANN-211806ab",
+    "beam_id": "B139",
+    "annotation_id": "ANN-211806ab",
+    "raw_text": "2L-Y8@\\X100C/C",
+    "normalized_text": "2L-Y8@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31686092.67,
+      -21176167.0,
+      31690232.67,
+      -21172076.21432855
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31686970.61176283,
+        -21175750.6936892,
+        31690292.67,
+        -21172511.05
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31686970.61176283,
+          -21175750.6936892,
+          31690292.67,
+          -21172511.05
+        ],
+        "dxf_xlim": [
+          31686970.61176283,
+          31690292.67
+        ],
+        "dxf_ylim": [
+          -21175750.6936892,
+          -21172511.05
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31686212.67,
+          -21176047.0,
+          31690112.67,
+          -21172262.8
+        ],
+        "annotation_bbox": [
+          31688414.61176283,
+          -21174409.1936892,
+          31689086.61176283,
+          -21174100.6936892
+        ],
+        "evidence_bbox": [
+          31687830.44,
+          -21174409.1936892,
+          31689805.59,
+          -21172691.05
+        ],
+        "crop_bbox": [
+          31686970.61176283,
+          -21175750.6936892,
+          31690292.67,
+          -21172511.05
+        ],
+        "crop_area": 10762285.003212232,
+        "crop_width_mm": 3322.058237172663,
+        "crop_height_mm": 3239.643689200282,
+        "aspect_ratio": 1.0254393865125104,
+        "target_beam_occupancy": 0.9458167235041628,
+        "annotation_occupancy": 0.01926282382766516,
+        "evidence_occupancy": 0.3153225831418224,
+        "whitespace_ratio": 0.05418327649583721,
+        "target_to_crop_area_ratio": 1.3713054426259983,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31686092.67,
+            -21176167.0,
+            31690232.67,
+            -21172076.21432855
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31686970.61176283,
+            -21175750.6936892,
+            31690292.67,
+            -21172511.05
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31686470.61176283,
+            -21176150.6936892,
+            31690392.67,
+            -21172411.05
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31685890.67,
+            -21176369.0,
+            31690434.67,
+            -21172128.6936892
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 1170,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31688414.61176283,
+          -21174409.1936892,
+          31689086.61176283,
+          -21174100.6936892
+        ],
+        "beam_bbox": [
+          31686212.67,
+          -21176047.0,
+          31690112.67,
+          -21172262.8
+        ],
+        "evidence_core_bbox": [
+          31687830.44,
+          -21174409.1936892,
+          31689805.59,
+          -21172691.05
+        ],
+        "leader_bboxes": [
+          [
+            31688574.7233438,
+            -21174086.70370271,
+            31688738.15451688,
+            -21173783.76760607
+          ]
+        ],
+        "center_x": 31688750.61176283,
+        "center_y": -21174370.6936892,
+        "described_ids": [
+          "BAR::7ACB1505"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31685892.67,
+        -21176367.0,
+        31690432.67,
+        -21171942.8
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31685892.67,
+          -21176367.0,
+          31690432.67,
+          -21171942.8
+        ],
+        "dxf_xlim": [
+          31685892.67,
+          31690432.67
+        ],
+        "dxf_ylim": [
+          -21176367.0,
+          -21171942.8
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31686212.67,
+          -21176047.0,
+          31690112.67,
+          -21172262.8
+        ],
+        "annotation_bbox": [
+          31688414.61176283,
+          -21174409.1936892,
+          31689086.61176283,
+          -21174100.6936892
+        ],
+        "evidence_bbox": [
+          31687830.44,
+          -21174409.1936892,
+          31689805.59,
+          -21172691.05
+        ],
+        "crop_bbox": [
+          31685892.67,
+          -21176367.0,
+          31690432.67,
+          -21171942.8
+        ],
+        "crop_area": 20085867.999996617,
+        "crop_width_mm": 4540.0,
+        "crop_height_mm": 4424.199999999255,
+        "aspect_ratio": 1.0261742235886182,
+        "target_beam_occupancy": 0.7347643626852263,
+        "annotation_occupancy": 0.010321286588164122,
+        "evidence_occupancy": 0.16895418747758117,
+        "whitespace_ratio": 0.26523563731477373,
+        "target_to_crop_area_ratio": 0.7347643626852263,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31686092.67,
+            -21176167.0,
+            31690232.67,
+            -21172076.21432855
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31685892.67,
+            -21176367.0,
+            31690432.67,
+            -21171942.8
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31685762.67,
+            -21176497.0,
+            31690562.67,
+            -21171812.8
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31685695.17,
+            -21176564.5,
+            31690630.17,
+            -21171745.3
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 1169,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31688414.61176283,
+          -21174409.1936892,
+          31689086.61176283,
+          -21174100.6936892
+        ],
+        "beam_bbox": [
+          31686212.67,
+          -21176047.0,
+          31690112.67,
+          -21172262.8
+        ],
+        "evidence_core_bbox": [
+          31687830.44,
+          -21174409.1936892,
+          31689805.59,
+          -21172691.05
+        ],
+        "leader_bboxes": [
+          [
+            31688574.7233438,
+            -21174086.70370271,
+            31688738.15451688,
+            -21173783.76760607
+          ]
+        ],
+        "center_x": 31688750.61176283,
+        "center_y": -21174370.6936892,
+        "described_ids": [
+          "BAR::7ACB1505"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B139__ANN-211806ab\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B142::ANN-d4d1251b",
+    "beam_id": "B142",
+    "annotation_id": "ANN-d4d1251b",
+    "raw_text": "2L-Y8@\\X100C/C",
+    "normalized_text": "2L-Y8@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31670257.075,
+      -21175657.56851807,
+      31674901.36,
+      -21172076.21432855
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31671771.39732491,
+        -21174320.96,
+        31674961.36,
+        -21172461.053
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31671771.39732491,
+          -21174320.96,
+          31674961.36,
+          -21172461.053
+        ],
+        "dxf_xlim": [
+          31671771.39732491,
+          31674961.36
+        ],
+        "dxf_ylim": [
+          -21174320.96,
+          -21172461.053
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31671677.09,
+          -21174140.96,
+          31674781.36,
+          -21172262.8
+        ],
+        "annotation_bbox": [
+          31673215.39732491,
+          -21173926.1936892,
+          31673887.39732491,
+          -21173617.6936892
+        ],
+        "evidence_bbox": [
+          31672554.652,
+          -21173926.1936892,
+          31674707.216,
+          -21172641.053
+        ],
+        "crop_bbox": [
+          31671771.39732491,
+          -21174320.96,
+          31674961.36,
+          -21172461.053
+        ],
+        "crop_area": 5933033.9091451,
+        "crop_width_mm": 3189.962675090879,
+        "crop_height_mm": 1859.90700000152,
+        "aspect_ratio": 1.7151194522566302,
+        "target_beam_occupancy": 0.8522549247248548,
+        "annotation_occupancy": 0.034941988057821824,
+        "evidence_occupancy": 0.4662618863926893,
+        "whitespace_ratio": 0.14774507527514524,
+        "target_to_crop_area_ratio": 0.9826870758673487,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31670257.075,
+            -21175657.56851807,
+            31674901.36,
+            -21172076.21432855
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31671771.39732491,
+            -21174320.96,
+            31674961.36,
+            -21172461.053
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31671397.09,
+            -21174420.96,
+            31675061.36,
+            -21172107.6936892
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31671355.09,
+            -21174462.96,
+            31675103.36,
+            -21171940.8
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 700,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31673215.39732491,
+          -21173926.1936892,
+          31673887.39732491,
+          -21173617.6936892
+        ],
+        "beam_bbox": [
+          31671677.09,
+          -21174140.96,
+          31674781.36,
+          -21172262.8
+        ],
+        "evidence_core_bbox": [
+          31672554.652,
+          -21173926.1936892,
+          31674707.216,
+          -21172641.053
+        ],
+        "leader_bboxes": [
+          [
+            31673386.07092841,
+            -21173543.76760607,
+            31673549.50210151,
+            -21173183.76760607
+          ]
+        ],
+        "center_x": 31673551.39732491,
+        "center_y": -21173887.6936892,
+        "described_ids": [
+          "BAR::SYN::B142::11D41EB"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31671357.09,
+        -21174460.96,
+        31675101.36,
+        -21171942.8
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31671357.09,
+          -21174460.96,
+          31675101.36,
+          -21171942.8
+        ],
+        "dxf_xlim": [
+          31671357.09,
+          31675101.36
+        ],
+        "dxf_ylim": [
+          -21174460.96,
+          -21171942.8
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31671677.09,
+          -21174140.96,
+          31674781.36,
+          -21172262.8
+        ],
+        "annotation_bbox": [
+          31673215.39732491,
+          -21173926.1936892,
+          31673887.39732491,
+          -21173617.6936892
+        ],
+        "evidence_bbox": [
+          31672554.652,
+          -21173926.1936892,
+          31674707.216,
+          -21172641.053
+        ],
+        "crop_bbox": [
+          31671357.09,
+          -21174460.96,
+          31675101.36,
+          -21171942.8
+        ],
+        "crop_area": 9428670.943199432,
+        "crop_width_mm": 3744.269999999553,
+        "crop_height_mm": 2518.160000000149,
+        "aspect_ratio": 1.4869071067761108,
+        "target_beam_occupancy": 0.6183602947141585,
+        "annotation_occupancy": 0.02198740429578008,
+        "evidence_occupancy": 0.2933974044883871,
+        "whitespace_ratio": 0.38163970528584146,
+        "target_to_crop_area_ratio": 0.6183602947141585,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31670257.075,
+            -21175657.56851807,
+            31674901.36,
+            -21172076.21432855
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31671357.09,
+            -21174460.96,
+            31675101.36,
+            -21171942.8
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31671227.09,
+            -21174590.96,
+            31675231.36,
+            -21171812.8
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31671159.59,
+            -21174658.46,
+            31675298.86,
+            -21171745.3
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 807,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31673215.39732491,
+          -21173926.1936892,
+          31673887.39732491,
+          -21173617.6936892
+        ],
+        "beam_bbox": [
+          31671677.09,
+          -21174140.96,
+          31674781.36,
+          -21172262.8
+        ],
+        "evidence_core_bbox": [
+          31672554.652,
+          -21173926.1936892,
+          31674707.216,
+          -21172641.053
+        ],
+        "leader_bboxes": [
+          [
+            31673386.07092841,
+            -21173543.76760607,
+            31673549.50210151,
+            -21173183.76760607
+          ]
+        ],
+        "center_x": 31673551.39732491,
+        "center_y": -21173887.6936892,
+        "described_ids": [
+          "BAR::SYN::B142::11D41EB"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B142__ANN-d4d1251b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B143::ANN-f8e9d15b",
+    "beam_id": "B143",
+    "annotation_id": "ANN-f8e9d15b",
+    "raw_text": "3L-Y10@\\X100C/C",
+    "normalized_text": "3L-Y10@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31628511.75,
+      -21180900.91,
+      31636435.29708857,
+      -21177477.43555605
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31629745.29708857,
+        -21180960.91,
+        31636495.29708857,
+        -21177810.21
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31629745.29708857,
+          -21180960.91,
+          31636495.29708857,
+          -21177810.21
+        ],
+        "dxf_xlim": [
+          31629745.29708857,
+          31636495.29708857
+        ],
+        "dxf_ylim": [
+          -21180960.91,
+          -21177810.21
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31629337.61,
+          -21180780.91,
+          31633237.61,
+          -21177990.21
+        ],
+        "annotation_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21179288.99187217
+        ],
+        "evidence_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21178900.15036167
+        ],
+        "crop_bbox": [
+          31629745.29708857,
+          -21180960.91,
+          31636495.29708857,
+          -21177810.21
+        ],
+        "crop_area": 21267224.99999497,
+        "crop_width_mm": 6750.0,
+        "crop_height_mm": 3150.699999999255,
+        "aspect_ratio": 2.1423810581780542,
+        "target_beam_occupancy": 0.4582637199692602,
+        "annotation_occupancy": 0.010444239904362348,
+        "evidence_occupancy": 0.02360843446009835,
+        "whitespace_ratio": 0.13788004782008745,
+        "target_to_crop_area_ratio": 0.511760702207254,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31628511.75,
+            -21180900.91,
+            31636435.29708857,
+            -21177477.43555605
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31629745.29708857,
+            -21180960.91,
+            31636495.29708857,
+            -21177810.21
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31629845.29708857,
+            -21181060.91,
+            31636595.29708857,
+            -21177710.21
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31629015.61,
+            -21181102.91,
+            31636637.29708857,
+            -21177668.21
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 560,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21179288.99187217
+        ],
+        "beam_bbox": [
+          31629337.61,
+          -21180780.91,
+          31633237.61,
+          -21177990.21
+        ],
+        "evidence_core_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21178900.15036167
+        ],
+        "leader_bboxes": [
+          [
+            31635792.64051373,
+            -21179260.15036167,
+            31635956.07168681,
+            -21178900.15036167
+          ]
+        ],
+        "center_x": 31635955.29708857,
+        "center_y": -21179558.99187217,
+        "described_ids": []
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31632435.29708857,
+        -21181100.91,
+        31636635.29708857,
+        -21177670.21
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31632435.29708857,
+          -21181100.91,
+          31636635.29708857,
+          -21177670.21
+        ],
+        "dxf_xlim": [
+          31632435.29708857,
+          31636635.29708857
+        ],
+        "dxf_ylim": [
+          -21181100.91,
+          -21177670.21
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31629337.61,
+          -21180780.91,
+          31633237.61,
+          -21177990.21
+        ],
+        "annotation_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21179288.99187217
+        ],
+        "evidence_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21178900.15036167
+        ],
+        "crop_bbox": [
+          31632435.29708857,
+          -21181100.91,
+          31636635.29708857,
+          -21177670.21
+        ],
+        "crop_area": 14408939.99999687,
+        "crop_width_mm": 4200.0,
+        "crop_height_mm": 3430.699999999255,
+        "aspect_ratio": 1.2242399510306679,
+        "target_beam_occupancy": 0.1553906562122845,
+        "annotation_occupancy": 0.015415429587467796,
+        "evidence_occupancy": 0.0348454423129429,
+        "whitespace_ratio": 0.24852792780041688,
+        "target_to_crop_area_ratio": 0.7553456395820551,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31628511.75,
+            -21180900.91,
+            31636435.29708857,
+            -21177477.43555605
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31632435.29708857,
+            -21181100.91,
+            31636635.29708857,
+            -21177670.21
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31631505.29708857,
+            -21181230.91,
+            31636765.29708857,
+            -21177540.21
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31630637.79708857,
+            -21181298.41,
+            31636832.79708857,
+            -21177472.71
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 979,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21179288.99187217
+        ],
+        "beam_bbox": [
+          31629337.61,
+          -21180780.91,
+          31633237.61,
+          -21177990.21
+        ],
+        "evidence_core_bbox": [
+          31635595.29708857,
+          -21179597.49187217,
+          31636315.29708857,
+          -21178900.15036167
+        ],
+        "leader_bboxes": [
+          [
+            31635792.64051373,
+            -21179260.15036167,
+            31635956.07168681,
+            -21178900.15036167
+          ]
+        ],
+        "center_x": 31635955.29708857,
+        "center_y": -21179558.99187217,
+        "described_ids": []
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B143__ANN-f8e9d15b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B144::ANN-48d936a3",
+    "beam_id": "B144",
+    "annotation_id": "ANN-48d936a3",
+    "raw_text": "3L-Y12@\\X100C/C",
+    "normalized_text": "3L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31649448.74,
+      -21184308.33,
+      31655046.67875109,
+      -21177515.07
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31650358.92758297,
+        -21180938.99187217,
+        31654273.811,
+        -21177877.436
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31650358.92758297,
+          -21180938.99187217,
+          31654273.811,
+          -21177877.436
+        ],
+        "dxf_xlim": [
+          31650358.92758297,
+          31654273.811
+        ],
+        "dxf_ylim": [
+          -21180938.99187217,
+          -21177877.436
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31649568.74,
+          -21184188.33,
+          31653468.74,
+          -21177635.07
+        ],
+        "annotation_bbox": [
+          31651778.92758297,
+          -21179597.49187217,
+          31652498.92758297,
+          -21179288.99187217
+        ],
+        "evidence_bbox": [
+          31651150.095,
+          -21179597.49187217,
+          31654093.811,
+          -21178057.436
+        ],
+        "crop_bbox": [
+          31650358.92758297,
+          -21180938.99187217,
+          31654273.811,
+          -21177877.436
+        ],
+        "crop_area": 11985634.314259592,
+        "crop_width_mm": 3914.8834170289338,
+        "crop_height_mm": 3061.555872168392,
+        "aspect_ratio": 1.2787234923973998,
+        "target_beam_occupancy": 0.7943563283390681,
+        "annotation_occupancy": 0.018532185629569774,
+        "evidence_occupancy": 0.37824340313848426,
+        "whitespace_ratio": 0.04597838066314752,
+        "target_to_crop_area_ratio": 2.132362237147954,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31649448.74,
+            -21184308.33,
+            31655046.67875109,
+            -21177515.07
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31650358.92758297,
+            -21180938.99187217,
+            31654273.811,
+            -21177877.436
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31649858.92758297,
+            -21181338.99187217,
+            31654373.811,
+            -21177777.436
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31649256.92758297,
+            -21181800.99187217,
+            31654415.811,
+            -21177316.99187217
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 938,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31651778.92758297,
+          -21179597.49187217,
+          31652498.92758297,
+          -21179288.99187217
+        ],
+        "beam_bbox": [
+          31649568.74,
+          -21184188.33,
+          31653468.74,
+          -21177635.07
+        ],
+        "evidence_core_bbox": [
+          31651150.095,
+          -21179597.49187217,
+          31654093.811,
+          -21178057.436
+        ],
+        "leader_bboxes": [
+          [
+            31651976.27100813,
+            -21179260.15036167,
+            31652139.70218121,
+            -21178900.15036167
+          ]
+        ],
+        "center_x": 31652138.92758297,
+        "center_y": -21179558.99187217,
+        "described_ids": [
+          "BAR::SYN::B144::11D4539"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31649248.74,
+        -21182278.99187217,
+        31654413.811,
+        -21177315.07
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31649248.74,
+          -21182278.99187217,
+          31654413.811,
+          -21177315.07
+        ],
+        "dxf_xlim": [
+          31649248.74,
+          31654413.811
+        ],
+        "dxf_ylim": [
+          -21182278.99187217,
+          -21177315.07
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31649568.74,
+          -21184188.33,
+          31653468.74,
+          -21177635.07
+        ],
+        "annotation_bbox": [
+          31651778.92758297,
+          -21179597.49187217,
+          31652498.92758297,
+          -21179288.99187217
+        ],
+        "evidence_bbox": [
+          31651150.095,
+          -21179597.49187217,
+          31654093.811,
+          -21178057.436
+        ],
+        "crop_bbox": [
+          31649248.74,
+          -21182278.99187217,
+          31654413.811,
+          -21177315.07
+        ],
+        "crop_area": 25639008.90821621,
+        "crop_width_mm": 5165.071000002325,
+        "crop_height_mm": 4963.921872168779,
+        "aspect_ratio": 1.0405222187241359,
+        "target_beam_occupancy": 0.706396076630495,
+        "annotation_occupancy": 0.008663361395721502,
+        "evidence_occupancy": 0.17681990470178244,
+        "whitespace_ratio": 0.18038656387793017,
+        "target_to_crop_area_ratio": 0.9968292491915203,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31649448.74,
+            -21184308.33,
+            31655046.67875109,
+            -21177515.07
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31649248.74,
+            -21182278.99187217,
+            31654413.811,
+            -21177315.07
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31649118.74,
+            -21183008.99187217,
+            31654543.811,
+            -21177185.07
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31649051.24,
+            -21183276.49187217,
+            31654611.311,
+            -21177117.57
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 1153,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31651778.92758297,
+          -21179597.49187217,
+          31652498.92758297,
+          -21179288.99187217
+        ],
+        "beam_bbox": [
+          31649568.74,
+          -21184188.33,
+          31653468.74,
+          -21177635.07
+        ],
+        "evidence_core_bbox": [
+          31651150.095,
+          -21179597.49187217,
+          31654093.811,
+          -21178057.436
+        ],
+        "leader_bboxes": [
+          [
+            31651976.27100813,
+            -21179260.15036167,
+            31652139.70218121,
+            -21178900.15036167
+          ]
+        ],
+        "center_x": 31652138.92758297,
+        "center_y": -21179558.99187217,
+        "described_ids": [
+          "BAR::SYN::B144::11D4539"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B144__ANN-48d936a3\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B175::ANN-25171e3b",
+    "beam_id": "B175",
+    "annotation_id": "ANN-25171e3b",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PARTIAL",
+    "p252_crop_bounds": [
+      31663391.8,
+      -21189758.8,
+      31667390.23,
+      -21185852.070914
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31664180.26281248,
+        -21189338.07092985,
+        31667450.23,
+        -21187094.78571963
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31664180.26281248,
+          -21189338.07092985,
+          31667450.23,
+          -21187094.78571963
+        ],
+        "dxf_xlim": [
+          31664180.26281248,
+          31667450.23
+        ],
+        "dxf_ylim": [
+          -21189338.07092985,
+          -21187094.78571963
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31663511.8,
+          -21189638.8,
+          31667270.23,
+          -21188593.81
+        ],
+        "annotation_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187688.07092985
+        ],
+        "evidence_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187274.78571963
+        ],
+        "crop_bbox": [
+          31664180.26281248,
+          -21189338.07092985,
+          31667450.23,
+          -21187094.78571963
+        ],
+        "crop_area": 7335469.029675126,
+        "crop_width_mm": 3269.9671875201166,
+        "crop_height_mm": 2243.285210222006,
+        "aspect_ratio": 1.4576689458031533,
+        "target_beam_occupancy": 0.313509857773877,
+        "annotation_occupancy": 0.030280272345425917,
+        "evidence_occupancy": 0.07084555183281308,
+        "whitespace_ratio": 0.13086899115926032,
+        "target_to_crop_area_ratio": 0.5354152201882408,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31663391.8,
+            -21189758.8,
+            31667390.23,
+            -21185852.070914
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31664180.26281248,
+            -21189338.07092985,
+            31667450.23,
+            -21187094.78571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31663680.26281248,
+            -21189738.07092985,
+            31667550.23,
+            -21186994.78571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31663189.8,
+            -21189960.8,
+            31667592.23,
+            -21186952.78571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 823,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187688.07092985
+        ],
+        "beam_bbox": [
+          31663511.8,
+          -21189638.8,
+          31667270.23,
+          -21188593.81
+        ],
+        "evidence_core_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187274.78571963
+        ],
+        "leader_bboxes": [
+          [
+            31665762.2029977,
+            -21187634.78571963,
+            31665925.63417078,
+            -21187274.78571963
+          ]
+        ],
+        "center_x": 31665960.26281248,
+        "center_y": -21187958.07092985,
+        "described_ids": []
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31663191.8,
+        -21189958.8,
+        31667590.23,
+        -21186954.78571963
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31663191.8,
+          -21189958.8,
+          31667590.23,
+          -21186954.78571963
+        ],
+        "dxf_xlim": [
+          31663191.8,
+          31667590.23
+        ],
+        "dxf_ylim": [
+          -21189958.8,
+          -21186954.78571963
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31663511.8,
+          -21189638.8,
+          31667270.23,
+          -21188593.81
+        ],
+        "annotation_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187688.07092985
+        ],
+        "evidence_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187274.78571963
+        ],
+        "crop_bbox": [
+          31663191.8,
+          -21189958.8,
+          31667590.23,
+          -21186954.78571963
+        ],
+        "crop_area": 13212946.53121294,
+        "crop_width_mm": 4398.429999999702,
+        "crop_height_mm": 3004.014280371368,
+        "aspect_ratio": 1.4641841181447217,
+        "target_beam_occupancy": 0.29724798752719883,
+        "annotation_occupancy": 0.016810784746255195,
+        "evidence_occupancy": 0.03933152610072187,
+        "whitespace_ratio": 0.32755482126666713,
+        "target_to_crop_area_ratio": 0.29724798752719883,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31663391.8,
+            -21189758.8,
+            31667390.23,
+            -21185852.070914
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31663191.8,
+            -21189958.8,
+            31667590.23,
+            -21186954.78571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31663061.8,
+            -21190088.8,
+            31667720.23,
+            -21186824.78571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31662994.3,
+            -21190156.3,
+            31667787.73,
+            -21186757.28571963
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 820,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187688.07092985
+        ],
+        "beam_bbox": [
+          31663511.8,
+          -21189638.8,
+          31667270.23,
+          -21188593.81
+        ],
+        "evidence_core_bbox": [
+          31665600.26281248,
+          -21187996.57092985,
+          31666320.26281248,
+          -21187274.78571963
+        ],
+        "leader_bboxes": [
+          [
+            31665762.2029977,
+            -21187634.78571963,
+            31665925.63417078,
+            -21187274.78571963
+          ]
+        ],
+        "center_x": 31665960.26281248,
+        "center_y": -21187958.07092985,
+        "described_ids": []
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B175__ANN-25171e3b\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B178::ANN-41e4a18e",
+    "beam_id": "B178",
+    "annotation_id": "ANN-41e4a18e",
+    "raw_text": "2L-Y8@\\X100C/C",
+    "normalized_text": "2L-Y8@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31644476.01,
+      -21202039.32951364,
+      31649521.07,
+      -21198186.41978537
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31646226.25678918,
+        -21200116.19,
+        31649581.07,
+        -21198505.89429861
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31646226.25678918,
+          -21200116.19,
+          31649581.07,
+          -21198505.89429861
+        ],
+        "dxf_xlim": [
+          31646226.25678918,
+          31649581.07
+        ],
+        "dxf_ylim": [
+          -21200116.19,
+          -21198505.89429861
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31645946.07,
+          -21199936.19,
+          31649401.07,
+          -21198373.01
+        ],
+        "annotation_bbox": [
+          31647670.25678918,
+          -21199924.39429861,
+          31648342.25678918,
+          -21199615.89429861
+        ],
+        "evidence_bbox": [
+          31646978.01,
+          -21199924.39429861,
+          31648888.051,
+          -21198751.258
+        ],
+        "crop_bbox": [
+          31646226.25678918,
+          -21200116.19,
+          31649581.07,
+          -21198505.89429861
+        ],
+        "crop_area": 5402241.292354777,
+        "crop_width_mm": 3354.8132108189166,
+        "crop_height_mm": 1610.295701391995,
+        "aspect_ratio": 2.0833522736966263,
+        "target_beam_occupancy": 0.8405625447687983,
+        "annotation_occupancy": 0.038375183332404424,
+        "evidence_occupancy": 0.4147794050031843,
+        "whitespace_ratio": 0.15943745523120167,
+        "target_to_crop_area_ratio": 0.9997307798232068,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31644476.01,
+            -21202039.32951364,
+            31649521.07,
+            -21198186.41978537
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31646226.25678918,
+            -21200116.19,
+            31649581.07,
+            -21198505.89429861
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31645726.25678918,
+            -21200216.19,
+            31649681.07,
+            -21198105.89429861
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31645624.07,
+            -21200258.19,
+            31649723.07,
+            -21198051.01
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 576,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31647670.25678918,
+          -21199924.39429861,
+          31648342.25678918,
+          -21199615.89429861
+        ],
+        "beam_bbox": [
+          31645946.07,
+          -21199936.19,
+          31649401.07,
+          -21198373.01
+        ],
+        "evidence_core_bbox": [
+          31646978.01,
+          -21199924.39429861,
+          31648888.051,
+          -21198751.258
+        ],
+        "leader_bboxes": [
+          [
+            31647832.59802817,
+            -21199553.97306289,
+            31647996.02920125,
+            -21199193.97306289
+          ]
+        ],
+        "center_x": 31648006.25678918,
+        "center_y": -21199885.89429861,
+        "described_ids": [
+          "BAR::SYN::B178::11D6E0C"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31645626.07,
+        -21200256.19,
+        31649721.07,
+        -21198053.01
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31645626.07,
+          -21200256.19,
+          31649721.07,
+          -21198053.01
+        ],
+        "dxf_xlim": [
+          31645626.07,
+          31649721.07
+        ],
+        "dxf_ylim": [
+          -21200256.19,
+          -21198053.01
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31645946.07,
+          -21199936.19,
+          31649401.07,
+          -21198373.01
+        ],
+        "annotation_bbox": [
+          31647670.25678918,
+          -21199924.39429861,
+          31648342.25678918,
+          -21199615.89429861
+        ],
+        "evidence_bbox": [
+          31646978.01,
+          -21199924.39429861,
+          31648888.051,
+          -21198751.258
+        ],
+        "crop_bbox": [
+          31645626.07,
+          -21200256.19,
+          31649721.07,
+          -21198053.01
+        ],
+        "crop_area": 9022022.09999878,
+        "crop_width_mm": 4095.0,
+        "crop_height_mm": 2203.179999999702,
+        "aspect_ratio": 1.8586770032410216,
+        "target_beam_occupancy": 0.5986226635378893,
+        "annotation_occupancy": 0.022978440720071838,
+        "evidence_occupancy": 0.2483632165927471,
+        "whitespace_ratio": 0.4013773364621107,
+        "target_to_crop_area_ratio": 0.5986226635378893,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31644476.01,
+            -21202039.32951364,
+            31649521.07,
+            -21198186.41978537
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31645626.07,
+            -21200256.19,
+            31649721.07,
+            -21198053.01
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31645496.07,
+            -21200386.19,
+            31649851.07,
+            -21197923.01
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31645428.57,
+            -21200453.69,
+            31649918.57,
+            -21197855.51
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 646,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31647670.25678918,
+          -21199924.39429861,
+          31648342.25678918,
+          -21199615.89429861
+        ],
+        "beam_bbox": [
+          31645946.07,
+          -21199936.19,
+          31649401.07,
+          -21198373.01
+        ],
+        "evidence_core_bbox": [
+          31646978.01,
+          -21199924.39429861,
+          31648888.051,
+          -21198751.258
+        ],
+        "leader_bboxes": [
+          [
+            31647832.59802817,
+            -21199553.97306289,
+            31647996.02920125,
+            -21199193.97306289
+          ]
+        ],
+        "center_x": 31648006.25678918,
+        "center_y": -21199885.89429861,
+        "described_ids": [
+          "BAR::SYN::B178::11D6E0C"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B178__ANN-41e4a18e\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B46::ANN-a09ab748",
+    "beam_id": "B46",
+    "annotation_id": "ANN-a09ab748",
+    "raw_text": "4L-Y10@\\X100/150/100C/C",
+    "normalized_text": "4L-Y10@\\X100/150/100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31672039.819,
+      -21140382.25,
+      31679562.007,
+      -21135640.67
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31675649.89412929,
+        -21139035.17303678,
+        31679622.007,
+        -21136275.17303678
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31675649.89412929,
+          -21139035.17303678,
+          31679622.007,
+          -21136275.17303678
+        ],
+        "dxf_xlim": [
+          31675649.89412929,
+          31679622.007
+        ],
+        "dxf_ylim": [
+          -21139035.17303678,
+          -21136275.17303678
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31674948.31,
+          -21140262.25,
+          31678804.42,
+          -21135760.67
+        ],
+        "annotation_bbox": [
+          31676877.89412929,
+          -21137693.67303678,
+          31677981.89412929,
+          -21137385.17303678
+        ],
+        "evidence_bbox": [
+          31676097.376,
+          -21137693.67303678,
+          31679442.007,
+          -21136485.032
+        ],
+        "crop_bbox": [
+          31675649.89412929,
+          -21139035.17303678,
+          31679622.007,
+          -21136275.17303678
+        ],
+        "crop_area": 10963031.523154378,
+        "crop_width_mm": 3972.112870708108,
+        "crop_height_mm": 2760.0,
+        "aspect_ratio": 1.4391713299667057,
+        "target_beam_occupancy": 0.7941682357450871,
+        "annotation_occupancy": 0.031066589499507725,
+        "evidence_occupancy": 0.36873544246821605,
+        "whitespace_ratio": 0.04531593281937918,
+        "target_to_crop_area_ratio": 1.5833747825266338,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31672039.819,
+            -21140382.25,
+            31679562.007,
+            -21135640.67
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31675649.89412929,
+            -21139035.17303678,
+            31679622.007,
+            -21136275.17303678
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31675149.89412929,
+            -21139435.17303678,
+            31679722.007,
+            -21135875.17303678
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31674626.31,
+            -21139897.17303678,
+            31679764.007,
+            -21135438.67
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 834,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31676877.89412929,
+          -21137693.67303678,
+          31677981.89412929,
+          -21137385.17303678
+        ],
+        "beam_bbox": [
+          31674948.31,
+          -21140262.25,
+          31678804.42,
+          -21135760.67
+        ],
+        "evidence_core_bbox": [
+          31676097.376,
+          -21137693.67303678,
+          31679442.007,
+          -21136485.032
+        ],
+        "leader_bboxes": [
+          [
+            31677185.33431451,
+            -21137287.74695367,
+            31677348.76548761,
+            -21136927.74695366
+          ]
+        ],
+        "center_x": 31677429.89412929,
+        "center_y": -21137655.17303678,
+        "described_ids": [
+          "BAR::SYN::B46::11CCD93"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31674628.31,
+        -21140375.17303678,
+        31679762.007,
+        -21135440.67
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31674628.31,
+          -21140375.17303678,
+          31679762.007,
+          -21135440.67
+        ],
+        "dxf_xlim": [
+          31674628.31,
+          31679762.007
+        ],
+        "dxf_ylim": [
+          -21140375.17303678,
+          -21135440.67
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31674948.31,
+          -21140262.25,
+          31678804.42,
+          -21135760.67
+        ],
+        "annotation_bbox": [
+          31676877.89412929,
+          -21137693.67303678,
+          31677981.89412929,
+          -21137385.17303678
+        ],
+        "evidence_bbox": [
+          31676097.376,
+          -21137693.67303678,
+          31679442.007,
+          -21136485.032
+        ],
+        "crop_bbox": [
+          31674628.31,
+          -21140375.17303678,
+          31679762.007,
+          -21135440.67
+        ],
+        "crop_area": 25332243.436403353,
+        "crop_width_mm": 5133.697000000626,
+        "crop_height_mm": 4934.50303677842,
+        "aspect_ratio": 1.0403675834704225,
+        "target_beam_occupancy": 0.685236887817929,
+        "annotation_occupancy": 0.013444683683663344,
+        "evidence_occupancy": 0.1595775869449514,
+        "whitespace_ratio": 0.20146288693146885,
+        "target_to_crop_area_ratio": 0.685236887817929,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31672039.819,
+            -21140382.25,
+            31679562.007,
+            -21135640.67
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31674628.31,
+            -21140375.17303678,
+            31679762.007,
+            -21135440.67
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31674498.31,
+            -21140712.25,
+            31679892.007,
+            -21135310.67
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31674430.81,
+            -21140779.75,
+            31679959.507,
+            -21135243.17
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 1153,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31676877.89412929,
+          -21137693.67303678,
+          31677981.89412929,
+          -21137385.17303678
+        ],
+        "beam_bbox": [
+          31674948.31,
+          -21140262.25,
+          31678804.42,
+          -21135760.67
+        ],
+        "evidence_core_bbox": [
+          31676097.376,
+          -21137693.67303678,
+          31679442.007,
+          -21136485.032
+        ],
+        "leader_bboxes": [
+          [
+            31677185.33431451,
+            -21137287.74695367,
+            31677348.76548761,
+            -21136927.74695366
+          ]
+        ],
+        "center_x": 31677429.89412929,
+        "center_y": -21137655.17303678,
+        "described_ids": [
+          "BAR::SYN::B46::11CCD93"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B46__ANN-a09ab748\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B47::ANN-f268d884",
+    "beam_id": "B47",
+    "annotation_id": "ANN-f268d884",
+    "raw_text": "4L-Y10@\\X100/150/100C/C",
+    "normalized_text": "4L-Y10@\\X100/150/100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31675390.45,
+      -21143670.94,
+      31679290.45,
+      -21139031.96
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31675735.418,
+        -21141915.4215657,
+        31679470.45,
+        -21139155.4215657
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31675735.418,
+          -21141915.4215657,
+          31679470.45,
+          -21139155.4215657
+        ],
+        "dxf_xlim": [
+          31675735.418,
+          31679470.45
+        ],
+        "dxf_ylim": [
+          -21141915.4215657,
+          -21139155.4215657
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31675390.45,
+          -21143670.94,
+          31679290.45,
+          -21139031.96
+        ],
+        "annotation_bbox": [
+          31677375.53086819,
+          -21140573.9215657,
+          31678479.53086819,
+          -21140265.4215657
+        ],
+        "evidence_bbox": [
+          31675915.418,
+          -21140573.9215657,
+          31679260.049,
+          -21139410.21
+        ],
+        "crop_bbox": [
+          31675735.418,
+          -21141915.4215657,
+          31679470.45,
+          -21139155.4215657
+        ],
+        "crop_area": 10308688.319993913,
+        "crop_width_mm": 3735.0319999977946,
+        "crop_height_mm": 2760.0,
+        "aspect_ratio": 1.3532724637673168,
+        "target_beam_occupancy": 0.9518076418086628,
+        "annotation_occupancy": 0.03303853889339445,
+        "evidence_occupancy": 0.3775636295206132,
+        "whitespace_ratio": 0.04819235819133716,
+        "target_to_crop_area_ratio": 1.7550265793672213,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31675390.45,
+            -21143670.94,
+            31679290.45,
+            -21139031.96
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31675735.418,
+            -21141915.4215657,
+            31679470.45,
+            -21139155.4215657
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31675635.418,
+            -21142315.4215657,
+            31679570.45,
+            -21138755.4215657
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31675068.45,
+            -21142777.4215657,
+            31679612.45,
+            -21138709.96
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 887,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31677375.53086819,
+          -21140573.9215657,
+          31678479.53086819,
+          -21140265.4215657
+        ],
+        "beam_bbox": [
+          31675390.45,
+          -21143670.94,
+          31679290.45,
+          -21139031.96
+        ],
+        "evidence_core_bbox": [
+          31675915.418,
+          -21140573.9215657,
+          31679260.049,
+          -21139410.21
+        ],
+        "leader_bboxes": [
+          [
+            31677682.81812048,
+            -21140212.92516526,
+            31677846.24929356,
+            -21139852.92516526
+          ]
+        ],
+        "center_x": 31677927.53086819,
+        "center_y": -21140535.4215657,
+        "described_ids": [
+          "BAR::SYN::B47::11CCE3C"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31675070.45,
+        -21143255.4215657,
+        31679610.45,
+        -21138711.96
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31675070.45,
+          -21143255.4215657,
+          31679610.45,
+          -21138711.96
+        ],
+        "dxf_xlim": [
+          31675070.45,
+          31679610.45
+        ],
+        "dxf_ylim": [
+          -21143255.4215657,
+          -21138711.96
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31675390.45,
+          -21143670.94,
+          31679290.45,
+          -21139031.96
+        ],
+        "annotation_bbox": [
+          31677375.53086819,
+          -21140573.9215657,
+          31678479.53086819,
+          -21140265.4215657
+        ],
+        "evidence_bbox": [
+          31675915.418,
+          -21140573.9215657,
+          31679260.049,
+          -21139410.21
+        ],
+        "crop_bbox": [
+          31675070.45,
+          -21143255.4215657,
+          31679610.45,
+          -21138711.96
+        ],
+        "crop_area": 20627315.508275405,
+        "crop_width_mm": 4540.0,
+        "crop_height_mm": 4543.461565699428,
+        "aspect_ratio": 0.9992381214962703,
+        "target_beam_occupancy": 0.7985285385109674,
+        "annotation_occupancy": 0.016511309960007263,
+        "evidence_occupancy": 0.18869085393744817,
+        "whitespace_ratio": 0.2014714614890326,
+        "target_to_crop_area_ratio": 0.8770904770784868,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31675390.45,
+            -21143670.94,
+            31679290.45,
+            -21139031.96
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31675070.45,
+            -21143255.4215657,
+            31679610.45,
+            -21138711.96
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31674940.45,
+            -21143985.4215657,
+            31679740.45,
+            -21138581.96
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31674872.95,
+            -21144188.44,
+            31679807.95,
+            -21138514.46
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\beam_context_refined.png",
+        "img_w": 1199,
+        "img_h": 1200,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31677375.53086819,
+          -21140573.9215657,
+          31678479.53086819,
+          -21140265.4215657
+        ],
+        "beam_bbox": [
+          31675390.45,
+          -21143670.94,
+          31679290.45,
+          -21139031.96
+        ],
+        "evidence_core_bbox": [
+          31675915.418,
+          -21140573.9215657,
+          31679260.049,
+          -21139410.21
+        ],
+        "leader_bboxes": [
+          [
+            31677682.81812048,
+            -21140212.92516526,
+            31677846.24929356,
+            -21139852.92516526
+          ]
+        ],
+        "center_x": 31677927.53086819,
+        "center_y": -21140535.4215657,
+        "described_ids": [
+          "BAR::SYN::B47::11CCE3C"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B47__ANN-f268d884\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B58::ANN-a0c82bbe",
+    "beam_id": "B58",
+    "annotation_id": "ANN-a0c82bbe",
+    "raw_text": "3L-Y12@\\X100C/C",
+    "normalized_text": "3L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31644561.621,
+      -21146164.72,
+      31663034.19,
+      -21141751.73
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31659716.59103592,
+        -21144970.01979845,
+        31663094.19,
+        -21142069.977
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31659716.59103592,
+          -21144970.01979845,
+          31663094.19,
+          -21142069.977
+        ],
+        "dxf_xlim": [
+          31659716.59103592,
+          31663094.19
+        ],
+        "dxf_ylim": [
+          -21144970.01979845,
+          -21142069.977
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31659473.08,
+          -21146044.72,
+          31662914.19,
+          -21141871.73
+        ],
+        "annotation_bbox": [
+          31661136.59103592,
+          -21143628.51979845,
+          31661856.59103592,
+          -21143320.01979845
+        ],
+        "evidence_bbox": [
+          31660481.667,
+          -21143628.51979845,
+          31662576.668,
+          -21142249.977
+        ],
+        "crop_bbox": [
+          31659716.59103592,
+          -21144970.01979845,
+          31663094.19,
+          -21142069.977
+        ],
+        "crop_area": 9795181.551827447,
+        "crop_width_mm": 3377.5989640802145,
+        "crop_height_mm": 2900.042798448354,
+        "aspect_ratio": 1.164672109627959,
+        "target_beam_occupancy": 0.9467077051141216,
+        "annotation_occupancy": 0.022676455645537268,
+        "evidence_occupancy": 0.2948437990673161,
+        "whitespace_ratio": 0.05329229488587839,
+        "target_to_crop_area_ratio": 1.4659981076336848,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31644561.621,
+            -21146164.72,
+            31663034.19,
+            -21141751.73
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31659716.59103592,
+            -21144970.01979845,
+            31663094.19,
+            -21142069.977
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31659216.59103592,
+            -21145370.01979845,
+            31663194.19,
+            -21141810.01979845
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31659151.08,
+            -21145832.01979845,
+            31663236.19,
+            -21141549.73
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 1030,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31661136.59103592,
+          -21143628.51979845,
+          31661856.59103592,
+          -21143320.01979845
+        ],
+        "beam_bbox": [
+          31659473.08,
+          -21146044.72,
+          31662914.19,
+          -21141871.73
+        ],
+        "evidence_core_bbox": [
+          31660481.667,
+          -21143628.51979845,
+          31662576.668,
+          -21142249.977
+        ],
+        "leader_bboxes": [
+          [
+            31661332.02696872,
+            -21143290.69218339,
+            31661495.45814181,
+            -21142992.69218339
+          ]
+        ],
+        "center_x": 31661496.59103592,
+        "center_y": -21143590.01979845,
+        "described_ids": [
+          "BAR::SYN::B58::11CD378"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31659153.08,
+        -21146310.01979845,
+        31663234.19,
+        -21141551.73
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31659153.08,
+          -21146310.01979845,
+          31663234.19,
+          -21141551.73
+        ],
+        "dxf_xlim": [
+          31659153.08,
+          31663234.19
+        ],
+        "dxf_ylim": [
+          -21146310.01979845,
+          -21141551.73
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31659473.08,
+          -21146044.72,
+          31662914.19,
+          -21141871.73
+        ],
+        "annotation_bbox": [
+          31661136.59103592,
+          -21143628.51979845,
+          31661856.59103592,
+          -21143320.01979845
+        ],
+        "evidence_bbox": [
+          31660481.667,
+          -21143628.51979845,
+          31662576.668,
+          -21142249.977
+        ],
+        "crop_bbox": [
+          31659153.08,
+          -21146310.01979845,
+          31663234.19,
+          -21141551.73
+        ],
+        "crop_area": 19419104.079366047,
+        "crop_width_mm": 4081.1100000031292,
+        "crop_height_mm": 4758.289798449725,
+        "aspect_ratio": 0.857684204382166,
+        "target_beam_occupancy": 0.7394634459045653,
+        "annotation_occupancy": 0.011438220789805421,
+        "evidence_occupancy": 0.14872202803442497,
+        "whitespace_ratio": 0.26053655409543475,
+        "target_to_crop_area_ratio": 0.7394634459045653,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31644561.621,
+            -21146164.72,
+            31663034.19,
+            -21141751.73
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31659153.08,
+            -21146310.01979845,
+            31663234.19,
+            -21141551.73
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31659023.08,
+            -21146494.72,
+            31663364.19,
+            -21141421.73
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31658955.58,
+            -21146562.22,
+            31663431.69,
+            -21141354.23
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\beam_context_refined.png",
+        "img_w": 1029,
+        "img_h": 1200,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31661136.59103592,
+          -21143628.51979845,
+          31661856.59103592,
+          -21143320.01979845
+        ],
+        "beam_bbox": [
+          31659473.08,
+          -21146044.72,
+          31662914.19,
+          -21141871.73
+        ],
+        "evidence_core_bbox": [
+          31660481.667,
+          -21143628.51979845,
+          31662576.668,
+          -21142249.977
+        ],
+        "leader_bboxes": [
+          [
+            31661332.02696872,
+            -21143290.69218339,
+            31661495.45814181,
+            -21142992.69218339
+          ]
+        ],
+        "center_x": 31661496.59103592,
+        "center_y": -21143590.01979845,
+        "described_ids": [
+          "BAR::SYN::B58::11CD378"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B58__ANN-a0c82bbe\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B71::ANN-65a3f3f0",
+    "beam_id": "B71",
+    "annotation_id": "ANN-65a3f3f0",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31665387.44,
+      -21146563.44,
+      31678528.496,
+      -21140050.83534931
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31666215.83644139,
+        -21145484.61826652,
+        31669587.44,
+        -21142724.61826652
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31666215.83644139,
+          -21145484.61826652,
+          31669587.44,
+          -21142724.61826652
+        ],
+        "dxf_xlim": [
+          31666215.83644139,
+          31669587.44
+        ],
+        "dxf_ylim": [
+          -21145484.61826652,
+          -21142724.61826652
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "annotation_bbox": [
+          31667635.83644139,
+          -21144143.11826652,
+          31668355.83644139,
+          -21143834.61826652
+        ],
+        "evidence_bbox": [
+          31666648.522,
+          -21144143.11826652,
+          31669274.14,
+          -21143392.6921834
+        ],
+        "crop_bbox": [
+          31666215.83644139,
+          -21145484.61826652,
+          31669587.44,
+          -21142724.61826652
+        ],
+        "crop_area": 9305625.821766704,
+        "crop_width_mm": 3371.6035586111248,
+        "crop_height_mm": 2760.0,
+        "aspect_ratio": 1.2215954922504075,
+        "target_beam_occupancy": 0.9466129404388967,
+        "annotation_occupancy": 0.02386943170231938,
+        "evidence_occupancy": 0.21173559621268476,
+        "whitespace_ratio": 0.053387059561103345,
+        "target_to_crop_area_ratio": 1.9167430908604026,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31665387.44,
+            -21146563.44,
+            31678528.496,
+            -21140050.83534931
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31666215.83644139,
+            -21145484.61826652,
+            31669587.44,
+            -21142724.61826652
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31665715.83644139,
+            -21145884.61826652,
+            31669687.44,
+            -21142324.61826652
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31665185.44,
+            -21146346.61826652,
+            31669729.44,
+            -21141862.61826652
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 982,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31667635.83644139,
+          -21144143.11826652,
+          31668355.83644139,
+          -21143834.61826652
+        ],
+        "beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "evidence_core_bbox": [
+          31666648.522,
+          -21144143.11826652,
+          31669274.14,
+          -21143392.6921834
+        ],
+        "leader_bboxes": [
+          [
+            31667829.28653281,
+            -21143689.1921834,
+            31667992.7177059,
+            -21143392.6921834
+          ]
+        ],
+        "center_x": 31667995.83644139,
+        "center_y": -21144104.61826652,
+        "described_ids": [
+          "BAR::SYN::B71::11CE4D2"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31665187.44,
+        -21146763.44,
+        31669727.44,
+        -21141549.98
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31665187.44,
+          -21146763.44,
+          31669727.44,
+          -21141549.98
+        ],
+        "dxf_xlim": [
+          31665187.44,
+          31669727.44
+        ],
+        "dxf_ylim": [
+          -21146763.44,
+          -21141549.98
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "annotation_bbox": [
+          31667635.83644139,
+          -21144143.11826652,
+          31668355.83644139,
+          -21143834.61826652
+        ],
+        "evidence_bbox": [
+          31666648.522,
+          -21144143.11826652,
+          31669274.14,
+          -21143392.6921834
+        ],
+        "crop_bbox": [
+          31665187.44,
+          -21146763.44,
+          31669727.44,
+          -21141549.98
+        ],
+        "crop_area": 23669108.40000406,
+        "crop_width_mm": 4540.0,
+        "crop_height_mm": 5213.460000000894,
+        "aspect_ratio": 0.8708228316701809,
+        "target_beam_occupancy": 0.7535769281448906,
+        "annotation_occupancy": 0.009384383908603921,
+        "evidence_occupancy": 0.08324488604326091,
+        "whitespace_ratio": 0.24642307185510937,
+        "target_to_crop_area_ratio": 0.7535769281448906,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31665387.44,
+            -21146563.44,
+            31678528.496,
+            -21140050.83534931
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31665187.44,
+            -21146763.44,
+            31669727.44,
+            -21141549.98
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31665057.44,
+            -21146893.44,
+            31669857.44,
+            -21141419.98
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31664989.94,
+            -21146960.94,
+            31669924.94,
+            -21141352.48
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\beam_context_refined.png",
+        "img_w": 1045,
+        "img_h": 1200,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31667635.83644139,
+          -21144143.11826652,
+          31668355.83644139,
+          -21143834.61826652
+        ],
+        "beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "evidence_core_bbox": [
+          31666648.522,
+          -21144143.11826652,
+          31669274.14,
+          -21143392.6921834
+        ],
+        "leader_bboxes": [
+          [
+            31667829.28653281,
+            -21143689.1921834,
+            31667992.7177059,
+            -21143392.6921834
+          ]
+        ],
+        "center_x": 31667995.83644139,
+        "center_y": -21144104.61826652,
+        "described_ids": [
+          "BAR::SYN::B71::11CE4D2"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-65a3f3f0\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B71::ANN-e8fa1fe7",
+    "beam_id": "B71",
+    "annotation_id": "ANN-e8fa1fe7",
+    "raw_text": "3L-Y10@\\X100C/C",
+    "normalized_text": "3L-Y10@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31665387.44,
+      -21146563.44,
+      31678528.496,
+      -21140050.83534931
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 3,
+      "strategy": "evidence_plus_immediate_beam_relaxed",
+      "crop_bbox": [
+        31665227.44,
+        -21142629.97737777,
+        31668227.10119347,
+        -21139890.83534931
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31665227.44,
+          -21142629.97737777,
+          31668227.10119347,
+          -21139890.83534931
+        ],
+        "dxf_xlim": [
+          31665227.44,
+          31668227.10119347
+        ],
+        "dxf_ylim": [
+          -21142629.97737777,
+          -21139890.83534931
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "annotation_bbox": [
+          31665576.59103213,
+          -21140479.33534931,
+          31666296.59103213,
+          -21140170.83534931
+        ],
+        "evidence_bbox": [
+          31665576.59103213,
+          -21142349.97737777,
+          31667947.10119347,
+          -21140170.83534931
+        ],
+        "crop_bbox": [
+          31665227.44,
+          -21142629.97737777,
+          31668227.10119347,
+          -21139890.83534931
+        ],
+        "crop_area": 8216498.046163046,
+        "crop_width_mm": 2999.6611934676766,
+        "crop_height_mm": 2739.1420284584165,
+        "aspect_ratio": 1.095109768789857,
+        "target_beam_occupancy": 0.25155916350743573,
+        "annotation_occupancy": 0.027033414813957872,
+        "evidence_occupancy": 0.6286958619647611,
+        "whitespace_ratio": 0.18602388676439485,
+        "target_to_crop_area_ratio": 2.1708146097999506,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31665387.44,
+            -21146563.44,
+            31678528.496,
+            -21140050.83534931
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31665327.44,
+            -21145940.83534931,
+            31668127.10119347,
+            -21139990.83534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31665227.44,
+            -21142629.97737777,
+            31668227.10119347,
+            -21139890.83534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31665185.44,
+            -21142682.83534931,
+            31668818.59103213,
+            -21139848.83534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 1096,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31665576.59103213,
+          -21140479.33534931,
+          31666296.59103213,
+          -21140170.83534931
+        ],
+        "beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "evidence_core_bbox": [
+          31665576.59103213,
+          -21142349.97737777,
+          31667947.10119347,
+          -21140170.83534931
+        ],
+        "leader_bboxes": [
+          [
+            31667804.72052725,
+            -21142349.97737777,
+            31667947.10119347,
+            -21141989.97737777
+          ]
+        ],
+        "center_x": 31665936.59103213,
+        "center_y": -21140440.83534931,
+        "described_ids": []
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31665187.44,
+        -21143160.83534931,
+        31669456.59103213,
+        -21139850.83534931
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31665187.44,
+          -21143160.83534931,
+          31669456.59103213,
+          -21139850.83534931
+        ],
+        "dxf_xlim": [
+          31665187.44,
+          31669456.59103213
+        ],
+        "dxf_ylim": [
+          -21143160.83534931,
+          -21139850.83534931
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "annotation_bbox": [
+          31665576.59103213,
+          -21140479.33534931,
+          31666296.59103213,
+          -21140170.83534931
+        ],
+        "evidence_bbox": [
+          31665576.59103213,
+          -21142349.97737777,
+          31667947.10119347,
+          -21140170.83534931
+        ],
+        "crop_bbox": [
+          31665187.44,
+          -21143160.83534931,
+          31669456.59103213,
+          -21139850.83534931
+        ],
+        "crop_area": 14130889.916341826,
+        "crop_width_mm": 4269.15103212744,
+        "crop_height_mm": 3310.0,
+        "aspect_ratio": 1.2897737257182598,
+        "target_beam_occupancy": 0.3562646013175703,
+        "annotation_occupancy": 0.015718755245777326,
+        "evidence_occupancy": 0.36555930674191617,
+        "whitespace_ratio": 0.17478657968211153,
+        "target_to_crop_area_ratio": 1.2622343041096282,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31665387.44,
+            -21146563.44,
+            31678528.496,
+            -21140050.83534931
+          ],
+          "readability_status": "READABILITY_FAIL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31665187.44,
+            -21143160.83534931,
+            31669456.59103213,
+            -21139850.83534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31665057.44,
+            -21143890.83534931,
+            31669857.44,
+            -21139720.83534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31664989.94,
+            -21144158.33534931,
+            31669924.94,
+            -21139653.33534931
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 930,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31665576.59103213,
+          -21140479.33534931,
+          31666296.59103213,
+          -21140170.83534931
+        ],
+        "beam_bbox": [
+          31665507.44,
+          -21146443.44,
+          31669407.44,
+          -21141869.98
+        ],
+        "evidence_core_bbox": [
+          31665576.59103213,
+          -21142349.97737777,
+          31667947.10119347,
+          -21140170.83534931
+        ],
+        "leader_bboxes": [
+          [
+            31667804.72052725,
+            -21142349.97737777,
+            31667947.10119347,
+            -21141989.97737777
+          ]
+        ],
+        "center_x": 31665936.59103213,
+        "center_y": -21140440.83534931,
+        "described_ids": []
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B71__ANN-e8fa1fe7\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B74::ANN-5a3a4c53",
+    "beam_id": "B74",
+    "annotation_id": "ANN-5a3a4c53",
+    "raw_text": "4L-Y10@\\X100/125/100C/C",
+    "normalized_text": "4L-Y10@\\X100/125/100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31662558.107,
+      -21149746.1,
+      31675740.461,
+      -21144654.44384345
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31662498.107,
+        -21148352.14088874,
+        31666900.615,
+        -21145592.14088874
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31662498.107,
+          -21148352.14088874,
+          31666900.615,
+          -21145592.14088874
+        ],
+        "dxf_xlim": [
+          31662498.107,
+          31666900.615
+        ],
+        "dxf_ylim": [
+          -21148352.14088874,
+          -21145592.14088874
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31662685.49,
+          -21149626.1,
+          31666585.49,
+          -21145185.44
+        ],
+        "annotation_bbox": [
+          31664639.86610242,
+          -21147010.64088874,
+          31665743.86610242,
+          -21146702.14088874
+        ],
+        "evidence_bbox": [
+          31662678.107,
+          -21147010.64088874,
+          31666720.615,
+          -21146206.01430448
+        ],
+        "crop_bbox": [
+          31662498.107,
+          -21148352.14088874,
+          31666900.615,
+          -21145592.14088874
+        ],
+        "crop_area": 12150922.079993337,
+        "crop_width_mm": 4402.507999997586,
+        "crop_height_mm": 2760.0,
+        "aspect_ratio": 1.595111594202024,
+        "target_beam_occupancy": 0.8858586969068855,
+        "annotation_occupancy": 0.028029477743156325,
+        "evidence_occupancy": 0.2676923925986693,
+        "whitespace_ratio": 0.081771572022174,
+        "target_to_crop_area_ratio": 1.42528886992995,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31662558.107,
+            -21149746.1,
+            31675740.461,
+            -21144654.44384345
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31662498.107,
+            -21148352.14088874,
+            31666900.615,
+            -21145592.14088874
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31662398.107,
+            -21148752.14088874,
+            31667000.615,
+            -21145192.14088874
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31662356.107,
+            -21149214.14088874,
+            31667042.615,
+            -21144863.44
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 752,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31664639.86610242,
+          -21147010.64088874,
+          31665743.86610242,
+          -21146702.14088874
+        ],
+        "beam_bbox": [
+          31662685.49,
+          -21149626.1,
+          31666585.49,
+          -21145185.44
+        ],
+        "evidence_core_bbox": [
+          31662678.107,
+          -21147010.64088874,
+          31666720.615,
+          -21146206.01430448
+        ],
+        "leader_bboxes": [
+          [
+            31665075.34731583,
+            -21146615.92397126,
+            31665370.51632822,
+            -21146206.01430448
+          ]
+        ],
+        "center_x": 31665191.86610242,
+        "center_y": -21146972.14088874,
+        "described_ids": [
+          "BAR::SYN::B74::11CE77B"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31662358.107,
+        -21149692.14088874,
+        31667040.615,
+        -21144865.44
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31662358.107,
+          -21149692.14088874,
+          31667040.615,
+          -21144865.44
+        ],
+        "dxf_xlim": [
+          31662358.107,
+          31667040.615
+        ],
+        "dxf_ylim": [
+          -21149692.14088874,
+          -21144865.44
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31662685.49,
+          -21149626.1,
+          31666585.49,
+          -21145185.44
+        ],
+        "annotation_bbox": [
+          31664639.86610242,
+          -21147010.64088874,
+          31665743.86610242,
+          -21146702.14088874
+        ],
+        "evidence_bbox": [
+          31662678.107,
+          -21147010.64088874,
+          31666720.615,
+          -21146206.01430448
+        ],
+        "crop_bbox": [
+          31662358.107,
+          -21149692.14088874,
+          31667040.615,
+          -21144865.44
+        ],
+        "crop_area": 22601065.525111314,
+        "crop_width_mm": 4682.507999997586,
+        "crop_height_mm": 4826.700888738036,
+        "aspect_ratio": 0.9701259945324372,
+        "target_beam_occupancy": 0.7662724565246039,
+        "annotation_occupancy": 0.015069378017668597,
+        "evidence_occupancy": 0.14391840952186238,
+        "whitespace_ratio": 0.20572755495422745,
+        "target_to_crop_area_ratio": 0.7662724565246039,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31662558.107,
+            -21149746.1,
+            31675740.461,
+            -21144654.44384345
+          ],
+          "readability_status": "READABILITY_PARTIAL"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31662358.107,
+            -21149692.14088874,
+            31667040.615,
+            -21144865.44
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31662228.107,
+            -21150076.1,
+            31667170.615,
+            -21144735.44
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31662160.607,
+            -21150143.6,
+            31667238.115,
+            -21144667.94
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\beam_context_refined.png",
+        "img_w": 1164,
+        "img_h": 1200,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31664639.86610242,
+          -21147010.64088874,
+          31665743.86610242,
+          -21146702.14088874
+        ],
+        "beam_bbox": [
+          31662685.49,
+          -21149626.1,
+          31666585.49,
+          -21145185.44
+        ],
+        "evidence_core_bbox": [
+          31662678.107,
+          -21147010.64088874,
+          31666720.615,
+          -21146206.01430448
+        ],
+        "leader_bboxes": [
+          [
+            31665075.34731583,
+            -21146615.92397126,
+            31665370.51632822,
+            -21146206.01430448
+          ]
+        ],
+        "center_x": 31665191.86610242,
+        "center_y": -21146972.14088874,
+        "described_ids": [
+          "BAR::SYN::B74::11CE77B"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B74__ANN-5a3a4c53\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  },
+  {
+    "model_version": "10.6.6",
+    "phase_id": "P2.5.2.1",
+    "candidate_id": "VC::B82::ANN-4679b76c",
+    "beam_id": "B82",
+    "annotation_id": "ANN-4679b76c",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "outcome": "VISION_CANDIDATE",
+    "candidate_priority": "P0",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "p252_crop_qa_status": "PASS",
+    "p252_crop_bounds": [
+      31662435.593,
+      -21151783.03,
+      31666899.393,
+      -21148674.85
+    ],
+    "success": true,
+    "overall_readability": "READABILITY_PASS",
+    "local_refined": {
+      "crop_type": "local_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "tight_target_centric",
+      "crop_bbox": [
+        31662974.607,
+        -21151339.77822625,
+        31666959.393,
+        -21148614.85
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31662974.607,
+          -21151339.77822625,
+          31666959.393,
+          -21148614.85
+        ],
+        "dxf_xlim": [
+          31662974.607,
+          31666959.393
+        ],
+        "dxf_ylim": [
+          -21151339.77822625,
+          -21148614.85
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31662614.57,
+          -21151663.03,
+          31666356.68,
+          -21148794.85
+        ],
+        "annotation_bbox": [
+          31664607.0,
+          -21149998.27822625,
+          31665327.0,
+          -21149689.77822625
+        ],
+        "evidence_bbox": [
+          31663154.607,
+          -21149998.27822625,
+          31666779.393,
+          -21149147.85214311
+        ],
+        "crop_bbox": [
+          31662974.607,
+          -21151339.77822625,
+          31666959.393,
+          -21148614.85
+        ],
+        "crop_area": 10858255.846951367,
+        "crop_width_mm": 3984.7859999984503,
+        "crop_height_mm": 2724.92822624743,
+        "aspect_ratio": 1.4623453056912268,
+        "target_beam_occupancy": 0.7926809942817094,
+        "annotation_occupancy": 0.020456324029458545,
+        "evidence_occupancy": 0.2838957382888668,
+        "whitespace_ratio": 0.10824469208415799,
+        "target_to_crop_area_ratio": 0.9884686096073757,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31662435.593,
+            -21151783.03,
+            31666899.393,
+            -21148674.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "tight_target_centric",
+          "crop_bbox": [
+            31662974.607,
+            -21151339.77822625,
+            31666959.393,
+            -21148614.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31662687.0,
+            -21151739.77822625,
+            31667059.393,
+            -21148514.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31662292.57,
+            -21151985.03,
+            31667101.393,
+            -21148472.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\local_refined.png",
+        "img_w": 1200,
+        "img_h": 821,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31664607.0,
+          -21149998.27822625,
+          31665327.0,
+          -21149689.77822625
+        ],
+        "beam_bbox": [
+          31662614.57,
+          -21151663.03,
+          31666356.68,
+          -21148794.85
+        ],
+        "evidence_core_bbox": [
+          31663154.607,
+          -21149998.27822625,
+          31666779.393,
+          -21149147.85214311
+        ],
+        "leader_bboxes": [
+          [
+            31664757.11965752,
+            -21149507.85214312,
+            31664920.55083061,
+            -21149147.85214311
+          ]
+        ],
+        "center_x": 31664967.0,
+        "center_y": -21149959.77822625,
+        "described_ids": [
+          "BAR::SYN::B82::11CF1D6"
+        ]
+      }
+    },
+    "beam_context_refined": {
+      "crop_type": "beam_context_refined",
+      "provenance": "P2521_REFINED_EVIDENCE",
+      "refinement_iteration": 2,
+      "strategy": "medium_beam_context",
+      "crop_bbox": [
+        31662294.57,
+        -21151983.03,
+        31667099.393,
+        -21148474.85
+      ],
+      "source_coordinates": {
+        "extent_mm": [
+          31662294.57,
+          -21151983.03,
+          31667099.393,
+          -21148474.85
+        ],
+        "dxf_xlim": [
+          31662294.57,
+          31667099.393
+        ],
+        "dxf_ylim": [
+          -21151983.03,
+          -21148474.85
+        ]
+      },
+      "readability_status": "READABILITY_PASS",
+      "readability": {
+        "readability_status": "READABILITY_PASS",
+        "flags": [],
+        "reason": "target_evidence_visually_dominant"
+      },
+      "metrics": {
+        "target_beam_bbox": [
+          31662614.57,
+          -21151663.03,
+          31666356.68,
+          -21148794.85
+        ],
+        "annotation_bbox": [
+          31664607.0,
+          -21149998.27822625,
+          31665327.0,
+          -21149689.77822625
+        ],
+        "evidence_bbox": [
+          31663154.607,
+          -21149998.27822625,
+          31666779.393,
+          -21149147.85214311
+        ],
+        "crop_bbox": [
+          31662294.57,
+          -21151983.03,
+          31667099.393,
+          -21148474.85
+        ],
+        "crop_area": 16856183.952134803,
+        "crop_width_mm": 4804.822999998927,
+        "crop_height_mm": 3508.179999999702,
+        "aspect_ratio": 1.36960560746579,
+        "target_beam_occupancy": 0.6367422834417903,
+        "annotation_occupancy": 0.01317735975299848,
+        "evidence_occupancy": 0.18287724961670554,
+        "whitespace_ratio": 0.29133058430921954,
+        "target_to_crop_area_ratio": 0.6367422834417903,
+        "annotation_fully_inside": true,
+        "beam_present_in_crop": true,
+        "evidence_present_in_crop": true,
+        "is_extreme": false
+      },
+      "iterations_evaluated": [
+        {
+          "iteration": 1,
+          "strategy": "baseline_original_p252_crop",
+          "crop_bbox": [
+            31662435.593,
+            -21151783.03,
+            31666899.393,
+            -21148674.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 2,
+          "strategy": "medium_beam_context",
+          "crop_bbox": [
+            31662294.57,
+            -21151983.03,
+            31667099.393,
+            -21148474.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 3,
+          "strategy": "evidence_plus_immediate_beam_relaxed",
+          "crop_bbox": [
+            31662164.57,
+            -21152113.03,
+            31667229.393,
+            -21148344.85
+          ],
+          "readability_status": "READABILITY_PASS"
+        },
+        {
+          "iteration": 4,
+          "strategy": "moderately_expanded_context",
+          "crop_bbox": [
+            31662097.07,
+            -21152180.53,
+            31667296.893,
+            -21148277.35
+          ],
+          "readability_status": "READABILITY_PASS"
+        }
+      ],
+      "render": {
+        "success": true,
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\beam_context_refined.png",
+        "img_w": 1200,
+        "img_h": 876,
+        "error": null
+      },
+      "collected_geometry": {
+        "annotation_bbox": [
+          31664607.0,
+          -21149998.27822625,
+          31665327.0,
+          -21149689.77822625
+        ],
+        "beam_bbox": [
+          31662614.57,
+          -21151663.03,
+          31666356.68,
+          -21148794.85
+        ],
+        "evidence_core_bbox": [
+          31663154.607,
+          -21149998.27822625,
+          31666779.393,
+          -21149147.85214311
+        ],
+        "leader_bboxes": [
+          [
+            31664757.11965752,
+            -21149507.85214312,
+            31664920.55083061,
+            -21149147.85214311
+          ]
+        ],
+        "center_x": 31664967.0,
+        "center_y": -21149959.77822625,
+        "described_ids": [
+          "BAR::SYN::B82::11CF1D6"
+        ]
+      }
+    },
+    "provenance": {
+      "labels": [
+        "ORIGINAL_P250_EVIDENCE",
+        "P252_EVIDENCE",
+        "P2521_REFINED_EVIDENCE"
+      ],
+      "copied": {
+        "p252": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\P252_EVIDENCE\\local_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\P252_EVIDENCE\\beam_context_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\P252_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\P252_EVIDENCE\\manifest.json"
+        ],
+        "p250": [
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\ORIGINAL_P250_EVIDENCE\\engineering_crop.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence_overlay.png",
+          "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\candidates\\VC__B82__ANN-4679b76c\\provenance\\ORIGINAL_P250_EVIDENCE\\evidence.json"
+        ]
+      }
+    },
+    "claude_calls": 0,
+    "engineering_changes": "NONE"
+  }
+]

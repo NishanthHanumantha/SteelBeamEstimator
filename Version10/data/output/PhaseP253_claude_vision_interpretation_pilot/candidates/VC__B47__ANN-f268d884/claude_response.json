@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B47::ANN-f268d884\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 4,\n  \"spacing_mm\": [100, 150, 100],\n  \"spacing_pattern\": \"100/150/100C/C\",\n  \"normalized_notation\": \"4L-Y10@100/150/100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly shows '4L-Y10@' followed by spacing pattern\",\n    \"Text reads '100/150/100C/C' indicating variable spacing pattern\",\n    \"Notation positioned with horizontal dimension arrows indicating stirrup spacing\",\n    \"Green rectangular outline in drawing shows stirrup configuration\",\n    \"Red dots at corners indicate stirrup leg positions\",\n    \"4L prefix indicates 4-legged stirrup configuration\",\n    \"Y10 indicates 10mm diameter reinforcement bar\",\n    \"C/C suffix confirms center-to-center spacing measurement\"\n  ],\n  \"reasoning_summary\": \"The notation '4L-Y10@100/150/100C/C' is clearly visible in magenta text. This is a standard stirrup notation where: 4L = 4 legs, Y10 = 10mm diameter bar, @ indicates spacing follows, 100/150/100 = variable spacing pattern in mm, C/C = center-to-center. The visual evidence shows this is associated with a rectangular stirrup configuration (green outline with red corner dots). The upstream OCR captured this correctly with only a minor '\\\\X' artifact that can be normalized to '@'. This is definitively a stirrup notation, not longitudinal reinforcement, so quantity field remains null per instructions.\",\n  \"warnings\": [\n    \"OCR artifact '\\\\X' normalized to '@' based on visual evidence and standard notation format\"\n  ]\n}\n```",
+  "latency_s": 11.924096899980213,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3866,
+    "output_tokens": 479
+  },
+  "estimated_input_tokens": 626,
+  "estimated_output_tokens": 409,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B47::ANN-f268d884",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "640c49d6bd432ac7780fa2828c6b1701a3f523ad02862ae34f8b56c064334f4c",
+  "timestamp_utc": "2026-08-12T12:33:54.690597+00:00"
+}

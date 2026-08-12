@@ -1,0 +1,183 @@
+{
+  "beam_id": "B98A",
+  "initial_bbox": [
+    31651335.2,
+    -21210918.03,
+    31654920.6,
+    -21207869.09
+  ],
+  "package_final_bbox": [
+    31651215.2,
+    -21215119.8650875,
+    31655040.6,
+    -21139018.42
+  ],
+  "package_expansion_meta": {
+    "expansions": 1,
+    "clipped_before_count": 3,
+    "still_clipped_count": 0,
+    "border_touch_count": 0,
+    "expanded": true
+  },
+  "clipped_before_objects": [
+    {
+      "id": "LDR::53A6EF71",
+      "kind": "leader",
+      "bbox": [
+        31653327.60990555,
+        -21214999.8650875,
+        31653701.6716307,
+        -21214939.8650875
+      ],
+      "geometry": {
+        "tip_x": 31653357.60990555,
+        "tip_y": -21214969.8650875,
+        "tail_x": 31653671.6716307,
+        "tail_y": -21214969.8650875
+      },
+      "y_gap_mm": 4021.8350875005126,
+      "x_gap_mm": 0.0
+    },
+    {
+      "id": "BAR::E6591903",
+      "kind": "reinforcement",
+      "bbox": [
+        31651874.66,
+        -21139178.42,
+        31654314.6,
+        -21139138.42
+      ],
+      "geometry": {
+        "start_x": 31651894.66,
+        "end_x": 31654294.6,
+        "y_position": -21139158.42,
+        "vertical_placement": "TOP_FACE"
+      },
+      "y_gap_mm": 68690.66999999806,
+      "x_gap_mm": 0.0
+    },
+    {
+      "id": "BAR::4D469A4E",
+      "kind": "reinforcement",
+      "bbox": [
+        31651924.66,
+        -21140178.42,
+        31654264.6,
+        -21140138.42
+      ],
+      "geometry": {
+        "start_x": 31651944.66,
+        "end_x": 31654244.6,
+        "y_position": -21140158.42,
+        "vertical_placement": "TOP_FACE"
+      },
+      "y_gap_mm": 67690.66999999806,
+      "x_gap_mm": 0.0
+    }
+  ],
+  "clipped_before_count": 3,
+  "dominant_vertical_expander": {
+    "id": "BAR::E6591903",
+    "kind": "reinforcement",
+    "bbox": [
+      31651874.66,
+      -21139178.42,
+      31654314.6,
+      -21139138.42
+    ],
+    "geometry": {
+      "start_x": 31651894.66,
+      "end_x": 31654294.6,
+      "y_position": -21139158.42,
+      "vertical_placement": "TOP_FACE"
+    },
+    "y_gap_mm": 68690.66999999806,
+    "x_gap_mm": 0.0
+  },
+  "expansion_steps": [
+    {
+      "step": 0,
+      "label": "initial_base_bbox",
+      "bbox": [
+        31651335.2,
+        -21210918.03,
+        31654920.6,
+        -21207869.09
+      ],
+      "height_mm": 3048.940000001341,
+      "width_mm": 3585.400000002235
+    },
+    {
+      "step": 1,
+      "label": "include_reinforcement",
+      "object_id": "BAR::E6591903",
+      "object_bbox": [
+        31651874.66,
+        -21139178.42,
+        31654314.6,
+        -21139138.42
+      ],
+      "y_gap_mm": 68690.66999999806,
+      "bbox_after": [
+        31651335.2,
+        -21210918.03,
+        31654920.6,
+        -21139138.42
+      ],
+      "height_mm": 71779.6099999994
+    },
+    {
+      "step": 2,
+      "label": "include_reinforcement",
+      "object_id": "BAR::4D469A4E",
+      "object_bbox": [
+        31651924.66,
+        -21140178.42,
+        31654264.6,
+        -21140138.42
+      ],
+      "y_gap_mm": 67690.66999999806,
+      "bbox_after": [
+        31651335.2,
+        -21210918.03,
+        31654920.6,
+        -21139138.42
+      ],
+      "height_mm": 71779.6099999994
+    },
+    {
+      "step": 3,
+      "label": "include_leader",
+      "object_id": "LDR::53A6EF71",
+      "object_bbox": [
+        31653327.60990555,
+        -21214999.8650875,
+        31653701.6716307,
+        -21214939.8650875
+      ],
+      "y_gap_mm": 4021.8350875005126,
+      "bbox_after": [
+        31651335.2,
+        -21214999.8650875,
+        31654920.6,
+        -21139138.42
+      ],
+      "height_mm": 75861.44508749992
+    }
+  ],
+  "replayed_final_bbox": [
+    31651215.2,
+    -21215119.8650875,
+    31655040.6,
+    -21139018.42
+  ],
+  "replay_diag": {
+    "expansions": 1,
+    "clipped_before_count": 3,
+    "still_clipped_count": 0,
+    "border_touch_count": 0,
+    "expanded": true
+  },
+  "final_height_mm": 76101.44508749992,
+  "final_width_mm": 3825.400000002235
+}

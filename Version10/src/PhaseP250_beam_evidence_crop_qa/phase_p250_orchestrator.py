@@ -49,11 +49,27 @@ from PhaseP250_beam_evidence_crop_qa.regression import (  # noqa: E402
     fingerprint_paths,
 )
 from PhaseP250_beam_evidence_crop_qa.renderer import (  # noqa: E402
+    _get_doc,
     render_engineering_crop,
     render_evidence_overlay,
 )
+from PhaseP250_beam_evidence_crop_qa.render_validation import (  # noqa: E402
+    validate_owned_geometry_rendered,
+)
+from PhaseP250_beam_evidence_crop_qa.owned_geometry import build_handle_index  # noqa: E402
 from PhaseP250_beam_evidence_crop_qa.report_builder import write_reports  # noqa: E402
 from PhaseP250_beam_evidence_crop_qa.unit_tests import run_unit_tests  # noqa: E402
+
+
+_HANDLE_INDEX_CACHE: Dict[str, Dict[str, Any]] = {}
+
+
+def _handle_index_for(dxf_path: Path) -> Dict[str, Any]:
+    key = str(Path(dxf_path).resolve())
+    if key not in _HANDLE_INDEX_CACHE:
+        doc = _get_doc(dxf_path)
+        _HANDLE_INDEX_CACHE[key] = build_handle_index(doc.modelspace())
+    return _HANDLE_INDEX_CACHE[key]
 
 
 def _dump(path: Path, obj: Any) -> None:
@@ -77,6 +93,9 @@ def _evidence_fingerprint(evidence: Dict[str, Any], qa: Dict[str, Any]) -> str:
             "leader_ids": [l.get("leader_id") for l in evidence.get("leaders") or []],
             "reinf_ids": [
                 r.get("reinforcement_id") for r in evidence.get("reinforcement") or []
+            ],
+            "owned_ids": [
+                o.get("ownership_id") for o in evidence.get("owned_geometry") or []
             ],
             "qa_overall": qa.get("overall"),
             "gates": qa.get("gates"),
@@ -140,6 +159,7 @@ def _process_one_beam(
         beam_id=beam_id,
         bundle=bundle,
         neighbour_beam_ids=neighbours,
+        handle_index=_handle_index_for(dxf_path),
     )
 
     extent_list = (evidence.get("evidence_window") or {}).get("bbox")
@@ -165,6 +185,7 @@ def _process_one_beam(
             dxf_path=dxf_path,
             extent=extent,
             out_path=eng_path,
+            owned_geometry=evidence.get("owned_geometry") or [],
         )
         if eng.get("success"):
             ovl = render_evidence_overlay(
@@ -180,11 +201,20 @@ def _process_one_beam(
                 "path": str(ovl_path),
             }
 
+    rv = {}
+    if eng.get("success") and eng.get("path"):
+        rv = validate_owned_geometry_rendered(
+            engineering_png=Path(eng["path"]),
+            evidence=evidence,
+            paint_meta=eng.get("owned_geometry_painted") or [],
+        )
+
     qa = evaluate_crop_qa(
         evidence=evidence,
         engineering_render=eng,
         overlay_render=ovl,
         neighbour_beam_ids=neighbours,
+        render_validation=rv,
     )
     cov = per_beam_recall(evidence, qa)
     gt_rec = gt_verified_recall(evidence=evidence, gt_bar_count=gt_bar_count)

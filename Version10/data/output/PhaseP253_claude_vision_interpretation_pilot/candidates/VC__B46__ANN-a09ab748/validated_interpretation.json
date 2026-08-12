@@ -1,0 +1,66 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B46::ANN-a09ab748",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100/150/100C/C",
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Annotation clearly shows '4L-Y10@' indicating 4-legged stirrups with Y10 (10mm diameter) bars",
+      "Spacing pattern '100/150/100C/C' is visible, indicating variable spacing: 100mm, then 150mm, then 100mm center-to-center",
+      "The notation is positioned centrally on a beam element labeled B46(400X500)",
+      "Visual context shows a rectangular beam cross-section with green reinforcement outline and red dots at corners indicating stirrup positions",
+      "The '4-Y20' notations above and below refer to longitudinal bars (4 bars of Y20), separate from this stirrup notation"
+    ],
+    "reasoning_summary": "The notation '4L-Y10@100/150/100C/C' is a standard stirrup specification. '4L' indicates 4 legs, 'Y10' indicates 10mm diameter bars, and '100/150/100C/C' indicates a variable spacing pattern with 100mm spacing at ends and 150mm in the middle, all measured center-to-center. The upstream flagged '\\X' appears to be OCR corruption of the '@' symbol, which is clearly visible in the image. This is stirrup reinforcement, so longitudinal quantity is correctly left null. The visual evidence strongly supports this interpretation with clear text and contextual beam drawing.",
+    "warnings": [
+      "Upstream OCR detected '\\X' which appears to be corruption of '@' symbol - corrected based on visual evidence"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Upstream OCR detected '\\X' which appears to be corruption of '@' symbol - corrected based on visual evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B46::ANN-a09ab748",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "100/150/100C/C",
+      "normalized_notation": "4L-Y10@100/150/100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Annotation clearly shows '4L-Y10@' indicating 4-legged stirrups with Y10 (10mm diameter) bars",
+        "Spacing pattern '100/150/100C/C' is visible, indicating variable spacing: 100mm, then 150mm, then 100mm center-to-center",
+        "The notation is positioned centrally on a beam element labeled B46(400X500)",
+        "Visual context shows a rectangular beam cross-section with green reinforcement outline and red dots at corners indicating stirrup positions",
+        "The '4-Y20' notations above and below refer to longitudinal bars (4 bars of Y20), separate from this stirrup notation"
+      ],
+      "reasoning_summary": "The notation '4L-Y10@100/150/100C/C' is a standard stirrup specification. '4L' indicates 4 legs, 'Y10' indicates 10mm diameter bars, and '100/150/100C/C' indicates a variable spacing pattern with 100mm spacing at ends and 150mm in the middle, all measured center-to-center. The upstream flagged '\\X' appears to be OCR corruption of the '@' symbol, which is clearly visible in the image. This is stirrup reinforcement, so longitudinal quantity is correctly left null. The visual evidence strongly supports this interpretation with clear text and contextual beam drawing.",
+      "warnings": [
+        "Upstream OCR detected '\\X' which appears to be corruption of '@' symbol - corrected based on visual evidence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

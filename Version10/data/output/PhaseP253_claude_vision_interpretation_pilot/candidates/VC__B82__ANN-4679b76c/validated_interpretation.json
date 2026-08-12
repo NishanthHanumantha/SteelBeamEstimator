@@ -1,0 +1,64 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B82::ANN-4679b76c",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "100C/C",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Magenta text clearly shows '4L-Y12@100C/C' with leader pointing to beam B82",
+      "The '4L' prefix indicates 4 legs of stirrups",
+      "Y12 indicates 12mm diameter reinforcement bars",
+      "@100C/C indicates spacing of 100mm center-to-center",
+      "Visual context shows this is a stirrup notation for beam B82(400X1100)",
+      "The notation appears alongside longitudinal reinforcement '4-Y25' shown above"
+    ],
+    "reasoning_summary": "The notation '4L-Y12@100C/C' is clearly visible in magenta text. The '4L' prefix definitively indicates 4-legged stirrups (not longitudinal bars). Y12 specifies 12mm diameter bars. The '@100C/C' indicates uniform spacing of 100mm center-to-center. The upstream OCR captured this as '4L-Y12@\\X100C/C' where '\\X' appears to be OCR corruption of the '@' symbol. Visual evidence fully supports the corrected interpretation. This is standard stirrup notation for beam B82.",
+    "warnings": [
+      "Upstream OCR contained '\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Upstream OCR contained '\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B82::ANN-4679b76c",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "100C/C",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '4L-Y12@100C/C' with leader pointing to beam B82",
+        "The '4L' prefix indicates 4 legs of stirrups",
+        "Y12 indicates 12mm diameter reinforcement bars",
+        "@100C/C indicates spacing of 100mm center-to-center",
+        "Visual context shows this is a stirrup notation for beam B82(400X1100)",
+        "The notation appears alongside longitudinal reinforcement '4-Y25' shown above"
+      ],
+      "reasoning_summary": "The notation '4L-Y12@100C/C' is clearly visible in magenta text. The '4L' prefix definitively indicates 4-legged stirrups (not longitudinal bars). Y12 specifies 12mm diameter bars. The '@100C/C' indicates uniform spacing of 100mm center-to-center. The upstream OCR captured this as '4L-Y12@\\X100C/C' where '\\X' appears to be OCR corruption of the '@' symbol. Visual evidence fully supports the corrected interpretation. This is standard stirrup notation for beam B82.",
+      "warnings": [
+        "Upstream OCR contained '\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

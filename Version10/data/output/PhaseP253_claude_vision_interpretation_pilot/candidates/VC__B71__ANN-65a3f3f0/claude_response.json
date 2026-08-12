@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B71::ANN-65a3f3f0\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 12,\n  \"legs\": 4,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"normalized_notation\": \"4L-Y12@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly reads '4L-Y12@100C/C' with horizontal bidirectional arrow indicating stirrup placement\",\n    \"The '4L' prefix indicates 4 legs of stirrups\",\n    \"Y12 indicates 12mm diameter reinforcement bars\",\n    \"@100C/C indicates spacing of 100mm center-to-center\",\n    \"Visual context shows this is a beam cross-section (B71) with stirrup configuration\",\n    \"The notation appears with a horizontal dimension arrow, typical for stirrup spacing notation\",\n    \"OCR corruption '\\\\X' in raw text is visually confirmed to be '@' in the image\"\n  ],\n  \"reasoning_summary\": \"The annotation clearly shows stirrup notation for beam B71. The '4L-Y12@100C/C' indicates 4-legged stirrups made of Y12 (12mm diameter) bars at 100mm center-to-center spacing. The OCR corruption '\\\\X' is visually confirmed to be '@' symbol. This is standard stirrup notation, not longitudinal reinforcement, so quantity field remains null as per instructions. All components are clearly visible and supported by the image evidence.\",\n  \"warnings\": [\n    \"OCR corruption corrected: '\\\\X' normalized to '@' based on visual evidence\"\n  ]\n}\n```",
+  "latency_s": 10.90298170002643,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3863,
+    "output_tokens": 446
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 360,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B71::ANN-65a3f3f0",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "74a237de8a5d97b9292bf9330840344a33a2275030ef1d8bdc58bc49c09056e7",
+  "timestamp_utc": "2026-08-12T12:34:18.146766+00:00"
+}

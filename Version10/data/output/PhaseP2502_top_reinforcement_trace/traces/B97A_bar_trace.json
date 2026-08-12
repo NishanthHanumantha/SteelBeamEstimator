@@ -1,0 +1,407 @@
+{
+  "beam_id": "B97A",
+  "actual_top_reinforcement": "OWN::B97A::1247FFF",
+  "own_trace": {
+    "own_id": "OWN::B97A::1247FFF",
+    "beam_id": "B97A",
+    "dxf": {
+      "found": true,
+      "handle": "1247FFF",
+      "dxftype": "LWPOLYLINE",
+      "layer": "-STR-BEAM",
+      "block_transform": "none_in_modelspace",
+      "rotation": null,
+      "scaling": null,
+      "translation": null,
+      "raw_coords": {
+        "points": [
+          [
+            31652245.4453964,
+            -21208369.09241377
+          ],
+          [
+            31649245.44539641,
+            -21208369.09241377
+          ]
+        ]
+      },
+      "bbox": [
+        31649245.44539641,
+        -21208369.09241377,
+        31652245.4453964,
+        -21208369.09241377
+      ],
+      "y_position": -21208369.09241377
+    },
+    "graph_attributes": {
+      "handle": "1247FFF",
+      "entity_type": "LWPOLYLINE",
+      "ownership": "HIGH",
+      "role": "TOP_BAR",
+      "layer": "-STR-BEAM",
+      "reasons": [
+        "overlap_pct=0.78",
+        "distance_to_axis=407.3mm",
+        "parallel_to_axis",
+        "inside_top_bar_band",
+        "inside_stirrup_band"
+      ],
+      "confidence_score": 0.82
+    },
+    "role": "TOP_BAR",
+    "ownership": "HIGH",
+    "layer": "-STR-BEAM",
+    "spatial_vs_beam": {
+      "beam_to_bar_y_offset_mm": 0.0,
+      "beam_to_bar_x_overlap_mm": 2454.365,
+      "beam_to_bar_euclidean_mm": 708.717,
+      "beam_depth_mm": 600.0,
+      "bar_to_beam_depth_ratio": 0.0,
+      "intersects_or_overlaps_envelope": true,
+      "bar_vs_envelope_position": "inside"
+    },
+    "annotation_to_geometry_mm": 421.89,
+    "leader_tip_to_geometry_mm": 148.487,
+    "inside_top_bar_band": true,
+    "is_actual_top_reinforcement_geometry": true
+  },
+  "bar_traces": [
+    {
+      "bar_id": "BAR::2B7B3233",
+      "beam_id": "B97A",
+      "1_dxf_entity_id": "1221B7C",
+      "2_dxf_entity_type": "LINE",
+      "3_layer": "-STR-REINF",
+      "4_raw_dxf_coordinates": {
+        "start": [
+          31649398.10879233,
+          -21183448.1865275
+        ],
+        "end": [
+          31651598.10879233,
+          -21183448.1865275
+        ]
+      },
+      "5_block_insert_transform": "none_in_modelspace",
+      "6_rotation": null,
+      "7_scaling": null,
+      "8_translation": null,
+      "9_final_r31_coordinates": {
+        "start_x": 31649398.11,
+        "end_x": 31651598.11,
+        "y_position": -21183448.19
+      },
+      "10_r31_semantic": "PhysicalBar / horizontal LINE on rein layer",
+      "11_r31_role_vertical_placement": "TOP_FACE",
+      "12_r31_source": "PhaseR3.1 PhysicalBarDetector (UUID bar_id, not DXF handle)",
+      "13_t18_candidate": true,
+      "14_t18_accepted": false,
+      "15_t18_rejection_rule": "R5_NEIGHBOUR_REJECT",
+      "16_t18_rejection_reason": "bar_y_outside_reinforcement_elevation",
+      "17_relationship_to_target_beam": {
+        "graph_beam_id": "B97A",
+        "r31_beam_id": "B97A",
+        "spatial": {
+          "beam_to_bar_y_offset_mm": 24880.902,
+          "beam_to_bar_x_overlap_mm": 2200.0,
+          "beam_to_bar_euclidean_mm": 25216.339,
+          "beam_depth_mm": 600.0,
+          "bar_to_beam_depth_ratio": 41.4682,
+          "intersects_or_overlaps_envelope": false,
+          "bar_vs_envelope_position": "above"
+        }
+      },
+      "18_neighbour_beams": [
+        "B100",
+        "B100A",
+        "B101",
+        "B101A",
+        "B102",
+        "B103",
+        "B119",
+        "B120"
+      ],
+      "19_distance_from_beam_geometry_mm": 25216.339,
+      "20_corresponds_to_4Y25_visually": false,
+      "metrics": {
+        "beam_to_bar_y_offset_mm": 24880.902,
+        "beam_to_bar_x_overlap_mm": 2200.0,
+        "beam_to_bar_euclidean_mm": 25216.339,
+        "beam_depth_mm": 600.0,
+        "bar_to_beam_depth_ratio": 41.4682,
+        "intersects_or_overlaps_envelope": false,
+        "bar_vs_envelope_position": "above",
+        "annotation_to_bar_distance_mm": 25341.767,
+        "leader_tip_to_bar_distance_mm": 24871.135,
+        "r31_detection_status": "DETECTED",
+        "t18_acceptance_status": "REJECTED",
+        "t18_rejection_rule": "R5_NEIGHBOUR_REJECT"
+      },
+      "dxf_probe": {
+        "found": true,
+        "handle": "1221B7C",
+        "dxftype": "LINE",
+        "layer": "-STR-REINF",
+        "block_transform": "none_in_modelspace",
+        "rotation": null,
+        "scaling": null,
+        "translation": null,
+        "raw_coords": {
+          "start": [
+            31649398.10879233,
+            -21183448.1865275
+          ],
+          "end": [
+            31651598.10879233,
+            -21183448.1865275
+          ]
+        },
+        "y_position": -21183448.1865275
+      },
+      "note": "R.3.1 bar_id is a generated UUID token (BAR::{hex8}), not the DXF handle. Matched DXF handle via coordinates/hint=1221B7C."
+    },
+    {
+      "bar_id": "BAR::5B1BFCC2",
+      "beam_id": "B97A",
+      "1_dxf_entity_id": "12469C4",
+      "2_dxf_entity_type": "LINE",
+      "3_layer": "-STR-REINF",
+      "4_raw_dxf_coordinates": {
+        "start": [
+          31651482.10630766,
+          -21163971.50000002
+        ],
+        "end": [
+          31649537.82180316,
+          -21163971.50000002
+        ]
+      },
+      "5_block_insert_transform": "none_in_modelspace",
+      "6_rotation": null,
+      "7_scaling": null,
+      "8_translation": null,
+      "9_final_r31_coordinates": {
+        "start_x": 31649537.82,
+        "end_x": 31651482.11,
+        "y_position": -21163971.5
+      },
+      "10_r31_semantic": "PhysicalBar / horizontal LINE on rein layer",
+      "11_r31_role_vertical_placement": "TOP_FACE",
+      "12_r31_source": "PhaseR3.1 PhysicalBarDetector (UUID bar_id, not DXF handle)",
+      "13_t18_candidate": true,
+      "14_t18_accepted": false,
+      "15_t18_rejection_rule": "R5_NEIGHBOUR_REJECT",
+      "16_t18_rejection_reason": "bar_y_outside_reinforcement_elevation",
+      "17_relationship_to_target_beam": {
+        "graph_beam_id": "B97A",
+        "r31_beam_id": "B97A",
+        "spatial": {
+          "beam_to_bar_y_offset_mm": 44357.592,
+          "beam_to_bar_x_overlap_mm": 1944.29,
+          "beam_to_bar_euclidean_mm": 44691.766,
+          "beam_depth_mm": 600.0,
+          "bar_to_beam_depth_ratio": 73.9293,
+          "intersects_or_overlaps_envelope": false,
+          "bar_vs_envelope_position": "above"
+        }
+      },
+      "18_neighbour_beams": [
+        "B100",
+        "B100A",
+        "B101",
+        "B101A",
+        "B102",
+        "B103",
+        "B119",
+        "B120"
+      ],
+      "19_distance_from_beam_geometry_mm": 44691.766,
+      "20_corresponds_to_4Y25_visually": false,
+      "metrics": {
+        "beam_to_bar_y_offset_mm": 44357.592,
+        "beam_to_bar_x_overlap_mm": 1944.29,
+        "beam_to_bar_euclidean_mm": 44691.766,
+        "beam_depth_mm": 600.0,
+        "bar_to_beam_depth_ratio": 73.9293,
+        "intersects_or_overlaps_envelope": false,
+        "bar_vs_envelope_position": "above",
+        "annotation_to_bar_distance_mm": 44818.034,
+        "leader_tip_to_bar_distance_mm": 44347.696,
+        "r31_detection_status": "DETECTED",
+        "t18_acceptance_status": "REJECTED",
+        "t18_rejection_rule": "R5_NEIGHBOUR_REJECT"
+      },
+      "dxf_probe": {
+        "found": true,
+        "handle": "12469C4",
+        "dxftype": "LINE",
+        "layer": "-STR-REINF",
+        "block_transform": "none_in_modelspace",
+        "rotation": null,
+        "scaling": null,
+        "translation": null,
+        "raw_coords": {
+          "start": [
+            31651482.10630766,
+            -21163971.50000002
+          ],
+          "end": [
+            31649537.82180316,
+            -21163971.50000002
+          ]
+        },
+        "y_position": -21163971.50000002
+      },
+      "note": "R.3.1 bar_id is a generated UUID token (BAR::{hex8}), not the DXF handle. Matched DXF handle via coordinates/hint=12469C4."
+    }
+  ],
+  "classifications": [
+    {
+      "classification": "FALSE_CANDIDATE",
+      "confidence": "HIGH",
+      "evidence": {
+        "y_offset_mm": 24880.902,
+        "depth_mm": 600.0,
+        "y_offset_to_depth_ratio": 41.47,
+        "dxf_handle": "1221B7C",
+        "layer": "-STR-REINF",
+        "t18_reason": "bar_y_outside_reinforcement_elevation",
+        "actual_top_is": "OWN::B97A::1247FFF",
+        "note": "Real -STR-REINF LINE exists at a different drawing elevation. R.3.1 assigned beam_id by X-overlap heuristics, but geometry is not this beam's top reinforcement. Actual top bar is OWN::* LWPOLYLINE on -STR-BEAM inside the envelope."
+      },
+      "corresponds_to_4Y25": false,
+      "bar_id": "BAR::2B7B3233"
+    },
+    {
+      "classification": "FALSE_CANDIDATE",
+      "confidence": "HIGH",
+      "evidence": {
+        "y_offset_mm": 44357.592,
+        "depth_mm": 600.0,
+        "y_offset_to_depth_ratio": 73.93,
+        "dxf_handle": "12469C4",
+        "layer": "-STR-REINF",
+        "t18_reason": "bar_y_outside_reinforcement_elevation",
+        "actual_top_is": "OWN::B97A::1247FFF",
+        "note": "Real -STR-REINF LINE exists at a different drawing elevation. R.3.1 assigned beam_id by X-overlap heuristics, but geometry is not this beam's top reinforcement. Actual top bar is OWN::* LWPOLYLINE on -STR-BEAM inside the envelope."
+      },
+      "corresponds_to_4Y25": false,
+      "bar_id": "BAR::5B1BFCC2"
+    }
+  ],
+  "annotation_trace": {
+    "beam_id": "B97A",
+    "annotation_id": "ANN-d7128f62",
+    "raw_text": "4-Y25",
+    "annotation_position": {
+      "x": 31650705.70627044,
+      "y": -21208789.1063728
+    },
+    "leader_id": "LDR::E83C245B",
+    "leader_tip": {
+      "x": 31650605.63027429,
+      "y": -21208319.09241375
+    },
+    "leader_tail": {
+      "x": 31650709.06144738,
+      "y": -21208721.80721938
+    },
+    "leader_tip_to_tail_mm": 415.785,
+    "leader_tail_to_annotation_mm": 67.383,
+    "accepted_annotation_record": {
+      "id": "ANN-d7128f62",
+      "text": "4-Y25",
+      "accepted": true,
+      "accepted_rules": [
+        "R3_ANNOTATION_VIA_CHAIN",
+        "R5_NEIGHBOUR_REJECT"
+      ],
+      "rejected_rule": null,
+      "ownership_reason": "leader_bar_chain_owned",
+      "ownership_score": 0.65
+    },
+    "accepted_chains": [
+      {
+        "annotation_id": "ANN-d7128f62",
+        "text": "4-Y25",
+        "leaders": [
+          "LDR::E83C245B"
+        ],
+        "describes": [
+          "LDR::E83C245B",
+          "OWN::B97A::1247FFF"
+        ],
+        "semantic_id": "SEM::ANN-d7128f62",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      }
+    ],
+    "describes": [
+      "LDR::E83C245B",
+      "OWN::B97A::1247FFF"
+    ],
+    "own_entity": {
+      "id": "OWN::B97A::1247FFF",
+      "attributes": {
+        "handle": "1247FFF",
+        "entity_type": "LWPOLYLINE",
+        "ownership": "HIGH",
+        "role": "TOP_BAR",
+        "layer": "-STR-BEAM",
+        "reasons": [
+          "overlap_pct=0.78",
+          "distance_to_axis=407.3mm",
+          "parallel_to_axis",
+          "inside_top_bar_band",
+          "inside_stirrup_band"
+        ],
+        "confidence_score": 0.82
+      },
+      "type": "OwnedEntity"
+    },
+    "evidence_package_reinforcement_count": 0,
+    "why_accepted_chain_with_empty_reinforcement": "Accepted chain describes OWN::* (T16 OwnedEntity TOP_BAR / LWPOLYLINE on -STR-BEAM), not BAR::* (R.3.1 PhysicalBar). P2.5.0 evidence_pack only includes AnnotationGraph PhysicalBar nodes from accepted bar_results; OwnedEntity geometry is not mapped into reinforcement[].",
+    "pipeline": [
+      "DXF TEXT/MTEXT",
+      "annotation extraction / normalization",
+      "leader detection",
+      "AnnotationGraph",
+      "T18 accepted annotation + accepted_chains",
+      "describes \u2192 OWN::B97A::1247FFF",
+      "P2.5.0 evidence package (annotations+leaders only; reinforcement=[])"
+    ]
+  },
+  "completeness": {
+    "beam_id": "B97A",
+    "accepted_top_bar_annotation": true,
+    "accepted_leader": true,
+    "target_beam_ownership": true,
+    "accepted_physical_reinforcement_count": 0,
+    "condition_ACCEPTED_SEMANTIC_WITHOUT_PHYSICAL_GEOMETRY": true,
+    "upstream_physical_geometry_available": true,
+    "upstream_geometry_id": "OWN::B97A::1247FFF",
+    "interpretation": "Legitimate semantic chain to T16 OwnedEntity TOP_BAR exists, but P2.5.0 evidence_pack omits OwnedEntity from reinforcement[]. Not a T18 false reject of the actual top bar; the rejected BAR::* are different far-elevation lines.",
+    "legitimate_or_missing_detection": "UPSTREAM_GEOMETRY_EXISTS_BUT_NOT_PACKAGED"
+  },
+  "outcome": "OUTCOME_B_rejected_BAR_not_actual_top__actual_is_OWN_LWPOLYLINE",
+  "evidence_reinforcement": [],
+  "evidence_window": [
+    31646955.30694844,
+    -21211038.03,
+    31651955.2,
+    -21207818.81
+  ],
+  "target_bbox": [
+    31648249.81,
+    -21210918.03,
+    31651835.2,
+    -21207938.81
+  ]
+}

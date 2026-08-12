@@ -2,7 +2,11 @@
 Render engineering crop + evidence overlay for a beam evidence pack.
 Reuses M.1 render algorithm (read-only DXF) with a process-local DXF cache
 so Fourth Set multi-beam runs do not re-parse the sheet every time.
-MODEL_VERSION: 10.6.0
+
+MODEL_VERSION: 10.6.3
+P2.5.0.4: after base DXF draw, paint accepted OWN TOP_BAR actual geometry
+with a visible engineering stroke (source entities are ACI color 7 / white
+and disappear on the white PNG background).
 """
 from __future__ import annotations
 
@@ -10,11 +14,17 @@ import importlib.util
 import math
 import sys
 from pathlib import Path
-from typing import Any, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-from .config import RENDER_DPI, RENDER_MAX_DIM_PX, BBox
+from .config import (
+    OWN_TOP_BAR_ENGINEERING_COLOR,
+    OWN_TOP_BAR_ENGINEERING_LINEWIDTH,
+    RENDER_DPI,
+    RENDER_MAX_DIM_PX,
+    BBox,
+)
 
-MODEL_VERSION = "10.6.0"
+MODEL_VERSION = "10.6.3"
 
 _TEXT_TYPES = {"TEXT", "MTEXT", "ATTRIB", "ATTDEF"}
 _DOC_CACHE: Dict[str, Any] = {}
@@ -54,6 +64,75 @@ def _get_doc(dxf_path: Path):
     return _DOC_CACHE[key]
 
 
+def _owned_polyline_points(og: Dict[str, Any]) -> Optional[List[Tuple[float, float]]]:
+    g = og.get("geometry") or {}
+    pts = g.get("points") or []
+    if pts and len(pts) >= 2:
+        out: List[Tuple[float, float]] = []
+        for p in pts:
+            try:
+                out.append((float(p[0]), float(p[1])))
+            except Exception:
+                return None
+        return out
+    try:
+        y = float(g["y_position"])
+        return [(float(g["start_x"]), y), (float(g["end_x"]), y)]
+    except Exception:
+        return None
+
+
+def paint_owned_geometry_on_axes(
+    ax: Any,
+    owned_geometry: Sequence[Dict[str, Any]],
+    *,
+    color: str = OWN_TOP_BAR_ENGINEERING_COLOR,
+    linewidth: float = OWN_TOP_BAR_ENGINEERING_LINEWIDTH,
+    zorder: float = 20.0,
+) -> List[Dict[str, Any]]:
+    """
+    Draw accepted OWN visual evidence on top of the base DXF render.
+    Uses actual packaged DXF coordinates — no synthetic geometry, no labels.
+    """
+    painted: List[Dict[str, Any]] = []
+    for og in owned_geometry or []:
+        if not og.get("accepted", True):
+            continue
+        if og.get("evidence_type") not in (None, "OWN_TOP_BAR") and str(
+            og.get("semantic_role") or ""
+        ).upper() not in ("", "TOP_BAR"):
+            # Still paint TOP_BAR; skip unrelated owned types if any appear later
+            if og.get("evidence_type") != "OWN_TOP_BAR":
+                continue
+        pts = _owned_polyline_points(og)
+        if not pts:
+            continue
+        xs = [p[0] for p in pts]
+        ys = [p[1] for p in pts]
+        ax.plot(
+            xs,
+            ys,
+            color=color,
+            linewidth=linewidth,
+            solid_capstyle="round",
+            solid_joinstyle="round",
+            zorder=zorder,
+            label=og.get("ownership_id"),
+        )
+        painted.append(
+            {
+                "ownership_id": og.get("ownership_id"),
+                "source_handle": og.get("source_handle"),
+                "evidence_id": og.get("evidence_id"),
+                "n_points": len(pts),
+                "color": color,
+                "linewidth": linewidth,
+                "points": pts,
+            }
+        )
+    return painted
+
+
 def render_engineering_crop(
     *,
     engine_root: Path,
@@ -62,14 +141,22 @@ def render_engineering_crop(
     out_path: Path,
     max_dim_px: int = RENDER_MAX_DIM_PX,
     dpi: int = RENDER_DPI,
+    owned_geometry: Optional[Sequence[Dict[str, Any]]] = None,
+    evidence: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    """Clean DXF render with text/leaders — no diagnostic labels."""
+    """
+    Clean DXF render with text/leaders — no diagnostic labels.
+    Optionally paints accepted OWN TOP_BAR geometry after the base DXF draw
+    so white-on-white BYLAYER color-7 entities become visible.
+    """
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    owned = list(owned_geometry or [])
+    if not owned and evidence is not None:
+        owned = list(evidence.get("owned_geometry") or [])
     try:
-        # Ensure CoordTransform class is available from M.1 module
         mod = _load_dxf_renderer(engine_root)
-        xf = _render_region_cached(
+        xf, painted = _render_region_cached(
             mod,
             Path(dxf_path),
             out_path,
@@ -77,6 +164,7 @@ def render_engineering_crop(
             render_text=True,
             max_dim_px=max_dim_px,
             dpi=dpi,
+            owned_geometry=owned,
         )
         return {
             "success": True,
@@ -86,6 +174,14 @@ def render_engineering_crop(
             "img_h": getattr(xf, "img_h", None),
             "dxf_xlim": list(getattr(xf, "dxf_xlim", ())),
             "dxf_ylim": list(getattr(xf, "dxf_ylim", ())),
+            "owned_geometry_painted": painted,
+            "owned_geometry_paint_count": len(painted),
+            "render_note": (
+                "OWN TOP_BAR painted after base DXF draw because source "
+                "entities use BYLAYER ACI color 7 (white on white)."
+                if painted
+                else None
+            ),
         }
     except Exception as exc:  # noqa: BLE001
         return {
@@ -93,6 +189,8 @@ def render_engineering_crop(
             "path": str(out_path),
             "error": str(exc),
             "extent": list(extent),
+            "owned_geometry_painted": [],
+            "owned_geometry_paint_count": 0,
         }
 
 
@@ -106,10 +204,12 @@ def _render_region_cached(
     min_dim_px: int = 400,
     dpi: int,
     render_text: bool,
+    owned_geometry: Optional[Sequence[Dict[str, Any]]] = None,
 ):
     """
     Same behaviour as M.1 render_dxf_region_to_png, but reuses a cached Document.
     Does not mutate the DXF file.
+    After base draw_layout, paints accepted OWN geometry on top (P2.5.0.4).
     """
     from ezdxf import bbox as ezdxf_bbox
     from ezdxf.addons.drawing import Frontend, RenderContext
@@ -175,9 +275,13 @@ def _render_region_cached(
     ctx = RenderContext(doc)
     backend = MatplotlibBackend(ax)
     frontend = Frontend(ctx, backend)
+    # 1–4: base DXF (background, structure, annotations as present in sheet)
     frontend.draw_layout(msp, finalize=False, filter_func=_entity_ok)
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
+
+    # 5: accepted OWN visual evidence (actual DXF coords), above beam geometry
+    painted = paint_owned_geometry_on_axes(ax, owned_geometry or [])
 
     fig.savefig(str(output_path), dpi=dpi, facecolor="white")
     plt.close(fig)
@@ -191,11 +295,14 @@ def _render_region_cached(
         img_w = int(math.ceil(fig_w_in * dpi))
         img_h = int(math.ceil(fig_h_in * dpi))
 
-    return mod.CoordTransform(
-        dxf_xlim=(xmin, xmax),
-        dxf_ylim=(ymin, ymax),
-        img_w=int(img_w),
-        img_h=int(img_h),
+    return (
+        mod.CoordTransform(
+            dxf_xlim=(xmin, xmax),
+            dxf_ylim=(ymin, ymax),
+            img_w=int(img_w),
+            img_h=int(img_h),
+        ),
+        painted,
     )
 
 
@@ -208,7 +315,7 @@ def render_evidence_overlay(
 ) -> Dict[str, Any]:
     """
     Debug overlay on top of engineering crop.
-    Labels: TARGET BEAM, ANN_*, LDR_*, R_*
+    Labels: TARGET BEAM, ANN_*, LDR_*, OWN TOP_BAR, R_*
     """
     import matplotlib
 
@@ -268,6 +375,26 @@ def render_evidence_overlay(
             rid = b.get("reinforcement_id") or f"R_{i}"
             short = rid.replace("BAR::SYN::", "R::").replace("BAR::", "R::")
             ax.text(p0[0], p0[1] - 6, short[-18:], color="#1F4E79", fontsize=6)
+
+        # Diagnostic overlay: OWN TOP_BAR + labels (QA only)
+        for i, og in enumerate(evidence.get("owned_geometry") or []):
+            pts = _owned_polyline_points(og)
+            if not pts:
+                continue
+            xs = [to_px(p[0], p[1])[0] for p in pts]
+            ys = [to_px(p[0], p[1])[1] for p in pts]
+            ax.plot(xs, ys, color="#C000C0", linewidth=2.2, linestyle="-")
+            label_xy = (xs[0], ys[0] - 8)
+            oid = og.get("ownership_id") or og.get("evidence_id") or f"OWN_{i}"
+            ax.text(
+                label_xy[0],
+                label_xy[1],
+                f"OWN TOP_BAR\n{oid}",
+                color="#C000C0",
+                fontsize=6,
+                fontweight="bold",
+                bbox=dict(facecolor="white", alpha=0.7, edgecolor="#C000C0", pad=1),
+            )
 
         for i, l in enumerate(evidence.get("leaders") or []):
             g = l.get("geometry") or {}

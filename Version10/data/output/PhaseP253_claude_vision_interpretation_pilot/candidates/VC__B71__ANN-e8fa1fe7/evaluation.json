@@ -1,0 +1,63 @@
+{
+  "candidate_id": "VC::B71::ANN-e8fa1fe7",
+  "beam_id": "B71",
+  "raw_text": "3L-Y10@\\X100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 3,
+    "diameter_mm": 10.0,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "quantity": null,
+    "normalized_notation": "3L-Y10@100C/C",
+    "raw_text": "3L-Y10@\\X100C/C",
+    "cleaned_text": "3L-Y10@100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption: '\\X' normalized to '@' based on visual evidence and standard notation format"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B71::ANN-e8fa1fe7",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "normalized_notation": "3L-Y10@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Text clearly shows '3L-Y10@' indicating 3 legs of Y10 (10mm diameter) bars",
+        "Text shows '100C/C' indicating 100mm center-to-center spacing",
+        "The backslash character '\\X' in OCR text '3L-Y10@\\X100C/C' is OCR corruption of '@' symbol",
+        "Visual context shows this annotation pointing to a beam element with stirrup configuration",
+        "The notation follows standard stirrup format: [legs]L-[bar type][diameter]@[spacing]C/C"
+      ],
+      "reasoning_summary": "The notation '3L-Y10@\\X100C/C' represents stirrup reinforcement. The '3L' indicates 3 legs, 'Y10' indicates 10mm diameter bars, and '100C/C' indicates 100mm center-to-center uniform spacing. The '\\X' is OCR corruption that should be '@' based on standard notation format and visual evidence. This is clearly a stirrup notation, not longitudinal reinforcement, so quantity field remains null as per instructions.",
+      "warnings": [
+        "OCR corruption: '\\X' normalized to '@' based on visual evidence and standard notation format"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

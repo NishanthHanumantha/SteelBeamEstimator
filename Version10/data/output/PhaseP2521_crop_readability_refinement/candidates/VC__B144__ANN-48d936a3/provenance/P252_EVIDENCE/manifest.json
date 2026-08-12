@@ -1,0 +1,114 @@
+{
+  "candidate_id": "VC::B144::ANN-48d936a3",
+  "beam_id": "B144",
+  "annotation_id": "ANN-48d936a3",
+  "raw_text": "3L-Y12@\\X100C/C",
+  "normalized_text": "3L-Y12@\\X100C/C",
+  "quantity_status": "UNRESOLVED",
+  "quantity_value": null,
+  "diameter_value_mm": null,
+  "semantic_type": "STIRRUP",
+  "reinforcement_role": "STIRRUP",
+  "outcome": "VISION_CANDIDATE",
+  "candidate_priority": "P0",
+  "candidate_reason_codes": [
+    "OCR_CORRUPTION",
+    "STIRRUP_PATTERN_UNPARSED",
+    "UNRESOLVED_QUANTITY"
+  ],
+  "candidate_reason_text": "OCR-corrupted reinforcement notation remains unresolved",
+  "candidate_normalization_hint": "possible_spacing_token_corruption",
+  "leader_id": "LDR::D3667B61",
+  "ownership_id": null,
+  "source_handle": null,
+  "evidence_id": null,
+  "crop_local_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B144__ANN-48d936a3\\local_crop.png",
+  "crop_beam_context_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B144__ANN-48d936a3\\beam_context_crop.png",
+  "crop_bounds": [
+    31649448.74,
+    -21184308.33,
+    31655046.67875109,
+    -21177515.07
+  ],
+  "crop_dimensions_mm": {
+    "w_mm": 5597.938751090318,
+    "h_mm": 6793.259999997914
+  },
+  "image_dimensions_px": {
+    "w": 988,
+    "h": 1200
+  },
+  "crop_qa_status": "PASS",
+  "crop_qa": {
+    "overall": "PASS",
+    "gates": {
+      "TARGET_BEAM_PRESENT": "PASS",
+      "TARGET_ANNOTATION_PRESENT": "PASS",
+      "LEADER_PRESENT_WHEN_EXPECTED": "PASS",
+      "RELEVANT_REINFORCEMENT_PRESENT_WHEN_EXPECTED": "PASS",
+      "NO_REJECTED_PHYSICAL_BAR": "PASS",
+      "NO_EXTREME_EXPANSION": "PASS",
+      "NO_CLIPPED_SELECTED_EVIDENCE": "PASS",
+      "VALID_IMAGE": "PASS",
+      "READABLE_DIMENSIONS": "PASS"
+    },
+    "hard_fails": [],
+    "soft_fails": [],
+    "flags": [],
+    "image_width_px": 988,
+    "image_height_px": 1200,
+    "crop_width_mm": 5597.938751090318,
+    "crop_height_mm": 6793.259999997914,
+    "beam_width_mm": 3900.0,
+    "beam_height_mm": 6553.259999997914,
+    "crop_to_beam_ratio": 1.4879,
+    "annotation_bbox_size": [
+      720.0,
+      308.5
+    ],
+    "annotation_visibility_status": "PRESENT",
+    "rejected_bars_in_reinforcement": [],
+    "excluded_rejected_bars_count": 0
+  },
+  "excluded_evidence_summary": {
+    "rejected_bars": [],
+    "rejected_leaders": [],
+    "basis": null
+  },
+  "deterministic_intent": {
+    "intent_id": "QI::B144::ANN-48d936a3",
+    "raw_text": "3L-Y12@\\X100C/C",
+    "normalized_text": "3L-Y12@\\X100C/C",
+    "quantity_status": "UNRESOLVED",
+    "quantity_value": null,
+    "diameter_value_mm": null,
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "leg_count": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "validation_status": "PASS",
+    "evidence_links": {
+      "beam_id": "B144",
+      "annotation_id": "ANN-48d936a3",
+      "leader_id": "LDR::D3667B61",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.65
+  },
+  "vision_candidate_context": {
+    "local_crop": "P2.5.0 engineering_crop (accepted-evidence window)",
+    "beam_context_crop": "Same verified evidence window (LEVEL B == LEVEL A source)",
+    "note": "No new coordinate system; rejected PhysicalBars excluded upstream"
+  },
+  "provenance": {
+    "phase": "P2.5.2",
+    "source_quantity_intent": "QI::B144::ANN-48d936a3",
+    "source_evidence_beam": "B144",
+    "p250_evidence_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B144\\evidence.json"
+  },
+  "future_vision_status": "PENDING"
+}

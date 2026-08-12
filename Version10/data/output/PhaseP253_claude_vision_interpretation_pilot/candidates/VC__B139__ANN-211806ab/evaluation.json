@@ -1,0 +1,62 @@
+{
+  "candidate_id": "VC::B139::ANN-211806ab",
+  "beam_id": "B139",
+  "raw_text": "2L-Y8@\\X100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 2,
+    "diameter_mm": 8.0,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "quantity": null,
+    "normalized_notation": "2L-Y8@100C/C",
+    "raw_text": "2L-Y8@\\X100C/C",
+    "cleaned_text": "2L-Y8@100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B139::ANN-211806ab",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '2L-Y8@' followed by '100C/C'",
+        "The '2L' prefix indicates 2-legged stirrup configuration",
+        "Y8 indicates 8mm diameter reinforcement bar",
+        "@ symbol followed by spacing value is standard stirrup notation",
+        "100C/C indicates 100mm center-to-center spacing",
+        "Drawing shows green rectangular stirrup outline with red dots at corners",
+        "Notation positioned at stirrup level, not at longitudinal reinforcement locations",
+        "Additional longitudinal bar notations visible separately (5-Y20, 5-Y16)"
+      ],
+      "reasoning_summary": "The notation '2L-Y8@100C/C' is clearly visible in magenta text. The '2L' prefix definitively indicates a 2-legged stirrup. Y8 specifies 8mm diameter bars. The '@100C/C' indicates stirrups spaced at 100mm center-to-center intervals. The visual context shows this annotation positioned at the stirrup/shear reinforcement level of beam B139 (500x1200mm), distinct from the longitudinal bar callouts. The OCR corruption in the metadata ('\\X' instead of proper spacing) is corrected based on clear visual evidence showing '100C/C'.",
+      "warnings": [],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

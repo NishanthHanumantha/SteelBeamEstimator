@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B82::ANN-4679b76c\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 12,\n  \"legs\": 4,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"100C/C\",\n  \"normalized_notation\": \"4L-Y12@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly shows '4L-Y12@100C/C' with leader pointing to beam B82\",\n    \"The '4L' prefix indicates 4 legs of stirrups\",\n    \"Y12 indicates 12mm diameter reinforcement bars\",\n    \"@100C/C indicates spacing of 100mm center-to-center\",\n    \"Visual context shows this is a stirrup notation for beam B82(400X1100)\",\n    \"The notation appears alongside longitudinal reinforcement '4-Y25' shown above\"\n  ],\n  \"reasoning_summary\": \"The notation '4L-Y12@100C/C' is clearly visible in magenta text. The '4L' prefix definitively indicates 4-legged stirrups (not longitudinal bars). Y12 specifies 12mm diameter bars. The '@100C/C' indicates uniform spacing of 100mm center-to-center. The upstream OCR captured this as '4L-Y12@\\\\X100C/C' where '\\\\X' appears to be OCR corruption of the '@' symbol. Visual evidence fully supports the corrected interpretation. This is standard stirrup notation for beam B82.\",\n  \"warnings\": [\n    \"Upstream OCR contained '\\\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions\"\n  ]\n}\n```",
+  "latency_s": 10.390684799989685,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3366,
+    "output_tokens": 449
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 346,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B82::ANN-4679b76c",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "666cbe8189c8b5fb57ea3f137fdd72f6bff2588c5bf78a444b71253aa1af9c4a",
+  "timestamp_utc": "2026-08-12T12:34:53.772171+00:00"
+}

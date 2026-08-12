@@ -1,0 +1,324 @@
+# P252 SUMMARY — Vision Candidate Set + Visual Evidence
+
+- MODEL_VERSION: `10.6.5`
+- Decision: **READY_FOR_P2.5.3**
+- Unit tests: `0/0`
+- Determinism: `PASS`
+- Regression unchanged: `True`
+- Claude: NONE
+- Engineering changes: NONE
+
+## Candidate selection
+
+- Eligible intents: `323`
+- Unresolved: `30`
+- OCR-corrupted: `25`
+- Vision candidates: `14`
+- Deferred: `16`
+- Excluded: `293`
+- P0/P1/P2/P3: `14`/`0`/`0`/`0`
+
+## Visual evidence quality
+
+- Local crops: `30`
+- Beam context crops: `30`
+- Crop QA PASS/PARTIAL/FAIL rates: `92.86`/`7.14`/`0.0`
+- Extreme crops: `15`
+
+## Future Vision work
+
+- All candidates have `future_vision_status = PENDING`
+- No Claude calls in P2.5.2
+- P2.5.3 may send local + beam-context crops with structured metadata
+
+## Reason codes
+
+```json
+{
+  "VISION_NOT_REQUIRED": 293,
+  "OCR_CORRUPTION": 25,
+  "STIRRUP_PATTERN_UNPARSED": 25,
+  "UNRESOLVED_QUANTITY": 25,
+  "INSUFFICIENT_VISUAL_EVIDENCE": 13,
+  "DEFER_ENGINEERING_RULE": 3,
+  "NON_QUANTITY_NOTE": 5,
+  "SEMANTIC_CONTEXT_REQUIRED": 2
+}
+```
+
+## Golden
+
+```json
+{
+  "b97a": {
+    "pass": true,
+    "candidate_status": "EXCLUDED",
+    "reason": [
+      "VISION_NOT_REQUIRED"
+    ],
+    "selection": {
+      "candidate_id": "VC::B97A::ANN-d7128f62",
+      "outcome": "EXCLUDED",
+      "candidate_priority": "P3",
+      "candidate_reason_codes": [
+        "VISION_NOT_REQUIRED"
+      ],
+      "candidate_reason_text": "Deterministic QuantityIntent already resolved",
+      "vision_status": "PENDING",
+      "candidate_normalization_hint": null,
+      "beam_id": "B97A",
+      "annotation_id": "ANN-d7128f62",
+      "raw_text": "4-Y25",
+      "deterministic_intent": {
+        "intent_id": "QI::B97A::ANN-d7128f62",
+        "raw_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "quantity_status": "EXPLICIT",
+        "quantity_value": 4,
+        "diameter_value_mm": 25.0,
+        "semantic_type": "LONGITUDINAL_BAR",
+        "reinforcement_role": "TOP_BAR",
+        "leg_count": null,
+        "spacing_value_mm": null,
+        "spacing_values_mm": [],
+        "validation_status": "PASS",
+        "evidence_links": {
+          "beam_id": "B97A",
+          "annotation_id": "ANN-d7128f62",
+          "leader_id": "LDR::E83C245B",
+          "ownership_id": "OWN::B97A::1247FFF",
+          "source_handle": "1247FFF",
+          "evidence_id": "OWNGEO::B97A::1247FFF",
+          "chain_semantic_type": "BarCallout"
+        },
+        "confidence": 0.99
+      }
+    },
+    "extreme_expansion": false
+  },
+  "ocr_stirrup": {
+    "pass": true,
+    "candidate_status": "VISION_CANDIDATE",
+    "raw_text_preserved": true,
+    "reason": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY"
+    ],
+    "crop_qa": "PASS",
+    "manifest": {
+      "candidate_id": "VC::B129::ANN-7aec78cb",
+      "beam_id": "B129",
+      "annotation_id": "ANN-7aec78cb",
+      "raw_text": "4L-Y12@\\X100C/C",
+      "normalized_text": "4L-Y12@\\X100C/C",
+      "quantity_status": "UNRESOLVED",
+      "quantity_value": null,
+      "diameter_value_mm": null,
+      "semantic_type": "STIRRUP",
+      "reinforcement_role": "STIRRUP",
+      "outcome": "VISION_CANDIDATE",
+      "candidate_priority": "P0",
+      "candidate_reason_codes": [
+        "OCR_CORRUPTION",
+        "STIRRUP_PATTERN_UNPARSED",
+        "UNRESOLVED_QUANTITY"
+      ],
+      "candidate_reason_text": "OCR-corrupted reinforcement notation remains unresolved",
+      "candidate_normalization_hint": "possible_spacing_token_corruption",
+      "leader_id": "LDR::210B4209",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "crop_local_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B129__ANN-7aec78cb\\local_crop.png",
+      "crop_beam_context_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B129__ANN-7aec78cb\\beam_context_crop.png",
+      "crop_bounds": [
+        31672348.02,
+        -21171128.77,
+        31676248.02,
+        -21166242.36
+      ],
+      "crop_dimensions_mm": {
+        "w_mm": 3900.0,
+        "h_mm": 4886.410000000149
+      },
+      "image_dimensions_px": {
+        "w": 958,
+        "h": 1200
+      },
+      "crop_qa_status": "PASS",
+      "crop_qa": {
+        "overall": "PASS",
+        "gates": {
+          "TARGET_BEAM_PRESENT": "PASS",
+          "TARGET_ANNOTATION_PRESENT": "PASS",
+          "LEADER_PRESENT_WHEN_EXPECTED": "PASS",
+          "RELEVANT_REINFORCEMENT_PRESENT_WHEN_EXPECTED": "PASS",
+          "NO_REJECTED_PHYSICAL_BAR": "PASS",
+          "NO_EXTREME_EXPANSION": "PASS",
+          "NO_CLIPPED_SELECTED_EVIDENCE": "PASS",
+          "VALID_IMAGE": "PASS",
+          "READABLE_DIMENSIONS": "PASS"
+        },
+        "hard_fails": [],
+        "soft_fails": [],
+        "flags": [],
+        "image_width_px": 958,
+        "image_height_px": 1200,
+        "crop_width_mm": 3900.0,
+        "crop_height_mm": 4886.410000000149,
+        "beam_width_mm": 3900.0,
+        "beam_height_mm": 4886.410000000149,
+        "crop_to_beam_ratio": 1.0,
+        "annotation_bbox_size": [
+          720.0,
+          308.5
+        ],
+        "annotation_visibility_status": "PRESENT",
+        "rejected_bars_in_reinforcement": [],
+        "excluded_rejected_bars_count": 0
+      },
+      "excluded_evidence_summary": {
+        "rejected_bars": [],
+        "rejected_leaders": [],
+        "basis": null
+      },
+      "deterministic_intent": {
+        "intent_id": "QI::B129::ANN-7aec78cb",
+        "raw_text": "4L-Y12@\\X100C/C",
+        "normalized_text": "4L-Y12@\\X100C/C",
+        "quantity_status": "UNRESOLVED",
+        "quantity_value": null,
+        "diameter_value_mm": null,
+        "semantic_type": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "leg_count": null,
+        "spacing_value_mm": null,
+        "spacing_values_mm": [],
+        "validation_status": "PASS",
+        "evidence_links": {
+          "beam_id": "B129",
+          "annotation_id": "ANN-7aec78cb",
+          "leader_id": "LDR::210B4209",
+          "ownership_id": null,
+          "source_handle": null,
+          "evidence_id": null,
+          "chain_semantic_type": "StirrupNote"
+        },
+        "confidence": 0.65
+      },
+      "vision_candidate_context": {
+        "local_crop": "P2.5.0 engineering_crop (accepted-evidence window)",
+        "beam_context_crop": "Same verified evidence window (LEVEL B == LEVEL A source)",
+        "note": "No new coordinate system; rejected PhysicalBars excluded upstream"
+      },
+      "provenance": {
+        "phase": "P2.5.2",
+        "source_quantity_intent": "QI::B129::ANN-7aec78cb",
+        "source_evidence_beam": "B129",
+        "p250_evidence_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B129\\evidence.json"
+      },
+      "future_vision_status": "PENDING"
+    }
+  },
+  "development_note": {
+    "pass": true,
+    "classification": "DEFERRED",
+    "reasons": [
+      "DEFER_ENGINEERING_RULE",
+      "NON_QUANTITY_NOTE"
+    ],
+    "quantity_interpretation_attempted": false,
+    "selection": {
+      "candidate_id": "VC::B58::ANN-c7a04160",
+      "outcome": "DEFERRED",
+      "candidate_priority": "P3",
+      "candidate_reason_codes": [
+        "DEFER_ENGINEERING_RULE",
+        "NON_QUANTITY_NOTE"
+      ],
+      "candidate_reason_text": "Development-length / engineering note \u2014 not a Vision quantity case",
+      "vision_status": "PENDING",
+      "candidate_normalization_hint": null,
+      "beam_id": "B58",
+      "annotation_id": "ANN-c7a04160",
+      "raw_text": "Ld",
+      "deterministic_intent": {
+        "intent_id": "QI::B58::ANN-c7a04160",
+        "raw_text": "Ld",
+        "normalized_text": "LD",
+        "quantity_status": "UNRESOLVED",
+        "quantity_value": null,
+        "diameter_value_mm": null,
+        "semantic_type": "UNKNOWN",
+        "reinforcement_role": "UNKNOWN",
+        "leg_count": null,
+        "spacing_value_mm": null,
+        "spacing_values_mm": [],
+        "validation_status": "PASS",
+        "evidence_links": {
+          "beam_id": "B58",
+          "annotation_id": "ANN-c7a04160",
+          "leader_id": null,
+          "ownership_id": null,
+          "source_handle": null,
+          "evidence_id": null,
+          "chain_semantic_type": "DevelopmentLength"
+        },
+        "confidence": 0.45
+      }
+    }
+  },
+  "sfr_note": {
+    "pass": true,
+    "classification": "DEFERRED",
+    "reasons": [
+      "SEMANTIC_CONTEXT_REQUIRED",
+      "NON_QUANTITY_NOTE",
+      "INSUFFICIENT_VISUAL_EVIDENCE"
+    ],
+    "quantity_interpretation_attempted": false,
+    "selection": {
+      "candidate_id": "VC::B96A::ANN-9114a4de",
+      "outcome": "DEFERRED",
+      "candidate_priority": "P3",
+      "candidate_reason_codes": [
+        "SEMANTIC_CONTEXT_REQUIRED",
+        "NON_QUANTITY_NOTE",
+        "INSUFFICIENT_VISUAL_EVIDENCE"
+      ],
+      "candidate_priority_note": "semantic_context_not_quantity",
+      "candidate_reason_text": "Descriptive side-face reinforcement note",
+      "vision_status": "PENDING",
+      "candidate_normalization_hint": null,
+      "beam_id": "B96A",
+      "annotation_id": "ANN-9114a4de",
+      "raw_text": "S.F.R.ON EACH FACE",
+      "deterministic_intent": {
+        "intent_id": "QI::B96A::ANN-9114a4de",
+        "raw_text": "S.F.R.ON EACH FACE",
+        "normalized_text": "S.F.R.ONEACHFACE",
+        "quantity_status": "UNRESOLVED",
+        "quantity_value": null,
+        "diameter_value_mm": null,
+        "semantic_type": "UNKNOWN",
+        "reinforcement_role": "UNKNOWN",
+        "leg_count": null,
+        "spacing_value_mm": null,
+        "spacing_values_mm": [],
+        "validation_status": "PASS",
+        "evidence_links": {
+          "beam_id": "B96A",
+          "annotation_id": "ANN-9114a4de",
+          "leader_id": "LDR::63051B26",
+          "ownership_id": "OWN::B96A::11F8B87",
+          "source_handle": null,
+          "evidence_id": null,
+          "chain_semantic_type": "Unknown"
+        },
+        "confidence": 0.45
+      }
+    }
+  }
+}
+```

@@ -1,0 +1,68 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B74::ANN-5a3a4c53",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "100/125/100C/C",
+    "normalized_notation": "4L-Y10@100/125/100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Text clearly shows '4L-Y10@' indicating 4-leg stirrups with Y10 (10mm diameter) bars",
+      "Spacing pattern '100/125/100C/C' is visible, indicating variable spacing: 100mm, 125mm, 100mm center-to-center",
+      "The notation is positioned within a beam section labeled B74(400X1100)",
+      "Visual context shows this is stirrup reinforcement notation for the beam, with longitudinal bars (4-Y20, 2-Y16) shown separately",
+      "The '4L' prefix clearly indicates 4 legs of stirrups",
+      "OCR corruption '\\X' in upstream text is corrected to '@' based on visual evidence and standard notation conventions"
+    ],
+    "reasoning_summary": "The notation 4L-Y10@100/125/100C/C represents stirrup reinforcement with 4 legs of Y10 (10mm diameter) bars at variable spacing. The upstream OCR captured '\\X' which is visually confirmed to be '@' (standard stirrup spacing indicator). The spacing pattern 100/125/100C/C indicates three zones with center-to-center spacing of 100mm, 125mm, and 100mm respectively. This is standard stirrup notation for beam B74. No longitudinal quantity is populated as this is stirrup reinforcement.",
+    "warnings": [
+      "OCR corruption corrected: '\\X' interpreted as '@' based on visual evidence and standard notation"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption corrected: '\\X' interpreted as '@' based on visual evidence and standard notation"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B74::ANN-5a3a4c53",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "100/125/100C/C",
+      "normalized_notation": "4L-Y10@100/125/100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Text clearly shows '4L-Y10@' indicating 4-leg stirrups with Y10 (10mm diameter) bars",
+        "Spacing pattern '100/125/100C/C' is visible, indicating variable spacing: 100mm, 125mm, 100mm center-to-center",
+        "The notation is positioned within a beam section labeled B74(400X1100)",
+        "Visual context shows this is stirrup reinforcement notation for the beam, with longitudinal bars (4-Y20, 2-Y16) shown separately",
+        "The '4L' prefix clearly indicates 4 legs of stirrups",
+        "OCR corruption '\\X' in upstream text is corrected to '@' based on visual evidence and standard notation conventions"
+      ],
+      "reasoning_summary": "The notation 4L-Y10@100/125/100C/C represents stirrup reinforcement with 4 legs of Y10 (10mm diameter) bars at variable spacing. The upstream OCR captured '\\X' which is visually confirmed to be '@' (standard stirrup spacing indicator). The spacing pattern 100/125/100C/C indicates three zones with center-to-center spacing of 100mm, 125mm, and 100mm respectively. This is standard stirrup notation for beam B74. No longitudinal quantity is populated as this is stirrup reinforcement.",
+      "warnings": [
+        "OCR corruption corrected: '\\X' interpreted as '@' based on visual evidence and standard notation"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

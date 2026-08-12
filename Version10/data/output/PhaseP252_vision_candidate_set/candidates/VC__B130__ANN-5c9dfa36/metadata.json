@@ -1,0 +1,57 @@
+{
+  "selection": {
+    "candidate_id": "VC::B130::ANN-5c9dfa36",
+    "outcome": "DEFERRED",
+    "candidate_priority": "P3",
+    "candidate_reason_codes": [
+      "OCR_CORRUPTION",
+      "STIRRUP_PATTERN_UNPARSED",
+      "UNRESOLVED_QUANTITY",
+      "INSUFFICIENT_VISUAL_EVIDENCE"
+    ],
+    "candidate_reason_text": "OCR-corrupted reinforcement notation remains unresolved | deferred: insufficient verified visual evidence | deferred: crop QA hard-fail (extreme/missing/invalid visual)",
+    "vision_status": "PENDING",
+    "candidate_normalization_hint": "possible_spacing_token_corruption",
+    "beam_id": "B130",
+    "annotation_id": "ANN-5c9dfa36",
+    "raw_text": "4L-Y10@\\X100C/C"
+  },
+  "crop_qa": {
+    "overall": "FAIL",
+    "gates": {
+      "TARGET_BEAM_PRESENT": "PASS",
+      "TARGET_ANNOTATION_PRESENT": "PASS",
+      "LEADER_PRESENT_WHEN_EXPECTED": "PASS",
+      "RELEVANT_REINFORCEMENT_PRESENT_WHEN_EXPECTED": "PASS",
+      "NO_REJECTED_PHYSICAL_BAR": "PASS",
+      "NO_EXTREME_EXPANSION": "FAIL",
+      "NO_CLIPPED_SELECTED_EVIDENCE": "PASS",
+      "VALID_IMAGE": "PASS",
+      "READABLE_DIMENSIONS": "PASS"
+    },
+    "hard_fails": [
+      "NO_EXTREME_EXPANSION"
+    ],
+    "soft_fails": [],
+    "flags": [
+      "EXTREME_ASPECT_RATIO",
+      "EXTREME_CROP_HEIGHT"
+    ],
+    "image_width_px": 400,
+    "image_height_px": 1200,
+    "crop_width_mm": 4376.969999998808,
+    "crop_height_mm": 74866.07999999821,
+    "beam_width_mm": 3900.0,
+    "beam_height_mm": 4790.839999999851,
+    "crop_to_beam_ratio": 17.5381,
+    "annotation_bbox_size": [
+      720.0,
+      308.5
+    ],
+    "annotation_visibility_status": "PRESENT",
+    "rejected_bars_in_reinforcement": [],
+    "excluded_rejected_bars_count": 0,
+    "deferred_due_to_crop_qa": true
+  },
+  "has_visual": true
+}

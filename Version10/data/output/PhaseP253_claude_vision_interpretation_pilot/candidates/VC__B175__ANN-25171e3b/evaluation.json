@@ -1,0 +1,64 @@
+{
+  "candidate_id": "VC::B175::ANN-25171e3b",
+  "beam_id": "B175",
+  "raw_text": "4L-Y12@\\X100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 4,
+    "diameter_mm": 12.0,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "quantity": null,
+    "normalized_notation": "4L-Y12@100C/C",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "cleaned_text": "4L-Y12@100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Upstream OCR contained '\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B175::ANN-25171e3b",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '4L-Y12@100C/C' with horizontal bidirectional arrow indicating stirrup spacing",
+        "The '4L' prefix indicates 4 legs of stirrups",
+        "Y12 indicates 12mm diameter reinforcement bars",
+        "100C/C indicates 100mm center-to-center spacing",
+        "Visual context shows this is a beam cross-section with stirrup configuration",
+        "The '@' symbol and bidirectional arrow are standard stirrup spacing notation"
+      ],
+      "reasoning_summary": "The notation '4L-Y12@100C/C' is clearly visible in magenta text with a horizontal bidirectional arrow. This is standard stirrup notation where: 4L = 4 legs, Y12 = 12mm diameter bars, @ = at spacing, 100C/C = 100mm center-to-center spacing. The upstream OCR captured '4L-Y12@\\X100C/C' where '\\X' appears to be OCR corruption of the '@' symbol. The visual evidence clearly supports the corrected interpretation. The drawing shows a beam cross-section context consistent with stirrup reinforcement notation.",
+      "warnings": [
+        "Upstream OCR contained '\\X' which has been interpreted as '@' based on visual evidence and standard notation conventions"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

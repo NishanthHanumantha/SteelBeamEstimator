@@ -1,0 +1,121 @@
+{
+  "candidate_id": "VC::B186::ANN-b70254d7",
+  "beam_id": "B186",
+  "annotation_id": "ANN-b70254d7",
+  "raw_text": "4L-Y12@\\X100C/C",
+  "normalized_text": "4L-Y12@\\X100C/C",
+  "quantity_status": "UNRESOLVED",
+  "quantity_value": null,
+  "diameter_value_mm": null,
+  "semantic_type": "STIRRUP",
+  "reinforcement_role": "STIRRUP",
+  "outcome": "DEFERRED",
+  "candidate_priority": "P3",
+  "candidate_reason_codes": [
+    "OCR_CORRUPTION",
+    "STIRRUP_PATTERN_UNPARSED",
+    "UNRESOLVED_QUANTITY",
+    "INSUFFICIENT_VISUAL_EVIDENCE"
+  ],
+  "candidate_reason_text": "OCR-corrupted reinforcement notation remains unresolved | deferred: insufficient verified visual evidence | deferred: crop QA hard-fail (extreme/missing/invalid visual)",
+  "candidate_normalization_hint": "possible_spacing_token_corruption",
+  "leader_id": "LDR::B0FFB4D0",
+  "ownership_id": null,
+  "source_handle": null,
+  "evidence_id": null,
+  "crop_local_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B186__ANN-b70254d7\\local_crop.png",
+  "crop_beam_context_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\candidates\\VC__B186__ANN-b70254d7\\beam_context_crop.png",
+  "crop_bounds": [
+    31665088.05,
+    -21203002.8,
+    31669545.72,
+    -21166512.65
+  ],
+  "crop_dimensions_mm": {
+    "w_mm": 4457.669999998063,
+    "h_mm": 36490.150000002235
+  },
+  "image_dimensions_px": {
+    "w": 400,
+    "h": 1200
+  },
+  "crop_qa_status": "FAIL",
+  "crop_qa": {
+    "overall": "FAIL",
+    "gates": {
+      "TARGET_BEAM_PRESENT": "PASS",
+      "TARGET_ANNOTATION_PRESENT": "PASS",
+      "LEADER_PRESENT_WHEN_EXPECTED": "PASS",
+      "RELEVANT_REINFORCEMENT_PRESENT_WHEN_EXPECTED": "PASS",
+      "NO_REJECTED_PHYSICAL_BAR": "PASS",
+      "NO_EXTREME_EXPANSION": "FAIL",
+      "NO_CLIPPED_SELECTED_EVIDENCE": "PASS",
+      "VALID_IMAGE": "PASS",
+      "READABLE_DIMENSIONS": "PASS"
+    },
+    "hard_fails": [
+      "NO_EXTREME_EXPANSION"
+    ],
+    "soft_fails": [],
+    "flags": [
+      "EXTREME_ASPECT_RATIO",
+      "EXTREME_CROP_HEIGHT"
+    ],
+    "image_width_px": 400,
+    "image_height_px": 1200,
+    "crop_width_mm": 4457.669999998063,
+    "crop_height_mm": 36490.150000002235,
+    "beam_width_mm": 3900.0,
+    "beam_height_mm": 4450.740000002086,
+    "crop_to_beam_ratio": 9.371,
+    "annotation_bbox_size": [
+      720.0,
+      308.5
+    ],
+    "annotation_visibility_status": "PRESENT",
+    "rejected_bars_in_reinforcement": [],
+    "excluded_rejected_bars_count": 0,
+    "deferred_due_to_crop_qa": true
+  },
+  "excluded_evidence_summary": {
+    "rejected_bars": [],
+    "rejected_leaders": [],
+    "basis": null
+  },
+  "deterministic_intent": {
+    "intent_id": "QI::B186::ANN-b70254d7",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "quantity_status": "UNRESOLVED",
+    "quantity_value": null,
+    "diameter_value_mm": null,
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "leg_count": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "validation_status": "PASS",
+    "evidence_links": {
+      "beam_id": "B186",
+      "annotation_id": "ANN-b70254d7",
+      "leader_id": "LDR::B0FFB4D0",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.65
+  },
+  "vision_candidate_context": {
+    "local_crop": "P2.5.0 engineering_crop (accepted-evidence window)",
+    "beam_context_crop": "Same verified evidence window (LEVEL B == LEVEL A source)",
+    "note": "No new coordinate system; rejected PhysicalBars excluded upstream"
+  },
+  "provenance": {
+    "phase": "P2.5.2",
+    "source_quantity_intent": "QI::B186::ANN-b70254d7",
+    "source_evidence_beam": "B186",
+    "p250_evidence_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP250_beam_evidence_crop_qa\\beams\\B186\\evidence.json"
+  },
+  "future_vision_status": "PENDING"
+}

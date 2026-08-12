@@ -1,0 +1,64 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B143::ANN-f8e9d15b",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "normalized_notation": "3L-Y10@100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Annotation clearly shows '3L-Y10@' followed by spacing notation",
+      "The '3L' prefix indicates 3 legs of stirrups",
+      "Y10 indicates 10mm diameter reinforcement bars",
+      "The '@100C/C' indicates uniform spacing at 100mm centers",
+      "Visual context shows this is a stirrup notation for beam B143(450X600)",
+      "The backslash in raw OCR '3L-Y10@\\X100C/C' appears to be OCR corruption of the @ symbol or spacing notation, corrected to standard format"
+    ],
+    "reasoning_summary": "The notation 3L-Y10@100C/C is a standard stirrup specification. The '3L' clearly indicates 3 legs, 'Y10' specifies 10mm diameter bars, and '@100C/C' indicates uniform spacing at 100mm center-to-center. The OCR corruption '\\X' in the raw text is visually confirmed to represent the spacing notation. This is applied to beam B143 with dimensions 450x600mm. As this is stirrup notation, no longitudinal quantity is populated per the rules.",
+    "warnings": [
+      "OCR corruption '\\X' in raw text normalized to standard spacing notation based on visual evidence"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' in raw text normalized to standard spacing notation based on visual evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B143::ANN-f8e9d15b",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "normalized_notation": "3L-Y10@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Annotation clearly shows '3L-Y10@' followed by spacing notation",
+        "The '3L' prefix indicates 3 legs of stirrups",
+        "Y10 indicates 10mm diameter reinforcement bars",
+        "The '@100C/C' indicates uniform spacing at 100mm centers",
+        "Visual context shows this is a stirrup notation for beam B143(450X600)",
+        "The backslash in raw OCR '3L-Y10@\\X100C/C' appears to be OCR corruption of the @ symbol or spacing notation, corrected to standard format"
+      ],
+      "reasoning_summary": "The notation 3L-Y10@100C/C is a standard stirrup specification. The '3L' clearly indicates 3 legs, 'Y10' specifies 10mm diameter bars, and '@100C/C' indicates uniform spacing at 100mm center-to-center. The OCR corruption '\\X' in the raw text is visually confirmed to represent the spacing notation. This is applied to beam B143 with dimensions 450x600mm. As this is stirrup notation, no longitudinal quantity is populated per the rules.",
+      "warnings": [
+        "OCR corruption '\\X' in raw text normalized to standard spacing notation based on visual evidence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

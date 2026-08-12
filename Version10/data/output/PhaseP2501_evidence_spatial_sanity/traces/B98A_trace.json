@@ -1,0 +1,220 @@
+{
+  "beam_id": "B98A",
+  "target_beam": {
+    "bbox": [
+      31651335.2,
+      -21210918.03,
+      31654920.6,
+      -21207869.09
+    ],
+    "depth_mm": 600.0,
+    "orientation": "HORIZONTAL",
+    "envelope_extent": [
+      31651585.2,
+      -21210668.03,
+      31654670.6,
+      -21208119.09
+    ],
+    "crop_extent_t18": [
+      31651585.2,
+      -21210668.03,
+      31654670.6,
+      -21208119.09
+    ],
+    "coordinate_space": "DXF_MODEL_MM",
+    "units": "mm"
+  },
+  "evidence_window": {
+    "bbox": [
+      31651215.2,
+      -21215119.8650875,
+      31655040.6,
+      -21139018.42
+    ],
+    "base_bbox": [
+      31651335.2,
+      -21210918.03,
+      31654920.6,
+      -21207869.09
+    ],
+    "height_mm": 76101.44508749992,
+    "expansion": {
+      "expansions": 1,
+      "clipped_before_count": 3,
+      "still_clipped_count": 0,
+      "border_touch_count": 0,
+      "expanded": true
+    },
+    "coordinate_space": "DXF_MODEL_MM"
+  },
+  "coordinate_space_consistency": {
+    "spaces": {
+      "beam_bbox": "DXF_MODEL_MM",
+      "t18_crop_extent": "DXF_MODEL_MM",
+      "envelope_extent": "DXF_MODEL_MM",
+      "reinforcement": "DXF_MODEL_MM",
+      "annotations": "DXF_MODEL_MM",
+      "leaders": "DXF_MODEL_MM",
+      "evidence_window": "DXF_MODEL_MM",
+      "renderer": "DXF_MODEL_MM"
+    },
+    "all_same_space": true,
+    "unit_mismatch_detected": false,
+    "transform_error_detected": false,
+    "note": "Beam bbox, R.3.1/AnnotationGraph bar Y, annotations, leaders, evidence window, and M.1 renderer extents all use ezdxf modelspace mm. No unit conversion or block-transform remapping is applied in P2.5.0."
+  },
+  "bar_traces": [
+    {
+      "object_id": "BAR::4D469A4E",
+      "steps": [
+        {
+          "step": "T18.ownership.bar_results",
+          "source_file": "PhaseT18_beam_ownership/BeamOwnership.json",
+          "accepted": false,
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "ownership_score": 0.0,
+          "coordinate_space": "N/A (decision record)"
+        },
+        {
+          "step": "AnnotationGraph.PhysicalBar",
+          "source_file": "PhaseT17_annotation_graph/AnnotationGraph.json",
+          "beam_id": "B98A",
+          "source": "R.3.1",
+          "y_position": -21140158.42,
+          "start_x": 31651944.66,
+          "end_x": 31654244.6,
+          "coordinate_space": "DXF_MODEL_MM",
+          "units": "mm",
+          "transform_applied": "none_observed"
+        },
+        {
+          "step": "R.3.1.PhysicalBars",
+          "source_file": "PhaseR3.1_engineering_relationship_engine/PhysicalBars.json",
+          "beam_id": "B98A",
+          "y_position": -21140158.42,
+          "start_x": 31651944.66,
+          "end_x": 31654244.6,
+          "vertical_placement": "TOP_FACE",
+          "coordinate_space": "DXF_MODEL_MM",
+          "units": "mm",
+          "transform_applied": "none_observed"
+        },
+        {
+          "step": "P2.5.0.evidence_package.reinforcement",
+          "included_in_package": true,
+          "y_position": -21140158.42,
+          "start_x": 31651944.66,
+          "end_x": 31654244.6,
+          "y_gap_to_beam_mm": 67710.66999999806,
+          "relationship_basis": "AnnotationGraph.beam_id / ownership.bar_results",
+          "coordinate_space": "DXF_MODEL_MM"
+        }
+      ],
+      "t18_accepted": false,
+      "spatially_inside_beam_y_band": false,
+      "genuinely_spatially_associated": false
+    },
+    {
+      "object_id": "BAR::E6591903",
+      "steps": [
+        {
+          "step": "T18.ownership.bar_results",
+          "source_file": "PhaseT18_beam_ownership/BeamOwnership.json",
+          "accepted": false,
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "ownership_score": 0.0,
+          "coordinate_space": "N/A (decision record)"
+        },
+        {
+          "step": "AnnotationGraph.PhysicalBar",
+          "source_file": "PhaseT17_annotation_graph/AnnotationGraph.json",
+          "beam_id": "B98A",
+          "source": "R.3.1",
+          "y_position": -21139158.42,
+          "start_x": 31651894.66,
+          "end_x": 31654294.6,
+          "coordinate_space": "DXF_MODEL_MM",
+          "units": "mm",
+          "transform_applied": "none_observed"
+        },
+        {
+          "step": "R.3.1.PhysicalBars",
+          "source_file": "PhaseR3.1_engineering_relationship_engine/PhysicalBars.json",
+          "beam_id": "B98A",
+          "y_position": -21139158.42,
+          "start_x": 31651894.66,
+          "end_x": 31654294.6,
+          "vertical_placement": "TOP_FACE",
+          "coordinate_space": "DXF_MODEL_MM",
+          "units": "mm",
+          "transform_applied": "none_observed"
+        },
+        {
+          "step": "P2.5.0.evidence_package.reinforcement",
+          "included_in_package": true,
+          "y_position": -21139158.42,
+          "start_x": 31651894.66,
+          "end_x": 31654294.6,
+          "y_gap_to_beam_mm": 68710.66999999806,
+          "relationship_basis": "AnnotationGraph.beam_id / ownership.bar_results",
+          "coordinate_space": "DXF_MODEL_MM"
+        }
+      ],
+      "t18_accepted": false,
+      "spatially_inside_beam_y_band": false,
+      "genuinely_spatially_associated": false
+    }
+  ],
+  "leader_traces": [
+    {
+      "object_id": "LDR::1812F192",
+      "t18_accepted": true,
+      "ownership_reason": "tip_inside_concrete_envelope",
+      "rejected_rule": null,
+      "included_in_package": true,
+      "geometry": {
+        "tip_x": 31653309.90820159,
+        "tip_y": -21208319.09241375,
+        "tail_x": 31653413.33937468,
+        "tail_y": -21208721.80721938
+      },
+      "coordinate_space": "DXF_MODEL_MM"
+    },
+    {
+      "object_id": "LDR::53A6EF71",
+      "t18_accepted": false,
+      "ownership_reason": "tip_outside_envelope_and_supports",
+      "rejected_rule": "R2_LEADER_TIP",
+      "included_in_package": true,
+      "geometry": {
+        "tip_x": 31653357.60990555,
+        "tip_y": -21214969.8650875,
+        "tail_x": 31653671.6716307,
+        "tail_y": -21214969.8650875
+      },
+      "coordinate_space": "DXF_MODEL_MM"
+    }
+  ],
+  "annotations_summary": [
+    {
+      "annotation_id": "ANN-2a9913fa",
+      "text": "4-Y25",
+      "position": {
+        "x": 31653409.98419774,
+        "y": -21208789.1063728
+      },
+      "source": "T18.accepted_annotations"
+    },
+    {
+      "annotation_id": "ANN-de653a14",
+      "text": "4L-Y10@100C/C",
+      "position": {
+        "x": 31653771.91237366,
+        "y": -21209203.7333025
+      },
+      "source": "T18.accepted_annotations"
+    }
+  ]
+}

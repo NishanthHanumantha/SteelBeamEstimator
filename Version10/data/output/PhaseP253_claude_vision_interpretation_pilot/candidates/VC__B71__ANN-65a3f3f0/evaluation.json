@@ -1,0 +1,65 @@
+{
+  "candidate_id": "VC::B71::ANN-65a3f3f0",
+  "beam_id": "B71",
+  "raw_text": "4L-Y12@\\X100C/C",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "details": {
+      "legs_ok": true,
+      "diameter_ok": true,
+      "spacing_ok": true
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "reinforcement_type": "STIRRUP",
+    "legs": 4,
+    "diameter_mm": 12.0,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "quantity": null,
+    "normalized_notation": "4L-Y12@100C/C",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "cleaned_text": "4L-Y12@100C/C",
+    "ocr_case": true
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption corrected: '\\X' normalized to '@' based on visual evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B71::ANN-65a3f3f0",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly reads '4L-Y12@100C/C' with horizontal bidirectional arrow indicating stirrup placement",
+        "The '4L' prefix indicates 4 legs of stirrups",
+        "Y12 indicates 12mm diameter reinforcement bars",
+        "@100C/C indicates spacing of 100mm center-to-center",
+        "Visual context shows this is a beam cross-section (B71) with stirrup configuration",
+        "The notation appears with a horizontal dimension arrow, typical for stirrup spacing notation",
+        "OCR corruption '\\X' in raw text is visually confirmed to be '@' in the image"
+      ],
+      "reasoning_summary": "The annotation clearly shows stirrup notation for beam B71. The '4L-Y12@100C/C' indicates 4-legged stirrups made of Y12 (12mm diameter) bars at 100mm center-to-center spacing. The OCR corruption '\\X' is visually confirmed to be '@' symbol. This is standard stirrup notation, not longitudinal reinforcement, so quantity field remains null as per instructions. All components are clearly visible and supported by the image evidence.",
+      "warnings": [
+        "OCR corruption corrected: '\\X' normalized to '@' based on visual evidence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

@@ -1,0 +1,524 @@
+{
+  "model_version": "10.6.1",
+  "phase_id": "P2.5.0",
+  "beam_id": "B98A",
+  "target_beam": {
+    "beam_id": "B98A",
+    "bbox": [
+      31651335.2,
+      -21210918.03,
+      31654920.6,
+      -21207869.09
+    ],
+    "envelope_extent": [
+      31651585.2,
+      -21210668.03,
+      31654670.6,
+      -21208119.09
+    ],
+    "crop_extent_t18": [
+      31651585.2,
+      -21210668.03,
+      31654670.6,
+      -21208119.09
+    ],
+    "orientation": "HORIZONTAL",
+    "depth_mm": 600.0,
+    "in_ownership": true,
+    "in_envelope": true
+  },
+  "evidence_window": {
+    "bbox": [
+      31651335.2,
+      -21210918.03,
+      31654920.6,
+      -21207869.09
+    ],
+    "base_bbox": [
+      31651335.2,
+      -21210918.03,
+      31654920.6,
+      -21207869.09
+    ],
+    "expansion": {
+      "expansions": 0,
+      "clipped_before_count": 0,
+      "still_clipped_count": 0,
+      "border_touch_count": 0,
+      "expanded": false
+    },
+    "coordinate_space": "DXF_MODEL_MM"
+  },
+  "annotations": [
+    {
+      "annotation_id": "ANN-2a9913fa",
+      "raw_text": "4-Y25",
+      "normalized_text": "4-Y25",
+      "position": {
+        "x": 31653409.98419774,
+        "y": -21208789.1063728
+      },
+      "bbox": [
+        31653289.98419774,
+        -21208827.6063728,
+        31653529.98419774,
+        -21208519.1063728
+      ],
+      "source": "T18.accepted_annotations"
+    },
+    {
+      "annotation_id": "ANN-de653a14",
+      "raw_text": "4L-Y10@100C/C",
+      "normalized_text": "4L-Y10@100C/C",
+      "position": {
+        "x": 31653771.91237366,
+        "y": -21209203.7333025
+      },
+      "bbox": [
+        31653459.91237366,
+        -21209242.2333025,
+        31654083.91237366,
+        -21208933.7333025
+      ],
+      "source": "T18.accepted_annotations"
+    }
+  ],
+  "leaders": [
+    {
+      "leader_id": "LDR::1812F192",
+      "geometry": {
+        "tip_x": 31653309.90820159,
+        "tip_y": -21208319.09241375,
+        "tail_x": 31653413.33937468,
+        "tail_y": -21208721.80721938
+      },
+      "bbox": [
+        31653279.90820159,
+        -21208751.80721938,
+        31653443.33937468,
+        -21208289.09241375
+      ],
+      "source": "AnnotationGraph+T18"
+    }
+  ],
+  "reinforcement": [],
+  "relationships": [
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B98A",
+      "annotation_id": "ANN-2a9913fa",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "beam_owns_annotation",
+      "beam_id": "B98A",
+      "annotation_id": "ANN-de653a14",
+      "basis": "T18.accepted_annotations"
+    },
+    {
+      "type": "leader_to_annotation",
+      "leader_id": "LDR::1812F192",
+      "annotation_id": "ANN-2a9913fa",
+      "basis": "T18.accepted_chains"
+    }
+  ],
+  "leader_chains": {
+    "accepted": [
+      {
+        "annotation_id": "ANN-2a9913fa",
+        "text": "4-Y25",
+        "leaders": [
+          "LDR::1812F192"
+        ],
+        "describes": [
+          "LDR::1812F192",
+          "OWN::B98A::1247FFE"
+        ],
+        "semantic_id": "SEM::ANN-2a9913fa",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      },
+      {
+        "annotation_id": "ANN-de653a14",
+        "text": "4L-Y10@100C/C",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-de653a14",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      }
+    ],
+    "rejected": [
+      {
+        "annotation_id": "ANN-1ff7cbfd",
+        "text": "32",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-1ff7cbfd",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-41f99399",
+        "text": "25",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-41f99399",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-05abde35",
+        "text": "16",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-05abde35",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-b32014bd",
+        "text": "20",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-b32014bd",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-9f6faa22",
+        "text": "12",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-9f6faa22",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-fb4040c6",
+        "text": "mm",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-fb4040c6",
+        "semantic_type": "Unknown",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-fb2c0551",
+        "text": "DIA. IN",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-fb2c0551",
+        "semantic_type": "Unknown",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-aefc7e34",
+        "text": "8",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": null,
+        "semantic_type": null,
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-4e59a2d0",
+        "text": "DEVELOPMENT LENGTHS",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-4e59a2d0",
+        "semantic_type": "DevelopmentLength",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R7_LD_SUPPORT_ONLY",
+        "ownership_reason": "ld_on_neighbour_side",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-ecc8090c",
+        "text": "10",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-ecc8090c",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-a1df2514",
+        "text": "M30 GRADE",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-a1df2514",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-01ea10a0",
+        "text": "450",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-01ea10a0",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-d490a430",
+        "text": "1450",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-d490a430",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-53a843de",
+        "text": "1150",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-53a843de",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-f953f68b",
+        "text": "725",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-f953f68b",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-8b7a92ef",
+        "text": "900",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-8b7a92ef",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-3ddfa062",
+        "text": "540",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-3ddfa062",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-91079b03",
+        "text": "375",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-91079b03",
+        "semantic_type": "BarCallout",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-e4ed5fb6",
+        "text": "L",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-e4ed5fb6",
+        "semantic_type": "Unknown",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      },
+      {
+        "annotation_id": "ANN-afb8148d",
+        "text": "ON EACH FACE",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-afb8148d",
+        "semantic_type": "Unknown",
+        "accepted": false,
+        "accepted_rules": [],
+        "rejected_rule": "R5_NEIGHBOUR_REJECT",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark",
+        "ownership_score": 0.0,
+        "neighbour_beam_source": "BELOW_MARK_NEIGHBOUR"
+      }
+    ],
+    "complete_count": 0,
+    "incomplete_count": 2,
+    "complete": [],
+    "incomplete": [
+      {
+        "annotation_id": "ANN-2a9913fa",
+        "text": "4-Y25",
+        "leaders": [
+          "LDR::1812F192"
+        ],
+        "describes": [
+          "LDR::1812F192",
+          "OWN::B98A::1247FFE"
+        ],
+        "semantic_id": "SEM::ANN-2a9913fa",
+        "semantic_type": "BarCallout",
+        "accepted": true,
+        "accepted_rules": [
+          "R3_ANNOTATION_VIA_CHAIN",
+          "R5_NEIGHBOUR_REJECT"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "leader_bar_chain_owned",
+        "ownership_score": 0.65
+      },
+      {
+        "annotation_id": "ANN-de653a14",
+        "text": "4L-Y10@100C/C",
+        "leaders": [],
+        "describes": [],
+        "semantic_id": "SEM::ANN-de653a14",
+        "semantic_type": "StirrupNote",
+        "accepted": true,
+        "accepted_rules": [
+          "R9_STIRRUP_REGION"
+        ],
+        "rejected_rule": null,
+        "ownership_reason": "stirrup_in_stirrup_region",
+        "ownership_score": 0.6
+      }
+    ]
+  },
+  "neighbours": [],
+  "shared_scopes": [
+    {
+      "scope_id": "SCOPE::SFR::ANN-2a029aa5",
+      "scope_type": "SIDE_FACE_REINFORCEMENT",
+      "member_beams": [
+        "B96A",
+        "B97A",
+        "B98A",
+        "B99A",
+        "B100A",
+        "B101A"
+      ],
+      "annotation_text": "SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM",
+      "shared": true
+    }
+  ],
+  "counts": {
+    "annotations": 2,
+    "leaders": 1,
+    "reinforcement": 0,
+    "relationships": 3,
+    "complete_chains": 0,
+    "rejected_bars_excluded": 2,
+    "rejected_leaders_excluded": 1
+  },
+  "excluded_rejected_evidence": {
+    "bars": [
+      "BAR::4D469A4E",
+      "BAR::E6591903"
+    ],
+    "leaders": [
+      "LDR::53A6EF71"
+    ],
+    "basis": "T18 bar_results/leader_results with accepted=false are diagnostic candidates only and must not expand the P2.5.0 evidence window (P2.5.0.1 fix)."
+  }
+}

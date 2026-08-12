@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B178::ANN-41e4a18e\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Magenta text clearly shows '2L-Y8@' followed by '100C/C'\",\n    \"The '\\\\X' in OCR text appears to be corruption; visual evidence shows direct transition from '@' to '100'\",\n    \"Notation positioned with horizontal dimension arrows indicating stirrup spacing\",\n    \"Text appears twice in the drawing at different beam locations, confirming consistent stirrup specification\",\n    \"Format matches standard stirrup notation: legs-bar_designation@spacing_pattern\"\n  ],\n  \"reasoning_summary\": \"The annotation '2L-Y8@100C/C' is clearly visible in magenta text in both images. The OCR captured '\\\\X' between '@' and '100', but visual inspection shows this is OCR corruption - the text flows directly from '@' to '100C/C'. This is standard stirrup notation indicating 2-legged stirrups using Y8 bars (8mm diameter) at 100mm center-to-center spacing. The horizontal dimension arrows and repeated appearance at multiple beam locations confirm this is a stirrup specification rather than longitudinal reinforcement.\",\n  \"warnings\": [\n    \"OCR corruption '\\\\X' corrected based on visual evidence showing direct '@100C/C' sequence\"\n  ]\n}\n```",
+  "latency_s": 10.724039199994877,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2509,
+    "output_tokens": 426
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 362,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B178::ANN-41e4a18e",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "23d8273bf22e7816fcbebb59a2271284047d63b576bbc3121ca1c8617621883d",
+  "timestamp_utc": "2026-08-12T12:33:29.806449+00:00"
+}

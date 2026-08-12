@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B71::ANN-e8fa1fe7\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"reinforcement_type\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 3,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"normalized_notation\": \"3L-Y10@100C/C\",\n  \"confidence\": 0.95,\n  \"visual_evidence\": [\n    \"Text clearly shows '3L-Y10@' indicating 3 legs of Y10 (10mm diameter) bars\",\n    \"Text shows '100C/C' indicating 100mm center-to-center spacing\",\n    \"The backslash character '\\\\X' in OCR text '3L-Y10@\\\\X100C/C' is OCR corruption of '@' symbol\",\n    \"Visual context shows this annotation pointing to a beam element with stirrup configuration\",\n    \"The notation follows standard stirrup format: [legs]L-[bar type][diameter]@[spacing]C/C\"\n  ],\n  \"reasoning_summary\": \"The notation '3L-Y10@\\\\X100C/C' represents stirrup reinforcement. The '3L' indicates 3 legs, 'Y10' indicates 10mm diameter bars, and '100C/C' indicates 100mm center-to-center uniform spacing. The '\\\\X' is OCR corruption that should be '@' based on standard notation format and visual evidence. This is clearly a stirrup notation, not longitudinal reinforcement, so quantity field remains null as per instructions.\",\n  \"warnings\": [\n    \"OCR corruption: '\\\\X' normalized to '@' based on visual evidence and standard notation format\"\n  ]\n}\n```",
+  "latency_s": 10.518583400000352,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3852,
+    "output_tokens": 435
+  },
+  "estimated_input_tokens": 622,
+  "estimated_output_tokens": 334,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B71::ANN-e8fa1fe7",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "b858d270d7bb23aad0665d93b7d5c91e25162b013d27f1bc3db0df6cf26bc505",
+  "timestamp_utc": "2026-08-12T12:34:29.181659+00:00"
+}

@@ -1,0 +1,90 @@
+{
+  "B97A": {
+    "label": "EVIDENCE_EXPANSION_ERROR",
+    "confidence": "HIGH",
+    "basis": {
+      "summary": "T18 already rejected far-elevation bars (bar_y_outside_reinforcement_elevation / R5_NEIGHBOUR_REJECT). P2.5.0 included those rejected bar_results keys in the evidence package and expanded the crop to contain them.",
+      "rejected_bars_included": [
+        {
+          "bar_id": "BAR::2B7B3233",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "y_gap": 24490.619999997318
+        },
+        {
+          "bar_id": "BAR::5B1BFCC2",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "y_gap": 43967.30999999866
+        }
+      ],
+      "dominant_expander": {
+        "id": "BAR::5B1BFCC2",
+        "kind": "reinforcement",
+        "bbox": [
+          31649517.82,
+          -21163991.5,
+          31651502.11,
+          -21163951.5
+        ],
+        "geometry": {
+          "start_x": 31649537.82,
+          "end_x": 31651482.11,
+          "y_position": -21163971.5,
+          "vertical_placement": "TOP_FACE"
+        },
+        "y_gap_mm": 43947.30999999866,
+        "x_gap_mm": 0.0
+      },
+      "final_height_mm": 47206.53000000119,
+      "ownership_engine_verdict": "REJECTED (correct)",
+      "p250_behavior": "INCLUDED_REJECTED (bug)",
+      "upstream_of_p250": false,
+      "inside_p250": true
+    }
+  },
+  "B98A": {
+    "label": "EVIDENCE_EXPANSION_ERROR",
+    "confidence": "HIGH",
+    "basis": {
+      "summary": "T18 already rejected far-elevation bars (bar_y_outside_reinforcement_elevation / R5_NEIGHBOUR_REJECT). P2.5.0 included those rejected bar_results keys in the evidence package and expanded the crop to contain them.",
+      "rejected_bars_included": [
+        {
+          "bar_id": "BAR::4D469A4E",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "y_gap": 67710.66999999806
+        },
+        {
+          "bar_id": "BAR::E6591903",
+          "ownership_reason": "bar_y_outside_reinforcement_elevation",
+          "rejected_rule": "R5_NEIGHBOUR_REJECT",
+          "y_gap": 68710.66999999806
+        }
+      ],
+      "dominant_expander": {
+        "id": "BAR::E6591903",
+        "kind": "reinforcement",
+        "bbox": [
+          31651874.66,
+          -21139178.42,
+          31654314.6,
+          -21139138.42
+        ],
+        "geometry": {
+          "start_x": 31651894.66,
+          "end_x": 31654294.6,
+          "y_position": -21139158.42,
+          "vertical_placement": "TOP_FACE"
+        },
+        "y_gap_mm": 68690.66999999806,
+        "x_gap_mm": 0.0
+      },
+      "final_height_mm": 76101.44508749992,
+      "ownership_engine_verdict": "REJECTED (correct)",
+      "p250_behavior": "INCLUDED_REJECTED (bug)",
+      "upstream_of_p250": false,
+      "inside_p250": true
+    }
+  }
+}

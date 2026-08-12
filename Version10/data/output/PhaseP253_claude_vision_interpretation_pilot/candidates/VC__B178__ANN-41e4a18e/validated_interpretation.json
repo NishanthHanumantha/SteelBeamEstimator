@@ -1,0 +1,62 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B178::ANN-41e4a18e",
+    "interpretation_status": "RESOLVED",
+    "reinforcement_type": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.95,
+    "visual_evidence": [
+      "Magenta text clearly shows '2L-Y8@' followed by '100C/C'",
+      "The '\\X' in OCR text appears to be corruption; visual evidence shows direct transition from '@' to '100'",
+      "Notation positioned with horizontal dimension arrows indicating stirrup spacing",
+      "Text appears twice in the drawing at different beam locations, confirming consistent stirrup specification",
+      "Format matches standard stirrup notation: legs-bar_designation@spacing_pattern"
+    ],
+    "reasoning_summary": "The annotation '2L-Y8@100C/C' is clearly visible in magenta text in both images. The OCR captured '\\X' between '@' and '100', but visual inspection shows this is OCR corruption - the text flows directly from '@' to '100C/C'. This is standard stirrup notation indicating 2-legged stirrups using Y8 bars (8mm diameter) at 100mm center-to-center spacing. The horizontal dimension arrows and repeated appearance at multiple beam locations confirm this is a stirrup specification rather than longitudinal reinforcement.",
+    "warnings": [
+      "OCR corruption '\\X' corrected based on visual evidence showing direct '@100C/C' sequence"
+    ],
+    "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' corrected based on visual evidence showing direct '@100C/C' sequence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B178::ANN-41e4a18e",
+      "interpretation_status": "RESOLVED",
+      "reinforcement_type": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.95,
+      "visual_evidence": [
+        "Magenta text clearly shows '2L-Y8@' followed by '100C/C'",
+        "The '\\X' in OCR text appears to be corruption; visual evidence shows direct transition from '@' to '100'",
+        "Notation positioned with horizontal dimension arrows indicating stirrup spacing",
+        "Text appears twice in the drawing at different beam locations, confirming consistent stirrup specification",
+        "Format matches standard stirrup notation: legs-bar_designation@spacing_pattern"
+      ],
+      "reasoning_summary": "The annotation '2L-Y8@100C/C' is clearly visible in magenta text in both images. The OCR captured '\\X' between '@' and '100', but visual inspection shows this is OCR corruption - the text flows directly from '@' to '100C/C'. This is standard stirrup notation indicating 2-legged stirrups using Y8 bars (8mm diameter) at 100mm center-to-center spacing. The horizontal dimension arrows and repeated appearance at multiple beam locations confirm this is a stirrup specification rather than longitudinal reinforcement.",
+      "warnings": [
+        "OCR corruption '\\X' corrected based on visual evidence showing direct '@100C/C' sequence"
+      ],
+      "schema_version": "P253_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

@@ -1,0 +1,44 @@
+{
+  "second_pass_mode": "PIPELINE_FINGERPRINT_ONLY_NO_RECALL",
+  "pipeline_fingerprint_run1": "4cad13b0cbbe87520881b83b20bd54e359402862ca52f998da8298051022b432",
+  "pipeline_fingerprint_run2": "4cad13b0cbbe87520881b83b20bd54e359402862ca52f998da8298051022b432",
+  "pipeline_match": true,
+  "unit_tests": {
+    "success": true,
+    "passed": 7,
+    "total": 7,
+    "results": [
+      {
+        "name": "ocr_ground_truth_oracle",
+        "pass": true
+      },
+      {
+        "name": "variable_spacing_oracle",
+        "pass": true
+      },
+      {
+        "name": "validator_rejects_stirrup_quantity",
+        "pass": true
+      },
+      {
+        "name": "validator_accepts_stirrup",
+        "pass": true
+      },
+      {
+        "name": "exact_evaluation",
+        "pass": true
+      },
+      {
+        "name": "hallucination_wrong_values",
+        "pass": true
+      },
+      {
+        "name": "json_extract",
+        "pass": true
+      }
+    ],
+    "model_version": "10.7.0"
+  },
+  "estimated_api_cost_usd_sonnet45_approx": 0.2469,
+  "pricing_note": "Approx Claude Sonnet 4.5 list rates \\/MTok in + \\/MTok out; actual billing may differ"
+}
