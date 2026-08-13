@@ -1,0 +1,47 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B119::ANN-1ae5aa17",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "quantity": 3,
+      "diameter_mm": 16,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3-Y16",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text '3-Y16' clearly visible in magenta annotation",
+        "Annotation positioned at top of beam cross-section",
+        "Leader line points to top reinforcement layer of beam",
+        "Visual position consistent with top longitudinal bars",
+        "Beam depth 600mm, annotation at upper fiber region",
+        "Horizontal beam orientation with annotation at top face",
+        "No stirrup notation characteristics (no spacing, no legs notation)",
+        "Quantity 3 and diameter Y16 explicitly stated in notation",
+        "Annotation appears in span region of beam (not at support)",
+        "Consistent with standard top bar notation format"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 1879,
+    "output_tokens": 323
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "ce5735b6f8703fdb66038ad5f60c9183f1de69e770557bc2cedf00d617a8b14f",
+  "prompt_fingerprint": "ae6bbc1e33485ab0b6f9ab00b801643bc44763b35f4e44f7801c4225ea85186a",
+  "live_call": false
+}

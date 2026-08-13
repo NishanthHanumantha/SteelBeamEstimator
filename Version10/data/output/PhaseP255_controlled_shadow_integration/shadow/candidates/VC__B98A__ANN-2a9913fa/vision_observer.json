@@ -1,0 +1,46 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B98A::ANN-2a9913fa",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "quantity": 4,
+      "diameter_mm": 25,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4-Y25",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text clearly reads '4-Y25' indicating 4 bars of Y25 (25mm diameter)",
+        "Leader line originates from the annotation and points upward to the top face of the beam cross-section",
+        "Leader terminates at the top fiber of the beam, indicating top reinforcement placement",
+        "Beam cross-section shows rectangular section with the annotation positioned above and pointing to top face",
+        "Beam B98A(400X1100) label confirms target beam identity",
+        "Sibling annotation '4L-Y10@100C/C' represents stirrups, consistent with this being longitudinal reinforcement",
+        "Position in span region (not at support) based on beam geometry and annotation placement",
+        "Deterministic metadata confirms TOP_BAR role and LONGITUDINAL_BAR type",
+        "No conflicting visual evidence; annotation clearly associated with target beam B98A"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 2818,
+    "output_tokens": 383
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "9bf215571dcbe20649abe1b8c6d6ceb73330e49919fc267a3f887bbddc0a119d",
+  "prompt_fingerprint": "7cda32f72b3937bcf8a03be06dfea85c562b32d970d7a8b782aa018aab8a4168",
+  "live_call": false
+}

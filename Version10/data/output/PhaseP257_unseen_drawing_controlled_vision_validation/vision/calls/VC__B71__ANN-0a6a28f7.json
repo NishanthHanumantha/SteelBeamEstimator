@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B71::ANN-0a6a28f7",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 1889,
+    "output_tokens": 407
+  },
+  "prompt_fingerprint": "6abfd6703a8c16af0e674726a691aa005542888367119f6a9eeb94b60afe6e05",
+  "evidence_fingerprint": "388c7dd9b421f73c30979eb3d3b0ee55bea88d5291fcaef42cda1b97666b83bd",
+  "validated_interpretation": {
+    "candidate_id": "VC::B71::ANN-0a6a28f7",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SUPPORT",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y12@\\X100C/C' clearly indicates 4-legged stirrups with Y12 bars at 100mm centers",
+      "Visual position shows annotation located at left support region of beam B71",
+      "Leader line points to stirrup reinforcement detail at beam-column junction",
+      "Stirrup pattern visible in elevation view matches 4-leg configuration",
+      "Annotation positioned near support where closer stirrup spacing is typical",
+      "OCR artifact '\\X' normalized to standard spacing notation",
+      "Sibling annotations '4-Y32' and '4-Y25' represent longitudinal bars, consistent with this being stirrup notation",
+      "Beam depth 600mm supports Y12 stirrup diameter as reasonable"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard notation",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no visual evidence of variable spacing in this zone"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard notation",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no visual evidence of variable spacing in this zone"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B71::ANN-0a6a28f7",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SUPPORT",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y12@\\X100C/C' clearly indicates 4-legged stirrups with Y12 bars at 100mm centers",
+        "Visual position shows annotation located at left support region of beam B71",
+        "Leader line points to stirrup reinforcement detail at beam-column junction",
+        "Stirrup pattern visible in elevation view matches 4-leg configuration",
+        "Annotation positioned near support where closer stirrup spacing is typical",
+        "OCR artifact '\\X' normalized to standard spacing notation",
+        "Sibling annotations '4-Y32' and '4-Y25' represent longitudinal bars, consistent with this being stirrup notation",
+        "Beam depth 600mm supports Y12 stirrup diameter as reasonable"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to standard notation",
+        "Spacing pattern assumed UNIFORM based on single spacing value; no visual evidence of variable spacing in this zone"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

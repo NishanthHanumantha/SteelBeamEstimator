@@ -1,0 +1,811 @@
+{
+  "phase_id": "P2.5.7",
+  "model_version": "10.8.3",
+  "scope": "FIFTH_SET_UNSEEN_ONLY",
+  "mode": "SELECTIVE_LIVE_SHADOW",
+  "pass_fail": "PASS",
+  "decision": "READY_FOR_NEXT_CONTROLLED_EXPERIMENT",
+  "vision_source": "LIVE_P254_PROMPT",
+  "claude_model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_count": 401,
+  "eligible_count": 41,
+  "skipped_count": 360,
+  "dataset": {
+    "drawing_set_id": "Fifth Set Drawings",
+    "set_key": "Fifth",
+    "source_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings",
+    "dxf_files": [
+      "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\framing\\9TH Floor_INIZIO_FRAMINIG_PLAN.dxf",
+      "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\general_notes\\SE-100_GENRAL NOTE_(SH-01 &SH-02)_R0 1.dxf",
+      "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\reinforcement\\SE-222_PODIUM FLOOR  REINFORCEMENT BEAM DETAILS (9TH FLOOR)_R0_(SH-01 TO 04).dxf"
+    ],
+    "dxf_count": 3,
+    "reference_estimator_excel": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+    "estimator_excel_exists": true,
+    "beam_ownership": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\EngineeringSummaries\\BeamOwnership.json",
+    "crop_dir": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders",
+    "crop_count": 143,
+    "number_of_beams": 143,
+    "number_of_reinforcement_candidates": 401,
+    "qa30_run_id": "qa2_Fifth_Set_Drawings_20260806_142822",
+    "creation_selection_reason": [
+      "P2.5.4/P2.5.5/P2.5.6 Claude Vision used Fourth Set only.",
+      "Fifth Set has independent DXF, estimator Excel, production artefacts, and beam crops.",
+      "Fifth Set was never in the frozen P2.5.4 41-candidate Vision benchmark.",
+      "No Claude prompt tuning was performed on Fifth Set."
+    ],
+    "previous_benchmark_membership": {
+      "P254_P255_P256": "Fourth Set only",
+      "QA30_generalization": "Fifth is an unseen production set (not used for Claude Vision)"
+    },
+    "unseen_status": true,
+    "UNSEEN_SET_VERIFIED": true,
+    "missing": [],
+    "blocked_if_not_unseen": true
+  },
+  "metrics": {
+    "total_candidate_fields": 2807,
+    "fields_with_reliable_GT": 1856,
+    "fields_without_reliable_GT": 951,
+    "GT_coverage": 0.661204,
+    "TRUE_VISION_INCREMENTAL_VALUE_RATE": 1.0,
+    "true_incremental_field_count": 101,
+    "deterministic_gap_invoked_count": 101,
+    "VISION_CORRECTION_RATE": 0.026786,
+    "VISION_CONFIRMATION_RATE": 0.549107,
+    "VISION_CONFLICT_RATE": 0.0,
+    "VISION_WRONG_ON_CORRECT_DETERMINISTIC_RATE": 0.0,
+    "dangerous_vision_override_count": 0,
+    "dangerous_vision_override_rate": 0.0,
+    "vision_field_candidate_count": 224,
+    "DETERMINISTIC_BASELINE_ACCURACY": 0.945582,
+    "DETERMINISTIC_ONLY_ACCURACY": 0.945582,
+    "VISION_FIELD_ACCURACY": 1.0,
+    "HYPOTHETICAL_COMBINED_ACCURACY": 0.996767,
+    "COMBINED_SHADOW_FIELD_ACCURACY": 0.996767,
+    "IMPROVEMENT_DELTA": 0.051185,
+    "by_field": {
+      "semantic_type": {
+        "scored": 401,
+        "vision_scored": 41,
+        "deterministic_exact": 395,
+        "vision_exact": 41,
+        "hypothetical_exact": 401,
+        "incremental_corrections": 6,
+        "dangerous_conflicts": 0,
+        "det_gap": 6,
+        "true_incremental": 6,
+        "deterministic_accuracy": 0.985037,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 1.0
+      },
+      "reinforcement_role": {
+        "scored": 133,
+        "vision_scored": 37,
+        "deterministic_exact": 131,
+        "vision_exact": 37,
+        "hypothetical_exact": 133,
+        "incremental_corrections": 2,
+        "dangerous_conflicts": 0,
+        "det_gap": 2,
+        "true_incremental": 2,
+        "deterministic_accuracy": 0.984962,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 1.0
+      },
+      "diameter": {
+        "scored": 395,
+        "vision_scored": 35,
+        "deterministic_exact": 366,
+        "vision_exact": 35,
+        "hypothetical_exact": 395,
+        "incremental_corrections": 29,
+        "dangerous_conflicts": 0,
+        "det_gap": 29,
+        "true_incremental": 29,
+        "deterministic_accuracy": 0.926582,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 1.0
+      },
+      "quantity": {
+        "scored": 264,
+        "vision_scored": 0,
+        "deterministic_exact": 264,
+        "vision_exact": 0,
+        "hypothetical_exact": 264,
+        "incremental_corrections": 0,
+        "dangerous_conflicts": 0,
+        "det_gap": 0,
+        "true_incremental": 0,
+        "deterministic_accuracy": 1.0,
+        "vision_accuracy": null,
+        "combined_hypothetical_accuracy": 1.0
+      },
+      "legs": {
+        "scored": 131,
+        "vision_scored": 35,
+        "deterministic_exact": 102,
+        "vision_exact": 35,
+        "hypothetical_exact": 131,
+        "incremental_corrections": 29,
+        "dangerous_conflicts": 0,
+        "det_gap": 29,
+        "true_incremental": 29,
+        "deterministic_accuracy": 0.778626,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 1.0
+      },
+      "spacing": {
+        "scored": 131,
+        "vision_scored": 35,
+        "deterministic_exact": 96,
+        "vision_exact": 35,
+        "hypothetical_exact": 125,
+        "incremental_corrections": 35,
+        "dangerous_conflicts": 0,
+        "det_gap": 35,
+        "true_incremental": 35,
+        "deterministic_accuracy": 0.732824,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 0.954198
+      },
+      "beam_association": {
+        "scored": 401,
+        "vision_scored": 41,
+        "deterministic_exact": 401,
+        "vision_exact": 41,
+        "hypothetical_exact": 401,
+        "incremental_corrections": 0,
+        "dangerous_conflicts": 0,
+        "det_gap": 0,
+        "true_incremental": 0,
+        "deterministic_accuracy": 1.0,
+        "vision_accuracy": 1.0,
+        "combined_hypothetical_accuracy": 1.0
+      }
+    },
+    "stirrup": {
+      "label": "stirrup",
+      "candidates": 131,
+      "scored_fields": 786,
+      "deterministic_accuracy": 0.881679,
+      "vision_accuracy": 1.0,
+      "TRUE_VISION_INCREMENTAL_VALUE_RATE": 1.0,
+      "vision_only_correct_recovery": 93,
+      "vision_wrong_recovery": 0
+    },
+    "role": {
+      "TOP_BAR": {
+        "ground_truth_count": 0,
+        "deterministic_known": 0,
+        "vision_known": 0,
+        "vision_correct_recovery": 0,
+        "vision_wrong_recovery": 0,
+        "deterministic_correct_vision_wrong": 0,
+        "deterministic_unknown_vision_correct": 0
+      },
+      "BOTTOM_BAR": {
+        "ground_truth_count": 0,
+        "deterministic_known": 0,
+        "vision_known": 0,
+        "vision_correct_recovery": 0,
+        "vision_wrong_recovery": 0,
+        "deterministic_correct_vision_wrong": 0,
+        "deterministic_unknown_vision_correct": 0
+      },
+      "SIDE_FACE": {
+        "ground_truth_count": 2,
+        "deterministic_known": 0,
+        "vision_known": 2,
+        "vision_correct_recovery": 2,
+        "vision_wrong_recovery": 0,
+        "deterministic_correct_vision_wrong": 0,
+        "deterministic_unknown_vision_correct": 2
+      },
+      "STIRRUP": {
+        "ground_truth_count": 131,
+        "deterministic_known": 131,
+        "vision_known": 35,
+        "vision_correct_recovery": 35,
+        "vision_wrong_recovery": 0,
+        "deterministic_correct_vision_wrong": 0,
+        "deterministic_unknown_vision_correct": 0
+      }
+    },
+    "ocr": {
+      "label": "ocr",
+      "candidates": 29,
+      "scored_fields": 174,
+      "deterministic_accuracy": 0.5,
+      "vision_accuracy": 1.0,
+      "TRUE_VISION_INCREMENTAL_VALUE_RATE": 1.0,
+      "vision_only_correct_recovery": 87,
+      "vision_wrong_recovery": 0
+    },
+    "accepted_shadow_field_count": 95,
+    "rejected_shadow_field_count": 6,
+    "conflict_field_count": 6,
+    "production_mutation_count": 0,
+    "steel_quantity_difference": 0,
+    "bbs_difference": 0,
+    "excel_difference": 0,
+    "counts": {
+      "VISION_ADDS_CORRECT_FIELD": 101,
+      "VISION_CONFIRMS_DETERMINISTIC": 123,
+      "VISION_CONFLICTS_WITH_CORRECT_DETERMINISTIC": 0,
+      "VISION_CORRECTS_WRONG_DETERMINISTIC": 6,
+      "VISION_WRONG_ON_CORRECT_DETERMINISTIC": 0
+    }
+  },
+  "cost": {
+    "live_claude_calls": 41,
+    "failed_calls": 0,
+    "input_tokens": 100642,
+    "output_tokens": 16733,
+    "total_tokens": 117375,
+    "estimated_cost_usd": 0.552921,
+    "cost_note": "Approx Claude Sonnet list rates $3/MTok in + $15/MTok out; actual Anthropic billing may differ",
+    "cost_per_candidate": 0.013486,
+    "cost_per_Vision_field_candidate": 0.013486,
+    "cost_per_TRUE_INCREMENTAL_FIELD": 0.005474,
+    "true_incremental_field_count": 101
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": [],
+    "p251_unchanged": true,
+    "p254_unchanged": true,
+    "p255_unchanged": true,
+    "p256_unchanged": true
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.5.7 writes only unseen-validation shadow/evaluation artefacts"
+  },
+  "engineering_changes": "NONE",
+  "production_output_changes": "NONE",
+  "unit_tests": {
+    "success": true,
+    "passed": 28,
+    "total": 28,
+    "results": [
+      {
+        "name": "unseen_dataset_manifest",
+        "pass": true
+      },
+      {
+        "name": "unseen_status_validation",
+        "pass": true
+      },
+      {
+        "name": "ground_truth_not_in_prompt",
+        "pass": true
+      },
+      {
+        "name": "live_mode_required",
+        "pass": true
+      },
+      {
+        "name": "selective_trigger_gate",
+        "pass": true
+      },
+      {
+        "name": "deterministic_snapshot_unchanged",
+        "pass": true
+      },
+      {
+        "name": "field_level_evaluation",
+        "pass": true
+      },
+      {
+        "name": "deterministic_correct_vision_wrong",
+        "pass": true
+      },
+      {
+        "name": "deterministic_unknown_vision_correct",
+        "pass": true
+      },
+      {
+        "name": "deterministic_wrong_vision_correct",
+        "pass": true
+      },
+      {
+        "name": "both_correct",
+        "pass": true
+      },
+      {
+        "name": "both_wrong",
+        "pass": true
+      },
+      {
+        "name": "B58_semantic_conflict",
+        "pass": true
+      },
+      {
+        "name": "B120_spacing_conflict",
+        "pass": true
+      },
+      {
+        "name": "B46_stirrup_recovery",
+        "pass": true
+      },
+      {
+        "name": "no_quantity_invention",
+        "pass": true
+      },
+      {
+        "name": "zone_not_promotable",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_steel_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_bbs_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_excel_mutation",
+        "pass": true
+      },
+      {
+        "name": "p251_regression",
+        "pass": true
+      },
+      {
+        "name": "p254_regression",
+        "pass": true
+      },
+      {
+        "name": "p255_regression",
+        "pass": true
+      },
+      {
+        "name": "p256_regression",
+        "pass": true
+      },
+      {
+        "name": "cost_tracking",
+        "pass": true
+      },
+      {
+        "name": "prompt_fingerprint_recorded",
+        "pass": true
+      },
+      {
+        "name": "evidence_fingerprint_recorded",
+        "pass": true
+      }
+    ],
+    "p256_unit_tests": {
+      "success": true,
+      "passed": 22,
+      "total": 22,
+      "results": [
+        {
+          "name": "field_both_agree",
+          "pass": true
+        },
+        {
+          "name": "vision_only_diameter_candidate",
+          "pass": true
+        },
+        {
+          "name": "vision_only_legs_candidate",
+          "pass": true
+        },
+        {
+          "name": "vision_only_spacing_candidate",
+          "pass": true
+        },
+        {
+          "name": "deterministic_value_wins_conflict",
+          "pass": true
+        },
+        {
+          "name": "b58_type_role_conflict",
+          "pass": true
+        },
+        {
+          "name": "b120_spacing_conflict",
+          "pass": true
+        },
+        {
+          "name": "b46_field_supplementation",
+          "pass": true
+        },
+        {
+          "name": "invented_stirrup_quantity_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_diameter_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_spacing_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_legs_rejected",
+          "pass": true
+        },
+        {
+          "name": "longitudinal_legs_not_applicable",
+          "pass": true
+        },
+        {
+          "name": "zone_not_promotable",
+          "pass": true
+        },
+        {
+          "name": "beam_association_conflict",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "p251_fingerprint_unchanged",
+          "pass": true
+        },
+        {
+          "name": "p254_regression_unchanged",
+          "pass": true
+        },
+        {
+          "name": "p255_regression_unchanged",
+          "pass": true
+        }
+      ],
+      "p255_unit_tests": {
+        "success": true,
+        "passed": 16,
+        "total": 16,
+        "results": [
+          {
+            "name": "both_agree",
+            "pass": true
+          },
+          {
+            "name": "vision_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "deterministic_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "vision_conflict",
+            "pass": true
+          },
+          {
+            "name": "both_unresolved",
+            "pass": true
+          },
+          {
+            "name": "vision_wrong_evaluation",
+            "pass": true
+          },
+          {
+            "name": "b58_semantic_conflict_protection",
+            "pass": true
+          },
+          {
+            "name": "no_production_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_steel_quantity_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_bbs_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_excel_mutation",
+            "pass": true
+          },
+          {
+            "name": "invalid_claude_response",
+            "pass": true
+          },
+          {
+            "name": "invented_quantity_rejection",
+            "pass": true
+          },
+          {
+            "name": "stirrup_quantity_protection",
+            "pass": true
+          },
+          {
+            "name": "zone_remains_unpromoted",
+            "pass": true
+          },
+          {
+            "name": "deterministic_fingerprint_unchanged",
+            "pass": true
+          }
+        ],
+        "p254_unit_tests": {
+          "success": true,
+          "passed": 9,
+          "total": 9,
+          "results": [
+            {
+              "name": "longitudinal_oracle",
+              "pass": true
+            },
+            {
+              "name": "sfr_oracle_no_invented_quantity",
+              "pass": true
+            },
+            {
+              "name": "stirrup_rejects_quantity",
+              "pass": true
+            },
+            {
+              "name": "validator_accepts_longitudinal",
+              "pass": true
+            },
+            {
+              "name": "exact_longitudinal_eval",
+              "pass": true
+            },
+            {
+              "name": "hallucination_wrong_diameter",
+              "pass": true
+            },
+            {
+              "name": "prompt_excludes_truth",
+              "pass": true
+            },
+            {
+              "name": "shadow_not_production",
+              "pass": true
+            },
+            {
+              "name": "json_extract",
+              "pass": true
+            }
+          ],
+          "model_version": "10.8.0"
+        },
+        "model_version": "10.8.1"
+      },
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.2"
+    },
+    "p255_unit_tests": {
+      "success": true,
+      "passed": 16,
+      "total": 16,
+      "results": [
+        {
+          "name": "both_agree",
+          "pass": true
+        },
+        {
+          "name": "vision_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "deterministic_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "vision_conflict",
+          "pass": true
+        },
+        {
+          "name": "both_unresolved",
+          "pass": true
+        },
+        {
+          "name": "vision_wrong_evaluation",
+          "pass": true
+        },
+        {
+          "name": "b58_semantic_conflict_protection",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_quantity_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "invalid_claude_response",
+          "pass": true
+        },
+        {
+          "name": "invented_quantity_rejection",
+          "pass": true
+        },
+        {
+          "name": "stirrup_quantity_protection",
+          "pass": true
+        },
+        {
+          "name": "zone_remains_unpromoted",
+          "pass": true
+        },
+        {
+          "name": "deterministic_fingerprint_unchanged",
+          "pass": true
+        }
+      ],
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.1"
+    },
+    "p254_unit_tests": {
+      "success": true,
+      "passed": 9,
+      "total": 9,
+      "results": [
+        {
+          "name": "longitudinal_oracle",
+          "pass": true
+        },
+        {
+          "name": "sfr_oracle_no_invented_quantity",
+          "pass": true
+        },
+        {
+          "name": "stirrup_rejects_quantity",
+          "pass": true
+        },
+        {
+          "name": "validator_accepts_longitudinal",
+          "pass": true
+        },
+        {
+          "name": "exact_longitudinal_eval",
+          "pass": true
+        },
+        {
+          "name": "hallucination_wrong_diameter",
+          "pass": true
+        },
+        {
+          "name": "prompt_excludes_truth",
+          "pass": true
+        },
+        {
+          "name": "shadow_not_production",
+          "pass": true
+        },
+        {
+          "name": "json_extract",
+          "pass": true
+        }
+      ],
+      "model_version": "10.8.0"
+    },
+    "model_version": "10.8.3"
+  },
+  "leak_blocked": 0
+}

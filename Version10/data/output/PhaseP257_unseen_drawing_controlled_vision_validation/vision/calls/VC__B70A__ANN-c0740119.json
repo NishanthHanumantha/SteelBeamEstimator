@@ -1,0 +1,82 @@
+{
+  "candidate_id": "VC::B70A::ANN-c0740119",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2765,
+    "output_tokens": 414
+  },
+  "prompt_fingerprint": "929f1a000572bf8b587beeb327a6b2284e106ffc83b982427dca909cbabae5a5",
+  "evidence_fingerprint": "6a89a4393e3813accd0911d3c191b922879d2c1feb13a6b1ac21bdd5c56fba8f",
+  "validated_interpretation": {
+    "candidate_id": "VC::B70A::ANN-c0740119",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "100C/125/100/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100C/125/100/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation text clearly reads '4L-Y10@100C/125/100/C'",
+      "Notation follows standard stirrup format: legs-diameter@spacing_pattern",
+      "4L indicates 4-leg stirrup configuration",
+      "Y10 indicates 10mm diameter reinforcement bars",
+      "Spacing pattern 100C/125/100/C indicates variable spacing: 100mm close spacing, 125mm middle zone, 100mm close spacing, with C indicating close spacing zones",
+      "Annotation positioned below the beam elevation view in typical stirrup notation location",
+      "No leader line pointing to specific bars, consistent with general stirrup specification for beam span",
+      "Deterministic metadata confirms STIRRUP type and SPACING_BASED quantity intent",
+      "Beam B70A is clearly labeled and this annotation is spatially associated with it",
+      "Position and context indicate this is a span stirrup specification rather than support region"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B70A::ANN-c0740119",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "100C/125/100/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100C/125/100/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Annotation text clearly reads '4L-Y10@100C/125/100/C'",
+        "Notation follows standard stirrup format: legs-diameter@spacing_pattern",
+        "4L indicates 4-leg stirrup configuration",
+        "Y10 indicates 10mm diameter reinforcement bars",
+        "Spacing pattern 100C/125/100/C indicates variable spacing: 100mm close spacing, 125mm middle zone, 100mm close spacing, with C indicating close spacing zones",
+        "Annotation positioned below the beam elevation view in typical stirrup notation location",
+        "No leader line pointing to specific bars, consistent with general stirrup specification for beam span",
+        "Deterministic metadata confirms STIRRUP type and SPACING_BASED quantity intent",
+        "Beam B70A is clearly labeled and this annotation is spatially associated with it",
+        "Position and context indicate this is a span stirrup specification rather than support region"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

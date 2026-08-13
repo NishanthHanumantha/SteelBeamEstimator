@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B17::ANN-e8e59885",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 1897,
+    "output_tokens": 453
+  },
+  "prompt_fingerprint": "b37fbc189696edff9ea178d7675357457d28ac5471b7a21db3b70d499ff48ef7",
+  "evidence_fingerprint": "1b60f06dce8ee81c99ef98d95a7082bfcfb5573ccebd8e49c8e41ab1a31f3e9c",
+  "validated_interpretation": {
+    "candidate_id": "VC::B17::ANN-e8e59885",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation '2L-Y12@\\X100C/C' is positioned below the beam cross-section with a leader pointing to the stirrup/link reinforcement shown in the section view",
+      "Visual evidence shows vertical stirrup elements in the beam cross-section consistent with the annotation location",
+      "Notation format '2L-Y12@100C/C' follows standard stirrup notation: 2 legs, Y12 diameter bars, at 100mm centers",
+      "The '\\X' in raw text appears to be OCR artifact; visual context and standard notation support '@' symbol",
+      "Position below beam section and leader connection clearly associates this with TARGET_BEAM B17",
+      "Location in mid-span region between supports indicates SPAN zone",
+      "Sibling annotations show longitudinal bars (2-Y20, 2-Y16) which are distinct from this stirrup notation",
+      "Cross-section view shows closed stirrup configuration consistent with 2-leg interpretation"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' normalized to '@' based on visual context and standard notation conventions",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' normalized to '@' based on visual context and standard notation conventions",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B17::ANN-e8e59885",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation '2L-Y12@\\X100C/C' is positioned below the beam cross-section with a leader pointing to the stirrup/link reinforcement shown in the section view",
+        "Visual evidence shows vertical stirrup elements in the beam cross-section consistent with the annotation location",
+        "Notation format '2L-Y12@100C/C' follows standard stirrup notation: 2 legs, Y12 diameter bars, at 100mm centers",
+        "The '\\X' in raw text appears to be OCR artifact; visual context and standard notation support '@' symbol",
+        "Position below beam section and leader connection clearly associates this with TARGET_BEAM B17",
+        "Location in mid-span region between supports indicates SPAN zone",
+        "Sibling annotations show longitudinal bars (2-Y20, 2-Y16) which are distinct from this stirrup notation",
+        "Cross-section view shows closed stirrup configuration consistent with 2-leg interpretation"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' normalized to '@' based on visual context and standard notation conventions",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

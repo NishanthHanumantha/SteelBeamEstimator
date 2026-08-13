@@ -1,0 +1,80 @@
+{
+  "candidate_id": "VC::B86::ANN-1765f9b1",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2752,
+    "output_tokens": 408
+  },
+  "prompt_fingerprint": "90023b7ab7ae4a4fb9129774f9eb409e40e4ed77bcce36970eafe5fda3a30da7",
+  "evidence_fingerprint": "39aeffbb1c599cae569e89e0fbbd97e1ef4225c49438d60e022f4154e0497466",
+  "validated_interpretation": {
+    "candidate_id": "VC::B86::ANN-1765f9b1",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+      "Visual evidence shows annotation positioned below beam cross-section with leader pointing to stirrup outline (green rectangular shape in section view)",
+      "The '4L' prefix explicitly denotes 4-legged stirrup configuration",
+      "The '@100C/C' suffix indicates uniform spacing at 100mm centers",
+      "Cross-section view shows stirrup outline matching 4-leg configuration",
+      "Position and leader association clearly link annotation to TARGET_BEAM B86",
+      "Notation follows standard stirrup format: [legs]L-[bar][diameter]@[spacing]C/C",
+      "OCR corruption '\\X' normalized to standard spacing notation based on visual context and standard notation patterns"
+    ],
+    "warnings": [
+      "Minor OCR artifact '\\X' in spacing notation normalized to standard format based on context"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Minor OCR artifact '\\X' in spacing notation normalized to standard format based on context"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B86::ANN-1765f9b1",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+        "Visual evidence shows annotation positioned below beam cross-section with leader pointing to stirrup outline (green rectangular shape in section view)",
+        "The '4L' prefix explicitly denotes 4-legged stirrup configuration",
+        "The '@100C/C' suffix indicates uniform spacing at 100mm centers",
+        "Cross-section view shows stirrup outline matching 4-leg configuration",
+        "Position and leader association clearly link annotation to TARGET_BEAM B86",
+        "Notation follows standard stirrup format: [legs]L-[bar][diameter]@[spacing]C/C",
+        "OCR corruption '\\X' normalized to standard spacing notation based on visual context and standard notation patterns"
+      ],
+      "warnings": [
+        "Minor OCR artifact '\\X' in spacing notation normalized to standard format based on context"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B123::ANN-3f905849",
+  "beam_id": "B123",
+  "annotation_id": "ANN-3f905849",
+  "annotation_text": "2-Y25",
+  "deterministic_result": {
+    "intent_id": "QI::B123::ANN-3f905849",
+    "beam_id": "B123",
+    "annotation_id": "ANN-3f905849",
+    "raw_text": "2-Y25",
+    "normalized_text": "2-Y25",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "2-Y25",
+    "quantity_value": 2,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y25",
+    "diameter_value_mm": 25.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "2-Y25",
+        "quantity_value": 2,
+        "diameter_expression": "Y25",
+        "diameter_value_mm": 25.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B123",
+      "annotation_id": "ANN-3f905849",
+      "leader_id": "LDR::99B5E871",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::99B5E871",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 25.0,
+  "deterministic_quantity": 2,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B123::ANN-3f905849",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "BOTTOM_BAR",
+    "quantity": 2,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2-Y25",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation '2-Y25' is clearly visible in magenta text in the upper right portion of beam B123(600X800)",
+      "Leader line points downward from the text to the bottom reinforcement layer of the beam",
+      "Visual position shows the annotation associated with the lower longitudinal bars in the beam cross-section",
+      "The annotation is positioned above the beam section, with leader pointing to bottom bars, consistent with bottom reinforcement callout convention",
+      "Beam B123(600X800) is clearly labeled and this annotation is within its span region",
+      "Text format '2-Y25' explicitly indicates 2 bars of Y25 (25mm diameter)",
+      "No stirrup spacing pattern present; pure longitudinal bar notation",
+      "Surrounding context shows other longitudinal bar callouts (6-Y20, 4-Y20) and stirrup notation (4L-Y10@100/125/100C/C) for comparison"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "BOTTOM_BAR",
+  "vision_diameter": 25,
+  "vision_quantity": 2,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Annotation '2-Y25' is clearly visible in magenta text in the upper right portion of beam B123(600X800)",
+    "Leader line points downward from the text to the bottom reinforcement layer of the beam",
+    "Visual position shows the annotation associated with the lower longitudinal bars in the beam cross-section",
+    "The annotation is positioned above the beam section, with leader pointing to bottom bars, consistent with bottom reinforcement callout convention",
+    "Beam B123(600X800) is clearly labeled and this annotation is within its span region",
+    "Text format '2-Y25' explicitly indicates 2 bars of Y25 (25mm diameter)",
+    "No stirrup spacing pattern present; pure longitudinal bar notation",
+    "Surrounding context shows other longitudinal bar callouts (6-Y20, 4-Y20) and stirrup notation (4L-Y10@100/125/100C/C) for comparison"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "425f05271b3160e4ffa9d5ca0f5ffd6b06b58e2e83ecaf1904942294d01a7f3a",
+  "prompt_fingerprint": "471ea33dd3de33dccde8ae52c7a18ff810fd1e6f7b2b23959575313b2b4ea17a",
+  "timestamp_utc": "2026-08-13T07:36:25.983446+00:00"
+}

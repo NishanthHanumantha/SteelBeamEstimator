@@ -1,0 +1,81 @@
+{
+  "candidate_id": "VC::B81::ANN-1a0e6df8",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2526,
+    "output_tokens": 405
+  },
+  "prompt_fingerprint": "6674fc59fd9d5c7ac812ec79b804718f46787c676ee3e92df1f3fc985007a361",
+  "evidence_fingerprint": "433c92f80301f128dbb3bf95255bf7af9dcb3279c4e9dc7b002617ca5258bcf8",
+  "validated_interpretation": {
+    "candidate_id": "VC::B81::ANN-1a0e6df8",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y8@\\X100C/C' clearly indicates stirrup notation with 2 legs, Y8 (8mm diameter), at 100mm centers",
+      "Visual position below the beam section with leader pointing upward to the beam confirms association with TARGET_BEAM B81",
+      "Annotation positioned in span region of beam, away from support zones",
+      "Green stirrup outlines visible in beam cross-section consistent with transverse reinforcement",
+      "OCR artifact '\\X' normalized to standard spacing notation '@' based on context",
+      "Sibling annotation '3-Y16' indicates longitudinal bars, supporting this as stirrup notation",
+      "Standard stirrup notation format: legs-diameter@spacing pattern confirmed"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B81::ANN-1a0e6df8",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y8@\\X100C/C' clearly indicates stirrup notation with 2 legs, Y8 (8mm diameter), at 100mm centers",
+        "Visual position below the beam section with leader pointing upward to the beam confirms association with TARGET_BEAM B81",
+        "Annotation positioned in span region of beam, away from support zones",
+        "Green stirrup outlines visible in beam cross-section consistent with transverse reinforcement",
+        "OCR artifact '\\X' normalized to standard spacing notation '@' based on context",
+        "Sibling annotation '3-Y16' indicates longitudinal bars, supporting this as stirrup notation",
+        "Standard stirrup notation format: legs-diameter@spacing pattern confirmed"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

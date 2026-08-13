@@ -1,0 +1,80 @@
+{
+  "candidate_id": "VC::B139::ANN-d54387af",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2581,
+    "output_tokens": 428
+  },
+  "prompt_fingerprint": "c9475b445d48f18863c94664ba1096c8a09439930f1a353cd9df387cac55843d",
+  "evidence_fingerprint": "f84ca21615da23dcc24ab22660c0f2e41b44ce48064439dc299127c4b58518a4",
+  "validated_interpretation": {
+    "candidate_id": "VC::B139::ANN-d54387af",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 5,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "5L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '5L-Y12@\\X100C/C' clearly indicates stirrup notation with 5 legs, Y12 diameter bars, at 100mm centers",
+      "Visual evidence shows green stirrup lines wrapping around the beam section in the upper detail",
+      "Leader line from annotation points to the stirrup reinforcement in the beam cross-section",
+      "Notation format matches standard Australian stirrup convention: [legs]L-[bar type][diameter]@[spacing]C/C",
+      "Position of annotation is below the beam detail it references, consistent with stirrup callout placement",
+      "The '\\X' in raw text appears to be OCR artifact for '@' symbol, normalized to standard notation",
+      "Beam B139 is identified in the drawing, and the annotation is spatially associated with this beam's stirrup detail",
+      "Zone is SPAN based on the stirrup detail shown in mid-span region of the beam section"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on visual context and standard notation format"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on visual context and standard notation format"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B139::ANN-d54387af",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 5,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "5L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '5L-Y12@\\X100C/C' clearly indicates stirrup notation with 5 legs, Y12 diameter bars, at 100mm centers",
+        "Visual evidence shows green stirrup lines wrapping around the beam section in the upper detail",
+        "Leader line from annotation points to the stirrup reinforcement in the beam cross-section",
+        "Notation format matches standard Australian stirrup convention: [legs]L-[bar type][diameter]@[spacing]C/C",
+        "Position of annotation is below the beam detail it references, consistent with stirrup callout placement",
+        "The '\\X' in raw text appears to be OCR artifact for '@' symbol, normalized to standard notation",
+        "Beam B139 is identified in the drawing, and the annotation is spatially associated with this beam's stirrup detail",
+        "Zone is SPAN based on the stirrup detail shown in mid-span region of the beam section"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to '@' based on visual context and standard notation format"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

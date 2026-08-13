@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B181::ANN-40299f2c",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 1889,
+    "output_tokens": 407
+  },
+  "prompt_fingerprint": "4d58533c3464f4b7e4e12521041ffd8230c28aa5dc17a2edaaaaa25458727ab8",
+  "evidence_fingerprint": "3c83a425ee9e6bddb760f447a1fabd033e3df0dff36399c306594bc383b9cc6c",
+  "validated_interpretation": {
+    "candidate_id": "VC::B181::ANN-40299f2c",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y12@\\X100C/C' clearly indicates stirrup notation with 2 legs",
+      "Visual evidence shows green stirrup lines (owned leaders) wrapping around beam perimeter in characteristic stirrup pattern",
+      "Annotation positioned at mid-span of beam B181 with leader pointing to stirrup reinforcement",
+      "Notation format matches standard stirrup specification: legs-diameter@spacing pattern",
+      "The '\\X' appears to be OCR artifact; context supports '100' spacing",
+      "Multiple green rectangular stirrup outlines visible in beam cross-section",
+      "Sibling annotations show longitudinal bars (2-Y25) which are distinct from this stirrup notation",
+      "Beam depth 600mm is consistent with stirrup application shown"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Stirrup piece count not calculated per instructions (quantity remains null for stirrups)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Stirrup piece count not calculated per instructions (quantity remains null for stirrups)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B181::ANN-40299f2c",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y12@\\X100C/C' clearly indicates stirrup notation with 2 legs",
+        "Visual evidence shows green stirrup lines (owned leaders) wrapping around beam perimeter in characteristic stirrup pattern",
+        "Annotation positioned at mid-span of beam B181 with leader pointing to stirrup reinforcement",
+        "Notation format matches standard stirrup specification: legs-diameter@spacing pattern",
+        "The '\\X' appears to be OCR artifact; context supports '100' spacing",
+        "Multiple green rectangular stirrup outlines visible in beam cross-section",
+        "Sibling annotations show longitudinal bars (2-Y25) which are distinct from this stirrup notation",
+        "Beam depth 600mm is consistent with stirrup application shown"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to standard spacing notation",
+        "Stirrup piece count not calculated per instructions (quantity remains null for stirrups)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

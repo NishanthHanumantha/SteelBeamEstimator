@@ -1,0 +1,78 @@
+{
+  "candidate_id": "VC::B62::ANN-2bf304e7",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2786,
+    "output_tokens": 371
+  },
+  "prompt_fingerprint": "17ad9bcc2fa97bfefeaeeb2f370c04468ae0447bc355c44339b3fbcf641f61cc",
+  "evidence_fingerprint": "da8bb07d1f7ff9c03d830d1f5ad1a910ee3c85cc07a71b754bfc9e0268c86967",
+  "validated_interpretation": {
+    "candidate_id": "VC::B62::ANN-2bf304e7",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs (3L), Y12 diameter bars, at 100mm centers",
+      "Visual evidence shows vertical green stirrup lines in the beam cross-section at the annotation location",
+      "Leader line points from annotation to stirrup reinforcement within the target beam B62",
+      "Stirrup pattern visible in the beam section matches the specified configuration",
+      "OCR artifact '\\X' normalized to standard spacing notation '@' based on visual context",
+      "Position and leader clearly associate this reinforcement with the target beam B62",
+      "Zone classified as SPAN based on position away from support regions"
+    ],
+    "warnings": [
+      "Minor OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Minor OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B62::ANN-2bf304e7",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs (3L), Y12 diameter bars, at 100mm centers",
+        "Visual evidence shows vertical green stirrup lines in the beam cross-section at the annotation location",
+        "Leader line points from annotation to stirrup reinforcement within the target beam B62",
+        "Stirrup pattern visible in the beam section matches the specified configuration",
+        "OCR artifact '\\X' normalized to standard spacing notation '@' based on visual context",
+        "Position and leader clearly associate this reinforcement with the target beam B62",
+        "Zone classified as SPAN based on position away from support regions"
+      ],
+      "warnings": [
+        "Minor OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

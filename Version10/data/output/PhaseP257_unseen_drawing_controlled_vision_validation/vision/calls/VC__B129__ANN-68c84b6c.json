@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B129::ANN-68c84b6c",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2780,
+    "output_tokens": 384
+  },
+  "prompt_fingerprint": "034d22799baa6fd6ec4c752080795d7d1650b9dd5ad45456617f46a3444a6fb1",
+  "evidence_fingerprint": "fcc3442f8ced4c9aa6d5542dccf9a4cf4d361756738eb32dff642c86900a10a9",
+  "validated_interpretation": {
+    "candidate_id": "VC::B129::ANN-68c84b6c",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y8@\\X100C/C' visible in image below beam B129",
+      "Leader line connects annotation to bottom of beam section",
+      "Format matches stirrup notation: 2L (2 legs), Y8 (8mm diameter), @100C/C (100mm spacing center-to-center)",
+      "OCR artifact '\\X' normalized to standard spacing notation",
+      "Position below beam and leader attachment consistent with stirrup reinforcement",
+      "Beam B129 shown in horizontal orientation with depth 600mm",
+      "Annotation positioned in mid-span region of beam",
+      "No visual conflict between text and drawing representation"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+      "Quantity field left null as per schema rules for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+      "Quantity field left null as per schema rules for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B129::ANN-68c84b6c",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y8@\\X100C/C' visible in image below beam B129",
+        "Leader line connects annotation to bottom of beam section",
+        "Format matches stirrup notation: 2L (2 legs), Y8 (8mm diameter), @100C/C (100mm spacing center-to-center)",
+        "OCR artifact '\\X' normalized to standard spacing notation",
+        "Position below beam and leader attachment consistent with stirrup reinforcement",
+        "Beam B129 shown in horizontal orientation with depth 600mm",
+        "Annotation positioned in mid-span region of beam",
+        "No visual conflict between text and drawing representation"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+        "Quantity field left null as per schema rules for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

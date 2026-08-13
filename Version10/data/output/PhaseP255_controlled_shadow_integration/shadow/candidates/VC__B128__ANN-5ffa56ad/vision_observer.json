@@ -1,0 +1,46 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B128::ANN-5ffa56ad",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "BOTTOM_BAR",
+      "quantity": 5,
+      "diameter_mm": 20,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "5-Y20",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Text '5-Y20' clearly visible in annotation",
+        "Annotation positioned at bottom face of horizontal beam with depth 600mm",
+        "Leader line points downward to bottom reinforcement layer",
+        "Pink/magenta reinforcement bars visible at bottom of beam section",
+        "Notation format '5-Y20' indicates 5 bars of Y20 (20mm diameter)",
+        "Position and leader direction consistent with bottom longitudinal reinforcement",
+        "Beam orientation is HORIZONTAL, annotation at lower edge",
+        "No stirrup spacing pattern present (would be indicated by @spacing notation)",
+        "Context shows typical beam section with top and bottom reinforcement layers"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 1901,
+    "output_tokens": 330
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "f90e70c5360339723f1148cf38e6ac263479e1d3d577a0728bdb12ca40c690da",
+  "prompt_fingerprint": "b093a3058743d791d7840832903600f7e7c51bafd9d736ad8b3dc59104dc40a1",
+  "live_call": false
+}

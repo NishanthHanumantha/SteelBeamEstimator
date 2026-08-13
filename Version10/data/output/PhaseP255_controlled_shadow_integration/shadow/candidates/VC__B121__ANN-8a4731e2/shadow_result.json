@@ -1,0 +1,178 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B121::ANN-8a4731e2",
+  "beam_id": "B121",
+  "annotation_id": "ANN-8a4731e2",
+  "annotation_text": "4-Y20",
+  "deterministic_result": {
+    "intent_id": "QI::B121::ANN-8a4731e2",
+    "beam_id": "B121",
+    "annotation_id": "ANN-8a4731e2",
+    "raw_text": "4-Y20",
+    "normalized_text": "4-Y20",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "4-Y20",
+    "quantity_value": 4,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y20",
+    "diameter_value_mm": 20.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "4-Y20",
+        "quantity_value": 4,
+        "diameter_expression": "Y20",
+        "diameter_value_mm": 20.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B121",
+      "annotation_id": "ANN-8a4731e2",
+      "leader_id": "LDR::55FC3091",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::55FC3091",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 20.0,
+  "deterministic_quantity": 4,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B121::ANN-8a4731e2",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 4,
+    "diameter_mm": 20,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4-Y20",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text clearly reads '4-Y20' indicating 4 bars of Y20 (20mm diameter)",
+      "Annotation positioned above the beam centerline in the upper portion of beam B121(450X600)",
+      "Leader line points upward from the annotation to the top region of the beam cross-section",
+      "Visual position and leader direction consistent with top longitudinal reinforcement",
+      "Beam depth is 600mm; annotation is in the top half of the beam section",
+      "Sibling annotations include '4L-Y12@100C/C' (stirrups) and another '4-Y20', indicating this is one of multiple longitudinal bar callouts",
+      "No spacing notation present, confirming this is longitudinal bar count rather than distributed reinforcement",
+      "Beam B121 is clearly identified in cyan text below the beam"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "TOP_BAR",
+  "vision_diameter": 20,
+  "vision_quantity": 4,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text clearly reads '4-Y20' indicating 4 bars of Y20 (20mm diameter)",
+    "Annotation positioned above the beam centerline in the upper portion of beam B121(450X600)",
+    "Leader line points upward from the annotation to the top region of the beam cross-section",
+    "Visual position and leader direction consistent with top longitudinal reinforcement",
+    "Beam depth is 600mm; annotation is in the top half of the beam section",
+    "Sibling annotations include '4L-Y12@100C/C' (stirrups) and another '4-Y20', indicating this is one of multiple longitudinal bar callouts",
+    "No spacing notation present, confirming this is longitudinal bar count rather than distributed reinforcement",
+    "Beam B121 is clearly identified in cyan text below the beam"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "7e7bf708c3ad6174f6374918e49d4ba99eed21e88e8904af5f40f7d8cf554cd1",
+  "prompt_fingerprint": "830e445b2fdc65f2e42dfff9e27d3e279a40ae68db17eaa292e4ce8789327259",
+  "timestamp_utc": "2026-08-13T07:36:25.895843+00:00"
+}

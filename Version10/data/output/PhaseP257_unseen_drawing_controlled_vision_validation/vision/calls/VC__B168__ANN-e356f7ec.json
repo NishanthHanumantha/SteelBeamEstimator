@@ -1,0 +1,91 @@
+{
+  "candidate_id": "VC::B168::ANN-e356f7ec",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2792,
+    "output_tokens": 422
+  },
+  "prompt_fingerprint": "cacf4aee43b292f4ebc649508e669bdc84d6a0d42bb0b8d8f2630ba90565d650",
+  "evidence_fingerprint": "0e004917bf20e99b2204412a5a257ddee038d5b4fa64d5888790267b0838d4a7",
+  "validated_interpretation": {
+    "candidate_id": "VC::B168::ANN-e356f7ec",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 3,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y8@100/125/100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '3L-Y8@\\X100/125/100C/C' is clearly visible in the image",
+      "Leader line points to the beam section, indicating stirrup reinforcement",
+      "Notation format matches standard stirrup notation: legs-diameter@spacing pattern",
+      "3L indicates 3-legged stirrup configuration",
+      "Y8 indicates 8mm diameter reinforcement bar",
+      "100/125/100 indicates variable spacing pattern in millimeters",
+      "C/C suffix confirms center-to-center spacing measurement",
+      "Annotation is positioned centrally within the beam span, indicating span zone stirrups",
+      "Visual context shows beam cross-section with stirrup representation",
+      "No conflicting evidence from image or surrounding annotations"
+    ],
+    "warnings": [
+      "OCR shows '\\X' character which appears to be OCR corruption of '@' symbol, normalized in interpretation",
+      "Quantity field left null as per instructions for stirrup reinforcement (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR shows '\\X' character which appears to be OCR corruption of '@' symbol, normalized in interpretation",
+      "Quantity field left null as per instructions for stirrup reinforcement (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B168::ANN-e356f7ec",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 3,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "VARIABLE",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y8@100/125/100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '3L-Y8@\\X100/125/100C/C' is clearly visible in the image",
+        "Leader line points to the beam section, indicating stirrup reinforcement",
+        "Notation format matches standard stirrup notation: legs-diameter@spacing pattern",
+        "3L indicates 3-legged stirrup configuration",
+        "Y8 indicates 8mm diameter reinforcement bar",
+        "100/125/100 indicates variable spacing pattern in millimeters",
+        "C/C suffix confirms center-to-center spacing measurement",
+        "Annotation is positioned centrally within the beam span, indicating span zone stirrups",
+        "Visual context shows beam cross-section with stirrup representation",
+        "No conflicting evidence from image or surrounding annotations"
+      ],
+      "warnings": [
+        "OCR shows '\\X' character which appears to be OCR corruption of '@' symbol, normalized in interpretation",
+        "Quantity field left null as per instructions for stirrup reinforcement (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

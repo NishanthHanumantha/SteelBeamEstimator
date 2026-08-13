@@ -1,0 +1,216 @@
+{
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "scope": "FOURTH_SET_ONLY",
+  "pass_fail": "PASS",
+  "decision": "READY_FOR_CONTROLLED_NEXT_EXPERIMENT",
+  "vision_source": "REPLAY_P254_FROZEN",
+  "candidate_count": 41,
+  "metrics": {
+    "total_candidates": 41,
+    "deterministic_resolved": 31,
+    "deterministic_type_resolved": 39,
+    "deterministic_partial": 0,
+    "deterministic_unresolved": 10,
+    "claude_calls": 41,
+    "claude_calls_live": 0,
+    "claude_calls_replayed": 41,
+    "claude_success_rate": 100.0,
+    "claude_valid_response_rate": 100.0,
+    "BOTH_AGREE": 37,
+    "BOTH_AGREE_RATE": 90.24,
+    "VISION_ONLY_RESOLVED": 2,
+    "VISION_ONLY_RESOLVED_RATE": 4.88,
+    "DETERMINISTIC_ONLY_RESOLVED": 0,
+    "DETERMINISTIC_ONLY_RESOLVED_RATE": 0.0,
+    "VISION_CONFLICT": 2,
+    "VISION_CONFLICT_RATE": 4.88,
+    "BOTH_UNRESOLVED": 0,
+    "BOTH_UNRESOLVED_RATE": 0.0,
+    "VISION_WRONG": 1,
+    "SEMANTIC_INTERPRETATION_ACCURACY": 97.56,
+    "TYPE_ACCURACY": 97.56,
+    "ROLE_ACCURACY": 95.65,
+    "DIAMETER_ACCURACY": 100.0,
+    "QUANTITY_ACCURACY": 100.0,
+    "SPACING_ACCURACY": 100.0,
+    "BEAM_ASSOCIATION_ACCURACY": 95.12,
+    "ZONE_ACCURACY": "N/A",
+    "HALLUCINATION_RATE": 2.44,
+    "ABSTENTION_RATE": 0.0,
+    "useful_vision_only_resolutions": 2,
+    "rejected_vision_resolutions": 1,
+    "conflicts_prevented_from_production": 3,
+    "potential_production_corrections_if_promoted": 29,
+    "dangerous_vision_overrides_prevented": 21,
+    "production_mutation_count": 0,
+    "steel_quantity_differences": 0,
+    "bbs_differences": 0,
+    "excel_differences": 0,
+    "eval_counts": {
+      "exact": 37,
+      "partial": 3,
+      "incorrect": 0,
+      "hallucination": 1,
+      "appropriate_abstention": 0
+    },
+    "token_usage": {
+      "input_tokens": 100215,
+      "output_tokens": 15639,
+      "total_tokens": 115854
+    },
+    "operational_counts": {
+      "BOTH_AGREE": 37,
+      "VISION_CONFLICT": 2,
+      "VISION_ONLY_RESOLVED": 2
+    },
+    "comparison_counts": {
+      "BOTH_AGREE": 37,
+      "VISION_CONFLICT": 1,
+      "VISION_WRONG": 1,
+      "VISION_ONLY_RESOLVED": 2
+    }
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": [],
+    "p254_unchanged": true,
+    "p251_unchanged": true
+  },
+  "regression_status": "PASS",
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.5.5 writes only baseline/shadow/evaluation artefacts"
+  },
+  "engineering_changes": "NONE",
+  "production_output_changes": "NONE",
+  "estimated_api_cost_usd": 0.5352,
+  "estimated_cost_note": "Approx Claude Sonnet list rates $3/MTok in + $15/MTok out; replay uses frozen P2.5.4 token usage (no new live spend unless --live).",
+  "unit_tests": {
+    "success": true,
+    "passed": 16,
+    "total": 16,
+    "results": [
+      {
+        "name": "both_agree",
+        "pass": true
+      },
+      {
+        "name": "vision_only_resolved",
+        "pass": true
+      },
+      {
+        "name": "deterministic_only_resolved",
+        "pass": true
+      },
+      {
+        "name": "vision_conflict",
+        "pass": true
+      },
+      {
+        "name": "both_unresolved",
+        "pass": true
+      },
+      {
+        "name": "vision_wrong_evaluation",
+        "pass": true
+      },
+      {
+        "name": "b58_semantic_conflict_protection",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_steel_quantity_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_bbs_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_excel_mutation",
+        "pass": true
+      },
+      {
+        "name": "invalid_claude_response",
+        "pass": true
+      },
+      {
+        "name": "invented_quantity_rejection",
+        "pass": true
+      },
+      {
+        "name": "stirrup_quantity_protection",
+        "pass": true
+      },
+      {
+        "name": "zone_remains_unpromoted",
+        "pass": true
+      },
+      {
+        "name": "deterministic_fingerprint_unchanged",
+        "pass": true
+      }
+    ],
+    "p254_unit_tests": {
+      "success": true,
+      "passed": 9,
+      "total": 9,
+      "results": [
+        {
+          "name": "longitudinal_oracle",
+          "pass": true
+        },
+        {
+          "name": "sfr_oracle_no_invented_quantity",
+          "pass": true
+        },
+        {
+          "name": "stirrup_rejects_quantity",
+          "pass": true
+        },
+        {
+          "name": "validator_accepts_longitudinal",
+          "pass": true
+        },
+        {
+          "name": "exact_longitudinal_eval",
+          "pass": true
+        },
+        {
+          "name": "hallucination_wrong_diameter",
+          "pass": true
+        },
+        {
+          "name": "prompt_excludes_truth",
+          "pass": true
+        },
+        {
+          "name": "shadow_not_production",
+          "pass": true
+        },
+        {
+          "name": "json_extract",
+          "pass": true
+        }
+      ],
+      "model_version": "10.8.0"
+    },
+    "model_version": "10.8.1"
+  },
+  "b58_ok": true,
+  "known_conflicts": [
+    "- VC::B120::ANN-f4213b73 text=`3L-Y10@100C/150/100/C` det=STIRRUP/STIRRUP vis=STIRRUP/STIRRUP op=VISION_CONFLICT cmp=VISION_CONFLICT fields={'fields': ['spacing'], 'details': {'spacing': {'vision': [100, 150, 100], 'deterministic': [100.0]}}}",
+    "- VC::B58::ANN-a0c82bbe text=`3L-Y12@\\X100C/C` det=STIRRUP/STIRRUP vis=SIDE_FACE_REINFORCEMENT/SIDE_FACE op=VISION_CONFLICT cmp=VISION_WRONG fields={'fields': ['type', 'role'], 'details': {'type': {'vision': 'SIDE_FACE_REINFORCEMENT', 'deterministic': 'STIRRUP'}, 'role': {'vision': 'SIDE_FACE', 'deterministic': 'STIRRUP'}}}"
+  ],
+  "claude_model": "claude-sonnet-4-5",
+  "temperature": 0
+}

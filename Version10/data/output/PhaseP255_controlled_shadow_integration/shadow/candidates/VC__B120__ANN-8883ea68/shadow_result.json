@@ -1,0 +1,180 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B120::ANN-8883ea68",
+  "beam_id": "B120",
+  "annotation_id": "ANN-8883ea68",
+  "annotation_text": "3-Y25",
+  "deterministic_result": {
+    "intent_id": "QI::B120::ANN-8883ea68",
+    "beam_id": "B120",
+    "annotation_id": "ANN-8883ea68",
+    "raw_text": "3-Y25",
+    "normalized_text": "3-Y25",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "3-Y25",
+    "quantity_value": 3,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y25",
+    "diameter_value_mm": 25.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "3-Y25",
+        "quantity_value": 3,
+        "diameter_expression": "Y25",
+        "diameter_value_mm": 25.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B120",
+      "annotation_id": "ANN-8883ea68",
+      "leader_id": "LDR::4AAC215B",
+      "ownership_id": "OWN::B120::11D1DD0",
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::4AAC215B",
+      "ownership_id": "OWN::B120::11D1DD0",
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 25.0,
+  "deterministic_quantity": 3,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B120::ANN-8883ea68",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "BOTTOM_BAR",
+    "quantity": 3,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3-Y25",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation '3-Y25' is clearly visible in magenta text",
+      "Leader line points downward from the annotation to the bottom fiber of the horizontal beam (green outline)",
+      "Position of annotation is below the beam centerline, consistent with bottom reinforcement",
+      "Beam depth 600mm with horizontal orientation confirmed by visual geometry",
+      "No stirrup notation pattern present (no spacing indicators like @100)",
+      "Notation format '3-Y25' matches standard longitudinal bar callout: quantity-diameter",
+      "Beam association confirmed by leader termination at target beam bottom face",
+      "Location appears to be in mid-span region based on beam geometry and surrounding context",
+      "No conflicting visual evidence or OCR corruption detected"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "BOTTOM_BAR",
+  "vision_diameter": 25,
+  "vision_quantity": 3,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Annotation '3-Y25' is clearly visible in magenta text",
+    "Leader line points downward from the annotation to the bottom fiber of the horizontal beam (green outline)",
+    "Position of annotation is below the beam centerline, consistent with bottom reinforcement",
+    "Beam depth 600mm with horizontal orientation confirmed by visual geometry",
+    "No stirrup notation pattern present (no spacing indicators like @100)",
+    "Notation format '3-Y25' matches standard longitudinal bar callout: quantity-diameter",
+    "Beam association confirmed by leader termination at target beam bottom face",
+    "Location appears to be in mid-span region based on beam geometry and surrounding context",
+    "No conflicting visual evidence or OCR corruption detected"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "5d32c2f94f25013a0bcff8ba6f7b0e3227daea84be8f5db91e3c55b0bd219d54",
+  "prompt_fingerprint": "0e753965dcff7501b27fbeb2dc6070bc2789b979850bd19381461735fa87369a",
+  "timestamp_utc": "2026-08-13T07:36:25.563719+00:00"
+}

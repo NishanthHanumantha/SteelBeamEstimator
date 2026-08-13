@@ -1,0 +1,184 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B178::ANN-41e4a18e",
+  "beam_id": "B178",
+  "annotation_id": "ANN-41e4a18e",
+  "annotation_text": "2L-Y8@\\X100C/C",
+  "deterministic_result": {
+    "intent_id": "QI::B178::ANN-41e4a18e",
+    "beam_id": "B178",
+    "annotation_id": "ANN-41e4a18e",
+    "raw_text": "2L-Y8@\\X100C/C",
+    "normalized_text": "2L-Y8@\\X100C/C",
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "quantity_expression": "2L-Y8@\\X100C/C",
+    "quantity_value": null,
+    "quantity_status": "UNRESOLVED",
+    "quantity_source": "STIRRUP_PATTERN",
+    "diameter_expression": null,
+    "diameter_value_mm": null,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B178",
+      "annotation_id": "ANN-41e4a18e",
+      "leader_id": "LDR::5EA6E3BE",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.65,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "Cannot parse stirrup notation: '2L-Y8@\\X100C/C'",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::5EA6E3BE",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "UNRESOLVED",
+  "deterministic_type": "STIRRUP",
+  "deterministic_role": "STIRRUP",
+  "deterministic_diameter": null,
+  "deterministic_quantity": null,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B178::ANN-41e4a18e",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text notation '2L-Y8@\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing",
+      "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns",
+      "Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)",
+      "Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement",
+      "Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation",
+      "Annotation positioned in span region between supports, indicating SPAN zone",
+      "Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green",
+      "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+      "No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association"
+    ],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "STIRRUP",
+  "vision_role": "STIRRUP",
+  "vision_diameter": 8,
+  "vision_quantity": null,
+  "vision_legs": 2,
+  "vision_spacing": [
+    100
+  ],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.92,
+  "vision_evidence_basis": [
+    "Text notation '2L-Y8@\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing",
+    "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns",
+    "Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)",
+    "Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement",
+    "Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation",
+    "Annotation positioned in span region between supports, indicating SPAN zone",
+    "Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green",
+    "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+    "No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ]
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "OCR_UNCERTAIN",
+    "SEMANTIC_UNCERTAIN",
+    "DIFFICULT_VISUAL",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "DIAMETER",
+      "LEGS",
+      "SPACING"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": false,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "263b02fb60e219d675475abf619c66c9750abf61ceedabee6ed54612e3f71926",
+  "prompt_fingerprint": "4e92ade663fbb354d855dc5dfb19db18bdb15c2aee572270415d2df45b5086c3",
+  "timestamp_utc": "2026-08-13T07:36:27.196692+00:00"
+}

@@ -1,0 +1,178 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B128::ANN-7ac07312",
+  "beam_id": "B128",
+  "annotation_id": "ANN-7ac07312",
+  "annotation_text": "5-Y25",
+  "deterministic_result": {
+    "intent_id": "QI::B128::ANN-7ac07312",
+    "beam_id": "B128",
+    "annotation_id": "ANN-7ac07312",
+    "raw_text": "5-Y25",
+    "normalized_text": "5-Y25",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "5-Y25",
+    "quantity_value": 5,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y25",
+    "diameter_value_mm": 25.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "5-Y25",
+        "quantity_value": 5,
+        "diameter_expression": "Y25",
+        "diameter_value_mm": 25.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B128",
+      "annotation_id": "ANN-7ac07312",
+      "leader_id": "LDR::A69A4A2C",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::A69A4A2C",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 25.0,
+  "deterministic_quantity": 5,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B128::ANN-7ac07312",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "BOTTOM_BAR",
+    "quantity": 5,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "5-Y25",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text '5-Y25' clearly visible in pink annotation label",
+      "Annotation positioned at bottom face of horizontal beam with depth 600mm",
+      "Leader line points from annotation to bottom longitudinal reinforcement layer",
+      "Visual context shows this is bottom reinforcement in span region",
+      "Notation format '5-Y25' indicates 5 bars of Y25 (25mm diameter)",
+      "Position and leader geometry consistent with bottom longitudinal bars",
+      "Beam orientation is HORIZONTAL, annotation is below beam soffit",
+      "Sibling annotations include stirrups (5L-Y12@100C/C) and other longitudinal bars (5-Y20, 3-Y20)"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "BOTTOM_BAR",
+  "vision_diameter": 25,
+  "vision_quantity": 5,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.92,
+  "vision_evidence_basis": [
+    "Text '5-Y25' clearly visible in pink annotation label",
+    "Annotation positioned at bottom face of horizontal beam with depth 600mm",
+    "Leader line points from annotation to bottom longitudinal reinforcement layer",
+    "Visual context shows this is bottom reinforcement in span region",
+    "Notation format '5-Y25' indicates 5 bars of Y25 (25mm diameter)",
+    "Position and leader geometry consistent with bottom longitudinal bars",
+    "Beam orientation is HORIZONTAL, annotation is below beam soffit",
+    "Sibling annotations include stirrups (5L-Y12@100C/C) and other longitudinal bars (5-Y20, 3-Y20)"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "c8b0a79c53d3d331f7285ce452cf923b41d2e308e83b08d9347fa5bfbb834f00",
+  "prompt_fingerprint": "fe708d2533603ccffe09fcc2ea00165b139deafa0315d7d99013ad6c0b527cf8",
+  "timestamp_utc": "2026-08-13T07:36:26.516900+00:00"
+}

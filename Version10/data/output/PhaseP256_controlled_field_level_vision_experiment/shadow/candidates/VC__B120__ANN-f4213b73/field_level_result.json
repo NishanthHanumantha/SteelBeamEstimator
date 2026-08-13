@@ -1,0 +1,270 @@
+{
+  "object_kind": "FieldLevelShadowResult",
+  "production_write": false,
+  "production_mutation": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "zone_candidate_allowed": false,
+  "phase_id": "P2.5.6",
+  "model_version": "10.8.2",
+  "candidate_id": "VC::B120::ANN-f4213b73",
+  "beam_id": "B120",
+  "annotation_id": "ANN-f4213b73",
+  "annotation_text": "3L-Y10@100C/150/100/C",
+  "deterministic_result": {
+    "intent_id": "QI::B120::ANN-f4213b73",
+    "beam_id": "B120",
+    "annotation_id": "ANN-f4213b73",
+    "raw_text": "3L-Y10@100C/150/100/C",
+    "normalized_text": "3L-Y10@100C/150/100/C",
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "quantity_expression": "3L-Y10@100C/150/100/C",
+    "quantity_value": null,
+    "quantity_status": "SPACING_BASED",
+    "quantity_source": "STIRRUP_PATTERN",
+    "diameter_expression": "Y10",
+    "diameter_value_mm": 10.0,
+    "spacing_expression": "100",
+    "spacing_value_mm": 100.0,
+    "spacing_values_mm": [
+      100.0
+    ],
+    "leg_expression": "3L",
+    "leg_count": 3,
+    "unit": "SPACING_MM",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B120",
+      "annotation_id": "ANN-f4213b73",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.99,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "stirrup_parsed",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "vision_result": {
+    "candidate_id": "VC::B120::ANN-f4213b73",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 3,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100C/150/100/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y10@100C/150/100/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation text clearly reads '3L-Y10@100C/150/100/C' indicating 3-legged stirrups",
+      "Y10 indicates 10mm diameter reinforcement bars",
+      "Spacing pattern 100C/150/100/C indicates variable spacing: 100mm at ends (C=close), 150mm in middle, 100mm at other end",
+      "Annotation positioned directly on horizontal beam shown in green",
+      "Visual context shows stirrup symbols (vertical lines) along the beam length consistent with stirrup reinforcement",
+      "Beam orientation is horizontal as indicated by metadata",
+      "No leader line pointing away from target beam, confirming TARGET_BEAM association",
+      "Position along beam span (not at support) indicates SPAN zone"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "field_comparisons": {
+    "semantic_type": {
+      "field": "semantic_type",
+      "deterministic_value": "STIRRUP",
+      "vision_value": "STIRRUP",
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "BOTH_AGREE",
+      "field_decision": "KEEP_DETERMINISTIC",
+      "accepted": false,
+      "reason": "EQUIVALENT_VALUES",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "reinforcement_role": {
+      "field": "reinforcement_role",
+      "deterministic_value": "STIRRUP",
+      "vision_value": "STIRRUP",
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "BOTH_AGREE",
+      "field_decision": "KEEP_DETERMINISTIC",
+      "accepted": false,
+      "reason": "EQUIVALENT_VALUES",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "diameter": {
+      "field": "diameter",
+      "deterministic_value": 10.0,
+      "vision_value": 10,
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "BOTH_AGREE",
+      "field_decision": "KEEP_DETERMINISTIC",
+      "accepted": false,
+      "reason": "EQUIVALENT_VALUES",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "quantity": {
+      "field": "quantity",
+      "deterministic_value": null,
+      "vision_value": null,
+      "deterministic_known": false,
+      "vision_known": false,
+      "field_status": "NOT_APPLICABLE",
+      "field_decision": "NOT_APPLICABLE",
+      "accepted": false,
+      "reason": "STIRRUP_QUANTITY_NOT_DERIVABLE_FROM_NOTATION",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "legs": {
+      "field": "legs",
+      "deterministic_value": 3,
+      "vision_value": 3,
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "BOTH_AGREE",
+      "field_decision": "KEEP_DETERMINISTIC",
+      "accepted": false,
+      "reason": "EQUIVALENT_VALUES",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "spacing": {
+      "field": "spacing",
+      "deterministic_value": [
+        100.0
+      ],
+      "vision_value": [
+        100,
+        150,
+        100
+      ],
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "VISION_CONFLICT",
+      "field_decision": "KEEP_DETERMINISTIC_FLAG_CONFLICT",
+      "accepted": false,
+      "reason": "DETERMINISTIC_CONFLICT",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": true,
+      "production_change": "NONE",
+      "safe": false
+    },
+    "beam_association": {
+      "field": "beam_association",
+      "deterministic_value": "TARGET_BEAM",
+      "vision_value": "TARGET_BEAM",
+      "deterministic_known": true,
+      "vision_known": true,
+      "field_status": "BOTH_AGREE",
+      "field_decision": "KEEP_DETERMINISTIC",
+      "accepted": false,
+      "reason": "EQUIVALENT_VALUES",
+      "validation_ok": true,
+      "validation_errors": [],
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": true
+    },
+    "zone": {
+      "field": "zone",
+      "deterministic_value": null,
+      "vision_value": "SPAN",
+      "deterministic_known": false,
+      "vision_known": true,
+      "field_status": "VISION_DIAGNOSTIC",
+      "field_decision": "ZONE_DIAGNOSTIC_ONLY",
+      "accepted": false,
+      "reason": "ZONE_NOT_PROMOTABLE",
+      "validation_ok": true,
+      "validation_errors": [],
+      "zone_candidate_allowed": false,
+      "hypothetical_change": false,
+      "production_change": "NONE",
+      "safe": false
+    }
+  },
+  "accepted_shadow_fields": [],
+  "accepted_shadow_field_details": [],
+  "rejected_shadow_fields": [
+    "spacing"
+  ],
+  "rejected_shadow_field_details": [
+    {
+      "field": "spacing",
+      "reason": "DETERMINISTIC_CONFLICT",
+      "status": "VISION_CONFLICT"
+    }
+  ],
+  "conflict_fields": [
+    "spacing"
+  ],
+  "conflict_field_details": [
+    {
+      "field": "spacing",
+      "reason": "DETERMINISTIC_CONFLICT",
+      "deterministic": [
+        100.0
+      ],
+      "vision": [
+        100,
+        150,
+        100
+      ]
+    }
+  ],
+  "final_shadow_decision": "KEEP_DETERMINISTIC_FLAG_CONFLICT",
+  "p255_operational_class": "VISION_CONFLICT",
+  "vision_source": "REPLAY_P254_FROZEN",
+  "shadow_trigger_reason": [
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evidence_fingerprint": "49e228c81563ef660f4499c5863541a6a63a6f8a60b135346020f8b07bda6bbc",
+  "prompt_fingerprint": "7570bb20713301dc707fd56e0e5c3aba232b6b440a828a14dd2f59c6c9eec6cf",
+  "timestamp_utc": "2026-08-13T10:44:00.416644+00:00"
+}

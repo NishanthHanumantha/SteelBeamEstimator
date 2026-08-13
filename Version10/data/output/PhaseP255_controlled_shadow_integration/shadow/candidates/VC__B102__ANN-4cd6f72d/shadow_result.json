@@ -1,0 +1,177 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B102::ANN-4cd6f72d",
+  "beam_id": "B102",
+  "annotation_id": "ANN-4cd6f72d",
+  "annotation_text": "3-Y16",
+  "deterministic_result": {
+    "intent_id": "QI::B102::ANN-4cd6f72d",
+    "beam_id": "B102",
+    "annotation_id": "ANN-4cd6f72d",
+    "raw_text": "3-Y16",
+    "normalized_text": "3-Y16",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "3-Y16",
+    "quantity_value": 3,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y16",
+    "diameter_value_mm": 16.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "3-Y16",
+        "quantity_value": 3,
+        "diameter_expression": "Y16",
+        "diameter_value_mm": 16.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B102",
+      "annotation_id": "ANN-4cd6f72d",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 16.0,
+  "deterministic_quantity": 3,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B102::ANN-4cd6f72d",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 3,
+    "diameter_mm": 16,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3-Y16",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation '3-Y16' is clearly visible in the image with pink/magenta text",
+      "Annotation is positioned above the beam section, indicating top reinforcement",
+      "Visual context shows this is a longitudinal bar notation (quantity-diameter format)",
+      "Position is within the span region of the beam, not at support",
+      "The notation is located within the green dashed lines representing the top of the beam section",
+      "Sibling annotations include '3-Y20' (likely bottom bars) and '3L-Y10@100C/C' (stirrups), consistent with typical beam reinforcement layout",
+      "No leader line pointing elsewhere; annotation is directly associated with the beam section shown",
+      "Text is clear and unambiguous: 3 bars of Y16 (16mm diameter)"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "TOP_BAR",
+  "vision_diameter": 16,
+  "vision_quantity": 3,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Annotation '3-Y16' is clearly visible in the image with pink/magenta text",
+    "Annotation is positioned above the beam section, indicating top reinforcement",
+    "Visual context shows this is a longitudinal bar notation (quantity-diameter format)",
+    "Position is within the span region of the beam, not at support",
+    "The notation is located within the green dashed lines representing the top of the beam section",
+    "Sibling annotations include '3-Y20' (likely bottom bars) and '3L-Y10@100C/C' (stirrups), consistent with typical beam reinforcement layout",
+    "No leader line pointing elsewhere; annotation is directly associated with the beam section shown",
+    "Text is clear and unambiguous: 3 bars of Y16 (16mm diameter)"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "a6430eaf9d2f024aef623352012f43706ff752e32c37f86069a1c8e5e399705f",
+  "prompt_fingerprint": "8cb4fc458daa6a2f5e8a1c88b98f7174957cb6c47edb08e54bd7e7e0779c582e",
+  "timestamp_utc": "2026-08-13T07:36:25.118571+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B82::ANN-4c8699c2",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2788,
+    "output_tokens": 435
+  },
+  "prompt_fingerprint": "df50aa10e78731caf9c8646b09dd3e7aa18a7329dc6987d5d2395c7bebf39883",
+  "evidence_fingerprint": "f1503d3ad92fbeaa59914b39e3a98bfc08d15d0bfb220b959e6506fe6a508946",
+  "validated_interpretation": {
+    "candidate_id": "VC::B82::ANN-4c8699c2",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+      "Visual position: annotation is located below the beam cross-section, typical placement for stirrup notation",
+      "Green leader line points from annotation upward to the beam section, confirming association with target beam B82",
+      "Beam cross-section shows vertical stirrup legs (dashed lines) consistent with 4-leg stirrup configuration",
+      "The '@\\X100C/C' pattern indicates uniform spacing at 100mm centers throughout the zone",
+      "Position in span region (between supports) rather than at support zone",
+      "Deterministic metadata confirms semantic_type: STIRRUP and role: STIRRUP",
+      "OCR corruption: '\\X' is typical OCR artifact, should be interpreted as spacing indicator '@'"
+    ],
+    "warnings": [
+      "Minor OCR corruption in original text: '\\X' normalized to standard spacing notation",
+      "Quantity field left null per schema rules for stirrups (legs parameter used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Minor OCR corruption in original text: '\\X' normalized to standard spacing notation",
+      "Quantity field left null per schema rules for stirrups (legs parameter used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B82::ANN-4c8699c2",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+        "Visual position: annotation is located below the beam cross-section, typical placement for stirrup notation",
+        "Green leader line points from annotation upward to the beam section, confirming association with target beam B82",
+        "Beam cross-section shows vertical stirrup legs (dashed lines) consistent with 4-leg stirrup configuration",
+        "The '@\\X100C/C' pattern indicates uniform spacing at 100mm centers throughout the zone",
+        "Position in span region (between supports) rather than at support zone",
+        "Deterministic metadata confirms semantic_type: STIRRUP and role: STIRRUP",
+        "OCR corruption: '\\X' is typical OCR artifact, should be interpreted as spacing indicator '@'"
+      ],
+      "warnings": [
+        "Minor OCR corruption in original text: '\\X' normalized to standard spacing notation",
+        "Quantity field left null per schema rules for stirrups (legs parameter used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

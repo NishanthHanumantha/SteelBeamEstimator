@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B59::ANN-9335368d",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2796,
+    "output_tokens": 449
+  },
+  "prompt_fingerprint": "e6535548fb6cdfe0928a02d76f7a90e9a1f3befbfb9ea0b918894c9ac7a7f2c1",
+  "evidence_fingerprint": "16a7a81e927cc229d2494f0d0c00bd2c412c62d91e6f8ba1dfec80692812c1d4",
+  "validated_interpretation": {
+    "candidate_id": "VC::B59::ANN-9335368d",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "CONSTANT",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs, Y12 diameter bars, at 100mm centers",
+      "Visual position: annotation is located below the beam section, centered along the span, with leader pointing upward to the beam - typical position for stirrup notation",
+      "Green stirrup lines visible in the beam cross-section showing vertical reinforcement consistent with stirrup placement",
+      "Beam B59 is shown in horizontal orientation with depth 600mm; annotation is positioned in mid-span region away from support zones",
+      "Sibling annotations show longitudinal bar notations (3-Y16, 3-Y25) which are distinct from this stirrup notation",
+      "The '3L' prefix explicitly indicates 3-legged stirrups",
+      "The '@100C/C' suffix indicates constant spacing at 100mm centers",
+      "OCR artifact '\\X' normalized to standard spacing notation"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B59::ANN-9335368d",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "CONSTANT",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs, Y12 diameter bars, at 100mm centers",
+        "Visual position: annotation is located below the beam section, centered along the span, with leader pointing upward to the beam - typical position for stirrup notation",
+        "Green stirrup lines visible in the beam cross-section showing vertical reinforcement consistent with stirrup placement",
+        "Beam B59 is shown in horizontal orientation with depth 600mm; annotation is positioned in mid-span region away from support zones",
+        "Sibling annotations show longitudinal bar notations (3-Y16, 3-Y25) which are distinct from this stirrup notation",
+        "The '3L' prefix explicitly indicates 3-legged stirrups",
+        "The '@100C/C' suffix indicates constant spacing at 100mm centers",
+        "OCR artifact '\\X' normalized to standard spacing notation"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to standard '@' spacing notation",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

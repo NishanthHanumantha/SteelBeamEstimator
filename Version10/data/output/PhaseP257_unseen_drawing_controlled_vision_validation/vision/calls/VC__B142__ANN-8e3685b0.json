@@ -1,0 +1,87 @@
+{
+  "candidate_id": "VC::B142::ANN-8e3685b0",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2006,
+    "output_tokens": 394
+  },
+  "prompt_fingerprint": "d951620bbbb5ea105ef74a5748ade8eb46ec3e5ec9b02d7ee829fc4bc0fe575a",
+  "evidence_fingerprint": "45abbdbec17de96d638c4644eeaa59f237aaec41ebc2001c051a4b0e4bdd1a21",
+  "validated_interpretation": {
+    "candidate_id": "VC::B142::ANN-8e3685b0",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y8@\\X100C/C' visible in image with leader pointing to beam",
+      "Leader line (green) connects annotation to top of horizontal beam section",
+      "Notation format matches stirrup pattern: legs-diameter@spacing",
+      "2L indicates 2-legged stirrup configuration",
+      "Y8 indicates 8mm diameter reinforcement bar",
+      "100C/C indicates 100mm center-to-center spacing",
+      "Beam B142 shown as horizontal element with depth ~600mm",
+      "Annotation positioned at mid-span region of beam",
+      "No support columns visible in immediate vicinity indicating span zone",
+      "OCR corruption '\\X' normalized to standard spacing notation based on visual context"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Stirrup piece count not calculated per instructions"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Stirrup piece count not calculated per instructions"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B142::ANN-8e3685b0",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y8@\\X100C/C' visible in image with leader pointing to beam",
+        "Leader line (green) connects annotation to top of horizontal beam section",
+        "Notation format matches stirrup pattern: legs-diameter@spacing",
+        "2L indicates 2-legged stirrup configuration",
+        "Y8 indicates 8mm diameter reinforcement bar",
+        "100C/C indicates 100mm center-to-center spacing",
+        "Beam B142 shown as horizontal element with depth ~600mm",
+        "Annotation positioned at mid-span region of beam",
+        "No support columns visible in immediate vicinity indicating span zone",
+        "OCR corruption '\\X' normalized to standard spacing notation based on visual context"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to standard spacing notation",
+        "Stirrup piece count not calculated per instructions"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B126::ANN-c442e075",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "quantity": 5,
+      "diameter_mm": 25,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "5-Y25",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text '5-Y25' clearly visible in magenta annotation",
+        "Leader line points downward from annotation to top face of beam B126(500X600)",
+        "Annotation positioned above the beam section, consistent with top reinforcement",
+        "Beam section shows horizontal orientation with depth 600mm",
+        "Format '5-Y25' indicates 5 bars of Y25 (25mm diameter)",
+        "Position and leader direction support top bar classification",
+        "Span zone indicated by position away from support regions",
+        "No stirrup notation pattern present (no spacing or 'L' prefix)"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 2234,
+    "output_tokens": 314
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "914dcfcfdf9673996381f623282958eb34d7d36db3d9e4f686e796b9027fbb86",
+  "prompt_fingerprint": "87c0d5d7b769cc2e7784b7a79fcf2c1636b6df61cd8434efd7ea9402d915db3e",
+  "live_call": false
+}

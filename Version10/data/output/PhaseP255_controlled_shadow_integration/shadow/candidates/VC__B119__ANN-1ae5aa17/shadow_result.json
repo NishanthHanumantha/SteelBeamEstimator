@@ -1,0 +1,181 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B119::ANN-1ae5aa17",
+  "beam_id": "B119",
+  "annotation_id": "ANN-1ae5aa17",
+  "annotation_text": "3-Y16",
+  "deterministic_result": {
+    "intent_id": "QI::B119::ANN-1ae5aa17",
+    "beam_id": "B119",
+    "annotation_id": "ANN-1ae5aa17",
+    "raw_text": "3-Y16",
+    "normalized_text": "3-Y16",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "3-Y16",
+    "quantity_value": 3,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y16",
+    "diameter_value_mm": 16.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "3-Y16",
+        "quantity_value": 3,
+        "diameter_expression": "Y16",
+        "diameter_value_mm": 16.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B119",
+      "annotation_id": "ANN-1ae5aa17",
+      "leader_id": "LDR::F3CF6D90",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::F3CF6D90",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 16.0,
+  "deterministic_quantity": 3,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B119::ANN-1ae5aa17",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 3,
+    "diameter_mm": 16,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3-Y16",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text '3-Y16' clearly visible in magenta annotation",
+      "Annotation positioned at top of beam cross-section",
+      "Leader line points to top reinforcement layer of beam",
+      "Visual position consistent with top longitudinal bars",
+      "Beam depth 600mm, annotation at upper fiber region",
+      "Horizontal beam orientation with annotation at top face",
+      "No stirrup notation characteristics (no spacing, no legs notation)",
+      "Quantity 3 and diameter Y16 explicitly stated in notation",
+      "Annotation appears in span region of beam (not at support)",
+      "Consistent with standard top bar notation format"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "TOP_BAR",
+  "vision_diameter": 16,
+  "vision_quantity": 3,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text '3-Y16' clearly visible in magenta annotation",
+    "Annotation positioned at top of beam cross-section",
+    "Leader line points to top reinforcement layer of beam",
+    "Visual position consistent with top longitudinal bars",
+    "Beam depth 600mm, annotation at upper fiber region",
+    "Horizontal beam orientation with annotation at top face",
+    "No stirrup notation characteristics (no spacing, no legs notation)",
+    "Quantity 3 and diameter Y16 explicitly stated in notation",
+    "Annotation appears in span region of beam (not at support)",
+    "Consistent with standard top bar notation format"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "ce5735b6f8703fdb66038ad5f60c9183f1de69e770557bc2cedf00d617a8b14f",
+  "prompt_fingerprint": "ae6bbc1e33485ab0b6f9ab00b801643bc44763b35f4e44f7801c4225ea85186a",
+  "timestamp_utc": "2026-08-13T07:36:25.472652+00:00"
+}

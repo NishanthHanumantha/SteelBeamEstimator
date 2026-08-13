@@ -1,0 +1,80 @@
+{
+  "candidate_id": "VC::B47::ANN-6234edc2",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2790,
+    "output_tokens": 419
+  },
+  "prompt_fingerprint": "cb3bda01bef4f6ff043d93ac9e6a6859a62bcf8fb186642b45c015fb58770c54",
+  "evidence_fingerprint": "c3ce97d8b4670a38369fa6fb935d05bf9e955a59dac327618b3e59c8ed59488f",
+  "validated_interpretation": {
+    "candidate_id": "VC::B47::ANN-6234edc2",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y10@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y10@\\X100C/C' clearly indicates 2-legged stirrups with Y10 (10mm diameter) bars at 100mm centers",
+      "The '\\X' appears to be OCR corruption of '@' or spacing indicator, normalized to '@' based on standard notation pattern",
+      "Leader line points to the beam outline (black) from below, typical position for stirrup annotation",
+      "Annotation is positioned below the beam section, consistent with stirrup notation placement",
+      "Visual context shows beam B47 with longitudinal bars (4-Y16 annotations pointing to top and bottom bars)",
+      "The stirrup notation is spatially associated with the target beam B47 outline",
+      "Format '2L-Y10@100C/C' follows standard stirrup notation: legs-diameter@spacing",
+      "No conflicting evidence from visual or textual sources"
+    ],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to standard '@' based on context and standard notation patterns"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to standard '@' based on context and standard notation patterns"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B47::ANN-6234edc2",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y10@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y10@\\X100C/C' clearly indicates 2-legged stirrups with Y10 (10mm diameter) bars at 100mm centers",
+        "The '\\X' appears to be OCR corruption of '@' or spacing indicator, normalized to '@' based on standard notation pattern",
+        "Leader line points to the beam outline (black) from below, typical position for stirrup annotation",
+        "Annotation is positioned below the beam section, consistent with stirrup notation placement",
+        "Visual context shows beam B47 with longitudinal bars (4-Y16 annotations pointing to top and bottom bars)",
+        "The stirrup notation is spatially associated with the target beam B47 outline",
+        "Format '2L-Y10@100C/C' follows standard stirrup notation: legs-diameter@spacing",
+        "No conflicting evidence from visual or textual sources"
+      ],
+      "warnings": [
+        "OCR corruption '\\X' in original text normalized to standard '@' based on context and standard notation patterns"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

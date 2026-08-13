@@ -1,0 +1,89 @@
+{
+  "candidate_id": "VC::B76::ANN-f3f0c63d",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2764,
+    "output_tokens": 414
+  },
+  "prompt_fingerprint": "47857fe035441931f7ab9628c0b53200127d06146f78f6c073434124b44bf0d9",
+  "evidence_fingerprint": "ec601c14ac47ba4efa8f52f90c40ea649c676ec5af719d1177f86c3fddea8e1e",
+  "validated_interpretation": {
+    "candidate_id": "VC::B76::ANN-f3f0c63d",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100/125/100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y10@\\X100/125/100C/C' clearly indicates stirrup notation with 4 legs",
+      "Y10 indicates 10mm diameter reinforcement bars",
+      "Spacing pattern 100/125/100 indicates variable spacing in millimeters",
+      "C/C suffix confirms center-to-center spacing measurement",
+      "Annotation positioned below beam cross-section, typical location for stirrup notation",
+      "Leader line points to beam section, confirming association with TARGET_BEAM B76",
+      "Beam depth 600mm supports stirrup interpretation",
+      "No visual conflict between annotation position and beam geometry",
+      "OCR artifact '\\X' normalized to '@' based on standard stirrup notation convention"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' interpreted as '@' based on context and standard notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' interpreted as '@' based on context and standard notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B76::ANN-f3f0c63d",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "VARIABLE",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/125/100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y10@\\X100/125/100C/C' clearly indicates stirrup notation with 4 legs",
+        "Y10 indicates 10mm diameter reinforcement bars",
+        "Spacing pattern 100/125/100 indicates variable spacing in millimeters",
+        "C/C suffix confirms center-to-center spacing measurement",
+        "Annotation positioned below beam cross-section, typical location for stirrup notation",
+        "Leader line points to beam section, confirming association with TARGET_BEAM B76",
+        "Beam depth 600mm supports stirrup interpretation",
+        "No visual conflict between annotation position and beam geometry",
+        "OCR artifact '\\X' normalized to '@' based on standard stirrup notation convention"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' interpreted as '@' based on context and standard notation",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

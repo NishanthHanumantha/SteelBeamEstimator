@@ -1,0 +1,87 @@
+{
+  "candidate_id": "VC::B41::ANN-acf3d77c",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2280,
+    "output_tokens": 450
+  },
+  "prompt_fingerprint": "7510fdd72585b6c9139e940640e305d67450c4489ced5a585ac476596695d889",
+  "evidence_fingerprint": "69703798d24f304d1412ac17e70be126ac2836a960a1510d9ed857d74f46b848",
+  "validated_interpretation": {
+    "candidate_id": "VC::B41::ANN-acf3d77c",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y12@\\X100C/C' clearly visible with leader pointing to stirrup reinforcement",
+      "Leader terminates at the stirrup/shear reinforcement (vertical blue lines) of the right beam section",
+      "Notation format matches standard stirrup specification: legs-diameter@spacing",
+      "4L indicates 4-legged stirrup configuration",
+      "Y12 indicates 12mm diameter reinforcement bars",
+      "@100C/C indicates 100mm center-to-center spacing",
+      "Visual evidence shows closed stirrup loops in the beam cross-section",
+      "Position at bottom of beam section consistent with stirrup notation placement",
+      "Beam B41 is the target beam and annotation clearly associates with its stirrup reinforcement",
+      "OCR artifact '\\X' in spacing notation normalized to standard format"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text '4L-Y12@\\X100C/C' normalized to '4L-Y12@100C/C' based on standard notation pattern",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text '4L-Y12@\\X100C/C' normalized to '4L-Y12@100C/C' based on standard notation pattern",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B41::ANN-acf3d77c",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y12@\\X100C/C' clearly visible with leader pointing to stirrup reinforcement",
+        "Leader terminates at the stirrup/shear reinforcement (vertical blue lines) of the right beam section",
+        "Notation format matches standard stirrup specification: legs-diameter@spacing",
+        "4L indicates 4-legged stirrup configuration",
+        "Y12 indicates 12mm diameter reinforcement bars",
+        "@100C/C indicates 100mm center-to-center spacing",
+        "Visual evidence shows closed stirrup loops in the beam cross-section",
+        "Position at bottom of beam section consistent with stirrup notation placement",
+        "Beam B41 is the target beam and annotation clearly associates with its stirrup reinforcement",
+        "OCR artifact '\\X' in spacing notation normalized to standard format"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text '4L-Y12@\\X100C/C' normalized to '4L-Y12@100C/C' based on standard notation pattern",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B101A::ANN-bfa9b021",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/150/100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Annotation text '4L-Y10@100/150/100C/C' clearly indicates stirrup notation with 4 legs (4L), Y10 diameter bars, and variable spacing pattern 100/150/100 center-to-center",
+        "Annotation positioned horizontally along the span of beam B101A(400X1100), consistent with stirrup spacing notation",
+        "Visual context shows beam cross-section with vertical stirrup legs indicated by vertical lines at regular intervals",
+        "Deterministic metadata confirms semantic_type=STIRRUP and quantity_intent_status=SPACING_BASED",
+        "Spacing pattern 100/150/100 indicates closer spacing at ends (100mm) and wider spacing in middle (150mm), typical for beam stirrup design",
+        "No leader line pointing to specific location; annotation spans the beam length, consistent with stirrup spacing notation",
+        "Sibling annotation '4-Y25' visible above and below beam, likely representing longitudinal reinforcement"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 2795,
+    "output_tokens": 420
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "64395b5811cfcad281a91298820fedef57a27d501f2ebd51de6a0c581d498f2e",
+  "prompt_fingerprint": "3e2b19ed7f583e66465bfbc45401fefa9369e62d2c500c03f93d75a24b97380e",
+  "live_call": false
+}

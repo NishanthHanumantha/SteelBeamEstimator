@@ -1,0 +1,465 @@
+{
+  "phase_id": "P2.5.6",
+  "model_version": "10.8.2",
+  "scope": "FOURTH_SET_ONLY",
+  "pass_fail": "PASS",
+  "decision": "READY_FOR_NEXT_CONTROLLED_EXPERIMENT",
+  "vision_source": "REPLAY_P254_FROZEN",
+  "candidate_count": 41,
+  "metrics": {
+    "total_candidates": 41,
+    "claude_calls": 41,
+    "claude_calls_live": 0,
+    "claude_calls_replayed": 41,
+    "claude_success_rate": 100.0,
+    "by_field": {
+      "semantic_type": {
+        "deterministic_known_count": 39,
+        "deterministic_unknown_count": 2,
+        "vision_known_count": 41,
+        "vision_unknown_count": 0,
+        "BOTH_AGREE": 38,
+        "VISION_ONLY_CANDIDATE": 2,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 1,
+        "UNRESOLVED": 0,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 38,
+          "VISION_CONFLICT": 1,
+          "VISION_FIELD_CANDIDATE": 2
+        }
+      },
+      "reinforcement_role": {
+        "deterministic_known_count": 21,
+        "deterministic_unknown_count": 20,
+        "vision_known_count": 40,
+        "vision_unknown_count": 1,
+        "BOTH_AGREE": 20,
+        "VISION_ONLY_CANDIDATE": 19,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 1,
+        "UNRESOLVED": 1,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 20,
+          "VISION_FIELD_CANDIDATE": 19,
+          "UNRESOLVED": 1,
+          "VISION_CONFLICT": 1
+        }
+      },
+      "diameter": {
+        "deterministic_known_count": 31,
+        "deterministic_unknown_count": 10,
+        "vision_known_count": 39,
+        "vision_unknown_count": 2,
+        "BOTH_AGREE": 31,
+        "VISION_ONLY_CANDIDATE": 8,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 0,
+        "UNRESOLVED": 2,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 31,
+          "VISION_FIELD_CANDIDATE": 8,
+          "UNRESOLVED": 2
+        }
+      },
+      "quantity": {
+        "deterministic_known_count": 20,
+        "deterministic_unknown_count": 21,
+        "vision_known_count": 20,
+        "vision_unknown_count": 21,
+        "BOTH_AGREE": 20,
+        "VISION_ONLY_CANDIDATE": 0,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 0,
+        "UNRESOLVED": 2,
+        "NOT_APPLICABLE": 19,
+        "VISION_REJECTED": 0,
+        "states": {
+          "NOT_APPLICABLE": 19,
+          "BOTH_AGREE": 20,
+          "UNRESOLVED": 2
+        }
+      },
+      "legs": {
+        "deterministic_known_count": 11,
+        "deterministic_unknown_count": 30,
+        "vision_known_count": 19,
+        "vision_unknown_count": 22,
+        "BOTH_AGREE": 11,
+        "VISION_ONLY_CANDIDATE": 8,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 0,
+        "UNRESOLVED": 2,
+        "NOT_APPLICABLE": 20,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 11,
+          "NOT_APPLICABLE": 20,
+          "VISION_FIELD_CANDIDATE": 8,
+          "UNRESOLVED": 2
+        }
+      },
+      "spacing": {
+        "deterministic_known_count": 11,
+        "deterministic_unknown_count": 30,
+        "vision_known_count": 19,
+        "vision_unknown_count": 22,
+        "BOTH_AGREE": 10,
+        "VISION_ONLY_CANDIDATE": 8,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 1,
+        "UNRESOLVED": 22,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 10,
+          "UNRESOLVED": 22,
+          "VISION_CONFLICT": 1,
+          "VISION_FIELD_CANDIDATE": 8
+        }
+      },
+      "beam_association": {
+        "deterministic_known_count": 41,
+        "deterministic_unknown_count": 0,
+        "vision_known_count": 39,
+        "vision_unknown_count": 2,
+        "BOTH_AGREE": 39,
+        "VISION_ONLY_CANDIDATE": 0,
+        "DETERMINISTIC_ONLY": 2,
+        "CONFLICT": 0,
+        "UNRESOLVED": 0,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "BOTH_AGREE": 39,
+          "VISION_UNRESOLVED": 2
+        }
+      },
+      "zone": {
+        "deterministic_known_count": 0,
+        "deterministic_unknown_count": 41,
+        "vision_known_count": 37,
+        "vision_unknown_count": 4,
+        "BOTH_AGREE": 0,
+        "VISION_ONLY_CANDIDATE": 0,
+        "DETERMINISTIC_ONLY": 0,
+        "CONFLICT": 0,
+        "UNRESOLVED": 4,
+        "NOT_APPLICABLE": 0,
+        "VISION_REJECTED": 0,
+        "states": {
+          "VISION_DIAGNOSTIC": 37,
+          "UNRESOLVED": 4
+        }
+      }
+    },
+    "accepted_vision_field_candidates": 45,
+    "rejected_vision_fields": 0,
+    "conflicting_vision_fields": 3,
+    "validated_vision_fields": 45,
+    "invalid_vision_fields": 0,
+    "total_vision_derived_candidate_fields": 45,
+    "validated_candidate_fields": 45,
+    "rejected_candidate_fields": 0,
+    "conflict_fields": 3,
+    "potentially_useful_fields": 45,
+    "SAFE_FIELD_CANDIDATE_RATE": 100.0,
+    "FIELD_CONFLICT_RATE": 0.91,
+    "FIELD_REJECTION_RATE": 0.0,
+    "FIELD_VALIDATION_PASS_RATE": 100.0,
+    "production_mutation_count": 0,
+    "steel_quantity_differences": 0,
+    "bbs_differences": 0,
+    "excel_differences": 0,
+    "token_usage": {
+      "input_tokens": 100215,
+      "output_tokens": 15639,
+      "total_tokens": 115854
+    }
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": [],
+    "p254_unchanged": true,
+    "p255_unchanged": true,
+    "p251_unchanged": true
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.5.6 writes only field-level shadow/evaluation artefacts"
+  },
+  "engineering_changes": "NONE",
+  "production_output_changes": "NONE",
+  "estimated_api_cost_usd": 0.5352,
+  "estimated_cost_note": "Approx Claude Sonnet list rates $3/MTok in + $15/MTok out; replay uses frozen P2.5.4 token usage (no new live spend unless --live).",
+  "unit_tests": {
+    "success": true,
+    "passed": 22,
+    "total": 22,
+    "results": [
+      {
+        "name": "field_both_agree",
+        "pass": true
+      },
+      {
+        "name": "vision_only_diameter_candidate",
+        "pass": true
+      },
+      {
+        "name": "vision_only_legs_candidate",
+        "pass": true
+      },
+      {
+        "name": "vision_only_spacing_candidate",
+        "pass": true
+      },
+      {
+        "name": "deterministic_value_wins_conflict",
+        "pass": true
+      },
+      {
+        "name": "b58_type_role_conflict",
+        "pass": true
+      },
+      {
+        "name": "b120_spacing_conflict",
+        "pass": true
+      },
+      {
+        "name": "b46_field_supplementation",
+        "pass": true
+      },
+      {
+        "name": "invented_stirrup_quantity_rejected",
+        "pass": true
+      },
+      {
+        "name": "invalid_diameter_rejected",
+        "pass": true
+      },
+      {
+        "name": "invalid_spacing_rejected",
+        "pass": true
+      },
+      {
+        "name": "invalid_legs_rejected",
+        "pass": true
+      },
+      {
+        "name": "longitudinal_legs_not_applicable",
+        "pass": true
+      },
+      {
+        "name": "zone_not_promotable",
+        "pass": true
+      },
+      {
+        "name": "beam_association_conflict",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_steel_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_bbs_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_excel_mutation",
+        "pass": true
+      },
+      {
+        "name": "p251_fingerprint_unchanged",
+        "pass": true
+      },
+      {
+        "name": "p254_regression_unchanged",
+        "pass": true
+      },
+      {
+        "name": "p255_regression_unchanged",
+        "pass": true
+      }
+    ],
+    "p255_unit_tests": {
+      "success": true,
+      "passed": 16,
+      "total": 16,
+      "results": [
+        {
+          "name": "both_agree",
+          "pass": true
+        },
+        {
+          "name": "vision_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "deterministic_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "vision_conflict",
+          "pass": true
+        },
+        {
+          "name": "both_unresolved",
+          "pass": true
+        },
+        {
+          "name": "vision_wrong_evaluation",
+          "pass": true
+        },
+        {
+          "name": "b58_semantic_conflict_protection",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_quantity_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "invalid_claude_response",
+          "pass": true
+        },
+        {
+          "name": "invented_quantity_rejection",
+          "pass": true
+        },
+        {
+          "name": "stirrup_quantity_protection",
+          "pass": true
+        },
+        {
+          "name": "zone_remains_unpromoted",
+          "pass": true
+        },
+        {
+          "name": "deterministic_fingerprint_unchanged",
+          "pass": true
+        }
+      ],
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.1"
+    },
+    "p254_unit_tests": {
+      "success": true,
+      "passed": 9,
+      "total": 9,
+      "results": [
+        {
+          "name": "longitudinal_oracle",
+          "pass": true
+        },
+        {
+          "name": "sfr_oracle_no_invented_quantity",
+          "pass": true
+        },
+        {
+          "name": "stirrup_rejects_quantity",
+          "pass": true
+        },
+        {
+          "name": "validator_accepts_longitudinal",
+          "pass": true
+        },
+        {
+          "name": "exact_longitudinal_eval",
+          "pass": true
+        },
+        {
+          "name": "hallucination_wrong_diameter",
+          "pass": true
+        },
+        {
+          "name": "prompt_excludes_truth",
+          "pass": true
+        },
+        {
+          "name": "shadow_not_production",
+          "pass": true
+        },
+        {
+          "name": "json_extract",
+          "pass": true
+        }
+      ],
+      "model_version": "10.8.0"
+    },
+    "model_version": "10.8.2"
+  },
+  "b46_ok": true,
+  "b58_ok": true,
+  "b120_ok": true,
+  "zone_ok": true
+}

@@ -1,0 +1,46 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B120::ANN-8883ea68",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "BOTTOM_BAR",
+      "quantity": 3,
+      "diameter_mm": 25,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3-Y25",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Annotation '3-Y25' is clearly visible in magenta text",
+        "Leader line points downward from the annotation to the bottom fiber of the horizontal beam (green outline)",
+        "Position of annotation is below the beam centerline, consistent with bottom reinforcement",
+        "Beam depth 600mm with horizontal orientation confirmed by visual geometry",
+        "No stirrup notation pattern present (no spacing indicators like @100)",
+        "Notation format '3-Y25' matches standard longitudinal bar callout: quantity-diameter",
+        "Beam association confirmed by leader termination at target beam bottom face",
+        "Location appears to be in mid-span region based on beam geometry and surrounding context",
+        "No conflicting visual evidence or OCR corruption detected"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 1896,
+    "output_tokens": 345
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "5d32c2f94f25013a0bcff8ba6f7b0e3227daea84be8f5db91e3c55b0bd219d54",
+  "prompt_fingerprint": "0e753965dcff7501b27fbeb2dc6070bc2789b979850bd19381461735fa87369a",
+  "live_call": false
+}

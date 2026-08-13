@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B80::ANN-86804332",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2639,
+    "output_tokens": 424
+  },
+  "prompt_fingerprint": "f4b8094a5bc4399b7935fd5ce3565861ecc2566867483f596af5524e26309c03",
+  "evidence_fingerprint": "51472944f6ec2dbf66eb3e303c6b8bddb1ba195214c43f7bdfa241e7c6e5a218",
+  "validated_interpretation": {
+    "candidate_id": "VC::B80::ANN-86804332",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation '2L-Y8@\\X100C/C' is positioned below the target beam B80 with a leader pointing to the bottom longitudinal reinforcement zone",
+      "The '2L' prefix indicates 2 legs of stirrups",
+      "Y8 indicates 8mm diameter reinforcement bars",
+      "The '@\\X100C/C' notation indicates spacing at 100mm centers (the '\\X' appears to be OCR artifact, normalized to '@')",
+      "Visual context shows the annotation is associated with the horizontal beam B80 in the upper portion of the drawing",
+      "The leader line connects from the annotation to the beam's bottom reinforcement layer, typical for stirrup notation placement",
+      "The beam section shows green stirrup outlines consistent with transverse reinforcement",
+      "Position is in the span region of the beam, not at support locations"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in spacing notation normalized to standard '@' symbol",
+      "Quantity field left null as per schema rules for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in spacing notation normalized to standard '@' symbol",
+      "Quantity field left null as per schema rules for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B80::ANN-86804332",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation '2L-Y8@\\X100C/C' is positioned below the target beam B80 with a leader pointing to the bottom longitudinal reinforcement zone",
+        "The '2L' prefix indicates 2 legs of stirrups",
+        "Y8 indicates 8mm diameter reinforcement bars",
+        "The '@\\X100C/C' notation indicates spacing at 100mm centers (the '\\X' appears to be OCR artifact, normalized to '@')",
+        "Visual context shows the annotation is associated with the horizontal beam B80 in the upper portion of the drawing",
+        "The leader line connects from the annotation to the beam's bottom reinforcement layer, typical for stirrup notation placement",
+        "The beam section shows green stirrup outlines consistent with transverse reinforcement",
+        "Position is in the span region of the beam, not at support locations"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in spacing notation normalized to standard '@' symbol",
+        "Quantity field left null as per schema rules for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

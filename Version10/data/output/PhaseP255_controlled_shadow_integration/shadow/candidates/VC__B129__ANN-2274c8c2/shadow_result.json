@@ -1,0 +1,186 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B129::ANN-2274c8c2",
+  "beam_id": "B129",
+  "annotation_id": "ANN-2274c8c2",
+  "annotation_text": "2-Y16",
+  "deterministic_result": {
+    "intent_id": "QI::B129::ANN-2274c8c2",
+    "beam_id": "B129",
+    "annotation_id": "ANN-2274c8c2",
+    "raw_text": "2-Y16",
+    "normalized_text": "2-Y16",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "2-Y16",
+    "quantity_value": 2,
+    "quantity_status": "EXPLICIT",
+    "quantity_source": "ANNOTATION_TEXT",
+    "diameter_expression": "Y16",
+    "diameter_value_mm": 16.0,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [
+      {
+        "quantity_expression": "2-Y16",
+        "quantity_value": 2,
+        "diameter_expression": "Y16",
+        "diameter_value_mm": 16.0,
+        "parse_ok": true
+      }
+    ],
+    "evidence_links": {
+      "beam_id": "B129",
+      "annotation_id": "ANN-2274c8c2",
+      "leader_id": "LDR::210B4209",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "BarCallout"
+    },
+    "confidence": 0.9,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "longitudinal_explicit",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::210B4209",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "EXPLICIT",
+  "deterministic_type": "LONGITUDINAL_BAR",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": 16.0,
+  "deterministic_quantity": 2,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B129::ANN-2274c8c2",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 2,
+    "diameter_mm": 16,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2-Y16",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text reads '2-Y16' indicating 2 bars of Y16 (16mm diameter)",
+      "Annotation appears in magenta text '4-Y20 2-Y16' at top of beam section",
+      "Leader line points downward from annotation to top face of beam B129(400X1100)",
+      "Green reinforcement line visible at top of beam cross-section at leader terminus",
+      "Position and leader direction indicate top longitudinal reinforcement",
+      "Beam section shows this is part of combined top bar notation with 4-Y20",
+      "Spatial context: annotation positioned above beam, leader points to top face",
+      "Beam depth 600mm (metadata) but drawing shows 1100mm depth - using visual evidence",
+      "Zone is SPAN based on beam section view showing mid-span configuration"
+    ],
+    "warnings": [
+      "Annotation '2-Y16' appears as part of combined notation '4-Y20 2-Y16' - this interpretation covers only the 2-Y16 component",
+      "Metadata indicates beam depth 600mm but drawing shows B129(400X1100) - visual evidence used"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "LONGITUDINAL_BAR",
+  "vision_role": "TOP_BAR",
+  "vision_diameter": 16,
+  "vision_quantity": 2,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text reads '2-Y16' indicating 2 bars of Y16 (16mm diameter)",
+    "Annotation appears in magenta text '4-Y20 2-Y16' at top of beam section",
+    "Leader line points downward from annotation to top face of beam B129(400X1100)",
+    "Green reinforcement line visible at top of beam cross-section at leader terminus",
+    "Position and leader direction indicate top longitudinal reinforcement",
+    "Beam section shows this is part of combined top bar notation with 4-Y20",
+    "Spatial context: annotation positioned above beam, leader points to top face",
+    "Beam depth 600mm (metadata) but drawing shows 1100mm depth - using visual evidence",
+    "Zone is SPAN based on beam section view showing mid-span configuration"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Annotation '2-Y16' appears as part of combined notation '4-Y20 2-Y16' - this interpretation covers only the 2-Y16 component",
+      "Metadata indicates beam depth 600mm but drawing shows B129(400X1100) - visual evidence used"
+    ]
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "ROLE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "9cf53bee5dbd88caecbaa2e5f82cd1dfe417607ccd260c8abb602daceb647f40",
+  "prompt_fingerprint": "7157f227c6694da05f009899ac8d020d713dd104e656d38338d1b726729cb9d7",
+  "timestamp_utc": "2026-08-13T07:36:26.683860+00:00"
+}

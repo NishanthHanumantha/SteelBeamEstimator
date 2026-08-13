@@ -1,0 +1,81 @@
+{
+  "candidate_id": "VC::B46::ANN-a84a3d64",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2616,
+    "output_tokens": 393
+  },
+  "prompt_fingerprint": "97bdf464ca39b1994f1ddc7b79af6a620c28790638fd8581877bc4cc50c8e5db",
+  "evidence_fingerprint": "16a0752d56e34e32e76c8bc66e277c3b8d904c9447d1dc039bec05c62fc37519",
+  "validated_interpretation": {
+    "candidate_id": "VC::B46::ANN-a84a3d64",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y10@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y10@\\X100C/C' clearly indicates 2-leg stirrups with Y10 diameter at 100mm centers",
+      "The '\\X' appears to be OCR corruption of '@' symbol, normalized to standard stirrup notation",
+      "Annotation positioned below the beam section, typical location for stirrup notation",
+      "Visual context shows beam cross-section with longitudinal bars (4-Y16 annotations visible)",
+      "No leader line pointing to specific location, consistent with general stirrup specification",
+      "Beam B46 is horizontal orientation with 600mm depth per metadata",
+      "Position and context support this as span stirrup reinforcement for target beam B46"
+    ],
+    "warnings": [
+      "OCR corruption: '\\X' normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null per schema rules - stirrup piece count not calculated from spacing"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption: '\\X' normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null per schema rules - stirrup piece count not calculated from spacing"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B46::ANN-a84a3d64",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y10@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y10@\\X100C/C' clearly indicates 2-leg stirrups with Y10 diameter at 100mm centers",
+        "The '\\X' appears to be OCR corruption of '@' symbol, normalized to standard stirrup notation",
+        "Annotation positioned below the beam section, typical location for stirrup notation",
+        "Visual context shows beam cross-section with longitudinal bars (4-Y16 annotations visible)",
+        "No leader line pointing to specific location, consistent with general stirrup specification",
+        "Beam B46 is horizontal orientation with 600mm depth per metadata",
+        "Position and context support this as span stirrup reinforcement for target beam B46"
+      ],
+      "warnings": [
+        "OCR corruption: '\\X' normalized to '@' based on standard stirrup notation pattern",
+        "Quantity field left null per schema rules - stirrup piece count not calculated from spacing"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

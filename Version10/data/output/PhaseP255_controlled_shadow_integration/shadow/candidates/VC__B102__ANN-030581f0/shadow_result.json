@@ -1,0 +1,173 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B102::ANN-030581f0",
+  "beam_id": "B102",
+  "annotation_id": "ANN-030581f0",
+  "annotation_text": "3L-Y10@100C/C",
+  "deterministic_result": {
+    "intent_id": "QI::B102::ANN-030581f0",
+    "beam_id": "B102",
+    "annotation_id": "ANN-030581f0",
+    "raw_text": "3L-Y10@100C/C",
+    "normalized_text": "3L-Y10@100C/C",
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "quantity_expression": "3L-Y10@100C/C",
+    "quantity_value": null,
+    "quantity_status": "SPACING_BASED",
+    "quantity_source": "STIRRUP_PATTERN",
+    "diameter_expression": "Y10",
+    "diameter_value_mm": 10.0,
+    "spacing_expression": "100",
+    "spacing_value_mm": 100.0,
+    "spacing_values_mm": [
+      100.0
+    ],
+    "leg_expression": "3L",
+    "leg_count": 3,
+    "unit": "SPACING_MM",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B102",
+      "annotation_id": "ANN-030581f0",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.99,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "stirrup_parsed",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": null,
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "SPACING_BASED",
+  "deterministic_type": "STIRRUP",
+  "deterministic_role": "STIRRUP",
+  "deterministic_diameter": 10.0,
+  "deterministic_quantity": null,
+  "deterministic_legs": 3,
+  "deterministic_spacing": [
+    100.0
+  ],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B102::ANN-030581f0",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y10@100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text notation '3L-Y10@100C/C' clearly indicates 3-legged stirrups with Y10 (10mm diameter) bars at 100mm centers",
+      "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+      "Visual evidence shows annotation positioned within beam B102 cross-section in span region",
+      "Annotation appears in cyan/turquoise color typical of stirrup notation on this drawing",
+      "Position is consistent with stirrup spacing notation for the target beam",
+      "No leader line pointing away from target beam; annotation is locally associated with B102",
+      "Spacing pattern 'C/C' (center-to-center) indicates uniform spacing of 100mm"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "STIRRUP",
+  "vision_role": "STIRRUP",
+  "vision_diameter": 10,
+  "vision_quantity": null,
+  "vision_legs": 3,
+  "vision_spacing": [
+    100
+  ],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text notation '3L-Y10@100C/C' clearly indicates 3-legged stirrups with Y10 (10mm diameter) bars at 100mm centers",
+    "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+    "Visual evidence shows annotation positioned within beam B102 cross-section in span region",
+    "Annotation appears in cyan/turquoise color typical of stirrup notation on this drawing",
+    "Position is consistent with stirrup spacing notation for the target beam",
+    "No leader line pointing away from target beam; annotation is locally associated with B102",
+    "Spacing pattern 'C/C' (center-to-center) indicates uniform spacing of 100mm"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [],
+    "hypothetical_production_impact": "NONE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": false,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "7b0a1bc0f105133ea591fb679ca03913d3ae433942bd3f0dfd96fd289fad39c5",
+  "prompt_fingerprint": "a01aa9dfb2629c80f9383bd26ada353d7764b35ec3f4c11a341f225054fbde04",
+  "timestamp_utc": "2026-08-13T07:36:24.909603+00:00"
+}

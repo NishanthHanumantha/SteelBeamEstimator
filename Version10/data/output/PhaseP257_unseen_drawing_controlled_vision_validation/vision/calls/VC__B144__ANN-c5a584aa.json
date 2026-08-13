@@ -1,0 +1,80 @@
+{
+  "candidate_id": "VC::B144::ANN-c5a584aa",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2010,
+    "output_tokens": 411
+  },
+  "prompt_fingerprint": "d9e7aaed1decfbcd1d6fe0b1b18b54c0a8bd4dfd8e8a8b46d34c4cf83a448dec",
+  "evidence_fingerprint": "9796cdd471ab0fa3a5a10ab47e0dfe5ac08e273c13feed3d8df559248f3a4b4c",
+  "validated_interpretation": {
+    "candidate_id": "VC::B144::ANN-c5a584aa",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SUPPORT",
+    "normalized_notation": "3L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs, Y12 diameter bars, at 100mm centers",
+      "The '\\X' appears to be OCR corruption of '@' symbol, normalized to standard stirrup spacing notation",
+      "Annotation is positioned below the beam section at a column/support interface, consistent with stirrup placement",
+      "Leader line points to the vertical stirrup elements visible in the beam cross-section",
+      "Visual context shows beam B144 at support region with column intersection",
+      "Sibling annotations '3-Y20' and '2-Y16' represent longitudinal bars, confirming this is the stirrup notation",
+      "Position and leader clearly associate this annotation with the target beam B144",
+      "The 'C/C' suffix confirms center-to-center spacing measurement"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B144::ANN-c5a584aa",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SUPPORT",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '3L-Y12@\\X100C/C' clearly indicates stirrup notation with 3 legs, Y12 diameter bars, at 100mm centers",
+        "The '\\X' appears to be OCR corruption of '@' symbol, normalized to standard stirrup spacing notation",
+        "Annotation is positioned below the beam section at a column/support interface, consistent with stirrup placement",
+        "Leader line points to the vertical stirrup elements visible in the beam cross-section",
+        "Visual context shows beam B144 at support region with column intersection",
+        "Sibling annotations '3-Y20' and '2-Y16' represent longitudinal bars, confirming this is the stirrup notation",
+        "Position and leader clearly associate this annotation with the target beam B144",
+        "The 'C/C' suffix confirms center-to-center spacing measurement"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' in original text normalized to '@' based on standard stirrup notation convention"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

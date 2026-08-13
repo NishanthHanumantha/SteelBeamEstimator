@@ -1,0 +1,48 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B123::ANN-6d809bfc",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "100/125/100C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/125/100C/C",
+      "confidence": 0.98,
+      "evidence_basis": [
+        "Text notation '4L-Y10@100/125/100C/C' clearly visible in cyan color below beam B123(600X600)",
+        "Notation positioned directly below the target beam B123 in the upper right section of the drawing",
+        "Format follows standard stirrup notation: 4L (4 legs), Y10 (10mm diameter), @100/125/100C/C (spacing pattern with center-to-center)",
+        "Visual position and leader association confirm this is stirrup reinforcement for beam B123",
+        "Beam identifier B123(600X600) shown in cyan directly above the notation",
+        "Stirrup notation is consistent with engineering drawing conventions for transverse reinforcement",
+        "No conflicting visual evidence; notation is clear and unambiguous"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 1911,
+    "output_tokens": 377
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "a95e8d878943bd384d7de143cd544ad82471c072bfce8c4286b6104eb8595355",
+  "prompt_fingerprint": "ae1fdd887275c0f8ec3587dd5b21f14f145875a836ff9fba829e0ae834a06f24",
+  "live_call": false
+}

@@ -1,0 +1,82 @@
+{
+  "candidate_id": "VC::B1::ANN-fe6b2608",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 1852,
+    "output_tokens": 446
+  },
+  "prompt_fingerprint": "c9b59216f44ca5754d7fc8a90f1747454599e85d5669e576be9f5c8a69083140",
+  "evidence_fingerprint": "5ae2914c9ea1a2f104dcb8d175862c47013ffd16dbad66a4d117d59e5a3f9e49",
+  "validated_interpretation": {
+    "candidate_id": "VC::B1::ANN-fe6b2608",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 3,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "100C/125/100C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y8@100C/125/100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation text '3L-Y8@100C/125/100C/C' clearly indicates stirrup notation with 3 legs (3L), Y8 diameter bars, and spacing pattern",
+      "Visual evidence shows vertical stirrup elements distributed along the beam length at the specified spacing intervals",
+      "Annotation is positioned directly on the TARGET_BEAM B1 outline with leader pointing to stirrup reinforcement",
+      "Stirrup pattern visible in drawing shows varying spacing: close spacing (100mm) at ends marked with 'C', wider spacing (125mm) in middle zone, consistent with notation",
+      "Metadata confirms deterministic_semantic_type: STIRRUP and deterministic_role: STIRRUP",
+      "Beam orientation is HORIZONTAL, stirrups are shown as vertical elements perpendicular to beam axis",
+      "Green dashed lines in drawing represent stirrup distribution pattern matching the spacing sequence"
+    ],
+    "warnings": [
+      "Spacing pattern '100C/125/100C/C' indicates close spacing zones at supports - total stirrup count depends on beam length which is not specified"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Spacing pattern '100C/125/100C/C' indicates close spacing zones at supports - total stirrup count depends on beam length which is not specified"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B1::ANN-fe6b2608",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 3,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "100C/125/100C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y8@100C/125/100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Annotation text '3L-Y8@100C/125/100C/C' clearly indicates stirrup notation with 3 legs (3L), Y8 diameter bars, and spacing pattern",
+        "Visual evidence shows vertical stirrup elements distributed along the beam length at the specified spacing intervals",
+        "Annotation is positioned directly on the TARGET_BEAM B1 outline with leader pointing to stirrup reinforcement",
+        "Stirrup pattern visible in drawing shows varying spacing: close spacing (100mm) at ends marked with 'C', wider spacing (125mm) in middle zone, consistent with notation",
+        "Metadata confirms deterministic_semantic_type: STIRRUP and deterministic_role: STIRRUP",
+        "Beam orientation is HORIZONTAL, stirrups are shown as vertical elements perpendicular to beam axis",
+        "Green dashed lines in drawing represent stirrup distribution pattern matching the spacing sequence"
+      ],
+      "warnings": [
+        "Spacing pattern '100C/125/100C/C' indicates close spacing zones at supports - total stirrup count depends on beam length which is not specified"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

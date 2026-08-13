@@ -1,0 +1,45 @@
+{
+  "vision_source": "REPLAY_P254_FROZEN",
+  "api_ok": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B97A::ANN-d7128f62",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "quantity": 4,
+      "diameter_mm": 25,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4-Y25",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text clearly reads '4-Y25' indicating 4 bars of Y25 (25mm diameter)",
+        "Annotation positioned at top of beam cross-section with leader pointing to top reinforcement layer",
+        "Magenta color coding consistent with top longitudinal reinforcement",
+        "Symmetric placement with identical '4-Y25' annotation on right side of beam",
+        "Position above beam section confirms top bar role",
+        "Beam B97A(400X1100) identified in cyan text below, confirming target beam association",
+        "Stirrup notation '4L-Y8@100C/C' shown separately at mid-height, distinct from this longitudinal bar notation",
+        "Cross-section view shows this annotation clearly associated with top reinforcement zone"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "usage": {
+    "input_tokens": 2403,
+    "output_tokens": 351
+  },
+  "model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "evidence_fingerprint": "d051d35b15f556d178f0b420ee28c35fb47bd1a211bbf71d65259304d21e97d6",
+  "prompt_fingerprint": "19ed75f1771d97c436e977f8896f1f7cc850b6b7199fae5487c070ab2ebe7a55",
+  "live_call": false
+}

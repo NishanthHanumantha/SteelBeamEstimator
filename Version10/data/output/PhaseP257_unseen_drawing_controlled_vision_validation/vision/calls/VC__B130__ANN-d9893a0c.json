@@ -1,0 +1,86 @@
+{
+  "candidate_id": "VC::B130::ANN-d9893a0c",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2522,
+    "output_tokens": 422
+  },
+  "prompt_fingerprint": "db1d816369f6ecfadba5e607077cb50e81b5b2813fdbf49a68c087307bfb7ccf",
+  "evidence_fingerprint": "454c7a91bf0d3e34cad37b533688be3ba5234d88a376bbc31c3411f504a1ada4",
+  "validated_interpretation": {
+    "candidate_id": "VC::B130::ANN-d9893a0c",
+    "interpretation_status": "PARTIAL",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100C/C",
+    "confidence": 0.75,
+    "evidence_basis": [
+      "Annotation text reads '4L-Y10@\\X100C/C' with OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+      "Visual position: annotation located below the beam cross-section with leader pointing to beam",
+      "4L indicates 4-leg stirrup configuration",
+      "Y10 indicates 10mm diameter reinforcement bar",
+      "100C/C indicates 100mm center-to-center spacing",
+      "Annotation is associated with TARGET_BEAM B130 based on leader connection and spatial proximity",
+      "Zone classified as SPAN based on position away from support regions shown at beam ends",
+      "Cross-section view shows beam depth of 600mm consistent with metadata"
+    ],
+    "warnings": [
+      "OCR corruption present: '\\X' interpreted as '@' based on context and standard notation",
+      "Quantity field left null as per rules - stirrup piece count should not be calculated",
+      "Spacing pattern assumed UNIFORM based on single spacing value, but drawing does not explicitly show variation zones"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption present: '\\X' interpreted as '@' based on context and standard notation",
+      "Quantity field left null as per rules - stirrup piece count should not be calculated",
+      "Spacing pattern assumed UNIFORM based on single spacing value, but drawing does not explicitly show variation zones"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B130::ANN-d9893a0c",
+      "interpretation_status": "PARTIAL",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100C/C",
+      "confidence": 0.75,
+      "evidence_basis": [
+        "Annotation text reads '4L-Y10@\\X100C/C' with OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+        "Visual position: annotation located below the beam cross-section with leader pointing to beam",
+        "4L indicates 4-leg stirrup configuration",
+        "Y10 indicates 10mm diameter reinforcement bar",
+        "100C/C indicates 100mm center-to-center spacing",
+        "Annotation is associated with TARGET_BEAM B130 based on leader connection and spatial proximity",
+        "Zone classified as SPAN based on position away from support regions shown at beam ends",
+        "Cross-section view shows beam depth of 600mm consistent with metadata"
+      ],
+      "warnings": [
+        "OCR corruption present: '\\X' interpreted as '@' based on context and standard notation",
+        "Quantity field left null as per rules - stirrup piece count should not be calculated",
+        "Spacing pattern assumed UNIFORM based on single spacing value, but drawing does not explicitly show variation zones"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

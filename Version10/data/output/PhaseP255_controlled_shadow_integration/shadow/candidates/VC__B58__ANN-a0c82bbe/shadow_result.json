@@ -1,0 +1,206 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B58::ANN-a0c82bbe",
+  "beam_id": "B58",
+  "annotation_id": "ANN-a0c82bbe",
+  "annotation_text": "3L-Y12@\\X100C/C",
+  "deterministic_result": {
+    "intent_id": "QI::B58::ANN-a0c82bbe",
+    "beam_id": "B58",
+    "annotation_id": "ANN-a0c82bbe",
+    "raw_text": "3L-Y12@\\X100C/C",
+    "normalized_text": "3L-Y12@\\X100C/C",
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "quantity_expression": "3L-Y12@\\X100C/C",
+    "quantity_value": null,
+    "quantity_status": "UNRESOLVED",
+    "quantity_source": "STIRRUP_PATTERN",
+    "diameter_expression": null,
+    "diameter_value_mm": null,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B58",
+      "annotation_id": "ANN-a0c82bbe",
+      "leader_id": "LDR::1BD582B9",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.65,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "Cannot parse stirrup notation: '3L-Y12@\\X100C/C'",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::1BD582B9",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "UNRESOLVED",
+  "deterministic_type": "STIRRUP",
+  "deterministic_role": "STIRRUP",
+  "deterministic_diameter": null,
+  "deterministic_quantity": null,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B58::ANN-a0c82bbe",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "SIDE_FACE_REINFORCEMENT",
+    "role": "SIDE_FACE",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text reads '3L-Y12@\\X100C/C' where '\\X' is OCR corruption of line break or formatting; engineering meaning is '3L-Y12@100C/C'",
+      "Notation format '3L-Y12@100C/C' indicates 3 legs of Y12 bars at 100mm centers/centers",
+      "Leader arrow points to horizontal span region of beam B58(300X800) between stirrups",
+      "Position is mid-depth of beam, consistent with side face reinforcement placement",
+      "Visual context shows stirrups and longitudinal bars; this annotation is distinct from both",
+      "3 legs indicates side face bars distributed along beam depth",
+      "Y12 diameter and 100mm spacing are typical for side face reinforcement in 800mm deep beam",
+      "Beam depth 600mm per metadata, but drawing shows 800mm; annotation placement supports side face role",
+      "No evidence of association with other beam; leader clearly targets B58"
+    ],
+    "warnings": [
+      "OCR corruption '\\X' normalized to standard spacing notation based on visual evidence and engineering convention",
+      "Metadata beam_depth_mm=600 conflicts with drawing dimension 800mm; interpretation based on visual evidence",
+      "Quantity field left null as 3L refers to legs (stirrup-like distribution), not discrete bar count"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "SIDE_FACE_REINFORCEMENT",
+  "vision_role": "SIDE_FACE",
+  "vision_diameter": 12,
+  "vision_quantity": null,
+  "vision_legs": 3,
+  "vision_spacing": [
+    100
+  ],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.92,
+  "vision_evidence_basis": [
+    "Text reads '3L-Y12@\\X100C/C' where '\\X' is OCR corruption of line break or formatting; engineering meaning is '3L-Y12@100C/C'",
+    "Notation format '3L-Y12@100C/C' indicates 3 legs of Y12 bars at 100mm centers/centers",
+    "Leader arrow points to horizontal span region of beam B58(300X800) between stirrups",
+    "Position is mid-depth of beam, consistent with side face reinforcement placement",
+    "Visual context shows stirrups and longitudinal bars; this annotation is distinct from both",
+    "3 legs indicates side face bars distributed along beam depth",
+    "Y12 diameter and 100mm spacing are typical for side face reinforcement in 800mm deep beam",
+    "Beam depth 600mm per metadata, but drawing shows 800mm; annotation placement supports side face role",
+    "No evidence of association with other beam; leader clearly targets B58"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "VISION_WRONG",
+  "operational_class": "VISION_CONFLICT",
+  "arbitration_action": "KEEP_DETERMINISTIC_FLAG_VISION_ERROR",
+  "conflict_flags": {
+    "fields": [
+      "type",
+      "role"
+    ],
+    "details": {
+      "type": {
+        "vision": "SIDE_FACE_REINFORCEMENT",
+        "deterministic": "STIRRUP"
+      },
+      "role": {
+        "vision": "SIDE_FACE",
+        "deterministic": "STIRRUP"
+      }
+    }
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' normalized to standard spacing notation based on visual evidence and engineering convention",
+      "Metadata beam_depth_mm=600 conflicts with drawing dimension 800mm; interpretation based on visual evidence",
+      "Quantity field left null as 3L refers to legs (stirrup-like distribution), not discrete bar count"
+    ]
+  },
+  "safety": {
+    "ok": false,
+    "flags": [
+      "SIDE_FACE_FROM_STIRRUP_SYNTAX",
+      "TYPE_CHANGE_VS_DETERMINISTIC",
+      "ROLE_CHANGE_VS_DETERMINISTIC",
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [
+      "SFR_NOT_FROM_GENERIC_MULTI_LEG_SPACING"
+    ],
+    "vision_rejected": true,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC_FLAG_VISION_ERROR",
+  "shadow_trigger_reason": [
+    "OCR_UNCERTAIN",
+    "SEMANTIC_UNCERTAIN",
+    "DIFFICULT_VISUAL",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "HALLUCINATION",
+    "exact_match": false,
+    "field_scores": {
+      "type": false,
+      "role": false,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    },
+    "details": "resolved_wrong_semantic_type"
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "TYPE",
+      "ROLE",
+      "DIAMETER",
+      "LEGS",
+      "SPACING"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "954cadb5b03e3e8022a2a87ef7f4a0a9d063fee511ef04929ace9e1a75b0d51a",
+  "prompt_fingerprint": "4d3272860b499d96060f6606200d0be50dbb701396136aec0eb1a23cb741c8dc",
+  "timestamp_utc": "2026-08-13T07:36:27.349688+00:00"
+}

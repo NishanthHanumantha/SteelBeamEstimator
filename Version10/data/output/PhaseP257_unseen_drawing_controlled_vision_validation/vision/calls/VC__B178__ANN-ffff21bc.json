@@ -1,0 +1,87 @@
+{
+  "candidate_id": "VC::B178::ANN-ffff21bc",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 1920,
+    "output_tokens": 421
+  },
+  "prompt_fingerprint": "8aa4a1a2ad1e77b6fc955272e111b7586d7c37c630bf1275c0c13c3e8d0f14f6",
+  "evidence_fingerprint": "8150ca9d9331fac2d8a02f50f4f02055d9a439fa15d0108bb5157a41b274a512",
+  "validated_interpretation": {
+    "candidate_id": "VC::B178::ANN-ffff21bc",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation '2L-Y8@\\X100C/C' is positioned at bottom-left of beam B178 with black leader pointing to beam outline",
+      "Text structure follows standard stirrup notation: legs-diameter@spacing pattern",
+      "2L indicates 2-legged stirrup configuration",
+      "Y8 indicates 8mm diameter reinforcement bar",
+      "@100C/C indicates 100mm center-to-center spacing",
+      "Backslash before X appears to be OCR artifact; normalized to standard spacing notation",
+      "Leader line clearly associates annotation with TARGET_BEAM B178",
+      "Position at bottom-left and uniform spacing pattern indicates SPAN zone stirrup reinforcement",
+      "Visual evidence shows stirrup outline in green matching typical transverse reinforcement representation",
+      "No conflicting evidence from image or metadata"
+    ],
+    "warnings": [
+      "OCR artifact '\\X' normalized to standard spacing notation - visual context supports 100mm spacing",
+      "Quantity field left null per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR artifact '\\X' normalized to standard spacing notation - visual context supports 100mm spacing",
+      "Quantity field left null per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B178::ANN-ffff21bc",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation '2L-Y8@\\X100C/C' is positioned at bottom-left of beam B178 with black leader pointing to beam outline",
+        "Text structure follows standard stirrup notation: legs-diameter@spacing pattern",
+        "2L indicates 2-legged stirrup configuration",
+        "Y8 indicates 8mm diameter reinforcement bar",
+        "@100C/C indicates 100mm center-to-center spacing",
+        "Backslash before X appears to be OCR artifact; normalized to standard spacing notation",
+        "Leader line clearly associates annotation with TARGET_BEAM B178",
+        "Position at bottom-left and uniform spacing pattern indicates SPAN zone stirrup reinforcement",
+        "Visual evidence shows stirrup outline in green matching typical transverse reinforcement representation",
+        "No conflicting evidence from image or metadata"
+      ],
+      "warnings": [
+        "OCR artifact '\\X' normalized to standard spacing notation - visual context supports 100mm spacing",
+        "Quantity field left null per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

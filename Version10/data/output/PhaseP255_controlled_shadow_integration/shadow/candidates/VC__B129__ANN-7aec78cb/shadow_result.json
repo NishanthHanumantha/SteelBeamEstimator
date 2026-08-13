@@ -1,0 +1,182 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B129::ANN-7aec78cb",
+  "beam_id": "B129",
+  "annotation_id": "ANN-7aec78cb",
+  "annotation_text": "4L-Y12@\\X100C/C",
+  "deterministic_result": {
+    "intent_id": "QI::B129::ANN-7aec78cb",
+    "beam_id": "B129",
+    "annotation_id": "ANN-7aec78cb",
+    "raw_text": "4L-Y12@\\X100C/C",
+    "normalized_text": "4L-Y12@\\X100C/C",
+    "semantic_type": "STIRRUP",
+    "reinforcement_role": "STIRRUP",
+    "quantity_expression": "4L-Y12@\\X100C/C",
+    "quantity_value": null,
+    "quantity_status": "UNRESOLVED",
+    "quantity_source": "STIRRUP_PATTERN",
+    "diameter_expression": null,
+    "diameter_value_mm": null,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B129",
+      "annotation_id": "ANN-7aec78cb",
+      "leader_id": "LDR::210B4209",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "StirrupNote"
+    },
+    "confidence": 0.65,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "Cannot parse stirrup notation: '4L-Y12@\\X100C/C'",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::210B4209",
+      "ownership_id": null,
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "UNRESOLVED",
+  "deterministic_type": "STIRRUP",
+  "deterministic_role": "STIRRUP",
+  "deterministic_diameter": null,
+  "deterministic_quantity": null,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B129::ANN-7aec78cb",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text notation '4L-Y12@\\X100C/C' clearly indicates 4-leg stirrups with Y12 diameter at 100mm centers",
+      "OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+      "Leader line points to the beam cross-section of B129(400X1100)",
+      "Horizontal double-headed arrow with '100C/C' dimension confirms spacing pattern",
+      "Annotation positioned within the beam section detail, confirming TARGET_BEAM association",
+      "Green stirrup outlines visible in cross-section showing closed rectangular stirrups",
+      "4L indicates 4-leg closed stirrup configuration typical for rectangular beams",
+      "Position and context indicate span zone stirrups (not support zone)"
+    ],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+      "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "STIRRUP",
+  "vision_role": "STIRRUP",
+  "vision_diameter": 12,
+  "vision_quantity": null,
+  "vision_legs": 4,
+  "vision_spacing": [
+    100
+  ],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "SPAN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text notation '4L-Y12@\\X100C/C' clearly indicates 4-leg stirrups with Y12 diameter at 100mm centers",
+    "OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+    "Leader line points to the beam cross-section of B129(400X1100)",
+    "Horizontal double-headed arrow with '100C/C' dimension confirms spacing pattern",
+    "Annotation positioned within the beam section detail, confirming TARGET_BEAM association",
+    "Green stirrup outlines visible in cross-section showing closed rectangular stirrups",
+    "4L indicates 4-leg closed stirrup configuration typical for rectangular beams",
+    "Position and context indicate span zone stirrups (not support zone)"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "BOTH_AGREE",
+  "operational_class": "BOTH_AGREE",
+  "arbitration_action": "KEEP_DETERMINISTIC",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+      "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+    ]
+  },
+  "safety": {
+    "ok": true,
+    "flags": [
+      "ZONE_DIAGNOSTIC_ONLY"
+    ],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": false,
+  "final_shadow_decision": "KEEP_DETERMINISTIC",
+  "shadow_trigger_reason": [
+    "OCR_UNCERTAIN",
+    "SEMANTIC_UNCERTAIN",
+    "MULTI_ANNOTATION_AMBIGUITY",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "DIAMETER",
+      "LEGS",
+      "SPACING"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": false,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "abb53c5f1262647c90700a379f04297e84376317e1bf32cff31c04a32f5adeac",
+  "prompt_fingerprint": "702985cac60b8e6add3118d7270b6b604d54e43d4d87db3263501a9c3604ee85",
+  "timestamp_utc": "2026-08-13T07:36:26.752459+00:00"
+}

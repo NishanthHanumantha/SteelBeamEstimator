@@ -1,0 +1,175 @@
+{
+  "object_kind": "ShadowIntegrationResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "claude_authority": "SHADOW_OBSERVER",
+  "zone_promotable": false,
+  "phase_id": "P2.5.5",
+  "model_version": "10.8.1",
+  "candidate_id": "VC::B96A::ANN-9114a4de",
+  "beam_id": "B96A",
+  "annotation_id": "ANN-9114a4de",
+  "annotation_text": "S.F.R.ON EACH FACE",
+  "deterministic_result": {
+    "intent_id": "QI::B96A::ANN-9114a4de",
+    "beam_id": "B96A",
+    "annotation_id": "ANN-9114a4de",
+    "raw_text": "S.F.R.ON EACH FACE",
+    "normalized_text": "S.F.R.ONEACHFACE",
+    "semantic_type": "UNKNOWN",
+    "reinforcement_role": "UNKNOWN",
+    "quantity_expression": "S.F.R.ON EACH FACE",
+    "quantity_value": null,
+    "quantity_status": "UNRESOLVED",
+    "quantity_source": "UNRESOLVED",
+    "diameter_expression": null,
+    "diameter_value_mm": null,
+    "spacing_expression": null,
+    "spacing_value_mm": null,
+    "spacing_values_mm": [],
+    "leg_expression": null,
+    "leg_count": null,
+    "unit": "COUNT",
+    "components": [],
+    "evidence_links": {
+      "beam_id": "B96A",
+      "annotation_id": "ANN-9114a4de",
+      "leader_id": "LDR::63051B26",
+      "ownership_id": "OWN::B96A::11F8B87",
+      "source_handle": null,
+      "evidence_id": null,
+      "chain_semantic_type": "Unknown"
+    },
+    "confidence": 0.45,
+    "validation_status": "PASS",
+    "validation_reasons": [],
+    "accepted": true,
+    "provenance": {
+      "phase": "P2.5.1",
+      "parse_note": "unrecognized_expression",
+      "ambiguous": false,
+      "source_evidence_phase": "P2.5.0",
+      "leader_id": "LDR::63051B26",
+      "ownership_id": "OWN::B96A::11F8B87",
+      "source_handle": null,
+      "evidence_id": null
+    }
+  },
+  "deterministic_status": "UNRESOLVED",
+  "deterministic_type": "UNKNOWN",
+  "deterministic_role": "UNKNOWN",
+  "deterministic_diameter": null,
+  "deterministic_quantity": null,
+  "deterministic_legs": null,
+  "deterministic_spacing": [],
+  "deterministic_association": "TARGET_BEAM",
+  "deterministic_zone": null,
+  "vision_result": {
+    "candidate_id": "VC::B96A::ANN-9114a4de",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "SIDE_FACE_REINFORCEMENT",
+    "role": "SIDE_FACE",
+    "quantity": null,
+    "diameter_mm": null,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "UNKNOWN",
+    "normalized_notation": "S.F.R.ON EACH FACE",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text explicitly states 'S.F.R.ON EACH FACE' where S.F.R. is standard abbreviation for Side Face Reinforcement",
+      "Annotation appears in context of beam cross-section detail showing vertical faces",
+      "Sibling annotation 'SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM' confirms this is side face reinforcement documentation",
+      "Visual context shows beam depth of 600mm which would typically require side face reinforcement per code requirements",
+      "No specific quantity or diameter provided in this descriptive note - this is a general specification/requirement note",
+      "Leader association and position support TARGET_BEAM assignment"
+    ],
+    "warnings": [
+      "This is a descriptive note indicating requirement for side face reinforcement, not a specific bar callout",
+      "Actual quantity and diameter of side face bars must be specified elsewhere in the drawing set",
+      "The phrase 'ON EACH FACE' indicates bilateral application but does not specify bar count or size"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "vision_status": "RESOLVED",
+  "vision_type": "SIDE_FACE_REINFORCEMENT",
+  "vision_role": "SIDE_FACE",
+  "vision_diameter": null,
+  "vision_quantity": null,
+  "vision_legs": null,
+  "vision_spacing": [],
+  "vision_association": "TARGET_BEAM",
+  "vision_zone": "UNKNOWN",
+  "vision_confidence": 0.95,
+  "vision_evidence_basis": [
+    "Text explicitly states 'S.F.R.ON EACH FACE' where S.F.R. is standard abbreviation for Side Face Reinforcement",
+    "Annotation appears in context of beam cross-section detail showing vertical faces",
+    "Sibling annotation 'SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM' confirms this is side face reinforcement documentation",
+    "Visual context shows beam depth of 600mm which would typically require side face reinforcement per code requirements",
+    "No specific quantity or diameter provided in this descriptive note - this is a general specification/requirement note",
+    "Leader association and position support TARGET_BEAM assignment"
+  ],
+  "vision_source": "REPLAY_P254_FROZEN",
+  "comparison_class": "VISION_ONLY_RESOLVED",
+  "operational_class": "VISION_ONLY_RESOLVED",
+  "arbitration_action": "SHADOW_ONLY_VISION_RESOLUTION",
+  "conflict_flags": {
+    "fields": [],
+    "details": {}
+  },
+  "validation_result": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "This is a descriptive note indicating requirement for side face reinforcement, not a specific bar callout",
+      "Actual quantity and diameter of side face bars must be specified elsewhere in the drawing set",
+      "The phrase 'ON EACH FACE' indicates bilateral application but does not specify bar count or size"
+    ]
+  },
+  "safety": {
+    "ok": true,
+    "flags": [],
+    "errors": [],
+    "vision_rejected": false,
+    "zone_promotable": false,
+    "production_write": false
+  },
+  "promotion_eligible": true,
+  "final_shadow_decision": "SHADOW_ONLY_VISION_RESOLUTION",
+  "shadow_trigger_reason": [
+    "SEMANTIC_UNCERTAIN",
+    "ROLE_UNCERTAIN",
+    "TYPE_UNCERTAIN",
+    "BEAM_ASSOCIATION_UNCERTAIN",
+    "SIDE_FACE_CANDIDATE",
+    "CONFIGURED_FULL_SHADOW"
+  ],
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": null,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "hypothetical_impact": {
+    "hypothetical_change": [
+      "TYPE",
+      "ROLE"
+    ],
+    "hypothetical_production_impact": "WOULD_CHANGE",
+    "actual_production_impact": "NONE",
+    "dangerous_if_promoted": true,
+    "note": "Diagnostic only. Vision was not applied to production objects."
+  },
+  "evidence_fingerprint": "d2d40cf98072085ec98f960916a74bc1ebab6c4f9270a6637446aba34ec71812",
+  "prompt_fingerprint": "5129e2034e2fd0925e94cab462304428c5bbb24439ed9c4b01cb28032caa0a18",
+  "timestamp_utc": "2026-08-13T07:36:27.510027+00:00"
+}

@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B16::ANN-924a8149",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2802,
+    "output_tokens": 417
+  },
+  "prompt_fingerprint": "e0621164bc81486e2135059254d5163ed8f080469b905146bd65f912b40128ea",
+  "evidence_fingerprint": "981e580190777bf44e05a4d4813c32b88c3f1167eed25104189d239c45c15f1b",
+  "validated_interpretation": {
+    "candidate_id": "VC::B16::ANN-924a8149",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+      "Visual position: annotation is located below the beam section, pointing upward with a leader to the beam depth zone",
+      "The '4L' prefix explicitly denotes 4-legged stirrups",
+      "The '@\\X100C/C' or '@100C/C' indicates uniform spacing at 100mm centers",
+      "Position and leader direction confirm association with the target beam B16",
+      "The annotation is positioned in the span region of the beam, not at supports",
+      "Stirrup notation is consistent with engineering drawing conventions for transverse reinforcement",
+      "OCR artifact '\\X' in spacing notation is normalized to standard '@' format"
+    ],
+    "warnings": [
+      "Minor OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Minor OCR artifact '\\X' in original text normalized to standard spacing notation",
+      "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B16::ANN-924a8149",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '4L-Y12@\\X100C/C' clearly indicates stirrup notation with 4 legs, Y12 diameter bars, at 100mm centers",
+        "Visual position: annotation is located below the beam section, pointing upward with a leader to the beam depth zone",
+        "The '4L' prefix explicitly denotes 4-legged stirrups",
+        "The '@\\X100C/C' or '@100C/C' indicates uniform spacing at 100mm centers",
+        "Position and leader direction confirm association with the target beam B16",
+        "The annotation is positioned in the span region of the beam, not at supports",
+        "Stirrup notation is consistent with engineering drawing conventions for transverse reinforcement",
+        "OCR artifact '\\X' in spacing notation is normalized to standard '@' format"
+      ],
+      "warnings": [
+        "Minor OCR artifact '\\X' in original text normalized to standard spacing notation",
+        "Quantity field left null as per schema requirement for stirrups (legs used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

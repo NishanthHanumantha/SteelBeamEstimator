@@ -1,0 +1,87 @@
+{
+  "candidate_id": "VC::B128::ANN-ca8a916f",
+  "api_ok": true,
+  "error": null,
+  "usage": {
+    "input_tokens": 2784,
+    "output_tokens": 450
+  },
+  "prompt_fingerprint": "2093c5a52ee4b334978ce61f249aab5e151c6100dc6ae82ae0bf9a2ac2ab9e3b",
+  "evidence_fingerprint": "c44f3701cb8909fc5b2be423dea1d6b79ee222fd492f70acbf35c61063c4ed1c",
+  "validated_interpretation": {
+    "candidate_id": "VC::B128::ANN-ca8a916f",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@\\X100/150/100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Annotation text '2L-Y8@\\X100/150/100C/C' clearly indicates stirrup notation with 2 legs (2L)",
+      "Y8 indicates 8mm diameter reinforcement bars",
+      "Pattern @\\X100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center",
+      "Annotation positioned below the beam cross-section with leader pointing to bottom longitudinal bars",
+      "Visual context shows beam cross-section (green outline) with the annotation clearly associated with TARGET_BEAM B128",
+      "Position and leader line indicate this is stirrup reinforcement for the span zone",
+      "Sibling annotation '3-Y16' visible above, indicating bottom longitudinal bars that these stirrups would enclose",
+      "Deterministic metadata confirms semantic_type: STIRRUP and role: STIRRUP"
+    ],
+    "warnings": [
+      "Quantity field left null per instructions - stirrup piece count should not be calculated",
+      "Backslash character in spacing pattern (@\\X) is non-standard but interpreted as variable spacing indicator"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Quantity field left null per instructions - stirrup piece count should not be calculated",
+      "Backslash character in spacing pattern (@\\X) is non-standard but interpreted as variable spacing indicator"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B128::ANN-ca8a916f",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "VARIABLE",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@\\X100/150/100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Annotation text '2L-Y8@\\X100/150/100C/C' clearly indicates stirrup notation with 2 legs (2L)",
+        "Y8 indicates 8mm diameter reinforcement bars",
+        "Pattern @\\X100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center",
+        "Annotation positioned below the beam cross-section with leader pointing to bottom longitudinal bars",
+        "Visual context shows beam cross-section (green outline) with the annotation clearly associated with TARGET_BEAM B128",
+        "Position and leader line indicate this is stirrup reinforcement for the span zone",
+        "Sibling annotation '3-Y16' visible above, indicating bottom longitudinal bars that these stirrups would enclose",
+        "Deterministic metadata confirms semantic_type: STIRRUP and role: STIRRUP"
+      ],
+      "warnings": [
+        "Quantity field left null per instructions - stirrup piece count should not be calculated",
+        "Backslash character in spacing pattern (@\\X) is non-standard but interpreted as variable spacing indicator"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}
