@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B101::ANN-80ac063f\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"BOTTOM_BAR\",\n  \"quantity\": 3,\n  \"diameter_mm\": 20,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3-Y20\",\n  \"confidence\": 0.92,\n  \"evidence_basis\": [\n    \"Annotation '3-Y20' is clearly visible and readable in the image\",\n    \"Leader line points downward from the annotation to the bottom fiber of the horizontal beam B101\",\n    \"Position of annotation is above the beam section, with leader terminating at bottom reinforcement layer\",\n    \"Visual context shows this is longitudinal reinforcement at the bottom of the beam cross-section\",\n    \"Beam depth is 600mm (horizontal orientation), annotation positioned in span region\",\n    \"No stirrup notation pattern (no spacing or 'C/C' designation)\",\n    \"Quantity '3' and diameter 'Y20' (20mm) are explicitly stated\",\n    \"Surrounding context shows stirrup notation '3L-Y10@100C/C' separately, confirming this is longitudinal\",\n    \"Leader geometry and annotation placement consistent with bottom longitudinal bar callout\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 8.604341999976896,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1880,
+    "output_tokens": 372
+  },
+  "estimated_input_tokens": 1053,
+  "estimated_output_tokens": 309,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B101::ANN-80ac063f",
+  "beam_id": "B101",
+  "annotation_id": "ANN-80ac063f",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "8081d5d54ff0c183f13eb03fc26aa2f434f471ab2d5515b471da895f4a6d9654",
+  "evidence_fingerprint": "8b7eb51af3ead4fca7e1981402384d52f1dc558750f0e578a85c801d9c96d346",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:57:57.361862+00:00"
+}

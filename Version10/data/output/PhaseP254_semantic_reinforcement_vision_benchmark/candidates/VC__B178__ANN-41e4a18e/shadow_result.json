@@ -1,0 +1,91 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B178::ANN-41e4a18e",
+  "beam_id": "B178",
+  "annotation_id": "ANN-41e4a18e",
+  "claude_interpretation": {
+    "candidate_id": "VC::B178::ANN-41e4a18e",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text notation '2L-Y8@\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing",
+      "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns",
+      "Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)",
+      "Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement",
+      "Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation",
+      "Annotation positioned in span region between supports, indicating SPAN zone",
+      "Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green",
+      "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+      "No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association"
+    ],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.92,
+  "provenance": {
+    "intent_id": "QI::B178::ANN-41e4a18e",
+    "leader_id": "LDR::5EA6E3BE",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "263b02fb60e219d675475abf619c66c9750abf61ceedabee6ed54612e3f71926",
+  "prompt_fingerprint": "4e92ade663fbb354d855dc5dfb19db18bdb15c2aee572270415d2df45b5086c3",
+  "token_usage": {
+    "input_tokens": 3058,
+    "output_tokens": 467
+  },
+  "timestamp_utc": "2026-08-13T06:03:23.871200+00:00"
+}

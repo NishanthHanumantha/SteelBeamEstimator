@@ -1,0 +1,100 @@
+{
+  "candidate_id": "VC::B143::ANN-f8e9d15b",
+  "beam_id": "B143",
+  "raw_text": "3L-Y10@\\X100C/C",
+  "semantic_class": "OCR_CONTROL",
+  "evaluation": {
+    "evaluation": "PARTIAL",
+    "exact_match": false,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": false,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "PARTIAL",
+    "evaluation": "PARTIAL",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10.0,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "3L-Y10@100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption present: '\\X' in original text normalized to '@'",
+      "Beam association uncertain: annotation positioned near B144 label, not clearly associated with target B143",
+      "No visible leader line to confirm beam ownership",
+      "Zone cannot be determined without confirmed beam association"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B143::ANN-f8e9d15b",
+      "interpretation_status": "PARTIAL",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "100C/C",
+      "beam_association": "UNCERTAIN",
+      "zone": "UNKNOWN",
+      "normalized_notation": "3L-Y10@100C/C",
+      "confidence": 0.75,
+      "evidence_basis": [
+        "Text reads '3L-Y10@\\X100C/C' with OCR corruption in spacing separator",
+        "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+        "3L indicates 3 legs",
+        "Y10 indicates 10mm diameter bars",
+        "100C/C indicates 100mm center-to-center spacing",
+        "Annotation appears in right portion of drawing near B144 beam label",
+        "No clear leader line visible connecting to B143 (450x600) beam shown in left portion",
+        "Spatial position suggests possible association with B144 (300x1100) rather than target B143",
+        "Cannot definitively establish beam_association from visual evidence alone"
+      ],
+      "warnings": [
+        "OCR corruption present: '\\X' in original text normalized to '@'",
+        "Beam association uncertain: annotation positioned near B144 label, not clearly associated with target B143",
+        "No visible leader line to confirm beam ownership",
+        "Zone cannot be determined without confirmed beam association"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

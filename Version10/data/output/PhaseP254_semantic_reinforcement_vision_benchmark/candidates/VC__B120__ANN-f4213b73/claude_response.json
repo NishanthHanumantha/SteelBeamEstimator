@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B120::ANN-f4213b73\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 3,\n  \"spacing_mm\": [100, 150, 100],\n  \"spacing_pattern\": \"100C/150/100/C\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3L-Y10@100C/150/100/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Annotation text clearly reads '3L-Y10@100C/150/100/C' indicating 3-legged stirrups\",\n    \"Y10 indicates 10mm diameter reinforcement bars\",\n    \"Spacing pattern 100C/150/100/C indicates variable spacing: 100mm at ends (C=close), 150mm in middle, 100mm at other end\",\n    \"Annotation positioned directly on horizontal beam shown in green\",\n    \"Visual context shows stirrup symbols (vertical lines) along the beam length consistent with stirrup reinforcement\",\n    \"Beam orientation is horizontal as indicated by metadata\",\n    \"No leader line pointing away from target beam, confirming TARGET_BEAM association\",\n    \"Position along beam span (not at support) indicates SPAN zone\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 8.105946200026665,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1894,
+    "output_tokens": 376
+  },
+  "estimated_input_tokens": 1058,
+  "estimated_output_tokens": 282,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B120::ANN-f4213b73",
+  "beam_id": "B120",
+  "annotation_id": "ANN-f4213b73",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "7570bb20713301dc707fd56e0e5c3aba232b6b440a828a14dd2f59c6c9eec6cf",
+  "evidence_fingerprint": "49e228c81563ef660f4499c5863541a6a63a6f8a60b135346020f8b07bda6bbc",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:59:51.772452+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B126::ANN-9f081a15\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 4,\n  \"spacing_mm\": [100, 150, 100],\n  \"spacing_pattern\": \"100/150/100C/C\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"4L-Y10@100/150/100C/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text notation '4L-Y10@100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars, and variable spacing pattern\",\n    \"Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP\",\n    \"Annotation positioned centrally along the beam span in elevation view\",\n    \"Notation format follows standard stirrup convention: legs-diameter@spacing pattern with C/C (center-to-center)\",\n    \"Spacing pattern 100/150/100 indicates variable spacing: 100mm at ends, 150mm in middle, typical for beam stirrup design\",\n    \"Target beam B126(500X600) dimensions visible in cyan text, confirming beam context\",\n    \"Other annotations (5-Y25, 3-Y20) represent longitudinal bars, consistent with this being the stirrup specification\",\n    \"Position along beam length and notation format unambiguously identify this as span stirrup reinforcement\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 9.610014000034425,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2230,
+    "output_tokens": 421
+  },
+  "estimated_input_tokens": 1049,
+  "estimated_output_tokens": 328,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B126::ANN-9f081a15",
+  "beam_id": "B126",
+  "annotation_id": "ANN-9f081a15",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "1b8574efc1107126d0bfdda3791d35841860617e30893446d26fcd110b0c5f6b",
+  "evidence_fingerprint": "54bd5e9365d67528c5539840f4aa1cc6963118787353b0ccb9cd4d0bd86b62de",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:01:11.613595+00:00"
+}

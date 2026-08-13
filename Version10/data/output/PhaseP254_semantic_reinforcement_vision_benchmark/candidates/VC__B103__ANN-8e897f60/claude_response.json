@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B103::ANN-8e897f60\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"BOTTOM_BAR\",\n  \"quantity\": 3,\n  \"diameter_mm\": 20,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3-Y20\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Annotation '3-Y20' is clearly visible in magenta text\",\n    \"Leader line points downward from the text to the bottom reinforcement layer of beam B103(350X500)\",\n    \"Visual position: annotation is located below the beam section, pointing to the lower longitudinal bars shown in green\",\n    \"Beam B103 is identified by cyan label 'B103(350X500)' directly below the beam section\",\n    \"The green reinforcement bars at the bottom of the section align with the leader endpoint\",\n    \"Notation format '3-Y20' indicates 3 bars of Y20 (20mm diameter)\",\n    \"Spatial context: annotation is positioned in the mid-span region of the beam, not at support\",\n    \"Other annotations visible: '3-Y16' (top bars), '3L-Y10@100C/C' (stirrups) confirm this is bottom longitudinal reinforcement\",\n    \"No conflicting evidence from image or metadata\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 9.193532500008587,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1905,
+    "output_tokens": 400
+  },
+  "estimated_input_tokens": 1060,
+  "estimated_output_tokens": 313,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B103::ANN-8e897f60",
+  "beam_id": "B103",
+  "annotation_id": "ANN-8e897f60",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "0ae348d5f12ce64f0f444425ed2b3a8f6d0b8d14dc63822f31aadda8c8ddfb34",
+  "evidence_fingerprint": "ede9885efebd0a23a464160e4dd6cbf73ff52ed51212af493ae0438b70d3091c",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:59:25.018086+00:00"
+}

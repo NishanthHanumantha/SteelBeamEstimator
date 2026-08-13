@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B123::ANN-8ae336be\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"TOP_BAR\",\n  \"quantity\": 6,\n  \"diameter_mm\": 20,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"6-Y20\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text '6-Y20' clearly visible in magenta annotation above beam B123(600X800)\",\n    \"Annotation positioned at top of beam cross-section with leader pointing to top reinforcement layer\",\n    \"Consistent with standard notation: 6 bars of Y20 (20mm diameter)\",\n    \"Spatial position above dashed line (neutral axis indicator) confirms top bar placement\",\n    \"Beam B123 clearly labeled below the section\",\n    \"Annotation color and style consistent with longitudinal bar callouts in this drawing set\",\n    \"No stirrup notation pattern (no '@' spacing indicator)\",\n    \"Position in span region between supports (no support-specific indicators visible)\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 9.046457600023132,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1892,
+    "output_tokens": 329
+  },
+  "estimated_input_tokens": 1058,
+  "estimated_output_tokens": 266,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B123::ANN-8ae336be",
+  "beam_id": "B123",
+  "annotation_id": "ANN-8ae336be",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "9324aa1059ef10f8b37c14433e32261d9e5040c3707de9ec69e9d0a86d7375c8",
+  "evidence_fingerprint": "f1b9293df1ed34e4335afd55b770ca5adc9337807a90144383905ab3e15b949c",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:01:00.397529+00:00"
+}

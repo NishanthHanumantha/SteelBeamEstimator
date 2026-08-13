@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B102::ANN-4cd6f72d\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"TOP_BAR\",\n  \"quantity\": 3,\n  \"diameter_mm\": 16,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3-Y16\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Annotation '3-Y16' is clearly visible in the image with pink/magenta text\",\n    \"Annotation is positioned above the beam section, indicating top reinforcement\",\n    \"Visual context shows this is a longitudinal bar notation (quantity-diameter format)\",\n    \"Position is within the span region of the beam, not at support\",\n    \"The notation is located within the green dashed lines representing the top of the beam section\",\n    \"Sibling annotations include '3-Y20' (likely bottom bars) and '3L-Y10@100C/C' (stirrups), consistent with typical beam reinforcement layout\",\n    \"No leader line pointing elsewhere; annotation is directly associated with the beam section shown\",\n    \"Text is clear and unambiguous: 3 bars of Y16 (16mm diameter)\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 8.410788199980743,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1887,
+    "output_tokens": 362
+  },
+  "estimated_input_tokens": 1053,
+  "estimated_output_tokens": 290,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B102::ANN-4cd6f72d",
+  "beam_id": "B102",
+  "annotation_id": "ANN-4cd6f72d",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "8cb4fc458daa6a2f5e8a1c88b98f7174957cb6c47edb08e54bd7e7e0779c582e",
+  "evidence_fingerprint": "a6430eaf9d2f024aef623352012f43706ff752e32c37f86069a1c8e5e399705f",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:58:55.271431+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B46::ANN-a09ab748",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100/150/100C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text notation '4L-Y10@\\X100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars",
+      "Spacing pattern 100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center",
+      "Horizontal double-headed arrow dimension line visually confirms spacing annotation",
+      "Annotation positioned centrally below beam cross-section with leader pointing to stirrup zone",
+      "Green stirrup outline visible in beam cross-section showing 4-leg configuration with red dots at corners",
+      "Beam identifier B46(400X500) confirms target beam context",
+      "OCR corruption '\\X' normalized to standard '@' symbol based on visual evidence and stirrup notation convention",
+      "Position and leader geometry clearly associate annotation with the target beam B46"
+    ],
+    "warnings": [
+      "OCR corruption detected: '\\X' interpreted as '@' based on visual context and standard stirrup notation",
+      "Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption detected: '\\X' interpreted as '@' based on visual context and standard stirrup notation",
+      "Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B46::ANN-a09ab748",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "100/150/100C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/150/100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text notation '4L-Y10@\\X100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars",
+        "Spacing pattern 100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center",
+        "Horizontal double-headed arrow dimension line visually confirms spacing annotation",
+        "Annotation positioned centrally below beam cross-section with leader pointing to stirrup zone",
+        "Green stirrup outline visible in beam cross-section showing 4-leg configuration with red dots at corners",
+        "Beam identifier B46(400X500) confirms target beam context",
+        "OCR corruption '\\X' normalized to standard '@' symbol based on visual evidence and stirrup notation convention",
+        "Position and leader geometry clearly associate annotation with the target beam B46"
+      ],
+      "warnings": [
+        "OCR corruption detected: '\\X' interpreted as '@' based on visual context and standard stirrup notation",
+        "Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

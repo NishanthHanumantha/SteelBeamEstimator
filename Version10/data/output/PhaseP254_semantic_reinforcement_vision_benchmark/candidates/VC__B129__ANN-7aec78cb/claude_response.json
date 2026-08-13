@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B129::ANN-7aec78cb\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 12,\n  \"legs\": 4,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"4L-Y12@100C/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text notation '4L-Y12@\\\\X100C/C' clearly indicates 4-leg stirrups with Y12 diameter at 100mm centers\",\n    \"OCR corruption '\\\\X' normalized to '@' based on standard stirrup notation pattern\",\n    \"Leader line points to the beam cross-section of B129(400X1100)\",\n    \"Horizontal double-headed arrow with '100C/C' dimension confirms spacing pattern\",\n    \"Annotation positioned within the beam section detail, confirming TARGET_BEAM association\",\n    \"Green stirrup outlines visible in cross-section showing closed rectangular stirrups\",\n    \"4L indicates 4-leg closed stirrup configuration typical for rectangular beams\",\n    \"Position and context indicate span zone stirrups (not support zone)\"\n  ],\n  \"warnings\": [\n    \"OCR corruption '\\\\X' in original text normalized to '@' based on visual evidence and standard notation\",\n    \"Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence\"\n  ]\n}\n```",
+  "latency_s": 10.486098899971694,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 4400,
+    "output_tokens": 413
+  },
+  "estimated_input_tokens": 1071,
+  "estimated_output_tokens": 334,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B129::ANN-7aec78cb",
+  "beam_id": "B129",
+  "annotation_id": "ANN-7aec78cb",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "702985cac60b8e6add3118d7270b6b604d54e43d4d87db3263501a9c3604ee85",
+  "evidence_fingerprint": "abb53c5f1262647c90700a379f04297e84376317e1bf32cff31c04a32f5adeac",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:02:10.699101+00:00"
+}

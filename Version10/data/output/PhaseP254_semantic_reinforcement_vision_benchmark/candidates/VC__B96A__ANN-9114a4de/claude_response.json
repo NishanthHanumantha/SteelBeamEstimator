@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B96A::ANN-9114a4de\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"SIDE_FACE_REINFORCEMENT\",\n  \"role\": \"SIDE_FACE\",\n  \"quantity\": null,\n  \"diameter_mm\": null,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"UNKNOWN\",\n  \"normalized_notation\": \"S.F.R.ON EACH FACE\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text explicitly states 'S.F.R.ON EACH FACE' where S.F.R. is standard abbreviation for Side Face Reinforcement\",\n    \"Annotation appears in context of beam cross-section detail showing vertical faces\",\n    \"Sibling annotation 'SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM' confirms this is side face reinforcement documentation\",\n    \"Visual context shows beam depth of 600mm which would typically require side face reinforcement per code requirements\",\n    \"No specific quantity or diameter provided in this descriptive note - this is a general specification/requirement note\",\n    \"Leader association and position support TARGET_BEAM assignment\"\n  ],\n  \"warnings\": [\n    \"This is a descriptive note indicating requirement for side face reinforcement, not a specific bar callout\",\n    \"Actual quantity and diameter of side face bars must be specified elsewhere in the drawing set\",\n    \"The phrase 'ON EACH FACE' indicates bilateral application but does not specify bar count or size\"\n  ]\n}\n```",
+  "latency_s": 9.3962690999615,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1944,
+    "output_tokens": 410
+  },
+  "estimated_input_tokens": 1076,
+  "estimated_output_tokens": 353,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B96A::ANN-9114a4de",
+  "beam_id": "B96A",
+  "annotation_id": "ANN-9114a4de",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "5129e2034e2fd0925e94cab462304428c5bbb24439ed9c4b01cb28032caa0a18",
+  "evidence_fingerprint": "d2d40cf98072085ec98f960916a74bc1ebab6c4f9270a6637446aba34ec71812",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:04:11.145323+00:00"
+}

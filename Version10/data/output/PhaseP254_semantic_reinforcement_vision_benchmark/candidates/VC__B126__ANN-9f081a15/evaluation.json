@@ -1,0 +1,93 @@
+{
+  "candidate_id": "VC::B126::ANN-9f081a15",
+  "beam_id": "B126",
+  "raw_text": "4L-Y10@100/150/100C/C",
+  "semantic_class": "MULTI_ANNOTATION",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "STIRRUP_TEXT_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10.0,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B126::ANN-9f081a15",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        150,
+        100
+      ],
+      "spacing_pattern": "100/150/100C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/150/100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text notation '4L-Y10@100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars, and variable spacing pattern",
+        "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+        "Annotation positioned centrally along the beam span in elevation view",
+        "Notation format follows standard stirrup convention: legs-diameter@spacing pattern with C/C (center-to-center)",
+        "Spacing pattern 100/150/100 indicates variable spacing: 100mm at ends, 150mm in middle, typical for beam stirrup design",
+        "Target beam B126(500X600) dimensions visible in cyan text, confirming beam context",
+        "Other annotations (5-Y25, 3-Y20) represent longitudinal bars, consistent with this being the stirrup specification",
+        "Position along beam length and notation format unambiguously identify this as span stirrup reinforcement"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

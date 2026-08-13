@@ -1,0 +1,88 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B96A::ANN-9114a4de",
+  "beam_id": "B96A",
+  "annotation_id": "ANN-9114a4de",
+  "claude_interpretation": {
+    "candidate_id": "VC::B96A::ANN-9114a4de",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "SIDE_FACE_REINFORCEMENT",
+    "role": "SIDE_FACE",
+    "quantity": null,
+    "diameter_mm": null,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "UNKNOWN",
+    "normalized_notation": "S.F.R.ON EACH FACE",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text explicitly states 'S.F.R.ON EACH FACE' where S.F.R. is standard abbreviation for Side Face Reinforcement",
+      "Annotation appears in context of beam cross-section detail showing vertical faces",
+      "Sibling annotation 'SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM' confirms this is side face reinforcement documentation",
+      "Visual context shows beam depth of 600mm which would typically require side face reinforcement per code requirements",
+      "No specific quantity or diameter provided in this descriptive note - this is a general specification/requirement note",
+      "Leader association and position support TARGET_BEAM assignment"
+    ],
+    "warnings": [
+      "This is a descriptive note indicating requirement for side face reinforcement, not a specific bar callout",
+      "Actual quantity and diameter of side face bars must be specified elsewhere in the drawing set",
+      "The phrase 'ON EACH FACE' indicates bilateral application but does not specify bar count or size"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "This is a descriptive note indicating requirement for side face reinforcement, not a specific bar callout",
+      "Actual quantity and diameter of side face bars must be specified elsewhere in the drawing set",
+      "The phrase 'ON EACH FACE' indicates bilateral application but does not specify bar count or size"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": null,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B96A::ANN-9114a4de",
+    "leader_id": "LDR::63051B26",
+    "ownership_id": "OWN::B96A::11F8B87",
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "d2d40cf98072085ec98f960916a74bc1ebab6c4f9270a6637446aba34ec71812",
+  "prompt_fingerprint": "5129e2034e2fd0925e94cab462304428c5bbb24439ed9c4b01cb28032caa0a18",
+  "token_usage": {
+    "input_tokens": 1944,
+    "output_tokens": 410
+  },
+  "timestamp_utc": "2026-08-13T06:04:11.196003+00:00"
+}

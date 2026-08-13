@@ -1,0 +1,86 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B100A::ANN-13582c44",
+  "beam_id": "B100A",
+  "annotation_id": "ANN-13582c44",
+  "claude_interpretation": {
+    "candidate_id": "VC::B100A::ANN-13582c44",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100/150/100C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Notation '4L-Y10@100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs",
+      "Y10 indicates 10mm diameter bars",
+      "Spacing pattern 100/150/100C/C indicates variable spacing with center-to-center measurement",
+      "Visual evidence shows vertical stirrup elements (blue rectangles) along horizontal beam",
+      "Stirrup symbols positioned along the span of the target beam",
+      "Multiple stirrup positions visible with varying spacing consistent with notation",
+      "Beam orientation is HORIZONTAL with depth 600mm, consistent with stirrup placement",
+      "No leader line conflict or ambiguity in beam association"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B100A::ANN-13582c44",
+    "leader_id": "LDR::8A54B888",
+    "ownership_id": "OWN::B100A::12481D8",
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "5618689b6a99cca9ac008bc897e6f3b7303813f4afcbbe01192eac6684b6ca95",
+  "prompt_fingerprint": "3c774d6c118ed48c40fc1a1822ab981185896c7e24a8b044805c6ff12e3649a0",
+  "token_usage": {
+    "input_tokens": 1904,
+    "output_tokens": 355
+  },
+  "timestamp_utc": "2026-08-13T05:57:47.676077+00:00"
+}

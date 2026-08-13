@@ -1,0 +1,91 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B142::ANN-d4d1251b",
+  "beam_id": "B142",
+  "annotation_id": "ANN-d4d1251b",
+  "claude_interpretation": {
+    "candidate_id": "VC::B142::ANN-d4d1251b",
+    "interpretation_status": "PARTIAL",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.85,
+    "evidence_basis": [
+      "Text reads '2L-Y8@\\X100C/C' with OCR corruption in spacing separator",
+      "Visual evidence shows horizontal double-headed arrow pointing to stirrup legs in beam B142(400X600)",
+      "Leader arrow points from text to stirrup representation within target beam cross-section",
+      "Stirrup pattern visible in beam section shows vertical legs consistent with 2-leg configuration",
+      "Notation format '2L-Y8@100C/C' indicates 2 legs, Y8 diameter, 100mm spacing center-to-center",
+      "Beam context shows this is span region reinforcement, not support zone",
+      "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns"
+    ],
+    "warnings": [
+      "OCR corruption in original text: '\\X' interpreted as spacing separator, normalized to '@'",
+      "Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption in original text: '\\X' interpreted as spacing separator, normalized to '@'",
+      "Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "PARTIAL",
+    "exact_match": false,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "PARTIAL",
+    "evaluation": "PARTIAL",
+    "validation_ok": true
+  },
+  "confidence": 0.85,
+  "provenance": {
+    "intent_id": "QI::B142::ANN-d4d1251b",
+    "leader_id": "LDR::D7F0B608",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "0c498e7dabc3a2e6d93384393827ef580978d4bb627a51169f434775e2cf8142",
+  "prompt_fingerprint": "852d2bfa5bb194fe72ea7ca560f5316dd91f6383b963111b907b62acf3a00bee",
+  "token_usage": {
+    "input_tokens": 3359,
+    "output_tokens": 432
+  },
+  "timestamp_utc": "2026-08-13T06:02:46.392569+00:00"
+}

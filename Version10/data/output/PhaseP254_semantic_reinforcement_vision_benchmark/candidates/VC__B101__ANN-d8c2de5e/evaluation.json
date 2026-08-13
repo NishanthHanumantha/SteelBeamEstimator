@@ -1,0 +1,88 @@
+{
+  "candidate_id": "VC::B101::ANN-d8c2de5e",
+  "beam_id": "B101",
+  "raw_text": "3L-Y10@100C/C",
+  "semantic_class": "MULTI_ANNOTATION",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "STIRRUP_TEXT_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10.0,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "3L-Y10@100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B101::ANN-d8c2de5e",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y10@100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text notation '3L-Y10@100C/C' clearly indicates 3-legged stirrups with Y10 (10mm diameter) bars at 100mm centers",
+        "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+        "Visual evidence shows annotation positioned along horizontal beam B101 with dashed lines indicating stirrup zone",
+        "Annotation appears in span region of beam, not at support",
+        "Beam orientation is HORIZONTAL with depth 600mm, consistent with stirrup notation placement",
+        "The '3L' prefix indicates 3 legs, '@100C/C' indicates uniform 100mm spacing center-to-center",
+        "No conflicting visual or textual evidence observed"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

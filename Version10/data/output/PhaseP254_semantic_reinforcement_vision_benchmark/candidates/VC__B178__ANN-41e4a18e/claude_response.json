@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B178::ANN-41e4a18e\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.92,\n  \"evidence_basis\": [\n    \"Text notation '2L-Y8@\\\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing\",\n    \"OCR corruption '\\\\X' normalized to standard '@' based on visual context and standard notation patterns\",\n    \"Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)\",\n    \"Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement\",\n    \"Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation\",\n    \"Annotation positioned in span region between supports, indicating SPAN zone\",\n    \"Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green\",\n    \"Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP\",\n    \"No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association\"\n  ],\n  \"warnings\": [\n    \"OCR corruption detected: '\\\\X' in original text normalized to '@' based on standard stirrup notation pattern\",\n    \"Quantity field left null as per schema rules for STIRRUP type (legs field used instead)\"\n  ]\n}\n```",
+  "latency_s": 12.332958399958443,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3058,
+    "output_tokens": 467
+  },
+  "estimated_input_tokens": 1070,
+  "estimated_output_tokens": 402,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B178::ANN-41e4a18e",
+  "beam_id": "B178",
+  "annotation_id": "ANN-41e4a18e",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "4e92ade663fbb354d855dc5dfb19db18bdb15c2aee572270415d2df45b5086c3",
+  "evidence_fingerprint": "263b02fb60e219d675475abf619c66c9750abf61ceedabee6ed54612e3f71926",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:03:23.816863+00:00"
+}

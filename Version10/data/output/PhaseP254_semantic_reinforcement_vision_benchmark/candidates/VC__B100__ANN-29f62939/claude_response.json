@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B100::ANN-29f62939\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 3,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3L-Y10@100C/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text notation '3L-Y10@100C/C' clearly indicates 3-legged stirrups with Y10 (10mm diameter) bars at 100mm centers\",\n    \"Annotation positioned within TARGET_BEAM B100 horizontal beam element\",\n    \"Visual context shows stirrup symbols (vertical lines with hooks) consistent with transverse reinforcement\",\n    \"Deterministic metadata confirms semantic_type=STIRRUP and quantity_intent_status=SPACING_BASED\",\n    \"Beam depth 600mm provides sufficient context for stirrup placement\",\n    \"Annotation appears in span region of beam based on position relative to beam geometry\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 8.176057799952105,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1882,
+    "output_tokens": 327
+  },
+  "estimated_input_tokens": 1054,
+  "estimated_output_tokens": 249,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B100::ANN-29f62939",
+  "beam_id": "B100",
+  "annotation_id": "ANN-29f62939",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "5af06e85607102e6491c7901235d73ffa1e0aea4d3fb4e9d65bd2a41cbc06618",
+  "evidence_fingerprint": "944bc6e1215c73d586d9198e41b1dd78028248a7342eba26c34e7489da40e1c6",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:57:29.680026+00:00"
+}

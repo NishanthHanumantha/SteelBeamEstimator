@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B139::ANN-211806ab\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"C/C\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.92,\n  \"evidence_basis\": [\n    \"Text clearly reads '2L-Y8@100C/C' indicating 2-legged stirrups, Y8 diameter, at 100mm center-to-center spacing\",\n    \"Leader arrow points directly to the beam cross-section, establishing association with target beam B139\",\n    \"Position below the beam section is typical for stirrup notation\",\n    \"Green rectangular outline in both images represents the beam cross-section (500x1200mm per B139 dimensions)\",\n    \"Red dots at corners indicate longitudinal reinforcement positions\",\n    \"Notation format matches standard stirrup specification: legs-diameter@spacing pattern\",\n    \"OCR corruption in metadata ('\\\\X' instead of '@') is corrected based on visual evidence showing '@' symbol\",\n    \"Beam context shows this is the primary stirrup specification for the span region\"\n  ],\n  \"warnings\": [\n    \"Metadata indicated OCR corruption with '\\\\X' but visual inspection confirms '@' symbol\",\n    \"Quantity (number of stirrups) is not specified in the notation and cannot be determined from spacing alone without beam length information\"\n  ]\n}\n```",
+  "latency_s": 11.232587899954524,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 4405,
+    "output_tokens": 423
+  },
+  "estimated_input_tokens": 1071,
+  "estimated_output_tokens": 359,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B139::ANN-211806ab",
+  "beam_id": "B139",
+  "annotation_id": "ANN-211806ab",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "7bde038259a480bd1d41032bf0340196d7a93fa8cb5581dfcefdaa47da2a0676",
+  "evidence_fingerprint": "d8f1f4313af20b8747186502abe81e9d8de9c778f4dd3cc7b10e296ca02db18a",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:02:34.602533+00:00"
+}

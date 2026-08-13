@@ -1,0 +1,84 @@
+{
+  "candidate_id": "VC::B120::ANN-8883ea68",
+  "beam_id": "B120",
+  "raw_text": "3-Y25",
+  "semantic_class": "LONGITUDINAL",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "LONGITUDINAL_TEXT_ORACLE",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "UNKNOWN",
+    "quantity": 3,
+    "diameter_mm": 25.0,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "3-Y25",
+    "fields_available": [
+      "semantic_type",
+      "beam_association",
+      "quantity",
+      "diameter_mm"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B120::ANN-8883ea68",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "BOTTOM_BAR",
+      "quantity": 3,
+      "diameter_mm": 25,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3-Y25",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Annotation '3-Y25' is clearly visible in magenta text",
+        "Leader line points downward from the annotation to the bottom fiber of the horizontal beam (green outline)",
+        "Position of annotation is below the beam centerline, consistent with bottom reinforcement",
+        "Beam depth 600mm with horizontal orientation confirmed by visual geometry",
+        "No stirrup notation pattern present (no spacing indicators like @100)",
+        "Notation format '3-Y25' matches standard longitudinal bar callout: quantity-diameter",
+        "Beam association confirmed by leader termination at target beam bottom face",
+        "Location appears to be in mid-span region based on beam geometry and surrounding context",
+        "No conflicting visual evidence or OCR corruption detected"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

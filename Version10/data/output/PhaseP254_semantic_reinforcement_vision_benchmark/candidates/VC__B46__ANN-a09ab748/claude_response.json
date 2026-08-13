@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B46::ANN-a09ab748\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 4,\n  \"spacing_mm\": [100, 150, 100],\n  \"spacing_pattern\": \"100/150/100C/C\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"4L-Y10@100/150/100C/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text notation '4L-Y10@\\\\X100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars\",\n    \"Spacing pattern 100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center\",\n    \"Horizontal double-headed arrow dimension line visually confirms spacing annotation\",\n    \"Annotation positioned centrally below beam cross-section with leader pointing to stirrup zone\",\n    \"Green stirrup outline visible in beam cross-section showing 4-leg configuration with red dots at corners\",\n    \"Beam identifier B46(400X500) confirms target beam context\",\n    \"OCR corruption '\\\\X' normalized to standard '@' symbol based on visual evidence and stirrup notation convention\",\n    \"Position and leader geometry clearly associate annotation with the target beam B46\"\n  ],\n  \"warnings\": [\n    \"OCR corruption detected: '\\\\X' interpreted as '@' based on visual context and standard stirrup notation\",\n    \"Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length\"\n  ]\n}\n```",
+  "latency_s": 10.70155130000785,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 4406,
+    "output_tokens": 450
+  },
+  "estimated_input_tokens": 1074,
+  "estimated_output_tokens": 367,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B46::ANN-a09ab748",
+  "beam_id": "B46",
+  "annotation_id": "ANN-a09ab748",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "9383c96585998187701ea422e41b5cbf0a7d973d2e38dce19b06137b76f173ab",
+  "evidence_fingerprint": "3166e957e05c7ba58a12ca345ac553c148ff0aeb5364f038117548fb1813dadb",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:03:36.001148+00:00"
+}

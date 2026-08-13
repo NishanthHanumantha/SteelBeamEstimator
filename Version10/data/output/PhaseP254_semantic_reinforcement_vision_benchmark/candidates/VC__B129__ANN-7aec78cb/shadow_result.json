@@ -1,0 +1,90 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B129::ANN-7aec78cb",
+  "beam_id": "B129",
+  "annotation_id": "ANN-7aec78cb",
+  "claude_interpretation": {
+    "candidate_id": "VC::B129::ANN-7aec78cb",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y12@100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text notation '4L-Y12@\\X100C/C' clearly indicates 4-leg stirrups with Y12 diameter at 100mm centers",
+      "OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+      "Leader line points to the beam cross-section of B129(400X1100)",
+      "Horizontal double-headed arrow with '100C/C' dimension confirms spacing pattern",
+      "Annotation positioned within the beam section detail, confirming TARGET_BEAM association",
+      "Green stirrup outlines visible in cross-section showing closed rectangular stirrups",
+      "4L indicates 4-leg closed stirrup configuration typical for rectangular beams",
+      "Position and context indicate span zone stirrups (not support zone)"
+    ],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+      "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+      "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B129::ANN-7aec78cb",
+    "leader_id": "LDR::210B4209",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "abb53c5f1262647c90700a379f04297e84376317e1bf32cff31c04a32f5adeac",
+  "prompt_fingerprint": "702985cac60b8e6add3118d7270b6b604d54e43d4d87db3263501a9c3604ee85",
+  "token_usage": {
+    "input_tokens": 4400,
+    "output_tokens": 413
+  },
+  "timestamp_utc": "2026-08-13T06:02:10.755204+00:00"
+}

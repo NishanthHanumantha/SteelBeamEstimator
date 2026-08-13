@@ -1,0 +1,92 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B46::ANN-a09ab748",
+  "beam_id": "B46",
+  "annotation_id": "ANN-a09ab748",
+  "claude_interpretation": {
+    "candidate_id": "VC::B46::ANN-a09ab748",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100/150/100C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4L-Y10@100/150/100C/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text notation '4L-Y10@\\X100/150/100C/C' clearly indicates stirrup reinforcement with 4 legs, Y10 diameter bars",
+      "Spacing pattern 100/150/100C/C indicates variable spacing: 100mm, 150mm, 100mm center-to-center",
+      "Horizontal double-headed arrow dimension line visually confirms spacing annotation",
+      "Annotation positioned centrally below beam cross-section with leader pointing to stirrup zone",
+      "Green stirrup outline visible in beam cross-section showing 4-leg configuration with red dots at corners",
+      "Beam identifier B46(400X500) confirms target beam context",
+      "OCR corruption '\\X' normalized to standard '@' symbol based on visual evidence and stirrup notation convention",
+      "Position and leader geometry clearly associate annotation with the target beam B46"
+    ],
+    "warnings": [
+      "OCR corruption detected: '\\X' interpreted as '@' based on visual context and standard stirrup notation",
+      "Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption detected: '\\X' interpreted as '@' based on visual context and standard stirrup notation",
+      "Quantity (total number of stirrup pieces) not determinable from spacing pattern alone without beam length"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B46::ANN-a09ab748",
+    "leader_id": "LDR::E549EBD6",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "3166e957e05c7ba58a12ca345ac553c148ff0aeb5364f038117548fb1813dadb",
+  "prompt_fingerprint": "9383c96585998187701ea422e41b5cbf0a7d973d2e38dce19b06137b76f173ab",
+  "token_usage": {
+    "input_tokens": 4406,
+    "output_tokens": 450
+  },
+  "timestamp_utc": "2026-08-13T06:03:36.070918+00:00"
+}

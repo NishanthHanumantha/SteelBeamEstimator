@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B142::ANN-d4d1251b\",\n  \"interpretation_status\": \"PARTIAL\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 8,\n  \"legs\": 2,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"2L-Y8@100C/C\",\n  \"confidence\": 0.85,\n  \"evidence_basis\": [\n    \"Text reads '2L-Y8@\\\\X100C/C' with OCR corruption in spacing separator\",\n    \"Visual evidence shows horizontal double-headed arrow pointing to stirrup legs in beam B142(400X600)\",\n    \"Leader arrow points from text to stirrup representation within target beam cross-section\",\n    \"Stirrup pattern visible in beam section shows vertical legs consistent with 2-leg configuration\",\n    \"Notation format '2L-Y8@100C/C' indicates 2 legs, Y8 diameter, 100mm spacing center-to-center\",\n    \"Beam context shows this is span region reinforcement, not support zone\",\n    \"OCR corruption '\\\\X' normalized to standard '@' based on visual context and standard notation patterns\"\n  ],\n  \"warnings\": [\n    \"OCR corruption in original text: '\\\\X' interpreted as spacing separator, normalized to '@'\",\n    \"Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length\",\n    \"Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation\"\n  ]\n}\n```",
+  "latency_s": 10.269327299960423,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 3359,
+    "output_tokens": 432
+  },
+  "estimated_input_tokens": 1070,
+  "estimated_output_tokens": 357,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B142::ANN-d4d1251b",
+  "beam_id": "B142",
+  "annotation_id": "ANN-d4d1251b",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "852d2bfa5bb194fe72ea7ca560f5316dd91f6383b963111b907b62acf3a00bee",
+  "evidence_fingerprint": "0c498e7dabc3a2e6d93384393827ef580978d4bb627a51169f434775e2cf8142",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:02:46.334580+00:00"
+}

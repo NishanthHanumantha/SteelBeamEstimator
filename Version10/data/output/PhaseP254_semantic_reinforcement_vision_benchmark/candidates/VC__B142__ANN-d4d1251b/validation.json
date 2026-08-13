@@ -1,0 +1,76 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B142::ANN-d4d1251b",
+    "interpretation_status": "PARTIAL",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.85,
+    "evidence_basis": [
+      "Text reads '2L-Y8@\\X100C/C' with OCR corruption in spacing separator",
+      "Visual evidence shows horizontal double-headed arrow pointing to stirrup legs in beam B142(400X600)",
+      "Leader arrow points from text to stirrup representation within target beam cross-section",
+      "Stirrup pattern visible in beam section shows vertical legs consistent with 2-leg configuration",
+      "Notation format '2L-Y8@100C/C' indicates 2 legs, Y8 diameter, 100mm spacing center-to-center",
+      "Beam context shows this is span region reinforcement, not support zone",
+      "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns"
+    ],
+    "warnings": [
+      "OCR corruption in original text: '\\X' interpreted as spacing separator, normalized to '@'",
+      "Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption in original text: '\\X' interpreted as spacing separator, normalized to '@'",
+      "Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length",
+      "Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B142::ANN-d4d1251b",
+      "interpretation_status": "PARTIAL",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.85,
+      "evidence_basis": [
+        "Text reads '2L-Y8@\\X100C/C' with OCR corruption in spacing separator",
+        "Visual evidence shows horizontal double-headed arrow pointing to stirrup legs in beam B142(400X600)",
+        "Leader arrow points from text to stirrup representation within target beam cross-section",
+        "Stirrup pattern visible in beam section shows vertical legs consistent with 2-leg configuration",
+        "Notation format '2L-Y8@100C/C' indicates 2 legs, Y8 diameter, 100mm spacing center-to-center",
+        "Beam context shows this is span region reinforcement, not support zone",
+        "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns"
+      ],
+      "warnings": [
+        "OCR corruption in original text: '\\X' interpreted as spacing separator, normalized to '@'",
+        "Quantity (number of stirrup pieces) cannot be determined from notation alone - requires span length",
+        "Spacing pattern assumed UNIFORM based on single spacing value; no zone-specific spacing variations visible in this annotation"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

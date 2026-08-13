@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B100::ANN-655eb304",
+  "beam_id": "B100",
+  "raw_text": "3-Y20",
+  "semantic_class": "LONGITUDINAL",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "LONGITUDINAL_TEXT_ORACLE",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "UNKNOWN",
+    "quantity": 3,
+    "diameter_mm": 20.0,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "3-Y20",
+    "fields_available": [
+      "semantic_type",
+      "beam_association",
+      "quantity",
+      "diameter_mm"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B100::ANN-655eb304",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "BOTTOM_BAR",
+      "quantity": 3,
+      "diameter_mm": 20,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3-Y20",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Text '3-Y20' clearly visible in annotation",
+        "Annotation positioned at bottom of beam section with leader pointing to bottom reinforcement layer",
+        "Visual context shows horizontal beam with annotation at lower fiber",
+        "Notation format '3-Y20' indicates 3 bars of Y20 (20mm diameter)",
+        "Position and leader direction consistent with bottom longitudinal reinforcement",
+        "Beam B100 identified as target beam with depth 600mm, annotation at bottom zone",
+        "No stirrup spacing notation present, confirming longitudinal bar interpretation",
+        "Sibling annotation '3L-Y10@100C/C' indicates stirrups, distinguishing this as longitudinal"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

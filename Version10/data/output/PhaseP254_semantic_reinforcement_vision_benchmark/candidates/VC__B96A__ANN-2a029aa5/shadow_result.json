@@ -1,0 +1,87 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B96A::ANN-2a029aa5",
+  "beam_id": "B96A",
+  "annotation_id": "ANN-2a029aa5",
+  "claude_interpretation": {
+    "candidate_id": "VC::B96A::ANN-2a029aa5",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "SIDE_FACE_REINFORCEMENT",
+    "role": "SIDE_FACE",
+    "quantity": null,
+    "diameter_mm": null,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "UNKNOWN",
+    "normalized_notation": "SIDE.FACE.REINFORCEMENT.DETAILS FOR BEAM",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text explicitly states 'SIDE.FACE.REINFORCEMENT. DETAILS FOR BEAM'",
+      "Annotation is a descriptive header/note for side face reinforcement details",
+      "Sibling annotations include 'S.F.R.ON EACH FACE' and development length notations, confirming this is a section header",
+      "No quantity or diameter information present in this annotation - it serves as a label/title",
+      "Visual context shows this is positioned as a detail callout header in the drawing"
+    ],
+    "warnings": [
+      "This is a descriptive header annotation, not a specific reinforcement specification",
+      "Actual side face reinforcement quantities and diameters would be specified in related annotations",
+      "No numeric reinforcement parameters can be extracted from this text"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "This is a descriptive header annotation, not a specific reinforcement specification",
+      "Actual side face reinforcement quantities and diameters would be specified in related annotations",
+      "No numeric reinforcement parameters can be extracted from this text"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": null,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B96A::ANN-2a029aa5",
+    "leader_id": null,
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "e9835f0fb4e3ff741621ea1c0ee6564203a02958a83f42cb9efe25c6443352ed",
+  "prompt_fingerprint": "4f966f721f758831305df609d7d5ccee5623a59aeeaac42c4e44678ed17e1c9b",
+  "token_usage": {
+    "input_tokens": 1930,
+    "output_tokens": 366
+  },
+  "timestamp_utc": "2026-08-13T06:04:00.076785+00:00"
+}

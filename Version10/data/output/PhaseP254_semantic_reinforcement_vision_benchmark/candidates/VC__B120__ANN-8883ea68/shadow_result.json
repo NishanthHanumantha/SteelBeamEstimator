@@ -1,0 +1,83 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B120::ANN-8883ea68",
+  "beam_id": "B120",
+  "annotation_id": "ANN-8883ea68",
+  "claude_interpretation": {
+    "candidate_id": "VC::B120::ANN-8883ea68",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "BOTTOM_BAR",
+    "quantity": 3,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3-Y25",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation '3-Y25' is clearly visible in magenta text",
+      "Leader line points downward from the annotation to the bottom fiber of the horizontal beam (green outline)",
+      "Position of annotation is below the beam centerline, consistent with bottom reinforcement",
+      "Beam depth 600mm with horizontal orientation confirmed by visual geometry",
+      "No stirrup notation pattern present (no spacing indicators like @100)",
+      "Notation format '3-Y25' matches standard longitudinal bar callout: quantity-diameter",
+      "Beam association confirmed by leader termination at target beam bottom face",
+      "Location appears to be in mid-span region based on beam geometry and surrounding context",
+      "No conflicting visual evidence or OCR corruption detected"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B120::ANN-8883ea68",
+    "leader_id": "LDR::4AAC215B",
+    "ownership_id": "OWN::B120::11D1DD0",
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "5d32c2f94f25013a0bcff8ba6f7b0e3227daea84be8f5db91e3c55b0bd219d54",
+  "prompt_fingerprint": "0e753965dcff7501b27fbeb2dc6070bc2789b979850bd19381461735fa87369a",
+  "token_usage": {
+    "input_tokens": 1896,
+    "output_tokens": 345
+  },
+  "timestamp_utc": "2026-08-13T05:59:42.634984+00:00"
+}

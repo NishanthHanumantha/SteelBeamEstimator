@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B103::ANN-6d8bbdf4\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"STIRRUP\",\n  \"role\": \"STIRRUP\",\n  \"quantity\": null,\n  \"diameter_mm\": 10,\n  \"legs\": 3,\n  \"spacing_mm\": [100],\n  \"spacing_pattern\": \"UNIFORM\",\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"3L-Y10@100C/C\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text notation '3L-Y10@100C/C' clearly indicates 3-legged stirrups with Y10 bars at 100mm spacing\",\n    \"Annotation positioned below beam B103(350X500) in the top detail\",\n    \"Visual context shows this is a stirrup specification for the horizontal beam\",\n    \"Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP\",\n    \"The 'L' prefix explicitly denotes legs, standard notation for stirrup configuration\",\n    \"Spacing pattern '@100C/C' indicates uniform center-to-center spacing of 100mm\",\n    \"Position and leader context associate this with the target beam B103\",\n    \"No conflicting evidence between visual representation and text notation\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 8.19546260003699,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1882,
+    "output_tokens": 355
+  },
+  "estimated_input_tokens": 1045,
+  "estimated_output_tokens": 272,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B103::ANN-6d8bbdf4",
+  "beam_id": "B103",
+  "annotation_id": "ANN-6d8bbdf4",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "706d9caf9cb4f6e7f35e39dfad785f35e79426ce77c1965f96368ac3b39a8734",
+  "evidence_fingerprint": "7f5bd7337d2a7ee90d0ebd797af5b5b633f062f43d5b4fdb984cf9fe6de92017",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:59:14.676117+00:00"
+}

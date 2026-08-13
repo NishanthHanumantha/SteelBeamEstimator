@@ -1,0 +1,272 @@
+{
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "scope": "FOURTH_SET_ONLY",
+  "pass_fail": "PASS",
+  "decision": "READY_FOR_SHADOW_INTEGRATION",
+  "claude_model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "class_distribution": {
+    "STIRRUP": 6,
+    "LONGITUDINAL": 15,
+    "MULTI_ANNOTATION": 8,
+    "OCR_CONTROL": 5,
+    "DIFFICULT_VISUAL": 3,
+    "SIDE_FACE": 2,
+    "SUPPORT_TOP": 2
+  },
+  "tag_distribution": {
+    "BEAM_ASSOCIATION": 31,
+    "MULTI_ANNOTATION": 22,
+    "STIRRUP": 14,
+    "LONGITUDINAL": 17,
+    "OCR_CONTROL": 8,
+    "DIFFICULT_VISUAL": 3,
+    "SIDE_FACE": 2,
+    "SUPPORT_TOP": 2
+  },
+  "metrics": {
+    "CLAUDE_CALL_COUNT": 41,
+    "CLAUDE_SUCCESS_RATE": 100.0,
+    "CLAUDE_VALID_RESPONSE_RATE": 100.0,
+    "GROUND_TRUTH_COVERAGE": 100.0,
+    "SEMANTIC_INTERPRETATION_ACCURACY": 97.56,
+    "TYPE_ACCURACY": 97.56,
+    "ROLE_ACCURACY": 95.65,
+    "DIAMETER_ACCURACY": 100.0,
+    "QUANTITY_ACCURACY": 100.0,
+    "SPACING_ACCURACY": 100.0,
+    "BEAM_ASSOCIATION_ACCURACY": 95.12,
+    "ZONE_ACCURACY": null,
+    "HALLUCINATION_RATE": 2.44,
+    "APPROPRIATE_ABSTENTION_RATE": 0.0,
+    "VISION_ONLY_RESOLUTION_RATE": 21.95,
+    "BOTH_AGREE_RATE": 75.61,
+    "VISION_CONFLICT_RATE": 0.0,
+    "counts": {
+      "resolved_status": 38,
+      "partial_status": 3,
+      "abstained_status": 0,
+      "exact": 37,
+      "partial": 3,
+      "incorrect": 0,
+      "hallucination": 1,
+      "appropriate_abstention": 0,
+      "api_success": 41,
+      "valid": 41,
+      "vision_only_resolved": 9,
+      "both_agree": 31,
+      "vision_conflict": 0,
+      "comparison": {
+        "BOTH_AGREE": 31,
+        "VISION_ONLY_RESOLVED": 9,
+        "VISION_WRONG": 1
+      }
+    },
+    "category": {
+      "LONGITUDINAL": {
+        "n": 17,
+        "exact": 16,
+        "partial": 1,
+        "incorrect": 0,
+        "hallucination": 0,
+        "semantic_accuracy": 100.0,
+        "type_accuracy": 100.0,
+        "role_accuracy": 100.0
+      },
+      "STIRRUP": {
+        "n": 14,
+        "exact": 11,
+        "partial": 2,
+        "incorrect": 0,
+        "hallucination": 1,
+        "semantic_accuracy": 92.86,
+        "type_accuracy": 92.86,
+        "role_accuracy": 92.86
+      },
+      "SIDE_FACE": {
+        "n": 2,
+        "exact": 2,
+        "partial": 0,
+        "incorrect": 0,
+        "hallucination": 0,
+        "semantic_accuracy": 100.0,
+        "type_accuracy": 100.0,
+        "role_accuracy": 100.0
+      },
+      "SUPPORT_TOP": {
+        "n": 2,
+        "exact": 2,
+        "partial": 0,
+        "incorrect": 0,
+        "hallucination": 0,
+        "semantic_accuracy": 100.0,
+        "type_accuracy": 100.0,
+        "role_accuracy": 100.0
+      },
+      "MULTI_ANNOTATION": {
+        "n": 22,
+        "exact": 22,
+        "partial": 0,
+        "incorrect": 0,
+        "hallucination": 0,
+        "semantic_accuracy": 100.0,
+        "type_accuracy": 100.0,
+        "role_accuracy": 100.0
+      },
+      "BEAM_ASSOCIATION": {
+        "n": 31,
+        "exact": 30,
+        "partial": 1,
+        "incorrect": 0,
+        "hallucination": 0,
+        "semantic_accuracy": 100.0,
+        "type_accuracy": 100.0,
+        "role_accuracy": 100.0
+      },
+      "DIFFICULT_VISUAL": {
+        "n": 3,
+        "exact": 1,
+        "partial": 1,
+        "incorrect": 0,
+        "hallucination": 1,
+        "semantic_accuracy": 66.67,
+        "type_accuracy": 66.67,
+        "role_accuracy": 66.67
+      },
+      "OCR_CONTROL": {
+        "n": 8,
+        "exact": 5,
+        "partial": 2,
+        "incorrect": 0,
+        "hallucination": 1,
+        "semantic_accuracy": 87.5,
+        "type_accuracy": 87.5,
+        "role_accuracy": 87.5
+      }
+    },
+    "token_usage": {
+      "input_tokens": 100215,
+      "output_tokens": 15639,
+      "total_tokens": 115854
+    },
+    "LOCAL_PLUS_CONTEXT_SUCCESS_RATE": 97.56,
+    "LOCAL_ONLY_SUCCESS_RATE": null
+  },
+  "determinism": {
+    "pipeline_fingerprint": "d823da364797e544a7a88a08c237674357ca2a7a256f9b17bb1c69ec7dcabfe2",
+    "pipeline_determinism_status": "PASS",
+    "deterministic_preparation_twice": true,
+    "claude_variability_test": "NOT_RUN",
+    "claude_variability_reason": "Cost control: single LOCAL_PLUS_CONTEXT Claude pass; deterministic candidate/evidence/prompt fingerprints compared instead.",
+    "note": "Candidate/evidence/prompt fingerprints are deterministic; Claude text may vary.",
+    "response_fingerprints": [
+      "05c04c4ad43ae84c1ddfe709afecf74f13e1b21fe7d8584eb1a4793c0c977e14",
+      "4c8ad32630c84c32fe2df32bcb9f1465bd817006f090c5dc8230d87c4c4a8146",
+      "b18aa457f44ed17b2bf4a9d6da8055250d83ed03de8b1f04771495a717fb9bbe",
+      "d2e16a93c3222980ec7ad58ec2c72ea49a1862b81fd27a9d23b1539965438d6b",
+      "85939dd5371b4df0a56fdcabc9e5a96468fb6c9418494fcdee93989bf44ad382",
+      "6564f36ce0c6cdef43c74f0cb1809e32a579417c05be1f2d84d3a78542046e94",
+      "4ea6679e22d4a1a3305a412f506ce55e39882a2c4ca8a527faca3355ed5ed337",
+      "c999446bc31cda711ecf432bd3178cf656b50a18e07b711ebe23645f82803efb",
+      "cf2f6feca97fd2d97a3587160f264423af211c1ed2378301fdbbc84b703a8058",
+      "52a3a84480fcb062ee03f4eef0ac93bdfab4e6ef3fc7a3da2679cda87df60a0e",
+      "c75410595d2bbb913a8a707064ca5c8787ff9a2680fc3fb4f0b7a094e53d4bd6",
+      "589e2146d9124685856f915b05fd1cfd0de21d29e9560c8743c80c9ee03cf6bb",
+      "982a9a7935f64fa92cf357d01ba8edb8041fd40dbab23068ef27c58d47d7b31c",
+      "a35992e74e9cc2cfc4fe251ce1475953fa7140e6b853582b54682d1ad1cf7b6c",
+      "72f6321d733e76708c67d78d684646119ea398d59cd67331e003a5c90e25a84f",
+      "0faca023319cd175ae5cf6f7fcd4a87ad99295af0ce0c130997ad5a1d325d53f",
+      "e1243cea9fb941f75f1d4ff619f98cb254f735f2ad3b50b6d7359c633c3a990a",
+      "7df4fc1e360e3adb764bc6961032372c48affac244bbdb3ee8ee86d17445da46",
+      "20530354b20a09b5a7307771f8dca0dc7cd2f0c4d6ee25988bab0643873660c7",
+      "4c5d50c57963bbc095ec0d3de125d32ee8825969b51918cce292384689ad47ca",
+      "5900f69e49dcc947ba523146084bbfdb7e9069061c043f00db71c05a203fb3fd",
+      "b0956a0ba14141874e00fbb50f906050e61a48728ac592a4cc16c5fe5b95011e",
+      "f69728423b1dfbdfe37782a6ac9f9f4370531b3012e6c0d22c8dc479f0df1982",
+      "11c4ca28d0fade335e0a7ccc2c52fe4b2e93fbada91f5213ee1f602ddab1bd7d",
+      "c92a472dad4d8dfc8689c1fc91964d299a5f1d6346977d76ce37d9b5d457783e",
+      "a3348ea9290f6fd83239b457d40f5d14c245251403099f6ef8807347a2488837",
+      "dc7580b3ae6c845657d0109aecac406184aec68489f2b71cd939f67e5fcb5ff6",
+      "c8b703b4d3f9ef9e58025d98ce1903de57831d4e00a104e44e1e32be3b0e6d3e",
+      "b3272224dbc2c9cd82067fbca66de7c5bc1e46d24802bea50fecb6c5ec5f1fcf",
+      "eebc9b9987585568a928fa279d9a21be6c12cee884019032109641c2a3338dc0",
+      "3c0fc27e6e8a54a19125ed2dc51aa83d6c85293ef87aaa250c84999bede0a83e",
+      "a85a0cda92b6946c20a057dc2d6dbd1612f6a83e55e91523c970c50301bd70ab",
+      "3c484b7e3a7e9f5812cde1f7c1d9b9c965348889cd4e7ce58a52a89adee36d52",
+      "d0c1b33f3303604ef7aaa046f005c0390bcbf3130ae814fcc058f467b5848d3d",
+      "e2be7dfd32741a0b2525934ab4565be9baa9c0ca4572a23b29abdd566237d1d1",
+      "426b3a6bb2c85bf1256b60a38c44d5f54d96285eb86cc652cf3c6f256638dc73",
+      "656b6f959a44651bbf5f6c62d42f077ff0c62274b4b6d2f33fb766e66dbb0e1d",
+      "713358929f20694434af44400d59be718c33fa54503db0a195a3e6a66cf65f7c",
+      "112fc577363dcce8c616ed3668f7134e90753d265426d3b57eb4cc8bb580a1c1",
+      "45e18818ddab8dc67440422cb32e2c84890dfe6ea7c0f2758698c9933d07d6b8",
+      "24a51dc0d1bf16a26e3d84663ddab7e52a2d05912efa62df1b63120ef96b46be"
+    ]
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.5.4 runner writes only benchmark/shadow/evaluation artefacts"
+  },
+  "engineering_changes": "NONE",
+  "production_output_changes": "NONE",
+  "estimated_api_cost_usd": 0.5352,
+  "estimated_cost_note": "Approx Claude Sonnet list rates /MTok in + /MTok out; actual Anthropic billing may differ",
+  "failed_or_incorrect_candidates": [
+    "VC::B58::ANN-a0c82bbe"
+  ],
+  "unit_tests": {
+    "success": true,
+    "passed": 9,
+    "total": 9,
+    "results": [
+      {
+        "name": "longitudinal_oracle",
+        "pass": true
+      },
+      {
+        "name": "sfr_oracle_no_invented_quantity",
+        "pass": true
+      },
+      {
+        "name": "stirrup_rejects_quantity",
+        "pass": true
+      },
+      {
+        "name": "validator_accepts_longitudinal",
+        "pass": true
+      },
+      {
+        "name": "exact_longitudinal_eval",
+        "pass": true
+      },
+      {
+        "name": "hallucination_wrong_diameter",
+        "pass": true
+      },
+      {
+        "name": "prompt_excludes_truth",
+        "pass": true
+      },
+      {
+        "name": "shadow_not_production",
+        "pass": true
+      },
+      {
+        "name": "json_extract",
+        "pass": true
+      }
+    ],
+    "model_version": "10.8.0"
+  },
+  "benchmark_count": 41
+}

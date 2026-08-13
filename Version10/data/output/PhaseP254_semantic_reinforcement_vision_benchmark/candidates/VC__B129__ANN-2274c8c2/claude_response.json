@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B129::ANN-2274c8c2\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"TOP_BAR\",\n  \"quantity\": 2,\n  \"diameter_mm\": 16,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"2-Y16\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text reads '2-Y16' indicating 2 bars of Y16 (16mm diameter)\",\n    \"Annotation appears in magenta text '4-Y20 2-Y16' at top of beam section\",\n    \"Leader line points downward from annotation to top face of beam B129(400X1100)\",\n    \"Green reinforcement line visible at top of beam cross-section at leader terminus\",\n    \"Position and leader direction indicate top longitudinal reinforcement\",\n    \"Beam section shows this is part of combined top bar notation with 4-Y20\",\n    \"Spatial context: annotation positioned above beam, leader points to top face\",\n    \"Beam depth 600mm (metadata) but drawing shows 1100mm depth - using visual evidence\",\n    \"Zone is SPAN based on beam section view showing mid-span configuration\"\n  ],\n  \"warnings\": [\n    \"Annotation '2-Y16' appears as part of combined notation '4-Y20 2-Y16' - this interpretation covers only the 2-Y16 component\",\n    \"Metadata indicates beam depth 600mm but drawing shows B129(400X1100) - visual evidence used\"\n  ]\n}\n```",
+  "latency_s": 10.348581199999899,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2757,
+    "output_tokens": 439
+  },
+  "estimated_input_tokens": 1057,
+  "estimated_output_tokens": 343,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B129::ANN-2274c8c2",
+  "beam_id": "B129",
+  "annotation_id": "ANN-2274c8c2",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "7157f227c6694da05f009899ac8d020d713dd104e656d38338d1b726729cb9d7",
+  "evidence_fingerprint": "9cf53bee5dbd88caecbaa2e5f82cd1dfe417607ccd260c8abb602daceb647f40",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:01:58.853358+00:00"
+}

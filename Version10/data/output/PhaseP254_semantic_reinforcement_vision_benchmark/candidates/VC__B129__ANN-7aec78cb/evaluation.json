@@ -1,0 +1,95 @@
+{
+  "candidate_id": "VC::B129::ANN-7aec78cb",
+  "beam_id": "B129",
+  "raw_text": "4L-Y12@\\X100C/C",
+  "semantic_class": "OCR_CONTROL",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "VISION_ONLY_RESOLVED",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12.0,
+    "legs": 4,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "4L-Y12@100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+      "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B129::ANN-7aec78cb",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 4,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y12@100C/C",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text notation '4L-Y12@\\X100C/C' clearly indicates 4-leg stirrups with Y12 diameter at 100mm centers",
+        "OCR corruption '\\X' normalized to '@' based on standard stirrup notation pattern",
+        "Leader line points to the beam cross-section of B129(400X1100)",
+        "Horizontal double-headed arrow with '100C/C' dimension confirms spacing pattern",
+        "Annotation positioned within the beam section detail, confirming TARGET_BEAM association",
+        "Green stirrup outlines visible in cross-section showing closed rectangular stirrups",
+        "4L indicates 4-leg closed stirrup configuration typical for rectangular beams",
+        "Position and context indicate span zone stirrups (not support zone)"
+      ],
+      "warnings": [
+        "OCR corruption '\\X' in original text normalized to '@' based on visual evidence and standard notation",
+        "Quantity (number of stirrup pieces) not specified in notation and cannot be determined from evidence"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "candidate_id": "VC::B121::ANN-8a4731e2",
+  "beam_id": "B121",
+  "raw_text": "4-Y20",
+  "semantic_class": "MULTI_ANNOTATION",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "LONGITUDINAL_TEXT_ORACLE",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "UNKNOWN",
+    "quantity": 4,
+    "diameter_mm": 20.0,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "4-Y20",
+    "fields_available": [
+      "semantic_type",
+      "beam_association",
+      "quantity",
+      "diameter_mm"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B121::ANN-8a4731e2",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "LONGITUDINAL_BAR",
+      "role": "TOP_BAR",
+      "quantity": 4,
+      "diameter_mm": 20,
+      "legs": null,
+      "spacing_mm": [],
+      "spacing_pattern": null,
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4-Y20",
+      "confidence": 0.95,
+      "evidence_basis": [
+        "Text clearly reads '4-Y20' indicating 4 bars of Y20 (20mm diameter)",
+        "Annotation positioned above the beam centerline in the upper portion of beam B121(450X600)",
+        "Leader line points upward from the annotation to the top region of the beam cross-section",
+        "Visual position and leader direction consistent with top longitudinal reinforcement",
+        "Beam depth is 600mm; annotation is in the top half of the beam section",
+        "Sibling annotations include '4L-Y12@100C/C' (stirrups) and another '4-Y20', indicating this is one of multiple longitudinal bar callouts",
+        "No spacing notation present, confirming this is longitudinal bar count rather than distributed reinforcement",
+        "Beam B121 is clearly identified in cyan text below the beam"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

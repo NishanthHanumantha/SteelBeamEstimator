@@ -1,0 +1,92 @@
+{
+  "candidate_id": "VC::B123::ANN-6d809bfc",
+  "beam_id": "B123",
+  "raw_text": "4L-Y10@100/125/100C/C",
+  "semantic_class": "STIRRUP",
+  "evaluation": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [],
+    "details": {}
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "STIRRUP_TEXT_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10.0,
+    "legs": 4,
+    "spacing_mm": [
+      100,
+      125,
+      100
+    ],
+    "spacing_pattern": "VARIABLE",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "4L-Y10@100/125/100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [],
+    "validated_interpretation": {
+      "candidate_id": "VC::B123::ANN-6d809bfc",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 10,
+      "legs": 4,
+      "spacing_mm": [
+        100,
+        125,
+        100
+      ],
+      "spacing_pattern": "100/125/100C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "4L-Y10@100/125/100C/C",
+      "confidence": 0.98,
+      "evidence_basis": [
+        "Text notation '4L-Y10@100/125/100C/C' clearly visible in cyan color below beam B123(600X600)",
+        "Notation positioned directly below the target beam B123 in the upper right section of the drawing",
+        "Format follows standard stirrup notation: 4L (4 legs), Y10 (10mm diameter), @100/125/100C/C (spacing pattern with center-to-center)",
+        "Visual position and leader association confirm this is stirrup reinforcement for beam B123",
+        "Beam identifier B123(600X600) shown in cyan directly above the notation",
+        "Stirrup notation is consistent with engineering drawing conventions for transverse reinforcement",
+        "No conflicting visual evidence; notation is clear and unambiguous"
+      ],
+      "warnings": [],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

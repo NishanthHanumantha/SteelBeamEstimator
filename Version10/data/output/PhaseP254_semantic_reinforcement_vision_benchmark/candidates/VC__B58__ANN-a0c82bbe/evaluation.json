@@ -1,0 +1,106 @@
+{
+  "candidate_id": "VC::B58::ANN-a0c82bbe",
+  "beam_id": "B58",
+  "raw_text": "3L-Y12@\\X100C/C",
+  "semantic_class": "DIFFICULT_VISUAL",
+  "evaluation": {
+    "evaluation": "HALLUCINATION",
+    "exact_match": false,
+    "field_scores": {
+      "type": false,
+      "role": false,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    },
+    "details": "resolved_wrong_semantic_type"
+  },
+  "comparison": {
+    "class": "VISION_WRONG",
+    "baseline_resolved": false,
+    "vision_status": "RESOLVED",
+    "evaluation": "HALLUCINATION",
+    "validation_ok": true
+  },
+  "conflicts": {
+    "flags": [
+      "ROLE_CONFLICT"
+    ],
+    "details": {
+      "role": {
+        "claude": "SIDE_FACE",
+        "deterministic": "STIRRUP"
+      }
+    }
+  },
+  "ground_truth": {
+    "available": true,
+    "source": "OCR_CLEAN_STIRRUP_ORACLE",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 12.0,
+    "legs": 3,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": null,
+    "normalized_notation": "3L-Y12@100C/C",
+    "fields_available": [
+      "semantic_type",
+      "role",
+      "diameter_mm",
+      "legs",
+      "spacing_mm",
+      "beam_association"
+    ],
+    "reason": null
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption '\\X' normalized to standard spacing notation based on visual evidence and engineering convention",
+      "Metadata beam_depth_mm=600 conflicts with drawing dimension 800mm; interpretation based on visual evidence",
+      "Quantity field left null as 3L refers to legs (stirrup-like distribution), not discrete bar count"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B58::ANN-a0c82bbe",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "SIDE_FACE_REINFORCEMENT",
+      "role": "SIDE_FACE",
+      "quantity": null,
+      "diameter_mm": 12,
+      "legs": 3,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "3L-Y12@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Text reads '3L-Y12@\\X100C/C' where '\\X' is OCR corruption of line break or formatting; engineering meaning is '3L-Y12@100C/C'",
+        "Notation format '3L-Y12@100C/C' indicates 3 legs of Y12 bars at 100mm centers/centers",
+        "Leader arrow points to horizontal span region of beam B58(300X800) between stirrups",
+        "Position is mid-depth of beam, consistent with side face reinforcement placement",
+        "Visual context shows stirrups and longitudinal bars; this annotation is distinct from both",
+        "3 legs indicates side face bars distributed along beam depth",
+        "Y12 diameter and 100mm spacing are typical for side face reinforcement in 800mm deep beam",
+        "Beam depth 600mm per metadata, but drawing shows 800mm; annotation placement supports side face role",
+        "No evidence of association with other beam; leader clearly targets B58"
+      ],
+      "warnings": [
+        "OCR corruption '\\X' normalized to standard spacing notation based on visual evidence and engineering convention",
+        "Metadata beam_depth_mm=600 conflicts with drawing dimension 800mm; interpretation based on visual evidence",
+        "Quantity field left null as 3L refers to legs (stirrup-like distribution), not discrete bar count"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  }
+}

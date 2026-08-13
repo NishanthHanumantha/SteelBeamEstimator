@@ -1,0 +1,82 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B126::ANN-c442e075",
+  "beam_id": "B126",
+  "annotation_id": "ANN-c442e075",
+  "claude_interpretation": {
+    "candidate_id": "VC::B126::ANN-c442e075",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 5,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "5-Y25",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text '5-Y25' clearly visible in magenta annotation",
+      "Leader line points downward from annotation to top face of beam B126(500X600)",
+      "Annotation positioned above the beam section, consistent with top reinforcement",
+      "Beam section shows horizontal orientation with depth 600mm",
+      "Format '5-Y25' indicates 5 bars of Y25 (25mm diameter)",
+      "Position and leader direction support top bar classification",
+      "Span zone indicated by position away from support regions",
+      "No stirrup notation pattern present (no spacing or 'L' prefix)"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B126::ANN-c442e075",
+    "leader_id": "LDR::BC957243",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "914dcfcfdf9673996381f623282958eb34d7d36db3d9e4f686e796b9027fbb86",
+  "prompt_fingerprint": "87c0d5d7b769cc2e7784b7a79fcf2c1636b6df61cd8434efd7ea9402d915db3e",
+  "token_usage": {
+    "input_tokens": 2234,
+    "output_tokens": 314
+  },
+  "timestamp_utc": "2026-08-13T06:01:20.915977+00:00"
+}

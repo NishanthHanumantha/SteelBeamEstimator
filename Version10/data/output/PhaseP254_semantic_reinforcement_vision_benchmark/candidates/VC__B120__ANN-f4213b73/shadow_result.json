@@ -1,0 +1,86 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B120::ANN-f4213b73",
+  "beam_id": "B120",
+  "annotation_id": "ANN-f4213b73",
+  "claude_interpretation": {
+    "candidate_id": "VC::B120::ANN-f4213b73",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 10,
+    "legs": 3,
+    "spacing_mm": [
+      100,
+      150,
+      100
+    ],
+    "spacing_pattern": "100C/150/100/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "3L-Y10@100C/150/100/C",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Annotation text clearly reads '3L-Y10@100C/150/100/C' indicating 3-legged stirrups",
+      "Y10 indicates 10mm diameter reinforcement bars",
+      "Spacing pattern 100C/150/100/C indicates variable spacing: 100mm at ends (C=close), 150mm in middle, 100mm at other end",
+      "Annotation positioned directly on horizontal beam shown in green",
+      "Visual context shows stirrup symbols (vertical lines) along the beam length consistent with stirrup reinforcement",
+      "Beam orientation is horizontal as indicated by metadata",
+      "No leader line pointing away from target beam, confirming TARGET_BEAM association",
+      "Position along beam span (not at support) indicates SPAN zone"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": true,
+      "quantity": null,
+      "diameter": true,
+      "spacing": true,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B120::ANN-f4213b73",
+    "leader_id": null,
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "49e228c81563ef660f4499c5863541a6a63a6f8a60b135346020f8b07bda6bbc",
+  "prompt_fingerprint": "7570bb20713301dc707fd56e0e5c3aba232b6b440a828a14dd2f59c6c9eec6cf",
+  "token_usage": {
+    "input_tokens": 1894,
+    "output_tokens": 376
+  },
+  "timestamp_utc": "2026-08-13T05:59:51.820502+00:00"
+}

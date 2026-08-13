@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B123::ANN-3f905849\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"BOTTOM_BAR\",\n  \"quantity\": 2,\n  \"diameter_mm\": 25,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"2-Y25\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Annotation '2-Y25' is clearly visible in magenta text in the upper right portion of beam B123(600X800)\",\n    \"Leader line points downward from the text to the bottom reinforcement layer of the beam\",\n    \"Visual position shows the annotation associated with the lower longitudinal bars in the beam cross-section\",\n    \"The annotation is positioned above the beam section, with leader pointing to bottom bars, consistent with bottom reinforcement callout convention\",\n    \"Beam B123(600X800) is clearly labeled and this annotation is within its span region\",\n    \"Text format '2-Y25' explicitly indicates 2 bars of Y25 (25mm diameter)\",\n    \"No stirrup spacing pattern present; pure longitudinal bar notation\",\n    \"Surrounding context shows other longitudinal bar callouts (6-Y20, 4-Y20) and stirrup notation (4L-Y10@100/125/100C/C) for comparison\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 11.175665499991737,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1892,
+    "output_tokens": 392
+  },
+  "estimated_input_tokens": 1058,
+  "estimated_output_tokens": 317,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B123::ANN-3f905849",
+  "beam_id": "B123",
+  "annotation_id": "ANN-3f905849",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "471ea33dd3de33dccde8ae52c7a18ff810fd1e6f7b2b23959575313b2b4ea17a",
+  "evidence_fingerprint": "425f05271b3160e4ffa9d5ca0f5ffd6b06b58e2e83ecaf1904942294d01a7f3a",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:00:33.173132+00:00"
+}

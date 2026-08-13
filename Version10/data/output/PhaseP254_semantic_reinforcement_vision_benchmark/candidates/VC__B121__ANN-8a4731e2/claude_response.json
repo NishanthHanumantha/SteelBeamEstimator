@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B121::ANN-8a4731e2\",\n  \"interpretation_status\": \"RESOLVED\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"TOP_BAR\",\n  \"quantity\": 4,\n  \"diameter_mm\": 20,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"TARGET_BEAM\",\n  \"zone\": \"SPAN\",\n  \"normalized_notation\": \"4-Y20\",\n  \"confidence\": 0.95,\n  \"evidence_basis\": [\n    \"Text clearly reads '4-Y20' indicating 4 bars of Y20 (20mm diameter)\",\n    \"Annotation positioned above the beam centerline in the upper portion of beam B121(450X600)\",\n    \"Leader line points upward from the annotation to the top region of the beam cross-section\",\n    \"Visual position and leader direction consistent with top longitudinal reinforcement\",\n    \"Beam depth is 600mm; annotation is in the top half of the beam section\",\n    \"Sibling annotations include '4L-Y12@100C/C' (stirrups) and another '4-Y20', indicating this is one of multiple longitudinal bar callouts\",\n    \"No spacing notation present, confirming this is longitudinal bar count rather than distributed reinforcement\",\n    \"Beam B121 is clearly identified in cyan text below the beam\"\n  ],\n  \"warnings\": []\n}\n```",
+  "latency_s": 7.958065400016494,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 1883,
+    "output_tokens": 371
+  },
+  "estimated_input_tokens": 1047,
+  "estimated_output_tokens": 294,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B121::ANN-8a4731e2",
+  "beam_id": "B121",
+  "annotation_id": "ANN-8a4731e2",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "830e445b2fdc65f2e42dfff9e27d3e279a40ae68db17eaa292e4ce8789327259",
+  "evidence_fingerprint": "7e7bf708c3ad6174f6374918e49d4ba99eed21e88e8904af5f40f7d8cf554cd1",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T06:00:19.836337+00:00"
+}

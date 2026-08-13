@@ -1,0 +1,77 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B178::ANN-41e4a18e",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "UNIFORM",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text notation '2L-Y8@\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing",
+      "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns",
+      "Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)",
+      "Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement",
+      "Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation",
+      "Annotation positioned in span region between supports, indicating SPAN zone",
+      "Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green",
+      "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+      "No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association"
+    ],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+      "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B178::ANN-41e4a18e",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "UNIFORM",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Text notation '2L-Y8@\\X100C/C' clearly indicates 2-legged stirrups with Y8 (8mm diameter) bars at 100mm center-to-center spacing",
+        "OCR corruption '\\X' normalized to standard '@' based on visual context and standard notation patterns",
+        "Horizontal leader line with bidirectional arrows points to the TARGET_BEAM (horizontal beam with green outline in context image)",
+        "Leader positioned at mid-depth of beam cross-section, typical for stirrup annotation placement",
+        "Beam context shows this is a horizontal beam (B178) with depth 600mm, consistent with stirrup annotation",
+        "Annotation positioned in span region between supports, indicating SPAN zone",
+        "Visual evidence shows the leader clearly associates with the horizontal beam element outlined in green",
+        "Deterministic metadata confirms semantic_type=STIRRUP and role=STIRRUP",
+        "No conflicting visual evidence; annotation placement and leader geometry support TARGET_BEAM association"
+      ],
+      "warnings": [
+        "OCR corruption detected: '\\X' in original text normalized to '@' based on standard stirrup notation pattern",
+        "Quantity field left null as per schema rules for STIRRUP type (legs field used instead)"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

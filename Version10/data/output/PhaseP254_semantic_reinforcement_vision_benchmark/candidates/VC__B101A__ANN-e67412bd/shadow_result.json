@@ -1,0 +1,90 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B101A::ANN-e67412bd",
+  "beam_id": "B101A",
+  "annotation_id": "ANN-e67412bd",
+  "claude_interpretation": {
+    "candidate_id": "VC::B101A::ANN-e67412bd",
+    "interpretation_status": "PARTIAL",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "UNKNOWN",
+    "quantity": 4,
+    "diameter_mm": 25,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "UNCERTAIN",
+    "zone": "UNKNOWN",
+    "normalized_notation": "4-Y25",
+    "confidence": 0.7,
+    "evidence_basis": [
+      "Text clearly reads '4-Y25' indicating 4 bars of Y25 (25mm diameter)",
+      "Deterministic metadata confirms LONGITUDINAL_BAR semantic type",
+      "Multiple instances of '4-Y25' visible in drawing at different vertical positions",
+      "No leader line visible connecting this specific annotation to beam B101A(400X1100)",
+      "Annotation appears above the beam section, but spatial relationship to target beam is ambiguous",
+      "Similar '4-Y25' annotations appear at top and bottom of beam sections, suggesting top and bottom reinforcement",
+      "Without clear leader or definitive position relative to beam depth, cannot determine if TOP_BAR or BOTTOM_BAR",
+      "Beam B101A is identified at bottom of drawing, but this annotation instance lacks direct visual connection"
+    ],
+    "warnings": [
+      "Role cannot be determined: annotation lacks leader line or clear positional evidence relative to target beam depth",
+      "Beam association uncertain: multiple beams present (B100A, B101A) and annotation position does not definitively indicate which beam",
+      "Zone cannot be determined from available evidence"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Role cannot be determined: annotation lacks leader line or clear positional evidence relative to target beam depth",
+      "Beam association uncertain: multiple beams present (B100A, B101A) and annotation position does not definitively indicate which beam",
+      "Zone cannot be determined from available evidence"
+    ]
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "PARTIAL",
+    "exact_match": false,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": false,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "PARTIAL",
+    "evaluation": "PARTIAL",
+    "validation_ok": true
+  },
+  "confidence": 0.7,
+  "provenance": {
+    "intent_id": "QI::B101A::ANN-e67412bd",
+    "leader_id": null,
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "db2a023e5804796a299115bd1a026b1ee8e0210617a00c834abe91f91c4e7224",
+  "prompt_fingerprint": "f563bebc48028a36aee3fad726c3b227b346512c3c0db2a6dd943bafb2b07f7f",
+  "token_usage": {
+    "input_tokens": 2792,
+    "output_tokens": 426
+  },
+  "timestamp_utc": "2026-08-13T05:58:28.270708+00:00"
+}

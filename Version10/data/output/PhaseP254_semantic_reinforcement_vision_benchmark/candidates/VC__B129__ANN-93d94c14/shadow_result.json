@@ -1,0 +1,84 @@
+{
+  "object_kind": "ShadowResolverResult",
+  "production_write": false,
+  "engineering_authority": "DETERMINISTIC_ENGINE",
+  "phase_id": "P2.5.4",
+  "model_version": "10.8.0",
+  "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1",
+  "candidate_id": "VC::B129::ANN-93d94c14",
+  "beam_id": "B129",
+  "annotation_id": "ANN-93d94c14",
+  "claude_interpretation": {
+    "candidate_id": "VC::B129::ANN-93d94c14",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "LONGITUDINAL_BAR",
+    "role": "TOP_BAR",
+    "quantity": 4,
+    "diameter_mm": 20,
+    "legs": null,
+    "spacing_mm": [],
+    "spacing_pattern": null,
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "4-Y20",
+    "confidence": 0.95,
+    "evidence_basis": [
+      "Text '4-Y20' clearly visible in magenta at top of beam section",
+      "Leader line points downward from text to top face of beam cross-section",
+      "Red circular markers at top corners of beam indicate longitudinal bar positions",
+      "Green continuous lines at top of section represent longitudinal reinforcement layer",
+      "Beam B129(400X1100) shown with depth 1100mm, annotation positioned at top face",
+      "Sibling annotation '4-Y20 2-Y16' at top confirms this is part of top reinforcement layer",
+      "Bottom face shows separate '4-Y20 2-Y16' annotation with distinct leader",
+      "Stirrup notation '4L-Y12@100C/C' shown separately below beam",
+      "Spatial position and leader geometry clearly associate this with top longitudinal bars",
+      "Quantity 4 and diameter Y20 explicitly stated in notation"
+    ],
+    "warnings": [],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "conflict_flags": {
+    "flags": [],
+    "details": {}
+  },
+  "benchmark_result": {
+    "evaluation": "EXACT",
+    "exact_match": true,
+    "field_scores": {
+      "type": true,
+      "role": null,
+      "quantity": true,
+      "diameter": true,
+      "spacing": null,
+      "beam_association": true,
+      "zone": null
+    }
+  },
+  "baseline_comparison": {
+    "class": "BOTH_AGREE",
+    "baseline_resolved": true,
+    "vision_status": "RESOLVED",
+    "evaluation": "EXACT",
+    "validation_ok": true
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "intent_id": "QI::B129::ANN-93d94c14",
+    "leader_id": "LDR::B7F51690",
+    "ownership_id": null,
+    "evidence_id": null,
+    "source_handle": null
+  },
+  "evidence_fingerprint": "a9adf8669acad182b591994669231b736bc3390655f5be25aa0f0d05e1e5e21d",
+  "prompt_fingerprint": "1ad454ddbf67e508622fa3b21260a21b0cfacf85450fd48364dbea31ef0bc02f",
+  "token_usage": {
+    "input_tokens": 2742,
+    "output_tokens": 389
+  },
+  "timestamp_utc": "2026-08-13T06:02:22.037017+00:00"
+}

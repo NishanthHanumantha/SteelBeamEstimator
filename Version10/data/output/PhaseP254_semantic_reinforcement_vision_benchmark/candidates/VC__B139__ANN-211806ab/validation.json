@@ -1,0 +1,75 @@
+{
+  "parsed": {
+    "candidate_id": "VC::B139::ANN-211806ab",
+    "interpretation_status": "RESOLVED",
+    "semantic_type": "STIRRUP",
+    "role": "STIRRUP",
+    "quantity": null,
+    "diameter_mm": 8,
+    "legs": 2,
+    "spacing_mm": [
+      100
+    ],
+    "spacing_pattern": "C/C",
+    "beam_association": "TARGET_BEAM",
+    "zone": "SPAN",
+    "normalized_notation": "2L-Y8@100C/C",
+    "confidence": 0.92,
+    "evidence_basis": [
+      "Text clearly reads '2L-Y8@100C/C' indicating 2-legged stirrups, Y8 diameter, at 100mm center-to-center spacing",
+      "Leader arrow points directly to the beam cross-section, establishing association with target beam B139",
+      "Position below the beam section is typical for stirrup notation",
+      "Green rectangular outline in both images represents the beam cross-section (500x1200mm per B139 dimensions)",
+      "Red dots at corners indicate longitudinal reinforcement positions",
+      "Notation format matches standard stirrup specification: legs-diameter@spacing pattern",
+      "OCR corruption in metadata ('\\X' instead of '@') is corrected based on visual evidence showing '@' symbol",
+      "Beam context shows this is the primary stirrup specification for the span region"
+    ],
+    "warnings": [
+      "Metadata indicated OCR corruption with '\\X' but visual inspection confirms '@' symbol",
+      "Quantity (number of stirrups) is not specified in the notation and cannot be determined from spacing alone without beam length information"
+    ],
+    "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "Metadata indicated OCR corruption with '\\X' but visual inspection confirms '@' symbol",
+      "Quantity (number of stirrups) is not specified in the notation and cannot be determined from spacing alone without beam length information"
+    ],
+    "validated_interpretation": {
+      "candidate_id": "VC::B139::ANN-211806ab",
+      "interpretation_status": "RESOLVED",
+      "semantic_type": "STIRRUP",
+      "role": "STIRRUP",
+      "quantity": null,
+      "diameter_mm": 8,
+      "legs": 2,
+      "spacing_mm": [
+        100
+      ],
+      "spacing_pattern": "C/C",
+      "beam_association": "TARGET_BEAM",
+      "zone": "SPAN",
+      "normalized_notation": "2L-Y8@100C/C",
+      "confidence": 0.92,
+      "evidence_basis": [
+        "Text clearly reads '2L-Y8@100C/C' indicating 2-legged stirrups, Y8 diameter, at 100mm center-to-center spacing",
+        "Leader arrow points directly to the beam cross-section, establishing association with target beam B139",
+        "Position below the beam section is typical for stirrup notation",
+        "Green rectangular outline in both images represents the beam cross-section (500x1200mm per B139 dimensions)",
+        "Red dots at corners indicate longitudinal reinforcement positions",
+        "Notation format matches standard stirrup specification: legs-diameter@spacing pattern",
+        "OCR corruption in metadata ('\\X' instead of '@') is corrected based on visual evidence showing '@' symbol",
+        "Beam context shows this is the primary stirrup specification for the span region"
+      ],
+      "warnings": [
+        "Metadata indicated OCR corruption with '\\X' but visual inspection confirms '@' symbol",
+        "Quantity (number of stirrups) is not specified in the notation and cannot be determined from spacing alone without beam length information"
+      ],
+      "schema_version": "P254_SEMANTIC_INTERPRETATION_SCHEMA_V1"
+    }
+  },
+  "parse_error": null
+}

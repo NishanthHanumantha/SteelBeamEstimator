@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "model": "claude-sonnet-4-5",
+  "raw_text": "```json\n{\n  \"candidate_id\": \"VC::B101A::ANN-e67412bd\",\n  \"interpretation_status\": \"PARTIAL\",\n  \"semantic_type\": \"LONGITUDINAL_BAR\",\n  \"role\": \"UNKNOWN\",\n  \"quantity\": 4,\n  \"diameter_mm\": 25,\n  \"legs\": null,\n  \"spacing_mm\": [],\n  \"spacing_pattern\": null,\n  \"beam_association\": \"UNCERTAIN\",\n  \"zone\": \"UNKNOWN\",\n  \"normalized_notation\": \"4-Y25\",\n  \"confidence\": 0.7,\n  \"evidence_basis\": [\n    \"Text clearly reads '4-Y25' indicating 4 bars of Y25 (25mm diameter)\",\n    \"Deterministic metadata confirms LONGITUDINAL_BAR semantic type\",\n    \"Multiple instances of '4-Y25' visible in drawing at different vertical positions\",\n    \"No leader line visible connecting this specific annotation to beam B101A(400X1100)\",\n    \"Annotation appears above the beam section, but spatial relationship to target beam is ambiguous\",\n    \"Similar '4-Y25' annotations appear at top and bottom of beam sections, suggesting top and bottom reinforcement\",\n    \"Without clear leader or definitive position relative to beam depth, cannot determine if TOP_BAR or BOTTOM_BAR\",\n    \"Beam B101A is identified at bottom of drawing, but this annotation instance lacks direct visual connection\"\n  ],\n  \"warnings\": [\n    \"Role cannot be determined: annotation lacks leader line or clear positional evidence relative to target beam depth\",\n    \"Beam association uncertain: multiple beams present (B100A, B101A) and annotation position does not definitively indicate which beam\",\n    \"Zone cannot be determined from available evidence\"\n  ]\n}\n```",
+  "latency_s": 10.581549700000323,
+  "retry_count": 0,
+  "usage": {
+    "input_tokens": 2792,
+    "output_tokens": 426
+  },
+  "estimated_input_tokens": 1053,
+  "estimated_output_tokens": 377,
+  "error": null,
+  "error_type": null,
+  "temperature": 0,
+  "candidate_id": "VC::B101A::ANN-e67412bd",
+  "beam_id": "B101A",
+  "annotation_id": "ANN-e67412bd",
+  "evidence_mode": "LOCAL_PLUS_CONTEXT",
+  "prompt_fingerprint": "f563bebc48028a36aee3fad726c3b227b346512c3c0db2a6dd943bafb2b07f7f",
+  "evidence_fingerprint": "db2a023e5804796a299115bd1a026b1ee8e0210617a00c834abe91f91c4e7224",
+  "prompt_version": "P254_SEMANTIC_VISION_PROMPT_V1",
+  "timestamp_utc": "2026-08-13T05:58:28.220733+00:00"
+}
