@@ -96,7 +96,7 @@ def firewall_check(version10_root: Path) -> Dict[str, Any]:
         rel = str(path.relative_to(src)).replace("\\", "/")
         if any(
             x in rel
-            for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP253_", "PhaseP257_")
+            for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP253_", "PhaseP257_", "PhaseP258_", "PhaseP259_", "PhaseP2510_", "PhaseP2511_")
         ):
             continue
         try:

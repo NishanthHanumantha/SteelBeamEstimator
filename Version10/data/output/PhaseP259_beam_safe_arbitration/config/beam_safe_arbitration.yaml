@@ -1,0 +1,26 @@
+# P2.5.9 beam-safe arbitration — production-available signals only.
+# No estimator / ground-truth inputs.
+# Rationale: P2.5.8 showed PARTIAL spacing expansion (UNIFORM → VARIABLE,
+# especially on truncated @N#Zone_A labels) increases SI.1 coverage and can
+# raise steel on beams that already have deterministic stirrups. Those
+# expansions are held until a production-available safety signal proves
+# they do not increase segmentation or piece count.
+
+allow_unknown_recovery: true
+allow_confirmed_override: false
+
+partial:
+  # HOLD if Vision spacing has more numeric values than deterministic.
+  hold_if_spacing_value_count_increases: true
+  # HOLD if SI.1 would change UNIFORM (1 spacing) to VARIABLE (N>1).
+  hold_if_si1_segmentation_changes: true
+  # HOLD if estimated SI.1 piece count (span + spacing, published SI.1 formulas)
+  # would increase versus the deterministic spacing estimate.
+  hold_if_estimated_piece_count_increases: true
+  # HOLD if the R1.3 beam already has stirrup bars (strong deterministic
+  # transverse reinforcement already exists).
+  hold_if_beam_already_has_stirrups: true
+  # HOLD if an existing stirrup label is a truncated zone token (#Zone_).
+  hold_if_existing_stirrup_label_is_zone_truncated: true
+  # If span cannot be read from R1.3 geometry, do not guess — HOLD.
+  hold_if_span_unavailable: true

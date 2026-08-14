@@ -1,0 +1,18 @@
+# P2.5.11 evidence enrichment — production-available signals only.
+# A valid explicit beam-associated stirrup notation is strong evidence.
+# OCR-truncated fragments such as isolated spacing-after-glyph remain HOLD.
+# Engineering plausibility supports a valid notation; it never invents one.
+
+preserve_p2510_allow: true
+preserve_p2510_reject: true
+
+strong:
+  allow_clean_uniform_with_target_association: true
+  allow_visible_schedule: true
+
+moderate:
+  allow_clean_uniform_with_plausibility: true
+  allow_ocr_uniform: false
+
+ocr:
+  treat_glyph_uniform_as_truncated: true

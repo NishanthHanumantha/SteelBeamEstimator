@@ -1,0 +1,3103 @@
+{
+  "pass_fail": "PASS",
+  "decision": "NEGATIVE",
+  "recommendation": "NEGATIVE \u2014 tighten validation / revert promotion class",
+  "mode": "REPLAY_P257_LIVE_RESULTS",
+  "dataset": {
+    "drawing_sets": [
+      "Fifth Set Drawings"
+    ],
+    "dxf_count": 3,
+    "beam_count": 143,
+    "candidate_count": 401
+  },
+  "vision": {
+    "candidates_available": 41,
+    "candidates_eligible": 35,
+    "fields_promoted": 93,
+    "fields_blocked": 30
+  },
+  "cost": {
+    "live_claude_calls": 0,
+    "failed_calls": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_cost_usd": 0.0,
+    "replay": true,
+    "replayed_p257_audits": 41,
+    "note": "REPLAY_P257_LIVE_RESULTS \u2014 Claude new spend = $0"
+  },
+  "field_impact": {
+    "diameter": {
+      "before_confirmed_or_known": 6,
+      "after_confirmed_or_repaired": 35,
+      "promoted": 29
+    },
+    "legs": {
+      "before_confirmed_or_known": 6,
+      "after_confirmed_or_repaired": 35,
+      "promoted": 29
+    },
+    "spacing": {
+      "before_confirmed_or_known": 0,
+      "after_confirmed_or_repaired": 35,
+      "promoted": 35
+    },
+    "reinforcement_role": {
+      "before_confirmed_or_known": 35,
+      "after_confirmed_or_repaired": 35,
+      "promoted": 0
+    }
+  },
+  "engineering": {
+    "phase_id": "P2.5.8",
+    "model_version": "10.8.4",
+    "drawing_set": "Fifth Set Drawings",
+    "baseline_steel_kg": 36271.794,
+    "vision_assisted_steel_kg": 38049.747,
+    "estimator_steel_kg": 58796.332,
+    "baseline_accuracy": 61.69,
+    "vision_assisted_accuracy": 64.71,
+    "STEEL_ACCURACY_IMPROVEMENT": 3.02,
+    "absolute_steel_error_baseline": 38.31,
+    "absolute_steel_error_vision": 35.29,
+    "error_reduction_percent": 7.88,
+    "total_steel_error_kg_baseline": -22524.538,
+    "total_steel_error_kg_vision": -20746.585,
+    "BEAM_COUNT_ACCURACY": {
+      "baseline": 76.47,
+      "vision_assisted": 76.47
+    },
+    "REINFORCEMENT_FIELD_ACCURACY": {
+      "baseline_bar_accuracy_pct": 34.3,
+      "vision_assisted_bar_accuracy_pct": 32.66
+    },
+    "STIRRUP_ACCURACY": {
+      "baseline_stirrup_quantity": 4928.0,
+      "shadow_stirrup_quantity": 6027.0,
+      "ground_truth_stirrup_quantity": 13869.0,
+      "baseline_stirrup_steel": 7075.317,
+      "shadow_stirrup_steel": 8853.27,
+      "ground_truth_stirrup_steel": 19962.308,
+      "stirrup_accuracy_before": 35.44,
+      "stirrup_accuracy_after": 44.35,
+      "stirrup_error_before": 64.56,
+      "stirrup_error_after": 55.65,
+      "improvement_pp": 8.91
+    },
+    "beam_impact": {
+      "beams_improved": 21,
+      "beams_worsened": 14,
+      "beams_unchanged": 150,
+      "beams_newly_resolved": 0,
+      "beams_still_unresolved": 185,
+      "improved": [
+        {
+          "beam_id": "B119",
+          "baseline_steel": 285.996,
+          "shadow_steel": 364.84,
+          "ground_truth_steel": 411.792,
+          "baseline_error": 125.796,
+          "shadow_error": 46.952,
+          "improvement": 78.844
+        },
+        {
+          "beam_id": "B120",
+          "baseline_steel": 180.308,
+          "shadow_steel": 226.585,
+          "ground_truth_steel": 260.359,
+          "baseline_error": 80.051,
+          "shadow_error": 33.774,
+          "improvement": 46.277
+        },
+        {
+          "beam_id": "B128",
+          "baseline_steel": 13.163,
+          "shadow_steel": 35.701,
+          "ground_truth_steel": 59.613,
+          "baseline_error": 46.45,
+          "shadow_error": 23.912,
+          "improvement": 22.538
+        },
+        {
+          "beam_id": "B129",
+          "baseline_steel": 50.073,
+          "shadow_steel": 89.295,
+          "ground_truth_steel": 78.945,
+          "baseline_error": 28.872,
+          "shadow_error": 10.35,
+          "improvement": 18.523
+        },
+        {
+          "beam_id": "B130",
+          "baseline_steel": 20.708,
+          "shadow_steel": 57.996,
+          "ground_truth_steel": 3509.973,
+          "baseline_error": 3489.265,
+          "shadow_error": 3451.977,
+          "improvement": 37.288
+        },
+        {
+          "beam_id": "B137",
+          "baseline_steel": 43.123,
+          "shadow_steel": 68.692,
+          "ground_truth_steel": 111.998,
+          "baseline_error": 68.875,
+          "shadow_error": 43.306,
+          "improvement": 25.569
+        },
+        {
+          "beam_id": "B142",
+          "baseline_steel": 33.278,
+          "shadow_steel": 62.319,
+          "ground_truth_steel": 73.078,
+          "baseline_error": 39.8,
+          "shadow_error": 10.759,
+          "improvement": 29.041
+        },
+        {
+          "beam_id": "B168",
+          "baseline_steel": 28.326,
+          "shadow_steel": 54.212,
+          "ground_truth_steel": 92.076,
+          "baseline_error": 63.75,
+          "shadow_error": 37.864,
+          "improvement": 25.886
+        },
+        {
+          "beam_id": "B181",
+          "baseline_steel": 26.203,
+          "shadow_steel": 51.772,
+          "ground_truth_steel": 187.497,
+          "baseline_error": 161.294,
+          "shadow_error": 135.725,
+          "improvement": 25.569
+        },
+        {
+          "beam_id": "B41",
+          "baseline_steel": 145.571,
+          "shadow_steel": 202.604,
+          "ground_truth_steel": 213.033,
+          "baseline_error": 67.462,
+          "shadow_error": 10.429,
+          "improvement": 57.033
+        },
+        {
+          "beam_id": "B43",
+          "baseline_steel": 91.676,
+          "shadow_steel": 150.662,
+          "ground_truth_steel": 214.751,
+          "baseline_error": 123.075,
+          "shadow_error": 64.089,
+          "improvement": 58.986
+        },
+        {
+          "beam_id": "B46",
+          "baseline_steel": 20.034,
+          "shadow_steel": 39.714,
+          "ground_truth_steel": 56.067,
+          "baseline_error": 36.033,
+          "shadow_error": 16.353,
+          "improvement": 19.68
+        },
+        {
+          "beam_id": "B47",
+          "baseline_steel": 17.551,
+          "shadow_steel": 33.088,
+          "ground_truth_steel": 56.067,
+          "baseline_error": 38.516,
+          "shadow_error": 22.979,
+          "improvement": 15.537
+        },
+        {
+          "beam_id": "B58",
+          "baseline_steel": 45.765,
+          "shadow_steel": 63.719,
+          "ground_truth_steel": 79.231,
+          "baseline_error": 33.466,
+          "shadow_error": 15.512,
+          "improvement": 17.954
+        },
+        {
+          "beam_id": "B59",
+          "baseline_steel": 94.891,
+          "shadow_steel": 131.327,
+          "ground_truth_steel": 233.074,
+          "baseline_error": 138.183,
+          "shadow_error": 101.747,
+          "improvement": 36.436
+        },
+        {
+          "beam_id": "B62",
+          "baseline_steel": 86.767,
+          "shadow_steel": 117.805,
+          "ground_truth_steel": 224.766,
+          "baseline_error": 137.999,
+          "shadow_error": 106.96,
+          "improvement": 31.038
+        },
+        {
+          "beam_id": "B63",
+          "baseline_steel": 23.823,
+          "shadow_steel": 45.624,
+          "ground_truth_steel": 80.179,
+          "baseline_error": 56.356,
+          "shadow_error": 34.555,
+          "improvement": 21.801
+        },
+        {
+          "beam_id": "B71",
+          "baseline_steel": 248.582,
+          "shadow_steel": 292.902,
+          "ground_truth_steel": 332.982,
+          "baseline_error": 84.4,
+          "shadow_error": 40.08,
+          "improvement": 44.32
+        },
+        {
+          "beam_id": "B74",
+          "baseline_steel": 75.68,
+          "shadow_steel": 146.704,
+          "ground_truth_steel": 178.042,
+          "baseline_error": 102.362,
+          "shadow_error": 31.338,
+          "improvement": 71.024
+        },
+        {
+          "beam_id": "B76",
+          "baseline_steel": 135.17,
+          "shadow_steel": 206.194,
+          "ground_truth_steel": 196.999,
+          "baseline_error": 61.829,
+          "shadow_error": 9.195,
+          "improvement": 52.633
+        },
+        {
+          "beam_id": "B81",
+          "baseline_steel": 26.355,
+          "shadow_steel": 48.231,
+          "ground_truth_steel": 53.71,
+          "baseline_error": 27.355,
+          "shadow_error": 5.479,
+          "improvement": 21.876
+        }
+      ],
+      "worsened": [
+        {
+          "beam_id": "B1",
+          "baseline_steel": 245.669,
+          "shadow_steel": 285.673,
+          "ground_truth_steel": 230.457,
+          "baseline_error": 15.212,
+          "shadow_error": 55.216,
+          "improvement": -40.004,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B139",
+          "baseline_steel": 442.417,
+          "shadow_steel": 504.315,
+          "ground_truth_steel": 274.284,
+          "baseline_error": 168.133,
+          "shadow_error": 230.031,
+          "improvement": -61.898,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B141",
+          "baseline_steel": 229.556,
+          "shadow_steel": 244.077,
+          "ground_truth_steel": 133.953,
+          "baseline_error": 95.603,
+          "shadow_error": 110.124,
+          "improvement": -14.521,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B144",
+          "baseline_steel": 90.852,
+          "shadow_steel": 122.245,
+          "ground_truth_steel": 76.962,
+          "baseline_error": 13.89,
+          "shadow_error": 45.283,
+          "improvement": -31.393,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B147",
+          "baseline_steel": 121.782,
+          "shadow_steel": 277.327,
+          "ground_truth_steel": 157.194,
+          "baseline_error": 35.412,
+          "shadow_error": 120.133,
+          "improvement": -84.721,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B16",
+          "baseline_steel": 409.64,
+          "shadow_steel": 506.483,
+          "ground_truth_steel": 344.428,
+          "baseline_error": 65.212,
+          "shadow_error": 162.055,
+          "improvement": -96.843,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B17",
+          "baseline_steel": 85.605,
+          "shadow_steel": 166.574,
+          "ground_truth_steel": 59.577,
+          "baseline_error": 26.028,
+          "shadow_error": 106.997,
+          "improvement": -80.969,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B178",
+          "baseline_steel": 188.172,
+          "shadow_steel": 203.419,
+          "ground_truth_steel": 162.596,
+          "baseline_error": 25.576,
+          "shadow_error": 40.823,
+          "improvement": -15.247,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B2",
+          "baseline_steel": 211.807,
+          "shadow_steel": 264.94,
+          "ground_truth_steel": 164.616,
+          "baseline_error": 47.191,
+          "shadow_error": 100.324,
+          "improvement": -53.133,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B4",
+          "baseline_steel": 719.044,
+          "shadow_steel": 876.729,
+          "ground_truth_steel": 371.775,
+          "baseline_error": 347.269,
+          "shadow_error": 504.954,
+          "improvement": -157.685,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B70A",
+          "baseline_steel": 353.814,
+          "shadow_steel": 408.686,
+          "ground_truth_steel": 328.38,
+          "baseline_error": 25.434,
+          "shadow_error": 80.306,
+          "improvement": -54.872,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B80",
+          "baseline_steel": 89.183,
+          "shadow_steel": 111.059,
+          "ground_truth_steel": 53.71,
+          "baseline_error": 35.473,
+          "shadow_error": 57.349,
+          "improvement": -21.876,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B82",
+          "baseline_steel": 176.512,
+          "shadow_steel": 275.024,
+          "ground_truth_steel": 141.283,
+          "baseline_error": 35.229,
+          "shadow_error": 133.741,
+          "improvement": -98.512,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        },
+        {
+          "beam_id": "B86",
+          "baseline_steel": 149.54,
+          "shadow_steel": 248.052,
+          "ground_truth_steel": 148.14,
+          "baseline_error": 1.4,
+          "shadow_error": 99.912,
+          "improvement": -98.512,
+          "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+        }
+      ],
+      "unchanged_ids": [
+        "B10",
+        "B100",
+        "B100A",
+        "B101",
+        "B101A",
+        "B102",
+        "B103",
+        "B11",
+        "B117",
+        "B118",
+        "B12",
+        "B121",
+        "B122",
+        "B123",
+        "B124",
+        "B126",
+        "B127",
+        "B13",
+        "B133",
+        "B134",
+        "B135",
+        "B136",
+        "B138",
+        "B14",
+        "B140",
+        "B143",
+        "B145",
+        "B146",
+        "B148",
+        "B149",
+        "B15",
+        "B150",
+        "B151",
+        "B152",
+        "B153",
+        "B154",
+        "B156",
+        "B157",
+        "B158",
+        "B158A",
+        "B159",
+        "B160",
+        "B161",
+        "B162",
+        "B162A",
+        "B163",
+        "B164",
+        "B165",
+        "B166",
+        "B168A",
+        "B169",
+        "B170",
+        "B172",
+        "B173",
+        "B174",
+        "B175",
+        "B176",
+        "B177",
+        "B179",
+        "B18",
+        "B180",
+        "B182",
+        "B185",
+        "B186",
+        "B187",
+        "B188",
+        "B189",
+        "B19",
+        "B191",
+        "B192",
+        "B193",
+        "B194",
+        "B195",
+        "B196",
+        "B197",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B3",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36",
+        "B37",
+        "B38",
+        "B39",
+        "B42",
+        "B44",
+        "B45",
+        "B48",
+        "B49",
+        "B4A",
+        "B5",
+        "B50",
+        "B51",
+        "B51A",
+        "B52",
+        "B52A",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B6",
+        "B60",
+        "B61",
+        "B64",
+        "B65",
+        "B66",
+        "B68",
+        "B69",
+        "B70",
+        "B72",
+        "B73",
+        "B75",
+        "B77",
+        "B78",
+        "B79",
+        "B83",
+        "B83A",
+        "B84",
+        "B85",
+        "B87",
+        "B88",
+        "B88A",
+        "B89",
+        "B9",
+        "B90",
+        "B91",
+        "B92",
+        "B92A",
+        "B93",
+        "B94",
+        "B95",
+        "B96",
+        "B96A",
+        "B97",
+        "B97A",
+        "B98",
+        "B98A",
+        "B99",
+        "B99A"
+      ],
+      "newly_resolved_ids": [],
+      "still_unresolved_ids": [
+        "B1",
+        "B10",
+        "B100",
+        "B100A",
+        "B101",
+        "B101A",
+        "B102",
+        "B103",
+        "B11",
+        "B117",
+        "B118",
+        "B119",
+        "B12",
+        "B120",
+        "B121",
+        "B122",
+        "B123",
+        "B124",
+        "B126",
+        "B127",
+        "B128",
+        "B129",
+        "B13",
+        "B130",
+        "B133",
+        "B134",
+        "B135",
+        "B136",
+        "B137",
+        "B138",
+        "B139",
+        "B14",
+        "B140",
+        "B141",
+        "B142",
+        "B143",
+        "B144",
+        "B145",
+        "B146",
+        "B147",
+        "B148",
+        "B149",
+        "B15",
+        "B150",
+        "B151",
+        "B152",
+        "B153",
+        "B154",
+        "B156",
+        "B157",
+        "B158",
+        "B158A",
+        "B159",
+        "B16",
+        "B160",
+        "B161",
+        "B162",
+        "B162A",
+        "B163",
+        "B164",
+        "B165",
+        "B166",
+        "B168",
+        "B168A",
+        "B169",
+        "B17",
+        "B170",
+        "B172",
+        "B173",
+        "B174",
+        "B175",
+        "B176",
+        "B177",
+        "B178",
+        "B179",
+        "B18",
+        "B180",
+        "B181",
+        "B182",
+        "B185",
+        "B186",
+        "B187",
+        "B188",
+        "B189",
+        "B19",
+        "B191",
+        "B192",
+        "B193",
+        "B194",
+        "B195",
+        "B196",
+        "B197",
+        "B2",
+        "B20",
+        "B21",
+        "B22",
+        "B23",
+        "B24",
+        "B25",
+        "B26",
+        "B27",
+        "B3",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36",
+        "B37",
+        "B38",
+        "B39",
+        "B4",
+        "B41",
+        "B42",
+        "B43",
+        "B44",
+        "B45",
+        "B46",
+        "B47",
+        "B48",
+        "B49",
+        "B4A",
+        "B5",
+        "B50",
+        "B51",
+        "B51A",
+        "B52",
+        "B52A",
+        "B53",
+        "B54",
+        "B55",
+        "B56",
+        "B57",
+        "B58",
+        "B59",
+        "B6",
+        "B60",
+        "B61",
+        "B62",
+        "B63",
+        "B64",
+        "B65",
+        "B66",
+        "B68",
+        "B69",
+        "B70",
+        "B70A",
+        "B71",
+        "B72",
+        "B73",
+        "B74",
+        "B75",
+        "B76",
+        "B77",
+        "B78",
+        "B79",
+        "B80",
+        "B81",
+        "B82",
+        "B83",
+        "B83A",
+        "B84",
+        "B85",
+        "B86",
+        "B87",
+        "B88",
+        "B88A",
+        "B89",
+        "B9",
+        "B90",
+        "B91",
+        "B92",
+        "B92A",
+        "B93",
+        "B94",
+        "B95",
+        "B96",
+        "B96A",
+        "B97",
+        "B97A",
+        "B98",
+        "B98A",
+        "B99",
+        "B99A"
+      ]
+    },
+    "overlay_actions": [
+      {
+        "candidate_id": "VC::B1::ANN-fe6b2608",
+        "beam_id": "B1",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "3L-Y8@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B119::ANN-8ddb5b01",
+        "beam_id": "B119",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "4L-Y10@100/150/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B120::ANN-e355ff51",
+        "beam_id": "B120",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "4L-Y10@100/150/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B128::ANN-ca8a916f",
+        "beam_id": "B128",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100/150/100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B129::ANN-68c84b6c",
+        "beam_id": "B129",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B130::ANN-d9893a0c",
+        "beam_id": "B130",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y10@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B137::ANN-e808b45c",
+        "beam_id": "B137",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B139::ANN-d54387af",
+        "beam_id": "B139",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "5L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B141::ANN-a40543b8",
+        "beam_id": "B141",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B142::ANN-8e3685b0",
+        "beam_id": "B142",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B144::ANN-c5a584aa",
+        "beam_id": "B144",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B147::ANN-be764e4a",
+        "beam_id": "B147",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B16::ANN-924a8149",
+        "beam_id": "B16",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B168::ANN-e356f7ec",
+        "beam_id": "B168",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y8@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B17::ANN-e8e59885",
+        "beam_id": "B17",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B178::ANN-ffff21bc",
+        "beam_id": "B178",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B181::ANN-40299f2c",
+        "beam_id": "B181",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B2::ANN-9cd39438",
+        "beam_id": "B2",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "3L-Y10@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B4::ANN-c970c8a7",
+        "beam_id": "B4",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "3L-Y10@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B41::ANN-acf3d77c",
+        "beam_id": "B41",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B43::ANN-d382031e",
+        "beam_id": "B43",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B46::ANN-a84a3d64",
+        "beam_id": "B46",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y10@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B47::ANN-6234edc2",
+        "beam_id": "B47",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y10@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B58::ANN-84de9219",
+        "beam_id": "B58",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y10@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B59::ANN-9335368d",
+        "beam_id": "B59",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B62::ANN-2bf304e7",
+        "beam_id": "B62",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B63::ANN-ebd43824",
+        "beam_id": "B63",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "3L-Y10@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B70A::ANN-c0740119",
+        "beam_id": "B70A",
+        "action": "PATCHED_EXISTING_STIRRUP",
+        "bar_label": "4L-Y10@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B71::ANN-0a6a28f7",
+        "beam_id": "B71",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B74::ANN-0833393a",
+        "beam_id": "B74",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y10@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B76::ANN-f3f0c63d",
+        "beam_id": "B76",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y10@100/125/100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B80::ANN-86804332",
+        "beam_id": "B80",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B81::ANN-1a0e6df8",
+        "beam_id": "B81",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "2L-Y8@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B82::ANN-4c8699c2",
+        "beam_id": "B82",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      },
+      {
+        "candidate_id": "VC::B86::ANN-1765f9b1",
+        "beam_id": "B86",
+        "action": "INSERTED_SHADOW_STIRRUP",
+        "bar_label": "4L-Y12@100",
+        "bars_touched": 1,
+        "fields": [
+          "diameter",
+          "legs",
+          "spacing"
+        ],
+        "source": "VISION",
+        "production_write": false
+      }
+    ],
+    "drawing_table": [
+      {
+        "drawing_set": "Fifth Set Drawings",
+        "baseline_steel": 36271.794,
+        "vision_assisted_steel": 38049.747,
+        "estimator_steel": 58796.332,
+        "baseline_accuracy": 61.69,
+        "vision_accuracy": 64.71,
+        "improvement": 3.02
+      }
+    ]
+  },
+  "stirrup": {
+    "baseline_stirrup_quantity": 4928.0,
+    "shadow_stirrup_quantity": 6027.0,
+    "ground_truth_stirrup_quantity": 13869.0,
+    "baseline_stirrup_steel": 7075.317,
+    "shadow_stirrup_steel": 8853.27,
+    "ground_truth_stirrup_steel": 19962.308,
+    "stirrup_accuracy_before": 35.44,
+    "stirrup_accuracy_after": 44.35,
+    "stirrup_error_before": 64.56,
+    "stirrup_error_after": 55.65,
+    "improvement_pp": 8.91
+  },
+  "beam_impact": {
+    "beams_improved": 21,
+    "beams_worsened": 14,
+    "beams_unchanged": 150,
+    "beams_newly_resolved": 0,
+    "beams_still_unresolved": 185,
+    "improved": [
+      {
+        "beam_id": "B119",
+        "baseline_steel": 285.996,
+        "shadow_steel": 364.84,
+        "ground_truth_steel": 411.792,
+        "baseline_error": 125.796,
+        "shadow_error": 46.952,
+        "improvement": 78.844
+      },
+      {
+        "beam_id": "B120",
+        "baseline_steel": 180.308,
+        "shadow_steel": 226.585,
+        "ground_truth_steel": 260.359,
+        "baseline_error": 80.051,
+        "shadow_error": 33.774,
+        "improvement": 46.277
+      },
+      {
+        "beam_id": "B128",
+        "baseline_steel": 13.163,
+        "shadow_steel": 35.701,
+        "ground_truth_steel": 59.613,
+        "baseline_error": 46.45,
+        "shadow_error": 23.912,
+        "improvement": 22.538
+      },
+      {
+        "beam_id": "B129",
+        "baseline_steel": 50.073,
+        "shadow_steel": 89.295,
+        "ground_truth_steel": 78.945,
+        "baseline_error": 28.872,
+        "shadow_error": 10.35,
+        "improvement": 18.523
+      },
+      {
+        "beam_id": "B130",
+        "baseline_steel": 20.708,
+        "shadow_steel": 57.996,
+        "ground_truth_steel": 3509.973,
+        "baseline_error": 3489.265,
+        "shadow_error": 3451.977,
+        "improvement": 37.288
+      },
+      {
+        "beam_id": "B137",
+        "baseline_steel": 43.123,
+        "shadow_steel": 68.692,
+        "ground_truth_steel": 111.998,
+        "baseline_error": 68.875,
+        "shadow_error": 43.306,
+        "improvement": 25.569
+      },
+      {
+        "beam_id": "B142",
+        "baseline_steel": 33.278,
+        "shadow_steel": 62.319,
+        "ground_truth_steel": 73.078,
+        "baseline_error": 39.8,
+        "shadow_error": 10.759,
+        "improvement": 29.041
+      },
+      {
+        "beam_id": "B168",
+        "baseline_steel": 28.326,
+        "shadow_steel": 54.212,
+        "ground_truth_steel": 92.076,
+        "baseline_error": 63.75,
+        "shadow_error": 37.864,
+        "improvement": 25.886
+      },
+      {
+        "beam_id": "B181",
+        "baseline_steel": 26.203,
+        "shadow_steel": 51.772,
+        "ground_truth_steel": 187.497,
+        "baseline_error": 161.294,
+        "shadow_error": 135.725,
+        "improvement": 25.569
+      },
+      {
+        "beam_id": "B41",
+        "baseline_steel": 145.571,
+        "shadow_steel": 202.604,
+        "ground_truth_steel": 213.033,
+        "baseline_error": 67.462,
+        "shadow_error": 10.429,
+        "improvement": 57.033
+      },
+      {
+        "beam_id": "B43",
+        "baseline_steel": 91.676,
+        "shadow_steel": 150.662,
+        "ground_truth_steel": 214.751,
+        "baseline_error": 123.075,
+        "shadow_error": 64.089,
+        "improvement": 58.986
+      },
+      {
+        "beam_id": "B46",
+        "baseline_steel": 20.034,
+        "shadow_steel": 39.714,
+        "ground_truth_steel": 56.067,
+        "baseline_error": 36.033,
+        "shadow_error": 16.353,
+        "improvement": 19.68
+      },
+      {
+        "beam_id": "B47",
+        "baseline_steel": 17.551,
+        "shadow_steel": 33.088,
+        "ground_truth_steel": 56.067,
+        "baseline_error": 38.516,
+        "shadow_error": 22.979,
+        "improvement": 15.537
+      },
+      {
+        "beam_id": "B58",
+        "baseline_steel": 45.765,
+        "shadow_steel": 63.719,
+        "ground_truth_steel": 79.231,
+        "baseline_error": 33.466,
+        "shadow_error": 15.512,
+        "improvement": 17.954
+      },
+      {
+        "beam_id": "B59",
+        "baseline_steel": 94.891,
+        "shadow_steel": 131.327,
+        "ground_truth_steel": 233.074,
+        "baseline_error": 138.183,
+        "shadow_error": 101.747,
+        "improvement": 36.436
+      },
+      {
+        "beam_id": "B62",
+        "baseline_steel": 86.767,
+        "shadow_steel": 117.805,
+        "ground_truth_steel": 224.766,
+        "baseline_error": 137.999,
+        "shadow_error": 106.96,
+        "improvement": 31.038
+      },
+      {
+        "beam_id": "B63",
+        "baseline_steel": 23.823,
+        "shadow_steel": 45.624,
+        "ground_truth_steel": 80.179,
+        "baseline_error": 56.356,
+        "shadow_error": 34.555,
+        "improvement": 21.801
+      },
+      {
+        "beam_id": "B71",
+        "baseline_steel": 248.582,
+        "shadow_steel": 292.902,
+        "ground_truth_steel": 332.982,
+        "baseline_error": 84.4,
+        "shadow_error": 40.08,
+        "improvement": 44.32
+      },
+      {
+        "beam_id": "B74",
+        "baseline_steel": 75.68,
+        "shadow_steel": 146.704,
+        "ground_truth_steel": 178.042,
+        "baseline_error": 102.362,
+        "shadow_error": 31.338,
+        "improvement": 71.024
+      },
+      {
+        "beam_id": "B76",
+        "baseline_steel": 135.17,
+        "shadow_steel": 206.194,
+        "ground_truth_steel": 196.999,
+        "baseline_error": 61.829,
+        "shadow_error": 9.195,
+        "improvement": 52.633
+      },
+      {
+        "beam_id": "B81",
+        "baseline_steel": 26.355,
+        "shadow_steel": 48.231,
+        "ground_truth_steel": 53.71,
+        "baseline_error": 27.355,
+        "shadow_error": 5.479,
+        "improvement": 21.876
+      }
+    ],
+    "worsened": [
+      {
+        "beam_id": "B1",
+        "baseline_steel": 245.669,
+        "shadow_steel": 285.673,
+        "ground_truth_steel": 230.457,
+        "baseline_error": 15.212,
+        "shadow_error": 55.216,
+        "improvement": -40.004,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B139",
+        "baseline_steel": 442.417,
+        "shadow_steel": 504.315,
+        "ground_truth_steel": 274.284,
+        "baseline_error": 168.133,
+        "shadow_error": 230.031,
+        "improvement": -61.898,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B141",
+        "baseline_steel": 229.556,
+        "shadow_steel": 244.077,
+        "ground_truth_steel": 133.953,
+        "baseline_error": 95.603,
+        "shadow_error": 110.124,
+        "improvement": -14.521,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B144",
+        "baseline_steel": 90.852,
+        "shadow_steel": 122.245,
+        "ground_truth_steel": 76.962,
+        "baseline_error": 13.89,
+        "shadow_error": 45.283,
+        "improvement": -31.393,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B147",
+        "baseline_steel": 121.782,
+        "shadow_steel": 277.327,
+        "ground_truth_steel": 157.194,
+        "baseline_error": 35.412,
+        "shadow_error": 120.133,
+        "improvement": -84.721,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B16",
+        "baseline_steel": 409.64,
+        "shadow_steel": 506.483,
+        "ground_truth_steel": 344.428,
+        "baseline_error": 65.212,
+        "shadow_error": 162.055,
+        "improvement": -96.843,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B17",
+        "baseline_steel": 85.605,
+        "shadow_steel": 166.574,
+        "ground_truth_steel": 59.577,
+        "baseline_error": 26.028,
+        "shadow_error": 106.997,
+        "improvement": -80.969,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B178",
+        "baseline_steel": 188.172,
+        "shadow_steel": 203.419,
+        "ground_truth_steel": 162.596,
+        "baseline_error": 25.576,
+        "shadow_error": 40.823,
+        "improvement": -15.247,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B2",
+        "baseline_steel": 211.807,
+        "shadow_steel": 264.94,
+        "ground_truth_steel": 164.616,
+        "baseline_error": 47.191,
+        "shadow_error": 100.324,
+        "improvement": -53.133,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B4",
+        "baseline_steel": 719.044,
+        "shadow_steel": 876.729,
+        "ground_truth_steel": 371.775,
+        "baseline_error": 347.269,
+        "shadow_error": 504.954,
+        "improvement": -157.685,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B70A",
+        "baseline_steel": 353.814,
+        "shadow_steel": 408.686,
+        "ground_truth_steel": 328.38,
+        "baseline_error": 25.434,
+        "shadow_error": 80.306,
+        "improvement": -54.872,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B80",
+        "baseline_steel": 89.183,
+        "shadow_steel": 111.059,
+        "ground_truth_steel": 53.71,
+        "baseline_error": 35.473,
+        "shadow_error": 57.349,
+        "improvement": -21.876,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B82",
+        "baseline_steel": 176.512,
+        "shadow_steel": 275.024,
+        "ground_truth_steel": 141.283,
+        "baseline_error": 35.229,
+        "shadow_error": 133.741,
+        "improvement": -98.512,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      },
+      {
+        "beam_id": "B86",
+        "baseline_steel": 149.54,
+        "shadow_steel": 248.052,
+        "ground_truth_steel": 148.14,
+        "baseline_error": 1.4,
+        "shadow_error": 99.912,
+        "improvement": -98.512,
+        "reason": "SHADOW_STEEL_FARTHER_FROM_ESTIMATOR"
+      }
+    ],
+    "unchanged_ids": [
+      "B10",
+      "B100",
+      "B100A",
+      "B101",
+      "B101A",
+      "B102",
+      "B103",
+      "B11",
+      "B117",
+      "B118",
+      "B12",
+      "B121",
+      "B122",
+      "B123",
+      "B124",
+      "B126",
+      "B127",
+      "B13",
+      "B133",
+      "B134",
+      "B135",
+      "B136",
+      "B138",
+      "B14",
+      "B140",
+      "B143",
+      "B145",
+      "B146",
+      "B148",
+      "B149",
+      "B15",
+      "B150",
+      "B151",
+      "B152",
+      "B153",
+      "B154",
+      "B156",
+      "B157",
+      "B158",
+      "B158A",
+      "B159",
+      "B160",
+      "B161",
+      "B162",
+      "B162A",
+      "B163",
+      "B164",
+      "B165",
+      "B166",
+      "B168A",
+      "B169",
+      "B170",
+      "B172",
+      "B173",
+      "B174",
+      "B175",
+      "B176",
+      "B177",
+      "B179",
+      "B18",
+      "B180",
+      "B182",
+      "B185",
+      "B186",
+      "B187",
+      "B188",
+      "B189",
+      "B19",
+      "B191",
+      "B192",
+      "B193",
+      "B194",
+      "B195",
+      "B196",
+      "B197",
+      "B20",
+      "B21",
+      "B22",
+      "B23",
+      "B24",
+      "B25",
+      "B26",
+      "B27",
+      "B3",
+      "B30",
+      "B31",
+      "B32",
+      "B33",
+      "B34",
+      "B35",
+      "B36",
+      "B37",
+      "B38",
+      "B39",
+      "B42",
+      "B44",
+      "B45",
+      "B48",
+      "B49",
+      "B4A",
+      "B5",
+      "B50",
+      "B51",
+      "B51A",
+      "B52",
+      "B52A",
+      "B53",
+      "B54",
+      "B55",
+      "B56",
+      "B57",
+      "B6",
+      "B60",
+      "B61",
+      "B64",
+      "B65",
+      "B66",
+      "B68",
+      "B69",
+      "B70",
+      "B72",
+      "B73",
+      "B75",
+      "B77",
+      "B78",
+      "B79",
+      "B83",
+      "B83A",
+      "B84",
+      "B85",
+      "B87",
+      "B88",
+      "B88A",
+      "B89",
+      "B9",
+      "B90",
+      "B91",
+      "B92",
+      "B92A",
+      "B93",
+      "B94",
+      "B95",
+      "B96",
+      "B96A",
+      "B97",
+      "B97A",
+      "B98",
+      "B98A",
+      "B99",
+      "B99A"
+    ],
+    "newly_resolved_ids": [],
+    "still_unresolved_ids": [
+      "B1",
+      "B10",
+      "B100",
+      "B100A",
+      "B101",
+      "B101A",
+      "B102",
+      "B103",
+      "B11",
+      "B117",
+      "B118",
+      "B119",
+      "B12",
+      "B120",
+      "B121",
+      "B122",
+      "B123",
+      "B124",
+      "B126",
+      "B127",
+      "B128",
+      "B129",
+      "B13",
+      "B130",
+      "B133",
+      "B134",
+      "B135",
+      "B136",
+      "B137",
+      "B138",
+      "B139",
+      "B14",
+      "B140",
+      "B141",
+      "B142",
+      "B143",
+      "B144",
+      "B145",
+      "B146",
+      "B147",
+      "B148",
+      "B149",
+      "B15",
+      "B150",
+      "B151",
+      "B152",
+      "B153",
+      "B154",
+      "B156",
+      "B157",
+      "B158",
+      "B158A",
+      "B159",
+      "B16",
+      "B160",
+      "B161",
+      "B162",
+      "B162A",
+      "B163",
+      "B164",
+      "B165",
+      "B166",
+      "B168",
+      "B168A",
+      "B169",
+      "B17",
+      "B170",
+      "B172",
+      "B173",
+      "B174",
+      "B175",
+      "B176",
+      "B177",
+      "B178",
+      "B179",
+      "B18",
+      "B180",
+      "B181",
+      "B182",
+      "B185",
+      "B186",
+      "B187",
+      "B188",
+      "B189",
+      "B19",
+      "B191",
+      "B192",
+      "B193",
+      "B194",
+      "B195",
+      "B196",
+      "B197",
+      "B2",
+      "B20",
+      "B21",
+      "B22",
+      "B23",
+      "B24",
+      "B25",
+      "B26",
+      "B27",
+      "B3",
+      "B30",
+      "B31",
+      "B32",
+      "B33",
+      "B34",
+      "B35",
+      "B36",
+      "B37",
+      "B38",
+      "B39",
+      "B4",
+      "B41",
+      "B42",
+      "B43",
+      "B44",
+      "B45",
+      "B46",
+      "B47",
+      "B48",
+      "B49",
+      "B4A",
+      "B5",
+      "B50",
+      "B51",
+      "B51A",
+      "B52",
+      "B52A",
+      "B53",
+      "B54",
+      "B55",
+      "B56",
+      "B57",
+      "B58",
+      "B59",
+      "B6",
+      "B60",
+      "B61",
+      "B62",
+      "B63",
+      "B64",
+      "B65",
+      "B66",
+      "B68",
+      "B69",
+      "B70",
+      "B70A",
+      "B71",
+      "B72",
+      "B73",
+      "B74",
+      "B75",
+      "B76",
+      "B77",
+      "B78",
+      "B79",
+      "B80",
+      "B81",
+      "B82",
+      "B83",
+      "B83A",
+      "B84",
+      "B85",
+      "B86",
+      "B87",
+      "B88",
+      "B88A",
+      "B89",
+      "B9",
+      "B90",
+      "B91",
+      "B92",
+      "B92A",
+      "B93",
+      "B94",
+      "B95",
+      "B96",
+      "B96A",
+      "B97",
+      "B97A",
+      "B98",
+      "B98A",
+      "B99",
+      "B99A"
+    ]
+  },
+  "safety": {
+    "phase_id": "P2.5.8",
+    "model_version": "10.8.4",
+    "vision_candidates": 41,
+    "eligible_repair_candidates": 35,
+    "promoted_shadow_fields": 93,
+    "blocked_fields": 30,
+    "ineligible_fields": 164,
+    "conflicts": 12,
+    "validation_failures": 67,
+    "by_field": {
+      "diameter": {
+        "promoted": 29,
+        "blocked": 12,
+        "ineligible": 0
+      },
+      "legs": {
+        "promoted": 29,
+        "blocked": 12,
+        "ineligible": 0
+      },
+      "spacing": {
+        "promoted": 35,
+        "blocked": 6,
+        "ineligible": 0
+      },
+      "reinforcement_role": {
+        "promoted": 0,
+        "blocked": 0,
+        "ineligible": 41
+      },
+      "semantic_type": {
+        "promoted": 0,
+        "blocked": 0,
+        "ineligible": 41
+      },
+      "quantity": {
+        "promoted": 0,
+        "blocked": 0,
+        "ineligible": 41
+      },
+      "zone": {
+        "promoted": 0,
+        "blocked": 0,
+        "ineligible": 41
+      }
+    },
+    "reasons": {
+      "CONFIRMED_FIELD_CANNOT_BE_OVERRIDDEN": 12,
+      "DETERMINISTIC_PARTIAL_VISION_VALID": 6,
+      "NOT_WHITELISTED": 82,
+      "FORBIDDEN_FIELD": 82,
+      "DETERMINISTIC_UNKNOWN_VISION_VALID": 87,
+      "TYPE_NOT_STIRRUP": 18
+    },
+    "production_mutation": 0
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "production_output_difference": 0,
+    "steel_production_difference": 0,
+    "bbs_production_difference": 0,
+    "excel_production_difference": 0,
+    "r13_production_difference": 0
+  },
+  "regression": {
+    "unchanged": true,
+    "changed_keys": [],
+    "p251": "PASS",
+    "p254": "PASS",
+    "p255": "PASS",
+    "p256": "PASS",
+    "p257": "PASS"
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 24,
+    "total": 24,
+    "results": [
+      {
+        "name": "promotion_whitelist",
+        "pass": true
+      },
+      {
+        "name": "unknown_field_can_be_repaired",
+        "pass": true
+      },
+      {
+        "name": "confirmed_field_cannot_be_overridden",
+        "pass": true
+      },
+      {
+        "name": "partial_field_can_be_repaired",
+        "pass": true
+      },
+      {
+        "name": "B58_type_role_block",
+        "pass": true
+      },
+      {
+        "name": "B120_spacing_conflict",
+        "pass": true
+      },
+      {
+        "name": "B46_stirrup_repair",
+        "pass": true
+      },
+      {
+        "name": "no_quantity_promotion",
+        "pass": true
+      },
+      {
+        "name": "no_zone_promotion",
+        "pass": true
+      },
+      {
+        "name": "no_cut_length_promotion",
+        "pass": true
+      },
+      {
+        "name": "provenance_preserved",
+        "pass": true
+      },
+      {
+        "name": "shadow_recompute_isolated",
+        "pass": true
+      },
+      {
+        "name": "production_output_unchanged",
+        "pass": true
+      },
+      {
+        "name": "steel_baseline_unchanged",
+        "pass": true
+      },
+      {
+        "name": "BBS_baseline_unchanged",
+        "pass": true
+      },
+      {
+        "name": "Excel_baseline_unchanged",
+        "pass": true
+      },
+      {
+        "name": "P2.5.1_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.5.4_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.5.5_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.5.6_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.5.7_regression",
+        "pass": true
+      },
+      {
+        "name": "baseline_vs_shadow_comparison",
+        "pass": true
+      },
+      {
+        "name": "steel_accuracy_calculation",
+        "pass": true
+      },
+      {
+        "name": "beam_improvement_calculation",
+        "pass": true
+      }
+    ],
+    "p257_unit_tests": {
+      "success": true,
+      "passed": 28,
+      "total": 28,
+      "results": [
+        {
+          "name": "unseen_dataset_manifest",
+          "pass": true
+        },
+        {
+          "name": "unseen_status_validation",
+          "pass": true
+        },
+        {
+          "name": "ground_truth_not_in_prompt",
+          "pass": true
+        },
+        {
+          "name": "live_mode_required",
+          "pass": true
+        },
+        {
+          "name": "selective_trigger_gate",
+          "pass": true
+        },
+        {
+          "name": "deterministic_snapshot_unchanged",
+          "pass": true
+        },
+        {
+          "name": "field_level_evaluation",
+          "pass": true
+        },
+        {
+          "name": "deterministic_correct_vision_wrong",
+          "pass": true
+        },
+        {
+          "name": "deterministic_unknown_vision_correct",
+          "pass": true
+        },
+        {
+          "name": "deterministic_wrong_vision_correct",
+          "pass": true
+        },
+        {
+          "name": "both_correct",
+          "pass": true
+        },
+        {
+          "name": "both_wrong",
+          "pass": true
+        },
+        {
+          "name": "B58_semantic_conflict",
+          "pass": true
+        },
+        {
+          "name": "B120_spacing_conflict",
+          "pass": true
+        },
+        {
+          "name": "B46_stirrup_recovery",
+          "pass": true
+        },
+        {
+          "name": "no_quantity_invention",
+          "pass": true
+        },
+        {
+          "name": "zone_not_promotable",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "p251_regression",
+          "pass": true
+        },
+        {
+          "name": "p254_regression",
+          "pass": true
+        },
+        {
+          "name": "p255_regression",
+          "pass": true
+        },
+        {
+          "name": "p256_regression",
+          "pass": true
+        },
+        {
+          "name": "cost_tracking",
+          "pass": true
+        },
+        {
+          "name": "prompt_fingerprint_recorded",
+          "pass": true
+        },
+        {
+          "name": "evidence_fingerprint_recorded",
+          "pass": true
+        }
+      ],
+      "p256_unit_tests": {
+        "success": true,
+        "passed": 22,
+        "total": 22,
+        "results": [
+          {
+            "name": "field_both_agree",
+            "pass": true
+          },
+          {
+            "name": "vision_only_diameter_candidate",
+            "pass": true
+          },
+          {
+            "name": "vision_only_legs_candidate",
+            "pass": true
+          },
+          {
+            "name": "vision_only_spacing_candidate",
+            "pass": true
+          },
+          {
+            "name": "deterministic_value_wins_conflict",
+            "pass": true
+          },
+          {
+            "name": "b58_type_role_conflict",
+            "pass": true
+          },
+          {
+            "name": "b120_spacing_conflict",
+            "pass": true
+          },
+          {
+            "name": "b46_field_supplementation",
+            "pass": true
+          },
+          {
+            "name": "invented_stirrup_quantity_rejected",
+            "pass": true
+          },
+          {
+            "name": "invalid_diameter_rejected",
+            "pass": true
+          },
+          {
+            "name": "invalid_spacing_rejected",
+            "pass": true
+          },
+          {
+            "name": "invalid_legs_rejected",
+            "pass": true
+          },
+          {
+            "name": "longitudinal_legs_not_applicable",
+            "pass": true
+          },
+          {
+            "name": "zone_not_promotable",
+            "pass": true
+          },
+          {
+            "name": "beam_association_conflict",
+            "pass": true
+          },
+          {
+            "name": "no_production_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_steel_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_bbs_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_excel_mutation",
+            "pass": true
+          },
+          {
+            "name": "p251_fingerprint_unchanged",
+            "pass": true
+          },
+          {
+            "name": "p254_regression_unchanged",
+            "pass": true
+          },
+          {
+            "name": "p255_regression_unchanged",
+            "pass": true
+          }
+        ],
+        "p255_unit_tests": {
+          "success": true,
+          "passed": 16,
+          "total": 16,
+          "results": [
+            {
+              "name": "both_agree",
+              "pass": true
+            },
+            {
+              "name": "vision_only_resolved",
+              "pass": true
+            },
+            {
+              "name": "deterministic_only_resolved",
+              "pass": true
+            },
+            {
+              "name": "vision_conflict",
+              "pass": true
+            },
+            {
+              "name": "both_unresolved",
+              "pass": true
+            },
+            {
+              "name": "vision_wrong_evaluation",
+              "pass": true
+            },
+            {
+              "name": "b58_semantic_conflict_protection",
+              "pass": true
+            },
+            {
+              "name": "no_production_mutation",
+              "pass": true
+            },
+            {
+              "name": "no_steel_quantity_mutation",
+              "pass": true
+            },
+            {
+              "name": "no_bbs_mutation",
+              "pass": true
+            },
+            {
+              "name": "no_excel_mutation",
+              "pass": true
+            },
+            {
+              "name": "invalid_claude_response",
+              "pass": true
+            },
+            {
+              "name": "invented_quantity_rejection",
+              "pass": true
+            },
+            {
+              "name": "stirrup_quantity_protection",
+              "pass": true
+            },
+            {
+              "name": "zone_remains_unpromoted",
+              "pass": true
+            },
+            {
+              "name": "deterministic_fingerprint_unchanged",
+              "pass": true
+            }
+          ],
+          "p254_unit_tests": {
+            "success": true,
+            "passed": 9,
+            "total": 9,
+            "results": [
+              {
+                "name": "longitudinal_oracle",
+                "pass": true
+              },
+              {
+                "name": "sfr_oracle_no_invented_quantity",
+                "pass": true
+              },
+              {
+                "name": "stirrup_rejects_quantity",
+                "pass": true
+              },
+              {
+                "name": "validator_accepts_longitudinal",
+                "pass": true
+              },
+              {
+                "name": "exact_longitudinal_eval",
+                "pass": true
+              },
+              {
+                "name": "hallucination_wrong_diameter",
+                "pass": true
+              },
+              {
+                "name": "prompt_excludes_truth",
+                "pass": true
+              },
+              {
+                "name": "shadow_not_production",
+                "pass": true
+              },
+              {
+                "name": "json_extract",
+                "pass": true
+              }
+            ],
+            "model_version": "10.8.0"
+          },
+          "model_version": "10.8.1"
+        },
+        "p254_unit_tests": {
+          "success": true,
+          "passed": 9,
+          "total": 9,
+          "results": [
+            {
+              "name": "longitudinal_oracle",
+              "pass": true
+            },
+            {
+              "name": "sfr_oracle_no_invented_quantity",
+              "pass": true
+            },
+            {
+              "name": "stirrup_rejects_quantity",
+              "pass": true
+            },
+            {
+              "name": "validator_accepts_longitudinal",
+              "pass": true
+            },
+            {
+              "name": "exact_longitudinal_eval",
+              "pass": true
+            },
+            {
+              "name": "hallucination_wrong_diameter",
+              "pass": true
+            },
+            {
+              "name": "prompt_excludes_truth",
+              "pass": true
+            },
+            {
+              "name": "shadow_not_production",
+              "pass": true
+            },
+            {
+              "name": "json_extract",
+              "pass": true
+            }
+          ],
+          "model_version": "10.8.0"
+        },
+        "model_version": "10.8.2"
+      },
+      "p255_unit_tests": {
+        "success": true,
+        "passed": 16,
+        "total": 16,
+        "results": [
+          {
+            "name": "both_agree",
+            "pass": true
+          },
+          {
+            "name": "vision_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "deterministic_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "vision_conflict",
+            "pass": true
+          },
+          {
+            "name": "both_unresolved",
+            "pass": true
+          },
+          {
+            "name": "vision_wrong_evaluation",
+            "pass": true
+          },
+          {
+            "name": "b58_semantic_conflict_protection",
+            "pass": true
+          },
+          {
+            "name": "no_production_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_steel_quantity_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_bbs_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_excel_mutation",
+            "pass": true
+          },
+          {
+            "name": "invalid_claude_response",
+            "pass": true
+          },
+          {
+            "name": "invented_quantity_rejection",
+            "pass": true
+          },
+          {
+            "name": "stirrup_quantity_protection",
+            "pass": true
+          },
+          {
+            "name": "zone_remains_unpromoted",
+            "pass": true
+          },
+          {
+            "name": "deterministic_fingerprint_unchanged",
+            "pass": true
+          }
+        ],
+        "p254_unit_tests": {
+          "success": true,
+          "passed": 9,
+          "total": 9,
+          "results": [
+            {
+              "name": "longitudinal_oracle",
+              "pass": true
+            },
+            {
+              "name": "sfr_oracle_no_invented_quantity",
+              "pass": true
+            },
+            {
+              "name": "stirrup_rejects_quantity",
+              "pass": true
+            },
+            {
+              "name": "validator_accepts_longitudinal",
+              "pass": true
+            },
+            {
+              "name": "exact_longitudinal_eval",
+              "pass": true
+            },
+            {
+              "name": "hallucination_wrong_diameter",
+              "pass": true
+            },
+            {
+              "name": "prompt_excludes_truth",
+              "pass": true
+            },
+            {
+              "name": "shadow_not_production",
+              "pass": true
+            },
+            {
+              "name": "json_extract",
+              "pass": true
+            }
+          ],
+          "model_version": "10.8.0"
+        },
+        "model_version": "10.8.1"
+      },
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.3"
+    },
+    "p256_unit_tests": {
+      "success": true,
+      "passed": 22,
+      "total": 22,
+      "results": [
+        {
+          "name": "field_both_agree",
+          "pass": true
+        },
+        {
+          "name": "vision_only_diameter_candidate",
+          "pass": true
+        },
+        {
+          "name": "vision_only_legs_candidate",
+          "pass": true
+        },
+        {
+          "name": "vision_only_spacing_candidate",
+          "pass": true
+        },
+        {
+          "name": "deterministic_value_wins_conflict",
+          "pass": true
+        },
+        {
+          "name": "b58_type_role_conflict",
+          "pass": true
+        },
+        {
+          "name": "b120_spacing_conflict",
+          "pass": true
+        },
+        {
+          "name": "b46_field_supplementation",
+          "pass": true
+        },
+        {
+          "name": "invented_stirrup_quantity_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_diameter_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_spacing_rejected",
+          "pass": true
+        },
+        {
+          "name": "invalid_legs_rejected",
+          "pass": true
+        },
+        {
+          "name": "longitudinal_legs_not_applicable",
+          "pass": true
+        },
+        {
+          "name": "zone_not_promotable",
+          "pass": true
+        },
+        {
+          "name": "beam_association_conflict",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "p251_fingerprint_unchanged",
+          "pass": true
+        },
+        {
+          "name": "p254_regression_unchanged",
+          "pass": true
+        },
+        {
+          "name": "p255_regression_unchanged",
+          "pass": true
+        }
+      ],
+      "p255_unit_tests": {
+        "success": true,
+        "passed": 16,
+        "total": 16,
+        "results": [
+          {
+            "name": "both_agree",
+            "pass": true
+          },
+          {
+            "name": "vision_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "deterministic_only_resolved",
+            "pass": true
+          },
+          {
+            "name": "vision_conflict",
+            "pass": true
+          },
+          {
+            "name": "both_unresolved",
+            "pass": true
+          },
+          {
+            "name": "vision_wrong_evaluation",
+            "pass": true
+          },
+          {
+            "name": "b58_semantic_conflict_protection",
+            "pass": true
+          },
+          {
+            "name": "no_production_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_steel_quantity_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_bbs_mutation",
+            "pass": true
+          },
+          {
+            "name": "no_excel_mutation",
+            "pass": true
+          },
+          {
+            "name": "invalid_claude_response",
+            "pass": true
+          },
+          {
+            "name": "invented_quantity_rejection",
+            "pass": true
+          },
+          {
+            "name": "stirrup_quantity_protection",
+            "pass": true
+          },
+          {
+            "name": "zone_remains_unpromoted",
+            "pass": true
+          },
+          {
+            "name": "deterministic_fingerprint_unchanged",
+            "pass": true
+          }
+        ],
+        "p254_unit_tests": {
+          "success": true,
+          "passed": 9,
+          "total": 9,
+          "results": [
+            {
+              "name": "longitudinal_oracle",
+              "pass": true
+            },
+            {
+              "name": "sfr_oracle_no_invented_quantity",
+              "pass": true
+            },
+            {
+              "name": "stirrup_rejects_quantity",
+              "pass": true
+            },
+            {
+              "name": "validator_accepts_longitudinal",
+              "pass": true
+            },
+            {
+              "name": "exact_longitudinal_eval",
+              "pass": true
+            },
+            {
+              "name": "hallucination_wrong_diameter",
+              "pass": true
+            },
+            {
+              "name": "prompt_excludes_truth",
+              "pass": true
+            },
+            {
+              "name": "shadow_not_production",
+              "pass": true
+            },
+            {
+              "name": "json_extract",
+              "pass": true
+            }
+          ],
+          "model_version": "10.8.0"
+        },
+        "model_version": "10.8.1"
+      },
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.2"
+    },
+    "p255_unit_tests": {
+      "success": true,
+      "passed": 16,
+      "total": 16,
+      "results": [
+        {
+          "name": "both_agree",
+          "pass": true
+        },
+        {
+          "name": "vision_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "deterministic_only_resolved",
+          "pass": true
+        },
+        {
+          "name": "vision_conflict",
+          "pass": true
+        },
+        {
+          "name": "both_unresolved",
+          "pass": true
+        },
+        {
+          "name": "vision_wrong_evaluation",
+          "pass": true
+        },
+        {
+          "name": "b58_semantic_conflict_protection",
+          "pass": true
+        },
+        {
+          "name": "no_production_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_steel_quantity_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_bbs_mutation",
+          "pass": true
+        },
+        {
+          "name": "no_excel_mutation",
+          "pass": true
+        },
+        {
+          "name": "invalid_claude_response",
+          "pass": true
+        },
+        {
+          "name": "invented_quantity_rejection",
+          "pass": true
+        },
+        {
+          "name": "stirrup_quantity_protection",
+          "pass": true
+        },
+        {
+          "name": "zone_remains_unpromoted",
+          "pass": true
+        },
+        {
+          "name": "deterministic_fingerprint_unchanged",
+          "pass": true
+        }
+      ],
+      "p254_unit_tests": {
+        "success": true,
+        "passed": 9,
+        "total": 9,
+        "results": [
+          {
+            "name": "longitudinal_oracle",
+            "pass": true
+          },
+          {
+            "name": "sfr_oracle_no_invented_quantity",
+            "pass": true
+          },
+          {
+            "name": "stirrup_rejects_quantity",
+            "pass": true
+          },
+          {
+            "name": "validator_accepts_longitudinal",
+            "pass": true
+          },
+          {
+            "name": "exact_longitudinal_eval",
+            "pass": true
+          },
+          {
+            "name": "hallucination_wrong_diameter",
+            "pass": true
+          },
+          {
+            "name": "prompt_excludes_truth",
+            "pass": true
+          },
+          {
+            "name": "shadow_not_production",
+            "pass": true
+          },
+          {
+            "name": "json_extract",
+            "pass": true
+          }
+        ],
+        "model_version": "10.8.0"
+      },
+      "model_version": "10.8.1"
+    },
+    "p254_unit_tests": {
+      "success": true,
+      "passed": 9,
+      "total": 9,
+      "results": [
+        {
+          "name": "longitudinal_oracle",
+          "pass": true
+        },
+        {
+          "name": "sfr_oracle_no_invented_quantity",
+          "pass": true
+        },
+        {
+          "name": "stirrup_rejects_quantity",
+          "pass": true
+        },
+        {
+          "name": "validator_accepts_longitudinal",
+          "pass": true
+        },
+        {
+          "name": "exact_longitudinal_eval",
+          "pass": true
+        },
+        {
+          "name": "hallucination_wrong_diameter",
+          "pass": true
+        },
+        {
+          "name": "prompt_excludes_truth",
+          "pass": true
+        },
+        {
+          "name": "shadow_not_production",
+          "pass": true
+        },
+        {
+          "name": "json_extract",
+          "pass": true
+        }
+      ],
+      "model_version": "10.8.0"
+    },
+    "model_version": "10.8.4"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.5.8 writes only isolated shadow recompute artefacts"
+  },
+  "recompute": {
+    "success": true,
+    "error": null
+  },
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair",
+  "meta": {
+    "model_version": "10.8.4",
+    "phase_id": "P2.5.8",
+    "phase_name": "Controlled Vision Field-Repair & Engineering Recompute",
+    "engineering_changes": "NONE",
+    "production_write": false
+  }
+}

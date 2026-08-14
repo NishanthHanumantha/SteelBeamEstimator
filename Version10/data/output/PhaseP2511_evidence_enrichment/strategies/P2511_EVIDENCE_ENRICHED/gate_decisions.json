@@ -1,0 +1,5639 @@
+[
+  {
+    "decision": "ALLOW",
+    "p2510_decision": "ALLOW",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "STRONG",
+    "reason_codes": [
+      "PRESERVED_P2510_ALLOW",
+      "COMPLETE_STIRRUP_SCHEDULE",
+      "TARGET_BEAM_ASSOCIATION",
+      "ENGINEERING_PLAUSIBILITY",
+      "SPATIAL_SUPPORT",
+      "CONTEXTUAL_SUPPORT"
+    ],
+    "resolved": {
+      "strength": "STRONG",
+      "annotation_quality": "OCR_BUT_SCHEDULE_VISIBLE",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": true,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": true,
+      "fields_consistent": true,
+      "reason_codes": [
+        "COMPLETE_STIRRUP_SCHEDULE",
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B128",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": true,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SPACING_INTRODUCES_NEW_ZONE",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100/150/100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100,
+              150,
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": true,
+          "uniform": false
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100,
+            150,
+            100
+          ],
+          "bar_label": "2L-Y8@100/150/100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 14
+      }
+    },
+    "p2510": {
+      "beam_id": "B128",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B128",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": true,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SPACING_INTRODUCES_NEW_ZONE",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100/150/100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100,
+                150,
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": true,
+            "uniform": false
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100,
+              150,
+              100
+            ],
+            "bar_label": "2L-Y8@100/150/100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 14
+        }
+      },
+      "evidence": {
+        "sufficient": true,
+        "signal_count": 2,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": true,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "ALLOW",
+      "reason_codes": [
+        "NEW_STIRRUP_SUPPORTED_BY_PRODUCTION_EVIDENCE"
+      ]
+    },
+    "beam_id": "B128"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B129",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 35
+      }
+    },
+    "p2510": {
+      "beam_id": "B129",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B129",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 35
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B129"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B130",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y10@100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y10@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 21
+      }
+    },
+    "p2510": {
+      "beam_id": "B130",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B130",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y10@100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y10@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 21
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B130"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B137",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 15
+      }
+    },
+    "p2510": {
+      "beam_id": "B137",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B137",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 15
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B137"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B139",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "5L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 5,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "5L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 21
+      }
+    },
+    "p2510": {
+      "beam_id": "B139",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B139",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "5L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 5,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "5L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 21
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B139"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B141",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 20
+      }
+    },
+    "p2510": {
+      "beam_id": "B141",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B141",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 20
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B141"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B142",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 40
+      }
+    },
+    "p2510": {
+      "beam_id": "B142",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B142",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 40
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B142"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B144",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 13
+      }
+    },
+    "p2510": {
+      "beam_id": "B144",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B144",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 13
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B144"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B147",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 60
+      }
+    },
+    "p2510": {
+      "beam_id": "B147",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B147",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 60
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B147"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B16",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 54
+      }
+    },
+    "p2510": {
+      "beam_id": "B16",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B16",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 54
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B16"
+  },
+  {
+    "decision": "ALLOW",
+    "p2510_decision": "ALLOW",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "STRONG",
+    "reason_codes": [
+      "PRESERVED_P2510_ALLOW",
+      "COMPLETE_STIRRUP_SCHEDULE",
+      "TARGET_BEAM_ASSOCIATION",
+      "ENGINEERING_PLAUSIBILITY",
+      "SPATIAL_SUPPORT",
+      "CONTEXTUAL_SUPPORT"
+    ],
+    "resolved": {
+      "strength": "STRONG",
+      "annotation_quality": "OCR_BUT_SCHEDULE_VISIBLE",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": true,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": true,
+      "fields_consistent": true,
+      "reason_codes": [
+        "COMPLETE_STIRRUP_SCHEDULE",
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B168",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": true,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SPACING_INTRODUCES_NEW_ZONE",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y8@100/125/100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100,
+              125,
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": true,
+          "uniform": false
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100,
+            125,
+            100
+          ],
+          "bar_label": "3L-Y8@100/125/100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 20
+      }
+    },
+    "p2510": {
+      "beam_id": "B168",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B168",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": true,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SPACING_INTRODUCES_NEW_ZONE",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y8@100/125/100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100,
+                125,
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": true,
+            "uniform": false
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100,
+              125,
+              100
+            ],
+            "bar_label": "3L-Y8@100/125/100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 20
+        }
+      },
+      "evidence": {
+        "sufficient": true,
+        "signal_count": 2,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": true,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "ALLOW",
+      "reason_codes": [
+        "NEW_STIRRUP_SUPPORTED_BY_PRODUCTION_EVIDENCE"
+      ]
+    },
+    "beam_id": "B168"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B17",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 60
+      }
+    },
+    "p2510": {
+      "beam_id": "B17",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B17",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 60
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B17"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B178",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 21
+      }
+    },
+    "p2510": {
+      "beam_id": "B178",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B178",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 21
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B178"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B181",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 15
+      }
+    },
+    "p2510": {
+      "beam_id": "B181",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B181",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 15
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B181"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B41",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 22
+      }
+    },
+    "p2510": {
+      "beam_id": "B41",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B41",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 22
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B41"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B43",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 22
+      }
+    },
+    "p2510": {
+      "beam_id": "B43",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B43",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 22
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B43"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B46",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y10@100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y10@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 19
+      }
+    },
+    "p2510": {
+      "beam_id": "B46",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B46",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y10@100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y10@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 19
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B46"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B47",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y10@100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y10@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 15
+      }
+    },
+    "p2510": {
+      "beam_id": "B47",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B47",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y10@100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y10@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 15
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B47"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B58",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y10@100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y10@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 14
+      }
+    },
+    "p2510": {
+      "beam_id": "B58",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B58",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y10@100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y10@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 14
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B58"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B59",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 27
+      }
+    },
+    "p2510": {
+      "beam_id": "B59",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B59",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 27
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B59"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B62",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 23
+      }
+    },
+    "p2510": {
+      "beam_id": "B62",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B62",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 23
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B62"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B63",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "3L-Y10@100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 3,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "3L-Y10@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 17
+      }
+    },
+    "p2510": {
+      "beam_id": "B63",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B63",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "3L-Y10@100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 3,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "3L-Y10@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 17
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B63"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B71",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 16
+      }
+    },
+    "p2510": {
+      "beam_id": "B71",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B71",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 16
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B71"
+  },
+  {
+    "decision": "ALLOW",
+    "p2510_decision": "ALLOW",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "STRONG",
+    "reason_codes": [
+      "PRESERVED_P2510_ALLOW",
+      "COMPLETE_STIRRUP_SCHEDULE",
+      "TARGET_BEAM_ASSOCIATION",
+      "ENGINEERING_PLAUSIBILITY",
+      "SPATIAL_SUPPORT",
+      "CONTEXTUAL_SUPPORT"
+    ],
+    "resolved": {
+      "strength": "STRONG",
+      "annotation_quality": "OCR_BUT_SCHEDULE_VISIBLE",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": true,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": true,
+      "fields_consistent": true,
+      "reason_codes": [
+        "COMPLETE_STIRRUP_SCHEDULE",
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B74",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": true,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SPACING_INTRODUCES_NEW_ZONE",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y10@100/125/100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100,
+              125,
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": true,
+          "uniform": false
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100,
+            125,
+            100
+          ],
+          "bar_label": "4L-Y10@100/125/100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 20
+      }
+    },
+    "p2510": {
+      "beam_id": "B74",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B74",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": true,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SPACING_INTRODUCES_NEW_ZONE",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y10@100/125/100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100,
+                125,
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": true,
+            "uniform": false
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100,
+              125,
+              100
+            ],
+            "bar_label": "4L-Y10@100/125/100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 20
+        }
+      },
+      "evidence": {
+        "sufficient": true,
+        "signal_count": 2,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": true,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "ALLOW",
+      "reason_codes": [
+        "NEW_STIRRUP_SUPPORTED_BY_PRODUCTION_EVIDENCE"
+      ]
+    },
+    "beam_id": "B74"
+  },
+  {
+    "decision": "ALLOW",
+    "p2510_decision": "ALLOW",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "STRONG",
+    "reason_codes": [
+      "PRESERVED_P2510_ALLOW",
+      "COMPLETE_STIRRUP_SCHEDULE",
+      "TARGET_BEAM_ASSOCIATION",
+      "ENGINEERING_PLAUSIBILITY",
+      "SPATIAL_SUPPORT",
+      "CONTEXTUAL_SUPPORT"
+    ],
+    "resolved": {
+      "strength": "STRONG",
+      "annotation_quality": "OCR_BUT_SCHEDULE_VISIBLE",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": true,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": true,
+      "fields_consistent": true,
+      "reason_codes": [
+        "COMPLETE_STIRRUP_SCHEDULE",
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B76",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": true,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SPACING_INTRODUCES_NEW_ZONE",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y10@100/125/100"
+          ],
+          "diameters": [
+            10.0
+          ],
+          "spacings": [
+            [
+              100,
+              125,
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": true,
+          "uniform": false
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 10,
+          "spacing_mm": [
+            100,
+            125,
+            100
+          ],
+          "bar_label": "4L-Y10@100/125/100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 20
+      }
+    },
+    "p2510": {
+      "beam_id": "B76",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B76",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": true,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SPACING_INTRODUCES_NEW_ZONE",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y10@100/125/100"
+            ],
+            "diameters": [
+              10.0
+            ],
+            "spacings": [
+              [
+                100,
+                125,
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": true,
+            "uniform": false
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 10,
+            "spacing_mm": [
+              100,
+              125,
+              100
+            ],
+            "bar_label": "4L-Y10@100/125/100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 20
+        }
+      },
+      "evidence": {
+        "sufficient": true,
+        "signal_count": 2,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": true,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "ALLOW",
+      "reason_codes": [
+        "NEW_STIRRUP_SUPPORTED_BY_PRODUCTION_EVIDENCE"
+      ]
+    },
+    "beam_id": "B76"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B80",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 21
+      }
+    },
+    "p2510": {
+      "beam_id": "B80",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B80",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 21
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B80"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B81",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "2L-Y8@100"
+          ],
+          "diameters": [
+            8.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 2,
+          "diameter_mm": 8,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "2L-Y8@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 21
+      }
+    },
+    "p2510": {
+      "beam_id": "B81",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B81",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "2L-Y8@100"
+            ],
+            "diameters": [
+              8.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 2,
+            "diameter_mm": 8,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "2L-Y8@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 21
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B81"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B82",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 38
+      }
+    },
+    "p2510": {
+      "beam_id": "B82",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B82",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 38
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B82"
+  },
+  {
+    "decision": "HOLD",
+    "p2510_decision": "HOLD",
+    "classification": "CREATES_NEW_STIRRUP",
+    "evidence_strength": "WEAK",
+    "reason_codes": [
+      "OCR_TRUNCATED",
+      "UNSUPPORTED_NEW_STIRRUP"
+    ],
+    "resolved": {
+      "strength": "WEAK",
+      "annotation_quality": "OCR_TRUNCATED",
+      "target_association": true,
+      "valid_fields": true,
+      "notation_valid": false,
+      "engineering_plausibility": true,
+      "spatial_evidence": true,
+      "contextual_evidence": true,
+      "complete_schedule": false,
+      "fields_consistent": true,
+      "reason_codes": [
+        "TARGET_BEAM_ASSOCIATION",
+        "ENGINEERING_PLAUSIBILITY",
+        "SPATIAL_SUPPORT",
+        "CONTEXTUAL_SUPPORT",
+        "OCR_TRUNCATED"
+      ],
+      "validity": {
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "errors": []
+      }
+    },
+    "insertion": {
+      "beam_id": "B86",
+      "classification": "CREATES_NEW_STIRRUP",
+      "new_stirrup_object": true,
+      "new_zone": false,
+      "new_piece": true,
+      "new_steel": true,
+      "existing_stirrup_match": false,
+      "existing_zone_match": false,
+      "existing_semantic_match": false,
+      "reason_codes": [
+        "OVERLAY_INSERTS_STIRRUP_OBJECT",
+        "SI1_PIECE_COUNT_INCREASES",
+        "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+      ],
+      "evidence": {
+        "overlay_actions": [
+          "INSERTED_SHADOW_STIRRUP"
+        ],
+        "before": {
+          "count": 0,
+          "labels": [],
+          "diameters": [],
+          "spacings": [],
+          "quantities": [],
+          "roles": [],
+          "has_zone": false,
+          "uniform": true
+        },
+        "after": {
+          "count": 1,
+          "labels": [
+            "4L-Y12@100"
+          ],
+          "diameters": [
+            12.0
+          ],
+          "spacings": [
+            [
+              100
+            ]
+          ],
+          "quantities": [
+            null
+          ],
+          "roles": [
+            "STIRRUP"
+          ],
+          "has_zone": false,
+          "uniform": true
+        },
+        "filled": {
+          "legs": 4,
+          "diameter_mm": 12,
+          "spacing_mm": [
+            100
+          ],
+          "bar_label": "4L-Y12@100"
+        },
+        "before_piece_estimate": 0,
+        "after_piece_estimate": 38
+      }
+    },
+    "p2510": {
+      "beam_id": "B86",
+      "classification": "CREATES_NEW_STIRRUP",
+      "insertion": {
+        "beam_id": "B86",
+        "classification": "CREATES_NEW_STIRRUP",
+        "new_stirrup_object": true,
+        "new_zone": false,
+        "new_piece": true,
+        "new_steel": true,
+        "existing_stirrup_match": false,
+        "existing_zone_match": false,
+        "existing_semantic_match": false,
+        "reason_codes": [
+          "OVERLAY_INSERTS_STIRRUP_OBJECT",
+          "SI1_PIECE_COUNT_INCREASES",
+          "NEW_STIRRUP_STEEL_WOULD_BE_CREATED"
+        ],
+        "evidence": {
+          "overlay_actions": [
+            "INSERTED_SHADOW_STIRRUP"
+          ],
+          "before": {
+            "count": 0,
+            "labels": [],
+            "diameters": [],
+            "spacings": [],
+            "quantities": [],
+            "roles": [],
+            "has_zone": false,
+            "uniform": true
+          },
+          "after": {
+            "count": 1,
+            "labels": [
+              "4L-Y12@100"
+            ],
+            "diameters": [
+              12.0
+            ],
+            "spacings": [
+              [
+                100
+              ]
+            ],
+            "quantities": [
+              null
+            ],
+            "roles": [
+              "STIRRUP"
+            ],
+            "has_zone": false,
+            "uniform": true
+          },
+          "filled": {
+            "legs": 4,
+            "diameter_mm": 12,
+            "spacing_mm": [
+              100
+            ],
+            "bar_label": "4L-Y12@100"
+          },
+          "before_piece_estimate": 0,
+          "after_piece_estimate": 38
+        }
+      },
+      "evidence": {
+        "sufficient": false,
+        "signal_count": 1,
+        "min_independent_signals": 2,
+        "signals": {
+          "existing_zone": false,
+          "corroborating_annotation": false,
+          "complete_schedule_in_text": false,
+          "target_beam_association": true
+        },
+        "hard_reasons": [],
+        "diameter_ok": true,
+        "legs_ok": true,
+        "spacing_ok": true,
+        "invented_quantity": false,
+        "semantic_conflict": false,
+        "association_conflict": false,
+        "second_stirrup_family": false
+      },
+      "decision": "HOLD",
+      "reason_codes": [
+        "NEW_PIECE_WITHOUT_EXISTING_STIRRUP",
+        "NEW_STEEL_WITHOUT_INDEPENDENT_EVIDENCE",
+        "INSUFFICIENT_INSERTION_EVIDENCE",
+        "NEW_STIRRUP_REQUIRES_STRONGER_EVIDENCE",
+        "UNSUPPORTED_NEW_STIRRUP"
+      ]
+    },
+    "beam_id": "B86"
+  }
+]

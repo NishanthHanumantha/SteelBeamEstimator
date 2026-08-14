@@ -1,0 +1,18 @@
+# P2.5.10 new-stirrup insertion safety — production-available signals only.
+# Completing an existing interpretation is safer than creating a new one.
+# Field-recovery evidence already consumed by P2.5.9 (deterministic type
+# STIRRUP + valid Vision fields) is NOT by itself insertion evidence.
+
+no_new_stirrup:
+  allow: true
+
+supplements_existing:
+  follow_unknown_only: true
+
+creates_new_stirrup:
+  min_independent_signals: 2
+  hold_if_new_zone_without_existing_zone: true
+  hold_if_new_piece_without_existing_stirrup: true
+  hold_if_new_steel_without_independent_evidence: true
+  reject_second_stirrup_family: true
+  reject_uniform_to_variable_without_existing_zone: true
