@@ -1,0 +1,143 @@
+{
+  "cache_key": "b20740d7063ed9136953d2da25d01c86150be05f2922587be137095ed7d51cd3",
+  "cached_at_utc": "2026-08-17T11:43:05.292685+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B139",
+    "beam_id": "B139",
+    "prompt_fingerprint": "4ffba3600b3c11265f8556b3e6c7ce655a0ebbc55f4b0156cd541d50ebdb0230",
+    "image_hash": "3a9b188da51b34180bfff5685a5b6f5ec31d1eb68b8d4d184bac21bae003ab73",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B139\",\n  \"beam_id\": \"B139\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"5-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 5,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, upper horizontal member\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation 5-Y16 is connected via leader line to the top horizontal beam member\",\n        \"Positioned at upper portion of the beam cross-section\",\n        \"Clear association with top reinforcement layer\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"5-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 5,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam, lower horizontal member\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation 5-Y20 is connected via leader line to the bottom horizontal beam member\",\n        \"Positioned at lower portion of the beam cross-section\",\n        \"Clear association with bottom reinforcement layer\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"2L-Y8@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Vertical stirrups along beam length\",\n      \"vision_confidence\": \"MEDIUM\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation indicates 2-legged stirrups at 100mm centers\",\n        \"Y8 indicates 8mm diameter bars\",\n        \"Positioned near bottom of beam section\",\n        \"Standard stirrup notation format\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B139::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B139",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "5-Y16",
+        "normalized_text": "5-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 5.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B139",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation 5-Y16 is connected via leader line to the top horizontal beam member",
+          "Positioned at upper portion of the beam cross-section",
+          "Clear association with top reinforcement layer",
+          "location_text:Top of beam, upper horizontal member"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\b20740d7063ed9136953d2da25d01c86150be05f2922587be137095ed7d51cd3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B139::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B139",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "5-Y20",
+        "normalized_text": "5-Y20",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 20,
+        "quantity": 5.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B139",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation 5-Y20 is connected via leader line to the bottom horizontal beam member",
+          "Positioned at lower portion of the beam cross-section",
+          "Clear association with bottom reinforcement layer",
+          "location_text:Bottom of beam, lower horizontal member"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\b20740d7063ed9136953d2da25d01c86150be05f2922587be137095ed7d51cd3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B139::C03",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B139",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@\\X100C/C",
+        "normalized_text": "2L-Y8@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B139",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation indicates 2-legged stirrups at 100mm centers",
+          "Y8 indicates 8mm diameter bars",
+          "Positioned near bottom of beam section",
+          "Standard stirrup notation format",
+          "location_text:Vertical stirrups along beam length"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\b20740d7063ed9136953d2da25d01c86150be05f2922587be137095ed7d51cd3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fourth::B139",
+      "returned_beam_id": "B139"
+    }
+  },
+  "usage": {
+    "input_tokens": 2435,
+    "output_tokens": 656
+  },
+  "error": null
+}

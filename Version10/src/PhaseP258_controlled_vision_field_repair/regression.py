@@ -27,6 +27,8 @@ _SKIP = (
     "PhaseP259_",
     "PhaseP2510_",
     "PhaseP2511_",
+    "PhaseP26_",
+    "PhaseP261_",
 )
 
 

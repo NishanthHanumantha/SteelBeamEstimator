@@ -1,0 +1,143 @@
+{
+  "cache_key": "222e3a57bf46fc4e69551d82493b1fc4f07d4d672b5e3676d0f3c9ce9bb00ad0",
+  "cached_at_utc": "2026-08-17T11:47:13.252722+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B170",
+    "beam_id": "B170",
+    "prompt_fingerprint": "2870181316e560483f2f04810d67165c5b558112e2c7555fd98c5bd1a0b0df94",
+    "image_hash": "1641894bd5c9aae41e56497e758c5fc16d11ea2db362ca57fd61ed0e5392bca6",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B170\",\n  \"beam_id\": \"B170\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, upper fiber, annotation points to top reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y16' with leader line pointing to top reinforcement layer of beam\",\n        \"Clear association with upper longitudinal bars visible in section\",\n        \"Standard notation for 3 bars of Y16 diameter\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam, lower fiber, annotation points to bottom reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y16' with leader line pointing to bottom reinforcement layer of beam\",\n        \"Clear association with lower longitudinal bars visible in section\",\n        \"Standard notation for 3 bars of Y16 diameter\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"3L-Y10@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrups/links along beam length, annotation below beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y10@100C/C' indicates 3-legged stirrups\",\n        \"Y10 diameter bars at 100mm center-to-center spacing\",\n        \"Standard stirrup notation for shear reinforcement\",\n        \"Positioned centrally below the beam section view\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B170::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B170",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y16",
+        "normalized_text": "3-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B170",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y16' with leader line pointing to top reinforcement layer of beam",
+          "Clear association with upper longitudinal bars visible in section",
+          "Standard notation for 3 bars of Y16 diameter",
+          "location_text:Top of beam, upper fiber, annotation points to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\222e3a57bf46fc4e69551d82493b1fc4f07d4d672b5e3676d0f3c9ce9bb00ad0.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B170::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B170",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y16",
+        "normalized_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B170",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y16' with leader line pointing to bottom reinforcement layer of beam",
+          "Clear association with lower longitudinal bars visible in section",
+          "Standard notation for 3 bars of Y16 diameter",
+          "location_text:Bottom of beam, lower fiber, annotation points to bottom reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\222e3a57bf46fc4e69551d82493b1fc4f07d4d672b5e3676d0f3c9ce9bb00ad0.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B170::C03",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B170",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100C/C",
+        "normalized_text": "3L-Y10@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B170",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y10@100C/C' indicates 3-legged stirrups",
+          "Y10 diameter bars at 100mm center-to-center spacing",
+          "Standard stirrup notation for shear reinforcement",
+          "Positioned centrally below the beam section view",
+          "location_text:Stirrups/links along beam length, annotation below beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\222e3a57bf46fc4e69551d82493b1fc4f07d4d672b5e3676d0f3c9ce9bb00ad0.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fourth::B170",
+      "returned_beam_id": "B170"
+    }
+  },
+  "usage": {
+    "input_tokens": 2165,
+    "output_tokens": 700
+  },
+  "error": null
+}

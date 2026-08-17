@@ -1,0 +1,70 @@
+{
+  "cache_key": "5acffbe24cfe66adb842fe7c7c0b162a38ffa3dc1d3aa122d7ba415686b32c31",
+  "cached_at_utc": "2026-08-17T10:30:27.255519+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B144",
+    "beam_id": "B144",
+    "prompt_fingerprint": "ade54c29a2455a1480d23c25ccc6c6c7a5ec6a5db1a7e85e88fae891a4dd74dc",
+    "image_hash": "25c91ca12165163b3229669a893514bc19b5b10da1d1fa7386bc6bf0433c835e",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B144\",\n  \"beam_id\": \"B144\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right end of beam B144, visible in upper detail view with leader pointing to stirrup region\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Annotation visible in upper right detail with leader line pointing to beam end\",\n        \"Text clearly shows 3L (3 legs), Y12 diameter, @\\\\X100C/C spacing\",\n        \"Listed in accepted_and_nearby_annotations as ACCEPTED with reason 'stirrup_in_stirrup_region'\",\n        \"Not present in deterministic_reinforcement.stirrups list (empty array)\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B144::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B144",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y12@\\X100C/C",
+        "normalized_text": "3L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B144",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation visible in upper right detail with leader line pointing to beam end",
+          "Text clearly shows 3L (3 legs), Y12 diameter, @\\X100C/C spacing",
+          "Listed in accepted_and_nearby_annotations as ACCEPTED with reason 'stirrup_in_stirrup_region'",
+          "Not present in deterministic_reinforcement.stirrups list (empty array)",
+          "location_text:Right end of beam B144, visible in upper detail view with leader pointing to stirrup region"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 1,
+      "normalized_count": 1,
+      "returned_region_id": "P26::Fifth::B144",
+      "returned_beam_id": "B144"
+    }
+  },
+  "usage": {
+    "input_tokens": 2658,
+    "output_tokens": 327
+  },
+  "error": null
+}

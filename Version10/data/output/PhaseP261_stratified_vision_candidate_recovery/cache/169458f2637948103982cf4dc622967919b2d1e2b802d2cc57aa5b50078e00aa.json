@@ -1,0 +1,104 @@
+{
+  "cache_key": "169458f2637948103982cf4dc622967919b2d1e2b802d2cc57aa5b50078e00aa",
+  "cached_at_utc": "2026-08-17T11:49:16.092575+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B6",
+    "beam_id": "B6",
+    "prompt_fingerprint": "98bec1635632779a2846ca93dcea43d972a18754a09396ee807bbba931fa5c60",
+    "image_hash": "c2b196391b00956cb5a3c95e935b611427eae829919d8b807d9bd853e94ced6c",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B6\",\n  \"beam_id\": \"B6\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right side of beam, top reinforcement indicated by annotation with leader pointing to hatched region\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y25' with green leader arrow pointing to hatched/cross-hatched region at top right of beam\",\n        \"Hatching pattern indicates reinforcement zone\",\n        \"NSW (not shown) annotation nearby suggests this is primary top reinforcement\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left side detail section showing column-beam connection with reinforcement at bottom\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' with green leader arrow pointing to hatched column region\",\n        \"Detail shows beam-column connection on left side\",\n        \"Cross-hatching in column indicates reinforcement location\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B6::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B6",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y25",
+        "normalized_text": "3-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B6",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y25' with green leader arrow pointing to hatched/cross-hatched region at top right of beam",
+          "Hatching pattern indicates reinforcement zone",
+          "NSW (not shown) annotation nearby suggests this is primary top reinforcement",
+          "location_text:Right side of beam, top reinforcement indicated by annotation with leader pointing to hatched region"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\169458f2637948103982cf4dc622967919b2d1e2b802d2cc57aa5b50078e00aa.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B6::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B6",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B6",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' with green leader arrow pointing to hatched column region",
+          "Detail shows beam-column connection on left side",
+          "Cross-hatching in column indicates reinforcement location",
+          "location_text:Left side detail section showing column-beam connection with reinforcement at bottom"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\169458f2637948103982cf4dc622967919b2d1e2b802d2cc57aa5b50078e00aa.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Sixth::B6",
+      "returned_beam_id": "B6"
+    }
+  },
+  "usage": {
+    "input_tokens": 2427,
+    "output_tokens": 477
+  },
+  "error": null
+}

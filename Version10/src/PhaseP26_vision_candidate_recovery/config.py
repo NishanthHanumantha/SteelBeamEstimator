@@ -1,0 +1,79 @@
+"""
+Phase P2.6 — Vision Candidate Recovery Pilot.
+MODEL_VERSION: 10.11.0
+
+Shadow / research only. Deterministic production remains sole authority.
+No engineering recompute. No production insert.
+"""
+from __future__ import annotations
+
+MODEL_VERSION = "10.11.0"
+PHASE_ID = "P2.6"
+PHASE_NAME = "Vision Candidate Recovery Pilot"
+OUTPUT_DIRNAME = "PhaseP26_vision_candidate_recovery_pilot"
+SCOPE = "FIFTH_SET_PILOT_ONLY"
+MODE = "PILOT_SHADOW"
+ENGINEERING_CHANGES = "NONE"
+CLAUDE = "SHADOW_CANDIDATE_RECOVERY"
+PRIMARY_SET_KEY = "Fifth"
+PRIMARY_DRAWING_SET = "Fifth Set Drawings"
+PILOT_SET = "Fifth Set Drawings"
+
+PROMPT_VERSION = "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1"
+SCHEMA_VERSION = "P26_VISION_CANDIDATE_SCHEMA_V1"
+CLAUDE_MODEL = "claude-sonnet-4-5"
+TEMPERATURE = 0
+
+PRODUCTION_WRITE = False
+ZONE_PROMOTABLE = False
+PILOT_TARGET_REGIONS = 18
+PILOT_MIN_REGIONS = 10
+PILOT_MAX_REGIONS = 20
+
+MODE_CACHE_ONLY = "CACHE_ONLY"
+MODE_LIVE_API = "LIVE_API"
+
+# Reuse frozen P2.5.0 / QA.3.0 Fifth Set engineering crops (do not re-render).
+CROP_SOURCE = "QA30_FIFTH_SHARED_RENDER"
+CROP_BASE_MARGIN_MM = 250.0
+CROP_EVIDENCE_PAD_MM = 120.0
+CROP_RENDER_MAX_DIM_PX = 1200
+CROP_CONTEXT_NOTE = (
+    "Existing P250/QA30 engineering crop already includes surrounding beam, "
+    "slab, and annotation context (base_margin_mm + evidence_pad_mm)."
+)
+
+INPUT_USD_PER_MTOK = 3.0
+OUTPUT_USD_PER_MTOK = 15.0
+
+DECISION_SHADOW = "SHADOW_CANDIDATE"
+
+DET_ALREADY = "ALREADY_DETECTED"
+DET_MISSING = "POTENTIALLY_MISSING"
+DET_CONFLICT = "CONFLICTING"
+DET_UNKNOWN = "UNKNOWN"
+
+GT_MATCH = "GT_MATCH"
+GT_TRUE_RECOVERY = "TRUE_RECOVERY"
+GT_DUPLICATE = "DUPLICATE"
+GT_UNSUPPORTED = "UNSUPPORTED"
+GT_AMBIGUOUS = "AMBIGUOUS"
+
+CANDIDATE_TYPES = (
+    "LONGITUDINAL_REINFORCEMENT",
+    "STIRRUP",
+    "SIDE_FACE_REINFORCEMENT",
+    "SPACER",
+    "OTHER_REINFORCEMENT",
+    "UNKNOWN",
+)
+ROLES = (
+    "TOP_BAR",
+    "BOTTOM_BAR",
+    "STIRRUP",
+    "SIDE_FACE",
+    "SPACER",
+    "ADDITIONAL",
+    "UNKNOWN",
+)
+ASSOCIATIONS = ("TARGET_BEAM", "OTHER_BEAM", "UNCERTAIN")

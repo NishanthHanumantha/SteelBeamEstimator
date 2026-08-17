@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "reviewer": "Claude Sonnet 4.6 HIGH (independent, read-only)",
+  "blocker": "none",
+  "high": "H1 visible_callout_texts are production drawing-evidence OCR strings (not gap_reasons); treat as OCR-repair confound for next refine, not GT leak. H2 stirrup strict metric was tautological (fixed offline: strict now requires quantity agreement; no Vision rerun).",
+  "medium": "M1 UNSEEN_RECOVERY_RATE was null in metrics.json (fixed). M2 assert_runtime_context unused (whitelist is for a different context dict; not applied to Vision metadata). M3 Sixth underrepresented (18 beams). M4 EASY missed-GT denominator is noisy vs production-signal stratum.",
+  "low": "L1 gap_reasons live in feature_row but are not sent to Claude. L2 API model not asserted (observed claude-sonnet-4-5). L3 review flag is post-hoc. L4 no side-face/spacer/other candidates. L5 STATUS/metrics unseen-rate inconsistency (fixed).",
+  "true_recovery_integrity": "CONFIRMED — OTHER_BEAM and UNCERTAIN cannot become TRUE_RECOVERY",
+  "selection_leakage": "CONFIRMED CLEAN — GT_USED_FOR_SELECTION = FALSE",
+  "prompt_neutrality": "CONFIRMED with drawing-evidence caveat (visible_callout_texts from accepted annotations)",
+  "firewall": "CONFIRMED CLEAN — production_mutation_count = 0",
+  "decision_endorsed": "REFINE_CANDIDATE_RECOVERY",
+  "vision_rerun_required": false,
+  "note": "No BLOCKER. HIGH findings do not require a new live Vision run. Primary TRUE_RECOVERY remains P2.6 family+diameter."
+}

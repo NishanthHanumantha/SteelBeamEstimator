@@ -1,0 +1,68 @@
+{
+  "cache_key": "04ee441c97853fdd9e8c6ef56e9d9023002d66840ce323b11ad581dd6ae9d279",
+  "cached_at_utc": "2026-08-17T11:41:35.086572+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B145",
+    "beam_id": "B145",
+    "prompt_fingerprint": "77e31959b2cd32748403fc5e55670568510df278fbe08fc0ffb79561cdeab8fa",
+    "image_hash": "3a0d850508ae090bd0744763644579f9091005d1916fb4fd4dab590744e3e458",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B145\",\n  \"beam_id\": \"B145\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, annotation points to upper reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '4-Y16' is visible with leader line pointing to top reinforcement layer of the beam\",\n        \"The leader clearly associates this reinforcement with the top bars of the beam section\",\n        \"Beam section shows reinforcement bars at top and bottom, annotation points to top layer\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B145::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B145",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B145",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y16' is visible with leader line pointing to top reinforcement layer of the beam",
+          "The leader clearly associates this reinforcement with the top bars of the beam section",
+          "Beam section shows reinforcement bars at top and bottom, annotation points to top layer",
+          "location_text:Top of beam, annotation points to upper reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\04ee441c97853fdd9e8c6ef56e9d9023002d66840ce323b11ad581dd6ae9d279.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 1,
+      "normalized_count": 1,
+      "returned_region_id": "P261::Fifth::B145",
+      "returned_beam_id": "B145"
+    }
+  },
+  "usage": {
+    "input_tokens": 1541,
+    "output_tokens": 271
+  },
+  "error": null
+}

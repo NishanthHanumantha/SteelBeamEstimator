@@ -1,0 +1,50 @@
+{
+  "candidate_id": "P26::B129::C02",
+  "source_set": "Fifth Set Drawings",
+  "source_drawing": "Fifth Set Drawings",
+  "beam_id": "B129",
+  "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+  "annotation_text": "4-Y20",
+  "normalized_text": "4-Y20",
+  "role": "TOP_BAR",
+  "diameter_mm": 20,
+  "quantity": 4.0,
+  "spacing_mm": [],
+  "legs": null,
+  "source_x": null,
+  "source_y": null,
+  "region_id": "P26::Fifth::B129",
+  "region_bbox": [
+    31674584.83,
+    -21183944.69,
+    31677984.83,
+    -21179932.9
+  ],
+  "vision_confidence": 0.95,
+  "text_confidence": 0.95,
+  "evidence_type": "BEAM_REGION_CROP",
+  "evidence_notes": [
+    "Text annotation visible in center of beam with green leader line pointing upward to top bars",
+    "Format indicates 4 bars of Y20 diameter",
+    "Leader clearly associates this with the top reinforcement layer of B129",
+    "location_text:Center of beam section, with leader line pointing to top reinforcement layer"
+  ],
+  "deterministic_match_status": "ALREADY_DETECTED",
+  "gt_match_status": null,
+  "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+  "vision_model": "claude-sonnet-4-5",
+  "model_version": "10.11.0",
+  "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+  "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\17feb4cf5f68d6969470e6be1a1fb0e80da2d0bcb872637fc205307709d636eb.json",
+  "beam_association": "TARGET_BEAM",
+  "decision": "SHADOW_CANDIDATE",
+  "deterministic_match_reason": "ROLE_FAMILY_AND_DIAMETER",
+  "deterministic_matched_bar_id": "R13-B129-TOP_MAIN-a21efb",
+  "gap_reasons": [
+    "OCR_CORRUPTION",
+    "STIRRUP_TEXT_NO_OBJECT",
+    "SPARSE_REINFORCEMENT",
+    "MISSING_BOTTOM_WHILE_ANNS",
+    "INCOMPLETE_PARSE"
+  ]
+}

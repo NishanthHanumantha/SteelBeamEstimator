@@ -1,0 +1,143 @@
+{
+  "cache_key": "f5d4bcc3142de484713ba0e98fb774c62c6dabc9f695d5e683e32ea65427df0d",
+  "cached_at_utc": "2026-08-17T11:52:29.244453+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B10",
+    "beam_id": "B10",
+    "prompt_fingerprint": "6079fac72d940772155785b73a633d0c57f3776a418dad6ad11f97fb0d454053",
+    "image_hash": "5ef6d4b99cf9cf3c7b7c5d765e69fcff112e6372d7a6604fd56f4eff7991ddf4",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B10\",\n  \"beam_id\": \"B10\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left side of bottom face, annotation points to lower reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' with leader pointing to bottom reinforcement\",\n        \"Located at left portion of beam B10\",\n        \"Clear association with bottom longitudinal bars shown in green outline\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right side of bottom face, annotation points to lower reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' with leader pointing to bottom reinforcement\",\n        \"Located at right portion of beam B10\",\n        \"Mirrors the left side bottom reinforcement configuration\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"2L-Y12@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center-bottom of beam, annotation below the beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y12@100C/C' indicates 2-legged stirrups\",\n        \"Y12 diameter bars at 100mm center-to-center spacing\",\n        \"Leader points to beam B10 from below\",\n        \"Typical stirrup notation for shear reinforcement\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B10::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B10",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B10",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' with leader pointing to bottom reinforcement",
+          "Located at left portion of beam B10",
+          "Clear association with bottom longitudinal bars shown in green outline",
+          "location_text:Left side of bottom face, annotation points to lower reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5d4bcc3142de484713ba0e98fb774c62c6dabc9f695d5e683e32ea65427df0d.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B10::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B10",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B10",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' with leader pointing to bottom reinforcement",
+          "Located at right portion of beam B10",
+          "Mirrors the left side bottom reinforcement configuration",
+          "location_text:Right side of bottom face, annotation points to lower reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5d4bcc3142de484713ba0e98fb774c62c6dabc9f695d5e683e32ea65427df0d.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B10::C03",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B10",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@100C/C",
+        "normalized_text": "2L-Y12@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B10",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y12@100C/C' indicates 2-legged stirrups",
+          "Y12 diameter bars at 100mm center-to-center spacing",
+          "Leader points to beam B10 from below",
+          "Typical stirrup notation for shear reinforcement",
+          "location_text:Center-bottom of beam, annotation below the beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5d4bcc3142de484713ba0e98fb774c62c6dabc9f695d5e683e32ea65427df0d.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Sixth::B10",
+      "returned_beam_id": "B10"
+    }
+  },
+  "usage": {
+    "input_tokens": 2422,
+    "output_tokens": 682
+  },
+  "error": null
+}

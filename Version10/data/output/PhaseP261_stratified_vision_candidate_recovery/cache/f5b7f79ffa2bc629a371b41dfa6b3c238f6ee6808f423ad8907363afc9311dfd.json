@@ -1,0 +1,106 @@
+{
+  "cache_key": "f5b7f79ffa2bc629a371b41dfa6b3c238f6ee6808f423ad8907363afc9311dfd",
+  "cached_at_utc": "2026-08-17T11:53:35.986098+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B88",
+    "beam_id": "B88",
+    "prompt_fingerprint": "0b301a56c24ec970f65187f91c24f844685b05e27fe0421427caaa0cc9e4f826",
+    "image_hash": "3871c298b4382f15590a8e6b46aaa93f4c22ac8691f5fd10276343bb9638cc0e",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B88\",\n  \"beam_id\": \"B88\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam B88, near left support\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y16' is positioned directly above the top fiber of beam B88\",\n        \"Leader line points to the top reinforcement location\",\n        \"Clear association with the beam labeled B88\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y8@200C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [200],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Along the span of beam B88, below the beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y8@200C/C' indicates 2-legged stirrups at 200mm centers\",\n        \"Leader line points to beam B88 section\",\n        \"Positioned below the beam cross-section, typical for stirrup notation\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B88::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B88",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y16",
+        "normalized_text": "2-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B88",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y16' is positioned directly above the top fiber of beam B88",
+          "Leader line points to the top reinforcement location",
+          "Clear association with the beam labeled B88",
+          "location_text:Top of beam B88, near left support"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5b7f79ffa2bc629a371b41dfa6b3c238f6ee6808f423ad8907363afc9311dfd.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B88::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B88",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@200C/C",
+        "normalized_text": "2L-Y8@200C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          200.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B88",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y8@200C/C' indicates 2-legged stirrups at 200mm centers",
+          "Leader line points to beam B88 section",
+          "Positioned below the beam cross-section, typical for stirrup notation",
+          "location_text:Along the span of beam B88, below the beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5b7f79ffa2bc629a371b41dfa6b3c238f6ee6808f423ad8907363afc9311dfd.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Sixth::B88",
+      "returned_beam_id": "B88"
+    }
+  },
+  "usage": {
+    "input_tokens": 2242,
+    "output_tokens": 469
+  },
+  "error": null
+}

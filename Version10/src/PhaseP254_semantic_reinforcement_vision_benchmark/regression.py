@@ -71,7 +71,7 @@ def firewall_check(version10_root: Path) -> Dict[str, Any]:
     offenders = []
     for path in src.rglob("*.py"):
         rel = str(path.relative_to(src)).replace("\\", "/")
-        if any(x in rel for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP257_", "PhaseP258_", "PhaseP259_", "PhaseP2510_", "PhaseP2511_")):
+        if any(x in rel for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP257_", "PhaseP258_", "PhaseP259_", "PhaseP2510_", "PhaseP2511_", "PhaseP26_", "PhaseP261_")):
             continue
         try:
             text = path.read_text(encoding="utf-8", errors="ignore")

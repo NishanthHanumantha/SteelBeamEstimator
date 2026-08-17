@@ -1,0 +1,116 @@
+{
+  "region_id": "P26::Fifth::B82",
+  "beam_id": "B82",
+  "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B82_render.png",
+  "region_bbox": [
+    31674826.92,
+    -21175133.97,
+    31678226.92,
+    -21170562.26
+  ],
+  "metadata": {
+    "region_id": "P26::Fifth::B82",
+    "beam_id": "B82",
+    "source_set": "Fifth Set Drawings",
+    "target_beam": "B82",
+    "gap_reasons": [
+      "OCR_CORRUPTION",
+      "STIRRUP_TEXT_NO_OBJECT",
+      "SPARSE_REINFORCEMENT",
+      "UNASSOCIATED_REINF_TEXT",
+      "INCOMPLETE_PARSE"
+    ],
+    "accepted_and_nearby_annotations": [
+      {
+        "annotation_id": "ANN-4c8699c2",
+        "text": "4L-Y12@\\X100C/C",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "stirrup_in_stirrup_region"
+      },
+      {
+        "annotation_id": "ANN-fda35286",
+        "text": "4-Y25",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "describes_owned_bar_in_reach"
+      },
+      {
+        "annotation_id": "ANN-272ee505",
+        "text": "4-Y25",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "leader_bar_chain_owned"
+      },
+      {
+        "annotation_id": "ANN-d83a15c7",
+        "text": "4-Y25",
+        "ownership": "REJECTED",
+        "ownership_reason": "annotation_on_neighbour_side_of_mark"
+      }
+    ],
+    "deterministic_reinforcement": {
+      "present": true,
+      "top_main": [
+        {
+          "bar_id": "R13-B82-TOP_MAIN-607961",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "bar_label": "4Y25",
+          "spacing_mm": null
+        }
+      ],
+      "bottom_main": [
+        {
+          "bar_id": "R13-B82-BOTTOM_MAIN-599cd3",
+          "semantic_role": "BOTTOM_MAIN",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "bar_label": "4Y25",
+          "spacing_mm": null
+        }
+      ],
+      "stirrups": [],
+      "side_face": [],
+      "spacers": [],
+      "total_classified_bars": 2
+    },
+    "beam_depth_mm": 600.0,
+    "region_bbox": [
+      31674826.92,
+      -21175133.97,
+      31678226.92,
+      -21170562.26
+    ],
+    "crop_config": {
+      "source": "QA30_FIFTH_SHARED_RENDER",
+      "reuse_p250_p252_infrastructure": true,
+      "base_margin_mm": 250.0,
+      "evidence_pad_mm": 120.0,
+      "render_max_dim_px": 1200,
+      "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+      "regenerate_dxf": false
+    },
+    "instruction": "Image 1 is a localized crop of the TARGET beam with surrounding context. Neighbouring beams, slabs, columns, and notes may appear. Do not assume nearby text belongs to the TARGET beam."
+  },
+  "images": [
+    {
+      "role": "beam_region_crop",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B82_render.png",
+      "sha256": "9a6470ed20d3ebe260e888d54a3cbcfb7dabc01d63371f7008dc14a9ac3d1d20",
+      "size_bytes": 25475,
+      "media_type": "image/png"
+    }
+  ],
+  "image_hash": "9a6470ed20d3ebe260e888d54a3cbcfb7dabc01d63371f7008dc14a9ac3d1d20",
+  "region_hash": "d29b461339092f95089c7ebd069c9376655a2922689bb0d74214efa247d3344c",
+  "drawing_hash": "c0397e1ed7f9320389b77d36628e5919925d83b8d8978df513c4812a01e25303",
+  "truth_leak_keys": [],
+  "crop_config": {
+    "source": "QA30_FIFTH_SHARED_RENDER",
+    "reuse_p250_p252_infrastructure": true,
+    "base_margin_mm": 250.0,
+    "evidence_pad_mm": 120.0,
+    "render_max_dim_px": 1200,
+    "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+    "regenerate_dxf": false
+  }
+}

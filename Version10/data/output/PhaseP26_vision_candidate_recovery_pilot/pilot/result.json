@@ -1,0 +1,282 @@
+{
+  "phase_id": "P2.6",
+  "phase_name": "Vision Candidate Recovery Pilot",
+  "model_version": "10.11.0",
+  "pilot_set": "Fifth Set Drawings",
+  "mode": "CACHE_ONLY",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot",
+  "selection": {
+    "pilot_set": "Fifth Set Drawings",
+    "set_key": "Fifth",
+    "beams_scored": 143,
+    "eligible_with_crop": 143,
+    "selected": 18,
+    "target": 18,
+    "selection_basis": "production_signals_only",
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "crop_source": "QA30_FIFTH_SHARED_RENDER",
+    "reason_counts": {
+      "OCR_CORRUPTION": 18,
+      "STIRRUP_TEXT_NO_OBJECT": 18,
+      "SPARSE_REINFORCEMENT": 13,
+      "MISSING_BOTTOM_WHILE_ANNS": 12,
+      "UNASSOCIATED_REINF_TEXT": 9,
+      "INCOMPLETE_PARSE": 18
+    }
+  },
+  "metrics": {
+    "pilot_beams_inspected": 18,
+    "vision_api_calls": 0,
+    "cache_hits": 18,
+    "cache_misses": 0,
+    "vision_candidates": 33,
+    "already_detected": 12,
+    "potentially_missing": 20,
+    "conflicting": 1,
+    "det_unknown": 0,
+    "gt_matches": 1,
+    "true_recoveries": 19,
+    "unsupported": 1,
+    "ambiguous": 0,
+    "duplicates_gt_status": 12,
+    "gt_supported_candidates": 31,
+    "missed_gt_bars_on_pilot_beams": 163,
+    "TRUE_RECOVERY_RATE": 0.116564,
+    "VISION_CANDIDATE_PRECISION": 0.939394,
+    "UNSUPPORTED_RATE": 0.030303,
+    "DUPLICATE_RATE": 0.363636,
+    "AMBIGUOUS_RATE": 0.0,
+    "candidate_type_counts": {
+      "STIRRUP": 15,
+      "LONGITUDINAL_REINFORCEMENT": 18
+    },
+    "true_recovery_by_type": {
+      "STIRRUP": 14,
+      "LONGITUDINAL_REINFORCEMENT": 5
+    },
+    "true_recovery_by_diameter": {
+      "10": 4,
+      "8": 3,
+      "16": 3,
+      "12": 7,
+      "20": 1,
+      "25": 1
+    },
+    "true_recovery_ocr_corrupted_text": 14,
+    "input_tokens": 50961,
+    "output_tokens": 8436,
+    "estimated_usd": 0.2794,
+    "gt_status_counts": {
+      "TRUE_RECOVERY": 19,
+      "DUPLICATE": 12,
+      "GT_MATCH": 1,
+      "UNSUPPORTED": 1
+    },
+    "det_status_counts": {
+      "POTENTIALLY_MISSING": 20,
+      "ALREADY_DETECTED": 12,
+      "CONFLICTING": 1
+    }
+  },
+  "recommendation": {
+    "strength": "STRONG",
+    "decision": "PROCEED_TO_LARGER_EXPERIMENT",
+    "note": "Pilot classification only. Not PRODUCTION_READY. Deterministic production remains sole authority."
+  },
+  "evidence": {
+    "examples": [
+      {
+        "example_class": "TRUE_RECOVERY",
+        "candidate_id": "P26::B130::C01",
+        "beam_id": "B130",
+        "annotation_text": "4L-Y10@\\X100C/C",
+        "candidate_type": "STIRRUP",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "deterministic_match_status": "POTENTIALLY_MISSING",
+        "gt_match_status": "TRUE_RECOVERY",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P26::Fifth::B130",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B130_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\evidence\\P26__B130__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\140dec4d70b93a56a7b75bd5ca5f4599eaa56c270fae98e6693d2ca08fe0c5dd.json"
+      },
+      {
+        "example_class": "DUPLICATE",
+        "candidate_id": "P26::B130::C02",
+        "beam_id": "B130",
+        "annotation_text": "4-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "deterministic_match_status": "ALREADY_DETECTED",
+        "gt_match_status": "DUPLICATE",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P26::Fifth::B130",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B130_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\evidence\\P26__B130__C02\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\140dec4d70b93a56a7b75bd5ca5f4599eaa56c270fae98e6693d2ca08fe0c5dd.json"
+      },
+      {
+        "example_class": "UNSUPPORTED",
+        "candidate_id": "P26::B144::C01",
+        "beam_id": "B144",
+        "annotation_text": "3L-Y12@\\X100C/C",
+        "candidate_type": "STIRRUP",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "deterministic_match_status": "POTENTIALLY_MISSING",
+        "gt_match_status": "UNSUPPORTED",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P26::Fifth::B144",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B144_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\evidence\\P26__B144__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\5acffbe24cfe66adb842fe7c7c0b162a38ffa3dc1d3aa122d7ba415686b32c31.json"
+      }
+    ],
+    "count": 3
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 22,
+    "total": 22,
+    "results": [
+      {
+        "name": "schema_validation",
+        "pass": true
+      },
+      {
+        "name": "malformed_response",
+        "pass": true
+      },
+      {
+        "name": "unknown_handling",
+        "pass": true
+      },
+      {
+        "name": "normalization_aliases",
+        "pass": true
+      },
+      {
+        "name": "deterministic_already_detected",
+        "pass": true
+      },
+      {
+        "name": "deterministic_potentially_missing",
+        "pass": true
+      },
+      {
+        "name": "gt_true_recovery",
+        "pass": true
+      },
+      {
+        "name": "gt_duplicate",
+        "pass": true
+      },
+      {
+        "name": "gt_unsupported",
+        "pass": true
+      },
+      {
+        "name": "ambiguous_neighbour",
+        "pass": true
+      },
+      {
+        "name": "ambiguous_neighbour_matching_diameter",
+        "pass": true
+      },
+      {
+        "name": "cache_key_and_roundtrip",
+        "pass": true
+      },
+      {
+        "name": "evidence_provenance_fields",
+        "pass": true
+      },
+      {
+        "name": "gap_score_no_gt_keys",
+        "pass": true
+      },
+      {
+        "name": "truth_leak_blocked",
+        "pass": true
+      },
+      {
+        "name": "prompt_mentions_unknown",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "model_version",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "malformed_candidates_array",
+        "pass": true
+      },
+      {
+        "name": "P2.5.11_regression",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.6 writes only isolated shadow candidate-recovery artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "steel_unchanged": true,
+    "bbs_unchanged": true,
+    "excel_unchanged": true,
+    "r13_unchanged": true,
+    "si1_unchanged": true
+  },
+  "gt_evaluation": {
+    "estimator_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+    "model_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+    "gt_used_at_runtime": false,
+    "gt_used_for_selection": false
+  },
+  "decision": "PROCEED_TO_LARGER_EXPERIMENT",
+  "strength": "STRONG",
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\P2.6_PILOT_STATUS.md",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\reports\\metrics.json"
+  }
+}

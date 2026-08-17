@@ -1,0 +1,106 @@
+{
+  "cache_key": "9f9f5414ecb572879e289345fbd0a42d5864ce1173d8d3556d45b17b69b3fa1e",
+  "cached_at_utc": "2026-08-17T11:48:48.120219+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B41",
+    "beam_id": "B41",
+    "prompt_fingerprint": "1f2209f5cca90b95b5fca143b1df0fbdd0049940400e46d6b46278836f0e6741",
+    "image_hash": "298819779d5b0f98e55c84b4edb77c8504fef78367b62213b22ea7a9f208a7e7",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B41\",\n  \"beam_id\": \"B41\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y25-1-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": null,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, annotation visible in upper section near hatched slab\",\n      \"vision_confidence\": 0.92,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation '2-Y25-1-Y20' is positioned at the top of the beam section\",\n        \"Indicates 2 bars of Y25 and 1 bar of Y20\",\n        \"Typical top reinforcement notation in beam cross-section\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y12@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom section annotation, below the beam\",\n      \"vision_confidence\": 0.88,\n      \"text_confidence\": 0.93,\n      \"evidence_notes\": [\n        \"Annotation '2L-Y12@100C/C' indicates 2-legged stirrups\",\n        \"Y12 diameter bars at 100mm center-to-center spacing\",\n        \"Positioned below beam section, typical stirrup notation location\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B41::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B41",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25-1-Y20",
+        "normalized_text": "2-Y25-1-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": null,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B41",
+        "region_bbox": null,
+        "vision_confidence": 0.92,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25-1-Y20' is positioned at the top of the beam section",
+          "Indicates 2 bars of Y25 and 1 bar of Y20",
+          "Typical top reinforcement notation in beam cross-section",
+          "location_text:Top of beam, annotation visible in upper section near hatched slab"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9f9f5414ecb572879e289345fbd0a42d5864ce1173d8d3556d45b17b69b3fa1e.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B41::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B41",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@100C/C",
+        "normalized_text": "2L-Y12@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B41",
+        "region_bbox": null,
+        "vision_confidence": 0.88,
+        "text_confidence": 0.93,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y12@100C/C' indicates 2-legged stirrups",
+          "Y12 diameter bars at 100mm center-to-center spacing",
+          "Positioned below beam section, typical stirrup notation location",
+          "location_text:Bottom section annotation, below the beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9f9f5414ecb572879e289345fbd0a42d5864ce1173d8d3556d45b17b69b3fa1e.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Sixth::B41",
+      "returned_beam_id": "B41"
+    }
+  },
+  "usage": {
+    "input_tokens": 2333,
+    "output_tokens": 494
+  },
+  "error": null
+}

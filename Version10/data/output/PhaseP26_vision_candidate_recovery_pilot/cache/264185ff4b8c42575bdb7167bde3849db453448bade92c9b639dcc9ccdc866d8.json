@@ -1,0 +1,107 @@
+{
+  "cache_key": "264185ff4b8c42575bdb7167bde3849db453448bade92c9b639dcc9ccdc866d8",
+  "cached_at_utc": "2026-08-17T10:28:34.286510+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B168",
+    "beam_id": "B168",
+    "prompt_fingerprint": "970997b35420e48f448ff3c56c6fbe15ebc6e6a178a1e2e446311d95d1247844",
+    "image_hash": "c7ec6a6acd275811e16660f321c22511fbb814e0890d596333fd49e7069a92be",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B168\",\n  \"beam_id\": \"B168\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Lower portion of beam section, pointed to by leader line from annotation below the beam\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '3-Y20' with leader pointing to bottom reinforcement layer\",\n        \"Visually distinct from the top '3-Y20' annotation which points to upper layer\",\n        \"Leader clearly terminates at lower longitudinal bars in the beam cross-section\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y8@\\\\X100/125/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 125, 100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Central region of beam, annotation positioned inside beam outline\",\n      \"vision_confidence\": 0.92,\n      \"text_confidence\": 0.85,\n      \"evidence_notes\": [\n        \"Stirrup annotation visible in center of beam section\",\n        \"Format indicates 3-legged Y8 stirrups with variable spacing pattern\",\n        \"Annotation is within the beam boundary and clearly associated with B168\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B168::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B168",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B168",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y20' with leader pointing to bottom reinforcement layer",
+          "Visually distinct from the top '3-Y20' annotation which points to upper layer",
+          "Leader clearly terminates at lower longitudinal bars in the beam cross-section",
+          "location_text:Lower portion of beam section, pointed to by leader line from annotation below the beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B168::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B168",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y8@\\X100/125/100C/C",
+        "normalized_text": "3L-Y8@\\X100/125/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          125.0,
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B168",
+        "region_bbox": null,
+        "vision_confidence": 0.92,
+        "text_confidence": 0.85,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Stirrup annotation visible in center of beam section",
+          "Format indicates 3-legged Y8 stirrups with variable spacing pattern",
+          "Annotation is within the beam boundary and clearly associated with B168",
+          "location_text:Central region of beam, annotation positioned inside beam outline"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B168",
+      "returned_beam_id": "B168"
+    }
+  },
+  "usage": {
+    "input_tokens": 2931,
+    "output_tokens": 523
+  },
+  "error": null
+}

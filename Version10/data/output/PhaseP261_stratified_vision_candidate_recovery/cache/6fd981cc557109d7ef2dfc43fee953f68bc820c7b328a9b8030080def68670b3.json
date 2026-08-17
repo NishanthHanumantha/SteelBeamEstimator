@@ -1,0 +1,69 @@
+{
+  "cache_key": "6fd981cc557109d7ef2dfc43fee953f68bc820c7b328a9b8030080def68670b3",
+  "cached_at_utc": "2026-08-17T11:41:53.445969+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B186",
+    "beam_id": "B186",
+    "prompt_fingerprint": "d29949a82489741ac060b4230eed217671c8d77b35844a2cd8b32e2193771bd3",
+    "image_hash": "7d5231dfd3cdd4d05a0517d9a84338b48bb8ce97d45aaa8e054cd86c6fc8cc2b",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B186\",\n  \"beam_id\": \"B186\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y12\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 12,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, near left end, annotation points to upper reinforcement bars\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '2-Y12' is clearly visible with leader line pointing to top reinforcement bars\",\n        \"Two dark blue/black bars visible at top of beam section\",\n        \"Annotation positioned directly above the beam outline\",\n        \"Leader line connects annotation to the top bars of the beam\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B186::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B186",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y12",
+        "normalized_text": "2-Y12",
+        "role": "TOP_BAR",
+        "diameter_mm": 12,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B186",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y12' is clearly visible with leader line pointing to top reinforcement bars",
+          "Two dark blue/black bars visible at top of beam section",
+          "Annotation positioned directly above the beam outline",
+          "Leader line connects annotation to the top bars of the beam",
+          "location_text:Top of beam, near left end, annotation points to upper reinforcement bars"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\6fd981cc557109d7ef2dfc43fee953f68bc820c7b328a9b8030080def68670b3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 1,
+      "normalized_count": 1,
+      "returned_region_id": "P261::Fifth::B186",
+      "returned_beam_id": "B186"
+    }
+  },
+  "usage": {
+    "input_tokens": 1498,
+    "output_tokens": 276
+  },
+  "error": null
+}

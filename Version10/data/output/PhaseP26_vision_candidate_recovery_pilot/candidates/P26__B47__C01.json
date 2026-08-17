@@ -1,0 +1,51 @@
+{
+  "candidate_id": "P26::B47::C01",
+  "source_set": "Fifth Set Drawings",
+  "source_drawing": "Fifth Set Drawings",
+  "beam_id": "B47",
+  "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+  "annotation_text": "4Y16",
+  "normalized_text": "4Y16",
+  "role": "BOTTOM_BAR",
+  "diameter_mm": 16,
+  "quantity": 4.0,
+  "spacing_mm": [],
+  "legs": null,
+  "source_x": null,
+  "source_y": null,
+  "region_id": "P26::Fifth::B47",
+  "region_bbox": [
+    31668279.45,
+    -21150252.67,
+    31671679.45,
+    -21147405.48
+  ],
+  "vision_confidence": 0.95,
+  "text_confidence": 0.95,
+  "evidence_type": "BEAM_REGION_CROP",
+  "evidence_notes": [
+    "Clear annotation '4Y16' visible at bottom of beam section",
+    "Leader line points to bottom longitudinal reinforcement bars",
+    "Symmetric to top reinforcement pattern",
+    "Missing from deterministic bottom_main list despite clear visual presence",
+    "location_text:Bottom annotation with leader pointing to lower longitudinal bars in beam cross-section"
+  ],
+  "deterministic_match_status": "POTENTIALLY_MISSING",
+  "gt_match_status": null,
+  "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+  "vision_model": "claude-sonnet-4-5",
+  "model_version": "10.11.0",
+  "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+  "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\6bc5c5a3372e2734e0cb8b34442e6d801f58ad93783a21813f64db728e830df2.json",
+  "beam_association": "TARGET_BEAM",
+  "decision": "SHADOW_CANDIDATE",
+  "deterministic_match_reason": "NO_EQUIVALENT_DETERMINISTIC_BAR",
+  "deterministic_matched_bar_id": null,
+  "gap_reasons": [
+    "OCR_CORRUPTION",
+    "STIRRUP_TEXT_NO_OBJECT",
+    "SPARSE_REINFORCEMENT",
+    "MISSING_BOTTOM_WHILE_ANNS",
+    "INCOMPLETE_PARSE"
+  ]
+}

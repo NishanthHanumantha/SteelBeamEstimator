@@ -1,0 +1,668 @@
+{
+  "phase_id": "P2.6.1",
+  "phase_name": "Stratified Vision Candidate Recovery Benchmark",
+  "model_version": "10.11.1",
+  "scope": "STRATIFIED_SAMPLE_FOURTH_FIFTH_SIXTH",
+  "mode": "CACHE_ONLY",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "partial_execution": false,
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery",
+  "selection": {
+    "seed": 2611101,
+    "target_beams": 75,
+    "per_stratum_target": 25,
+    "selected": 75,
+    "universe_scored": 404,
+    "eligible_with_crop": 362,
+    "available_by_stratum": {
+      "DIFFICULT": 52,
+      "NORMAL": 195,
+      "EASY": 115
+    },
+    "selected_by_stratum": {
+      "DIFFICULT": 25,
+      "NORMAL": 25,
+      "EASY": 25
+    },
+    "selected_by_set": {
+      "Fifth": 27,
+      "Fourth": 30,
+      "Sixth": 18
+    },
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "drawing_sets": [
+      "Fourth",
+      "Fifth",
+      "Sixth"
+    ],
+    "drawing_visibility": "UNSEEN",
+    "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled.",
+    "p26_overlap_in_sample": 5
+  },
+  "metrics": {
+    "BEAMS_INSPECTED": 75,
+    "VISION_CALLS": 75,
+    "vision_api_calls": 0,
+    "live_calls": 0,
+    "cache_hits": 75,
+    "cache_misses": 0,
+    "budget_stops": 0,
+    "VISION_CANDIDATES": 207,
+    "ALREADY_DETECTED": 136,
+    "POTENTIALLY_MISSING": 34,
+    "TRUE_RECOVERIES": 26,
+    "STRICT_TRUE_RECOVERIES": 8,
+    "GT_SUPPORTED": 153,
+    "UNSUPPORTED": 13,
+    "AMBIGUOUS": 15,
+    "missed_gt_bars_on_sampled_beams": 178,
+    "TRUE_RECOVERY_RATE": 0.146067,
+    "STRICT_TRUE_RECOVERY_RATE": 0.044944,
+    "VISION_CANDIDATE_PRECISION": 0.73913,
+    "UNSUPPORTED_RATE": 0.062802,
+    "DUPLICATE_RATE": 0.657005,
+    "AMBIGUOUS_RATE": 0.072464,
+    "input_tokens": 148202,
+    "output_tokens": 47626,
+    "estimated_usd": 1.159,
+    "cost_per_true_recovery": 0.0446,
+    "true_recovery_ocr_corrupted_text": 18,
+    "true_recovery_by_type": {
+      "LONGITUDINAL_REINFORCEMENT": 8,
+      "STIRRUP": 18
+    },
+    "overall": {
+      "candidates": 207,
+      "already_detected": 136,
+      "potentially_missing": 34,
+      "conflicting": 26,
+      "true_recoveries": 26,
+      "strict_true_recoveries": 8,
+      "unsupported": 13,
+      "ambiguous": 15,
+      "gt_supported_candidates": 153,
+      "missed_gt_bars": 178,
+      "TRUE_RECOVERY_RATE": 0.146067,
+      "STRICT_TRUE_RECOVERY_RATE": 0.044944,
+      "VISION_CANDIDATE_PRECISION": 0.73913,
+      "UNSUPPORTED_RATE": 0.062802,
+      "DUPLICATE_RATE": 0.657005,
+      "AMBIGUOUS_RATE": 0.072464,
+      "gt_status_counts": {
+        "TRUE_RECOVERY": 26,
+        "DUPLICATE": 136,
+        "GT_MATCH": 17,
+        "UNSUPPORTED": 13,
+        "AMBIGUOUS": 15
+      },
+      "det_status_counts": {
+        "POTENTIALLY_MISSING": 34,
+        "ALREADY_DETECTED": 136,
+        "CONFLICTING": 26,
+        "AMBIGUOUS": 11
+      }
+    },
+    "by_stratum": {
+      "DIFFICULT": {
+        "candidates": 67,
+        "already_detected": 27,
+        "potentially_missing": 23,
+        "conflicting": 9,
+        "true_recoveries": 19,
+        "strict_true_recoveries": 1,
+        "unsupported": 7,
+        "ambiguous": 8,
+        "gt_supported_candidates": 45,
+        "missed_gt_bars": 56,
+        "TRUE_RECOVERY_RATE": 0.339286,
+        "STRICT_TRUE_RECOVERY_RATE": 0.017857,
+        "VISION_CANDIDATE_PRECISION": 0.671642,
+        "UNSUPPORTED_RATE": 0.104478,
+        "DUPLICATE_RATE": 0.402985,
+        "AMBIGUOUS_RATE": 0.119403,
+        "gt_status_counts": {
+          "TRUE_RECOVERY": 19,
+          "DUPLICATE": 27,
+          "GT_MATCH": 6,
+          "UNSUPPORTED": 7,
+          "AMBIGUOUS": 8
+        },
+        "det_status_counts": {
+          "POTENTIALLY_MISSING": 23,
+          "ALREADY_DETECTED": 27,
+          "CONFLICTING": 9,
+          "AMBIGUOUS": 8
+        }
+      },
+      "NORMAL": {
+        "candidates": 62,
+        "already_detected": 46,
+        "potentially_missing": 11,
+        "conflicting": 4,
+        "true_recoveries": 6,
+        "strict_true_recoveries": 6,
+        "unsupported": 3,
+        "ambiguous": 5,
+        "gt_supported_candidates": 47,
+        "missed_gt_bars": 73,
+        "TRUE_RECOVERY_RATE": 0.082192,
+        "STRICT_TRUE_RECOVERY_RATE": 0.082192,
+        "VISION_CANDIDATE_PRECISION": 0.758065,
+        "UNSUPPORTED_RATE": 0.048387,
+        "DUPLICATE_RATE": 0.741935,
+        "AMBIGUOUS_RATE": 0.080645,
+        "gt_status_counts": {
+          "DUPLICATE": 46,
+          "GT_MATCH": 2,
+          "TRUE_RECOVERY": 6,
+          "UNSUPPORTED": 3,
+          "AMBIGUOUS": 5
+        },
+        "det_status_counts": {
+          "ALREADY_DETECTED": 46,
+          "CONFLICTING": 4,
+          "POTENTIALLY_MISSING": 11,
+          "AMBIGUOUS": 1
+        }
+      },
+      "EASY": {
+        "candidates": 78,
+        "already_detected": 63,
+        "potentially_missing": 0,
+        "conflicting": 13,
+        "true_recoveries": 1,
+        "strict_true_recoveries": 1,
+        "unsupported": 3,
+        "ambiguous": 2,
+        "gt_supported_candidates": 61,
+        "missed_gt_bars": 49,
+        "TRUE_RECOVERY_RATE": 0.020408,
+        "STRICT_TRUE_RECOVERY_RATE": 0.020408,
+        "VISION_CANDIDATE_PRECISION": 0.782051,
+        "UNSUPPORTED_RATE": 0.038462,
+        "DUPLICATE_RATE": 0.807692,
+        "AMBIGUOUS_RATE": 0.025641,
+        "gt_status_counts": {
+          "DUPLICATE": 63,
+          "TRUE_RECOVERY": 1,
+          "AMBIGUOUS": 2,
+          "GT_MATCH": 9,
+          "UNSUPPORTED": 3
+        },
+        "det_status_counts": {
+          "ALREADY_DETECTED": 63,
+          "CONFLICTING": 13,
+          "AMBIGUOUS": 2
+        }
+      }
+    },
+    "by_candidate_type": {
+      "STIRRUP": {
+        "candidates": 62,
+        "already_detected": 40,
+        "potentially_missing": 18,
+        "conflicting": 1,
+        "true_recoveries": 18,
+        "strict_true_recoveries": 0,
+        "unsupported": 1,
+        "ambiguous": 3,
+        "gt_supported_candidates": 55,
+        "VISION_CANDIDATE_PRECISION": 0.887097,
+        "UNSUPPORTED_RATE": 0.016129,
+        "DUPLICATE_RATE": 0.645161,
+        "AMBIGUOUS_RATE": 0.048387,
+        "gt_status_counts": {
+          "TRUE_RECOVERY": 18,
+          "UNSUPPORTED": 1,
+          "DUPLICATE": 40,
+          "AMBIGUOUS": 3
+        },
+        "det_status_counts": {
+          "POTENTIALLY_MISSING": 18,
+          "ALREADY_DETECTED": 40,
+          "AMBIGUOUS": 3,
+          "CONFLICTING": 1
+        }
+      },
+      "LONGITUDINAL_REINFORCEMENT": {
+        "candidates": 145,
+        "already_detected": 96,
+        "potentially_missing": 16,
+        "conflicting": 25,
+        "true_recoveries": 8,
+        "strict_true_recoveries": 8,
+        "unsupported": 12,
+        "ambiguous": 12,
+        "gt_supported_candidates": 98,
+        "VISION_CANDIDATE_PRECISION": 0.675862,
+        "UNSUPPORTED_RATE": 0.082759,
+        "DUPLICATE_RATE": 0.662069,
+        "AMBIGUOUS_RATE": 0.082759,
+        "gt_status_counts": {
+          "TRUE_RECOVERY": 8,
+          "DUPLICATE": 96,
+          "GT_MATCH": 17,
+          "UNSUPPORTED": 12,
+          "AMBIGUOUS": 12
+        },
+        "det_status_counts": {
+          "POTENTIALLY_MISSING": 16,
+          "ALREADY_DETECTED": 96,
+          "CONFLICTING": 25,
+          "AMBIGUOUS": 8
+        }
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "candidates": 0,
+        "already_detected": 0,
+        "potentially_missing": 0,
+        "conflicting": 0,
+        "true_recoveries": 0,
+        "strict_true_recoveries": 0,
+        "unsupported": 0,
+        "ambiguous": 0,
+        "gt_supported_candidates": 0,
+        "VISION_CANDIDATE_PRECISION": null,
+        "UNSUPPORTED_RATE": null,
+        "DUPLICATE_RATE": null,
+        "AMBIGUOUS_RATE": null,
+        "gt_status_counts": {},
+        "det_status_counts": {}
+      },
+      "SPACER": {
+        "candidates": 0,
+        "already_detected": 0,
+        "potentially_missing": 0,
+        "conflicting": 0,
+        "true_recoveries": 0,
+        "strict_true_recoveries": 0,
+        "unsupported": 0,
+        "ambiguous": 0,
+        "gt_supported_candidates": 0,
+        "VISION_CANDIDATE_PRECISION": null,
+        "UNSUPPORTED_RATE": null,
+        "DUPLICATE_RATE": null,
+        "AMBIGUOUS_RATE": null,
+        "gt_status_counts": {},
+        "det_status_counts": {}
+      },
+      "OTHER": {
+        "candidates": 0,
+        "already_detected": 0,
+        "potentially_missing": 0,
+        "conflicting": 0,
+        "true_recoveries": 0,
+        "strict_true_recoveries": 0,
+        "unsupported": 0,
+        "ambiguous": 0,
+        "gt_supported_candidates": 0,
+        "VISION_CANDIDATE_PRECISION": null,
+        "UNSUPPORTED_RATE": null,
+        "DUPLICATE_RATE": null,
+        "AMBIGUOUS_RATE": null,
+        "gt_status_counts": {},
+        "det_status_counts": {}
+      },
+      "UNKNOWN": {
+        "candidates": 0,
+        "already_detected": 0,
+        "potentially_missing": 0,
+        "conflicting": 0,
+        "true_recoveries": 0,
+        "strict_true_recoveries": 0,
+        "unsupported": 0,
+        "ambiguous": 0,
+        "gt_supported_candidates": 0,
+        "VISION_CANDIDATE_PRECISION": null,
+        "UNSUPPORTED_RATE": null,
+        "DUPLICATE_RATE": null,
+        "AMBIGUOUS_RATE": null,
+        "gt_status_counts": {},
+        "det_status_counts": {}
+      }
+    },
+    "by_drawing_set": {
+      "Fifth Set Drawings": {
+        "candidates": 73,
+        "already_detected": 46,
+        "potentially_missing": 14,
+        "conflicting": 11,
+        "true_recoveries": 12,
+        "strict_true_recoveries": 3,
+        "unsupported": 8,
+        "ambiguous": 2,
+        "gt_supported_candidates": 56,
+        "missed_gt_bars": 76,
+        "TRUE_RECOVERY_RATE": 0.157895,
+        "STRICT_TRUE_RECOVERY_RATE": 0.039474,
+        "VISION_CANDIDATE_PRECISION": 0.767123,
+        "UNSUPPORTED_RATE": 0.109589,
+        "DUPLICATE_RATE": 0.630137,
+        "AMBIGUOUS_RATE": 0.027397,
+        "gt_status_counts": {
+          "TRUE_RECOVERY": 12,
+          "DUPLICATE": 46,
+          "GT_MATCH": 5,
+          "UNSUPPORTED": 8,
+          "AMBIGUOUS": 2
+        },
+        "det_status_counts": {
+          "POTENTIALLY_MISSING": 14,
+          "ALREADY_DETECTED": 46,
+          "CONFLICTING": 11,
+          "AMBIGUOUS": 2
+        }
+      },
+      "Fourth Set Drawings": {
+        "candidates": 82,
+        "already_detected": 57,
+        "potentially_missing": 12,
+        "conflicting": 8,
+        "true_recoveries": 11,
+        "strict_true_recoveries": 4,
+        "unsupported": 3,
+        "ambiguous": 5,
+        "gt_supported_candidates": 58,
+        "missed_gt_bars": 67,
+        "TRUE_RECOVERY_RATE": 0.164179,
+        "STRICT_TRUE_RECOVERY_RATE": 0.059701,
+        "VISION_CANDIDATE_PRECISION": 0.707317,
+        "UNSUPPORTED_RATE": 0.036585,
+        "DUPLICATE_RATE": 0.695122,
+        "AMBIGUOUS_RATE": 0.060976,
+        "gt_status_counts": {
+          "DUPLICATE": 57,
+          "TRUE_RECOVERY": 11,
+          "UNSUPPORTED": 3,
+          "AMBIGUOUS": 5,
+          "GT_MATCH": 6
+        },
+        "det_status_counts": {
+          "ALREADY_DETECTED": 57,
+          "POTENTIALLY_MISSING": 12,
+          "AMBIGUOUS": 5,
+          "CONFLICTING": 8
+        }
+      },
+      "Sixth Set Drawings": {
+        "candidates": 52,
+        "already_detected": 33,
+        "potentially_missing": 8,
+        "conflicting": 7,
+        "true_recoveries": 3,
+        "strict_true_recoveries": 1,
+        "unsupported": 2,
+        "ambiguous": 8,
+        "gt_supported_candidates": 39,
+        "missed_gt_bars": 35,
+        "TRUE_RECOVERY_RATE": 0.085714,
+        "STRICT_TRUE_RECOVERY_RATE": 0.028571,
+        "VISION_CANDIDATE_PRECISION": 0.75,
+        "UNSUPPORTED_RATE": 0.038462,
+        "DUPLICATE_RATE": 0.634615,
+        "AMBIGUOUS_RATE": 0.153846,
+        "gt_status_counts": {
+          "DUPLICATE": 33,
+          "TRUE_RECOVERY": 3,
+          "AMBIGUOUS": 8,
+          "UNSUPPORTED": 2,
+          "GT_MATCH": 6
+        },
+        "det_status_counts": {
+          "ALREADY_DETECTED": 33,
+          "POTENTIALLY_MISSING": 8,
+          "AMBIGUOUS": 4,
+          "CONFLICTING": 7
+        }
+      }
+    },
+    "known_vs_unseen": {
+      "known_candidates": 0,
+      "unseen_candidates": 207,
+      "KNOWN_RECOVERY_RATE": "N/A \u2014 insufficient sample",
+      "UNSEEN_RECOVERY_RATE": 0.146067,
+      "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled."
+    },
+    "gt_status_counts": {
+      "TRUE_RECOVERY": 26,
+      "DUPLICATE": 136,
+      "GT_MATCH": 17,
+      "UNSUPPORTED": 13,
+      "AMBIGUOUS": 15
+    },
+    "det_status_counts": {
+      "POTENTIALLY_MISSING": 34,
+      "ALREADY_DETECTED": 136,
+      "CONFLICTING": 26,
+      "AMBIGUOUS": 11
+    },
+    "gt_matches": 17
+  },
+  "recommendation": {
+    "strength": "PROMISING",
+    "decision": "REFINE_CANDIDATE_RECOVERY",
+    "note": "Stratified-sample classification only. Not PRODUCTION_READY. Deterministic production remains sole authority. only_difficult_recoveries=False easy_duplicate_high=True easy_unsupported_high=False"
+  },
+  "evidence": {
+    "examples": [
+      {
+        "example_class": "TRUE_RECOVERY_STIRRUP",
+        "candidate_id": "P261::Fifth::B128::C02",
+        "beam_id": "B128",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "DIFFICULT",
+        "annotation_text": "2L-Y8@\\X100/150/100C/C",
+        "candidate_type": "STIRRUP",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "deterministic_match_status": "POTENTIALLY_MISSING",
+        "gt_match_status": "TRUE_RECOVERY",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B128",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B128_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B128__C02\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\cf1fbd177531b71860dff8e41c7aee71653534bc0adbe09554a70639d9884679.json"
+      },
+      {
+        "example_class": "TRUE_RECOVERY_LONGITUDINAL",
+        "candidate_id": "P261::Fifth::B128::C01",
+        "beam_id": "B128",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "DIFFICULT",
+        "annotation_text": "3-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 3.0,
+        "deterministic_match_status": "POTENTIALLY_MISSING",
+        "gt_match_status": "TRUE_RECOVERY",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B128",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B128_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B128__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\cf1fbd177531b71860dff8e41c7aee71653534bc0adbe09554a70639d9884679.json"
+      },
+      {
+        "example_class": "DUPLICATE",
+        "candidate_id": "P261::Fifth::B137::C01",
+        "beam_id": "B137",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "DIFFICULT",
+        "annotation_text": "2-Y25",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "deterministic_match_status": "ALREADY_DETECTED",
+        "gt_match_status": "DUPLICATE",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B137",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B137_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B137__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0ef0ac21dd9f08e18a06428929abae1d4d4ae674f5081e60f2de46585067183b.json"
+      },
+      {
+        "example_class": "UNSUPPORTED",
+        "candidate_id": "P261::Fifth::B145::C01",
+        "beam_id": "B145",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "DIFFICULT",
+        "annotation_text": "4-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "deterministic_match_status": "CONFLICTING",
+        "gt_match_status": "UNSUPPORTED",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B145",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B145_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B145__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\04ee441c97853fdd9e8c6ef56e9d9023002d66840ce323b11ad581dd6ae9d279.json"
+      },
+      {
+        "example_class": "AMBIGUOUS",
+        "candidate_id": "P261::Fourth::B143::C04",
+        "beam_id": "B143",
+        "source_set": "Fourth Set Drawings",
+        "stratum": "DIFFICULT",
+        "annotation_text": "3L-Y10@\\X100C/C",
+        "candidate_type": "STIRRUP",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "deterministic_match_status": "AMBIGUOUS",
+        "gt_match_status": "AMBIGUOUS",
+        "beam_association": "UNCERTAIN",
+        "region_id": "P261::Fourth::B143",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B143_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fourth__B143__C04\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\fec9f68b3a76b21573396e68acbe1f336882f643be5b54788df7cd13fd178b8f.json"
+      },
+      {
+        "example_class": "EASY_CONTROL",
+        "candidate_id": "P261::Fifth::B135::C01",
+        "beam_id": "B135",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "EASY",
+        "annotation_text": "3-Y20",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "deterministic_match_status": "ALREADY_DETECTED",
+        "gt_match_status": "DUPLICATE",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B135",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B135_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B135__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\b60ab1f4d03e2b93952810de49c3a9a69c3b0ab62a201e27cfc7eb332b89bc09.json"
+      },
+      {
+        "example_class": "NORMAL_CASE",
+        "candidate_id": "P261::Fifth::B100::C01",
+        "beam_id": "B100",
+        "source_set": "Fifth Set Drawings",
+        "stratum": "NORMAL",
+        "annotation_text": "3-Y25",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "deterministic_match_status": "ALREADY_DETECTED",
+        "gt_match_status": "DUPLICATE",
+        "beam_association": "TARGET_BEAM",
+        "region_id": "P261::Fifth::B100",
+        "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B100_render.png",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\evidence\\P261__Fifth__B100__C01\\region_overlay.png",
+        "decision": "SHADOW_CANDIDATE",
+        "evidence_type": "BEAM_REGION_CROP",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f19c1b7433a16347421e30b91fdf7d5529206627df30f301ec5b27dae2121dd5.json"
+      }
+    ],
+    "count": 7,
+    "missing_classes": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 0,
+    "total": 0
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.6.1 writes only isolated stratified shadow candidate-recovery artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "steel_unchanged": true,
+    "bbs_unchanged": true,
+    "excel_unchanged": true,
+    "r13_unchanged": true,
+    "si1_unchanged": true
+  },
+  "gt_evaluation": {
+    "paths": {
+      "Fourth": {
+        "estimator": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\Estimator_Output_4thSet\\EstimatorOutput_Basement_Beam BBS_INIZIO.xlsx",
+        "model": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      },
+      "Fifth": {
+        "estimator": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+        "model": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      },
+      "Sixth": {
+        "estimator": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Sixth Set Drawings\\Estimator_Output_6thSet\\Estimator_Output_11-18TH FLOOR.xlsx",
+        "model": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx"
+      }
+    },
+    "gt_used_at_runtime": false,
+    "gt_used_for_selection": false
+  },
+  "independent_review": {
+    "status": "COMPLETE",
+    "reviewer": "Claude Sonnet 4.6 HIGH (independent, read-only)",
+    "blocker": "none",
+    "high": "H1 visible_callout_texts are production drawing-evidence OCR strings (not gap_reasons); treat as OCR-repair confound for next refine, not GT leak. H2 stirrup strict metric was tautological (fixed offline: strict now requires quantity agreement; no Vision rerun).",
+    "medium": "M1 UNSEEN_RECOVERY_RATE was null in metrics.json (fixed). M2 assert_runtime_context unused (whitelist is for a different context dict; not applied to Vision metadata). M3 Sixth underrepresented (18 beams). M4 EASY missed-GT denominator is noisy vs production-signal stratum.",
+    "low": "L1 gap_reasons live in feature_row but are not sent to Claude. L2 API model not asserted (observed claude-sonnet-4-5). L3 review flag is post-hoc. L4 no side-face/spacer/other candidates. L5 STATUS/metrics unseen-rate inconsistency (fixed).",
+    "true_recovery_integrity": "CONFIRMED \u2014 OTHER_BEAM and UNCERTAIN cannot become TRUE_RECOVERY",
+    "selection_leakage": "CONFIRMED CLEAN \u2014 GT_USED_FOR_SELECTION = FALSE",
+    "prompt_neutrality": "CONFIRMED with drawing-evidence caveat (visible_callout_texts from accepted annotations)",
+    "firewall": "CONFIRMED CLEAN \u2014 production_mutation_count = 0",
+    "decision_endorsed": "REFINE_CANDIDATE_RECOVERY",
+    "vision_rerun_required": false,
+    "note": "No BLOCKER. HIGH findings do not require a new live Vision run. Primary TRUE_RECOVERY remains P2.6 family+diameter."
+  },
+  "decision": "REFINE_CANDIDATE_RECOVERY",
+  "strength": "PROMISING",
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\P2.6.1_STATUS.md",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\reports\\metrics.json"
+  }
+}

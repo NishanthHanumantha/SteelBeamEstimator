@@ -1,0 +1,104 @@
+{
+  "cache_key": "88a5f157ed48a9ec05eeb38be5189ba9cda7f73342f2cc7d60c5aa7a357f6ee3",
+  "cached_at_utc": "2026-08-17T11:51:37.629603+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B135",
+    "beam_id": "B135",
+    "prompt_fingerprint": "2b17820bd9ea0be951b8dc97bb9cb6ea5e9486f8ca45256ff2dd88ebf864b5b3",
+    "image_hash": "413644fda72faef7d47a5b0a3c7247747b7012e0e029e15638bc7eca266caf67",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B135\",\n  \"beam_id\": \"B135\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"5-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 5,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left portion of beam, annotation with leader pointing to top reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Clear annotation '5-Y20' with leader pointing to top bars\",\n        \"Located in left section of beam B135\",\n        \"Green leader line connects annotation to reinforcement layer\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center-right portion of beam, annotation with leader pointing to top reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Clear annotation '3-Y20' with leader pointing to top bars\",\n        \"Located in center-right section of beam B135\",\n        \"Green leader line connects annotation to reinforcement layer\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B135::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B135",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "5-Y20",
+        "normalized_text": "5-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 5.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B135",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear annotation '5-Y20' with leader pointing to top bars",
+          "Located in left section of beam B135",
+          "Green leader line connects annotation to reinforcement layer",
+          "location_text:Left portion of beam, annotation with leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\88a5f157ed48a9ec05eeb38be5189ba9cda7f73342f2cc7d60c5aa7a357f6ee3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B135::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B135",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B135",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear annotation '3-Y20' with leader pointing to top bars",
+          "Located in center-right section of beam B135",
+          "Green leader line connects annotation to reinforcement layer",
+          "location_text:Center-right portion of beam, annotation with leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\88a5f157ed48a9ec05eeb38be5189ba9cda7f73342f2cc7d60c5aa7a357f6ee3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B135",
+      "returned_beam_id": "B135"
+    }
+  },
+  "usage": {
+    "input_tokens": 1506,
+    "output_tokens": 459
+  },
+  "error": null
+}

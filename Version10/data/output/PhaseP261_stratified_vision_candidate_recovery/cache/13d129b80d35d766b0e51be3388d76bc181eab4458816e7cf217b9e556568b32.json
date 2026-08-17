@@ -1,0 +1,107 @@
+{
+  "cache_key": "13d129b80d35d766b0e51be3388d76bc181eab4458816e7cf217b9e556568b32",
+  "cached_at_utc": "2026-08-17T11:46:32.250659+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B97",
+    "beam_id": "B97",
+    "prompt_fingerprint": "9f37cd658132c033121aa289647b65dbfc439b2776a4dd7f93bbea3b1aece237",
+    "image_hash": "2e78d4a1bef7a87f686d2c41e7516e4040ad2444e8895e9d6e0b25497e25aa59",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B97\",\n  \"beam_id\": \"B97\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam section, indicated by leader pointing to upper reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '4-Y20' with leader pointing to top reinforcement bars in beam cross-section\",\n        \"Clearly visible as 4 bars of Y20 diameter positioned at top of beam\",\n        \"Leader line connects annotation directly to top bar layer\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y8@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrups/links throughout beam span at 100mm centers\",\n      \"vision_confidence\": 0.92,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation '2L-Y8@100C/C' indicates 2-legged stirrups\",\n        \"Y8 diameter bars at 100mm center-to-center spacing\",\n        \"Annotation positioned below beam section, typical location for stirrup callouts\",\n        \"2L prefix indicates two-legged configuration\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B97::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B97",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y20",
+        "normalized_text": "4-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B97",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y20' with leader pointing to top reinforcement bars in beam cross-section",
+          "Clearly visible as 4 bars of Y20 diameter positioned at top of beam",
+          "Leader line connects annotation directly to top bar layer",
+          "location_text:Top of beam section, indicated by leader pointing to upper reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\13d129b80d35d766b0e51be3388d76bc181eab4458816e7cf217b9e556568b32.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B97::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B97",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@100C/C",
+        "normalized_text": "2L-Y8@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B97",
+        "region_bbox": null,
+        "vision_confidence": 0.92,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y8@100C/C' indicates 2-legged stirrups",
+          "Y8 diameter bars at 100mm center-to-center spacing",
+          "Annotation positioned below beam section, typical location for stirrup callouts",
+          "2L prefix indicates two-legged configuration",
+          "location_text:Stirrups/links throughout beam span at 100mm centers"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\13d129b80d35d766b0e51be3388d76bc181eab4458816e7cf217b9e556568b32.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B97",
+      "returned_beam_id": "B97"
+    }
+  },
+  "usage": {
+    "input_tokens": 1684,
+    "output_tokens": 509
+  },
+  "error": null
+}

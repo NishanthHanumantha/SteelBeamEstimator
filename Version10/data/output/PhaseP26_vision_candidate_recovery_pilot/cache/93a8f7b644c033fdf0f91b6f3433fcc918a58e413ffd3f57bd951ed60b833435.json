@@ -1,0 +1,107 @@
+{
+  "cache_key": "93a8f7b644c033fdf0f91b6f3433fcc918a58e413ffd3f57bd951ed60b833435",
+  "cached_at_utc": "2026-08-17T10:29:43.811206+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B43",
+    "beam_id": "B43",
+    "prompt_fingerprint": "aaaf1add8ec8a8efc4de5c13953dc7746df0ade9c0e361033628c3c760834c13",
+    "image_hash": "a5105c19f5c8454b6e8d08825298f8cd7a113bf39727d0cad42d90457daf13ab",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B43\",\n  \"beam_id\": \"B43\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center of beam region, below the 4-Y25 annotation\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Clear stirrup annotation visible in the image\",\n        \"Format indicates 4-leg stirrups at 100mm centers\",\n        \"Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: stirrup_in_stirrup_region\",\n        \"Not present in deterministic_reinforcement.stirrups list (empty)\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Upper portion of beam, with leader pointing to top reinforcement\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Visible annotation with leader line pointing to top of beam section\",\n        \"Listed in accepted_and_nearby_annotations as ACCEPTED\",\n        \"Matches deterministic top_main bar (bar_label: 4Y25)\",\n        \"Clear visual association with beam B43\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B43::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B43",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y12@\\X100C/C",
+        "normalized_text": "4L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B43",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear stirrup annotation visible in the image",
+          "Format indicates 4-leg stirrups at 100mm centers",
+          "Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: stirrup_in_stirrup_region",
+          "Not present in deterministic_reinforcement.stirrups list (empty)",
+          "location_text:Center of beam region, below the 4-Y25 annotation"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B43::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B43",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B43",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Visible annotation with leader line pointing to top of beam section",
+          "Listed in accepted_and_nearby_annotations as ACCEPTED",
+          "Matches deterministic top_main bar (bar_label: 4Y25)",
+          "Clear visual association with beam B43",
+          "location_text:Upper portion of beam, with leader pointing to top reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B43",
+      "returned_beam_id": "B43"
+    }
+  },
+  "usage": {
+    "input_tokens": 3185,
+    "output_tokens": 541
+  },
+  "error": null
+}

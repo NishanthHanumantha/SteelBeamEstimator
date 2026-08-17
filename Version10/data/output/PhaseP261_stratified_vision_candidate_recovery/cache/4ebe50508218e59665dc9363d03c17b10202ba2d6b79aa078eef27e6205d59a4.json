@@ -1,0 +1,142 @@
+{
+  "cache_key": "4ebe50508218e59665dc9363d03c17b10202ba2d6b79aa078eef27e6205d59a4",
+  "cached_at_utc": "2026-08-17T11:47:31.109949+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B174",
+    "beam_id": "B174",
+    "prompt_fingerprint": "f6a359fd2065efc58a3445d688d65b76cc9549d1f23222d3b411152acfd60f02",
+    "image_hash": "901448aa067937e586a19b4fef6d85db97c25ca5ef74b6b6fc2df1e2de9caa22",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B174\",\n  \"beam_id\": \"B174\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Upper annotation pointing to top of beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y16' with leader line pointing to top reinforcement layer of beam\",\n        \"Located at upper portion of beam cross-section\",\n        \"Clear association with beam B174\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Lower annotation pointing to bottom of beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y16' with leader line pointing to bottom reinforcement layer of beam\",\n        \"Located at lower portion of beam cross-section\",\n        \"Clear association with beam B174\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"2L-Y8@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation below beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y8@100C/C' indicates 2-legged stirrups\",\n        \"Y8 diameter bars at 100mm center-to-center spacing\",\n        \"Located below the beam section, typical position for stirrup notation\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B174::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B174",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B174",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y16' with leader line pointing to top reinforcement layer of beam",
+          "Located at upper portion of beam cross-section",
+          "Clear association with beam B174",
+          "location_text:Upper annotation pointing to top of beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\4ebe50508218e59665dc9363d03c17b10202ba2d6b79aa078eef27e6205d59a4.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B174::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B174",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B174",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y16' with leader line pointing to bottom reinforcement layer of beam",
+          "Located at lower portion of beam cross-section",
+          "Clear association with beam B174",
+          "location_text:Lower annotation pointing to bottom of beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\4ebe50508218e59665dc9363d03c17b10202ba2d6b79aa078eef27e6205d59a4.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B174::C03",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B174",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@100C/C",
+        "normalized_text": "2L-Y8@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B174",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y8@100C/C' indicates 2-legged stirrups",
+          "Y8 diameter bars at 100mm center-to-center spacing",
+          "Located below the beam section, typical position for stirrup notation",
+          "location_text:Annotation below beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\4ebe50508218e59665dc9363d03c17b10202ba2d6b79aa078eef27e6205d59a4.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fourth::B174",
+      "returned_beam_id": "B174"
+    }
+  },
+  "usage": {
+    "input_tokens": 1864,
+    "output_tokens": 655
+  },
+  "error": null
+}

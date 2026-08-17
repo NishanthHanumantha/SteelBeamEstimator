@@ -1,0 +1,107 @@
+{
+  "cache_key": "33b3852ce0ad144a80e99ffae1d3d8943b28b60834de3a89aeed854baee5e4fb",
+  "cached_at_utc": "2026-08-17T10:28:44.168849+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B181",
+    "beam_id": "B181",
+    "prompt_fingerprint": "6b3b0b5924480bd73c62354ef3429757291ddfc379ece0badda60b37eb3378c8",
+    "image_hash": "5f265405633ceb68fcf8cbd5802a7bea2ab399d8a124bcbdfd615d87a63a46e1",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B181\",\n  \"beam_id\": \"B181\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam on left side, with leader pointing to bottom bars\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Three identical '2-Y25' annotations visible with leaders pointing to bottom reinforcement bars\",\n        \"Annotations appear at bottom of beam cross-section\",\n        \"Leaders clearly point to dark blue bars at bottom of beam\",\n        \"Consistent with typical bottom main reinforcement notation\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center-right of beam region, annotation below beam outline\",\n      \"vision_confidence\": 0.9,\n      \"text_confidence\": 0.85,\n      \"evidence_notes\": [\n        \"Stirrup annotation visible below beam outline\",\n        \"Format indicates 2-leg stirrups with Y12 bars at 100mm centers\",\n        \"Green stirrup outlines visible in beam cross-section on right side\",\n        \"Annotation already listed in deterministic metadata as accepted\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B181::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B181",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B181",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Three identical '2-Y25' annotations visible with leaders pointing to bottom reinforcement bars",
+          "Annotations appear at bottom of beam cross-section",
+          "Leaders clearly point to dark blue bars at bottom of beam",
+          "Consistent with typical bottom main reinforcement notation",
+          "location_text:Bottom of beam on left side, with leader pointing to bottom bars"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B181::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B181",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@\\X100C/C",
+        "normalized_text": "2L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B181",
+        "region_bbox": null,
+        "vision_confidence": 0.9,
+        "text_confidence": 0.85,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Stirrup annotation visible below beam outline",
+          "Format indicates 2-leg stirrups with Y12 bars at 100mm centers",
+          "Green stirrup outlines visible in beam cross-section on right side",
+          "Annotation already listed in deterministic metadata as accepted",
+          "location_text:Center-right of beam region, annotation below beam outline"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B181",
+      "returned_beam_id": "B181"
+    }
+  },
+  "usage": {
+    "input_tokens": 2083,
+    "output_tokens": 528
+  },
+  "error": null
+}

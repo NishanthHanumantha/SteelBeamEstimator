@@ -1,0 +1,105 @@
+{
+  "cache_key": "5ff3271e9c4fb94e974c35c311224f1e5d751aa82954ad730ae2c9ab0a2ced08",
+  "cached_at_utc": "2026-08-17T10:28:23.690931+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B147",
+    "beam_id": "B147",
+    "prompt_fingerprint": "a7cb7d97f73a6037c0b85fe8ce479ba19078b07cd6709b93cacc395d5d6c120d",
+    "image_hash": "16066ebb2a883eab0e0774d86dc2bb9699a9d2e920e2f064a613e8ee64334572",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B147\",\n  \"beam_id\": \"B147\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right side of beam B147, annotation visible below the beam section\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Annotation clearly visible with leader pointing to beam B147\",\n        \"Text indicates 4-legged stirrups, Y12 diameter, at 100mm centers\",\n        \"Listed in deterministic metadata as ACCEPTED but not in deterministic_reinforcement.stirrups\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right side of beam B147, annotation with leader pointing to top reinforcement\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation clearly visible with leader pointing to top bars\",\n        \"Already listed in deterministic_reinforcement.top_main\",\n        \"Included for completeness as it is visually present\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B147::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B147",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y12@\\X100C/C",
+        "normalized_text": "4L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B147",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation clearly visible with leader pointing to beam B147",
+          "Text indicates 4-legged stirrups, Y12 diameter, at 100mm centers",
+          "Listed in deterministic metadata as ACCEPTED but not in deterministic_reinforcement.stirrups",
+          "location_text:Right side of beam B147, annotation visible below the beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B147::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B147",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B147",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation clearly visible with leader pointing to top bars",
+          "Already listed in deterministic_reinforcement.top_main",
+          "Included for completeness as it is visually present",
+          "location_text:Right side of beam B147, annotation with leader pointing to top reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B147",
+      "returned_beam_id": "B147"
+    }
+  },
+  "usage": {
+    "input_tokens": 1968,
+    "output_tokens": 509
+  },
+  "error": null
+}

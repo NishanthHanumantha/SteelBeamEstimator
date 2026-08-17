@@ -1,0 +1,106 @@
+{
+  "cache_key": "ba44b74e36b315668f3dd8ede3ac057a2df24b8120edd40e12b4d19f4dc1d389",
+  "cached_at_utc": "2026-08-17T10:29:57.822014+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B62",
+    "beam_id": "B62",
+    "prompt_fingerprint": "2479eb6557bdef27a46b43ece6446173169b4ffd8adef6388967ecf814bc2841",
+    "image_hash": "4f8fa456d11d0e9ec3d53a1dcce0b0016fdcbe049a370610da1f16cc52a280e1",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B62\",\n  \"beam_id\": \"B62\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Lower right portion of beam, annotation with leader pointing to stirrup representation\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Annotation clearly visible with leader line pointing to beam\",\n        \"Text format matches stirrup notation: legs-diameter@spacing\",\n        \"Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: stirrup_in_stirrup_region\",\n        \"Not present in deterministic_reinforcement.stirrups list\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Upper right portion, annotation with leader pointing to top reinforcement bars\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation visible with leader line pointing to top bars of beam\",\n        \"Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: leader_bar_chain_owned\",\n        \"Matches deterministic top_main entry R13-B62-TOP_MAIN-2939ee\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B62::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B62",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y12@\\X100C/C",
+        "normalized_text": "3L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B62",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation clearly visible with leader line pointing to beam",
+          "Text format matches stirrup notation: legs-diameter@spacing",
+          "Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: stirrup_in_stirrup_region",
+          "Not present in deterministic_reinforcement.stirrups list",
+          "location_text:Lower right portion of beam, annotation with leader pointing to stirrup representation"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B62::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B62",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y25",
+        "normalized_text": "3-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B62",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation visible with leader line pointing to top bars of beam",
+          "Listed in accepted_and_nearby_annotations as ACCEPTED with ownership_reason: leader_bar_chain_owned",
+          "Matches deterministic top_main entry R13-B62-TOP_MAIN-2939ee",
+          "location_text:Upper right portion, annotation with leader pointing to top reinforcement bars"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B62",
+      "returned_beam_id": "B62"
+    }
+  },
+  "usage": {
+    "input_tokens": 3431,
+    "output_tokens": 546
+  },
+  "error": null
+}

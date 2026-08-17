@@ -1,0 +1,69 @@
+{
+  "cache_key": "9c45498439e77f97a640becd6c977a5965ef2df05d8d9aeed59d63cdac8cc3a7",
+  "cached_at_utc": "2026-08-17T11:43:42.747938+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B145",
+    "beam_id": "B145",
+    "prompt_fingerprint": "6f02b0551301eb79c37e7cc6918a1d253766d68b43bd1c6eecd28c87a41b968d",
+    "image_hash": "0fe76e74941027921916cf0bb29ba5a93b61938449887cb6ab5ab52282c7e1dd",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B145\",\n  \"beam_id\": \"B145\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, annotation positioned above the beam with leader pointing to top reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Clear annotation '4-Y16' visible with leader line pointing to top of beam section\",\n        \"Annotation positioned directly above the beam outline\",\n        \"Leader line clearly associates this reinforcement with the top layer of the beam\",\n        \"Y16 indicates 16mm diameter bars, quantity of 4 bars specified\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B145::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B145",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B145",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear annotation '4-Y16' visible with leader line pointing to top of beam section",
+          "Annotation positioned directly above the beam outline",
+          "Leader line clearly associates this reinforcement with the top layer of the beam",
+          "Y16 indicates 16mm diameter bars, quantity of 4 bars specified",
+          "location_text:Top of beam, annotation positioned above the beam with leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9c45498439e77f97a640becd6c977a5965ef2df05d8d9aeed59d63cdac8cc3a7.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 1,
+      "normalized_count": 1,
+      "returned_region_id": "P261::Fourth::B145",
+      "returned_beam_id": "B145"
+    }
+  },
+  "usage": {
+    "input_tokens": 1498,
+    "output_tokens": 284
+  },
+  "error": null
+}

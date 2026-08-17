@@ -1,0 +1,95 @@
+{
+  "region_id": "P26::Fifth::B147",
+  "beam_id": "B147",
+  "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B147_render.png",
+  "region_bbox": [
+    31670932.83,
+    -21217481.85,
+    31674332.83,
+    -21213731.26
+  ],
+  "metadata": {
+    "region_id": "P26::Fifth::B147",
+    "beam_id": "B147",
+    "source_set": "Fifth Set Drawings",
+    "target_beam": "B147",
+    "gap_reasons": [
+      "OCR_CORRUPTION",
+      "STIRRUP_TEXT_NO_OBJECT",
+      "SPARSE_REINFORCEMENT",
+      "MISSING_BOTTOM_WHILE_ANNS",
+      "INCOMPLETE_PARSE"
+    ],
+    "accepted_and_nearby_annotations": [
+      {
+        "annotation_id": "ANN-be764e4a",
+        "text": "4L-Y12@\\X100C/C",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "stirrup_in_stirrup_region"
+      },
+      {
+        "annotation_id": "ANN-3b2a6f7d",
+        "text": "4-Y25",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "leader_bar_chain_owned"
+      }
+    ],
+    "deterministic_reinforcement": {
+      "present": true,
+      "top_main": [
+        {
+          "bar_id": "R13-B147-TOP_MAIN-189fd9",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "bar_label": "4Y25",
+          "spacing_mm": null
+        }
+      ],
+      "bottom_main": [],
+      "stirrups": [],
+      "side_face": [],
+      "spacers": [],
+      "total_classified_bars": 1
+    },
+    "beam_depth_mm": 600.0,
+    "region_bbox": [
+      31670932.83,
+      -21217481.85,
+      31674332.83,
+      -21213731.26
+    ],
+    "crop_config": {
+      "source": "QA30_FIFTH_SHARED_RENDER",
+      "reuse_p250_p252_infrastructure": true,
+      "base_margin_mm": 250.0,
+      "evidence_pad_mm": 120.0,
+      "render_max_dim_px": 1200,
+      "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+      "regenerate_dxf": false
+    },
+    "instruction": "Image 1 is a localized crop of the TARGET beam with surrounding context. Neighbouring beams, slabs, columns, and notes may appear. Do not assume nearby text belongs to the TARGET beam."
+  },
+  "images": [
+    {
+      "role": "beam_region_crop",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B147_render.png",
+      "sha256": "16066ebb2a883eab0e0774d86dc2bb9699a9d2e920e2f064a613e8ee64334572",
+      "size_bytes": 22405,
+      "media_type": "image/png"
+    }
+  ],
+  "image_hash": "16066ebb2a883eab0e0774d86dc2bb9699a9d2e920e2f064a613e8ee64334572",
+  "region_hash": "be49feeaee76c6a5a849ee0e315039737a3af1c4b641124ab6c1445d70ba89c5",
+  "drawing_hash": "d74989787ae546bd313e1695145293bd79c79a2e660b3630d20d27b876625c22",
+  "truth_leak_keys": [],
+  "crop_config": {
+    "source": "QA30_FIFTH_SHARED_RENDER",
+    "reuse_p250_p252_infrastructure": true,
+    "base_margin_mm": 250.0,
+    "evidence_pad_mm": 120.0,
+    "render_max_dim_px": 1200,
+    "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+    "regenerate_dxf": false
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "cache_key": "3e32d7ce5a32bb17e22c06e7896fe6ce3d9711ecace3cbf75fc388d641a68931",
+  "cached_at_utc": "2026-08-17T10:29:15.787200+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B63",
+    "beam_id": "B63",
+    "prompt_fingerprint": "4ad666ccc8740eeb37d2518f8ff043408457fbfeae3ea93ada009f404c4afa60",
+    "image_hash": "2fc09358a4a7d67684f23acbb0be02c3156af055e8d64bcfa90736f96d978705",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B63\",\n  \"beam_id\": \"B63\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3L-Y10@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10.0,\n      \"quantity\": null,\n      \"spacing_mm\": [100.0],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation visible below the beam cross-section in the upper portion of the image, with a leader pointing to the beam\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Text annotation clearly visible with leader line pointing to beam B63\",\n        \"Format indicates stirrup specification: 3 legs, Y10 diameter, 100mm spacing center-to-center\",\n        \"Listed in accepted_and_nearby_annotations but not in deterministic_reinforcement.stirrups\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20.0,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation visible within the beam cross-section in the upper portion, near center\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Text annotation clearly visible inside beam section\",\n        \"Format indicates 3 bars of Y20 diameter\",\n        \"Already listed in deterministic_reinforcement.top_main as 3Y20\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B63::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B63",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@\\X100C/C",
+        "normalized_text": "3L-Y10@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B63",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Text annotation clearly visible with leader line pointing to beam B63",
+          "Format indicates stirrup specification: 3 legs, Y10 diameter, 100mm spacing center-to-center",
+          "Listed in accepted_and_nearby_annotations but not in deterministic_reinforcement.stirrups",
+          "location_text:Annotation visible below the beam cross-section in the upper portion of the image, with a leader pointing to the beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B63::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B63",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B63",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Text annotation clearly visible inside beam section",
+          "Format indicates 3 bars of Y20 diameter",
+          "Already listed in deterministic_reinforcement.top_main as 3Y20",
+          "location_text:Annotation visible within the beam cross-section in the upper portion, near center"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B63",
+      "returned_beam_id": "B63"
+    }
+  },
+  "usage": {
+    "input_tokens": 2871,
+    "output_tokens": 535
+  },
+  "error": null
+}

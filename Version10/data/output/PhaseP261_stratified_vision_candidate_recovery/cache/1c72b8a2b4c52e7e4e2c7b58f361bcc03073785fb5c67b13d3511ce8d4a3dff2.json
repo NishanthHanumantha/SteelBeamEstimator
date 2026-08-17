@@ -1,0 +1,111 @@
+{
+  "cache_key": "1c72b8a2b4c52e7e4e2c7b58f361bcc03073785fb5c67b13d3511ce8d4a3dff2",
+  "cached_at_utc": "2026-08-17T11:50:14.760564+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B57",
+    "beam_id": "B57",
+    "prompt_fingerprint": "4154f156315735b261504b4538aab38dd14eb88b507d23f4e9be17f4099cf844",
+    "image_hash": "c427f0f95d6819ef77c06f29baea1ea96d6064809d8fc2ebb24c1d1b34c98859",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B57\",\n  \"beam_id\": \"B57\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top right end of beam, near support\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y20' is clearly visible and labeled as 'Owned annotations' (black dot)\",\n        \"Located at the top right portion of the beam B57\",\n        \"Indicates 3 bars of Y20 (20mm diameter) reinforcement\",\n        \"Positioned near the support region where top reinforcement is typically required\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y10@100/125/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 125, 100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Right end of beam, near support\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y10@100/125/100C/C' is clearly visible and labeled as 'Owned annotations'\",\n        \"Located at the right end of beam B57\",\n        \"Indicates 3-legged stirrups of Y10 (10mm diameter)\",\n        \"Variable spacing pattern: 100mm, 125mm, 100mm center-to-center\",\n        \"Typical stirrup notation for shear reinforcement\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B57::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B57",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B57",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y20' is clearly visible and labeled as 'Owned annotations' (black dot)",
+          "Located at the top right portion of the beam B57",
+          "Indicates 3 bars of Y20 (20mm diameter) reinforcement",
+          "Positioned near the support region where top reinforcement is typically required",
+          "location_text:Top right end of beam, near support"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\1c72b8a2b4c52e7e4e2c7b58f361bcc03073785fb5c67b13d3511ce8d4a3dff2.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B57::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B57",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100/125/100C/C",
+        "normalized_text": "3L-Y10@100/125/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          125.0,
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B57",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y10@100/125/100C/C' is clearly visible and labeled as 'Owned annotations'",
+          "Located at the right end of beam B57",
+          "Indicates 3-legged stirrups of Y10 (10mm diameter)",
+          "Variable spacing pattern: 100mm, 125mm, 100mm center-to-center",
+          "Typical stirrup notation for shear reinforcement",
+          "location_text:Right end of beam, near support"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\1c72b8a2b4c52e7e4e2c7b58f361bcc03073785fb5c67b13d3511ce8d4a3dff2.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B57",
+      "returned_beam_id": "B57"
+    }
+  },
+  "usage": {
+    "input_tokens": 1516,
+    "output_tokens": 548
+  },
+  "error": null
+}

@@ -1,0 +1,140 @@
+{
+  "cache_key": "0ef0ac21dd9f08e18a06428929abae1d4d4ae674f5081e60f2de46585067183b",
+  "cached_at_utc": "2026-08-17T11:41:13.990939+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B137",
+    "beam_id": "B137",
+    "prompt_fingerprint": "1db3c148a0ce706a0e48dd28a0a82cd6e402e3f3be32081852ab7b0ec6616861",
+    "image_hash": "9f5d1e47e949a2be4b0adbcbdb4feb29e6aad68de3ea6cb6cb308d55b6526eb7",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B137\",\n  \"beam_id\": \"B137\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam at left support region, annotation visible with leader pointing to top reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' with leader pointing to top bars at left end of beam B137\",\n        \"Green leader line connects annotation to reinforcement layer at top of beam section\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam at mid-span region, annotation visible with leader pointing to bottom reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' with leader pointing to bottom bars in center section of beam B137\",\n        \"Green leader line connects annotation to reinforcement layer at bottom of beam section\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"2L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrups along beam length, annotation at bottom right of beam detail\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y12@\\\\X100C/C' indicates 2-legged Y12 stirrups at 100mm centers\",\n        \"Annotation positioned near beam B137 detail with leader connection\",\n        \"Typical stirrup notation for beam reinforcement\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B137::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B137",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B137",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' with leader pointing to top bars at left end of beam B137",
+          "Green leader line connects annotation to reinforcement layer at top of beam section",
+          "location_text:Top of beam at left support region, annotation visible with leader pointing to top reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0ef0ac21dd9f08e18a06428929abae1d4d4ae674f5081e60f2de46585067183b.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B137::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B137",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B137",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' with leader pointing to bottom bars in center section of beam B137",
+          "Green leader line connects annotation to reinforcement layer at bottom of beam section",
+          "location_text:Bottom of beam at mid-span region, annotation visible with leader pointing to bottom reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0ef0ac21dd9f08e18a06428929abae1d4d4ae674f5081e60f2de46585067183b.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B137::C03",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B137",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@\\X100C/C",
+        "normalized_text": "2L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B137",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y12@\\X100C/C' indicates 2-legged Y12 stirrups at 100mm centers",
+          "Annotation positioned near beam B137 detail with leader connection",
+          "Typical stirrup notation for beam reinforcement",
+          "location_text:Stirrups along beam length, annotation at bottom right of beam detail"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0ef0ac21dd9f08e18a06428929abae1d4d4ae674f5081e60f2de46585067183b.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fifth::B137",
+      "returned_beam_id": "B137"
+    }
+  },
+  "usage": {
+    "input_tokens": 1694,
+    "output_tokens": 684
+  },
+  "error": null
+}

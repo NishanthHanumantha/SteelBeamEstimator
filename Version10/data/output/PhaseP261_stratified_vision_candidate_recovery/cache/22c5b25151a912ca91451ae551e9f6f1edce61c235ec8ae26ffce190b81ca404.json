@@ -1,0 +1,107 @@
+{
+  "cache_key": "22c5b25151a912ca91451ae551e9f6f1edce61c235ec8ae26ffce190b81ca404",
+  "cached_at_utc": "2026-08-17T11:43:35.987215+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B144",
+    "beam_id": "B144",
+    "prompt_fingerprint": "1d2a7eca3790631d66fba1d90c837d07dcdbc172837f057c322f8d7d14f4c699",
+    "image_hash": "9b059094a06062c7f6d56f2e2c71b4edd38d2e0816c3c4bf590aac025657ee4f",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B144\",\n  \"beam_id\": \"B144\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation positioned above the beam section, near the top of the beam cross-section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y25' is clearly visible and positioned above the beam section\",\n        \"The annotation is connected to the beam with a leader line pointing to the top region\",\n        \"Typical notation for top longitudinal reinforcement bars\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation positioned below the beam section, indicating stirrup/link reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y12@\\\\X100C/C' clearly indicates 3-legged stirrups\",\n        \"Y12 diameter bars at 100mm center-to-center spacing\",\n        \"Positioned below the beam with leader line connection\",\n        \"Standard notation for stirrup/shear reinforcement\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B144::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B144",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y25",
+        "normalized_text": "3-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B144",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y25' is clearly visible and positioned above the beam section",
+          "The annotation is connected to the beam with a leader line pointing to the top region",
+          "Typical notation for top longitudinal reinforcement bars",
+          "location_text:Annotation positioned above the beam section, near the top of the beam cross-section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\22c5b25151a912ca91451ae551e9f6f1edce61c235ec8ae26ffce190b81ca404.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B144::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B144",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y12@\\X100C/C",
+        "normalized_text": "3L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B144",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y12@\\X100C/C' clearly indicates 3-legged stirrups",
+          "Y12 diameter bars at 100mm center-to-center spacing",
+          "Positioned below the beam with leader line connection",
+          "Standard notation for stirrup/shear reinforcement",
+          "location_text:Annotation positioned below the beam section, indicating stirrup/link reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\22c5b25151a912ca91451ae551e9f6f1edce61c235ec8ae26ffce190b81ca404.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B144",
+      "returned_beam_id": "B144"
+    }
+  },
+  "usage": {
+    "input_tokens": 2202,
+    "output_tokens": 501
+  },
+  "error": null
+}

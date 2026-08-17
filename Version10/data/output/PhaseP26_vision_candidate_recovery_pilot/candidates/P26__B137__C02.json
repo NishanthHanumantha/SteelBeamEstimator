@@ -1,0 +1,50 @@
+{
+  "candidate_id": "P26::B137::C02",
+  "source_set": "Fifth Set Drawings",
+  "source_drawing": "Fifth Set Drawings",
+  "beam_id": "B137",
+  "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+  "annotation_text": "2-Y25",
+  "normalized_text": "2-Y25",
+  "role": "BOTTOM_BAR",
+  "diameter_mm": 25,
+  "quantity": 2.0,
+  "spacing_mm": [],
+  "legs": null,
+  "source_x": null,
+  "source_y": null,
+  "region_id": "P26::Fifth::B137",
+  "region_bbox": [
+    31672467.63,
+    -21209311.85,
+    31675748.59,
+    -21207854.78
+  ],
+  "vision_confidence": 0.9,
+  "text_confidence": 0.95,
+  "evidence_type": "BEAM_REGION_CROP",
+  "evidence_notes": [
+    "Annotation visible with leader pointing to bottom reinforcement layer",
+    "This appears to be bottom bars based on leader position",
+    "Listed in accepted annotations but deterministic metadata shows 2Y25 as TOP_MAIN only",
+    "location_text:Center-right section, annotation with leader pointing to bottom bars of middle beam section"
+  ],
+  "deterministic_match_status": "CONFLICTING",
+  "gt_match_status": null,
+  "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+  "vision_model": "claude-sonnet-4-5",
+  "model_version": "10.11.0",
+  "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+  "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\7e8a26a191ed7521691406d555573e2df81ec828860cf260b42aa19e0f11fc41.json",
+  "beam_association": "TARGET_BEAM",
+  "decision": "SHADOW_CANDIDATE",
+  "deterministic_match_reason": "SAME_ROLE_DIFFERENT_DIAMETER",
+  "deterministic_matched_bar_id": "R13-B137-BOTTOM_MAIN-d92e53",
+  "gap_reasons": [
+    "OCR_CORRUPTION",
+    "STIRRUP_TEXT_NO_OBJECT",
+    "SPARSE_REINFORCEMENT",
+    "UNASSOCIATED_REINF_TEXT",
+    "INCOMPLETE_PARSE"
+  ]
+}

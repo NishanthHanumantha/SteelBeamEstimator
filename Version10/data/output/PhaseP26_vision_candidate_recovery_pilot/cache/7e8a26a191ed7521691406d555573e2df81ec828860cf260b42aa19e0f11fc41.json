@@ -1,0 +1,105 @@
+{
+  "cache_key": "7e8a26a191ed7521691406d555573e2df81ec828860cf260b42aa19e0f11fc41",
+  "cached_at_utc": "2026-08-17T10:28:10.180463+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B137",
+    "beam_id": "B137",
+    "prompt_fingerprint": "bf6d6a0b77faf23deaf59b273aa0d00e8ab945d8251af3f9f211cd2dfeaff3c1",
+    "image_hash": "9f5d1e47e949a2be4b0adbcbdb4feb29e6aad68de3ea6cb6cb308d55b6526eb7",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B137\",\n  \"beam_id\": \"B137\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom right of image, annotation with leader pointing to beam section\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Clear stirrup annotation visible with leader line\",\n        \"Text indicates 2-leg Y12 stirrups at 100mm centers\",\n        \"Listed in accepted_and_nearby_annotations but not in deterministic_reinforcement.stirrups\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center-right section, annotation with leader pointing to bottom bars of middle beam section\",\n      \"vision_confidence\": 0.9,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation visible with leader pointing to bottom reinforcement layer\",\n        \"This appears to be bottom bars based on leader position\",\n        \"Listed in accepted annotations but deterministic metadata shows 2Y25 as TOP_MAIN only\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B137::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B137",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@\\X100C/C",
+        "normalized_text": "2L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B137",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear stirrup annotation visible with leader line",
+          "Text indicates 2-leg Y12 stirrups at 100mm centers",
+          "Listed in accepted_and_nearby_annotations but not in deterministic_reinforcement.stirrups",
+          "location_text:Bottom right of image, annotation with leader pointing to beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B137::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B137",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B137",
+        "region_bbox": null,
+        "vision_confidence": 0.9,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation visible with leader pointing to bottom reinforcement layer",
+          "This appears to be bottom bars based on leader position",
+          "Listed in accepted annotations but deterministic metadata shows 2Y25 as TOP_MAIN only",
+          "location_text:Center-right section, annotation with leader pointing to bottom bars of middle beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B137",
+      "returned_beam_id": "B137"
+    }
+  },
+  "usage": {
+    "input_tokens": 2351,
+    "output_tokens": 512
+  },
+  "error": null
+}

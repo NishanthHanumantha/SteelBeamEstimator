@@ -1,0 +1,69 @@
+{
+  "cache_key": "b97a4eeb122268650d4ca3dabafcb62858a2265e4687415db5b082dcf1f011c2",
+  "cached_at_utc": "2026-08-17T11:43:49.016691+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B147",
+    "beam_id": "B147",
+    "prompt_fingerprint": "90315786ee0206cdf2ee16055637fd08e5539d9ddc2a6b17111e9535d554c4a7",
+    "image_hash": "2e63eb4e20765a9ac4418f664a6376c130b83de68012be821d8cdc18d2260cfe",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B147\",\n  \"beam_id\": \"B147\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom reinforcement layer, annotation points to lower bars in the beam section\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y16' is visible with a leader pointing to the bottom layer of reinforcement bars\",\n        \"Four dark blue bars are shown in the bottom portion of the beam cross-section\",\n        \"The annotation is clearly associated with the beam labeled B147\",\n        \"Y16 indicates 16mm diameter bars, quantity is 4\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B147::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B147",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B147",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y16' is visible with a leader pointing to the bottom layer of reinforcement bars",
+          "Four dark blue bars are shown in the bottom portion of the beam cross-section",
+          "The annotation is clearly associated with the beam labeled B147",
+          "Y16 indicates 16mm diameter bars, quantity is 4",
+          "location_text:Bottom reinforcement layer, annotation points to lower bars in the beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\b97a4eeb122268650d4ca3dabafcb62858a2265e4687415db5b082dcf1f011c2.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 1,
+      "normalized_count": 1,
+      "returned_region_id": "P261::Fourth::B147",
+      "returned_beam_id": "B147"
+    }
+  },
+  "usage": {
+    "input_tokens": 1799,
+    "output_tokens": 284
+  },
+  "error": null
+}

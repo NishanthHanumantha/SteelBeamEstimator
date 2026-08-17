@@ -1,0 +1,105 @@
+{
+  "cache_key": "140dec4d70b93a56a7b75bd5ca5f4599eaa56c270fae98e6693d2ca08fe0c5dd",
+  "cached_at_utc": "2026-08-17T10:27:40.226640+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B130",
+    "beam_id": "B130",
+    "prompt_fingerprint": "8787305fd99e5e153405933210110cde438e5cebbdbd66f37e393ff63fc5c1c7",
+    "image_hash": "5240a8dcdf48ddfa9015fb5215142b0d8ae1bee9d0f68e3eb3f30a4f75496522",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B130\",\n  \"beam_id\": \"B130\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4L-Y10@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Below the beam cross-section, centered in the view\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Text annotation clearly visible below beam section\",\n        \"Format indicates stirrup specification with legs (4L), diameter (Y10), and spacing (@100C/C)\",\n        \"Listed in deterministic metadata as ACCEPTED but not in deterministic_reinforcement.stirrups\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Near top of beam section with leader line pointing to top reinforcement\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation with green leader line pointing to top of beam section\",\n        \"Already listed in deterministic_reinforcement.top_main\",\n        \"Visually confirmed as top reinforcement\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B130::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B130",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y10@\\X100C/C",
+        "normalized_text": "4L-Y10@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B130",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Text annotation clearly visible below beam section",
+          "Format indicates stirrup specification with legs (4L), diameter (Y10), and spacing (@100C/C)",
+          "Listed in deterministic metadata as ACCEPTED but not in deterministic_reinforcement.stirrups",
+          "location_text:Below the beam cross-section, centered in the view"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B130::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B130",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y16",
+        "normalized_text": "4-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B130",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation with green leader line pointing to top of beam section",
+          "Already listed in deterministic_reinforcement.top_main",
+          "Visually confirmed as top reinforcement",
+          "location_text:Near top of beam section with leader line pointing to top reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B130",
+      "returned_beam_id": "B130"
+    }
+  },
+  "usage": {
+    "input_tokens": 2686,
+    "output_tokens": 502
+  },
+  "error": null
+}

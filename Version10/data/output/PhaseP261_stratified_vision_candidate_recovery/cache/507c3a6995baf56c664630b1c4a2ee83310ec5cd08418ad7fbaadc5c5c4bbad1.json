@@ -1,0 +1,142 @@
+{
+  "cache_key": "507c3a6995baf56c664630b1c4a2ee83310ec5cd08418ad7fbaadc5c5c4bbad1",
+  "cached_at_utc": "2026-08-17T11:48:39.123529+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B138",
+    "beam_id": "B138",
+    "prompt_fingerprint": "b3c5c7d61febdace35a3f3233d0de11613bc7cbf51eb1e15f3873fdfd457e88d",
+    "image_hash": "cc5a58fd6838236d47b3cec48373eed2edc16cb9e283b85ba6b9fbe68e59eaab",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B138\",\n  \"beam_id\": \"B138\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom reinforcement, left side of beam span\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y25' is clearly visible and directly associated with the bottom reinforcement layer of beam B138\",\n        \"Leader line points to bottom bars shown in dark blue\",\n        \"Located on left portion of beam span\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom reinforcement, right side of beam span\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y20' is clearly visible and directly associated with the bottom reinforcement layer of beam B138\",\n        \"Leader line points to bottom bars shown in dark blue\",\n        \"Located on right portion of beam span\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"2L-Y12@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrups along beam span, annotation below beam\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y12@100C/C' indicates 2-legged Y12 stirrups at 100mm centers\",\n        \"Annotation positioned below the beam section\",\n        \"Leader line connects annotation to beam B138\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B138::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B138",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y25",
+        "normalized_text": "2-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B138",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y25' is clearly visible and directly associated with the bottom reinforcement layer of beam B138",
+          "Leader line points to bottom bars shown in dark blue",
+          "Located on left portion of beam span",
+          "location_text:Bottom reinforcement, left side of beam span"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\507c3a6995baf56c664630b1c4a2ee83310ec5cd08418ad7fbaadc5c5c4bbad1.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B138::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B138",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y20",
+        "normalized_text": "2-Y20",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 20,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B138",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y20' is clearly visible and directly associated with the bottom reinforcement layer of beam B138",
+          "Leader line points to bottom bars shown in dark blue",
+          "Located on right portion of beam span",
+          "location_text:Bottom reinforcement, right side of beam span"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\507c3a6995baf56c664630b1c4a2ee83310ec5cd08418ad7fbaadc5c5c4bbad1.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B138::C03",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B138",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@100C/C",
+        "normalized_text": "2L-Y12@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B138",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y12@100C/C' indicates 2-legged Y12 stirrups at 100mm centers",
+          "Annotation positioned below the beam section",
+          "Leader line connects annotation to beam B138",
+          "location_text:Stirrups along beam span, annotation below beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\507c3a6995baf56c664630b1c4a2ee83310ec5cd08418ad7fbaadc5c5c4bbad1.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Sixth::B138",
+      "returned_beam_id": "B138"
+    }
+  },
+  "usage": {
+    "input_tokens": 2422,
+    "output_tokens": 675
+  },
+  "error": null
+}

@@ -1,0 +1,107 @@
+{
+  "cache_key": "6394c85245b26339f8872a96695677b774fe5e90ea197cb96d47c006b966aa26",
+  "cached_at_utc": "2026-08-17T11:46:40.949108+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B101",
+    "beam_id": "B101",
+    "prompt_fingerprint": "fffcbec0fbb43762642ec863593cde1d43365c647331ba58ed5551a6c4b50cee",
+    "image_hash": "55ef44137104ac156d796032a2ea8fdd8c20448a92c3ae439ce779a0a58caf6e",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B101\",\n  \"beam_id\": \"B101\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam B101, near mid-span\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y20' is positioned directly above the beam outline\",\n        \"Clear association with beam B101 based on proximity and placement\",\n        \"Indicates 3 bars of Y20 diameter\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y10@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Along beam B101 span, indicated by dashed line pattern\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y10@100C/C' visible above beam with dashed line indicator\",\n        \"3L indicates 3-legged stirrups\",\n        \"Y10 diameter bars at 100mm center-to-center spacing\",\n        \"Dashed line pattern suggests stirrup distribution zone\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B101::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B101",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B101",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y20' is positioned directly above the beam outline",
+          "Clear association with beam B101 based on proximity and placement",
+          "Indicates 3 bars of Y20 diameter",
+          "location_text:Top of beam B101, near mid-span"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\6394c85245b26339f8872a96695677b774fe5e90ea197cb96d47c006b966aa26.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B101::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B101",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100C/C",
+        "normalized_text": "3L-Y10@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B101",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y10@100C/C' visible above beam with dashed line indicator",
+          "3L indicates 3-legged stirrups",
+          "Y10 diameter bars at 100mm center-to-center spacing",
+          "Dashed line pattern suggests stirrup distribution zone",
+          "location_text:Along beam B101 span, indicated by dashed line pattern"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\6394c85245b26339f8872a96695677b774fe5e90ea197cb96d47c006b966aa26.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B101",
+      "returned_beam_id": "B101"
+    }
+  },
+  "usage": {
+    "input_tokens": 1512,
+    "output_tokens": 483
+  },
+  "error": null
+}

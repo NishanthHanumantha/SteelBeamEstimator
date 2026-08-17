@@ -1,0 +1,109 @@
+{
+  "cache_key": "74dc0fe21d0f18522135b7d97308c27b9d0ebe343ef315e9a484694de3ac80e7",
+  "cached_at_utc": "2026-08-17T11:50:24.797691+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B64",
+    "beam_id": "B64",
+    "prompt_fingerprint": "5dd816ea8b1c54a76904b692e79f68afe3fc8cdf7072184db51e1794c5c124e8",
+    "image_hash": "eab59ab1477c488039264aebe779308897aad453d803b7949a6cfc7c404f4cc2",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B64\",\n  \"beam_id\": \"B64\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom reinforcement in beam cross-section, indicated by green leader line pointing to lower portion of beam\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2-Y16' with leader line pointing to bottom of beam section\",\n        \"Green leader line clearly associates this reinforcement with the beam shown in cross-section\",\n        \"Typical bottom bar notation format: quantity-bar size\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y10@100/125/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 125, 100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrup/link reinforcement for beam, annotation located below beam elevation view\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y10@100/125/100C/C' indicates 3-legged stirrups\",\n        \"Y10 diameter bars at varying spacing: 100mm/125mm/100mm center-to-center\",\n        \"Standard stirrup notation format with 'L' indicating legs\",\n        \"Positioned below beam elevation, typical location for stirrup callouts\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B64::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B64",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y16",
+        "normalized_text": "2-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B64",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y16' with leader line pointing to bottom of beam section",
+          "Green leader line clearly associates this reinforcement with the beam shown in cross-section",
+          "Typical bottom bar notation format: quantity-bar size",
+          "location_text:Bottom reinforcement in beam cross-section, indicated by green leader line pointing to lower portion of beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\74dc0fe21d0f18522135b7d97308c27b9d0ebe343ef315e9a484694de3ac80e7.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B64::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B64",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100/125/100C/C",
+        "normalized_text": "3L-Y10@100/125/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          125.0,
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B64",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y10@100/125/100C/C' indicates 3-legged stirrups",
+          "Y10 diameter bars at varying spacing: 100mm/125mm/100mm center-to-center",
+          "Standard stirrup notation format with 'L' indicating legs",
+          "Positioned below beam elevation, typical location for stirrup callouts",
+          "location_text:Stirrup/link reinforcement for beam, annotation located below beam elevation view"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\74dc0fe21d0f18522135b7d97308c27b9d0ebe343ef315e9a484694de3ac80e7.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B64",
+      "returned_beam_id": "B64"
+    }
+  },
+  "usage": {
+    "input_tokens": 2419,
+    "output_tokens": 530
+  },
+  "error": null
+}

@@ -1,0 +1,9508 @@
+{
+  "sources": {
+    "qa2b1": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\output\\PhaseQA2B1_production_regeneration\\GroundTruth_Benchmark_Report.xlsx",
+    "qa30": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Generalization_Benchmark_Report.xlsx"
+  },
+  "sheets": {
+    "qa2b1": [
+      "Executive Summary",
+      "Drawing Set Summary",
+      "Pipeline Runtime",
+      "Beam Detection",
+      "Beam Matching",
+      "Bar Detection",
+      "Bar Matching",
+      "Missing Bars",
+      "Diameter Comparison",
+      "Diameter Steel Quantity",
+      "Steel Quantity Comparison",
+      "Error Classification",
+      "ACCEPTABLE_EXTRA Spacers",
+      "Role Status Matrix",
+      "Overall Benchmark",
+      "Compiled Statistics",
+      "Drawing Set Ranking"
+    ],
+    "qa30": [
+      "Generalization",
+      "Executive Summary",
+      "Drawing Set Summary",
+      "Pipeline Runtime",
+      "Beam Detection",
+      "Beam Matching",
+      "Bar Detection",
+      "Bar Matching",
+      "Missing Bars",
+      "Diameter Comparison",
+      "Diameter Steel Quantity",
+      "Steel Quantity Comparison",
+      "Error Classification",
+      "ACCEPTABLE_EXTRA Spacers",
+      "Role Status Matrix",
+      "Overall Benchmark",
+      "Compiled Statistics",
+      "Drawing Set Ranking"
+    ]
+  },
+  "qa2b1": {
+    "Drawing Set Summary": [
+      [
+        "Drawing Set",
+        "Pipe OK",
+        "Runtime s",
+        "Beam Det %",
+        "Beam Match %",
+        "Bar Det %",
+        "Bar Acc %",
+        "Steel Acc %",
+        "Errors"
+      ],
+      [
+        "First Set Drawings",
+        true,
+        447.3,
+        100,
+        100,
+        81.18,
+        34.78,
+        99.83,
+        84
+      ],
+      [
+        "Second Set Drawings",
+        true,
+        1147.01,
+        95.52,
+        95.52,
+        71.76,
+        35.74,
+        85.5,
+        359
+      ],
+      [
+        "Third Set Drawings",
+        true,
+        1415.52,
+        90.48,
+        90.48,
+        63.52,
+        17.91,
+        87.89,
+        506
+      ]
+    ],
+    "Beam Detection": [
+      [
+        "Drawing Set",
+        "Est Beams",
+        "Detected",
+        "Undetected",
+        "Extra",
+        "Det %"
+      ],
+      [
+        "First Set Drawings",
+        18,
+        18,
+        0,
+        0,
+        100
+      ],
+      [
+        "Second Set Drawings",
+        67,
+        64,
+        3,
+        0,
+        95.52
+      ],
+      [
+        "Third Set Drawings",
+        63,
+        57,
+        6,
+        4,
+        90.48
+      ]
+    ],
+    "Bar Detection": [
+      [
+        "Drawing Set",
+        "Est Bars",
+        "Detected",
+        "Det %"
+      ],
+      [
+        "First Set Drawings",
+        85,
+        69,
+        81.18
+      ],
+      [
+        "Second Set Drawings",
+        386,
+        277,
+        71.76
+      ],
+      [
+        "Third Set Drawings",
+        466,
+        296,
+        63.52
+      ]
+    ],
+    "Bar Matching": [
+      [
+        "Drawing Set",
+        "Beam",
+        "Role",
+        "Dia",
+        "Est Qty",
+        "Model Qty",
+        "Status",
+        "Diff Qty"
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "STIRRUP",
+        8,
+        57,
+        55,
+        "WRONG_DIAMETER",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "SIDE_FACE_REINFORCEMENT",
+        8,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "TOP_EXTRA",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "SPACER_BAR",
+        25,
+        0,
+        5,
+        "ACCEPTABLE_EXTRA",
+        5
+      ],
+      [
+        "First Set Drawings",
+        "B1",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "BOTTOM_EXTRA",
+        12,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "STIRRUP",
+        8,
+        29,
+        45,
+        "WRONG_QUANTITY",
+        16
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "STIRRUP",
+        8,
+        7,
+        11,
+        "WRONG_QUANTITY",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        5,
+        3,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "STIRRUP",
+        8,
+        0,
+        11,
+        "EXTRA",
+        11
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B3",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B3",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B3",
+        "STIRRUP",
+        8,
+        25,
+        20,
+        "WRONG_QUANTITY",
+        -5
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "TOP_EXTRA",
+        12,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "STIRRUP",
+        8,
+        47,
+        45,
+        "MATCH",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "STIRRUP",
+        8,
+        11,
+        11,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "SPACER_BAR",
+        25,
+        4,
+        3,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "SPACER_BAR",
+        25,
+        8,
+        10,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "STIRRUP",
+        8,
+        0,
+        11,
+        "EXTRA",
+        11
+      ],
+      [
+        "First Set Drawings",
+        "B4",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "TOP_EXTRA",
+        12,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "STIRRUP",
+        8,
+        45,
+        45,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "STIRRUP",
+        8,
+        11,
+        11,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "SPACER_BAR",
+        25,
+        4,
+        5,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "SPACER_BAR",
+        25,
+        8,
+        0,
+        "MISSING",
+        -8
+      ],
+      [
+        "First Set Drawings",
+        "B5",
+        "STIRRUP",
+        8,
+        0,
+        11,
+        "EXTRA",
+        11
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "STIRRUP",
+        8,
+        27,
+        26,
+        "MATCH",
+        -1
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "STIRRUP",
+        8,
+        0,
+        38,
+        "EXTRA",
+        38
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        10,
+        13,
+        18,
+        "WRONG_QUANTITY",
+        5
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        10,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        10,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        0,
+        18,
+        "EXTRA",
+        18
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B7",
+        "SPACER_BAR",
+        25,
+        0,
+        4,
+        "ACCEPTABLE_EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "STIRRUP",
+        8,
+        23,
+        13,
+        "WRONG_QUANTITY",
+        -10
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "SIDE_FACE_REINFORCEMENT",
+        8,
+        4,
+        3,
+        "PARTIAL_MATCH",
+        -1
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "STIRRUP",
+        8,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B8",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "TOP_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "STIRRUP",
+        8,
+        31,
+        28,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "SIDE_FACE_REINFORCEMENT",
+        8,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "TOP_EXTRA",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "STIRRUP",
+        8,
+        40,
+        36,
+        "WRONG_QUANTITY",
+        -4
+      ],
+      [
+        "First Set Drawings",
+        "B10",
+        "SIDE_FACE_REINFORCEMENT",
+        8,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B11",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B11",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B11",
+        "STIRRUP",
+        8,
+        21,
+        10,
+        "WRONG_QUANTITY",
+        -11
+      ],
+      [
+        "First Set Drawings",
+        "B12",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B12",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B12",
+        "STIRRUP",
+        8,
+        45,
+        18,
+        "WRONG_QUANTITY",
+        -27
+      ],
+      [
+        "First Set Drawings",
+        "B12",
+        "STIRRUP",
+        8,
+        11,
+        4,
+        "WRONG_QUANTITY",
+        -7
+      ],
+      [
+        "First Set Drawings",
+        "B12",
+        "STIRRUP",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "STIRRUP",
+        8,
+        41,
+        18,
+        "WRONG_QUANTITY",
+        -23
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "STIRRUP",
+        8,
+        10,
+        4,
+        "WRONG_QUANTITY",
+        -6
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "STIRRUP",
+        8,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "First Set Drawings",
+        "B13",
+        "SPACER_BAR",
+        10,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "TOP_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "STIRRUP",
+        8,
+        20,
+        18,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B14",
+        "SIDE_FACE_REINFORCEMENT",
+        8,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "First Set Drawings",
+        "B15",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B15",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B15",
+        "STIRRUP",
+        8,
+        35,
+        32,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "First Set Drawings",
+        "B16",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B16",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B16",
+        "STIRRUP",
+        8,
+        24,
+        23,
+        "MATCH",
+        -1
+      ],
+      [
+        "First Set Drawings",
+        "B17",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B17",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B17",
+        "STIRRUP",
+        8,
+        8,
+        10,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "First Set Drawings",
+        "B18",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "First Set Drawings",
+        "B18",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "First Set Drawings",
+        "B18",
+        "STIRRUP",
+        8,
+        39,
+        19,
+        "WRONG_QUANTITY",
+        -20
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "TOP_EXTRA",
+        16,
+        4,
+        2,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "STIRRUP",
+        8,
+        22,
+        21,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "SPACER_BAR",
+        25,
+        4,
+        7,
+        "WRONG_QUANTITY",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B1",
+        "SPACER_BAR",
+        12,
+        0,
+        1,
+        "ACCEPTABLE_EXTRA",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "TOP_MAIN",
+        16,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "TOP_MAIN",
+        12,
+        1,
+        1,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "BOTTOM_MAIN",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "STIRRUP",
+        8,
+        26,
+        25,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "TOP_EXTRA",
+        12,
+        0,
+        1,
+        "EXTRA",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        12,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B2",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "TOP_MAIN",
+        16,
+        2,
+        3,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "TOP_MAIN",
+        12,
+        1,
+        1,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "STIRRUP",
+        10,
+        35,
+        33,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "STIRRUP",
+        10,
+        9,
+        9,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B3",
+        "STIRRUP",
+        10,
+        0,
+        9,
+        "EXTRA",
+        9
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        20,
+        6,
+        3,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        16,
+        4,
+        2,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "BOTTOM_MAIN",
+        25,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        5,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "STIRRUP",
+        12,
+        27,
+        42,
+        "WRONG_QUANTITY",
+        15
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "STIRRUP_HOOK",
+        12,
+        27,
+        17,
+        "WRONG_QUANTITY",
+        -10
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "STIRRUP",
+        12,
+        11,
+        17,
+        "WRONG_QUANTITY",
+        6
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "STIRRUP_HOOK",
+        12,
+        11,
+        79,
+        "WRONG_DIAMETER",
+        68
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        6,
+        6,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        20,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "TOP_EXTRA",
+        20,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        12,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        0,
+        5,
+        "ACCEPTABLE_EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B6",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "TOP_MAIN",
+        16,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "TOP_MAIN",
+        12,
+        1,
+        2,
+        "PARTIAL_MATCH",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "BOTTOM_MAIN",
+        16,
+        3,
+        4,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        27,
+        26,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        8,
+        8,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B7",
+        "STIRRUP",
+        8,
+        0,
+        8,
+        "EXTRA",
+        8
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "TOP_EXTRA",
+        12,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "BOTTOM_MAIN",
+        16,
+        3,
+        4,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "STIRRUP",
+        10,
+        18,
+        18,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "SPACER_BAR",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B8",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_MAIN",
+        12,
+        1,
+        3,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "BOTTOM_MAIN",
+        16,
+        3,
+        4,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "STIRRUP",
+        8,
+        27,
+        26,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "STIRRUP",
+        8,
+        8,
+        8,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_EXTRA",
+        12,
+        0,
+        1,
+        "EXTRA",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "STIRRUP",
+        8,
+        0,
+        8,
+        "EXTRA",
+        8
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "UNKNOWN",
+        1,
+        0,
+        150,
+        "EXTRA",
+        150
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B9",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "BOTTOM_MAIN",
+        16,
+        5,
+        2,
+        "WRONG_DIAMETER",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "STIRRUP",
+        10,
+        21,
+        18,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B10",
+        "SPACER_BAR",
+        25,
+        0,
+        4,
+        "ACCEPTABLE_EXTRA",
+        4
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "TOP_EXTRA",
+        20,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "TOP_EXTRA",
+        16,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "BOTTOM_MAIN",
+        25,
+        5,
+        2,
+        "WRONG_DIAMETER",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        5,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "STIRRUP",
+        12,
+        55,
+        53,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "STIRRUP_HOOK",
+        12,
+        55,
+        20,
+        "WRONG_QUANTITY",
+        -35
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "STIRRUP",
+        12,
+        21,
+        20,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "STIRRUP_HOOK",
+        12,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "SPACER_BAR",
+        25,
+        5,
+        3,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "SPACER_BAR",
+        25,
+        4,
+        6,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B11",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "TOP_EXTRA",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        2,
+        "WRONG_DIAMETER",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "BOTTOM_EXTRA",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "STIRRUP",
+        12,
+        55,
+        53,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "STIRRUP_HOOK",
+        12,
+        55,
+        17,
+        "WRONG_QUANTITY",
+        -38
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "STIRRUP",
+        12,
+        18,
+        17,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "STIRRUP_HOOK",
+        12,
+        18,
+        0,
+        "MISSING",
+        -18
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "SPACER_BAR",
+        25,
+        9,
+        0,
+        "MISSING",
+        -9
+      ],
+      [
+        "Second Set Drawings",
+        "B12",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "TOP_EXTRA",
+        16,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "BOTTOM_MAIN",
+        12,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "STIRRUP",
+        10,
+        27,
+        26,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "STIRRUP_HOOK",
+        10,
+        27,
+        7,
+        "WRONG_QUANTITY",
+        -20
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "STIRRUP",
+        10,
+        8,
+        7,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "STIRRUP_HOOK",
+        10,
+        8,
+        0,
+        "MISSING",
+        -8
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "SPACER_BAR",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "BOTTOM_EXTRA",
+        25,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "BOTTOM_EXTRA",
+        25,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B13",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B14",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B14",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B14",
+        "STIRRUP",
+        8,
+        12,
+        45,
+        "WRONG_QUANTITY",
+        33
+      ],
+      [
+        "Second Set Drawings",
+        "B14A",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B14A",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B14A",
+        "STIRRUP",
+        8,
+        20,
+        19,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B14A",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_MAIN",
+        16,
+        2,
+        3,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_MAIN",
+        12,
+        1,
+        1,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        12,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        5,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "STIRRUP",
+        12,
+        61,
+        60,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        12,
+        0,
+        1,
+        "EXTRA",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        5,
+        "ACCEPTABLE_EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        5,
+        "ACCEPTABLE_EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B16",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B16",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B16",
+        "STIRRUP",
+        8,
+        7,
+        9,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "TOP_MAIN",
+        12,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        5,
+        "WRONG_DIAMETER",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "STIRRUP",
+        8,
+        13,
+        14,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B17",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B18",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B18",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B18",
+        "STIRRUP",
+        8,
+        20,
+        19,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B18",
+        "STIRRUP_HOOK",
+        8,
+        20,
+        0,
+        "MISSING",
+        -20
+      ],
+      [
+        "Second Set Drawings",
+        "B18",
+        "SPACER_BAR",
+        25,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "STIRRUP",
+        8,
+        22,
+        22,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "STIRRUP_HOOK",
+        8,
+        22,
+        0,
+        "MISSING",
+        -22
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "SPACER_BAR",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "SPACER_BAR",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B19",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_MAIN",
+        25,
+        4,
+        3,
+        "PARTIAL_MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_MAIN",
+        25,
+        2,
+        3,
+        "PARTIAL_MATCH",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_MAIN",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_EXTRA",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "TOP_EXTRA",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "STIRRUP",
+        12,
+        55,
+        53,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "STIRRUP",
+        12,
+        18,
+        17,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B20",
+        "STIRRUP",
+        12,
+        0,
+        17,
+        "EXTRA",
+        17
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "TOP_EXTRA",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        2,
+        "WRONG_DIAMETER",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "STIRRUP",
+        12,
+        61,
+        59,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "STIRRUP_HOOK",
+        12,
+        61,
+        0,
+        "MISSING",
+        -61
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "SPACER_BAR",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B21",
+        "SPACER_BAR",
+        25,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        2,
+        "WRONG_DIAMETER",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "STIRRUP",
+        12,
+        90,
+        80,
+        "WRONG_QUANTITY",
+        -10
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "STIRRUP_HOOK",
+        12,
+        90,
+        2,
+        "PARTIAL_MATCH",
+        -88
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "SPACER_BAR",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "SPACER_BAR",
+        25,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "TOP_EXTRA",
+        16,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B22",
+        "TOP_EXTRA",
+        16,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "TOP_EXTRA",
+        20,
+        5,
+        2,
+        "PARTIAL_MATCH",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "BOTTOM_MAIN",
+        16,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "STIRRUP",
+        10,
+        55,
+        53,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "STIRRUP_HOOK",
+        10,
+        55,
+        17,
+        "WRONG_QUANTITY",
+        -38
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "STIRRUP",
+        10,
+        18,
+        17,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "STIRRUP_HOOK",
+        10,
+        18,
+        0,
+        "MISSING",
+        -18
+      ],
+      [
+        "Second Set Drawings",
+        "B23",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "TOP_MAIN",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "TOP_EXTRA",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "STIRRUP",
+        10,
+        47,
+        45,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "STIRRUP",
+        10,
+        11,
+        11,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "SPACER_BAR",
+        25,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B25",
+        "STIRRUP",
+        10,
+        0,
+        11,
+        "EXTRA",
+        11
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "STIRRUP",
+        10,
+        19,
+        22,
+        "WRONG_DIAMETER",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "STIRRUP",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Second Set Drawings",
+        "B26",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "STIRRUP",
+        8,
+        31,
+        22,
+        "WRONG_QUANTITY",
+        -9
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "STIRRUP",
+        8,
+        2,
+        5,
+        "WRONG_QUANTITY",
+        3
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "SPACER_BAR",
+        25,
+        4,
+        2,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "STIRRUP",
+        8,
+        0,
+        5,
+        "EXTRA",
+        5
+      ],
+      [
+        "Second Set Drawings",
+        "B27",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B28",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B28",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B28",
+        "STIRRUP",
+        8,
+        9,
+        18,
+        "WRONG_QUANTITY",
+        9
+      ],
+      [
+        "Second Set Drawings",
+        "B29",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B29",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B29",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B29",
+        "STIRRUP",
+        8,
+        17,
+        18,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Second Set Drawings",
+        "B29A",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B29A",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B29A",
+        "STIRRUP",
+        8,
+        10,
+        8,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "STIRRUP",
+        8,
+        11,
+        20,
+        "WRONG_QUANTITY",
+        9
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "SPACER_BAR",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "SPACER_BAR",
+        12,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B30",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "STIRRUP",
+        8,
+        13,
+        13,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "SPACER_BAR",
+        25,
+        3,
+        2,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B31",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "TOP_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "BOTTOM_MAIN",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "STIRRUP",
+        8,
+        21,
+        19,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B31A",
+        "SPACER_BAR",
+        25,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "BOTTOM_MAIN",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "BOTTOM_EXTRA",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "STIRRUP",
+        12,
+        41,
+        40,
+        "MATCH",
+        -1
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "SPACER_BAR",
+        25,
+        5,
+        2,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "SPACER_BAR",
+        12,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B32",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "TOP_MAIN",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "STIRRUP",
+        12,
+        43,
+        41,
+        "MATCH",
+        -2
+      ],
+      [
+        "Second Set Drawings",
+        "B33",
+        "SPACER_BAR",
+        25,
+        4,
+        3,
+        "WRONG_QUANTITY",
+        -1
+      ]
+    ],
+    "Diameter Comparison": [
+      [
+        "Drawing Set",
+        "Diameter",
+        "Est Qty",
+        "Model Qty",
+        "Diff",
+        "Diff %",
+        "Missing %",
+        "Extra %"
+      ],
+      [
+        "First Set Drawings",
+        "Y8",
+        627,
+        578,
+        -49,
+        7.81,
+        0.16,
+        1.91
+      ],
+      [
+        "First Set Drawings",
+        "Y10",
+        13,
+        83,
+        70,
+        538.46,
+        0,
+        15.38
+      ],
+      [
+        "First Set Drawings",
+        "Y12",
+        6,
+        10,
+        4,
+        66.67,
+        0,
+        50
+      ],
+      [
+        "First Set Drawings",
+        "Y16",
+        64,
+        54,
+        -10,
+        15.62,
+        17.19,
+        10.94
+      ],
+      [
+        "First Set Drawings",
+        "Y20",
+        34,
+        32,
+        -2,
+        5.88,
+        8.82,
+        0
+      ],
+      [
+        "First Set Drawings",
+        "Y25",
+        29,
+        60,
+        31,
+        106.9,
+        3.45,
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "Y1",
+        0,
+        150,
+        150,
+        100,
+        0,
+        100
+      ],
+      [
+        "Second Set Drawings",
+        "Y2",
+        0.15,
+        0,
+        -0.15,
+        100,
+        100,
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "Y8",
+        603,
+        757,
+        154,
+        25.54,
+        1.49,
+        0.83
+      ],
+      [
+        "Second Set Drawings",
+        "Y10",
+        943,
+        740,
+        -203,
+        21.53,
+        1.17,
+        0.74
+      ],
+      [
+        "Second Set Drawings",
+        "Y12",
+        1346,
+        1042,
+        -304,
+        22.59,
+        2.08,
+        1.11
+      ],
+      [
+        "Second Set Drawings",
+        "Y16",
+        337,
+        346,
+        9,
+        2.67,
+        7.42,
+        10.09
+      ],
+      [
+        "Second Set Drawings",
+        "Y20",
+        153,
+        163,
+        10,
+        6.54,
+        10.46,
+        6.54
+      ],
+      [
+        "Second Set Drawings",
+        "Y25",
+        204,
+        240,
+        36,
+        17.65,
+        9.31,
+        0.98
+      ],
+      [
+        "Third Set Drawings",
+        "Y1",
+        1,
+        0,
+        -1,
+        100,
+        500,
+        0
+      ],
+      [
+        "Third Set Drawings",
+        "Y2",
+        0.45,
+        0,
+        -0.45,
+        100,
+        300,
+        0
+      ],
+      [
+        "Third Set Drawings",
+        "Y8",
+        1412,
+        1066,
+        -346,
+        24.5,
+        2.05,
+        0.14
+      ],
+      [
+        "Third Set Drawings",
+        "Y10",
+        2202,
+        1170,
+        -1032,
+        46.87,
+        1.32,
+        0.14
+      ],
+      [
+        "Third Set Drawings",
+        "Y12",
+        498,
+        269,
+        -229,
+        45.98,
+        4.42,
+        1
+      ],
+      [
+        "Third Set Drawings",
+        "Y16",
+        360,
+        461,
+        101,
+        28.06,
+        7.22,
+        18.33
+      ],
+      [
+        "Third Set Drawings",
+        "Y20",
+        313,
+        321,
+        8,
+        2.56,
+        10.86,
+        5.75
+      ],
+      [
+        "Third Set Drawings",
+        "Y25",
+        334,
+        333,
+        -1,
+        0.3,
+        6.59,
+        0
+      ]
+    ],
+    "Diameter Steel Quantity": [
+      [
+        "Drawing Set",
+        "Diameter",
+        "Est KG",
+        "Model KG",
+        "Diff KG",
+        "Diff %"
+      ],
+      [
+        "First Set Drawings",
+        "Y8",
+        401.468,
+        353.428,
+        -48.04,
+        11.97
+      ],
+      [
+        "First Set Drawings",
+        "Y10",
+        12.829,
+        78.485,
+        65.656,
+        511.78
+      ],
+      [
+        "First Set Drawings",
+        "Y12",
+        18.399,
+        65.478,
+        47.079,
+        255.88
+      ],
+      [
+        "First Set Drawings",
+        "Y16",
+        494.666,
+        468.315,
+        -26.351,
+        5.33
+      ],
+      [
+        "First Set Drawings",
+        "Y20",
+        479.475,
+        423.14,
+        -56.335,
+        11.75
+      ],
+      [
+        "First Set Drawings",
+        "Y25",
+        16.769,
+        32.365,
+        15.596,
+        93
+      ],
+      [
+        "Second Set Drawings",
+        "Y1",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "Y2",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Second Set Drawings",
+        "Y8",
+        431.462,
+        531.692,
+        100.23,
+        23.23
+      ],
+      [
+        "Second Set Drawings",
+        "Y10",
+        1184.742,
+        961.185,
+        -223.557,
+        18.87
+      ],
+      [
+        "Second Set Drawings",
+        "Y12",
+        2780.072,
+        2437.65,
+        -342.422,
+        12.32
+      ],
+      [
+        "Second Set Drawings",
+        "Y16",
+        2571.579,
+        3488.689,
+        917.11,
+        35.66
+      ],
+      [
+        "Second Set Drawings",
+        "Y20",
+        2326.75,
+        3162.046,
+        835.296,
+        35.9
+      ],
+      [
+        "Second Set Drawings",
+        "Y25",
+        1124.694,
+        1348.748,
+        224.054,
+        19.92
+      ],
+      [
+        "Third Set Drawings",
+        "Y1",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Third Set Drawings",
+        "Y2",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Third Set Drawings",
+        "Y8",
+        1499.286,
+        927.871,
+        -571.415,
+        38.11
+      ],
+      [
+        "Third Set Drawings",
+        "Y10",
+        3100.085,
+        1691.374,
+        -1408.711,
+        45.44
+      ],
+      [
+        "Third Set Drawings",
+        "Y12",
+        1700.406,
+        886.251,
+        -814.155,
+        47.88
+      ],
+      [
+        "Third Set Drawings",
+        "Y16",
+        2860.728,
+        3950.582,
+        1089.854,
+        38.1
+      ],
+      [
+        "Third Set Drawings",
+        "Y20",
+        4373.067,
+        4766.393,
+        393.326,
+        8.99
+      ],
+      [
+        "Third Set Drawings",
+        "Y25",
+        2512.576,
+        1880.826,
+        -631.75,
+        25.14
+      ]
+    ],
+    "Steel Quantity Comparison": [
+      [
+        "Drawing Set",
+        "Est KG",
+        "Model KG",
+        "Diff KG",
+        "Diff %",
+        "Acc %",
+        "Est MT",
+        "Model MT",
+        "Diff MT"
+      ],
+      [
+        "First Set Drawings",
+        1423.606,
+        1421.211,
+        -2.395,
+        0.17,
+        99.83,
+        1.4236,
+        1.4212,
+        -0.0024
+      ],
+      [
+        "Second Set Drawings",
+        10419.298,
+        11930.01,
+        1510.712,
+        14.5,
+        85.5,
+        10.4193,
+        11.93,
+        1.5107
+      ],
+      [
+        "Third Set Drawings",
+        16046.15,
+        14103.297,
+        -1942.853,
+        12.11,
+        87.89,
+        16.0462,
+        14.1033,
+        -1.9429
+      ]
+    ],
+    "Error Classification": {
+      "header": [
+        "Drawing Set",
+        "Error Type",
+        "Beam",
+        "Detail"
+      ],
+      "n_item_rows": 949,
+      "by_set": {
+        "First Set Drawings": {
+          "Wrong Diameter": 15,
+          "Missing Bar": 16,
+          "Wrong Role": 9,
+          "Extra Bar": 24,
+          "Wrong Quantity": 20
+        },
+        "Second Set Drawings": {
+          "Beam Missing": 3,
+          "Wrong Diameter": 61,
+          "Wrong Quantity": 81,
+          "Wrong Role": 30,
+          "Extra Bar": 74,
+          "Missing Bar": 109,
+          "Steel Difference": 1
+        },
+        "Third Set Drawings": {
+          "Beam Missing": 6,
+          "Beam Mismatch": 4,
+          "Wrong Diameter": 94,
+          "Wrong Role": 23,
+          "Extra Bar": 94,
+          "Wrong Quantity": 114,
+          "Missing Bar": 170,
+          "Steel Difference": 1
+        }
+      },
+      "freq": {
+        "Wrong Diameter": 170,
+        "Missing Bar": 295,
+        "Wrong Role": 62,
+        "Extra Bar": 192,
+        "Wrong Quantity": 215,
+        "Beam Missing": 9,
+        "Steel Difference": 2,
+        "Beam Mismatch": 4
+      }
+    },
+    "Overall Benchmark": [
+      [
+        "Field",
+        "Value"
+      ],
+      [
+        "model_version",
+        "9.1.0"
+      ],
+      [
+        "phase",
+        "QA.2A"
+      ],
+      [
+        "total_drawing_sets",
+        3
+      ],
+      [
+        "production_runs_completed",
+        3
+      ],
+      [
+        "model_workbooks_generated",
+        3
+      ],
+      [
+        "total_beams",
+        148
+      ],
+      [
+        "detected_beams",
+        139
+      ],
+      [
+        "correct_beams",
+        139
+      ],
+      [
+        "total_bars",
+        937
+      ],
+      [
+        "detected_bars",
+        642
+      ],
+      [
+        "correct_bars",
+        176
+      ],
+      [
+        "missing_bars",
+        295
+      ],
+      [
+        "beam_detection_pct",
+        93.92
+      ],
+      [
+        "bar_detection_pct",
+        68.52
+      ],
+      [
+        "bar_accuracy_pct",
+        27.41
+      ],
+      [
+        "steel_accuracy_pct",
+        91.07
+      ],
+      [
+        "diameter_accuracy_pct",
+        27.41
+      ],
+      [
+        "overall_accuracy_pct",
+        70.23
+      ],
+      [
+        "average_pipeline_runtime_s",
+        1003.28
+      ],
+      [
+        "validation_status",
+        "PASS"
+      ],
+      [
+        "recommendation",
+        "A \u2014 Ground-truth framework operational; prioritize top error categories for Version9 accuracy work."
+      ]
+    ]
+  },
+  "qa30": {
+    "Drawing Set Summary": [
+      [
+        "Drawing Set",
+        "Pipe OK",
+        "Runtime s",
+        "Beam Det %",
+        "Beam Match %",
+        "Bar Det %",
+        "Bar Acc %",
+        "Steel Acc %",
+        "Errors"
+      ],
+      [
+        "Fourth Set Drawings",
+        true,
+        1.32,
+        78.32,
+        78.32,
+        39.89,
+        37.33,
+        58.39,
+        878
+      ],
+      [
+        "Fifth Set Drawings",
+        true,
+        9979.18,
+        76.47,
+        76.47,
+        40.25,
+        34.3,
+        61.69,
+        1400
+      ],
+      [
+        "Sixth Set Drawings",
+        true,
+        1137.86,
+        95.86,
+        95.86,
+        61.45,
+        38.87,
+        96.54,
+        767
+      ]
+    ],
+    "Beam Detection": [
+      [
+        "Drawing Set",
+        "Est Beams",
+        "Detected",
+        "Undetected",
+        "Extra",
+        "Det %"
+      ],
+      [
+        "Fourth Set Drawings",
+        143,
+        112,
+        31,
+        6,
+        78.32
+      ],
+      [
+        "Fifth Set Drawings",
+        187,
+        143,
+        44,
+        0,
+        76.47
+      ],
+      [
+        "Sixth Set Drawings",
+        145,
+        139,
+        6,
+        4,
+        95.86
+      ]
+    ],
+    "Bar Detection": [
+      [
+        "Drawing Set",
+        "Est Bars",
+        "Detected",
+        "Det %"
+      ],
+      [
+        "Fourth Set Drawings",
+        940,
+        375,
+        39.89
+      ],
+      [
+        "Fifth Set Drawings",
+        1456,
+        586,
+        40.25
+      ],
+      [
+        "Sixth Set Drawings",
+        921,
+        566,
+        61.45
+      ]
+    ],
+    "Bar Matching": [
+      [
+        "Drawing Set",
+        "Beam",
+        "Role",
+        "Dia",
+        "Est Qty",
+        "Model Qty",
+        "Status",
+        "Diff Qty"
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "BOTTOM_EXTRA",
+        12,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "STIRRUP",
+        10,
+        37,
+        55,
+        "WRONG_QUANTITY",
+        18
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "STIRRUP",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "STIRRUP_HOOK",
+        10,
+        37,
+        0,
+        "MISSING",
+        -37
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "STIRRUP_HOOK",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "SPACER_BAR",
+        25,
+        6,
+        3,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "SPACER_BAR",
+        25,
+        0,
+        4,
+        "ACCEPTABLE_EXTRA",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B14",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        7,
+        "WRONG_QUANTITY",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "BOTTOM_EXTRA",
+        12,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "STIRRUP",
+        8,
+        41,
+        61,
+        "WRONG_QUANTITY",
+        20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "STIRRUP",
+        8,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "STIRRUP_HOOK",
+        8,
+        41,
+        0,
+        "MISSING",
+        -41
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "STIRRUP_HOOK",
+        8,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        12,
+        3,
+        "WRONG_QUANTITY",
+        -9
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "BOTTOM_EXTRA",
+        25,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B15",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "TOP_EXTRA",
+        20,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "BOTTOM_EXTRA",
+        12,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "STIRRUP",
+        10,
+        45,
+        54,
+        "WRONG_QUANTITY",
+        9
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "SPACER_BAR",
+        25,
+        9,
+        3,
+        "WRONG_QUANTITY",
+        -6
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "TOP_EXTRA",
+        12,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        4,
+        "EXTRA",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "SPACER_BAR",
+        25,
+        0,
+        4,
+        "ACCEPTABLE_EXTRA",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B16",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "TOP_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "TOP_EXTRA",
+        25,
+        2,
+        2,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "BOTTOM_MAIN",
+        20,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "STIRRUP",
+        12,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "SPACER_BAR",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B17",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "TOP_MAIN",
+        20,
+        4,
+        2,
+        "WRONG_DIAMETER",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "TOP_EXTRA",
+        25,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "TOP_EXTRA",
+        25,
+        2,
+        4,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "BOTTOM_EXTRA",
+        16,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "STIRRUP",
+        10,
+        31,
+        40,
+        "WRONG_QUANTITY",
+        9
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "STIRRUP",
+        10,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "STIRRUP_HOOK",
+        10,
+        31,
+        0,
+        "MISSING",
+        -31
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "STIRRUP_HOOK",
+        10,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "SPACER_BAR",
+        25,
+        6,
+        2,
+        "WRONG_QUANTITY",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "SPACER_BAR",
+        25,
+        0,
+        7,
+        "ACCEPTABLE_EXTRA",
+        7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B18",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42A",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42A",
+        "BOTTOM_MAIN",
+        16,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42A",
+        "STIRRUP",
+        8,
+        45,
+        5,
+        "WRONG_QUANTITY",
+        -40
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42A",
+        "STIRRUP_HOOK",
+        8,
+        45,
+        0,
+        "MISSING",
+        -45
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "TOP_MAIN",
+        20,
+        7,
+        6,
+        "WRONG_DIAMETER",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "TOP_EXTRA",
+        16,
+        4,
+        7,
+        "WRONG_DIAMETER",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "BOTTOM_MAIN",
+        20,
+        7,
+        4,
+        "WRONG_DIAMETER",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "BOTTOM_EXTRA",
+        25,
+        6,
+        2,
+        "WRONG_DIAMETER",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "STIRRUP",
+        10,
+        69,
+        52,
+        "WRONG_QUANTITY",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "STIRRUP",
+        10,
+        22,
+        0,
+        "MISSING",
+        -22
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "STIRRUP_HOOK",
+        10,
+        69,
+        0,
+        "MISSING",
+        -69
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "STIRRUP_HOOK",
+        10,
+        22,
+        0,
+        "MISSING",
+        -22
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "SPACER_BAR",
+        25,
+        13,
+        5,
+        "WRONG_QUANTITY",
+        -8
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "TOP_EXTRA",
+        20,
+        0,
+        7,
+        "EXTRA",
+        7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B19",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "TOP_EXTRA",
+        25,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "TOP_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "BOTTOM_EXTRA",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "STIRRUP",
+        10,
+        51,
+        75,
+        "WRONG_QUANTITY",
+        24
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "STIRRUP",
+        10,
+        20,
+        0,
+        "MISSING",
+        -20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "STIRRUP_HOOK",
+        10,
+        51,
+        0,
+        "MISSING",
+        -51
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "STIRRUP_HOOK",
+        10,
+        20,
+        0,
+        "MISSING",
+        -20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B22",
+        "SPACER_BAR",
+        25,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "TOP_EXTRA",
+        20,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "STIRRUP",
+        8,
+        29,
+        35,
+        "WRONG_QUANTITY",
+        6
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "STIRRUP",
+        8,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "STIRRUP_HOOK",
+        8,
+        29,
+        0,
+        "MISSING",
+        -29
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "STIRRUP_HOOK",
+        8,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B23",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "TOP_EXTRA",
+        25,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        2,
+        "PARTIAL_MATCH",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "BOTTOM_EXTRA",
+        20,
+        4,
+        4,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "STIRRUP",
+        12,
+        47,
+        35,
+        "WRONG_QUANTITY",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "STIRRUP_HOOK",
+        12,
+        47,
+        35,
+        "WRONG_DIAMETER",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B29",
+        "SPACER_BAR",
+        25,
+        15,
+        2,
+        "WRONG_QUANTITY",
+        -13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        3,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "STIRRUP",
+        8,
+        43,
+        63,
+        "WRONG_QUANTITY",
+        20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "STIRRUP",
+        8,
+        14,
+        0,
+        "MISSING",
+        -14
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "STIRRUP_HOOK",
+        8,
+        43,
+        0,
+        "MISSING",
+        -43
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "STIRRUP_HOOK",
+        8,
+        14,
+        0,
+        "MISSING",
+        -14
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "SPACER_BAR",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B42",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B45",
+        "TOP_MAIN",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B45",
+        "BOTTOM_MAIN",
+        25,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B45",
+        "STIRRUP",
+        10,
+        28,
+        29,
+        "MATCH",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B45",
+        "STIRRUP_HOOK",
+        10,
+        28,
+        0,
+        "MISSING",
+        -28
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "STIRRUP",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "STIRRUP",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "STIRRUP_HOOK",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B46",
+        "STIRRUP_HOOK",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "TOP_MAIN",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "BOTTOM_MAIN",
+        25,
+        3,
+        5,
+        "WRONG_DIAMETER",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "STIRRUP",
+        10,
+        28,
+        29,
+        "MATCH",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "STIRRUP_HOOK",
+        10,
+        28,
+        0,
+        "MISSING",
+        -28
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B48",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B51",
+        "TOP_MAIN",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B51",
+        "BOTTOM_MAIN",
+        25,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B51",
+        "STIRRUP",
+        12,
+        17,
+        16,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B52",
+        "TOP_MAIN",
+        25,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B52",
+        "BOTTOM_MAIN",
+        25,
+        2,
+        5,
+        "WRONG_DIAMETER",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B52",
+        "STIRRUP",
+        12,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "BOTTOM_EXTRA",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "STIRRUP",
+        10,
+        25,
+        0,
+        "MISSING",
+        -25
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "STIRRUP_HOOK",
+        10,
+        25,
+        0,
+        "MISSING",
+        -25
+      ],
+      [
+        "Fourth Set Drawings",
+        "B59",
+        "SPACER_BAR",
+        25,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "TOP_EXTRA",
+        25,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        5,
+        "WRONG_QUANTITY",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "BOTTOM_EXTRA",
+        20,
+        3,
+        3,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "STIRRUP",
+        8,
+        23,
+        22,
+        "MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "STIRRUP_HOOK",
+        8,
+        23,
+        0,
+        "MISSING",
+        -23
+      ],
+      [
+        "Fourth Set Drawings",
+        "B60",
+        "SPACER_BAR",
+        25,
+        3,
+        4,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "TOP_EXTRA",
+        25,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "BOTTOM_EXTRA",
+        20,
+        3,
+        3,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "STIRRUP",
+        8,
+        23,
+        22,
+        "MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "STIRRUP_HOOK",
+        8,
+        23,
+        0,
+        "MISSING",
+        -23
+      ],
+      [
+        "Fourth Set Drawings",
+        "B61",
+        "SPACER_BAR",
+        25,
+        3,
+        4,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "STIRRUP",
+        8,
+        43,
+        63,
+        "WRONG_QUANTITY",
+        20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "STIRRUP",
+        8,
+        12,
+        0,
+        "MISSING",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "STIRRUP_HOOK",
+        8,
+        43,
+        0,
+        "MISSING",
+        -43
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "STIRRUP_HOOK",
+        8,
+        12,
+        0,
+        "MISSING",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "SPACER_BAR",
+        25,
+        5,
+        3,
+        "WRONG_QUANTITY",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "TOP_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B69",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "STIRRUP",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "STIRRUP",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "STIRRUP_HOOK",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B47",
+        "STIRRUP_HOOK",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "TOP_MAIN",
+        20,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "TOP_EXTRA",
+        16,
+        3,
+        5,
+        "PARTIAL_MATCH",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "STIRRUP",
+        8,
+        49,
+        50,
+        "MATCH",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "STIRRUP_HOOK",
+        8,
+        49,
+        0,
+        "MISSING",
+        -49
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "SPACER_BAR",
+        25,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B55",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "TOP_MAIN",
+        20,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "STIRRUP",
+        8,
+        45,
+        66,
+        "WRONG_QUANTITY",
+        21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "STIRRUP",
+        8,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "STIRRUP_HOOK",
+        8,
+        45,
+        0,
+        "MISSING",
+        -45
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "STIRRUP_HOOK",
+        8,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B56",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "TOP_MAIN",
+        20,
+        5,
+        5,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "STIRRUP",
+        10,
+        21,
+        29,
+        "WRONG_QUANTITY",
+        8
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "STIRRUP",
+        10,
+        6,
+        0,
+        "MISSING",
+        -6
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B57",
+        "STIRRUP_HOOK",
+        10,
+        6,
+        0,
+        "MISSING",
+        -6
+      ],
+      [
+        "Fourth Set Drawings",
+        "B58",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B58",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B58",
+        "STIRRUP",
+        12,
+        14,
+        0,
+        "MISSING",
+        -14
+      ],
+      [
+        "Fourth Set Drawings",
+        "B58",
+        "STIRRUP_HOOK",
+        12,
+        14,
+        0,
+        "MISSING",
+        -14
+      ],
+      [
+        "Fourth Set Drawings",
+        "B71",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B71",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        2,
+        "WRONG_DIAMETER",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B71",
+        "STIRRUP",
+        12,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B71",
+        "STIRRUP_HOOK",
+        12,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "STIRRUP",
+        10,
+        60,
+        27,
+        "WRONG_QUANTITY",
+        -33
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "STIRRUP_HOOK",
+        10,
+        60,
+        0,
+        "MISSING",
+        -60
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B72",
+        "SPACER_BAR",
+        25,
+        0,
+        4,
+        "ACCEPTABLE_EXTRA",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B73",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B73",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B73",
+        "STIRRUP",
+        10,
+        29,
+        29,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B73",
+        "STIRRUP_HOOK",
+        10,
+        29,
+        0,
+        "MISSING",
+        -29
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "TOP_EXTRA",
+        16,
+        2,
+        3,
+        "WRONG_QUANTITY",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "STIRRUP",
+        10,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "STIRRUP",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "STIRRUP_HOOK",
+        10,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "STIRRUP_HOOK",
+        10,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "SPACER_BAR",
+        25,
+        3,
+        2,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "TOP_EXTRA",
+        16,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B63",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "TOP_EXTRA",
+        16,
+        2,
+        3,
+        "PARTIAL_MATCH",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        0,
+        "MISSING",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "STIRRUP",
+        8,
+        28,
+        29,
+        "MATCH",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "STIRRUP_HOOK",
+        8,
+        28,
+        0,
+        "MISSING",
+        -28
+      ],
+      [
+        "Fourth Set Drawings",
+        "B64",
+        "SPACER_BAR",
+        25,
+        1,
+        0,
+        "MISSING",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "TOP_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        4,
+        "WRONG_DIAMETER",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "STIRRUP",
+        8,
+        45,
+        66,
+        "WRONG_QUANTITY",
+        21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "STIRRUP",
+        8,
+        12,
+        0,
+        "MISSING",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "STIRRUP_HOOK",
+        8,
+        45,
+        0,
+        "MISSING",
+        -45
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "STIRRUP_HOOK",
+        8,
+        12,
+        0,
+        "MISSING",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B65",
+        "SPACER_BAR",
+        25,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "TOP_MAIN",
+        16,
+        5,
+        5,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "BOTTOM_MAIN",
+        20,
+        5,
+        4,
+        "WRONG_DIAMETER",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "STIRRUP",
+        8,
+        33,
+        50,
+        "WRONG_QUANTITY",
+        17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "STIRRUP",
+        8,
+        13,
+        0,
+        "MISSING",
+        -13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "STIRRUP_HOOK",
+        8,
+        33,
+        0,
+        "MISSING",
+        -33
+      ],
+      [
+        "Fourth Set Drawings",
+        "B66",
+        "STIRRUP_HOOK",
+        8,
+        13,
+        0,
+        "MISSING",
+        -13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "STIRRUP",
+        10,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "STIRRUP",
+        10,
+        7,
+        0,
+        "MISSING",
+        -7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "STIRRUP_HOOK",
+        10,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "STIRRUP_HOOK",
+        10,
+        7,
+        0,
+        "MISSING",
+        -7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "SPACER_BAR",
+        25,
+        3,
+        2,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B74",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "TOP_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "STIRRUP",
+        8,
+        41,
+        63,
+        "WRONG_QUANTITY",
+        22
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "STIRRUP",
+        8,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "STIRRUP_HOOK",
+        8,
+        41,
+        0,
+        "MISSING",
+        -41
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "STIRRUP_HOOK",
+        8,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B75",
+        "SPACER_BAR",
+        25,
+        7,
+        0,
+        "MISSING",
+        -7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "TOP_MAIN",
+        20,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        2,
+        "WRONG_ROLE",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "STIRRUP",
+        10,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "STIRRUP",
+        10,
+        7,
+        0,
+        "MISSING",
+        -7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "STIRRUP_HOOK",
+        10,
+        16,
+        0,
+        "MISSING",
+        -16
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "STIRRUP_HOOK",
+        10,
+        7,
+        0,
+        "MISSING",
+        -7
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "SPACER_BAR",
+        25,
+        3,
+        2,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B76",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B80",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B80",
+        "BOTTOM_MAIN",
+        16,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B80",
+        "STIRRUP",
+        8,
+        18,
+        0,
+        "MISSING",
+        -18
+      ],
+      [
+        "Fourth Set Drawings",
+        "B80",
+        "STIRRUP_HOOK",
+        8,
+        18,
+        0,
+        "MISSING",
+        -18
+      ],
+      [
+        "Fourth Set Drawings",
+        "B77",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B77",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B77",
+        "STIRRUP",
+        10,
+        29,
+        29,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B77",
+        "STIRRUP_HOOK",
+        10,
+        29,
+        0,
+        "MISSING",
+        -29
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "STIRRUP",
+        10,
+        41,
+        29,
+        "WRONG_QUANTITY",
+        -12
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "STIRRUP",
+        10,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "STIRRUP_HOOK",
+        10,
+        41,
+        0,
+        "MISSING",
+        -41
+      ],
+      [
+        "Fourth Set Drawings",
+        "B78",
+        "STIRRUP_HOOK",
+        10,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B79",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B79",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B79",
+        "STIRRUP",
+        12,
+        17,
+        17,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B79",
+        "STIRRUP_HOOK",
+        12,
+        17,
+        17,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B82",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B82",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B82",
+        "STIRRUP",
+        12,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B82",
+        "STIRRUP_HOOK",
+        12,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B83",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B83",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B83",
+        "STIRRUP",
+        10,
+        46,
+        43,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B83",
+        "STIRRUP_HOOK",
+        10,
+        46,
+        0,
+        "MISSING",
+        -46
+      ],
+      [
+        "Fourth Set Drawings",
+        "B85",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B85",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B85",
+        "STIRRUP",
+        10,
+        46,
+        22,
+        "WRONG_QUANTITY",
+        -24
+      ],
+      [
+        "Fourth Set Drawings",
+        "B85",
+        "STIRRUP_HOOK",
+        10,
+        46,
+        0,
+        "MISSING",
+        -46
+      ],
+      [
+        "Fourth Set Drawings",
+        "B86",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B86",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B86",
+        "STIRRUP",
+        12,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B86",
+        "STIRRUP_HOOK",
+        12,
+        10,
+        0,
+        "MISSING",
+        -10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B88",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B88",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        4,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B88",
+        "STIRRUP",
+        10,
+        21,
+        25,
+        "WRONG_QUANTITY",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B88",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B89",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B89",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B89",
+        "STIRRUP",
+        10,
+        24,
+        24,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B89",
+        "STIRRUP_HOOK",
+        10,
+        24,
+        0,
+        "MISSING",
+        -24
+      ],
+      [
+        "Fourth Set Drawings",
+        "B91",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B91",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        4,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B91",
+        "STIRRUP",
+        10,
+        24,
+        20,
+        "WRONG_QUANTITY",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B91",
+        "STIRRUP_HOOK",
+        10,
+        24,
+        0,
+        "MISSING",
+        -24
+      ],
+      [
+        "Fourth Set Drawings",
+        "B92",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B92",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B92",
+        "STIRRUP",
+        10,
+        21,
+        25,
+        "WRONG_QUANTITY",
+        4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B92",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B93",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B93",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B93",
+        "STIRRUP",
+        10,
+        21,
+        20,
+        "MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B93",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B94",
+        "TOP_MAIN",
+        20,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B94",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B94",
+        "STIRRUP",
+        10,
+        21,
+        20,
+        "MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B94",
+        "STIRRUP_HOOK",
+        10,
+        21,
+        0,
+        "MISSING",
+        -21
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "TOP_EXTRA",
+        16,
+        2,
+        2,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        3,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "BOTTOM_EXTRA",
+        16,
+        2,
+        0,
+        "MISSING",
+        -2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "STIRRUP",
+        8,
+        51,
+        76,
+        "WRONG_QUANTITY",
+        25
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "STIRRUP",
+        8,
+        20,
+        0,
+        "MISSING",
+        -20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "STIRRUP_HOOK",
+        8,
+        51,
+        0,
+        "MISSING",
+        -51
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "STIRRUP_HOOK",
+        8,
+        20,
+        0,
+        "MISSING",
+        -20
+      ],
+      [
+        "Fourth Set Drawings",
+        "B96",
+        "SPACER_BAR",
+        25,
+        10,
+        5,
+        "WRONG_QUANTITY",
+        -5
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "TOP_MAIN",
+        16,
+        4,
+        4,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "TOP_EXTRA",
+        16,
+        4,
+        3,
+        "PARTIAL_MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "TOP_EXTRA",
+        16,
+        4,
+        3,
+        "PARTIAL_MATCH",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "BOTTOM_MAIN",
+        20,
+        4,
+        3,
+        "WRONG_DIAMETER",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "STIRRUP",
+        8,
+        49,
+        62,
+        "WRONG_QUANTITY",
+        13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "STIRRUP",
+        8,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "STIRRUP_HOOK",
+        8,
+        49,
+        0,
+        "MISSING",
+        -49
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "STIRRUP_HOOK",
+        8,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "SPACER_BAR",
+        25,
+        4,
+        3,
+        "WRONG_QUANTITY",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "BOTTOM_EXTRA",
+        20,
+        0,
+        3,
+        "EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B97",
+        "SPACER_BAR",
+        25,
+        0,
+        3,
+        "ACCEPTABLE_EXTRA",
+        3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "TOP_MAIN",
+        25,
+        4,
+        4,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "BOTTOM_MAIN",
+        25,
+        4,
+        3,
+        "WRONG_DIAMETER",
+        -1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "STIRRUP",
+        8,
+        51,
+        76,
+        "WRONG_QUANTITY",
+        25
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "STIRRUP",
+        8,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "STIRRUP_HOOK",
+        8,
+        51,
+        0,
+        "MISSING",
+        -51
+      ],
+      [
+        "Fourth Set Drawings",
+        "B98",
+        "STIRRUP_HOOK",
+        8,
+        17,
+        0,
+        "MISSING",
+        -17
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "TOP_MAIN",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "BOTTOM_MAIN",
+        25,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "STIRRUP",
+        10,
+        45,
+        60,
+        "WRONG_QUANTITY",
+        15
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "STIRRUP",
+        10,
+        13,
+        0,
+        "MISSING",
+        -13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "STIRRUP_HOOK",
+        10,
+        45,
+        0,
+        "MISSING",
+        -45
+      ],
+      [
+        "Fourth Set Drawings",
+        "B119",
+        "STIRRUP_HOOK",
+        10,
+        13,
+        0,
+        "MISSING",
+        -13
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "TOP_MAIN",
+        25,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "BOTTOM_MAIN",
+        25,
+        3,
+        4,
+        "WRONG_DIAMETER",
+        1
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "STIRRUP",
+        10,
+        25,
+        35,
+        "WRONG_QUANTITY",
+        10
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "STIRRUP",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "STIRRUP_HOOK",
+        10,
+        25,
+        0,
+        "MISSING",
+        -25
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "STIRRUP_HOOK",
+        10,
+        11,
+        0,
+        "MISSING",
+        -11
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "BOTTOM_EXTRA",
+        16,
+        0,
+        2,
+        "EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B120",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "TOP_EXTRA",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "TOP_EXTRA",
+        25,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "STIRRUP",
+        10,
+        50,
+        50,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "STIRRUP_HOOK",
+        10,
+        50,
+        0,
+        "MISSING",
+        -50
+      ],
+      [
+        "Fourth Set Drawings",
+        "B99",
+        "SPACER_BAR",
+        25,
+        4,
+        0,
+        "MISSING",
+        -4
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "TOP_EXTRA",
+        25,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "TOP_EXTRA",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "STIRRUP",
+        10,
+        40,
+        40,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "STIRRUP_HOOK",
+        10,
+        40,
+        0,
+        "MISSING",
+        -40
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "SPACER_BAR",
+        25,
+        5,
+        2,
+        "WRONG_QUANTITY",
+        -3
+      ],
+      [
+        "Fourth Set Drawings",
+        "B100",
+        "SPACER_BAR",
+        25,
+        0,
+        2,
+        "ACCEPTABLE_EXTRA",
+        2
+      ],
+      [
+        "Fourth Set Drawings",
+        "B101",
+        "TOP_MAIN",
+        16,
+        3,
+        3,
+        "WRONG_DIAMETER",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B101",
+        "TOP_EXTRA",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B101",
+        "TOP_EXTRA",
+        16,
+        3,
+        3,
+        "MATCH",
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "B101",
+        "BOTTOM_MAIN",
+        20,
+        3,
+        0,
+        "MISSING",
+        -3
+      ]
+    ],
+    "Diameter Comparison": [
+      [
+        "Drawing Set",
+        "Diameter",
+        "Est Qty",
+        "Model Qty",
+        "Diff",
+        "Diff %",
+        "Missing %",
+        "Extra %"
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y1",
+        0.45,
+        0,
+        -0.45,
+        100,
+        100,
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y2",
+        0.4,
+        24,
+        23.6,
+        5900,
+        100,
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y8",
+        3056,
+        1546,
+        -1510,
+        49.41,
+        2.98,
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y10",
+        5795,
+        2021,
+        -3774,
+        65.13,
+        2.97,
+        0.03
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y12",
+        1620.33,
+        365,
+        -1255.33,
+        77.47,
+        3.7,
+        0.31
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y16",
+        290,
+        317,
+        27,
+        9.31,
+        11.72,
+        10.69
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y20",
+        856,
+        486,
+        -370,
+        43.22,
+        13.79,
+        1.4
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y25",
+        853,
+        563,
+        -290,
+        34,
+        10.32,
+        0.12
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y1",
+        5.7,
+        0,
+        -5.7,
+        100,
+        266.67,
+        0
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y8",
+        2089,
+        1156,
+        -933,
+        44.66,
+        2.73,
+        0
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y10",
+        6844,
+        2634,
+        -4210,
+        61.51,
+        3.04,
+        0.03
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y12",
+        4976,
+        1194,
+        -3782,
+        76,
+        3.28,
+        0.12
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y16",
+        488,
+        440,
+        -48,
+        9.84,
+        13.73,
+        11.07
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y20",
+        848,
+        589,
+        -259,
+        30.54,
+        10.85,
+        4.48
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y25",
+        1930,
+        1107,
+        -823,
+        42.64,
+        13.37,
+        1.19
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y32",
+        50,
+        36,
+        -14,
+        28,
+        18,
+        0
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y1",
+        0.5,
+        0,
+        -0.5,
+        100,
+        200,
+        0
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y8",
+        837,
+        796,
+        -41,
+        4.9,
+        1.55,
+        0
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y10",
+        2458,
+        1631,
+        -827,
+        33.65,
+        2.4,
+        0
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y12",
+        2438,
+        2156,
+        -282,
+        11.57,
+        3.12,
+        0.29
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y16",
+        276,
+        308,
+        32,
+        11.59,
+        11.59,
+        13.77
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y20",
+        481,
+        375,
+        -106,
+        22.04,
+        19.33,
+        4.57
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y25",
+        761,
+        816,
+        55,
+        7.23,
+        9.33,
+        1.84
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y32",
+        64,
+        23,
+        -41,
+        64.06,
+        14.06,
+        0
+      ]
+    ],
+    "Diameter Steel Quantity": [
+      [
+        "Drawing Set",
+        "Diameter",
+        "Est KG",
+        "Model KG",
+        "Diff KG",
+        "Diff %"
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y1",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y2",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y8",
+        2225.686,
+        1258.858,
+        -966.828,
+        43.44
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y10",
+        6984.66,
+        2864.488,
+        -4120.172,
+        58.99
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y12",
+        3253.71,
+        819.75,
+        -2433.96,
+        74.81
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y16",
+        1875.903,
+        2854.39,
+        978.487,
+        52.16
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y20",
+        12098.748,
+        7258.112,
+        -4840.636,
+        40.01
+      ],
+      [
+        "Fourth Set Drawings",
+        "Y25",
+        10706.148,
+        6633.199,
+        -4072.949,
+        38.04
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y1",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y8",
+        1561.051,
+        931.076,
+        -629.975,
+        40.36
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y10",
+        9375.228,
+        3914.285,
+        -5460.943,
+        58.25
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y12",
+        9171.753,
+        2496.584,
+        -6675.169,
+        72.78
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y16",
+        2871.897,
+        3662.885,
+        790.988,
+        27.54
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y20",
+        12026.043,
+        9194.427,
+        -2831.616,
+        23.55
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y25",
+        22638.393,
+        14445.044,
+        -8193.349,
+        36.19
+      ],
+      [
+        "Fifth Set Drawings",
+        "Y32",
+        1151.967,
+        1627.493,
+        475.526,
+        41.28
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y1",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y8",
+        797.936,
+        739.425,
+        -58.511,
+        7.33
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y10",
+        3910.726,
+        2804.709,
+        -1106.017,
+        28.28
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y12",
+        5346.58,
+        5030.071,
+        -316.509,
+        5.92
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y16",
+        1418.043,
+        2606.99,
+        1188.947,
+        83.84
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y20",
+        5062.931,
+        4938.881,
+        -124.05,
+        2.45
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y25",
+        8312.02,
+        8657.661,
+        345.641,
+        4.16
+      ],
+      [
+        "Sixth Set Drawings",
+        "Y32",
+        1655.773,
+        808.811,
+        -846.962,
+        51.15
+      ]
+    ],
+    "Steel Quantity Comparison": [
+      [
+        "Drawing Set",
+        "Est KG",
+        "Model KG",
+        "Diff KG",
+        "Diff %",
+        "Acc %",
+        "Est MT",
+        "Model MT",
+        "Diff MT"
+      ],
+      [
+        "Fourth Set Drawings",
+        37144.855,
+        21688.797,
+        -15456.058,
+        41.61,
+        58.39,
+        37.1449,
+        21.6888,
+        -15.4561
+      ],
+      [
+        "Fifth Set Drawings",
+        58796.332,
+        36271.794,
+        -22524.538,
+        38.31,
+        61.69,
+        58.7963,
+        36.2718,
+        -22.5245
+      ],
+      [
+        "Sixth Set Drawings",
+        26504.009,
+        25586.548,
+        -917.461,
+        3.46,
+        96.54,
+        26.504,
+        25.5865,
+        -0.9175
+      ]
+    ],
+    "Error Classification": {
+      "header": [
+        "Drawing Set",
+        "Error Type",
+        "Beam",
+        "Detail"
+      ],
+      "n_item_rows": 3045,
+      "by_set": {
+        "Fourth Set Drawings": {
+          "Beam Missing": 31,
+          "Beam Mismatch": 6,
+          "Wrong Diameter": 101,
+          "Wrong Role": 20,
+          "Wrong Quantity": 103,
+          "Missing Bar": 565,
+          "Extra Bar": 51,
+          "Steel Difference": 1
+        },
+        "Fifth Set Drawings": {
+          "Beam Missing": 44,
+          "Wrong Role": 45,
+          "Wrong Quantity": 166,
+          "Missing Bar": 870,
+          "Extra Bar": 123,
+          "Wrong Diameter": 151,
+          "Steel Difference": 1
+        },
+        "Sixth Set Drawings": {
+          "Beam Missing": 6,
+          "Beam Mismatch": 4,
+          "Wrong Quantity": 176,
+          "Missing Bar": 355,
+          "Extra Bar": 81,
+          "Wrong Diameter": 104,
+          "Wrong Role": 40,
+          "Steel Difference": 1
+        }
+      },
+      "freq": {
+        "Beam Missing": 81,
+        "Beam Mismatch": 10,
+        "Wrong Diameter": 356,
+        "Wrong Role": 105,
+        "Wrong Quantity": 445,
+        "Missing Bar": 1790,
+        "Extra Bar": 255,
+        "Steel Difference": 3
+      }
+    },
+    "Overall Benchmark": [
+      [
+        "Field",
+        "Value"
+      ],
+      [
+        "model_version",
+        "9.1.0"
+      ],
+      [
+        "phase",
+        "QA.2A"
+      ],
+      [
+        "total_drawing_sets",
+        3
+      ],
+      [
+        "production_runs_completed",
+        3
+      ],
+      [
+        "model_workbooks_generated",
+        3
+      ],
+      [
+        "total_beams",
+        475
+      ],
+      [
+        "detected_beams",
+        394
+      ],
+      [
+        "correct_beams",
+        394
+      ],
+      [
+        "total_bars",
+        3317
+      ],
+      [
+        "detected_bars",
+        1527
+      ],
+      [
+        "correct_bars",
+        561
+      ],
+      [
+        "missing_bars",
+        1790
+      ],
+      [
+        "beam_detection_pct",
+        82.95
+      ],
+      [
+        "bar_detection_pct",
+        46.04
+      ],
+      [
+        "bar_accuracy_pct",
+        36.74
+      ],
+      [
+        "steel_accuracy_pct",
+        72.21
+      ],
+      [
+        "diameter_accuracy_pct",
+        36.74
+      ],
+      [
+        "overall_accuracy_pct",
+        59.48
+      ],
+      [
+        "average_pipeline_runtime_s",
+        3706.12
+      ],
+      [
+        "validation_status",
+        "PASS"
+      ],
+      [
+        "recommendation",
+        "A \u2014 Ground-truth framework operational; prioritize top error categories for Version9 accuracy work."
+      ]
+    ]
+  }
+}

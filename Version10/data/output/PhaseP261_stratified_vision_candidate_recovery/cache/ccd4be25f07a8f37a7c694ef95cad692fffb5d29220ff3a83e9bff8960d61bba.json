@@ -1,0 +1,106 @@
+{
+  "cache_key": "ccd4be25f07a8f37a7c694ef95cad692fffb5d29220ff3a83e9bff8960d61bba",
+  "cached_at_utc": "2026-08-17T11:44:51.398781+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B56",
+    "beam_id": "B56",
+    "prompt_fingerprint": "4e5e3cd5645f19c80a6ddcd4e831a9cec2db35d8f92b5d9a7392b3986edca65d",
+    "image_hash": "bf66086a81bacd8100a4aeb331c0f4a311999dac33aacdce8660c9e4ff55957b",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B56\",\n  \"beam_id\": \"B56\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation located within the hatched beam section at the top of the beam\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y25' is clearly visible within the hatched cross-section of the beam\",\n        \"Position indicates top reinforcement bars\",\n        \"4 bars of Y25 (25mm diameter)\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation located below the beam section, indicating stirrup/link reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4L-Y12@\\\\X100C/C' indicates 4-legged stirrups\",\n        \"Y12 bars (12mm diameter) at 100mm centers\",\n        \"Typical stirrup notation for beam B56\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B56::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B56",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B56",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y25' is clearly visible within the hatched cross-section of the beam",
+          "Position indicates top reinforcement bars",
+          "4 bars of Y25 (25mm diameter)",
+          "location_text:Annotation located within the hatched beam section at the top of the beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\ccd4be25f07a8f37a7c694ef95cad692fffb5d29220ff3a83e9bff8960d61bba.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B56::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B56",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y12@\\X100C/C",
+        "normalized_text": "4L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B56",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4L-Y12@\\X100C/C' indicates 4-legged stirrups",
+          "Y12 bars (12mm diameter) at 100mm centers",
+          "Typical stirrup notation for beam B56",
+          "location_text:Annotation located below the beam section, indicating stirrup/link reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\ccd4be25f07a8f37a7c694ef95cad692fffb5d29220ff3a83e9bff8960d61bba.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Sixth::B56",
+      "returned_beam_id": "B56"
+    }
+  },
+  "usage": {
+    "input_tokens": 2244,
+    "output_tokens": 479
+  },
+  "error": null
+}

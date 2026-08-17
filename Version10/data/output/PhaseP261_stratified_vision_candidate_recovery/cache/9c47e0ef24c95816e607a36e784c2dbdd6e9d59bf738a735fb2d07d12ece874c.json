@@ -1,0 +1,139 @@
+{
+  "cache_key": "9c47e0ef24c95816e607a36e784c2dbdd6e9d59bf738a735fb2d07d12ece874c",
+  "cached_at_utc": "2026-08-17T11:42:55.363009+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B130",
+    "beam_id": "B130",
+    "prompt_fingerprint": "4ffea83074fb0a6570b8905bbd712abd70738913fdead7d6c85d10905e9c3ca3",
+    "image_hash": "7299335c4385279ba4b2007d541c2652adac1538943679ed63948df156cbda2f",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B130\",\n  \"beam_id\": \"B130\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, upper annotation with leader pointing to top reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y25' with leader pointing to top reinforcement layer of beam B130\",\n        \"Clear association with top bars visible in beam cross-section\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam, middle annotation with leader pointing to bottom reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y25' with leader pointing to bottom reinforcement layer of beam B130\",\n        \"Clear association with bottom bars visible in beam cross-section\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"4L-Y10@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom center annotation indicating stirrup/link reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4L-Y10@\\\\X100C/C' indicates 4-legged stirrups, Y10 diameter at 100mm centers\",\n        \"Positioned centrally below beam cross-section, typical location for stirrup notation\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B130::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B130",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B130",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y25' with leader pointing to top reinforcement layer of beam B130",
+          "Clear association with top bars visible in beam cross-section",
+          "location_text:Top of beam, upper annotation with leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9c47e0ef24c95816e607a36e784c2dbdd6e9d59bf738a735fb2d07d12ece874c.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B130::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B130",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B130",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y25' with leader pointing to bottom reinforcement layer of beam B130",
+          "Clear association with bottom bars visible in beam cross-section",
+          "location_text:Bottom of beam, middle annotation with leader pointing to bottom reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9c47e0ef24c95816e607a36e784c2dbdd6e9d59bf738a735fb2d07d12ece874c.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B130::C03",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B130",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y10@\\X100C/C",
+        "normalized_text": "4L-Y10@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B130",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4L-Y10@\\X100C/C' indicates 4-legged stirrups, Y10 diameter at 100mm centers",
+          "Positioned centrally below beam cross-section, typical location for stirrup notation",
+          "location_text:Bottom center annotation indicating stirrup/link reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\9c47e0ef24c95816e607a36e784c2dbdd6e9d59bf738a735fb2d07d12ece874c.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fourth::B130",
+      "returned_beam_id": "B130"
+    }
+  },
+  "usage": {
+    "input_tokens": 2339,
+    "output_tokens": 657
+  },
+  "error": null
+}

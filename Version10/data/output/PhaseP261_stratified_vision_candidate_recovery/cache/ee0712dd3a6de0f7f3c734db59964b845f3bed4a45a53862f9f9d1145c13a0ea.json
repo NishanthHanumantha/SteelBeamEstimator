@@ -1,0 +1,106 @@
+{
+  "cache_key": "ee0712dd3a6de0f7f3c734db59964b845f3bed4a45a53862f9f9d1145c13a0ea",
+  "cached_at_utc": "2026-08-17T11:42:12.589067+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B62",
+    "beam_id": "B62",
+    "prompt_fingerprint": "8349dda74bea54dbaa1b803fada5e11b5b7d66ba7e30a82f020c66f684702536",
+    "image_hash": "4f8fa456d11d0e9ec3d53a1dcce0b0016fdcbe049a370610da1f16cc52a280e1",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B62\",\n  \"beam_id\": \"B62\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top right portion of beam, annotation points to top reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3-Y25' visible with leader line pointing to top bars of the beam\",\n        \"Clear association with top longitudinal reinforcement\",\n        \"3 bars of Y25 (25mm diameter)\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Lower center portion of beam, annotation points to stirrup/link reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y12@\\\\X100C/C' visible with leader line\",\n        \"3-legged stirrups, Y12 (12mm diameter) at 100mm centers\",\n        \"Vertical green lines visible in beam section indicating stirrup locations\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B62::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B62",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y25",
+        "normalized_text": "3-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B62",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y25' visible with leader line pointing to top bars of the beam",
+          "Clear association with top longitudinal reinforcement",
+          "3 bars of Y25 (25mm diameter)",
+          "location_text:Top right portion of beam, annotation points to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\ee0712dd3a6de0f7f3c734db59964b845f3bed4a45a53862f9f9d1145c13a0ea.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B62::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B62",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y12@\\X100C/C",
+        "normalized_text": "3L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B62",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y12@\\X100C/C' visible with leader line",
+          "3-legged stirrups, Y12 (12mm diameter) at 100mm centers",
+          "Vertical green lines visible in beam section indicating stirrup locations",
+          "location_text:Lower center portion of beam, annotation points to stirrup/link reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\ee0712dd3a6de0f7f3c734db59964b845f3bed4a45a53862f9f9d1145c13a0ea.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B62",
+      "returned_beam_id": "B62"
+    }
+  },
+  "usage": {
+    "input_tokens": 2427,
+    "output_tokens": 481
+  },
+  "error": null
+}

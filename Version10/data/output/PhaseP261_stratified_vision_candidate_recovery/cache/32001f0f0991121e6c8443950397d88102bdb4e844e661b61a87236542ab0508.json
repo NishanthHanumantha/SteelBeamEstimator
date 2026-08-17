@@ -1,0 +1,107 @@
+{
+  "cache_key": "32001f0f0991121e6c8443950397d88102bdb4e844e661b61a87236542ab0508",
+  "cached_at_utc": "2026-08-17T11:48:57.575229+00:00",
+  "request_metadata": {
+    "region_id": "P261::Sixth::B45",
+    "beam_id": "B45",
+    "prompt_fingerprint": "ad1093f426409f706c4a510eab6d4b0ee1bac7c8129b4ed50f0dfc194c1923d2",
+    "image_hash": "6556c81a209ce2bb62941ddd6c715d297c8dbb2d780563b6eb254ab128c61a8d",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Sixth::B45\",\n  \"beam_id\": \"B45\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, annotation points to upper reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y25' is directly connected via leader line to the top reinforcement bars shown in the beam cross-section\",\n        \"Green reinforcement lines visible at top of beam section\",\n        \"Standard notation: 4 bars of Y25 (25mm diameter)\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y12@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrup/link reinforcement for beam B45\",\n      \"vision_confidence\": \"MEDIUM\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '2L-Y12@100C/C' indicates 2-legged stirrups of Y12 at 100mm centers\",\n        \"Annotation positioned below the beam section\",\n        \"Standard stirrup notation format\",\n        \"No direct leader line visible, but positioned in context of beam B45\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Sixth::B45::C01",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B45",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B45",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y25' is directly connected via leader line to the top reinforcement bars shown in the beam cross-section",
+          "Green reinforcement lines visible at top of beam section",
+          "Standard notation: 4 bars of Y25 (25mm diameter)",
+          "location_text:Top of beam, annotation points to upper reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\32001f0f0991121e6c8443950397d88102bdb4e844e661b61a87236542ab0508.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Sixth::B45::C02",
+        "source_set": "Sixth Set Drawings",
+        "source_drawing": "Sixth Set Drawings",
+        "beam_id": "B45",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y12@100C/C",
+        "normalized_text": "2L-Y12@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Sixth::B45",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y12@100C/C' indicates 2-legged stirrups of Y12 at 100mm centers",
+          "Annotation positioned below the beam section",
+          "Standard stirrup notation format",
+          "No direct leader line visible, but positioned in context of beam B45",
+          "location_text:Stirrup/link reinforcement for beam B45"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\32001f0f0991121e6c8443950397d88102bdb4e844e661b61a87236542ab0508.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Sixth::B45",
+      "returned_beam_id": "B45"
+    }
+  },
+  "usage": {
+    "input_tokens": 2244,
+    "output_tokens": 498
+  },
+  "error": null
+}

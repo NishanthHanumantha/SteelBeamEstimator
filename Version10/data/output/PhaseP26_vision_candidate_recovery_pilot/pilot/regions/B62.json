@@ -1,0 +1,146 @@
+{
+  "region_id": "P26::Fifth::B62",
+  "beam_id": "B62",
+  "crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B62_render.png",
+  "region_bbox": [
+    31675385.33,
+    -21163611.07,
+    31678386.78,
+    -21160751.02
+  ],
+  "metadata": {
+    "region_id": "P26::Fifth::B62",
+    "beam_id": "B62",
+    "source_set": "Fifth Set Drawings",
+    "target_beam": "B62",
+    "gap_reasons": [
+      "OCR_CORRUPTION",
+      "STIRRUP_TEXT_NO_OBJECT",
+      "MISSING_BOTTOM_WHILE_ANNS",
+      "UNASSOCIATED_REINF_TEXT",
+      "INCOMPLETE_PARSE"
+    ],
+    "accepted_and_nearby_annotations": [
+      {
+        "annotation_id": "ANN-195e2f87",
+        "text": "3-Y25",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "leader_bar_chain_owned"
+      },
+      {
+        "annotation_id": "ANN-2bf304e7",
+        "text": "3L-Y12@\\X100C/C",
+        "ownership": "ACCEPTED",
+        "ownership_reason": "stirrup_in_stirrup_region"
+      },
+      {
+        "annotation_id": "ANN-7d2f3737",
+        "text": "3-Y16",
+        "ownership": "REJECTED",
+        "ownership_reason": "no_owned_leader_bar_chain"
+      },
+      {
+        "annotation_id": "ANN-d3481731",
+        "text": "3-Y25",
+        "ownership": "REJECTED",
+        "ownership_reason": "no_owned_leader_bar_chain"
+      },
+      {
+        "annotation_id": "ANN-d2410e7e",
+        "text": "3-Y25",
+        "ownership": "REJECTED",
+        "ownership_reason": "no_owned_leader_bar_chain"
+      }
+    ],
+    "deterministic_reinforcement": {
+      "present": true,
+      "top_main": [
+        {
+          "bar_id": "R13-B62-TOP_MAIN-2939ee",
+          "semantic_role": "TOP_MAIN",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "bar_label": "3Y25",
+          "spacing_mm": null
+        },
+        {
+          "bar_id": "R13-B62-TOP_EXTRA-df9f10",
+          "semantic_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 3,
+          "bar_label": "3Y16#L",
+          "spacing_mm": null
+        },
+        {
+          "bar_id": "R13-B62-TOP_EXTRA-767af3",
+          "semantic_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 3,
+          "bar_label": "3Y16#R",
+          "spacing_mm": null
+        }
+      ],
+      "bottom_main": [],
+      "stirrups": [],
+      "side_face": [],
+      "spacers": [
+        {
+          "bar_id": "R13-B62-SPACER_BAR-6713b4",
+          "semantic_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 2,
+          "bar_label": "SPACER 25@1000",
+          "spacing_mm": 1000.0
+        },
+        {
+          "bar_id": "R13-B62-SPACER_BAR-3b903b",
+          "semantic_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 2,
+          "bar_label": "SPACER 25@1000",
+          "spacing_mm": 1000.0
+        }
+      ],
+      "total_classified_bars": 5
+    },
+    "beam_depth_mm": 600.0,
+    "region_bbox": [
+      31675385.33,
+      -21163611.07,
+      31678386.78,
+      -21160751.02
+    ],
+    "crop_config": {
+      "source": "QA30_FIFTH_SHARED_RENDER",
+      "reuse_p250_p252_infrastructure": true,
+      "base_margin_mm": 250.0,
+      "evidence_pad_mm": 120.0,
+      "render_max_dim_px": 1200,
+      "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+      "regenerate_dxf": false
+    },
+    "instruction": "Image 1 is a localized crop of the TARGET beam with surrounding context. Neighbouring beams, slabs, columns, and notes may appear. Do not assume nearby text belongs to the TARGET beam."
+  },
+  "images": [
+    {
+      "role": "beam_region_crop",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B62_render.png",
+      "sha256": "4f8fa456d11d0e9ec3d53a1dcce0b0016fdcbe049a370610da1f16cc52a280e1",
+      "size_bytes": 30237,
+      "media_type": "image/png"
+    }
+  ],
+  "image_hash": "4f8fa456d11d0e9ec3d53a1dcce0b0016fdcbe049a370610da1f16cc52a280e1",
+  "region_hash": "04a30e8479303c3151ed9449dec85657f27506340cfb8f68413ae2ba89194856",
+  "drawing_hash": "150ca262b266d0f72d5f63f7817940bdcf74d700c0bc56e567be9cf40f40a462",
+  "truth_leak_keys": [],
+  "crop_config": {
+    "source": "QA30_FIFTH_SHARED_RENDER",
+    "reuse_p250_p252_infrastructure": true,
+    "base_margin_mm": 250.0,
+    "evidence_pad_mm": 120.0,
+    "render_max_dim_px": 1200,
+    "context_note": "Existing P250/QA30 engineering crop already includes surrounding beam, slab, and annotation context (base_margin_mm + evidence_pad_mm).",
+    "regenerate_dxf": false
+  }
+}

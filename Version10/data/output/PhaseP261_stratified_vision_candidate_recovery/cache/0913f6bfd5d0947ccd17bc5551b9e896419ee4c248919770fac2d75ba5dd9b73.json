@@ -1,0 +1,142 @@
+{
+  "cache_key": "0913f6bfd5d0947ccd17bc5551b9e896419ee4c248919770fac2d75ba5dd9b73",
+  "cached_at_utc": "2026-08-17T11:42:23.410930+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B71",
+    "beam_id": "B71",
+    "prompt_fingerprint": "ef34394144f74dce5b84ab949ac18c64358455a640747463e09168789a565403",
+    "image_hash": "e97881cd63c2a0d6632fc21a99ee0c5883183fb2d4a7032eb756a0031a86e081",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B71\",\n  \"beam_id\": \"B71\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y32\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 32,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left end of beam, bottom reinforcement annotation\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y32' is positioned directly below the beam outline at the left support region\",\n        \"Clear association with the target beam B71 shown in the upper portion of the drawing\",\n        \"Typical bottom bar notation for beam reinforcement\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left end of beam, top reinforcement annotation\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4-Y25' is positioned above the '4-Y32' annotation at the left support\",\n        \"Located at the same vertical section as the bottom bars, indicating support region reinforcement\",\n        \"Typical top bar notation for beam reinforcement at support\"\n      ]\n    },\n    {\n      \"candidate_index\": 3,\n      \"annotation_text\": \"4L-Y12@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 12,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left support region of beam\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '4L-Y12@\\\\X100C/C' indicates 4-legged stirrups at 100mm centers\",\n        \"Positioned below the beam at the left support region\",\n        \"Standard stirrup notation with leg count, diameter, and spacing\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B71::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B71",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y32",
+        "normalized_text": "4-Y32",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 32,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B71",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y32' is positioned directly below the beam outline at the left support region",
+          "Clear association with the target beam B71 shown in the upper portion of the drawing",
+          "Typical bottom bar notation for beam reinforcement",
+          "location_text:Left end of beam, bottom reinforcement annotation"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0913f6bfd5d0947ccd17bc5551b9e896419ee4c248919770fac2d75ba5dd9b73.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B71::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B71",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y25",
+        "normalized_text": "4-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B71",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y25' is positioned above the '4-Y32' annotation at the left support",
+          "Located at the same vertical section as the bottom bars, indicating support region reinforcement",
+          "Typical top bar notation for beam reinforcement at support",
+          "location_text:Left end of beam, top reinforcement annotation"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0913f6bfd5d0947ccd17bc5551b9e896419ee4c248919770fac2d75ba5dd9b73.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B71::C03",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B71",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y12@\\X100C/C",
+        "normalized_text": "4L-Y12@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 12,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B71",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4L-Y12@\\X100C/C' indicates 4-legged stirrups at 100mm centers",
+          "Positioned below the beam at the left support region",
+          "Standard stirrup notation with leg count, diameter, and spacing",
+          "location_text:Left support region of beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\0913f6bfd5d0947ccd17bc5551b9e896419ee4c248919770fac2d75ba5dd9b73.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 3,
+      "normalized_count": 3,
+      "returned_region_id": "P261::Fifth::B71",
+      "returned_beam_id": "B71"
+    }
+  },
+  "usage": {
+    "input_tokens": 1522,
+    "output_tokens": 689
+  },
+  "error": null
+}

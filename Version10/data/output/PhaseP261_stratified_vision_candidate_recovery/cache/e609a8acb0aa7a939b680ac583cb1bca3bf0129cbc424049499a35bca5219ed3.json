@@ -1,0 +1,107 @@
+{
+  "cache_key": "e609a8acb0aa7a939b680ac583cb1bca3bf0129cbc424049499a35bca5219ed3",
+  "cached_at_utc": "2026-08-17T11:46:21.587160+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B94",
+    "beam_id": "B94",
+    "prompt_fingerprint": "d49e5a6d209b8af88c7ef3037d2875be43b893da0855e83c03df4a9fc8eed8db",
+    "image_hash": "711a04c39bfb656989eed89615ffb2388794d63b6d01e25b0ffa807cd973f3f7",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B94\",\n  \"beam_id\": \"B94\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation positioned at top of beam section, with leader pointing to top reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Clear annotation '3-Y20' with leader line pointing to top of beam cross-section\",\n        \"Positioned at upper portion of beam indicating top reinforcement\",\n        \"Standard notation: 3 bars of Y20 (20mm diameter)\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y10@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation positioned below beam section, indicating stirrup/link reinforcement\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Annotation '3L-Y10@100C/C' indicates 3-legged stirrups\",\n        \"Y10 diameter bars at 100mm center-to-center spacing\",\n        \"Standard stirrup notation with spacing specification\",\n        \"Positioned below beam consistent with stirrup callout convention\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B94::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B94",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y20",
+        "normalized_text": "3-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B94",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear annotation '3-Y20' with leader line pointing to top of beam cross-section",
+          "Positioned at upper portion of beam indicating top reinforcement",
+          "Standard notation: 3 bars of Y20 (20mm diameter)",
+          "location_text:Annotation positioned at top of beam section, with leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\e609a8acb0aa7a939b680ac583cb1bca3bf0129cbc424049499a35bca5219ed3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B94::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B94",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100C/C",
+        "normalized_text": "3L-Y10@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B94",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3L-Y10@100C/C' indicates 3-legged stirrups",
+          "Y10 diameter bars at 100mm center-to-center spacing",
+          "Standard stirrup notation with spacing specification",
+          "Positioned below beam consistent with stirrup callout convention",
+          "location_text:Annotation positioned below beam section, indicating stirrup/link reinforcement"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\e609a8acb0aa7a939b680ac583cb1bca3bf0129cbc424049499a35bca5219ed3.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B94",
+      "returned_beam_id": "B94"
+    }
+  },
+  "usage": {
+    "input_tokens": 2421,
+    "output_tokens": 496
+  },
+  "error": null
+}

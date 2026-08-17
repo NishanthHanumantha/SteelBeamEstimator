@@ -1,0 +1,107 @@
+{
+  "cache_key": "6bc5c5a3372e2734e0cb8b34442e6d801f58ad93783a21813f64db728e830df2",
+  "cached_at_utc": "2026-08-17T10:29:04.571711+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B47",
+    "beam_id": "B47",
+    "prompt_fingerprint": "a62390416d5f525ee2c14aaf9e61a6ec98306a34e2408929ec5c4027613762e8",
+    "image_hash": "c208f4074f8a0c61ef7172354af01c0052b4c0d1a6e9568d5852b308810e3fdf",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B47\",\n  \"beam_id\": \"B47\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom annotation with leader pointing to lower longitudinal bars in beam cross-section\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Clear annotation '4Y16' visible at bottom of beam section\",\n        \"Leader line points to bottom longitudinal reinforcement bars\",\n        \"Symmetric to top reinforcement pattern\",\n        \"Missing from deterministic bottom_main list despite clear visual presence\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y10@\\\\X100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrup annotation below beam section\",\n      \"vision_confidence\": 0.9,\n      \"text_confidence\": 0.85,\n      \"evidence_notes\": [\n        \"Annotation visible: '2L-Y10@\\\\X100C/C'\",\n        \"Indicates 2-leg Y10 stirrups at 100mm centers\",\n        \"Listed in accepted_annotations but missing from deterministic stirrups list\",\n        \"Standard stirrup notation format\"\n      ],\n      \"listed_in_deterministic_metadata\": false\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B47::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B47",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4Y16",
+        "normalized_text": "4Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B47",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear annotation '4Y16' visible at bottom of beam section",
+          "Leader line points to bottom longitudinal reinforcement bars",
+          "Symmetric to top reinforcement pattern",
+          "Missing from deterministic bottom_main list despite clear visual presence",
+          "location_text:Bottom annotation with leader pointing to lower longitudinal bars in beam cross-section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B47::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B47",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y10@\\X100C/C",
+        "normalized_text": "2L-Y10@\\X100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B47",
+        "region_bbox": null,
+        "vision_confidence": 0.9,
+        "text_confidence": 0.85,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation visible: '2L-Y10@\\X100C/C'",
+          "Indicates 2-leg Y10 stirrups at 100mm centers",
+          "Listed in accepted_annotations but missing from deterministic stirrups list",
+          "Standard stirrup notation format",
+          "location_text:Stirrup annotation below beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B47",
+      "returned_beam_id": "B47"
+    }
+  },
+  "usage": {
+    "input_tokens": 2930,
+    "output_tokens": 522
+  },
+  "error": null
+}

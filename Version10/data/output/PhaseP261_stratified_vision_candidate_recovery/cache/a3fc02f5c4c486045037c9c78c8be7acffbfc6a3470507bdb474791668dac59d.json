@@ -1,0 +1,107 @@
+{
+  "cache_key": "a3fc02f5c4c486045037c9c78c8be7acffbfc6a3470507bdb474791668dac59d",
+  "cached_at_utc": "2026-08-17T11:47:21.409975+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B173",
+    "beam_id": "B173",
+    "prompt_fingerprint": "19954c3a656f66dba274496ba2b8f111bd1dd60e073db6aa735a060c29033c1e",
+    "image_hash": "e04d59813cb4486a190f4fe234e8e4c94372989daf4043fd848bcca5bab9bd08",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B173\",\n  \"beam_id\": \"B173\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Bottom of beam, indicated by leader pointing to bottom reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '3-Y16' with leader pointing to bottom of beam cross-section\",\n        \"Leader clearly indicates bottom longitudinal reinforcement\",\n        \"Typical bottom bar notation format\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"2L-Y8@100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrup/shear reinforcement annotation below beam section\",\n      \"vision_confidence\": 0.92,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation '2L-Y8@100C/C' indicates 2-legged stirrups\",\n        \"Y8 diameter bars at 100mm center-to-center spacing\",\n        \"Standard stirrup notation format\",\n        \"Located below beam indicating shear reinforcement\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B173::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B173",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y16",
+        "normalized_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B173",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '3-Y16' with leader pointing to bottom of beam cross-section",
+          "Leader clearly indicates bottom longitudinal reinforcement",
+          "Typical bottom bar notation format",
+          "location_text:Bottom of beam, indicated by leader pointing to bottom reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\a3fc02f5c4c486045037c9c78c8be7acffbfc6a3470507bdb474791668dac59d.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B173::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B173",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@100C/C",
+        "normalized_text": "2L-Y8@100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B173",
+        "region_bbox": null,
+        "vision_confidence": 0.92,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2L-Y8@100C/C' indicates 2-legged stirrups",
+          "Y8 diameter bars at 100mm center-to-center spacing",
+          "Standard stirrup notation format",
+          "Located below beam indicating shear reinforcement",
+          "location_text:Stirrup/shear reinforcement annotation below beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\a3fc02f5c4c486045037c9c78c8be7acffbfc6a3470507bdb474791668dac59d.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B173",
+      "returned_beam_id": "B173"
+    }
+  },
+  "usage": {
+    "input_tokens": 2415,
+    "output_tokens": 481
+  },
+  "error": null
+}

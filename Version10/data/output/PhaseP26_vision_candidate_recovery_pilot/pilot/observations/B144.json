@@ -1,0 +1,72 @@
+{
+  "region_id": "P26::Fifth::B144",
+  "beam_id": "B144",
+  "cache_key": "5acffbe24cfe66adb842fe7c7c0b162a38ffa3dc1d3aa122d7ba415686b32c31",
+  "prompt_fingerprint": "ade54c29a2455a1480d23c25ccc6c6c7a5ec6a5db1a7e85e88fae891a4dd74dc",
+  "vision_model": "claude-sonnet-4-5",
+  "temperature": 0,
+  "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+  "truth_leak_keys": [],
+  "timestamp_utc": "2026-08-17T10:48:51.113448+00:00",
+  "production_write": false,
+  "decision": "SHADOW_CANDIDATE",
+  "api_ok": true,
+  "cache_hit": true,
+  "live_call": false,
+  "error": null,
+  "candidates": [
+    {
+      "candidate_id": "P26::B144::C01",
+      "source_set": "Fifth Set Drawings",
+      "source_drawing": "Fifth Set Drawings",
+      "beam_id": "B144",
+      "candidate_type": "STIRRUP",
+      "annotation_text": "3L-Y12@\\X100C/C",
+      "normalized_text": "3L-Y12@\\X100C/C",
+      "role": "STIRRUP",
+      "diameter_mm": 12,
+      "quantity": null,
+      "spacing_mm": [
+        100.0
+      ],
+      "legs": 3,
+      "source_x": null,
+      "source_y": null,
+      "region_id": "P26::Fifth::B144",
+      "region_bbox": null,
+      "vision_confidence": 0.95,
+      "text_confidence": 0.9,
+      "evidence_type": "BEAM_REGION_CROP",
+      "evidence_notes": [
+        "Annotation visible in upper right detail with leader line pointing to beam end",
+        "Text clearly shows 3L (3 legs), Y12 diameter, @\\X100C/C spacing",
+        "Listed in accepted_and_nearby_annotations as ACCEPTED with reason 'stirrup_in_stirrup_region'",
+        "Not present in deterministic_reinforcement.stirrups list (empty array)",
+        "location_text:Right end of beam B144, visible in upper detail view with leader pointing to stirrup region"
+      ],
+      "deterministic_match_status": "POTENTIALLY_MISSING",
+      "gt_match_status": null,
+      "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+      "vision_model": "claude-sonnet-4-5",
+      "model_version": "10.11.0",
+      "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+      "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\5acffbe24cfe66adb842fe7c7c0b162a38ffa3dc1d3aa122d7ba415686b32c31.json",
+      "beam_association": "TARGET_BEAM",
+      "decision": "SHADOW_CANDIDATE",
+      "deterministic_match_reason": "NO_EQUIVALENT_DETERMINISTIC_BAR",
+      "deterministic_matched_bar_id": null
+    }
+  ],
+  "parse_report": {
+    "ok": true,
+    "error": null,
+    "raw_candidate_count": 1,
+    "normalized_count": 1,
+    "returned_region_id": "P26::Fifth::B144",
+    "returned_beam_id": "B144"
+  },
+  "usage": {
+    "input_tokens": 2658,
+    "output_tokens": 327
+  }
+}

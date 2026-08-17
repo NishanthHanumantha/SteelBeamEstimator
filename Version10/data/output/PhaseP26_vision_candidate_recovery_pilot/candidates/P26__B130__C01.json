@@ -1,0 +1,53 @@
+{
+  "candidate_id": "P26::B130::C01",
+  "source_set": "Fifth Set Drawings",
+  "source_drawing": "Fifth Set Drawings",
+  "beam_id": "B130",
+  "candidate_type": "STIRRUP",
+  "annotation_text": "4L-Y10@\\X100C/C",
+  "normalized_text": "4L-Y10@\\X100C/C",
+  "role": "STIRRUP",
+  "diameter_mm": 10,
+  "quantity": null,
+  "spacing_mm": [
+    100.0
+  ],
+  "legs": 4,
+  "source_x": null,
+  "source_y": null,
+  "region_id": "P26::Fifth::B130",
+  "region_bbox": [
+    31675786.9,
+    -21189233.36,
+    31679186.9,
+    -21186755.51
+  ],
+  "vision_confidence": 0.95,
+  "text_confidence": 0.9,
+  "evidence_type": "BEAM_REGION_CROP",
+  "evidence_notes": [
+    "Text annotation clearly visible below beam section",
+    "Format indicates stirrup specification with legs (4L), diameter (Y10), and spacing (@100C/C)",
+    "Listed in deterministic metadata as ACCEPTED but not in deterministic_reinforcement.stirrups",
+    "location_text:Below the beam cross-section, centered in the view"
+  ],
+  "deterministic_match_status": "POTENTIALLY_MISSING",
+  "gt_match_status": null,
+  "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+  "vision_model": "claude-sonnet-4-5",
+  "model_version": "10.11.0",
+  "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+  "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\cache\\140dec4d70b93a56a7b75bd5ca5f4599eaa56c270fae98e6693d2ca08fe0c5dd.json",
+  "beam_association": "TARGET_BEAM",
+  "decision": "SHADOW_CANDIDATE",
+  "deterministic_match_reason": "NO_EQUIVALENT_DETERMINISTIC_BAR",
+  "deterministic_matched_bar_id": null,
+  "gap_reasons": [
+    "OCR_CORRUPTION",
+    "STIRRUP_TEXT_NO_OBJECT",
+    "SPARSE_REINFORCEMENT",
+    "MISSING_BOTTOM_WHILE_ANNS",
+    "UNASSOCIATED_REINF_TEXT",
+    "INCOMPLETE_PARSE"
+  ]
+}

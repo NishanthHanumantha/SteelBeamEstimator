@@ -1,0 +1,107 @@
+{
+  "cache_key": "f5a5a0adc7c1b332be1794878332ab4ae399eb4a3f554748aee100bbba5cb554",
+  "cached_at_utc": "2026-08-17T11:48:01.848299+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B23",
+    "beam_id": "B23",
+    "prompt_fingerprint": "ec6571dc6f88de4ef0d609cc9ab799f2f88bd7c0498a5edd226dfa87ad902e11",
+    "image_hash": "4e4169c1bddacc3ddd9583922f79448d1f14d6c47dd0b858a2f70b6f7493d4b6",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B23\",\n  \"beam_id\": \"B23\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"4-Y20\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 20,\n      \"quantity\": 4,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam B23, visible in elevation view at upper portion\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '4-Y20' is clearly positioned above the beam B23 in the elevation view\",\n        \"Represents 4 bars of Y20 diameter as top reinforcement\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"4L-Y8@100/125/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 125, 100],\n      \"legs\": 4,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Stirrup reinforcement for beam B23, annotation positioned to the right of the beam elevation\",\n      \"vision_confidence\": 0.92,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Annotation '4L-Y8@100/125/100C/C' indicates 4-legged stirrups\",\n        \"Y8 diameter bars at varying spacing: 100mm, 125mm, 100mm center-to-center\",\n        \"Positioned near beam B23 elevation view with leader line connection\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B23::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B23",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "4-Y20",
+        "normalized_text": "4-Y20",
+        "role": "TOP_BAR",
+        "diameter_mm": 20,
+        "quantity": 4.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B23",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4-Y20' is clearly positioned above the beam B23 in the elevation view",
+          "Represents 4 bars of Y20 diameter as top reinforcement",
+          "location_text:Top of beam B23, visible in elevation view at upper portion"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5a5a0adc7c1b332be1794878332ab4ae399eb4a3f554748aee100bbba5cb554.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B23::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B23",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "4L-Y8@100/125/100C/C",
+        "normalized_text": "4L-Y8@100/125/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          125.0,
+          100.0
+        ],
+        "legs": 4,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B23",
+        "region_bbox": null,
+        "vision_confidence": 0.92,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '4L-Y8@100/125/100C/C' indicates 4-legged stirrups",
+          "Y8 diameter bars at varying spacing: 100mm, 125mm, 100mm center-to-center",
+          "Positioned near beam B23 elevation view with leader line connection",
+          "location_text:Stirrup reinforcement for beam B23, annotation positioned to the right of the beam elevation"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f5a5a0adc7c1b332be1794878332ab4ae399eb4a3f554748aee100bbba5cb554.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B23",
+      "returned_beam_id": "B23"
+    }
+  },
+  "usage": {
+    "input_tokens": 1731,
+    "output_tokens": 507
+  },
+  "error": null
+}

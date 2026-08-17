@@ -1,0 +1,107 @@
+{
+  "cache_key": "3e77ca806a4c287e193282a32fae8a8c911da9f2e6a16113e13e7541b54ab91e",
+  "cached_at_utc": "2026-08-17T10:27:49.172813+00:00",
+  "request_metadata": {
+    "region_id": "P26::Fifth::B128",
+    "beam_id": "B128",
+    "prompt_fingerprint": "52d19a117f828033630bc806319de5e047de916b1e8cb21d7cf3213f453e7aa0",
+    "image_hash": "d25b6f046bbc514336b34d693b9938c500751b6760a3c43ff8d854e74fe24a11",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P26::Fifth::B128\",\n  \"beam_id\": \"B128\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2L-Y8@\\\\X100/150/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 8,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 150, 100],\n      \"legs\": 2,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Below the beam section, centered annotation with leader pointing to beam\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.9,\n      \"evidence_notes\": [\n        \"Clear stirrup annotation visible below beam cross-section\",\n        \"Leader line points to bottom of beam section\",\n        \"Standard stirrup notation format with legs, diameter, and spacing pattern\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Annotation with leader pointing to bottom reinforcement layer of beam section\",\n      \"vision_confidence\": 0.9,\n      \"text_confidence\": 0.95,\n      \"evidence_notes\": [\n        \"Leader line clearly points to bottom longitudinal bars in beam section\",\n        \"Annotation positioned below beam, pointing upward to bottom reinforcement\",\n        \"Standard bar notation format\"\n      ],\n      \"listed_in_deterministic_metadata\": true\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P26::B128::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B128",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "2L-Y8@\\X100/150/100C/C",
+        "normalized_text": "2L-Y8@\\X100/150/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 8,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          150.0,
+          100.0
+        ],
+        "legs": 2,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B128",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.9,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Clear stirrup annotation visible below beam cross-section",
+          "Leader line points to bottom of beam section",
+          "Standard stirrup notation format with legs, diameter, and spacing pattern",
+          "location_text:Below the beam section, centered annotation with leader pointing to beam"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P26::B128::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B128",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y16",
+        "normalized_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P26::Fifth::B128",
+        "region_bbox": null,
+        "vision_confidence": 0.9,
+        "text_confidence": 0.95,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Leader line clearly points to bottom longitudinal bars in beam section",
+          "Annotation positioned below beam, pointing upward to bottom reinforcement",
+          "Standard bar notation format",
+          "location_text:Annotation with leader pointing to bottom reinforcement layer of beam section"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P26_VISION_CANDIDATE_RECOVERY_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.0",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": null,
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P26::Fifth::B128",
+      "returned_beam_id": "B128"
+    }
+  },
+  "usage": {
+    "input_tokens": 2875,
+    "output_tokens": 492
+  },
+  "error": null
+}

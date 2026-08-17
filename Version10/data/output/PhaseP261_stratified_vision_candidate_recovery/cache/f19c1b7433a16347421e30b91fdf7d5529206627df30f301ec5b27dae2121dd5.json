@@ -1,0 +1,110 @@
+{
+  "cache_key": "f19c1b7433a16347421e30b91fdf7d5529206627df30f301ec5b27dae2121dd5",
+  "cached_at_utc": "2026-08-17T11:45:16.961024+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fifth::B100",
+    "beam_id": "B100",
+    "prompt_fingerprint": "17d8ffeef801015343b36d232dc6fd48a9201a2e89dcdf2fa6d2d6784bf4f4a7",
+    "image_hash": "4971ddaaa7ec44eb64be82ce51d6211106c4eada6d08a533527e9b8c775fed57",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fifth::B100\",\n  \"beam_id\": \"B100\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"3-Y25\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 25,\n      \"quantity\": 3,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Top of beam, annotation with green leader pointing to top reinforcement layer\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"Green leader line clearly points from annotation to top of beam section\",\n        \"Annotation positioned directly above beam outline\",\n        \"Standard notation for longitudinal bars: quantity-bar_type-diameter\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"3L-Y10@100/125/100C/C\",\n      \"candidate_type\": \"STIRRUP\",\n      \"role\": \"STIRRUP\",\n      \"diameter_mm\": 10,\n      \"quantity\": null,\n      \"spacing_mm\": [100, 125, 100],\n      \"legs\": 3,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Center region below beam, annotation indicates stirrup configuration\",\n      \"vision_confidence\": \"HIGH\",\n      \"text_confidence\": \"HIGH\",\n      \"evidence_notes\": [\n        \"3L indicates 3-legged stirrups\",\n        \"Y10 indicates 10mm diameter bars\",\n        \"Variable spacing pattern: 100/125/100 mm center-to-center\",\n        \"Annotation positioned below beam section, typical for stirrup callouts\",\n        \"C/C suffix confirms center-to-center spacing\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fifth::B100::C01",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B100",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "3-Y25",
+        "normalized_text": "3-Y25",
+        "role": "TOP_BAR",
+        "diameter_mm": 25,
+        "quantity": 3.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B100",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Green leader line clearly points from annotation to top of beam section",
+          "Annotation positioned directly above beam outline",
+          "Standard notation for longitudinal bars: quantity-bar_type-diameter",
+          "location_text:Top of beam, annotation with green leader pointing to top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f19c1b7433a16347421e30b91fdf7d5529206627df30f301ec5b27dae2121dd5.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fifth::B100::C02",
+        "source_set": "Fifth Set Drawings",
+        "source_drawing": "Fifth Set Drawings",
+        "beam_id": "B100",
+        "candidate_type": "STIRRUP",
+        "annotation_text": "3L-Y10@100/125/100C/C",
+        "normalized_text": "3L-Y10@100/125/100C/C",
+        "role": "STIRRUP",
+        "diameter_mm": 10,
+        "quantity": null,
+        "spacing_mm": [
+          100.0,
+          125.0,
+          100.0
+        ],
+        "legs": 3,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fifth::B100",
+        "region_bbox": null,
+        "vision_confidence": null,
+        "text_confidence": null,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "3L indicates 3-legged stirrups",
+          "Y10 indicates 10mm diameter bars",
+          "Variable spacing pattern: 100/125/100 mm center-to-center",
+          "Annotation positioned below beam section, typical for stirrup callouts",
+          "C/C suffix confirms center-to-center spacing",
+          "location_text:Center region below beam, annotation indicates stirrup configuration"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\f19c1b7433a16347421e30b91fdf7d5529206627df30f301ec5b27dae2121dd5.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fifth::B100",
+      "returned_beam_id": "B100"
+    }
+  },
+  "usage": {
+    "input_tokens": 2075,
+    "output_tokens": 496
+  },
+  "error": null
+}

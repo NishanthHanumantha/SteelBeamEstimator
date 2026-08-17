@@ -1,0 +1,105 @@
+{
+  "cache_key": "160c9bfea92004028da8391264e968bbe668cae59f79a73423ff7c23ea047ae7",
+  "cached_at_utc": "2026-08-17T11:52:18.888832+00:00",
+  "request_metadata": {
+    "region_id": "P261::Fourth::B55",
+    "beam_id": "B55",
+    "prompt_fingerprint": "0176e34b55350be31e338b75f9d12908b7c09c82a93f4306839651ea8bc39549",
+    "image_hash": "905384d38d5ec538498266925225482297cf7c25c30959c8b048e48b602853a3",
+    "model": "claude-sonnet-4-5",
+    "temperature": 0,
+    "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+    "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1"
+  },
+  "raw_response": "```json\n{\n  \"region_id\": \"P261::Fourth::B55\",\n  \"beam_id\": \"B55\",\n  \"candidates\": [\n    {\n      \"candidate_index\": 1,\n      \"annotation_text\": \"2-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"TOP_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 2,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left side of beam, top reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '2-Y16' visible at left end of beam\",\n        \"Associated with top reinforcement bars shown in dark blue\",\n        \"Clear leader line connecting text to top bars\"\n      ]\n    },\n    {\n      \"candidate_index\": 2,\n      \"annotation_text\": \"5-Y16\",\n      \"candidate_type\": \"LONGITUDINAL_REINFORCEMENT\",\n      \"role\": \"BOTTOM_BAR\",\n      \"diameter_mm\": 16,\n      \"quantity\": 5,\n      \"spacing_mm\": [],\n      \"legs\": null,\n      \"beam_association\": \"TARGET_BEAM\",\n      \"approx_location\": \"Left side of beam, bottom reinforcement layer\",\n      \"vision_confidence\": 0.95,\n      \"text_confidence\": 0.98,\n      \"evidence_notes\": [\n        \"Annotation '5-Y16' visible at left end of beam\",\n        \"Associated with bottom reinforcement bars shown in dark blue\",\n        \"Clear leader line connecting text to bottom bars\",\n        \"Bottom bars extend along full beam length\"\n      ]\n    }\n  ]\n}\n```",
+  "normalized_response": {
+    "candidates": [
+      {
+        "candidate_id": "P261::Fourth::B55::C01",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B55",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "2-Y16",
+        "normalized_text": "2-Y16",
+        "role": "TOP_BAR",
+        "diameter_mm": 16,
+        "quantity": 2.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B55",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '2-Y16' visible at left end of beam",
+          "Associated with top reinforcement bars shown in dark blue",
+          "Clear leader line connecting text to top bars",
+          "location_text:Left side of beam, top reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\160c9bfea92004028da8391264e968bbe668cae59f79a73423ff7c23ea047ae7.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      },
+      {
+        "candidate_id": "P261::Fourth::B55::C02",
+        "source_set": "Fourth Set Drawings",
+        "source_drawing": "Fourth Set Drawings",
+        "beam_id": "B55",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "annotation_text": "5-Y16",
+        "normalized_text": "5-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter_mm": 16,
+        "quantity": 5.0,
+        "spacing_mm": [],
+        "legs": null,
+        "source_x": null,
+        "source_y": null,
+        "region_id": "P261::Fourth::B55",
+        "region_bbox": null,
+        "vision_confidence": 0.95,
+        "text_confidence": 0.98,
+        "evidence_type": "BEAM_REGION_CROP",
+        "evidence_notes": [
+          "Annotation '5-Y16' visible at left end of beam",
+          "Associated with bottom reinforcement bars shown in dark blue",
+          "Clear leader line connecting text to bottom bars",
+          "Bottom bars extend along full beam length",
+          "location_text:Left side of beam, bottom reinforcement layer"
+        ],
+        "deterministic_match_status": "UNKNOWN",
+        "gt_match_status": null,
+        "prompt_version": "P261_NEUTRAL_VISION_CANDIDATE_PROMPT_V1",
+        "vision_model": "claude-sonnet-4-5",
+        "model_version": "10.11.1",
+        "schema_version": "P26_VISION_CANDIDATE_SCHEMA_V1",
+        "raw_vision_response_reference": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\cache\\160c9bfea92004028da8391264e968bbe668cae59f79a73423ff7c23ea047ae7.json",
+        "beam_association": "TARGET_BEAM",
+        "decision": "SHADOW_CANDIDATE"
+      }
+    ],
+    "parse_report": {
+      "ok": true,
+      "error": null,
+      "raw_candidate_count": 2,
+      "normalized_count": 2,
+      "returned_region_id": "P261::Fourth::B55",
+      "returned_beam_id": "B55"
+    }
+  },
+  "usage": {
+    "input_tokens": 1506,
+    "output_tokens": 459
+  },
+  "error": null
+}
