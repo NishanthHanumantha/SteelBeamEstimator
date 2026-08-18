@@ -1,0 +1,18 @@
+{
+  "set_key": "Sixth",
+  "beam_id": "B56",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "15.512099400002626",
+  "usage": {
+    "input_tokens": "3772",
+    "output_tokens": "693"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_MAIN\",\n    \"LEADER_POINTS_TO_TOP_ZONE\",\n    \"ANNOTATION_IN_TOP_ZONE\",\n    \"QUANTITY_AND_DIAMETER_MATCH\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"annotation_location\": \"The '4-Y25' annotation is positioned in the top zone of the beam cross-section, with its leader pointing upward to the top reinforcement layer\",\n      \"leader_direction\": \"Leader tip points UP into the top zone where reinforcement bars are visible\",\n      \"visible_reinforcement\": \"Top layer shows horizontal reinforcement bars consistent with the annotation callout\",\n      \"cross_section_context\": \"The hatched cross-section clearly shows top reinforcement; no indication of additional distinct reinforcement at this location\"\n    },\n    \"deterministic_alignment\": {\n      \"existing_top_main\": \"4Y25 (4 bars of 25mm diameter) already exists in TOP_MAIN layer\",\n      \"exact_specification_match\": true,\n      \"quantity_match\": \"4 bars in annotation matches 4 bars in existing TOP_MAIN\",\n      \"diameter_match\": \"Y25 (25mm) matches existing diameter\"\n    },\n    \"spatial_alignment\": {\n      \"annotation_zone\": \"TOP_ZONE\",\n      \"leader_tip_zone\": \"TOP_ZONE\",\n      \"populated_layer\": \"TOP\",\n      \"zone_consistency\": true\n    }\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": \"4 bars of Y25 (25mm diameter)\",\n    \"indicated_layer\": \"TOP\",\n    \"role_indication\": \"Main top longitudinal reinforcement\",\n    \"callout_purpose\": \"Standard reinforcement callout identifying the top main bars visible in the cross-section\"\n  },\n  \"uncertainty_notes\": \"The annotation '4-Y25' exactly matches the existing TOP_MAIN reinforcement specification (bar_id: R13-B56-TOP_MAIN-2de2fa, bar_label: 4Y25). The leader points to the top zone where this reinforcement is already represented. There is no visual or contextual evidence suggesting this represents additional or distinct reinforcement. The annotation appears to be a standard callout labeling the existing top main reinforcement visible in the cross-section.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B143",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "20.670652400003746",
+  "usage": {
+    "input_tokens": "3859",
+    "output_tokens": "835"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"EXISTING_TOP_LAYER_OBJECTS\",\n    \"LEADER_TIPS_POINT_TO_TOP_BARS\",\n    \"NO_EVIDENCE_OF_DISTINCT_LAYER\",\n    \"DETERMINISTIC_ALREADY_ACCEPTED\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"4-Y20_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\",\n      \"2-Y12_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\",\n      \"bar_visualization\": \"Dark blue bars visible at top of beam section representing top longitudinal reinforcement\",\n      \"no_bottom_callouts\": \"No annotations or leaders pointing to bottom of beam section\",\n      \"green_outline\": \"Beam outline shows typical section with reinforcement concentrated at top\"\n    },\n    \"deterministic_model\": {\n      \"existing_4Y20\": \"Bar ID R13-B143-TOP_EXTRA-b6b812, diameter 20mm, quantity 4, family TOP\",\n      \"existing_2Y12\": \"Bar ID R13-B143-TOP_EXTRA-947e24, diameter 12mm, quantity 2, family TOP\",\n      \"total_top_bars\": \"9 bars total in top layer (3Y25 + 4Y20 + 2Y12)\",\n      \"accepted_specs_match\": \"Both 4-Y20 and 2-Y12 are in accepted_specs list with coverage ROLE_COVERAGE_GAP\"\n    },\n    \"spatial_analysis\": {\n      \"4-Y20_leader_tip\": \"Leader tip at top zone boundary (dist_tip_top_zone: 4.07mm), pointing UP\",\n      \"2-Y12_leader_tip\": \"Leader tip in top zone (dist_tip_top_zone: 0.0mm), pointing UP\",\n      \"nearest_bars\": \"Both annotations nearest to TOP family bars (512mm and 547mm respectively)\",\n      \"position_zone\": \"Both annotations in TOP_ZONE\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"4-Y20\": \"Callout for 4 bars of Y20 diameter in top layer, already represented by bar R13-B143-TOP_EXTRA-b6b812\",\n    \"2-Y12\": \"Callout for 2 bars of Y12 diameter in top layer, already represented by bar R13-B143-TOP_EXTRA-947e24\"\n  },\n  \"uncertainty_notes\": \"The deterministic model shows ROLE_COVERAGE_GAP status, but this appears to be a labeling/role assignment issue rather than missing reinforcement. The exact quantities and diameters are already present in existing_top_reinforcement. Both annotations have leaders pointing to the top bars visible in the image. No evidence suggests these represent additional distinct reinforcement in a different layer or location.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

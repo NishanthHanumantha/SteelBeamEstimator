@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B170",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "20.26963209999667",
+  "usage": {
+    "input_tokens": "5620",
+    "output_tokens": "778"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.88,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"IDENTICAL_SPECIFICATION_MATCH\",\n    \"EXISTING_TOP_LAYER_OBJECT_PRESENT\",\n    \"MULTIPLE_CALLOUTS_SAME_SPECIFICATION\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_BARS\",\n    \"LEADER_TIPS_POINT_TO_SAME_REINFORCEMENT_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Two '3-Y16' annotations visible in the beam section\",\n      \"One annotation points downward to the top reinforcement layer (upper bars)\",\n      \"One annotation points upward to the same top reinforcement layer (upper bars)\",\n      \"Both leader tips terminate at or near the same horizontal reinforcement line (top layer)\",\n      \"The beam section shows two distinct horizontal reinforcement layers - top and bottom\",\n      \"No visual evidence of additional bars beyond what is shown in the top layer\",\n      \"The annotations appear to be calling out the same set of bars from different positions\"\n    ],\n    \"deterministic_model_state\": [\n      \"Existing top reinforcement: 3Y16 (3 bars of 16mm diameter)\",\n      \"Populated layer: TOP\",\n      \"No bottom reinforcement represented\",\n      \"Candidate annotations: all specify 3-Y16 (identical to existing)\",\n      \"Role gap status indicates repeated accepted annotations without rejected match\"\n    ],\n    \"spatial_analysis\": [\n      \"Both annotations are in proximity to top layer bars\",\n      \"Leader tips point to TOP and BOTTOM zones but both appear to reference the top reinforcement\",\n      \"Physical bar proximity: 295mm and 376mm to nearest bars\",\n      \"Annotation cluster separation present\",\n      \"Context supports these are repeat callouts of same reinforcement\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"specification\": \"3-Y16 (3 bars, 16mm diameter)\",\n    \"visual_layer_indication\": \"TOP\",\n    \"appears_to_reference\": \"The existing top layer reinforcement already represented as R13-B170-TOP_MAIN-4536b7\",\n    \"redundancy_assessment\": \"Both visible annotations call out the same reinforcement specification that matches the existing top layer object\"\n  },\n  \"uncertainty_notes\": [\n    \"The two annotations point from different directions (one down, one up) but both leader tips appear to terminate at or reference the top reinforcement layer\",\n    \"No visual evidence in the section of additional bars that would require a distinct specification\",\n    \"The identical specification (3-Y16) matching the existing top reinforcement strongly suggests these are duplicate callouts rather than additional requirements\",\n    \"Minor uncertainty (confidence 0.88 rather than 0.95+) due to the opposing leader directions, but the visual evidence of bar placement and identical specifications outweighs this\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

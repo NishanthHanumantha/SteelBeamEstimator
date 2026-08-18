@@ -1,0 +1,6671 @@
+{
+  "phase_id": "P2.6.5",
+  "phase_name": "Spatial / Context-Aware Longitudinal Ambiguity Resolution",
+  "model_version": "10.11.5",
+  "gate_version": "P265_SPATIAL_CONTEXT_LONGITUDINAL_V1_0",
+  "scope": "FROZEN_P261_STRATIFIED_SAMPLE",
+  "mode": "REPLAY_P261_CACHED",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal",
+  "sample": {
+    "seed": 2611101,
+    "target_beams": 75,
+    "per_stratum_target": 25,
+    "selected": 75,
+    "universe_scored": 404,
+    "eligible_with_crop": 362,
+    "available_by_stratum": {
+      "DIFFICULT": 52,
+      "NORMAL": 195,
+      "EASY": 115
+    },
+    "selected_by_stratum": {
+      "DIFFICULT": 25,
+      "NORMAL": 25,
+      "EASY": 25
+    },
+    "selected_by_set": {
+      "Fifth": 27,
+      "Fourth": 30,
+      "Sixth": 18
+    },
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "drawing_sets": [
+      "Fourth",
+      "Fifth",
+      "Sixth"
+    ],
+    "drawing_visibility": "UNSEEN",
+    "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled.",
+    "p26_overlap_in_sample": 5
+  },
+  "replay": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses.",
+    "not_a_new_vision_benchmark": true,
+    "call_beams": 37,
+    "skip_beams": 38,
+    "hold_beams": 0,
+    "gated_candidates": 101,
+    "suppressed_candidates": 106
+  },
+  "metrics": {
+    "label": "Observed P2.6.5 shadow uses frozen P2.6.4 routing. Not a new Vision benchmark. Not production behaviour.",
+    "TOTAL_BEAMS": 75,
+    "CALL_BEAMS": 37,
+    "SKIP_BEAMS": 38,
+    "HOLD_BEAMS": 0,
+    "CALL_RATE": 0.493333,
+    "CALL_REDUCTION": 0.506667,
+    "TOTAL_BASELINE_VISION_CANDIDATES": 207,
+    "GATED_VISION_CANDIDATES": 101,
+    "DUPLICATES_BASELINE": 136,
+    "DUPLICATES_GATED": 47,
+    "DUPLICATE_RATE_BASELINE": 0.657005,
+    "DUPLICATE_RATE_GATED": 0.465347,
+    "BASELINE_PRECISION": 0.73913,
+    "GATED_PRECISION": 0.683168,
+    "BASELINE_UNSUPPORTED_RATE": 0.062802,
+    "GATED_UNSUPPORTED_RATE": 0.108911,
+    "BASELINE_AMBIGUOUS_RATE": 0.072464,
+    "GATED_AMBIGUOUS_RATE": 0.108911,
+    "BASELINE_TRUE_RECOVERIES": 26,
+    "GATED_TRUE_RECOVERIES": 25,
+    "RECOVERIES_RETAINED": 25,
+    "RECOVERIES_LOST": 1,
+    "RECOVERY_RETENTION_RATE": 0.961538,
+    "FALSE_SKIPS": 1,
+    "FALSE_CALLS": 13,
+    "FALSE_CALL_RATE": 0.351351,
+    "RECOVERY_RETENTION_PER_VISION_CALL": 0.675676,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_BASELINE": 34.6667,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 67.5676,
+    "TRUE_RECOVERIES_PER_CALL_BASELINE": 0.346667,
+    "by_stratum": {
+      "DIFFICULT": {
+        "beams": 25,
+        "call": 25,
+        "skip": 0,
+        "hold": 0,
+        "call_rate": 1.0,
+        "calls_saved": 0,
+        "baseline": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "gated": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "recoveries_retained": 19,
+        "recoveries_lost": 0
+      },
+      "NORMAL": {
+        "beams": 25,
+        "call": 11,
+        "skip": 14,
+        "hold": 0,
+        "call_rate": 0.44,
+        "calls_saved": 14,
+        "baseline": {
+          "candidates": 62,
+          "duplicates": 46,
+          "true_recoveries": 6,
+          "unsupported": 3,
+          "ambiguous": 5,
+          "precision": 0.758065,
+          "duplicate_rate": 0.741935,
+          "unsupported_rate": 0.048387,
+          "ambiguous_rate": 0.080645
+        },
+        "gated": {
+          "candidates": 30,
+          "duplicates": 19,
+          "true_recoveries": 6,
+          "unsupported": 1,
+          "ambiguous": 3,
+          "precision": 0.766667,
+          "duplicate_rate": 0.633333,
+          "unsupported_rate": 0.033333,
+          "ambiguous_rate": 0.1
+        },
+        "recoveries_retained": 6,
+        "recoveries_lost": 0
+      },
+      "EASY": {
+        "beams": 25,
+        "call": 1,
+        "skip": 24,
+        "hold": 0,
+        "call_rate": 0.04,
+        "calls_saved": 24,
+        "baseline": {
+          "candidates": 78,
+          "duplicates": 63,
+          "true_recoveries": 1,
+          "unsupported": 3,
+          "ambiguous": 2,
+          "precision": 0.782051,
+          "duplicate_rate": 0.807692,
+          "unsupported_rate": 0.038462,
+          "ambiguous_rate": 0.025641
+        },
+        "gated": {
+          "candidates": 4,
+          "duplicates": 1,
+          "true_recoveries": 0,
+          "unsupported": 3,
+          "ambiguous": 0,
+          "precision": 0.25,
+          "duplicate_rate": 0.25,
+          "unsupported_rate": 0.75,
+          "ambiguous_rate": 0.0
+        },
+        "recoveries_retained": 0,
+        "recoveries_lost": 1
+      }
+    },
+    "by_candidate_type": {
+      "STIRRUP": {
+        "baseline_candidates": 62,
+        "gated_candidates": 32,
+        "baseline_duplicates": 40,
+        "gated_duplicates": 10,
+        "baseline_true_recoveries": 18,
+        "gated_true_recoveries": 18,
+        "retained_recoveries": 18,
+        "lost_recoveries": 0
+      },
+      "LONGITUDINAL_REINFORCEMENT": {
+        "baseline_candidates": 145,
+        "gated_candidates": 69,
+        "baseline_duplicates": 96,
+        "gated_duplicates": 37,
+        "baseline_true_recoveries": 8,
+        "gated_true_recoveries": 7,
+        "retained_recoveries": 7,
+        "lost_recoveries": 1
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      },
+      "OTHER": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      }
+    },
+    "call_reason_counts": {
+      "STIRRUP_TEXT_NO_OBJECT": 19,
+      "OCR_CORRUPTED_STIRRUP": 21,
+      "INCOMPLETE_PARSE": 19,
+      "LONGITUDINAL_COVERAGE_SHORTFALL": 16,
+      "UNASSOCIATED_REINFORCEMENT": 5
+    },
+    "skip_reason_counts": {
+      "LONGITUDINAL_FULLY_COVERED": 34,
+      "MATCHING_OBJECT_EXISTS": 38,
+      "COMPLETE_PARSE": 38,
+      "STRONG_DETERMINISTIC_COVERAGE": 37,
+      "ROLE_GAP_DETERMINISTICALLY_EXPLAINED": 3
+    },
+    "baseline": {
+      "candidates": 207,
+      "duplicates": 136,
+      "true_recoveries": 26,
+      "unsupported": 13,
+      "ambiguous": 15,
+      "precision": 0.73913,
+      "duplicate_rate": 0.657005,
+      "unsupported_rate": 0.062802,
+      "ambiguous_rate": 0.072464
+    },
+    "gated": {
+      "candidates": 101,
+      "duplicates": 47,
+      "true_recoveries": 25,
+      "unsupported": 11,
+      "ambiguous": 11,
+      "precision": 0.683168,
+      "duplicate_rate": 0.465347,
+      "unsupported_rate": 0.108911,
+      "ambiguous_rate": 0.108911
+    },
+    "hypothetical_baseline_calls": 75,
+    "gated_calls": 37,
+    "calls_saved": 38,
+    "replay_cost_usd": 0.0,
+    "STIRRUP_BASELINE_TRUE_RECOVERIES": 18,
+    "STIRRUP_GATED_TRUE_RECOVERIES": 18,
+    "STIRRUP_RECOVERY_RETENTION": 1.0,
+    "LONGITUDINAL_BASELINE_TRUE_RECOVERIES": 8,
+    "LONGITUDINAL_GATED_TRUE_RECOVERIES": 7,
+    "LONGITUDINAL_RECOVERY_RETENTION": 0.875,
+    "LONGITUDINAL_FALSE_SKIPS": 1,
+    "LONGITUDINAL_FALSE_CALLS": 7,
+    "coverage_condition_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "UNASSOCIATED": 61,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "longitudinal_coverage_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "p262_baseline": {
+      "CALL_BEAMS": 38,
+      "SKIP_BEAMS": 37,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.493333,
+      "GATED_VISION_CANDIDATES": 118,
+      "DUPLICATE_RATE_GATED": 0.533898,
+      "GATED_PRECISION": 0.711864,
+      "GATED_UNSUPPORTED_RATE": 0.09322,
+      "GATED_TRUE_RECOVERIES": 22,
+      "RECOVERY_RETENTION_RATE": 0.846154,
+      "FALSE_SKIPS": 4,
+      "FALSE_CALLS": 17,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 57.8947
+    },
+    "longitudinal": {
+      "baseline_candidates": 145,
+      "gated_candidates": 69,
+      "baseline_duplicates": 96,
+      "gated_duplicates": 37,
+      "baseline_true_recoveries": 8,
+      "gated_true_recoveries": 7,
+      "retained_recoveries": 7,
+      "lost_recoveries": 1,
+      "precision": 0.608696,
+      "unsupported_rate": 0.144928,
+      "ambiguous_rate": 0.115942,
+      "false_skips": 1,
+      "false_calls": 7,
+      "by_coverage": {
+        "FULLY_COVERED": 53,
+        "QUANTITY_SHORTFALL": 3,
+        "ROLE_CONFLICT": 0,
+        "DIAMETER_CONFLICT": 0,
+        "MULTIPLE_CALLOUT_SHORTFALL": 0,
+        "MISSING_OBJECT": 0,
+        "ROLE_COVERAGE_GAP": 18,
+        "UNASSOCIATED": 0,
+        "NO_LONGITUDINAL_DEMAND": 1
+      },
+      "role_coverage_gap_calls": 15,
+      "role_coverage_gap_skips": 3,
+      "role_gap_explained": 5
+    },
+    "p263_baseline": {
+      "CALL_BEAMS": 40,
+      "SKIP_BEAMS": 35,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.466667,
+      "GATED_VISION_CANDIDATES": 108,
+      "DUPLICATE_RATE_GATED": 0.5,
+      "GATED_PRECISION": 0.685185,
+      "GATED_UNSUPPORTED_RATE": 0.101852,
+      "GATED_TRUE_RECOVERIES": 25,
+      "RECOVERY_RETENTION_RATE": 0.961538,
+      "FALSE_SKIPS": 1,
+      "FALSE_CALLS": 16,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 62.5
+    },
+    "ROLE_COVERAGE_GAP_BEAMS": 18,
+    "ROLE_COVERAGE_GAP_CALLS": 15,
+    "ROLE_COVERAGE_GAP_SKIPS": 3,
+    "ROLE_GAP_EXPLAINED_BEAMS": 5,
+    "ROLE_GAP_REQUIRED_BEAMS": 13,
+    "ROLE_COVERAGE_GAP_CALLS_P263": 18,
+    "p261_baseline": {
+      "CALL_BEAMS": 75,
+      "SKIP_BEAMS": 0,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.0,
+      "GATED_VISION_CANDIDATES": 207,
+      "DUPLICATE_RATE_GATED": 0.657005,
+      "GATED_PRECISION": 0.73913,
+      "GATED_UNSUPPORTED_RATE": 0.062802,
+      "GATED_TRUE_RECOVERIES": 26,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 34.6667
+    },
+    "p264_baseline": {
+      "CALL_BEAMS": 37,
+      "SKIP_BEAMS": 38,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.506667,
+      "GATED_VISION_CANDIDATES": 101,
+      "DUPLICATE_RATE_GATED": 0.465347,
+      "GATED_PRECISION": 0.683168,
+      "GATED_UNSUPPORTED_RATE": 0.108911,
+      "GATED_AMBIGUOUS_RATE": 0.108911,
+      "GATED_TRUE_RECOVERIES": 25,
+      "RECOVERY_RETENTION_RATE": 0.961538,
+      "FALSE_SKIPS": 1,
+      "FALSE_CALLS": 13,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 67.5676,
+      "STIRRUP_RETAINED": 18,
+      "LONGITUDINAL_RETAINED": 7
+    },
+    "FULLY_COVERED_BEAMS": 53,
+    "context_status_counts": {
+      "CONTEXT_SUPPORTS_CALL": 26,
+      "CONTEXT_SUPPORTS_SKIP": 4,
+      "CONTEXT_AMBIGUOUS": 44,
+      "CONTEXT_INSUFFICIENT": 1
+    },
+    "role_gap_context_status_counts": {
+      "CONTEXT_SUPPORTS_CALL": 9,
+      "CONTEXT_SUPPORTS_SKIP": 4,
+      "CONTEXT_AMBIGUOUS": 5,
+      "CONTEXT_INSUFFICIENT": 0
+    },
+    "CONTEXT_SUPPORTS_SKIP": 4,
+    "CONTEXT_SUPPORTS_CALL": 26,
+    "CONTEXT_AMBIGUOUS": 44,
+    "CONTEXT_INSUFFICIENT": 1
+  },
+  "hypothetical_metrics": {
+    "label": "Observed P2.6.5 shadow uses frozen P2.6.4 routing. Not a new Vision benchmark. Not production behaviour.",
+    "TOTAL_BEAMS": 75,
+    "CALL_BEAMS": 37,
+    "SKIP_BEAMS": 38,
+    "HOLD_BEAMS": 0,
+    "CALL_RATE": 0.493333,
+    "CALL_REDUCTION": 0.506667,
+    "TOTAL_BASELINE_VISION_CANDIDATES": 207,
+    "GATED_VISION_CANDIDATES": 101,
+    "DUPLICATES_BASELINE": 136,
+    "DUPLICATES_GATED": 47,
+    "DUPLICATE_RATE_BASELINE": 0.657005,
+    "DUPLICATE_RATE_GATED": 0.465347,
+    "BASELINE_PRECISION": 0.73913,
+    "GATED_PRECISION": 0.683168,
+    "BASELINE_UNSUPPORTED_RATE": 0.062802,
+    "GATED_UNSUPPORTED_RATE": 0.108911,
+    "BASELINE_AMBIGUOUS_RATE": 0.072464,
+    "GATED_AMBIGUOUS_RATE": 0.108911,
+    "BASELINE_TRUE_RECOVERIES": 26,
+    "GATED_TRUE_RECOVERIES": 25,
+    "RECOVERIES_RETAINED": 25,
+    "RECOVERIES_LOST": 1,
+    "RECOVERY_RETENTION_RATE": 0.961538,
+    "FALSE_SKIPS": 1,
+    "FALSE_CALLS": 13,
+    "FALSE_CALL_RATE": 0.351351,
+    "RECOVERY_RETENTION_PER_VISION_CALL": 0.675676,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_BASELINE": 34.6667,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 67.5676,
+    "TRUE_RECOVERIES_PER_CALL_BASELINE": 0.346667,
+    "by_stratum": {
+      "DIFFICULT": {
+        "beams": 25,
+        "call": 25,
+        "skip": 0,
+        "hold": 0,
+        "call_rate": 1.0,
+        "calls_saved": 0,
+        "baseline": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "gated": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "recoveries_retained": 19,
+        "recoveries_lost": 0
+      },
+      "NORMAL": {
+        "beams": 25,
+        "call": 11,
+        "skip": 14,
+        "hold": 0,
+        "call_rate": 0.44,
+        "calls_saved": 14,
+        "baseline": {
+          "candidates": 62,
+          "duplicates": 46,
+          "true_recoveries": 6,
+          "unsupported": 3,
+          "ambiguous": 5,
+          "precision": 0.758065,
+          "duplicate_rate": 0.741935,
+          "unsupported_rate": 0.048387,
+          "ambiguous_rate": 0.080645
+        },
+        "gated": {
+          "candidates": 30,
+          "duplicates": 19,
+          "true_recoveries": 6,
+          "unsupported": 1,
+          "ambiguous": 3,
+          "precision": 0.766667,
+          "duplicate_rate": 0.633333,
+          "unsupported_rate": 0.033333,
+          "ambiguous_rate": 0.1
+        },
+        "recoveries_retained": 6,
+        "recoveries_lost": 0
+      },
+      "EASY": {
+        "beams": 25,
+        "call": 1,
+        "skip": 24,
+        "hold": 0,
+        "call_rate": 0.04,
+        "calls_saved": 24,
+        "baseline": {
+          "candidates": 78,
+          "duplicates": 63,
+          "true_recoveries": 1,
+          "unsupported": 3,
+          "ambiguous": 2,
+          "precision": 0.782051,
+          "duplicate_rate": 0.807692,
+          "unsupported_rate": 0.038462,
+          "ambiguous_rate": 0.025641
+        },
+        "gated": {
+          "candidates": 4,
+          "duplicates": 1,
+          "true_recoveries": 0,
+          "unsupported": 3,
+          "ambiguous": 0,
+          "precision": 0.25,
+          "duplicate_rate": 0.25,
+          "unsupported_rate": 0.75,
+          "ambiguous_rate": 0.0
+        },
+        "recoveries_retained": 0,
+        "recoveries_lost": 1
+      }
+    },
+    "by_candidate_type": {
+      "STIRRUP": {
+        "baseline_candidates": 62,
+        "gated_candidates": 32,
+        "baseline_duplicates": 40,
+        "gated_duplicates": 10,
+        "baseline_true_recoveries": 18,
+        "gated_true_recoveries": 18,
+        "retained_recoveries": 18,
+        "lost_recoveries": 0
+      },
+      "LONGITUDINAL_REINFORCEMENT": {
+        "baseline_candidates": 145,
+        "gated_candidates": 69,
+        "baseline_duplicates": 96,
+        "gated_duplicates": 37,
+        "baseline_true_recoveries": 8,
+        "gated_true_recoveries": 7,
+        "retained_recoveries": 7,
+        "lost_recoveries": 1
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      },
+      "OTHER": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      }
+    },
+    "call_reason_counts": {
+      "STIRRUP_TEXT_NO_OBJECT": 19,
+      "OCR_CORRUPTED_STIRRUP": 21,
+      "INCOMPLETE_PARSE": 19,
+      "LONGITUDINAL_COVERAGE_SHORTFALL": 16,
+      "UNASSOCIATED_REINFORCEMENT": 5
+    },
+    "skip_reason_counts": {
+      "LONGITUDINAL_FULLY_COVERED": 34,
+      "MATCHING_OBJECT_EXISTS": 38,
+      "COMPLETE_PARSE": 38,
+      "STRONG_DETERMINISTIC_COVERAGE": 37,
+      "ROLE_GAP_DETERMINISTICALLY_EXPLAINED": 3
+    },
+    "baseline": {
+      "candidates": 207,
+      "duplicates": 136,
+      "true_recoveries": 26,
+      "unsupported": 13,
+      "ambiguous": 15,
+      "precision": 0.73913,
+      "duplicate_rate": 0.657005,
+      "unsupported_rate": 0.062802,
+      "ambiguous_rate": 0.072464
+    },
+    "gated": {
+      "candidates": 101,
+      "duplicates": 47,
+      "true_recoveries": 25,
+      "unsupported": 11,
+      "ambiguous": 11,
+      "precision": 0.683168,
+      "duplicate_rate": 0.465347,
+      "unsupported_rate": 0.108911,
+      "ambiguous_rate": 0.108911
+    },
+    "hypothetical_baseline_calls": 75,
+    "gated_calls": 37,
+    "calls_saved": 38,
+    "replay_cost_usd": 0.0,
+    "STIRRUP_BASELINE_TRUE_RECOVERIES": 18,
+    "STIRRUP_GATED_TRUE_RECOVERIES": 18,
+    "STIRRUP_RECOVERY_RETENTION": 1.0,
+    "LONGITUDINAL_BASELINE_TRUE_RECOVERIES": 8,
+    "LONGITUDINAL_GATED_TRUE_RECOVERIES": 7,
+    "LONGITUDINAL_RECOVERY_RETENTION": 0.875,
+    "LONGITUDINAL_FALSE_SKIPS": 1,
+    "LONGITUDINAL_FALSE_CALLS": 7,
+    "coverage_condition_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "UNASSOCIATED": 61,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "longitudinal_coverage_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "p262_baseline": {
+      "CALL_BEAMS": 38,
+      "SKIP_BEAMS": 37,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.493333,
+      "GATED_VISION_CANDIDATES": 118,
+      "DUPLICATE_RATE_GATED": 0.533898,
+      "GATED_PRECISION": 0.711864,
+      "GATED_UNSUPPORTED_RATE": 0.09322,
+      "GATED_TRUE_RECOVERIES": 22,
+      "RECOVERY_RETENTION_RATE": 0.846154,
+      "FALSE_SKIPS": 4,
+      "FALSE_CALLS": 17,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 57.8947
+    },
+    "longitudinal": {
+      "baseline_candidates": 145,
+      "gated_candidates": 69,
+      "baseline_duplicates": 96,
+      "gated_duplicates": 37,
+      "baseline_true_recoveries": 8,
+      "gated_true_recoveries": 7,
+      "retained_recoveries": 7,
+      "lost_recoveries": 1,
+      "precision": 0.608696,
+      "unsupported_rate": 0.144928,
+      "ambiguous_rate": 0.115942,
+      "false_skips": 1,
+      "false_calls": 7,
+      "by_coverage": {
+        "FULLY_COVERED": 53,
+        "QUANTITY_SHORTFALL": 3,
+        "ROLE_CONFLICT": 0,
+        "DIAMETER_CONFLICT": 0,
+        "MULTIPLE_CALLOUT_SHORTFALL": 0,
+        "MISSING_OBJECT": 0,
+        "ROLE_COVERAGE_GAP": 18,
+        "UNASSOCIATED": 0,
+        "NO_LONGITUDINAL_DEMAND": 1
+      },
+      "role_coverage_gap_calls": 15,
+      "role_coverage_gap_skips": 3,
+      "role_gap_explained": 5
+    },
+    "p263_baseline": {
+      "CALL_BEAMS": 40,
+      "SKIP_BEAMS": 35,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.466667,
+      "GATED_VISION_CANDIDATES": 108,
+      "DUPLICATE_RATE_GATED": 0.5,
+      "GATED_PRECISION": 0.685185,
+      "GATED_UNSUPPORTED_RATE": 0.101852,
+      "GATED_TRUE_RECOVERIES": 25,
+      "RECOVERY_RETENTION_RATE": 0.961538,
+      "FALSE_SKIPS": 1,
+      "FALSE_CALLS": 16,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 62.5
+    },
+    "ROLE_COVERAGE_GAP_BEAMS": 18,
+    "ROLE_COVERAGE_GAP_CALLS": 15,
+    "ROLE_COVERAGE_GAP_SKIPS": 3,
+    "ROLE_GAP_EXPLAINED_BEAMS": 5,
+    "ROLE_GAP_REQUIRED_BEAMS": 13,
+    "ROLE_COVERAGE_GAP_CALLS_P263": 18,
+    "p261_baseline": {
+      "CALL_BEAMS": 75,
+      "SKIP_BEAMS": 0,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.0,
+      "GATED_VISION_CANDIDATES": 207,
+      "DUPLICATE_RATE_GATED": 0.657005,
+      "GATED_PRECISION": 0.73913,
+      "GATED_UNSUPPORTED_RATE": 0.062802,
+      "GATED_TRUE_RECOVERIES": 26,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 34.6667
+    },
+    "p264_baseline": {
+      "CALL_BEAMS": 37,
+      "SKIP_BEAMS": 38,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.506667,
+      "GATED_VISION_CANDIDATES": 101,
+      "DUPLICATE_RATE_GATED": 0.465347,
+      "GATED_PRECISION": 0.683168,
+      "GATED_UNSUPPORTED_RATE": 0.108911,
+      "GATED_AMBIGUOUS_RATE": 0.108911,
+      "GATED_TRUE_RECOVERIES": 25,
+      "RECOVERY_RETENTION_RATE": 0.961538,
+      "FALSE_SKIPS": 1,
+      "FALSE_CALLS": 13,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 67.5676,
+      "STIRRUP_RETAINED": 18,
+      "LONGITUDINAL_RETAINED": 7
+    },
+    "FULLY_COVERED_BEAMS": 53,
+    "context_status_counts": {
+      "CONTEXT_SUPPORTS_CALL": 26,
+      "CONTEXT_SUPPORTS_SKIP": 4,
+      "CONTEXT_AMBIGUOUS": 44,
+      "CONTEXT_INSUFFICIENT": 1
+    },
+    "role_gap_context_status_counts": {
+      "CONTEXT_SUPPORTS_CALL": 9,
+      "CONTEXT_SUPPORTS_SKIP": 4,
+      "CONTEXT_AMBIGUOUS": 5,
+      "CONTEXT_INSUFFICIENT": 0
+    },
+    "CONTEXT_SUPPORTS_SKIP": 4,
+    "CONTEXT_SUPPORTS_CALL": 26,
+    "CONTEXT_AMBIGUOUS": 44,
+    "CONTEXT_INSUFFICIENT": 1
+  },
+  "recommendation": {
+    "strength": "PROMISING",
+    "decision": "REFINE_LONGITUDINAL_GATE",
+    "note": "Observed routing is P2.6.4. Hypothetical overlay is not production. stirrup_ok=True retention_ok=True long_ok=True separable=True prec_ok=False uns_ok=False context skip/call/amb=4/26/44 hypo_lost=1 hypo_false_skips=1"
+  },
+  "false_skips": [
+    {
+      "beam_id": "B136",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B136",
+      "stratum": "EASY",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B136",
+        "annotation_count": 3,
+        "rejected_annotation_count": 3,
+        "reinforcement_annotation_count": 3,
+        "deterministic_object_count": 7,
+        "matching_object_count": 3,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 3,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": true,
+        "longitudinal_coverage": "FULLY_COVERED",
+        "longitudinal_gap": false,
+        "coverage_conditions": [
+          "UNASSOCIATED",
+          "FULLY_COVERED"
+        ],
+        "long_annotation_unique_count": 2,
+        "long_top_object_count": 3,
+        "long_bottom_object_count": 1,
+        "quantity_shortfall_count": 0,
+        "role_conflict_count": 0,
+        "diameter_conflict_count": 0,
+        "layer_gap": false,
+        "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+        "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+        "unique_accepted_spec_count": 0,
+        "accepted_instance_count": 0,
+        "populated_layer": null,
+        "extra_object_count": 0,
+        "accepted_matches_main": false,
+        "rejected_matching_populated": false
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "annotation": "4-Y16",
+      "role": "UNKNOWN",
+      "diameter": 16,
+      "quantity": 4,
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Fifth::B136::C02",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "CONFLICTING",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    }
+  ],
+  "false_calls": [
+    {
+      "beam_id": "B145",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B186",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B186",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B139",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B139",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "STIRRUP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS"
+    },
+    {
+      "beam_id": "B143",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B143",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "OCR_CORRUPTED_STIRRUP",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 3
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ],
+      "candidate_class_hint": "STIRRUP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS"
+    },
+    {
+      "beam_id": "B145",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B147",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B147",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "DUPLICATE": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B46",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B46",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "AMBIGUOUS": 3
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "STIRRUP",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B100",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B100",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH"
+    },
+    {
+      "beam_id": "B175",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B175",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 5,
+      "gt_status_counts": {
+        "DUPLICATE": 4,
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B23",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B23",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH"
+    },
+    {
+      "beam_id": "B41",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B41",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 1
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B59",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B59",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 1
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    },
+    {
+      "beam_id": "B77",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B77",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 3
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP"
+    }
+  ],
+  "control_cases": [
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fifth",
+      "beam_id": "B128",
+      "eval_stratum": "DIFFICULT",
+      "annotation": [
+        "3-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 1,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 0,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "3-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fifth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "3-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1614.8524309508502,
+      "physical_bar_count": 6,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "3-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B102",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "3-Y16",
+        "3-Y20"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 7,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "3-Y16",
+        "3-Y20"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B170",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "3-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1014.8524309508502,
+      "physical_bar_count": 6,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "3-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "3-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 1,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 0,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "3-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B174",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "4-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1114.8524309396744,
+      "physical_bar_count": 0,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "4-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "TRUE_RECOVERY_CONTROL",
+      "set_key": "Sixth",
+      "beam_id": "B138",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "2-Y25",
+        "2-Y20"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 4,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 0,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "2-Y25",
+        "2-Y20"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fifth",
+      "beam_id": "B100",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "3-Y25"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ZONE_BOUNDARY"
+      ],
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 1,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "3-Y25"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B23",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "4-Y20"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 6,
+      "leader_count": 1,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "4-Y20"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B141",
+      "eval_stratum": "DIFFICULT",
+      "annotation": [
+        "5-Y16"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 2,
+      "leader_count": 1,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "5-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fifth",
+      "beam_id": "B62",
+      "eval_stratum": "DIFFICULT",
+      "annotation": [
+        "3-Y25"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 4,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS_AND_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "3-Y25"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Sixth",
+      "beam_id": "B56",
+      "eval_stratum": "DIFFICULT",
+      "annotation": [
+        "4-Y25"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "4-Y25"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B143",
+      "eval_stratum": "DIFFICULT",
+      "annotation": [
+        "4-Y20",
+        "2-Y12"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 2,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 2,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "4-Y20",
+        "2-Y12"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Fourth",
+      "beam_id": "B176",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "5-Y20"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 14.131582152098417,
+      "physical_bar_count": 2,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 2,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "5-Y20"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "DUPLICATE_CONTROL",
+      "set_key": "Sixth",
+      "beam_id": "B45",
+      "eval_stratum": "NORMAL",
+      "annotation": [
+        "4-Y25"
+      ],
+      "populated_layer": "TOP",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "p264_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION",
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 0,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_REJECTED_MATCH",
+      "vision_true_recoveries": 0,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": true,
+      "vision_outcome": "DUPLICATE_ONLY",
+      "annotation_texts": [
+        "4-Y25"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": true
+    },
+    {
+      "family": "FALSE_SKIP_CONTROL",
+      "set_key": "Fifth",
+      "beam_id": "B136",
+      "eval_stratum": "EASY",
+      "annotation": [
+        "6-Y20",
+        "4-Y16"
+      ],
+      "populated_layer": null,
+      "longitudinal_coverage": "FULLY_COVERED",
+      "p264_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION",
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "physical_bar_count": 3,
+      "leader_count": 2,
+      "annotation_xy_available": true,
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "vision_true_recoveries": 1,
+      "vision_duplicates": 1,
+      "vision_unsupported": 0,
+      "vision_duplicate_only": false,
+      "vision_outcome": "TRUE_RECOVERY",
+      "annotation_texts": [
+        "6-Y20",
+        "4-Y16"
+      ],
+      "in_sample": true,
+      "is_role_coverage_gap": false
+    }
+  ],
+  "feature_rows": [
+    {
+      "set_key": "Fifth",
+      "beam_id": "B128",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "3-Y16"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 3,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B137",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "2-Y25",
+        "2-Y25",
+        "2-Y25",
+        "2-Y25"
+      ],
+      "quantity": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1314.8524309508502,
+      "min_object_distance": 194.86572010362664,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B139",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "4-Y25"
+      ],
+      "quantity": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        4
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 2,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1714.8524309322238,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B145",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y16"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 284.4523187892182,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B16",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "4-Y16",
+        "4-Y25"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20,
+        16,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 6,
+      "bottom_object_count": 0,
+      "top_quantity": 24,
+      "bottom_quantity": 0,
+      "extra_object_count": 5,
+      "unique_accepted_spec_count": 3,
+      "accepted_instance_count": 4,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOUNDARY",
+        "TOP",
+        "BOUNDARY",
+        "BOUNDARY",
+        "TOP"
+      ],
+      "max_repeat_dy": 1145.8935170173645,
+      "min_object_distance": 496.5172513061928,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SAME_CLUSTER",
+        "TOP_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B186",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "2-Y12"
+      ],
+      "quantity": [
+        2
+      ],
+      "diameter": [
+        12
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 273.7748200258295,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B58",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "3-Y20"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B62",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "3-Y25"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 9,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": true,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS_AND_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B71",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y32",
+        "4-Y25"
+      ],
+      "quantity": [
+        4,
+        4
+      ],
+      "diameter": [
+        32,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 321.9275864241411,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B74",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y20",
+        "2-Y16"
+      ],
+      "quantity": [
+        4,
+        2
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B81",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "3-Y16"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B130",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y25",
+        "4-Y25",
+        "4-Y25",
+        "4-Y25"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1614.8524309396744,
+      "min_object_distance": 284.22575734425016,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B139",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "5-Y16",
+        "5-Y20"
+      ],
+      "quantity": [
+        5,
+        5
+      ],
+      "diameter": [
+        16,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 15,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 2,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 296.88194091036434,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B141",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "5-Y16"
+      ],
+      "quantity": [
+        5
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 5,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 373.84386689421245,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B143",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y20",
+        "2-Y12"
+      ],
+      "quantity": [
+        4,
+        2
+      ],
+      "diameter": [
+        20,
+        12
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 9,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 2,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": true,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 512.2519956959432,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B144",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "3-Y25"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 322.42167171676795,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B145",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y16"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B147",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y16"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 1266.9032522031202,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B17",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "2-Y20",
+        "2-Y20",
+        "2-Y16",
+        "2-Y20",
+        "2-Y20"
+      ],
+      "quantity": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        20,
+        20,
+        16,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 1140.6028826087713,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B178",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25"
+      ],
+      "quantity": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1014.8524309508502,
+      "min_object_distance": 194.86546456465976,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B186",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y25",
+        "4-Y25",
+        "4-Y25",
+        "4-Y25"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1614.8524309396744,
+      "min_object_distance": 245.56886888524113,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B46",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "4-Y20"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1014.8524309620261,
+      "min_object_distance": 258.08885100947447,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B47",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y20"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 339.9016490719792,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B56",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y25"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 8,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B60",
+      "eval_stratum": "DIFFICULT",
+      "annotation_text": [
+        "4-Y25",
+        "4-Y25",
+        "4-Y25",
+        "4-Y25",
+        "2-Y20",
+        "2-Y20",
+        "2-Y20",
+        "2-Y20"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25,
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1748.3210567923961,
+      "min_object_distance": 325.4961554798749,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B100",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y25"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 3,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B127",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "5-Y25",
+        "5-Y25",
+        "5-Y25",
+        "5-Y25"
+      ],
+      "quantity": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 12.782475590705872,
+      "min_object_distance": 458.9224857196219,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B162A",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y16",
+        "2-Y16",
+        "2-Y16",
+        "2-Y16"
+      ],
+      "quantity": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1114.8524309508502,
+      "min_object_distance": 206.35641154892775,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y16",
+        "3-Y16",
+        "3-Y16",
+        "3-Y16"
+      ],
+      "quantity": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "diameter": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 3,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1614.8524309508502,
+      "min_object_distance": 284.45200905003185,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B175",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y25",
+        "2-Y25",
+        "3-Y25",
+        "3-Y25",
+        "3-Y25",
+        "3-Y25",
+        "2-Y25",
+        "2-Y25",
+        "2-Y20"
+      ],
+      "quantity": [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        25,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 5,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 129.55884651094675,
+      "min_object_distance": 141.03896049293743,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B191",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "5-Y25"
+      ],
+      "quantity": [
+        5
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 397.62601124537275,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B94",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y20"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B97",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "4-Y20"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 374.3317567250442,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B101",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y20"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 9,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 320.4340989213662,
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B102",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y20",
+        "3-Y16"
+      ],
+      "quantity": [
+        3,
+        3
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 9,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 2,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 394.6551426222364,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B152",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20"
+      ],
+      "quantity": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 1008.9312192797661,
+      "min_object_distance": 283.68487583997,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B170",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y16",
+        "3-Y16",
+        "3-Y16",
+        "3-Y16"
+      ],
+      "quantity": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "diameter": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 3,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1014.8524309508502,
+      "min_object_distance": 295.45067270061145,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y16"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 3,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B174",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "4-Y16"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 4,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1114.8524309396744,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B176",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "5-Y20",
+        "5-Y20",
+        "5-Y20",
+        "5-Y20"
+      ],
+      "quantity": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 5,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": true,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 14.131582152098417,
+      "min_object_distance": 372.1176305816833,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B23",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "4-Y20"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 4,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 316.5610215672781,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY",
+        "CROSS_LAYER_SEPARATION",
+        "LEADER_SEPARATION"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B57",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "5-Y20"
+      ],
+      "quantity": [
+        5
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 329.3981926877712,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B107",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [],
+      "quantity": [],
+      "diameter": [],
+      "role": [],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "NO_LONGITUDINAL_DEMAND",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": false,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_INSUFFICIENT",
+      "evidence_codes": [
+        "NO_ANNOTATION_XY",
+        "SEPARATE_CLUSTER",
+        "NO_RELIABLE_SPATIAL_EVIDENCE"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B108",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y16"
+      ],
+      "quantity": [
+        2
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 298.94883644047684,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B138",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y25",
+        "2-Y20"
+      ],
+      "quantity": [
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 3,
+      "bottom_object_count": 0,
+      "top_quantity": 6,
+      "bottom_quantity": 0,
+      "extra_object_count": 2,
+      "unique_accepted_spec_count": 2,
+      "accepted_instance_count": 2,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+      "role_gap_reason": "MULTIPLE_ACCEPTED_SPECS",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 394.75779528699445,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B41",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y25-1-Y20"
+      ],
+      "quantity": [
+        null
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 1,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 487.7434695281724,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B45",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "4-Y25"
+      ],
+      "quantity": [
+        4
+      ],
+      "diameter": [
+        25
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": "TOP",
+      "top_object_count": 1,
+      "bottom_object_count": 0,
+      "top_quantity": 4,
+      "bottom_quantity": 0,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 1,
+      "accepted_instance_count": 1,
+      "accepted_matches_main": true,
+      "rejected_matching_populated": true,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+      "role_gap_reason": "MAIN_COVERED_PLUS_REJECTED_MATCH",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_SKIP",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "TOP_PROXIMITY",
+        "SPATIAL_MATCH_STRONG"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B59",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "2-Y25-2-Y20"
+      ],
+      "quantity": [
+        null
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 1,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 1072.612491979089,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B6",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y25",
+        "2-Y25"
+      ],
+      "quantity": [
+        3,
+        2
+      ],
+      "diameter": [
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 5,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "TOP_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B89",
+      "eval_stratum": "NORMAL",
+      "annotation_text": [
+        "3-Y16"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 1527.258905157993,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B135",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20",
+        "2-Y16"
+      ],
+      "quantity": [
+        3,
+        2
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 317.5439114543198,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B136",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "6-Y20",
+        "4-Y16"
+      ],
+      "quantity": [
+        6,
+        4
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 527.5227405093423,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B164",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y16",
+        "3-Y20",
+        "3-Y25",
+        "3-Y25",
+        "3-Y25",
+        "3-Y25"
+      ],
+      "quantity": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "diameter": [
+        16,
+        20,
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 5,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 185.23998687417486,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B56",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20",
+        "2-Y16"
+      ],
+      "quantity": [
+        3,
+        2
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 370.419611544437,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B57",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20"
+      ],
+      "quantity": [
+        3
+      ],
+      "diameter": [
+        20
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 329.39755419791817,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B64",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "2-Y16"
+      ],
+      "quantity": [
+        2
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B72",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y25",
+        "4-Y20"
+      ],
+      "quantity": [
+        4,
+        4
+      ],
+      "diameter": [
+        25,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 784.2931896363116,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B77",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y16",
+        "4-Y25",
+        "4-Y20",
+        "2-Y12"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        2
+      ],
+      "diameter": [
+        16,
+        25,
+        20,
+        12
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 4,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 1,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 335.12516777698977,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "CALL_VISION",
+      "hypothetical_decision": "CALL_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B103",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y16",
+        "3-Y20"
+      ],
+      "quantity": [
+        3,
+        3
+      ],
+      "diameter": [
+        16,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B126",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "5-Y25",
+        "3-Y20"
+      ],
+      "quantity": [
+        5,
+        3
+      ],
+      "diameter": [
+        25,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 373.8723151869651,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B133",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "5-Y20",
+        "2-Y16"
+      ],
+      "quantity": [
+        5,
+        2
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 329.75976600954425,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B134",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20",
+        "3-Y20",
+        "3-Y20",
+        "3-Y20"
+      ],
+      "quantity": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "BOUNDARY",
+        "TOP",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 1114.8524309508502,
+      "min_object_distance": 217.8771792814654,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B135",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "5-Y20",
+        "3-Y20"
+      ],
+      "quantity": [
+        5,
+        3
+      ],
+      "diameter": [
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 284.9951020152209,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B14",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "2-Y16",
+        "2-Y16",
+        "2-Y16",
+        "2-Y16",
+        "2-Y12"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20,
+        16,
+        16,
+        16,
+        16,
+        12
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 1440.6028825975955,
+      "min_object_distance": 301.4168080878284,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B15",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y20",
+        "2-Y12"
+      ],
+      "quantity": [
+        4,
+        2
+      ],
+      "diameter": [
+        20,
+        12
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 5,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 446.26034381800827,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B18",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y20",
+        "4-Y16"
+      ],
+      "quantity": [
+        4,
+        4
+      ],
+      "diameter": [
+        20,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 4,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 634.8927304550526,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SAME_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B55",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "5-Y16",
+        "2-Y16"
+      ],
+      "quantity": [
+        5,
+        2
+      ],
+      "diameter": [
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 197.19236570600776,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B10",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "2-Y25",
+        "2-Y25",
+        "2-Y25",
+        "2-Y25"
+      ],
+      "quantity": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "BOTTOM",
+        "BOTTOM",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 2.9153606164909434,
+      "min_object_distance": 690.9244588842104,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "REPEATED_SAME_LOCATION",
+        "SEPARATE_CLUSTER",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B129",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "2-Y25",
+        "2-Y20"
+      ],
+      "quantity": [
+        2,
+        2
+      ],
+      "diameter": [
+        25,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 203.99657521867266,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B36",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20",
+        "2-Y20"
+      ],
+      "quantity": [
+        3,
+        2
+      ],
+      "diameter": [
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOUNDARY",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 321.40566108815864,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B4",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "6-Y20",
+        "6-Y20",
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "4-Y16",
+        "6-Y20",
+        "6-Y20",
+        "4-Y20"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        6,
+        6,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        6,
+        6,
+        4
+      ],
+      "diameter": [
+        16,
+        16,
+        16,
+        20,
+        20,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 4,
+      "bottom_object_count": 1,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP",
+        "TOP",
+        "BOUNDARY",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "TOP",
+        "BOUNDARY",
+        "BOUNDARY"
+      ],
+      "max_repeat_dy": 1129.14637491123,
+      "min_object_distance": 1020.1879090850684,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SAME_CLUSTER",
+        "TOP_PROXIMITY",
+        "ZONE_BOUNDARY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B67",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y20",
+        "3-Y20",
+        "3-Y20",
+        "3-Y20",
+        "2-Y16",
+        "2-Y16",
+        "2-Y16",
+        "2-Y16"
+      ],
+      "quantity": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20,
+        16,
+        16,
+        16,
+        16
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "TOP",
+        "BOTTOM",
+        "TOP",
+        "BOTTOM"
+      ],
+      "max_repeat_dy": 1447.4468243256415,
+      "min_object_distance": 384.8271466111363,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B8",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "3-Y16",
+        "2-Y20"
+      ],
+      "quantity": [
+        3,
+        2
+      ],
+      "diameter": [
+        16,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP",
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 283.80965280536475,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B88",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "2-Y16"
+      ],
+      "quantity": [
+        2
+      ],
+      "diameter": [
+        16
+      ],
+      "role": [
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 1,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": true,
+      "tip_layer_votes": [
+        "TOP"
+      ],
+      "max_repeat_dy": 0.0,
+      "min_object_distance": 834.8209833835564,
+      "context_status": "CONTEXT_AMBIGUOUS",
+      "evidence_codes": [
+        "SEPARATE_CLUSTER",
+        "TOP_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B9",
+      "eval_stratum": "EASY",
+      "annotation_text": [
+        "4-Y20",
+        "4-Y20",
+        "4-Y20",
+        "4-Y20"
+      ],
+      "quantity": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "diameter": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "role": [
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN",
+        "UNKNOWN"
+      ],
+      "populated_layer": null,
+      "top_object_count": 3,
+      "bottom_object_count": 3,
+      "top_quantity": null,
+      "bottom_quantity": null,
+      "extra_object_count": 0,
+      "unique_accepted_spec_count": 0,
+      "accepted_instance_count": 0,
+      "accepted_matches_main": false,
+      "rejected_matching_populated": false,
+      "quantity_shortfall_count": 0,
+      "role_conflict_count": 0,
+      "diameter_conflict_count": 0,
+      "association": "TARGET_BEAM",
+      "longitudinal_coverage": "FULLY_COVERED",
+      "role_gap_status": "ROLE_GAP_NOT_APPLICABLE",
+      "role_gap_reason": "NOT_ROLE_COVERAGE_GAP",
+      "annotation_xy_available": true,
+      "leader_geometry_available": true,
+      "physical_bar_geometry_available": false,
+      "tip_layer_votes": [
+        "BOTTOM",
+        "TOP",
+        "BOTTOM",
+        "TOP"
+      ],
+      "max_repeat_dy": 1429.592556559248,
+      "min_object_distance": null,
+      "context_status": "CONTEXT_SUPPORTS_CALL",
+      "evidence_codes": [
+        "NO_PHYSICAL_BAR_GEOMETRY",
+        "REPEATED_SEPARATE_LOCATION",
+        "ANNOTATION_CLUSTER_SEPARATION",
+        "SPATIAL_SEPARATION_STRONG",
+        "TOP_PROXIMITY",
+        "BOTTOM_PROXIMITY"
+      ],
+      "observed_decision": "SKIP_VISION",
+      "hypothetical_decision": "SKIP_VISION"
+    }
+  ],
+  "sensitivity": {
+    "clearance_ratio_default": 0.15,
+    "repeat_ratio_default": 0.5,
+    "method": "recompute tip-layer votes from stored zone distances; classifier is categorical",
+    "by_clearance_ratio": [
+      {
+        "clearance_ratio": 0.1,
+        "CONTEXT_SUPPORTS_CALL": 26,
+        "CONTEXT_SUPPORTS_SKIP": 4,
+        "CONTEXT_AMBIGUOUS": 44,
+        "CONTEXT_INSUFFICIENT": 1
+      },
+      {
+        "clearance_ratio": 0.15,
+        "CONTEXT_SUPPORTS_CALL": 26,
+        "CONTEXT_SUPPORTS_SKIP": 4,
+        "CONTEXT_AMBIGUOUS": 44,
+        "CONTEXT_INSUFFICIENT": 1
+      },
+      {
+        "clearance_ratio": 0.2,
+        "CONTEXT_SUPPORTS_CALL": 26,
+        "CONTEXT_SUPPORTS_SKIP": 4,
+        "CONTEXT_AMBIGUOUS": 44,
+        "CONTEXT_INSUFFICIENT": 1
+      }
+    ],
+    "stable": true
+  },
+  "evidence": {
+    "examples": [
+      {
+        "example_class": "LONGITUDINAL_TRUE_RECOVERY",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter": null,
+        "quantity": 3.0,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_true_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_FALSE_SKIP",
+        "beam_id": "B136",
+        "set_key": "Fifth",
+        "stratum": "EASY",
+        "gate_decision": "SKIP_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_FULLY_COVERED",
+          "MATCHING_OBJECT_EXISTS",
+          "COMPLETE_PARSE",
+          "STRONG_DETERMINISTIC_COVERAGE"
+        ],
+        "annotation_text": "4-Y16",
+        "role": "UNKNOWN",
+        "diameter": 16,
+        "quantity": 4,
+        "production_coverage": "FULLY_COVERED",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_false_skip\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_FALSE_CALL",
+        "beam_id": "B139",
+        "set_key": "Fourth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_false_call\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_DUPLICATE",
+        "beam_id": "B137",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE"
+        ],
+        "annotation_text": "2-Y25",
+        "role": "TOP_BAR",
+        "diameter": null,
+        "quantity": 2.0,
+        "production_coverage": "FULLY_COVERED",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "DUPLICATE",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_duplicate\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_QUANTITY_SHORTFALL",
+        "beam_id": "B41",
+        "set_key": "Sixth",
+        "stratum": "NORMAL",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "QUANTITY_SHORTFALL",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_quantity_shortfall\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_ROLE_CONFLICT",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\longitudinal_role_conflict\\region_overlay.png"
+      },
+      {
+        "example_class": "STIRRUP_TRUE_RECOVERY",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "2L-Y8@\\X100/150/100C/C",
+        "role": "STIRRUP",
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "STIRRUP",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\stirrup_true_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "NORMAL_OR_EASY_LONGITUDINAL_RECOVERY",
+        "beam_id": "B173",
+        "set_key": "Fifth",
+        "stratum": "NORMAL",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter": null,
+        "quantity": 3.0,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\normal_or_easy_longitudinal_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "ROLE_GAP_EXPLAINED",
+        "beam_id": "B101",
+        "set_key": "Fourth",
+        "gate_decision": "SKIP_VISION",
+        "role_gap_status": "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+        "role_gap_reason": "MAIN_COVERED_PLUS_EXTRAS",
+        "reason_codes": [
+          "ROLE_GAP_DETERMINISTICALLY_EXPLAINED",
+          "MATCHING_OBJECT_EXISTS",
+          "COMPLETE_PARSE",
+          "STRONG_DETERMINISTIC_COVERAGE"
+        ],
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\role_gap_explained\\region_overlay.png"
+      },
+      {
+        "example_class": "ROLE_GAP_REQUIRED",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "gate_decision": "CALL_VISION",
+        "role_gap_status": "ROLE_GAP_REQUIRES_VISION",
+        "role_gap_reason": "SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\role_gap_required\\region_overlay.png"
+      },
+      {
+        "example_class": "CONTEXT_SUPPORTS_CALL",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "observed_decision": "CALL_VISION",
+        "context_status": "CONTEXT_SUPPORTS_CALL",
+        "context_evidence_codes": [
+          "NO_PHYSICAL_BAR_GEOMETRY",
+          "BOTTOM_PROXIMITY",
+          "CROSS_LAYER_SEPARATION",
+          "LEADER_SEPARATION"
+        ],
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\context_supports_call\\region_overlay.png"
+      },
+      {
+        "example_class": "CONTEXT_SUPPORTS_SKIP",
+        "beam_id": "B62",
+        "set_key": "Fifth",
+        "observed_decision": "CALL_VISION",
+        "context_status": "CONTEXT_SUPPORTS_SKIP",
+        "context_evidence_codes": [
+          "NO_PHYSICAL_BAR_GEOMETRY",
+          "TOP_PROXIMITY",
+          "SPATIAL_MATCH_STRONG"
+        ],
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\context_supports_skip\\region_overlay.png"
+      },
+      {
+        "example_class": "CONTEXT_INSUFFICIENT",
+        "beam_id": "B107",
+        "set_key": "Sixth",
+        "observed_decision": "SKIP_VISION",
+        "context_status": "CONTEXT_INSUFFICIENT",
+        "context_evidence_codes": [
+          "NO_ANNOTATION_XY",
+          "SEPARATE_CLUSTER",
+          "NO_RELIABLE_SPATIAL_EVIDENCE"
+        ],
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\evidence\\context_insufficient\\region_overlay.png"
+      }
+    ],
+    "count": 13,
+    "missing_classes": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 32,
+    "total": 32,
+    "results": [
+      {
+        "name": "spatial_feature_extraction",
+        "pass": true
+      },
+      {
+        "name": "missing_geometry_handling",
+        "pass": true
+      },
+      {
+        "name": "coordinate_normalization",
+        "pass": true
+      },
+      {
+        "name": "same_location_duplicate_detection",
+        "pass": true
+      },
+      {
+        "name": "spatial_separation_detection",
+        "pass": true
+      },
+      {
+        "name": "top_bottom_proximity",
+        "pass": true
+      },
+      {
+        "name": "repeated_annotation_handling",
+        "pass": true
+      },
+      {
+        "name": "cluster_detection",
+        "pass": true
+      },
+      {
+        "name": "evidence_aggregation",
+        "pass": true
+      },
+      {
+        "name": "ambiguity_preservation",
+        "pass": true
+      },
+      {
+        "name": "single_feature_cannot_skip",
+        "pass": true
+      },
+      {
+        "name": "b128_true_recovery_preservation",
+        "pass": true
+      },
+      {
+        "name": "b173_true_recovery_preservation",
+        "pass": true
+      },
+      {
+        "name": "b100_duplicate_only_behaviour",
+        "pass": true
+      },
+      {
+        "name": "b141_duplicate_only_behaviour",
+        "pass": true
+      },
+      {
+        "name": "b23_duplicate_only_behaviour",
+        "pass": true
+      },
+      {
+        "name": "b136_false_skip_diagnostic",
+        "pass": true
+      },
+      {
+        "name": "band_distance_helpers",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "no_live_vision_api",
+        "pass": true
+      },
+      {
+        "name": "frozen_p261_replay_integrity",
+        "pass": true
+      },
+      {
+        "name": "p264_artefact_immutability_paths",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "gate_runtime_no_gt_tokens",
+        "pass": true
+      },
+      {
+        "name": "gate_runtime_no_estimator_tokens",
+        "pass": true
+      },
+      {
+        "name": "stratum_not_used_in_classifier",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "observed_routing_unchanged_from_p264",
+        "pass": true
+      },
+      {
+        "name": "hypothetical_does_not_skip_stirrup_calls",
+        "pass": true
+      },
+      {
+        "name": "replay_skip_drops_candidates",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_hardcoding_in_classifier",
+        "pass": true
+      },
+      {
+        "name": "P2.6.4_regression",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.5",
+    "gate_version": "P265_SPATIAL_CONTEXT_LONGITUDINAL_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "cached_vision_unmodified": true,
+    "live_vision_invoked": false,
+    "note": "P2.6.5 writes only isolated spatial-context shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "p264_artefacts_unchanged": true,
+    "p263_artefacts_unchanged": true,
+    "live_vision_invoked": false,
+    "engineering_changes": "NONE"
+  },
+  "decision": "REFINE_LONGITUDINAL_GATE",
+  "strength": "PROMISING",
+  "live_cost_usd": "not run",
+  "live_vision_invoked": false,
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\P2.6.5_STATUS.md",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\metrics.json",
+    "features_csv": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\features.csv"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B173",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "15.009553900003084",
+  "usage": {
+    "input_tokens": "3675",
+    "output_tokens": "643"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"LEADER_POINTS_TO_EXISTING_TOP_REINFORCEMENT\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"annotation_location\": \"The 3-Y16 annotation is positioned with a leader pointing upward to the top reinforcement layer of the beam cross-section\",\n      \"leader_direction\": \"Leader points UP from annotation to top of beam section\",\n      \"beam_section\": \"Shows a rectangular beam cross-section with reinforcement indicated at the top\",\n      \"visual_reinforcement_layers\": \"Only one layer of longitudinal reinforcement is visually evident at the top of the section\"\n    },\n    \"deterministic_model_state\": {\n      \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already represented in TOP layer\",\n      \"existing_bottom\": \"No bottom reinforcement represented\",\n      \"exact_match\": \"Candidate 3-Y16 exactly matches existing top reinforcement specification\"\n    },\n    \"spatial_alignment\": {\n      \"leader_tip_zone\": \"BOTTOM zone (tip location), but leader direction is UP pointing to top reinforcement\",\n      \"annotation_position_zone\": \"TOP_ZONE\",\n      \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation from bottom, supporting top layer association\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": \"3 bars of Y16 (16mm diameter)\",\n    \"likely_intent\": \"Callout identifying the existing top longitudinal reinforcement\",\n    \"layer_association\": \"TOP layer - leader clearly points to top reinforcement in the beam section\"\n  },\n  \"uncertainty_notes\": \"The leader tip is technically in the bottom zone by coordinate measurement, but the visual evidence clearly shows the leader pointing upward to the top reinforcement. The annotation matches exactly the existing top reinforcement (3Y16) already in the deterministic model. No visual evidence suggests additional or missing reinforcement beyond what is already represented. The annotation appears to be a standard identification callout for the existing top bars.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

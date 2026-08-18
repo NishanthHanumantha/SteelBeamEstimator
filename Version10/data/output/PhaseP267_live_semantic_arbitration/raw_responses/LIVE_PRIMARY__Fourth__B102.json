@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B102",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "18.155033300005016",
+  "usage": {
+    "input_tokens": "3903",
+    "output_tokens": "843"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"EXISTING_TOP_LAYER_OBJECTS\",\n    \"LEADER_TIPS_POINT_TO_TOP_BARS\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\",\n    \"VISUAL_CONFIRMATION_OF_CALLOUTS\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"3-Y20_annotation\": \"Visible at right side of beam with leader pointing upward to top reinforcement layer shown in dark blue\",\n      \"3-Y16_annotation\": \"Visible at left side of beam with leader pointing to top reinforcement layer\",\n      \"top_layer_bars\": \"Clear dark blue bars visible at top of beam section matching the annotated quantities\",\n      \"bottom_layer_bars\": \"Green dashed lines visible at bottom, no annotations pointing to bottom layer\",\n      \"bar_arrangement\": \"Top layer shows continuous reinforcement with the annotated bars clearly indicated by leader lines\"\n    },\n    \"deterministic_match\": {\n      \"3-Y20_match\": \"Existing object R13-B102-TOP_MAIN-ac532f with 3Y20, diameter 20mm, quantity 3\",\n      \"3-Y16_match\": \"Existing objects R13-B102-TOP_EXTRA (both #L and #R) with 3Y16, diameter 16mm, total quantity 6 (two groups of 3)\",\n      \"total_top_quantity\": \"9 bars in top layer (3\u00d7Y20 + 6\u00d7Y16) matches deterministic model\"\n    },\n    \"spatial_alignment\": {\n      \"3-Y20_leader\": \"Leader tip points upward to top zone, nearest bar distance 394.66mm to TOP family bar\",\n      \"3-Y16_leader\": \"Leader tip points to top zone, nearest bar distance 1070.90mm to TOP family bar\",\n      \"both_annotations_top_zone\": true\n    }\n  },\n  \"annotation_interpretation\": {\n    \"3-Y20\": {\n      \"represents\": \"Callout for the 3 Y20 main top bars already modeled as R13-B102-TOP_MAIN-ac532f\",\n      \"purpose\": \"Documentation/labeling of existing top reinforcement\"\n    },\n    \"3-Y16\": {\n      \"represents\": \"Callout for 3 Y16 top extra bars (one of the two groups already modeled as TOP_EXTRA)\",\n      \"purpose\": \"Documentation/labeling of existing top reinforcement group\"\n    }\n  },\n  \"uncertainty_notes\": [\n    \"The 3-Y16 annotation could theoretically refer to either the left or right group of TOP_EXTRA bars, but both are already represented in the model\",\n    \"No visual evidence of bottom layer reinforcement matching these specifications\",\n    \"No visual evidence of side face reinforcement matching these specifications\",\n    \"The deterministic model shows 6 total Y16 bars (two groups of 3), and this annotation documents one of those groups\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

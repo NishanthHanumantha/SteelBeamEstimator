@@ -1,0 +1,18 @@
+{
+  "set_key": "Sixth",
+  "beam_id": "B56",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "14.509785200003535",
+  "usage": {
+    "input_tokens": "3772",
+    "output_tokens": "648"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_MAIN\",\n    \"LEADER_POINTS_TO_TOP_ZONE\",\n    \"ANNOTATION_IN_TOP_ZONE\",\n    \"QUANTITY_AND_DIAMETER_MATCH\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"annotation_location\": \"The '4-Y25' annotation is positioned in the top zone of the beam cross-section, with its leader pointing upward to the top reinforcement layer\",\n      \"leader_behavior\": \"Leader tip points directly to the top longitudinal bars shown in the section view\",\n      \"reinforcement_visible\": \"Top layer shows continuous longitudinal bars that the annotation clearly references\",\n      \"section_view\": \"Cross-section shows hatched beam with top reinforcement bars clearly visible\"\n    },\n    \"deterministic_match\": {\n      \"existing_top_main\": \"4Y25 (bar_id: R13-B56-TOP_MAIN-2de2fa)\",\n      \"exact_specification_match\": true,\n      \"quantity_match\": 4,\n      \"diameter_match\": 25\n    },\n    \"spatial_alignment\": {\n      \"annotation_zone\": \"TOP_ZONE\",\n      \"leader_tip_zone\": \"TOP\",\n      \"tip_in_top_zone\": true,\n      \"dy_from_centreline\": 1280.4,\n      \"position_consistent_with_top\": true\n    }\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": \"4 bars of Y25 (25mm diameter)\",\n    \"apparent_role\": \"TOP_MAIN\",\n    \"matches_existing\": \"R13-B56-TOP_MAIN-2de2fa with label 4Y25\"\n  },\n  \"uncertainty_notes\": \"The annotation '4-Y25' exactly matches the existing top main reinforcement specification (4Y25) already represented in the deterministic model. The leader clearly points to the top layer of the beam section. There is no visual or contextual evidence suggesting this represents additional or distinct reinforcement beyond what is already modeled. The annotation appears to be a standard callout identifying the top main bars.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

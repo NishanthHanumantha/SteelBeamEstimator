@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B128",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "20.56491489999462",
+  "usage": {
+    "input_tokens": "3682",
+    "output_tokens": "835"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"BOTTOM\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_BOTTOM_BARS\",\n    \"SINGLE_SPEC_ALREADY_MODELED\",\n    \"NO_VISUAL_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"beam_section\": \"Rectangular beam section shown with green highlighted perimeter representing the beam outline\",\n      \"visible_reinforcement\": \"Dark blue lines at top and bottom of section representing longitudinal bars\",\n      \"annotation_location\": \"3-Y16 annotation with leader pointing to bottom longitudinal bars\",\n      \"leader_behavior\": \"Leader clearly terminates at the bottom reinforcement layer\",\n      \"bar_count_visual\": \"Bottom bars appear to show 3 bars based on the continuous line representation\"\n    },\n    \"deterministic_model\": {\n      \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already modeled in TOP layer\",\n      \"existing_bottom\": \"No bottom reinforcement in deterministic model\",\n      \"total_modeled\": \"Only top layer populated with 3-Y16\"\n    },\n    \"spatial_analysis\": {\n      \"leader_tip_zone\": \"Leader tip is in BOTTOM zone (tip_in_bottom_zone: true)\",\n      \"annotation_position\": \"Annotation positioned below the beam section\",\n      \"leader_direction\": \"Leader points UP from annotation to bottom bars\",\n      \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation from populated TOP layer\"\n    },\n    \"specification_match\": {\n      \"candidate\": \"3-Y16 (3 bars, 16mm diameter)\",\n      \"existing_top\": \"3Y16 (3 bars, 16mm diameter)\",\n      \"match_quality\": \"Exact quantity and diameter match\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"notation\": \"3-Y16\",\n    \"quantity\": 3,\n    \"diameter_mm\": 16,\n    \"interpreted_role\": \"Bottom longitudinal reinforcement callout\",\n    \"visual_target\": \"Bottom layer bars visible in section\",\n    \"callout_purpose\": \"Specification of bottom reinforcement, which matches the top specification already modeled\"\n  },\n  \"uncertainty_notes\": [\n    \"The deterministic model shows only TOP layer populated (3Y16), but the annotation clearly points to BOTTOM bars\",\n    \"This appears to be a symmetric reinforcement design where top and bottom have identical specifications\",\n    \"The annotation is calling out the bottom bars (3-Y16) which are the mirror/repeat of the top specification\",\n    \"While the deterministic model doesn't show bottom bars as 'existing', the visual evidence and leader clearly indicate this is a callout for bottom reinforcement that mirrors the top\",\n    \"Classification as DUPLICATE_OR_REPEAT because this represents the same specification (3-Y16) being used in a different layer (bottom vs top), which is a common repeat pattern in symmetric beam design\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

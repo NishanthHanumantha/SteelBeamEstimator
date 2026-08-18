@@ -1,0 +1,1779 @@
+[
+  {
+    "set_key": "Fifth",
+    "beam_id": "B128",
+    "region_id": "P261::Fifth::B128",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "BOTTOM",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_BOTTOM_BARS",
+          "SINGLE_SPEC_ALREADY_MODELED",
+          "NO_VISUAL_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"3-Y16 annotation with leader pointing to bottom longitudinal bars\", \"bar_count_visual\": \"Bottom bars appear to show 3 bars based on the continuous line representation\", \"beam_section\": \"Rectangular beam section shown with green highlighted perimeter representing the beam outline\", \"leader_behavior\": \"Leader clearly terminates at the bottom reinforcement layer\", \"visible_reinforcement\": \"Dark blue lines at top and bottom of section representing longitudinal bars\"}",
+          "deterministic_model: {\"existing_bottom\": \"No bottom reinforcement in deterministic model\", \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already modeled in TOP layer\", \"total_modeled\": \"Only top layer populated with 3-Y16\"}",
+          "spatial_analysis: {\"annotation_position\": \"Annotation positioned below the beam section\", \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation from populated TOP layer\", \"leader_direction\": \"Leader points UP from annotation to bottom bars\", \"leader_tip_zone\": \"Leader tip is in BOTTOM zone (tip_in_bottom_zone: true)\"}",
+          "specification_match: {\"candidate\": \"3-Y16 (3 bars, 16mm diameter)\", \"existing_top\": \"3Y16 (3 bars, 16mm diameter)\", \"match_quality\": \"Exact quantity and diameter match\"}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"Specification of bottom reinforcement, which matches the top specification already modeled\", \"diameter_mm\": 16, \"interpreted_role\": \"Bottom longitudinal reinforcement callout\", \"notation\": \"3-Y16\", \"quantity\": 3, \"visual_target\": \"Bottom layer bars visible in section\"}",
+        "uncertainty_notes": "The deterministic model shows only TOP layer populated (3Y16), but the annotation clearly points to BOTTOM bars; This appears to be a symmetric reinforcement design where top and bottom have identical specifications; The annotation is calling out the bottom bars (3-Y16) which are the mirror/repeat of the top specification; While the deterministic model doesn't show bottom bars as 'existing', the visual evidence and leader clearly indicate this is a callout for bottom reinforcement that mirrors the top; Classification as DUPLICATE_OR_REPEAT because this represents the same specification (3-Y16) being used in a different layer (bottom vs top), which is a common repeat pattern in symmetric beam design",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "NO_VISUAL_EVIDENCE_OF_ADDITIONAL_BARS",
+          "LEADER_POINTS_TO_EXISTING_TOP_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"3-Y16 annotation with leader pointing upward to the bottom face of the top longitudinal reinforcement layer\", \"beam_cross_section\": \"Rectangular beam section shown with green highlighted perimeter representing the beam outline\", \"leader_behavior\": \"Leader tip terminates at the bottom edge of the top reinforcement layer, indicating it is calling out the top bars\", \"no_additional_bars_visible\": \"No additional bar layers or distinct reinforcement groups visible beyond the top and bottom layers already shown\", \"visible_reinforcement\": \"Dark blue lines at top and bottom of section representing longitudinal bars\"}",
+          "deterministic_match: {\"candidate_spec\": \"3-Y16 (3 bars of 16mm diameter)\", \"exact_match\": true, \"existing_top_spec\": \"3Y16 (3 bars of 16mm diameter)\", \"populated_layer\": \"TOP\"}",
+          "spatial_alignment: {\"interpretation\": \"Leader originates below and points upward to top reinforcement layer, consistent with calling out top bars from below\", \"leader_direction\": \"UP\", \"leader_tip_zone\": \"BOTTOM zone (tip_in_bottom_zone: true)\"}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"Repeat/duplicate callout of existing top longitudinal reinforcement already represented in deterministic model as R13-B128-TOP_MAIN-3150a4\", \"diameter_mm\": 16, \"interpreted_role\": \"TOP_MAIN\", \"notation\": \"3-Y16\", \"quantity\": 3}",
+        "uncertainty_notes": "Spatial context indicates leader tip is in bottom zone, but leader direction is UP pointing to top bars - this is consistent with a callout from below; No visual evidence of additional distinct reinforcement layer or bars beyond what is already modeled; The exact quantity and diameter match with existing top reinforcement strongly supports duplicate classification; Confidence reduced slightly from 1.0 due to spatial context label being 'SUPPORTING_EVIDENCE_ONLY' rather than definitive",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B16",
+    "region_id": "P261::Fifth::B16",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "MULTIPLE_CALLOUTS_SAME_SPEC",
+          "DETERMINISTIC_ALREADY_POPULATED",
+          "VISUAL_CONTINUITY_LINES",
+          "LEADER_POINTS_TO_EXISTING_BARS"
+        ],
+        "evidence": [
+          "visual_observations: Image shows two 4-Y20 annotations in the top zone pointing to continuous horizontal reinforcement bars",
+          "visual_observations: Both 4-Y20 callouts have leaders pointing to the same set of top longitudinal bars",
+          "visual_observations: The bars being annotated are visually continuous across the beam section",
+          "visual_observations: One 4-Y16 annotation points to bottom layer of top zone reinforcement",
+          "visual_observations: One 4-Y25 annotation points to top layer of top zone reinforcement",
+          "visual_observations: All annotations appear to be labeling the same physical reinforcement from different locations",
+          "deterministic_state: Existing top reinforcement includes: 4Y25 (TOP_MAIN), 4Y20#L, 4Y20#R, 4Y20, 4Y16#L, 4Y16#R",
+          "deterministic_state: Total of 24 bars in top layer already represented",
+          "deterministic_state: Three distinct diameter specifications already accepted: 25mm (qty 4), 20mm (qty 4), 16mm (qty 4)",
+          "deterministic_state: Multiple 4-Y20 instances already exist in deterministic model",
+          "spatial_analysis: All annotation leader tips point to TOP zone",
+          "spatial_analysis: Annotations are spatially separated but reference same continuous bars",
+          "spatial_analysis: No evidence of additional distinct reinforcement layers",
+          "spatial_analysis: Physical bar proximity confirms annotations point to existing modeled bars",
+          "annotation_pattern: Two identical 4-Y20 annotations appear as duplicate callouts",
+          "annotation_pattern: Pattern suggests repeat labeling for clarity or different span regions",
+          "annotation_pattern: No new diameter or quantity specification beyond what is already modeled"
+        ],
+        "annotation_interpretation": "{\"ambiguity_source\": \"NONE - annotations clearly reference already-modeled reinforcement\", \"interpreted_diameter_mm\": 20, \"interpreted_quantity\": 4, \"interpreted_role\": \"TOP longitudinal reinforcement continuation/repeat callout\", \"notation\": \"4-Y20 (appears twice), 4-Y16, 4-Y25\", \"visual_clarity\": \"HIGH - clear leader lines to existing bars\"}",
+        "uncertainty_notes": "The presence of two separate 4-Y20 callouts initially suggests potential for distinct bars, but visual inspection confirms they point to the same continuous reinforcement; Deterministic model already contains multiple 4-Y20 instances (4Y20#L, 4Y20#R, 4Y20), indicating the model has already captured these bars; No visual evidence of additional reinforcement layers that would justify treating these as distinct specifications; The annotation pattern is consistent with standard practice of repeating callouts for long spans or different detail views",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "MULTIPLE_CALLOUTS_SAME_SPEC",
+          "EXISTING_OBJECTS_MATCH_SPEC",
+          "SPATIAL_DISTRIBUTION_CONSISTENT",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_locations\": \"Two 4-Y20 annotations point to the top reinforcement layer from different locations along the beam span. One 4-Y16 annotation points to the bottom reinforcement. One 4-Y25 annotation points to the top reinforcement.\", \"bar_continuity\": \"The top reinforcement bars appear continuous across the beam span with annotations at different positions indicating the same reinforcement layer.\", \"layer_clarity\": \"The annotations clearly target the top longitudinal bars, with leader lines pointing to the same horizontal reinforcement layer.\", \"reinforcement_visible\": \"The image shows a beam elevation with longitudinal reinforcement bars drawn at the top and bottom faces. Multiple annotations point to these bars.\"}",
+          "deterministic_model_state: {\"existing_top_bars\": [\"4Y25 (TOP_MAIN)\", \"4Y20#L (TOP_EXTRA)\", \"4Y20#R (TOP_EXTRA)\", \"4Y20 (TOP_EXTRA)\", \"4Y16#L (TOP_EXTRA)\", \"4Y16#R (TOP_EXTRA)\"], \"specs_present\": \"The deterministic model already contains 4-Y20, 4-Y16, and 4-Y25 specifications in the TOP layer.\", \"total_top_quantity\": 24}",
+          "annotation_pattern: {\"duplicate_4Y16_count\": 1, \"duplicate_4Y20_count\": 4, \"duplicate_4Y25_count\": 1, \"spatial_distribution\": \"The 4-Y20 annotations appear at two distinct locations (left and right portions of beam), consistent with callouts for left/right extra bars already in the model (4Y20#L, 4Y20#R, 4Y20).\"}",
+          "spatial_alignment: {\"all_annotations_top_zone\": true, \"leader_tips_point_to_top_bars\": true, \"no_bottom_layer_targeting\": \"The 4-Y16 annotation points upward to top bars, not to a distinct bottom layer.\"}"
+        ],
+        "annotation_interpretation": "{\"4-Y16_annotation\": \"This annotation points to top reinforcement despite the upward leader. The model already contains 4Y16#L and 4Y16#R totaling 8-Y16 bars in the top layer.\", \"4-Y20_annotations\": \"These are repeat callouts of the top reinforcement at different locations along the beam span. The model already contains 4Y20#L, 4Y20#R, and 4Y20 bars totaling 12-Y20 bars in the top layer.\", \"4-Y25_annotation\": \"This is a callout of the main top reinforcement already represented as 4Y25 (TOP_MAIN) in the model.\"}",
+        "uncertainty_notes": "{\"confidence_factors\": [\"All annotation specifications (4-Y20, 4-Y16, 4-Y25) are already present in the deterministic model's TOP layer\", \"The image clearly shows annotations pointing to the same top reinforcement layer from different positions\", \"No visual evidence of additional distinct reinforcement layers or bars beyond what is already modeled\", \"The deterministic model's total of 24 top bars across three diameters is consistent with the annotation pattern\"], \"minor_concerns\": [\"The 4-Y16 annotation has an upward-pointing leader which might suggest bottom reinforcement, but the leader tip clearly targets the top bar layer in the image.\", \"Multiple 4-Y20 annotations could theoretically indicate additional bars, but their spatial distribution and the existing model state (with #L, #R, and center bars) suggests these are location-specific callouts of the same reinforcement.\"]}",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B62",
+    "region_id": "P261::Fifth::B62",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_REINFORCEMENT",
+          "QUANTITY_AND_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_TOP_ZONE",
+          "ANNOTATION_IN_TOP_ZONE",
+          "NO_EVIDENCE_OF_DISTINCT_LAYER"
+        ],
+        "evidence": [
+          "image_observations: Annotation '3-Y25' is located in the upper portion of the beam section",
+          "image_observations: Leader line points downward to the top reinforcement layer (upper bars in the section)",
+          "image_observations: The leader tip terminates at the top layer of longitudinal bars",
+          "image_observations: Three horizontal bars are visible in the top zone matching the annotation",
+          "image_observations: No visual evidence of additional or separate 3-Y25 bars beyond those already shown",
+          "deterministic_model_state: Existing top reinforcement includes bar_id R13-B62-TOP_MAIN-2939ee with label '3Y25'",
+          "deterministic_model_state: This existing bar has diameter 25mm and quantity 3",
+          "deterministic_model_state: Exact match: annotation '3-Y25' matches existing '3Y25' specification",
+          "deterministic_model_state: Deterministic model shows populated_layer is TOP",
+          "deterministic_model_state: Role coverage status indicates MAIN_COVERED_PLUS_EXTRAS",
+          "spatial_alignment: Leader tip is in TOP_ZONE (tip_in_top_zone: true)",
+          "spatial_alignment: Annotation position_zone is TOP_ZONE",
+          "spatial_alignment: Distance to top zone: 64.84mm (very close)",
+          "spatial_alignment: Distance to bottom zone: 712.13mm (far)",
+          "spatial_alignment: Spatial context supports SKIP with TOP proximity evidence"
+        ],
+        "annotation_interpretation": "{\"annotation_purpose\": \"REPEAT_CALLOUT\", \"graphical_role\": \"Labels the existing top main reinforcement visible in the section view\", \"parsed_specification\": {\"bar_type\": \"Y25\", \"diameter_mm\": 25, \"quantity\": 3}, \"refers_to_existing\": \"R13-B62-TOP_MAIN-2939ee\"}",
+        "uncertainty_notes": "Confidence reduced slightly from 1.0 to 0.92 due to general caution principle; No conflicting evidence observed - all indicators align toward duplicate classification; The annotation clearly labels the visible top layer bars already represented in the deterministic model",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_REINFORCEMENT",
+          "QUANTITY_AND_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_TOP_ZONE",
+          "ANNOTATION_IN_TOP_ZONE",
+          "NO_EVIDENCE_OF_DISTINCT_LAYER"
+        ],
+        "evidence": [
+          "image_evidence: The annotation '3-Y25' is located in the upper portion of the beam section with a leader line pointing to the top reinforcement layer. The leader tip is in the TOP_ZONE (tip_in_top_zone: true). The annotation is positioned above the beam centerline (dy_from_centreline: 1848.63mm) and clearly associated with the top reinforcement bars visible in the drawing.",
+          "deterministic_match: The deterministic model already contains a TOP_MAIN bar with specification '3Y25' (bar_id: R13-B62-TOP_MAIN-2939ee) with quantity=3 and diameter_mm=25, which exactly matches the candidate notation '3-Y25'.",
+          "spatial_alignment: The annotation's leader tip is in the top zone (dist_tip_top_zone: 0.0mm), and the annotation itself is positioned in the TOP_ZONE. The spatial context indicates TOP_PROXIMITY and SPATIAL_MATCH_STRONG.",
+          "no_conflict_indicators: There are no diameter conflicts, quantity shortfalls, or role conflicts in the deterministic model. The populated_layer is TOP, and the annotation aligns with this layer."
+        ],
+        "annotation_interpretation": "{\"likely_role\": \"TOP_MAIN\", \"matches_existing\": \"R13-B62-TOP_MAIN-2939ee (3Y25)\", \"parsed_specification\": \"3 bars of Y25 (25mm diameter)\"}",
+        "uncertainty_notes": "Confidence is high (0.92) due to exact match of quantity and diameter with existing top reinforcement, clear spatial alignment with top zone, and consistent leader direction. The slight uncertainty (0.08) accounts for the possibility of a distinct additional requirement not visually distinguishable, but no evidence supports this interpretation.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B139",
+    "region_id": "P261::Fourth::B139",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECTS",
+          "LEADER_TIP_ZONE_ALIGNMENT",
+          "NO_BOTTOM_LAYER_OBJECTS",
+          "ANNOTATION_PROXIMITY_TO_TOP_BARS"
+        ],
+        "evidence": [
+          "image_observations: {\"5-Y16_annotation\": \"Located in upper portion of beam section, leader pointing to top reinforcement layer shown in dark blue\", \"5-Y20_annotation\": \"Located in lower portion of beam section, leader pointing to bottom reinforcement layer shown in dark blue\", \"green_leaders\": \"Two green leader lines connect annotations to their respective reinforcement layers\", \"reinforcement_profile\": \"Beam shows top reinforcement bars (dark blue lines at top) and bottom reinforcement bars (dark blue lines at bottom)\"}",
+          "deterministic_model: {\"existing_bottom_specs\": [], \"existing_top_specs\": [\"5Y20 (20mm, qty 5)\", \"5Y16#L (16mm, qty 5)\", \"5Y16#R (16mm, qty 5)\"], \"total_bottom_quantity\": 0, \"total_top_quantity\": 15}",
+          "annotation_analysis: {\"5-Y16\": {\"diameter_mm\": 16, \"leader_tip_direction\": \"DOWN\", \"nearest_bar_distance\": 296.88, \"nearest_bar_family\": \"TOP\", \"position_zone\": \"TOP_ZONE\", \"quantity\": 5}, \"5-Y20\": {\"diameter_mm\": 20, \"leader_tip_direction\": \"UP\", \"nearest_bar_distance\": 342.12, \"nearest_bar_family\": \"TOP\", \"position_zone\": \"TOP_ZONE\", \"quantity\": 5}}",
+          "matching_assessment: {\"5-Y16_matches\": \"R13-B139-TOP_EXTRA-b182ec (5Y16#L) or R13-B139-TOP_EXTRA-b7d545 (5Y16#R)\", \"5-Y20_matches\": \"R13-B139-TOP_MAIN-f2c509 (5Y20)\", \"exact_quantity_diameter_match\": true}"
+        ],
+        "annotation_interpretation": "{\"5-Y16\": \"Callout for 5 bars of Y16 reinforcement in top layer, already represented by existing TOP_EXTRA objects\", \"5-Y20\": \"Callout for 5 bars of Y20 reinforcement in top layer, already represented by existing TOP_MAIN object\", \"interpretation\": \"Both annotations are repeat callouts of reinforcement already captured in the deterministic model\"}",
+        "uncertainty_notes": "5-Y20 annotation positioned lower in section but leader tip points upward to top zone (tip_in_bottom_zone: true, but position_zone: TOP_ZONE); Deterministic model shows 15 total top bars (5Y20 + 5Y16#L + 5Y16#R), which exactly matches the two annotations (5+5+5); No bottom layer reinforcement exists in deterministic model, supporting interpretation that both annotations refer to top layer despite vertical separation",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECTS",
+          "LEADER_TIPS_POINT_TO_TOP_BARS",
+          "NO_BOTTOM_REINFORCEMENT_PRESENT",
+          "VISUAL_CONFIRMATION_TOP_PLACEMENT"
+        ],
+        "evidence": [
+          "image_observations: {\"5-Y16_annotation\": \"Leader points upward to top fiber reinforcement layer, clearly indicating top bars\", \"5-Y20_annotation\": \"Leader points upward to bottom of top fiber reinforcement layer, indicating top bars at lower position within top zone\", \"beam_section\": \"Shows clear top reinforcement bars (dark blue lines) at two levels in top zone. No bottom reinforcement visible.\", \"green_leaders\": \"Two green leader lines both point upward to top zone bars, confirming top layer association\"}",
+          "deterministic_model: {\"annotation_specs\": [\"5-Y16 (16mm, qty 5)\", \"5-Y20 (20mm, qty 5)\"], \"existing_bottom_specs\": [], \"existing_top_specs\": [\"5Y20 (20mm, qty 5)\", \"5Y16#L (16mm, qty 5)\", \"5Y16#R (16mm, qty 5)\"], \"total_top_16mm\": 10, \"total_top_20mm\": 5, \"total_top_quantity\": 15}",
+          "spatial_analysis: {\"5-Y16_position\": \"Top zone, leader tip in top zone, 296.88mm from nearest top bar\", \"5-Y20_position\": \"Top zone (despite being near bottom zone boundary), leader tip in bottom zone but pointing UP to top bars, 342.12mm from nearest top bar\", \"annotation_cluster_separation\": true, \"both_annotations_near_top_bars\": true}",
+          "matching_analysis: {\"5-Y16_match\": \"Matches existing 5Y16#L and 5Y16#R (total 10 bars of 16mm in top)\", \"5-Y20_match\": \"Matches existing 5Y20 (5 bars of 20mm in top)\", \"exact_diameter_quantity_match\": true}"
+        ],
+        "annotation_interpretation": "{\"5-Y16\": {\"interpreted_diameter_mm\": 16, \"interpreted_quantity\": 5, \"interpreted_role\": \"TOP\", \"represents\": \"Callout for top layer 16mm bars, already represented by 5Y16#L and 5Y16#R objects\"}, \"5-Y20\": {\"interpreted_diameter_mm\": 20, \"interpreted_quantity\": 5, \"interpreted_role\": \"TOP\", \"represents\": \"Callout for top layer 20mm bars, already represented by 5Y20 object\"}}",
+        "uncertainty_notes": "The 5-Y20 annotation is positioned near the bottom zone boundary, but the leader clearly points UPWARD to top bars, not downward to bottom bars; The deterministic model shows 10 bars of Y16 (split as #L and #R), while annotation shows 5-Y16. This likely represents one of the two groups, making it a partial duplicate callout; No bottom reinforcement exists in the deterministic model, and the image shows no bottom bars, confirming both annotations refer to top layer only",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B141",
+    "region_id": "P261::Fourth::B141",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "LEADER_POINTS_TO_EXISTING_TOP_BARS",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: The annotation '5-Y16' has a leader pointing upward to the top reinforcement layer (green bars visible in section)",
+          "image_observations: The leader tip terminates at the top longitudinal bars in the beam section",
+          "image_observations: The beam section shows green bars at the top face representing the top reinforcement",
+          "image_observations: No additional distinct reinforcement layer is visible that would require separate specification",
+          "image_observations: The annotation appears to be labeling the existing top bars shown in the section view",
+          "deterministic_match: {\"candidate_spec\": \"5-Y16 (5 bars of 16mm diameter)\", \"existing_top_spec\": \"5Y16 (5 bars of 16mm diameter)\", \"match_quality\": \"EXACT\"}",
+          "spatial_alignment: {\"leader_direction\": \"UP\", \"leader_tip_zone\": \"BOTTOM_ZONE (but pointing upward to top bars)\", \"nearest_bar_distance_mm\": 373.84, \"nearest_bar_family\": \"TOP\"}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"LABELING_EXISTING_TOP_REINFORCEMENT\", \"diameter_mm\": 16, \"interpreted_role\": \"TOP_MAIN\", \"notation\": \"5-Y16\", \"quantity\": 5}",
+        "uncertainty_notes": "Leader tail is positioned in bottom zone, but leader direction is upward pointing to top bars; The exact match of quantity (5) and diameter (16mm) with existing top reinforcement strongly suggests this is a repeat callout; No visual evidence of additional bottom or side reinforcement that would justify treating this as distinct",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "LEADER_POINTS_TO_EXISTING_TOP_BARS",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: The annotation '5-Y16' has a leader pointing upward to the top reinforcement layer (green bars visible in section)",
+          "image_observations: The leader tip terminates at the top longitudinal bars in the beam section",
+          "image_observations: The beam section shows green bars at the top face representing the top reinforcement",
+          "image_observations: No additional distinct reinforcement layer is visible that would require separate specification",
+          "image_observations: The annotation appears to be labeling the existing top bars shown in the section view",
+          "deterministic_match: {\"candidate_notation\": \"5-Y16 (5 bars of 16mm diameter)\", \"existing_top_reinforcement\": \"5Y16 (5 bars of 16mm diameter)\", \"match_quality\": \"EXACT\"}",
+          "spatial_alignment: {\"annotation_position\": \"Below beam, leader pointing to top reinforcement\", \"leader_direction\": \"UP\", \"leader_tip_zone\": \"BOTTOM_ZONE (but pointing upward to top bars)\", \"nearest_bar_distance\": \"373.84mm\", \"nearest_bar_family\": \"TOP\"}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"LABELING_EXISTING_TOP_REINFORCEMENT\", \"diameter_mm\": 16, \"interpreted_role\": \"TOP_MAIN\", \"notation\": \"5-Y16\", \"quantity\": 5}",
+        "uncertainty_notes": "The annotation is positioned in the bottom zone but the leader clearly points upward to the top reinforcement layer; The deterministic model already has exactly 5Y16 bars in the TOP layer; No visual evidence of additional or missing reinforcement beyond what is already represented; The spatial context codes suggest bottom proximity, but the leader geometry and tip direction indicate this is labeling the top bars from below",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B143",
+    "region_id": "P261::Fourth::B143",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECTS",
+          "LEADER_TIPS_POINT_TO_TOP_BARS",
+          "NO_EVIDENCE_OF_DISTINCT_LAYER",
+          "DETERMINISTIC_ALREADY_ACCEPTED"
+        ],
+        "evidence": [
+          "image_observations: {\"2-Y12_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\", \"4-Y20_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\", \"bar_visualization\": \"Dark blue bars visible at top of beam section representing top longitudinal reinforcement\", \"green_outline\": \"Beam outline shows typical section with reinforcement concentrated at top\", \"no_bottom_callouts\": \"No annotations or leaders pointing to bottom of beam section\"}",
+          "deterministic_model: {\"accepted_specs_match\": \"Both 4-Y20 and 2-Y12 are in accepted_specs list with coverage ROLE_COVERAGE_GAP\", \"existing_2Y12\": \"Bar ID R13-B143-TOP_EXTRA-947e24, diameter 12mm, quantity 2, family TOP\", \"existing_4Y20\": \"Bar ID R13-B143-TOP_EXTRA-b6b812, diameter 20mm, quantity 4, family TOP\", \"total_top_bars\": \"9 bars total in top layer (3Y25 + 4Y20 + 2Y12)\"}",
+          "spatial_analysis: {\"2-Y12_leader_tip\": \"Leader tip in top zone (dist_tip_top_zone: 0.0mm), pointing UP\", \"4-Y20_leader_tip\": \"Leader tip at top zone boundary (dist_tip_top_zone: 4.07mm), pointing UP\", \"nearest_bars\": \"Both annotations nearest to TOP family bars (512mm and 547mm respectively)\", \"position_zone\": \"Both annotations in TOP_ZONE\"}"
+        ],
+        "annotation_interpretation": "{\"2-Y12\": \"Callout for 2 bars of Y12 diameter in top layer, already represented by bar R13-B143-TOP_EXTRA-947e24\", \"4-Y20\": \"Callout for 4 bars of Y20 diameter in top layer, already represented by bar R13-B143-TOP_EXTRA-b6b812\"}",
+        "uncertainty_notes": "The deterministic model shows ROLE_COVERAGE_GAP status, but this appears to be a labeling/role assignment issue rather than missing reinforcement. The exact quantities and diameters are already present in existing_top_reinforcement. Both annotations have leaders pointing to the top bars visible in the image. No evidence suggests these represent additional distinct reinforcement in a different layer or location.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_OBJECTS_PRESENT",
+          "LEADER_TIPS_POINT_TO_TOP_BARS",
+          "NO_EVIDENCE_OF_DISTINCT_LAYER",
+          "DETERMINISTIC_ALREADY_ACCEPTED"
+        ],
+        "evidence": [
+          "image_observations: {\"2-Y12_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\", \"4-Y20_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\", \"bar_visualization\": \"Dark blue bars visible at top of beam section representing top longitudinal reinforcement\", \"beam_outline\": \"Green outline shows beam cross-section with reinforcement concentrated at top\", \"no_bottom_callouts\": \"No annotations or leaders pointing to bottom of beam section\"}",
+          "deterministic_model: {\"exact_match_2Y12\": true, \"exact_match_4Y20\": true, \"existing_top_bars\": [\"4Y20 (TOP_EXTRA)\", \"2Y12 (TOP_EXTRA)\", \"3Y25 (TOP_MAIN)\"], \"populated_layer\": \"TOP\", \"total_top_quantity\": 9}",
+          "spatial_analysis: {\"2-Y12_nearest_bar\": \"547mm from TOP family bar\", \"4-Y20_nearest_bar\": \"512mm from TOP family bar\", \"leader_directions\": \"Both UP\", \"position_zones\": \"Both TOP_ZONE\", \"tip_zones\": \"Both at or near top zone boundary\"}"
+        ],
+        "annotation_interpretation": "{\"2-Y12\": {\"matches_existing\": \"R13-B143-TOP_EXTRA-947e24\", \"represents\": \"Callout for existing 2Y12 top reinforcement bars visible in section\", \"role\": \"TOP reinforcement label\"}, \"4-Y20\": {\"matches_existing\": \"R13-B143-TOP_EXTRA-b6b812\", \"represents\": \"Callout for existing 4Y20 top reinforcement bars visible in section\", \"role\": \"TOP reinforcement label\"}}",
+        "uncertainty_notes": "Both annotations have exact quantity and diameter matches in existing top reinforcement; Leader tips point upward to visible top bars in the beam section; No visual evidence of bottom layer reinforcement or callouts; Deterministic model already accepted these specifications as TOP_EXTRA; Spatial context confirms TOP zone positioning for both annotations; No conflicting evidence suggesting these represent additional distinct reinforcement",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B56",
+    "region_id": "P261::Sixth::B56",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_MAIN",
+          "LEADER_POINTS_TO_TOP_ZONE",
+          "ANNOTATION_IN_TOP_ZONE",
+          "QUANTITY_AND_DIAMETER_MATCH",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"The '4-Y25' annotation is positioned in the top zone of the beam cross-section, with its leader pointing upward to the top reinforcement layer\", \"cross_section_context\": \"The hatched cross-section clearly shows top reinforcement; no indication of additional distinct reinforcement at this location\", \"leader_direction\": \"Leader tip points UP into the top zone where reinforcement bars are visible\", \"visible_reinforcement\": \"Top layer shows horizontal reinforcement bars consistent with the annotation callout\"}",
+          "deterministic_alignment: {\"diameter_match\": \"Y25 (25mm) matches existing diameter\", \"exact_specification_match\": true, \"existing_top_main\": \"4Y25 (4 bars of 25mm diameter) already exists in TOP_MAIN layer\", \"quantity_match\": \"4 bars in annotation matches 4 bars in existing TOP_MAIN\"}",
+          "spatial_alignment: {\"annotation_zone\": \"TOP_ZONE\", \"leader_tip_zone\": \"TOP_ZONE\", \"populated_layer\": \"TOP\", \"zone_consistency\": true}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"Standard reinforcement callout identifying the top main bars visible in the cross-section\", \"indicated_layer\": \"TOP\", \"parsed_specification\": \"4 bars of Y25 (25mm diameter)\", \"role_indication\": \"Main top longitudinal reinforcement\"}",
+        "uncertainty_notes": "The annotation '4-Y25' exactly matches the existing TOP_MAIN reinforcement specification (bar_id: R13-B56-TOP_MAIN-2de2fa, bar_label: 4Y25). The leader points to the top zone where this reinforcement is already represented. There is no visual or contextual evidence suggesting this represents additional or distinct reinforcement. The annotation appears to be a standard callout labeling the existing top main reinforcement visible in the cross-section.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_MAIN",
+          "LEADER_POINTS_TO_TOP_ZONE",
+          "ANNOTATION_IN_TOP_ZONE",
+          "QUANTITY_AND_DIAMETER_MATCH",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"The '4-Y25' annotation is positioned in the top zone of the beam cross-section, with its leader pointing upward to the top reinforcement layer\", \"leader_behavior\": \"Leader tip points directly to the top longitudinal bars shown in the section view\", \"reinforcement_visible\": \"Top layer shows continuous longitudinal bars that the annotation clearly references\", \"section_view\": \"Cross-section shows hatched beam with top reinforcement bars clearly visible\"}",
+          "deterministic_match: {\"diameter_match\": 25, \"exact_specification_match\": true, \"existing_top_main\": \"4Y25 (bar_id: R13-B56-TOP_MAIN-2de2fa)\", \"quantity_match\": 4}",
+          "spatial_alignment: {\"annotation_zone\": \"TOP_ZONE\", \"dy_from_centreline\": 1280.4, \"leader_tip_zone\": \"TOP\", \"position_consistent_with_top\": true, \"tip_in_top_zone\": true}"
+        ],
+        "annotation_interpretation": "{\"apparent_role\": \"TOP_MAIN\", \"matches_existing\": \"R13-B56-TOP_MAIN-2de2fa with label 4Y25\", \"parsed_specification\": \"4 bars of Y25 (25mm diameter)\"}",
+        "uncertainty_notes": "The annotation '4-Y25' exactly matches the existing top main reinforcement specification (4Y25) already represented in the deterministic model. The leader clearly points to the top layer of the beam section. There is no visual or contextual evidence suggesting this represents additional or distinct reinforcement beyond what is already modeled. The annotation appears to be a standard callout identifying the top main bars.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B100",
+    "region_id": "P261::Fifth::B100",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_TOP_BARS",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: Beam B100 section shows two horizontal lines at top representing top reinforcement bars",
+          "image_observations: Green leader line points upward from annotation '3-Y25' to the top bars",
+          "image_observations: Leader tip terminates at the top reinforcement layer",
+          "image_observations: No additional bars visible at bottom or elsewhere that would require this annotation",
+          "image_observations: The annotation '3-Y25' is positioned below the beam section with clear leader association to top bars",
+          "deterministic_alignment: Deterministic model shows existing_top_reinforcement: 3Y25 (diameter 25mm, quantity 3)",
+          "deterministic_alignment: Candidate notation specifies: 3-Y25 (diameter 25mm, quantity 3)",
+          "deterministic_alignment: Exact match in both quantity and diameter",
+          "deterministic_alignment: populated_layer is TOP with no bottom reinforcement",
+          "deterministic_alignment: role_gap_reason indicates SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH",
+          "spatial_alignment: Leader tip is in TOP_ZONE (tip_in_top_zone: true)",
+          "spatial_alignment: Leader direction is UP, pointing toward top bars",
+          "spatial_alignment: Annotation position_zone: TOP_ZONE",
+          "spatial_alignment: No physical bar geometry conflicts noted"
+        ],
+        "annotation_interpretation": "{\"inferred_role\": \"TOP_MAIN\", \"notation_format\": \"STANDARD_BAR_CALLOUT\", \"parsed_diameter_mm\": 25, \"parsed_quantity\": 3}",
+        "uncertainty_notes": "No ambiguity detected - clear visual and contextual alignment; Leader geometry unambiguously points to existing top bars; No evidence of missing reinforcement specification",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_TOP_BARS",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: Annotation '3-Y25' with leader pointing upward to top reinforcement bars",
+          "image_observations: Leader tip clearly terminates at the top longitudinal bars shown in the beam section",
+          "image_observations: Two parallel lines visible at top of beam section representing longitudinal reinforcement",
+          "image_observations: No additional bars or reinforcement layers visible that would require separate specification",
+          "image_observations: Beam identifier 'B100' matches context",
+          "image_observations: Additional annotation '3LY10@100/125/100C/C' visible but refers to different reinforcement type (likely links/stirrups)",
+          "deterministic_model_state: Existing top reinforcement: 3Y25 (bar_id: R13-B100-TOP_MAIN-09c25c)",
+          "deterministic_model_state: Exact match: quantity=3, diameter=25mm",
+          "deterministic_model_state: No bottom reinforcement populated",
+          "deterministic_model_state: Role coverage status indicates gap requiring vision, but single spec already matched",
+          "spatial_analysis: Leader tip in TOP_ZONE (tip_in_top_zone: true)",
+          "spatial_analysis: Leader direction: UP, pointing to visible top bars",
+          "spatial_analysis: Distance from top zone: 0.0mm (at boundary)",
+          "spatial_analysis: No physical bar geometry conflict noted"
+        ],
+        "annotation_interpretation": "{\"graphical_association\": \"Leader clearly associates annotation with the top layer bars visible in the beam section drawing\", \"likely_intent\": \"Callout identifying the top longitudinal reinforcement already shown in section\", \"parsed_specification\": \"3 bars of Y25 (25mm diameter)\"}",
+        "uncertainty_notes": "Deterministic model shows 'ROLE_COVERAGE_GAP' and 'ROLE_GAP_REQUIRES_VISION', but this appears to be a conservative flag rather than evidence of missing reinforcement; The single specification (3-Y25) is already fully represented in existing_top_reinforcement with exact quantity and diameter match; No visual evidence in the image of additional bars or a second layer that would justify treating this as distinct reinforcement",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B162A",
+    "region_id": "P261::Fifth::B162A",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP",
+          "QUANTITY_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_EXISTING_BARS",
+          "MULTIPLE_CALLOUTS_SAME_SPEC",
+          "COVERAGE_FULLY_COVERED"
+        ],
+        "evidence": [
+          "image_observations: Beam section shows 2 bars at top layer and 2 bars at bottom layer",
+          "image_observations: Two separate '2-Y16' annotations with leaders pointing to the top bars",
+          "image_observations: One '2-Y16' annotation with leader pointing to bottom bars",
+          "image_observations: Additional '2LY8@100C/C' annotation below the bottom '2-Y16' (appears to be stirrup/link notation)",
+          "image_observations: The top two bars are clearly visible and match the 2-Y16 specification",
+          "image_observations: Multiple annotations pointing to the same physical reinforcement",
+          "deterministic_model_state: Existing top reinforcement: 2Y16 (diameter 16mm, quantity 2)",
+          "deterministic_model_state: Existing bottom reinforcement: 4Y20 (diameter 20mm, quantity 4)",
+          "deterministic_model_state: Coverage status: FULLY_COVERED",
+          "deterministic_model_state: All candidate annotations are 2-Y16 (matching existing top)",
+          "spatial_analysis: Leader tips point to top zone and bottom zone",
+          "spatial_analysis: Nearest bar distances: 206mm and 323mm (close proximity)",
+          "spatial_analysis: Annotations are in separate clusters but reference same specification",
+          "spatial_analysis: Physical bars are available at pointed locations",
+          "annotation_characteristics: Four instances of '2-Y16' annotation in context",
+          "annotation_characteristics: Two annotations point to top bars with leaders pointing DOWN and UP respectively",
+          "annotation_characteristics: Specifications match exactly: 2 bars, Y16 diameter",
+          "annotation_characteristics: No additional quantity or different diameter specified"
+        ],
+        "annotation_interpretation": "{\"likely_intent\": \"Multiple callouts of the same top reinforcement for clarity or different view references\", \"matches_existing\": \"R13-B162A-TOP_MAIN-e7d73e (2Y16)\", \"represents_additional\": false, \"specification\": \"2-Y16 (2 bars of 16mm diameter)\"}",
+        "uncertainty_notes": "One annotation points to bottom zone, but bottom already has 4Y20, not 2Y16; The bottom-pointing '2-Y16' annotation may be attempting to describe something else, but the image shows only 2 bars at top matching 2Y16; Despite spatial separation of annotations, all specify identical reinforcement (2-Y16) which is already represented in the top layer; The deterministic model shows FULLY_COVERED status, supporting duplicate interpretation",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP",
+          "QUANTITY_DIAMETER_MATCH",
+          "LEADER_POINTS_TO_EXISTING_BARS",
+          "COVERAGE_FULLY_COVERED",
+          "MULTIPLE_CALLOUTS_SAME_SPEC"
+        ],
+        "evidence": [
+          "image_evidence: The beam section shows two '2-Y16' annotations with leaders pointing to the top layer of the beam. The cross-section clearly displays two bars in the top layer matching this specification.",
+          "existing_reinforcement: Deterministic model contains R13-B162A-TOP_MAIN-e7d73e with specification 2Y16 (quantity=2, diameter=16mm) in the TOP family.",
+          "annotation_details: Four annotation instances are provided, but they represent two distinct callouts (ANN-caa1a5b9 and ANN-c043acbe), both specifying '2-Y16' with diameter 16mm and quantity 2.",
+          "leader_analysis: Both annotations have leaders pointing to the top region of the beam section. ANN-caa1a5b9 has leader_tip_direction DOWN pointing into top zone. ANN-c043acbe has leader_tip_direction UP from bottom, also targeting top bars.",
+          "spatial_proximity: Nearest bar distances are 206mm and 323mm respectively, both pointing to bars in the UNKNOWN family (likely the existing top bars).",
+          "coverage_status: Deterministic shows FULLY_COVERED status with two coverage rows, both showing 2-Y16 as FULLY_COVERED."
+        ],
+        "annotation_interpretation": "{\"apparent_intent\": \"Multiple callouts identifying the same top longitudinal reinforcement from different views or for clarity\", \"existing_match_details\": \"Exact match with R13-B162A-TOP_MAIN-e7d73e: 2Y16\", \"matches_existing\": true, \"specification\": \"2-Y16 (2 bars of 16mm diameter)\"}",
+        "uncertainty_notes": "The presence of four annotation instances (two unique callouts) for the same specification initially suggests potential ambiguity. However, the image clearly shows only two bars in the top layer, and both annotations point to these same bars. The deterministic model already represents this as 2Y16 top reinforcement with FULLY_COVERED status. The annotations appear to be repeat callouts for documentation clarity rather than distinct additional reinforcement.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B173",
+    "region_id": "P261::Fifth::B173",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "MATCHING_SPECIFICATION_EXISTS",
+          "IDENTICAL_QUANTITY_AND_DIAMETER",
+          "TOP_LAYER_ALREADY_POPULATED",
+          "MULTIPLE_CALLOUTS_SAME_SPEC",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: Beam B173 cross-section shows a rectangular beam with reinforcement indicated",
+          "image_observations: Two '3-Y16' annotations visible: one pointing to top of beam (leader pointing down), one pointing to bottom of beam (leader pointing up)",
+          "image_observations: Both annotations have identical specification: 3-Y16 (3 bars of Y16 diameter)",
+          "image_observations: Green highlighted box encompasses the beam section showing the reinforcement layout",
+          "image_observations: A third annotation '2LY8@100C/C' is visible at the bottom, indicating stirrups/links",
+          "image_observations: The beam section shows bars represented at top and bottom faces",
+          "image_observations: No visual evidence of additional distinct longitudinal bars beyond what's shown",
+          "deterministic_state: Existing top reinforcement: 3Y16 (bar_id: R13-B173-TOP_MAIN-2b38d7)",
+          "deterministic_state: Top quantity: 3, diameter: 16mm",
+          "deterministic_state: Bottom quantity: 0",
+          "deterministic_state: Populated layer: TOP only",
+          "deterministic_state: Role gap status indicates ROLE_GAP_REQUIRES_VISION with reason REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+          "spatial_analysis: Two annotation instances of '3-Y16' at separate vertical locations",
+          "spatial_analysis: One annotation (ANN-ba00127a) in top zone with leader tip pointing down to top of beam",
+          "spatial_analysis: One annotation (ANN-317d0c57) in bottom zone with leader tip pointing up from bottom",
+          "spatial_analysis: Both annotations point to the same specification but from different viewing positions",
+          "spatial_analysis: Spatial context indicates ANNOTATION_CLUSTER_SEPARATION and REPEATED_SEPARATE_LOCATION"
+        ],
+        "annotation_interpretation": "{\"existing_object_reference\": \"R13-B173-TOP_MAIN-2b38d7 (3Y16, TOP layer)\", \"interpretation\": \"The two '3-Y16' callouts represent the same reinforcement specification shown from different annotation positions (top and bottom of drawing). This is a common drafting practice to ensure clarity. The existing deterministic model already captures 3Y16 in the TOP layer. The bottom annotation does not indicate additional bottom reinforcement but rather provides a redundant callout of the top bars for drawing clarity.\", \"matches_existing\": true, \"specification\": \"3-Y16 (3 bars of 16mm diameter)\"}",
+        "uncertainty_notes": "The spatial context shows one leader pointing to top zone and one to bottom zone, which could suggest bottom reinforcement; However, the image shows both leaders pointing to what appears to be the same reinforcement layer; The deterministic model shows only TOP populated with exactly matching specification (3Y16); No visual evidence in the beam section of distinct bottom longitudinal bars separate from top bars; The role gap status 'REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH' suggests the system detected repetition; Confidence reduced from 0.95 to 0.88 due to the ambiguous leader directions, but visual evidence strongly supports duplicate interpretation",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECT",
+          "MULTIPLE_CALLOUTS_SAME_SPEC",
+          "NO_EVIDENCE_ADDITIONAL_LAYER",
+          "LEADER_TIPS_POINT_TO_SAME_REINFORCEMENT_ZONE"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_locations\": \"Two 3-Y16 callouts visible: one pointing to top of beam (leader pointing down), one pointing to bottom of beam (leader pointing up)\", \"beam_section\": \"Shows beam B173 cross-section with reinforcement layout\", \"bottom_layer\": \"Bottom layer visible but no distinct reinforcement bars shown in bottom zone that would require separate 3-Y16 specification\", \"leader_behavior\": \"Both leaders point toward the same top reinforcement layer from different annotation positions\", \"reinforcement_visible\": \"Top layer shows 3 bars represented by the green highlighted rectangle at top of section\"}",
+          "deterministic_model: {\"existing_bottom\": \"Empty - no bottom reinforcement represented\", \"existing_top\": \"3Y16 (16mm diameter, quantity 3) already represented in TOP layer\", \"populated_layer\": \"TOP only\"}",
+          "spatial_analysis: {\"annotation_positions\": \"Annotations at different y-coordinates (top zone and bottom zone positions) but both reference same reinforcement specification\", \"leader_tips\": \"One tip in top zone, one tip in bottom zone, but both 3-Y16 callouts\", \"nearest_bars\": \"Both annotations associate with bars in the top region (BAR::SYN::B173::11D6822 and 11D6821)\"}",
+          "specification_match: {\"candidate\": \"3-Y16 (quantity=3, diameter=16mm)\", \"existing\": \"3Y16 (quantity=3, diameter=16mm)\", \"match\": \"Exact match in quantity and diameter\"}"
+        ],
+        "annotation_interpretation": "{\"primary_callout\": \"3-Y16 at top zone represents the top layer reinforcement\", \"rationale\": \"The image shows only one layer of 3 bars at the top. There is no visual evidence of a separate set of 3-Y16 bars at the bottom that would justify treating these as distinct specifications. The deterministic model correctly represents the single top layer. Multiple callouts of the same specification from different drawing positions is common practice for clarity.\", \"secondary_callout\": \"3-Y16 at bottom zone is a repeat/continuation callout of the same top reinforcement, not a distinct bottom layer specification\"}",
+        "uncertainty_notes": "The spatial context shows leader tips in both top and bottom zones, which could suggest separate layers, but the image evidence does not support distinct bottom reinforcement matching this specification; If there were distinct bottom reinforcement, it would typically be visible in the cross-section or indicated by different notation/role markers; The existing model already represents 3Y16 in the top layer, and no bottom layer object exists - adding these annotations would create inappropriate duplication",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B101",
+    "region_id": "P261::Fourth::B101",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_MAIN",
+          "QUANTITY_DIAMETER_MATCH",
+          "LEADER_TIP_IN_TOP_ZONE",
+          "NEAREST_BAR_TOP_FAMILY",
+          "NO_BOTTOM_REINFORCEMENT_EXISTS",
+          "SINGLE_CALLOUT_PATTERN"
+        ],
+        "evidence": [
+          "image_evidence: The annotation '3-Y20' is visible in the image with a leader pointing upward to the top zone of beam B101. The green highlighted region shows existing top reinforcement bars. The annotation appears to be a standard callout for the main top reinforcement.",
+          "existing_match: Deterministic model shows existing top reinforcement bar 'R13-B101-TOP_MAIN-0fbf87' with label '3Y20', diameter 20mm, quantity 3, which exactly matches the annotation '3-Y20'.",
+          "spatial_alignment: The annotation leader tip is in the top zone (tip_in_top_zone: true, position_zone: TOP_ZONE). The nearest bar is 320mm away and has family UNKNOWN but the deterministic model clearly identifies a TOP family bar with matching specification.",
+          "no_conflict_indicators: No bottom reinforcement exists in the deterministic model. The annotation does not indicate a different location, additional bars, or conflicting specification. The populated_layer is TOP with 9 total bars (3x20mm + 3x16mm + 3x16mm)."
+        ],
+        "annotation_interpretation": "{\"inferred_role\": \"TOP_MAIN\", \"location_indicators\": \"Leader pointing upward to top zone, annotation positioned above beam outline\", \"parsed_diameter_mm\": 20, \"parsed_quantity\": 3, \"parsed_text\": \"3-Y20\"}",
+        "uncertainty_notes": "The nearest bar shows family UNKNOWN with 320mm distance, which introduces minor uncertainty. However, the deterministic model clearly shows a TOP_MAIN bar (R13-B101-TOP_MAIN-0fbf87) with exact matching specification (3Y20, 20mm diameter, quantity 3). The spatial context strongly supports this is a callout for existing top reinforcement. The annotation pattern is consistent with a single main reinforcement callout rather than indicating additional distinct reinforcement.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_MATCH_EXISTING_TOP_MAIN",
+          "QUANTITY_DIAMETER_MATCH",
+          "LEADER_TIP_IN_TOP_ZONE",
+          "PROXIMITY_TO_TOP_BARS",
+          "NO_BOTTOM_REINFORCEMENT_EXISTS"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"Upper portion of beam section, with leader pointing upward to top zone\", \"annotation_text\": \"3-Y20\", \"annotation_visible\": true, \"green_highlight_zone\": \"Top zone of beam\", \"leader_direction\": \"UP\", \"leader_tip_zone\": \"TOP_ZONE\", \"visible_bar_representations\": \"Multiple bar lines visible in top zone of beam section\"}",
+          "deterministic_model: {\"additional_top_extras\": \"Two 3Y16 bars also present in top\", \"exact_match\": true, \"existing_top_main\": {\"bar_label\": \"3Y20\", \"diameter_mm\": 20, \"family\": \"TOP\", \"quantity\": 3}}",
+          "spatial_analysis: {\"leader_tip_direction\": \"UP\", \"nearest_bar_distance\": 320.43, \"nearest_bar_family\": \"UNKNOWN\", \"position_zone\": \"TOP_ZONE\", \"tip_in_bottom_zone\": false, \"tip_in_top_zone\": true}",
+          "specification_match: {\"candidate_diameter\": 20, \"candidate_quantity\": 3, \"existing_diameter\": 20, \"existing_quantity\": 3, \"match_type\": \"EXACT\"}"
+        ],
+        "annotation_interpretation": "{\"callout_purpose\": \"REPEAT_SPECIFICATION\", \"inferred_role\": \"TOP_MAIN\", \"parsed_bar_mark\": \"Y20\", \"parsed_diameter_mm\": 20, \"parsed_quantity\": 3}",
+        "uncertainty_notes": "The annotation 3-Y20 exactly matches the existing TOP_MAIN reinforcement (bar_id: R13-B101-TOP_MAIN-0fbf87, label: 3Y20) with identical quantity (3) and diameter (20mm). The leader points upward into the top zone where this reinforcement is already represented. The image shows the annotation in the upper portion of the beam with the green highlight zone indicating top reinforcement. No bottom reinforcement exists in the deterministic model, and the spatial context strongly supports this being a repeat callout of the already-represented top main bars. The nearest bar distance of 320mm and upward leader direction are consistent with labeling existing top reinforcement rather than specifying additional distinct bars.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B102",
+    "region_id": "P261::Fourth::B102",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECTS",
+          "LEADER_TIPS_POINT_TO_TOP_BARS",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER",
+          "VISUAL_CONFIRMATION_OF_CALLOUTS"
+        ],
+        "evidence": [
+          "image_observations: {\"3-Y16_annotation\": \"Visible at left side of beam with leader pointing to top reinforcement layer\", \"3-Y20_annotation\": \"Visible at right side of beam with leader pointing upward to top reinforcement layer shown in dark blue\", \"bar_arrangement\": \"Top layer shows continuous reinforcement with the annotated bars clearly indicated by leader lines\", \"bottom_layer_bars\": \"Green dashed lines visible at bottom, no annotations pointing to bottom layer\", \"top_layer_bars\": \"Clear dark blue bars visible at top of beam section matching the annotated quantities\"}",
+          "deterministic_match: {\"3-Y16_match\": \"Existing objects R13-B102-TOP_EXTRA (both #L and #R) with 3Y16, diameter 16mm, total quantity 6 (two groups of 3)\", \"3-Y20_match\": \"Existing object R13-B102-TOP_MAIN-ac532f with 3Y20, diameter 20mm, quantity 3\", \"total_top_quantity\": \"9 bars in top layer (3\\u00d7Y20 + 6\\u00d7Y16) matches deterministic model\"}",
+          "spatial_alignment: {\"3-Y16_leader\": \"Leader tip points to top zone, nearest bar distance 1070.90mm to TOP family bar\", \"3-Y20_leader\": \"Leader tip points upward to top zone, nearest bar distance 394.66mm to TOP family bar\", \"both_annotations_top_zone\": true}"
+        ],
+        "annotation_interpretation": "{\"3-Y16\": {\"purpose\": \"Documentation/labeling of existing top reinforcement group\", \"represents\": \"Callout for 3 Y16 top extra bars (one of the two groups already modeled as TOP_EXTRA)\"}, \"3-Y20\": {\"purpose\": \"Documentation/labeling of existing top reinforcement\", \"represents\": \"Callout for the 3 Y20 main top bars already modeled as R13-B102-TOP_MAIN-ac532f\"}}",
+        "uncertainty_notes": "The 3-Y16 annotation could theoretically refer to either the left or right group of TOP_EXTRA bars, but both are already represented in the model; No visual evidence of bottom layer reinforcement matching these specifications; No visual evidence of side face reinforcement matching these specifications; The deterministic model shows 6 total Y16 bars (two groups of 3), and this annotation documents one of those groups",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "EXISTING_TOP_LAYER_OBJECTS",
+          "LEADER_TIPS_POINT_TO_TOP_BARS",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER",
+          "VISUAL_CONFIRMATION_OF_CALLOUTS"
+        ],
+        "evidence": [
+          "image_observations: {\"3-Y16_annotation\": \"Visible at left side of beam with leader pointing to top reinforcement layer\", \"3-Y20_annotation\": \"Visible at right side of beam with leader pointing upward to top reinforcement layer shown in dark blue\", \"bar_arrangement\": \"Top layer shows continuous reinforcement with the annotated bars clearly indicated by leader lines\", \"bottom_layer_bars\": \"Green dashed lines visible at bottom, no annotations pointing to bottom layer\", \"top_layer_bars\": \"Clear dark blue bars visible at top of beam section matching the annotated quantities\"}",
+          "deterministic_match: {\"3-Y16_match\": \"Existing objects R13-B102-TOP_EXTRA (both #L and #R) with 3Y16, diameter 16mm, total quantity 6 (two groups of 3)\", \"3-Y20_match\": \"Existing object R13-B102-TOP_MAIN-ac532f with 3Y20, diameter 20mm, quantity 3\", \"total_top_quantity\": \"9 bars in top layer (3\\u00d7Y20 + 6\\u00d7Y16) matches deterministic model\"}",
+          "leader_analysis: {\"3-Y16_leader\": \"Leader tip at top zone, pointing to existing top bars, distance 1070.90mm to nearest top bar\", \"3-Y20_leader\": \"Leader tip at top zone, pointing upward to existing top bars, distance 394.66mm to nearest bar\", \"both_leaders_target_top\": true}",
+          "no_additional_layer_evidence: No visual or contextual evidence of a separate reinforcement layer requiring these specifications beyond what is already modeled"
+        ],
+        "annotation_interpretation": "{\"3-Y16\": \"Callout for 3 Y16 extra top bars (one of the two groups) already represented in the deterministic model\", \"3-Y20\": \"Callout for the 3 Y20 main top bars already represented in the deterministic model\"}",
+        "uncertainty_notes": "The 3-Y16 annotation could theoretically refer to either the left or right group of 3Y16 bars (TOP_EXTRA-3a93f5 or TOP_EXTRA-f9ac3a), but both are already represented. The deterministic model shows 6 total Y16 bars in two groups of 3, and this annotation is simply identifying one of those groups. No evidence suggests these are additional bars beyond the existing 9 top bars.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B170",
+    "region_id": "P261::Fourth::B170",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "IDENTICAL_SPECIFICATION_MATCH",
+          "EXISTING_TOP_LAYER_OBJECT_PRESENT",
+          "MULTIPLE_CALLOUTS_SAME_SPECIFICATION",
+          "NO_EVIDENCE_OF_ADDITIONAL_BARS",
+          "LEADER_TIPS_POINT_TO_SAME_REINFORCEMENT_LAYER"
+        ],
+        "evidence": [
+          "image_observations: Two '3-Y16' annotations visible in the beam section",
+          "image_observations: One annotation points downward to the top reinforcement layer (upper bars)",
+          "image_observations: One annotation points upward to the same top reinforcement layer (upper bars)",
+          "image_observations: Both leader tips terminate at or near the same horizontal reinforcement line (top layer)",
+          "image_observations: The beam section shows two distinct horizontal reinforcement layers - top and bottom",
+          "image_observations: No visual evidence of additional bars beyond what is shown in the top layer",
+          "image_observations: The annotations appear to be calling out the same set of bars from different positions",
+          "deterministic_model_state: Existing top reinforcement: 3Y16 (3 bars of 16mm diameter)",
+          "deterministic_model_state: Populated layer: TOP",
+          "deterministic_model_state: No bottom reinforcement represented",
+          "deterministic_model_state: Candidate annotations: all specify 3-Y16 (identical to existing)",
+          "deterministic_model_state: Role gap status indicates repeated accepted annotations without rejected match",
+          "spatial_analysis: Both annotations are in proximity to top layer bars",
+          "spatial_analysis: Leader tips point to TOP and BOTTOM zones but both appear to reference the top reinforcement",
+          "spatial_analysis: Physical bar proximity: 295mm and 376mm to nearest bars",
+          "spatial_analysis: Annotation cluster separation present",
+          "spatial_analysis: Context supports these are repeat callouts of same reinforcement"
+        ],
+        "annotation_interpretation": "{\"appears_to_reference\": \"The existing top layer reinforcement already represented as R13-B170-TOP_MAIN-4536b7\", \"redundancy_assessment\": \"Both visible annotations call out the same reinforcement specification that matches the existing top layer object\", \"specification\": \"3-Y16 (3 bars, 16mm diameter)\", \"visual_layer_indication\": \"TOP\"}",
+        "uncertainty_notes": "The two annotations point from different directions (one down, one up) but both leader tips appear to terminate at or reference the top reinforcement layer; No visual evidence in the section of additional bars that would require a distinct specification; The identical specification (3-Y16) matching the existing top reinforcement strongly suggests these are duplicate callouts rather than additional requirements; Minor uncertainty (confidence 0.88 rather than 0.95+) due to the opposing leader directions, but the visual evidence of bar placement and identical specifications outweighs this",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "IDENTICAL_SPECIFICATION_MATCH",
+          "EXISTING_TOP_LAYER_OBJECT_PRESENT",
+          "ANNOTATION_QUANTITY_MATCHES_EXISTING",
+          "ANNOTATION_DIAMETER_MATCHES_EXISTING",
+          "VISUAL_EVIDENCE_SUPPORTS_DUPLICATE",
+          "MULTIPLE_CALLOUTS_SAME_BARS"
+        ],
+        "evidence": [
+          "visual_observations: Two annotations both labeled '3-Y16' with leader lines pointing to the same top longitudinal reinforcement bars",
+          "visual_observations: Upper annotation (ANN-05e27048) has leader pointing DOWN to top bars",
+          "visual_observations: Lower annotation (ANN-d4a7bc97) has leader pointing UP to the same top bars",
+          "visual_observations: Both annotations reference the same horizontal reinforcement layer visible at the top of the beam section",
+          "visual_observations: The beam section shows a clear top reinforcement layer with bars that match the 3-Y16 specification",
+          "visual_observations: No visual evidence of additional distinct reinforcement beyond what is already shown",
+          "deterministic_model_state: Existing top reinforcement: 3Y16 (bar_id: R13-B170-TOP_MAIN-4536b7)",
+          "deterministic_model_state: Deterministic model has accepted 1 spec with 2 instances of 3-Y16",
+          "deterministic_model_state: Top quantity: 3 bars of 16mm diameter",
+          "deterministic_model_state: Bottom quantity: 0",
+          "deterministic_model_state: Role gap status indicates REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH",
+          "spatial_analysis: Both annotations in TOP_ZONE position",
+          "spatial_analysis: Nearest bar distances: 295.45mm and 376.09mm - both pointing to same top bars",
+          "spatial_analysis: Annotation cluster separation detected",
+          "spatial_analysis: Spatial context label: SUPPORTING_EVIDENCE_ONLY with CONTEXT_SUPPORTS_CALL",
+          "spatial_analysis: Leader tip zones vote: TOP, BOTTOM, TOP, BOTTOM - indicating callouts from both sides to same layer",
+          "specification_comparison: {\"candidate\": \"3-Y16 (3 bars, 16mm diameter)\", \"existing_top\": \"3Y16 (3 bars, 16mm diameter)\", \"match\": \"EXACT\"}"
+        ],
+        "annotation_interpretation": "{\"annotation_purpose\": \"DUPLICATE_CALLOUT\", \"interpretation_notes\": \"Both 3-Y16 annotations are repeat callouts of the same top longitudinal reinforcement already represented in the deterministic model as R13-B170-TOP_MAIN-4536b7. The annotations point to the same physical bars from different positions (one from above, one from below) for clarity on the drawing.\", \"represents_additional_quantity\": false, \"represents_distinct_bars\": false}",
+        "uncertainty_notes": "Deterministic model shows role_gap_status as ROLE_GAP_REQUIRES_VISION with reason REPEATED_ACCEPTED_WITHOUT_REJECTED_MATCH, which initially suggests ambiguity; However, visual inspection clearly shows both annotations reference the same top bars; No visual evidence of bottom layer reinforcement that would justify treating these as distinct specifications; The presence of two callouts is a common drafting practice for readability, not an indication of missing reinforcement; Confidence reduced slightly from 0.95 to 0.88 due to the role_gap flag, but visual evidence strongly supports duplicate classification",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B173",
+    "region_id": "P261::Fourth::B173",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "LEADER_POINTS_TO_EXISTING_TOP_REINFORCEMENT",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"The 3-Y16 annotation is positioned with a leader pointing upward to the top reinforcement layer of the beam cross-section\", \"beam_section\": \"Shows a rectangular beam cross-section with reinforcement indicated at the top\", \"leader_behavior\": \"Green leader line points from the 3-Y16 label upward to the top reinforcement zone\", \"reinforcement_visible\": \"Top reinforcement layer is clearly shown in the cross-section with a dark blue outline indicating the reinforcement zone\"}",
+          "deterministic_model: {\"exact_match\": \"The candidate 3-Y16 exactly matches the existing TOP reinforcement specification\", \"existing_bottom\": \"No bottom reinforcement represented\", \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already represented in TOP layer\"}",
+          "spatial_analysis: {\"annotation_position\": \"Annotation is below the beam but leader clearly indicates top reinforcement\", \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation supporting this is a callout for top bars\", \"leader_tip_zone\": \"Leader tip is in BOTTOM zone but points upward toward TOP\"}"
+        ],
+        "annotation_interpretation": "{\"diameter_mm\": 16, \"inferred_role\": \"TOP_MAIN\", \"notation_type\": \"Standard longitudinal bar callout\", \"quantity\": 3, \"represents_existing\": \"This annotation is a callout/label for the existing top reinforcement already modeled as R13-B173-TOP_MAIN-f120af\"}",
+        "uncertainty_notes": "Leader tip is technically in bottom zone (dist_tip_bottom_zone: 0.0) but leader direction is UP and points to top reinforcement; The annotation placement below the beam is typical drafting practice for labeling top bars in section views; No visual evidence of additional bottom or side reinforcement that would suggest this is a distinct specification; The exact match of quantity and diameter with existing top reinforcement strongly supports duplicate classification",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "error_class": null,
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.92,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "EXACT_QUANTITY_DIAMETER_MATCH",
+          "SINGLE_SPEC_ALREADY_POPULATED",
+          "LEADER_POINTS_TO_EXISTING_TOP_REINFORCEMENT",
+          "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+        ],
+        "evidence": [
+          "image_observations: {\"annotation_location\": \"The 3-Y16 annotation is positioned with a leader pointing upward to the top reinforcement layer of the beam cross-section\", \"beam_section\": \"Shows a rectangular beam cross-section with reinforcement indicated at the top\", \"leader_direction\": \"Leader points UP from annotation to top of beam section\", \"visual_reinforcement_layers\": \"Only one layer of longitudinal reinforcement is visually evident at the top of the section\"}",
+          "deterministic_model_state: {\"exact_match\": \"Candidate 3-Y16 exactly matches existing top reinforcement specification\", \"existing_bottom\": \"No bottom reinforcement represented\", \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already represented in TOP layer\"}",
+          "spatial_alignment: {\"annotation_position_zone\": \"TOP_ZONE\", \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation from bottom, supporting top layer association\", \"leader_tip_zone\": \"BOTTOM zone (tip location), but leader direction is UP pointing to top reinforcement\"}"
+        ],
+        "annotation_interpretation": "{\"layer_association\": \"TOP layer - leader clearly points to top reinforcement in the beam section\", \"likely_intent\": \"Callout identifying the existing top longitudinal reinforcement\", \"parsed_specification\": \"3 bars of Y16 (16mm diameter)\"}",
+        "uncertainty_notes": "The leader tip is technically in the bottom zone by coordinate measurement, but the visual evidence clearly shows the leader pointing upward to the top reinforcement. The annotation matches exactly the existing top reinforcement (3Y16) already in the deterministic model. No visual evidence suggests additional or missing reinforcement beyond what is already represented. The annotation appears to be a standard identification callout for the existing top bars.",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence"
+        ]
+      }
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B174",
+    "region_id": "P261::Fourth::B174",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": true,
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "error_class": null,
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": {
+        "schema_version": "P267_LIVE_SEMANTIC_SCHEMA_V1",
+        "decision": "DUPLICATE_OR_REPEAT",
+        "confidence": 0.88,
+        "target_layer": "TOP",
+        "existing_representation_assessment": "REPRESENTED",
+        "deterministic_context_consistent": true,
+        "spatial_context_consistent": true,
+        "conflict_present": false,
+        "reason_codes": [
+          "IDENTICAL_SPECIFICATION_MATCH",
+          "MULTIPLE_CALLOUTS_SAME_BARS",
+          "EXISTING_TOP_LAYER_MATCH",
+          "NO_EVIDENCE_ADDITIONAL_BARS",
+          "LEADER_TIPS_POINT_TO_SAME_BARS"
+        ],
+        "evidence": [
+          "image_observations: Two annotations labeled '4-Y16' are visible in the beam section",
+          "image_observations: Upper annotation points downward to top longitudinal bars",
+          "image_observations: Lower annotation points upward to the same top longitudinal bars",
+          "image_observations: Both leader tips target the same set of top reinforcement bars",
+          "image_observations: No distinct separate bar groups visible in the section",
+          "image_observations: The beam section shows a single layer of top bars being called out twice",
+          "image_observations: No additional bars visible that would justify a second distinct specification",
+          "deterministic_model_state: Existing top reinforcement: 4Y16 (bar_id: R13-B174-TOP_MAIN-57b611)",
+          "deterministic_model_state: Deterministic model has accepted 2 instances of the same 4-Y16 specification",
+          "deterministic_model_state: Both annotations have identical diameter (16mm) and quantity (4)",
+          "deterministic_model_state: Model shows populated_layer: TOP with 4 bars of 16mm diameter",
+          "deterministic_model_state: No bottom reinforcement represented",
+          "deterministic_model_state: Role coverage status indicates ROLE_GAP_REQUIRES_VISION due to repeated acceptance",
+          "spatial_analysis: Both annotations are in different vertical positions but reference the same bars",
+          "spatial_analysis: Leader tips point to top zone from opposite directions (one DOWN, one UP)",
+          "spatial_analysis: Spatial context indicates ANNOTATION_CLUSTER_SEPARATION and REPEATED_SEPARATE_LOCATION",
+          "spatial_analysis: No physical bar geometry available to distinguish separate bar groups",
+          "spatial_analysis: Both annotations target the same physical reinforcement layer"
+        ],
+        "annotation_interpretation": "{\"apparent_intent\": \"Multiple callouts of the same top longitudinal reinforcement for clarity or visibility from different drawing views\", \"bars_referenced\": \"Single group of 4Y16 top bars already represented in deterministic model\", \"duplication_pattern\": \"Two separate annotations calling out the same physical bars from different positions\", \"specification\": \"4-Y16 (4 bars of 16mm diameter)\"}",
+        "uncertainty_notes": "No physical bar geometry available to definitively confirm single vs. multiple bar groups; Deterministic model accepted both instances, creating ambiguity in the role assignment; However, visual inspection shows both leader tips clearly pointing to the same top bar layer; No visual evidence of additional distinct bars that would warrant a second 4-Y16 specification; The existing representation (R13-B174-TOP_MAIN-57b611: 4Y16) matches the annotation specification exactly",
+        "schema_ok": true,
+        "coerced_fields": [
+          "annotation_interpretation",
+          "evidence",
+          "uncertainty_notes"
+        ]
+      }
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B176",
+    "region_id": "P261::Fourth::B176",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B23",
+    "region_id": "P261::Fourth::B23",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B108",
+    "region_id": "P261::Sixth::B108",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B138",
+    "region_id": "P261::Sixth::B138",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "DISTINCT_REINFORCEMENT",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B45",
+    "region_id": "P261::Sixth::B45",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "p266_reference": "DUPLICATE_OR_REPEAT",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B6",
+    "region_id": "P261::Sixth::B6",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B136",
+    "region_id": "P261::Fifth::B136",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B56",
+    "region_id": "P261::Fifth::B56",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B14",
+    "region_id": "P261::Fourth::B14",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B55",
+    "region_id": "P261::Fourth::B55",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B129",
+    "region_id": "P261::Sixth::B129",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B4",
+    "region_id": "P261::Sixth::B4",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B67",
+    "region_id": "P261::Sixth::B67",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B8",
+    "region_id": "P261::Sixth::B8",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "p266_reference": "AMBIGUOUS",
+    "primary": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_PRIMARY",
+      "cache_hit": false,
+      "payload": null
+    },
+    "repeat": {
+      "ok": false,
+      "decision": "FAILED:api_failure",
+      "confidence": null,
+      "error_class": "api_failure",
+      "source": "P267_LIVE_REPEAT",
+      "cache_hit": false,
+      "payload": null
+    },
+    "production_routing_changed": false
+  }
+]

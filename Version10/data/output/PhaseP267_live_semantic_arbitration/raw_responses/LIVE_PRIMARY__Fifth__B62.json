@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B62",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "17.22421280000708",
+  "usage": {
+    "input_tokens": "3964",
+    "output_tokens": "719"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_REINFORCEMENT\",\n    \"QUANTITY_AND_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_TOP_ZONE\",\n    \"ANNOTATION_IN_TOP_ZONE\",\n    \"NO_EVIDENCE_OF_DISTINCT_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Annotation '3-Y25' is located in the upper portion of the beam section\",\n      \"Leader line points downward to the top reinforcement layer (upper bars in the section)\",\n      \"The leader tip terminates at the top layer of longitudinal bars\",\n      \"Three horizontal bars are visible in the top zone matching the annotation\",\n      \"No visual evidence of additional or separate 3-Y25 bars beyond those already shown\"\n    ],\n    \"deterministic_model_state\": [\n      \"Existing top reinforcement includes bar_id R13-B62-TOP_MAIN-2939ee with label '3Y25'\",\n      \"This existing bar has diameter 25mm and quantity 3\",\n      \"Exact match: annotation '3-Y25' matches existing '3Y25' specification\",\n      \"Deterministic model shows populated_layer is TOP\",\n      \"Role coverage status indicates MAIN_COVERED_PLUS_EXTRAS\"\n    ],\n    \"spatial_alignment\": [\n      \"Leader tip is in TOP_ZONE (tip_in_top_zone: true)\",\n      \"Annotation position_zone is TOP_ZONE\",\n      \"Distance to top zone: 64.84mm (very close)\",\n      \"Distance to bottom zone: 712.13mm (far)\",\n      \"Spatial context supports SKIP with TOP proximity evidence\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": {\n      \"quantity\": 3,\n      \"diameter_mm\": 25,\n      \"bar_type\": \"Y25\"\n    },\n    \"annotation_purpose\": \"REPEAT_CALLOUT\",\n    \"refers_to_existing\": \"R13-B62-TOP_MAIN-2939ee\",\n    \"graphical_role\": \"Labels the existing top main reinforcement visible in the section view\"\n  },\n  \"uncertainty_notes\": [\n    \"Confidence reduced slightly from 1.0 to 0.92 due to general caution principle\",\n    \"No conflicting evidence observed - all indicators align toward duplicate classification\",\n    \"The annotation clearly labels the visible top layer bars already represented in the deterministic model\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

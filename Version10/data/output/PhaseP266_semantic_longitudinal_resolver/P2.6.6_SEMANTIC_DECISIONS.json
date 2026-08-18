@@ -1,0 +1,1269 @@
+[
+  {
+    "set_key": "Fifth",
+    "beam_id": "B128",
+    "region_id": "P261::Fifth::B128",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (3-Y16).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y16' is clearly visible with a leader line pointing to the bottom reinforcement layer of the beam cross-section",
+        "The leader terminates at the bottom longitudinal bars shown in the beam section",
+        "Quantity 3, diameter Y16 (16mm) clearly indicated",
+        "location_text:Bottom of beam, center region, with leader pointing to bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B16",
+    "region_id": "P261::Fifth::B16",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (4-Y16, 4-Y20, 4-Y25).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY",
+        "SEPARATE_REPEATED_SPEC"
+      ],
+      "visual_evidence": [
+        "Annotation '4-Y20' with leader pointing to top longitudinal bars of beam B16",
+        "Located in upper left region of the beam span",
+        "location_text:Top reinforcement at left portion of beam, indicated by leader pointing to top bars",
+        "Annotation '4-Y25' with leader pointing to top longitudinal bars of beam B16",
+        "Located in upper right region of the beam span",
+        "location_text:Top reinforcement at right portion of beam, indicated by leader pointing to top bars",
+        "Annotation '4-Y16' with leader pointing to bottom longitudinal bars of beam B16",
+        "Located in lower left-center region of the beam span"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 4,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B62",
+    "region_id": "P261::Fifth::B62",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (3-Y25).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y25' visible with leader line pointing to top bars of the beam",
+        "Clear association with top longitudinal reinforcement",
+        "3 bars of Y25 (25mm diameter)",
+        "location_text:Top right portion of beam, annotation points to top reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B139",
+    "region_id": "P261::Fourth::B139",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (5-Y16, 5-Y20).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation 5-Y16 is connected via leader line to the top horizontal beam member",
+        "Positioned at upper portion of the beam cross-section",
+        "Clear association with top reinforcement layer",
+        "location_text:Top of beam, upper horizontal member",
+        "Annotation 5-Y20 is connected via leader line to the bottom horizontal beam member",
+        "Positioned at lower portion of the beam cross-section",
+        "Clear association with bottom reinforcement layer",
+        "location_text:Bottom of beam, lower horizontal member"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B141",
+    "region_id": "P261::Fourth::B141",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (5-Y16).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION",
+        "CROSS_LAYER_AMBIGUITY"
+      ],
+      "visual_evidence": [
+        "Annotation '5-Y16' is clearly visible with a green leader line pointing to the top reinforcement layer of beam B141",
+        "The leader line originates from the annotation and points directly to the top bars shown in the beam cross-section",
+        "Quantity: 5 bars, Diameter: Y16 (16mm)",
+        "location_text:Center of beam span, with green leader line pointing to top reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B143",
+    "region_id": "P261::Fourth::B143",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (2-Y12, 4-Y20).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation clearly positioned at top of beam B143",
+        "Leader line points to top reinforcement bars shown in dark blue",
+        "4 bars of Y20 diameter indicated",
+        "location_text:Top of beam, left portion, annotation points to upper reinforcement layer",
+        "Annotation positioned at top of beam B143",
+        "Leader line points to top reinforcement bars",
+        "2 bars of Y12 diameter indicated",
+        "location_text:Top of beam, center-right portion, annotation points to upper reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B56",
+    "region_id": "P261::Sixth::B56",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (4-Y25).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation '4-Y25' is clearly visible within the hatched cross-section of the beam",
+        "Position indicates top reinforcement bars",
+        "4 bars of Y25 (25mm diameter)",
+        "location_text:Annotation located within the hatched beam section at the top of the beam"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "PRESERVE_STIRRUP_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B100",
+    "region_id": "P261::Fifth::B100",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (3-Y25).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Green leader line clearly points from annotation to top of beam section",
+        "Annotation positioned directly above beam outline",
+        "Standard notation for longitudinal bars: quantity-bar_type-diameter",
+        "location_text:Top of beam, annotation with green leader pointing to top reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DUPLICATE_NOT_SAFE_TO_SKIP",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B162A",
+    "region_id": "P261::Fifth::B162A",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '2-Y16' with leader pointing to top longitudinal reinforcement",
+        "Positioned above beam cross-section",
+        "Clear association with upper bars in beam detail",
+        "location_text:Top of beam, indicated by leader pointing to upper longitudinal bars",
+        "Annotation '2-Y16' with leader pointing to bottom longitudinal reinforcement",
+        "Positioned below beam cross-section",
+        "Clear association with lower bars in beam detail",
+        "location_text:Bottom of beam, indicated by leader pointing to lower longitudinal bars"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B173",
+    "region_id": "P261::Fifth::B173",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (3-Y16).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y16' with leader pointing to top reinforcement bars in the beam cross-section",
+        "Clear association with top layer of longitudinal reinforcement",
+        "location_text:Top of beam, indicated by leader pointing to top reinforcement layer",
+        "Annotation '3-Y16' with leader pointing to bottom reinforcement bars in the beam cross-section",
+        "Clear association with bottom layer of longitudinal reinforcement",
+        "location_text:Bottom of beam, indicated by leader pointing to bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B101",
+    "region_id": "P261::Fourth::B101",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (3-Y20).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y20' is positioned directly above the beam outline",
+        "Clear association with beam B101 based on proximity and placement",
+        "Indicates 3 bars of Y20 diameter",
+        "location_text:Top of beam B101, near mid-span"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_OBSERVED_SKIP",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B102",
+    "region_id": "P261::Fourth::B102",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (3-Y16, 3-Y20).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y16' is clearly visible at the right end of beam B102",
+        "Black dot marker indicates owned annotation for this beam",
+        "Located in top reinforcement layer based on vertical position",
+        "location_text:Right end of beam B102, top reinforcement layer",
+        "Annotation '3-Y20' is visible at the right end of beam B102",
+        "Located in bottom reinforcement layer based on vertical position",
+        "Blue bars visible in the beam section at this location",
+        "location_text:Right end of beam B102, bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B170",
+    "region_id": "P261::Fourth::B170",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (3-Y16).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y16' with leader line pointing to top reinforcement layer of beam",
+        "Clear association with upper longitudinal bars visible in section",
+        "Standard notation for 3 bars of Y16 diameter",
+        "location_text:Top of beam, upper fiber, annotation points to top reinforcement layer",
+        "Annotation '3-Y16' with leader line pointing to bottom reinforcement layer of beam",
+        "Clear association with lower longitudinal bars visible in section",
+        "location_text:Bottom of beam, lower fiber, annotation points to bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B173",
+    "region_id": "P261::Fourth::B173",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (3-Y16).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y16' with leader pointing to bottom of beam cross-section",
+        "Leader clearly indicates bottom longitudinal reinforcement",
+        "Typical bottom bar notation format",
+        "location_text:Bottom of beam, indicated by leader pointing to bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B174",
+    "region_id": "P261::Fourth::B174",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (4-Y16).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "visual_evidence": [
+        "Annotation '4-Y16' with leader line pointing to top reinforcement layer of beam",
+        "Located at upper portion of beam cross-section",
+        "Clear association with beam B174",
+        "location_text:Upper annotation pointing to top of beam section",
+        "Annotation '4-Y16' with leader line pointing to bottom reinforcement layer of beam",
+        "Located at lower portion of beam cross-section",
+        "location_text:Lower annotation pointing to bottom of beam section"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B176",
+    "region_id": "P261::Fourth::B176",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (5-Y20).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation positioned above beam with leader pointing to top reinforcement layer",
+        "5 bars of Y20 (20mm diameter)",
+        "Green line representation shows top longitudinal bars",
+        "location_text:Left annotation with leader pointing to top of beam",
+        "Second instance of same annotation on right side",
+        "Indicates continuation or confirmation of top reinforcement",
+        "Leader points to top layer of beam",
+        "location_text:Right annotation with leader pointing to top of beam"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_OBSERVED_SKIP",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B23",
+    "region_id": "P261::Fourth::B23",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (4-Y20).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION",
+        "CROSS_LAYER_AMBIGUITY"
+      ],
+      "visual_evidence": [
+        "Annotation '4-Y20' is clearly positioned above the beam B23 in the elevation view",
+        "Represents 4 bars of Y20 diameter as top reinforcement",
+        "location_text:Top of beam B23, visible in elevation view at upper portion"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DUPLICATE_NOT_SAFE_TO_SKIP",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B108",
+    "region_id": "P261::Sixth::B108",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observation conflicts with an existing deterministic bar (2-Y16).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Clear annotation '2-Y16' visible in bottom section view",
+        "Leader line points to two bars at top of beam section",
+        "Bars shown as filled circles in cross-section",
+        "Consistent with typical top reinforcement notation",
+        "location_text:Bottom section view, top of beam cross-section, annotation with leader pointing to reinforcement bars"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B138",
+    "region_id": "P261::Sixth::B138",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "CALL_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation has no equivalent deterministic bar (2-Y20, 2-Y25).",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "semantic_reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY",
+        "SEPARATE_REPEATED_SPEC"
+      ],
+      "visual_evidence": [
+        "Annotation '2-Y25' is clearly visible and directly associated with the bottom reinforcement layer of beam B138",
+        "Leader line points to bottom bars shown in dark blue",
+        "Located on left portion of beam span",
+        "location_text:Bottom reinforcement, left side of beam span",
+        "Annotation '2-Y20' is clearly visible and directly associated with the bottom reinforcement layer of beam B138",
+        "Located on right portion of beam span",
+        "location_text:Bottom reinforcement, right side of beam span"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": false,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "POTENTIALLY_MISSING"
+      ]
+    },
+    "shadow_decision": "SHADOW_DISTINCT",
+    "hypothetical_vision_routing": "CALL_VISION",
+    "hypothetical_reason": "SEMANTIC_DISTINCT_CALL",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B45",
+    "region_id": "P261::Sixth::B45",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_SKIP",
+    "semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "annotation_interpretation": "Frozen Vision longitudinal observation matches an existing deterministic bar (4-Y25).",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "semantic_reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "visual_evidence": [
+        "Annotation '4-Y25' is directly connected via leader line to the top reinforcement bars shown in the beam cross-section",
+        "Green reinforcement lines visible at top of beam section",
+        "Standard notation: 4 bars of Y25 (25mm diameter)",
+        "location_text:Top of beam, annotation points to upper reinforcement layer"
+      ],
+      "deterministic_context_consistent": true,
+      "spatial_context_consistent": true,
+      "conflict_present": false,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 1,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED"
+      ]
+    },
+    "shadow_decision": "SHADOW_DUPLICATE",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_OBSERVED_SKIP",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B6",
+    "region_id": "P261::Sixth::B6",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '3-Y25' with green leader arrow pointing to hatched/cross-hatched region at top right of beam",
+        "Hatching pattern indicates reinforcement zone",
+        "NSW (not shown) annotation nearby suggests this is primary top reinforcement",
+        "location_text:Right side of beam, top reinforcement indicated by annotation with leader pointing to hatched region",
+        "Annotation '2-Y25' with green leader arrow pointing to hatched column region",
+        "Detail shows beam-column connection on left side",
+        "Cross-hatching in column indicates reinforcement location",
+        "location_text:Left side detail section showing column-beam connection with reinforcement at bottom"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B136",
+    "region_id": "P261::Fifth::B136",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '6-Y20' clearly visible above the beam outline",
+        "Green leader line connects annotation to top of beam",
+        "Positioned in upper right section of beam B136",
+        "location_text:Top right portion of beam, annotation visible above beam outline",
+        "Annotation '4-Y16' visible adjacent to 6-Y20",
+        "Appears to be associated with bottom reinforcement based on typical detailing practice",
+        "Located in same region as 6-Y20 annotation",
+        "location_text:Top right portion of beam, annotation near 6-Y20"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B56",
+    "region_id": "P261::Fifth::B56",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Clear annotation '2-Y16' visible with leader line pointing to top of beam section",
+        "Positioned at top reinforcement layer of beam B56",
+        "Typical top bar notation format",
+        "location_text:Top right portion of beam, annotation with leader pointing to top reinforcement layer",
+        "Clear annotation '3-Y20' visible with leader line pointing to bottom of beam section",
+        "Positioned at bottom reinforcement layer of beam B56",
+        "Typical bottom bar notation format",
+        "location_text:Center of beam, annotation with leader pointing to bottom reinforcement layer"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B14",
+    "region_id": "P261::Fourth::B14",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '2-Y16' visible at top left of beam B14",
+        "Leader points to top reinforcement layer",
+        "location_text:Top of beam, left portion",
+        "Annotation '4-Y20' visible at top center of beam B14",
+        "location_text:Top of beam, center portion",
+        "Annotation '2-Y16' visible at top right of beam B14",
+        "location_text:Top of beam, right portion",
+        "Annotation '4-Y20' visible at bottom left of beam B14"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 5,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B55",
+    "region_id": "P261::Fourth::B55",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '2-Y16' visible at left end of beam",
+        "Associated with top reinforcement bars shown in dark blue",
+        "Clear leader line connecting text to top bars",
+        "location_text:Left side of beam, top reinforcement layer",
+        "Annotation '5-Y16' visible at left end of beam",
+        "Associated with bottom reinforcement bars shown in dark blue",
+        "Clear leader line connecting text to bottom bars",
+        "Bottom bars extend along full beam length"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B129",
+    "region_id": "P261::Sixth::B129",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Leader line points to bottom longitudinal bars shown in dark blue",
+        "2-Y25 indicates 2 bars of 25mm diameter",
+        "Positioned at bottom of beam section",
+        "Standard longitudinal bar notation",
+        "location_text:Right side of beam, near bottom face with leader line pointing to bottom reinforcement",
+        "Leader line points to bottom longitudinal bars",
+        "2-Y20 indicates 2 bars of 20mm diameter",
+        "Positioned near bottom face of beam"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B4",
+    "region_id": "P261::Sixth::B4",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation visible at top of beam section on left side",
+        "Leader line points to top reinforcement layer",
+        "location_text:Top left region of beam, near left support",
+        "Annotation visible at top of beam section in center area",
+        "location_text:Top center region of beam",
+        "Annotation visible at top of beam section",
+        "location_text:Top center-right region of beam",
+        "Annotation visible at top of beam section on right side"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 6,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B67",
+    "region_id": "P261::Sixth::B67",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_SUPPORTS_CALL",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation with leader line pointing to top reinforcement bars (dark blue lines)",
+        "Position and leader indicate top longitudinal reinforcement",
+        "3 bars of Y20 (20mm diameter)",
+        "location_text:Top right area of beam, annotation with leader pointing to top reinforcement layer",
+        "Annotation with leader line pointing to top reinforcement bars",
+        "Adjacent to 3-Y20 annotation, indicating additional top bars",
+        "2 bars of Y16 (16mm diameter)",
+        "Annotation with leader line pointing to bottom reinforcement bars (dark blue lines)"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 4,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  },
+  {
+    "set_key": "Sixth",
+    "beam_id": "B8",
+    "region_id": "P261::Sixth::B8",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "observed_decision": "SKIP_VISION",
+    "p265_context_status": "CONTEXT_AMBIGUOUS",
+    "semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "annotation_interpretation": "Frozen Vision longitudinal observations disagree on whether the spec is already represented.",
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "semantic_reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "visual_evidence": [
+        "Annotation '2-Y20' visible in hatched cross-section at top left",
+        "Black dot marker indicates bar position in top region",
+        "Typical top reinforcement notation format",
+        "location_text:Top left area of beam cross-section, within hatched zone",
+        "Annotation '3-Y16' visible in hatched cross-section at top right",
+        "location_text:Top right area of beam cross-section, within hatched zone"
+      ],
+      "deterministic_context_consistent": false,
+      "spatial_context_consistent": false,
+      "conflict_present": true,
+      "schema_version": "P266_SEMANTIC_LONGITUDINAL_SCHEMA_V1",
+      "schema_ok": true,
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "adapter_observation_count": 2,
+      "adapter_match_statuses": [
+        "ALREADY_DETECTED",
+        "CONFLICTING"
+      ]
+    },
+    "shadow_decision": "SHADOW_AMBIGUOUS",
+    "hypothetical_vision_routing": "SKIP_VISION",
+    "hypothetical_reason": "PRESERVE_FULLY_COVERED_PRODUCTION_PATH",
+    "safe_skip_candidate": false,
+    "production_routing_changed": false
+  }
+]

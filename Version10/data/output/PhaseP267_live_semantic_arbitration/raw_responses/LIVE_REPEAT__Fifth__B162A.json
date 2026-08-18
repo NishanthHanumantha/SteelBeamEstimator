@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B162A",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "18.235617599988473",
+  "usage": {
+    "input_tokens": "6016",
+    "output_tokens": "709"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP\",\n    \"QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_EXISTING_BARS\",\n    \"COVERAGE_FULLY_COVERED\",\n    \"MULTIPLE_CALLOUTS_SAME_SPEC\"\n  ],\n  \"evidence\": {\n    \"image_evidence\": \"The beam section shows two '2-Y16' annotations with leaders pointing to the top layer of the beam. The cross-section clearly displays two bars in the top layer matching this specification.\",\n    \"existing_reinforcement\": \"Deterministic model contains R13-B162A-TOP_MAIN-e7d73e with specification 2Y16 (quantity=2, diameter=16mm) in the TOP family.\",\n    \"annotation_details\": \"Four annotation instances are provided, but they represent two distinct callouts (ANN-caa1a5b9 and ANN-c043acbe), both specifying '2-Y16' with diameter 16mm and quantity 2.\",\n    \"leader_analysis\": \"Both annotations have leaders pointing to the top region of the beam section. ANN-caa1a5b9 has leader_tip_direction DOWN pointing into top zone. ANN-c043acbe has leader_tip_direction UP from bottom, also targeting top bars.\",\n    \"spatial_proximity\": \"Nearest bar distances are 206mm and 323mm respectively, both pointing to bars in the UNKNOWN family (likely the existing top bars).\",\n    \"coverage_status\": \"Deterministic shows FULLY_COVERED status with two coverage rows, both showing 2-Y16 as FULLY_COVERED.\"\n  },\n  \"annotation_interpretation\": {\n    \"specification\": \"2-Y16 (2 bars of 16mm diameter)\",\n    \"apparent_intent\": \"Multiple callouts identifying the same top longitudinal reinforcement from different views or for clarity\",\n    \"matches_existing\": true,\n    \"existing_match_details\": \"Exact match with R13-B162A-TOP_MAIN-e7d73e: 2Y16\"\n  },\n  \"uncertainty_notes\": \"The presence of four annotation instances (two unique callouts) for the same specification initially suggests potential ambiguity. However, the image clearly shows only two bars in the top layer, and both annotations point to these same bars. The deterministic model already represents this as 2Y16 top reinforcement with FULLY_COVERED status. The annotations appear to be repeat callouts for documentation clarity rather than distinct additional reinforcement.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

@@ -1,0 +1,1366 @@
+{
+  "longitudinal_coverage_counts": {
+    "ROLE_COVERAGE_GAP": 18,
+    "FULLY_COVERED": 53,
+    "NO_LONGITUDINAL_DEMAND": 1,
+    "QUANTITY_SHORTFALL": 3
+  },
+  "coverage_condition_counts": {
+    "ROLE_COVERAGE_GAP": 18,
+    "UNASSOCIATED": 61,
+    "FULLY_COVERED": 53,
+    "NO_LONGITUDINAL_DEMAND": 1,
+    "QUANTITY_SHORTFALL": 3
+  },
+  "by_coverage": {
+    "FULLY_COVERED": 53,
+    "QUANTITY_SHORTFALL": 3,
+    "ROLE_CONFLICT": 0,
+    "DIAMETER_CONFLICT": 0,
+    "MULTIPLE_CALLOUT_SHORTFALL": 0,
+    "MISSING_OBJECT": 0,
+    "ROLE_COVERAGE_GAP": 18,
+    "UNASSOCIATED": 0,
+    "NO_LONGITUDINAL_DEMAND": 1
+  },
+  "call_reason_counts": {
+    "STIRRUP_TEXT_NO_OBJECT": 19,
+    "OCR_CORRUPTED_STIRRUP": 21,
+    "INCOMPLETE_PARSE": 19,
+    "LONGITUDINAL_COVERAGE_SHORTFALL": 21,
+    "UNASSOCIATED_REINFORCEMENT": 5
+  },
+  "skip_reason_counts": {
+    "LONGITUDINAL_FULLY_COVERED": 34,
+    "MATCHING_OBJECT_EXISTS": 35,
+    "COMPLETE_PARSE": 35,
+    "STRONG_DETERMINISTIC_COVERAGE": 35
+  },
+  "by_stratum": {
+    "DIFFICULT": {
+      "beams": 25,
+      "call": 25,
+      "skip": 0,
+      "hold": 0,
+      "call_rate": 1.0,
+      "calls_saved": 0,
+      "baseline": {
+        "candidates": 67,
+        "duplicates": 27,
+        "true_recoveries": 19,
+        "unsupported": 7,
+        "ambiguous": 8,
+        "precision": 0.671642,
+        "duplicate_rate": 0.402985,
+        "unsupported_rate": 0.104478,
+        "ambiguous_rate": 0.119403
+      },
+      "gated": {
+        "candidates": 67,
+        "duplicates": 27,
+        "true_recoveries": 19,
+        "unsupported": 7,
+        "ambiguous": 8,
+        "precision": 0.671642,
+        "duplicate_rate": 0.402985,
+        "unsupported_rate": 0.104478,
+        "ambiguous_rate": 0.119403
+      },
+      "recoveries_retained": 19,
+      "recoveries_lost": 0
+    },
+    "NORMAL": {
+      "beams": 25,
+      "call": 14,
+      "skip": 11,
+      "hold": 0,
+      "call_rate": 0.56,
+      "calls_saved": 11,
+      "baseline": {
+        "candidates": 62,
+        "duplicates": 46,
+        "true_recoveries": 6,
+        "unsupported": 3,
+        "ambiguous": 5,
+        "precision": 0.758065,
+        "duplicate_rate": 0.741935,
+        "unsupported_rate": 0.048387,
+        "ambiguous_rate": 0.080645
+      },
+      "gated": {
+        "candidates": 37,
+        "duplicates": 26,
+        "true_recoveries": 6,
+        "unsupported": 1,
+        "ambiguous": 3,
+        "precision": 0.756757,
+        "duplicate_rate": 0.702703,
+        "unsupported_rate": 0.027027,
+        "ambiguous_rate": 0.081081
+      },
+      "recoveries_retained": 6,
+      "recoveries_lost": 0
+    },
+    "EASY": {
+      "beams": 25,
+      "call": 1,
+      "skip": 24,
+      "hold": 0,
+      "call_rate": 0.04,
+      "calls_saved": 24,
+      "baseline": {
+        "candidates": 78,
+        "duplicates": 63,
+        "true_recoveries": 1,
+        "unsupported": 3,
+        "ambiguous": 2,
+        "precision": 0.782051,
+        "duplicate_rate": 0.807692,
+        "unsupported_rate": 0.038462,
+        "ambiguous_rate": 0.025641
+      },
+      "gated": {
+        "candidates": 4,
+        "duplicates": 1,
+        "true_recoveries": 0,
+        "unsupported": 3,
+        "ambiguous": 0,
+        "precision": 0.25,
+        "duplicate_rate": 0.25,
+        "unsupported_rate": 0.75,
+        "ambiguous_rate": 0.0
+      },
+      "recoveries_retained": 0,
+      "recoveries_lost": 1
+    }
+  },
+  "by_candidate_type": {
+    "STIRRUP": {
+      "baseline_candidates": 62,
+      "gated_candidates": 35,
+      "baseline_duplicates": 40,
+      "gated_duplicates": 13,
+      "baseline_true_recoveries": 18,
+      "gated_true_recoveries": 18,
+      "retained_recoveries": 18,
+      "lost_recoveries": 0
+    },
+    "LONGITUDINAL_REINFORCEMENT": {
+      "baseline_candidates": 145,
+      "gated_candidates": 73,
+      "baseline_duplicates": 96,
+      "gated_duplicates": 41,
+      "baseline_true_recoveries": 8,
+      "gated_true_recoveries": 7,
+      "retained_recoveries": 7,
+      "lost_recoveries": 1
+    },
+    "SIDE_FACE_REINFORCEMENT": {
+      "baseline_candidates": 0,
+      "gated_candidates": 0,
+      "baseline_duplicates": 0,
+      "gated_duplicates": 0,
+      "baseline_true_recoveries": 0,
+      "gated_true_recoveries": 0,
+      "retained_recoveries": 0,
+      "lost_recoveries": 0
+    },
+    "OTHER": {
+      "baseline_candidates": 0,
+      "gated_candidates": 0,
+      "baseline_duplicates": 0,
+      "gated_duplicates": 0,
+      "baseline_true_recoveries": 0,
+      "gated_true_recoveries": 0,
+      "retained_recoveries": 0,
+      "lost_recoveries": 0
+    }
+  },
+  "per_beam": [
+    {
+      "set_key": "Fifth",
+      "beam_id": "B128",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B137",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B139",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B145",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B16",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B186",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B58",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B62",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B71",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B74",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B81",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B130",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B139",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B141",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B143",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "OCR_CORRUPTED_STIRRUP",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B144",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "OCR_CORRUPTED_STIRRUP"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B145",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B147",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B17",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B178",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B186",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B46",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B47",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B56",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B60",
+      "eval_stratum": "DIFFICULT",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B100",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B127",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B162A",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B175",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B191",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B94",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B97",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B101",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B102",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B152",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B170",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B173",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B174",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B176",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B23",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B57",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B107",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "NO_LONGITUDINAL_DEMAND",
+      "coverage_conditions": [
+        "NO_LONGITUDINAL_DEMAND",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B108",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B138",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B41",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B45",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B59",
+      "eval_stratum": "NORMAL",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B6",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B89",
+      "eval_stratum": "NORMAL",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B135",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B136",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B164",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B56",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B57",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B64",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B72",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B77",
+      "eval_stratum": "EASY",
+      "decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "longitudinal_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B103",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B126",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B133",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B134",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B135",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B14",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B15",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B18",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B55",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B10",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B129",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B36",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B4",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B67",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B8",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B88",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    },
+    {
+      "set_key": "Sixth",
+      "beam_id": "B9",
+      "eval_stratum": "EASY",
+      "decision": "SKIP_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "longitudinal_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1037 @@
+{
+  "phase_id": "P2.6.3",
+  "phase_name": "Longitudinal-Aware Selective Vision Gate",
+  "model_version": "10.11.3",
+  "gate_version": "P263_LONGITUDINAL_AWARE_GATE_V1_0",
+  "scope": "FROZEN_P261_STRATIFIED_SAMPLE",
+  "mode": "REPLAY_P261_CACHED",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate",
+  "sample": {
+    "seed": 2611101,
+    "target_beams": 75,
+    "per_stratum_target": 25,
+    "selected": 75,
+    "universe_scored": 404,
+    "eligible_with_crop": 362,
+    "available_by_stratum": {
+      "DIFFICULT": 52,
+      "NORMAL": 195,
+      "EASY": 115
+    },
+    "selected_by_stratum": {
+      "DIFFICULT": 25,
+      "NORMAL": 25,
+      "EASY": 25
+    },
+    "selected_by_set": {
+      "Fifth": 27,
+      "Fourth": 30,
+      "Sixth": 18
+    },
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "drawing_sets": [
+      "Fourth",
+      "Fifth",
+      "Sixth"
+    ],
+    "drawing_visibility": "UNSEEN",
+    "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled.",
+    "p26_overlap_in_sample": 5
+  },
+  "replay": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses.",
+    "not_a_new_vision_benchmark": true,
+    "call_beams": 40,
+    "skip_beams": 35,
+    "hold_beams": 0,
+    "gated_candidates": 108,
+    "suppressed_candidates": 99
+  },
+  "metrics": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses. P2.6.3 longitudinal-aware gate. Not a new Vision benchmark.",
+    "TOTAL_BEAMS": 75,
+    "CALL_BEAMS": 40,
+    "SKIP_BEAMS": 35,
+    "HOLD_BEAMS": 0,
+    "CALL_RATE": 0.533333,
+    "CALL_REDUCTION": 0.466667,
+    "TOTAL_BASELINE_VISION_CANDIDATES": 207,
+    "GATED_VISION_CANDIDATES": 108,
+    "DUPLICATES_BASELINE": 136,
+    "DUPLICATES_GATED": 54,
+    "DUPLICATE_RATE_BASELINE": 0.657005,
+    "DUPLICATE_RATE_GATED": 0.5,
+    "BASELINE_PRECISION": 0.73913,
+    "GATED_PRECISION": 0.685185,
+    "BASELINE_UNSUPPORTED_RATE": 0.062802,
+    "GATED_UNSUPPORTED_RATE": 0.101852,
+    "BASELINE_AMBIGUOUS_RATE": 0.072464,
+    "GATED_AMBIGUOUS_RATE": 0.101852,
+    "BASELINE_TRUE_RECOVERIES": 26,
+    "GATED_TRUE_RECOVERIES": 25,
+    "RECOVERIES_RETAINED": 25,
+    "RECOVERIES_LOST": 1,
+    "RECOVERY_RETENTION_RATE": 0.961538,
+    "FALSE_SKIPS": 1,
+    "FALSE_CALLS": 16,
+    "FALSE_CALL_RATE": 0.4,
+    "RECOVERY_RETENTION_PER_VISION_CALL": 0.625,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_BASELINE": 34.6667,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 62.5,
+    "TRUE_RECOVERIES_PER_CALL_BASELINE": 0.346667,
+    "by_stratum": {
+      "DIFFICULT": {
+        "beams": 25,
+        "call": 25,
+        "skip": 0,
+        "hold": 0,
+        "call_rate": 1.0,
+        "calls_saved": 0,
+        "baseline": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "gated": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "recoveries_retained": 19,
+        "recoveries_lost": 0
+      },
+      "NORMAL": {
+        "beams": 25,
+        "call": 14,
+        "skip": 11,
+        "hold": 0,
+        "call_rate": 0.56,
+        "calls_saved": 11,
+        "baseline": {
+          "candidates": 62,
+          "duplicates": 46,
+          "true_recoveries": 6,
+          "unsupported": 3,
+          "ambiguous": 5,
+          "precision": 0.758065,
+          "duplicate_rate": 0.741935,
+          "unsupported_rate": 0.048387,
+          "ambiguous_rate": 0.080645
+        },
+        "gated": {
+          "candidates": 37,
+          "duplicates": 26,
+          "true_recoveries": 6,
+          "unsupported": 1,
+          "ambiguous": 3,
+          "precision": 0.756757,
+          "duplicate_rate": 0.702703,
+          "unsupported_rate": 0.027027,
+          "ambiguous_rate": 0.081081
+        },
+        "recoveries_retained": 6,
+        "recoveries_lost": 0
+      },
+      "EASY": {
+        "beams": 25,
+        "call": 1,
+        "skip": 24,
+        "hold": 0,
+        "call_rate": 0.04,
+        "calls_saved": 24,
+        "baseline": {
+          "candidates": 78,
+          "duplicates": 63,
+          "true_recoveries": 1,
+          "unsupported": 3,
+          "ambiguous": 2,
+          "precision": 0.782051,
+          "duplicate_rate": 0.807692,
+          "unsupported_rate": 0.038462,
+          "ambiguous_rate": 0.025641
+        },
+        "gated": {
+          "candidates": 4,
+          "duplicates": 1,
+          "true_recoveries": 0,
+          "unsupported": 3,
+          "ambiguous": 0,
+          "precision": 0.25,
+          "duplicate_rate": 0.25,
+          "unsupported_rate": 0.75,
+          "ambiguous_rate": 0.0
+        },
+        "recoveries_retained": 0,
+        "recoveries_lost": 1
+      }
+    },
+    "by_candidate_type": {
+      "STIRRUP": {
+        "baseline_candidates": 62,
+        "gated_candidates": 35,
+        "baseline_duplicates": 40,
+        "gated_duplicates": 13,
+        "baseline_true_recoveries": 18,
+        "gated_true_recoveries": 18,
+        "retained_recoveries": 18,
+        "lost_recoveries": 0
+      },
+      "LONGITUDINAL_REINFORCEMENT": {
+        "baseline_candidates": 145,
+        "gated_candidates": 73,
+        "baseline_duplicates": 96,
+        "gated_duplicates": 41,
+        "baseline_true_recoveries": 8,
+        "gated_true_recoveries": 7,
+        "retained_recoveries": 7,
+        "lost_recoveries": 1
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      },
+      "OTHER": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      }
+    },
+    "call_reason_counts": {
+      "STIRRUP_TEXT_NO_OBJECT": 19,
+      "OCR_CORRUPTED_STIRRUP": 21,
+      "INCOMPLETE_PARSE": 19,
+      "LONGITUDINAL_COVERAGE_SHORTFALL": 21,
+      "UNASSOCIATED_REINFORCEMENT": 5
+    },
+    "skip_reason_counts": {
+      "LONGITUDINAL_FULLY_COVERED": 34,
+      "MATCHING_OBJECT_EXISTS": 35,
+      "COMPLETE_PARSE": 35,
+      "STRONG_DETERMINISTIC_COVERAGE": 35
+    },
+    "baseline": {
+      "candidates": 207,
+      "duplicates": 136,
+      "true_recoveries": 26,
+      "unsupported": 13,
+      "ambiguous": 15,
+      "precision": 0.73913,
+      "duplicate_rate": 0.657005,
+      "unsupported_rate": 0.062802,
+      "ambiguous_rate": 0.072464
+    },
+    "gated": {
+      "candidates": 108,
+      "duplicates": 54,
+      "true_recoveries": 25,
+      "unsupported": 11,
+      "ambiguous": 11,
+      "precision": 0.685185,
+      "duplicate_rate": 0.5,
+      "unsupported_rate": 0.101852,
+      "ambiguous_rate": 0.101852
+    },
+    "hypothetical_baseline_calls": 75,
+    "gated_calls": 40,
+    "calls_saved": 35,
+    "replay_cost_usd": 0.0,
+    "STIRRUP_BASELINE_TRUE_RECOVERIES": 18,
+    "STIRRUP_GATED_TRUE_RECOVERIES": 18,
+    "STIRRUP_RECOVERY_RETENTION": 1.0,
+    "LONGITUDINAL_BASELINE_TRUE_RECOVERIES": 8,
+    "LONGITUDINAL_GATED_TRUE_RECOVERIES": 7,
+    "LONGITUDINAL_RECOVERY_RETENTION": 0.875,
+    "LONGITUDINAL_FALSE_SKIPS": 1,
+    "LONGITUDINAL_FALSE_CALLS": 10,
+    "coverage_condition_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "UNASSOCIATED": 61,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "longitudinal_coverage_counts": {
+      "ROLE_COVERAGE_GAP": 18,
+      "FULLY_COVERED": 53,
+      "NO_LONGITUDINAL_DEMAND": 1,
+      "QUANTITY_SHORTFALL": 3
+    },
+    "p262_baseline": {
+      "CALL_BEAMS": 38,
+      "SKIP_BEAMS": 37,
+      "HOLD_BEAMS": 0,
+      "CALL_REDUCTION": 0.493333,
+      "GATED_VISION_CANDIDATES": 118,
+      "DUPLICATE_RATE_GATED": 0.533898,
+      "GATED_PRECISION": 0.711864,
+      "GATED_UNSUPPORTED_RATE": 0.09322,
+      "GATED_TRUE_RECOVERIES": 22,
+      "RECOVERY_RETENTION_RATE": 0.846154,
+      "FALSE_SKIPS": 4,
+      "FALSE_CALLS": 17,
+      "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 57.8947,
+      "STIRRUP_RETAINED": 18,
+      "LONGITUDINAL_RETAINED": 4
+    },
+    "longitudinal": {
+      "baseline_candidates": 145,
+      "gated_candidates": 73,
+      "baseline_duplicates": 96,
+      "gated_duplicates": 41,
+      "baseline_true_recoveries": 8,
+      "gated_true_recoveries": 7,
+      "retained_recoveries": 7,
+      "lost_recoveries": 1,
+      "precision": 0.616438,
+      "unsupported_rate": 0.136986,
+      "ambiguous_rate": 0.109589,
+      "false_skips": 1,
+      "false_calls": 10,
+      "by_coverage": {
+        "FULLY_COVERED": 53,
+        "QUANTITY_SHORTFALL": 3,
+        "ROLE_CONFLICT": 0,
+        "DIAMETER_CONFLICT": 0,
+        "MULTIPLE_CALLOUT_SHORTFALL": 0,
+        "MISSING_OBJECT": 0,
+        "ROLE_COVERAGE_GAP": 18,
+        "UNASSOCIATED": 0,
+        "NO_LONGITUDINAL_DEMAND": 1
+      }
+    }
+  },
+  "recommendation": {
+    "strength": "PROMISING",
+    "decision": "REFINE_LONGITUDINAL_GATE",
+    "note": "Gated-replay classification only. Not PRODUCTION_READY. stirrup_ok=True retention_ok=True long_ret_ok=True precision_ok=False unsupported_ok=False duplicate_ok=True call_reduction_ok=True per100_ok=True"
+  },
+  "false_skips": [
+    {
+      "beam_id": "B136",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B136",
+      "stratum": "EASY",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "LONGITUDINAL_FULLY_COVERED",
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B136",
+        "annotation_count": 3,
+        "rejected_annotation_count": 3,
+        "reinforcement_annotation_count": 3,
+        "deterministic_object_count": 7,
+        "matching_object_count": 3,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 3,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": true,
+        "longitudinal_coverage": "FULLY_COVERED",
+        "longitudinal_gap": false,
+        "coverage_conditions": [
+          "UNASSOCIATED",
+          "FULLY_COVERED"
+        ],
+        "long_annotation_unique_count": 2,
+        "long_top_object_count": 3,
+        "long_bottom_object_count": 1,
+        "quantity_shortfall_count": 0,
+        "role_conflict_count": 0,
+        "diameter_conflict_count": 0,
+        "layer_gap": false
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "annotation": "4-Y16",
+      "role": "UNKNOWN",
+      "diameter": 16,
+      "quantity": 4,
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Fifth::B136::C02",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "CONFLICTING"
+    }
+  ],
+  "false_calls": [
+    {
+      "beam_id": "B145",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER"
+    },
+    {
+      "beam_id": "B186",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B186",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER"
+    },
+    {
+      "beam_id": "B139",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B139",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "STIRRUP"
+    },
+    {
+      "beam_id": "B143",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B143",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "OCR_CORRUPTED_STIRRUP",
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 3
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ],
+      "candidate_class_hint": "STIRRUP"
+    },
+    {
+      "beam_id": "B145",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER"
+    },
+    {
+      "beam_id": "B147",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B147",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "DUPLICATE": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER"
+    },
+    {
+      "beam_id": "B46",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B46",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "AMBIGUOUS": 3
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "STIRRUP"
+    },
+    {
+      "beam_id": "B100",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B100",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B175",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B175",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 5,
+      "gt_status_counts": {
+        "DUPLICATE": 4,
+        "UNSUPPORTED": 1
+      },
+      "production_coverage": "FULLY_COVERED",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "FULLY_COVERED"
+      ],
+      "candidate_class_hint": "OTHER"
+    },
+    {
+      "beam_id": "B101",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B101",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B176",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B176",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 3
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B23",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B23",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B41",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B41",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 1
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B45",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B45",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "DUPLICATE": 2
+      },
+      "production_coverage": "ROLE_COVERAGE_GAP",
+      "coverage_conditions": [
+        "ROLE_COVERAGE_GAP",
+        "UNASSOCIATED"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B59",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B59",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 2,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 1
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    },
+    {
+      "beam_id": "B77",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B77",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "LONGITUDINAL_COVERAGE_SHORTFALL"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 3
+      },
+      "production_coverage": "QUANTITY_SHORTFALL",
+      "coverage_conditions": [
+        "UNASSOCIATED",
+        "QUANTITY_SHORTFALL"
+      ],
+      "candidate_class_hint": "LONGITUDINAL_REINFORCEMENT"
+    }
+  ],
+  "evidence": {
+    "examples": [
+      {
+        "example_class": "LONGITUDINAL_TRUE_RECOVERY",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter": null,
+        "quantity": 3.0,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_true_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_FALSE_SKIP",
+        "beam_id": "B136",
+        "set_key": "Fifth",
+        "stratum": "EASY",
+        "gate_decision": "SKIP_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_FULLY_COVERED",
+          "MATCHING_OBJECT_EXISTS",
+          "COMPLETE_PARSE",
+          "STRONG_DETERMINISTIC_COVERAGE"
+        ],
+        "annotation_text": "4-Y16",
+        "role": "UNKNOWN",
+        "diameter": 16,
+        "quantity": 4,
+        "production_coverage": "FULLY_COVERED",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_false_skip\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_FALSE_CALL",
+        "beam_id": "B139",
+        "set_key": "Fourth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_false_call\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_DUPLICATE",
+        "beam_id": "B137",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE"
+        ],
+        "annotation_text": "2-Y25",
+        "role": "TOP_BAR",
+        "diameter": null,
+        "quantity": 2.0,
+        "production_coverage": "FULLY_COVERED",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "DUPLICATE",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_duplicate\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_QUANTITY_SHORTFALL",
+        "beam_id": "B41",
+        "set_key": "Sixth",
+        "stratum": "NORMAL",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "QUANTITY_SHORTFALL",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_quantity_shortfall\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_ROLE_CONFLICT",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": null,
+        "role": null,
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\longitudinal_role_conflict\\region_overlay.png"
+      },
+      {
+        "example_class": "STIRRUP_TRUE_RECOVERY",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "2L-Y8@\\X100/150/100C/C",
+        "role": "STIRRUP",
+        "diameter": null,
+        "quantity": null,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "STIRRUP",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\stirrup_true_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "NORMAL_OR_EASY_LONGITUDINAL_RECOVERY",
+        "beam_id": "B173",
+        "set_key": "Fifth",
+        "stratum": "NORMAL",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "LONGITUDINAL_COVERAGE_SHORTFALL"
+        ],
+        "annotation_text": "3-Y16",
+        "role": "BOTTOM_BAR",
+        "diameter": null,
+        "quantity": 3.0,
+        "production_coverage": "ROLE_COVERAGE_GAP",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\evidence\\normal_or_easy_longitudinal_recovery\\region_overlay.png"
+      }
+    ],
+    "count": 8,
+    "missing_classes": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 24,
+    "total": 24,
+    "results": [
+      {
+        "name": "same_role_dia_sufficient_qty_skip",
+        "pass": true
+      },
+      {
+        "name": "same_role_dia_insufficient_qty_call",
+        "pass": true
+      },
+      {
+        "name": "same_dia_different_role_call",
+        "pass": true
+      },
+      {
+        "name": "multiple_callouts_insufficient_qty_call",
+        "pass": true
+      },
+      {
+        "name": "multiple_callouts_adequately_represented_skip",
+        "pass": true
+      },
+      {
+        "name": "conflicting_longitudinal_object_call",
+        "pass": true
+      },
+      {
+        "name": "unknown_role_conservative",
+        "pass": true
+      },
+      {
+        "name": "unassociated_longitudinal_matching_coverage_skip",
+        "pass": true
+      },
+      {
+        "name": "no_deterministic_longitudinal_object_call",
+        "pass": true
+      },
+      {
+        "name": "stirrup_behavior_unchanged",
+        "pass": true
+      },
+      {
+        "name": "b56_b57_control_fixtures",
+        "pass": true
+      },
+      {
+        "name": "stratum_not_used",
+        "pass": true
+      },
+      {
+        "name": "gate_runtime_no_gt_tokens",
+        "pass": true
+      },
+      {
+        "name": "gate_runtime_no_estimator_tokens",
+        "pass": true
+      },
+      {
+        "name": "frozen_manifest_not_resampled",
+        "pass": true
+      },
+      {
+        "name": "no_live_vision_api",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "P2.6.1_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.2_stirrup_regression",
+        "pass": true
+      },
+      {
+        "name": "replay_skip_drops_candidates",
+        "pass": true
+      },
+      {
+        "name": "metrics_false_paths",
+        "pass": true
+      },
+      {
+        "name": "coverage_evaluator_role_qty",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.3",
+    "gate_version": "P263_LONGITUDINAL_AWARE_GATE_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "cached_vision_unmodified": true,
+    "live_vision_invoked": false,
+    "note": "P2.6.3 writes only isolated longitudinal-aware gate shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "p262_artefacts_unchanged": true,
+    "live_vision_invoked": false,
+    "engineering_changes": "NONE"
+  },
+  "decision": "REFINE_LONGITUDINAL_GATE",
+  "strength": "PROMISING",
+  "live_cost_usd": "not run",
+  "live_vision_invoked": false,
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\P2.6.3_STATUS.md",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\metrics.json",
+    "longitudinal_metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\longitudinal_metrics.json",
+    "coverage_diagnostics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\coverage_diagnostics.json"
+  }
+}

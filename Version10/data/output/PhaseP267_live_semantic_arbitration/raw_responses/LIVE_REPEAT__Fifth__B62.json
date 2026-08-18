@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B62",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "15.949060900005861",
+  "usage": {
+    "input_tokens": "3964",
+    "output_tokens": "635"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_REINFORCEMENT\",\n    \"QUANTITY_AND_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_TOP_ZONE\",\n    \"ANNOTATION_IN_TOP_ZONE\",\n    \"NO_EVIDENCE_OF_DISTINCT_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_evidence\": \"The annotation '3-Y25' is located in the upper portion of the beam section with a leader line pointing to the top reinforcement layer. The leader tip is in the TOP_ZONE (tip_in_top_zone: true). The annotation is positioned above the beam centerline (dy_from_centreline: 1848.63mm) and clearly associated with the top reinforcement bars visible in the drawing.\",\n    \"deterministic_match\": \"The deterministic model already contains a TOP_MAIN bar with specification '3Y25' (bar_id: R13-B62-TOP_MAIN-2939ee) with quantity=3 and diameter_mm=25, which exactly matches the candidate notation '3-Y25'.\",\n    \"spatial_alignment\": \"The annotation's leader tip is in the top zone (dist_tip_top_zone: 0.0mm), and the annotation itself is positioned in the TOP_ZONE. The spatial context indicates TOP_PROXIMITY and SPATIAL_MATCH_STRONG.\",\n    \"no_conflict_indicators\": \"There are no diameter conflicts, quantity shortfalls, or role conflicts in the deterministic model. The populated_layer is TOP, and the annotation aligns with this layer.\"\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": \"3 bars of Y25 (25mm diameter)\",\n    \"likely_role\": \"TOP_MAIN\",\n    \"matches_existing\": \"R13-B62-TOP_MAIN-2939ee (3Y25)\"\n  },\n  \"uncertainty_notes\": \"Confidence is high (0.92) due to exact match of quantity and diameter with existing top reinforcement, clear spatial alignment with top zone, and consistent leader direction. The slight uncertainty (0.08) accounts for the possibility of a distinct additional requirement not visually distinguishable, but no evidence supports this interpretation.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

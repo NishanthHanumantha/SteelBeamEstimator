@@ -1,0 +1,33 @@
+{
+  "phase_id": "P2.6.7",
+  "model_version": "10.11.7",
+  "gate_version": "P267_LIVE_SEMANTIC_ARBITRATION_V1_0",
+  "mode": "REPARSE_STORED_LIVE_RAW",
+  "pass_fail": "PASS",
+  "decision": "LIVE_BENCHMARK_FAILED",
+  "target_beams": 29,
+  "primary_live_calls": 29,
+  "repeat_live_calls": 29,
+  "total_live_calls": 58,
+  "successful_primary": 15,
+  "successful_repeat": 14,
+  "semantic_repeatability_rate": 1.0,
+  "critical_case_repeatability": 1.0,
+  "distinct_precision": null,
+  "distinct_recall": 0.0,
+  "duplicate_precision": 0.45454545454545453,
+  "duplicate_recall": 0.625,
+  "false_distinct": 0,
+  "false_duplicate": 6,
+  "true_recovery_recall": 0.0,
+  "recovery_retention": 0.1428571428571429,
+  "ambiguous_rate": 0.0,
+  "unsupported_rate": 0.0,
+  "production_mutation_count": 0,
+  "production_routing_changed": false,
+  "recommendation": {
+    "decision": "LIVE_BENCHMARK_FAILED",
+    "strength": "UNSAFE_TRUE_RECOVERY",
+    "note": "True-recovery protection failed under live Vision (DUPLICATE on a recovery control)."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "target_beams": 29,
+  "primary_live_calls": 29,
+  "repeat_live_calls": 29,
+  "total_live_calls": 58,
+  "successful_primary": 15,
+  "successful_repeat": 14,
+  "failed_primary": 14,
+  "failed_repeat": 15,
+  "retry_count_total": 0,
+  "cache_hits": 0,
+  "expected_live_calls": 58,
+  "schema_reparsed_primary": 15,
+  "schema_reparsed_repeat": 14,
+  "schema_reparsed_total": 29,
+  "api_failures_remaining": 29,
+  "accuracy": {
+    "true_recovery_recall": 0.0,
+    "distinct_precision": null,
+    "distinct_recall": 0.0,
+    "duplicate_precision": 0.45454545454545453,
+    "duplicate_recall": 0.625,
+    "semantic_precision": 0.45454545454545453,
+    "false_DISTINCT": 0,
+    "false_DUPLICATE": 6,
+    "ambiguous_rate": 0.0,
+    "unsupported_rate": 0.0,
+    "recovery_retention": 0.1428571428571429,
+    "valid_primary": 15,
+    "DISTINCT": 0,
+    "DUPLICATE": 15,
+    "AMBIGUOUS": 0,
+    "UNSUPPORTED": 0,
+    "true_recovery_n": 7,
+    "duplicate_control_n": 8,
+    "true_recovery_classified_duplicate": 6
+  },
+  "repeatability": {
+    "valid_paired_cases": 14,
+    "exact_semantic_decision_agreement": 14,
+    "semantic_repeatability_rate": 1.0,
+    "layer_agreement_rate": 0.9285714285714286,
+    "representation_assessment_agreement_rate": 1.0,
+    "mean_confidence_delta": 0.0,
+    "ambiguity_transition_rate": 0.0,
+    "DISTINCT_to_DUPLICATE": 0,
+    "DUPLICATE_to_DISTINCT": 0,
+    "DISTINCT_to_AMBIGUOUS": 0,
+    "DUPLICATE_to_AMBIGUOUS": 0,
+    "AMBIGUOUS_to_DISTINCT": 0,
+    "AMBIGUOUS_to_DUPLICATE": 0,
+    "other_transitions": 0
+  },
+  "critical": {
+    "cases": {
+      "Fifth/B128": {
+        "primary": "DUPLICATE_OR_REPEAT",
+        "repeat": "DUPLICATE_OR_REPEAT",
+        "p266_reference": "DISTINCT_REINFORCEMENT",
+        "p265_context": "CONTEXT_SUPPORTS_CALL",
+        "observed_decision": "CALL_VISION"
+      },
+      "Fourth/B141": {
+        "primary": "DUPLICATE_OR_REPEAT",
+        "repeat": "DUPLICATE_OR_REPEAT",
+        "p266_reference": "DUPLICATE_OR_REPEAT",
+        "p265_context": "CONTEXT_SUPPORTS_CALL",
+        "observed_decision": "CALL_VISION"
+      },
+      "Fourth/B23": {
+        "primary": null,
+        "repeat": null,
+        "p266_reference": "DUPLICATE_OR_REPEAT",
+        "p265_context": "CONTEXT_SUPPORTS_CALL",
+        "observed_decision": "CALL_VISION"
+      }
+    },
+    "strong_split": false,
+    "b128_duplicate_failure": true
+  },
+  "critical_repeatability": {
+    "valid_paired_cases": 2,
+    "agreement": 2,
+    "critical_case_repeatability": 1.0,
+    "rows": [
+      {
+        "set_key": "Fifth",
+        "beam_id": "B128",
+        "primary": "DUPLICATE_OR_REPEAT",
+        "repeat": "DUPLICATE_OR_REPEAT",
+        "agree": true
+      },
+      {
+        "set_key": "Fourth",
+        "beam_id": "B141",
+        "primary": "DUPLICATE_OR_REPEAT",
+        "repeat": "DUPLICATE_OR_REPEAT",
+        "agree": true
+      },
+      {
+        "set_key": "Fourth",
+        "beam_id": "B23",
+        "primary": null,
+        "repeat": null,
+        "agree": false
+      }
+    ]
+  },
+  "LIVE_VISION_CALLS": 58
+}

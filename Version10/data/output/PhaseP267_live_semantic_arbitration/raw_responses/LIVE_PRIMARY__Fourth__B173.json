@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B173",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "16.08378939999966",
+  "usage": {
+    "input_tokens": "3675",
+    "output_tokens": "707"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"LEADER_POINTS_TO_EXISTING_TOP_REINFORCEMENT\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"annotation_location\": \"The 3-Y16 annotation is positioned with a leader pointing upward to the top reinforcement layer of the beam cross-section\",\n      \"beam_section\": \"Shows a rectangular beam cross-section with reinforcement indicated at the top\",\n      \"leader_behavior\": \"Green leader line points from the 3-Y16 label upward to the top reinforcement zone\",\n      \"reinforcement_visible\": \"Top reinforcement layer is clearly shown in the cross-section with a dark blue outline indicating the reinforcement zone\"\n    },\n    \"deterministic_model\": {\n      \"existing_top\": \"3Y16 (3 bars of 16mm diameter) already represented in TOP layer\",\n      \"existing_bottom\": \"No bottom reinforcement represented\",\n      \"exact_match\": \"The candidate 3-Y16 exactly matches the existing TOP reinforcement specification\"\n    },\n    \"spatial_analysis\": {\n      \"leader_tip_zone\": \"Leader tip is in BOTTOM zone but points upward toward TOP\",\n      \"annotation_position\": \"Annotation is below the beam but leader clearly indicates top reinforcement\",\n      \"cross_layer_evidence\": \"Spatial context indicates cross-layer separation supporting this is a callout for top bars\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"quantity\": 3,\n    \"diameter_mm\": 16,\n    \"inferred_role\": \"TOP_MAIN\",\n    \"notation_type\": \"Standard longitudinal bar callout\",\n    \"represents_existing\": \"This annotation is a callout/label for the existing top reinforcement already modeled as R13-B173-TOP_MAIN-f120af\"\n  },\n  \"uncertainty_notes\": [\n    \"Leader tip is technically in bottom zone (dist_tip_bottom_zone: 0.0) but leader direction is UP and points to top reinforcement\",\n    \"The annotation placement below the beam is typical drafting practice for labeling top bars in section views\",\n    \"No visual evidence of additional bottom or side reinforcement that would suggest this is a distinct specification\",\n    \"The exact match of quantity and diameter with existing top reinforcement strongly supports duplicate classification\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

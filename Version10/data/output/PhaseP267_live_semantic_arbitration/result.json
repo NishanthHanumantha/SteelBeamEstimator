@@ -1,0 +1,307 @@
+{
+  "phase_id": "P2.6.7",
+  "phase_name": "Live Semantic Arbitration Benchmark & Repeatability Test",
+  "model_version": "10.11.7",
+  "gate_version": "P267_LIVE_SEMANTIC_ARBITRATION_V1_0",
+  "scope": "P266_TARGET_LIVE_SHADOW",
+  "mode": "REPARSE_STORED_LIVE_RAW",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration",
+  "metrics": {
+    "target_beams": 29,
+    "primary_live_calls": 29,
+    "repeat_live_calls": 29,
+    "total_live_calls": 58,
+    "successful_primary": 15,
+    "successful_repeat": 14,
+    "failed_primary": 14,
+    "failed_repeat": 15,
+    "retry_count_total": 0,
+    "cache_hits": 0,
+    "expected_live_calls": 58,
+    "schema_reparsed_primary": 15,
+    "schema_reparsed_repeat": 14,
+    "schema_reparsed_total": 29,
+    "api_failures_remaining": 29,
+    "accuracy": {
+      "true_recovery_recall": 0.0,
+      "distinct_precision": null,
+      "distinct_recall": 0.0,
+      "duplicate_precision": 0.45454545454545453,
+      "duplicate_recall": 0.625,
+      "semantic_precision": 0.45454545454545453,
+      "false_DISTINCT": 0,
+      "false_DUPLICATE": 6,
+      "ambiguous_rate": 0.0,
+      "unsupported_rate": 0.0,
+      "recovery_retention": 0.1428571428571429,
+      "valid_primary": 15,
+      "DISTINCT": 0,
+      "DUPLICATE": 15,
+      "AMBIGUOUS": 0,
+      "UNSUPPORTED": 0,
+      "true_recovery_n": 7,
+      "duplicate_control_n": 8,
+      "true_recovery_classified_duplicate": 6
+    },
+    "repeatability": {
+      "valid_paired_cases": 14,
+      "exact_semantic_decision_agreement": 14,
+      "semantic_repeatability_rate": 1.0,
+      "layer_agreement_rate": 0.9285714285714286,
+      "representation_assessment_agreement_rate": 1.0,
+      "mean_confidence_delta": 0.0,
+      "ambiguity_transition_rate": 0.0,
+      "DISTINCT_to_DUPLICATE": 0,
+      "DUPLICATE_to_DISTINCT": 0,
+      "DISTINCT_to_AMBIGUOUS": 0,
+      "DUPLICATE_to_AMBIGUOUS": 0,
+      "AMBIGUOUS_to_DISTINCT": 0,
+      "AMBIGUOUS_to_DUPLICATE": 0,
+      "other_transitions": 0
+    },
+    "critical": {
+      "cases": {
+        "Fifth/B128": {
+          "primary": "DUPLICATE_OR_REPEAT",
+          "repeat": "DUPLICATE_OR_REPEAT",
+          "p266_reference": "DISTINCT_REINFORCEMENT",
+          "p265_context": "CONTEXT_SUPPORTS_CALL",
+          "observed_decision": "CALL_VISION"
+        },
+        "Fourth/B141": {
+          "primary": "DUPLICATE_OR_REPEAT",
+          "repeat": "DUPLICATE_OR_REPEAT",
+          "p266_reference": "DUPLICATE_OR_REPEAT",
+          "p265_context": "CONTEXT_SUPPORTS_CALL",
+          "observed_decision": "CALL_VISION"
+        },
+        "Fourth/B23": {
+          "primary": null,
+          "repeat": null,
+          "p266_reference": "DUPLICATE_OR_REPEAT",
+          "p265_context": "CONTEXT_SUPPORTS_CALL",
+          "observed_decision": "CALL_VISION"
+        }
+      },
+      "strong_split": false,
+      "b128_duplicate_failure": true
+    },
+    "critical_repeatability": {
+      "valid_paired_cases": 2,
+      "agreement": 2,
+      "critical_case_repeatability": 1.0,
+      "rows": [
+        {
+          "set_key": "Fifth",
+          "beam_id": "B128",
+          "primary": "DUPLICATE_OR_REPEAT",
+          "repeat": "DUPLICATE_OR_REPEAT",
+          "agree": true
+        },
+        {
+          "set_key": "Fourth",
+          "beam_id": "B141",
+          "primary": "DUPLICATE_OR_REPEAT",
+          "repeat": "DUPLICATE_OR_REPEAT",
+          "agree": true
+        },
+        {
+          "set_key": "Fourth",
+          "beam_id": "B23",
+          "primary": null,
+          "repeat": null,
+          "agree": false
+        }
+      ]
+    },
+    "LIVE_VISION_CALLS": 58
+  },
+  "recommendation": {
+    "decision": "LIVE_BENCHMARK_FAILED",
+    "strength": "UNSAFE_TRUE_RECOVERY",
+    "note": "True-recovery protection failed under live Vision (DUPLICATE on a recovery control)."
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 35,
+    "total": 35,
+    "results": [
+      {
+        "name": "schema_validation",
+        "pass": true
+      },
+      {
+        "name": "enum_validation",
+        "pass": true
+      },
+      {
+        "name": "confidence_validation",
+        "pass": true
+      },
+      {
+        "name": "malformed_response_handling",
+        "pass": true
+      },
+      {
+        "name": "schema_coerces_nested_supporting_fields",
+        "pass": true
+      },
+      {
+        "name": "schema_does_not_invent_decision",
+        "pass": true
+      },
+      {
+        "name": "reparse_nested_raw_keeps_claude_decision",
+        "pass": true
+      },
+      {
+        "name": "reparse_credit_failure_stays_failed",
+        "pass": true
+      },
+      {
+        "name": "api_failure_handling",
+        "pass": true
+      },
+      {
+        "name": "no_expected_label_leakage",
+        "pass": true
+      },
+      {
+        "name": "no_gt_usage",
+        "pass": true
+      },
+      {
+        "name": "no_estimator_usage",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "p264_fingerprint_path",
+        "pass": true
+      },
+      {
+        "name": "p265_fingerprint_path",
+        "pass": true
+      },
+      {
+        "name": "p266_fingerprint_path",
+        "pass": true
+      },
+      {
+        "name": "target_population_exactly_29",
+        "pass": true
+      },
+      {
+        "name": "repeat_count_matches_primary",
+        "pass": true
+      },
+      {
+        "name": "cache_bypass_for_repeat",
+        "pass": true
+      },
+      {
+        "name": "critical_case_evaluation_logic",
+        "pass": true
+      },
+      {
+        "name": "fully_covered_path_untouched",
+        "pass": true
+      },
+      {
+        "name": "no_duplicate_to_skip_routing",
+        "pass": true
+      },
+      {
+        "name": "raw_response_secret_sanitization",
+        "pass": true
+      },
+      {
+        "name": "repeatability_calculation",
+        "pass": true
+      },
+      {
+        "name": "semantic_metric_calculation",
+        "pass": true
+      },
+      {
+        "name": "failed_call_accounting",
+        "pass": true
+      },
+      {
+        "name": "live_context_strips_frozen_observations",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_hardcoding_in_runtime",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "classify_phase_never_production_ready",
+        "pass": true
+      },
+      {
+        "name": "mocked_live_call_does_not_use_p266_cache",
+        "pass": true
+      },
+      {
+        "name": "P2.6.6_regression",
+        "pass": true
+      },
+      {
+        "name": "orchestrator_refuses_replay_mode",
+        "pass": true
+      },
+      {
+        "name": "artifact_generation_helpers",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.7",
+    "gate_version": "P267_LIVE_SEMANTIC_ARBITRATION_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.6.7 writes only isolated live-arbitration shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "p264_artefacts_unchanged": true,
+    "p265_artefacts_unchanged": true,
+    "p266_artefacts_unchanged": true,
+    "live_vision_invoked": false,
+    "stored_live_raw_reparsed": true,
+    "engineering_changes": "NONE",
+    "fully_covered_untouched": true
+  },
+  "decision": "LIVE_BENCHMARK_FAILED",
+  "strength": "UNSAFE_TRUE_RECOVERY",
+  "interpretation": "Live Claude primary split strong=False; B128 duplicate failure=True; repeatability=1.0; false DUPLICATE=6. This does not change production routing and is not PRODUCTION_READY.",
+  "live_vision_invoked": false,
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_STATUS.md",
+    "results": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_RESULTS.json",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_METRICS.json"
+  }
+}

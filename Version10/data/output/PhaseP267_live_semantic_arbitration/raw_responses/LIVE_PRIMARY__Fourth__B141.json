@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B141",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "13.677214900002582",
+  "usage": {
+    "input_tokens": "3575",
+    "output_tokens": "616"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"LEADER_POINTS_TO_EXISTING_TOP_BARS\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"The annotation '5-Y16' has a leader pointing upward to the top reinforcement layer (green bars visible in section)\",\n      \"The leader tip terminates at the top longitudinal bars in the beam section\",\n      \"The beam section shows green bars at the top face representing the top reinforcement\",\n      \"No additional distinct reinforcement layer is visible that would require separate specification\",\n      \"The annotation appears to be labeling the existing top bars shown in the section view\"\n    ],\n    \"deterministic_match\": {\n      \"existing_top_spec\": \"5Y16 (5 bars of 16mm diameter)\",\n      \"candidate_spec\": \"5-Y16 (5 bars of 16mm diameter)\",\n      \"match_quality\": \"EXACT\"\n    },\n    \"spatial_alignment\": {\n      \"leader_direction\": \"UP\",\n      \"leader_tip_zone\": \"BOTTOM_ZONE (but pointing upward to top bars)\",\n      \"nearest_bar_family\": \"TOP\",\n      \"nearest_bar_distance_mm\": 373.84\n    }\n  },\n  \"annotation_interpretation\": {\n    \"notation\": \"5-Y16\",\n    \"quantity\": 5,\n    \"diameter_mm\": 16,\n    \"interpreted_role\": \"TOP_MAIN\",\n    \"callout_purpose\": \"LABELING_EXISTING_TOP_REINFORCEMENT\"\n  },\n  \"uncertainty_notes\": [\n    \"Leader tail is positioned in bottom zone, but leader direction is upward pointing to top bars\",\n    \"The exact match of quantity (5) and diameter (16mm) with existing top reinforcement strongly suggests this is a repeat callout\",\n    \"No visual evidence of additional bottom or side reinforcement that would justify treating this as distinct\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

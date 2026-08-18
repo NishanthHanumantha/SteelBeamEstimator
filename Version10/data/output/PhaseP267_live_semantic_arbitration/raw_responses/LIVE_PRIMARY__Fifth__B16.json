@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B16",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "23.04876059999515",
+  "usage": {
+    "input_tokens": "8085",
+    "output_tokens": "859"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.88,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"MULTIPLE_CALLOUTS_SAME_SPEC\",\n    \"DETERMINISTIC_ALREADY_POPULATED\",\n    \"VISUAL_CONTINUITY_LINES\",\n    \"LEADER_POINTS_TO_EXISTING_BARS\"\n  ],\n  \"evidence\": {\n    \"visual_observations\": [\n      \"Image shows two 4-Y20 annotations in the top zone pointing to continuous horizontal reinforcement bars\",\n      \"Both 4-Y20 callouts have leaders pointing to the same set of top longitudinal bars\",\n      \"The bars being annotated are visually continuous across the beam section\",\n      \"One 4-Y16 annotation points to bottom layer of top zone reinforcement\",\n      \"One 4-Y25 annotation points to top layer of top zone reinforcement\",\n      \"All annotations appear to be labeling the same physical reinforcement from different locations\"\n    ],\n    \"deterministic_state\": [\n      \"Existing top reinforcement includes: 4Y25 (TOP_MAIN), 4Y20#L, 4Y20#R, 4Y20, 4Y16#L, 4Y16#R\",\n      \"Total of 24 bars in top layer already represented\",\n      \"Three distinct diameter specifications already accepted: 25mm (qty 4), 20mm (qty 4), 16mm (qty 4)\",\n      \"Multiple 4-Y20 instances already exist in deterministic model\"\n    ],\n    \"spatial_analysis\": [\n      \"All annotation leader tips point to TOP zone\",\n      \"Annotations are spatially separated but reference same continuous bars\",\n      \"No evidence of additional distinct reinforcement layers\",\n      \"Physical bar proximity confirms annotations point to existing modeled bars\"\n    ],\n    \"annotation_pattern\": [\n      \"Two identical 4-Y20 annotations appear as duplicate callouts\",\n      \"Pattern suggests repeat labeling for clarity or different span regions\",\n      \"No new diameter or quantity specification beyond what is already modeled\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"notation\": \"4-Y20 (appears twice), 4-Y16, 4-Y25\",\n    \"interpreted_quantity\": 4,\n    \"interpreted_diameter_mm\": 20,\n    \"interpreted_role\": \"TOP longitudinal reinforcement continuation/repeat callout\",\n    \"visual_clarity\": \"HIGH - clear leader lines to existing bars\",\n    \"ambiguity_source\": \"NONE - annotations clearly reference already-modeled reinforcement\"\n  },\n  \"uncertainty_notes\": [\n    \"The presence of two separate 4-Y20 callouts initially suggests potential for distinct bars, but visual inspection confirms they point to the same continuous reinforcement\",\n    \"Deterministic model already contains multiple 4-Y20 instances (4Y20#L, 4Y20#R, 4Y20), indicating the model has already captured these bars\",\n    \"No visual evidence of additional reinforcement layers that would justify treating these as distinct specifications\",\n    \"The annotation pattern is consistent with standard practice of repeating callouts for long spans or different detail views\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

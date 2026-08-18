@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B101",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "18.948930699989432",
+  "usage": {
+    "input_tokens": "3117",
+    "output_tokens": "809"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_MAIN\",\n    \"QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_TIP_IN_TOP_ZONE\",\n    \"PROXIMITY_TO_TOP_BARS\",\n    \"NO_BOTTOM_REINFORCEMENT_EXISTS\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"annotation_visible\": true,\n      \"annotation_text\": \"3-Y20\",\n      \"annotation_location\": \"Upper portion of beam section, with leader pointing upward to top zone\",\n      \"leader_direction\": \"UP\",\n      \"leader_tip_zone\": \"TOP_ZONE\",\n      \"visible_bar_representations\": \"Multiple bar lines visible in top zone of beam section\",\n      \"green_highlight_zone\": \"Top zone of beam\"\n    },\n    \"deterministic_model\": {\n      \"existing_top_main\": {\n        \"bar_label\": \"3Y20\",\n        \"diameter_mm\": 20,\n        \"quantity\": 3,\n        \"family\": \"TOP\"\n      },\n      \"exact_match\": true,\n      \"additional_top_extras\": \"Two 3Y16 bars also present in top\"\n    },\n    \"spatial_analysis\": {\n      \"leader_tip_direction\": \"UP\",\n      \"tip_in_top_zone\": true,\n      \"tip_in_bottom_zone\": false,\n      \"nearest_bar_distance\": 320.43,\n      \"nearest_bar_family\": \"UNKNOWN\",\n      \"position_zone\": \"TOP_ZONE\"\n    },\n    \"specification_match\": {\n      \"candidate_quantity\": 3,\n      \"candidate_diameter\": 20,\n      \"existing_quantity\": 3,\n      \"existing_diameter\": 20,\n      \"match_type\": \"EXACT\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"parsed_quantity\": 3,\n    \"parsed_diameter_mm\": 20,\n    \"parsed_bar_mark\": \"Y20\",\n    \"inferred_role\": \"TOP_MAIN\",\n    \"callout_purpose\": \"REPEAT_SPECIFICATION\"\n  },\n  \"uncertainty_notes\": \"The annotation 3-Y20 exactly matches the existing TOP_MAIN reinforcement (bar_id: R13-B101-TOP_MAIN-0fbf87, label: 3Y20) with identical quantity (3) and diameter (20mm). The leader points upward into the top zone where this reinforcement is already represented. The image shows the annotation in the upper portion of the beam with the green highlight zone indicating top reinforcement. No bottom reinforcement exists in the deterministic model, and the spatial context strongly supports this being a repeat callout of the already-represented top main bars. The nearest bar distance of 320mm and upward leader direction are consistent with labeling existing top reinforcement rather than specifying additional distinct bars.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

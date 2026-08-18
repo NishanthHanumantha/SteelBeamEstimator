@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B139",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "19.063211700005922",
+  "usage": {
+    "input_tokens": "4796",
+    "output_tokens": "959"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"EXISTING_TOP_LAYER_OBJECTS\",\n    \"LEADER_TIP_ZONE_ALIGNMENT\",\n    \"NO_BOTTOM_LAYER_OBJECTS\",\n    \"ANNOTATION_PROXIMITY_TO_TOP_BARS\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"5-Y16_annotation\": \"Located in upper portion of beam section, leader pointing to top reinforcement layer shown in dark blue\",\n      \"5-Y20_annotation\": \"Located in lower portion of beam section, leader pointing to bottom reinforcement layer shown in dark blue\",\n      \"reinforcement_profile\": \"Beam shows top reinforcement bars (dark blue lines at top) and bottom reinforcement bars (dark blue lines at bottom)\",\n      \"green_leaders\": \"Two green leader lines connect annotations to their respective reinforcement layers\"\n    },\n    \"deterministic_model\": {\n      \"existing_top_specs\": [\n        \"5Y20 (20mm, qty 5)\",\n        \"5Y16#L (16mm, qty 5)\",\n        \"5Y16#R (16mm, qty 5)\"\n      ],\n      \"existing_bottom_specs\": [],\n      \"total_top_quantity\": 15,\n      \"total_bottom_quantity\": 0\n    },\n    \"annotation_analysis\": {\n      \"5-Y16\": {\n        \"quantity\": 5,\n        \"diameter_mm\": 16,\n        \"position_zone\": \"TOP_ZONE\",\n        \"leader_tip_direction\": \"DOWN\",\n        \"nearest_bar_family\": \"TOP\",\n        \"nearest_bar_distance\": 296.88\n      },\n      \"5-Y20\": {\n        \"quantity\": 5,\n        \"diameter_mm\": 20,\n        \"position_zone\": \"TOP_ZONE\",\n        \"leader_tip_direction\": \"UP\",\n        \"nearest_bar_family\": \"TOP\",\n        \"nearest_bar_distance\": 342.12\n      }\n    },\n    \"matching_assessment\": {\n      \"5-Y16_matches\": \"R13-B139-TOP_EXTRA-b182ec (5Y16#L) or R13-B139-TOP_EXTRA-b7d545 (5Y16#R)\",\n      \"5-Y20_matches\": \"R13-B139-TOP_MAIN-f2c509 (5Y20)\",\n      \"exact_quantity_diameter_match\": true\n    }\n  },\n  \"annotation_interpretation\": {\n    \"5-Y16\": \"Callout for 5 bars of Y16 reinforcement in top layer, already represented by existing TOP_EXTRA objects\",\n    \"5-Y20\": \"Callout for 5 bars of Y20 reinforcement in top layer, already represented by existing TOP_MAIN object\",\n    \"interpretation\": \"Both annotations are repeat callouts of reinforcement already captured in the deterministic model\"\n  },\n  \"uncertainty_notes\": [\n    \"5-Y20 annotation positioned lower in section but leader tip points upward to top zone (tip_in_bottom_zone: true, but position_zone: TOP_ZONE)\",\n    \"Deterministic model shows 15 total top bars (5Y20 + 5Y16#L + 5Y16#R), which exactly matches the two annotations (5+5+5)\",\n    \"No bottom layer reinforcement exists in deterministic model, supporting interpretation that both annotations refer to top layer despite vertical separation\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

@@ -1,0 +1,1014 @@
+{
+  "phase_id": "P2.6.2",
+  "phase_name": "Selective Vision Candidate Gate",
+  "model_version": "10.11.2",
+  "scope": "FROZEN_P261_STRATIFIED_SAMPLE",
+  "mode": "REPLAY_P261_CACHED",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate",
+  "sample": {
+    "seed": 2611101,
+    "target_beams": 75,
+    "per_stratum_target": 25,
+    "selected": 75,
+    "universe_scored": 404,
+    "eligible_with_crop": 362,
+    "available_by_stratum": {
+      "DIFFICULT": 52,
+      "NORMAL": 195,
+      "EASY": 115
+    },
+    "selected_by_stratum": {
+      "DIFFICULT": 25,
+      "NORMAL": 25,
+      "EASY": 25
+    },
+    "selected_by_set": {
+      "Fifth": 27,
+      "Fourth": 30,
+      "Sixth": 18
+    },
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "drawing_sets": [
+      "Fourth",
+      "Fifth",
+      "Sixth"
+    ],
+    "drawing_visibility": "UNSEEN",
+    "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled.",
+    "p26_overlap_in_sample": 5
+  },
+  "replay": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses.",
+    "not_a_new_vision_benchmark": true,
+    "call_beams": 38,
+    "skip_beams": 37,
+    "hold_beams": 0,
+    "gated_candidates": 118,
+    "suppressed_candidates": 89
+  },
+  "metrics": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses. Not a new Vision benchmark.",
+    "TOTAL_BEAMS": 75,
+    "CALL_BEAMS": 38,
+    "SKIP_BEAMS": 37,
+    "HOLD_BEAMS": 0,
+    "CALL_RATE": 0.506667,
+    "CALL_REDUCTION": 0.493333,
+    "TOTAL_BASELINE_VISION_CANDIDATES": 207,
+    "GATED_VISION_CANDIDATES": 118,
+    "DUPLICATES_BASELINE": 136,
+    "DUPLICATES_GATED": 63,
+    "DUPLICATE_RATE_BASELINE": 0.657005,
+    "DUPLICATE_RATE_GATED": 0.533898,
+    "BASELINE_PRECISION": 0.73913,
+    "GATED_PRECISION": 0.711864,
+    "BASELINE_UNSUPPORTED_RATE": 0.062802,
+    "GATED_UNSUPPORTED_RATE": 0.09322,
+    "BASELINE_AMBIGUOUS_RATE": 0.072464,
+    "GATED_AMBIGUOUS_RATE": 0.084746,
+    "BASELINE_TRUE_RECOVERIES": 26,
+    "GATED_TRUE_RECOVERIES": 22,
+    "RECOVERIES_RETAINED": 22,
+    "RECOVERIES_LOST": 4,
+    "RECOVERY_RETENTION_RATE": 0.846154,
+    "FALSE_SKIPS": 4,
+    "FALSE_CALLS": 17,
+    "FALSE_CALL_RATE": 0.447368,
+    "RECOVERY_RETENTION_PER_VISION_CALL": 0.578947,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_BASELINE": 34.6667,
+    "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 57.8947,
+    "TRUE_RECOVERIES_PER_CALL_BASELINE": 0.346667,
+    "by_stratum": {
+      "DIFFICULT": {
+        "beams": 25,
+        "call": 25,
+        "skip": 0,
+        "hold": 0,
+        "call_rate": 1.0,
+        "calls_saved": 0,
+        "baseline": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "gated": {
+          "candidates": 67,
+          "duplicates": 27,
+          "true_recoveries": 19,
+          "unsupported": 7,
+          "ambiguous": 8,
+          "precision": 0.671642,
+          "duplicate_rate": 0.402985,
+          "unsupported_rate": 0.104478,
+          "ambiguous_rate": 0.119403
+        },
+        "recoveries_retained": 19,
+        "recoveries_lost": 0
+      },
+      "NORMAL": {
+        "beams": 25,
+        "call": 9,
+        "skip": 16,
+        "hold": 0,
+        "call_rate": 0.36,
+        "calls_saved": 16,
+        "baseline": {
+          "candidates": 62,
+          "duplicates": 46,
+          "true_recoveries": 6,
+          "unsupported": 3,
+          "ambiguous": 5,
+          "precision": 0.758065,
+          "duplicate_rate": 0.741935,
+          "unsupported_rate": 0.048387,
+          "ambiguous_rate": 0.080645
+        },
+        "gated": {
+          "candidates": 29,
+          "duplicates": 22,
+          "true_recoveries": 3,
+          "unsupported": 1,
+          "ambiguous": 2,
+          "precision": 0.724138,
+          "duplicate_rate": 0.758621,
+          "unsupported_rate": 0.034483,
+          "ambiguous_rate": 0.068966
+        },
+        "recoveries_retained": 3,
+        "recoveries_lost": 3
+      },
+      "EASY": {
+        "beams": 25,
+        "call": 4,
+        "skip": 21,
+        "hold": 0,
+        "call_rate": 0.16,
+        "calls_saved": 21,
+        "baseline": {
+          "candidates": 78,
+          "duplicates": 63,
+          "true_recoveries": 1,
+          "unsupported": 3,
+          "ambiguous": 2,
+          "precision": 0.782051,
+          "duplicate_rate": 0.807692,
+          "unsupported_rate": 0.038462,
+          "ambiguous_rate": 0.025641
+        },
+        "gated": {
+          "candidates": 22,
+          "duplicates": 14,
+          "true_recoveries": 0,
+          "unsupported": 3,
+          "ambiguous": 0,
+          "precision": 0.818182,
+          "duplicate_rate": 0.636364,
+          "unsupported_rate": 0.136364,
+          "ambiguous_rate": 0.0
+        },
+        "recoveries_retained": 0,
+        "recoveries_lost": 1
+      }
+    },
+    "by_candidate_type": {
+      "STIRRUP": {
+        "baseline_candidates": 62,
+        "gated_candidates": 32,
+        "baseline_duplicates": 40,
+        "gated_duplicates": 11,
+        "baseline_true_recoveries": 18,
+        "gated_true_recoveries": 18,
+        "retained_recoveries": 18,
+        "lost_recoveries": 0
+      },
+      "LONGITUDINAL_REINFORCEMENT": {
+        "baseline_candidates": 145,
+        "gated_candidates": 86,
+        "baseline_duplicates": 96,
+        "gated_duplicates": 52,
+        "baseline_true_recoveries": 8,
+        "gated_true_recoveries": 4,
+        "retained_recoveries": 4,
+        "lost_recoveries": 4
+      },
+      "SIDE_FACE_REINFORCEMENT": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      },
+      "OTHER": {
+        "baseline_candidates": 0,
+        "gated_candidates": 0,
+        "baseline_duplicates": 0,
+        "gated_duplicates": 0,
+        "baseline_true_recoveries": 0,
+        "gated_true_recoveries": 0,
+        "retained_recoveries": 0,
+        "lost_recoveries": 0
+      }
+    },
+    "call_reason_counts": {
+      "STIRRUP_TEXT_NO_OBJECT": 19,
+      "OCR_CORRUPTED_STIRRUP": 21,
+      "INCOMPLETE_PARSE": 19,
+      "MISSING_DETERMINISTIC_OBJECT": 15,
+      "UNASSOCIATED_REINFORCEMENT": 5
+    },
+    "skip_reason_counts": {
+      "MATCHING_OBJECT_EXISTS": 37,
+      "COMPLETE_PARSE": 35,
+      "STRONG_DETERMINISTIC_COVERAGE": 37
+    },
+    "baseline": {
+      "candidates": 207,
+      "duplicates": 136,
+      "true_recoveries": 26,
+      "unsupported": 13,
+      "ambiguous": 15,
+      "precision": 0.73913,
+      "duplicate_rate": 0.657005,
+      "unsupported_rate": 0.062802,
+      "ambiguous_rate": 0.072464
+    },
+    "gated": {
+      "candidates": 118,
+      "duplicates": 63,
+      "true_recoveries": 22,
+      "unsupported": 11,
+      "ambiguous": 10,
+      "precision": 0.711864,
+      "duplicate_rate": 0.533898,
+      "unsupported_rate": 0.09322,
+      "ambiguous_rate": 0.084746
+    },
+    "hypothetical_baseline_calls": 75,
+    "gated_calls": 38,
+    "calls_saved": 37,
+    "replay_cost_usd": 0.0
+  },
+  "recommendation": {
+    "strength": "PROMISING",
+    "decision": "REFINE_SELECTIVE_GATE",
+    "note": "Gated-replay classification only. Not PRODUCTION_READY. call_reduction_ok=True retention_ok=True precision_ok=False unsupported_ok=False duplicate_ok=True lost=4"
+  },
+  "false_skips": [
+    {
+      "beam_id": "B102",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B102",
+      "stratum": "NORMAL",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B102",
+        "annotation_count": 3,
+        "rejected_annotation_count": 0,
+        "reinforcement_annotation_count": 3,
+        "deterministic_object_count": 6,
+        "matching_object_count": 3,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 0,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": false
+      },
+      "annotation": "3-Y20",
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Fourth::B102::C02",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "POTENTIALLY_MISSING"
+    },
+    {
+      "beam_id": "B173",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B173",
+      "stratum": "NORMAL",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B173",
+        "annotation_count": 2,
+        "rejected_annotation_count": 0,
+        "reinforcement_annotation_count": 2,
+        "deterministic_object_count": 2,
+        "matching_object_count": 2,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 0,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": false
+      },
+      "annotation": "3-Y16",
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Fourth::B173::C01",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "POTENTIALLY_MISSING"
+    },
+    {
+      "beam_id": "B138",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B138",
+      "stratum": "NORMAL",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B138",
+        "annotation_count": 3,
+        "rejected_annotation_count": 5,
+        "reinforcement_annotation_count": 3,
+        "deterministic_object_count": 6,
+        "matching_object_count": 3,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 0,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": false
+      },
+      "annotation": "2-Y20",
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Sixth::B138::C02",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "POTENTIALLY_MISSING"
+    },
+    {
+      "beam_id": "B136",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B136",
+      "stratum": "EASY",
+      "gate_decision": "SKIP_VISION",
+      "why_gate_skipped": [
+        "MATCHING_OBJECT_EXISTS",
+        "COMPLETE_PARSE",
+        "STRONG_DETERMINISTIC_COVERAGE"
+      ],
+      "production_features": {
+        "beam_id": "B136",
+        "annotation_count": 3,
+        "rejected_annotation_count": 3,
+        "reinforcement_annotation_count": 3,
+        "deterministic_object_count": 7,
+        "matching_object_count": 3,
+        "incomplete_parse_count": 0,
+        "OCR_corruption_count": 0,
+        "unassociated_annotation_count": 3,
+        "stirrup_text_present": true,
+        "stirrup_object_present": true,
+        "stirrup_text_no_object": false,
+        "unmatched_stirrup_count": 0,
+        "ocr_corrupted_stirrup_unmatched": 0,
+        "longitudinal_text_present": true,
+        "unmatched_longitudinal_count": 0,
+        "longitudinal_object_shortfall": 0,
+        "side_text_present": false,
+        "side_object_present": false,
+        "unassociated_strong_count": 0,
+        "parse_complete": true,
+        "association": "TARGET_BEAM",
+        "has_top": true,
+        "has_bottom": true
+      },
+      "annotation": "4-Y16",
+      "candidate_class": "LONGITUDINAL_REINFORCEMENT",
+      "candidate_id": "P261::Fifth::B136::C02",
+      "gt_recovery": "TRUE_RECOVERY",
+      "deterministic_match_status": "CONFLICTING"
+    }
+  ],
+  "false_calls": [
+    {
+      "beam_id": "B145",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      }
+    },
+    {
+      "beam_id": "B186",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B186",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      }
+    },
+    {
+      "beam_id": "B139",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B139",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 2
+      }
+    },
+    {
+      "beam_id": "B143",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B143",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "OCR_CORRUPTED_STIRRUP"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "AMBIGUOUS": 1,
+        "DUPLICATE": 3
+      }
+    },
+    {
+      "beam_id": "B145",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B145",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "UNSUPPORTED": 1
+      }
+    },
+    {
+      "beam_id": "B147",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B147",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 1,
+      "gt_status_counts": {
+        "DUPLICATE": 1
+      }
+    },
+    {
+      "beam_id": "B46",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B46",
+      "stratum": "DIFFICULT",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "STIRRUP_TEXT_NO_OBJECT",
+        "OCR_CORRUPTED_STIRRUP",
+        "INCOMPLETE_PARSE"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "AMBIGUOUS": 3
+      }
+    },
+    {
+      "beam_id": "B127",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B127",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 3
+      }
+    },
+    {
+      "beam_id": "B162A",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B162A",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 2,
+        "GT_MATCH": 1
+      }
+    },
+    {
+      "beam_id": "B175",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B175",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "UNASSOCIATED_REINFORCEMENT"
+      ],
+      "candidate_count": 5,
+      "gt_status_counts": {
+        "DUPLICATE": 4,
+        "UNSUPPORTED": 1
+      }
+    },
+    {
+      "beam_id": "B152",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B152",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 3
+      }
+    },
+    {
+      "beam_id": "B176",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B176",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "DUPLICATE": 3
+      }
+    },
+    {
+      "beam_id": "B107",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B107",
+      "stratum": "NORMAL",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 3,
+      "gt_status_counts": {
+        "AMBIGUOUS": 2,
+        "DUPLICATE": 1
+      }
+    },
+    {
+      "beam_id": "B77",
+      "set_key": "Fifth",
+      "region_id": "P261::Fifth::B77",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 4,
+      "gt_status_counts": {
+        "DUPLICATE": 1,
+        "UNSUPPORTED": 3
+      }
+    },
+    {
+      "beam_id": "B14",
+      "set_key": "Fourth",
+      "region_id": "P261::Fourth::B14",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 6,
+      "gt_status_counts": {
+        "DUPLICATE": 4,
+        "GT_MATCH": 2
+      }
+    },
+    {
+      "beam_id": "B4",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B4",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 7,
+      "gt_status_counts": {
+        "DUPLICATE": 5,
+        "GT_MATCH": 2
+      }
+    },
+    {
+      "beam_id": "B67",
+      "set_key": "Sixth",
+      "region_id": "P261::Sixth::B67",
+      "stratum": "EASY",
+      "gate_decision": "CALL_VISION",
+      "reason_codes": [
+        "MISSING_DETERMINISTIC_OBJECT"
+      ],
+      "candidate_count": 5,
+      "gt_status_counts": {
+        "DUPLICATE": 4,
+        "GT_MATCH": 1
+      }
+    }
+  ],
+  "evidence": {
+    "examples": [
+      {
+        "example_class": "CALL_TRUE_RECOVERY",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE"
+        ],
+        "annotation_text": "3-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\call_true_recovery\\region_overlay.png"
+      },
+      {
+        "example_class": "CALL_DUPLICATE",
+        "beam_id": "B137",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE",
+          "MISSING_DETERMINISTIC_OBJECT"
+        ],
+        "annotation_text": "2-Y25",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "DUPLICATE",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\call_duplicate\\region_overlay.png"
+      },
+      {
+        "example_class": "CALL_UNSUPPORTED",
+        "beam_id": "B145",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "UNASSOCIATED_REINFORCEMENT"
+        ],
+        "annotation_text": "4-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "UNSUPPORTED",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\call_unsupported\\region_overlay.png"
+      },
+      {
+        "example_class": "SKIP_CORRECT",
+        "beam_id": "B100",
+        "set_key": "Fifth",
+        "stratum": "NORMAL",
+        "gate_decision": "SKIP_VISION",
+        "reason_codes": [
+          "MATCHING_OBJECT_EXISTS",
+          "COMPLETE_PARSE",
+          "STRONG_DETERMINISTIC_COVERAGE"
+        ],
+        "annotation_text": null,
+        "candidate_type": null,
+        "gt_match_status": null,
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\skip_correct\\region_overlay.png"
+      },
+      {
+        "example_class": "SKIP_FALSE_SKIP",
+        "beam_id": "B102",
+        "set_key": "Fourth",
+        "stratum": "NORMAL",
+        "gate_decision": "SKIP_VISION",
+        "reason_codes": [
+          "MATCHING_OBJECT_EXISTS",
+          "COMPLETE_PARSE",
+          "STRONG_DETERMINISTIC_COVERAGE"
+        ],
+        "annotation_text": "3-Y20",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\skip_false_skip\\region_overlay.png"
+      },
+      {
+        "example_class": "STIRRUP_GAP",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE"
+        ],
+        "annotation_text": "2L-Y8@\\X100/150/100C/C",
+        "candidate_type": "STIRRUP",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\stirrup_gap\\region_overlay.png"
+      },
+      {
+        "example_class": "LONGITUDINAL_GAP",
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "stratum": "DIFFICULT",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "STIRRUP_TEXT_NO_OBJECT",
+          "OCR_CORRUPTED_STIRRUP",
+          "INCOMPLETE_PARSE"
+        ],
+        "annotation_text": "3-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\longitudinal_gap\\region_overlay.png"
+      },
+      {
+        "example_class": "NORMAL_OR_EASY_RECOVERY",
+        "beam_id": "B173",
+        "set_key": "Fifth",
+        "stratum": "NORMAL",
+        "gate_decision": "CALL_VISION",
+        "reason_codes": [
+          "MISSING_DETERMINISTIC_OBJECT"
+        ],
+        "annotation_text": "3-Y16",
+        "candidate_type": "LONGITUDINAL_REINFORCEMENT",
+        "gt_match_status": "TRUE_RECOVERY",
+        "overlay_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\evidence\\normal_or_easy_recovery\\region_overlay.png"
+      }
+    ],
+    "count": 8,
+    "missing_classes": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 21,
+    "total": 21,
+    "results": [
+      {
+        "name": "matching_object_skip",
+        "pass": true
+      },
+      {
+        "name": "complete_parse_skip",
+        "pass": true
+      },
+      {
+        "name": "stirrup_text_no_object_call",
+        "pass": true
+      },
+      {
+        "name": "ocr_stirrup_call",
+        "pass": true
+      },
+      {
+        "name": "incomplete_stirrup_call",
+        "pass": true
+      },
+      {
+        "name": "missing_longitudinal_call",
+        "pass": true
+      },
+      {
+        "name": "complete_longitudinal_skip",
+        "pass": true
+      },
+      {
+        "name": "longitudinal_object_shortfall_call",
+        "pass": true
+      },
+      {
+        "name": "matching_object_unassociated_skip",
+        "pass": true
+      },
+      {
+        "name": "uncertain_association_hold",
+        "pass": true
+      },
+      {
+        "name": "other_beam_hold",
+        "pass": true
+      },
+      {
+        "name": "b56_b57_control_fixtures",
+        "pass": true
+      },
+      {
+        "name": "stratum_not_used",
+        "pass": true
+      },
+      {
+        "name": "gate_runtime_no_gt_tokens",
+        "pass": true
+      },
+      {
+        "name": "frozen_manifest_not_resampled",
+        "pass": true
+      },
+      {
+        "name": "replay_skip_drops_candidates",
+        "pass": true
+      },
+      {
+        "name": "metrics_reduction_retention_false_paths",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "no_production_mutation",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "P2.6.1_regression",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.2"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "production_output_changes": false,
+    "engineering_changes": "NONE",
+    "note": "P2.6.2 writes only isolated selective-gate shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": []
+  },
+  "independent_review": {
+    "reviewer": "Claude Sonnet 4.6",
+    "status": "COMPLETE",
+    "blocker": [],
+    "high": [
+      {
+        "id": "HIGH-1",
+        "title": "MATCHING_OBJECT_EXISTS skip is quantity-blind for longitudinal bars",
+        "resolution": "ADDRESSED_V1_1",
+        "detail": "V1.1 adds per-diameter longitudinal annotation vs R1.3 object-count shortfall (production-visible callout count, not GT). Two same-diameter callouts vs one object now CALL MISSING_DETERMINISTIC_OBJECT."
+      },
+      {
+        "id": "HIGH-2",
+        "title": "HOLD rate 53% (40/75) from any unassociated annotation",
+        "resolution": "ADDRESSED_V1_1",
+        "detail": "HOLD/UNASSOCIATED now requires matching_object_count==0. Beams with matching deterministic objects and rejected annotations SKIP per section 11 instead of HOLD."
+      }
+    ],
+    "medium": [
+      {
+        "id": "MEDIUM-1",
+        "title": "Precision target comparison vs full-sample baseline is methodologically strict",
+        "resolution": "ACCEPTED",
+        "detail": "classify_gate still uses the prompt's full-sample precision target. Gated precision is also reported by stratum so DIFFICULT-only comparison remains available."
+      },
+      {
+        "id": "MEDIUM-2",
+        "title": "STATUS tests 0/0 after --skip-unit-tests",
+        "resolution": "ADDRESSED",
+        "detail": "Orchestrator now reloads existing unit_tests.json when tests are skipped."
+      }
+    ],
+    "low": [
+      {
+        "id": "LOW-1",
+        "title": "why_gate_skipped field name is used for HOLD as well as SKIP",
+        "resolution": "ACCEPTED"
+      },
+      {
+        "id": "LOW-2",
+        "title": "runtime_leakage_scan uses a fixed module list",
+        "resolution": "ACCEPTED"
+      }
+    ],
+    "item_verdicts": {
+      "gt_leakage": "PASS",
+      "estimator_leakage": "PASS",
+      "pre_vision_placement": "PASS",
+      "b56_b57_controls": "PASS",
+      "false_skip_methodology": "PASS",
+      "false_call_methodology": "PASS",
+      "duplicate_calculation": "PASS",
+      "stratification_interpretation": "PASS \u2014 DIFFICULT\u2194CALL correlation is shared production signals, not stratum leakage",
+      "stirrup_selectivity": "PASS",
+      "production_firewall": "PASS"
+    },
+    "measurement_issues": false,
+    "recommended_decision": "REFINE_SELECTIVE_GATE",
+    "v1_1_replay": {
+      "call_reduction": 0.493333,
+      "recovery_retention": 0.846154,
+      "gated_precision": 0.711864,
+      "gated_unsupported": 0.09322,
+      "gated_duplicate_rate": 0.533898,
+      "hold_beams": 0,
+      "false_skips": 4,
+      "false_calls": 17,
+      "note": "V1.1 meets call-reduction, retention, and duplicate targets. Precision and unsupported remain worse than the full-sample P2.6.1 baseline, so the phase stays REFINE_SELECTIVE_GATE. Not PRODUCTION_READY."
+    },
+    "notes": "Independent review found 0 BLOCKER. HIGH-1 and HIGH-2 were production-signal defects, not GT-tuned exceptions; addressed in GATE_VERSION P262_SELECTIVE_GATE_V1_1 and frozen replay rerun. Residual decision follows gated-replay KPIs. Not PRODUCTION_READY. Engineering recompute is not authorized by this phase."
+  },
+  "decision": "REFINE_SELECTIVE_GATE",
+  "strength": "PROMISING",
+  "live_cost_usd": "not run",
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\P2.6.2_STATUS.md",
+    "metrics": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\reports\\metrics.json"
+  }
+}

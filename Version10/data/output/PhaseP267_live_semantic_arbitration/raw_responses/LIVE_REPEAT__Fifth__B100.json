@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B100",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "17.677697500010254",
+  "usage": {
+    "input_tokens": "3313",
+    "output_tokens": "693"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_TOP_BARS\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Annotation '3-Y25' with leader pointing upward to top reinforcement bars\",\n      \"Leader tip clearly terminates at the top longitudinal bars shown in the beam section\",\n      \"Two parallel lines visible at top of beam section representing longitudinal reinforcement\",\n      \"No additional bars or reinforcement layers visible that would require separate specification\",\n      \"Beam identifier 'B100' matches context\",\n      \"Additional annotation '3LY10@100/125/100C/C' visible but refers to different reinforcement type (likely links/stirrups)\"\n    ],\n    \"deterministic_model_state\": [\n      \"Existing top reinforcement: 3Y25 (bar_id: R13-B100-TOP_MAIN-09c25c)\",\n      \"Exact match: quantity=3, diameter=25mm\",\n      \"No bottom reinforcement populated\",\n      \"Role coverage status indicates gap requiring vision, but single spec already matched\"\n    ],\n    \"spatial_analysis\": [\n      \"Leader tip in TOP_ZONE (tip_in_top_zone: true)\",\n      \"Leader direction: UP, pointing to visible top bars\",\n      \"Distance from top zone: 0.0mm (at boundary)\",\n      \"No physical bar geometry conflict noted\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"parsed_specification\": \"3 bars of Y25 (25mm diameter)\",\n    \"likely_intent\": \"Callout identifying the top longitudinal reinforcement already shown in section\",\n    \"graphical_association\": \"Leader clearly associates annotation with the top layer bars visible in the beam section drawing\"\n  },\n  \"uncertainty_notes\": [\n    \"Deterministic model shows 'ROLE_COVERAGE_GAP' and 'ROLE_GAP_REQUIRES_VISION', but this appears to be a conservative flag rather than evidence of missing reinforcement\",\n    \"The single specification (3-Y25) is already fully represented in existing_top_reinforcement with exact quantity and diameter match\",\n    \"No visual evidence in the image of additional bars or a second layer that would justify treating this as distinct reinforcement\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

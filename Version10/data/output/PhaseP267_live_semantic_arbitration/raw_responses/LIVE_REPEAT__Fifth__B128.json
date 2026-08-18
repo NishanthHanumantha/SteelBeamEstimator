@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B128",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "15.162035300003481",
+  "usage": {
+    "input_tokens": "3682",
+    "output_tokens": "725"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"NO_VISUAL_EVIDENCE_OF_ADDITIONAL_BARS\",\n    \"LEADER_POINTS_TO_EXISTING_TOP_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"beam_cross_section\": \"Rectangular beam section shown with green highlighted perimeter representing the beam outline\",\n      \"visible_reinforcement\": \"Dark blue lines at top and bottom of section representing longitudinal bars\",\n      \"annotation_location\": \"3-Y16 annotation with leader pointing upward to the bottom face of the top longitudinal reinforcement layer\",\n      \"leader_behavior\": \"Leader tip terminates at the bottom edge of the top reinforcement layer, indicating it is calling out the top bars\",\n      \"no_additional_bars_visible\": \"No additional bar layers or distinct reinforcement groups visible beyond the top and bottom layers already shown\"\n    },\n    \"deterministic_match\": {\n      \"existing_top_spec\": \"3Y16 (3 bars of 16mm diameter)\",\n      \"candidate_spec\": \"3-Y16 (3 bars of 16mm diameter)\",\n      \"exact_match\": true,\n      \"populated_layer\": \"TOP\"\n    },\n    \"spatial_alignment\": {\n      \"leader_tip_zone\": \"BOTTOM zone (tip_in_bottom_zone: true)\",\n      \"leader_direction\": \"UP\",\n      \"interpretation\": \"Leader originates below and points upward to top reinforcement layer, consistent with calling out top bars from below\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"notation\": \"3-Y16\",\n    \"quantity\": 3,\n    \"diameter_mm\": 16,\n    \"interpreted_role\": \"TOP_MAIN\",\n    \"callout_purpose\": \"Repeat/duplicate callout of existing top longitudinal reinforcement already represented in deterministic model as R13-B128-TOP_MAIN-3150a4\"\n  },\n  \"uncertainty_notes\": [\n    \"Spatial context indicates leader tip is in bottom zone, but leader direction is UP pointing to top bars - this is consistent with a callout from below\",\n    \"No visual evidence of additional distinct reinforcement layer or bars beyond what is already modeled\",\n    \"The exact quantity and diameter match with existing top reinforcement strongly supports duplicate classification\",\n    \"Confidence reduced slightly from 1.0 due to spatial context label being 'SUPPORTING_EVIDENCE_ONLY' rather than definitive\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

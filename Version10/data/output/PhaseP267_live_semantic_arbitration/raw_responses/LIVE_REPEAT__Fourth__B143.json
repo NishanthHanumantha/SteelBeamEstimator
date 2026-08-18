@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B143",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "17.461550899999565",
+  "usage": {
+    "input_tokens": "3859",
+    "output_tokens": "817"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"EXISTING_TOP_OBJECTS_PRESENT\",\n    \"LEADER_TIPS_POINT_TO_TOP_BARS\",\n    \"NO_EVIDENCE_OF_DISTINCT_LAYER\",\n    \"DETERMINISTIC_ALREADY_ACCEPTED\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"4-Y20_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\",\n      \"2-Y12_annotation\": \"Leader points upward to top reinforcement layer shown as dark blue bars. Annotation positioned above beam section.\",\n      \"bar_visualization\": \"Dark blue bars visible at top of beam section representing top longitudinal reinforcement\",\n      \"no_bottom_callouts\": \"No annotations or leaders pointing to bottom of beam section\",\n      \"beam_outline\": \"Green outline shows beam cross-section with reinforcement concentrated at top\"\n    },\n    \"deterministic_model\": {\n      \"existing_top_bars\": [\n        \"4Y20 (TOP_EXTRA)\",\n        \"2Y12 (TOP_EXTRA)\",\n        \"3Y25 (TOP_MAIN)\"\n      ],\n      \"exact_match_4Y20\": true,\n      \"exact_match_2Y12\": true,\n      \"total_top_quantity\": 9,\n      \"populated_layer\": \"TOP\"\n    },\n    \"spatial_analysis\": {\n      \"4-Y20_nearest_bar\": \"512mm from TOP family bar\",\n      \"2-Y12_nearest_bar\": \"547mm from TOP family bar\",\n      \"leader_directions\": \"Both UP\",\n      \"tip_zones\": \"Both at or near top zone boundary\",\n      \"position_zones\": \"Both TOP_ZONE\"\n    }\n  },\n  \"annotation_interpretation\": {\n    \"4-Y20\": {\n      \"represents\": \"Callout for existing 4Y20 top reinforcement bars visible in section\",\n      \"role\": \"TOP reinforcement label\",\n      \"matches_existing\": \"R13-B143-TOP_EXTRA-b6b812\"\n    },\n    \"2-Y12\": {\n      \"represents\": \"Callout for existing 2Y12 top reinforcement bars visible in section\",\n      \"role\": \"TOP reinforcement label\",\n      \"matches_existing\": \"R13-B143-TOP_EXTRA-947e24\"\n    }\n  },\n  \"uncertainty_notes\": [\n    \"Both annotations have exact quantity and diameter matches in existing top reinforcement\",\n    \"Leader tips point upward to visible top bars in the beam section\",\n    \"No visual evidence of bottom layer reinforcement or callouts\",\n    \"Deterministic model already accepted these specifications as TOP_EXTRA\",\n    \"Spatial context confirms TOP zone positioning for both annotations\",\n    \"No conflicting evidence suggesting these represent additional distinct reinforcement\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

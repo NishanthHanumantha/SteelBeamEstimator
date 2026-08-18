@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B139",
+  "pass_id": "LIVE_REPEAT",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "20.555223699993803",
+  "usage": {
+    "input_tokens": "4796",
+    "output_tokens": "999"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"EXISTING_TOP_LAYER_OBJECTS\",\n    \"LEADER_TIPS_POINT_TO_TOP_BARS\",\n    \"NO_BOTTOM_REINFORCEMENT_PRESENT\",\n    \"VISUAL_CONFIRMATION_TOP_PLACEMENT\"\n  ],\n  \"evidence\": {\n    \"image_observations\": {\n      \"5-Y16_annotation\": \"Leader points upward to top fiber reinforcement layer, clearly indicating top bars\",\n      \"5-Y20_annotation\": \"Leader points upward to bottom of top fiber reinforcement layer, indicating top bars at lower position within top zone\",\n      \"beam_section\": \"Shows clear top reinforcement bars (dark blue lines) at two levels in top zone. No bottom reinforcement visible.\",\n      \"green_leaders\": \"Two green leader lines both point upward to top zone bars, confirming top layer association\"\n    },\n    \"deterministic_model\": {\n      \"existing_top_specs\": [\n        \"5Y20 (20mm, qty 5)\",\n        \"5Y16#L (16mm, qty 5)\",\n        \"5Y16#R (16mm, qty 5)\"\n      ],\n      \"total_top_quantity\": 15,\n      \"total_top_16mm\": 10,\n      \"total_top_20mm\": 5,\n      \"existing_bottom_specs\": [],\n      \"annotation_specs\": [\n        \"5-Y16 (16mm, qty 5)\",\n        \"5-Y20 (20mm, qty 5)\"\n      ]\n    },\n    \"spatial_analysis\": {\n      \"5-Y16_position\": \"Top zone, leader tip in top zone, 296.88mm from nearest top bar\",\n      \"5-Y20_position\": \"Top zone (despite being near bottom zone boundary), leader tip in bottom zone but pointing UP to top bars, 342.12mm from nearest top bar\",\n      \"annotation_cluster_separation\": true,\n      \"both_annotations_near_top_bars\": true\n    },\n    \"matching_analysis\": {\n      \"5-Y16_match\": \"Matches existing 5Y16#L and 5Y16#R (total 10 bars of 16mm in top)\",\n      \"5-Y20_match\": \"Matches existing 5Y20 (5 bars of 20mm in top)\",\n      \"exact_diameter_quantity_match\": true\n    }\n  },\n  \"annotation_interpretation\": {\n    \"5-Y16\": {\n      \"interpreted_role\": \"TOP\",\n      \"interpreted_quantity\": 5,\n      \"interpreted_diameter_mm\": 16,\n      \"represents\": \"Callout for top layer 16mm bars, already represented by 5Y16#L and 5Y16#R objects\"\n    },\n    \"5-Y20\": {\n      \"interpreted_role\": \"TOP\",\n      \"interpreted_quantity\": 5,\n      \"interpreted_diameter_mm\": 20,\n      \"represents\": \"Callout for top layer 20mm bars, already represented by 5Y20 object\"\n    }\n  },\n  \"uncertainty_notes\": [\n    \"The 5-Y20 annotation is positioned near the bottom zone boundary, but the leader clearly points UPWARD to top bars, not downward to bottom bars\",\n    \"The deterministic model shows 10 bars of Y16 (split as #L and #R), while annotation shows 5-Y16. This likely represents one of the two groups, making it a partial duplicate callout\",\n    \"No bottom reinforcement exists in the deterministic model, and the image shows no bottom bars, confirming both annotations refer to top layer only\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_REPEAT"
+}

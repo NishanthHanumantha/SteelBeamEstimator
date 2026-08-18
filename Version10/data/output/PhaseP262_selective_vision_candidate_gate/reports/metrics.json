@@ -1,0 +1,211 @@
+{
+  "label": "Gated replay using frozen P2.6.1 Vision responses. Not a new Vision benchmark.",
+  "TOTAL_BEAMS": 75,
+  "CALL_BEAMS": 38,
+  "SKIP_BEAMS": 37,
+  "HOLD_BEAMS": 0,
+  "CALL_RATE": 0.506667,
+  "CALL_REDUCTION": 0.493333,
+  "TOTAL_BASELINE_VISION_CANDIDATES": 207,
+  "GATED_VISION_CANDIDATES": 118,
+  "DUPLICATES_BASELINE": 136,
+  "DUPLICATES_GATED": 63,
+  "DUPLICATE_RATE_BASELINE": 0.657005,
+  "DUPLICATE_RATE_GATED": 0.533898,
+  "BASELINE_PRECISION": 0.73913,
+  "GATED_PRECISION": 0.711864,
+  "BASELINE_UNSUPPORTED_RATE": 0.062802,
+  "GATED_UNSUPPORTED_RATE": 0.09322,
+  "BASELINE_AMBIGUOUS_RATE": 0.072464,
+  "GATED_AMBIGUOUS_RATE": 0.084746,
+  "BASELINE_TRUE_RECOVERIES": 26,
+  "GATED_TRUE_RECOVERIES": 22,
+  "RECOVERIES_RETAINED": 22,
+  "RECOVERIES_LOST": 4,
+  "RECOVERY_RETENTION_RATE": 0.846154,
+  "FALSE_SKIPS": 4,
+  "FALSE_CALLS": 17,
+  "FALSE_CALL_RATE": 0.447368,
+  "RECOVERY_RETENTION_PER_VISION_CALL": 0.578947,
+  "TRUE_RECOVERIES_PER_100_VISION_CALLS_BASELINE": 34.6667,
+  "TRUE_RECOVERIES_PER_100_VISION_CALLS_GATED": 57.8947,
+  "TRUE_RECOVERIES_PER_CALL_BASELINE": 0.346667,
+  "by_stratum": {
+    "DIFFICULT": {
+      "beams": 25,
+      "call": 25,
+      "skip": 0,
+      "hold": 0,
+      "call_rate": 1.0,
+      "calls_saved": 0,
+      "baseline": {
+        "candidates": 67,
+        "duplicates": 27,
+        "true_recoveries": 19,
+        "unsupported": 7,
+        "ambiguous": 8,
+        "precision": 0.671642,
+        "duplicate_rate": 0.402985,
+        "unsupported_rate": 0.104478,
+        "ambiguous_rate": 0.119403
+      },
+      "gated": {
+        "candidates": 67,
+        "duplicates": 27,
+        "true_recoveries": 19,
+        "unsupported": 7,
+        "ambiguous": 8,
+        "precision": 0.671642,
+        "duplicate_rate": 0.402985,
+        "unsupported_rate": 0.104478,
+        "ambiguous_rate": 0.119403
+      },
+      "recoveries_retained": 19,
+      "recoveries_lost": 0
+    },
+    "NORMAL": {
+      "beams": 25,
+      "call": 9,
+      "skip": 16,
+      "hold": 0,
+      "call_rate": 0.36,
+      "calls_saved": 16,
+      "baseline": {
+        "candidates": 62,
+        "duplicates": 46,
+        "true_recoveries": 6,
+        "unsupported": 3,
+        "ambiguous": 5,
+        "precision": 0.758065,
+        "duplicate_rate": 0.741935,
+        "unsupported_rate": 0.048387,
+        "ambiguous_rate": 0.080645
+      },
+      "gated": {
+        "candidates": 29,
+        "duplicates": 22,
+        "true_recoveries": 3,
+        "unsupported": 1,
+        "ambiguous": 2,
+        "precision": 0.724138,
+        "duplicate_rate": 0.758621,
+        "unsupported_rate": 0.034483,
+        "ambiguous_rate": 0.068966
+      },
+      "recoveries_retained": 3,
+      "recoveries_lost": 3
+    },
+    "EASY": {
+      "beams": 25,
+      "call": 4,
+      "skip": 21,
+      "hold": 0,
+      "call_rate": 0.16,
+      "calls_saved": 21,
+      "baseline": {
+        "candidates": 78,
+        "duplicates": 63,
+        "true_recoveries": 1,
+        "unsupported": 3,
+        "ambiguous": 2,
+        "precision": 0.782051,
+        "duplicate_rate": 0.807692,
+        "unsupported_rate": 0.038462,
+        "ambiguous_rate": 0.025641
+      },
+      "gated": {
+        "candidates": 22,
+        "duplicates": 14,
+        "true_recoveries": 0,
+        "unsupported": 3,
+        "ambiguous": 0,
+        "precision": 0.818182,
+        "duplicate_rate": 0.636364,
+        "unsupported_rate": 0.136364,
+        "ambiguous_rate": 0.0
+      },
+      "recoveries_retained": 0,
+      "recoveries_lost": 1
+    }
+  },
+  "by_candidate_type": {
+    "STIRRUP": {
+      "baseline_candidates": 62,
+      "gated_candidates": 32,
+      "baseline_duplicates": 40,
+      "gated_duplicates": 11,
+      "baseline_true_recoveries": 18,
+      "gated_true_recoveries": 18,
+      "retained_recoveries": 18,
+      "lost_recoveries": 0
+    },
+    "LONGITUDINAL_REINFORCEMENT": {
+      "baseline_candidates": 145,
+      "gated_candidates": 86,
+      "baseline_duplicates": 96,
+      "gated_duplicates": 52,
+      "baseline_true_recoveries": 8,
+      "gated_true_recoveries": 4,
+      "retained_recoveries": 4,
+      "lost_recoveries": 4
+    },
+    "SIDE_FACE_REINFORCEMENT": {
+      "baseline_candidates": 0,
+      "gated_candidates": 0,
+      "baseline_duplicates": 0,
+      "gated_duplicates": 0,
+      "baseline_true_recoveries": 0,
+      "gated_true_recoveries": 0,
+      "retained_recoveries": 0,
+      "lost_recoveries": 0
+    },
+    "OTHER": {
+      "baseline_candidates": 0,
+      "gated_candidates": 0,
+      "baseline_duplicates": 0,
+      "gated_duplicates": 0,
+      "baseline_true_recoveries": 0,
+      "gated_true_recoveries": 0,
+      "retained_recoveries": 0,
+      "lost_recoveries": 0
+    }
+  },
+  "call_reason_counts": {
+    "STIRRUP_TEXT_NO_OBJECT": 19,
+    "OCR_CORRUPTED_STIRRUP": 21,
+    "INCOMPLETE_PARSE": 19,
+    "MISSING_DETERMINISTIC_OBJECT": 15,
+    "UNASSOCIATED_REINFORCEMENT": 5
+  },
+  "skip_reason_counts": {
+    "MATCHING_OBJECT_EXISTS": 37,
+    "COMPLETE_PARSE": 35,
+    "STRONG_DETERMINISTIC_COVERAGE": 37
+  },
+  "baseline": {
+    "candidates": 207,
+    "duplicates": 136,
+    "true_recoveries": 26,
+    "unsupported": 13,
+    "ambiguous": 15,
+    "precision": 0.73913,
+    "duplicate_rate": 0.657005,
+    "unsupported_rate": 0.062802,
+    "ambiguous_rate": 0.072464
+  },
+  "gated": {
+    "candidates": 118,
+    "duplicates": 63,
+    "true_recoveries": 22,
+    "unsupported": 11,
+    "ambiguous": 10,
+    "precision": 0.711864,
+    "duplicate_rate": 0.533898,
+    "unsupported_rate": 0.09322,
+    "ambiguous_rate": 0.084746
+  },
+  "hypothetical_baseline_calls": 75,
+  "gated_calls": 38,
+  "calls_saved": 37,
+  "replay_cost_usd": 0.0
+}

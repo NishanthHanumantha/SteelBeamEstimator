@@ -1,0 +1,49 @@
+{
+  "frozen": true,
+  "resampled": false,
+  "sample": {
+    "seed": 2611101,
+    "target_beams": 75,
+    "per_stratum_target": 25,
+    "selected": 75,
+    "universe_scored": 404,
+    "eligible_with_crop": 362,
+    "available_by_stratum": {
+      "DIFFICULT": 52,
+      "NORMAL": 195,
+      "EASY": 115
+    },
+    "selected_by_stratum": {
+      "DIFFICULT": 25,
+      "NORMAL": 25,
+      "EASY": 25
+    },
+    "selected_by_set": {
+      "Fifth": 27,
+      "Fourth": 30,
+      "Sixth": 18
+    },
+    "gt_used_for_selection": false,
+    "estimator_used_for_selection": false,
+    "drawing_sets": [
+      "Fourth",
+      "Fifth",
+      "Sixth"
+    ],
+    "drawing_visibility": "UNSEEN",
+    "note": "Fourth/Fifth/Sixth are QA.3.0 unseen sets. First Set (known) was not sampled.",
+    "p26_overlap_in_sample": 5
+  },
+  "replay": {
+    "label": "Gated replay using frozen P2.6.1 Vision responses.",
+    "not_a_new_vision_benchmark": true,
+    "call_beams": 37,
+    "skip_beams": 38,
+    "hold_beams": 0,
+    "gated_candidates": 101,
+    "suppressed_candidates": 106
+  },
+  "gate_version": "P264_SELECTIVE_ROLE_GAP_GATE_V1_0",
+  "cached_source": "PhaseP261_stratified_vision_candidate_recovery",
+  "live_vision": false
+}

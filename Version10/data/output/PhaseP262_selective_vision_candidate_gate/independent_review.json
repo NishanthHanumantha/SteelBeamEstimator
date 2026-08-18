@@ -1,0 +1,71 @@
+{
+  "reviewer": "Claude Sonnet 4.6",
+  "status": "COMPLETE",
+  "blocker": [],
+  "high": [
+    {
+      "id": "HIGH-1",
+      "title": "MATCHING_OBJECT_EXISTS skip is quantity-blind for longitudinal bars",
+      "resolution": "ADDRESSED_V1_1",
+      "detail": "V1.1 adds per-diameter longitudinal annotation vs R1.3 object-count shortfall (production-visible callout count, not GT). Two same-diameter callouts vs one object now CALL MISSING_DETERMINISTIC_OBJECT."
+    },
+    {
+      "id": "HIGH-2",
+      "title": "HOLD rate 53% (40/75) from any unassociated annotation",
+      "resolution": "ADDRESSED_V1_1",
+      "detail": "HOLD/UNASSOCIATED now requires matching_object_count==0. Beams with matching deterministic objects and rejected annotations SKIP per section 11 instead of HOLD."
+    }
+  ],
+  "medium": [
+    {
+      "id": "MEDIUM-1",
+      "title": "Precision target comparison vs full-sample baseline is methodologically strict",
+      "resolution": "ACCEPTED",
+      "detail": "classify_gate still uses the prompt's full-sample precision target. Gated precision is also reported by stratum so DIFFICULT-only comparison remains available."
+    },
+    {
+      "id": "MEDIUM-2",
+      "title": "STATUS tests 0/0 after --skip-unit-tests",
+      "resolution": "ADDRESSED",
+      "detail": "Orchestrator now reloads existing unit_tests.json when tests are skipped."
+    }
+  ],
+  "low": [
+    {
+      "id": "LOW-1",
+      "title": "why_gate_skipped field name is used for HOLD as well as SKIP",
+      "resolution": "ACCEPTED"
+    },
+    {
+      "id": "LOW-2",
+      "title": "runtime_leakage_scan uses a fixed module list",
+      "resolution": "ACCEPTED"
+    }
+  ],
+  "item_verdicts": {
+    "gt_leakage": "PASS",
+    "estimator_leakage": "PASS",
+    "pre_vision_placement": "PASS",
+    "b56_b57_controls": "PASS",
+    "false_skip_methodology": "PASS",
+    "false_call_methodology": "PASS",
+    "duplicate_calculation": "PASS",
+    "stratification_interpretation": "PASS — DIFFICULT↔CALL correlation is shared production signals, not stratum leakage",
+    "stirrup_selectivity": "PASS",
+    "production_firewall": "PASS"
+  },
+  "measurement_issues": false,
+  "recommended_decision": "REFINE_SELECTIVE_GATE",
+  "v1_1_replay": {
+    "call_reduction": 0.493333,
+    "recovery_retention": 0.846154,
+    "gated_precision": 0.711864,
+    "gated_unsupported": 0.09322,
+    "gated_duplicate_rate": 0.533898,
+    "hold_beams": 0,
+    "false_skips": 4,
+    "false_calls": 17,
+    "note": "V1.1 meets call-reduction, retention, and duplicate targets. Precision and unsupported remain worse than the full-sample P2.6.1 baseline, so the phase stays REFINE_SELECTIVE_GATE. Not PRODUCTION_READY."
+  },
+  "notes": "Independent review found 0 BLOCKER. HIGH-1 and HIGH-2 were production-signal defects, not GT-tuned exceptions; addressed in GATE_VERSION P262_SELECTIVE_GATE_V1_1 and frozen replay rerun. Residual decision follows gated-replay KPIs. Not PRODUCTION_READY. Engineering recompute is not authorized by this phase."
+}

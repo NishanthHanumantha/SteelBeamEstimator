@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B100",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "15.097815799992532",
+  "usage": {
+    "input_tokens": "3313",
+    "output_tokens": "614"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_TOP_BARS\",\n    \"SINGLE_SPEC_ALREADY_POPULATED\",\n    \"NO_EVIDENCE_OF_ADDITIONAL_LAYER\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Beam B100 section shows two horizontal lines at top representing top reinforcement bars\",\n      \"Green leader line points upward from annotation '3-Y25' to the top bars\",\n      \"Leader tip terminates at the top reinforcement layer\",\n      \"No additional bars visible at bottom or elsewhere that would require this annotation\",\n      \"The annotation '3-Y25' is positioned below the beam section with clear leader association to top bars\"\n    ],\n    \"deterministic_alignment\": [\n      \"Deterministic model shows existing_top_reinforcement: 3Y25 (diameter 25mm, quantity 3)\",\n      \"Candidate notation specifies: 3-Y25 (diameter 25mm, quantity 3)\",\n      \"Exact match in both quantity and diameter\",\n      \"populated_layer is TOP with no bottom reinforcement\",\n      \"role_gap_reason indicates SINGLE_SPEC_NO_EXTRAS_OR_REJECTED_MATCH\"\n    ],\n    \"spatial_alignment\": [\n      \"Leader tip is in TOP_ZONE (tip_in_top_zone: true)\",\n      \"Leader direction is UP, pointing toward top bars\",\n      \"Annotation position_zone: TOP_ZONE\",\n      \"No physical bar geometry conflicts noted\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"parsed_quantity\": 3,\n    \"parsed_diameter_mm\": 25,\n    \"inferred_role\": \"TOP_MAIN\",\n    \"notation_format\": \"STANDARD_BAR_CALLOUT\"\n  },\n  \"uncertainty_notes\": [\n    \"No ambiguity detected - clear visual and contextual alignment\",\n    \"Leader geometry unambiguously points to existing top bars\",\n    \"No evidence of missing reinforcement specification\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B101",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "17.643510299996706",
+  "usage": {
+    "input_tokens": "3117",
+    "output_tokens": "674"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP_MAIN\",\n    \"QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_TIP_IN_TOP_ZONE\",\n    \"NEAREST_BAR_TOP_FAMILY\",\n    \"NO_BOTTOM_REINFORCEMENT_EXISTS\",\n    \"SINGLE_CALLOUT_PATTERN\"\n  ],\n  \"evidence\": {\n    \"image_evidence\": \"The annotation '3-Y20' is visible in the image with a leader pointing upward to the top zone of beam B101. The green highlighted region shows existing top reinforcement bars. The annotation appears to be a standard callout for the main top reinforcement.\",\n    \"existing_match\": \"Deterministic model shows existing top reinforcement bar 'R13-B101-TOP_MAIN-0fbf87' with label '3Y20', diameter 20mm, quantity 3, which exactly matches the annotation '3-Y20'.\",\n    \"spatial_alignment\": \"The annotation leader tip is in the top zone (tip_in_top_zone: true, position_zone: TOP_ZONE). The nearest bar is 320mm away and has family UNKNOWN but the deterministic model clearly identifies a TOP family bar with matching specification.\",\n    \"no_conflict_indicators\": \"No bottom reinforcement exists in the deterministic model. The annotation does not indicate a different location, additional bars, or conflicting specification. The populated_layer is TOP with 9 total bars (3x20mm + 3x16mm + 3x16mm).\"\n  },\n  \"annotation_interpretation\": {\n    \"parsed_quantity\": 3,\n    \"parsed_diameter_mm\": 20,\n    \"parsed_text\": \"3-Y20\",\n    \"inferred_role\": \"TOP_MAIN\",\n    \"location_indicators\": \"Leader pointing upward to top zone, annotation positioned above beam outline\"\n  },\n  \"uncertainty_notes\": \"The nearest bar shows family UNKNOWN with 320mm distance, which introduces minor uncertainty. However, the deterministic model clearly shows a TOP_MAIN bar (R13-B101-TOP_MAIN-0fbf87) with exact matching specification (3Y20, 20mm diameter, quantity 3). The spatial context strongly supports this is a callout for existing top reinforcement. The annotation pattern is consistent with a single main reinforcement callout rather than indicating additional distinct reinforcement.\"\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

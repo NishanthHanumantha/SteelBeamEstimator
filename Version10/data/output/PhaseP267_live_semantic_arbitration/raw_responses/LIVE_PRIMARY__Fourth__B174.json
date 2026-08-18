@@ -1,0 +1,18 @@
+{
+  "set_key": "Fourth",
+  "beam_id": "B174",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "22.489888399999472",
+  "usage": {
+    "input_tokens": "5035",
+    "output_tokens": "804"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.88,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"IDENTICAL_SPECIFICATION_MATCH\",\n    \"MULTIPLE_CALLOUTS_SAME_BARS\",\n    \"EXISTING_TOP_LAYER_MATCH\",\n    \"NO_EVIDENCE_ADDITIONAL_BARS\",\n    \"LEADER_TIPS_POINT_TO_SAME_BARS\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Two annotations labeled '4-Y16' are visible in the beam section\",\n      \"Upper annotation points downward to top longitudinal bars\",\n      \"Lower annotation points upward to the same top longitudinal bars\",\n      \"Both leader tips target the same set of top reinforcement bars\",\n      \"No distinct separate bar groups visible in the section\",\n      \"The beam section shows a single layer of top bars being called out twice\",\n      \"No additional bars visible that would justify a second distinct specification\"\n    ],\n    \"deterministic_model_state\": [\n      \"Existing top reinforcement: 4Y16 (bar_id: R13-B174-TOP_MAIN-57b611)\",\n      \"Deterministic model has accepted 2 instances of the same 4-Y16 specification\",\n      \"Both annotations have identical diameter (16mm) and quantity (4)\",\n      \"Model shows populated_layer: TOP with 4 bars of 16mm diameter\",\n      \"No bottom reinforcement represented\",\n      \"Role coverage status indicates ROLE_GAP_REQUIRES_VISION due to repeated acceptance\"\n    ],\n    \"spatial_analysis\": [\n      \"Both annotations are in different vertical positions but reference the same bars\",\n      \"Leader tips point to top zone from opposite directions (one DOWN, one UP)\",\n      \"Spatial context indicates ANNOTATION_CLUSTER_SEPARATION and REPEATED_SEPARATE_LOCATION\",\n      \"No physical bar geometry available to distinguish separate bar groups\",\n      \"Both annotations target the same physical reinforcement layer\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"specification\": \"4-Y16 (4 bars of 16mm diameter)\",\n    \"apparent_intent\": \"Multiple callouts of the same top longitudinal reinforcement for clarity or visibility from different drawing views\",\n    \"bars_referenced\": \"Single group of 4Y16 top bars already represented in deterministic model\",\n    \"duplication_pattern\": \"Two separate annotations calling out the same physical bars from different positions\"\n  },\n  \"uncertainty_notes\": [\n    \"No physical bar geometry available to definitively confirm single vs. multiple bar groups\",\n    \"Deterministic model accepted both instances, creating ambiguity in the role assignment\",\n    \"However, visual inspection shows both leader tips clearly pointing to the same top bar layer\",\n    \"No visual evidence of additional distinct bars that would warrant a second 4-Y16 specification\",\n    \"The existing representation (R13-B174-TOP_MAIN-57b611: 4Y16) matches the annotation specification exactly\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}

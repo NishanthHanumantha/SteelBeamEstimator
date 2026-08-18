@@ -1,0 +1,18 @@
+{
+  "set_key": "Fifth",
+  "beam_id": "B162A",
+  "pass_id": "LIVE_PRIMARY",
+  "ok": "False",
+  "error_class": "schema_failure",
+  "error": "annotation_interpretation must be a string",
+  "retry_count": "0",
+  "latency_s": "19.27558859999408",
+  "usage": {
+    "input_tokens": "6016",
+    "output_tokens": "795"
+  },
+  "raw_response": "```json\n{\n  \"schema_version\": \"P267_LIVE_SEMANTIC_SCHEMA_V1\",\n  \"decision\": \"DUPLICATE_OR_REPEAT\",\n  \"confidence\": 0.92,\n  \"target_layer\": \"TOP\",\n  \"existing_representation_assessment\": \"REPRESENTED\",\n  \"deterministic_context_consistent\": true,\n  \"spatial_context_consistent\": true,\n  \"conflict_present\": false,\n  \"reason_codes\": [\n    \"EXACT_MATCH_EXISTING_TOP\",\n    \"QUANTITY_DIAMETER_MATCH\",\n    \"LEADER_POINTS_TO_EXISTING_BARS\",\n    \"MULTIPLE_CALLOUTS_SAME_SPEC\",\n    \"COVERAGE_FULLY_COVERED\"\n  ],\n  \"evidence\": {\n    \"image_observations\": [\n      \"Beam section shows 2 bars at top layer and 2 bars at bottom layer\",\n      \"Two separate '2-Y16' annotations with leaders pointing to the top bars\",\n      \"One '2-Y16' annotation with leader pointing to bottom bars\",\n      \"Additional '2LY8@100C/C' annotation below the bottom '2-Y16' (appears to be stirrup/link notation)\",\n      \"The top two bars are clearly visible and match the 2-Y16 specification\",\n      \"Multiple annotations pointing to the same physical reinforcement\"\n    ],\n    \"deterministic_model_state\": [\n      \"Existing top reinforcement: 2Y16 (diameter 16mm, quantity 2)\",\n      \"Existing bottom reinforcement: 4Y20 (diameter 20mm, quantity 4)\",\n      \"Coverage status: FULLY_COVERED\",\n      \"All candidate annotations are 2-Y16 (matching existing top)\"\n    ],\n    \"spatial_analysis\": [\n      \"Leader tips point to top zone and bottom zone\",\n      \"Nearest bar distances: 206mm and 323mm (close proximity)\",\n      \"Annotations are in separate clusters but reference same specification\",\n      \"Physical bars are available at pointed locations\"\n    ],\n    \"annotation_characteristics\": [\n      \"Four instances of '2-Y16' annotation in context\",\n      \"Two annotations point to top bars with leaders pointing DOWN and UP respectively\",\n      \"Specifications match exactly: 2 bars, Y16 diameter\",\n      \"No additional quantity or different diameter specified\"\n    ]\n  },\n  \"annotation_interpretation\": {\n    \"specification\": \"2-Y16 (2 bars of 16mm diameter)\",\n    \"likely_intent\": \"Multiple callouts of the same top reinforcement for clarity or different view references\",\n    \"matches_existing\": \"R13-B162A-TOP_MAIN-e7d73e (2Y16)\",\n    \"represents_additional\": false\n  },\n  \"uncertainty_notes\": [\n    \"One annotation points to bottom zone, but bottom already has 4Y20, not 2Y16\",\n    \"The bottom-pointing '2-Y16' annotation may be attempting to describe something else, but the image shows only 2 bars at top matching 2Y16\",\n    \"Despite spatial separation of annotations, all specify identical reinforcement (2-Y16) which is already represented in the top layer\",\n    \"The deterministic model shows FULLY_COVERED status, supporting duplicate interpretation\"\n  ]\n}\n```",
+  "payload": null,
+  "cache_hit": "False",
+  "source": "P267_LIVE_PRIMARY"
+}
