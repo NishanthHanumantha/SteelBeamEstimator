@@ -1,0 +1,271 @@
+{
+  "phase": "P2.6.9",
+  "set_key": "Fifth",
+  "beam_id": "B128",
+  "expected_groups": [
+    {
+      "family": "LONGITUDINAL",
+      "physical_layer": "BOTTOM",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "zone": "FULL_SPAN",
+      "provenance": "P268_PHYSICAL_LAYER_CONTROL",
+      "beam_id": "B128",
+      "evidence_quality": "CONTROL",
+      "confidence": 0.6,
+      "annotation_ids": [],
+      "leader_ids": [],
+      "spacing": "UNKNOWN",
+      "spatial_extent": "UNKNOWN",
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "CONTROL_OVERLAY",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "phase": "P2.6.9",
+      "group_id": "G01"
+    },
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G02",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-8a0b5fda"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "HIGH",
+      "confidence": 0.8,
+      "raw_text": "3-Y16",
+      "position_zone": "TOP_ZONE"
+    },
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G03",
+      "family": "STIRRUP",
+      "physical_layer": "STIRRUP",
+      "reinforcement_role": "STIRRUP",
+      "count": "UNKNOWN",
+      "diameter": 81,
+      "specification": "2L-Y8@\\X100/150/100C/C",
+      "spacing": "100/150/100 C/C",
+      "zone": "UNKNOWN",
+      "spatial_extent": "UNKNOWN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-ca8a916f"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "LOW",
+      "confidence": 0.5,
+      "raw_text": "2L-Y8@\\X100/150/100C/C",
+      "position_zone": "TOP_ZONE"
+    }
+  ],
+  "detected_groups": [
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G01",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "R13-B128-TOP_MAIN-3150a4",
+      "provenance": "R13_PRODUCTION_MODEL",
+      "evidence_quality": "DETERMINISTIC",
+      "confidence": 0.8305,
+      "source_bar_id": "R13-B128-TOP_MAIN-3150a4",
+      "piece_type": "TOP_MAIN",
+      "cut_length_mm": 2876.0
+    }
+  ],
+  "comparison": {
+    "expected_group_count": 3,
+    "detected_group_count": 1,
+    "correctly_interpreted_groups": 1,
+    "missing_groups": [
+      [
+        "LONGITUDINAL",
+        "BOTTOM",
+        "MAIN",
+        "3Y16"
+      ],
+      [
+        "STIRRUP",
+        "STIRRUP",
+        "STIRRUP",
+        "2L-Y8@\\X100/150/100C/C"
+      ]
+    ],
+    "spurious_groups": [],
+    "merged_groups": [
+      {
+        "expected": [
+          [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "3Y16"
+          ],
+          [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y16"
+          ]
+        ],
+        "detected": [
+          [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y16"
+          ]
+        ]
+      }
+    ],
+    "split_groups": [],
+    "matched": [
+      {
+        "expected": [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y16"
+        ],
+        "detected": [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y16"
+        ],
+        "status": "CORRECT_GROUP"
+      }
+    ],
+    "errors": [
+      "WRONG_LAYER",
+      "MERGED_DISTINCT_GROUPS",
+      "MISSED_GROUP"
+    ],
+    "error_counts": {
+      "WRONG_LAYER": 1,
+      "MERGED_DISTINCT_GROUPS": 1,
+      "MISSED_GROUP": 2
+    },
+    "expected": [
+      [
+        "LONGITUDINAL",
+        "BOTTOM",
+        "MAIN",
+        "3Y16"
+      ],
+      [
+        "LONGITUDINAL",
+        "TOP",
+        "MAIN",
+        "3Y16"
+      ],
+      [
+        "STIRRUP",
+        "STIRRUP",
+        "STIRRUP",
+        "2L-Y8@\\X100/150/100C/C"
+      ]
+    ],
+    "detected": [
+      [
+        "LONGITUDINAL",
+        "TOP",
+        "MAIN",
+        "3Y16"
+      ]
+    ]
+  },
+  "associations": [
+    {
+      "annotation_id": "ANN-ca8a916f",
+      "parsed_specification": "2L-Y8@\\X100/150/100C/C",
+      "assigned_group_id": null,
+      "assigned_layer": null,
+      "assigned_role": null,
+      "spatial_leader_evidence": {
+        "position_zone": "TOP_ZONE",
+        "role": "UNKNOWN"
+      },
+      "association_status": "ungrouped",
+      "association_confidence": 0.0
+    },
+    {
+      "annotation_id": "ANN-8a0b5fda",
+      "parsed_specification": "3Y16",
+      "assigned_group_id": "G01",
+      "assigned_layer": "TOP",
+      "assigned_role": "MAIN",
+      "spatial_leader_evidence": {
+        "position_zone": "TOP_ZONE",
+        "role": "TOP_MAIN"
+      },
+      "association_status": "correctly_grouped",
+      "association_confidence": 0.8
+    }
+  ],
+  "metrics": {
+    "group_count_accuracy": 0.0,
+    "layer_classification_accuracy": 0.3333,
+    "role_classification_accuracy": 0.3333,
+    "specification_accuracy": 0.3333,
+    "count_accuracy": 1.0,
+    "spatial_extent_accuracy": "NOT_EVALUABLE",
+    "annotation_association_accuracy": 0.5,
+    "duplicate_group_error_count": 0,
+    "merged_distinct_group_count": 1,
+    "split_same_group_error_count": 0,
+    "unclassified_group_count": 0,
+    "overall_group_interpretation_accuracy": 0.3333,
+    "missed_groups": 2,
+    "spurious_groups": 0,
+    "wrong_layer_count": 1,
+    "wrong_role_count": 0,
+    "wrong_spec_count": 0
+  },
+  "discrepancy_notes": [
+    "Phase drawing sketch matches two 3-Y16 groups (TOP and BOTTOM).",
+    "R.1 associated only one 3-Y16 annotation to TOP_MAIN; the bottom group is a physical-layer control overlay, not a second parsed annotation."
+  ],
+  "overlay_provenance": "R.1 DXF annotations plus P2.6.8 identical-spec/different-layer control. R.1 captured a single 3-Y16 annotation as TOP_MAIN. PhysicalBars on both faces and P2.6.8 POTENTIALLY_MISSING bottom establish a second physical group with the same specification.",
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "production_routing_changed": false,
+  "annotation_count": 2,
+  "model_found": true
+}

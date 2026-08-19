@@ -1,0 +1,164 @@
+{
+  "target_beams": 6,
+  "aggregate": {
+    "total_expected_groups": 25,
+    "total_detected_groups": 20,
+    "correctly_interpreted_groups": 20,
+    "missed_groups": 5,
+    "spurious_groups": 0,
+    "merged_distinct_groups": 3,
+    "split_groups": 0,
+    "wrong_layer_count": 1,
+    "wrong_role_count": 2,
+    "wrong_spec_count": 0,
+    "error_taxonomy": {
+      "MISSED_GROUP": 5,
+      "WRONG_ROLE": 2,
+      "MERGED_DISTINCT_GROUPS": 3,
+      "WRONG_LAYER": 1
+    },
+    "overall_group_interpretation_accuracy": 0.8,
+    "primary_families": [
+      "LONGITUDINAL",
+      "STIRRUP"
+    ]
+  },
+  "controls": {
+    "b128": {
+      "expected_top_3y16": true,
+      "expected_bottom_3y16": true,
+      "detected_top_3y16": true,
+      "detected_bottom_3y16": false,
+      "longitudinal_expected": 2,
+      "longitudinal_detected": 1,
+      "collapsed_identical_spec": true,
+      "ok": false
+    },
+    "b55": {
+      "expected_keys": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ],
+      "detected_keys": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "SPACER",
+          "SPACER",
+          "SPACER",
+          "3Y25"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ],
+      "two_y16_expected": 1,
+      "same_layer_3y25_expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ]
+      ],
+      "same_layer_3y25_detected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ]
+      ],
+      "stirrup_not_mixed": true,
+      "ok": false
+    },
+    "b141": {
+      "expected_keys": [
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y16"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8@\\X100C/C"
+        ]
+      ],
+      "detected_keys": [
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y16"
+        ]
+      ],
+      "top_5y16_present": true,
+      "not_b128_same_spec_conflict": true,
+      "ok": true
+    }
+  },
+  "production_invariants": {
+    "all_shadow_only": true,
+    "all_no_change": true,
+    "any_production_routing_changed": false,
+    "count": 6
+  },
+  "capability": "GROUP_INTERPRETATION_NOT_READY",
+  "LIVE_VISION_CALLS": 0
+}

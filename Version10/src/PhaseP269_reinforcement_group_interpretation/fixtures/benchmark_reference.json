@@ -1,0 +1,74 @@
+{
+  "schema": "P269_BENCHMARK_REFERENCE_V1",
+  "note": "Evaluation-only. Never imported by extractor/identity/drawing_groups. Overlay groups fill drawing-annotation gaps established by P2.6.8 physical-layer evidence. They do not override repository DXF annotations when those annotations exist.",
+  "beams": [
+    {
+      "set_key": "Fifth",
+      "beam_id": "B128",
+      "provenance": "R.1 DXF annotations plus P2.6.8 identical-spec/different-layer control. R.1 captured a single 3-Y16 annotation as TOP_MAIN. PhysicalBars on both faces and P2.6.8 POTENTIALLY_MISSING bottom establish a second physical group with the same specification.",
+      "overlay_groups": [
+        {
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "zone": "FULL_SPAN",
+          "provenance": "P268_PHYSICAL_LAYER_CONTROL"
+        }
+      ],
+      "discrepancy_notes": [
+        "Phase drawing sketch matches two 3-Y16 groups (TOP and BOTTOM).",
+        "R.1 associated only one 3-Y16 annotation to TOP_MAIN; the bottom group is a physical-layer control overlay, not a second parsed annotation."
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B55",
+      "provenance": "R.1 DXF annotations are the repository drawing source. Phase sketch (TOP 3-Y25 / BOTTOM 3-Y20 / extras 2-Y16 both faces) disagrees with DXF text and is not used as expected truth.",
+      "overlay_groups": [],
+      "discrepancy_notes": [
+        "Phase sketch: TOP MAIN 3-Y25, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y20, BOTTOM EXTRA 2-Y16, STIRRUP 3L-Y10@100/125/100 C/C.",
+        "DXF R.1: TOP MAIN 3-Y20, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y25, BOTTOM EXTRA 3-Y25, STIRRUP 3L-Y10@100/125/100C/C.",
+        "Repository DXF wins. The same-layer multi-group control is BOTTOM MAIN 3-Y25 vs BOTTOM EXTRA 3-Y25, not two 2-Y16 groups."
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B141",
+      "provenance": "R.1 DXF annotations. Phase sketch TOP 5-Y20 / BOTTOM 5-Y16 is not present in the associated DXF texts.",
+      "overlay_groups": [],
+      "discrepancy_notes": [
+        "Phase sketch: TOP 5-Y20 and BOTTOM 5-Y16 as distinct groups.",
+        "DXF R.1: TOP MAIN 5-Y16 plus an unclassified stirrup string 4L-Y8@\\X100C/C.",
+        "Repository DXF wins. B141 is not a B128-style same-specification/different-layer case. Leader/spatial ambiguity is recorded separately from physical-group identity."
+      ]
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B66",
+      "provenance": "R.1 DXF annotations: TOP 5-Y20, BOTTOM 4-Y25, STIRRUP 4L-Y8@100/125/100C/C.",
+      "overlay_groups": [],
+      "discrepancy_notes": []
+    },
+    {
+      "set_key": "Fourth",
+      "beam_id": "B161",
+      "provenance": "R.1 DXF annotations, split by specification inside a role (BOTTOM EXTRA 3-Y16 and 3-Y20 remain distinct). R.1 role-bucket groups incorrectly merged those two extras; this benchmark does not use that merged bucket as truth.",
+      "overlay_groups": [],
+      "discrepancy_notes": [
+        "R.1 groups.json merged BOTTOM_EXTRA labels 3Y16+3Y20 into one bucket. Expected groups are derived from annotations, not that merged bucket."
+      ]
+    },
+    {
+      "set_key": "Fifth",
+      "beam_id": "B65",
+      "provenance": "R.1 DXF annotations: TOP 3-Y20, TOP EXTRA 2-Y16, BOTTOM 4-Y20, BOTTOM EXTRA 4-Y16 and 2-Y16, STIRRUP 3L-Y10@100/125/100C/C.",
+      "overlay_groups": [],
+      "discrepancy_notes": [
+        "Two BOTTOM EXTRA groups share diameter 16 but different counts (4-Y16 vs 2-Y16) and must remain distinct."
+      ]
+    }
+  ]
+}

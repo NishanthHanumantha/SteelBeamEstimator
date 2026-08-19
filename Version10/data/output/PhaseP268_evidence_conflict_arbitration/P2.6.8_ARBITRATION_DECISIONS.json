@@ -1,0 +1,2546 @@
+[
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B128::C01",
+    "set_key": "Fifth",
+    "beam_id": "B128",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "3Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "BOTTOM",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_LAYER"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MISMATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "EQUAL_SPEC_CROSS_LAYER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "LEADER_POINTS_TO_BOTTOM_BARS",
+        "SINGLE_SPEC_ALREADY_MODELED",
+        "NO_VISUAL_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "BOTTOM",
+      "role_layer": "BOTTOM",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "BOTTOM",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B16::C01",
+    "set_key": "Fifth",
+    "beam_id": "B16",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.88
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "4Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY",
+        "SEPARATE_REPEATED_SPEC"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "MULTIPLE_CALLOUTS_SAME_SPEC",
+        "DETERMINISTIC_ALREADY_POPULATED",
+        "VISUAL_CONTINUITY_LINES",
+        "LEADER_POINTS_TO_EXISTING_BARS"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B62::C01",
+    "set_key": "Fifth",
+    "beam_id": "B62",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "3Y25",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "AGREE",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_MATCH_EXISTING_TOP_REINFORCEMENT",
+        "QUANTITY_AND_DIAMETER_MATCH",
+        "LEADER_POINTS_TO_TOP_ZONE",
+        "ANNOTATION_IN_TOP_ZONE",
+        "NO_EVIDENCE_OF_DISTINCT_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_SKIP"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B139::C01",
+    "set_key": "Fourth",
+    "beam_id": "B139",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "5Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "EXISTING_TOP_LAYER_OBJECTS",
+        "LEADER_TIP_ZONE_ALIGNMENT",
+        "NO_BOTTOM_LAYER_OBJECTS",
+        "ANNOTATION_PROXIMITY_TO_TOP_BARS"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B141::C01",
+    "set_key": "Fourth",
+    "beam_id": "B141",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "5Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LEADER_CONFLICT",
+    "conflict_types": [
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MISMATCH",
+      "SPATIAL_MISMATCH",
+      "ANNOTATION_REPRESENTATION_ONLY"
+    ],
+    "rationale": "LEADER_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION",
+        "CROSS_LAYER_AMBIGUITY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "SINGLE_SPEC_ALREADY_POPULATED",
+        "LEADER_POINTS_TO_EXISTING_TOP_BARS",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "BOTTOM",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B143::C01",
+    "set_key": "Fourth",
+    "beam_id": "B143",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "4Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LEADER_CONFLICT",
+    "conflict_types": [
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MISMATCH"
+    ],
+    "rationale": "LEADER_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "EXISTING_TOP_LAYER_OBJECTS",
+        "LEADER_TIPS_POINT_TO_TOP_BARS",
+        "NO_EVIDENCE_OF_DISTINCT_LAYER",
+        "DETERMINISTIC_ALREADY_ACCEPTED"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B56::C01",
+    "set_key": "Sixth",
+    "beam_id": "B56",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "4Y25",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "AGREE",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_MATCH_EXISTING_TOP_MAIN",
+        "LEADER_POINTS_TO_TOP_ZONE",
+        "ANNOTATION_IN_TOP_ZONE",
+        "QUANTITY_AND_DIAMETER_MATCH",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_SKIP"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B100::C01",
+    "set_key": "Fifth",
+    "beam_id": "B100",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "3Y25",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "AGREE",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "LEADER_POINTS_TO_TOP_BARS",
+        "SINGLE_SPEC_ALREADY_POPULATED",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B162A::C01",
+    "set_key": "Fifth",
+    "beam_id": "B162A",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "2Y16",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=DUPLICATE_OR_REPEAT winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_MATCH_EXISTING_TOP",
+        "QUANTITY_DIAMETER_MATCH",
+        "LEADER_POINTS_TO_EXISTING_BARS",
+        "MULTIPLE_CALLOUTS_SAME_SPEC",
+        "COVERAGE_FULLY_COVERED"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B173::C01",
+    "set_key": "Fifth",
+    "beam_id": "B173",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.88
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "3Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "MATCHING_SPECIFICATION_EXISTS",
+        "IDENTICAL_QUANTITY_AND_DIAMETER",
+        "TOP_LAYER_ALREADY_POPULATED",
+        "MULTIPLE_CALLOUTS_SAME_SPEC",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B101::C01",
+    "set_key": "Fourth",
+    "beam_id": "B101",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "3Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "AGREE",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_MATCH_EXISTING_TOP_MAIN",
+        "QUANTITY_DIAMETER_MATCH",
+        "LEADER_TIP_IN_TOP_ZONE",
+        "NEAREST_BAR_TOP_FAMILY",
+        "NO_BOTTOM_REINFORCEMENT_EXISTS",
+        "SINGLE_CALLOUT_PATTERN"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_SKIP"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B102::C01",
+    "set_key": "Fourth",
+    "beam_id": "B102",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "3Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "EXISTING_TOP_LAYER_OBJECTS",
+        "LEADER_TIPS_POINT_TO_TOP_BARS",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER",
+        "VISUAL_CONFIRMATION_OF_CALLOUTS"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B170::C01",
+    "set_key": "Fourth",
+    "beam_id": "B170",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.88
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "3Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "IDENTICAL_SPECIFICATION_MATCH",
+        "EXISTING_TOP_LAYER_OBJECT_PRESENT",
+        "MULTIPLE_CALLOUTS_SAME_SPECIFICATION",
+        "NO_EVIDENCE_OF_ADDITIONAL_BARS",
+        "LEADER_TIPS_POINT_TO_SAME_REINFORCEMENT_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B173::C01",
+    "set_key": "Fourth",
+    "beam_id": "B173",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.92
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "3Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "BOTTOM",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_LAYER",
+      "LAYER_CONFLICT",
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MISMATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "EQUAL_SPEC_CROSS_LAYER",
+      "LEADER_MISMATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.92,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "EXACT_QUANTITY_DIAMETER_MATCH",
+        "SINGLE_SPEC_ALREADY_POPULATED",
+        "LEADER_POINTS_TO_EXISTING_TOP_REINFORCEMENT",
+        "NO_EVIDENCE_OF_ADDITIONAL_LAYER"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "BOTTOM",
+      "role_layer": "BOTTOM",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "BOTTOM",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B174::C01",
+    "set_key": "Fourth",
+    "beam_id": "B174",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.88
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "4Y16",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+    "conflict_types": [
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+      "EQUAL_SPEC_DIFFERENT_TARGET"
+    ],
+    "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "DETERMINISTIC_EVIDENCE_STRONGER",
+      "SEMANTIC_EVIDENCE_WEAKER",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT: deterministic=DETERMINISTIC_DISTINCT semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.88,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "IDENTICAL_SPECIFICATION_MATCH",
+        "MULTIPLE_CALLOUTS_SAME_BARS",
+        "EXISTING_TOP_LAYER_MATCH",
+        "NO_EVIDENCE_ADDITIONAL_BARS",
+        "LEADER_TIPS_POINT_TO_SAME_BARS"
+      ],
+      "source": "P267_LIVE_PRIMARY",
+      "usable": true
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B176::C02",
+    "set_key": "Fourth",
+    "beam_id": "B176",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.72
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "5Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LEADER_CONFLICT",
+    "conflict_types": [
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MISMATCH"
+    ],
+    "rationale": "LEADER_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B23::C01",
+    "set_key": "Fourth",
+    "beam_id": "B23",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.72
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "4Y20",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LEADER_CONFLICT",
+    "conflict_types": [
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MISMATCH",
+      "SPATIAL_MISMATCH",
+      "ANNOTATION_REPRESENTATION_ONLY"
+    ],
+    "rationale": "LEADER_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION",
+        "CROSS_LAYER_AMBIGUITY"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "BOTTOM",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B108::C01",
+    "set_key": "Sixth",
+    "beam_id": "B108",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "2Y16",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "BOTTOM_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B138::C01",
+    "set_key": "Sixth",
+    "beam_id": "B138",
+    "semantic_result": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.72
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "populated_layer": "TOP",
+      "match_status": "POTENTIALLY_MISSING",
+      "specification": "2Y25",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "BOTTOM",
+    "conflict_type": "EQUAL_SPEC_DIFFERENT_LAYER",
+    "conflict_types": [
+      "EQUAL_SPEC_DIFFERENT_LAYER",
+      "LEADER_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_role_layer",
+    "reason_codes": [
+      "DETERMINISTIC_DISTINCT",
+      "PHYSICAL_TARGET_MISMATCH",
+      "SPEC_MATCH",
+      "LAYER_MISMATCH",
+      "SEMANTIC_DISTINCT",
+      "EQUAL_SPEC_CROSS_LAYER",
+      "LEADER_MISMATCH"
+    ],
+    "rationale": "EQUAL_SPEC_DIFFERENT_LAYER: deterministic=DETERMINISTIC_DISTINCT semantic=DISTINCT_REINFORCEMENT winner=deterministic_role_layer action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DISTINCT_REINFORCEMENT",
+      "confidence": 0.72,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "NOT_REPRESENTED",
+      "reason_codes": [
+        "UNREPRESENTED_REINFORCEMENT",
+        "DISTINCT_LAYER",
+        "EXPLICIT_BOTTOM_WHILE_TOP_ONLY",
+        "SEPARATE_REPEATED_SPEC"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "BOTTOM",
+      "role_layer": "BOTTOM",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DISTINCT",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "CALL_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B45::C01",
+    "set_key": "Sixth",
+    "beam_id": "B45",
+    "semantic_result": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.72
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "populated_layer": "TOP",
+      "match_status": "ALREADY_DETECTED",
+      "specification": "4Y25",
+      "spec_match_any_layer": true,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "AGREE",
+    "evidence_strength": "STRONG",
+    "confidence": 0.9,
+    "winning_evidence_source": "deterministic_physical",
+    "reason_codes": [
+      "DETERMINISTIC_DUPLICATE",
+      "PHYSICAL_TARGET_MATCH",
+      "SPEC_MATCH",
+      "LAYER_MATCH",
+      "SEMANTIC_DUPLICATE",
+      "LEADER_MATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_DUPLICATE semantic=DUPLICATE_OR_REPEAT winner=deterministic_physical action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "DUPLICATE_OR_REPEAT",
+      "confidence": 0.72,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "REPRESENTED",
+      "reason_codes": [
+        "ALREADY_REPRESENTED_LAYER",
+        "SAME_REINFORCEMENT_TARGET",
+        "DUPLICATE_ANNOTATION"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_DUPLICATE",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_SKIP"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "ROLE_COVERAGE_GAP",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B6::C01",
+    "set_key": "Sixth",
+    "beam_id": "B6",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "3Y25",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "BOTTOM_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B136::C01",
+    "set_key": "Fifth",
+    "beam_id": "B136",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "6Y20",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LAYER_CONFLICT",
+    "conflict_types": [
+      "LAYER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH"
+    ],
+    "rationale": "LAYER_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fifth::B56::C01",
+    "set_key": "Fifth",
+    "beam_id": "B56",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "3Y20",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LAYER_CONFLICT",
+    "conflict_types": [
+      "LAYER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH"
+    ],
+    "rationale": "LAYER_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B14::C01",
+    "set_key": "Fourth",
+    "beam_id": "B14",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "4Y20",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LAYER_CONFLICT",
+    "conflict_types": [
+      "LAYER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "LAYER_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Fourth::B55::C01",
+    "set_key": "Fourth",
+    "beam_id": "B55",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "5Y16",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "BOTTOM_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B129::C02",
+    "set_key": "Sixth",
+    "beam_id": "B129",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "2Y25",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "BOTTOM",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "BOTTOM",
+      "role_layer": "BOTTOM",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B4::C01",
+    "set_key": "Sixth",
+    "beam_id": "B4",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "4Y16",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LAYER_CONFLICT",
+    "conflict_types": [
+      "LAYER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "LAYER_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "SUPPORT_TOP_ZONE",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": null,
+        "tip_in_bottom_zone": null,
+        "leader_tip_direction": null,
+        "leader_association": null
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B67::C02",
+    "set_key": "Sixth",
+    "beam_id": "B67",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "BOTTOM",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "3Y20",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": true
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "LAYER_CONFLICT",
+    "conflict_types": [
+      "LAYER_CONFLICT"
+    ],
+    "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "SPATIAL_MATCH"
+    ],
+    "rationale": "LAYER_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "BOTTOM",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "BOTTOM",
+      "vote_layer": "UNKNOWN",
+      "prior_semantic_layer": "BOTTOM",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "TOP_ZONE",
+        "tip_in_top_zone": false,
+        "tip_in_bottom_zone": true,
+        "leader_tip_direction": "UP",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_SUPPORTS_CALL"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  },
+  {
+    "phase": "P2.6.8",
+    "candidate_id": "P261::Sixth::B8::C01",
+    "set_key": "Sixth",
+    "beam_id": "B8",
+    "semantic_result": {
+      "decision": "AMBIGUOUS",
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true,
+      "target_layer": "TOP",
+      "confidence": 0.4
+    },
+    "deterministic_result": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "populated_layer": "UNKNOWN",
+      "match_status": "CONFLICTING",
+      "specification": "3Y16",
+      "spec_match_any_layer": false,
+      "spec_match_same_layer": false
+    },
+    "resolved_layer": "TOP",
+    "conflict_type": "NO_CONFLICT",
+    "conflict_types": [
+      "NO_CONFLICT"
+    ],
+    "arbitration_result": "SEMANTIC_SUPPORTS_DETERMINISTIC",
+    "evidence_strength": "MEDIUM",
+    "confidence": 0.6,
+    "winning_evidence_source": "leader_association",
+    "reason_codes": [
+      "INSUFFICIENT_PHYSICAL_EVIDENCE",
+      "SPEC_MISMATCH",
+      "LEADER_MATCH"
+    ],
+    "rationale": "NO_CONFLICT: deterministic=DETERMINISTIC_AMBIGUOUS semantic=AMBIGUOUS winner=leader_association action=NO_CHANGE",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "p266_semantic": {
+      "decision": "AMBIGUOUS",
+      "confidence": 0.4,
+      "target_layer": "TOP",
+      "existing_representation_assessment": "UNCERTAIN",
+      "reason_codes": [
+        "DETERMINISTIC_VISION_CONFLICT",
+        "MULTIPLE_PLAUSIBLE_TARGETS"
+      ],
+      "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+      "usable": true
+    },
+    "p267_semantic": {
+      "decision": "SEMANTIC_UNUSABLE",
+      "usable": false,
+      "source": "P267_LIVE_PRIMARY",
+      "error_class": "api_failure"
+    },
+    "layer_evidence": {
+      "resolved_layer": "TOP",
+      "role_layer": "TOP",
+      "leader_layer": "TOP",
+      "vote_layer": "TOP",
+      "prior_semantic_layer": "TOP",
+      "layer_source": "deterministic_role_layer",
+      "layer_evidence_incomplete": false
+    },
+    "target_evidence": {
+      "physical": "DETERMINISTIC_AMBIGUOUS",
+      "leader": {
+        "position_zone": "BOTTOM_ZONE",
+        "tip_in_top_zone": true,
+        "tip_in_bottom_zone": false,
+        "leader_tip_direction": "DOWN",
+        "leader_association": "ATTACHED_TO"
+      },
+      "spatial_status": "CONTEXT_AMBIGUOUS"
+    },
+    "observed_decision": "SKIP_VISION",
+    "longitudinal_coverage": "FULLY_COVERED",
+    "production_routing_changed": false
+  }
+]

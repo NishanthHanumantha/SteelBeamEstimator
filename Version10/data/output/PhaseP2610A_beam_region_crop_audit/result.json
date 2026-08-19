@@ -1,0 +1,329 @@
+{
+  "phase_id": "P2.6.10-A",
+  "phase_name": "Existing Beam-Region Crop Capability Audit",
+  "model_version": "10.11.10",
+  "gate_version": "P2610A_BEAM_REGION_CROP_AUDIT_V1_0",
+  "scope": "BEAM_REGION_CROP_AUDIT",
+  "mode": "OFFLINE_AUDIT",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "existing_rendering_capability": "FOUND",
+  "reusability_class": "REUSABLE_WITH_SMALL_ADAPTER",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit",
+  "metrics": {
+    "target_beams": 6,
+    "crops_complete": true,
+    "production_invariants": {
+      "all_shadow_only": true,
+      "all_no_change": true,
+      "any_production_routing_changed": false,
+      "count": 6,
+      "live_vision_invoked": false
+    },
+    "LIVE_VISION_CALLS": 0
+  },
+  "recommendation": {
+    "decision": "RENDERING_READY_WITH_ADAPTER",
+    "strength": "DIAGNOSTIC"
+  },
+  "decision": "RENDERING_READY_WITH_ADAPTER",
+  "b55_diagnostics": {
+    "B55_title_located": "YES",
+    "B55_beam_geometry_located": "YES",
+    "correct_visual_detail_captured": "YES",
+    "neighboring_detail_visible": "YES",
+    "target_reinforcement_visually_present": "YES",
+    "unrelated_reinforcement_captured": "NO",
+    "clipping": "NO",
+    "text_readability": "GOOD",
+    "Vision_readiness": "READY",
+    "neighbor_titles_in_context": [
+      "B49",
+      "B50",
+      "B64",
+      "B63"
+    ],
+    "neighbor_titles_in_detail": [],
+    "detail_reinforcement_text_count": 6,
+    "notes": []
+  },
+  "discovered_components": [
+    {
+      "file": "Version10/src/PhaseM.1_engineering_vision_dataset/dxf_renderer.py",
+      "class_function": "render_dxf_region_to_png / render_dxf_to_png / CoordTransform",
+      "purpose": "Canonical ezdxf+matplotlib PNG renderer for a caller-supplied DXF extent",
+      "rendering_method": "ezdxf Frontend + MatplotlibBackend (Agg) PNG",
+      "localization_method": "none (extent is caller-supplied)",
+      "dependencies": "ezdxf, matplotlib, optional PIL",
+      "supports_dxf_directly": true,
+      "can_isolate_beam": "IF_CALLER_SUPPLIES_EXTENT",
+      "uses_beam_geometry": false,
+      "uses_beam_title": false,
+      "uses_annotation_association": false,
+      "output_formats": [
+        "PNG"
+      ],
+      "coordinate_system": "DXF Y-up, image Y-down via CoordTransform",
+      "existing_tests": "M.1 / T1.1 renderer validation",
+      "known_limitations": "No SVG/PDF/ODA. Does not locate beams by itself.",
+      "independence": "INDEPENDENT",
+      "reuse": "YES"
+    },
+    {
+      "file": "Version10/src/PhaseM.1_engineering_vision_dataset/beam_cropper.py",
+      "class_function": "compute_beam_dxf_bbox / crop_beam_image",
+      "purpose": "Coarse centroid window from BeamAxis/registry",
+      "rendering_method": "pixel crop of a full-sheet PNG",
+      "localization_method": "beam geometry/registry centroid \u00b13000 mm",
+      "dependencies": "beam registry / axis",
+      "supports_dxf_directly": false,
+      "can_isolate_beam": "COARSE",
+      "uses_beam_geometry": true,
+      "uses_beam_title": false,
+      "uses_annotation_association": false,
+      "output_formats": [
+        "PNG"
+      ],
+      "coordinate_system": "DXF bbox then pixel crop",
+      "existing_tests": "M.1",
+      "known_limitations": "Too coarse for neighboring details; superseded by region render.",
+      "independence": "INDEPENDENT_BUT_COARSE",
+      "reuse": "NO_FOR_P2610A"
+    },
+    {
+      "file": "Version10/src/PhaseT1_geometric_stirrup_evidence/beam_extent.py",
+      "class_function": "find_beam_mark / compute_beam_scoped_extent",
+      "purpose": "Production beam-scoped extent using R.1 by_beam cluster + nearest title",
+      "rendering_method": "none (extent only)",
+      "localization_method": "reinforcement association centroid + title nearest that point",
+      "dependencies": "R.1 by_beam annotations",
+      "supports_dxf_directly": true,
+      "can_isolate_beam": true,
+      "uses_beam_geometry": false,
+      "uses_beam_title": true,
+      "uses_annotation_association": true,
+      "output_formats": [],
+      "coordinate_system": "DXF mm",
+      "existing_tests": "T1",
+      "known_limitations": "NOT INDEPENDENT. find_beam_mark itself is reusable if near_xy is association-free.",
+      "independence": "NOT_INDEPENDENT",
+      "reuse": "find_beam_mark_pattern_only"
+    },
+    {
+      "file": "Version10/src/PhaseT1_geometric_stirrup_evidence/geometry_envelope.py",
+      "class_function": "build_geometry_envelope / _outline_bracket / compute_geometry_envelopes",
+      "purpose": "Elevation envelope from outline/stirrup DIMENSION geometry once a mark XY is known",
+      "rendering_method": "none (extent only)",
+      "localization_method": "title mark + outline LINE clusters + stirrup DIMENSION bands",
+      "dependencies": "compute_geometry_envelopes still resolves marks via annotations_by_beam; build_geometry_envelope does not",
+      "supports_dxf_directly": true,
+      "can_isolate_beam": true,
+      "uses_beam_geometry": true,
+      "uses_beam_title": true,
+      "uses_annotation_association": "compute_geometry_envelopes YES; build_geometry_envelope NO",
+      "output_formats": [],
+      "coordinate_system": "DXF mm",
+      "existing_tests": "T1.5",
+      "known_limitations": "Do not call compute_geometry_envelopes with R.1 data. Reuse build_geometry_envelope with an independent mark.",
+      "independence": "PARTIAL",
+      "reuse": "YES_WITH_INDEPENDENT_MARK"
+    },
+    {
+      "file": "Version10/src/PhaseT181_beam_render_validation / T182 / T183 RenderedBeams",
+      "class_function": "ownership / adaptive / shared-ownership renderers",
+      "purpose": "Production web-run beam PNGs",
+      "rendering_method": "render_dxf_region_to_png with association/ownership extents",
+      "localization_method": "owned annotations / BeamScopedAnnotations union",
+      "dependencies": "T16/T18 ownership, R.1",
+      "supports_dxf_directly": true,
+      "can_isolate_beam": true,
+      "uses_beam_geometry": true,
+      "uses_beam_title": true,
+      "uses_annotation_association": true,
+      "output_formats": [
+        "PNG"
+      ],
+      "coordinate_system": "DXF extent \u2192 PNG",
+      "existing_tests": "T181\u2013T183 / QA30",
+      "known_limitations": "NOT INDEPENDENT. Existing PNGs are diagnostic comparison only.",
+      "independence": "NOT_INDEPENDENT",
+      "reuse": "NO"
+    },
+    {
+      "file": "Version10/src/PhaseP250_beam_evidence_crop_qa / P252\u2013P2523",
+      "class_function": "engineering_crop / evidence window",
+      "purpose": "Vision evidence crops from owned bars/leaders/annotations",
+      "rendering_method": "render_dxf_region_to_png",
+      "localization_method": "owned bar/leader/annotation evidence window",
+      "dependencies": "P2.5.x evidence packs",
+      "supports_dxf_directly": true,
+      "can_isolate_beam": true,
+      "uses_beam_geometry": true,
+      "uses_beam_title": true,
+      "uses_annotation_association": true,
+      "output_formats": [
+        "PNG"
+      ],
+      "coordinate_system": "DXF extent \u2192 PNG",
+      "existing_tests": "P250 / P252.x",
+      "known_limitations": "NOT INDEPENDENT of annotation/ownership association.",
+      "independence": "NOT_INDEPENDENT",
+      "reuse": "NO"
+    },
+    {
+      "file": "Version10/src/PhaseQA2B0_pipeline_integration/pipeline_paths.py",
+      "class_function": "CROP_PREFERENCE",
+      "purpose": "Ordered lookup of existing production crop PNGs",
+      "rendering_method": "none",
+      "localization_method": "precomputed association-dependent renders",
+      "dependencies": "web_run artefacts",
+      "supports_dxf_directly": false,
+      "can_isolate_beam": "PRECOMPUTED",
+      "uses_beam_geometry": true,
+      "uses_beam_title": true,
+      "uses_annotation_association": true,
+      "output_formats": [
+        "PNG"
+      ],
+      "coordinate_system": "n/a",
+      "existing_tests": "QA2B0",
+      "known_limitations": "Must not be the P2.6.10-A generation mechanism.",
+      "independence": "NOT_INDEPENDENT",
+      "reuse": "NO"
+    }
+  ],
+  "unit_tests": {
+    "success": true,
+    "passed": 14,
+    "total": 14,
+    "results": [
+      {
+        "name": "parse_beam_title",
+        "pass": true
+      },
+      {
+        "name": "detail_y_split_excludes_other_elevation_row",
+        "pass": true
+      },
+      {
+        "name": "localization_modules_independent_of_association",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_hardcoding_in_runtime",
+        "pass": true
+      },
+      {
+        "name": "no_gt_usage",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "P2.6.6_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.7_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.8_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.9_regression",
+        "pass": true
+      },
+      {
+        "name": "production_identical_fingerprints",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "classify_never_production_ready",
+        "pass": true
+      },
+      {
+        "name": "renderer_is_m1_region_renderer",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.10",
+    "gate_version": "P2610A_BEAM_REGION_CROP_AUDIT_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.6.10-A writes only isolated crop-audit shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "all_shadow_only": true,
+    "all_no_change": true,
+    "engineering_changes": "NONE",
+    "steel_quantity_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "production_objects_modified": false,
+    "live_vision_invoked": false
+  },
+  "prior_regression": {
+    "p266": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\unit_tests.json",
+      "ok": true,
+      "passed": 36,
+      "total": 36,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p267": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\unit_tests.json",
+      "ok": true,
+      "passed": 35,
+      "total": 35,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p268": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\unit_tests.json",
+      "ok": true,
+      "passed": 27,
+      "total": 27,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p269": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\unit_tests.json",
+      "ok": true,
+      "passed": 20,
+      "total": 20,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    }
+  },
+  "next_step": "P2.6.10 can proceed with Claude Vision using the P2.6.10-A adapter (title localization + outline envelope + M.1 region renderer). Do not use R.1 association extents.",
+  "live_vision_invoked": false,
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_STATUS.md",
+    "results": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_RESULTS.json",
+    "b55": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_B55_DIAGNOSTICS.json"
+  }
+}

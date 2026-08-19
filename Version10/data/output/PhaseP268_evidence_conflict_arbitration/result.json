@@ -1,0 +1,300 @@
+{
+  "phase_id": "P2.6.8",
+  "phase_name": "Evidence-Conflict Arbitration / Layer-Aware Semantic Resolver",
+  "model_version": "10.11.8",
+  "gate_version": "P268_EVIDENCE_CONFLICT_ARBITRATION_V1_0",
+  "scope": "EVIDENCE_CONFLICT_SHADOW",
+  "mode": "OFFLINE_ARBITRATION",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration",
+  "metrics": {
+    "target_beams": 29,
+    "conflict_distribution": {
+      "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT": 8,
+      "NO_CONFLICT": 11,
+      "LEADER_CONFLICT": 4,
+      "EQUAL_SPEC_DIFFERENT_LAYER": 1,
+      "LAYER_CONFLICT": 5
+    },
+    "arbitration_distribution": {
+      "DETERMINISTIC_OVERRIDES_SEMANTIC": 8,
+      "AGREE": 5,
+      "CONFLICT_REQUIRES_REVIEW": 9,
+      "SEMANTIC_SUPPORTS_DETERMINISTIC": 7
+    },
+    "controls": {
+      "cases": {
+        "Fifth/B128": {
+          "deterministic": {
+            "physical": "DETERMINISTIC_DISTINCT",
+            "populated_layer": "TOP",
+            "match_status": "POTENTIALLY_MISSING",
+            "specification": "3Y16",
+            "spec_match_any_layer": true,
+            "spec_match_same_layer": false
+          },
+          "semantic": {
+            "decision": "DUPLICATE_OR_REPEAT",
+            "source": "P267_LIVE_PRIMARY",
+            "usable": true,
+            "target_layer": "BOTTOM",
+            "confidence": 0.92
+          },
+          "resolved_layer": "BOTTOM",
+          "conflict_type": "SEMANTIC_DUPLICATE_PHYSICAL_DISTINCT",
+          "arbitration_result": "DETERMINISTIC_OVERRIDES_SEMANTIC",
+          "confidence": 0.9,
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "winning_evidence_source": "deterministic_physical",
+          "reason_codes": [
+            "DETERMINISTIC_DISTINCT",
+            "PHYSICAL_TARGET_MISMATCH",
+            "SPEC_MATCH",
+            "LAYER_MISMATCH",
+            "SEMANTIC_DUPLICATE",
+            "DETERMINISTIC_EVIDENCE_STRONGER",
+            "SEMANTIC_EVIDENCE_WEAKER",
+            "EQUAL_SPEC_CROSS_LAYER",
+            "LEADER_MATCH",
+            "SPATIAL_MATCH"
+          ]
+        },
+        "Fourth/B141": {
+          "deterministic": {
+            "physical": "DETERMINISTIC_DUPLICATE",
+            "populated_layer": "TOP",
+            "match_status": "ALREADY_DETECTED",
+            "specification": "5Y16",
+            "spec_match_any_layer": true,
+            "spec_match_same_layer": true
+          },
+          "semantic": {
+            "decision": "DUPLICATE_OR_REPEAT",
+            "source": "P267_LIVE_PRIMARY",
+            "usable": true,
+            "target_layer": "TOP",
+            "confidence": 0.92
+          },
+          "resolved_layer": "TOP",
+          "conflict_type": "LEADER_CONFLICT",
+          "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+          "confidence": 0.9,
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "winning_evidence_source": "deterministic_physical",
+          "reason_codes": [
+            "DETERMINISTIC_DUPLICATE",
+            "PHYSICAL_TARGET_MATCH",
+            "SPEC_MATCH",
+            "LAYER_MATCH",
+            "SEMANTIC_DUPLICATE",
+            "LEADER_MISMATCH",
+            "SPATIAL_MISMATCH",
+            "ANNOTATION_REPRESENTATION_ONLY"
+          ]
+        },
+        "Fourth/B23": {
+          "deterministic": {
+            "physical": "DETERMINISTIC_DUPLICATE",
+            "populated_layer": "TOP",
+            "match_status": "ALREADY_DETECTED",
+            "specification": "4Y20",
+            "spec_match_any_layer": true,
+            "spec_match_same_layer": true
+          },
+          "semantic": {
+            "decision": "DUPLICATE_OR_REPEAT",
+            "source": "REPLAY_P261_OBSERVATION_ADAPTER",
+            "usable": true,
+            "target_layer": "TOP",
+            "confidence": 0.72
+          },
+          "resolved_layer": "TOP",
+          "conflict_type": "LEADER_CONFLICT",
+          "arbitration_result": "CONFLICT_REQUIRES_REVIEW",
+          "confidence": 0.9,
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "winning_evidence_source": "deterministic_physical",
+          "reason_codes": [
+            "DETERMINISTIC_DUPLICATE",
+            "PHYSICAL_TARGET_MATCH",
+            "SPEC_MATCH",
+            "LAYER_MATCH",
+            "SEMANTIC_DUPLICATE",
+            "LEADER_MISMATCH",
+            "SPATIAL_MISMATCH",
+            "ANNOTATION_REPRESENTATION_ONLY"
+          ]
+        }
+      },
+      "b128_physical_distinct_protected": true,
+      "b141_not_overclassified": true
+    },
+    "production_invariants": {
+      "all_shadow_only": true,
+      "all_no_change": true,
+      "any_production_routing_changed": false,
+      "count": 29
+    },
+    "LIVE_VISION_CALLS": 0
+  },
+  "recommendation": {
+    "decision": "SAFE_SHADOW_DIAGNOSTIC",
+    "strength": "DIAGNOSTIC",
+    "note": "Evidence-conflict arbitration explained the P2.6.7 DISTINCT vs DUPLICATE disagreement without production mutation."
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 27,
+    "total": 27,
+    "results": [
+      {
+        "name": "same_spec_same_layer_no_conflict",
+        "pass": true
+      },
+      {
+        "name": "same_spec_different_layer",
+        "pass": true
+      },
+      {
+        "name": "same_spec_different_physical_target",
+        "pass": true
+      },
+      {
+        "name": "semantic_duplicate_physical_distinct",
+        "pass": true
+      },
+      {
+        "name": "semantic_distinct_physical_duplicate",
+        "pass": true
+      },
+      {
+        "name": "same_target_different_annotation_representation",
+        "pass": true
+      },
+      {
+        "name": "leader_conflict",
+        "pass": true
+      },
+      {
+        "name": "spatial_conflict",
+        "pass": true
+      },
+      {
+        "name": "role_conflict",
+        "pass": true
+      },
+      {
+        "name": "missing_layer_evidence",
+        "pass": true
+      },
+      {
+        "name": "missing_semantic_response",
+        "pass": true
+      },
+      {
+        "name": "malformed_claude_response",
+        "pass": true
+      },
+      {
+        "name": "unknown_semantic_class",
+        "pass": true
+      },
+      {
+        "name": "deterministic_stronger_than_semantic",
+        "pass": true
+      },
+      {
+        "name": "semantic_cannot_mutate_production",
+        "pass": true
+      },
+      {
+        "name": "P2.6.6_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.7_regression",
+        "pass": true
+      },
+      {
+        "name": "production_identical_fingerprints",
+        "pass": true
+      },
+      {
+        "name": "recovery_fields_forbidden_in_contract",
+        "pass": true
+      },
+      {
+        "name": "no_gt_usage",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_hardcoding_in_runtime",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "prompt_no_recovery_request",
+        "pass": true
+      },
+      {
+        "name": "b128_and_b141_controls_from_frozen_artefacts",
+        "pass": true
+      },
+      {
+        "name": "classify_phase_never_production_ready",
+        "pass": true
+      },
+      {
+        "name": "insufficient_physical_evidence",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.8",
+    "gate_version": "P268_EVIDENCE_CONFLICT_ARBITRATION_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.6.8 writes only isolated evidence-conflict shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "p264_artefacts_unchanged": true,
+    "p265_artefacts_unchanged": true,
+    "p266_artefacts_unchanged": true,
+    "p267_artefacts_unchanged": true,
+    "all_shadow_only": true,
+    "all_no_change": true,
+    "engineering_changes": "NONE",
+    "steel_quantity_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "live_vision_invoked": false
+  },
+  "decision": "SAFE_SHADOW_DIAGNOSTIC",
+  "strength": "DIAGNOSTIC",
+  "live_vision_invoked": false,
+  "report_paths": {
+    "status": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_STATUS.md",
+    "results": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_RESULTS.json"
+  }
+}

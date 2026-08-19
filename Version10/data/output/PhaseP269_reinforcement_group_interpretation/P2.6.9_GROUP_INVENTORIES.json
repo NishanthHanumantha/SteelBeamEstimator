@@ -1,0 +1,2627 @@
+[
+  {
+    "set_key": "Fourth",
+    "beam_id": "B141",
+    "expected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B141",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 5,
+        "diameter": 16,
+        "specification": "5Y16",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-2adb0aed"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "5-Y16",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B141",
+        "group_id": "G02",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": "UNKNOWN",
+        "diameter": 81,
+        "specification": "4L-Y8@\\X100C/C",
+        "spacing": "100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-2f359490"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "LOW",
+        "confidence": 0.5,
+        "raw_text": "4L-Y8@\\X100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B141",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 5,
+        "diameter": 16,
+        "specification": "5Y16",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B141-TOP_MAIN-e1d22e",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8341,
+        "source_bar_id": "R13-B141-TOP_MAIN-e1d22e",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 8746.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 2,
+      "detected_group_count": 1,
+      "correctly_interpreted_groups": 1,
+      "missing_groups": [
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8@\\X100C/C"
+        ]
+      ],
+      "spurious_groups": [],
+      "merged_groups": [],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "5Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "5Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [
+        "MISSED_GROUP"
+      ],
+      "error_counts": {
+        "MISSED_GROUP": 1
+      },
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y16"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8@\\X100C/C"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y16"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-2f359490",
+        "parsed_specification": "4L-Y8@\\X100C/C",
+        "assigned_group_id": null,
+        "assigned_layer": null,
+        "assigned_role": null,
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "UNKNOWN"
+        },
+        "association_status": "ungrouped",
+        "association_confidence": 0.0
+      },
+      {
+        "annotation_id": "ANN-2adb0aed",
+        "parsed_specification": "5Y16",
+        "assigned_group_id": "G01",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 0.0,
+      "layer_classification_accuracy": 0.5,
+      "role_classification_accuracy": 0.5,
+      "specification_accuracy": 0.5,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 0.5,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 0,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 0.5,
+      "missed_groups": 1,
+      "spurious_groups": 0,
+      "wrong_layer_count": 0,
+      "wrong_role_count": 0,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B66",
+    "expected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 25,
+        "specification": "4Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-c6c87976"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4-Y25",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 5,
+        "diameter": 20,
+        "specification": "5Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-6cfb6ebe"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "5-Y20",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G03",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 4,
+        "diameter": 8,
+        "specification": "4L-Y8",
+        "spacing": "100/125/100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-830f2ae1"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4L-Y8@100/125/100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 25,
+        "specification": "4Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B66-BOTTOM_MAIN-59fb84",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8305,
+        "source_bar_id": "R13-B66-BOTTOM_MAIN-59fb84",
+        "piece_type": "BOTTOM_MAIN",
+        "cut_length_mm": 7050.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 5,
+        "diameter": 20,
+        "specification": "5Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B66-TOP_MAIN-3ad435",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8305,
+        "source_bar_id": "R13-B66-TOP_MAIN-3ad435",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 6620.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B66",
+        "group_id": "G03",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 4,
+        "diameter": 8,
+        "specification": "4L-Y8",
+        "spacing": "100",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B66-STIRRUP-22b1d5",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8532,
+        "source_bar_id": "R13-B66-STIRRUP-22b1d5",
+        "piece_type": "STIRRUP_ZONE_A",
+        "cut_length_mm": 2160.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 3,
+      "detected_group_count": 3,
+      "correctly_interpreted_groups": 3,
+      "missing_groups": [],
+      "spurious_groups": [],
+      "merged_groups": [],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "4Y25"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "4Y25"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "5Y20"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "5Y20"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "4L-Y8"
+          ],
+          "detected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "4L-Y8"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [],
+      "error_counts": {},
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "4Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "4Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "5Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-830f2ae1",
+        "parsed_specification": "4L-Y8",
+        "assigned_group_id": "G03",
+        "assigned_layer": "STIRRUP",
+        "assigned_role": "STIRRUP",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "STIRRUP"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-c6c87976",
+        "parsed_specification": "4Y25",
+        "assigned_group_id": "G01",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-6cfb6ebe",
+        "parsed_specification": "5Y20",
+        "assigned_group_id": "G02",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 1.0,
+      "layer_classification_accuracy": 1.0,
+      "role_classification_accuracy": 1.0,
+      "specification_accuracy": 1.0,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 1.0,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 0,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 1.0,
+      "missed_groups": 0,
+      "spurious_groups": 0,
+      "wrong_layer_count": 0,
+      "wrong_role_count": 0,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  },
+  {
+    "set_key": "Fourth",
+    "beam_id": "B161",
+    "expected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 3,
+        "diameter": 16,
+        "specification": "3Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-6d2a9dab"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y16",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-9734f438"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y20",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-99af2455"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y20",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G04",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 4,
+        "diameter": 16,
+        "specification": "4Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-32b0ae8b"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4-Y16",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G05",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 25,
+        "specification": "4Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-e3f4e1ce"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4-Y25",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G06",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 4,
+        "diameter": 8,
+        "specification": "4L-Y8",
+        "spacing": "100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-c82f2009"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4L-Y8@100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 3,
+        "diameter": 16,
+        "specification": "3Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-BOTTOM_EXTRA-429050",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8217,
+        "source_bar_id": "R13-B161-BOTTOM_EXTRA-429050",
+        "piece_type": "BOTTOM_EXTRA_LEFT",
+        "cut_length_mm": 2876.3,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B161-BOTTOM_EXTRA-429050",
+          "R13-B161-BOTTOM_EXTRA-fab441"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-BOTTOM_MAIN-74252f",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8346,
+        "source_bar_id": "R13-B161-BOTTOM_MAIN-74252f",
+        "piece_type": "BOTTOM_MAIN",
+        "cut_length_mm": 7721.2
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 4,
+        "diameter": 16,
+        "specification": "4Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-TOP_EXTRA-f114bd",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8217,
+        "source_bar_id": "R13-B161-TOP_EXTRA-f114bd",
+        "piece_type": "TOP_EXTRA_LEFT",
+        "cut_length_mm": 2876.3,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B161-TOP_EXTRA-f114bd",
+          "R13-B161-TOP_EXTRA-a66024"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G04",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 25,
+        "specification": "4Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-TOP_MAIN-b3f7e3",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8346,
+        "source_bar_id": "R13-B161-TOP_MAIN-b3f7e3",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 8151.2
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G05",
+        "family": "SPACER",
+        "physical_layer": "SPACER",
+        "reinforcement_role": "SPACER",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": 1000.0,
+        "zone": "UNKNOWN",
+        "spatial_extent": "ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-SPACER_BAR-fcd1b5",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.85,
+        "source_bar_id": "R13-B161-SPACER_BAR-fcd1b5",
+        "piece_type": "SPACER_BAR",
+        "cut_length_mm": 390.0,
+        "piece_count": 4,
+        "source_bar_ids": [
+          "R13-B161-SPACER_BAR-fcd1b5",
+          "R13-B161-SPACER_BAR-345f0f",
+          "R13-B161-SPACER_BAR-f0b93b",
+          "R13-B161-SPACER_BAR-8ba4c1"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B161",
+        "group_id": "G06",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 4,
+        "diameter": 8,
+        "specification": "4L-Y8",
+        "spacing": "100",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B161-STIRRUP-efca9b",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8532,
+        "source_bar_id": "R13-B161-STIRRUP-efca9b",
+        "piece_type": "STIRRUP_ZONE_A",
+        "cut_length_mm": 2260.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 6,
+      "detected_group_count": 5,
+      "correctly_interpreted_groups": 5,
+      "missing_groups": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y20"
+        ]
+      ],
+      "spurious_groups": [],
+      "merged_groups": [
+        {
+          "expected": [
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "EXTRA",
+              "3Y20"
+            ],
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "MAIN",
+              "3Y20"
+            ]
+          ],
+          "detected": [
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "MAIN",
+              "3Y20"
+            ]
+          ]
+        }
+      ],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "3Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "3Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "3Y20"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "3Y20"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "4Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "4Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "4Y25"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "4Y25"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "4L-Y8"
+          ],
+          "detected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "4L-Y8"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [
+        "WRONG_ROLE",
+        "MERGED_DISTINCT_GROUPS",
+        "MISSED_GROUP"
+      ],
+      "error_counts": {
+        "WRONG_ROLE": 1,
+        "MERGED_DISTINCT_GROUPS": 1,
+        "MISSED_GROUP": 1
+      },
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y20"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "4Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "4Y25"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "4Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "4Y25"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "4L-Y8"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-6d2a9dab",
+        "parsed_specification": "3Y16",
+        "assigned_group_id": "G01",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-99af2455",
+        "parsed_specification": "3Y20",
+        "assigned_group_id": "G02",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-9734f438",
+        "parsed_specification": "3Y20",
+        "assigned_group_id": "G02",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_EXTRA"
+        },
+        "association_status": "incorrectly_grouped",
+        "association_confidence": 0.4
+      },
+      {
+        "annotation_id": "ANN-c82f2009",
+        "parsed_specification": "4L-Y8",
+        "assigned_group_id": "G06",
+        "assigned_layer": "STIRRUP",
+        "assigned_role": "STIRRUP",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "STIRRUP"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-e3f4e1ce",
+        "parsed_specification": "4Y25",
+        "assigned_group_id": "G04",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-32b0ae8b",
+        "parsed_specification": "4Y16",
+        "assigned_group_id": "G03",
+        "assigned_layer": "TOP",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 0.0,
+      "layer_classification_accuracy": 0.8333,
+      "role_classification_accuracy": 0.8333,
+      "specification_accuracy": 0.8333,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 0.8333,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 1,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 0.8333,
+      "missed_groups": 1,
+      "spurious_groups": 0,
+      "wrong_layer_count": 0,
+      "wrong_role_count": 1,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B128",
+    "expected_groups": [
+      {
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 16,
+        "specification": "3Y16",
+        "zone": "FULL_SPAN",
+        "provenance": "P268_PHYSICAL_LAYER_CONTROL",
+        "beam_id": "B128",
+        "evidence_quality": "CONTROL",
+        "confidence": 0.6,
+        "annotation_ids": [],
+        "leader_ids": [],
+        "spacing": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "CONTROL_OVERLAY",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "phase": "P2.6.9",
+        "group_id": "G01"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B128",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 16,
+        "specification": "3Y16",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-8a0b5fda"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y16",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B128",
+        "group_id": "G03",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": "UNKNOWN",
+        "diameter": 81,
+        "specification": "2L-Y8@\\X100/150/100C/C",
+        "spacing": "100/150/100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-ca8a916f"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "LOW",
+        "confidence": 0.5,
+        "raw_text": "2L-Y8@\\X100/150/100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B128",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 16,
+        "specification": "3Y16",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B128-TOP_MAIN-3150a4",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8305,
+        "source_bar_id": "R13-B128-TOP_MAIN-3150a4",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 2876.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 3,
+      "detected_group_count": 1,
+      "correctly_interpreted_groups": 1,
+      "missing_groups": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y16"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "2L-Y8@\\X100/150/100C/C"
+        ]
+      ],
+      "spurious_groups": [],
+      "merged_groups": [
+        {
+          "expected": [
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "MAIN",
+              "3Y16"
+            ],
+            [
+              "LONGITUDINAL",
+              "TOP",
+              "MAIN",
+              "3Y16"
+            ]
+          ],
+          "detected": [
+            [
+              "LONGITUDINAL",
+              "TOP",
+              "MAIN",
+              "3Y16"
+            ]
+          ]
+        }
+      ],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [
+        "WRONG_LAYER",
+        "MERGED_DISTINCT_GROUPS",
+        "MISSED_GROUP"
+      ],
+      "error_counts": {
+        "WRONG_LAYER": 1,
+        "MERGED_DISTINCT_GROUPS": 1,
+        "MISSED_GROUP": 2
+      },
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y16"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "2L-Y8@\\X100/150/100C/C"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y16"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-ca8a916f",
+        "parsed_specification": "2L-Y8@\\X100/150/100C/C",
+        "assigned_group_id": null,
+        "assigned_layer": null,
+        "assigned_role": null,
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "UNKNOWN"
+        },
+        "association_status": "ungrouped",
+        "association_confidence": 0.0
+      },
+      {
+        "annotation_id": "ANN-8a0b5fda",
+        "parsed_specification": "3Y16",
+        "assigned_group_id": "G01",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 0.0,
+      "layer_classification_accuracy": 0.3333,
+      "role_classification_accuracy": 0.3333,
+      "specification_accuracy": 0.3333,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 0.5,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 1,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 0.3333,
+      "missed_groups": 2,
+      "spurious_groups": 0,
+      "wrong_layer_count": 1,
+      "wrong_role_count": 0,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B55",
+    "expected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-acb561e7"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y25",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-61d93c37"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y25",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-e1107212"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "2-Y16",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G04",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-e003f58c"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y20",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G05",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 3,
+        "diameter": 10,
+        "specification": "3L-Y10",
+        "spacing": "100/125/100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-2502e956"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3L-Y10@100/125/100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B55-BOTTOM_MAIN-55dc12",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8264,
+        "source_bar_id": "R13-B55-BOTTOM_MAIN-55dc12",
+        "piece_type": "BOTTOM_MAIN",
+        "cut_length_mm": 7050.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B55-TOP_EXTRA-cc1345",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8177,
+        "source_bar_id": "R13-B55-TOP_EXTRA-cc1345",
+        "piece_type": "TOP_EXTRA_LEFT",
+        "cut_length_mm": 2601.0,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B55-TOP_EXTRA-cc1345",
+          "R13-B55-TOP_EXTRA-af5ec1"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B55-TOP_MAIN-371daa",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8346,
+        "source_bar_id": "R13-B55-TOP_MAIN-371daa",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 6620.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G04",
+        "family": "SPACER",
+        "physical_layer": "SPACER",
+        "reinforcement_role": "SPACER",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": 1000.0,
+        "zone": "UNKNOWN",
+        "spatial_extent": "ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B55-SPACER_BAR-cddc91",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.85,
+        "source_bar_id": "R13-B55-SPACER_BAR-cddc91",
+        "piece_type": "SPACER_BAR",
+        "cut_length_mm": 240.0,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B55-SPACER_BAR-cddc91",
+          "R13-B55-SPACER_BAR-6779b9"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B55",
+        "group_id": "G05",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 3,
+        "diameter": 10,
+        "specification": "3L-Y10",
+        "spacing": "100",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B55-STIRRUP-285cb2",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8532,
+        "source_bar_id": "R13-B55-STIRRUP-285cb2",
+        "piece_type": "STIRRUP_ZONE_A",
+        "cut_length_mm": 3000.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 5,
+      "detected_group_count": 4,
+      "correctly_interpreted_groups": 4,
+      "missing_groups": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y25"
+        ]
+      ],
+      "spurious_groups": [],
+      "merged_groups": [
+        {
+          "expected": [
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "EXTRA",
+              "3Y25"
+            ],
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "MAIN",
+              "3Y25"
+            ]
+          ],
+          "detected": [
+            [
+              "LONGITUDINAL",
+              "BOTTOM",
+              "MAIN",
+              "3Y25"
+            ]
+          ]
+        }
+      ],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "3Y25"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "3Y25"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "2Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "2Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y20"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y20"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "3L-Y10"
+          ],
+          "detected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "3L-Y10"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [
+        "WRONG_ROLE",
+        "MERGED_DISTINCT_GROUPS",
+        "MISSED_GROUP"
+      ],
+      "error_counts": {
+        "WRONG_ROLE": 1,
+        "MERGED_DISTINCT_GROUPS": 1,
+        "MISSED_GROUP": 1
+      },
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "3Y25"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-2502e956",
+        "parsed_specification": "3L-Y10",
+        "assigned_group_id": "G05",
+        "assigned_layer": "STIRRUP",
+        "assigned_role": "STIRRUP",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "STIRRUP"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-e003f58c",
+        "parsed_specification": "3Y20",
+        "assigned_group_id": "G03",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-e1107212",
+        "parsed_specification": "2Y16",
+        "assigned_group_id": "G02",
+        "assigned_layer": "TOP",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-61d93c37",
+        "parsed_specification": "3Y25",
+        "assigned_group_id": "G01",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-acb561e7",
+        "parsed_specification": "3Y25",
+        "assigned_group_id": "G01",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_EXTRA"
+        },
+        "association_status": "incorrectly_grouped",
+        "association_confidence": 0.4
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 0.0,
+      "layer_classification_accuracy": 0.8,
+      "role_classification_accuracy": 0.8,
+      "specification_accuracy": 0.8,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 0.8,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 1,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 0.8,
+      "missed_groups": 1,
+      "spurious_groups": 0,
+      "wrong_layer_count": 0,
+      "wrong_role_count": 1,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  },
+  {
+    "set_key": "Fifth",
+    "beam_id": "B65",
+    "expected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-63c34c43"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "2-Y16",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 4,
+        "diameter": 16,
+        "specification": "4Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-90f52a09"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4-Y16",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 20,
+        "specification": "4Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-f274c88b"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "4-Y20",
+        "position_zone": "BOTTOM_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G04",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "SUPPORT_ZONE",
+        "spatial_extent": "SUPPORT_ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-09cdbbb7"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "2-Y16",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G05",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-ca8179be"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3-Y20",
+        "position_zone": "TOP_ZONE"
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G06",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 3,
+        "diameter": 10,
+        "specification": "3L-Y10",
+        "spacing": "100/125/100 C/C",
+        "zone": "UNKNOWN",
+        "spatial_extent": "UNKNOWN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [
+          "ANN-0a703090"
+        ],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "DRAWING_ANNOTATION",
+        "provenance": "R1_DXF_ANNOTATION",
+        "evidence_quality": "HIGH",
+        "confidence": 0.8,
+        "raw_text": "3L-Y10@100/125/100C/C",
+        "position_zone": "TOP_ZONE"
+      }
+    ],
+    "detected_groups": [
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G01",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-BOTTOM_EXTRA-a8eebd",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.826,
+        "source_bar_id": "R13-B65-BOTTOM_EXTRA-a8eebd",
+        "piece_type": "BOTTOM_EXTRA_LEFT",
+        "cut_length_mm": 3013.5,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B65-BOTTOM_EXTRA-a8eebd",
+          "R13-B65-BOTTOM_EXTRA-49b98a"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G02",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "EXTRA",
+        "count": 4,
+        "diameter": 16,
+        "specification": "4Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-BOTTOM_EXTRA-c730f6",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8177,
+        "source_bar_id": "R13-B65-BOTTOM_EXTRA-c730f6",
+        "piece_type": "BOTTOM_EXTRA_LEFT",
+        "cut_length_mm": 3013.5,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B65-BOTTOM_EXTRA-c730f6",
+          "R13-B65-BOTTOM_EXTRA-7583d9"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G03",
+        "family": "LONGITUDINAL",
+        "physical_layer": "BOTTOM",
+        "reinforcement_role": "MAIN",
+        "count": 4,
+        "diameter": 20,
+        "specification": "4Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-BOTTOM_MAIN-eb7147",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8386,
+        "source_bar_id": "R13-B65-BOTTOM_MAIN-eb7147",
+        "piece_type": "BOTTOM_MAIN",
+        "cut_length_mm": 8270.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G04",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "EXTRA",
+        "count": 2,
+        "diameter": 16,
+        "specification": "2Y16",
+        "spacing": "UNKNOWN",
+        "zone": "BOTH_SUPPORTS",
+        "spatial_extent": "BOTH_SUPPORTS",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-TOP_EXTRA-c18ec1",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.826,
+        "source_bar_id": "R13-B65-TOP_EXTRA-c18ec1",
+        "piece_type": "TOP_EXTRA_LEFT",
+        "cut_length_mm": 3013.5,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B65-TOP_EXTRA-c18ec1",
+          "R13-B65-TOP_EXTRA-51c1f1"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G05",
+        "family": "LONGITUDINAL",
+        "physical_layer": "TOP",
+        "reinforcement_role": "MAIN",
+        "count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "spacing": "UNKNOWN",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-TOP_MAIN-6d99df",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8305,
+        "source_bar_id": "R13-B65-TOP_MAIN-6d99df",
+        "piece_type": "TOP_MAIN",
+        "cut_length_mm": 8270.0
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G06",
+        "family": "SPACER",
+        "physical_layer": "SPACER",
+        "reinforcement_role": "SPACER",
+        "count": 3,
+        "diameter": 25,
+        "specification": "3Y25",
+        "spacing": 1000.0,
+        "zone": "UNKNOWN",
+        "spatial_extent": "ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-SPACER_BAR-41f287",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.85,
+        "source_bar_id": "R13-B65-SPACER_BAR-41f287",
+        "piece_type": "SPACER_BAR",
+        "cut_length_mm": 240.0,
+        "piece_count": 4,
+        "source_bar_ids": [
+          "R13-B65-SPACER_BAR-41f287",
+          "R13-B65-SPACER_BAR-e36fe7",
+          "R13-B65-SPACER_BAR-7b9606",
+          "R13-B65-SPACER_BAR-8fe919"
+        ]
+      },
+      {
+        "phase": "P2.6.9",
+        "beam_id": "B65",
+        "group_id": "G07",
+        "family": "STIRRUP",
+        "physical_layer": "STIRRUP",
+        "reinforcement_role": "STIRRUP",
+        "count": 3,
+        "diameter": 10,
+        "specification": "3L-Y10",
+        "spacing": "100",
+        "zone": "FULL_SPAN",
+        "spatial_extent": "FULL_SPAN",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B65-STIRRUP-cf0c13",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.8532,
+        "source_bar_id": "R13-B65-STIRRUP-cf0c13",
+        "piece_type": "STIRRUP_ZONE_A",
+        "cut_length_mm": 3000.0
+      }
+    ],
+    "comparison": {
+      "expected_group_count": 6,
+      "detected_group_count": 6,
+      "correctly_interpreted_groups": 6,
+      "missing_groups": [],
+      "spurious_groups": [],
+      "merged_groups": [],
+      "split_groups": [],
+      "matched": [
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "2Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "2Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "4Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "EXTRA",
+            "4Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "4Y20"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "BOTTOM",
+            "MAIN",
+            "4Y20"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "2Y16"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "EXTRA",
+            "2Y16"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y20"
+          ],
+          "detected": [
+            "LONGITUDINAL",
+            "TOP",
+            "MAIN",
+            "3Y20"
+          ],
+          "status": "CORRECT_GROUP"
+        },
+        {
+          "expected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "3L-Y10"
+          ],
+          "detected": [
+            "STIRRUP",
+            "STIRRUP",
+            "STIRRUP",
+            "3L-Y10"
+          ],
+          "status": "CORRECT_GROUP"
+        }
+      ],
+      "errors": [],
+      "error_counts": {},
+      "expected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "4Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "4Y20"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ],
+      "detected": [
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "EXTRA",
+          "4Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "BOTTOM",
+          "MAIN",
+          "4Y20"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "EXTRA",
+          "2Y16"
+        ],
+        [
+          "LONGITUDINAL",
+          "TOP",
+          "MAIN",
+          "3Y20"
+        ],
+        [
+          "STIRRUP",
+          "STIRRUP",
+          "STIRRUP",
+          "3L-Y10"
+        ]
+      ]
+    },
+    "associations": [
+      {
+        "annotation_id": "ANN-f274c88b",
+        "parsed_specification": "4Y20",
+        "assigned_group_id": "G03",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-0a703090",
+        "parsed_specification": "3L-Y10",
+        "assigned_group_id": "G07",
+        "assigned_layer": "STIRRUP",
+        "assigned_role": "STIRRUP",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "STIRRUP"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-ca8179be",
+        "parsed_specification": "3Y20",
+        "assigned_group_id": "G05",
+        "assigned_layer": "TOP",
+        "assigned_role": "MAIN",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_MAIN"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-09cdbbb7",
+        "parsed_specification": "2Y16",
+        "assigned_group_id": "G04",
+        "assigned_layer": "TOP",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "TOP_ZONE",
+          "role": "TOP_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-90f52a09",
+        "parsed_specification": "4Y16",
+        "assigned_group_id": "G02",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      },
+      {
+        "annotation_id": "ANN-63c34c43",
+        "parsed_specification": "2Y16",
+        "assigned_group_id": "G01",
+        "assigned_layer": "BOTTOM",
+        "assigned_role": "EXTRA",
+        "spatial_leader_evidence": {
+          "position_zone": "BOTTOM_ZONE",
+          "role": "BOTTOM_EXTRA"
+        },
+        "association_status": "correctly_grouped",
+        "association_confidence": 0.8
+      }
+    ],
+    "metrics": {
+      "group_count_accuracy": 1.0,
+      "layer_classification_accuracy": 1.0,
+      "role_classification_accuracy": 1.0,
+      "specification_accuracy": 1.0,
+      "count_accuracy": 1.0,
+      "spatial_extent_accuracy": "NOT_EVALUABLE",
+      "annotation_association_accuracy": 1.0,
+      "duplicate_group_error_count": 0,
+      "merged_distinct_group_count": 0,
+      "split_same_group_error_count": 0,
+      "unclassified_group_count": 0,
+      "overall_group_interpretation_accuracy": 1.0,
+      "missed_groups": 0,
+      "spurious_groups": 0,
+      "wrong_layer_count": 0,
+      "wrong_role_count": 0,
+      "wrong_spec_count": 0
+    },
+    "production_action": "NO_CHANGE",
+    "shadow_only": true
+  }
+]
