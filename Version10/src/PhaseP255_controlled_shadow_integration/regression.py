@@ -101,7 +101,7 @@ def firewall_check(version10_root: Path) -> Dict[str, Any]:
     )
     for path in src.rglob("*.py"):
         rel = str(path.relative_to(src)).replace("\\", "/")
-        if "PhaseP254_" in rel or "PhaseP255_" in rel or "PhaseP256_" in rel or "PhaseP257_" in rel or "PhaseP258_" in rel or "PhaseP259_" in rel or "PhaseP2510_" in rel or "PhaseP2511_" in rel or "PhaseP253_" in rel or "PhaseP26_" in rel or "PhaseP261_" in rel or "PhaseP262_" in rel or "PhaseP263_" in rel or "PhaseP264_" in rel or "PhaseP265_" in rel or "PhaseP266_" in rel or "PhaseP267_" in rel or "PhaseP268_" in rel or "PhaseP269_" in rel or "PhaseP2610A_" in rel:
+        if "PhaseP254_" in rel or "PhaseP255_" in rel or "PhaseP256_" in rel or "PhaseP257_" in rel or "PhaseP258_" in rel or "PhaseP259_" in rel or "PhaseP2510_" in rel or "PhaseP2511_" in rel or "PhaseP253_" in rel or "PhaseP26_" in rel or "PhaseP261_" in rel or "PhaseP262_" in rel or "PhaseP263_" in rel or "PhaseP264_" in rel or "PhaseP265_" in rel or "PhaseP266_" in rel or "PhaseP267_" in rel or "PhaseP268_" in rel or "PhaseP269_" in rel or "PhaseP2610A_" in rel or "PhaseP2610B_" in rel:
             continue
         try:
             text = path.read_text(encoding="utf-8", errors="ignore")

@@ -1,0 +1,178 @@
+{
+  "phase_id": "P2.6.10-B",
+  "phase_name": "Adaptive Beam Detail Completeness & Reinforcement Evidence Crop Benchmark",
+  "model_version": "10.11.11",
+  "gate_version": "P2610B_ADAPTIVE_BEAM_DETAIL_COMPLETENESS_V1_0",
+  "scope": "ADAPTIVE_BEAM_DETAIL_COMPLETENESS",
+  "mode": "OFFLINE_BENCHMARK",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PASS",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop",
+  "metrics": {
+    "target_beams": 6,
+    "crops_complete": true,
+    "readiness": "READY",
+    "complete_count": 6,
+    "LIVE_VISION_CALLS": 0
+  },
+  "recommendation": {
+    "decision": "SAFE_SHADOW_BENCHMARK",
+    "strength": "DIAGNOSTIC",
+    "readiness": "READY",
+    "note": "Adaptive detail-crop benchmark completed without production mutation. No Claude Vision."
+  },
+  "decision": "SAFE_SHADOW_BENCHMARK",
+  "unit_tests": {
+    "success": true,
+    "passed": 18,
+    "total": 18,
+    "results": [
+      {
+        "name": "title_anchor_and_text_kinds",
+        "pass": true
+      },
+      {
+        "name": "adaptive_upward_expansion_keeps_top_band",
+        "pass": true
+      },
+      {
+        "name": "adaptive_horizontal_expansion_keeps_right_extra",
+        "pass": true
+      },
+      {
+        "name": "top_and_bottom_evidence_detection",
+        "pass": true
+      },
+      {
+        "name": "dimension_and_row_isolation",
+        "pass": true
+      },
+      {
+        "name": "no_r1_dependency",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_hardcoding_in_runtime",
+        "pass": true
+      },
+      {
+        "name": "no_gt_usage",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "P2.6.6_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.7_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.8_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.9_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.10-A_artifact_preservation",
+        "pass": true
+      },
+      {
+        "name": "production_identical_fingerprints",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "classify_never_production_ready",
+        "pass": true
+      },
+      {
+        "name": "missing_top_is_incomplete",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.11",
+    "gate_version": "P2610B_ADAPTIVE_BEAM_DETAIL_COMPLETENESS_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.6.10-B writes only isolated adaptive-crop shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "all_shadow_only": true,
+    "all_no_change": true,
+    "engineering_changes": "NONE",
+    "steel_quantity_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "production_objects_modified": false,
+    "live_vision_invoked": false
+  },
+  "prior_regression": {
+    "p266": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\unit_tests.json",
+      "ok": true,
+      "passed": 36,
+      "total": 36,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p267": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\unit_tests.json",
+      "ok": true,
+      "passed": 35,
+      "total": 35,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p268": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\unit_tests.json",
+      "ok": true,
+      "passed": 27,
+      "total": 27,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p269": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\unit_tests.json",
+      "ok": true,
+      "passed": 20,
+      "total": 20,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p2610a": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\unit_tests.json",
+      "ok": true,
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    }
+  },
+  "live_vision_invoked": false
+}
