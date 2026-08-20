@@ -1,0 +1,68 @@
+{
+  "beam_id": "B119",
+  "source_set": "Fourth",
+  "title_status": "PRESENT",
+  "geometry_status": "PRESENT",
+  "top_evidence_status": "PRESENT",
+  "bottom_evidence_status": "PRESENT",
+  "stirrup_evidence_status": "PRESENT",
+  "dimension_evidence_status": "PRESENT",
+  "leader_evidence_status": "NOT_DETERMINABLE",
+  "neighbor_title_status": "NOT_APPLICABLE",
+  "neighbor_detail_status": "NOT_DETERMINABLE",
+  "sliver_status": "PRESENT",
+  "completeness_status": "FAIL",
+  "failure_categories": [
+    "HORIZONTAL_TRUNCATION",
+    "VERTICAL_TRUNCATION"
+  ],
+  "deterministic_notes": [
+    "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+    "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+  ],
+  "p2610b_complete_flag": false,
+  "missing_evidence": [
+    {
+      "text": "3-Y16",
+      "kind": "REINF",
+      "band": "BOTTOM_REINFORCEMENT_BAND",
+      "dx": -1118.3929429799318,
+      "dy": -757.4062288589776
+    },
+    {
+      "text": "3-Y16",
+      "kind": "REINF",
+      "band": "BOTTOM_REINFORCEMENT_BAND",
+      "dx": -183.24593603238463,
+      "dy": -766.3374481499195
+    }
+  ],
+  "neighbor_titles_in_crop": [],
+  "evidence_in_crop": 5,
+  "evidence_total": 7,
+  "pass_logic": "FAIL if any failure_categories; else PASS. NOT_APPLICABLE evidence does not fail. Slivers do not fail.",
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B119.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B119.png",
+  "context_bounds": [
+    31662261.57,
+    -21170303.46,
+    31670061.57,
+    -21161231.7
+  ],
+  "detail_bounds": [
+    31662341.478799403,
+    -21166320.40451702,
+    31670541.478799403,
+    -21162875.81891394
+  ],
+  "crop_dimensions": {
+    "context": [
+      1204,
+      1400
+    ],
+    "detail": [
+      1800,
+      756
+    ]
+  }
+}

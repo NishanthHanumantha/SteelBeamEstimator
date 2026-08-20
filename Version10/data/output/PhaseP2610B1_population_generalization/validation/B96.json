@@ -1,0 +1,60 @@
+{
+  "beam_id": "B96",
+  "source_set": "Fourth",
+  "title_status": "PRESENT",
+  "geometry_status": "PRESENT",
+  "top_evidence_status": "PRESENT",
+  "bottom_evidence_status": "PRESENT",
+  "stirrup_evidence_status": "PRESENT",
+  "dimension_evidence_status": "PRESENT",
+  "leader_evidence_status": "NOT_DETERMINABLE",
+  "neighbor_title_status": "NOT_APPLICABLE",
+  "neighbor_detail_status": "NOT_DETERMINABLE",
+  "sliver_status": "NOT_APPLICABLE",
+  "completeness_status": "FAIL",
+  "failure_categories": [
+    "HORIZONTAL_TRUNCATION"
+  ],
+  "deterministic_notes": [
+    "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+    "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+  ],
+  "p2610b_complete_flag": false,
+  "missing_evidence": [
+    {
+      "text": "DIMENSION",
+      "kind": "DIM",
+      "band": "TOP_EXTRA_DIMENSION_BAND",
+      "dx": 4110.409066349268,
+      "dy": 1473.7617440000176
+    }
+  ],
+  "neighbor_titles_in_crop": [],
+  "evidence_in_crop": 11,
+  "evidence_total": 12,
+  "pass_logic": "FAIL if any failure_categories; else PASS. NOT_APPLICABLE evidence does not fail. Slivers do not fail.",
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B96.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B96.png",
+  "context_bounds": [
+    31667510.4,
+    -21166832.66,
+    31675310.4,
+    -21158656.68
+  ],
+  "detail_bounds": [
+    31667310.3974346,
+    -21163551.79964719,
+    31675510.3974346,
+    -21158951.79964719
+  ],
+  "crop_dimensions": {
+    "context": [
+      1336,
+      1400
+    ],
+    "detail": [
+      1800,
+      1010
+    ]
+  }
+}
