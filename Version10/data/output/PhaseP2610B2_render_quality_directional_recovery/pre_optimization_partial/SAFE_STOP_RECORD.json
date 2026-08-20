@@ -1,0 +1,33 @@
+{
+  "record_type": "SAFE_STOP_RECORD",
+  "phase_id": "P2.6.10-B.2",
+  "model_version": "10.11.13",
+  "run_label": "PRE_OPTIMIZATION_PARTIAL_RUN",
+  "safe_stop_status": "STOPPED_FORCE_AFTER_GRACEFUL_DENIED",
+  "graceful_stop_attempted": true,
+  "graceful_stop_result": "Windows refused non-force termination (process can only be terminated with /F).",
+  "force_stop_used": true,
+  "stopped_pid": 32268,
+  "parent_stub_pid": 5532,
+  "shell_pid": 32096,
+  "command": "python Version10/Run_PY/run_phase_p2610b2_render_quality_directional_recovery.py --skip-unit-tests",
+  "beams_completed_before_stop": 8,
+  "beams_remaining_before_stop": 127,
+  "elapsed_time_before_stop_s": 1002.216,
+  "observed_average_time_per_beam_s": 125.277,
+  "current_execution_stage": "per_beam_context_and_detail_with_inline_recovery",
+  "last_beam_id": "B70A",
+  "progress_bar": "PROGRESS [#---------------------------] 8/135   5.9%  elapsed=16m 42s  ETA=4h 25m",
+  "measured_bottleneck_notes": [
+    "Every completed beam entered recovery (rec=2 or rec=3) because BORDER_CLIPPING_SUSPECT set recovery_required.",
+    "render_crop re-opens the full DXF via ezdxf.readfile for every PNG.",
+    "Each validation also scanned the full modelspace for border/content AABB."
+  ],
+  "artefact_counts": {
+    "diagnostics_json": 9,
+    "context_png": 36,
+    "detail_png": 24
+  },
+  "preserved_under": "pre_optimization_partial",
+  "do_not_use_as_final_population_evidence": true
+}

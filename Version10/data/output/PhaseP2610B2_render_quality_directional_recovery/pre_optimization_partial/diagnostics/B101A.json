@@ -1,0 +1,390 @@
+{
+  "beam_id": "B101A",
+  "stages": [
+    "INITIAL_CONTEXT",
+    "VALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "FREEZE_CONTEXT",
+    "DERIVE_DETAIL",
+    "RENDER_DETAIL",
+    "VALIDATE_DETAIL",
+    "RECOVER_DETAIL"
+  ],
+  "dominant_orientation": "COMPACT",
+  "initial_context_bounds": [
+    31658952.84,
+    -21213617.79,
+    31666752.84,
+    -21204920.84
+  ],
+  "final_context_bounds": [
+    31659635.1638402,
+    -21209917.79434781,
+    31666486.85260137,
+    -21206425.641447864
+  ],
+  "initial_detail_bounds": [
+    31659635.1638402,
+    -21209917.79434781,
+    31666486.85260137,
+    -21206425.641447864
+  ],
+  "final_detail_bounds": [
+    31659635.1638402,
+    -21209917.79434781,
+    31666486.85260137,
+    -21206425.641447864
+  ],
+  "context_status": "BORDER_CLIPPING_SUSPECT",
+  "detail_status": "BORDER_CLIPPING_SUSPECT",
+  "context_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "LOW_LONGITUDINAL_COVERAGE"
+  ],
+  "detail_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT"
+  ],
+  "context_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "COMPACT",
+      "action": "EXPAND_BALANCED",
+      "before_bounds": [
+        31658952.84,
+        -21213617.79,
+        31666752.84,
+        -21204920.84
+      ],
+      "after_bounds": [
+        31659635.1638402,
+        -21210337.79434781,
+        31667352.83987149,
+        -21206381.1290013
+      ],
+      "blocked": false,
+      "note": "",
+      "result": "LOW_INFORMATION_RENDER"
+    },
+    {
+      "attempt": 2,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "COMPACT",
+      "action": "SHIFT_TO_CONTENT",
+      "before_bounds": [
+        31659635.1638402,
+        -21210337.79434781,
+        31667352.83987149,
+        -21206381.1290013
+      ],
+      "after_bounds": [
+        31659635.1638402,
+        -21209917.79434781,
+        31666486.85260137,
+        -21206425.641447864
+      ],
+      "blocked": false,
+      "note": "",
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 3,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "COMPACT",
+      "action": "NONE",
+      "before_bounds": [
+        31659635.1638402,
+        -21209917.79434781,
+        31666486.85260137,
+        -21206425.641447864
+      ],
+      "after_bounds": [
+        31659635.1638402,
+        -21209917.79434781,
+        31666486.85260137,
+        -21206425.641447864
+      ],
+      "blocked": true,
+      "note": "max_attempts",
+      "result": "BLOCKED"
+    }
+  ],
+  "detail_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "COMPACT",
+      "action": "EXPAND_LEFT",
+      "before_bounds": [
+        31659635.1638402,
+        -21209917.79434781,
+        31666486.85260137,
+        -21206425.641447864
+      ],
+      "after_bounds": [
+        31659635.1638402,
+        -21209917.79434781,
+        31666486.85260137,
+        -21206425.641447864
+      ],
+      "blocked": false,
+      "note": "clamped_noop",
+      "result": "NO_CHANGE"
+    }
+  ],
+  "context_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "LOW_LONGITUDINAL_COVERAGE"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.03711,
+    "information_density": 0.00192,
+    "entropy": 0.4146,
+    "component_count": 12,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.96209,
+    "coverage_x": 0.9693,
+    "coverage_y": 0.8627,
+    "column_occupancy": [
+      0.0624,
+      0.0311,
+      0.0327,
+      0.0291,
+      0.0574,
+      0.0356,
+      0.0256,
+      0.023
+    ],
+    "row_occupancy": [
+      0.0052,
+      0.0265,
+      0.0553,
+      0.0064,
+      0.0455,
+      0.0305,
+      0.0726,
+      0.0545
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": false,
+      "top": false,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      45,
+      1356,
+      660
+    ],
+    "content_bbox_dxf": [
+      31659635.1638402,
+      -21209653.681943614,
+      31666271.513811734,
+      -21206645.735118028
+    ],
+    "recovery_required": true,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1400,
+      714
+    ],
+    "dxf_content_bbox": [
+      31661503.55700779,
+      -21209617.79434781,
+      31666276.74555208,
+      -21204544.67703536
+    ],
+    "border_analysis": {
+      "meaningful_target_clipping_suspect": true,
+      "harmless_border_contact": false,
+      "sides": {
+        "left": true,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "harmless_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "geometry_sides": {
+        "left": true,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "text_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      }
+    },
+    "dominant_orientation": "COMPACT"
+  },
+  "detail_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.02979,
+    "information_density": 0.00134,
+    "entropy": 0.3611,
+    "component_count": 14,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.9698,
+    "coverage_x": 0.9689,
+    "coverage_y": 0.8648,
+    "column_occupancy": [
+      0.0535,
+      0.025,
+      0.0318,
+      0.0206,
+      0.0497,
+      0.0279,
+      0.019,
+      0.0109
+    ],
+    "row_occupancy": [
+      0.0088,
+      0.0215,
+      0.0439,
+      0.005,
+      0.0125,
+      0.0262,
+      0.0671,
+      0.0543
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": false,
+      "top": false,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      57,
+      1743,
+      849
+    ],
+    "content_bbox_dxf": [
+      31659635.1638402,
+      -21209658.834263626,
+      31666269.882457267,
+      -21206642.710930195
+    ],
+    "recovery_required": true,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1800,
+      917
+    ],
+    "dxf_content_bbox": [
+      31661503.55700779,
+      -21209617.79434781,
+      31666276.74555208,
+      -21204544.67703536
+    ],
+    "border_analysis": {
+      "meaningful_target_clipping_suspect": true,
+      "harmless_border_contact": false,
+      "sides": {
+        "left": true,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "harmless_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "geometry_sides": {
+        "left": true,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "text_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      }
+    },
+    "dominant_orientation": "COMPACT"
+  },
+  "context_valid_before_recovery": false,
+  "context_valid_after_recovery": false,
+  "detail_valid_before_recovery": false,
+  "detail_valid_after_recovery": true,
+  "context_recovery_attempt_count": 3,
+  "context_recovery_success": false,
+  "detail_recovery_attempt_count": 1,
+  "detail_recovery_success": true,
+  "target_visible": true,
+  "longitudinal_complete": false,
+  "context_quality_pass": true,
+  "final_vision_usable": false,
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B101A.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B101A.png",
+  "context_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\initial\\B101A.png",
+  "detail_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\initial\\B101A.png",
+  "p2610b_adaptive": {
+    "outline": [
+      -21213154.83254378,
+      -21207469.09241375
+    ],
+    "evidence_counts": {
+      "stirrup": 1,
+      "reinf": 2,
+      "dim": 3
+    }
+  },
+  "context_render": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\recovery\\B101A_a2.png",
+    "image_dimensions": [
+      1400,
+      714
+    ]
+  },
+  "detail_render": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\initial\\B101A.png",
+    "image_dimensions": [
+      1800,
+      917
+    ]
+  },
+  "context_first": true
+}

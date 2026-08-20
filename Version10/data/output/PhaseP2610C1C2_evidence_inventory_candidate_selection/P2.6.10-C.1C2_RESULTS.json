@@ -1,0 +1,3454 @@
+{
+  "unit_tests": {
+    "success": true,
+    "passed": 21,
+    "total": 21
+  },
+  "live_claude_vision": "NOT_CALLED",
+  "phase_id": "P2.6.10-C.1+C.2",
+  "handoff": {
+    "ready_for": "P2.6.10-C.3",
+    "name": "Visual Completeness Gate + Claude Vision Shadow Benchmark",
+    "manifest": "selection_manifest.json"
+  },
+  "anti_hardcoding": {
+    "ok": true,
+    "source_guard": {
+      "ok": true,
+      "hits": [],
+      "beam_id_special_cases": false,
+      "manual_crop_overrides": false,
+      "gt_coordinate_dependency": false
+    },
+    "translation_invariance": {
+      "synthetic": {
+        "ok": true,
+        "decision": "RETAIN",
+        "status": "RETAIN_PREFERRED"
+      },
+      "dxf_copy": {
+        "ok": true,
+        "skipped": true,
+        "note": "C.1+C.2 does not load DXF; selection invariance is evidence-only"
+      }
+    },
+    "spatial_distance": {
+      "ok": true,
+      "decision": "REPLACE"
+    },
+    "packed_sheet": {
+      "ok": true,
+      "n": 12,
+      "unique_decisions": [
+        "RETAIN"
+      ]
+    },
+    "no_worse_overwrite": {
+      "ok": true,
+      "critical_challenger": "RETAIN",
+      "tiny": "RETAIN",
+      "clears": "REPLACE"
+    },
+    "beam_id_special_cases": false,
+    "manual_crop_overrides": false,
+    "gt_coordinate_dependency": false
+  },
+  "decision": "PASS_WITH_LIMITATIONS",
+  "gate_version": "P2610C1C2_EVIDENCE_INVENTORY_CANDIDATE_SELECTION_V1_0",
+  "validation_summary": {
+    "total_unique_beams": 135,
+    "beams_with_b1_context": 135,
+    "beams_with_b1_detail": 135,
+    "beams_with_b2_candidates": 135,
+    "beams_with_b3_candidates": 90,
+    "context_selected_b1": 107,
+    "context_selected_b2": 24,
+    "context_selected_b3": 4,
+    "context_unresolved_missing": 0,
+    "detail_selected_b1": 85,
+    "detail_selected_b2": 23,
+    "detail_selected_b3": 27,
+    "detail_unresolved_missing": 0,
+    "mixed_source_selections": 53,
+    "b1_retained_by_preference": 192,
+    "b1_replaced_critical_failure": 71,
+    "b1_replaced_material_improvement": 7,
+    "ambiguous_no_replacement": 127,
+    "missing_selections": 0,
+    "per_status_counts": {
+      "REPLACE_PREFERRED": 78,
+      "RETAIN_PREFERRED": 179,
+      "RETAIN_PREFERRED_STILL_CRITICAL": 13
+    },
+    "unresolved_render_count": 13,
+    "shadow_only": true,
+    "production_write": false,
+    "engineering_changes": "NONE",
+    "live_vision_calls": false,
+    "prior_phase_units": {
+      "p266": true,
+      "p2610a": true,
+      "p2610b": true,
+      "p2610b1": true,
+      "p2610b2": true,
+      "p2610b3": true
+    }
+  },
+  "selection_summary": {
+    "total_unique_beams": 135,
+    "beams_with_b1_context": 135,
+    "beams_with_b1_detail": 135,
+    "beams_with_b2_candidates": 135,
+    "beams_with_b3_candidates": 90,
+    "context_selected_b1": 107,
+    "context_selected_b2": 24,
+    "context_selected_b3": 4,
+    "context_unresolved_missing": 0,
+    "detail_selected_b1": 85,
+    "detail_selected_b2": 23,
+    "detail_selected_b3": 27,
+    "detail_unresolved_missing": 0,
+    "mixed_source_selections": 53,
+    "b1_retained_by_preference": 192,
+    "b1_replaced_critical_failure": 71,
+    "b1_replaced_material_improvement": 7,
+    "ambiguous_no_replacement": 127,
+    "missing_selections": 0,
+    "per_status_counts": {
+      "REPLACE_PREFERRED": 78,
+      "RETAIN_PREFERRED": 179,
+      "RETAIN_PREFERRED_STILL_CRITICAL": 13
+    },
+    "unresolved_render_count": 13
+  },
+  "pass_fail": "PASS",
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": [],
+    "before": {
+      "p24_regression": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP24_fourth_set_bar_failure_audit\\RegressionReport.json",
+        "sha256": "cd39d43d71a19f03eb2d172ae00b7bd32871c55c3f2b2ed1efc1bf43bc941a18",
+        "size": 5188
+      },
+      "p251_report": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\P2.5.1_QuantityIntent_Report.md",
+        "sha256": "69117be9673a064a5868ecb248e84d1ec13e1d6dfeb7234dafe4236e4ff379a1",
+        "size": 5516
+      },
+      "p252_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\manifests\\VisionCandidateManifest.json",
+        "sha256": "0ad374aae585196cfea8ae6270876f552a8a0395a8edd67ebcfff1679a8adbb6",
+        "size": 127646
+      },
+      "p252_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\metrics\\metrics.json",
+        "sha256": "a5757247e450a449e8caf3dd01ce7479ad4f8d68005483a970b786d4b1efa808",
+        "size": 1134
+      },
+      "p2521_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\P2.5.2.1_STATUS.md",
+        "sha256": "5e5c22da1f552336d28fbd8cd43e7a57151df996ae42fe7a42a01785def36cc4",
+        "size": 1972
+      },
+      "p2522_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\P2.5.2.2_STATUS.md",
+        "sha256": "dae40a4957cc41f83f42a1d1c18229c2cf6828d4efcf4dcad13b1884f64c5606",
+        "size": 13223
+      },
+      "p2523_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\P2.5.2.3_STATUS.md",
+        "sha256": "98e0ac2041d589e953fe62aa0b6e20b79a8ebab79bfbcbbeb21cefb5acb5822b",
+        "size": 11722
+      },
+      "p2523_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\manifests\\TargetBeamCompletenessManifest.json",
+        "sha256": "c083c77d3fed4ea064379f40358889a1c234c1e5de197e83e2676e0fe20728de",
+        "size": 121008
+      },
+      "p253_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\P2.5.3_STATUS.md",
+        "sha256": "17643cba0366e58175f2a1cb805efebab9630e8155546f42990048bb3be6db08",
+        "size": 6576
+      },
+      "p253_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\pilot_summary.json",
+        "sha256": "ed3b2a9882fbdcc28de2d2c9fe80a9dea4f991359093ca4b66c956c0cbe8eb26",
+        "size": 4871
+      },
+      "p254_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\P2.5.4_STATUS.md",
+        "sha256": "412ab5468bd7ba1871e1ae0f16ac6ebe50d69f46d161f46f7bb5fa48d0e19eb8",
+        "size": 18177
+      },
+      "p254_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark_summary.json",
+        "sha256": "b492c085b9337181e51471b1c8402a06a9f1d751ea270274854d15f8cda2fdfa",
+        "size": 9295
+      },
+      "p254_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\benchmark_manifest.json",
+        "sha256": "3a1a4827476ed398e8aaadc148e01fdf8d31ffcb4005ebcfd42118906fa4a2f8",
+        "size": 53363
+      },
+      "p254_gt": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\ground_truth_reference.json",
+        "sha256": "838ba9164ff0f41523b6f8107623da38a009901058514a0100775c52ec76c517",
+        "size": 22858
+      },
+      "p251_matrix": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\quantity_intent_matrix.json",
+        "sha256": "6d0cee65d623d76d667efa15ac3abde5ccb1d3717735989084b1a1bcd0d4cb3f",
+        "size": 477197
+      },
+      "p255_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\P2.5.5_STATUS.md",
+        "sha256": "403dab28e9cbbb039f1ad72d732ed36ec12d9748d069d4d39b82498250109c30",
+        "size": 4178
+      },
+      "p255_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\evaluation\\metrics.json",
+        "sha256": "1acee97564a65692e3d82e4af953ce562877cbfa01a99a032f8fbada3a723faa",
+        "size": 1826
+      },
+      "p255_baseline_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\baseline\\benchmark_manifest_fingerprint.json",
+        "sha256": "f416d8afa442927a9dcf049d8dbb46cf5dd505c499bb2ac9f6b44beb63e8eebf",
+        "size": 1427
+      },
+      "p256_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\P2.5.6_STATUS.md",
+        "sha256": "65dedcb1afd90cd5ca96df23a28ca6a6c9c15838bf00feaa558f244797a9a157",
+        "size": 6384
+      },
+      "p256_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\evaluation\\metrics.json",
+        "sha256": "8419a04107ffb245644c40ef1dccf5c9b8777c1f6b826ee0ffeeeac358ffeac6",
+        "size": 4861
+      },
+      "fifth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+        "sha256": "1ade8e99b71e5abcafae796a919b480565c4f2a5a650f05d4a46a97234167c8f",
+        "size": 443045
+      },
+      "fifth_beam_ownership": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseT18_beam_ownership\\BeamOwnership.json",
+        "sha256": "c576789b10e58e5dd87a9e3640d2b7525c8c8b5f83025581736d71f0b5d6ac50",
+        "size": 1579337
+      },
+      "fifth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "1b0a5f0e30531049b16202e34ede4dfccaf6e21e58a40ed6ff72641ffad3dcb2",
+        "size": 160373
+      },
+      "fifth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "0eaa6146e9850b62d47e776a172e183b84efc4c9eae268a1bf8f1f6ef55113ee",
+        "size": 1070556
+      },
+      "fifth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "17b4f950b19e04de82e5a8920572904fc15848bc957e8734965b15c10ab1738b",
+        "size": 527729
+      },
+      "fifth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "cb7433bbfba8a75de9c463755b52f6fd7f2ce6cf56374a316187b85d020f23a4",
+        "size": 91391
+      },
+      "fourth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\Estimator_Output_4thSet\\EstimatorOutput_Basement_Beam BBS_INIZIO.xlsx",
+        "missing": true
+      },
+      "fourth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "e5dc274d7d1a7343f6bb588e7dde9c576ae4687b4a7bd468f56b465267cd136c",
+        "size": 108441
+      },
+      "p257_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\P2.5.7_STATUS.md",
+        "sha256": "9fe61ff19568727b16d12d46770d98977e8d5ff5c2c85475b376388f916f46c1",
+        "size": 4973
+      },
+      "p257_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\evaluation\\incremental_value_metrics.json",
+        "sha256": "63b234d32458042718c968aa3bd638b0e3d875cebe3bf461b4d4b151aa6d8cab",
+        "size": 5959
+      },
+      "p257_vision": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\vision_results.json",
+        "sha256": "3113b77899c0b4c0474f058968c1ec96d845d27af7a6664de145615d2d0a3948",
+        "size": 4277713
+      },
+      "fourth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "2669e67cd67a19231eaf9e2a206d865e1e7a224eee838d5800ae1aad3038b589",
+        "size": 66248
+      },
+      "p258_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\P2.5.8_STATUS.md",
+        "sha256": "820bd4ac1a797ce9b02e7fe2523baa1cb10bfb88220988db8e9c9ea6b067fe41",
+        "size": 3325
+      },
+      "p258_promoted": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\promoted_repairs.json",
+        "sha256": "8acc7fd41a8063a469da795f759d3ac5711261fe1dc0ce960bcf746cc690b2ac",
+        "size": 134265
+      },
+      "p259_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\P2.5.9_STATUS.md",
+        "sha256": "300fe301e7b72581093e6006e30a89859c3e4d8a44392d6df9e304c5c9d53cf6",
+        "size": 3378
+      },
+      "p259_unknown": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\strategies\\P259_UNKNOWN_ONLY\\promoted_repairs.json",
+        "sha256": "0b02e291daed897ffa75b0db14ec03cb5d62e4d5c68f4ad33ae4637fcd9ce397",
+        "size": 141147
+      },
+      "p2510_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2510_new_stirrup_safety\\P2.5.10_STATUS.md",
+        "sha256": "e3a6f22d992d0ccdf39fb3cdd04002766eccc786c08943260d441efd197df7b1",
+        "size": 13748
+      },
+      "p2511_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2511_evidence_enrichment\\P2.5.11_STATUS.md",
+        "sha256": "73537649bb850910ee76e59e5e8fa6df6ac802bf063f62ff862d6b504a5a3ac3",
+        "size": 7342
+      },
+      "fourth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "e5ce124accef6ca12147307881a4d62d31bbe85133b5974f868421003a48688e",
+        "size": 714539
+      },
+      "fourth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "a2508b55ef5739b450a8c001ab5b226861b8bee758dc629304f9ba512d5305c9",
+        "size": 341864
+      },
+      "sixth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "f28349a9c58163449320e04d66ec9a96551f8801a64c41f59f7f8695286c3c62",
+        "size": 997489
+      },
+      "sixth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "1a672427c773a57bb73f5c0099974667163c6724a21a2c0a7427610ff0b400c6",
+        "size": 86301
+      },
+      "sixth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "2dd95d62bc62ecd122e6eaf6fbec7e4b602f0363f2caee38f58e42d69613d52c",
+        "size": 486020
+      },
+      "sixth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Sixth Set Drawings\\Estimator_Output_6thSet\\Estimator_Output_11-18TH FLOOR.xlsx",
+        "missing": true
+      },
+      "p26_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\P2.6_PILOT_STATUS.md",
+        "sha256": "b73bbb0820eb8e321243c9a1ad62a6ae810b346b284a9eeb1da74fce7e76e2ca",
+        "size": 3685
+      },
+      "p261_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\P2.6.1_STATUS.md",
+        "sha256": "41b2da7e868ff36205cd6d1e8ea56b0d78a4a36d151f47bf1986697122083799",
+        "size": 9619
+      },
+      "p262_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\P2.6.2_STATUS.md",
+        "sha256": "f6747db418b6f3a0bf10d0ca2bfe6c494df20cdf1aa80d93cca0332b954013d8",
+        "size": 9525
+      },
+      "p262_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\reports\\metrics.json",
+        "sha256": "a724bc80f8ee3c3882bdd843d0503c5de39b7b18ee1ac47494e2dc8673360fdd",
+        "size": 5869
+      },
+      "p262_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\gate_manifest.json",
+        "sha256": "69cee3fd578d1dbe8750248f078715025f94cbb5000ee01c224a49df300956eb",
+        "size": 1109
+      },
+      "p263_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\P2.6.3_STATUS.md",
+        "sha256": "e2fde2f9e844caa2a369bde6942580a0e7422f11e2669356bad3acac3d6f9076",
+        "size": 9633
+      },
+      "p263_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\metrics.json",
+        "sha256": "c65ae12a59ca433c02c4d1268517f98df7aa017439c8040f7e13e61b74347be5",
+        "size": 7834
+      },
+      "p263_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\gate_manifest.json",
+        "sha256": "10c751578935a9becb2525a49b832db3ff04470fdc3338411659c6aeeaaebf1c",
+        "size": 1260
+      },
+      "p264_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\P2.6.4_STATUS.md",
+        "sha256": "b99bfb3a492735614e1955ad5c26861fb54b703d711647681f674e5e1ebd83c3",
+        "size": 14997
+      },
+      "p264_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\reports\\metrics.json",
+        "sha256": "34d4306d8c0683f2dbcdba546f818d7951cfdf4125f997ae833c8e1c2411cc64",
+        "size": 8805
+      },
+      "p264_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\gate_manifest.json",
+        "sha256": "45ffd54fc193c9e5d8d2d013d01fa22da762d2c9e6dffbea0f4f3678dd4740e1",
+        "size": 1261
+      },
+      "p265_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\P2.6.5_STATUS.md",
+        "sha256": "8d45d533779c20f45c8a3fbc0bb0e89e0d7d2a0051061935d13e271b675a523d",
+        "size": 16080
+      },
+      "p265_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\metrics.json",
+        "sha256": "6c0cd7892b08b4880aadf7f4e4916b7c29d25e137f38a52fb20cbe1d078f8654",
+        "size": 10006
+      },
+      "p265_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_manifest.json",
+        "sha256": "8c98f9bd46a004406f2a857232414299da597c0ed4cdf4cc2da673b6c70ee78d",
+        "size": 1582
+      },
+      "p265_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_decisions.json",
+        "sha256": "a762fe1e94352ffb92008b7e9aec1540a67d34a9dc47fc3a9e54ae3b1b0fa7a3",
+        "size": 790454
+      },
+      "p266_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_STATUS.md",
+        "sha256": "5720aa331e6cddf22730ecef574f1460ca9c9ae5ac0042ffdaa8cf72588b4b14",
+        "size": 13182
+      },
+      "p266_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_METRICS.json",
+        "sha256": "78d0b44a578dfce9ebf8f27cb6ae0f3aeb99c7c7c88b93b17cf8a94beae78492",
+        "size": 10985
+      },
+      "p266_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_SEMANTIC_DECISIONS.json",
+        "sha256": "00e4a4da29d1a06ae9d72e99e8780f44ce5182f4af9f2a9f03f8a798db34f1ed",
+        "size": 53488
+      },
+      "p266_targets": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\target_records.json",
+        "sha256": "8e22c528698c8f64e3b70f993fc248907e3fc2743f71de6cf960e8692d2d1b3d",
+        "size": 706475
+      },
+      "p267_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_STATUS.md",
+        "sha256": "032d65de1f021c433d0e136291dad7bbcda969df5c6855d80a943198e1644c17",
+        "size": 4646
+      },
+      "p267_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_RESULTS.json",
+        "sha256": "ae510a78bb1ea6f36d7feeeec88f3c3d788c449b7709cb54814a820d6980810f",
+        "size": 1063
+      },
+      "p267_live": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_LIVE_DECISIONS.json",
+        "sha256": "2cec2833089c3f9f3e8507cffcd1e9c107be564592d34233c102448b8459cdb1",
+        "size": 110890
+      },
+      "p268_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_STATUS.md",
+        "sha256": "8a6271246fe000af079e2f5c54ea244de7f4e2c9b4a072ee9d85fa7d44d677f0",
+        "size": 3884
+      },
+      "p268_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_RESULTS.json",
+        "sha256": "a4fd8de8959c6c38dcee409d3623fe65dd30de5b3a134fa002843d177651f3c9",
+        "size": 4609
+      },
+      "p269_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\P2.6.9_STATUS.md",
+        "sha256": "7efb2cf5ca234dba2fc11c87046ce844c102ea34e1be5680e4347ca265057c20",
+        "size": 9912
+      },
+      "p269_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\result.json",
+        "sha256": "c3728f7109cd1cd3936b29d72e84fea0c32d474ee35193e8c7bcc78694662153",
+        "size": 5840
+      },
+      "p2610a_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_STATUS.md",
+        "sha256": "4319380b6d2a28b4be6c34236a695d1035e23ab0d9ec67e30dbea88d315914d6",
+        "size": 7382
+      },
+      "p2610a_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_RESULTS.json",
+        "sha256": "449547e4b5247a7c2717651ea4e1174480189d37af6f0873b5c35cdf2db10e5b",
+        "size": 12068
+      },
+      "p2610a_b55": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_B55_DIAGNOSTICS.json",
+        "sha256": "0aea04ff8206d6edda73f910f5399a7abb07cdae247924a3ea7e5e4c6e3e3f87",
+        "size": 518
+      },
+      "p2610b_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_STATUS.md",
+        "sha256": "01b44134aa750325bc16a08ac5821afd3bdce15e9aeacb88fd12f387e2a553b7",
+        "size": 9234
+      },
+      "p2610b_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_RESULTS.json",
+        "sha256": "0a4d74f9872d03a00dd2557452be9fc40014aca3144264971cd170ea01bbbcfa",
+        "size": 5248
+      },
+      "p2610b_unit": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\unit_tests.json",
+        "sha256": "ef70cd1fa03c187fbaae99d2c7c25879de2045a8f09bd0de8ecbca04bdd60d44",
+        "size": 1612
+      },
+      "p2610b1_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\P2.6.10-B.1_RESULTS.json",
+        "sha256": "4cbfd16bf533e5461ae4de7fcbaeae9e014d8908c1fa25ae2f56338dc3a2d05b",
+        "size": 22234
+      },
+      "p2610b1_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\validation_summary.json",
+        "sha256": "81aec3bc9545d3df40e0165a25a08dd626a0c7594968e8925bf329cd75712e06",
+        "size": 967
+      },
+      "p2610b2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\P2.6.10-B.2_RESULTS.json",
+        "sha256": "8fd642818e20b26ccac501ed5a159d9232d7a96d447514e35742a5e8bb5926b0",
+        "size": 324587
+      },
+      "p2610b2_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\validation_summary.json",
+        "sha256": "86589d8df6b5fa70a00856c49f57bca45443f30a9ab4fbb4806a668188e1b8bf",
+        "size": 1999
+      },
+      "p2610b3_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\P2.6.10-B.3_RESULTS.json",
+        "sha256": "0636ef900d8fa20cf144f0ff414459280697483fb7813c031f5952470693f840",
+        "size": 351425
+      },
+      "p2610b3_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\validation_summary.json",
+        "sha256": "2e66be89911b953db035968e7fbf0ce4fe37f62938928b805ec73c5ff4e594cc",
+        "size": 533
+      }
+    },
+    "after": {
+      "p24_regression": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP24_fourth_set_bar_failure_audit\\RegressionReport.json",
+        "sha256": "cd39d43d71a19f03eb2d172ae00b7bd32871c55c3f2b2ed1efc1bf43bc941a18",
+        "size": 5188
+      },
+      "p251_report": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\P2.5.1_QuantityIntent_Report.md",
+        "sha256": "69117be9673a064a5868ecb248e84d1ec13e1d6dfeb7234dafe4236e4ff379a1",
+        "size": 5516
+      },
+      "p252_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\manifests\\VisionCandidateManifest.json",
+        "sha256": "0ad374aae585196cfea8ae6270876f552a8a0395a8edd67ebcfff1679a8adbb6",
+        "size": 127646
+      },
+      "p252_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\metrics\\metrics.json",
+        "sha256": "a5757247e450a449e8caf3dd01ce7479ad4f8d68005483a970b786d4b1efa808",
+        "size": 1134
+      },
+      "p2521_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\P2.5.2.1_STATUS.md",
+        "sha256": "5e5c22da1f552336d28fbd8cd43e7a57151df996ae42fe7a42a01785def36cc4",
+        "size": 1972
+      },
+      "p2522_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\P2.5.2.2_STATUS.md",
+        "sha256": "dae40a4957cc41f83f42a1d1c18229c2cf6828d4efcf4dcad13b1884f64c5606",
+        "size": 13223
+      },
+      "p2523_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\P2.5.2.3_STATUS.md",
+        "sha256": "98e0ac2041d589e953fe62aa0b6e20b79a8ebab79bfbcbbeb21cefb5acb5822b",
+        "size": 11722
+      },
+      "p2523_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\manifests\\TargetBeamCompletenessManifest.json",
+        "sha256": "c083c77d3fed4ea064379f40358889a1c234c1e5de197e83e2676e0fe20728de",
+        "size": 121008
+      },
+      "p253_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\P2.5.3_STATUS.md",
+        "sha256": "17643cba0366e58175f2a1cb805efebab9630e8155546f42990048bb3be6db08",
+        "size": 6576
+      },
+      "p253_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\pilot_summary.json",
+        "sha256": "ed3b2a9882fbdcc28de2d2c9fe80a9dea4f991359093ca4b66c956c0cbe8eb26",
+        "size": 4871
+      },
+      "p254_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\P2.5.4_STATUS.md",
+        "sha256": "412ab5468bd7ba1871e1ae0f16ac6ebe50d69f46d161f46f7bb5fa48d0e19eb8",
+        "size": 18177
+      },
+      "p254_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark_summary.json",
+        "sha256": "b492c085b9337181e51471b1c8402a06a9f1d751ea270274854d15f8cda2fdfa",
+        "size": 9295
+      },
+      "p254_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\benchmark_manifest.json",
+        "sha256": "3a1a4827476ed398e8aaadc148e01fdf8d31ffcb4005ebcfd42118906fa4a2f8",
+        "size": 53363
+      },
+      "p254_gt": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\ground_truth_reference.json",
+        "sha256": "838ba9164ff0f41523b6f8107623da38a009901058514a0100775c52ec76c517",
+        "size": 22858
+      },
+      "p251_matrix": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\quantity_intent_matrix.json",
+        "sha256": "6d0cee65d623d76d667efa15ac3abde5ccb1d3717735989084b1a1bcd0d4cb3f",
+        "size": 477197
+      },
+      "p255_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\P2.5.5_STATUS.md",
+        "sha256": "403dab28e9cbbb039f1ad72d732ed36ec12d9748d069d4d39b82498250109c30",
+        "size": 4178
+      },
+      "p255_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\evaluation\\metrics.json",
+        "sha256": "1acee97564a65692e3d82e4af953ce562877cbfa01a99a032f8fbada3a723faa",
+        "size": 1826
+      },
+      "p255_baseline_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\baseline\\benchmark_manifest_fingerprint.json",
+        "sha256": "f416d8afa442927a9dcf049d8dbb46cf5dd505c499bb2ac9f6b44beb63e8eebf",
+        "size": 1427
+      },
+      "p256_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\P2.5.6_STATUS.md",
+        "sha256": "65dedcb1afd90cd5ca96df23a28ca6a6c9c15838bf00feaa558f244797a9a157",
+        "size": 6384
+      },
+      "p256_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\evaluation\\metrics.json",
+        "sha256": "8419a04107ffb245644c40ef1dccf5c9b8777c1f6b826ee0ffeeeac358ffeac6",
+        "size": 4861
+      },
+      "fifth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+        "sha256": "1ade8e99b71e5abcafae796a919b480565c4f2a5a650f05d4a46a97234167c8f",
+        "size": 443045
+      },
+      "fifth_beam_ownership": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseT18_beam_ownership\\BeamOwnership.json",
+        "sha256": "c576789b10e58e5dd87a9e3640d2b7525c8c8b5f83025581736d71f0b5d6ac50",
+        "size": 1579337
+      },
+      "fifth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "1b0a5f0e30531049b16202e34ede4dfccaf6e21e58a40ed6ff72641ffad3dcb2",
+        "size": 160373
+      },
+      "fifth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "0eaa6146e9850b62d47e776a172e183b84efc4c9eae268a1bf8f1f6ef55113ee",
+        "size": 1070556
+      },
+      "fifth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "17b4f950b19e04de82e5a8920572904fc15848bc957e8734965b15c10ab1738b",
+        "size": 527729
+      },
+      "fifth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "cb7433bbfba8a75de9c463755b52f6fd7f2ce6cf56374a316187b85d020f23a4",
+        "size": 91391
+      },
+      "fourth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\Estimator_Output_4thSet\\EstimatorOutput_Basement_Beam BBS_INIZIO.xlsx",
+        "missing": true
+      },
+      "fourth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "e5dc274d7d1a7343f6bb588e7dde9c576ae4687b4a7bd468f56b465267cd136c",
+        "size": 108441
+      },
+      "p257_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\P2.5.7_STATUS.md",
+        "sha256": "9fe61ff19568727b16d12d46770d98977e8d5ff5c2c85475b376388f916f46c1",
+        "size": 4973
+      },
+      "p257_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\evaluation\\incremental_value_metrics.json",
+        "sha256": "63b234d32458042718c968aa3bd638b0e3d875cebe3bf461b4d4b151aa6d8cab",
+        "size": 5959
+      },
+      "p257_vision": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\vision_results.json",
+        "sha256": "3113b77899c0b4c0474f058968c1ec96d845d27af7a6664de145615d2d0a3948",
+        "size": 4277713
+      },
+      "fourth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "2669e67cd67a19231eaf9e2a206d865e1e7a224eee838d5800ae1aad3038b589",
+        "size": 66248
+      },
+      "p258_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\P2.5.8_STATUS.md",
+        "sha256": "820bd4ac1a797ce9b02e7fe2523baa1cb10bfb88220988db8e9c9ea6b067fe41",
+        "size": 3325
+      },
+      "p258_promoted": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\promoted_repairs.json",
+        "sha256": "8acc7fd41a8063a469da795f759d3ac5711261fe1dc0ce960bcf746cc690b2ac",
+        "size": 134265
+      },
+      "p259_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\P2.5.9_STATUS.md",
+        "sha256": "300fe301e7b72581093e6006e30a89859c3e4d8a44392d6df9e304c5c9d53cf6",
+        "size": 3378
+      },
+      "p259_unknown": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\strategies\\P259_UNKNOWN_ONLY\\promoted_repairs.json",
+        "sha256": "0b02e291daed897ffa75b0db14ec03cb5d62e4d5c68f4ad33ae4637fcd9ce397",
+        "size": 141147
+      },
+      "p2510_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2510_new_stirrup_safety\\P2.5.10_STATUS.md",
+        "sha256": "e3a6f22d992d0ccdf39fb3cdd04002766eccc786c08943260d441efd197df7b1",
+        "size": 13748
+      },
+      "p2511_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2511_evidence_enrichment\\P2.5.11_STATUS.md",
+        "sha256": "73537649bb850910ee76e59e5e8fa6df6ac802bf063f62ff862d6b504a5a3ac3",
+        "size": 7342
+      },
+      "fourth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "e5ce124accef6ca12147307881a4d62d31bbe85133b5974f868421003a48688e",
+        "size": 714539
+      },
+      "fourth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "a2508b55ef5739b450a8c001ab5b226861b8bee758dc629304f9ba512d5305c9",
+        "size": 341864
+      },
+      "sixth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "f28349a9c58163449320e04d66ec9a96551f8801a64c41f59f7f8695286c3c62",
+        "size": 997489
+      },
+      "sixth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "1a672427c773a57bb73f5c0099974667163c6724a21a2c0a7427610ff0b400c6",
+        "size": 86301
+      },
+      "sixth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "2dd95d62bc62ecd122e6eaf6fbec7e4b602f0363f2caee38f58e42d69613d52c",
+        "size": 486020
+      },
+      "sixth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Sixth Set Drawings\\Estimator_Output_6thSet\\Estimator_Output_11-18TH FLOOR.xlsx",
+        "missing": true
+      },
+      "p26_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\P2.6_PILOT_STATUS.md",
+        "sha256": "b73bbb0820eb8e321243c9a1ad62a6ae810b346b284a9eeb1da74fce7e76e2ca",
+        "size": 3685
+      },
+      "p261_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\P2.6.1_STATUS.md",
+        "sha256": "41b2da7e868ff36205cd6d1e8ea56b0d78a4a36d151f47bf1986697122083799",
+        "size": 9619
+      },
+      "p262_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\P2.6.2_STATUS.md",
+        "sha256": "f6747db418b6f3a0bf10d0ca2bfe6c494df20cdf1aa80d93cca0332b954013d8",
+        "size": 9525
+      },
+      "p262_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\reports\\metrics.json",
+        "sha256": "a724bc80f8ee3c3882bdd843d0503c5de39b7b18ee1ac47494e2dc8673360fdd",
+        "size": 5869
+      },
+      "p262_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\gate_manifest.json",
+        "sha256": "69cee3fd578d1dbe8750248f078715025f94cbb5000ee01c224a49df300956eb",
+        "size": 1109
+      },
+      "p263_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\P2.6.3_STATUS.md",
+        "sha256": "e2fde2f9e844caa2a369bde6942580a0e7422f11e2669356bad3acac3d6f9076",
+        "size": 9633
+      },
+      "p263_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\metrics.json",
+        "sha256": "c65ae12a59ca433c02c4d1268517f98df7aa017439c8040f7e13e61b74347be5",
+        "size": 7834
+      },
+      "p263_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\gate_manifest.json",
+        "sha256": "10c751578935a9becb2525a49b832db3ff04470fdc3338411659c6aeeaaebf1c",
+        "size": 1260
+      },
+      "p264_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\P2.6.4_STATUS.md",
+        "sha256": "b99bfb3a492735614e1955ad5c26861fb54b703d711647681f674e5e1ebd83c3",
+        "size": 14997
+      },
+      "p264_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\reports\\metrics.json",
+        "sha256": "34d4306d8c0683f2dbcdba546f818d7951cfdf4125f997ae833c8e1c2411cc64",
+        "size": 8805
+      },
+      "p264_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\gate_manifest.json",
+        "sha256": "45ffd54fc193c9e5d8d2d013d01fa22da762d2c9e6dffbea0f4f3678dd4740e1",
+        "size": 1261
+      },
+      "p265_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\P2.6.5_STATUS.md",
+        "sha256": "8d45d533779c20f45c8a3fbc0bb0e89e0d7d2a0051061935d13e271b675a523d",
+        "size": 16080
+      },
+      "p265_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\metrics.json",
+        "sha256": "6c0cd7892b08b4880aadf7f4e4916b7c29d25e137f38a52fb20cbe1d078f8654",
+        "size": 10006
+      },
+      "p265_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_manifest.json",
+        "sha256": "8c98f9bd46a004406f2a857232414299da597c0ed4cdf4cc2da673b6c70ee78d",
+        "size": 1582
+      },
+      "p265_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_decisions.json",
+        "sha256": "a762fe1e94352ffb92008b7e9aec1540a67d34a9dc47fc3a9e54ae3b1b0fa7a3",
+        "size": 790454
+      },
+      "p266_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_STATUS.md",
+        "sha256": "5720aa331e6cddf22730ecef574f1460ca9c9ae5ac0042ffdaa8cf72588b4b14",
+        "size": 13182
+      },
+      "p266_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_METRICS.json",
+        "sha256": "78d0b44a578dfce9ebf8f27cb6ae0f3aeb99c7c7c88b93b17cf8a94beae78492",
+        "size": 10985
+      },
+      "p266_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_SEMANTIC_DECISIONS.json",
+        "sha256": "00e4a4da29d1a06ae9d72e99e8780f44ce5182f4af9f2a9f03f8a798db34f1ed",
+        "size": 53488
+      },
+      "p266_targets": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\target_records.json",
+        "sha256": "8e22c528698c8f64e3b70f993fc248907e3fc2743f71de6cf960e8692d2d1b3d",
+        "size": 706475
+      },
+      "p267_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_STATUS.md",
+        "sha256": "032d65de1f021c433d0e136291dad7bbcda969df5c6855d80a943198e1644c17",
+        "size": 4646
+      },
+      "p267_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_RESULTS.json",
+        "sha256": "ae510a78bb1ea6f36d7feeeec88f3c3d788c449b7709cb54814a820d6980810f",
+        "size": 1063
+      },
+      "p267_live": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_LIVE_DECISIONS.json",
+        "sha256": "2cec2833089c3f9f3e8507cffcd1e9c107be564592d34233c102448b8459cdb1",
+        "size": 110890
+      },
+      "p268_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_STATUS.md",
+        "sha256": "8a6271246fe000af079e2f5c54ea244de7f4e2c9b4a072ee9d85fa7d44d677f0",
+        "size": 3884
+      },
+      "p268_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_RESULTS.json",
+        "sha256": "a4fd8de8959c6c38dcee409d3623fe65dd30de5b3a134fa002843d177651f3c9",
+        "size": 4609
+      },
+      "p269_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\P2.6.9_STATUS.md",
+        "sha256": "7efb2cf5ca234dba2fc11c87046ce844c102ea34e1be5680e4347ca265057c20",
+        "size": 9912
+      },
+      "p269_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\result.json",
+        "sha256": "c3728f7109cd1cd3936b29d72e84fea0c32d474ee35193e8c7bcc78694662153",
+        "size": 5840
+      },
+      "p2610a_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_STATUS.md",
+        "sha256": "4319380b6d2a28b4be6c34236a695d1035e23ab0d9ec67e30dbea88d315914d6",
+        "size": 7382
+      },
+      "p2610a_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_RESULTS.json",
+        "sha256": "449547e4b5247a7c2717651ea4e1174480189d37af6f0873b5c35cdf2db10e5b",
+        "size": 12068
+      },
+      "p2610a_b55": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_B55_DIAGNOSTICS.json",
+        "sha256": "0aea04ff8206d6edda73f910f5399a7abb07cdae247924a3ea7e5e4c6e3e3f87",
+        "size": 518
+      },
+      "p2610b_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_STATUS.md",
+        "sha256": "01b44134aa750325bc16a08ac5821afd3bdce15e9aeacb88fd12f387e2a553b7",
+        "size": 9234
+      },
+      "p2610b_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_RESULTS.json",
+        "sha256": "0a4d74f9872d03a00dd2557452be9fc40014aca3144264971cd170ea01bbbcfa",
+        "size": 5248
+      },
+      "p2610b_unit": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\unit_tests.json",
+        "sha256": "ef70cd1fa03c187fbaae99d2c7c25879de2045a8f09bd0de8ecbca04bdd60d44",
+        "size": 1612
+      },
+      "p2610b1_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\P2.6.10-B.1_RESULTS.json",
+        "sha256": "4cbfd16bf533e5461ae4de7fcbaeae9e014d8908c1fa25ae2f56338dc3a2d05b",
+        "size": 22234
+      },
+      "p2610b1_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\validation_summary.json",
+        "sha256": "81aec3bc9545d3df40e0165a25a08dd626a0c7594968e8925bf329cd75712e06",
+        "size": 967
+      },
+      "p2610b2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\P2.6.10-B.2_RESULTS.json",
+        "sha256": "8fd642818e20b26ccac501ed5a159d9232d7a96d447514e35742a5e8bb5926b0",
+        "size": 324587
+      },
+      "p2610b2_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\validation_summary.json",
+        "sha256": "86589d8df6b5fa70a00856c49f57bca45443f30a9ab4fbb4806a668188e1b8bf",
+        "size": 1999
+      },
+      "p2610b3_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\P2.6.10-B.3_RESULTS.json",
+        "sha256": "0636ef900d8fa20cf144f0ff414459280697483fb7813c031f5952470693f840",
+        "size": 351425
+      },
+      "p2610b3_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\validation_summary.json",
+        "sha256": "2e66be89911b953db035968e7fbf0ce4fe37f62938928b805ec73c5ff4e594cc",
+        "size": 533
+      }
+    }
+  },
+  "thresholds": {
+    "MATERIAL_SCORE_MARGIN": 0.35,
+    "MIN_FOREGROUND_GAIN": 0.02,
+    "MAX_COVERAGE_REGRESSION": 0.08,
+    "CRITICAL_STATUSES": [
+      "EMPTY_RENDER",
+      "BLACK_RENDER",
+      "LOW_INFORMATION_RENDER",
+      "RENDER_MISSING"
+    ]
+  },
+  "b1_replacements": [
+    {
+      "beam_id": "B100",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02719
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.1631,
+        "critical_failure": false,
+        "foreground_ratio": 0.0458
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.1631,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01861,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B103",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0245
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9976,
+        "critical_failure": false,
+        "foreground_ratio": 0.03046
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9976,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00596,
+        "coverage_x_delta": 0.0011
+      }
+    },
+    {
+      "beam_id": "B117",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0245
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9885,
+        "critical_failure": false,
+        "foreground_ratio": 0.02816
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9885,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00366,
+        "coverage_x_delta": -0.0001
+      }
+    },
+    {
+      "beam_id": "B119",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02136
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9777,
+        "critical_failure": false,
+        "foreground_ratio": 0.03007
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9777,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00871,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B121",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01514
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0105,
+        "critical_failure": false,
+        "foreground_ratio": 0.03187
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0105,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01673,
+        "coverage_x_delta": 0.2417
+      }
+    },
+    {
+      "beam_id": "B122",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02221
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8552,
+        "critical_failure": false,
+        "foreground_ratio": 0.03068
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8552,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00847,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B129",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02555
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.099,
+        "critical_failure": false,
+        "foreground_ratio": 0.03814
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.099,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01259,
+        "coverage_x_delta": 0.2619
+      }
+    },
+    {
+      "beam_id": "B130",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02343
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0291,
+        "critical_failure": false,
+        "foreground_ratio": 0.0309
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0291,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00747,
+        "coverage_x_delta": 0.2509
+      }
+    },
+    {
+      "beam_id": "B133",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02506
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8732,
+        "critical_failure": false,
+        "foreground_ratio": 0.03722
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8732,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01216,
+        "coverage_x_delta": 0.0021
+      }
+    },
+    {
+      "beam_id": "B133",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02388
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8307,
+        "critical_failure": false,
+        "foreground_ratio": 0.02917
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8307,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00529,
+        "coverage_x_delta": 0.0233
+      }
+    },
+    {
+      "beam_id": "B134",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02581
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9918,
+        "critical_failure": false,
+        "foreground_ratio": 0.03416
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9918,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00835,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B134A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02638
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9798,
+        "critical_failure": false,
+        "foreground_ratio": 0.03156
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9798,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00518,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B135",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02712
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9567,
+        "critical_failure": false,
+        "foreground_ratio": 0.02918
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9567,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00206,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B135A",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01341
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8123,
+        "critical_failure": false,
+        "foreground_ratio": 0.03267
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8123,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01926,
+        "coverage_x_delta": 0.0514
+      }
+    },
+    {
+      "beam_id": "B135A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01944
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8056,
+        "critical_failure": false,
+        "foreground_ratio": 0.03062
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8056,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01118,
+        "coverage_x_delta": 0.0966
+      }
+    },
+    {
+      "beam_id": "B136",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02784
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9673,
+        "critical_failure": false,
+        "foreground_ratio": 0.0287
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9673,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00086,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B139",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.00805
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.5865,
+        "critical_failure": false,
+        "foreground_ratio": 0.03104
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.5865,
+        "score_margin": 0.35,
+        "foreground_gain": 0.02299,
+        "coverage_x_delta": 0.542
+      }
+    },
+    {
+      "beam_id": "B139",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01096
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.7199,
+        "critical_failure": false,
+        "foreground_ratio": 0.03311
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.7199,
+        "score_margin": 0.35,
+        "foreground_gain": 0.02215,
+        "coverage_x_delta": 0.5875
+      }
+    },
+    {
+      "beam_id": "B140",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0231
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9962,
+        "critical_failure": false,
+        "foreground_ratio": 0.02888
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9962,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00578,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B143",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01307
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8278,
+        "critical_failure": false,
+        "foreground_ratio": 0.03557
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8278,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0225,
+        "coverage_x_delta": 0.1285
+      }
+    },
+    {
+      "beam_id": "B143",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02083
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.808,
+        "critical_failure": false,
+        "foreground_ratio": 0.03339
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.808,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01256,
+        "coverage_x_delta": 0.1867
+      }
+    },
+    {
+      "beam_id": "B144",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02601
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.065,
+        "critical_failure": false,
+        "foreground_ratio": 0.03369
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.065,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00768,
+        "coverage_x_delta": -0.0006
+      }
+    },
+    {
+      "beam_id": "B147",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02799
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0765,
+        "critical_failure": false,
+        "foreground_ratio": 0.03503
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0765,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00704,
+        "coverage_x_delta": -0.0002
+      }
+    },
+    {
+      "beam_id": "B150",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0272
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.6168,
+        "critical_failure": false,
+        "foreground_ratio": 0.0349
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.6168,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0077,
+        "coverage_x_delta": 0.0384
+      }
+    },
+    {
+      "beam_id": "B154",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02044
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.6287,
+        "critical_failure": false,
+        "foreground_ratio": 0.03218
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.6287,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01174,
+        "coverage_x_delta": 0.2623
+      }
+    },
+    {
+      "beam_id": "B156",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02778
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.6611,
+        "critical_failure": false,
+        "foreground_ratio": 0.02874
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.6611,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00096,
+        "coverage_x_delta": 0.0184
+      }
+    },
+    {
+      "beam_id": "B164",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02733
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.7922,
+        "critical_failure": false,
+        "foreground_ratio": 0.04292
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.7922,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01559,
+        "coverage_x_delta": 0.0537
+      }
+    },
+    {
+      "beam_id": "B169",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02777
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0427,
+        "critical_failure": false,
+        "foreground_ratio": 0.03377
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0427,
+        "score_margin": 0.35,
+        "foreground_gain": 0.006,
+        "coverage_x_delta": 0.0904
+      }
+    },
+    {
+      "beam_id": "B170",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01553
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.6657,
+        "critical_failure": false,
+        "foreground_ratio": 0.02846
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.6657,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01293,
+        "coverage_x_delta": 0.39
+      }
+    },
+    {
+      "beam_id": "B173",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02021
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 2.7818,
+        "critical_failure": false,
+        "foreground_ratio": 0.02952
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 2.7818,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00931,
+        "coverage_x_delta": -0.4092
+      }
+    },
+    {
+      "beam_id": "B175",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02695
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.049,
+        "critical_failure": false,
+        "foreground_ratio": 0.03918
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.049,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01223,
+        "coverage_x_delta": 0.0001
+      }
+    },
+    {
+      "beam_id": "B175",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02698
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9958,
+        "critical_failure": false,
+        "foreground_ratio": 0.03258
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9958,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0056,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B176",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02319
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0208,
+        "critical_failure": false,
+        "foreground_ratio": 0.04505
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0208,
+        "score_margin": 0.35,
+        "foreground_gain": 0.02186,
+        "coverage_x_delta": -0.0172
+      }
+    },
+    {
+      "beam_id": "B176",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02425
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9243,
+        "critical_failure": false,
+        "foreground_ratio": 0.03268
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9243,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00843,
+        "coverage_x_delta": 0.0066
+      }
+    },
+    {
+      "beam_id": "B177",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01987
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8531,
+        "critical_failure": false,
+        "foreground_ratio": 0.03364
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8531,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01377,
+        "coverage_x_delta": 0.3961
+      }
+    },
+    {
+      "beam_id": "B177",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01741
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8751,
+        "critical_failure": false,
+        "foreground_ratio": 0.03188
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8751,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01447,
+        "coverage_x_delta": 0.46
+      }
+    },
+    {
+      "beam_id": "B182",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02035
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0572,
+        "critical_failure": false,
+        "foreground_ratio": 0.03563
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0572,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01528,
+        "coverage_x_delta": 0.0011
+      }
+    },
+    {
+      "beam_id": "B186",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02282
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0371,
+        "critical_failure": false,
+        "foreground_ratio": 0.03003
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0371,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00721,
+        "coverage_x_delta": 0.3151
+      }
+    },
+    {
+      "beam_id": "B23",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02743
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.145,
+        "critical_failure": false,
+        "foreground_ratio": 0.04349
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.145,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01606,
+        "coverage_x_delta": 0.0002
+      }
+    },
+    {
+      "beam_id": "B24",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.4682,
+        "critical_failure": false,
+        "foreground_ratio": 0.2088
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.8462,
+        "critical_failure": false,
+        "foreground_ratio": 0.25642
+      },
+      "material_improvement": {
+        "baseline_score": 5.4682,
+        "challenger_score": 5.8462,
+        "score_margin": 0.35,
+        "foreground_gain": 0.04762,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B31",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.418,
+        "critical_failure": false,
+        "foreground_ratio": 0.07734
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.9032,
+        "critical_failure": false,
+        "foreground_ratio": 0.13808
+      },
+      "material_improvement": {
+        "baseline_score": 4.418,
+        "challenger_score": 4.9032,
+        "score_margin": 0.35,
+        "foreground_gain": 0.06074,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B32",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 10.4999,
+        "critical_failure": false,
+        "foreground_ratio": 0.83788
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 11.7986,
+        "critical_failure": false,
+        "foreground_ratio": 1.0
+      },
+      "material_improvement": {
+        "baseline_score": 10.4999,
+        "challenger_score": 11.7986,
+        "score_margin": 0.35,
+        "foreground_gain": 0.16212,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B42A",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01556
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.7481,
+        "critical_failure": false,
+        "foreground_ratio": 0.03266
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.7481,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0171,
+        "coverage_x_delta": 0.0557
+      }
+    },
+    {
+      "beam_id": "B42A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02579
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8469,
+        "critical_failure": false,
+        "foreground_ratio": 0.03046
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8469,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00467,
+        "coverage_x_delta": 0.0733
+      }
+    },
+    {
+      "beam_id": "B45",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02529
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9662,
+        "critical_failure": false,
+        "foreground_ratio": 0.02856
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9662,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00327,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B46",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.4451,
+        "critical_failure": false,
+        "foreground_ratio": 0.20572
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 6.0242,
+        "critical_failure": false,
+        "foreground_ratio": 0.27858
+      },
+      "material_improvement": {
+        "baseline_score": 5.4451,
+        "challenger_score": 6.0242,
+        "score_margin": 0.35,
+        "foreground_gain": 0.07286,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B47",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.8657,
+        "critical_failure": false,
+        "foreground_ratio": 0.25857
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 6.2552,
+        "critical_failure": false,
+        "foreground_ratio": 0.30754
+      },
+      "material_improvement": {
+        "baseline_score": 5.8657,
+        "challenger_score": 6.2552,
+        "score_margin": 0.35,
+        "foreground_gain": 0.04897,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B51",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02587
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9787,
+        "critical_failure": false,
+        "foreground_ratio": 0.02987
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9787,
+        "score_margin": 0.35,
+        "foreground_gain": 0.004,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B58",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02688
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.1296,
+        "critical_failure": false,
+        "foreground_ratio": 0.04273
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.1296,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01585,
+        "coverage_x_delta": 0.103
+      }
+    },
+    {
+      "beam_id": "B66",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02687
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8486,
+        "critical_failure": false,
+        "foreground_ratio": 0.02926
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8486,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00239,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B68",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01835
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.6689,
+        "critical_failure": false,
+        "foreground_ratio": 0.03126
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.6689,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01291,
+        "coverage_x_delta": 0.1222
+      }
+    },
+    {
+      "beam_id": "B68",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02438
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.7198,
+        "critical_failure": false,
+        "foreground_ratio": 0.02935
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.7198,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00497,
+        "coverage_x_delta": 0.1683
+      }
+    },
+    {
+      "beam_id": "B68A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02649
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8623,
+        "critical_failure": false,
+        "foreground_ratio": 0.02811
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8623,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00162,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B69",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02752
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0452,
+        "critical_failure": false,
+        "foreground_ratio": 0.03092
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0452,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0034,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B70",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02561
+      },
+      "challenger_evidence": {
+        "primary_status": "VALID",
+        "score": 3.8596,
+        "critical_failure": false,
+        "foreground_ratio": 0.03148
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8596,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00587,
+        "coverage_x_delta": 0.2317
+      }
+    },
+    {
+      "beam_id": "B71",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01899
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0219,
+        "critical_failure": false,
+        "foreground_ratio": 0.02815
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0219,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00916,
+        "coverage_x_delta": 0.04
+      }
+    },
+    {
+      "beam_id": "B73",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.9103,
+        "critical_failure": false,
+        "foreground_ratio": 0.13935
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.3339,
+        "critical_failure": false,
+        "foreground_ratio": 0.19191
+      },
+      "material_improvement": {
+        "baseline_score": 4.9103,
+        "challenger_score": 5.3339,
+        "score_margin": 0.35,
+        "foreground_gain": 0.05256,
+        "coverage_x_delta": 0.0012
+      }
+    },
+    {
+      "beam_id": "B77",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02215
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8477,
+        "critical_failure": false,
+        "foreground_ratio": 0.0357
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8477,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01355,
+        "coverage_x_delta": 0.0001
+      }
+    },
+    {
+      "beam_id": "B77",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02358
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9232,
+        "critical_failure": false,
+        "foreground_ratio": 0.03248
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9232,
+        "score_margin": 0.35,
+        "foreground_gain": 0.0089,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B78",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01576
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8651,
+        "critical_failure": false,
+        "foreground_ratio": 0.04034
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8651,
+        "score_margin": 0.35,
+        "foreground_gain": 0.02458,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B78",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02499
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.7811,
+        "critical_failure": false,
+        "foreground_ratio": 0.03007
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.7811,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00508,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B79",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0268
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0495,
+        "critical_failure": false,
+        "foreground_ratio": 0.04105
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0495,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01425,
+        "coverage_x_delta": 0.0001
+      }
+    },
+    {
+      "beam_id": "B80",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 5.0582,
+        "critical_failure": false,
+        "foreground_ratio": 0.24951
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 7.5763,
+        "critical_failure": false,
+        "foreground_ratio": 0.47985
+      },
+      "material_improvement": {
+        "baseline_score": 5.0582,
+        "challenger_score": 7.5763,
+        "score_margin": 0.35,
+        "foreground_gain": 0.23034,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B81",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02471
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8723,
+        "critical_failure": false,
+        "foreground_ratio": 0.03209
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8723,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00738,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B81",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02409
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8982,
+        "critical_failure": false,
+        "foreground_ratio": 0.02983
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8982,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00574,
+        "coverage_x_delta": 0.01
+      }
+    },
+    {
+      "beam_id": "B82",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02304
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0395,
+        "critical_failure": false,
+        "foreground_ratio": 0.03967
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0395,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01663,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B85",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01695
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.9377,
+        "critical_failure": false,
+        "foreground_ratio": 0.03288
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.9377,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01593,
+        "coverage_x_delta": 0.0453
+      }
+    },
+    {
+      "beam_id": "B86",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02646
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8866,
+        "critical_failure": false,
+        "foreground_ratio": 0.02957
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8866,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00311,
+        "coverage_x_delta": 0.278
+      }
+    },
+    {
+      "beam_id": "B89",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02724
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0412,
+        "critical_failure": false,
+        "foreground_ratio": 0.03827
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0412,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01103,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B91",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02624
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0659,
+        "critical_failure": false,
+        "foreground_ratio": 0.03357
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0659,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00733,
+        "coverage_x_delta": 0.0003
+      }
+    },
+    {
+      "beam_id": "B96",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02718
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0781,
+        "critical_failure": false,
+        "foreground_ratio": 0.04449
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0781,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01731,
+        "coverage_x_delta": -0.0007
+      }
+    },
+    {
+      "beam_id": "B96",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02736
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0441,
+        "critical_failure": false,
+        "foreground_ratio": 0.04022
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0441,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01286,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B96A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.01606
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0437,
+        "critical_failure": false,
+        "foreground_ratio": 0.03085
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0437,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01479,
+        "coverage_x_delta": 0.2934
+      }
+    },
+    {
+      "beam_id": "B97A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02324
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.8966,
+        "critical_failure": false,
+        "foreground_ratio": 0.02999
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.8966,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00675,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B98",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.0229
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0203,
+        "critical_failure": false,
+        "foreground_ratio": 0.02992
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0203,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00702,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B98A",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.2",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02684
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 3.905,
+        "critical_failure": false,
+        "foreground_ratio": 0.03062
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 3.905,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00378,
+        "coverage_x_delta": 0.0
+      }
+    },
+    {
+      "beam_id": "B99",
+      "render_type": "context",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02722
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.1433,
+        "critical_failure": false,
+        "foreground_ratio": 0.04348
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.1433,
+        "score_margin": 0.35,
+        "foreground_gain": 0.01626,
+        "coverage_x_delta": 0.1372
+      }
+    },
+    {
+      "beam_id": "B99",
+      "render_type": "detail",
+      "baseline": "B.1",
+      "challenger": "B.3",
+      "decision": "REPLACE",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "selection_status": "REPLACE_PREFERRED",
+      "baseline_evidence": {
+        "primary_status": "LOW_INFORMATION_RENDER",
+        "score": -1.0,
+        "critical_failure": true,
+        "foreground_ratio": 0.02668
+      },
+      "challenger_evidence": {
+        "primary_status": "BORDER_CLIPPING_SUSPECT",
+        "score": 4.0534,
+        "critical_failure": false,
+        "foreground_ratio": 0.03209
+      },
+      "material_improvement": {
+        "baseline_score": -1.0,
+        "challenger_score": 4.0534,
+        "score_margin": 0.35,
+        "foreground_gain": 0.00541,
+        "coverage_x_delta": 0.1533
+      }
+    }
+  ],
+  "performance": {
+    "total_runtime_s": 127.253,
+    "inventory_discovery_s": 0.002,
+    "file_inspection_hashing_s": 0.001,
+    "evidence_loading_s": 123.282,
+    "selection_s": 0.007,
+    "report_generation_s": null,
+    "note": "No DXF load. No rerender. SHA cache keyed by resolved path."
+  },
+  "phase_name": "Evidence Inventory & Preference-Preserving Candidate Selection",
+  "model_version": "10.11.15",
+  "production": {
+    "production_mutation_count": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "live_vision_invoked": false,
+    "shadow_only": true
+  },
+  "recommendation": "Evidence inventory and preference-preserving selection complete. B.1 is retained by default. Consume selection_manifest.json in P2.6.10-C.3. Do not treat this as production-ready.",
+  "unresolved_beams": [
+    {
+      "beam_id": "B101A",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B120",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B121",
+      "render_type": "context",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B168",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B170",
+      "render_type": "context",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B173",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B180",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B56",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B57",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B83",
+      "render_type": "context",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B83",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B85",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    },
+    {
+      "beam_id": "B86",
+      "render_type": "detail",
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "selected_source": "B.1"
+    }
+  ]
+}

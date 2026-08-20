@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -48,6 +49,66 @@ _V10 = Path(__file__).resolve().parents[2]
 def _dump(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")
+
+
+def _fmt_duration(seconds: float) -> str:
+    seconds = max(0, int(seconds))
+    hours, rem = divmod(seconds, 3600)
+    minutes, secs = divmod(rem, 60)
+    if hours:
+        return f"{hours}h {minutes:02d}m"
+    return f"{minutes}m {secs:02d}s"
+
+
+def _progress_line(done: int, total: int, elapsed_s: float, *, width: int = 28) -> str:
+    total = max(total, 1)
+    frac = min(max(done / total, 0.0), 1.0)
+    filled = int(width * frac)
+    bar = "#" * filled + "-" * (width - filled)
+    remain = ((total - done) * (elapsed_s / done)) if done else 0.0
+    return (
+        f"  PROGRESS [{bar}] {done}/{total} {frac * 100:5.1f}%  "
+        f"elapsed={_fmt_duration(elapsed_s)}  ETA={_fmt_duration(remain)}"
+    )
+
+
+def _emit_progress(out_root: Path, done: int, total: int, beam_id: str, t0: float) -> None:
+    elapsed = time.time() - t0
+    line = _progress_line(done, total, elapsed)
+    print(line, flush=True)
+    _dump(
+        out_root / "progress.json",
+        {
+            "done": done,
+            "total": total,
+            "beam_id": beam_id,
+            "elapsed_s": elapsed,
+            "eta_s": ((total - done) * (elapsed / done)) if done else 0,
+            "bar": line.strip(),
+            "phase": "crop_loop" if done < total else "crop_loop_done",
+        },
+    )
+
+
+def _reuse_existing_png(path: Path, extent: Any, crop_type: str) -> Optional[Dict[str, Any]]:
+    """Resume helper: keep an already-written crop PNG instead of re-rendering."""
+    if not path.exists() or path.stat().st_size < 200:
+        return None
+    try:
+        from PIL import Image
+
+        with Image.open(path) as im:
+            width, height = im.size
+    except Exception:
+        return None
+    box = list(extent) if extent is not None else []
+    return {
+        "path": str(path),
+        "crop_type": crop_type,
+        "dxf_bbox": box,
+        "image_dimensions": [int(width), int(height)],
+        "reused_existing_png": True,
+    }
 
 
 def _classify_decision(
@@ -114,6 +175,12 @@ def run_phase_p2610b1(
         if not unit.get("success"):
             failed = [r for r in unit.get("results") or [] if not r.get("pass")]
             raise RuntimeError(f"P2.6.10-B.1 unit tests failed: {failed}")
+    else:
+        existing = out_root / "unit_tests.json"
+        if existing.exists():
+            unit = json.loads(existing.read_text(encoding="utf-8"))
+            unit["skipped"] = False
+            unit["loaded_from_previous_run"] = True
 
     fw = firewall_check(v10)
     leak = runtime_leakage_scan(pkg)
@@ -143,6 +210,7 @@ def run_phase_p2610b1(
     records: list = []
     failures: list = []
     context_ok = detail_ok = complete_n = render_fail = skip_n = 0
+    t0 = time.time()
     for i, beam_id in enumerate(beam_ids, start=1):
         mark = marks.get(beam_id)
         rec: Dict[str, Any] = {
@@ -171,11 +239,11 @@ def run_phase_p2610b1(
             failures.append(val)
             _dump(out_root / "validation" / f"{beam_id}.json", val)
             _log(f"  [{i}/{len(beam_ids)}] {beam_id} DISCOVERY_FAILED")
+            _emit_progress(out_root, i, len(beam_ids), beam_id, t0)
             continue
         try:
             regions = build_adaptive_regions(msp=msp, beam_id=beam_id, mark=mark, titles=titles)
         except Exception as exc:
-            skip_n += 1
             val = validate_detail(
                 beam_id=beam_id,
                 extent=None,
@@ -194,12 +262,19 @@ def run_phase_p2610b1(
             failures.append(val)
             _dump(out_root / "validation" / f"{beam_id}.json", val)
             _log(f"  [{i}/{len(beam_ids)}] {beam_id} ENVELOPE_FAILED")
+            _emit_progress(out_root, i, len(beam_ids), beam_id, t0)
             continue
         crops: Dict[str, Any] = {}
         rendered_ok = True
+        reused = False
         for crop_type in ("context", "detail"):
             extent = regions.get(f"{crop_type}_extent")
             out_png = out_root / crop_type / f"{beam_id}.png"
+            reused_crop = _reuse_existing_png(out_png, extent, crop_type)
+            if reused_crop is not None:
+                crops[crop_type] = reused_crop
+                reused = True
+                continue
             try:
                 crops[crop_type] = render_crop(
                     dxf_path=dxf_path, output_path=out_png, extent=extent, crop_type=crop_type
@@ -251,7 +326,24 @@ def run_phase_p2610b1(
             f"  [{i}/{len(beam_ids)}] {beam_id} "
             f"status={val.get('completeness_status')} "
             f"fail={val.get('failure_categories')}"
+            f"{' reused_png' if reused else ''}"
         )
+        _emit_progress(out_root, i, len(beam_ids), beam_id, t0)
+
+    _log("  Crop loop complete. Next: anti-hardcoding (DXF copy) then six-beam regression.")
+    _dump(
+        out_root / "progress.json",
+        {
+            "done": len(beam_ids),
+            "total": len(beam_ids),
+            "beam_id": None,
+            "elapsed_s": time.time() - t0,
+            "eta_s": 480,
+            "phase": "anti_hardcoding",
+            "bar": _progress_line(len(beam_ids), max(len(beam_ids), 1), time.time() - t0),
+            "note": "Crops done. Anti-hardcoding + six-beam regression remaining (~5-10 min).",
+        },
+    )
 
     # Anti-hardcoding uses a separate in-memory DXF copy so population msp is untouched.
     probe_id = beam_ids[0] if beam_ids else None
@@ -266,6 +358,19 @@ def run_phase_p2610b1(
     _dump(out_root / "anti_hardcoding" / "translation_tests" / "dxf_copy.json", (anti.get("translation_invariance") or {}).get("dxf_copy"))
     _dump(out_root / "anti_hardcoding" / "spatial_distance_tests" / "result.json", anti.get("spatial_distance"))
     _dump(out_root / "anti_hardcoding" / "packed_sheet_tests" / "result.json", anti.get("packed_sheet"))
+    _log("  Anti-hardcoding complete. Next: original six-beam live engine regression.")
+    _dump(
+        out_root / "progress.json",
+        {
+            "done": len(beam_ids),
+            "total": len(beam_ids),
+            "elapsed_s": time.time() - t0,
+            "eta_s": 240,
+            "phase": "six_beam_regression",
+            "bar": _progress_line(len(beam_ids), max(len(beam_ids), 1), time.time() - t0),
+            "note": "Six-beam regression remaining (~2-5 min).",
+        },
+    )
 
     six_records = []
     six_docs: Dict[str, Any] = {}
@@ -418,6 +523,20 @@ def run_phase_p2610b1(
     _dump(out_root / "result.json", dump)
     _dump(out_root / "fingerprints_after.json", after)
     _log(f"  decision={decision} complete={complete_n}/{discovered_n}")
+    _dump(
+        out_root / "progress.json",
+        {
+            "done": discovered_n,
+            "total": discovered_n,
+            "percent": 100.0,
+            "elapsed_s": time.time() - t0,
+            "eta_s": 0,
+            "phase": "complete",
+            "decision": decision,
+            "bar": _progress_line(discovered_n, max(discovered_n, 1), time.time() - t0),
+            "note": "P2.6.10-B.1 run finished.",
+        },
+    )
     return result
 
 

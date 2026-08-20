@@ -1,0 +1,414 @@
+{
+  "beam_id": "B99A",
+  "stages": [
+    "INITIAL_CONTEXT",
+    "VALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "FREEZE_CONTEXT",
+    "DERIVE_DETAIL",
+    "RENDER_DETAIL",
+    "VALIDATE_DETAIL",
+    "RECOVER_DETAIL",
+    "REVALIDATE_DETAIL",
+    "RECOVER_DETAIL"
+  ],
+  "dominant_orientation": "VERTICAL",
+  "initial_context_bounds": [
+    31652714.37,
+    -21215269.59,
+    31660199.768122874,
+    -21204919.09
+  ],
+  "final_context_bounds": [
+    31653220.59819927,
+    -21210337.79434781,
+    31659135.1638402,
+    -21203794.49427638
+  ],
+  "initial_detail_bounds": [
+    31653361.36130304,
+    -21210337.79434781,
+    31659135.1638402,
+    -21204749.21535251
+  ],
+  "final_detail_bounds": [
+    31653361.36130304,
+    -21210337.79434781,
+    31659135.1638402,
+    -21204149.21535251
+  ],
+  "context_status": "BORDER_CLIPPING_SUSPECT",
+  "detail_status": "LOW_INFORMATION_RENDER",
+  "context_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "RIGHT_BORDER_CONTACT",
+    "LOW_LONGITUDINAL_COVERAGE"
+  ],
+  "detail_flags": [
+    "LOW_INFORMATION_RENDER"
+  ],
+  "context_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_BOTH_Y",
+      "before_bounds": [
+        31652714.37,
+        -21215269.59,
+        31660199.768122874,
+        -21204919.09
+      ],
+      "after_bounds": [
+        31653220.59819927,
+        -21210337.79434781,
+        31659135.1638402,
+        -21203819.09
+      ],
+      "blocked": false,
+      "note": "",
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 2,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_BOTH_Y",
+      "before_bounds": [
+        31653220.59819927,
+        -21210337.79434781,
+        31659135.1638402,
+        -21203819.09
+      ],
+      "after_bounds": [
+        31653220.59819927,
+        -21210337.79434781,
+        31659135.1638402,
+        -21203794.49427638
+      ],
+      "blocked": false,
+      "note": "",
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 3,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "NONE",
+      "before_bounds": [
+        31653220.59819927,
+        -21210337.79434781,
+        31659135.1638402,
+        -21203794.49427638
+      ],
+      "after_bounds": [
+        31653220.59819927,
+        -21210337.79434781,
+        31659135.1638402,
+        -21203794.49427638
+      ],
+      "blocked": true,
+      "note": "max_attempts",
+      "result": "BLOCKED"
+    }
+  ],
+  "detail_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_TOP",
+      "before_bounds": [
+        31653361.36130304,
+        -21210337.79434781,
+        31659135.1638402,
+        -21204749.21535251
+      ],
+      "after_bounds": [
+        31653361.36130304,
+        -21210337.79434781,
+        31659135.1638402,
+        -21204149.21535251
+      ],
+      "blocked": false,
+      "note": "",
+      "result": "LOW_INFORMATION_RENDER"
+    },
+    {
+      "attempt": 2,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "VERTICAL",
+      "action": "NONE",
+      "before_bounds": [
+        31653361.36130304,
+        -21210337.79434781,
+        31659135.1638402,
+        -21204149.21535251
+      ],
+      "after_bounds": [
+        31653361.36130304,
+        -21210337.79434781,
+        31659135.1638402,
+        -21204149.21535251
+      ],
+      "blocked": true,
+      "note": "max_attempts",
+      "result": "BLOCKED"
+    }
+  ],
+  "context_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "RIGHT_BORDER_CONTACT",
+      "LOW_LONGITUDINAL_COVERAGE"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.03138,
+    "information_density": 0.00148,
+    "entropy": 0.3771,
+    "component_count": 28,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.96817,
+    "coverage_x": 0.9992,
+    "coverage_y": 0.8514,
+    "column_occupancy": [
+      0.0418,
+      0.0285,
+      0.035,
+      0.0414,
+      0.0251,
+      0.0363,
+      0.0235,
+      0.0194
+    ],
+    "row_occupancy": [
+      0.0247,
+      0.0418,
+      0.0233,
+      0.0178,
+      0.0383,
+      0.0194,
+      0.0615,
+      0.024
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": true,
+      "top": false,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      63,
+      1263,
+      1254
+    ],
+    "content_bbox_dxf": [
+      31653220.59819927,
+      -21209655.421626076,
+      31659125.81274828,
+      -21204088.942779593
+    ],
+    "recovery_required": true,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1265,
+      1400
+    ],
+    "dxf_content_bbox": [
+      31654759.85840589,
+      -21209617.79434781,
+      31657521.97909752,
+      -21205642.35813663
+    ],
+    "border_analysis": {
+      "meaningful_target_clipping_suspect": false,
+      "harmless_border_contact": true,
+      "sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "harmless_sides": {
+        "left": true,
+        "right": true,
+        "top": false,
+        "bottom": false
+      },
+      "geometry_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      },
+      "text_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      }
+    },
+    "dominant_orientation": "VERTICAL"
+  },
+  "detail_diagnostic": {
+    "primary_status": "LOW_INFORMATION_RENDER",
+    "flags": [
+      "LOW_INFORMATION_RENDER"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "LOW_INFORMATION_RENDER",
+    "foreground_ratio": 0.02595,
+    "information_density": 0.00103,
+    "entropy": 0.3168,
+    "component_count": 26,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.97304,
+    "coverage_x": 0.9994,
+    "coverage_y": 0.8906,
+    "column_occupancy": [
+      0.0358,
+      0.0201,
+      0.0191,
+      0.0323,
+      0.0194,
+      0.0406,
+      0.022,
+      0.0184
+    ],
+    "row_occupancy": [
+      0.0409,
+      0.0098,
+      0.0028,
+      0.0185,
+      0.0294,
+      0.0318,
+      0.0594,
+      0.0151
+    ],
+    "meaningful_border_contact": {
+      "left": false,
+      "right": false,
+      "top": true,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X",
+      "Y"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      0,
+      1677,
+      1602
+    ],
+    "content_bbox_dxf": [
+      31653361.36130304,
+      -21209657.050658327,
+      31659128.286171902,
+      -21204149.21535251
+    ],
+    "recovery_required": true,
+    "file_generated": true,
+    "visually_usable": false,
+    "target_visible": false,
+    "image_dimensions": [
+      1679,
+      1800
+    ],
+    "dxf_content_bbox": [
+      31654759.85840589,
+      -21209617.79434781,
+      31657521.97909752,
+      -21205642.35813663
+    ],
+    "border_analysis": {
+      "meaningful_target_clipping_suspect": true,
+      "harmless_border_contact": true,
+      "sides": {
+        "left": false,
+        "right": false,
+        "top": true,
+        "bottom": false
+      },
+      "harmless_sides": {
+        "left": true,
+        "right": true,
+        "top": false,
+        "bottom": false
+      },
+      "geometry_sides": {
+        "left": false,
+        "right": false,
+        "top": true,
+        "bottom": false
+      },
+      "text_sides": {
+        "left": false,
+        "right": false,
+        "top": false,
+        "bottom": false
+      }
+    },
+    "dominant_orientation": "VERTICAL"
+  },
+  "context_valid_before_recovery": false,
+  "context_valid_after_recovery": true,
+  "detail_valid_before_recovery": false,
+  "detail_valid_after_recovery": false,
+  "context_recovery_attempt_count": 3,
+  "context_recovery_success": true,
+  "detail_recovery_attempt_count": 2,
+  "detail_recovery_success": false,
+  "target_visible": false,
+  "longitudinal_complete": false,
+  "context_quality_pass": true,
+  "final_vision_usable": false,
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B99A.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B99A.png",
+  "context_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\initial\\B99A.png",
+  "detail_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\initial\\B99A.png",
+  "p2610b_adaptive": {
+    "outline": [
+      -21212919.58726503,
+      -21207269.09241375
+    ],
+    "evidence_counts": {
+      "stirrup": 1,
+      "reinf": 2,
+      "dim": 2
+    }
+  },
+  "context_render": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\recovery\\B99A_a2.png",
+    "image_dimensions": [
+      1265,
+      1400
+    ]
+  },
+  "detail_render": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\recovery\\B99A_a1.png",
+    "image_dimensions": [
+      1679,
+      1800
+    ]
+  },
+  "context_first": true
+}

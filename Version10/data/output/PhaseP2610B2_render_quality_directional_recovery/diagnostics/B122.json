@@ -1,0 +1,352 @@
+{
+  "beam_id": "B122",
+  "stages": [
+    "INITIAL_CONTEXT",
+    "VALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "FREEZE_CONTEXT",
+    "DERIVE_DETAIL",
+    "RENDER_DETAIL",
+    "VALIDATE_DETAIL",
+    "RECOVER_DETAIL",
+    "REVALIDATE_DETAIL"
+  ],
+  "dominant_orientation": "HORIZONTAL",
+  "initial_context_bounds": [
+    31648281.6,
+    -21178414.42,
+    31656081.6,
+    -21170861.05
+  ],
+  "final_context_bounds": [
+    31648281.6,
+    -21178414.42,
+    31656081.6,
+    -21170861.05
+  ],
+  "initial_detail_bounds": [
+    31648281.6,
+    -21174902.66629448,
+    31656081.6,
+    -21171582.66629448
+  ],
+  "final_detail_bounds": [
+    31648281.6,
+    -21174482.66629448,
+    31656081.6,
+    -21171947.783787955
+  ],
+  "context_status": "BORDER_CLIPPING_SUSPECT",
+  "detail_status": "BORDER_CLIPPING_SUSPECT",
+  "context_initial_status": "BORDER_CLIPPING_SUSPECT",
+  "context_recovery_applied": true,
+  "context_final_status": "BORDER_CLIPPING_SUSPECT",
+  "context_recovery_reason": "HORIZONTAL_TRUNCATION_SUSPECT",
+  "detail_initial_status": "LOW_INFORMATION_RENDER",
+  "detail_recovery_applied": true,
+  "detail_recovery_reason": "LOW_INFORMATION_RENDER",
+  "detail_final_status": "BORDER_CLIPPING_SUSPECT",
+  "context_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "RIGHT_BORDER_CONTACT",
+    "BOTTOM_BORDER_CONTACT",
+    "LOW_LONGITUDINAL_COVERAGE",
+    "HORIZONTAL_TRUNCATION_SUSPECT"
+  ],
+  "detail_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "RIGHT_BORDER_CONTACT",
+    "HORIZONTAL_TRUNCATION_SUSPECT"
+  ],
+  "context_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "HORIZONTAL",
+      "action": "EXPAND_LEFT",
+      "before_bounds": [
+        31648281.6,
+        -21178414.42,
+        31656081.6,
+        -21170861.05
+      ],
+      "after_bounds": [
+        31647681.60469231,
+        -21174902.66629448,
+        31656081.6,
+        -21170861.05
+      ],
+      "result": "LOW_INFORMATION_RENDER"
+    },
+    {
+      "attempt": 2,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "HORIZONTAL",
+      "action": "EXPAND_RIGHT",
+      "before_bounds": [
+        31648281.6,
+        -21178414.42,
+        31656081.6,
+        -21170861.05
+      ],
+      "after_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656681.60469231,
+        -21170861.05
+      ],
+      "result": "LOW_INFORMATION_RENDER"
+    },
+    {
+      "attempt": 3,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "HORIZONTAL",
+      "action": "EXPAND_BOTH_X",
+      "before_bounds": [
+        31648281.6,
+        -21178414.42,
+        31656081.6,
+        -21170861.05
+      ],
+      "after_bounds": [
+        31647681.60469231,
+        -21174902.66629448,
+        31656681.60469231,
+        -21170861.05
+      ],
+      "result": "LOW_INFORMATION_RENDER"
+    }
+  ],
+  "detail_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "HORIZONTAL",
+      "action": "SHIFT_TO_CONTENT",
+      "before_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656081.6,
+        -21171582.66629448
+      ],
+      "after_bounds": [
+        31648281.6,
+        -21174482.66629448,
+        31656081.6,
+        -21171947.783787955
+      ],
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 2,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "HORIZONTAL",
+      "action": "TRIM_EMPTY_SIDE",
+      "before_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656081.6,
+        -21171582.66629448
+      ],
+      "after_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656081.6,
+        -21171582.66629448
+      ],
+      "result": "DUPLICATE_SKIPPED",
+      "note": "cache_or_duplicate_extent"
+    },
+    {
+      "attempt": 3,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "HORIZONTAL",
+      "action": "EXPAND_BALANCED",
+      "before_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656081.6,
+        -21171582.66629448
+      ],
+      "after_bounds": [
+        31648281.6,
+        -21174902.66629448,
+        31656081.6,
+        -21171342.66629448
+      ],
+      "result": "LOW_INFORMATION_RENDER"
+    }
+  ],
+  "context_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "RIGHT_BORDER_CONTACT",
+      "BOTTOM_BORDER_CONTACT",
+      "LOW_LONGITUDINAL_COVERAGE",
+      "HORIZONTAL_TRUNCATION_SUSPECT"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.03373,
+    "information_density": 0.00162,
+    "entropy": 0.3831,
+    "component_count": 0,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.9649,
+    "coverage_x": 0.9993,
+    "coverage_y": 0.9993,
+    "column_occupancy": [
+      0.0398,
+      0.0259,
+      0.0164,
+      0.0212,
+      0.0441,
+      0.0294,
+      0.0516,
+      0.0412
+    ],
+    "row_occupancy": [
+      0.001,
+      0.0361,
+      0.0506,
+      0.0256,
+      0.0258,
+      0.052,
+      0.0637,
+      0.015
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": true,
+      "top": false,
+      "bottom": true
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X",
+      "Y"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      0,
+      1398,
+      1353
+    ],
+    "content_bbox_dxf": [
+      31648281.6,
+      -21178403.271114394,
+      31656070.45714286,
+      -21170861.05
+    ],
+    "recovery_required": false,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1400,
+      1355
+    ],
+    "dominant_orientation": "HORIZONTAL"
+  },
+  "detail_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "RIGHT_BORDER_CONTACT",
+      "HORIZONTAL_TRUNCATION_SUSPECT"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.03068,
+    "information_density": 0.00131,
+    "entropy": 0.3424,
+    "component_count": 0,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.96886,
+    "coverage_x": 0.9989,
+    "coverage_y": 0.812,
+    "column_occupancy": [
+      0.0161,
+      0.015,
+      0.0136,
+      0.0173,
+      0.071,
+      0.0324,
+      0.0429,
+      0.0372
+    ],
+    "row_occupancy": [
+      0.0175,
+      0.0208,
+      0.0336,
+      0.0581,
+      0.0156,
+      0.0519,
+      0.0418,
+      0.0057
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": true,
+      "top": false,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      51,
+      1797,
+      525
+    ],
+    "content_bbox_dxf": [
+      31648281.6,
+      -21174222.678345095,
+      31656068.6,
+      -21172168.773544934
+    ],
+    "recovery_required": false,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1800,
+      585
+    ]
+  },
+  "context_valid_before_recovery": false,
+  "context_valid_after_recovery": true,
+  "detail_valid_before_recovery": false,
+  "detail_valid_after_recovery": true,
+  "context_recovery_attempt_count": 3,
+  "context_recovery_success": true,
+  "detail_recovery_attempt_count": 3,
+  "detail_recovery_success": true,
+  "target_visible": true,
+  "longitudinal_complete": false,
+  "context_quality_pass": true,
+  "final_vision_usable": true,
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B122.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B122.png",
+  "context_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\initial\\B122.png",
+  "detail_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\initial\\B122.png",
+  "context_first": true,
+  "timing": {
+    "context_render_s": 0.0,
+    "detail_render_s": 1.1103888000361621,
+    "quality_s": 0.3319503999664448,
+    "recovery_s": 5.082567600009497,
+    "reuse_copy_s": 0.013712699990719557
+  },
+  "run_label": "POST_OPTIMIZATION_VALIDATION_RUN"
+}

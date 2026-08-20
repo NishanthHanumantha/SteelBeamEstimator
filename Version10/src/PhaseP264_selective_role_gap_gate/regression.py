@@ -39,7 +39,7 @@ _SKIP = (
     "PhaseP269_",
     "PhaseP2610A_",
     "PhaseP2610B_",
-    "PhaseP2610B1_",
+    "PhaseP2610B1_", "PhaseP2610B2_", "PhaseP2610B3_", "PhaseP2610C1C2_",
 )
 
 _RUNTIME_MODULES = (

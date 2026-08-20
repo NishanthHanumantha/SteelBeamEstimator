@@ -1,0 +1,67 @@
+{
+  "beam_id": "B22",
+  "source_set": "Fourth",
+  "title_status": "PRESENT",
+  "geometry_status": "PRESENT",
+  "top_evidence_status": "PRESENT",
+  "bottom_evidence_status": "PRESENT",
+  "stirrup_evidence_status": "PRESENT",
+  "dimension_evidence_status": "PRESENT",
+  "leader_evidence_status": "NOT_DETERMINABLE",
+  "neighbor_title_status": "NOT_APPLICABLE",
+  "neighbor_detail_status": "NOT_DETERMINABLE",
+  "sliver_status": "PRESENT",
+  "completeness_status": "FAIL",
+  "failure_categories": [
+    "HORIZONTAL_TRUNCATION"
+  ],
+  "deterministic_notes": [
+    "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+    "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+  ],
+  "p2610b_complete_flag": false,
+  "missing_evidence": [
+    {
+      "text": "4-Y25",
+      "kind": "REINF",
+      "band": "BOTTOM_REINFORCEMENT_BAND",
+      "dx": -1084.1768404580653,
+      "dy": -785.4810219965875
+    },
+    {
+      "text": "DIMENSION",
+      "kind": "DIM",
+      "band": "BOTTOM_REINFORCEMENT_BAND",
+      "dx": -4674.023783169687,
+      "dy": 1018.092327952385
+    }
+  ],
+  "neighbor_titles_in_crop": [],
+  "evidence_in_crop": 10,
+  "evidence_total": 12,
+  "pass_logic": "FAIL if any failure_categories; else PASS. NOT_APPLICABLE evidence does not fail. Slivers do not fail.",
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B22.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B22.png",
+  "context_bounds": [
+    31657432.97,
+    -21133372.28,
+    31665232.97,
+    -21121121.38
+  ],
+  "detail_bounds": [
+    31657232.973435,
+    -21127951.95931632,
+    31665432.973435,
+    -21125000.92089767
+  ],
+  "crop_dimensions": {
+    "context": [
+      891,
+      1400
+    ],
+    "detail": [
+      1800,
+      648
+    ]
+  }
+}

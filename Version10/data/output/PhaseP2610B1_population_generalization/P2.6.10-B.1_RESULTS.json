@@ -1,0 +1,645 @@
+{
+  "phase_id": "P2.6.10-B.1",
+  "phase_name": "All-Beam Population Generalization & Anti-Hardcoding Validation",
+  "model_version": "10.11.12",
+  "gate_version": "P2610B1_POPULATION_GENERALIZATION_ANTI_HARDCODING_V1_0",
+  "mode": "OFFLINE_VALIDATION",
+  "production_write": false,
+  "engineering_changes": "NONE",
+  "pass_fail": "PARTIAL",
+  "decision": "PASS_WITH_LIMITATIONS \u2014 GENERALIZATION MOSTLY CONFIRMED, LIMITATIONS DOCUMENTED",
+  "output_root": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization",
+  "population": {
+    "source_dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\4th Set Drawings-Inizio_B1\\reinforcement\\SE-204_BASEMENT-01 FLOOR BEAM REINFORCEMENT DETAILS(SH-01 TO 03).dxf",
+    "title_hits": 160,
+    "unique_beam_ids": 135,
+    "collapsed_duplicates": [
+      {
+        "beam_id": "B135",
+        "title_hits": 2,
+        "chosen_score": 138.1711458543688,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B136",
+        "title_hits": 2,
+        "chosen_score": 127.67114585459233,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B144",
+        "title_hits": 2,
+        "chosen_score": 100.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B30",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B31",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B32",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B33",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B34",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B35",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B36",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B37",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B38",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B39",
+        "title_hits": 3,
+        "chosen_score": 0.0,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B59",
+        "title_hits": 2,
+        "chosen_score": 117.62321482300759,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      },
+      {
+        "beam_id": "B98",
+        "title_hits": 2,
+        "chosen_score": 134.96347095124423,
+        "reason": "DUPLICATE_TITLE_COLLAPSED_TO_BEST_MARK"
+      }
+    ]
+  },
+  "validation_summary": {
+    "drawing_set": "fourth_set",
+    "source_dxf": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\4th Set Drawings-Inizio_B1\\reinforcement\\SE-204_BASEMENT-01 FLOOR BEAM REINFORCEMENT DETAILS(SH-01 TO 03).dxf",
+    "discovered_beam_count": 135,
+    "title_hits": 160,
+    "collapsed_duplicate_title_groups": 15,
+    "context_crop_success_count": 135,
+    "detail_crop_success_count": 135,
+    "fully_complete_count": 120,
+    "incomplete_count": 15,
+    "render_failure_count": 0,
+    "skip_count": 0,
+    "completeness_rate": 0.8888888888888888,
+    "failure_breakdown": {
+      "VERTICAL_TRUNCATION": 5,
+      "HORIZONTAL_TRUNCATION": 12
+    },
+    "anti_hardcoding": {
+      "source_guard_pass": true,
+      "translation_invariance_pass": true,
+      "spatial_distance_pass": true,
+      "packed_sheet_robustness_pass": true
+    },
+    "production_mutation_count": 0,
+    "steel_quantity_delta": 0,
+    "BBS_delta": 0,
+    "workbook_delta": 0,
+    "live_vision_invoked": false
+  },
+  "failures": [
+    {
+      "beam_id": "B191",
+      "failure_categories": [
+        "VERTICAL_TRUNCATION",
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B176",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B150",
+      "failure_categories": [
+        "VERTICAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B123",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B101",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B99",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B119",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION",
+        "VERTICAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B120",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B96",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B63",
+      "failure_categories": [
+        "VERTICAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B48",
+      "failure_categories": [
+        "VERTICAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B29",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B19",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B22",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    },
+    {
+      "beam_id": "B23",
+      "failure_categories": [
+        "HORIZONTAL_TRUNCATION"
+      ],
+      "notes": [
+        "leader_status=NOT_DETERMINABLE; P2.6.10-B does not collect LEADER entities",
+        "PASS requires title+geometry present, no MISSING applicable evidence, no neighbor titles inside the crop, and a successful render. Packed-sheet slivers outside the title insert do not fail the crop."
+      ]
+    }
+  ],
+  "anti_hardcoding": {
+    "ok": true,
+    "source_guard": {
+      "ok": true,
+      "hits": [],
+      "beam_id_special_cases": false,
+      "manual_crop_overrides": false,
+      "gt_coordinate_dependency": false
+    },
+    "translation_invariance": {
+      "synthetic": {
+        "ok": true,
+        "cap0": 3380.0,
+        "cap1": 880.0,
+        "left0": -4400.0,
+        "right0": 4600.0,
+        "left1": -400.0,
+        "right1": 8600.0,
+        "dx": 4000.0,
+        "dy": -2500.0
+      },
+      "dxf_copy": {
+        "ok": true,
+        "beam_id": "B135A",
+        "before": [
+          31670249.32194487,
+          -21213282.72222301,
+          31678449.32194487,
+          -21209962.72222301
+        ],
+        "after": [
+          31674249.32194487,
+          -21215782.72222301,
+          31682449.32194487,
+          -21212462.72222301
+        ],
+        "expected_shifted": [
+          31674249.32194487,
+          -21215782.72222301,
+          31682449.32194487,
+          -21212462.72222301
+        ],
+        "max_delta_mm": 0.0,
+        "note": "in-memory entity.translate only; canonical DXF not written"
+      }
+    },
+    "spatial_distance": {
+      "ok": true,
+      "y_cap": 3180.0,
+      "old_fixed_cap": 1600.0,
+      "far_top_dy": 1971.0
+    },
+    "packed_sheet": {
+      "ok": true,
+      "x_left": -4500.0,
+      "x_right": 4500.0,
+      "y_cap": 3180.0
+    },
+    "beam_id_special_cases": false,
+    "manual_crop_overrides": false,
+    "gt_coordinate_dependency": false
+  },
+  "six_beam_regression": {
+    "ok": true,
+    "records": [
+      {
+        "set_key": "Fourth",
+        "beam_id": "B141",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "YES",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "YES",
+          "right_support_evidence_visible_when_present": "N/A",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 5,
+          "evidence_total": 5
+        }
+      },
+      {
+        "set_key": "Fourth",
+        "beam_id": "B66",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "N/A",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "YES",
+          "right_support_evidence_visible_when_present": "YES",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 5,
+          "evidence_total": 5
+        }
+      },
+      {
+        "set_key": "Fourth",
+        "beam_id": "B161",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "YES",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "YES",
+          "right_support_evidence_visible_when_present": "YES",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 10,
+          "evidence_total": 10
+        }
+      },
+      {
+        "set_key": "Fifth",
+        "beam_id": "B128",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "YES",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "N/A",
+          "right_support_evidence_visible_when_present": "YES",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 5,
+          "evidence_total": 5
+        }
+      },
+      {
+        "set_key": "Fifth",
+        "beam_id": "B55",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "YES",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "YES",
+          "right_support_evidence_visible_when_present": "YES",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 11,
+          "evidence_total": 11
+        }
+      },
+      {
+        "set_key": "Fifth",
+        "beam_id": "B65",
+        "complete": true,
+        "completeness": {
+          "title_visible": "YES",
+          "beam_geometry_visible": "YES",
+          "stirrup_visible": "YES",
+          "bottom_reinforcement_visible": "YES",
+          "top_reinforcement_visible": "YES",
+          "top_extra_visible_when_present": "YES",
+          "relevant_dimensions_visible_when_present": "YES",
+          "left_support_evidence_visible_when_present": "YES",
+          "right_support_evidence_visible_when_present": "YES",
+          "leaders_preserved": "YES",
+          "important_text_clipped": "NO",
+          "unrelated_neighbor_detail_present": "NO",
+          "vertical_evidence_complete": "YES",
+          "horizontal_evidence_complete": "YES",
+          "missing_evidence": [],
+          "clipped_text": [],
+          "neighbor_titles_in_crop": [],
+          "complete": true,
+          "evidence_in_crop": 8,
+          "evidence_total": 8
+        }
+      }
+    ]
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 16,
+    "total": 16,
+    "results": [
+      {
+        "name": "fourth_set_only",
+        "pass": true
+      },
+      {
+        "name": "source_guard",
+        "pass": true
+      },
+      {
+        "name": "no_beam_id_in_crop_runtime",
+        "pass": true
+      },
+      {
+        "name": "no_r1_or_gt_in_runtime",
+        "pass": true
+      },
+      {
+        "name": "translation_invariance",
+        "pass": true
+      },
+      {
+        "name": "spatial_distance_robustness",
+        "pass": true
+      },
+      {
+        "name": "packed_sheet_robustness",
+        "pass": true
+      },
+      {
+        "name": "na_evidence_does_not_fail",
+        "pass": true
+      },
+      {
+        "name": "missing_top_is_failure",
+        "pass": true
+      },
+      {
+        "name": "production_write_false",
+        "pass": true
+      },
+      {
+        "name": "P2.6.6_regression",
+        "pass": true
+      },
+      {
+        "name": "P2.6.10-A_artifact_preservation",
+        "pass": true
+      },
+      {
+        "name": "P2.6.10-B_tests_and_artefacts",
+        "pass": true
+      },
+      {
+        "name": "production_identical_fingerprints",
+        "pass": true
+      },
+      {
+        "name": "firewall_and_leakage",
+        "pass": true
+      },
+      {
+        "name": "decision_never_production_ready",
+        "pass": true
+      }
+    ],
+    "model_version": "10.11.12",
+    "gate_version": "P2610B1_POPULATION_GENERALIZATION_ANTI_HARDCODING_V1_0"
+  },
+  "firewall": {
+    "ok": true,
+    "offenders": [],
+    "shadow_writes_production": false,
+    "note": "P2.6.10-B.1 writes only isolated population-validation shadow artefacts"
+  },
+  "leakage": {
+    "ok": true,
+    "hits": []
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "fingerprints_ok": true,
+    "changed_keys": [],
+    "steel_quantity_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "production_objects_modified": false,
+    "live_vision_invoked": false,
+    "engineering_changes": "NONE"
+  },
+  "prior_regression": {
+    "p266": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\unit_tests.json",
+      "ok": true,
+      "passed": 36,
+      "total": 36,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p2610a": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\unit_tests.json",
+      "ok": true,
+      "passed": 14,
+      "total": 14,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    },
+    "p2610b": {
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\unit_tests.json",
+      "ok": true,
+      "passed": 18,
+      "total": 18,
+      "success": true,
+      "method": "frozen_unit_tests_json",
+      "note": "Nested P261\u2013P266 unit-test trees are not re-executed."
+    }
+  },
+  "live_vision_invoked": false
+}

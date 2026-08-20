@@ -1,0 +1,358 @@
+{
+  "beam_id": "B147",
+  "stages": [
+    "INITIAL_CONTEXT",
+    "VALIDATE_CONTEXT",
+    "RECOVER_CONTEXT",
+    "REVALIDATE_CONTEXT",
+    "FREEZE_CONTEXT",
+    "DERIVE_DETAIL",
+    "RENDER_DETAIL",
+    "VALIDATE_DETAIL",
+    "RECOVER_DETAIL",
+    "REVALIDATE_DETAIL"
+  ],
+  "dominant_orientation": "VERTICAL",
+  "initial_context_bounds": [
+    31668588.577650946,
+    -21181547.27,
+    31675728.09,
+    -21173109.32
+  ],
+  "final_context_bounds": [
+    31668588.577650946,
+    -21181547.27,
+    31675728.09,
+    -21173109.32
+  ],
+  "initial_detail_bounds": [
+    31669999.06684846,
+    -21178267.27228466,
+    31675004.89974915,
+    -21174910.96084322
+  ],
+  "final_detail_bounds": [
+    31669999.06684846,
+    -21178267.27228466,
+    31675216.556694314,
+    -21174910.96084322
+  ],
+  "context_status": "BORDER_CLIPPING_SUSPECT",
+  "detail_status": "BORDER_CLIPPING_SUSPECT",
+  "context_initial_status": "BORDER_CLIPPING_SUSPECT",
+  "context_recovery_applied": true,
+  "context_final_status": "BORDER_CLIPPING_SUSPECT",
+  "context_recovery_reason": "VERTICAL_TRUNCATION_SUSPECT",
+  "detail_initial_status": "LOW_INFORMATION_RENDER",
+  "detail_recovery_applied": true,
+  "detail_recovery_reason": "LOW_INFORMATION_RENDER",
+  "detail_final_status": "BORDER_CLIPPING_SUSPECT",
+  "context_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "RIGHT_BORDER_CONTACT",
+    "TOP_BORDER_CONTACT",
+    "BOTTOM_BORDER_CONTACT",
+    "LOW_LONGITUDINAL_COVERAGE",
+    "HORIZONTAL_TRUNCATION_SUSPECT",
+    "VERTICAL_TRUNCATION_SUSPECT"
+  ],
+  "detail_flags": [
+    "BORDER_CLIPPING_SUSPECT",
+    "LEFT_BORDER_CONTACT",
+    "RIGHT_BORDER_CONTACT",
+    "HORIZONTAL_TRUNCATION_SUSPECT"
+  ],
+  "context_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_TOP",
+      "before_bounds": [
+        31668588.577650946,
+        -21181547.27,
+        31675728.09,
+        -21173109.32
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675728.09,
+        -21174910.96084322
+      ],
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 2,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_BOTTOM",
+      "before_bounds": [
+        31668588.577650946,
+        -21181547.27,
+        31675728.09,
+        -21173109.32
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675728.09,
+        -21174910.96084322
+      ],
+      "result": "DUPLICATE_SKIPPED",
+      "note": "cache_or_duplicate_extent"
+    },
+    {
+      "attempt": 3,
+      "reason": "BORDER_CLIPPING_SUSPECT",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_BOTH_Y",
+      "before_bounds": [
+        31668588.577650946,
+        -21181547.27,
+        31675728.09,
+        -21173109.32
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675728.09,
+        -21174910.96084322
+      ],
+      "result": "DUPLICATE_SKIPPED",
+      "note": "cache_or_duplicate_extent"
+    }
+  ],
+  "detail_recovery_history": [
+    {
+      "attempt": 1,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "VERTICAL",
+      "action": "SHIFT_TO_CONTENT",
+      "before_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675004.89974915,
+        -21174910.96084322
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675216.556694314,
+        -21174910.96084322
+      ],
+      "result": "BORDER_CLIPPING_SUSPECT"
+    },
+    {
+      "attempt": 2,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "VERTICAL",
+      "action": "TRIM_EMPTY_SIDE",
+      "before_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675004.89974915,
+        -21174910.96084322
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675004.89974915,
+        -21174910.96084322
+      ],
+      "result": "DUPLICATE_SKIPPED",
+      "note": "cache_or_duplicate_extent"
+    },
+    {
+      "attempt": 3,
+      "reason": "LOW_INFORMATION_RENDER",
+      "orientation": "VERTICAL",
+      "action": "EXPAND_BALANCED",
+      "before_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675004.89974915,
+        -21174910.96084322
+      ],
+      "after_bounds": [
+        31669999.06684846,
+        -21178267.27228466,
+        31675364.89974915,
+        -21174910.96084322
+      ],
+      "result": "LOW_INFORMATION_RENDER"
+    }
+  ],
+  "context_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "RIGHT_BORDER_CONTACT",
+      "TOP_BORDER_CONTACT",
+      "BOTTOM_BORDER_CONTACT",
+      "LOW_LONGITUDINAL_COVERAGE",
+      "HORIZONTAL_TRUNCATION_SUSPECT",
+      "VERTICAL_TRUNCATION_SUSPECT"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.05192,
+    "information_density": 0.00364,
+    "entropy": 0.5606,
+    "component_count": 0,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.94738,
+    "coverage_x": 0.9983,
+    "coverage_y": 0.9993,
+    "column_occupancy": [
+      0.0585,
+      0.0657,
+      0.0564,
+      0.0527,
+      0.0569,
+      0.0555,
+      0.0326,
+      0.0368
+    ],
+    "row_occupancy": [
+      0.0695,
+      0.0534,
+      0.0386,
+      0.0432,
+      0.0451,
+      0.0703,
+      0.0396,
+      0.0557
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": true,
+      "top": true,
+      "bottom": true
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X",
+      "Y"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      0,
+      1182,
+      1398
+    ],
+    "content_bbox_dxf": [
+      31668588.577650946,
+      -21181535.215785712,
+      31675710.015285194,
+      -21173109.32
+    ],
+    "recovery_required": false,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1185,
+      1400
+    ],
+    "dominant_orientation": "VERTICAL"
+  },
+  "detail_diagnostic": {
+    "primary_status": "BORDER_CLIPPING_SUSPECT",
+    "flags": [
+      "BORDER_CLIPPING_SUSPECT",
+      "LEFT_BORDER_CONTACT",
+      "RIGHT_BORDER_CONTACT",
+      "HORIZONTAL_TRUNCATION_SUSPECT"
+    ],
+    "render_status": "FILE_GENERATED",
+    "quality_status": "BORDER_CLIPPING_SUSPECT",
+    "foreground_ratio": 0.02818,
+    "information_density": 0.00113,
+    "entropy": 0.3203,
+    "component_count": 0,
+    "dark_ratio": 0.0,
+    "white_ratio": 0.97155,
+    "coverage_x": 0.9989,
+    "coverage_y": 0.9983,
+    "column_occupancy": [
+      0.0276,
+      0.0181,
+      0.0339,
+      0.0538,
+      0.051,
+      0.0157,
+      0.0164,
+      0.009
+    ],
+    "row_occupancy": [
+      0.0165,
+      0.0268,
+      0.0173,
+      0.0136,
+      0.0224,
+      0.0527,
+      0.0428,
+      0.0337
+    ],
+    "meaningful_border_contact": {
+      "left": true,
+      "right": true,
+      "top": false,
+      "bottom": false
+    },
+    "clipping_suspected": true,
+    "clipping_axes": [
+      "X"
+    ],
+    "empty_sides": [],
+    "content_bbox_px": [
+      0,
+      0,
+      1797,
+      1155
+    ],
+    "content_bbox_dxf": [
+      31669999.06684846,
+      -21178258.5771773,
+      31675207.860877905,
+      -21174910.96084322
+    ],
+    "recovery_required": false,
+    "file_generated": true,
+    "visually_usable": true,
+    "target_visible": true,
+    "image_dimensions": [
+      1800,
+      1158
+    ]
+  },
+  "context_valid_before_recovery": false,
+  "context_valid_after_recovery": true,
+  "detail_valid_before_recovery": false,
+  "detail_valid_after_recovery": true,
+  "context_recovery_attempt_count": 3,
+  "context_recovery_success": true,
+  "detail_recovery_attempt_count": 3,
+  "detail_recovery_success": true,
+  "target_visible": true,
+  "longitudinal_complete": false,
+  "context_quality_pass": true,
+  "final_vision_usable": true,
+  "context_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B147.png",
+  "detail_crop_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B147.png",
+  "context_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\initial\\B147.png",
+  "detail_initial_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\initial\\B147.png",
+  "context_first": true,
+  "timing": {
+    "context_render_s": 0.0,
+    "detail_render_s": 0.0,
+    "quality_s": 0.39596809999784455,
+    "recovery_s": 1.623003399989102,
+    "reuse_copy_s": 0.03540899994550273
+  },
+  "run_label": "POST_OPTIMIZATION_VALIDATION_RUN"
+}
