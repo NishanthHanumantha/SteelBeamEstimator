@@ -1,0 +1,63 @@
+{
+  "target_beam_id": "B128",
+  "target_beam_identified": true,
+  "target_association_confidence": 0.95,
+  "visual_assessment": {
+    "title_visible": true,
+    "stirrup_region_visible": true,
+    "bottom_region_visible": true,
+    "top_region_visible": true,
+    "dimension_extra_region_visible": true
+  },
+  "reinforcement_groups": [
+    {
+      "layer": "TOP",
+      "role": "MAIN",
+      "spec": "5Y20",
+      "support_scope": "FULL_SPAN",
+      "confidence": 0.95,
+      "evidence": "Green line at top of beam with 5-Y20 annotations at multiple locations along span, dimension 2350 shown"
+    },
+    {
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "spec": "5Y25",
+      "support_scope": "LEFT_SUPPORT",
+      "confidence": 0.9,
+      "evidence": "Green lines at bottom left support region with 5-Y25 annotation visible"
+    },
+    {
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "spec": "3Y20",
+      "support_scope": "LEFT_SUPPORT",
+      "confidence": 0.85,
+      "evidence": "Green line at bottom left support with 3-Y20 annotation near column junction"
+    },
+    {
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "spec": "5Y25",
+      "support_scope": "RIGHT_SUPPORT",
+      "confidence": 0.9,
+      "evidence": "Green lines at bottom right support region with 5-Y25 annotation visible at right end"
+    }
+  ],
+  "stirrups": [
+    {
+      "spec": "5L-Y12@100C/C",
+      "confidence": 0.95
+    }
+  ],
+  "uncertainties": [
+    "Bottom reinforcement shows two different specifications (5Y25 and 3Y20) at left support - unclear if these are separate groups or overlapping layers",
+    "Right support bottom reinforcement shows only 5Y25 - asymmetry with left support configuration"
+  ],
+  "neighbor_evidence_detected": true,
+  "response_status": "OK",
+  "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "usable": true,
+  "unusable_reason": null
+}

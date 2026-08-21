@@ -1,0 +1,131 @@
+{
+  "phase_id": "P2.6.10-D.2",
+  "phase_name": "Shadow Hybrid Semantic Resolver",
+  "model_version": "10.11.20",
+  "gate_version": "P2610D2_SHADOW_HYBRID_SEMANTIC_RESOLUTION_V1_0",
+  "decision": "PASS",
+  "pass_fail": "PASS",
+  "metrics": {
+    "population": {
+      "total_beams": 16,
+      "successfully_resolved_beams": 16,
+      "unresolved_beams": 0
+    },
+    "groups": {
+      "matched_groups": 33,
+      "vision_only_groups": 11,
+      "deterministic_only_groups": 5,
+      "ambiguous_groups": 1,
+      "possible_duplicates": 2
+    },
+    "field_resolution": {
+      "TARGET_IDENTITY": {
+        "vision_accepted": 16
+      },
+      "LAYER": {
+        "vision_accepted": 45,
+        "conflicts_recorded": 8,
+        "deterministic_authority_or_only": 5
+      },
+      "ROLE": {
+        "vision_accepted": 45,
+        "conflicts_recorded": 6,
+        "deterministic_authority_or_only": 5
+      },
+      "BAR_COUNT": {
+        "vision_accepted": 45,
+        "deterministic_authority_or_only": 5,
+        "conflicts_recorded": 7
+      },
+      "DIAMETER": {
+        "vision_accepted": 45,
+        "deterministic_authority_or_only": 5,
+        "conflicts_recorded": 6
+      },
+      "SPECIFICATION": {
+        "vision_accepted": 45,
+        "conflicts_recorded": 31,
+        "deterministic_authority_or_only": 5
+      },
+      "SUPPORT_SCOPE": {
+        "vision_accepted": 42,
+        "deterministic_fallback": 3,
+        "conflicts_recorded": 13,
+        "deterministic_authority_or_only": 5
+      },
+      "STIRRUP_IDENTIFICATION": {
+        "vision_accepted": 16,
+        "deterministic_authority_or_only": 10
+      }
+    },
+    "engineering_fields": {
+      "deterministic_authority_retained": 66,
+      "unavailable_cut_length_references": 12
+    },
+    "stirrups": {
+      "vision_semantic_identification_accepted": 16,
+      "deterministic_engineering_references_retained": 26,
+      "conflicts_recorded": 0
+    },
+    "provenance": {
+      "counts": {
+        "VISION": 299,
+        "DETERMINISTIC": 43,
+        "UNRESOLVED": 0
+      },
+      "total_fields": 342,
+      "percent": {
+        "VISION": 87.43,
+        "DETERMINISTIC": 12.57,
+        "UNRESOLVED": 0.0
+      }
+    },
+    "note": "Structural metrics only. Not accuracy."
+  },
+  "population": {
+    "ok": true,
+    "expected": 16,
+    "discovered_count": 16,
+    "beam_ids": [
+      "B100",
+      "B100A",
+      "B103",
+      "B119",
+      "B128",
+      "B129",
+      "B133",
+      "B139",
+      "B141",
+      "B161",
+      "B17",
+      "B46",
+      "B55",
+      "B65",
+      "B66",
+      "B68"
+    ],
+    "reason": null
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "shadow_only": true,
+    "live_claude_call": false,
+    "steel_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0
+  },
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 30,
+    "total": 30
+  },
+  "live_claude_call": false,
+  "runtime_s": 153.154
+}

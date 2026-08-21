@@ -1,0 +1,47 @@
+{
+  "beam_id": "B66",
+  "conflicts": [
+    {
+      "beam_id": "B66",
+      "hybrid_group_reference": "VG2",
+      "field": "LAYER",
+      "code": "LAYER_CONFLICT",
+      "vision_value": "BOTTOM",
+      "deterministic_value": "TOP",
+      "selected_value": "BOTTOM",
+      "selected_source": "VISION",
+      "vision_confidence": 0.9,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B66",
+    "matched": 1,
+    "vision_only": 1,
+    "deterministic_only": 1,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 1,
+        "deterministic_index": 1,
+        "score": 10,
+        "vision_id": "VG2",
+        "deterministic_id": "G02"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B66",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B66",
+    "deterministic_value": "B66",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

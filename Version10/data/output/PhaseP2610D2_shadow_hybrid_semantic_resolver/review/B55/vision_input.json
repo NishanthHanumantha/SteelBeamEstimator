@@ -1,0 +1,55 @@
+{
+  "target_beam_id": "B55",
+  "target_beam_identified": true,
+  "target_association_confidence": 0.95,
+  "visual_assessment": {
+    "title_visible": true,
+    "stirrup_region_visible": true,
+    "bottom_region_visible": true,
+    "top_region_visible": true,
+    "dimension_extra_region_visible": true
+  },
+  "reinforcement_groups": [
+    {
+      "layer": "TOP",
+      "role": "MAIN",
+      "spec": "3Y16",
+      "support_scope": "LEFT_SUPPORT",
+      "confidence": 0.92,
+      "evidence": "3-Y16 annotation at left support with dimension 1400, shown in green layer at top of beam section"
+    },
+    {
+      "layer": "TOP",
+      "role": "EXTRA",
+      "spec": "5Y20",
+      "support_scope": "BOTH_SUPPORTS",
+      "confidence": 0.9,
+      "evidence": "5-Y20 annotations visible at both left support (mid-span region) and right support, shown in green layer at top"
+    },
+    {
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "spec": "5Y20",
+      "support_scope": "FULL_SPAN",
+      "confidence": 0.88,
+      "evidence": "5-Y20 annotation at bottom center of beam section, shown in green layer spanning full length"
+    }
+  ],
+  "stirrups": [
+    {
+      "spec": "3L-Y8@100C/C",
+      "confidence": 0.93
+    }
+  ],
+  "uncertainties": [
+    "The 5-Y20 appears in both top extra and bottom main positions - visual evidence shows distinct groups but same specification",
+    "Dimension 1400 associated with left support top bars may indicate extent rather than full span"
+  ],
+  "neighbor_evidence_detected": false,
+  "response_status": "OK",
+  "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "usable": true,
+  "unusable_reason": null
+}

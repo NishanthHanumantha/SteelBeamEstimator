@@ -1,0 +1,203 @@
+{
+  "beam_id": "B161",
+  "conflicts": [
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG4",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "4-Y16",
+      "deterministic_value": "4Y16",
+      "selected_value": "4-Y16",
+      "selected_source": "VISION",
+      "vision_confidence": 0.88,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG4",
+      "field": "SUPPORT_SCOPE",
+      "code": "SUPPORT_SCOPE_CONFLICT",
+      "vision_value": "LEFT_SUPPORT",
+      "deterministic_value": "BOTH_SUPPORTS",
+      "selected_value": "LEFT_SUPPORT",
+      "selected_source": "VISION",
+      "vision_confidence": 0.88,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG2",
+      "field": "LAYER",
+      "code": "LAYER_CONFLICT",
+      "vision_value": "BOTTOM",
+      "deterministic_value": "TOP",
+      "selected_value": "BOTTOM",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG2",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "4-Y25",
+      "deterministic_value": "4Y25",
+      "selected_value": "4-Y25",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG3",
+      "field": "ROLE",
+      "code": "ROLE_CONFLICT",
+      "vision_value": "MAIN",
+      "deterministic_value": "EXTRA",
+      "selected_value": "MAIN",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG3",
+      "field": "BAR_COUNT",
+      "code": "BAR_COUNT_CONFLICT",
+      "vision_value": 4,
+      "deterministic_value": 3,
+      "selected_value": 4,
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG3",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "4-Y16",
+      "deterministic_value": "3Y16",
+      "selected_value": "4-Y16",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG3",
+      "field": "SUPPORT_SCOPE",
+      "code": "SUPPORT_SCOPE_CONFLICT",
+      "vision_value": "FULL_SPAN",
+      "deterministic_value": "BOTH_SUPPORTS",
+      "selected_value": "FULL_SPAN",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG1",
+      "field": "LAYER",
+      "code": "LAYER_CONFLICT",
+      "vision_value": "TOP",
+      "deterministic_value": "BOTTOM",
+      "selected_value": "TOP",
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG1",
+      "field": "BAR_COUNT",
+      "code": "BAR_COUNT_CONFLICT",
+      "vision_value": 4,
+      "deterministic_value": 3,
+      "selected_value": 4,
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B161",
+      "hybrid_group_reference": "VG1",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "4-Y20",
+      "deterministic_value": "3Y20",
+      "selected_value": "4-Y20",
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B161",
+    "matched": 4,
+    "vision_only": 1,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [
+      {
+        "code": "POSSIBLE_DUPLICATE_GROUP",
+        "group_ids": [
+          "VG4",
+          "VG5"
+        ],
+        "key": [
+          "TOP",
+          "EXTRA",
+          "4-Y16",
+          "4",
+          "16"
+        ]
+      }
+    ],
+    "pairs": [
+      {
+        "vision_index": 3,
+        "deterministic_index": 2,
+        "score": 13,
+        "vision_id": "VG4",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 1,
+        "deterministic_index": 3,
+        "score": 10,
+        "vision_id": "VG2",
+        "deterministic_id": "G04"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG3",
+        "deterministic_id": "G01"
+      },
+      {
+        "vision_index": 0,
+        "deterministic_index": 1,
+        "score": 4,
+        "vision_id": "VG1",
+        "deterministic_id": "G02"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B161",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B161",
+    "deterministic_value": "B161",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

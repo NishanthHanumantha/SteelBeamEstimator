@@ -96,7 +96,7 @@ def firewall_check(version10_root: Path) -> Dict[str, Any]:
         rel = str(path.relative_to(src)).replace("\\", "/")
         if any(
             x in rel
-            for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP253_", "PhaseP257_", "PhaseP258_", "PhaseP259_", "PhaseP2510_", "PhaseP2511_", "PhaseP26_", "PhaseP261_", "PhaseP262_", "PhaseP263_", "PhaseP264_", "PhaseP265_", "PhaseP266_", "PhaseP267_", "PhaseP268_", "PhaseP269_", "PhaseP2610A_", "PhaseP2610B_", "PhaseP2610B1_", "PhaseP2610B2_", "PhaseP2610B3_", "PhaseP2610C1C2_", "PhaseP2610C3_", "PhaseP2610C4_", "PhaseP2610C5_", "PhaseP2610D1_")
+            for x in ("PhaseP254_", "PhaseP255_", "PhaseP256_", "PhaseP253_", "PhaseP257_", "PhaseP258_", "PhaseP259_", "PhaseP2510_", "PhaseP2511_", "PhaseP26_", "PhaseP261_", "PhaseP262_", "PhaseP263_", "PhaseP264_", "PhaseP265_", "PhaseP266_", "PhaseP267_", "PhaseP268_", "PhaseP269_", "PhaseP2610A_", "PhaseP2610B_", "PhaseP2610B1_", "PhaseP2610B2_", "PhaseP2610B3_", "PhaseP2610C1C2_", "PhaseP2610C3_", "PhaseP2610C4_", "PhaseP2610C5_", "PhaseP2610D1_", "PhaseP2610D2_")
         ):
             continue
         try:

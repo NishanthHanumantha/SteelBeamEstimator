@@ -1,0 +1,78 @@
+{
+  "beam_id": "B119",
+  "conflicts": [
+    {
+      "beam_id": "B119",
+      "hybrid_group_reference": "G1",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "3-Y25",
+      "deterministic_value": "3Y25",
+      "selected_value": "3-Y25",
+      "selected_source": "VISION",
+      "vision_confidence": 0.9,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B119",
+      "hybrid_group_reference": "G2",
+      "field": "DIAMETER",
+      "code": "DIAMETER_CONFLICT",
+      "vision_value": 10,
+      "deterministic_value": 16,
+      "selected_value": 10,
+      "selected_source": "VISION",
+      "vision_confidence": 0.85,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B119",
+      "hybrid_group_reference": "G2",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "3L-Y10@100C/125/100/E",
+      "deterministic_value": "3Y16",
+      "selected_value": "3L-Y10@100C/125/100/E",
+      "selected_source": "VISION",
+      "vision_confidence": 0.85,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B119",
+    "matched": 2,
+    "vision_only": 0,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 1,
+        "score": 14,
+        "vision_id": "G1",
+        "deterministic_id": "G02"
+      },
+      {
+        "vision_index": 1,
+        "deterministic_index": 0,
+        "score": 8,
+        "vision_id": "G2",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B119",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B119",
+    "deterministic_value": "B119",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

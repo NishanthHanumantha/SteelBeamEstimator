@@ -1,0 +1,137 @@
+{
+  "beam_id": "B103",
+  "conflicts": [
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G1",
+      "field": "ROLE",
+      "code": "ROLE_CONFLICT",
+      "vision_value": "MAIN",
+      "deterministic_value": "EXTRA",
+      "selected_value": "MAIN",
+      "selected_source": "VISION",
+      "vision_confidence": 0.85,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G1",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "3-Y16",
+      "deterministic_value": "3Y16",
+      "selected_value": "3-Y16",
+      "selected_source": "VISION",
+      "vision_confidence": 0.9,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G1",
+      "field": "SUPPORT_SCOPE",
+      "code": "SUPPORT_SCOPE_CONFLICT",
+      "vision_value": "UNKNOWN",
+      "deterministic_value": "BOTH_SUPPORTS",
+      "selected_value": "BOTH_SUPPORTS",
+      "selected_source": "DETERMINISTIC",
+      "vision_confidence": null,
+      "reason": "DETERMINISTIC_FALLBACK"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G2",
+      "field": "LAYER",
+      "code": "LAYER_CONFLICT",
+      "vision_value": "BOTTOM",
+      "deterministic_value": "TOP",
+      "selected_value": "BOTTOM",
+      "selected_source": "VISION",
+      "vision_confidence": 0.9,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G2",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "3-Y20",
+      "deterministic_value": "3Y20",
+      "selected_value": "3-Y20",
+      "selected_source": "VISION",
+      "vision_confidence": 0.9,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G2",
+      "field": "SUPPORT_SCOPE",
+      "code": "SUPPORT_SCOPE_CONFLICT",
+      "vision_value": "UNKNOWN",
+      "deterministic_value": "FULL_SPAN",
+      "selected_value": "FULL_SPAN",
+      "selected_source": "DETERMINISTIC",
+      "vision_confidence": null,
+      "reason": "DETERMINISTIC_FALLBACK"
+    }
+  ],
+  "fallbacks": [
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G1",
+      "field": "SUPPORT_SCOPE",
+      "reason": "VISION_MISSING_VALUE",
+      "deterministic_value": "BOTH_SUPPORTS",
+      "vision_value": "UNKNOWN",
+      "vision_available": false,
+      "vision_confidence": null,
+      "resolution_reason": "DETERMINISTIC_FALLBACK"
+    },
+    {
+      "beam_id": "B103",
+      "hybrid_group_reference": "G2",
+      "field": "SUPPORT_SCOPE",
+      "reason": "VISION_MISSING_VALUE",
+      "deterministic_value": "FULL_SPAN",
+      "vision_value": "UNKNOWN",
+      "vision_available": false,
+      "vision_confidence": null,
+      "resolution_reason": "DETERMINISTIC_FALLBACK"
+    }
+  ],
+  "matching": {
+    "beam_id": "B103",
+    "matched": 2,
+    "vision_only": 0,
+    "deterministic_only": 1,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 1,
+        "score": 12,
+        "vision_id": "G1",
+        "deterministic_id": "G02"
+      },
+      {
+        "vision_index": 1,
+        "deterministic_index": 2,
+        "score": 9,
+        "vision_id": "G2",
+        "deterministic_id": "G03"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B103",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B103",
+    "deterministic_value": "B103",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

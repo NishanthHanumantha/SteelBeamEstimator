@@ -1,0 +1,59 @@
+{
+  "beam_id": "B141",
+  "conflicts": [
+    {
+      "beam_id": "B141",
+      "hybrid_group_reference": "VG2",
+      "field": "LAYER",
+      "code": "LAYER_CONFLICT",
+      "vision_value": "BOTTOM",
+      "deterministic_value": "TOP",
+      "selected_value": "BOTTOM",
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B141",
+      "hybrid_group_reference": "VG2",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "5-Y16",
+      "deterministic_value": "5Y16",
+      "selected_value": "5-Y16",
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B141",
+    "matched": 1,
+    "vision_only": 1,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 1,
+        "deterministic_index": 0,
+        "score": 10,
+        "vision_id": "VG2",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B141",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B141",
+    "deterministic_value": "B141",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

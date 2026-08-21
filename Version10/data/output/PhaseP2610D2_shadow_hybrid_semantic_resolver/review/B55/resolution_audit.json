@@ -1,0 +1,124 @@
+{
+  "beam_id": "B55",
+  "conflicts": [
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG1",
+      "field": "DIAMETER",
+      "code": "DIAMETER_CONFLICT",
+      "vision_value": 16,
+      "deterministic_value": 20,
+      "selected_value": 16,
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG1",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "3Y16",
+      "deterministic_value": "3Y20",
+      "selected_value": "3Y16",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG1",
+      "field": "SUPPORT_SCOPE",
+      "code": "SUPPORT_SCOPE_CONFLICT",
+      "vision_value": "LEFT_SUPPORT",
+      "deterministic_value": "FULL_SPAN",
+      "selected_value": "LEFT_SUPPORT",
+      "selected_source": "VISION",
+      "vision_confidence": 0.92,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG3",
+      "field": "BAR_COUNT",
+      "code": "BAR_COUNT_CONFLICT",
+      "vision_value": 5,
+      "deterministic_value": 3,
+      "selected_value": 5,
+      "selected_source": "VISION",
+      "vision_confidence": 0.88,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG3",
+      "field": "DIAMETER",
+      "code": "DIAMETER_CONFLICT",
+      "vision_value": 20,
+      "deterministic_value": 25,
+      "selected_value": 20,
+      "selected_source": "VISION",
+      "vision_confidence": 0.88,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B55",
+      "hybrid_group_reference": "VG3",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "5Y20",
+      "deterministic_value": "3Y25",
+      "selected_value": "5Y20",
+      "selected_source": "VISION",
+      "vision_confidence": 0.88,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B55",
+    "matched": 2,
+    "vision_only": 0,
+    "deterministic_only": 1,
+    "ambiguous": 1,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 2,
+        "score": 7,
+        "vision_id": "VG1",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG3",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": [
+      {
+        "code": "AMBIGUOUS_GROUP_MATCH",
+        "vision_index": 1,
+        "deterministic_index": 1,
+        "score": 6,
+        "vision_id": "VG2",
+        "deterministic_id": "G02",
+        "reason": "TIED_TOP_SCORE"
+      }
+    ]
+  },
+  "target": {
+    "value": "B55",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B55",
+    "deterministic_value": "B55",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}

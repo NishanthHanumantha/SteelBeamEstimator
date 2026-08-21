@@ -1,0 +1,65 @@
+{
+  "target_beam_id": "B17",
+  "target_identified": true,
+  "association_confidence": 0.95,
+  "groups": [
+    {
+      "physical_group_id": "G1",
+      "layer": "TOP",
+      "spec": "2-Y20",
+      "bar_count": 2,
+      "role_hypothesis": "MAIN",
+      "role_confidence": 0.85,
+      "support_scope": "FULL_SPAN",
+      "relative_length_evidence": "LONGER",
+      "span_relationship": "FULL_SPAN",
+      "confidence": 0.9,
+      "evidence": "Two Y20 bars shown in green running continuously along the top of beam B17, spanning the full length with red dots indicating continuity"
+    },
+    {
+      "physical_group_id": "G2",
+      "layer": "BOTTOM",
+      "spec": "2-Y20",
+      "bar_count": 2,
+      "role_hypothesis": "MAIN",
+      "role_confidence": 0.85,
+      "support_scope": "BOTH_SUPPORTS",
+      "relative_length_evidence": "SHORTER",
+      "span_relationship": "PARTIAL_SUPPORT",
+      "confidence": 0.85,
+      "evidence": "Two Y20 bars shown in green at bottom layer, labeled '2-Y20+2-Y16', appearing to extend from support regions with red dots at ends"
+    },
+    {
+      "physical_group_id": "G3",
+      "layer": "BOTTOM",
+      "spec": "2-Y16",
+      "bar_count": 2,
+      "role_hypothesis": "EXTRA",
+      "role_confidence": 0.75,
+      "support_scope": "BOTH_SUPPORTS",
+      "relative_length_evidence": "SHORTER",
+      "span_relationship": "PARTIAL_SUPPORT",
+      "confidence": 0.8,
+      "evidence": "Two Y16 bars shown in green at bottom layer, part of the '2-Y20+2-Y16' notation, appearing as additional support reinforcement at ends"
+    }
+  ],
+  "stirrups": [
+    {
+      "spec": "2L-Y12@100C/C",
+      "confidence": 0.9,
+      "evidence": "Stirrup specification clearly labeled below beam B17(200X600) detail, showing 2-legged Y12 bars at 100mm centers"
+    }
+  ],
+  "ambiguities": [
+    "The exact termination points of bottom bars (G2 and G3) are not precisely clear from the visual evidence",
+    "The '2-Y20+2-Y16' notation suggests these bars may be positioned together but their exact relative positioning is not fully detailed"
+  ],
+  "neighbour_evidence_detected": false,
+  "response_status": "OK",
+  "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "usable": true,
+  "unusable_reason": null,
+  "call_status": "OK"
+}

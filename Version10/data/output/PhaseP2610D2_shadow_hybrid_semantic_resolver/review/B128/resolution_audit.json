@@ -1,0 +1,86 @@
+{
+  "beam_id": "B128",
+  "conflicts": [
+    {
+      "beam_id": "B128",
+      "hybrid_group_reference": "VG1",
+      "field": "BAR_COUNT",
+      "code": "BAR_COUNT_CONFLICT",
+      "vision_value": 5,
+      "deterministic_value": 3,
+      "selected_value": 5,
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B128",
+      "hybrid_group_reference": "VG1",
+      "field": "DIAMETER",
+      "code": "DIAMETER_CONFLICT",
+      "vision_value": 20,
+      "deterministic_value": 16,
+      "selected_value": 20,
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    },
+    {
+      "beam_id": "B128",
+      "hybrid_group_reference": "VG1",
+      "field": "SPECIFICATION",
+      "code": "SPECIFICATION_CONFLICT",
+      "vision_value": "5Y20",
+      "deterministic_value": "3Y16",
+      "selected_value": "5Y20",
+      "selected_source": "VISION",
+      "vision_confidence": 0.95,
+      "reason": "VISION_PREFERRED_VALID"
+    }
+  ],
+  "fallbacks": [],
+  "matching": {
+    "beam_id": "B128",
+    "matched": 1,
+    "vision_only": 3,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [
+      {
+        "code": "POSSIBLE_DUPLICATE_GROUP",
+        "group_ids": [
+          "VG2",
+          "VG4"
+        ],
+        "key": [
+          "BOTTOM",
+          "MAIN",
+          "5Y25",
+          "5",
+          "25"
+        ]
+      }
+    ],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG1",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "target": {
+    "value": "B128",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B128",
+    "deterministic_value": "B128",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  }
+}
