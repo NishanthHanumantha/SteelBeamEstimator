@@ -1,0 +1,83 @@
+{
+  "beam_id": "B65",
+  "gate_status": "VISION_READY_WITH_LIMITATIONS",
+  "called": true,
+  "skip_reason": null,
+  "call_reason": "SIX_BEAM_CONTROL",
+  "cohort_label": "SIX_BEAM_CONTROL",
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 11.383208199986257,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3631,
+      "output_tokens": 563
+    },
+    "estimated_input_tokens": 646,
+    "estimated_output_tokens": 445,
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "d6edfd884db0c83fa0367fe55080fa350fd284caf6a82f116b3422ef219bce71",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B65",
+    "target_beam_identified": true,
+    "target_association_confidence": 0.95,
+    "visual_assessment": {
+      "title_visible": true,
+      "stirrup_region_visible": true,
+      "bottom_region_visible": true,
+      "top_region_visible": true,
+      "dimension_extra_region_visible": true
+    },
+    "reinforcement_groups": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "2Y16",
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.92,
+        "evidence": "Two red bars visible at top left support, annotation '2-Y16' with 850mm and 1800mm dimensions indicating left support zone"
+      },
+      {
+        "layer": "TOP",
+        "role": "EXTRA",
+        "spec": "5Y16",
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.9,
+        "evidence": "Annotation '5-Y16' visible at top right region with single red bar shown at right support"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y20",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.93,
+        "evidence": "Two green bars visible running full span at bottom layer, annotation '5-Y20' centered below beam"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100/175/100C/C",
+        "confidence": 0.95
+      }
+    ],
+    "uncertainties": [
+      "Top layer shows 2Y16 at left support and 5Y16 at right support - these appear to be separate groups with different quantities rather than a continuous group",
+      "Visual evidence shows simplified representation with limited bars drawn; actual bar count matches annotations but full distribution not fully detailed"
+    ],
+    "neighbor_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null
+  },
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "raw_text_present": true
+}

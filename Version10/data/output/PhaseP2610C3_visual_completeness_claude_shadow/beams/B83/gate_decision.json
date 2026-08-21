@@ -1,0 +1,126 @@
+{
+  "beam_id": "B83",
+  "status": "VISION_NOT_READY",
+  "reason_codes": [
+    "CONTEXT_CRITICAL_LOW_INFORMATION_RENDER",
+    "CONTEXT_RETAIN_PREFERRED_STILL_CRITICAL",
+    "DETAIL_CRITICAL_LOW_INFORMATION_RENDER",
+    "DETAIL_RETAIN_PREFERRED_STILL_CRITICAL",
+    "CONTEXT_IDENTITY_UNAVAILABLE",
+    "DETAIL_CORE_UNAVAILABLE",
+    "CRITICAL_VISUAL_FAILURE"
+  ],
+  "context_source_phase": "B.1",
+  "detail_source_phase": "B.1",
+  "mixed_source": false,
+  "gate": {
+    "status": "VISION_NOT_READY",
+    "reason_codes": [
+      "CONTEXT_CRITICAL_LOW_INFORMATION_RENDER",
+      "CONTEXT_RETAIN_PREFERRED_STILL_CRITICAL",
+      "DETAIL_CRITICAL_LOW_INFORMATION_RENDER",
+      "DETAIL_RETAIN_PREFERRED_STILL_CRITICAL",
+      "CONTEXT_IDENTITY_UNAVAILABLE",
+      "DETAIL_CORE_UNAVAILABLE",
+      "CRITICAL_VISUAL_FAILURE"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": false,
+      "detail": false
+    },
+    "sufficient_for_target_interpretation": false,
+    "anchor": {
+      "identity_ok": false,
+      "geometry_ok": false,
+      "association_ambiguous": false,
+      "reason_codes": [
+        "CONTEXT_IDENTITY_UNAVAILABLE",
+        "DETAIL_CORE_UNAVAILABLE"
+      ],
+      "stack_observability": {
+        "title_region": "MISSING_OR_CLIPPED",
+        "stirrup_region": "OBSERVABLE_IF_DRAWN",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": false
+    },
+    "context_source_phase": "B.1",
+    "detail_source_phase": "B.1"
+  },
+  "evidence": {
+    "beam_id": "B83",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B83.png",
+      "sha256": "6c2a5e0736f1096c97ea2183fe6f08fc641e7fc10e67bdd178f251e93ee1cbbf",
+      "primary_status": "LOW_INFORMATION_RENDER",
+      "critical_failure": true,
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "usable_status": false,
+      "score": -1.0,
+      "foreground_ratio": 0.01639,
+      "coverage_x": 0.9984,
+      "coverage_y": 0.5343,
+      "empty_sides": [
+        "bottom"
+      ],
+      "quality_flags": [
+        "LOW_INFORMATION_RENDER",
+        "EMPTY_REGION_PRESENT",
+        "EMPTY_BOTTOM"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B83.png",
+        "exists": true,
+        "expected_sha256": "6c2a5e0736f1096c97ea2183fe6f08fc641e7fc10e67bdd178f251e93ee1cbbf",
+        "actual_sha256": "6c2a5e0736f1096c97ea2183fe6f08fc641e7fc10e67bdd178f251e93ee1cbbf",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B83.png",
+      "sha256": "5bc62a7e0c5d0305a20a65bc163f9b5d43973f93892142f5b18fa2189396e583",
+      "primary_status": "LOW_INFORMATION_RENDER",
+      "critical_failure": true,
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "usable_status": false,
+      "score": -1.0,
+      "foreground_ratio": 0.02107,
+      "coverage_x": 0.9989,
+      "coverage_y": 0.7997,
+      "empty_sides": [],
+      "quality_flags": [
+        "LOW_INFORMATION_RENDER"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B83.png",
+        "exists": true,
+        "expected_sha256": "5bc62a7e0c5d0305a20a65bc163f9b5d43973f93892142f5b18fa2189396e583",
+        "actual_sha256": "5bc62a7e0c5d0305a20a65bc163f9b5d43973f93892142f5b18fa2189396e583",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

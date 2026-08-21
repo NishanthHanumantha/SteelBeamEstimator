@@ -1,0 +1,119 @@
+{
+  "beam_id": "B150",
+  "status": "VISION_READY_WITH_LIMITATIONS",
+  "reason_codes": [
+    "CONTEXT_CLIP",
+    "CONTEXT_VERTICAL_TRUNCATION",
+    "DETAIL_CLIP",
+    "MINOR_CLIP_OR_SLIVER"
+  ],
+  "context_source_phase": "B.1",
+  "detail_source_phase": "B.2",
+  "mixed_source": true,
+  "gate": {
+    "status": "VISION_READY_WITH_LIMITATIONS",
+    "reason_codes": [
+      "CONTEXT_CLIP",
+      "CONTEXT_VERTICAL_TRUNCATION",
+      "DETAIL_CLIP",
+      "MINOR_CLIP_OR_SLIVER"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": true,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": true,
+    "anchor": {
+      "identity_ok": true,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [],
+      "stack_observability": {
+        "title_region": "AVAILABLE",
+        "stirrup_region": "CLIP_SUSPECT",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": true
+    },
+    "context_source_phase": "B.1",
+    "detail_source_phase": "B.2"
+  },
+  "evidence": {
+    "beam_id": "B150",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B150.png",
+      "sha256": "083646726a103fe2e2ffb14a8ea0bc82d7e55e2d71f66f10e109c5b7f1e831c9",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "RETAIN_PREFERRED",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "CHALLENGERS_REJECTED"
+      ],
+      "usable_status": true,
+      "score": 3.9648,
+      "foreground_ratio": 0.04121,
+      "coverage_x": 0.9179,
+      "coverage_y": 0.9993,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "TOP_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT",
+        "LOW_LONGITUDINAL_COVERAGE",
+        "VERTICAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B150.png",
+        "exists": true,
+        "expected_sha256": "083646726a103fe2e2ffb14a8ea0bc82d7e55e2d71f66f10e109c5b7f1e831c9",
+        "actual_sha256": "083646726a103fe2e2ffb14a8ea0bc82d7e55e2d71f66f10e109c5b7f1e831c9",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.2",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B150.png",
+      "sha256": "e027155946811e078575df848066464e4c93f86a55cbb7092daa9e3c14e14000",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 3.6168,
+      "foreground_ratio": 0.0349,
+      "coverage_x": 0.7706,
+      "coverage_y": 0.9964,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B150.png",
+        "exists": true,
+        "expected_sha256": "e027155946811e078575df848066464e4c93f86a55cbb7092daa9e3c14e14000",
+        "actual_sha256": "e027155946811e078575df848066464e4c93f86a55cbb7092daa9e3c14e14000",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

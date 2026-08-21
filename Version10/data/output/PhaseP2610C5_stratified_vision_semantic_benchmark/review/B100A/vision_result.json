@@ -1,0 +1,71 @@
+{
+  "called": true,
+  "skip_reason": null,
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 9.151451599958818,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3903,
+      "output_tokens": 534
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "441d408a6e7fa80e00e73c48578bbac1acd3dbc5fc388d2573ec2cb47e1a5dcf",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B100A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars labeled 4-Y25 visible in both context and detail images, running continuously across beam span"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer bars labeled 4-Y25 visible in both context and detail images, running continuously across beam span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100/150/100C/C",
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly labeled on beam B100A in both images, showing 4-legged Y10 bars with varying spacing: 100mm at ends, 150mm at center"
+      }
+    ],
+    "ambiguities": [
+      "Relative bar lengths cannot be determined from the drawings - no clear visual evidence of differential length between top and bottom bars",
+      "Physical bar termination points and development lengths are not visible in the provided views"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  }
+}

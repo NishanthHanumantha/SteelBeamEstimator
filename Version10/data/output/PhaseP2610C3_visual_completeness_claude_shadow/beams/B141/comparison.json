@@ -1,0 +1,157 @@
+{
+  "taxonomy": "VISION_DISAGREEMENT",
+  "p269_expected": [
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B141",
+      "group_id": "G01",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 5,
+      "diameter": 16,
+      "specification": "5Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-2adb0aed"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "HIGH",
+      "confidence": 0.8,
+      "raw_text": "5-Y16",
+      "position_zone": "TOP_ZONE"
+    },
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B141",
+      "group_id": "G02",
+      "family": "STIRRUP",
+      "physical_layer": "STIRRUP",
+      "reinforcement_role": "STIRRUP",
+      "count": "UNKNOWN",
+      "diameter": 81,
+      "specification": "4L-Y8@\\X100C/C",
+      "spacing": "100 C/C",
+      "zone": "UNKNOWN",
+      "spatial_extent": "UNKNOWN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-2f359490"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "LOW",
+      "confidence": 0.5,
+      "raw_text": "4L-Y8@\\X100C/C",
+      "position_zone": "TOP_ZONE"
+    }
+  ],
+  "deterministic": [
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B141",
+      "group_id": "G01",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 5,
+      "diameter": 16,
+      "specification": "5Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "R13-B141-TOP_MAIN-e1d22e",
+      "provenance": "R13_PRODUCTION_MODEL",
+      "evidence_quality": "DETERMINISTIC",
+      "confidence": 0.8341,
+      "source_bar_id": "R13-B141-TOP_MAIN-e1d22e",
+      "piece_type": "TOP_MAIN",
+      "cut_length_mm": 8746.0
+    }
+  ],
+  "manual_notes": [
+    "Phase sketch: TOP 5-Y20 and BOTTOM 5-Y16 as distinct groups.",
+    "DXF R.1: TOP MAIN 5-Y16 plus an unclassified stirrup string 4L-Y8@\\X100C/C.",
+    "Repository DXF wins. B141 is not a B128-style same-specification/different-layer case. Leader/spatial ambiguity is recorded separately from physical-group identity."
+  ],
+  "vs_p269": {
+    "expected_count": 2,
+    "predicted_count": 2,
+    "matched": [],
+    "missing": [
+      {
+        "layer": "STIRRUP",
+        "role": "STIRRUP",
+        "spec": "4LY8@\\X100C/C"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y16"
+      }
+    ],
+    "spurious": [
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y16"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y20"
+      }
+    ],
+    "correctly_matched_count": 0,
+    "missing_count": 2,
+    "spurious_count": 2,
+    "merged_distinct_groups": 0,
+    "identity_rule": "layer+role+specification"
+  },
+  "vs_deterministic": {
+    "expected_count": 1,
+    "predicted_count": 2,
+    "matched": [],
+    "missing": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y16"
+      }
+    ],
+    "spurious": [
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y16"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y20"
+      }
+    ],
+    "correctly_matched_count": 0,
+    "missing_count": 1,
+    "spurious_count": 2,
+    "merged_distinct_groups": 0,
+    "identity_rule": "layer+role+specification"
+  },
+  "target_identified": true,
+  "neighbor_evidence_detected": true
+}

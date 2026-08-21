@@ -1,0 +1,98 @@
+{
+  "beam_id": "B161",
+  "gate_status": "VISION_READY_WITH_LIMITATIONS",
+  "called": true,
+  "skip_reason": null,
+  "call_reason": "SIX_BEAM_CONTROL",
+  "cohort_label": "SIX_BEAM_CONTROL",
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 10.790497400041204,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3403,
+      "output_tokens": 706
+    },
+    "estimated_input_tokens": 647,
+    "estimated_output_tokens": 524,
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "97e1101646aa328596b50ae5428ce50d6d08d9f5ef04fc7800aadfd12707da28",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B161",
+    "target_beam_identified": true,
+    "target_association_confidence": 0.95,
+    "visual_assessment": {
+      "title_visible": true,
+      "stirrup_region_visible": true,
+      "bottom_region_visible": true,
+      "top_region_visible": true,
+      "dimension_extra_region_visible": true
+    },
+    "reinforcement_groups": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "4-Y20",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Top layer green bars with 4-Y20 annotation centered above beam, spanning full length"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "4-Y25",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.92,
+        "evidence": "Bottom layer green bars with 4-Y25 annotation at mid-span, visible spanning full length"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "4-Y16",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.92,
+        "evidence": "Bottom layer green bars with 4-Y16 annotation adjacent to 4-Y25 at mid-span"
+      },
+      {
+        "layer": "TOP",
+        "role": "EXTRA",
+        "spec": "4-Y16",
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.88,
+        "evidence": "Top layer bars extending from left support, dimension 800 shown, red dots at support"
+      },
+      {
+        "layer": "TOP",
+        "role": "EXTRA",
+        "spec": "4-Y16",
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.88,
+        "evidence": "Top layer bars extending from right support, dimension 800 shown, red dots at support"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.93
+      }
+    ],
+    "uncertainties": [
+      "Left and right 4-Y16 extras are treated as separate groups (LEFT_SUPPORT and RIGHT_SUPPORT) based on visual evidence showing distinct support zones with 800mm dimensions at each end, though they share identical specification"
+    ],
+    "neighbor_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null
+  },
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "raw_text_present": true
+}

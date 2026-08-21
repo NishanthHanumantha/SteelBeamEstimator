@@ -1,0 +1,112 @@
+{
+  "beam_id": "B133",
+  "status": "VISION_READY_WITH_LIMITATIONS",
+  "reason_codes": [
+    "CONTEXT_CLIP",
+    "DETAIL_CLIP",
+    "MINOR_CLIP_OR_SLIVER"
+  ],
+  "context_source_phase": "B.2",
+  "detail_source_phase": "B.2",
+  "mixed_source": false,
+  "gate": {
+    "status": "VISION_READY_WITH_LIMITATIONS",
+    "reason_codes": [
+      "CONTEXT_CLIP",
+      "DETAIL_CLIP",
+      "MINOR_CLIP_OR_SLIVER"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": true,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": true,
+    "anchor": {
+      "identity_ok": true,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [],
+      "stack_observability": {
+        "title_region": "AVAILABLE",
+        "stirrup_region": "CLIP_SUSPECT",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": false
+    },
+    "context_source_phase": "B.2",
+    "detail_source_phase": "B.2"
+  },
+  "evidence": {
+    "beam_id": "B133",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.2",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B133.png",
+      "sha256": "d9d03db07ab3954b6bb60af22f021c26cedbb2c3b7660aa501c7ee1faed4a27f",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 3.8732,
+      "foreground_ratio": 0.03722,
+      "coverage_x": 0.9671,
+      "coverage_y": 0.8412,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "BOTTOM_BORDER_CONTACT",
+        "LOW_LONGITUDINAL_COVERAGE"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B133.png",
+        "exists": true,
+        "expected_sha256": "d9d03db07ab3954b6bb60af22f021c26cedbb2c3b7660aa501c7ee1faed4a27f",
+        "actual_sha256": "d9d03db07ab3954b6bb60af22f021c26cedbb2c3b7660aa501c7ee1faed4a27f",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.2",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B133.png",
+      "sha256": "b8c3a0b71fb57a1512a42d20fe7c86915ad248c324e0bddfb66a71f26c165416",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 3.8307,
+      "foreground_ratio": 0.02917,
+      "coverage_x": 0.9672,
+      "coverage_y": 0.8629,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "BOTTOM_BORDER_CONTACT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B133.png",
+        "exists": true,
+        "expected_sha256": "b8c3a0b71fb57a1512a42d20fe7c86915ad248c324e0bddfb66a71f26c165416",
+        "actual_sha256": "b8c3a0b71fb57a1512a42d20fe7c86915ad248c324e0bddfb66a71f26c165416",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

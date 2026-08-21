@@ -1,0 +1,74 @@
+{
+  "beam_id": "B66",
+  "gate_status": "VISION_READY_WITH_LIMITATIONS",
+  "called": true,
+  "skip_reason": null,
+  "call_reason": "SIX_BEAM_CONTROL",
+  "cohort_label": "SIX_BEAM_CONTROL",
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 10.23077279998688,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3407,
+      "output_tokens": 510
+    },
+    "estimated_input_tokens": 646,
+    "estimated_output_tokens": 395,
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "47683ab15faa6e313b5dd3d2d520aaca400685a380dccc9786c14d7517597904",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B66",
+    "target_beam_identified": true,
+    "target_association_confidence": 0.95,
+    "visual_assessment": {
+      "title_visible": true,
+      "stirrup_region_visible": true,
+      "bottom_region_visible": true,
+      "top_region_visible": true,
+      "dimension_extra_region_visible": true
+    },
+    "reinforcement_groups": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y16",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.92,
+        "evidence": "Magenta annotation 5-Y16 positioned above beam centerline in detail view, with visual bars shown in green at top layer spanning full length"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y20",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Magenta annotation 5-Y20 positioned below beam centerline in detail view, with visual bars shown in green at bottom layer spanning full length"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100/125/100C/C",
+        "confidence": 0.93
+      }
+    ],
+    "uncertainties": [
+      "No extra bars or support-specific reinforcement visible for B66 in the detail view"
+    ],
+    "neighbor_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null
+  },
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "raw_text_present": true
+}

@@ -1,0 +1,123 @@
+{
+  "beam_id": "B80",
+  "status": "VISION_READY_WITH_LIMITATIONS",
+  "reason_codes": [
+    "CONTEXT_CLIP",
+    "CONTEXT_HORIZONTAL_TRUNCATION",
+    "DETAIL_CLIP",
+    "DETAIL_HORIZONTAL_TRUNCATION",
+    "MINOR_CLIP_OR_SLIVER"
+  ],
+  "context_source_phase": "B.2",
+  "detail_source_phase": "B.1",
+  "mixed_source": true,
+  "gate": {
+    "status": "VISION_READY_WITH_LIMITATIONS",
+    "reason_codes": [
+      "CONTEXT_CLIP",
+      "CONTEXT_HORIZONTAL_TRUNCATION",
+      "DETAIL_CLIP",
+      "DETAIL_HORIZONTAL_TRUNCATION",
+      "MINOR_CLIP_OR_SLIVER"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": true,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": true,
+    "anchor": {
+      "identity_ok": true,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [],
+      "stack_observability": {
+        "title_region": "AVAILABLE",
+        "stirrup_region": "CLIP_SUSPECT",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": true
+    },
+    "context_source_phase": "B.2",
+    "detail_source_phase": "B.1"
+  },
+  "evidence": {
+    "beam_id": "B80",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.2",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B80.png",
+      "sha256": "b372c50f39ccc28c7d53bef645738406d62827bde51aeecbc625963a1b8bf758",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "MATERIAL_SCORE_AND_FOREGROUND_GAIN"
+      ],
+      "usable_status": true,
+      "score": 7.5763,
+      "foreground_ratio": 0.47985,
+      "coverage_x": 0.9993,
+      "coverage_y": 0.9389,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "TOP_BORDER_CONTACT",
+        "LOW_LONGITUDINAL_COVERAGE",
+        "HORIZONTAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\context\\final\\B80.png",
+        "exists": true,
+        "expected_sha256": "b372c50f39ccc28c7d53bef645738406d62827bde51aeecbc625963a1b8bf758",
+        "actual_sha256": "b372c50f39ccc28c7d53bef645738406d62827bde51aeecbc625963a1b8bf758",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B80.png",
+      "sha256": "7a4ea39a9fe31f973386fa3692ae5ee58a6d4e1dd8880d435ea3a92d1f692058",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "RETAIN_PREFERRED",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "CHALLENGERS_REJECTED"
+      ],
+      "usable_status": true,
+      "score": 7.1067,
+      "foreground_ratio": 0.4282,
+      "coverage_x": 0.9989,
+      "coverage_y": 0.8833,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "TOP_BORDER_CONTACT",
+        "HORIZONTAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B80.png",
+        "exists": true,
+        "expected_sha256": "7a4ea39a9fe31f973386fa3692ae5ee58a6d4e1dd8880d435ea3a92d1f692058",
+        "actual_sha256": "7a4ea39a9fe31f973386fa3692ae5ee58a6d4e1dd8880d435ea3a92d1f692058",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "contract_version": "P2610D1_HYBRID_AUTHORITY_CONTRACT_V1",
+  "vision_preferred_neq_unconditionally_accepted": true,
+  "confidence_threshold_config_key": "VISION_MIN_CONFIDENCE",
+  "vision_min_confidence": 0.7,
+  "fields": [
+    {
+      "field_name": "TARGET_IDENTITY",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for target association. Deterministic identity remains available."
+    },
+    {
+      "field_name": "LAYER",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for TOP/BOTTOM/STIRRUP/SIDE visual layer."
+    },
+    {
+      "field_name": "PHYSICAL_GROUP_DETECTION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Distinct physical groups must not merge on identical spec or count."
+    },
+    {
+      "field_name": "BAR_COUNT",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for visible bar-count notation."
+    },
+    {
+      "field_name": "DIAMETER",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred. Deterministic diameter is fallback and diagnostic only."
+    },
+    {
+      "field_name": "SPECIFICATION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred. Normalize without destroying count/diameter/legs/spacing."
+    },
+    {
+      "field_name": "ROLE",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "MAIN/EXTRA is Vision preferred. Deterministic role is fallback only."
+    },
+    {
+      "field_name": "SUPPORT_SCOPE",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Semantic evidence only. Do not force engineering calculations in D.1."
+    },
+    {
+      "field_name": "STIRRUP_IDENTIFICATION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision owns visual stirrup identification. Quantity calculation remains deterministic."
+    },
+    {
+      "field_name": "SPACER",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Spacers are engineering-derived. Vision is not responsible."
+    },
+    {
+      "field_name": "GEOMETRY",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Beam width/depth/span/support geometry remain deterministic."
+    },
+    {
+      "field_name": "CUT_LENGTH",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Vision must never own cut length."
+    },
+    {
+      "field_name": "DEVELOPMENT_LENGTH",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    {
+      "field_name": "ANCHORAGE",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    {
+      "field_name": "HOOKS_BENDS",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    {
+      "field_name": "STIRRUP_ENGINEERING_CALCULATION",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Zone length, quantity, hooks, and spacing application remain deterministic."
+    },
+    {
+      "field_name": "PIECE_GENERATION",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Piece generation remains deterministic."
+    },
+    {
+      "field_name": "WEIGHT",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Steel weight remains deterministic."
+    },
+    {
+      "field_name": "BBS",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "BBS remains deterministic."
+    },
+    {
+      "field_name": "WORKBOOK",
+      "authority": "DETERMINISTIC_PRODUCTION",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Excel/workbook remains production/deterministic. No routing in D.1."
+    }
+  ],
+  "by_name": {
+    "TARGET_IDENTITY": {
+      "field_name": "TARGET_IDENTITY",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for target association. Deterministic identity remains available."
+    },
+    "LAYER": {
+      "field_name": "LAYER",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for TOP/BOTTOM/STIRRUP/SIDE visual layer."
+    },
+    "PHYSICAL_GROUP_DETECTION": {
+      "field_name": "PHYSICAL_GROUP_DETECTION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Distinct physical groups must not merge on identical spec or count."
+    },
+    "BAR_COUNT": {
+      "field_name": "BAR_COUNT",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred for visible bar-count notation."
+    },
+    "DIAMETER": {
+      "field_name": "DIAMETER",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred. Deterministic diameter is fallback and diagnostic only."
+    },
+    "SPECIFICATION": {
+      "field_name": "SPECIFICATION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision preferred. Normalize without destroying count/diameter/legs/spacing."
+    },
+    "ROLE": {
+      "field_name": "ROLE",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "MAIN/EXTRA is Vision preferred. Deterministic role is fallback only."
+    },
+    "SUPPORT_SCOPE": {
+      "field_name": "SUPPORT_SCOPE",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Semantic evidence only. Do not force engineering calculations in D.1."
+    },
+    "STIRRUP_IDENTIFICATION": {
+      "field_name": "STIRRUP_IDENTIFICATION",
+      "authority": "VISION_PREFERRED",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": true,
+      "confidence_threshold": 0.7,
+      "notes": "Vision owns visual stirrup identification. Quantity calculation remains deterministic."
+    },
+    "SPACER": {
+      "field_name": "SPACER",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Spacers are engineering-derived. Vision is not responsible."
+    },
+    "GEOMETRY": {
+      "field_name": "GEOMETRY",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Beam width/depth/span/support geometry remain deterministic."
+    },
+    "CUT_LENGTH": {
+      "field_name": "CUT_LENGTH",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Vision must never own cut length."
+    },
+    "DEVELOPMENT_LENGTH": {
+      "field_name": "DEVELOPMENT_LENGTH",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    "ANCHORAGE": {
+      "field_name": "ANCHORAGE",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    "HOOKS_BENDS": {
+      "field_name": "HOOKS_BENDS",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Engineering calculation remains deterministic."
+    },
+    "STIRRUP_ENGINEERING_CALCULATION": {
+      "field_name": "STIRRUP_ENGINEERING_CALCULATION",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Zone length, quantity, hooks, and spacing application remain deterministic."
+    },
+    "PIECE_GENERATION": {
+      "field_name": "PIECE_GENERATION",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Piece generation remains deterministic."
+    },
+    "WEIGHT": {
+      "field_name": "WEIGHT",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Steel weight remains deterministic."
+    },
+    "BBS": {
+      "field_name": "BBS",
+      "authority": "DETERMINISTIC_ENGINEERING",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "BBS remains deterministic."
+    },
+    "WORKBOOK": {
+      "field_name": "WORKBOOK",
+      "authority": "DETERMINISTIC_PRODUCTION",
+      "fallback_authority": "DETERMINISTIC",
+      "validation_required": false,
+      "confidence_threshold": null,
+      "notes": "Excel/workbook remains production/deterministic. No routing in D.1."
+    }
+  },
+  "vision_preferred_fields": [
+    "TARGET_IDENTITY",
+    "LAYER",
+    "PHYSICAL_GROUP_DETECTION",
+    "BAR_COUNT",
+    "DIAMETER",
+    "SPECIFICATION",
+    "ROLE",
+    "SUPPORT_SCOPE",
+    "STIRRUP_IDENTIFICATION"
+  ],
+  "deterministic_authority_fields": [
+    "SPACER",
+    "GEOMETRY",
+    "CUT_LENGTH",
+    "DEVELOPMENT_LENGTH",
+    "ANCHORAGE",
+    "HOOKS_BENDS",
+    "STIRRUP_ENGINEERING_CALCULATION",
+    "PIECE_GENERATION",
+    "WEIGHT",
+    "BBS",
+    "WORKBOOK"
+  ],
+  "hooks": {
+    "LONGER_BAR_LIKELY_MAIN": {
+      "status": "ARCHITECTURE_HOOK_ONLY",
+      "implemented_override": false,
+      "note": "Later phase may use relative span as a confidence signal. D.1 must not force longest=MAIN."
+    }
+  }
+}

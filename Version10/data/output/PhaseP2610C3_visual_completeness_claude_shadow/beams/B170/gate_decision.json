@@ -1,0 +1,118 @@
+{
+  "beam_id": "B170",
+  "status": "VISION_NOT_READY",
+  "reason_codes": [
+    "CONTEXT_CRITICAL_LOW_INFORMATION_RENDER",
+    "CONTEXT_RETAIN_PREFERRED_STILL_CRITICAL",
+    "CONTEXT_IDENTITY_UNAVAILABLE",
+    "CRITICAL_VISUAL_FAILURE"
+  ],
+  "context_source_phase": "B.1",
+  "detail_source_phase": "B.2",
+  "mixed_source": true,
+  "gate": {
+    "status": "VISION_NOT_READY",
+    "reason_codes": [
+      "CONTEXT_CRITICAL_LOW_INFORMATION_RENDER",
+      "CONTEXT_RETAIN_PREFERRED_STILL_CRITICAL",
+      "CONTEXT_IDENTITY_UNAVAILABLE",
+      "CRITICAL_VISUAL_FAILURE"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": false,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": false,
+    "anchor": {
+      "identity_ok": false,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [
+        "CONTEXT_IDENTITY_UNAVAILABLE"
+      ],
+      "stack_observability": {
+        "title_region": "MISSING_OR_CLIPPED",
+        "stirrup_region": "OBSERVABLE_IF_DRAWN",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": true
+    },
+    "context_source_phase": "B.1",
+    "detail_source_phase": "B.2"
+  },
+  "evidence": {
+    "beam_id": "B170",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B170.png",
+      "sha256": "2dcd4ebffdfe6520e0309fb63679e6cc35f4a77a7c56efbd5be25ddc4bf09983",
+      "primary_status": "LOW_INFORMATION_RENDER",
+      "critical_failure": true,
+      "selection_status": "RETAIN_PREFERRED_STILL_CRITICAL",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_NONCRITICAL_CHALLENGER"
+      ],
+      "usable_status": false,
+      "score": -1.0,
+      "foreground_ratio": 0.01215,
+      "coverage_x": 0.6414,
+      "coverage_y": 0.5551,
+      "empty_sides": [
+        "left",
+        "bottom"
+      ],
+      "quality_flags": [
+        "LOW_INFORMATION_RENDER",
+        "EMPTY_REGION_PRESENT",
+        "EMPTY_LEFT",
+        "EMPTY_BOTTOM"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B170.png",
+        "exists": true,
+        "expected_sha256": "2dcd4ebffdfe6520e0309fb63679e6cc35f4a77a7c56efbd5be25ddc4bf09983",
+        "actual_sha256": "2dcd4ebffdfe6520e0309fb63679e6cc35f4a77a7c56efbd5be25ddc4bf09983",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.2",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B170.png",
+      "sha256": "eda0db6fb01ed4543cba9d60d2600a3f72ef313c404e16939e16cbddbd69e899",
+      "primary_status": "VALID",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 3.6657,
+      "foreground_ratio": 0.02846,
+      "coverage_x": 0.9122,
+      "coverage_y": 0.8136,
+      "empty_sides": [],
+      "quality_flags": [],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\detail\\final\\B170.png",
+        "exists": true,
+        "expected_sha256": "eda0db6fb01ed4543cba9d60d2600a3f72ef313c404e16939e16cbddbd69e899",
+        "actual_sha256": "eda0db6fb01ed4543cba9d60d2600a3f72ef313c404e16939e16cbddbd69e899",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

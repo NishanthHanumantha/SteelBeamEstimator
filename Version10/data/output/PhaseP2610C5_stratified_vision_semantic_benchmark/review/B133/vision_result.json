@@ -1,0 +1,84 @@
+{
+  "called": true,
+  "skip_reason": null,
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 10.664961200032849,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3236,
+      "output_tokens": 698
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "d2534e4a79efa93e8217351172d965b72e0efbdbd4e3b6ca33d4ba3f7263004f",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B133",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer reinforcement shown in green, labeled 5-Y20, extends full span with end anchorages visible at both supports"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer reinforcement shown in green, labeled 5-Y20, extends full span with end anchorages visible at both supports"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.8,
+        "evidence": "Bottom layer reinforcement labeled 2-Y16, appears to be shorter bars positioned in right portion of span, likely additional reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100/125/100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification clearly labeled as 4L-Y8@100/125/100C/C indicating 4-legged Y8 stirrups with varying spacing pattern"
+      }
+    ],
+    "ambiguities": [
+      "The exact termination points and length of 2-Y16 bars are not fully clear from the drawing",
+      "The spacing pattern 100/125/100C/C suggests variable spacing but exact zones are not dimensioned"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  }
+}

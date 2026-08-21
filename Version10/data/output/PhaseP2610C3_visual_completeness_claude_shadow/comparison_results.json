@@ -1,0 +1,2721 @@
+[
+  {
+    "beam_id": "B141",
+    "set_key": "Fourth",
+    "context_source": "B.1",
+    "detail_source": "B.1",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "CONTEXT_VERTICAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "CLIP_SUSPECT",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": false
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.1"
+    },
+    "claude": {
+      "beam_id": "B141",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 7.2835703999735415,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3855,
+          "output_tokens": 421
+        },
+        "estimated_input_tokens": 647,
+        "estimated_output_tokens": 304,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "c5ce7fe046996d49a5a77057d148b6c6fa7c4426b960af9e111b7efb85e8ce88",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B141",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5-Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.95,
+            "evidence": "Green reinforcement line at top of beam section, labeled 5-Y20 in magenta, visible in both context and detail images"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5-Y16",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.95,
+            "evidence": "Green reinforcement line at bottom of beam section, labeled 5-Y16 in magenta, visible in detail image"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "4L-Y8@100C/C",
+            "confidence": 0.95
+          }
+        ],
+        "uncertainties": [],
+        "neighbor_evidence_detected": true,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B141",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 5,
+          "diameter": 16,
+          "specification": "5Y16",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-2adb0aed"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "5-Y16",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B141",
+          "group_id": "G02",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": "UNKNOWN",
+          "diameter": 81,
+          "specification": "4L-Y8@\\X100C/C",
+          "spacing": "100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-2f359490"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "LOW",
+          "confidence": 0.5,
+          "raw_text": "4L-Y8@\\X100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B141",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 5,
+          "diameter": 16,
+          "specification": "5Y16",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B141-TOP_MAIN-e1d22e",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8341,
+          "source_bar_id": "R13-B141-TOP_MAIN-e1d22e",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 8746.0
+        }
+      ],
+      "manual_notes": [
+        "Phase sketch: TOP 5-Y20 and BOTTOM 5-Y16 as distinct groups.",
+        "DXF R.1: TOP MAIN 5-Y16 plus an unclassified stirrup string 4L-Y8@\\X100C/C.",
+        "Repository DXF wins. B141 is not a B128-style same-specification/different-layer case. Leader/spatial ambiguity is recorded separately from physical-group identity."
+      ],
+      "vs_p269": {
+        "expected_count": 2,
+        "predicted_count": 2,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "4LY8@\\X100C/C"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y16"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 2,
+        "spurious_count": 2,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 1,
+        "predicted_count": 2,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y16"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 1,
+        "spurious_count": 2,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": true
+    }
+  },
+  {
+    "beam_id": "B66",
+    "set_key": "Fourth",
+    "context_source": "B.1",
+    "detail_source": "B.2",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "DETAIL_HORIZONTAL_TRUNCATION",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "OBSERVABLE_IF_DRAWN",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": true
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.2"
+    },
+    "claude": {
+      "beam_id": "B66",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 10.23077279998688,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3407,
+          "output_tokens": 510
+        },
+        "estimated_input_tokens": 646,
+        "estimated_output_tokens": 395,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "47683ab15faa6e313b5dd3d2d520aaca400685a380dccc9786c14d7517597904",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B66",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y16",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.92,
+            "evidence": "Magenta annotation 5-Y16 positioned above beam centerline in detail view, with visual bars shown in green at top layer spanning full length"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.9,
+            "evidence": "Magenta annotation 5-Y20 positioned below beam centerline in detail view, with visual bars shown in green at bottom layer spanning full length"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "4L-Y8@100/125/100C/C",
+            "confidence": 0.93
+          }
+        ],
+        "uncertainties": [
+          "No extra bars or support-specific reinforcement visible for B66 in the detail view"
+        ],
+        "neighbor_evidence_detected": true,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 25,
+          "specification": "4Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-c6c87976"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4-Y25",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 5,
+          "diameter": 20,
+          "specification": "5Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-6cfb6ebe"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "5-Y20",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G03",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 4,
+          "diameter": 8,
+          "specification": "4L-Y8",
+          "spacing": "100/125/100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-830f2ae1"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4L-Y8@100/125/100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 25,
+          "specification": "4Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B66-BOTTOM_MAIN-59fb84",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8305,
+          "source_bar_id": "R13-B66-BOTTOM_MAIN-59fb84",
+          "piece_type": "BOTTOM_MAIN",
+          "cut_length_mm": 7050.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 5,
+          "diameter": 20,
+          "specification": "5Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B66-TOP_MAIN-3ad435",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8305,
+          "source_bar_id": "R13-B66-TOP_MAIN-3ad435",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 6620.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B66",
+          "group_id": "G03",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 4,
+          "diameter": 8,
+          "specification": "4L-Y8",
+          "spacing": "100",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B66-STIRRUP-22b1d5",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8532,
+          "source_bar_id": "R13-B66-STIRRUP-22b1d5",
+          "piece_type": "STIRRUP_ZONE_A",
+          "cut_length_mm": 2160.0
+        }
+      ],
+      "manual_notes": [],
+      "vs_p269": {
+        "expected_count": 3,
+        "predicted_count": 2,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "4LY8"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 3,
+        "spurious_count": 2,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 3,
+        "predicted_count": 2,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "4LY8"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 3,
+        "spurious_count": 2,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": true
+    }
+  },
+  {
+    "beam_id": "B161",
+    "set_key": "Fourth",
+    "context_source": "B.1",
+    "detail_source": "B.1",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "CONTEXT_VERTICAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "CLIP_SUSPECT",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": false
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.1"
+    },
+    "claude": {
+      "beam_id": "B161",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 10.790497400041204,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3403,
+          "output_tokens": 706
+        },
+        "estimated_input_tokens": 647,
+        "estimated_output_tokens": 524,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "97e1101646aa328596b50ae5428ce50d6d08d9f5ef04fc7800aadfd12707da28",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B161",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "4-Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.95,
+            "evidence": "Top layer green bars with 4-Y20 annotation centered above beam, spanning full length"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4-Y25",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.92,
+            "evidence": "Bottom layer green bars with 4-Y25 annotation at mid-span, visible spanning full length"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4-Y16",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.92,
+            "evidence": "Bottom layer green bars with 4-Y16 annotation adjacent to 4-Y25 at mid-span"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "4-Y16",
+            "support_scope": "LEFT_SUPPORT",
+            "confidence": 0.88,
+            "evidence": "Top layer bars extending from left support, dimension 800 shown, red dots at support"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "4-Y16",
+            "support_scope": "RIGHT_SUPPORT",
+            "confidence": 0.88,
+            "evidence": "Top layer bars extending from right support, dimension 800 shown, red dots at support"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "4L-Y8@100C/C",
+            "confidence": 0.93
+          }
+        ],
+        "uncertainties": [
+          "Left and right 4-Y16 extras are treated as separate groups (LEFT_SUPPORT and RIGHT_SUPPORT) based on visual evidence showing distinct support zones with 800mm dimensions at each end, though they share identical specification"
+        ],
+        "neighbor_evidence_detected": true,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-6d2a9dab"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y16",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-9734f438"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y20",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-99af2455"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y20",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G04",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 4,
+          "diameter": 16,
+          "specification": "4Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-32b0ae8b"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4-Y16",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G05",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 25,
+          "specification": "4Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-e3f4e1ce"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4-Y25",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G06",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 4,
+          "diameter": 8,
+          "specification": "4L-Y8",
+          "spacing": "100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-c82f2009"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4L-Y8@100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-BOTTOM_EXTRA-429050",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8217,
+          "source_bar_id": "R13-B161-BOTTOM_EXTRA-429050",
+          "piece_type": "BOTTOM_EXTRA_LEFT",
+          "cut_length_mm": 2876.3,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B161-BOTTOM_EXTRA-429050",
+            "R13-B161-BOTTOM_EXTRA-fab441"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-BOTTOM_MAIN-74252f",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8346,
+          "source_bar_id": "R13-B161-BOTTOM_MAIN-74252f",
+          "piece_type": "BOTTOM_MAIN",
+          "cut_length_mm": 7721.2
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 4,
+          "diameter": 16,
+          "specification": "4Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-TOP_EXTRA-f114bd",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8217,
+          "source_bar_id": "R13-B161-TOP_EXTRA-f114bd",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "cut_length_mm": 2876.3,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B161-TOP_EXTRA-f114bd",
+            "R13-B161-TOP_EXTRA-a66024"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G04",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 25,
+          "specification": "4Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-TOP_MAIN-b3f7e3",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8346,
+          "source_bar_id": "R13-B161-TOP_MAIN-b3f7e3",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 8151.2
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G05",
+          "family": "SPACER",
+          "physical_layer": "SPACER",
+          "reinforcement_role": "SPACER",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": 1000.0,
+          "zone": "UNKNOWN",
+          "spatial_extent": "ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-SPACER_BAR-fcd1b5",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.85,
+          "source_bar_id": "R13-B161-SPACER_BAR-fcd1b5",
+          "piece_type": "SPACER_BAR",
+          "cut_length_mm": 390.0,
+          "piece_count": 4,
+          "source_bar_ids": [
+            "R13-B161-SPACER_BAR-fcd1b5",
+            "R13-B161-SPACER_BAR-345f0f",
+            "R13-B161-SPACER_BAR-f0b93b",
+            "R13-B161-SPACER_BAR-8ba4c1"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B161",
+          "group_id": "G06",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 4,
+          "diameter": 8,
+          "specification": "4L-Y8",
+          "spacing": "100",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B161-STIRRUP-efca9b",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8532,
+          "source_bar_id": "R13-B161-STIRRUP-efca9b",
+          "piece_type": "STIRRUP_ZONE_A",
+          "cut_length_mm": 2260.0
+        }
+      ],
+      "manual_notes": [
+        "R.1 groups.json merged BOTTOM_EXTRA labels 3Y16+3Y20 into one bucket. Expected groups are derived from annotations, not that merged bucket."
+      ],
+      "vs_p269": {
+        "expected_count": 6,
+        "predicted_count": 5,
+        "matched": [
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "4Y16"
+          }
+        ],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "3Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "3Y20"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y20"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "4LY8"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "4Y25"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y25"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "4Y20"
+          }
+        ],
+        "correctly_matched_count": 1,
+        "missing_count": 5,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 6,
+        "predicted_count": 5,
+        "matched": [
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "4Y16"
+          }
+        ],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "3Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y20"
+          },
+          {
+            "layer": "SPACER",
+            "role": "SPACER",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "4LY8"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "4Y25"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y25"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "4Y20"
+          }
+        ],
+        "correctly_matched_count": 1,
+        "missing_count": 5,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": true
+    }
+  },
+  {
+    "beam_id": "B128",
+    "set_key": "Fifth",
+    "context_source": "B.1",
+    "detail_source": "B.1",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "CONTEXT_VERTICAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "DETAIL_HORIZONTAL_TRUNCATION",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "CLIP_SUSPECT",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": false
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.1"
+    },
+    "claude": {
+      "beam_id": "B128",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 9.532798099971842,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3876,
+          "output_tokens": 595
+        },
+        "estimated_input_tokens": 647,
+        "estimated_output_tokens": 447,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "a580ee8cfe526a1670205fc057ba20b7afc5144bc366d5c8971750b1ad5f7c81",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B128",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.95,
+            "evidence": "Green line at top of beam with 5-Y20 annotations at multiple locations along span, dimension 2350 shown"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y25",
+            "support_scope": "LEFT_SUPPORT",
+            "confidence": 0.9,
+            "evidence": "Green lines at bottom left support region with 5-Y25 annotation visible"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y20",
+            "support_scope": "LEFT_SUPPORT",
+            "confidence": 0.85,
+            "evidence": "Green line at bottom left support with 3-Y20 annotation near column junction"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y25",
+            "support_scope": "RIGHT_SUPPORT",
+            "confidence": 0.9,
+            "evidence": "Green lines at bottom right support region with 5-Y25 annotation visible at right end"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "5L-Y12@100C/C",
+            "confidence": 0.95
+          }
+        ],
+        "uncertainties": [
+          "Bottom reinforcement shows two different specifications (5Y25 and 3Y20) at left support - unclear if these are separate groups or overlapping layers",
+          "Right support bottom reinforcement shows only 5Y25 - asymmetry with left support configuration"
+        ],
+        "neighbor_evidence_detected": true,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "zone": "FULL_SPAN",
+          "provenance": "P268_PHYSICAL_LAYER_CONTROL",
+          "beam_id": "B128",
+          "evidence_quality": "CONTROL",
+          "confidence": 0.6,
+          "annotation_ids": [],
+          "leader_ids": [],
+          "spacing": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "CONTROL_OVERLAY",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "phase": "P2.6.9",
+          "group_id": "G01"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B128",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-8a0b5fda"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y16",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B128",
+          "group_id": "G03",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": "UNKNOWN",
+          "diameter": 81,
+          "specification": "2L-Y8@\\X100/150/100C/C",
+          "spacing": "100/150/100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-ca8a916f"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "LOW",
+          "confidence": 0.5,
+          "raw_text": "2L-Y8@\\X100/150/100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B128",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B128-TOP_MAIN-3150a4",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8305,
+          "source_bar_id": "R13-B128-TOP_MAIN-3150a4",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 2876.0
+        }
+      ],
+      "manual_notes": [
+        "Phase drawing sketch matches two 3-Y16 groups (TOP and BOTTOM).",
+        "R.1 associated only one 3-Y16 annotation to TOP_MAIN; the bottom group is a physical-layer control overlay, not a second parsed annotation."
+      ],
+      "vs_p269": {
+        "expected_count": 3,
+        "predicted_count": 4,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y16"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "2LY8@\\X100/150/100C/C"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y16"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y20"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y25"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 3,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 1,
+        "predicted_count": 4,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y16"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y20"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y25"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "5Y20"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 1,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": true
+    }
+  },
+  {
+    "beam_id": "B55",
+    "set_key": "Fifth",
+    "context_source": "B.1",
+    "detail_source": "B.1",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "CONTEXT_VERTICAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "DETAIL_VERTICAL_TRUNCATION",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "CLIP_SUSPECT",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": false
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.1"
+    },
+    "claude": {
+      "beam_id": "B55",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 8.956643900019117,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3571,
+          "output_tokens": 516
+        },
+        "estimated_input_tokens": 646,
+        "estimated_output_tokens": 390,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "71bb8ee497fcb494d6e9f1c08fdc7e778052f6dac43ab62425e80cd0345f9f0b",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B55",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y16",
+            "support_scope": "LEFT_SUPPORT",
+            "confidence": 0.92,
+            "evidence": "3-Y16 annotation at left support with dimension 1400, shown in green layer at top of beam section"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y20",
+            "support_scope": "BOTH_SUPPORTS",
+            "confidence": 0.9,
+            "evidence": "5-Y20 annotations visible at both left support (mid-span region) and right support, shown in green layer at top"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.88,
+            "evidence": "5-Y20 annotation at bottom center of beam section, shown in green layer spanning full length"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "3L-Y8@100C/C",
+            "confidence": 0.93
+          }
+        ],
+        "uncertainties": [
+          "The 5-Y20 appears in both top extra and bottom main positions - visual evidence shows distinct groups but same specification",
+          "Dimension 1400 associated with left support top bars may indicate extent rather than full span"
+        ],
+        "neighbor_evidence_detected": false,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-acb561e7"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y25",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-61d93c37"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y25",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-e1107212"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "2-Y16",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G04",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-e003f58c"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y20",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G05",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 3,
+          "diameter": 10,
+          "specification": "3L-Y10",
+          "spacing": "100/125/100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-2502e956"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3L-Y10@100/125/100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B55-BOTTOM_MAIN-55dc12",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8264,
+          "source_bar_id": "R13-B55-BOTTOM_MAIN-55dc12",
+          "piece_type": "BOTTOM_MAIN",
+          "cut_length_mm": 7050.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B55-TOP_EXTRA-cc1345",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8177,
+          "source_bar_id": "R13-B55-TOP_EXTRA-cc1345",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "cut_length_mm": 2601.0,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B55-TOP_EXTRA-cc1345",
+            "R13-B55-TOP_EXTRA-af5ec1"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B55-TOP_MAIN-371daa",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8346,
+          "source_bar_id": "R13-B55-TOP_MAIN-371daa",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 6620.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G04",
+          "family": "SPACER",
+          "physical_layer": "SPACER",
+          "reinforcement_role": "SPACER",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": 1000.0,
+          "zone": "UNKNOWN",
+          "spatial_extent": "ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B55-SPACER_BAR-cddc91",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.85,
+          "source_bar_id": "R13-B55-SPACER_BAR-cddc91",
+          "piece_type": "SPACER_BAR",
+          "cut_length_mm": 240.0,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B55-SPACER_BAR-cddc91",
+            "R13-B55-SPACER_BAR-6779b9"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B55",
+          "group_id": "G05",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 3,
+          "diameter": 10,
+          "specification": "3L-Y10",
+          "spacing": "100",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B55-STIRRUP-285cb2",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8532,
+          "source_bar_id": "R13-B55-STIRRUP-285cb2",
+          "piece_type": "STIRRUP_ZONE_A",
+          "cut_length_mm": 3000.0
+        }
+      ],
+      "manual_notes": [
+        "Phase sketch: TOP MAIN 3-Y25, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y20, BOTTOM EXTRA 2-Y16, STIRRUP 3L-Y10@100/125/100 C/C.",
+        "DXF R.1: TOP MAIN 3-Y20, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y25, BOTTOM EXTRA 3-Y25, STIRRUP 3L-Y10@100/125/100C/C.",
+        "Repository DXF wins. The same-layer multi-group control is BOTTOM MAIN 3-Y25 vs BOTTOM EXTRA 3-Y25, not two 2-Y16 groups."
+      ],
+      "vs_p269": {
+        "expected_count": 5,
+        "predicted_count": 3,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "3LY10"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 5,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 5,
+        "predicted_count": 3,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "SPACER",
+            "role": "SPACER",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "3LY10"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 5,
+        "spurious_count": 3,
+        "merged_distinct_groups": 0,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": false
+    }
+  },
+  {
+    "beam_id": "B65",
+    "set_key": "Fifth",
+    "context_source": "B.1",
+    "detail_source": "B.1",
+    "gate": {
+      "status": "VISION_READY_WITH_LIMITATIONS",
+      "reason_codes": [
+        "CONTEXT_CLIP",
+        "CONTEXT_HORIZONTAL_TRUNCATION",
+        "CONTEXT_VERTICAL_TRUNCATION",
+        "DETAIL_CLIP",
+        "DETAIL_HORIZONTAL_TRUNCATION",
+        "MINOR_CLIP_OR_SLIVER"
+      ],
+      "image_exists": {
+        "context": true,
+        "detail": true
+      },
+      "image_visually_usable": {
+        "context": true,
+        "detail": true
+      },
+      "sufficient_for_target_interpretation": true,
+      "anchor": {
+        "identity_ok": true,
+        "geometry_ok": true,
+        "association_ambiguous": false,
+        "reason_codes": [],
+        "stack_observability": {
+          "title_region": "AVAILABLE",
+          "stirrup_region": "OBSERVABLE_IF_DRAWN",
+          "bottom_region": "OBSERVABLE_IF_DRAWN",
+          "top_region": "OBSERVABLE_IF_DRAWN",
+          "dimension_extra_region": "NOT_REQUIRED",
+          "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+        },
+        "mixed_source": false
+      },
+      "context_source_phase": "B.1",
+      "detail_source_phase": "B.1"
+    },
+    "claude": {
+      "beam_id": "B65",
+      "gate_status": "VISION_READY_WITH_LIMITATIONS",
+      "called": true,
+      "skip_reason": null,
+      "call_reason": "SIX_BEAM_CONTROL",
+      "cohort_label": "SIX_BEAM_CONTROL",
+      "audit": {
+        "success": true,
+        "model": "claude-sonnet-4-5",
+        "latency_s": 11.383208199986257,
+        "retry_count": 0,
+        "usage": {
+          "input_tokens": 3631,
+          "output_tokens": 563
+        },
+        "estimated_input_tokens": 646,
+        "estimated_output_tokens": 445,
+        "error": null,
+        "error_type": null,
+        "temperature": 0,
+        "prompt_fingerprint": "d6edfd884db0c83fa0367fe55080fa350fd284caf6a82f116b3422ef219bce71",
+        "n_images": 2
+      },
+      "parsed": {
+        "target_beam_id": "B65",
+        "target_beam_identified": true,
+        "target_association_confidence": 0.95,
+        "visual_assessment": {
+          "title_visible": true,
+          "stirrup_region_visible": true,
+          "bottom_region_visible": true,
+          "top_region_visible": true,
+          "dimension_extra_region_visible": true
+        },
+        "reinforcement_groups": [
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "2Y16",
+            "support_scope": "LEFT_SUPPORT",
+            "confidence": 0.92,
+            "evidence": "Two red bars visible at top left support, annotation '2-Y16' with 850mm and 1800mm dimensions indicating left support zone"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y16",
+            "support_scope": "RIGHT_SUPPORT",
+            "confidence": 0.9,
+            "evidence": "Annotation '5-Y16' visible at top right region with single red bar shown at right support"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20",
+            "support_scope": "FULL_SPAN",
+            "confidence": 0.93,
+            "evidence": "Two green bars visible running full span at bottom layer, annotation '5-Y20' centered below beam"
+          }
+        ],
+        "stirrups": [
+          {
+            "spec": "4L-Y8@100/175/100C/C",
+            "confidence": 0.95
+          }
+        ],
+        "uncertainties": [
+          "Top layer shows 2Y16 at left support and 5Y16 at right support - these appear to be separate groups with different quantities rather than a continuous group",
+          "Visual evidence shows simplified representation with limited bars drawn; actual bar count matches annotations but full distribution not fully detailed"
+        ],
+        "neighbor_evidence_detected": true,
+        "response_status": "OK",
+        "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+        "production_action": "NO_CHANGE",
+        "shadow_only": true,
+        "usable": true,
+        "unusable_reason": null
+      },
+      "production_action": "NO_CHANGE",
+      "shadow_only": true,
+      "raw_text_present": true
+    },
+    "comparison": {
+      "taxonomy": "VISION_DISAGREEMENT",
+      "p269_expected": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-63c34c43"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "2-Y16",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 4,
+          "diameter": 16,
+          "specification": "4Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-90f52a09"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4-Y16",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 20,
+          "specification": "4Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-f274c88b"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "4-Y20",
+          "position_zone": "BOTTOM_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G04",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "SUPPORT_ZONE",
+          "spatial_extent": "SUPPORT_ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-09cdbbb7"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "2-Y16",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G05",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-ca8179be"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3-Y20",
+          "position_zone": "TOP_ZONE"
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G06",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 3,
+          "diameter": 10,
+          "specification": "3L-Y10",
+          "spacing": "100/125/100 C/C",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [
+            "ANN-0a703090"
+          ],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "DRAWING_ANNOTATION",
+          "provenance": "R1_DXF_ANNOTATION",
+          "evidence_quality": "HIGH",
+          "confidence": 0.8,
+          "raw_text": "3L-Y10@100/125/100C/C",
+          "position_zone": "TOP_ZONE"
+        }
+      ],
+      "deterministic": [
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-BOTTOM_EXTRA-a8eebd",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.826,
+          "source_bar_id": "R13-B65-BOTTOM_EXTRA-a8eebd",
+          "piece_type": "BOTTOM_EXTRA_LEFT",
+          "cut_length_mm": 3013.5,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B65-BOTTOM_EXTRA-a8eebd",
+            "R13-B65-BOTTOM_EXTRA-49b98a"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "EXTRA",
+          "count": 4,
+          "diameter": 16,
+          "specification": "4Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-BOTTOM_EXTRA-c730f6",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8177,
+          "source_bar_id": "R13-B65-BOTTOM_EXTRA-c730f6",
+          "piece_type": "BOTTOM_EXTRA_LEFT",
+          "cut_length_mm": 3013.5,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B65-BOTTOM_EXTRA-c730f6",
+            "R13-B65-BOTTOM_EXTRA-7583d9"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G03",
+          "family": "LONGITUDINAL",
+          "physical_layer": "BOTTOM",
+          "reinforcement_role": "MAIN",
+          "count": 4,
+          "diameter": 20,
+          "specification": "4Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-BOTTOM_MAIN-eb7147",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8386,
+          "source_bar_id": "R13-B65-BOTTOM_MAIN-eb7147",
+          "piece_type": "BOTTOM_MAIN",
+          "cut_length_mm": 8270.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G04",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 2,
+          "diameter": 16,
+          "specification": "2Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-TOP_EXTRA-c18ec1",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.826,
+          "source_bar_id": "R13-B65-TOP_EXTRA-c18ec1",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "cut_length_mm": 3013.5,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B65-TOP_EXTRA-c18ec1",
+            "R13-B65-TOP_EXTRA-51c1f1"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G05",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-TOP_MAIN-6d99df",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8305,
+          "source_bar_id": "R13-B65-TOP_MAIN-6d99df",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 8270.0
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G06",
+          "family": "SPACER",
+          "physical_layer": "SPACER",
+          "reinforcement_role": "SPACER",
+          "count": 3,
+          "diameter": 25,
+          "specification": "3Y25",
+          "spacing": 1000.0,
+          "zone": "UNKNOWN",
+          "spatial_extent": "ZONE",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-SPACER_BAR-41f287",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.85,
+          "source_bar_id": "R13-B65-SPACER_BAR-41f287",
+          "piece_type": "SPACER_BAR",
+          "cut_length_mm": 240.0,
+          "piece_count": 4,
+          "source_bar_ids": [
+            "R13-B65-SPACER_BAR-41f287",
+            "R13-B65-SPACER_BAR-e36fe7",
+            "R13-B65-SPACER_BAR-7b9606",
+            "R13-B65-SPACER_BAR-8fe919"
+          ]
+        },
+        {
+          "phase": "P2.6.9",
+          "beam_id": "B65",
+          "group_id": "G07",
+          "family": "STIRRUP",
+          "physical_layer": "STIRRUP",
+          "reinforcement_role": "STIRRUP",
+          "count": 3,
+          "diameter": 10,
+          "specification": "3L-Y10",
+          "spacing": "100",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B65-STIRRUP-cf0c13",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8532,
+          "source_bar_id": "R13-B65-STIRRUP-cf0c13",
+          "piece_type": "STIRRUP_ZONE_A",
+          "cut_length_mm": 3000.0
+        }
+      ],
+      "manual_notes": [
+        "Two BOTTOM EXTRA groups share diameter 16 but different counts (4-Y16 vs 2-Y16) and must remain distinct."
+      ],
+      "vs_p269": {
+        "expected_count": 6,
+        "predicted_count": 3,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "4Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y20"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "3LY10"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "2Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 6,
+        "spurious_count": 3,
+        "merged_distinct_groups": 1,
+        "identity_rule": "layer+role+specification"
+      },
+      "vs_deterministic": {
+        "expected_count": 7,
+        "predicted_count": 3,
+        "matched": [],
+        "missing": [
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "EXTRA",
+            "spec": "4Y16"
+          },
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "4Y20"
+          },
+          {
+            "layer": "SPACER",
+            "role": "SPACER",
+            "spec": "3Y25"
+          },
+          {
+            "layer": "STIRRUP",
+            "role": "STIRRUP",
+            "spec": "3LY10"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "2Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "3Y20"
+          }
+        ],
+        "spurious": [
+          {
+            "layer": "BOTTOM",
+            "role": "MAIN",
+            "spec": "5Y20"
+          },
+          {
+            "layer": "TOP",
+            "role": "EXTRA",
+            "spec": "5Y16"
+          },
+          {
+            "layer": "TOP",
+            "role": "MAIN",
+            "spec": "2Y16"
+          }
+        ],
+        "correctly_matched_count": 0,
+        "missing_count": 7,
+        "spurious_count": 3,
+        "merged_distinct_groups": 1,
+        "identity_rule": "layer+role+specification"
+      },
+      "target_identified": true,
+      "neighbor_evidence_detected": true
+    }
+  }
+]

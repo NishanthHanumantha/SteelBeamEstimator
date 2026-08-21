@@ -1,0 +1,273 @@
+{
+  "taxonomy": [
+    "GROUP_STRUCTURE_DISAGREEMENT",
+    "ROLE_ONLY_DISAGREEMENT",
+    "STIRRUP_DISAGREEMENT"
+  ],
+  "target_association": "MATCH",
+  "physical_group_count": {
+    "vision": 3,
+    "deterministic": 3
+  },
+  "layer_match": {
+    "vision_layers": [
+      "BOTTOM",
+      "TOP"
+    ],
+    "deterministic_layers": [
+      "OTHER",
+      "TOP"
+    ],
+    "shared": [
+      "TOP"
+    ],
+    "vision_only": [
+      "BOTTOM"
+    ],
+    "deterministic_only": [
+      "OTHER"
+    ]
+  },
+  "spec_match": {
+    "shared": [
+      "3Y16",
+      "3Y20"
+    ],
+    "vision_only": [
+      "2Y20"
+    ],
+    "deterministic_only": [
+      "2Y25"
+    ]
+  },
+  "pairs": [
+    {
+      "layer": "TOP",
+      "spec": "3Y16",
+      "physical_group_match": true,
+      "layer_match": true,
+      "spec_match": true,
+      "role_match": false,
+      "vision_role": "MAIN",
+      "deterministic_role": "EXTRA",
+      "vision_count": 3,
+      "deterministic_count": 3,
+      "count_comparison": "EXACT",
+      "count_delta": 0,
+      "vision": {
+        "layer": "TOP",
+        "spec": "3-Y16",
+        "role": "MAIN",
+        "bar_count": 3,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "physical_group_id": "G1",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y16",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.9,
+          "evidence": "Green bars at top layer shown at both left and right supports, labeled 3-Y16, extending partially into span from each support"
+        }
+      },
+      "deterministic": {
+        "layer": "TOP",
+        "spec": "3Y16",
+        "role": "EXTRA",
+        "bar_count": 3,
+        "support_scope": "BOTH_SUPPORTS",
+        "raw": {
+          "phase": "P2.6.9",
+          "beam_id": "B100",
+          "group_id": "G01",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "EXTRA",
+          "count": 3,
+          "diameter": 16,
+          "specification": "3Y16",
+          "spacing": "UNKNOWN",
+          "zone": "BOTH_SUPPORTS",
+          "spatial_extent": "BOTH_SUPPORTS",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B100-TOP_EXTRA-96a3cf",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8217,
+          "source_bar_id": "R13-B100-TOP_EXTRA-96a3cf",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "cut_length_mm": 2357.0,
+          "piece_count": 2,
+          "source_bar_ids": [
+            "R13-B100-TOP_EXTRA-96a3cf",
+            "R13-B100-TOP_EXTRA-513b55"
+          ]
+        }
+      }
+    },
+    {
+      "layer": "TOP",
+      "spec": "3Y20",
+      "physical_group_match": true,
+      "layer_match": true,
+      "spec_match": true,
+      "role_match": true,
+      "vision_role": "MAIN",
+      "deterministic_role": "MAIN",
+      "vision_count": 3,
+      "deterministic_count": 3,
+      "count_comparison": "EXACT",
+      "count_delta": 0,
+      "vision": {
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "role": "MAIN",
+        "bar_count": 3,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "physical_group_id": "G2",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Green bars at top layer labeled 3-Y20, running continuously across full span from left to right support"
+        }
+      },
+      "deterministic": {
+        "layer": "TOP",
+        "spec": "3Y20",
+        "role": "MAIN",
+        "bar_count": 3,
+        "support_scope": "FULL_SPAN",
+        "raw": {
+          "phase": "P2.6.9",
+          "beam_id": "B100",
+          "group_id": "G02",
+          "family": "LONGITUDINAL",
+          "physical_layer": "TOP",
+          "reinforcement_role": "MAIN",
+          "count": 3,
+          "diameter": 20,
+          "specification": "3Y20",
+          "spacing": "UNKNOWN",
+          "zone": "FULL_SPAN",
+          "spatial_extent": "FULL_SPAN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B100-TOP_MAIN-0690c1",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.8346,
+          "source_bar_id": "R13-B100-TOP_MAIN-0690c1",
+          "piece_type": "TOP_MAIN",
+          "cut_length_mm": 5644.1
+        }
+      }
+    }
+  ],
+  "vision_only_groups": [
+    {
+      "layer": "BOTTOM",
+      "spec": "2-Y20",
+      "role": "MAIN",
+      "bar_count": 2,
+      "support_scope": "FULL_SPAN",
+      "relative_length_evidence": "UNKNOWN",
+      "span_relationship": "FULL_SPAN",
+      "physical_group_id": "G3",
+      "raw": {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Blue bars at bottom layer running full span, visually continuous across beam length"
+      }
+    }
+  ],
+  "deterministic_only_groups": [
+    {
+      "layer": "OTHER",
+      "spec": "2Y25",
+      "role": "SPACER",
+      "bar_count": 2,
+      "support_scope": "UNKNOWN",
+      "raw": {
+        "phase": "P2.6.9",
+        "beam_id": "B100",
+        "group_id": "G03",
+        "family": "SPACER",
+        "physical_layer": "SPACER",
+        "reinforcement_role": "SPACER",
+        "count": 2,
+        "diameter": 25,
+        "specification": "2Y25",
+        "spacing": 1000.0,
+        "zone": "UNKNOWN",
+        "spatial_extent": "ZONE",
+        "start_position": "UNKNOWN",
+        "end_position": "UNKNOWN",
+        "annotation_ids": [],
+        "leader_ids": [],
+        "source_layer": "UNKNOWN",
+        "deterministic_identity": "R13-B100-SPACER_BAR-b87891",
+        "provenance": "R13_PRODUCTION_MODEL",
+        "evidence_quality": "DETERMINISTIC",
+        "confidence": 0.85,
+        "source_bar_id": "R13-B100-SPACER_BAR-b87891",
+        "piece_type": "SPACER_BAR",
+        "cut_length_mm": 290.0,
+        "piece_count": 2,
+        "source_bar_ids": [
+          "R13-B100-SPACER_BAR-b87891",
+          "R13-B100-SPACER_BAR-2f8e60"
+        ]
+      }
+    }
+  ],
+  "merged_distinct_groups": 0,
+  "role_mismatch_count": 1,
+  "count_disagreement_count": 0,
+  "stirrup": {
+    "vision_count": 1,
+    "deterministic_count": 1,
+    "matched": [],
+    "vision_only": [
+      "3LY10@100C/C"
+    ],
+    "deterministic_only": [
+      "3LY10"
+    ],
+    "agreement": false
+  },
+  "same_spec_collapse": false,
+  "truth_declaration": "NONE",
+  "note": "Automated comparison only. No VISION_CORRECT or DETERMINISTIC_CORRECT declaration."
+}

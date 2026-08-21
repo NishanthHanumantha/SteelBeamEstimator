@@ -1,0 +1,128 @@
+{
+  "beam_id": "B24A",
+  "status": "VISION_READY_WITH_LIMITATIONS",
+  "reason_codes": [
+    "CONTEXT_CLIP",
+    "CONTEXT_HORIZONTAL_TRUNCATION",
+    "CONTEXT_VERTICAL_TRUNCATION",
+    "DETAIL_CLIP",
+    "DETAIL_HORIZONTAL_TRUNCATION",
+    "MINOR_CLIP_OR_SLIVER"
+  ],
+  "context_source_phase": "B.1",
+  "detail_source_phase": "B.1",
+  "mixed_source": false,
+  "gate": {
+    "status": "VISION_READY_WITH_LIMITATIONS",
+    "reason_codes": [
+      "CONTEXT_CLIP",
+      "CONTEXT_HORIZONTAL_TRUNCATION",
+      "CONTEXT_VERTICAL_TRUNCATION",
+      "DETAIL_CLIP",
+      "DETAIL_HORIZONTAL_TRUNCATION",
+      "MINOR_CLIP_OR_SLIVER"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": true,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": true,
+    "anchor": {
+      "identity_ok": true,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [],
+      "stack_observability": {
+        "title_region": "AVAILABLE",
+        "stirrup_region": "CLIP_SUSPECT",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": false
+    },
+    "context_source_phase": "B.1",
+    "detail_source_phase": "B.1"
+  },
+  "evidence": {
+    "beam_id": "B24A",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B24A.png",
+      "sha256": "b089de619c67e5057e0057124fa94ed8561098e7725b87a912e5b596f6647632",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "RETAIN_PREFERRED",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "CHALLENGERS_REJECTED"
+      ],
+      "usable_status": true,
+      "score": 4.2404,
+      "foreground_ratio": 0.05561,
+      "coverage_x": 0.9981,
+      "coverage_y": 0.9993,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "TOP_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT",
+        "LOW_LONGITUDINAL_COVERAGE",
+        "HORIZONTAL_TRUNCATION_SUSPECT",
+        "VERTICAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\context\\B24A.png",
+        "exists": true,
+        "expected_sha256": "b089de619c67e5057e0057124fa94ed8561098e7725b87a912e5b596f6647632",
+        "actual_sha256": "b089de619c67e5057e0057124fa94ed8561098e7725b87a912e5b596f6647632",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.1",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B24A.png",
+      "sha256": "a779146a50a8666b522e575cdad6a3c680faa47ce133bda441d30e2c31a33b76",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "RETAIN_PREFERRED",
+      "reason_codes": [
+        "PREFERRED_BASELINE",
+        "NO_DISTINCT_CHALLENGER"
+      ],
+      "usable_status": true,
+      "score": 4.1184,
+      "foreground_ratio": 0.04387,
+      "coverage_x": 0.9989,
+      "coverage_y": 0.9696,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT",
+        "HORIZONTAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\detail\\B24A.png",
+        "exists": true,
+        "expected_sha256": "a779146a50a8666b522e575cdad6a3c680faa47ce133bda441d30e2c31a33b76",
+        "actual_sha256": "a779146a50a8666b522e575cdad6a3c680faa47ce133bda441d30e2c31a33b76",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

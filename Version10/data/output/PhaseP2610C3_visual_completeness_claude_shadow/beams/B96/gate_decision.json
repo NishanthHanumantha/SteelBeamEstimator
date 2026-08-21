@@ -1,0 +1,122 @@
+{
+  "beam_id": "B96",
+  "status": "VISION_READY_WITH_LIMITATIONS",
+  "reason_codes": [
+    "CONTEXT_CLIP",
+    "CONTEXT_HORIZONTAL_TRUNCATION",
+    "DETAIL_CLIP",
+    "DETAIL_HORIZONTAL_TRUNCATION",
+    "MINOR_CLIP_OR_SLIVER"
+  ],
+  "context_source_phase": "B.3",
+  "detail_source_phase": "B.3",
+  "mixed_source": false,
+  "gate": {
+    "status": "VISION_READY_WITH_LIMITATIONS",
+    "reason_codes": [
+      "CONTEXT_CLIP",
+      "CONTEXT_HORIZONTAL_TRUNCATION",
+      "DETAIL_CLIP",
+      "DETAIL_HORIZONTAL_TRUNCATION",
+      "MINOR_CLIP_OR_SLIVER"
+    ],
+    "image_exists": {
+      "context": true,
+      "detail": true
+    },
+    "image_visually_usable": {
+      "context": true,
+      "detail": true
+    },
+    "sufficient_for_target_interpretation": true,
+    "anchor": {
+      "identity_ok": true,
+      "geometry_ok": true,
+      "association_ambiguous": false,
+      "reason_codes": [],
+      "stack_observability": {
+        "title_region": "AVAILABLE",
+        "stirrup_region": "CLIP_SUSPECT",
+        "bottom_region": "OBSERVABLE_IF_DRAWN",
+        "top_region": "OBSERVABLE_IF_DRAWN",
+        "dimension_extra_region": "NOT_REQUIRED",
+        "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+      },
+      "mixed_source": false
+    },
+    "context_source_phase": "B.3",
+    "detail_source_phase": "B.3"
+  },
+  "evidence": {
+    "beam_id": "B96",
+    "context": {
+      "crop_type": "context",
+      "source_phase": "B.3",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\review\\B96\\b3_candidate\\context_3_UNUSED_CANVAS_CRUSH.png",
+      "sha256": "c993ea40427831cd176d35df5aa2cdfb5a8e986c87e4ebd78e2c8db9f5658ad9",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 4.0781,
+      "foreground_ratio": 0.04449,
+      "coverage_x": 0.9993,
+      "coverage_y": 0.9236,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT",
+        "LOW_LONGITUDINAL_COVERAGE",
+        "HORIZONTAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\review\\B96\\b3_candidate\\context_3_UNUSED_CANVAS_CRUSH.png",
+        "exists": true,
+        "expected_sha256": "c993ea40427831cd176d35df5aa2cdfb5a8e986c87e4ebd78e2c8db9f5658ad9",
+        "actual_sha256": "c993ea40427831cd176d35df5aa2cdfb5a8e986c87e4ebd78e2c8db9f5658ad9",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    },
+    "detail": {
+      "crop_type": "detail",
+      "source_phase": "B.3",
+      "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\review\\B96\\selected\\detail.png",
+      "sha256": "d418a4126c1279be3a0a9eb3115a78aade09a9f7d37abeaadb99276e6d17bb0e",
+      "primary_status": "BORDER_CLIPPING_SUSPECT",
+      "critical_failure": false,
+      "selection_status": "REPLACE_PREFERRED",
+      "reason_codes": [
+        "CLEARS_BASELINE_CRITICAL_FAILURE"
+      ],
+      "usable_status": true,
+      "score": 4.0441,
+      "foreground_ratio": 0.04022,
+      "coverage_x": 0.9989,
+      "coverage_y": 0.9245,
+      "empty_sides": [],
+      "quality_flags": [
+        "BORDER_CLIPPING_SUSPECT",
+        "LEFT_BORDER_CONTACT",
+        "RIGHT_BORDER_CONTACT",
+        "BOTTOM_BORDER_CONTACT",
+        "HORIZONTAL_TRUNCATION_SUSPECT"
+      ],
+      "integrity": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\review\\B96\\selected\\detail.png",
+        "exists": true,
+        "expected_sha256": "d418a4126c1279be3a0a9eb3115a78aade09a9f7d37abeaadb99276e6d17bb0e",
+        "actual_sha256": "d418a4126c1279be3a0a9eb3115a78aade09a9f7d37abeaadb99276e6d17bb0e",
+        "sha_mismatch": false,
+        "file_missing": false,
+        "integrity_ok": true
+      }
+    }
+  }
+}

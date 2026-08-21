@@ -1,0 +1,3673 @@
+{
+  "phase_id": "P2.6.10-C.3",
+  "phase_name": "Visual Completeness Gate + Claude Vision Shadow Benchmark",
+  "model_version": "10.11.16",
+  "gate_version": "P2610C3_VISUAL_COMPLETENESS_CLAUDE_SHADOW_BENCHMARK_V1_0",
+  "decision": "PASS_WITH_LIMITATIONS",
+  "pass_fail": "PASS",
+  "live_claude_vision": "CALLED",
+  "population_summary": {
+    "total_unique_beams": 135,
+    "gate": {
+      "total": 135,
+      "VISION_READY": 2,
+      "VISION_READY_WITH_LIMITATIONS": 121,
+      "VISION_REVIEW_ONLY": 0,
+      "VISION_NOT_READY": 12
+    },
+    "claude": {
+      "attempted": 8,
+      "api_success": 8,
+      "schema_valid_usable": 8,
+      "unusable": 0,
+      "skipped": 127,
+      "average_group_confidence": 0.9182608695652175,
+      "skip_reasons": {
+        "CLAUDE_CALL_SKIPPED": 115,
+        "CLAUDE_CALL_SKIPPED_NOT_READY": 12
+      }
+    },
+    "mixed_source": 53,
+    "prior_phase_units": {
+      "p266": true,
+      "p269": true,
+      "p2610a": true,
+      "p2610b": true,
+      "p2610b1": true,
+      "p2610b2": true,
+      "p2610b3": true,
+      "p2610c1c2": true
+    }
+  },
+  "six_beam": {
+    "technically_valid": true,
+    "stop_population": false,
+    "rows": [
+      {
+        "beam_id": "B141",
+        "set_key": "Fourth",
+        "context_source": "B.1",
+        "detail_source": "B.1",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "CONTEXT_VERTICAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "CLIP_SUSPECT",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": false
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.1"
+        },
+        "claude": {
+          "beam_id": "B141",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 7.2835703999735415,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3855,
+              "output_tokens": 421
+            },
+            "estimated_input_tokens": 647,
+            "estimated_output_tokens": 304,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "c5ce7fe046996d49a5a77057d148b6c6fa7c4426b960af9e111b7efb85e8ce88",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B141",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5-Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.95,
+                "evidence": "Green reinforcement line at top of beam section, labeled 5-Y20 in magenta, visible in both context and detail images"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5-Y16",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.95,
+                "evidence": "Green reinforcement line at bottom of beam section, labeled 5-Y16 in magenta, visible in detail image"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "4L-Y8@100C/C",
+                "confidence": 0.95
+              }
+            ],
+            "uncertainties": [],
+            "neighbor_evidence_detected": true,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B141",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 5,
+              "diameter": 16,
+              "specification": "5Y16",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-2adb0aed"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "5-Y16",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B141",
+              "group_id": "G02",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": "UNKNOWN",
+              "diameter": 81,
+              "specification": "4L-Y8@\\X100C/C",
+              "spacing": "100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-2f359490"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "LOW",
+              "confidence": 0.5,
+              "raw_text": "4L-Y8@\\X100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B141",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 5,
+              "diameter": 16,
+              "specification": "5Y16",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B141-TOP_MAIN-e1d22e",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8341,
+              "source_bar_id": "R13-B141-TOP_MAIN-e1d22e",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 8746.0
+            }
+          ],
+          "manual_notes": [
+            "Phase sketch: TOP 5-Y20 and BOTTOM 5-Y16 as distinct groups.",
+            "DXF R.1: TOP MAIN 5-Y16 plus an unclassified stirrup string 4L-Y8@\\X100C/C.",
+            "Repository DXF wins. B141 is not a B128-style same-specification/different-layer case. Leader/spatial ambiguity is recorded separately from physical-group identity."
+          ],
+          "vs_p269": {
+            "expected_count": 2,
+            "predicted_count": 2,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "4LY8@\\X100C/C"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y16"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 2,
+            "spurious_count": 2,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 1,
+            "predicted_count": 2,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y16"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 1,
+            "spurious_count": 2,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": true
+        }
+      },
+      {
+        "beam_id": "B66",
+        "set_key": "Fourth",
+        "context_source": "B.1",
+        "detail_source": "B.2",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "DETAIL_HORIZONTAL_TRUNCATION",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "OBSERVABLE_IF_DRAWN",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": true
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.2"
+        },
+        "claude": {
+          "beam_id": "B66",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 10.23077279998688,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3407,
+              "output_tokens": 510
+            },
+            "estimated_input_tokens": 646,
+            "estimated_output_tokens": 395,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "47683ab15faa6e313b5dd3d2d520aaca400685a380dccc9786c14d7517597904",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B66",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y16",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.92,
+                "evidence": "Magenta annotation 5-Y16 positioned above beam centerline in detail view, with visual bars shown in green at top layer spanning full length"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.9,
+                "evidence": "Magenta annotation 5-Y20 positioned below beam centerline in detail view, with visual bars shown in green at bottom layer spanning full length"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "4L-Y8@100/125/100C/C",
+                "confidence": 0.93
+              }
+            ],
+            "uncertainties": [
+              "No extra bars or support-specific reinforcement visible for B66 in the detail view"
+            ],
+            "neighbor_evidence_detected": true,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 25,
+              "specification": "4Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-c6c87976"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4-Y25",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 5,
+              "diameter": 20,
+              "specification": "5Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-6cfb6ebe"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "5-Y20",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G03",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 4,
+              "diameter": 8,
+              "specification": "4L-Y8",
+              "spacing": "100/125/100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-830f2ae1"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4L-Y8@100/125/100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 25,
+              "specification": "4Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B66-BOTTOM_MAIN-59fb84",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8305,
+              "source_bar_id": "R13-B66-BOTTOM_MAIN-59fb84",
+              "piece_type": "BOTTOM_MAIN",
+              "cut_length_mm": 7050.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 5,
+              "diameter": 20,
+              "specification": "5Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B66-TOP_MAIN-3ad435",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8305,
+              "source_bar_id": "R13-B66-TOP_MAIN-3ad435",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 6620.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B66",
+              "group_id": "G03",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 4,
+              "diameter": 8,
+              "specification": "4L-Y8",
+              "spacing": "100",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B66-STIRRUP-22b1d5",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8532,
+              "source_bar_id": "R13-B66-STIRRUP-22b1d5",
+              "piece_type": "STIRRUP_ZONE_A",
+              "cut_length_mm": 2160.0
+            }
+          ],
+          "manual_notes": [],
+          "vs_p269": {
+            "expected_count": 3,
+            "predicted_count": 2,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "4LY8"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 3,
+            "spurious_count": 2,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 3,
+            "predicted_count": 2,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "4LY8"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 3,
+            "spurious_count": 2,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": true
+        }
+      },
+      {
+        "beam_id": "B161",
+        "set_key": "Fourth",
+        "context_source": "B.1",
+        "detail_source": "B.1",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "CONTEXT_VERTICAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "CLIP_SUSPECT",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": false
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.1"
+        },
+        "claude": {
+          "beam_id": "B161",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 10.790497400041204,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3403,
+              "output_tokens": 706
+            },
+            "estimated_input_tokens": 647,
+            "estimated_output_tokens": 524,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "97e1101646aa328596b50ae5428ce50d6d08d9f5ef04fc7800aadfd12707da28",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B161",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "4-Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.95,
+                "evidence": "Top layer green bars with 4-Y20 annotation centered above beam, spanning full length"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4-Y25",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.92,
+                "evidence": "Bottom layer green bars with 4-Y25 annotation at mid-span, visible spanning full length"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4-Y16",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.92,
+                "evidence": "Bottom layer green bars with 4-Y16 annotation adjacent to 4-Y25 at mid-span"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "4-Y16",
+                "support_scope": "LEFT_SUPPORT",
+                "confidence": 0.88,
+                "evidence": "Top layer bars extending from left support, dimension 800 shown, red dots at support"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "4-Y16",
+                "support_scope": "RIGHT_SUPPORT",
+                "confidence": 0.88,
+                "evidence": "Top layer bars extending from right support, dimension 800 shown, red dots at support"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "4L-Y8@100C/C",
+                "confidence": 0.93
+              }
+            ],
+            "uncertainties": [
+              "Left and right 4-Y16 extras are treated as separate groups (LEFT_SUPPORT and RIGHT_SUPPORT) based on visual evidence showing distinct support zones with 800mm dimensions at each end, though they share identical specification"
+            ],
+            "neighbor_evidence_detected": true,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 3,
+              "diameter": 16,
+              "specification": "3Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-6d2a9dab"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y16",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-9734f438"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y20",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-99af2455"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y20",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G04",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 4,
+              "diameter": 16,
+              "specification": "4Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-32b0ae8b"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4-Y16",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G05",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 25,
+              "specification": "4Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-e3f4e1ce"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4-Y25",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G06",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 4,
+              "diameter": 8,
+              "specification": "4L-Y8",
+              "spacing": "100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-c82f2009"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4L-Y8@100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 3,
+              "diameter": 16,
+              "specification": "3Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-BOTTOM_EXTRA-429050",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8217,
+              "source_bar_id": "R13-B161-BOTTOM_EXTRA-429050",
+              "piece_type": "BOTTOM_EXTRA_LEFT",
+              "cut_length_mm": 2876.3,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B161-BOTTOM_EXTRA-429050",
+                "R13-B161-BOTTOM_EXTRA-fab441"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-BOTTOM_MAIN-74252f",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8346,
+              "source_bar_id": "R13-B161-BOTTOM_MAIN-74252f",
+              "piece_type": "BOTTOM_MAIN",
+              "cut_length_mm": 7721.2
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 4,
+              "diameter": 16,
+              "specification": "4Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-TOP_EXTRA-f114bd",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8217,
+              "source_bar_id": "R13-B161-TOP_EXTRA-f114bd",
+              "piece_type": "TOP_EXTRA_LEFT",
+              "cut_length_mm": 2876.3,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B161-TOP_EXTRA-f114bd",
+                "R13-B161-TOP_EXTRA-a66024"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G04",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 25,
+              "specification": "4Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-TOP_MAIN-b3f7e3",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8346,
+              "source_bar_id": "R13-B161-TOP_MAIN-b3f7e3",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 8151.2
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G05",
+              "family": "SPACER",
+              "physical_layer": "SPACER",
+              "reinforcement_role": "SPACER",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": 1000.0,
+              "zone": "UNKNOWN",
+              "spatial_extent": "ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-SPACER_BAR-fcd1b5",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.85,
+              "source_bar_id": "R13-B161-SPACER_BAR-fcd1b5",
+              "piece_type": "SPACER_BAR",
+              "cut_length_mm": 390.0,
+              "piece_count": 4,
+              "source_bar_ids": [
+                "R13-B161-SPACER_BAR-fcd1b5",
+                "R13-B161-SPACER_BAR-345f0f",
+                "R13-B161-SPACER_BAR-f0b93b",
+                "R13-B161-SPACER_BAR-8ba4c1"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B161",
+              "group_id": "G06",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 4,
+              "diameter": 8,
+              "specification": "4L-Y8",
+              "spacing": "100",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B161-STIRRUP-efca9b",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8532,
+              "source_bar_id": "R13-B161-STIRRUP-efca9b",
+              "piece_type": "STIRRUP_ZONE_A",
+              "cut_length_mm": 2260.0
+            }
+          ],
+          "manual_notes": [
+            "R.1 groups.json merged BOTTOM_EXTRA labels 3Y16+3Y20 into one bucket. Expected groups are derived from annotations, not that merged bucket."
+          ],
+          "vs_p269": {
+            "expected_count": 6,
+            "predicted_count": 5,
+            "matched": [
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "4Y16"
+              }
+            ],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "3Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "3Y20"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y20"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "4LY8"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "4Y25"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y25"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "4Y20"
+              }
+            ],
+            "correctly_matched_count": 1,
+            "missing_count": 5,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 6,
+            "predicted_count": 5,
+            "matched": [
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "4Y16"
+              }
+            ],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "3Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y20"
+              },
+              {
+                "layer": "SPACER",
+                "role": "SPACER",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "4LY8"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "4Y25"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y25"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "4Y20"
+              }
+            ],
+            "correctly_matched_count": 1,
+            "missing_count": 5,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": true
+        }
+      },
+      {
+        "beam_id": "B128",
+        "set_key": "Fifth",
+        "context_source": "B.1",
+        "detail_source": "B.1",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "CONTEXT_VERTICAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "DETAIL_HORIZONTAL_TRUNCATION",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "CLIP_SUSPECT",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": false
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.1"
+        },
+        "claude": {
+          "beam_id": "B128",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 9.532798099971842,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3876,
+              "output_tokens": 595
+            },
+            "estimated_input_tokens": 647,
+            "estimated_output_tokens": 447,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "a580ee8cfe526a1670205fc057ba20b7afc5144bc366d5c8971750b1ad5f7c81",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B128",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.95,
+                "evidence": "Green line at top of beam with 5-Y20 annotations at multiple locations along span, dimension 2350 shown"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y25",
+                "support_scope": "LEFT_SUPPORT",
+                "confidence": 0.9,
+                "evidence": "Green lines at bottom left support region with 5-Y25 annotation visible"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y20",
+                "support_scope": "LEFT_SUPPORT",
+                "confidence": 0.85,
+                "evidence": "Green line at bottom left support with 3-Y20 annotation near column junction"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y25",
+                "support_scope": "RIGHT_SUPPORT",
+                "confidence": 0.9,
+                "evidence": "Green lines at bottom right support region with 5-Y25 annotation visible at right end"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "5L-Y12@100C/C",
+                "confidence": 0.95
+              }
+            ],
+            "uncertainties": [
+              "Bottom reinforcement shows two different specifications (5Y25 and 3Y20) at left support - unclear if these are separate groups or overlapping layers",
+              "Right support bottom reinforcement shows only 5Y25 - asymmetry with left support configuration"
+            ],
+            "neighbor_evidence_detected": true,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 16,
+              "specification": "3Y16",
+              "zone": "FULL_SPAN",
+              "provenance": "P268_PHYSICAL_LAYER_CONTROL",
+              "beam_id": "B128",
+              "evidence_quality": "CONTROL",
+              "confidence": 0.6,
+              "annotation_ids": [],
+              "leader_ids": [],
+              "spacing": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "CONTROL_OVERLAY",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "phase": "P2.6.9",
+              "group_id": "G01"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B128",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 16,
+              "specification": "3Y16",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-8a0b5fda"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y16",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B128",
+              "group_id": "G03",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": "UNKNOWN",
+              "diameter": 81,
+              "specification": "2L-Y8@\\X100/150/100C/C",
+              "spacing": "100/150/100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-ca8a916f"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "LOW",
+              "confidence": 0.5,
+              "raw_text": "2L-Y8@\\X100/150/100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B128",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 16,
+              "specification": "3Y16",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B128-TOP_MAIN-3150a4",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8305,
+              "source_bar_id": "R13-B128-TOP_MAIN-3150a4",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 2876.0
+            }
+          ],
+          "manual_notes": [
+            "Phase drawing sketch matches two 3-Y16 groups (TOP and BOTTOM).",
+            "R.1 associated only one 3-Y16 annotation to TOP_MAIN; the bottom group is a physical-layer control overlay, not a second parsed annotation."
+          ],
+          "vs_p269": {
+            "expected_count": 3,
+            "predicted_count": 4,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y16"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "2LY8@\\X100/150/100C/C"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y16"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y20"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y25"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 3,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 1,
+            "predicted_count": 4,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y16"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y20"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y25"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "5Y20"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 1,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": true
+        }
+      },
+      {
+        "beam_id": "B55",
+        "set_key": "Fifth",
+        "context_source": "B.1",
+        "detail_source": "B.1",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "CONTEXT_VERTICAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "DETAIL_VERTICAL_TRUNCATION",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "CLIP_SUSPECT",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": false
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.1"
+        },
+        "claude": {
+          "beam_id": "B55",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 8.956643900019117,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3571,
+              "output_tokens": 516
+            },
+            "estimated_input_tokens": 646,
+            "estimated_output_tokens": 390,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "71bb8ee497fcb494d6e9f1c08fdc7e778052f6dac43ab62425e80cd0345f9f0b",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B55",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y16",
+                "support_scope": "LEFT_SUPPORT",
+                "confidence": 0.92,
+                "evidence": "3-Y16 annotation at left support with dimension 1400, shown in green layer at top of beam section"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y20",
+                "support_scope": "BOTH_SUPPORTS",
+                "confidence": 0.9,
+                "evidence": "5-Y20 annotations visible at both left support (mid-span region) and right support, shown in green layer at top"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.88,
+                "evidence": "5-Y20 annotation at bottom center of beam section, shown in green layer spanning full length"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "3L-Y8@100C/C",
+                "confidence": 0.93
+              }
+            ],
+            "uncertainties": [
+              "The 5-Y20 appears in both top extra and bottom main positions - visual evidence shows distinct groups but same specification",
+              "Dimension 1400 associated with left support top bars may indicate extent rather than full span"
+            ],
+            "neighbor_evidence_detected": false,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-acb561e7"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y25",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-61d93c37"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y25",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-e1107212"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "2-Y16",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G04",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-e003f58c"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y20",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G05",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 3,
+              "diameter": 10,
+              "specification": "3L-Y10",
+              "spacing": "100/125/100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-2502e956"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3L-Y10@100/125/100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B55-BOTTOM_MAIN-55dc12",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8264,
+              "source_bar_id": "R13-B55-BOTTOM_MAIN-55dc12",
+              "piece_type": "BOTTOM_MAIN",
+              "cut_length_mm": 7050.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B55-TOP_EXTRA-cc1345",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8177,
+              "source_bar_id": "R13-B55-TOP_EXTRA-cc1345",
+              "piece_type": "TOP_EXTRA_LEFT",
+              "cut_length_mm": 2601.0,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B55-TOP_EXTRA-cc1345",
+                "R13-B55-TOP_EXTRA-af5ec1"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B55-TOP_MAIN-371daa",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8346,
+              "source_bar_id": "R13-B55-TOP_MAIN-371daa",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 6620.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G04",
+              "family": "SPACER",
+              "physical_layer": "SPACER",
+              "reinforcement_role": "SPACER",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": 1000.0,
+              "zone": "UNKNOWN",
+              "spatial_extent": "ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B55-SPACER_BAR-cddc91",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.85,
+              "source_bar_id": "R13-B55-SPACER_BAR-cddc91",
+              "piece_type": "SPACER_BAR",
+              "cut_length_mm": 240.0,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B55-SPACER_BAR-cddc91",
+                "R13-B55-SPACER_BAR-6779b9"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B55",
+              "group_id": "G05",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 3,
+              "diameter": 10,
+              "specification": "3L-Y10",
+              "spacing": "100",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B55-STIRRUP-285cb2",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8532,
+              "source_bar_id": "R13-B55-STIRRUP-285cb2",
+              "piece_type": "STIRRUP_ZONE_A",
+              "cut_length_mm": 3000.0
+            }
+          ],
+          "manual_notes": [
+            "Phase sketch: TOP MAIN 3-Y25, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y20, BOTTOM EXTRA 2-Y16, STIRRUP 3L-Y10@100/125/100 C/C.",
+            "DXF R.1: TOP MAIN 3-Y20, TOP EXTRA 2-Y16, BOTTOM MAIN 3-Y25, BOTTOM EXTRA 3-Y25, STIRRUP 3L-Y10@100/125/100C/C.",
+            "Repository DXF wins. The same-layer multi-group control is BOTTOM MAIN 3-Y25 vs BOTTOM EXTRA 3-Y25, not two 2-Y16 groups."
+          ],
+          "vs_p269": {
+            "expected_count": 5,
+            "predicted_count": 3,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "3LY10"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 5,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 5,
+            "predicted_count": 3,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "SPACER",
+                "role": "SPACER",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "3LY10"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 5,
+            "spurious_count": 3,
+            "merged_distinct_groups": 0,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": false
+        }
+      },
+      {
+        "beam_id": "B65",
+        "set_key": "Fifth",
+        "context_source": "B.1",
+        "detail_source": "B.1",
+        "gate": {
+          "status": "VISION_READY_WITH_LIMITATIONS",
+          "reason_codes": [
+            "CONTEXT_CLIP",
+            "CONTEXT_HORIZONTAL_TRUNCATION",
+            "CONTEXT_VERTICAL_TRUNCATION",
+            "DETAIL_CLIP",
+            "DETAIL_HORIZONTAL_TRUNCATION",
+            "MINOR_CLIP_OR_SLIVER"
+          ],
+          "image_exists": {
+            "context": true,
+            "detail": true
+          },
+          "image_visually_usable": {
+            "context": true,
+            "detail": true
+          },
+          "sufficient_for_target_interpretation": true,
+          "anchor": {
+            "identity_ok": true,
+            "geometry_ok": true,
+            "association_ambiguous": false,
+            "reason_codes": [],
+            "stack_observability": {
+              "title_region": "AVAILABLE",
+              "stirrup_region": "OBSERVABLE_IF_DRAWN",
+              "bottom_region": "OBSERVABLE_IF_DRAWN",
+              "top_region": "OBSERVABLE_IF_DRAWN",
+              "dimension_extra_region": "NOT_REQUIRED",
+              "note": "Absence of extras is not a failure. NOT_PRESENT_IN_DRAWING cannot be proven from PNG metrics alone."
+            },
+            "mixed_source": false
+          },
+          "context_source_phase": "B.1",
+          "detail_source_phase": "B.1"
+        },
+        "claude": {
+          "beam_id": "B65",
+          "gate_status": "VISION_READY_WITH_LIMITATIONS",
+          "called": true,
+          "skip_reason": null,
+          "call_reason": "SIX_BEAM_CONTROL",
+          "cohort_label": "SIX_BEAM_CONTROL",
+          "audit": {
+            "success": true,
+            "model": "claude-sonnet-4-5",
+            "latency_s": 11.383208199986257,
+            "retry_count": 0,
+            "usage": {
+              "input_tokens": 3631,
+              "output_tokens": 563
+            },
+            "estimated_input_tokens": 646,
+            "estimated_output_tokens": 445,
+            "error": null,
+            "error_type": null,
+            "temperature": 0,
+            "prompt_fingerprint": "d6edfd884db0c83fa0367fe55080fa350fd284caf6a82f116b3422ef219bce71",
+            "n_images": 2
+          },
+          "parsed": {
+            "target_beam_id": "B65",
+            "target_beam_identified": true,
+            "target_association_confidence": 0.95,
+            "visual_assessment": {
+              "title_visible": true,
+              "stirrup_region_visible": true,
+              "bottom_region_visible": true,
+              "top_region_visible": true,
+              "dimension_extra_region_visible": true
+            },
+            "reinforcement_groups": [
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "2Y16",
+                "support_scope": "LEFT_SUPPORT",
+                "confidence": 0.92,
+                "evidence": "Two red bars visible at top left support, annotation '2-Y16' with 850mm and 1800mm dimensions indicating left support zone"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y16",
+                "support_scope": "RIGHT_SUPPORT",
+                "confidence": 0.9,
+                "evidence": "Annotation '5-Y16' visible at top right region with single red bar shown at right support"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20",
+                "support_scope": "FULL_SPAN",
+                "confidence": 0.93,
+                "evidence": "Two green bars visible running full span at bottom layer, annotation '5-Y20' centered below beam"
+              }
+            ],
+            "stirrups": [
+              {
+                "spec": "4L-Y8@100/175/100C/C",
+                "confidence": 0.95
+              }
+            ],
+            "uncertainties": [
+              "Top layer shows 2Y16 at left support and 5Y16 at right support - these appear to be separate groups with different quantities rather than a continuous group",
+              "Visual evidence shows simplified representation with limited bars drawn; actual bar count matches annotations but full distribution not fully detailed"
+            ],
+            "neighbor_evidence_detected": true,
+            "response_status": "OK",
+            "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+            "production_action": "NO_CHANGE",
+            "shadow_only": true,
+            "usable": true,
+            "unusable_reason": null
+          },
+          "production_action": "NO_CHANGE",
+          "shadow_only": true,
+          "raw_text_present": true
+        },
+        "comparison": {
+          "taxonomy": "VISION_DISAGREEMENT",
+          "p269_expected": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-63c34c43"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "2-Y16",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 4,
+              "diameter": 16,
+              "specification": "4Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-90f52a09"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4-Y16",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 20,
+              "specification": "4Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-f274c88b"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "4-Y20",
+              "position_zone": "BOTTOM_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G04",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "SUPPORT_ZONE",
+              "spatial_extent": "SUPPORT_ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-09cdbbb7"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "2-Y16",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G05",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-ca8179be"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3-Y20",
+              "position_zone": "TOP_ZONE"
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G06",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 3,
+              "diameter": 10,
+              "specification": "3L-Y10",
+              "spacing": "100/125/100 C/C",
+              "zone": "UNKNOWN",
+              "spatial_extent": "UNKNOWN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [
+                "ANN-0a703090"
+              ],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "DRAWING_ANNOTATION",
+              "provenance": "R1_DXF_ANNOTATION",
+              "evidence_quality": "HIGH",
+              "confidence": 0.8,
+              "raw_text": "3L-Y10@100/125/100C/C",
+              "position_zone": "TOP_ZONE"
+            }
+          ],
+          "deterministic": [
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G01",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-BOTTOM_EXTRA-a8eebd",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.826,
+              "source_bar_id": "R13-B65-BOTTOM_EXTRA-a8eebd",
+              "piece_type": "BOTTOM_EXTRA_LEFT",
+              "cut_length_mm": 3013.5,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B65-BOTTOM_EXTRA-a8eebd",
+                "R13-B65-BOTTOM_EXTRA-49b98a"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G02",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "EXTRA",
+              "count": 4,
+              "diameter": 16,
+              "specification": "4Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-BOTTOM_EXTRA-c730f6",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8177,
+              "source_bar_id": "R13-B65-BOTTOM_EXTRA-c730f6",
+              "piece_type": "BOTTOM_EXTRA_LEFT",
+              "cut_length_mm": 3013.5,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B65-BOTTOM_EXTRA-c730f6",
+                "R13-B65-BOTTOM_EXTRA-7583d9"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G03",
+              "family": "LONGITUDINAL",
+              "physical_layer": "BOTTOM",
+              "reinforcement_role": "MAIN",
+              "count": 4,
+              "diameter": 20,
+              "specification": "4Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-BOTTOM_MAIN-eb7147",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8386,
+              "source_bar_id": "R13-B65-BOTTOM_MAIN-eb7147",
+              "piece_type": "BOTTOM_MAIN",
+              "cut_length_mm": 8270.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G04",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "EXTRA",
+              "count": 2,
+              "diameter": 16,
+              "specification": "2Y16",
+              "spacing": "UNKNOWN",
+              "zone": "BOTH_SUPPORTS",
+              "spatial_extent": "BOTH_SUPPORTS",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-TOP_EXTRA-c18ec1",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.826,
+              "source_bar_id": "R13-B65-TOP_EXTRA-c18ec1",
+              "piece_type": "TOP_EXTRA_LEFT",
+              "cut_length_mm": 3013.5,
+              "piece_count": 2,
+              "source_bar_ids": [
+                "R13-B65-TOP_EXTRA-c18ec1",
+                "R13-B65-TOP_EXTRA-51c1f1"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G05",
+              "family": "LONGITUDINAL",
+              "physical_layer": "TOP",
+              "reinforcement_role": "MAIN",
+              "count": 3,
+              "diameter": 20,
+              "specification": "3Y20",
+              "spacing": "UNKNOWN",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-TOP_MAIN-6d99df",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8305,
+              "source_bar_id": "R13-B65-TOP_MAIN-6d99df",
+              "piece_type": "TOP_MAIN",
+              "cut_length_mm": 8270.0
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G06",
+              "family": "SPACER",
+              "physical_layer": "SPACER",
+              "reinforcement_role": "SPACER",
+              "count": 3,
+              "diameter": 25,
+              "specification": "3Y25",
+              "spacing": 1000.0,
+              "zone": "UNKNOWN",
+              "spatial_extent": "ZONE",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-SPACER_BAR-41f287",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.85,
+              "source_bar_id": "R13-B65-SPACER_BAR-41f287",
+              "piece_type": "SPACER_BAR",
+              "cut_length_mm": 240.0,
+              "piece_count": 4,
+              "source_bar_ids": [
+                "R13-B65-SPACER_BAR-41f287",
+                "R13-B65-SPACER_BAR-e36fe7",
+                "R13-B65-SPACER_BAR-7b9606",
+                "R13-B65-SPACER_BAR-8fe919"
+              ]
+            },
+            {
+              "phase": "P2.6.9",
+              "beam_id": "B65",
+              "group_id": "G07",
+              "family": "STIRRUP",
+              "physical_layer": "STIRRUP",
+              "reinforcement_role": "STIRRUP",
+              "count": 3,
+              "diameter": 10,
+              "specification": "3L-Y10",
+              "spacing": "100",
+              "zone": "FULL_SPAN",
+              "spatial_extent": "FULL_SPAN",
+              "start_position": "UNKNOWN",
+              "end_position": "UNKNOWN",
+              "annotation_ids": [],
+              "leader_ids": [],
+              "source_layer": "UNKNOWN",
+              "deterministic_identity": "R13-B65-STIRRUP-cf0c13",
+              "provenance": "R13_PRODUCTION_MODEL",
+              "evidence_quality": "DETERMINISTIC",
+              "confidence": 0.8532,
+              "source_bar_id": "R13-B65-STIRRUP-cf0c13",
+              "piece_type": "STIRRUP_ZONE_A",
+              "cut_length_mm": 3000.0
+            }
+          ],
+          "manual_notes": [
+            "Two BOTTOM EXTRA groups share diameter 16 but different counts (4-Y16 vs 2-Y16) and must remain distinct."
+          ],
+          "vs_p269": {
+            "expected_count": 6,
+            "predicted_count": 3,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "4Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y20"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "3LY10"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "2Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 6,
+            "spurious_count": 3,
+            "merged_distinct_groups": 1,
+            "identity_rule": "layer+role+specification"
+          },
+          "vs_deterministic": {
+            "expected_count": 7,
+            "predicted_count": 3,
+            "matched": [],
+            "missing": [
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "EXTRA",
+                "spec": "4Y16"
+              },
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "4Y20"
+              },
+              {
+                "layer": "SPACER",
+                "role": "SPACER",
+                "spec": "3Y25"
+              },
+              {
+                "layer": "STIRRUP",
+                "role": "STIRRUP",
+                "spec": "3LY10"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "2Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "3Y20"
+              }
+            ],
+            "spurious": [
+              {
+                "layer": "BOTTOM",
+                "role": "MAIN",
+                "spec": "5Y20"
+              },
+              {
+                "layer": "TOP",
+                "role": "EXTRA",
+                "spec": "5Y16"
+              },
+              {
+                "layer": "TOP",
+                "role": "MAIN",
+                "spec": "2Y16"
+              }
+            ],
+            "correctly_matched_count": 0,
+            "missing_count": 7,
+            "spurious_count": 3,
+            "merged_distinct_groups": 1,
+            "identity_rule": "layer+role+specification"
+          },
+          "target_identified": true,
+          "neighbor_evidence_detected": true
+        }
+      }
+    ]
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "steel_quantity_delta": 0,
+    "BBS_delta": 0,
+    "workbook_delta": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "shadow_only": true
+  },
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": [],
+    "before": {
+      "p24_regression": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP24_fourth_set_bar_failure_audit\\RegressionReport.json",
+        "sha256": "cd39d43d71a19f03eb2d172ae00b7bd32871c55c3f2b2ed1efc1bf43bc941a18",
+        "size": 5188
+      },
+      "p251_report": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\P2.5.1_QuantityIntent_Report.md",
+        "sha256": "69117be9673a064a5868ecb248e84d1ec13e1d6dfeb7234dafe4236e4ff379a1",
+        "size": 5516
+      },
+      "p252_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\manifests\\VisionCandidateManifest.json",
+        "sha256": "0ad374aae585196cfea8ae6270876f552a8a0395a8edd67ebcfff1679a8adbb6",
+        "size": 127646
+      },
+      "p252_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\metrics\\metrics.json",
+        "sha256": "a5757247e450a449e8caf3dd01ce7479ad4f8d68005483a970b786d4b1efa808",
+        "size": 1134
+      },
+      "p2521_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\P2.5.2.1_STATUS.md",
+        "sha256": "5e5c22da1f552336d28fbd8cd43e7a57151df996ae42fe7a42a01785def36cc4",
+        "size": 1972
+      },
+      "p2522_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\P2.5.2.2_STATUS.md",
+        "sha256": "dae40a4957cc41f83f42a1d1c18229c2cf6828d4efcf4dcad13b1884f64c5606",
+        "size": 13223
+      },
+      "p2523_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\P2.5.2.3_STATUS.md",
+        "sha256": "98e0ac2041d589e953fe62aa0b6e20b79a8ebab79bfbcbbeb21cefb5acb5822b",
+        "size": 11722
+      },
+      "p2523_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\manifests\\TargetBeamCompletenessManifest.json",
+        "sha256": "c083c77d3fed4ea064379f40358889a1c234c1e5de197e83e2676e0fe20728de",
+        "size": 121008
+      },
+      "p253_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\P2.5.3_STATUS.md",
+        "sha256": "17643cba0366e58175f2a1cb805efebab9630e8155546f42990048bb3be6db08",
+        "size": 6576
+      },
+      "p253_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\pilot_summary.json",
+        "sha256": "ed3b2a9882fbdcc28de2d2c9fe80a9dea4f991359093ca4b66c956c0cbe8eb26",
+        "size": 4871
+      },
+      "p254_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\P2.5.4_STATUS.md",
+        "sha256": "412ab5468bd7ba1871e1ae0f16ac6ebe50d69f46d161f46f7bb5fa48d0e19eb8",
+        "size": 18177
+      },
+      "p254_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark_summary.json",
+        "sha256": "b492c085b9337181e51471b1c8402a06a9f1d751ea270274854d15f8cda2fdfa",
+        "size": 9295
+      },
+      "p254_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\benchmark_manifest.json",
+        "sha256": "3a1a4827476ed398e8aaadc148e01fdf8d31ffcb4005ebcfd42118906fa4a2f8",
+        "size": 53363
+      },
+      "p254_gt": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\ground_truth_reference.json",
+        "sha256": "838ba9164ff0f41523b6f8107623da38a009901058514a0100775c52ec76c517",
+        "size": 22858
+      },
+      "p251_matrix": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\quantity_intent_matrix.json",
+        "sha256": "6d0cee65d623d76d667efa15ac3abde5ccb1d3717735989084b1a1bcd0d4cb3f",
+        "size": 477197
+      },
+      "p255_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\P2.5.5_STATUS.md",
+        "sha256": "403dab28e9cbbb039f1ad72d732ed36ec12d9748d069d4d39b82498250109c30",
+        "size": 4178
+      },
+      "p255_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\evaluation\\metrics.json",
+        "sha256": "1acee97564a65692e3d82e4af953ce562877cbfa01a99a032f8fbada3a723faa",
+        "size": 1826
+      },
+      "p255_baseline_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\baseline\\benchmark_manifest_fingerprint.json",
+        "sha256": "f416d8afa442927a9dcf049d8dbb46cf5dd505c499bb2ac9f6b44beb63e8eebf",
+        "size": 1427
+      },
+      "p256_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\P2.5.6_STATUS.md",
+        "sha256": "65dedcb1afd90cd5ca96df23a28ca6a6c9c15838bf00feaa558f244797a9a157",
+        "size": 6384
+      },
+      "p256_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\evaluation\\metrics.json",
+        "sha256": "8419a04107ffb245644c40ef1dccf5c9b8777c1f6b826ee0ffeeeac358ffeac6",
+        "size": 4861
+      },
+      "fifth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+        "sha256": "1ade8e99b71e5abcafae796a919b480565c4f2a5a650f05d4a46a97234167c8f",
+        "size": 443045
+      },
+      "fifth_beam_ownership": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseT18_beam_ownership\\BeamOwnership.json",
+        "sha256": "c576789b10e58e5dd87a9e3640d2b7525c8c8b5f83025581736d71f0b5d6ac50",
+        "size": 1579337
+      },
+      "fifth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "1b0a5f0e30531049b16202e34ede4dfccaf6e21e58a40ed6ff72641ffad3dcb2",
+        "size": 160373
+      },
+      "fifth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "0eaa6146e9850b62d47e776a172e183b84efc4c9eae268a1bf8f1f6ef55113ee",
+        "size": 1070556
+      },
+      "fifth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "17b4f950b19e04de82e5a8920572904fc15848bc957e8734965b15c10ab1738b",
+        "size": 527729
+      },
+      "fifth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "cb7433bbfba8a75de9c463755b52f6fd7f2ce6cf56374a316187b85d020f23a4",
+        "size": 91391
+      },
+      "fourth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\Estimator_Output_4thSet\\EstimatorOutput_Basement_Beam BBS_INIZIO.xlsx",
+        "missing": true
+      },
+      "fourth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "e5dc274d7d1a7343f6bb588e7dde9c576ae4687b4a7bd468f56b465267cd136c",
+        "size": 108441
+      },
+      "p257_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\P2.5.7_STATUS.md",
+        "sha256": "9fe61ff19568727b16d12d46770d98977e8d5ff5c2c85475b376388f916f46c1",
+        "size": 4973
+      },
+      "p257_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\evaluation\\incremental_value_metrics.json",
+        "sha256": "63b234d32458042718c968aa3bd638b0e3d875cebe3bf461b4d4b151aa6d8cab",
+        "size": 5959
+      },
+      "p257_vision": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\vision_results.json",
+        "sha256": "3113b77899c0b4c0474f058968c1ec96d845d27af7a6664de145615d2d0a3948",
+        "size": 4277713
+      },
+      "fourth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "2669e67cd67a19231eaf9e2a206d865e1e7a224eee838d5800ae1aad3038b589",
+        "size": 66248
+      },
+      "p258_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\P2.5.8_STATUS.md",
+        "sha256": "820bd4ac1a797ce9b02e7fe2523baa1cb10bfb88220988db8e9c9ea6b067fe41",
+        "size": 3325
+      },
+      "p258_promoted": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\promoted_repairs.json",
+        "sha256": "8acc7fd41a8063a469da795f759d3ac5711261fe1dc0ce960bcf746cc690b2ac",
+        "size": 134265
+      },
+      "p259_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\P2.5.9_STATUS.md",
+        "sha256": "300fe301e7b72581093e6006e30a89859c3e4d8a44392d6df9e304c5c9d53cf6",
+        "size": 3378
+      },
+      "p259_unknown": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\strategies\\P259_UNKNOWN_ONLY\\promoted_repairs.json",
+        "sha256": "0b02e291daed897ffa75b0db14ec03cb5d62e4d5c68f4ad33ae4637fcd9ce397",
+        "size": 141147
+      },
+      "p2510_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2510_new_stirrup_safety\\P2.5.10_STATUS.md",
+        "sha256": "e3a6f22d992d0ccdf39fb3cdd04002766eccc786c08943260d441efd197df7b1",
+        "size": 13748
+      },
+      "p2511_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2511_evidence_enrichment\\P2.5.11_STATUS.md",
+        "sha256": "73537649bb850910ee76e59e5e8fa6df6ac802bf063f62ff862d6b504a5a3ac3",
+        "size": 7342
+      },
+      "fourth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "e5ce124accef6ca12147307881a4d62d31bbe85133b5974f868421003a48688e",
+        "size": 714539
+      },
+      "fourth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "a2508b55ef5739b450a8c001ab5b226861b8bee758dc629304f9ba512d5305c9",
+        "size": 341864
+      },
+      "sixth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "f28349a9c58163449320e04d66ec9a96551f8801a64c41f59f7f8695286c3c62",
+        "size": 997489
+      },
+      "sixth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "1a672427c773a57bb73f5c0099974667163c6724a21a2c0a7427610ff0b400c6",
+        "size": 86301
+      },
+      "sixth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "2dd95d62bc62ecd122e6eaf6fbec7e4b602f0363f2caee38f58e42d69613d52c",
+        "size": 486020
+      },
+      "sixth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Sixth Set Drawings\\Estimator_Output_6thSet\\Estimator_Output_11-18TH FLOOR.xlsx",
+        "missing": true
+      },
+      "p26_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\P2.6_PILOT_STATUS.md",
+        "sha256": "b73bbb0820eb8e321243c9a1ad62a6ae810b346b284a9eeb1da74fce7e76e2ca",
+        "size": 3685
+      },
+      "p261_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\P2.6.1_STATUS.md",
+        "sha256": "41b2da7e868ff36205cd6d1e8ea56b0d78a4a36d151f47bf1986697122083799",
+        "size": 9619
+      },
+      "p262_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\P2.6.2_STATUS.md",
+        "sha256": "f6747db418b6f3a0bf10d0ca2bfe6c494df20cdf1aa80d93cca0332b954013d8",
+        "size": 9525
+      },
+      "p262_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\reports\\metrics.json",
+        "sha256": "a724bc80f8ee3c3882bdd843d0503c5de39b7b18ee1ac47494e2dc8673360fdd",
+        "size": 5869
+      },
+      "p262_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\gate_manifest.json",
+        "sha256": "69cee3fd578d1dbe8750248f078715025f94cbb5000ee01c224a49df300956eb",
+        "size": 1109
+      },
+      "p263_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\P2.6.3_STATUS.md",
+        "sha256": "e2fde2f9e844caa2a369bde6942580a0e7422f11e2669356bad3acac3d6f9076",
+        "size": 9633
+      },
+      "p263_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\metrics.json",
+        "sha256": "c65ae12a59ca433c02c4d1268517f98df7aa017439c8040f7e13e61b74347be5",
+        "size": 7834
+      },
+      "p263_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\gate_manifest.json",
+        "sha256": "10c751578935a9becb2525a49b832db3ff04470fdc3338411659c6aeeaaebf1c",
+        "size": 1260
+      },
+      "p264_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\P2.6.4_STATUS.md",
+        "sha256": "b99bfb3a492735614e1955ad5c26861fb54b703d711647681f674e5e1ebd83c3",
+        "size": 14997
+      },
+      "p264_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\reports\\metrics.json",
+        "sha256": "34d4306d8c0683f2dbcdba546f818d7951cfdf4125f997ae833c8e1c2411cc64",
+        "size": 8805
+      },
+      "p264_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\gate_manifest.json",
+        "sha256": "45ffd54fc193c9e5d8d2d013d01fa22da762d2c9e6dffbea0f4f3678dd4740e1",
+        "size": 1261
+      },
+      "p265_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\P2.6.5_STATUS.md",
+        "sha256": "8d45d533779c20f45c8a3fbc0bb0e89e0d7d2a0051061935d13e271b675a523d",
+        "size": 16080
+      },
+      "p265_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\metrics.json",
+        "sha256": "6c0cd7892b08b4880aadf7f4e4916b7c29d25e137f38a52fb20cbe1d078f8654",
+        "size": 10006
+      },
+      "p265_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_manifest.json",
+        "sha256": "8c98f9bd46a004406f2a857232414299da597c0ed4cdf4cc2da673b6c70ee78d",
+        "size": 1582
+      },
+      "p265_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_decisions.json",
+        "sha256": "a762fe1e94352ffb92008b7e9aec1540a67d34a9dc47fc3a9e54ae3b1b0fa7a3",
+        "size": 790454
+      },
+      "p266_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_STATUS.md",
+        "sha256": "5720aa331e6cddf22730ecef574f1460ca9c9ae5ac0042ffdaa8cf72588b4b14",
+        "size": 13182
+      },
+      "p266_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_METRICS.json",
+        "sha256": "78d0b44a578dfce9ebf8f27cb6ae0f3aeb99c7c7c88b93b17cf8a94beae78492",
+        "size": 10985
+      },
+      "p266_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_SEMANTIC_DECISIONS.json",
+        "sha256": "00e4a4da29d1a06ae9d72e99e8780f44ce5182f4af9f2a9f03f8a798db34f1ed",
+        "size": 53488
+      },
+      "p266_targets": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\target_records.json",
+        "sha256": "8e22c528698c8f64e3b70f993fc248907e3fc2743f71de6cf960e8692d2d1b3d",
+        "size": 706475
+      },
+      "p267_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_STATUS.md",
+        "sha256": "032d65de1f021c433d0e136291dad7bbcda969df5c6855d80a943198e1644c17",
+        "size": 4646
+      },
+      "p267_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_RESULTS.json",
+        "sha256": "ae510a78bb1ea6f36d7feeeec88f3c3d788c449b7709cb54814a820d6980810f",
+        "size": 1063
+      },
+      "p267_live": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_LIVE_DECISIONS.json",
+        "sha256": "2cec2833089c3f9f3e8507cffcd1e9c107be564592d34233c102448b8459cdb1",
+        "size": 110890
+      },
+      "p268_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_STATUS.md",
+        "sha256": "8a6271246fe000af079e2f5c54ea244de7f4e2c9b4a072ee9d85fa7d44d677f0",
+        "size": 3884
+      },
+      "p268_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_RESULTS.json",
+        "sha256": "a4fd8de8959c6c38dcee409d3623fe65dd30de5b3a134fa002843d177651f3c9",
+        "size": 4609
+      },
+      "p269_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\P2.6.9_STATUS.md",
+        "sha256": "7efb2cf5ca234dba2fc11c87046ce844c102ea34e1be5680e4347ca265057c20",
+        "size": 9912
+      },
+      "p269_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\result.json",
+        "sha256": "c3728f7109cd1cd3936b29d72e84fea0c32d474ee35193e8c7bcc78694662153",
+        "size": 5840
+      },
+      "p2610a_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_STATUS.md",
+        "sha256": "4319380b6d2a28b4be6c34236a695d1035e23ab0d9ec67e30dbea88d315914d6",
+        "size": 7382
+      },
+      "p2610a_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_RESULTS.json",
+        "sha256": "449547e4b5247a7c2717651ea4e1174480189d37af6f0873b5c35cdf2db10e5b",
+        "size": 12068
+      },
+      "p2610a_b55": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_B55_DIAGNOSTICS.json",
+        "sha256": "0aea04ff8206d6edda73f910f5399a7abb07cdae247924a3ea7e5e4c6e3e3f87",
+        "size": 518
+      },
+      "p2610b_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_STATUS.md",
+        "sha256": "01b44134aa750325bc16a08ac5821afd3bdce15e9aeacb88fd12f387e2a553b7",
+        "size": 9234
+      },
+      "p2610b_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_RESULTS.json",
+        "sha256": "0a4d74f9872d03a00dd2557452be9fc40014aca3144264971cd170ea01bbbcfa",
+        "size": 5248
+      },
+      "p2610b_unit": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\unit_tests.json",
+        "sha256": "ef70cd1fa03c187fbaae99d2c7c25879de2045a8f09bd0de8ecbca04bdd60d44",
+        "size": 1612
+      },
+      "p2610b1_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\P2.6.10-B.1_RESULTS.json",
+        "sha256": "4cbfd16bf533e5461ae4de7fcbaeae9e014d8908c1fa25ae2f56338dc3a2d05b",
+        "size": 22234
+      },
+      "p2610b1_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\validation_summary.json",
+        "sha256": "81aec3bc9545d3df40e0165a25a08dd626a0c7594968e8925bf329cd75712e06",
+        "size": 967
+      },
+      "p2610b2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\P2.6.10-B.2_RESULTS.json",
+        "sha256": "8fd642818e20b26ccac501ed5a159d9232d7a96d447514e35742a5e8bb5926b0",
+        "size": 324587
+      },
+      "p2610b2_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\validation_summary.json",
+        "sha256": "86589d8df6b5fa70a00856c49f57bca45443f30a9ab4fbb4806a668188e1b8bf",
+        "size": 1999
+      },
+      "p2610b3_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\P2.6.10-B.3_RESULTS.json",
+        "sha256": "0636ef900d8fa20cf144f0ff414459280697483fb7813c031f5952470693f840",
+        "size": 351425
+      },
+      "p2610b3_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\validation_summary.json",
+        "sha256": "2e66be89911b953db035968e7fbf0ce4fe37f62938928b805ec73c5ff4e594cc",
+        "size": 533
+      },
+      "p2610c1c2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610C1C2_evidence_inventory_candidate_selection\\P2.6.10-C.1C2_RESULTS.json",
+        "sha256": "e6adde952b32c74f62d9368d5a47ec147d47fe6ffbc1572d5760bb976e8da518",
+        "size": 126891
+      },
+      "p2610c1c2_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610C1C2_evidence_inventory_candidate_selection\\selection_manifest.json",
+        "sha256": "f2984a3f7489651bf44dbd005694b8d6a0296e4abf9e6a0479e3b3ab3c7d9ee4",
+        "size": 1226682
+      }
+    },
+    "after": {
+      "p24_regression": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP24_fourth_set_bar_failure_audit\\RegressionReport.json",
+        "sha256": "cd39d43d71a19f03eb2d172ae00b7bd32871c55c3f2b2ed1efc1bf43bc941a18",
+        "size": 5188
+      },
+      "p251_report": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\P2.5.1_QuantityIntent_Report.md",
+        "sha256": "69117be9673a064a5868ecb248e84d1ec13e1d6dfeb7234dafe4236e4ff379a1",
+        "size": 5516
+      },
+      "p252_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\manifests\\VisionCandidateManifest.json",
+        "sha256": "0ad374aae585196cfea8ae6270876f552a8a0395a8edd67ebcfff1679a8adbb6",
+        "size": 127646
+      },
+      "p252_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP252_vision_candidate_set\\metrics\\metrics.json",
+        "sha256": "a5757247e450a449e8caf3dd01ce7479ad4f8d68005483a970b786d4b1efa808",
+        "size": 1134
+      },
+      "p2521_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2521_crop_readability_refinement\\P2.5.2.1_STATUS.md",
+        "sha256": "5e5c22da1f552336d28fbd8cd43e7a57151df996ae42fe7a42a01785def36cc4",
+        "size": 1972
+      },
+      "p2522_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2522_render_safe_annotation_bounds\\P2.5.2.2_STATUS.md",
+        "sha256": "dae40a4957cc41f83f42a1d1c18229c2cf6828d4efcf4dcad13b1884f64c5606",
+        "size": 13223
+      },
+      "p2523_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\P2.5.2.3_STATUS.md",
+        "sha256": "98e0ac2041d589e953fe62aa0b6e20b79a8ebab79bfbcbbeb21cefb5acb5822b",
+        "size": 11722
+      },
+      "p2523_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2523_target_beam_visual_completeness\\manifests\\TargetBeamCompletenessManifest.json",
+        "sha256": "c083c77d3fed4ea064379f40358889a1c234c1e5de197e83e2676e0fe20728de",
+        "size": 121008
+      },
+      "p253_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\P2.5.3_STATUS.md",
+        "sha256": "17643cba0366e58175f2a1cb805efebab9630e8155546f42990048bb3be6db08",
+        "size": 6576
+      },
+      "p253_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP253_claude_vision_interpretation_pilot\\pilot_summary.json",
+        "sha256": "ed3b2a9882fbdcc28de2d2c9fe80a9dea4f991359093ca4b66c956c0cbe8eb26",
+        "size": 4871
+      },
+      "p254_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\P2.5.4_STATUS.md",
+        "sha256": "412ab5468bd7ba1871e1ae0f16ac6ebe50d69f46d161f46f7bb5fa48d0e19eb8",
+        "size": 18177
+      },
+      "p254_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark_summary.json",
+        "sha256": "b492c085b9337181e51471b1c8402a06a9f1d751ea270274854d15f8cda2fdfa",
+        "size": 9295
+      },
+      "p254_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\benchmark_manifest.json",
+        "sha256": "3a1a4827476ed398e8aaadc148e01fdf8d31ffcb4005ebcfd42118906fa4a2f8",
+        "size": 53363
+      },
+      "p254_gt": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP254_semantic_reinforcement_vision_benchmark\\benchmark\\ground_truth_reference.json",
+        "sha256": "838ba9164ff0f41523b6f8107623da38a009901058514a0100775c52ec76c517",
+        "size": 22858
+      },
+      "p251_matrix": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP251_quantity_intent_schema\\quantity_intent_matrix.json",
+        "sha256": "6d0cee65d623d76d667efa15ac3abde5ccb1d3717735989084b1a1bcd0d4cb3f",
+        "size": 477197
+      },
+      "p255_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\P2.5.5_STATUS.md",
+        "sha256": "403dab28e9cbbb039f1ad72d732ed36ec12d9748d069d4d39b82498250109c30",
+        "size": 4178
+      },
+      "p255_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\evaluation\\metrics.json",
+        "sha256": "1acee97564a65692e3d82e4af953ce562877cbfa01a99a032f8fbada3a723faa",
+        "size": 1826
+      },
+      "p255_baseline_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP255_controlled_shadow_integration\\baseline\\benchmark_manifest_fingerprint.json",
+        "sha256": "f416d8afa442927a9dcf049d8dbb46cf5dd505c499bb2ac9f6b44beb63e8eebf",
+        "size": 1427
+      },
+      "p256_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\P2.5.6_STATUS.md",
+        "sha256": "65dedcb1afd90cd5ca96df23a28ca6a6c9c15838bf00feaa558f244797a9a157",
+        "size": 6384
+      },
+      "p256_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP256_controlled_field_level_vision_experiment\\evaluation\\metrics.json",
+        "sha256": "8419a04107ffb245644c40ef1dccf5c9b8777c1f6b826ee0ffeeeac358ffeac6",
+        "size": 4861
+      },
+      "fifth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fifth Set Drawings\\Estimator_Output_5thSet\\EstimatorOutput_9TH FLOOR.xlsx",
+        "sha256": "1ade8e99b71e5abcafae796a919b480565c4f2a5a650f05d4a46a97234167c8f",
+        "size": 443045
+      },
+      "fifth_beam_ownership": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseT18_beam_ownership\\BeamOwnership.json",
+        "sha256": "c576789b10e58e5dd87a9e3640d2b7525c8c8b5f83025581736d71f0b5d6ac50",
+        "size": 1579337
+      },
+      "fifth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "1b0a5f0e30531049b16202e34ede4dfccaf6e21e58a40ed6ff72641ffad3dcb2",
+        "size": 160373
+      },
+      "fifth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "0eaa6146e9850b62d47e776a172e183b84efc4c9eae268a1bf8f1f6ef55113ee",
+        "size": 1070556
+      },
+      "fifth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "17b4f950b19e04de82e5a8920572904fc15848bc957e8734965b15c10ab1738b",
+        "size": 527729
+      },
+      "fifth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fifth_Set_Drawings_20260806_142822\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "cb7433bbfba8a75de9c463755b52f6fd7f2ce6cf56374a316187b85d020f23a4",
+        "size": 91391
+      },
+      "fourth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Fourth Set Drawings\\Estimator_Output_4thSet\\EstimatorOutput_Basement_Beam BBS_INIZIO.xlsx",
+        "missing": true
+      },
+      "fourth_physical_bars": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR3.1_engineering_relationship_engine\\PhysicalBars.json",
+        "sha256": "e5dc274d7d1a7343f6bb588e7dde9c576ae4687b4a7bd468f56b465267cd136c",
+        "size": 108441
+      },
+      "p257_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\P2.5.7_STATUS.md",
+        "sha256": "9fe61ff19568727b16d12d46770d98977e8d5ff5c2c85475b376388f916f46c1",
+        "size": 4973
+      },
+      "p257_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\evaluation\\incremental_value_metrics.json",
+        "sha256": "63b234d32458042718c968aa3bd638b0e3d875cebe3bf461b4d4b151aa6d8cab",
+        "size": 5959
+      },
+      "p257_vision": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP257_unseen_drawing_controlled_vision_validation\\vision_results.json",
+        "sha256": "3113b77899c0b4c0474f058968c1ec96d845d27af7a6664de145615d2d0a3948",
+        "size": 4277713
+      },
+      "fourth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "2669e67cd67a19231eaf9e2a206d865e1e7a224eee838d5800ae1aad3038b589",
+        "size": 66248
+      },
+      "p258_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\P2.5.8_STATUS.md",
+        "sha256": "820bd4ac1a797ce9b02e7fe2523baa1cb10bfb88220988db8e9c9ea6b067fe41",
+        "size": 3325
+      },
+      "p258_promoted": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP258_controlled_vision_field_repair\\promoted_repairs.json",
+        "sha256": "8acc7fd41a8063a469da795f759d3ac5711261fe1dc0ce960bcf746cc690b2ac",
+        "size": 134265
+      },
+      "p259_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\P2.5.9_STATUS.md",
+        "sha256": "300fe301e7b72581093e6006e30a89859c3e4d8a44392d6df9e304c5c9d53cf6",
+        "size": 3378
+      },
+      "p259_unknown": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP259_beam_safe_arbitration\\strategies\\P259_UNKNOWN_ONLY\\promoted_repairs.json",
+        "sha256": "0b02e291daed897ffa75b0db14ec03cb5d62e4d5c68f4ad33ae4637fcd9ce397",
+        "size": 141147
+      },
+      "p2510_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2510_new_stirrup_safety\\P2.5.10_STATUS.md",
+        "sha256": "e3a6f22d992d0ccdf39fb3cdd04002766eccc786c08943260d441efd197df7b1",
+        "size": 13748
+      },
+      "p2511_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2511_evidence_enrichment\\P2.5.11_STATUS.md",
+        "sha256": "73537649bb850910ee76e59e5e8fa6df6ac802bf063f62ff862d6b504a5a3ac3",
+        "size": 7342
+      },
+      "fourth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "e5ce124accef6ca12147307881a4d62d31bbe85133b5974f868421003a48688e",
+        "size": 714539
+      },
+      "fourth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Fourth_Set_Drawings_20260806_121946\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "a2508b55ef5739b450a8c001ab5b226861b8bee758dc629304f9ba512d5305c9",
+        "size": 341864
+      },
+      "sixth_r13_models": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\PhaseR1.3_pipeline_integration\\beam_reinforcement_models_production.json",
+        "sha256": "f28349a9c58163449320e04d66ec9a96551f8801a64c41f59f7f8695286c3c62",
+        "size": 997489
+      },
+      "sixth_model_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\Estimation_Output.xlsx",
+        "sha256": "1a672427c773a57bb73f5c0099974667163c6724a21a2c0a7427610ff0b400c6",
+        "size": 86301
+      },
+      "sixth_bbs_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\web_runs\\qa2_Sixth_Set_Drawings_20260806_171449\\data\\output\\Production_Output\\bbs_summary.json",
+        "sha256": "2dd95d62bc62ecd122e6eaf6fbec7e4b602f0363f2caee38f58e42d69613d52c",
+        "size": 486020
+      },
+      "sixth_estimator_excel": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Test_Input\\Sixth Set Drawings\\Estimator_Output_6thSet\\Estimator_Output_11-18TH FLOOR.xlsx",
+        "missing": true
+      },
+      "p26_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP26_vision_candidate_recovery_pilot\\P2.6_PILOT_STATUS.md",
+        "sha256": "b73bbb0820eb8e321243c9a1ad62a6ae810b346b284a9eeb1da74fce7e76e2ca",
+        "size": 3685
+      },
+      "p261_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP261_stratified_vision_candidate_recovery\\P2.6.1_STATUS.md",
+        "sha256": "41b2da7e868ff36205cd6d1e8ea56b0d78a4a36d151f47bf1986697122083799",
+        "size": 9619
+      },
+      "p262_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\P2.6.2_STATUS.md",
+        "sha256": "f6747db418b6f3a0bf10d0ca2bfe6c494df20cdf1aa80d93cca0332b954013d8",
+        "size": 9525
+      },
+      "p262_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\reports\\metrics.json",
+        "sha256": "a724bc80f8ee3c3882bdd843d0503c5de39b7b18ee1ac47494e2dc8673360fdd",
+        "size": 5869
+      },
+      "p262_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP262_selective_vision_candidate_gate\\gate_manifest.json",
+        "sha256": "69cee3fd578d1dbe8750248f078715025f94cbb5000ee01c224a49df300956eb",
+        "size": 1109
+      },
+      "p263_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\P2.6.3_STATUS.md",
+        "sha256": "e2fde2f9e844caa2a369bde6942580a0e7422f11e2669356bad3acac3d6f9076",
+        "size": 9633
+      },
+      "p263_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\reports\\metrics.json",
+        "sha256": "c65ae12a59ca433c02c4d1268517f98df7aa017439c8040f7e13e61b74347be5",
+        "size": 7834
+      },
+      "p263_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP263_longitudinal_aware_gate\\gate_manifest.json",
+        "sha256": "10c751578935a9becb2525a49b832db3ff04470fdc3338411659c6aeeaaebf1c",
+        "size": 1260
+      },
+      "p264_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\P2.6.4_STATUS.md",
+        "sha256": "b99bfb3a492735614e1955ad5c26861fb54b703d711647681f674e5e1ebd83c3",
+        "size": 14997
+      },
+      "p264_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\reports\\metrics.json",
+        "sha256": "34d4306d8c0683f2dbcdba546f818d7951cfdf4125f997ae833c8e1c2411cc64",
+        "size": 8805
+      },
+      "p264_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP264_selective_role_gap_gate\\gate_manifest.json",
+        "sha256": "45ffd54fc193c9e5d8d2d013d01fa22da762d2c9e6dffbea0f4f3678dd4740e1",
+        "size": 1261
+      },
+      "p265_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\P2.6.5_STATUS.md",
+        "sha256": "8d45d533779c20f45c8a3fbc0bb0e89e0d7d2a0051061935d13e271b675a523d",
+        "size": 16080
+      },
+      "p265_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\reports\\metrics.json",
+        "sha256": "6c0cd7892b08b4880aadf7f4e4916b7c29d25e137f38a52fb20cbe1d078f8654",
+        "size": 10006
+      },
+      "p265_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_manifest.json",
+        "sha256": "8c98f9bd46a004406f2a857232414299da597c0ed4cdf4cc2da673b6c70ee78d",
+        "size": 1582
+      },
+      "p265_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP265_spatial_context_longitudinal\\gate_decisions.json",
+        "sha256": "a762fe1e94352ffb92008b7e9aec1540a67d34a9dc47fc3a9e54ae3b1b0fa7a3",
+        "size": 790454
+      },
+      "p266_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_STATUS.md",
+        "sha256": "5720aa331e6cddf22730ecef574f1460ca9c9ae5ac0042ffdaa8cf72588b4b14",
+        "size": 13182
+      },
+      "p266_metrics": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_METRICS.json",
+        "sha256": "78d0b44a578dfce9ebf8f27cb6ae0f3aeb99c7c7c88b93b17cf8a94beae78492",
+        "size": 10985
+      },
+      "p266_decisions": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\P2.6.6_SEMANTIC_DECISIONS.json",
+        "sha256": "00e4a4da29d1a06ae9d72e99e8780f44ce5182f4af9f2a9f03f8a798db34f1ed",
+        "size": 53488
+      },
+      "p266_targets": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP266_semantic_longitudinal_resolver\\target_records.json",
+        "sha256": "8e22c528698c8f64e3b70f993fc248907e3fc2743f71de6cf960e8692d2d1b3d",
+        "size": 706475
+      },
+      "p267_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_STATUS.md",
+        "sha256": "032d65de1f021c433d0e136291dad7bbcda969df5c6855d80a943198e1644c17",
+        "size": 4646
+      },
+      "p267_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_RESULTS.json",
+        "sha256": "ae510a78bb1ea6f36d7feeeec88f3c3d788c449b7709cb54814a820d6980810f",
+        "size": 1063
+      },
+      "p267_live": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP267_live_semantic_arbitration\\P2.6.7_LIVE_DECISIONS.json",
+        "sha256": "2cec2833089c3f9f3e8507cffcd1e9c107be564592d34233c102448b8459cdb1",
+        "size": 110890
+      },
+      "p268_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_STATUS.md",
+        "sha256": "8a6271246fe000af079e2f5c54ea244de7f4e2c9b4a072ee9d85fa7d44d677f0",
+        "size": 3884
+      },
+      "p268_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP268_evidence_conflict_arbitration\\P2.6.8_RESULTS.json",
+        "sha256": "a4fd8de8959c6c38dcee409d3623fe65dd30de5b3a134fa002843d177651f3c9",
+        "size": 4609
+      },
+      "p269_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\P2.6.9_STATUS.md",
+        "sha256": "7efb2cf5ca234dba2fc11c87046ce844c102ea34e1be5680e4347ca265057c20",
+        "size": 9912
+      },
+      "p269_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP269_reinforcement_group_interpretation\\result.json",
+        "sha256": "c3728f7109cd1cd3936b29d72e84fea0c32d474ee35193e8c7bcc78694662153",
+        "size": 5840
+      },
+      "p2610a_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_STATUS.md",
+        "sha256": "4319380b6d2a28b4be6c34236a695d1035e23ab0d9ec67e30dbea88d315914d6",
+        "size": 7382
+      },
+      "p2610a_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_RESULTS.json",
+        "sha256": "449547e4b5247a7c2717651ea4e1174480189d37af6f0873b5c35cdf2db10e5b",
+        "size": 12068
+      },
+      "p2610a_b55": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610A_beam_region_crop_audit\\P2.6.10-A_B55_DIAGNOSTICS.json",
+        "sha256": "0aea04ff8206d6edda73f910f5399a7abb07cdae247924a3ea7e5e4c6e3e3f87",
+        "size": 518
+      },
+      "p2610b_status": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_STATUS.md",
+        "sha256": "01b44134aa750325bc16a08ac5821afd3bdce15e9aeacb88fd12f387e2a553b7",
+        "size": 9234
+      },
+      "p2610b_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\P2.6.10-B_RESULTS.json",
+        "sha256": "0a4d74f9872d03a00dd2557452be9fc40014aca3144264971cd170ea01bbbcfa",
+        "size": 5248
+      },
+      "p2610b_unit": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B_adaptive_beam_detail_crop\\unit_tests.json",
+        "sha256": "ef70cd1fa03c187fbaae99d2c7c25879de2045a8f09bd0de8ecbca04bdd60d44",
+        "size": 1612
+      },
+      "p2610b1_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\P2.6.10-B.1_RESULTS.json",
+        "sha256": "4cbfd16bf533e5461ae4de7fcbaeae9e014d8908c1fa25ae2f56338dc3a2d05b",
+        "size": 22234
+      },
+      "p2610b1_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B1_population_generalization\\validation_summary.json",
+        "sha256": "81aec3bc9545d3df40e0165a25a08dd626a0c7594968e8925bf329cd75712e06",
+        "size": 967
+      },
+      "p2610b2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\P2.6.10-B.2_RESULTS.json",
+        "sha256": "8fd642818e20b26ccac501ed5a159d9232d7a96d447514e35742a5e8bb5926b0",
+        "size": 324587
+      },
+      "p2610b2_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B2_render_quality_directional_recovery\\validation_summary.json",
+        "sha256": "86589d8df6b5fa70a00856c49f57bca45443f30a9ab4fbb4806a668188e1b8bf",
+        "size": 1999
+      },
+      "p2610b3_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\P2.6.10-B.3_RESULTS.json",
+        "sha256": "0636ef900d8fa20cf144f0ff414459280697483fb7813c031f5952470693f840",
+        "size": 351425
+      },
+      "p2610b3_summary": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610B3_target_anchor_geometry_context_recovery\\validation_summary.json",
+        "sha256": "2e66be89911b953db035968e7fbf0ce4fe37f62938928b805ec73c5ff4e594cc",
+        "size": 533
+      },
+      "p2610c1c2_results": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610C1C2_evidence_inventory_candidate_selection\\P2.6.10-C.1C2_RESULTS.json",
+        "sha256": "e6adde952b32c74f62d9368d5a47ec147d47fe6ffbc1572d5760bb976e8da518",
+        "size": 126891
+      },
+      "p2610c1c2_manifest": {
+        "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610C1C2_evidence_inventory_candidate_selection\\selection_manifest.json",
+        "sha256": "f2984a3f7489651bf44dbd005694b8d6a0296e4abf9e6a0479e3b3ab3c7d9ee4",
+        "size": 1226682
+      }
+    }
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 19,
+    "total": 19
+  },
+  "anti_hardcoding": {
+    "ok": true,
+    "source_guard": {
+      "ok": true,
+      "hits": [],
+      "beam_id_special_cases": false
+    },
+    "rename_invariance": {
+      "ok": true,
+      "status": "VISION_READY"
+    },
+    "provenance_invariance": {
+      "ok": true,
+      "status": "VISION_READY"
+    },
+    "beam_id_special_cases": false
+  },
+  "control_answers": {
+    "1_visually_eligible_ready": 2,
+    "1b_ready_with_limitations": 121,
+    "2_blocked_before_claude": 12,
+    "3_six_beam_target_identified": 6,
+    "4_same_spec_distinct_groups_collapsed": [
+      "B65"
+    ],
+    "5_six_beam_taxonomy": [
+      "VISION_DISAGREEMENT",
+      "VISION_DISAGREEMENT",
+      "VISION_DISAGREEMENT",
+      "VISION_DISAGREEMENT",
+      "VISION_DISAGREEMENT",
+      "VISION_DISAGREEMENT"
+    ],
+    "6_neighbor_evidence_flags": [
+      "B141",
+      "B66",
+      "B161",
+      "B128",
+      "B65"
+    ],
+    "7_b55_taxonomy": "VISION_DISAGREEMENT",
+    "8_accuracy_improvement": "diagnostic_only_see_six_beam_report",
+    "9_production_generalization": "SHADOW_DIAGNOSTICS_ONLY"
+  },
+  "handoff": {
+    "consumed_manifest": "PhaseP2610C1C2_evidence_inventory_candidate_selection/selection_manifest.json"
+  }
+}

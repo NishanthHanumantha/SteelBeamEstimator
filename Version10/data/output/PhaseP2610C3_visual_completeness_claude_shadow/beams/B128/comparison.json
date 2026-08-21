@@ -1,0 +1,194 @@
+{
+  "taxonomy": "VISION_DISAGREEMENT",
+  "p269_expected": [
+    {
+      "family": "LONGITUDINAL",
+      "physical_layer": "BOTTOM",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "zone": "FULL_SPAN",
+      "provenance": "P268_PHYSICAL_LAYER_CONTROL",
+      "beam_id": "B128",
+      "evidence_quality": "CONTROL",
+      "confidence": 0.6,
+      "annotation_ids": [],
+      "leader_ids": [],
+      "spacing": "UNKNOWN",
+      "spatial_extent": "UNKNOWN",
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "CONTROL_OVERLAY",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "phase": "P2.6.9",
+      "group_id": "G01"
+    },
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G02",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-8a0b5fda"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "HIGH",
+      "confidence": 0.8,
+      "raw_text": "3-Y16",
+      "position_zone": "TOP_ZONE"
+    },
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G03",
+      "family": "STIRRUP",
+      "physical_layer": "STIRRUP",
+      "reinforcement_role": "STIRRUP",
+      "count": "UNKNOWN",
+      "diameter": 81,
+      "specification": "2L-Y8@\\X100/150/100C/C",
+      "spacing": "100/150/100 C/C",
+      "zone": "UNKNOWN",
+      "spatial_extent": "UNKNOWN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [
+        "ANN-ca8a916f"
+      ],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "DRAWING_ANNOTATION",
+      "provenance": "R1_DXF_ANNOTATION",
+      "evidence_quality": "LOW",
+      "confidence": 0.5,
+      "raw_text": "2L-Y8@\\X100/150/100C/C",
+      "position_zone": "TOP_ZONE"
+    }
+  ],
+  "deterministic": [
+    {
+      "phase": "P2.6.9",
+      "beam_id": "B128",
+      "group_id": "G01",
+      "family": "LONGITUDINAL",
+      "physical_layer": "TOP",
+      "reinforcement_role": "MAIN",
+      "count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "spacing": "UNKNOWN",
+      "zone": "FULL_SPAN",
+      "spatial_extent": "FULL_SPAN",
+      "start_position": "UNKNOWN",
+      "end_position": "UNKNOWN",
+      "annotation_ids": [],
+      "leader_ids": [],
+      "source_layer": "UNKNOWN",
+      "deterministic_identity": "R13-B128-TOP_MAIN-3150a4",
+      "provenance": "R13_PRODUCTION_MODEL",
+      "evidence_quality": "DETERMINISTIC",
+      "confidence": 0.8305,
+      "source_bar_id": "R13-B128-TOP_MAIN-3150a4",
+      "piece_type": "TOP_MAIN",
+      "cut_length_mm": 2876.0
+    }
+  ],
+  "manual_notes": [
+    "Phase drawing sketch matches two 3-Y16 groups (TOP and BOTTOM).",
+    "R.1 associated only one 3-Y16 annotation to TOP_MAIN; the bottom group is a physical-layer control overlay, not a second parsed annotation."
+  ],
+  "vs_p269": {
+    "expected_count": 3,
+    "predicted_count": 4,
+    "matched": [],
+    "missing": [
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "3Y16"
+      },
+      {
+        "layer": "STIRRUP",
+        "role": "STIRRUP",
+        "spec": "2LY8@\\X100/150/100C/C"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "3Y16"
+      }
+    ],
+    "spurious": [
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "3Y20"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y25"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y20"
+      }
+    ],
+    "correctly_matched_count": 0,
+    "missing_count": 3,
+    "spurious_count": 3,
+    "merged_distinct_groups": 0,
+    "identity_rule": "layer+role+specification"
+  },
+  "vs_deterministic": {
+    "expected_count": 1,
+    "predicted_count": 4,
+    "matched": [],
+    "missing": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "3Y16"
+      }
+    ],
+    "spurious": [
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "3Y20"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y25"
+      },
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5Y20"
+      }
+    ],
+    "correctly_matched_count": 0,
+    "missing_count": 1,
+    "spurious_count": 3,
+    "merged_distinct_groups": 0,
+    "identity_rule": "layer+role+specification"
+  },
+  "target_identified": true,
+  "neighbor_evidence_detected": true
+}

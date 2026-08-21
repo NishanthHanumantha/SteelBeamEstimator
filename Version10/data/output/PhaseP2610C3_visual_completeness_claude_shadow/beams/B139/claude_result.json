@@ -1,0 +1,74 @@
+{
+  "beam_id": "B139",
+  "gate_status": "VISION_READY",
+  "called": true,
+  "skip_reason": null,
+  "call_reason": "ELIGIBLE_VISION_READY",
+  "cohort_label": "ELIGIBLE_VISION_READY",
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 7.84448849997716,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3897,
+      "output_tokens": 475
+    },
+    "estimated_input_tokens": 647,
+    "estimated_output_tokens": 365,
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "22ee68b1da4f25dbe90d590dea6946563ccc78622901864b0096a32a5a0ec8a5",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B139",
+    "target_beam_identified": true,
+    "target_association_confidence": 0.95,
+    "visual_assessment": {
+      "title_visible": true,
+      "stirrup_region_visible": true,
+      "bottom_region_visible": true,
+      "top_region_visible": true,
+      "dimension_extra_region_visible": true
+    },
+    "reinforcement_groups": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "5-Y16",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Annotation '5-Y16' positioned at top of beam section with downward arrow indicator, aligned with top reinforcement layer shown in green outline"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5-Y20",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Annotation '5-Y20' positioned at bottom of beam section with upward arrow indicator, aligned with bottom reinforcement layer shown in green outline"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@100C/C",
+        "confidence": 0.9
+      }
+    ],
+    "uncertainties": [
+      "Stirrup spacing pattern shows '@100C/C' which indicates constant 100mm spacing throughout the beam span, no zone variation visible"
+    ],
+    "neighbor_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null
+  },
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "raw_text_present": true
+}

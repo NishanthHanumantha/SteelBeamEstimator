@@ -1,0 +1,83 @@
+{
+  "beam_id": "B55",
+  "gate_status": "VISION_READY_WITH_LIMITATIONS",
+  "called": true,
+  "skip_reason": null,
+  "call_reason": "SIX_BEAM_CONTROL",
+  "cohort_label": "SIX_BEAM_CONTROL",
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 8.956643900019117,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3571,
+      "output_tokens": 516
+    },
+    "estimated_input_tokens": 646,
+    "estimated_output_tokens": 390,
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "71bb8ee497fcb494d6e9f1c08fdc7e778052f6dac43ab62425e80cd0345f9f0b",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B55",
+    "target_beam_identified": true,
+    "target_association_confidence": 0.95,
+    "visual_assessment": {
+      "title_visible": true,
+      "stirrup_region_visible": true,
+      "bottom_region_visible": true,
+      "top_region_visible": true,
+      "dimension_extra_region_visible": true
+    },
+    "reinforcement_groups": [
+      {
+        "layer": "TOP",
+        "role": "MAIN",
+        "spec": "3Y16",
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.92,
+        "evidence": "3-Y16 annotation at left support with dimension 1400, shown in green layer at top of beam section"
+      },
+      {
+        "layer": "TOP",
+        "role": "EXTRA",
+        "spec": "5Y20",
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.9,
+        "evidence": "5-Y20 annotations visible at both left support (mid-span region) and right support, shown in green layer at top"
+      },
+      {
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "spec": "5Y20",
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.88,
+        "evidence": "5-Y20 annotation at bottom center of beam section, shown in green layer spanning full length"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y8@100C/C",
+        "confidence": 0.93
+      }
+    ],
+    "uncertainties": [
+      "The 5-Y20 appears in both top extra and bottom main positions - visual evidence shows distinct groups but same specification",
+      "Dimension 1400 associated with left support top bars may indicate extent rather than full span"
+    ],
+    "neighbor_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C3_REINFORCEMENT_EVIDENCE_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null
+  },
+  "production_action": "NO_CHANGE",
+  "shadow_only": true,
+  "raw_text_present": true
+}

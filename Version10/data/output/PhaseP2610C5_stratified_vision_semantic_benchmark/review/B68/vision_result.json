@@ -1,0 +1,81 @@
+{
+  "called": true,
+  "skip_reason": null,
+  "audit": {
+    "success": true,
+    "model": "claude-sonnet-4-5",
+    "latency_s": 9.754173299996182,
+    "retry_count": 0,
+    "usage": {
+      "input_tokens": 3410,
+      "output_tokens": 675
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": 0,
+    "prompt_fingerprint": "bf6a55820536eefc3be4d09ed5ee88308819a988d6743fa08a732bf3a56fd47c",
+    "n_images": 2
+  },
+  "parsed": {
+    "target_beam_id": "B68",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars shown in both images, extending full span with end hooks at both supports. Labeled as 4-Y20 in multiple locations."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer bars shown in both images, extending full span with end hooks at both supports. Labeled as 4-Y20 in detail callout."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "4-Y16",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Shorter top bars labeled 4-Y16, positioned over right support region, extending approximately 700mm from right end. Dashed line indicates extent."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100/150/100C/C",
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly labeled as 4L-Y8@100/150/100C/C, indicating 4-legged Y8 stirrups with varying spacing: 100mm at ends, 150mm at center, 100mm at opposite end."
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  }
+}
