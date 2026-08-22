@@ -1,0 +1,223 @@
+{
+  "beam_id": "B141",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B141_render.png",
+    "sha256": "f5cb84d66d1913eb9d07d18f0ef9e25a467a382dbc84cb13f4c3d6ed8cd2e4a9",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.975156200001948",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "696"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "c7eda3b8538ba9b0147ab4ebd0ffb0540030ffcadcc6734290f1b60c7b93f36a",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B141",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars labeled 4Y20, shown running full span with green leader lines pointing to bars at top of beam section"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "4-Y16",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Top layer bars labeled 4Y16, shown running full span with green leader line pointing to bars at top of beam section, positioned alongside the 4Y20 bars"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-Y10",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.5,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Two blue bars visible at bottom of beam section in cross-hatched area, no explicit label but consistent with typical bottom reinforcement pattern"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation 4L-Y10@100C/C shown with black dot below beam section, indicating 4-legged Y10 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement bars are visible but not explicitly labeled in the detail view",
+      "Relative bar lengths cannot be determined from the section view alone",
+      "The exact positioning and extent of bottom bars is unclear from available views"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B141",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars labeled 4Y20, shown running full span with green leader lines pointing to bars at top of beam section",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer bars labeled 4Y20, shown running full span with green leader lines pointing to bars at top of beam section"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "4-Y16",
+        "specification": "4-Y16",
+        "bar_count": 4,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars labeled 4Y16, shown running full span with green leader line pointing to bars at top of beam section, positioned alongside the 4Y20 bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "4-Y16",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Top layer bars labeled 4Y16, shown running full span with green leader line pointing to bars at top of beam section, positioned alongside the 4Y20 bars"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "2-Y10",
+        "specification": "2-Y10",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.5,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two blue bars visible at bottom of beam section in cross-hatched area, no explicit label but consistent with typical bottom reinforcement pattern",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "2-Y10",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.5,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Two blue bars visible at bottom of beam section in cross-hatched area, no explicit label but consistent with typical bottom reinforcement pattern"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100C/C",
+        "specification": "4L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation 4L-Y10@100C/C shown with black dot below beam section, indicating 4-legged Y10 stirrups at 100mm centers",
+        "raw": {
+          "spec": "4L-Y10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation 4L-Y10@100C/C shown with black dot below beam section, indicating 4-legged Y10 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "696"
+  }
+}

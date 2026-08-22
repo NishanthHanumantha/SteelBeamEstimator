@@ -1,0 +1,99 @@
+{
+  "beam_id": "B65",
+  "target_identity": {
+    "value": "B65",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B65",
+    "deterministic_value": "B65",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "group_count": 5,
+  "group_matching": {
+    "matched": 3,
+    "vision_only": 0,
+    "deterministic_only": 2,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 3,
+        "score": 12,
+        "vision_id": "VG1",
+        "deterministic_id": "G04"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 2,
+        "score": 8,
+        "vision_id": "VG3",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 1,
+        "deterministic_index": 4,
+        "score": 4,
+        "vision_id": "VG2",
+        "deterministic_id": "G05"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "possible_duplicate_groups": [],
+  "reinforcement_groups": [
+    {
+      "group_id": "VG1",
+      "origin": "MATCHED",
+      "layer": "TOP",
+      "role": "MAIN",
+      "bar_count": 2,
+      "diameter": 16,
+      "specification": "2Y16",
+      "support_scope": "LEFT_SUPPORT"
+    },
+    {
+      "group_id": "VG3",
+      "origin": "MATCHED",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 5,
+      "diameter": 20,
+      "specification": "5Y20",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG2",
+      "origin": "MATCHED",
+      "layer": "TOP",
+      "role": "EXTRA",
+      "bar_count": 5,
+      "diameter": 16,
+      "specification": "5Y16",
+      "support_scope": "RIGHT_SUPPORT"
+    },
+    {
+      "group_id": "G01",
+      "origin": "DETERMINISTIC_ONLY_GROUP",
+      "layer": "BOTTOM",
+      "role": "EXTRA",
+      "bar_count": 2,
+      "diameter": 16,
+      "specification": "2Y16",
+      "support_scope": "BOTH_SUPPORTS"
+    },
+    {
+      "group_id": "G02",
+      "origin": "DETERMINISTIC_ONLY_GROUP",
+      "layer": "BOTTOM",
+      "role": "EXTRA",
+      "bar_count": 4,
+      "diameter": 16,
+      "specification": "4Y16",
+      "support_scope": "BOTH_SUPPORTS"
+    }
+  ]
+}

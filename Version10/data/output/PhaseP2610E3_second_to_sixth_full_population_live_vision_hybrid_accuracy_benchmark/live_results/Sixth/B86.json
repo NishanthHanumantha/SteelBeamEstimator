@@ -1,0 +1,180 @@
+{
+  "beam_id": "B86",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B86_render.png",
+    "sha256": "a7009dc4ad80e17a48a740a60ff2be6e8f70bff34e5b1209a457ef37107c87ef",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.501682300004177",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3046",
+      "output_tokens": "575"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "0bb398644d7e84fd2312a883f631ad39bc67d20db041853a0398ec133352af4d",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B86",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100C/C",
+        "confidence": 0.85,
+        "evidence": "Stirrup annotation 3L-Y12@100C/C visible in context view pointing to B86 beam, indicating 3-legged Y12 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Both top and bottom reinforcement groups have identical specification (2-Y25+1-Y20), which is unusual but preserved as physically distinct groups per layer",
+      "Detail view shows green outline of beam section but limited internal reinforcement detail to confirm exact bar positioning within layers"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B86",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer reinforcement shown at four locations around B86 perimeter with annotation 2-Y25+1-Y20, appears continuous across full span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Stirrup annotation 3L-Y12@100C/C visible in context view pointing to B86 beam, indicating 3-legged Y12 stirrups at 100mm centers",
+        "raw": {
+          "spec": "3L-Y12@100C/C",
+          "confidence": 0.85,
+          "evidence": "Stirrup annotation 3L-Y12@100C/C visible in context view pointing to B86 beam, indicating 3-legged Y12 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3046",
+    "output_tokens": "575"
+  }
+}

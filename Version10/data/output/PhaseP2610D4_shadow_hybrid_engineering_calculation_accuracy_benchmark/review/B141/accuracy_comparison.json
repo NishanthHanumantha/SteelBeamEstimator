@@ -1,0 +1,69 @@
+{
+  "beam_id": "B141",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 179.6274,
+  "deterministic_kg": 68.263,
+  "benchmark_kg": 90.5896,
+  "truth_source": "ESTIMATOR_EXCEL",
+  "hybrid_error_pct": 98.29,
+  "deterministic_error_pct": 24.65,
+  "hybrid_accuracy_pct": 1.71,
+  "deterministic_accuracy_pct": 75.35,
+  "hybrid_signed_percent_error": 98.29,
+  "deterministic_signed_percent_error": -24.65,
+  "absolute_error_hybrid_kg": 89.0378,
+  "absolute_error_deterministic_kg": 22.3266,
+  "winner": "DETERMINISTIC",
+  "truth_lines": [
+    {
+      "role": "Top Bars",
+      "description": "Top bars",
+      "diameter_mm": 20.0,
+      "bar_count": 5.0,
+      "weight_kg": 47.8626
+    },
+    {
+      "role": "Bottom Bars",
+      "description": "Bottom bars",
+      "diameter_mm": 16.0,
+      "bar_count": 5.0,
+      "weight_kg": 26.7162
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 8.0,
+      "bar_count": 13.0,
+      "weight_kg": 9.8528
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 8.0,
+      "bar_count": 13.0,
+      "weight_kg": 6.158
+    }
+  ],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y16": 69.0206,
+      "Y20": 110.6068
+    },
+    "deterministic": {
+      "Y16": 68.263
+    },
+    "benchmark": {
+      "Y8": 16.0108,
+      "Y16": 26.7162,
+      "Y20": 47.8626
+    }
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

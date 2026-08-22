@@ -1,0 +1,135 @@
+{
+  "beam_id": "B22",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B22_render.png",
+    "sha256": "40531893f5db4d3e5adc21d30e95b3a8caf59ebb7f5e90e145f417a9821cec28",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "6.373822099994868",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2444",
+      "output_tokens": "343"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "748575ef66abedb61cfbe2e87910238f5e057f26638f7a0e26d3b46cd4fa8abe",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B22",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.92,
+        "evidence": "Top layer showing 4-Y20 bars marked with owned annotations (black dots) spanning the full length of B22 beam in elevation view"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100/125/100C/C",
+        "confidence": 0.88,
+        "evidence": "Stirrup specification shown with owned annotation (black dot) in elevation view of B22, indicating 4-legged Y10 stirrups at varying spacing: 100mm/125mm/100mm centers"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B22",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.92,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer showing 4-Y20 bars marked with owned annotations (black dots) spanning the full length of B22 beam in elevation view",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.92,
+          "evidence": "Top layer showing 4-Y20 bars marked with owned annotations (black dots) spanning the full length of B22 beam in elevation view"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100/125/100C/C",
+        "specification": "4L-Y10@100/125/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.88,
+        "evidence": "Stirrup specification shown with owned annotation (black dot) in elevation view of B22, indicating 4-legged Y10 stirrups at varying spacing: 100mm/125mm/100mm centers",
+        "raw": {
+          "spec": "4L-Y10@100/125/100C/C",
+          "confidence": 0.88,
+          "evidence": "Stirrup specification shown with owned annotation (black dot) in elevation view of B22, indicating 4-legged Y10 stirrups at varying spacing: 100mm/125mm/100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2444",
+    "output_tokens": "343"
+  }
+}

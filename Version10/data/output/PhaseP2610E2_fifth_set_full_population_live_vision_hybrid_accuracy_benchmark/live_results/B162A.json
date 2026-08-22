@@ -1,0 +1,175 @@
+{
+  "beam_id": "B162A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_RETRIED_AFTER_HISTORICAL_FAILURE",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B162A_render.png",
+    "sha256": "5871e5eb797f17a9f5d36e0cb516f594899d4071a5ef7ff98170affed1c7ad48",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "6.769525400013663",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3920",
+      "output_tokens": "485"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "db1216a2ec7a1083c9835b81d66f79bf6c4ca33bb7a9a035349f1c7de548f1a0",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B162A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at top of beam section, extending full length with annotation '2-Y16' pointing to top bars"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at bottom of beam section, extending full length with annotation '2-Y16' pointing to bottom bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y8@100C/C' shown below beam section, indicating 2-legged Y8 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B162A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at top of beam section, extending full length with annotation '2-Y16' pointing to top bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at top of beam section, extending full length with annotation '2-Y16' pointing to top bars"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at bottom of beam section, extending full length with annotation '2-Y16' pointing to bottom bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at bottom of beam section, extending full length with annotation '2-Y16' pointing to bottom bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@100C/C",
+        "specification": "2L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y8@100C/C' shown below beam section, indicating 2-legged Y8 stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y8@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '2L-Y8@100C/C' shown below beam section, indicating 2-legged Y8 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3920",
+    "output_tokens": "485"
+  }
+}

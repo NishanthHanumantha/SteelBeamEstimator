@@ -1,0 +1,121 @@
+{
+  "beam_id": "B38",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B38_render.png",
+    "sha256": "6fc7070c898f374a76805afcf45dbab8468d61e981ed2e22952690f99399a394",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.62276679999195",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2952",
+      "output_tokens": "348"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "387d0cb04c28a417cd3d92e4e62b985c28f8dc6ab7ca619d15dff0f5907b4c17",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B38",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2 bars",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Two green annotation dots visible at top of beam section in upper portion of drawing, indicating top reinforcement bars"
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "No text specification visible for the reinforcement bars - only visual representation with annotation dots",
+      "Bar diameter not specified in visible annotations",
+      "No stirrup/link details visible in the provided images",
+      "Bar length and span relationship cannot be determined from the section view alone",
+      "Role (MAIN vs EXTRA) cannot be confidently determined without specification text or additional context",
+      "Two beam cross-sections shown at bottom but no clear reinforcement details visible in those sections beyond outline"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B38",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "2 bars",
+        "specification": "2 bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two green annotation dots visible at top of beam section in upper portion of drawing, indicating top reinforcement bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2 bars",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Two green annotation dots visible at top of beam section in upper portion of drawing, indicating top reinforcement bars"
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2952",
+    "output_tokens": "348"
+  }
+}

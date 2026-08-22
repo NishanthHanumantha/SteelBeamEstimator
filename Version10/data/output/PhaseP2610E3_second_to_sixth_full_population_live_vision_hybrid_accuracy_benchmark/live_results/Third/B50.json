@@ -1,0 +1,222 @@
+{
+  "beam_id": "B50",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B50_render.png",
+    "sha256": "ae796b68add97d6b17eee0ef1c805a8486e729f2ca940e87c5a43fd2b60ca101",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.868242399999872",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3382",
+      "output_tokens": "685"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "e32724b64979495b26653b8e52d78dc4160518071c2f0368831fc7f8fa3f5b0c",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B50",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y12",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.85,
+        "evidence": "Two Y12 bars shown at top layer near left support, shorter than main bars, indicated by annotation 2-Y12 with leader pointing to top bars"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Three Y20 bars shown at top layer extending full span, indicated by annotation 3-Y20 with leader pointing to top bars, appear to be continuous main reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-Y12",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.75,
+        "evidence": "Two bars visible at bottom layer in section view, visually distinct from top reinforcement groups, exact length unclear from drawings"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation 3L-Y10@100C/C clearly visible in detail view, indicating 3-legged Y10 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement length and span relationship unclear from available views",
+      "Role classification for bottom bars uncertain - could be main or extra depending on structural requirements"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B50",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y12",
+        "specification": "2-Y12",
+        "bar_count": 2,
+        "diameter": 12,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y12 bars shown at top layer near left support, shorter than main bars, indicated by annotation 2-Y12 with leader pointing to top bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y12",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.85,
+          "evidence": "Two Y12 bars shown at top layer near left support, shorter than main bars, indicated by annotation 2-Y12 with leader pointing to top bars"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y20 bars shown at top layer extending full span, indicated by annotation 3-Y20 with leader pointing to top bars, appear to be continuous main reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Three Y20 bars shown at top layer extending full span, indicated by annotation 3-Y20 with leader pointing to top bars, appear to be continuous main reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y12",
+        "specification": "2-Y12",
+        "bar_count": 2,
+        "diameter": 12,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two bars visible at bottom layer in section view, visually distinct from top reinforcement groups, exact length unclear from drawings",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "2-Y12",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.75,
+          "evidence": "Two bars visible at bottom layer in section view, visually distinct from top reinforcement groups, exact length unclear from drawings"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100C/C",
+        "specification": "3L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation 3L-Y10@100C/C clearly visible in detail view, indicating 3-legged Y10 stirrups at 100mm centers",
+        "raw": {
+          "spec": "3L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation 3L-Y10@100C/C clearly visible in detail view, indicating 3-legged Y10 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3382",
+    "output_tokens": "685"
+  }
+}

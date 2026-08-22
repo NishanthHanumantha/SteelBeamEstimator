@@ -1,0 +1,179 @@
+{
+  "beam_id": "B144",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B144_render.png",
+    "sha256": "25c91ca12165163b3229669a893514bc19b5b10da1d1fa7386bc6bf0433c835e",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.94110630004434",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2358",
+      "output_tokens": "551"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "cf13e4964c9eb2aee4f0fe7ebe716f0c73e5e22f195bc73bd3c8b87f36242a46",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B144",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Top layer bars shown in section view, extending full span of beam B144. Appear to be continuous reinforcement at top face."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Bottom layer bars shown in section view, extending across the span but shorter than top bars. Appear to be main bottom reinforcement."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@X100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup annotation visible in right support region showing 3-legged Y12 bars at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Bar specifications (count and diameter) for longitudinal reinforcement are not clearly labeled for beam B144 itself",
+      "The annotations 3-Y20 and 2-Y16 appear to be associated with adjacent column or support elements, not the target beam B144",
+      "Exact bar counts for top and bottom layers cannot be determined from the visual evidence alone"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B144",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars shown in section view, extending full span of beam B144. Appear to be continuous reinforcement at top face.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Top layer bars shown in section view, extending full span of beam B144. Appear to be continuous reinforcement at top face."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer bars shown in section view, extending across the span but shorter than top bars. Appear to be main bottom reinforcement.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Bottom layer bars shown in section view, extending across the span but shorter than top bars. Appear to be main bottom reinforcement."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@X100C/C",
+        "specification": "3L-Y12@X100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup annotation visible in right support region showing 3-legged Y12 bars at 100mm centers",
+        "raw": {
+          "spec": "3L-Y12@X100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup annotation visible in right support region showing 3-legged Y12 bars at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2358",
+    "output_tokens": "551"
+  }
+}

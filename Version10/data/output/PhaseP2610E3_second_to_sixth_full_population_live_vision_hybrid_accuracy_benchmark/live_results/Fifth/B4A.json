@@ -1,0 +1,207 @@
+{
+  "beam_id": "B4A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "REUSE",
+  "call_provenance": "VISION_REUSED_CURRENT_ARCHITECTURE",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B4A_render.png",
+    "sha256": "41158298b5076de4f9cd46ac7850f87192f93b8ae2506299e53f28e9477d3932",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": false,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "parsed": {
+    "target_beam_id": "B4A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Three Y25 bars shown at top of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.85,
+        "evidence": "Two Y16 bars shown at top of beam in cross-section, labeled 2\u00d7Y16, appear to be shorter support bars based on typical detailing practice"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Three Y25 bars shown at bottom of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly labeled as 2L-Y10@100C/C at bottom of cross-section detail"
+      }
+    ],
+    "ambiguities": [
+      "Exact length and curtailment details of 2-Y16 bars not clearly visible in provided views",
+      "Physical bar lengths cannot be determined from the drawings provided - relative_length_evidence set to UNKNOWN where visual confirmation is not available"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B4A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y25 bars shown at top of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Three Y25 bars shown at top of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at top of beam in cross-section, labeled 2\u00d7Y16, appear to be shorter support bars based on typical detailing practice",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.85,
+          "evidence": "Two Y16 bars shown at top of beam in cross-section, labeled 2\u00d7Y16, appear to be shorter support bars based on typical detailing practice"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y25 bars shown at bottom of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Three Y25 bars shown at bottom of beam in cross-section, labeled 3\u00d7Y25, running full span in elevation views"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@100C/C",
+        "specification": "2L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly labeled as 2L-Y10@100C/C at bottom of cross-section detail",
+        "raw": {
+          "spec": "2L-Y10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Stirrup specification clearly labeled as 2L-Y10@100C/C at bottom of cross-section detail"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3908",
+    "output_tokens": "695"
+  },
+  "set_key": "Fifth",
+  "reuse_source": "E2_FIFTH_LIVE"
+}

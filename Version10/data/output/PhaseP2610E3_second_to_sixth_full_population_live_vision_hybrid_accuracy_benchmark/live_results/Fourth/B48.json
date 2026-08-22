@@ -1,0 +1,221 @@
+{
+  "beam_id": "B48",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B48_render.png",
+    "sha256": "b3505d972d852cf2b06884903fe50a215eab1e6939930e24b21f165cf4785540",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.583224799949676",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3926",
+      "output_tokens": "680"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "60f529f6fab3d6e08e2b7f30c4768ab3584e121c7bb24f42a4d9c21c1e06081b",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B48",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars shown at top of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars shown at bottom of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.75,
+        "evidence": "Gray dashed bars shown on side faces in longitudinal view, appearing shorter than main bars, likely hanger or side face reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Label 3L-Y10@100C/C shown below beam section, green leader lines indicate stirrups/links enclosing the beam"
+      }
+    ],
+    "ambiguities": [
+      "Side face bars (G3) shown as dashed lines - exact length and termination points not clearly visible in detail view"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B48",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars shown at top of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars shown at top of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars shown at bottom of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars shown at bottom of beam section in both cross-section and longitudinal view, labeled 3-Y25, extending full span with hooks at supports"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Gray dashed bars shown on side faces in longitudinal view, appearing shorter than main bars, likely hanger or side face reinforcement",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.75,
+          "evidence": "Gray dashed bars shown on side faces in longitudinal view, appearing shorter than main bars, likely hanger or side face reinforcement"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100C/C",
+        "specification": "3L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Label 3L-Y10@100C/C shown below beam section, green leader lines indicate stirrups/links enclosing the beam",
+        "raw": {
+          "spec": "3L-Y10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Label 3L-Y10@100C/C shown below beam section, green leader lines indicate stirrups/links enclosing the beam"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3926",
+    "output_tokens": "680"
+  }
+}

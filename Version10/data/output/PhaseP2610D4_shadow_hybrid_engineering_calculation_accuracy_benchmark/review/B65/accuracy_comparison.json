@@ -1,0 +1,102 @@
+{
+  "beam_id": "B65",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 265.2411,
+  "deterministic_kg": 280.198,
+  "benchmark_kg": 222.6927,
+  "truth_source": "ESTIMATOR_EXCEL",
+  "hybrid_error_pct": 19.11,
+  "deterministic_error_pct": 25.82,
+  "hybrid_accuracy_pct": 80.89,
+  "deterministic_accuracy_pct": 74.18,
+  "hybrid_signed_percent_error": 19.11,
+  "deterministic_signed_percent_error": 25.82,
+  "absolute_error_hybrid_kg": 42.5484,
+  "absolute_error_deterministic_kg": 57.5053,
+  "winner": "HYBRID",
+  "truth_lines": [
+    {
+      "role": "Top Bars",
+      "description": "Top bars",
+      "diameter_mm": 16.0,
+      "bar_count": 5.0,
+      "weight_kg": 55.6587
+    },
+    {
+      "role": "Top Bars Extra",
+      "description": "Top bars - extra",
+      "diameter_mm": 16.0,
+      "bar_count": 2.0,
+      "weight_kg": 6.4738
+    },
+    {
+      "role": "Bottom Bars",
+      "description": "Bottom bars",
+      "diameter_mm": 20.0,
+      "bar_count": 5.0,
+      "weight_kg": 86.9668
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 8.0,
+      "bar_count": 45.0,
+      "weight_kg": 34.1058
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 8.0,
+      "bar_count": 12.0,
+      "weight_kg": 9.0949
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 8.0,
+      "bar_count": 45.0,
+      "weight_kg": 21.3161
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 8.0,
+      "bar_count": 12.0,
+      "weight_kg": 5.6843
+    },
+    {
+      "role": "Spacer Bars",
+      "description": "Spacer bars",
+      "diameter_mm": 25.0,
+      "bar_count": 2.0,
+      "weight_kg": 3.3923
+    }
+  ],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y16": 103.3147,
+      "Y20": 101.9753,
+      "Y25": 3.6992,
+      "Y8": 56.2519
+    },
+    "deterministic": {
+      "Y20": 100.495,
+      "Y25": 131.784,
+      "Y8": 47.918
+    },
+    "benchmark": {
+      "Y8": 70.2011,
+      "Y16": 62.1325,
+      "Y20": 86.9668,
+      "Y25": 3.3923
+    }
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

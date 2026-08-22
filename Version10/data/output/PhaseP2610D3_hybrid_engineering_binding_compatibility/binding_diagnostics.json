@@ -1,0 +1,83 @@
+{
+  "benchmark_population_count": 16,
+  "beam_compatibility": {
+    "ENGINEERING_COMPATIBLE": 15,
+    "ENGINEERING_PARTIALLY_COMPATIBLE": 0,
+    "ENGINEERING_AMBIGUOUS": 1,
+    "ENGINEERING_INCOMPATIBLE": 0
+  },
+  "group_binding": {
+    "total": 50,
+    "BOUND": 49,
+    "PARTIALLY_BOUND": 0,
+    "AMBIGUOUS": 1,
+    "MISSING_GEOMETRY": 0,
+    "MISSING_SUPPORT_REFERENCE": 0,
+    "MISSING_RULE_REFERENCE": 0,
+    "UNSUPPORTED": 0,
+    "INVALID_INPUT": 0
+  },
+  "source_categories": {
+    "matched_groups": 33,
+    "matched_groups_bound": 33,
+    "vision_only_groups": 11,
+    "vision_only_groups_bound": 11,
+    "deterministic_only_groups": 5,
+    "deterministic_only_groups_bound": 5,
+    "ambiguous_groups_unresolved": 1,
+    "possible_duplicates_preserved": 4
+  },
+  "coverage": {
+    "label": "ENGINEERING_BINDING_COVERAGE",
+    "note": "COMPATIBILITY COVERAGE, NOT ACCURACY. Not estimator truth. Not production promotion.",
+    "formula": "fully_bound_required_references / total_required_references",
+    "all_groups": 1.0,
+    "matched_groups": 1.0,
+    "vision_only_groups": 1.0,
+    "deterministic_only_groups": 1.0,
+    "counts": {
+      "matched": {
+        "bound": 297,
+        "total": 297
+      },
+      "vision_only": {
+        "bound": 99,
+        "total": 99
+      },
+      "deterministic_only": {
+        "bound": 45,
+        "total": 45
+      },
+      "all": {
+        "bound": 450,
+        "total": 450
+      }
+    },
+    "engineering_reference_coverage": {
+      "geometry": 1.0,
+      "section_geometry": 1.0,
+      "direction": 1.0,
+      "support": 1.0,
+      "cut_length_rule": 1.0,
+      "development_length_rule": 1.0,
+      "anchorage": 1.0,
+      "hook_bend": 1.0
+    }
+  },
+  "top_unresolved_categories": [
+    [
+      "VISION_ONLY_RULE_FAMILY_BOUND_INSTANCE_UNAVAILABLE",
+      12
+    ],
+    [
+      "AMBIGUOUS",
+      1
+    ]
+  ],
+  "calculations_performed": {
+    "cut_length": false,
+    "development_length": false,
+    "steel_weight": false,
+    "bbs": false
+  }
+}

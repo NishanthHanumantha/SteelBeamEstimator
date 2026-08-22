@@ -1,0 +1,266 @@
+{
+  "beam_id": "B101",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B101_render.png",
+    "sha256": "5856aafc20568cac50f225ee0de99fea0332501558a0b3dd503fe984651fd195",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.895485100045335",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "832"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "9d734c3a552a2cf84d31fa7d0355c8adc1466adda8a673133b3e8f46cf5c8136",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B101",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "bars visible in top layer",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.6,
+        "evidence": "Two dark blue bars visible at top of beam section in context image, extending horizontally"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "bars visible in bottom layer",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.6,
+        "evidence": "Two dark blue bars visible at bottom of beam section in context image"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "bars visible on left side face",
+        "bar_count": 3,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.2,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.5,
+        "evidence": "Three green bars visible on left side face of beam in detail image, running vertically along beam depth"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "spec": "bars visible on right side face",
+        "bar_count": 3,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.2,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.5,
+        "evidence": "Three green bars visible on right side face of beam in detail image, running vertically along beam depth"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@100C/C",
+        "confidence": 0.85,
+        "evidence": "Annotation '4L-Y12@100C/C' visible in context image with leader pointing to beam section, indicating 4-legged stirrups of Y12 diameter at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Bar diameters not clearly specified in visible annotations for longitudinal reinforcement groups",
+      "Exact bar counts uncertain due to drawing resolution and overlapping representation",
+      "Bar lengths and span relationships cannot be determined from available views",
+      "Green bars on side faces may be hanger bars or skin reinforcement but role unclear"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B101",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "bars visible in top layer",
+        "specification": "bars visible in top layer",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars visible at top of beam section in context image, extending horizontally",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "bars visible in top layer",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.6,
+          "evidence": "Two dark blue bars visible at top of beam section in context image, extending horizontally"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "bars visible in bottom layer",
+        "specification": "bars visible in bottom layer",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars visible at bottom of beam section in context image",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "bars visible in bottom layer",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.6,
+          "evidence": "Two dark blue bars visible at bottom of beam section in context image"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "bars visible on left side face",
+        "specification": "bars visible on left side face",
+        "bar_count": 3,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.5,
+        "role_confidence": 0.2,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three green bars visible on left side face of beam in detail image, running vertically along beam depth",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "bars visible on left side face",
+          "bar_count": 3,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.2,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.5,
+          "evidence": "Three green bars visible on left side face of beam in detail image, running vertically along beam depth"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "bars visible on right side face",
+        "specification": "bars visible on right side face",
+        "bar_count": 3,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.5,
+        "role_confidence": 0.2,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three green bars visible on right side face of beam in detail image, running vertically along beam depth",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "SIDE_FACE",
+          "spec": "bars visible on right side face",
+          "bar_count": 3,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.2,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.5,
+          "evidence": "Three green bars visible on right side face of beam in detail image, running vertically along beam depth"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Annotation '4L-Y12@100C/C' visible in context image with leader pointing to beam section, indicating 4-legged stirrups of Y12 diameter at 100mm centers",
+        "raw": {
+          "spec": "4L-Y12@100C/C",
+          "confidence": 0.85,
+          "evidence": "Annotation '4L-Y12@100C/C' visible in context image with leader pointing to beam section, indicating 4-legged stirrups of Y12 diameter at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "832"
+  }
+}

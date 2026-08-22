@@ -1,0 +1,223 @@
+{
+  "beam_id": "B122",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B122_render.png",
+    "sha256": "97a2a60601d8ed1997c563262d622e6a7ef7e75025572973d7b651ad12d6fdcb",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.721019099990372",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3820",
+      "output_tokens": "714"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "64233662f025fb65de17513a1e915b075c33a353a9712fc9f8525ebcd84373b6",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B122",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top of beam section, annotation '2xY16' points to these bars in upper right detail view"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y10",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Dark blue bars at bottom of beam section visible in upper left detail view, part of annotation '2L-Y10@200/125/125C/C' which includes stirrup specification"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "Multiple green bars",
+        "bar_count": 0,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.6,
+        "evidence": "Green bars visible on side faces in multiple views, appear to be distributed vertically along beam depth, count unclear from drawings"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@200/125/125C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y10@200/125/125C/C' below upper right detail, indicates 2-legged Y10 stirrups with variable spacing 200/125/125 center-to-center"
+      }
+    ],
+    "ambiguities": [
+      "Green side face bars count is not clearly specified in annotations",
+      "Exact length and distribution of side face bars cannot be determined from these views",
+      "Bar lengths cannot be visually confirmed from section views alone"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B122",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of beam section, annotation '2xY16' points to these bars in upper right detail view",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top of beam section, annotation '2xY16' points to these bars in upper right detail view"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y10",
+        "specification": "2-Y10",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at bottom of beam section visible in upper left detail view, part of annotation '2L-Y10@200/125/125C/C' which includes stirrup specification",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y10",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Dark blue bars at bottom of beam section visible in upper left detail view, part of annotation '2L-Y10@200/125/125C/C' which includes stirrup specification"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "Multiple green bars",
+        "specification": "Multiple green bars",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars visible on side faces in multiple views, appear to be distributed vertically along beam depth, count unclear from drawings",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "Multiple green bars",
+          "bar_count": 0,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.6,
+          "evidence": "Green bars visible on side faces in multiple views, appear to be distributed vertically along beam depth, count unclear from drawings"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@200/125/125C/C",
+        "specification": "2L-Y10@200/125/125C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y10@200/125/125C/C' below upper right detail, indicates 2-legged Y10 stirrups with variable spacing 200/125/125 center-to-center",
+        "raw": {
+          "spec": "2L-Y10@200/125/125C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '2L-Y10@200/125/125C/C' below upper right detail, indicates 2-legged Y10 stirrups with variable spacing 200/125/125 center-to-center"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3820",
+    "output_tokens": "714"
+  }
+}

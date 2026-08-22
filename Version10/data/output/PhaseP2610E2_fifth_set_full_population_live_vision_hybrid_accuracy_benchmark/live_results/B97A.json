@@ -1,0 +1,305 @@
+{
+  "beam_id": "B97A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B97A_render.png",
+    "sha256": "85efa34c45082457aaca0bdf5ef8eae00d3643e808ea63c5b0c66ab6274f1769",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "16.17709150002338",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3306",
+      "output_tokens": "1030"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "0bc50ef3fa4a53805bff9fd989ecfc0558ae9ee8336df7d0231f1003488e6e5e",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B97A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars shown in elevation view, labeled 4-Y25, appear to run full span of beam with hooks at ends"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "Unknown count, blue bars",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.6,
+        "evidence": "Bottom layer blue bars visible in cross-section and elevation, count not clearly specified in visible annotations"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "Ed+10bd+10db",
+        "bar_count": null,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Side face reinforcement detail shown in right detail section, labeled 'Ed+10bd+10db' with S.F.R. notation, specific count and length unclear from visual"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "spec": "Green bars at supports",
+        "bar_count": null,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.65,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.65,
+        "evidence": "Green colored bars visible at top near support regions in elevation view, appear shorter than main bars, likely additional top reinforcement at supports"
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "BOTTOM",
+        "spec": "Green bars at supports",
+        "bar_count": null,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.6,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.6,
+        "evidence": "Green colored bars visible at bottom near support regions in elevation view, appear shorter than main bottom bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.9,
+        "evidence": "Clearly labeled stirrup specification 4L-Y8@100C/C visible in elevation view, vertical blue lines represent stirrups throughout beam span"
+      }
+    ],
+    "ambiguities": [
+      "Exact bar count for bottom main reinforcement (G2) not clearly visible in annotations",
+      "Side face reinforcement (G3) specification 'Ed+10bd+10db' is unclear - appears to be a formula rather than explicit count",
+      "Green bars at supports (G4, G5) - exact count, diameter, and precise length/extent not clearly specified"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B97A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars shown in elevation view, labeled 4-Y25, appear to run full span of beam with hooks at ends",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer bars shown in elevation view, labeled 4-Y25, appear to run full span of beam with hooks at ends"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "Unknown count, blue bars",
+        "specification": "Unknown count, blue bars",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.6,
+        "role_confidence": 0.7,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer blue bars visible in cross-section and elevation, count not clearly specified in visible annotations",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "Unknown count, blue bars",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.6,
+          "evidence": "Bottom layer blue bars visible in cross-section and elevation, count not clearly specified in visible annotations"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "Ed+10bd+10db",
+        "specification": "Ed+10bd+10db",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Side face reinforcement detail shown in right detail section, labeled 'Ed+10bd+10db' with S.F.R. notation, specific count and length unclear from visual",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "Ed+10bd+10db",
+          "bar_count": null,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Side face reinforcement detail shown in right detail section, labeled 'Ed+10bd+10db' with S.F.R. notation, specific count and length unclear from visual"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "Green bars at supports",
+        "specification": "Green bars at supports",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.65,
+        "role_confidence": 0.65,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green colored bars visible at top near support regions in elevation view, appear shorter than main bars, likely additional top reinforcement at supports",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "TOP",
+          "spec": "Green bars at supports",
+          "bar_count": null,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.65,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.65,
+          "evidence": "Green colored bars visible at top near support regions in elevation view, appear shorter than main bars, likely additional top reinforcement at supports"
+        }
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "Green bars at supports",
+        "specification": "Green bars at supports",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.6,
+        "role_confidence": 0.6,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green colored bars visible at bottom near support regions in elevation view, appear shorter than main bottom bars",
+        "raw": {
+          "physical_group_id": "G5",
+          "layer": "BOTTOM",
+          "spec": "Green bars at supports",
+          "bar_count": null,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.6,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.6,
+          "evidence": "Green colored bars visible at bottom near support regions in elevation view, appear shorter than main bottom bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100C/C",
+        "specification": "4L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Clearly labeled stirrup specification 4L-Y8@100C/C visible in elevation view, vertical blue lines represent stirrups throughout beam span",
+        "raw": {
+          "spec": "4L-Y8@100C/C",
+          "confidence": 0.9,
+          "evidence": "Clearly labeled stirrup specification 4L-Y8@100C/C visible in elevation view, vertical blue lines represent stirrups throughout beam span"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3306",
+    "output_tokens": "1030"
+  }
+}

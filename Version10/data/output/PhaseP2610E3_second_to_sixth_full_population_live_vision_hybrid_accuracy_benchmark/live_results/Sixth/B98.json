@@ -1,0 +1,179 @@
+{
+  "beam_id": "B98",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B98_render.png",
+    "sha256": "bc7ae4458d437b8bed758370a544c3553dfee33e0847cd98c63506be5255cf38",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.404797299997881",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "546"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "6c1b39dadd140c2bb748f911e03e5ce0f72a751ed5521badf65eb2a196de78f3",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B98",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer reinforcement shown in detail view with annotation '2-Y25+1-Y20', bars extend full span of beam B98"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3L-Y12@100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Bottom layer reinforcement shown with annotation '3L-Y12@100C/C', appears to extend full span with consistent spacing"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100C/C",
+        "confidence": 0.85,
+        "evidence": "Stirrup/link annotation visible in detail view showing 3-legged Y12 bars at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The '3L-Y12@100C/C' annotation could represent either bottom longitudinal bars or stirrups/links. Based on the 'L' designation and spacing notation, interpreted as stirrups, but bottom bars may also be present"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B98",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer reinforcement shown in detail view with annotation '2-Y25+1-Y20', bars extend full span of beam B98",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer reinforcement shown in detail view with annotation '2-Y25+1-Y20', bars extend full span of beam B98"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "bar_count": 3,
+        "diameter": 12,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer reinforcement shown with annotation '3L-Y12@100C/C', appears to extend full span with consistent spacing",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3L-Y12@100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Bottom layer reinforcement shown with annotation '3L-Y12@100C/C', appears to extend full span with consistent spacing"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Stirrup/link annotation visible in detail view showing 3-legged Y12 bars at 100mm centers",
+        "raw": {
+          "spec": "3L-Y12@100C/C",
+          "confidence": 0.85,
+          "evidence": "Stirrup/link annotation visible in detail view showing 3-legged Y12 bars at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "546"
+  }
+}

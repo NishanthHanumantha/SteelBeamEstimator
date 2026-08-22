@@ -1,0 +1,180 @@
+{
+  "beam_id": "B191",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B191_render.png",
+    "sha256": "f86c57ba585d145594112cd62927dcf5d381f8b6f0aa03be7db36c5adc8fcc31",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.96642830001656",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2444",
+      "output_tokens": "602"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "41413e34fce8e2097bdabd106bd00d687ac1acc417f581ded059567dab98bdad",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B191",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Blue bars shown at top of beam section in both context and detail views. Annotation '5-Y20' with leader pointing to top reinforcement. Bars appear to span full length of beam B191."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Green bars shown at bottom of beam section in both views. Two continuous bottom bars visible spanning the beam length. No explicit annotation for bottom bars, but physical presence is clear."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100/175/100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y10@100/175/100C/C' with leader pointing to stirrup/link reinforcement. Blue vertical stirrup legs visible in section views. Variable spacing pattern indicated: 100mm, 175mm, 100mm center-to-center."
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement count inferred from visual representation (2 green bars visible) but no explicit annotation confirms the exact count or diameter for bottom bars.",
+      "Relative bar lengths cannot be determined with certainty from the section views provided - no elevation or longitudinal section showing actual bar termination points."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B191",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y20",
+        "specification": "5-Y20",
+        "bar_count": 5,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars shown at top of beam section in both context and detail views. Annotation '5-Y20' with leader pointing to top reinforcement. Bars appear to span full length of beam B191.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "5-Y20",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Blue bars shown at top of beam section in both context and detail views. Annotation '5-Y20' with leader pointing to top reinforcement. Bars appear to span full length of beam B191."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars shown at bottom of beam section in both views. Two continuous bottom bars visible spanning the beam length. No explicit annotation for bottom bars, but physical presence is clear.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Green bars shown at bottom of beam section in both views. Two continuous bottom bars visible spanning the beam length. No explicit annotation for bottom bars, but physical presence is clear."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100/175/100C/C",
+        "specification": "4L-Y10@100/175/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y10@100/175/100C/C' with leader pointing to stirrup/link reinforcement. Blue vertical stirrup legs visible in section views. Variable spacing pattern indicated: 100mm, 175mm, 100mm center-to-center.",
+        "raw": {
+          "spec": "4L-Y10@100/175/100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '4L-Y10@100/175/100C/C' with leader pointing to stirrup/link reinforcement. Blue vertical stirrup legs visible in section views. Variable spacing pattern indicated: 100mm, 175mm, 100mm center-to-center."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2444",
+    "output_tokens": "602"
+  }
+}

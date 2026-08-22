@@ -1,0 +1,180 @@
+{
+  "beam_id": "B87",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B87_render.png",
+    "sha256": "1681447701c1ac43a31888bb2680ee4e500d92cb8b45c1f13675ba45a51cce80",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.75768090004567",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2874",
+      "output_tokens": "589"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "f0712785e3aafb06d29dc4bbe97f44f4e0810877052eea3af72ac1381d646ee2",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B87",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at top of beam section, labeled '2-Y16' at both left and right ends of the beam, indicating continuous top reinforcement"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom reinforcement labeled '2L-Y8@200C/C' shown in section view, indicating 2 legs of Y8 bars at 200mm centers along the span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@200C/C",
+        "confidence": 0.85,
+        "evidence": "Stirrup specification '2L-Y8@200C/C' shown at bottom of beam section, indicating 2-legged Y8 stirrups at 200mm spacing"
+      }
+    ],
+    "ambiguities": [
+      "The '2L-Y8@200C/C' notation appears to describe both the bottom longitudinal bars and the stirrup configuration - interpretation assumes this is primarily stirrup notation with 2 legs",
+      "Relative bar lengths cannot be determined from the section views provided - no elevation or longitudinal section showing actual bar lengths"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B87",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at top of beam section, labeled '2-Y16' at both left and right ends of the beam, indicating continuous top reinforcement",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at top of beam section, labeled '2-Y16' at both left and right ends of the beam, indicating continuous top reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "diameter": 8,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom reinforcement labeled '2L-Y8@200C/C' shown in section view, indicating 2 legs of Y8 bars at 200mm centers along the span",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2L-Y8@200C/C",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom reinforcement labeled '2L-Y8@200C/C' shown in section view, indicating 2 legs of Y8 bars at 200mm centers along the span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Stirrup specification '2L-Y8@200C/C' shown at bottom of beam section, indicating 2-legged Y8 stirrups at 200mm spacing",
+        "raw": {
+          "spec": "2L-Y8@200C/C",
+          "confidence": 0.85,
+          "evidence": "Stirrup specification '2L-Y8@200C/C' shown at bottom of beam section, indicating 2-legged Y8 stirrups at 200mm spacing"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2874",
+    "output_tokens": "589"
+  }
+}

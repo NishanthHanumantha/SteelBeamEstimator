@@ -1,0 +1,261 @@
+{
+  "beam_id": "B40",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B40_render.png",
+    "sha256": "3a9cb1f241446803daa48fcfbb4b04d6aef7079066bcdc1fa46ccb4da337ca90",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.259252599964384",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2358",
+      "output_tokens": "788"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "69cb1679edd522ba789a120261889e2daf8eecd56f0d4d1ae5ce23464774e235",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B40",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.9,
+        "evidence": "Three Y25 bars shown at top layer on left portion of beam, annotation '3-Y25' with leader pointing to this group"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.9,
+        "evidence": "Two Y25 bars shown at top layer on right portion of beam, part of annotation '2-Y25+1-Y20'"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "1-Y20",
+        "bar_count": 1,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Single Y20 bar shown at top layer on right portion, part of annotation '2-Y25+1-Y20', appears to be additional reinforcement at right support"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Two Y25 bars shown at bottom layer running full length of beam, visible in section view as continuous bottom reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup annotation '3LY10@100C/C' shown with leader pointing to stirrup representation in beam section"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B40",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y25 bars shown at top layer on left portion of beam, annotation '3-Y25' with leader pointing to this group",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.9,
+          "evidence": "Three Y25 bars shown at top layer on left portion of beam, annotation '3-Y25' with leader pointing to this group"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y25 bars shown at top layer on right portion of beam, part of annotation '2-Y25+1-Y20'",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.9,
+          "evidence": "Two Y25 bars shown at top layer on right portion of beam, part of annotation '2-Y25+1-Y20'"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "1-Y20",
+        "specification": "1-Y20",
+        "bar_count": 1,
+        "diameter": 20,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Single Y20 bar shown at top layer on right portion, part of annotation '2-Y25+1-Y20', appears to be additional reinforcement at right support",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "1-Y20",
+          "bar_count": 1,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.85,
+          "evidence": "Single Y20 bar shown at top layer on right portion, part of annotation '2-Y25+1-Y20', appears to be additional reinforcement at right support"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y25 bars shown at bottom layer running full length of beam, visible in section view as continuous bottom reinforcement",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "BOTTOM",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Two Y25 bars shown at bottom layer running full length of beam, visible in section view as continuous bottom reinforcement"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100C/C",
+        "specification": "3L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup annotation '3LY10@100C/C' shown with leader pointing to stirrup representation in beam section",
+        "raw": {
+          "spec": "3L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup annotation '3LY10@100C/C' shown with leader pointing to stirrup representation in beam section"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2358",
+    "output_tokens": "788"
+  }
+}

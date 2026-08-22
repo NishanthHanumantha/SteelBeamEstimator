@@ -1,0 +1,139 @@
+{
+  "beam_id": "B29",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B29_render.png",
+    "sha256": "2a30a06bc2a927146314cf8aa28c1b53818d1bed64a83bbf204c47a5ad4490d3",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.17109319998417",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3726",
+      "output_tokens": "384"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "61fa92d8f56d5d64cd19d1977a86cd54aff6274d07e3bbec59535bb0f3410e28",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B29",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Green stirrup detail shows 2 bars at bottom corners with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and diameter."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Green stirrup outline visible in detail view showing closed rectangular shape with two top corners and bottom point configuration, but no specification annotation visible for stirrup spacing or diameter."
+      }
+    ],
+    "ambiguities": [
+      "Stirrup specification (diameter and spacing) not clearly annotated in the detail view",
+      "Bar lengths and span relationship cannot be determined from the cross-sectional detail alone",
+      "Support scope unclear - only cross-section shown, no longitudinal elevation to confirm bar extent"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B29",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green stirrup detail shows 2 bars at bottom corners with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and diameter.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Green stirrup detail shows 2 bars at bottom corners with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and diameter."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.3,
+        "evidence": "Green stirrup outline visible in detail view showing closed rectangular shape with two top corners and bottom point configuration, but no specification annotation visible for stirrup spacing or diameter.",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Green stirrup outline visible in detail view showing closed rectangular shape with two top corners and bottom point configuration, but no specification annotation visible for stirrup spacing or diameter."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3726",
+    "output_tokens": "384"
+  }
+}

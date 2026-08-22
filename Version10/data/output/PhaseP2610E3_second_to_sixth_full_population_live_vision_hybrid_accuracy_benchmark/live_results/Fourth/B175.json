@@ -1,0 +1,95 @@
+{
+  "beam_id": "B175",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B175_render.png",
+    "sha256": "fc95d02f2b2eb538a17794d28b8ca2e788f1588fb13a26b911d86fb928defd32",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.664562899968587",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2788",
+      "output_tokens": "288"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "c30256feda5df248551b622f8b5e954ccf3124945d4a64fe48ac5d2b0422f7fc",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B175",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@X100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation '4L-Y12@X100C/C' visible in upper portion of beam detail, indicating 4-legged Y12 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "No longitudinal reinforcement bars are visually depicted in either image. Only beam outline (thin black line), a horizontal dashed line (possibly indicating beam centerline or construction joint), and stirrup specification are shown.",
+      "The absence of any visible longitudinal bars (top, bottom, or side face) is unusual for a beam detail. This may indicate the detail is incomplete, or longitudinal bars are specified elsewhere.",
+      "Cannot determine main versus extra reinforcement groups as no longitudinal bars are present in the drawing."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B175",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@X100C/C",
+        "specification": "4L-Y12@X100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation '4L-Y12@X100C/C' visible in upper portion of beam detail, indicating 4-legged Y12 stirrups at 100mm centers",
+        "raw": {
+          "spec": "4L-Y12@X100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation '4L-Y12@X100C/C' visible in upper portion of beam detail, indicating 4-legged Y12 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2788",
+    "output_tokens": "288"
+  }
+}

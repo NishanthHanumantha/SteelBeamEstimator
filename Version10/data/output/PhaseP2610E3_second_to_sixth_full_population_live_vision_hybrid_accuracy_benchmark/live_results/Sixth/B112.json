@@ -1,0 +1,122 @@
+{
+  "beam_id": "B112",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B112_render.png",
+    "sha256": "1e5c63bea364a70dd9ed5f548493e0f5353f24d3d4811da8a9571254e0e63f67",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.685609099979047",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3930",
+      "output_tokens": "416"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "ba67a297b306930d65061b96435cde4268e9e9a52f5a78e9cd9b3102f7124ec5",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B112",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.6,
+        "evidence": "Green line visible at top of B112 beam in context view, appears to run full span horizontally. No specification annotation visible for this reinforcement."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "B112 is labeled in top-left corner of both images",
+      "Green reinforcement line visible at top of beam but no specification text (count, diameter, spacing) is associated with B112",
+      "The detail view shows B112 as a relatively short beam segment with cross-hatched column/support on right side",
+      "No stirrup/link annotations visible for B112",
+      "The 2Y16 annotations visible in the detail image appear to be associated with neighboring beams below B112, not with B112 itself",
+      "Cannot determine bar count, diameter, or exact specification from visual evidence alone",
+      "Beam appears to be a short cantilever or connection element based on its proportions and position"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B112",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.6,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green line visible at top of B112 beam in context view, appears to run full span horizontally. No specification annotation visible for this reinforcement.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.6,
+          "evidence": "Green line visible at top of B112 beam in context view, appears to run full span horizontally. No specification annotation visible for this reinforcement."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3930",
+    "output_tokens": "416"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "beam_id": "B136",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B136_render.png",
+    "sha256": "7917f372752b6891c3e5280c0759ab9ed899571ab0cf70d4e945c622c4df46d7",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.104409699968528",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3390",
+      "output_tokens": "513"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "d45f09781dbde63f06ae858a6c829ae0c1670c4d4526d1bf36b3b953e7dbc91f",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B136",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled as 2L-Y10@100C/C in section view, showing closed links at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Both top and bottom reinforcement groups have identical specification (3-Y20), which is physically represented as two distinct groups but with same bar count and diameter"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B136",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer bars shown in section view, labeled 3-Y20, running full span of beam visible in both elevation and section"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@100C/C",
+        "specification": "2L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled as 2L-Y10@100C/C in section view, showing closed links at 100mm centers",
+        "raw": {
+          "spec": "2L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification labeled as 2L-Y10@100C/C in section view, showing closed links at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3390",
+    "output_tokens": "513"
+  }
+}

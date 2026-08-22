@@ -1,0 +1,177 @@
+{
+  "beam_id": "B119",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B119_render.png",
+    "sha256": "83ab8b2908d2964064e7203099356ce91a240b7ff2b0cf3454c20a1dbd5512a0",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.788829899975099",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "514"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "7cd8e7085999204830076e8d10d514401bbb176e62c656a765c4ac30ac66a91d",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B119",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Green bars at top layer with annotation 3-Y25, running full span of beam B119"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "Unspecified",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Blue bars visible at bottom layer but no specification annotation visible for B119. Dark blue bars shown in both views but count and diameter not labeled"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100C/150/100/C",
+        "confidence": 0.95,
+        "evidence": "Annotation 4L-Y10@100C/150/100/C visible in top view, indicating 4-legged Y10 stirrups with varying spacing pattern"
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement bars are visible in dark blue but no specification annotation is present for B119. Count and diameter cannot be determined from visual evidence alone."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B119",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars at top layer with annotation 3-Y25, running full span of beam B119",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Green bars at top layer with annotation 3-Y25, running full span of beam B119"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "Unspecified",
+        "specification": "Unspecified",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars visible at bottom layer but no specification annotation visible for B119. Dark blue bars shown in both views but count and diameter not labeled",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "Unspecified",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Blue bars visible at bottom layer but no specification annotation visible for B119. Dark blue bars shown in both views but count and diameter not labeled"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100C/150/100/C",
+        "specification": "4L-Y10@100C/150/100/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation 4L-Y10@100C/150/100/C visible in top view, indicating 4-legged Y10 stirrups with varying spacing pattern",
+        "raw": {
+          "spec": "4L-Y10@100C/150/100/C",
+          "confidence": 0.95,
+          "evidence": "Annotation 4L-Y10@100C/150/100/C visible in top view, indicating 4-legged Y10 stirrups with varying spacing pattern"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "514"
+  }
+}

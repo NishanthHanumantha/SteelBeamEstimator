@@ -1,0 +1,223 @@
+{
+  "beam_id": "B36",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B36_render.png",
+    "sha256": "8013550f4afe90726cce474ce3c1ed5a092737e01672e045ddfd280a3fec2d1c",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.728333799983375",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3296",
+      "output_tokens": "685"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "a517d29ff330a1c39e1c730431fbfe67c5f4b1e80245d1e1d2e145676d1da9d6",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at bottom of beam in right section detail, labeled 2-Y16, running full length of beam span"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "750",
+        "bar_count": 1,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.5,
+        "evidence": "Annotation 750 appears above beam sections, likely indicating top reinforcement or dimension, but specification unclear from visual evidence alone"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.2,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.4,
+        "evidence": "Green vertical bars visible at left end of both beam sections, appear to be side face or hanger bars, but no clear specification label visible"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@100C/C clearly visible below beam sections, indicating 2-legged Y8 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Annotation 750 interpretation unclear - could be dimension, bar mark, or top reinforcement specification",
+      "Green vertical bars at beam ends lack clear specification labels",
+      "Exact span length and bar lengths not dimensioned in detail view"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at bottom of beam in right section detail, labeled 2-Y16, running full length of beam span",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at bottom of beam in right section detail, labeled 2-Y16, running full length of beam span"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "750",
+        "specification": "750",
+        "bar_count": 1,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.5,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation 750 appears above beam sections, likely indicating top reinforcement or dimension, but specification unclear from visual evidence alone",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "750",
+          "bar_count": 1,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.5,
+          "evidence": "Annotation 750 appears above beam sections, likely indicating top reinforcement or dimension, but specification unclear from visual evidence alone"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.4,
+        "role_confidence": 0.2,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green vertical bars visible at left end of both beam sections, appear to be side face or hanger bars, but no clear specification label visible",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.2,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.4,
+          "evidence": "Green vertical bars visible at left end of both beam sections, appear to be side face or hanger bars, but no clear specification label visible"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@100C/C",
+        "specification": "2L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@100C/C clearly visible below beam sections, indicating 2-legged Y8 stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y8@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation 2L-Y8@100C/C clearly visible below beam sections, indicating 2-legged Y8 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3296",
+    "output_tokens": "685"
+  }
+}

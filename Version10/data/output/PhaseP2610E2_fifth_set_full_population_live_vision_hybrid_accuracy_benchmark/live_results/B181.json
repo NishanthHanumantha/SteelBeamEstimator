@@ -1,0 +1,305 @@
+{
+  "beam_id": "B181",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B181_render.png",
+    "sha256": "5f265405633ceb68fcf8cbd5802a7bea2ab399d8a124bcbdfd615d87a63a46e1",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "14.953582199988887",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "962"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "0b0ef706ab8e518d12be4d31506be7e8551edf13f8dfb11dfaa627492967192c",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B181",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Dark blue bars at top of beam spanning full length, visible in both left and right sections of B181"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.75,
+        "evidence": "Dark blue bars at top, shorter than G1, visible at support regions on both ends"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom bars labeled 2-Y25 in detail view (right section), spanning full beam length"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.85,
+        "evidence": "Bottom bars labeled 2-Y25 at support regions, shorter than G3, visible in detail view with annotations pointing to them"
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "OTHER",
+        "spec": "UNKNOWN",
+        "bar_count": 4,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.5,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.65,
+        "evidence": "Green leaders (owned leaders) visible along beam length, likely distribution bars or links, count approximate"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y12@X100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled in detail view at bottom right of beam section"
+      }
+    ],
+    "ambiguities": [
+      "Top bar specifications not clearly labeled - count and diameter inferred from visual representation only",
+      "Green leaders may represent distribution bars or link legs - exact function unclear from drawing",
+      "Physical separation between full-span and support bars at bottom layer clear, but exact lengths not dimensioned"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B181",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 3,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of beam spanning full length, visible in both left and right sections of B181",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Dark blue bars at top of beam spanning full length, visible in both left and right sections of B181"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top, shorter than G1, visible at support regions on both ends",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.75,
+          "evidence": "Dark blue bars at top, shorter than G1, visible at support regions on both ends"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom bars labeled 2-Y25 in detail view (right section), spanning full beam length",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom bars labeled 2-Y25 in detail view (right section), spanning full beam length"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom bars labeled 2-Y25 at support regions, shorter than G3, visible in detail view with annotations pointing to them",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "BOTTOM",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.85,
+          "evidence": "Bottom bars labeled 2-Y25 at support regions, shorter than G3, visible in detail view with annotations pointing to them"
+        }
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "OTHER",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 4,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.65,
+        "role_confidence": 0.5,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green leaders (owned leaders) visible along beam length, likely distribution bars or links, count approximate",
+        "raw": {
+          "physical_group_id": "G5",
+          "layer": "OTHER",
+          "spec": "UNKNOWN",
+          "bar_count": 4,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.5,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.65,
+          "evidence": "Green leaders (owned leaders) visible along beam length, likely distribution bars or links, count approximate"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y12@X100C/C",
+        "specification": "2L-Y12@X100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled in detail view at bottom right of beam section",
+        "raw": {
+          "spec": "2L-Y12@X100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification labeled in detail view at bottom right of beam section"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "962"
+  }
+}

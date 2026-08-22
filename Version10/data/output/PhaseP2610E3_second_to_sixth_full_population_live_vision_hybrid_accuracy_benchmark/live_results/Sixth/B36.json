@@ -1,0 +1,222 @@
+{
+  "beam_id": "B36",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B36_render.png",
+    "sha256": "fed447482f25a19cf25674772231fe2cd4bfa9574277f8abd349cb08917fbb3c",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.97233999997843",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3734",
+      "output_tokens": "689"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "1e2e99abaac89e33962517bfe108affb0f1437dbff73088c7c69d94bd85c1308",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y20 bars shown in dark blue at bottom of beam, labeled '2-Y20' with leader annotation, extending full span of beam"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.8,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.85,
+        "evidence": "Three Y20 bars shown in dark blue at bottom of beam, labeled '3-Y20' with leader annotation, extending partially from left support"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "Unknown count, unknown diameter",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.7,
+        "evidence": "Multiple bars shown in dark blue at top of beam extending full span, visible in both context and detail views, but no clear specification annotation visible for this group"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification clearly labeled '3L-Y12@100C/C' with leader annotation pointing to beam section"
+      }
+    ],
+    "ambiguities": [
+      "Top reinforcement bars are visible but no clear specification annotation is associated with them in the detail view",
+      "Green outline bars visible in both views appear to be part of neighboring beam elements, not target beam B36"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y20 bars shown in dark blue at bottom of beam, labeled '2-Y20' with leader annotation, extending full span of beam",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y20 bars shown in dark blue at bottom of beam, labeled '2-Y20' with leader annotation, extending full span of beam"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y20 bars shown in dark blue at bottom of beam, labeled '3-Y20' with leader annotation, extending partially from left support",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.8,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.85,
+          "evidence": "Three Y20 bars shown in dark blue at bottom of beam, labeled '3-Y20' with leader annotation, extending partially from left support"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "Unknown count, unknown diameter",
+        "specification": "Unknown count, unknown diameter",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.7,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Multiple bars shown in dark blue at top of beam extending full span, visible in both context and detail views, but no clear specification annotation visible for this group",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "Unknown count, unknown diameter",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.7,
+          "evidence": "Multiple bars shown in dark blue at top of beam extending full span, visible in both context and detail views, but no clear specification annotation visible for this group"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification clearly labeled '3L-Y12@100C/C' with leader annotation pointing to beam section",
+        "raw": {
+          "spec": "3L-Y12@100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification clearly labeled '3L-Y12@100C/C' with leader annotation pointing to beam section"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3734",
+    "output_tokens": "689"
+  }
+}

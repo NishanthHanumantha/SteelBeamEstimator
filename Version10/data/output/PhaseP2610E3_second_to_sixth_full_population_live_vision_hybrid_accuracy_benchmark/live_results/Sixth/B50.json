@@ -1,0 +1,183 @@
+{
+  "beam_id": "B50",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B50_render.png",
+    "sha256": "995dee4b5247966ae32fbd0955bce987745481d74e8739e6415dc28dd004f06e",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.451874699967448",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "543"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "fc31ebb95bc084485e264a19e2e2009ee9943bebc1f71e32cd00a417a7ed0df7",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B50",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Green line visible at top left of beam B50, appears to be top reinforcement but specification not readable in detail image"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.6,
+        "evidence": "Blue line running along full top length of beam B50, appears continuous across span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100C/C",
+        "confidence": 0.85,
+        "evidence": "Annotation '4L-Y10@100C/C' visible in detail image, positioned centrally below beam section, indicating 4-legged Y10 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "Detail image shows very limited reinforcement detail for beam B50",
+      "Top reinforcement bars visible but specifications not clearly annotated",
+      "Cannot distinguish between main and extra bars from available visual evidence",
+      "No bottom reinforcement clearly visible in section view",
+      "Bar counts and diameters for longitudinal reinforcement cannot be determined from images"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B50",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green line visible at top left of beam B50, appears to be top reinforcement but specification not readable in detail image",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Green line visible at top left of beam B50, appears to be top reinforcement but specification not readable in detail image"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue line running along full top length of beam B50, appears continuous across span",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.6,
+          "evidence": "Blue line running along full top length of beam B50, appears continuous across span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100C/C",
+        "specification": "4L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Annotation '4L-Y10@100C/C' visible in detail image, positioned centrally below beam section, indicating 4-legged Y10 stirrups at 100mm centers",
+        "raw": {
+          "spec": "4L-Y10@100C/C",
+          "confidence": 0.85,
+          "evidence": "Annotation '4L-Y10@100C/C' visible in detail image, positioned centrally below beam section, indicating 4-legged Y10 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "543"
+  }
+}

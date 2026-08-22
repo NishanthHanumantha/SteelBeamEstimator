@@ -1,0 +1,93 @@
+{
+  "HYBRID_ONLY": {
+    "applicable": true,
+    "kpis": {
+      "beam_n": 472.0,
+      "beam_d": 484.0,
+      "bar_n": 1885.0,
+      "bar_d": 3305.0,
+      "correct_n": 686.0,
+      "correct_d": 1885.0,
+      "diameter_n": 1479.0,
+      "diameter_d": 1885.0,
+      "hybrid_total_kg": 84137.506,
+      "benchmark_total_kg": 111858.539,
+      "signed_error_kg": -27721.033,
+      "absolute_error_kg": 27721.033,
+      "beam_identification_percent": 97.52,
+      "bar_identification_percent": 57.03,
+      "correct_of_detected_percent": 36.39,
+      "diameter_identification_percent": 78.46,
+      "weight_accuracy_percent": 75.22,
+      "overall_accuracy_percent": 66.54,
+      "pooling": "RAW_NUMERATOR_DENOMINATOR",
+      "note": "Headline pooled KPIs sum raw numerators and denominators. Set percentages are not averaged.",
+      "formula_weight": "max(0, 100 - abs(model_kg - benchmark_kg) / benchmark_kg * 100)",
+      "formula_overall": "mean(pooled beam, pooled bar, pooled correct-of-detected, pooled weight)"
+    }
+  },
+  "FALLBACK_ONLY": {
+    "applicable": true,
+    "kpis": {
+      "beam_n": 43.0,
+      "beam_d": 44.0,
+      "bar_n": 123.0,
+      "bar_d": 254.0,
+      "correct_n": 47.0,
+      "correct_d": 123.0,
+      "diameter_n": 84.0,
+      "diameter_d": 123.0,
+      "hybrid_total_kg": 6167.615,
+      "benchmark_total_kg": 8687.025,
+      "signed_error_kg": -2519.41,
+      "absolute_error_kg": 2519.41,
+      "beam_identification_percent": 97.73,
+      "bar_identification_percent": 48.43,
+      "correct_of_detected_percent": 38.21,
+      "diameter_identification_percent": 68.29,
+      "weight_accuracy_percent": 71.0,
+      "overall_accuracy_percent": 63.84,
+      "pooling": "RAW_NUMERATOR_DENOMINATOR",
+      "note": "Headline pooled KPIs sum raw numerators and denominators. Set percentages are not averaged.",
+      "formula_weight": "max(0, 100 - abs(model_kg - benchmark_kg) / benchmark_kg * 100)",
+      "formula_overall": "mean(pooled beam, pooled bar, pooled correct-of-detected, pooled weight)"
+    }
+  },
+  "FULL_POPULATION": {
+    "applicable": true,
+    "kpis": {
+      "beam_n": 515.0,
+      "beam_d": 605.0,
+      "bar_n": 2008.0,
+      "bar_d": 4169.0,
+      "correct_n": 733.0,
+      "correct_d": 2008.0,
+      "diameter_n": 1563.0,
+      "diameter_d": 2008.0,
+      "hybrid_total_kg": 90305.121,
+      "benchmark_total_kg": 148910.644,
+      "signed_error_kg": -58605.523,
+      "absolute_error_kg": 58605.523,
+      "beam_identification_percent": 85.12,
+      "bar_identification_percent": 48.17,
+      "correct_of_detected_percent": 36.5,
+      "diameter_identification_percent": 77.84,
+      "weight_accuracy_percent": 60.64,
+      "overall_accuracy_percent": 57.61,
+      "pooling": "RAW_NUMERATOR_DENOMINATOR",
+      "note": "Headline pooled KPIs sum raw numerators and denominators. Set percentages are not averaged.",
+      "formula_weight": "max(0, 100 - abs(model_kg - benchmark_kg) / benchmark_kg * 100)",
+      "formula_overall": "mean(pooled beam, pooled bar, pooled correct-of-detected, pooled weight)",
+      "taxonomy": {
+        "MATCH": 733,
+        "WRONG_QUANTITY": 593,
+        "EXTRA": 183,
+        "ACCEPTABLE_EXTRA": 89,
+        "WRONG_ROLE": 134,
+        "WRONG_DIAMETER": 445,
+        "MISSING": 2161,
+        "PARTIAL_MATCH": 103
+      }
+    }
+  }
+}

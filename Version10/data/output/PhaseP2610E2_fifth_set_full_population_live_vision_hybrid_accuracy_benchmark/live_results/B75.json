@@ -1,0 +1,157 @@
+{
+  "beam_id": "B75",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B75_render.png",
+    "sha256": "65ca17a32ee8dec41aaafc42a3d58e8c7484e33060a94d5d53957d88903a1cce",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.632482099987101",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3906",
+      "output_tokens": "441"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "063815c212578a944910d9508441fc71d96a17131f7ff2df455edb61860e8402",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B75",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.92,
+        "evidence": "Dark blue bars at bottom layer, labeled 4-Y25, extending full span with visible end hooks at both supports"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.88,
+        "evidence": "Dark blue bars at bottom layer, labeled 2-Y16, shorter length extending from right support region only"
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "No stirrup/link specification visible in the detail view for beam B75",
+      "Green outline bars visible in context view appear to be from neighboring beams, not target B75"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B75",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.92,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at bottom layer, labeled 4-Y25, extending full span with visible end hooks at both supports",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.92,
+          "evidence": "Dark blue bars at bottom layer, labeled 4-Y25, extending full span with visible end hooks at both supports"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.88,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at bottom layer, labeled 2-Y16, shorter length extending from right support region only",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.88,
+          "evidence": "Dark blue bars at bottom layer, labeled 2-Y16, shorter length extending from right support region only"
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3906",
+    "output_tokens": "441"
+  }
+}

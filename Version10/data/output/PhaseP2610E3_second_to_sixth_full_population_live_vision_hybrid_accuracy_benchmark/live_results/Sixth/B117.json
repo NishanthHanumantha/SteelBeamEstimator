@@ -1,0 +1,223 @@
+{
+  "beam_id": "B117",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B117_render.png",
+    "sha256": "0179d066c8eab09bd53b36422cb6219087ab57c81f914c067c9255b310643468",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "13.638199999986682",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3562",
+      "output_tokens": "782"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "5e7654646aee94850a86fb7ef66a23c340119ceedd002e3db7cf10e28d880b78",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B117",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom reinforcement shown in cross-section with annotation '2-Y16' pointing to bottom bars. Bars appear to run full span based on typical beam detailing."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.8,
+        "evidence": "Annotation '2L-Y8@200C/C' shown below the beam section. The 'L' designation and spacing notation suggest top longitudinal bars, likely hanger bars or distribution steel."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "4 bars (vertical distribution)",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Four vertical dashed lines visible in the beam elevation view, positioned at regular intervals along the beam depth. These appear to be side face bars or vertical distribution reinforcement."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Links as per 2L-Y8@200C/C specification",
+        "confidence": 0.7,
+        "evidence": "The '2L-Y8@200C/C' notation likely indicates link/stirrup specification with Y8 bars at 200mm centers. Standard notation suggests closed links."
+      }
+    ],
+    "ambiguities": [
+      "The '2L-Y8@200C/C' notation could represent either top longitudinal bars or stirrup/link specification - interpretation as top bars is based on the 'L' prefix and spacing notation",
+      "Exact length and extent of side face bars cannot be determined from the elevation view",
+      "No explicit stirrup callout visible, stirrup specification inferred from the 2L-Y8@200C/C notation"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B117",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom reinforcement shown in cross-section with annotation '2-Y16' pointing to bottom bars. Bars appear to run full span based on typical beam detailing.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom reinforcement shown in cross-section with annotation '2-Y16' pointing to bottom bars. Bars appear to run full span based on typical beam detailing."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "diameter": 8,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '2L-Y8@200C/C' shown below the beam section. The 'L' designation and spacing notation suggest top longitudinal bars, likely hanger bars or distribution steel.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2L-Y8@200C/C",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.8,
+          "evidence": "Annotation '2L-Y8@200C/C' shown below the beam section. The 'L' designation and spacing notation suggest top longitudinal bars, likely hanger bars or distribution steel."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "4 bars (vertical distribution)",
+        "specification": "4 bars (vertical distribution)",
+        "bar_count": 4,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Four vertical dashed lines visible in the beam elevation view, positioned at regular intervals along the beam depth. These appear to be side face bars or vertical distribution reinforcement.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "4 bars (vertical distribution)",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Four vertical dashed lines visible in the beam elevation view, positioned at regular intervals along the beam depth. These appear to be side face bars or vertical distribution reinforcement."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Links as per 2L-Y8@200C/C specification",
+        "specification": "Links as per 2L-Y8@200C/C specification",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.7,
+        "evidence": "The '2L-Y8@200C/C' notation likely indicates link/stirrup specification with Y8 bars at 200mm centers. Standard notation suggests closed links.",
+        "raw": {
+          "spec": "Links as per 2L-Y8@200C/C specification",
+          "confidence": 0.7,
+          "evidence": "The '2L-Y8@200C/C' notation likely indicates link/stirrup specification with Y8 bars at 200mm centers. Standard notation suggests closed links."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3562",
+    "output_tokens": "782"
+  }
+}

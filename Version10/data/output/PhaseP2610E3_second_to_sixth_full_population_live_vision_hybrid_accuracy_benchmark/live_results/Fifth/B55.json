@@ -1,0 +1,204 @@
+{
+  "beam_id": "B55",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "REUSE",
+  "call_provenance": "VISION_REUSED_CURRENT_ARCHITECTURE",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B55_render.png",
+    "sha256": "461b922cd8f7e74c0015f2dbeeeff50e1909a0d37bded7628027f124d37ecf50",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": false,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "parsed": {
+    "target_beam_id": "B55",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y22",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Solid green line at top of beam spanning full length with annotation '3-Y22+Y16', top bars in elevation and section views"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "1-Y16",
+        "bar_count": 1,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Part of '3-Y22+Y16' annotation, single Y16 bar running with the 3-Y22 group at top, shown in both views"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "3-Y10",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Dashed green line at bottom of beam spanning full length, annotation '3L-Y10@100/125/100C/C' indicates 3 longitudinal Y10 bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100/125/100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation '3L-Y10@100/125/100C/C' with vertical stirrup marks shown at varying spacing (100mm at ends, 125mm at center). Blue vertical lines indicate stirrup positions throughout beam length"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B55",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y22",
+        "specification": "3-Y22",
+        "bar_count": 3,
+        "diameter": 22,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Solid green line at top of beam spanning full length with annotation '3-Y22+Y16', top bars in elevation and section views",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y22",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Solid green line at top of beam spanning full length with annotation '3-Y22+Y16', top bars in elevation and section views"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "1-Y16",
+        "specification": "1-Y16",
+        "bar_count": 1,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Part of '3-Y22+Y16' annotation, single Y16 bar running with the 3-Y22 group at top, shown in both views",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "1-Y16",
+          "bar_count": 1,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Part of '3-Y22+Y16' annotation, single Y16 bar running with the 3-Y22 group at top, shown in both views"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y10",
+        "specification": "3-Y10",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dashed green line at bottom of beam spanning full length, annotation '3L-Y10@100/125/100C/C' indicates 3 longitudinal Y10 bars",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "3-Y10",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Dashed green line at bottom of beam spanning full length, annotation '3L-Y10@100/125/100C/C' indicates 3 longitudinal Y10 bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100/125/100C/C",
+        "specification": "3L-Y10@100/125/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation '3L-Y10@100/125/100C/C' with vertical stirrup marks shown at varying spacing (100mm at ends, 125mm at center). Blue vertical lines indicate stirrup positions throughout beam length",
+        "raw": {
+          "spec": "3L-Y10@100/125/100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation '3L-Y10@100/125/100C/C' with vertical stirrup marks shown at varying spacing (100mm at ends, 125mm at center). Blue vertical lines indicate stirrup positions throughout beam length"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "680"
+  },
+  "set_key": "Fifth",
+  "reuse_source": "E2_FIFTH_LIVE"
+}

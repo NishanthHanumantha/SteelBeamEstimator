@@ -1,0 +1,180 @@
+{
+  "beam_id": "B93",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B93_render.png",
+    "sha256": "aa14290be440c40f697c8f2670768b67fc966edf91d4fef400f7f5c0b16b51ab",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.29943120002281",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3390",
+      "output_tokens": "504"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "391da62fdff3d18af4af63e5578d24d9dfee8af8828ada6ad0f9135fe1c5ea48",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B93",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2 bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two dark blue bars shown at top of beam section, extending full span with continuity beyond beam ends visible in context view"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2 bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two dark blue bars shown at bottom of beam section within the blue outline rectangle, spanning the beam length shown"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4LY10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Text annotation '4LY10@100C/C' clearly visible below beam detail with leader pointing to stirrup representation shown by green diagonal lines"
+      }
+    ],
+    "ambiguities": [
+      "Bar diameter not specified in visible annotations for longitudinal reinforcement groups",
+      "Exact bar lengths cannot be determined from the drawing scale and dimensions provided"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B93",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2 bars",
+        "specification": "2 bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars shown at top of beam section, extending full span with continuity beyond beam ends visible in context view",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2 bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two dark blue bars shown at top of beam section, extending full span with continuity beyond beam ends visible in context view"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2 bars",
+        "specification": "2 bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars shown at bottom of beam section within the blue outline rectangle, spanning the beam length shown",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2 bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two dark blue bars shown at bottom of beam section within the blue outline rectangle, spanning the beam length shown"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4LY10@100C/C",
+        "specification": "4LY10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Text annotation '4LY10@100C/C' clearly visible below beam detail with leader pointing to stirrup representation shown by green diagonal lines",
+        "raw": {
+          "spec": "4LY10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Text annotation '4LY10@100C/C' clearly visible below beam detail with leader pointing to stirrup representation shown by green diagonal lines"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3390",
+    "output_tokens": "504"
+  }
+}

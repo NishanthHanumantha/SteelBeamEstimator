@@ -1,0 +1,181 @@
+{
+  "beam_id": "B63",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B63_render.png",
+    "sha256": "971ea30d3c467c665fc99fd66d0e4df52c4838841009075d1de0ea49509249fa",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.180958000011742",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3390",
+      "output_tokens": "546"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "4727558469580f9198a5a961475ce150d2210d5bf8fdc67bc318fb3f04fbe3fe",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B63",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars shown at top of beam section in detail view, labeled 3-Y20 with annotation marker pointing to top reinforcement layer"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars shown at bottom of beam section in detail view, labeled 3-Y20 with annotation marker pointing to bottom reinforcement layer"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation 2L-Y10@100C/C shown at bottom of section detail with marker pointing to stirrup/link reinforcement"
+      }
+    ],
+    "ambiguities": [
+      "Bar lengths cannot be determined from the section views provided - no longitudinal elevation or plan view showing bar extent",
+      "Both top and bottom groups have identical specification (3-Y20) making role assignment based on specification alone uncertain",
+      "Support scope and span relationship cannot be determined without longitudinal view showing bar curtailment or continuation"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B63",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars shown at top of beam section in detail view, labeled 3-Y20 with annotation marker pointing to top reinforcement layer",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars shown at top of beam section in detail view, labeled 3-Y20 with annotation marker pointing to top reinforcement layer"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars shown at bottom of beam section in detail view, labeled 3-Y20 with annotation marker pointing to bottom reinforcement layer",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars shown at bottom of beam section in detail view, labeled 3-Y20 with annotation marker pointing to bottom reinforcement layer"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@100C/C",
+        "specification": "2L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation 2L-Y10@100C/C shown at bottom of section detail with marker pointing to stirrup/link reinforcement",
+        "raw": {
+          "spec": "2L-Y10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation 2L-Y10@100C/C shown at bottom of section detail with marker pointing to stirrup/link reinforcement"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3390",
+    "output_tokens": "546"
+  }
+}

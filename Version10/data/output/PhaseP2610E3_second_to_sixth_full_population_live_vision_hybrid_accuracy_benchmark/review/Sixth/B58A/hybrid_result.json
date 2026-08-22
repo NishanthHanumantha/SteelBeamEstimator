@@ -1,0 +1,387 @@
+{
+  "beam_id": "B58A",
+  "source_provenance": {
+    "kind": "HYBRID",
+    "vision_used": true,
+    "vision_source": "E3_LIVE",
+    "mode": "LIVE_BENCHMARK",
+    "call_provenance": "VISION_NEW_LIVE_CALL",
+    "set_key": "Sixth"
+  },
+  "target_identity": {
+    "value": "B58A",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B58A",
+    "deterministic_value": "B58A",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "reinforcement_groups": [
+    {
+      "group_id": "G2",
+      "origin": "MATCHED",
+      "layer": {
+        "value": "BOTTOM",
+        "source": "VISION",
+        "confidence": 0.7,
+        "fallback_used": false,
+        "vision_value": "BOTTOM",
+        "deterministic_value": "BOTTOM",
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "role": {
+        "value": "MAIN",
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": "MAIN",
+        "deterministic_value": "MAIN",
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "bar_count": {
+        "value": 6,
+        "source": "DETERMINISTIC",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": 6,
+        "conflict_detected": false,
+        "resolution_reason": "DETERMINISTIC_FALLBACK",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "diameter": {
+        "value": 25,
+        "source": "DETERMINISTIC",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": 25,
+        "conflict_detected": false,
+        "resolution_reason": "DETERMINISTIC_FALLBACK",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "specification": {
+        "value": "6Y25",
+        "source": "DETERMINISTIC",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": "6Y25",
+        "conflict_detected": true,
+        "resolution_reason": "DETERMINISTIC_FALLBACK",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "support_scope": {
+        "value": "FULL_SPAN",
+        "source": "VISION",
+        "confidence": 0.7,
+        "fallback_used": false,
+        "vision_value": "FULL_SPAN",
+        "deterministic_value": "FULL_SPAN",
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": 4240.4,
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "LONGER",
+      "relative_group_extent": "FULL_SPAN",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": true,
+        "conflict_detected": true,
+        "resolution_reason": "MATCHED",
+        "vision_id": "G2",
+        "deterministic_id": "G01",
+        "match_score": 6
+      }
+    },
+    {
+      "group_id": "G1",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": {
+        "value": "TOP",
+        "source": "VISION",
+        "confidence": 0.7,
+        "fallback_used": false,
+        "vision_value": "TOP",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "role": {
+        "value": "MAIN",
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": "MAIN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "bar_count": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "diameter": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "specification": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "support_scope": {
+        "value": "FULL_SPAN",
+        "source": "VISION",
+        "confidence": 0.7,
+        "fallback_used": false,
+        "vision_value": "FULL_SPAN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": "UNAVAILABLE",
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "LONGER",
+      "relative_group_extent": "FULL_SPAN",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": false,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "vision_id": "G1",
+        "deterministic_id": null,
+        "match_score": null
+      }
+    },
+    {
+      "group_id": "G3",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": false,
+        "vision_value": "SIDE_FACE",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "role": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "bar_count": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "diameter": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "specification": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "support_scope": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": "UNAVAILABLE",
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "UNKNOWN",
+      "relative_group_extent": "UNKNOWN",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": false,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "vision_id": "G3",
+        "deterministic_id": null,
+        "match_score": null
+      }
+    }
+  ],
+  "stirrups": {
+    "items": [
+      {
+        "origin": "VISION_ONLY_GROUP",
+        "semantic_identification": {
+          "value": null,
+          "source": "UNRESOLVED",
+          "confidence": null,
+          "fallback_used": true,
+          "vision_value": "UNKNOWN",
+          "deterministic_value": null,
+          "conflict_detected": false,
+          "resolution_reason": "UNRESOLVED",
+          "validation_reason": "VISION_LOW_CONFIDENCE"
+        },
+        "engineering_calculation_reference": {
+          "source": "DETERMINISTIC",
+          "authority": "DETERMINISTIC_ENGINEERING",
+          "reason": "DETERMINISTIC_AUTHORITY",
+          "cut_length_mm": "UNAVAILABLE"
+        }
+      }
+    ],
+    "semantic_identification_authority": "VISION_PREFERRED",
+    "engineering_calculation_authority": "DETERMINISTIC_ENGINEERING"
+  },
+  "spacers": {
+    "source": "DETERMINISTIC",
+    "authority": "DETERMINISTIC_ENGINEERING",
+    "reason": "DETERMINISTIC_AUTHORITY",
+    "groups": [
+      {
+        "physical_group_id": "G02",
+        "layer": "SPACER",
+        "role": "SPACER",
+        "specification": "1Y12",
+        "bar_count": 1,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "cut_length_mm": 3122.4,
+        "provenance": "R13_PRODUCTION_MODEL",
+        "family": "SPACER",
+        "raw": {
+          "phase": "P2.6.9",
+          "beam_id": "B58A",
+          "group_id": "G02",
+          "family": "SPACER",
+          "physical_layer": "SPACER",
+          "reinforcement_role": "SPACER",
+          "count": 1,
+          "diameter": 12,
+          "specification": "1Y12",
+          "spacing": "UNKNOWN",
+          "zone": "UNKNOWN",
+          "spatial_extent": "UNKNOWN",
+          "start_position": "UNKNOWN",
+          "end_position": "UNKNOWN",
+          "annotation_ids": [],
+          "leader_ids": [],
+          "source_layer": "UNKNOWN",
+          "deterministic_identity": "R13-B58A-SPACER_BAR-e128d6",
+          "provenance": "R13_PRODUCTION_MODEL",
+          "evidence_quality": "DETERMINISTIC",
+          "confidence": 0.812,
+          "source_bar_id": "R13-B58A-SPACER_BAR-e128d6",
+          "piece_type": "SPACER",
+          "cut_length_mm": 3122.4
+        }
+      }
+    ]
+  },
+  "group_matching": {
+    "matched": 1,
+    "vision_only": 2,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 1,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "G2",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "possible_duplicate_groups": [],
+  "successfully_resolved": true
+}

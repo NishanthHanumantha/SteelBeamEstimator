@@ -1,0 +1,193 @@
+{
+  "phase_id": "P2.6.10-E.2",
+  "phase_name": "Fifth Set Full-Population Live Vision Hybrid Accuracy Benchmark",
+  "model_version": "10.11.23",
+  "gate_version": "P2610E2_FIFTH_SET_FULL_POPULATION_LIVE_VISION_HYBRID_ACCURACY_BENCHMARK_V1_0",
+  "decision": "PASS_WITH_LIMITATIONS",
+  "live_completion": "COMPLETE_LIVE_BENCHMARK",
+  "pass_fail": "PASS",
+  "mode": "LIVE_BENCHMARK",
+  "live_claude_call": true,
+  "runtime_s": 1617.698,
+  "production": {
+    "production_mutation_count": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "shadow_only": true,
+    "live_claude_call": true,
+    "production_mutation_delta": 0,
+    "estimator_unchanged": true
+  },
+  "kpis": {
+    "beam_identification_percent": 76.47,
+    "bar_identification_percent": 39.29,
+    "correct_of_detected_percent": 36.89,
+    "diameter_identification_percent": 76.75,
+    "weight_accuracy_percent": 47.58,
+    "overall_accuracy_percent": 50.06,
+    "hybrid_total_kg": 27977.137,
+    "benchmark_total_kg": 58796.332,
+    "absolute_error_kg": 30819.195,
+    "signed_error_kg": -30819.195,
+    "beam_n": 143,
+    "beam_d": 187,
+    "bar_n": 572,
+    "bar_d": 1456,
+    "correct_n": 211,
+    "correct_d": 572,
+    "taxonomy": {
+      "MATCH": 211,
+      "WRONG_QUANTITY": 164,
+      "MISSING": 884,
+      "WRONG_DIAMETER": 133,
+      "PARTIAL_MATCH": 31,
+      "WRONG_ROLE": 33,
+      "EXTRA": 50,
+      "ACCEPTABLE_EXTRA": 23
+    }
+  },
+  "splits": {
+    "HYBRID_ONLY": {
+      "beam_identification_percent": 98.62,
+      "bar_identification_percent": 51.81,
+      "correct_of_detected_percent": 36.89,
+      "diameter_identification_percent": 76.75,
+      "weight_accuracy_percent": 67.82,
+      "overall_accuracy_percent": 63.78,
+      "hybrid_total_kg": 27977.137,
+      "benchmark_total_kg": 41250.823,
+      "absolute_error_kg": 13273.685,
+      "signed_error_kg": -13273.685,
+      "beam_n": 143,
+      "beam_d": 145,
+      "bar_n": 572,
+      "bar_d": 1104,
+      "correct_n": 211,
+      "correct_d": 572,
+      "taxonomy": {
+        "MATCH": 211,
+        "WRONG_QUANTITY": 164,
+        "MISSING": 532,
+        "WRONG_DIAMETER": 133,
+        "PARTIAL_MATCH": 31,
+        "WRONG_ROLE": 33,
+        "EXTRA": 50,
+        "ACCEPTABLE_EXTRA": 23
+      }
+    },
+    "FALLBACK_ONLY": {},
+    "FULL_POPULATION": {
+      "beam_identification_percent": 76.47,
+      "bar_identification_percent": 39.29,
+      "correct_of_detected_percent": 36.89,
+      "diameter_identification_percent": 76.75,
+      "weight_accuracy_percent": 47.58,
+      "overall_accuracy_percent": 50.06,
+      "hybrid_total_kg": 27977.137,
+      "benchmark_total_kg": 58796.332,
+      "absolute_error_kg": 30819.195,
+      "signed_error_kg": -30819.195,
+      "beam_n": 143,
+      "beam_d": 187,
+      "bar_n": 572,
+      "bar_d": 1456,
+      "correct_n": 211,
+      "correct_d": 572,
+      "taxonomy": {
+        "MATCH": 211,
+        "WRONG_QUANTITY": 164,
+        "MISSING": 884,
+        "WRONG_DIAMETER": 133,
+        "PARTIAL_MATCH": 31,
+        "WRONG_ROLE": 33,
+        "EXTRA": 50,
+        "ACCEPTABLE_EXTRA": 23
+      }
+    }
+  },
+  "execution_provenance": {
+    "hybrid_count": 143,
+    "fallback_count": 0,
+    "hybrid_percent": 100.0,
+    "fallback_percent": 0.0,
+    "VISION_NEW_LIVE_CALL": 135,
+    "VISION_RETRIED_AFTER_HISTORICAL_FAILURE": 8
+  },
+  "vision_coverage": {
+    "VISION_READY": 143,
+    "VISION_READY_WITH_LIMITATIONS": 0,
+    "VISION_NOT_READY": 0,
+    "VISION_REVIEW_ONLY": 0,
+    "VISION_ELIGIBLE": 143,
+    "VISION_BLOCKED_NOT_READY": 0,
+    "visual_source_available": 143,
+    "claude_attempted": 143,
+    "api_success": 143,
+    "api_failed": 0,
+    "schema_valid": 143,
+    "semantic_usable": 143
+  },
+  "live_summary": {
+    "attempted": 143,
+    "api_success": 143,
+    "api_failed": 0,
+    "schema_valid": 143,
+    "semantic_usable": 143,
+    "retries": 0,
+    "reused": 0,
+    "historical_retried_recovered": 8,
+    "input_tokens": 420680,
+    "output_tokens": 86796
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 39,
+    "total": 39
+  },
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "prior_phase_unit_ok": {
+    "C.3": {
+      "ok": true,
+      "passed": 19
+    },
+    "C.4": {
+      "ok": true,
+      "passed": 22
+    },
+    "C.5": {
+      "ok": true,
+      "passed": 21
+    },
+    "D.1": {
+      "ok": true,
+      "passed": 32
+    },
+    "D.2": {
+      "ok": true,
+      "passed": 30
+    },
+    "D.3": {
+      "ok": true,
+      "passed": 24
+    },
+    "D.4": {
+      "ok": true,
+      "passed": 28
+    },
+    "E.1": {
+      "ok": true,
+      "passed": 31
+    }
+  },
+  "limitations": [
+    "ESTIMATOR_WORKBOOK_MAPPING_LIMITATION",
+    "STIRRUP_ENGINEERING_UNAVAILABLE",
+    "AMBIGUOUS_WITHHELD"
+  ],
+  "conclusion": "HYBRID coverage is 100.0% of executed model beams. Subset overall scores are not both applicable; full-population overall is 50.06.",
+  "pdf_path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseP2610E2_fifth_set_full_population_live_vision_hybrid_accuracy_benchmark\\Steel_Beam_Estimation_Hybrid_Performance_Report_Fifth_Set.pdf"
+}

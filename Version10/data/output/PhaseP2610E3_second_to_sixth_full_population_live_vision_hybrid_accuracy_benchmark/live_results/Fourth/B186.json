@@ -1,0 +1,180 @@
+{
+  "beam_id": "B186",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B186_render.png",
+    "sha256": "d7688cc4a915744638912b73349c5f4d0f048b3eef9e1abfd92c26fa45316dea",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.087929199973587",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3820",
+      "output_tokens": "581"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "39c9754977d62bef82fdb75736e2e1cbe5df495e5c1ed3517f2a576ba4dfe602",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B186",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars shown in section view with annotation 4-Y25 pointing to top reinforcement. Bars appear to span full length of beam."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer bars shown in section view with annotation 4-Y25 pointing to bottom reinforcement. Bars appear to span full length of beam."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@X100C/C",
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly annotated as 4L-Y12@X100C/C below the beam section. 4-legged stirrups with Y12 bars at 100mm centers."
+      }
+    ],
+    "ambiguities": [
+      "Both top and bottom reinforcement groups have identical specification (4-Y25). Physical distinction is clear from layer position, but relative bar lengths cannot be determined from the drawings.",
+      "The 'X' in stirrup spacing notation (X100C/C) may indicate variable spacing or a specific zone designation, but this is not explicitly clarified in the visible detail."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B186",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars shown in section view with annotation 4-Y25 pointing to top reinforcement. Bars appear to span full length of beam.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer bars shown in section view with annotation 4-Y25 pointing to top reinforcement. Bars appear to span full length of beam."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer bars shown in section view with annotation 4-Y25 pointing to bottom reinforcement. Bars appear to span full length of beam.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer bars shown in section view with annotation 4-Y25 pointing to bottom reinforcement. Bars appear to span full length of beam."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@X100C/C",
+        "specification": "4L-Y12@X100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Stirrup specification clearly annotated as 4L-Y12@X100C/C below the beam section. 4-legged stirrups with Y12 bars at 100mm centers.",
+        "raw": {
+          "spec": "4L-Y12@X100C/C",
+          "confidence": 0.95,
+          "evidence": "Stirrup specification clearly annotated as 4L-Y12@X100C/C below the beam section. 4-legged stirrups with Y12 bars at 100mm centers."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3820",
+    "output_tokens": "581"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "ground_truth_source": "ESTIMATOR_EXCEL",
+  "beam": "PhaseQA.2A_ground_truth_benchmark.beam_matcher.BeamMatcher",
+  "bar": "PhaseQA.2A_ground_truth_benchmark.bar_matcher.BarMatcher",
+  "steel": "QA.2A metric8 max(0, 100 - abs(model-bench)/bench*100)",
+  "overall": "mean(beam ID, bar ID, correct-of-detected, steel); diameter excluded",
+  "limitation": "Estimator workbook comparison is benchmark truth; row-level mapping may not perfectly represent physical drawing interpretation."
+}

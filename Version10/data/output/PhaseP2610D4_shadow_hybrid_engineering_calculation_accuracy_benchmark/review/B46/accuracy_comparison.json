@@ -1,0 +1,81 @@
+{
+  "beam_id": "B46",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 63.528,
+  "deterministic_kg": 61.16,
+  "benchmark_kg": 96.9094,
+  "truth_source": "ESTIMATOR_EXCEL",
+  "hybrid_error_pct": 34.45,
+  "deterministic_error_pct": 36.89,
+  "hybrid_accuracy_pct": 65.55,
+  "deterministic_accuracy_pct": 63.11,
+  "hybrid_signed_percent_error": -34.45,
+  "deterministic_signed_percent_error": -36.89,
+  "absolute_error_hybrid_kg": 33.3814,
+  "absolute_error_deterministic_kg": 35.7494,
+  "winner": "HYBRID",
+  "truth_lines": [
+    {
+      "role": "Top Bars",
+      "description": "Top bars",
+      "diameter_mm": 20.0,
+      "bar_count": 4.0,
+      "weight_kg": 33.4545
+    },
+    {
+      "role": "Bottom Bars",
+      "description": "Bottom bars",
+      "diameter_mm": 20.0,
+      "bar_count": 4.0,
+      "weight_kg": 33.4545
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 10.0,
+      "bar_count": 11.0,
+      "weight_kg": 11.941
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 10.0,
+      "bar_count": 5.0,
+      "weight_kg": 5.4277
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 10.0,
+      "bar_count": 11.0,
+      "weight_kg": 8.6843
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 10.0,
+      "bar_count": 5.0,
+      "weight_kg": 3.9474
+    }
+  ],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y20": 63.528
+    },
+    "deterministic": {
+      "Y20": 61.16
+    },
+    "benchmark": {
+      "Y10": 30.0004,
+      "Y20": 66.909
+    }
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

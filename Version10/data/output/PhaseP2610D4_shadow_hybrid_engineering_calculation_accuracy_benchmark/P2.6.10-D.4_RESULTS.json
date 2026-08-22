@@ -1,0 +1,83 @@
+{
+  "phase_id": "P2.6.10-D.4",
+  "phase_name": "Shadow Hybrid Engineering Calculation & Accuracy Benchmark",
+  "model_version": "10.11.22",
+  "gate_version": "P2610D4_SHADOW_HYBRID_ENGINEERING_CALCULATION_ACCURACY_BENCHMARK_V1_0",
+  "decision": "PASS_WITH_LIMITATIONS",
+  "pass_fail": "PASS",
+  "population_metrics": {
+    "population_discovered": 16,
+    "calculation_completeness": {
+      "SHADOW_COMPLETE": 15,
+      "SHADOW_PARTIAL": 0,
+      "SHADOW_AMBIGUOUS": 1,
+      "SHADOW_INCOMPATIBLE": 0
+    },
+    "no_benchmark_truth": 1,
+    "benchmark_truth_coverage": 15,
+    "hybrid_total_kg": 2987.8652,
+    "deterministic_total_kg": 2854.296,
+    "benchmark_total_kg": 3076.2588,
+    "hybrid_absolute_error_kg": 88.3936,
+    "deterministic_absolute_error_kg": 221.9628,
+    "hybrid_error_pct": 2.87,
+    "deterministic_error_pct": 7.22,
+    "hybrid_accuracy_pct": 97.13,
+    "deterministic_accuracy_pct": 92.78,
+    "accuracy_improvement_delta_pp": 4.35,
+    "winners": {
+      "HYBRID": 7,
+      "DETERMINISTIC": 8,
+      "TIE": 0,
+      "NO_BENCHMARK_TRUTH": 1
+    },
+    "totals_include_only_beams_with_benchmark_truth": true,
+    "group_semantic_impact": {
+      "beams_with_benchmark_truth": 15,
+      "expected_group_count": 65,
+      "hybrid_group_count": 47,
+      "deterministic_group_count": null,
+      "missing_groups": 19,
+      "spurious_groups": 1,
+      "note": "Group counts compare hybrid longitudinal groups to estimator RoleLines. Schemas differ; this is a count delta, not identity matching."
+    },
+    "bar_count_accuracy": {
+      "beams_compared": 15,
+      "exact_matches": 0,
+      "overestimates": 0,
+      "underestimates": 15,
+      "mean_absolute_count_error": 34.067,
+      "note": "Beam-level sum of longitudinal bar counts versus estimator RoleLine bar counts."
+    },
+    "formulas": {
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)",
+      "accuracy_improvement_delta_pp": "hybrid_accuracy_pct - deterministic_accuracy_pct",
+      "source": "QA.2A metric8 / PhaseP258 metrics (local implementation in this shadow reporter)"
+    }
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "shadow_only": true,
+    "live_claude_call": false,
+    "steel_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "production_mutation_delta": 0
+  },
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 28,
+    "total": 28
+  },
+  "live_claude_call": false,
+  "runtime_s": 249.039,
+  "recommendation": "PROCEED_TO_NEXT_SHADOW_PHASE"
+}

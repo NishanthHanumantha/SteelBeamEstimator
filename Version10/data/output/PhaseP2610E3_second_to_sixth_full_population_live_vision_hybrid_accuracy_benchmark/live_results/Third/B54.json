@@ -1,0 +1,120 @@
+{
+  "beam_id": "B54",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B54_render.png",
+    "sha256": "c5d97545c7ab4eb9aa3a36787009c9663acd018d927418b3a4bcd3682180293d",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.2771792999701574",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3124",
+      "output_tokens": "353"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "facf091c7df36e8d0dd54fa2f54242085deb4efa0783572677eda253c42edd54",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B54",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y16' pointing to them. Bars appear to extend vertically upward from the beam outline."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "The drawing shows a partial section view with limited detail. Only top reinforcement is clearly visible.",
+      "No stirrup/link reinforcement is shown in the visible portion of the detail.",
+      "Bar lengths and span relationships cannot be determined from this sectional view.",
+      "The dashed horizontal line may indicate a construction joint or reference line but does not provide reinforcement information.",
+      "Bottom reinforcement, if present, is not visible in this view."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B54",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y16' pointing to them. Bars appear to extend vertically upward from the beam outline.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y16' pointing to them. Bars appear to extend vertically upward from the beam outline."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3124",
+    "output_tokens": "353"
+  }
+}

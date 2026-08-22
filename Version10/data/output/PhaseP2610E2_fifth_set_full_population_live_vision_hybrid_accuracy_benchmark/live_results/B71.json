@@ -1,0 +1,220 @@
+{
+  "beam_id": "B71",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B71_render.png",
+    "sha256": "e97881cd63c2a0d6632fc21a99ee0c5883183fb2d4a7032eb756a0031a86e081",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.08426909998525",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "680"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "d73d4634597819d2e3ff271c1e035b56737b8d1fc8d36f34a3225fe2c726ef9d",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B71",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y32",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Dark blue bars running full span at top of beam, labeled 4-Y32 in detail view, continuous throughout beam length"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top layer, labeled 4-Y25, visible only at left support region, shorter than G1 bars"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Green dashed lines visible at bottom in both views suggest possible bottom reinforcement, but no clear specification or bar count visible for B71"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@X100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation clearly visible below the beam detail showing 4L-Y12@X100C/C with owned annotation marker"
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement (green dashed lines) is visible but specification is unclear - may belong to neighboring beams or slab",
+      "The exact termination points of the 4-Y25 bars (G2) are not precisely defined in the drawings"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B71",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y32",
+        "specification": "4-Y32",
+        "bar_count": 4,
+        "diameter": 32,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars running full span at top of beam, labeled 4-Y32 in detail view, continuous throughout beam length",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y32",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Dark blue bars running full span at top of beam, labeled 4-Y32 in detail view, continuous throughout beam length"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top layer, labeled 4-Y25, visible only at left support region, shorter than G1 bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top layer, labeled 4-Y25, visible only at left support region, shorter than G1 bars"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green dashed lines visible at bottom in both views suggest possible bottom reinforcement, but no clear specification or bar count visible for B71",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Green dashed lines visible at bottom in both views suggest possible bottom reinforcement, but no clear specification or bar count visible for B71"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@X100C/C",
+        "specification": "4L-Y12@X100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation clearly visible below the beam detail showing 4L-Y12@X100C/C with owned annotation marker",
+        "raw": {
+          "spec": "4L-Y12@X100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation clearly visible below the beam detail showing 4L-Y12@X100C/C with owned annotation marker"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "680"
+  }
+}

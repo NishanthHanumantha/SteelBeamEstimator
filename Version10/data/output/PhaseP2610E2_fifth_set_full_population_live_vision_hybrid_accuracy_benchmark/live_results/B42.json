@@ -1,0 +1,157 @@
+{
+  "beam_id": "B42",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B42_render.png",
+    "sha256": "9011bd1d56ff4a2fabb6e7adf72b57bbab73f75922583405476b7ea3a1170069",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.343593100027647",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2186",
+      "output_tokens": "497"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "198ae1822ecec1860ce4329ca1eb254acf259abc1c693eee456b793d021d4879",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B42",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Top layer reinforcement shown as 4-Y20, positioned at top of beam section, appears to run full span based on typical beam detailing"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2L-Y10@100/125/100C/C",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer reinforcement specified as 2L-Y10 with variable spacing pattern (100/125/100C/C), positioned at bottom of beam section"
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "The 2L-Y10@100/125/100C/C notation suggests a variable spacing pattern or possibly layered arrangement, but the exact physical configuration is not entirely clear from the drawing",
+      "No stirrup/shear reinforcement is explicitly shown in the detail view, though this may be specified elsewhere"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B42",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer reinforcement shown as 4-Y20, positioned at top of beam section, appears to run full span based on typical beam detailing",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Top layer reinforcement shown as 4-Y20, positioned at top of beam section, appears to run full span based on typical beam detailing"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2L-Y10@100/125/100C/C",
+        "specification": "2L-Y10@100/125/100C/C",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer reinforcement specified as 2L-Y10 with variable spacing pattern (100/125/100C/C), positioned at bottom of beam section",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2L-Y10@100/125/100C/C",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer reinforcement specified as 2L-Y10 with variable spacing pattern (100/125/100C/C), positioned at bottom of beam section"
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2186",
+    "output_tokens": "497"
+  }
+}

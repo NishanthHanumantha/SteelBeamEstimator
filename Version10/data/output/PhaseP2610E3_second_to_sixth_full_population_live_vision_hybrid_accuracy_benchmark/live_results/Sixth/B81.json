@@ -1,0 +1,179 @@
+{
+  "beam_id": "B81",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B81_render.png",
+    "sha256": "574ec69d8ef18cff4077df0392023495148c80d2b43955c04d7ebfa843860d40",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.813251900020987",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2616",
+      "output_tokens": "535"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "e3032ad37902c5880ed9b57870eb3d0927a3dd6e62441904dce152f2d322c50d",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B81",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer annotation '4-Y20' visible in cross-section, bars shown spanning full length of beam in elevation view"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.8,
+        "evidence": "Top layer annotation '2-Y16' visible in cross-section, appears to be additional bars but length/extent unclear from views provided"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100/150/100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification '4L-Y8@100/150/100C/C' annotated below beam cross-section, indicating 4-legged Y8 stirrups with variable spacing pattern"
+      }
+    ],
+    "ambiguities": [
+      "The exact span relationship and support scope of the 2-Y16 bars (G2) cannot be definitively determined from the provided views - they may be support bars or partial-span extras"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B81",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer annotation '4-Y20' visible in cross-section, bars shown spanning full length of beam in elevation view",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer annotation '4-Y20' visible in cross-section, bars shown spanning full length of beam in elevation view"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer annotation '2-Y16' visible in cross-section, appears to be additional bars but length/extent unclear from views provided",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.8,
+          "evidence": "Top layer annotation '2-Y16' visible in cross-section, appears to be additional bars but length/extent unclear from views provided"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100/150/100C/C",
+        "specification": "4L-Y8@100/150/100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification '4L-Y8@100/150/100C/C' annotated below beam cross-section, indicating 4-legged Y8 stirrups with variable spacing pattern",
+        "raw": {
+          "spec": "4L-Y8@100/150/100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification '4L-Y8@100/150/100C/C' annotated below beam cross-section, indicating 4-legged Y8 stirrups with variable spacing pattern"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2616",
+    "output_tokens": "535"
+  }
+}

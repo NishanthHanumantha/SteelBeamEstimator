@@ -1,0 +1,119 @@
+{
+  "beam_id": "B37",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B37_render.png",
+    "sha256": "3e99180473f2fcc8f66f5ffb835c3464a5139d261a75a7a49b2b2d3afd2d4fb9",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "6.521604200010188",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3468",
+      "output_tokens": "324"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "86dbc8c92b03d6e4f04665121959d291dca777bbb73da0f5cb16309c4ad0e332",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B37",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Two Y20 bars shown at bottom of beam section with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and size."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "No stirrup/link reinforcement visible in the detail view",
+      "Bar lengths and span coverage cannot be determined from the cross-sectional view provided",
+      "Only bottom reinforcement is clearly visible; top reinforcement not shown or annotated",
+      "Support conditions and full span details not visible in provided images"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B37",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y20 bars shown at bottom of beam section with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and size.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Two Y20 bars shown at bottom of beam section with annotation '2-Y20'. Bars appear to be main longitudinal reinforcement based on position and size."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3468",
+    "output_tokens": "324"
+  }
+}

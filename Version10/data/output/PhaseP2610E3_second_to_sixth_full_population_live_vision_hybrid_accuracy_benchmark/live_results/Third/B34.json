@@ -1,0 +1,326 @@
+{
+  "beam_id": "B34",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B34_render.png",
+    "sha256": "7272de4ae5704384167f7786c2469ca1e20820b0dcdd95c30d1466687ec3832c",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "14.642975300026592",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2608",
+      "output_tokens": "1048"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "779534ac149dedcfab4523f4ab6924737c16aa35c68ea957467f27d672c41ea1",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B34",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "continuous green bars at top",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two continuous green bars running full length at top of beam, appear to be primary top reinforcement"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "short green bars at top left",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.8,
+        "evidence": "Two shorter green bars at top left end, appear to be additional support reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "short green bars at top right",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.8,
+        "evidence": "Two shorter green bars at top right end, appear to be additional support reinforcement"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "spec": "continuous orange bars at bottom",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two continuous orange bars running full length at bottom of beam, appear to be primary bottom reinforcement"
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "SIDE_FACE",
+        "spec": "8-Y8",
+        "bar_count": 8,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.6,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Annotation '8-Y8, SIDE FACE REINF. ON BOTH F...' indicates side face reinforcement, 8 bars of Y8"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3-Y20",
+        "confidence": 0.5,
+        "evidence": "Annotation '3-Y20' visible near right end, likely stirrup or link specification but unclear"
+      },
+      {
+        "spec": "2L-Y8@100C/C",
+        "confidence": 0.75,
+        "evidence": "Annotation '2L-Y8@100C/C' visible near right end, indicates 2-legged Y8 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The '3-Y20' annotation is unclear - could be stirrup specification or other reinforcement detail",
+      "Exact bar diameters for continuous top and bottom bars not explicitly labeled in visible annotations",
+      "Side face reinforcement distribution and exact placement not clearly shown in elevation view"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B34",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "continuous green bars at top",
+        "specification": "continuous green bars at top",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two continuous green bars running full length at top of beam, appear to be primary top reinforcement",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "continuous green bars at top",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two continuous green bars running full length at top of beam, appear to be primary top reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "short green bars at top left",
+        "specification": "short green bars at top left",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two shorter green bars at top left end, appear to be additional support reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "short green bars at top left",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.8,
+          "evidence": "Two shorter green bars at top left end, appear to be additional support reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "short green bars at top right",
+        "specification": "short green bars at top right",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two shorter green bars at top right end, appear to be additional support reinforcement",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "short green bars at top right",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.8,
+          "evidence": "Two shorter green bars at top right end, appear to be additional support reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "continuous orange bars at bottom",
+        "specification": "continuous orange bars at bottom",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two continuous orange bars running full length at bottom of beam, appear to be primary bottom reinforcement",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "BOTTOM",
+          "spec": "continuous orange bars at bottom",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two continuous orange bars running full length at bottom of beam, appear to be primary bottom reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "8-Y8",
+        "specification": "8-Y8",
+        "bar_count": 8,
+        "diameter": 8,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.7,
+        "role_confidence": 0.6,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '8-Y8, SIDE FACE REINF. ON BOTH F...' indicates side face reinforcement, 8 bars of Y8",
+        "raw": {
+          "physical_group_id": "G5",
+          "layer": "SIDE_FACE",
+          "spec": "8-Y8",
+          "bar_count": 8,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.6,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Annotation '8-Y8, SIDE FACE REINF. ON BOTH F...' indicates side face reinforcement, 8 bars of Y8"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "diameter": 20,
+        "legs": null,
+        "confidence": 0.5,
+        "evidence": "Annotation '3-Y20' visible near right end, likely stirrup or link specification but unclear",
+        "raw": {
+          "spec": "3-Y20",
+          "confidence": 0.5,
+          "evidence": "Annotation '3-Y20' visible near right end, likely stirrup or link specification but unclear"
+        }
+      },
+      {
+        "stirrup_id": "VS2",
+        "specification_raw": "2L-Y8@100C/C",
+        "specification": "2L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.75,
+        "evidence": "Annotation '2L-Y8@100C/C' visible near right end, indicates 2-legged Y8 stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y8@100C/C",
+          "confidence": 0.75,
+          "evidence": "Annotation '2L-Y8@100C/C' visible near right end, indicates 2-legged Y8 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2608",
+    "output_tokens": "1048"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "beam_id": "B72",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B72_render.png",
+    "sha256": "648d286b6fad1be33d79a69cfe91eb1700cb6417df1c7acd863e7828ef3fdf6a",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.7129319999949075",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2788",
+      "output_tokens": "374"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "ed669a581e0f33efa2c29f35416789c01366a8180eee054b8977d80d5c45e143",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B72",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Annotation '3-Y20' with pointer directed at bottom of beam B72 section, indicating bottom reinforcement running full span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y10@100C/C' located below the beam section detail, indicating 2-legged stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "No top reinforcement is explicitly annotated or visible in the detail view",
+      "Bar lengths cannot be determined from the section view provided",
+      "Only bottom reinforcement group is clearly specified"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B72",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '3-Y20' with pointer directed at bottom of beam B72 section, indicating bottom reinforcement running full span",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Annotation '3-Y20' with pointer directed at bottom of beam B72 section, indicating bottom reinforcement running full span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@100C/C",
+        "specification": "2L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y10@100C/C' located below the beam section detail, indicating 2-legged stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '2L-Y10@100C/C' located below the beam section detail, indicating 2-legged stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2788",
+    "output_tokens": "374"
+  }
+}

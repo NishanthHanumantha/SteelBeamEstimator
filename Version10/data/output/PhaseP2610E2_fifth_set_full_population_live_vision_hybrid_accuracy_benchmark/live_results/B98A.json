@@ -1,0 +1,221 @@
+{
+  "beam_id": "B98A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B98A_render.png",
+    "sha256": "a7078380f4c94a4d26a4782d5d1c386cf988105d1c48ee1e5ea2985b3d49ca61",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "15.56094000005396",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2618",
+      "output_tokens": "786"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "ca5bcb42121d1a24ceebeff1934d5911e7a63d060ead9e319ba116e8968d8035",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B98A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Green bars at top of beam in context image, annotation '4-Y25' visible at right end of beam"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4L-Y10@100C/C",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Blue bars at bottom of beam in context image, annotation '4L-Y10@100C/C' visible below beam. The 'L' designation suggests longitudinal bars"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "2Y10",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.8,
+        "evidence": "Detail section shows side face reinforcement with blue bars on each face. Annotation 'S.F.R. - 2Y10: 750>d<900' indicates side face reinforcement with 2Y10 bars, spacing constraint 750>d<900"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Y10@100C/C",
+        "confidence": 0.85,
+        "evidence": "Vertical stirrups visible in context image cross-section. The '4L-Y10@100C/C' annotation likely refers to 4 legs of Y10 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The '4L-Y10@100C/C' annotation could refer to either longitudinal bottom bars or stirrup legs. Based on typical notation and visual evidence of vertical stirrups, interpreted as stirrups with 4 legs",
+      "Bar lengths and span relationships cannot be determined from the provided views - no longitudinal section or length dimensions visible",
+      "Side face reinforcement spacing constraint '750>d<900' suggests variable spacing but actual placement not clearly visible in detail"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B98A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars at top of beam in context image, annotation '4-Y25' visible at right end of beam",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Green bars at top of beam in context image, annotation '4-Y25' visible at right end of beam"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4L-Y10@100C/C",
+        "specification": "4L-Y10@100C/C",
+        "bar_count": 4,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars at bottom of beam in context image, annotation '4L-Y10@100C/C' visible below beam. The 'L' designation suggests longitudinal bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "4L-Y10@100C/C",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Blue bars at bottom of beam in context image, annotation '4L-Y10@100C/C' visible below beam. The 'L' designation suggests longitudinal bars"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "2Y10",
+        "specification": "2Y10",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Detail section shows side face reinforcement with blue bars on each face. Annotation 'S.F.R. - 2Y10: 750>d<900' indicates side face reinforcement with 2Y10 bars, spacing constraint 750>d<900",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "2Y10",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.8,
+          "evidence": "Detail section shows side face reinforcement with blue bars on each face. Annotation 'S.F.R. - 2Y10: 750>d<900' indicates side face reinforcement with 2Y10 bars, spacing constraint 750>d<900"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Y10@100C/C",
+        "specification": "Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Vertical stirrups visible in context image cross-section. The '4L-Y10@100C/C' annotation likely refers to 4 legs of Y10 stirrups at 100mm centers",
+        "raw": {
+          "spec": "Y10@100C/C",
+          "confidence": 0.85,
+          "evidence": "Vertical stirrups visible in context image cross-section. The '4L-Y10@100C/C' annotation likely refers to 4 legs of Y10 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2618",
+    "output_tokens": "786"
+  }
+}

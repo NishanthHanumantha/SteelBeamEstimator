@@ -1,0 +1,223 @@
+{
+  "beam_id": "B21",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B21_render.png",
+    "sha256": "89714c72569683eb3d7a1fa9de8fccf52ee3a22338e5fe38d060184612d80df9",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.746495899977162",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3132",
+      "output_tokens": "722"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "8b47e7d8af61b36c6d6b34d09902e5cb6dbc593e1d9d71c933f9fe5eee70aa99",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B21",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y16",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top of beam, labeled '3-Y16' with annotation marker pointing to them"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3-Y12",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at bottom of beam visible in detail view, associated with '3L-Y12@100C/C' annotation which appears to reference bottom reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "4 bars (diameter unknown)",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.75,
+        "evidence": "Green vertical bars visible at left support region, appear to be side face or hanger bars extending partially into span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '3L-Y12@100C/C' visible below beam detail, indicating 3-legged Y12 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The '3L-Y12@100C/C' annotation may refer to stirrups (3-legged links) rather than bottom bars, though the '3L' prefix suggests stirrup configuration",
+      "Green bars at support could be hanger bars, side face bars, or support reinforcement - exact classification uncertain",
+      "Bar lengths and span relationships cannot be determined with confidence from the available views"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B21",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y16",
+        "specification": "3-Y16",
+        "bar_count": 3,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of beam, labeled '3-Y16' with annotation marker pointing to them",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y16",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top of beam, labeled '3-Y16' with annotation marker pointing to them"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3-Y12",
+        "specification": "3-Y12",
+        "bar_count": 3,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at bottom of beam visible in detail view, associated with '3L-Y12@100C/C' annotation which appears to reference bottom reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3-Y12",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at bottom of beam visible in detail view, associated with '3L-Y12@100C/C' annotation which appears to reference bottom reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "4 bars (diameter unknown)",
+        "specification": "4 bars (diameter unknown)",
+        "bar_count": 4,
+        "diameter": null,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green vertical bars visible at left support region, appear to be side face or hanger bars extending partially into span",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "4 bars (diameter unknown)",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.75,
+          "evidence": "Green vertical bars visible at left support region, appear to be side face or hanger bars extending partially into span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '3L-Y12@100C/C' visible below beam detail, indicating 3-legged Y12 stirrups at 100mm centers",
+        "raw": {
+          "spec": "3L-Y12@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '3L-Y12@100C/C' visible below beam detail, indicating 3-legged Y12 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3132",
+    "output_tokens": "722"
+  }
+}

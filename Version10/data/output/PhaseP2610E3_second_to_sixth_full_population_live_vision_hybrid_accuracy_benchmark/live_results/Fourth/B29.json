@@ -1,0 +1,306 @@
+{
+  "beam_id": "B29",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B29_render.png",
+    "sha256": "0167401a3e5e0e2b84b212bfa3a08b52306758e1b3a2c4321ac4b3aeba9baaf8",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "15.983516399981454",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "1109"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "841bf1c45c4ac90b4c40a7672f5aadf497aa907e418a956cec1ae77670045210",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B29",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25+2-Y16",
+        "bar_count": 6,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Top layer reinforcement shown as continuous bars spanning the full length of B29, labeled '4-Y25+2-Y16' with annotation marker"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4L-Y10@100/150/100C/C",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer showing 4 legs of Y10 bars with variable spacing (100/150/100C/C) running full span, labeled '4L-Y10@100/150/100C/C'"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Bottom layer showing 4 legs of Y12 bars at right end with uniform 100C/C spacing, labeled '4L-Y12@100C/C', appears to be additional reinforcement at support"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.8,
+        "evidence": "Additional Y25 bars visible at support regions, labeled '4-Y25' separately from main top reinforcement, appears as supplementary bars"
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.75,
+        "evidence": "Y20 bars visible at support regions, labeled '4-Y20', appears as additional support reinforcement distinct from main top bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.85,
+        "evidence": "Vertical stirrups shown throughout beam span with 4 legs of Y8 bars at 100mm centers, visible as vertical lines with spacing annotations"
+      }
+    ],
+    "ambiguities": [
+      "The exact length and termination points of G4 (4-Y25) and G5 (4-Y20) support bars are not clearly defined in the detail view",
+      "The relationship between the main top reinforcement (4-Y25+2-Y16) and the separate 4-Y25 and 4-Y20 annotations requires interpretation of whether these are distinct physical groups or part of the same assembly"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B29",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25+2-Y16",
+        "specification": "4-Y25+2-Y16",
+        "bar_count": 6,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer reinforcement shown as continuous bars spanning the full length of B29, labeled '4-Y25+2-Y16' with annotation marker",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25+2-Y16",
+          "bar_count": 6,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Top layer reinforcement shown as continuous bars spanning the full length of B29, labeled '4-Y25+2-Y16' with annotation marker"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4L-Y10@100/150/100C/C",
+        "specification": "4L-Y10@100/150/100C/C",
+        "bar_count": 4,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer showing 4 legs of Y10 bars with variable spacing (100/150/100C/C) running full span, labeled '4L-Y10@100/150/100C/C'",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "4L-Y10@100/150/100C/C",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer showing 4 legs of Y10 bars with variable spacing (100/150/100C/C) running full span, labeled '4L-Y10@100/150/100C/C'"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "diameter": 12,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer showing 4 legs of Y12 bars at right end with uniform 100C/C spacing, labeled '4L-Y12@100C/C', appears to be additional reinforcement at support",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "4L-Y12@100C/C",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.85,
+          "evidence": "Bottom layer showing 4 legs of Y12 bars at right end with uniform 100C/C spacing, labeled '4L-Y12@100C/C', appears to be additional reinforcement at support"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.8,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Additional Y25 bars visible at support regions, labeled '4-Y25' separately from main top reinforcement, appears as supplementary bars",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.8,
+          "evidence": "Additional Y25 bars visible at support regions, labeled '4-Y25' separately from main top reinforcement, appears as supplementary bars"
+        }
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Y20 bars visible at support regions, labeled '4-Y20', appears as additional support reinforcement distinct from main top bars",
+        "raw": {
+          "physical_group_id": "G5",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.75,
+          "evidence": "Y20 bars visible at support regions, labeled '4-Y20', appears as additional support reinforcement distinct from main top bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100C/C",
+        "specification": "4L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Vertical stirrups shown throughout beam span with 4 legs of Y8 bars at 100mm centers, visible as vertical lines with spacing annotations",
+        "raw": {
+          "spec": "4L-Y8@100C/C",
+          "confidence": 0.85,
+          "evidence": "Vertical stirrups shown throughout beam span with 4 legs of Y8 bars at 100mm centers, visible as vertical lines with spacing annotations"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "1109"
+  }
+}

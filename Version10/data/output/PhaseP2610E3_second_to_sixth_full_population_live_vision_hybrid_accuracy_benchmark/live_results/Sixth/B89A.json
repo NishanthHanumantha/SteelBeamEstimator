@@ -1,0 +1,139 @@
+{
+  "beam_id": "B89A",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B89A_render.png",
+    "sha256": "5d6923e9f14b672b0d9ebba9085a748293da19a5eb3588585eae61adf0253063",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.82894999999553",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3920",
+      "output_tokens": "443"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "67e9d52674ac327c379fabc5a82efda484f8d4c5e657fce8ee65fca97645abce",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B89A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y8",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Blue bars shown at top of beam in elevation view, annotation 2L-Y8@200C/C points to these top bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@200C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@200C/C with leader pointing to beam, cross-hatched sections at supports show stirrup/link configuration, 2-leg stirrups at 200mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The annotation 2L-Y8@200C/C appears to describe stirrups (links) rather than longitudinal bars, based on the @200C/C spacing notation and cross-hatched support details showing closed links",
+      "No clear bottom reinforcement is visible in the elevation view, though cross-sections at supports show diagonal hatching suggesting stirrup configuration",
+      "Bar lengths cannot be determined from the elevation view as end details are not clearly visible"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B89A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y8",
+        "specification": "2-Y8",
+        "bar_count": 2,
+        "diameter": 8,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars shown at top of beam in elevation view, annotation 2L-Y8@200C/C points to these top bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y8",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Blue bars shown at top of beam in elevation view, annotation 2L-Y8@200C/C points to these top bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@200C/C with leader pointing to beam, cross-hatched sections at supports show stirrup/link configuration, 2-leg stirrups at 200mm centers",
+        "raw": {
+          "spec": "2L-Y8@200C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation 2L-Y8@200C/C with leader pointing to beam, cross-hatched sections at supports show stirrup/link configuration, 2-leg stirrups at 200mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3920",
+    "output_tokens": "443"
+  }
+}

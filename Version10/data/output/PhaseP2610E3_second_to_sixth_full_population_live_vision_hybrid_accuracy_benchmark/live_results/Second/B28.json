@@ -1,0 +1,180 @@
+{
+  "beam_id": "B28",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B28_render.png",
+    "sha256": "a9516f1b0336644d10dbf245c79da1c514a9ab626bb6c0e13839ce151e032a15",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.984044999990147",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3918",
+      "output_tokens": "516"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "be02f2a6f839e9dc369899f2794c9c44a43e5a892f803cd8d1cae0068370f80e",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B28",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Two dark blue bars visible at top of beam section, labeled 2-Y16 with leader pointing to top reinforcement"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y12",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Detail image shows 2-Y12 annotation in magenta below the beam section, indicating bottom reinforcement with 200mm spacing dimension shown"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@200C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@200C/C visible below beam section, with 200mm spacing dimension shown in magenta. Stirrup symbols visible at beam supports in context view"
+      }
+    ],
+    "ambiguities": [
+      "Bar lengths and span relationships cannot be determined from the cross-sectional views provided",
+      "Support scope unclear - no longitudinal section or bar length indicators visible"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B28",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars visible at top of beam section, labeled 2-Y16 with leader pointing to top reinforcement",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Two dark blue bars visible at top of beam section, labeled 2-Y16 with leader pointing to top reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y12",
+        "specification": "2-Y12",
+        "bar_count": 2,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Detail image shows 2-Y12 annotation in magenta below the beam section, indicating bottom reinforcement with 200mm spacing dimension shown",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y12",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Detail image shows 2-Y12 annotation in magenta below the beam section, indicating bottom reinforcement with 200mm spacing dimension shown"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation 2L-Y8@200C/C visible below beam section, with 200mm spacing dimension shown in magenta. Stirrup symbols visible at beam supports in context view",
+        "raw": {
+          "spec": "2L-Y8@200C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation 2L-Y8@200C/C visible below beam section, with 200mm spacing dimension shown in magenta. Stirrup symbols visible at beam supports in context view"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3918",
+    "output_tokens": "516"
+  }
+}

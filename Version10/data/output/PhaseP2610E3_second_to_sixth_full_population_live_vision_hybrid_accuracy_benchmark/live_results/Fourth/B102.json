@@ -1,0 +1,222 @@
+{
+  "beam_id": "B102",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B102_render.png",
+    "sha256": "8e925581da8541f5bc483c832c7c58108ebcd72f9b06555600cd24363d914547",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.891022399999201",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "712"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "4085f85d03bfe13b8bcea3d583d2c948734ec5fe6c33a616cf1b6b5f2820c971",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B102",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y16",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top right end of B102, labeled 3-Y16, shorter length extending from right support"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Dark blue bars at top of B102, labeled 3-Y20, running full length of beam from left to right support"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "3L-Y10@100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Green dashed line at bottom of B102, labeled 3L-Y10@100C/C, running full span with layered notation indicating 3 bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.75,
+        "evidence": "Vertical blue lines throughout beam span, though specific stirrup annotation not clearly visible in detail view, inferred from typical beam detailing pattern"
+      }
+    ],
+    "ambiguities": [
+      "Stirrup specification not explicitly labeled on B102 in visible detail, inferred from standard detailing practice",
+      "Bottom reinforcement notation 3L-Y10@100C/C uses 'L' prefix which may indicate layered or lapped bars, but physical count is 3 bars"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B102",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y16",
+        "specification": "3-Y16",
+        "bar_count": 3,
+        "diameter": 16,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top right end of B102, labeled 3-Y16, shorter length extending from right support",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y16",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top right end of B102, labeled 3-Y16, shorter length extending from right support"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of B102, labeled 3-Y20, running full length of beam from left to right support",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Dark blue bars at top of B102, labeled 3-Y20, running full length of beam from left to right support"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3L-Y10@100C/C",
+        "specification": "3L-Y10@100C/C",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green dashed line at bottom of B102, labeled 3L-Y10@100C/C, running full span with layered notation indicating 3 bars",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "3L-Y10@100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Green dashed line at bottom of B102, labeled 3L-Y10@100C/C, running full span with layered notation indicating 3 bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100C/C",
+        "specification": "4L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.75,
+        "evidence": "Vertical blue lines throughout beam span, though specific stirrup annotation not clearly visible in detail view, inferred from typical beam detailing pattern",
+        "raw": {
+          "spec": "4L-Y8@100C/C",
+          "confidence": 0.75,
+          "evidence": "Vertical blue lines throughout beam span, though specific stirrup annotation not clearly visible in detail view, inferred from typical beam detailing pattern"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "712"
+  }
+}

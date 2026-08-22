@@ -1,0 +1,222 @@
+{
+  "beam_id": "B3",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B3_render.png",
+    "sha256": "e2189bcd1e95644eb00db1aa2220d8d72e4ee82e6d5ad5028cea5af27c5a8905",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.55736670002807",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3898",
+      "output_tokens": "680"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "cf6386d86d9903b68384d38c93eb9c1b5d83159151330d07fb520b9f1de01148",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B3",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Five dark blue bars at top layer running full span, labeled 2-Y20 pointing to upper bars, visually appear to be primary top reinforcement"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "1-Y20",
+        "bar_count": 1,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Single dark blue bar at bottom layer running full span, appears to be continuous bottom reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "10-Y10",
+        "bar_count": 10,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.9,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.95,
+        "evidence": "Annotation '10-Y10, SIDE FACE REINF. ON BOTH...' with leader pointing to green vertical line indicating side face bars at support regions on both ends"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.0,
+        "evidence": "No stirrup or link specification visible in the provided detail view"
+      }
+    ],
+    "ambiguities": [
+      "The annotation '2-Y20' points to the top bars but visual count shows 5 bars - possible annotation refers to a subset or is incomplete",
+      "Side face reinforcement quantity and exact distribution between left and right supports cannot be determined from this view"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B3",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y20",
+        "specification": "5-Y20",
+        "bar_count": 5,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Five dark blue bars at top layer running full span, labeled 2-Y20 pointing to upper bars, visually appear to be primary top reinforcement",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "5-Y20",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Five dark blue bars at top layer running full span, labeled 2-Y20 pointing to upper bars, visually appear to be primary top reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "1-Y20",
+        "specification": "1-Y20",
+        "bar_count": 1,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.7,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Single dark blue bar at bottom layer running full span, appears to be continuous bottom reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "1-Y20",
+          "bar_count": 1,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Single dark blue bar at bottom layer running full span, appears to be continuous bottom reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "10-Y10",
+        "specification": "10-Y10",
+        "bar_count": 10,
+        "diameter": 10,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '10-Y10, SIDE FACE REINF. ON BOTH...' with leader pointing to green vertical line indicating side face bars at support regions on both ends",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "10-Y10",
+          "bar_count": 10,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.9,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.95,
+          "evidence": "Annotation '10-Y10, SIDE FACE REINF. ON BOTH...' with leader pointing to green vertical line indicating side face bars at support regions on both ends"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.0,
+        "evidence": "No stirrup or link specification visible in the provided detail view",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.0,
+          "evidence": "No stirrup or link specification visible in the provided detail view"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3898",
+    "output_tokens": "680"
+  }
+}

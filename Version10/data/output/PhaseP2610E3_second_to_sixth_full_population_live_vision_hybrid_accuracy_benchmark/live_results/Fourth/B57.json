@@ -1,0 +1,223 @@
+{
+  "beam_id": "B57",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B57_render.png",
+    "sha256": "2ebec6f40e73a6766f56755527528d677c6c75b1de00e124d38f368f4c4b89f2",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.639219400007278",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "702"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "60d63ec8762f9c44857f8aaffcd2e693fccf550b5de64db84ed0185b685acb15",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B57",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Dark blue bars running full length of beam at top layer, labeled 5-Y20 with annotation marker"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3L-Y10@100/125/100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.9,
+        "evidence": "Green dashed lines at bottom layer with annotation 3L-Y10@100/125/100C/C, visible at support regions with shorter extent than top bars"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.7,
+        "evidence": "Green solid line running full span at bottom layer, appears to be continuous bottom reinforcement but no specification label visible"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Blue vertical marks visible at intervals along beam suggesting stirrups/links, but no clear specification label found for B57 stirrups"
+      }
+    ],
+    "ambiguities": [
+      "Bottom layer green solid line (G3) has no visible specification label",
+      "Stirrup specification not clearly labeled for B57",
+      "The annotation 3L-Y10@100/125/100C/C appears to reference spacing pattern but exact bar count and distribution unclear from visual alone"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B57",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y20",
+        "specification": "5-Y20",
+        "bar_count": 5,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars running full length of beam at top layer, labeled 5-Y20 with annotation marker",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "5-Y20",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Dark blue bars running full length of beam at top layer, labeled 5-Y20 with annotation marker"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "3L-Y10@100/125/100C/C",
+        "specification": "3L-Y10@100/125/100C/C",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green dashed lines at bottom layer with annotation 3L-Y10@100/125/100C/C, visible at support regions with shorter extent than top bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3L-Y10@100/125/100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.9,
+          "evidence": "Green dashed lines at bottom layer with annotation 3L-Y10@100/125/100C/C, visible at support regions with shorter extent than top bars"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.7,
+        "role_confidence": 0.75,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green solid line running full span at bottom layer, appears to be continuous bottom reinforcement but no specification label visible",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.7,
+          "evidence": "Green solid line running full span at bottom layer, appears to be continuous bottom reinforcement but no specification label visible"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.3,
+        "evidence": "Blue vertical marks visible at intervals along beam suggesting stirrups/links, but no clear specification label found for B57 stirrups",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Blue vertical marks visible at intervals along beam suggesting stirrups/links, but no clear specification label found for B57 stirrups"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "702"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "phase_id": "P2.6.10-D.3",
+  "phase_name": "Hybrid Engineering Binding & Deterministic Calculation Compatibility",
+  "model_version": "10.11.21",
+  "gate_version": "P2610D3_HYBRID_ENGINEERING_BINDING_COMPATIBILITY_V1_0",
+  "decision": "PASS",
+  "pass_fail": "PASS",
+  "diagnostics": {
+    "benchmark_population_count": 16,
+    "beam_compatibility": {
+      "ENGINEERING_COMPATIBLE": 15,
+      "ENGINEERING_PARTIALLY_COMPATIBLE": 0,
+      "ENGINEERING_AMBIGUOUS": 1,
+      "ENGINEERING_INCOMPATIBLE": 0
+    },
+    "group_binding": {
+      "total": 50,
+      "BOUND": 49,
+      "PARTIALLY_BOUND": 0,
+      "AMBIGUOUS": 1,
+      "MISSING_GEOMETRY": 0,
+      "MISSING_SUPPORT_REFERENCE": 0,
+      "MISSING_RULE_REFERENCE": 0,
+      "UNSUPPORTED": 0,
+      "INVALID_INPUT": 0
+    },
+    "source_categories": {
+      "matched_groups": 33,
+      "matched_groups_bound": 33,
+      "vision_only_groups": 11,
+      "vision_only_groups_bound": 11,
+      "deterministic_only_groups": 5,
+      "deterministic_only_groups_bound": 5,
+      "ambiguous_groups_unresolved": 1,
+      "possible_duplicates_preserved": 4
+    },
+    "coverage": {
+      "label": "ENGINEERING_BINDING_COVERAGE",
+      "note": "COMPATIBILITY COVERAGE, NOT ACCURACY. Not estimator truth. Not production promotion.",
+      "formula": "fully_bound_required_references / total_required_references",
+      "all_groups": 1.0,
+      "matched_groups": 1.0,
+      "vision_only_groups": 1.0,
+      "deterministic_only_groups": 1.0,
+      "counts": {
+        "matched": {
+          "bound": 297,
+          "total": 297
+        },
+        "vision_only": {
+          "bound": 99,
+          "total": 99
+        },
+        "deterministic_only": {
+          "bound": 45,
+          "total": 45
+        },
+        "all": {
+          "bound": 450,
+          "total": 450
+        }
+      },
+      "engineering_reference_coverage": {
+        "geometry": 1.0,
+        "section_geometry": 1.0,
+        "direction": 1.0,
+        "support": 1.0,
+        "cut_length_rule": 1.0,
+        "development_length_rule": 1.0,
+        "anchorage": 1.0,
+        "hook_bend": 1.0
+      }
+    },
+    "top_unresolved_categories": [
+      [
+        "VISION_ONLY_RULE_FAMILY_BOUND_INSTANCE_UNAVAILABLE",
+        12
+      ],
+      [
+        "AMBIGUOUS",
+        1
+      ]
+    ],
+    "calculations_performed": {
+      "cut_length": false,
+      "development_length": false,
+      "steel_weight": false,
+      "bbs": false
+    }
+  },
+  "population": {
+    "ok": true,
+    "expected": 16,
+    "discovered_count": 16,
+    "beam_ids": [
+      "B100",
+      "B100A",
+      "B103",
+      "B119",
+      "B128",
+      "B129",
+      "B133",
+      "B139",
+      "B141",
+      "B161",
+      "B17",
+      "B46",
+      "B55",
+      "B65",
+      "B66",
+      "B68"
+    ],
+    "reason": null
+  },
+  "production": {
+    "production_mutation_count": 0,
+    "production_write": false,
+    "production_action": "NO_CHANGE",
+    "engineering_changes": "NONE",
+    "shadow_only": true,
+    "live_claude_call": false,
+    "steel_delta": 0,
+    "bbs_delta": 0,
+    "workbook_delta": 0,
+    "production_mutation_delta": 0
+  },
+  "fingerprints": {
+    "unchanged": true,
+    "changed_keys": []
+  },
+  "unit_tests": {
+    "success": true,
+    "passed": 24,
+    "total": 24
+  },
+  "live_claude_call": false,
+  "runtime_s": 37.699,
+  "ready_for_shadow_calculation": true,
+  "authority_preservation": {
+    "diameter": true,
+    "role": true,
+    "spacer": true,
+    "stirrup_split": true
+  }
+}

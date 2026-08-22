@@ -1,0 +1,220 @@
+{
+  "beam_id": "B99A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B99A_render.png",
+    "sha256": "8a5bc55da8e72c76503587eeabcf3de0bc6a5ba7370ca9651a17ed96aea0ab16",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.888997800007928",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2188",
+      "output_tokens": "649"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "4ddc6bb4dd2f3447df7fd226dc25669fa84022640a80600c5cd577f6532bf836",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B99A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "continuous bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Green bars shown continuous across full span in elevation and cross-section views"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "continuous bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Blue bars shown continuous across full span in elevation and cross-section views"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "2Y10",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.8,
+        "evidence": "Side face reinforcement shown in detail section, specification partially visible as 'S.F.R. - 2Y10: 750>d<900'"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation visible on right side of elevation view showing '4L-Y10@100C/C', vertical stirrups shown throughout beam span"
+      }
+    ],
+    "ambiguities": [
+      "Exact bar diameter for top and bottom continuous bars not clearly specified in visible annotations",
+      "Side face reinforcement length and positioning details not fully visible in provided views"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B99A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "continuous bars",
+        "specification": "continuous bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars shown continuous across full span in elevation and cross-section views",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "continuous bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Green bars shown continuous across full span in elevation and cross-section views"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "continuous bars",
+        "specification": "continuous bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars shown continuous across full span in elevation and cross-section views",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "continuous bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Blue bars shown continuous across full span in elevation and cross-section views"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "2Y10",
+        "specification": "2Y10",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.8,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Side face reinforcement shown in detail section, specification partially visible as 'S.F.R. - 2Y10: 750>d<900'",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "2Y10",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.8,
+          "evidence": "Side face reinforcement shown in detail section, specification partially visible as 'S.F.R. - 2Y10: 750>d<900'"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100C/C",
+        "specification": "4L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation visible on right side of elevation view showing '4L-Y10@100C/C', vertical stirrups shown throughout beam span",
+        "raw": {
+          "spec": "4L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation visible on right side of elevation view showing '4L-Y10@100C/C', vertical stirrups shown throughout beam span"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2188",
+    "output_tokens": "649"
+  }
+}

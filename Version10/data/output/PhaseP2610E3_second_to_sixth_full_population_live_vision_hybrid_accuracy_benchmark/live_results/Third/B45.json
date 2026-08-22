@@ -1,0 +1,263 @@
+{
+  "beam_id": "B45",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B45_render.png",
+    "sha256": "dcfab295887a51b8a33705dffd410f24cd65d12d5865531d422598ffbd8671b9",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.884691999992356",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3898",
+      "output_tokens": "834"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "2281562fa8ebb288567f547b2029fa54ad96b00f0066817172162954a41ad3de",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B45",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y16",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.9,
+        "evidence": "Green bars at top left with 4-Y16 annotation, extending from left support with downward hook termination"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "4-Y16",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Green bars at top center with 4-Y16 annotation, running full span of beam"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "4-Y12",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.9,
+        "evidence": "Green bars at top right with 4-Y12 annotation, extending from right support with downward hook termination"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "spec": "4L-Y10",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Blue bars at bottom running full span, associated with 4L-Y10@100C/C annotation which indicates longitudinal bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation 4L-Y10@100C/C at bottom center indicates stirrups/links at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "The annotation 4L-Y10@100C/C typically indicates stirrups (links), but the '4L' prefix suggests 4 legs which may also reference longitudinal bottom bars. Interpreted as stirrups based on @100C/C spacing notation."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B45",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y16",
+        "specification": "4-Y16",
+        "bar_count": 4,
+        "diameter": 16,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars at top left with 4-Y16 annotation, extending from left support with downward hook termination",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y16",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.9,
+          "evidence": "Green bars at top left with 4-Y16 annotation, extending from left support with downward hook termination"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y16",
+        "specification": "4-Y16",
+        "bar_count": 4,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars at top center with 4-Y16 annotation, running full span of beam",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "4-Y16",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Green bars at top center with 4-Y16 annotation, running full span of beam"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y12",
+        "specification": "4-Y12",
+        "bar_count": 4,
+        "diameter": 12,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars at top right with 4-Y12 annotation, extending from right support with downward hook termination",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "4-Y12",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.9,
+          "evidence": "Green bars at top right with 4-Y12 annotation, extending from right support with downward hook termination"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4L-Y10",
+        "specification": "4L-Y10",
+        "bar_count": 4,
+        "diameter": 10,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars at bottom running full span, associated with 4L-Y10@100C/C annotation which indicates longitudinal bars",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "BOTTOM",
+          "spec": "4L-Y10",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Blue bars at bottom running full span, associated with 4L-Y10@100C/C annotation which indicates longitudinal bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100C/C",
+        "specification": "4L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation 4L-Y10@100C/C at bottom center indicates stirrups/links at 100mm centers",
+        "raw": {
+          "spec": "4L-Y10@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation 4L-Y10@100C/C at bottom center indicates stirrups/links at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3898",
+    "output_tokens": "834"
+  }
+}

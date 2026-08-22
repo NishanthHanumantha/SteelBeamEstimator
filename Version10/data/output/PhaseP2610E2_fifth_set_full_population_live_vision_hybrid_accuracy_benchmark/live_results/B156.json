@@ -1,0 +1,136 @@
+{
+  "beam_id": "B156",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B156_render.png",
+    "sha256": "ed9dd8fcab8f6cd25548785c3fb1678923dff7fc6d686264128777f3c514945d",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.704439699999057",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2874",
+      "output_tokens": "437"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "b56cbc0aebcc7660737d9f514e5da6b1c7ea44e167a8037d06dd3efeb0ba836b",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B156",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Three Y25 bars shown at top of beam section, labeled '3xY25', running continuously across the span. Typical top reinforcement configuration for continuous beam."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100/150/100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification '3L-Y10@100/150/100C/C' clearly labeled below the beam section. Three-legged Y10 stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support."
+      }
+    ],
+    "ambiguities": [
+      "No bottom reinforcement is visible in the detail view. This may indicate bottom bars are not present, or they are not shown in this particular section view.",
+      "The relative length of the top bars cannot be determined from the section view alone - no elevation or longitudinal section is provided to assess bar curtailment or lap positions."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B156",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three Y25 bars shown at top of beam section, labeled '3xY25', running continuously across the span. Typical top reinforcement configuration for continuous beam.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Three Y25 bars shown at top of beam section, labeled '3xY25', running continuously across the span. Typical top reinforcement configuration for continuous beam."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100/150/100C/C",
+        "specification": "3L-Y10@100/150/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification '3L-Y10@100/150/100C/C' clearly labeled below the beam section. Three-legged Y10 stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support.",
+        "raw": {
+          "spec": "3L-Y10@100/150/100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification '3L-Y10@100/150/100C/C' clearly labeled below the beam section. Three-legged Y10 stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2874",
+    "output_tokens": "437"
+  }
+}

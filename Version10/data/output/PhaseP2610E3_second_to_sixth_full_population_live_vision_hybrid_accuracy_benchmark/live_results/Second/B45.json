@@ -1,0 +1,264 @@
+{
+  "beam_id": "B45",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B45_render.png",
+    "sha256": "7f1c526ddb2d129090a5129cd003f6646377b4bdb94c674aed8ae316f93eb08d",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.831186699972022",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3812",
+      "output_tokens": "854"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "ecdfd62941a63a02a05a1da0cae49a21a9764f10e99924acab83aabe909a2527",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B45",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at top of beam section running full span, labeled '2-Y16' with green leader lines pointing to top layer bars"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown at bottom of beam section running full span, labeled '2-Y16' with green leader line pointing to bottom layer bars"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "Ld",
+        "bar_count": 0,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.6,
+        "evidence": "Label 'Ld' shown with leader pointing to shorter top bars visible at left end of beam, appears to be development length bars but count and diameter not specified"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "spec": "Unknown",
+        "bar_count": 0,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.65,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.55,
+        "evidence": "Shorter top bars visible at right portion of beam section, no specification label visible, appear to be additional top reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y12@100C/C",
+        "confidence": 0.85,
+        "evidence": "Label '2L-Y12@100C/C' shown below beam section with leader line, indicating 2-legged Y12 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "G3 (Ld bars): Bar count and diameter not specified in label, only development length notation visible",
+      "G4: Shorter top bars visible at right end but no specification label present, count and size uncertain"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B45",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at top of beam section running full span, labeled '2-Y16' with green leader lines pointing to top layer bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at top of beam section running full span, labeled '2-Y16' with green leader lines pointing to top layer bars"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at bottom of beam section running full span, labeled '2-Y16' with green leader line pointing to bottom layer bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown at bottom of beam section running full span, labeled '2-Y16' with green leader line pointing to bottom layer bars"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "Ld",
+        "specification": "Ld",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.7,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Label 'Ld' shown with leader pointing to shorter top bars visible at left end of beam, appears to be development length bars but count and diameter not specified",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "Ld",
+          "bar_count": 0,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.6,
+          "evidence": "Label 'Ld' shown with leader pointing to shorter top bars visible at left end of beam, appears to be development length bars but count and diameter not specified"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "Unknown",
+        "specification": "Unknown",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.55,
+        "role_confidence": 0.65,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Shorter top bars visible at right portion of beam section, no specification label visible, appear to be additional top reinforcement",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "TOP",
+          "spec": "Unknown",
+          "bar_count": 0,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.65,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.55,
+          "evidence": "Shorter top bars visible at right portion of beam section, no specification label visible, appear to be additional top reinforcement"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y12@100C/C",
+        "specification": "2L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Label '2L-Y12@100C/C' shown below beam section with leader line, indicating 2-legged Y12 stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y12@100C/C",
+          "confidence": 0.85,
+          "evidence": "Label '2L-Y12@100C/C' shown below beam section with leader line, indicating 2-legged Y12 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3812",
+    "output_tokens": "854"
+  }
+}

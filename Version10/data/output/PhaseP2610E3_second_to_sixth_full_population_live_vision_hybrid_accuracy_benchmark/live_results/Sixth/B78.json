@@ -1,0 +1,160 @@
+{
+  "beam_id": "B78",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B78_render.png",
+    "sha256": "4add0e5c8ffb6e693a4d8d3021a79cc0804b84e2167967367968d1a99a4b8407",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "10.118656700011343",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3304",
+      "output_tokens": "532"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "a81bc722504a745e7da3781e44f04a16022b342ae25b039a91926ece255da1cd",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B78",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars shown at top of beam section with annotation '2-Y25+1-Y20' pointing to this group. Visible in upper detail view."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3L-Y12@100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Annotation '3L-Y12@100C/C' with pointer located below beam section. Appears to reference bottom longitudinal bars, though visual representation is limited."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "The '3L-Y12@100C/C' annotation uses '@100C/C' spacing notation which is typically associated with stirrups or distributed bars, but the 'L' prefix and position suggest longitudinal bottom bars. Physical representation unclear.",
+      "Bar lengths and span relationships cannot be determined from the provided views - no elevation or length dimensions visible for B78.",
+      "No clear stirrup/link representation visible in the detail views, though spacing notation in bottom annotation suggests possible distributed reinforcement."
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B78",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars shown at top of beam section with annotation '2-Y25+1-Y20' pointing to this group. Visible in upper detail view.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars shown at top of beam section with annotation '2-Y25+1-Y20' pointing to this group. Visible in upper detail view."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "bar_count": 3,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '3L-Y12@100C/C' with pointer located below beam section. Appears to reference bottom longitudinal bars, though visual representation is limited.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3L-Y12@100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Annotation '3L-Y12@100C/C' with pointer located below beam section. Appears to reference bottom longitudinal bars, though visual representation is limited."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3304",
+    "output_tokens": "532"
+  }
+}

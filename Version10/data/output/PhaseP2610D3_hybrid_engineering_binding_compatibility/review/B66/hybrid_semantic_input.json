@@ -1,0 +1,65 @@
+{
+  "beam_id": "B66",
+  "target_identity": {
+    "value": "B66",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B66",
+    "deterministic_value": "B66",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "group_count": 3,
+  "group_matching": {
+    "matched": 1,
+    "vision_only": 1,
+    "deterministic_only": 1,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 1,
+        "deterministic_index": 1,
+        "score": 10,
+        "vision_id": "VG2",
+        "deterministic_id": "G02"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "possible_duplicate_groups": [],
+  "reinforcement_groups": [
+    {
+      "group_id": "VG2",
+      "origin": "MATCHED",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 5,
+      "diameter": 20,
+      "specification": "5Y20",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG1",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": "TOP",
+      "role": "MAIN",
+      "bar_count": 5,
+      "diameter": 16,
+      "specification": "5Y16",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "G01",
+      "origin": "DETERMINISTIC_ONLY_GROUP",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 4,
+      "diameter": 25,
+      "specification": "4Y25",
+      "support_scope": "FULL_SPAN"
+    }
+  ]
+}

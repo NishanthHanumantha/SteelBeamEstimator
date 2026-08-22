@@ -1,0 +1,182 @@
+{
+  "beam_id": "B85",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B85_render.png",
+    "sha256": "ab0e51fb6e97e282c05e12f37912eb6690e7464e270202be63857793f86177ed",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.543835099961143",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "544"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "cb6addbf9a3d81c5e84a7c920282c3abfb6c23e597fbd5256239e77def90fc4f",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B85",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Detail image shows continuous dark blue bars running full span at top of beam section. Bars extend through the beam length visible in both plan and section views."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Detail image shows continuous dark blue bars running full span at bottom of beam section. Bars extend through the beam length in section view."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Green diagonal marks visible in detail section view may indicate stirrup positions, but no clear specification text is readable for count, diameter, or spacing."
+      }
+    ],
+    "ambiguities": [
+      "No readable text annotations for bar specifications (diameter, count) are visible in either image",
+      "Exact bar count cannot be determined from the section views provided",
+      "Stirrup specification cannot be confidently read from available detail",
+      "Plan view shows beam B85 location but detail reinforcement specifications are not annotated with readable text"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B85",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Detail image shows continuous dark blue bars running full span at top of beam section. Bars extend through the beam length visible in both plan and section views.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Detail image shows continuous dark blue bars running full span at top of beam section. Bars extend through the beam length visible in both plan and section views."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Detail image shows continuous dark blue bars running full span at bottom of beam section. Bars extend through the beam length in section view.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Detail image shows continuous dark blue bars running full span at bottom of beam section. Bars extend through the beam length in section view."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.3,
+        "evidence": "Green diagonal marks visible in detail section view may indicate stirrup positions, but no clear specification text is readable for count, diameter, or spacing.",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Green diagonal marks visible in detail section view may indicate stirrup positions, but no clear specification text is readable for count, diameter, or spacing."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "544"
+  }
+}

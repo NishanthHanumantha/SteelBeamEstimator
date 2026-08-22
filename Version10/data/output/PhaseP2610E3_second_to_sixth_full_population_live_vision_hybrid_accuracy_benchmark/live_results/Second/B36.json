@@ -1,0 +1,119 @@
+{
+  "beam_id": "B36",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B36_render.png",
+    "sha256": "5761cfb0fd520da8c62365691738d06effbb4fe9196cc40f56c6c2c30ea6af5a",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "6.966150599997491",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3910",
+      "output_tokens": "320"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "b37530a27e28f3369c92bf14fee1289788f0269b4b8c33a57520adfce6384a64",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y12",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2 -Y12' and green leader pointing to them"
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "No stirrup/link reinforcement visible in the detail",
+      "Bar length and span relationship cannot be determined from the cross-sectional view provided",
+      "Support scope unclear - only cross-section shown, no longitudinal elevation",
+      "The magenta '12' annotation appears to be a grid or reference mark, not reinforcement specification"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B36",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y12",
+        "specification": "2-Y12",
+        "bar_count": 2,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2 -Y12' and green leader pointing to them",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y12",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Two green vertical bars shown at top of beam section with annotation '2 -Y12' and green leader pointing to them"
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3910",
+    "output_tokens": "320"
+  }
+}

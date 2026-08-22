@@ -1,0 +1,180 @@
+{
+  "beam_id": "B97",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B97_render.png",
+    "sha256": "522c28347324c88d2e53530a67fbb1b4ad77c7a757d66af3070c20f80926a81d",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.85569779999787",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3562",
+      "output_tokens": "638"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "2c49854741f1a2a0c02f10f7c11a797ca4ddbba2075b716309b941dd1dd6f0cb",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B97",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Two Y16 bars shown at top right end of beam, indicated by green leader line pointing to '2Y16' label. Bars appear to be shorter support reinforcement at right end."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Bottom longitudinal reinforcement specified as '2L-Y8@200C/C' shown in annotation below beam section. The 'L' prefix indicates longitudinal bars, '2' indicates two bars, running full span at 200mm centers."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Y8@200C/C",
+        "confidence": 0.85,
+        "evidence": "Stirrups shown as diagonal cross-hatching pattern throughout beam section. Specification '2L-Y8@200C/C' indicates Y8 stirrups at 200mm spacing. Blue vertical lines at intervals suggest stirrup positions."
+      }
+    ],
+    "ambiguities": [
+      "The annotation '2L-Y8@200C/C' combines both longitudinal bars (2L) and stirrup spacing (@200C/C). Interpretation assumes 2 longitudinal Y8 bars and Y8 stirrups at 200mm centers.",
+      "The exact length and extent of the 2-Y16 top bars cannot be precisely determined from the visual evidence - classified as partial right support based on position."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B97",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown at top right end of beam, indicated by green leader line pointing to '2Y16' label. Bars appear to be shorter support reinforcement at right end.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.85,
+          "evidence": "Two Y16 bars shown at top right end of beam, indicated by green leader line pointing to '2Y16' label. Bars appear to be shorter support reinforcement at right end."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "diameter": 8,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom longitudinal reinforcement specified as '2L-Y8@200C/C' shown in annotation below beam section. The 'L' prefix indicates longitudinal bars, '2' indicates two bars, running full span at 200mm centers.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2L-Y8@200C/C",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Bottom longitudinal reinforcement specified as '2L-Y8@200C/C' shown in annotation below beam section. The 'L' prefix indicates longitudinal bars, '2' indicates two bars, running full span at 200mm centers."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Y8@200C/C",
+        "specification": "Y8@200C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Stirrups shown as diagonal cross-hatching pattern throughout beam section. Specification '2L-Y8@200C/C' indicates Y8 stirrups at 200mm spacing. Blue vertical lines at intervals suggest stirrup positions.",
+        "raw": {
+          "spec": "Y8@200C/C",
+          "confidence": 0.85,
+          "evidence": "Stirrups shown as diagonal cross-hatching pattern throughout beam section. Specification '2L-Y8@200C/C' indicates Y8 stirrups at 200mm spacing. Blue vertical lines at intervals suggest stirrup positions."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3562",
+    "output_tokens": "638"
+  }
+}

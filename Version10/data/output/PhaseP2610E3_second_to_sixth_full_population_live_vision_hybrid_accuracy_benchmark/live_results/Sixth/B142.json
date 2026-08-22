@@ -1,0 +1,139 @@
+{
+  "beam_id": "B142",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B142_render.png",
+    "sha256": "f1cd0f53be124d6426f3cc71c13e31c2a27433a689ef35204d134f243ef854bd",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.757267499982845",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3132",
+      "output_tokens": "403"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "dd25a73fb2ffa6b4474c147b99f06a78ba1695a213372842eb6bb72b23570b40",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B142",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Blue bars visible at top of beam section in cross-section view, but no specification annotation directly associated with B142 longitudinal reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@100C/C",
+        "confidence": 0.85,
+        "evidence": "Annotation '2L-Y8@100C/C' visible in center of drawing with leader pointing to beam, indicating 2-legged Y8 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [
+      "No clear longitudinal reinforcement specification visible for B142 in either image",
+      "Cross-section shows blue bars at top layer but count and diameter not annotated",
+      "The annotation 2L-Y8@100C/C appears to be the only owned annotation for this beam, referring to stirrups/links only"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B142",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars visible at top of beam section in cross-section view, but no specification annotation directly associated with B142 longitudinal reinforcement",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Blue bars visible at top of beam section in cross-section view, but no specification annotation directly associated with B142 longitudinal reinforcement"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@100C/C",
+        "specification": "2L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.85,
+        "evidence": "Annotation '2L-Y8@100C/C' visible in center of drawing with leader pointing to beam, indicating 2-legged Y8 stirrups at 100mm centers",
+        "raw": {
+          "spec": "2L-Y8@100C/C",
+          "confidence": 0.85,
+          "evidence": "Annotation '2L-Y8@100C/C' visible in center of drawing with leader pointing to beam, indicating 2-legged Y8 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3132",
+    "output_tokens": "403"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "beam_id": "B139",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B139_render.png",
+    "sha256": "3a9b188da51b34180bfff5685a5b6f5ec31d1eb68b8d4d184bac21bae003ab73",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.745922299975064",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3926",
+      "output_tokens": "488"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "69d54fdbd34defe32a16f3100f7c38cbc332b6349d117e903b4841ddeb7e2bd0",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B139",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y16",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Top reinforcement labeled 5-Y16 with green leader pointing to top bars in beam section"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Bottom reinforcement labeled 5-Y20 with green leader pointing to bottom bars in beam section"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y8@X100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled 2L-Y8@X100C/C shown at bottom of beam detail with green leader"
+      }
+    ],
+    "ambiguities": [
+      "Bar lengths and span relationships cannot be determined from the section view provided",
+      "Support scope unclear - section view does not show full beam elevation or support conditions"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B139",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y16",
+        "specification": "5-Y16",
+        "bar_count": 5,
+        "diameter": 16,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top reinforcement labeled 5-Y16 with green leader pointing to top bars in beam section",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "5-Y16",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Top reinforcement labeled 5-Y16 with green leader pointing to top bars in beam section"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "5-Y20",
+        "specification": "5-Y20",
+        "bar_count": 5,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom reinforcement labeled 5-Y20 with green leader pointing to bottom bars in beam section",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "5-Y20",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Bottom reinforcement labeled 5-Y20 with green leader pointing to bottom bars in beam section"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y8@X100C/C",
+        "specification": "2L-Y8@X100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification labeled 2L-Y8@X100C/C shown at bottom of beam detail with green leader",
+        "raw": {
+          "spec": "2L-Y8@X100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification labeled 2L-Y8@X100C/C shown at bottom of beam detail with green leader"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3926",
+    "output_tokens": "488"
+  }
+}

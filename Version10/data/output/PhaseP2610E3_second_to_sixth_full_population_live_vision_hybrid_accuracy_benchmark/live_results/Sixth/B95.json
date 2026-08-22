@@ -1,0 +1,159 @@
+{
+  "beam_id": "B95",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B95_render.png",
+    "sha256": "7c42c30da6b614ce6d78b2e01c2f6a77f6fbff3970a3f9a85fce474c6f4bb36d",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.08862210001098",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3390",
+      "output_tokens": "480"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "723fa490d9d81cf5209e9d451a928205f3a3674641f0d56269d10eb924a87b79",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B95",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y16",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Three bars shown at top of beam section with annotation 3-Y16, extending full span with hooks at both ends"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Two longitudinal bars shown at bottom of beam section with annotation 2L-Y8@200C/C, extending full span"
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "The annotation 2L-Y8@200C/C is unusual - typically stirrups would be specified with spacing, but the 'L' prefix and position suggest these are longitudinal bottom bars rather than stirrups",
+      "No explicit stirrup specification visible in the detail view for beam B95"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B95",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y16",
+        "specification": "3-Y16",
+        "bar_count": 3,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three bars shown at top of beam section with annotation 3-Y16, extending full span with hooks at both ends",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y16",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Three bars shown at top of beam section with annotation 3-Y16, extending full span with hooks at both ends"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2L-Y8@200C/C",
+        "specification": "2L-Y8@200C/C",
+        "bar_count": 2,
+        "diameter": 8,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two longitudinal bars shown at bottom of beam section with annotation 2L-Y8@200C/C, extending full span",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2L-Y8@200C/C",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Two longitudinal bars shown at bottom of beam section with annotation 2L-Y8@200C/C, extending full span"
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3390",
+    "output_tokens": "480"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "hybrid_total_kg": 28219.705,
+  "benchmark_total_kg": 58796.332,
+  "absolute_error_kg": 30576.627,
+  "signed_error_kg": -30576.627,
+  "absolute_error_percent": 52.0,
+  "weight_accuracy_percent": 48.0,
+  "formula": "max(0, 100 - abs(model_kg - benchmark_kg) / benchmark_kg * 100)",
+  "source": "PhaseQA.2A_ground_truth_benchmark.metrics_engine.MetricsEngine._steel / QA.2A metric8",
+  "numerator": "max(0, 100 - abs(hybrid - benchmark) / benchmark * 100)",
+  "denominator": "benchmark_kg",
+  "raw": {
+    "estimator_total_kg": 58796.332,
+    "model_total_kg": 28219.705,
+    "difference_kg": -30576.627,
+    "difference_pct": 52.0,
+    "accuracy_pct": 48.0,
+    "estimator_total_mt": 58.7963,
+    "model_total_mt": 28.2197,
+    "difference_mt": -30.5766
+  }
+}

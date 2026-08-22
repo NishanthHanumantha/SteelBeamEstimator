@@ -1,0 +1,135 @@
+{
+  "beam_id": "B135A",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B135A_render.png",
+    "sha256": "1c719989155cd457eecabbb6242cacf0389e5a159c7bf74cc2c3fcb6a3fcaf54",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "5.606146500038449",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2102",
+      "output_tokens": "336"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "30ccf2015e64765d937648ff0e67ac10baa3e4ae0b3dc45456671e6ca8b77460",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B135A",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.95,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Four Y20 bars shown in dark blue running full length of beam B135A at top layer, with annotation '4-Y20' directly labeling this group"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation '4LY8@100C/C' shown below the longitudinal bars, indicating 4-legged Y8 stirrups at 100mm centers"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B135A",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.95,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Four Y20 bars shown in dark blue running full length of beam B135A at top layer, with annotation '4-Y20' directly labeling this group",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.95,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Four Y20 bars shown in dark blue running full length of beam B135A at top layer, with annotation '4-Y20' directly labeling this group"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100C/C",
+        "specification": "4L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation '4LY8@100C/C' shown below the longitudinal bars, indicating 4-legged Y8 stirrups at 100mm centers",
+        "raw": {
+          "spec": "4L-Y8@100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation '4LY8@100C/C' shown below the longitudinal bars, indicating 4-legged Y8 stirrups at 100mm centers"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2102",
+    "output_tokens": "336"
+  }
+}

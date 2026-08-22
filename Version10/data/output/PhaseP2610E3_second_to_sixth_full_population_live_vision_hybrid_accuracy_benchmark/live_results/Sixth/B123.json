@@ -1,0 +1,223 @@
+{
+  "beam_id": "B123",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B123_render.png",
+    "sha256": "32269961ff1391e997752a8d3702cc16fb1584a38fba3a1179b20abc762ef76c",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.886804200010374",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3918",
+      "output_tokens": "739"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "09472e49f48d11d09c24b057603bb15267caa2cb1d6f8364005c1325f156603d",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B123",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Top layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at top of beam section. Dark blue bars visible in top position."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Bottom layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at bottom of beam section. Dark blue bars visible in bottom position."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "spec": "Multiple bars",
+        "bar_count": 4,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.7,
+        "evidence": "Green bars visible in detail view (bottom right) showing multiple bars at top layer with varying lengths, appearing to be support reinforcement. Exact specification not clearly annotated for these bars."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@100C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation '2L-Y10@100C/C' clearly visible below the beam elevation, indicating 2-legged Y10 stirrups at 100mm centers. Green stirrup outlines visible in detail section view."
+      }
+    ],
+    "ambiguities": [
+      "Green bars in detail view show additional top reinforcement but specific bar sizes and counts are not clearly annotated",
+      "Relative lengths of reinforcement groups cannot be determined with certainty from the views provided",
+      "Support scope and span relationships are unclear without dimensional information"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B123",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at top of beam section. Dark blue bars visible in top position.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Top layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at top of beam section. Dark blue bars visible in top position."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at bottom of beam section. Dark blue bars visible in bottom position.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Bottom layer reinforcement shown in elevation view with annotation '2-Y25+1-Y20' pointing to bars at bottom of beam section. Dark blue bars visible in bottom position."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "Multiple bars",
+        "specification": "Multiple bars",
+        "bar_count": 4,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.3,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars visible in detail view (bottom right) showing multiple bars at top layer with varying lengths, appearing to be support reinforcement. Exact specification not clearly annotated for these bars.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "TOP",
+          "spec": "Multiple bars",
+          "bar_count": 4,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.7,
+          "evidence": "Green bars visible in detail view (bottom right) showing multiple bars at top layer with varying lengths, appearing to be support reinforcement. Exact specification not clearly annotated for these bars."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@100C/C",
+        "specification": "2L-Y10@100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation '2L-Y10@100C/C' clearly visible below the beam elevation, indicating 2-legged Y10 stirrups at 100mm centers. Green stirrup outlines visible in detail section view.",
+        "raw": {
+          "spec": "2L-Y10@100C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation '2L-Y10@100C/C' clearly visible below the beam elevation, indicating 2-legged Y10 stirrups at 100mm centers. Green stirrup outlines visible in detail section view."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3918",
+    "output_tokens": "739"
+  }
+}

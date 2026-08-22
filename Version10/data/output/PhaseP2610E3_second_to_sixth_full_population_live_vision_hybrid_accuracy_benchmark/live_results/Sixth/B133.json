@@ -1,0 +1,181 @@
+{
+  "beam_id": "B133",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B133_render.png",
+    "sha256": "ae6fb959c16a182d5e2a6e39f9f13eaafbb74249d5c64e6f82772dcaa191621b",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.71261540002888",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2874",
+      "output_tokens": "546"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "e857854550f81291eea37bd296f2c27f3ce42b00877cad073b6316e29bfc8c34",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B133",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top of beam section with annotation '2-Y25+1-Y20' and pointer. Three bars visible in cross-section at top layer."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.6,
+        "evidence": "Dark blue bars visible at bottom of beam section in elevation view. No direct annotation visible for these bars. Count appears to be 2 bars based on visual representation."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '3L-Y12@100C/C' with pointer to stirrup/link representation shown as hatched cross-section at right support."
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement bars are visible but lack direct annotation specifying diameter and count",
+      "Bar lengths and span relationships cannot be determined from the detail view provided",
+      "Support scope for top bars unclear - annotation does not indicate whether bars are continuous or support-specific"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B133",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25+1-Y20",
+        "specification": "2-Y25+1-Y20",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of beam section with annotation '2-Y25+1-Y20' and pointer. Three bars visible in cross-section at top layer.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25+1-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top of beam section with annotation '2-Y25+1-Y20' and pointer. Three bars visible in cross-section at top layer."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars visible at bottom of beam section in elevation view. No direct annotation visible for these bars. Count appears to be 2 bars based on visual representation.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.6,
+          "evidence": "Dark blue bars visible at bottom of beam section in elevation view. No direct annotation visible for these bars. Count appears to be 2 bars based on visual representation."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100C/C",
+        "specification": "3L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '3L-Y12@100C/C' with pointer to stirrup/link representation shown as hatched cross-section at right support.",
+        "raw": {
+          "spec": "3L-Y12@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '3L-Y12@100C/C' with pointer to stirrup/link representation shown as hatched cross-section at right support."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2874",
+    "output_tokens": "546"
+  }
+}

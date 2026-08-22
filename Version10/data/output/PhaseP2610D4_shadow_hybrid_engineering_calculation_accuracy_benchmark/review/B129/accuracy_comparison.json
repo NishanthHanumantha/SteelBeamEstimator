@@ -1,0 +1,94 @@
+{
+  "beam_id": "B129",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 197.6427,
+  "deterministic_kg": 136.882,
+  "benchmark_kg": 149.3763,
+  "truth_source": "ESTIMATOR_EXCEL",
+  "hybrid_error_pct": 32.31,
+  "deterministic_error_pct": 8.36,
+  "hybrid_accuracy_pct": 67.69,
+  "deterministic_accuracy_pct": 91.64,
+  "hybrid_signed_percent_error": 32.31,
+  "deterministic_signed_percent_error": -8.36,
+  "absolute_error_hybrid_kg": 48.2664,
+  "absolute_error_deterministic_kg": 12.4943,
+  "winner": "DETERMINISTIC",
+  "truth_lines": [
+    {
+      "role": "Top Bars",
+      "description": "Top bars",
+      "diameter_mm": 20.0,
+      "bar_count": 4.0,
+      "weight_kg": 34.2143
+    },
+    {
+      "role": "Top Bars Extra",
+      "description": "Top bars -extra",
+      "diameter_mm": 16.0,
+      "bar_count": 2.0,
+      "weight_kg": 9.5338
+    },
+    {
+      "role": "Bottom Bars",
+      "description": "Bottom bars",
+      "diameter_mm": 20.0,
+      "bar_count": 4.0,
+      "weight_kg": 34.2143
+    },
+    {
+      "role": "Bottom Bars Extra",
+      "description": "Bottom bars  -extra",
+      "diameter_mm": 16.0,
+      "bar_count": 2.0,
+      "weight_kg": 9.5338
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 12.0,
+      "bar_count": 12.0,
+      "weight_kg": 31.9742
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 12.0,
+      "bar_count": 12.0,
+      "weight_kg": 27.2846
+    },
+    {
+      "role": "Spacer Bars",
+      "description": "Spacer bars",
+      "diameter_mm": 25.0,
+      "bar_count": 2.0,
+      "weight_kg": 2.6213
+    }
+  ],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y20": 160.9903,
+      "Y16": 34.0321,
+      "Y25": 2.6203
+    },
+    "deterministic": {
+      "Y20": 79.903,
+      "Y16": 49.118,
+      "Y25": 7.861
+    },
+    "benchmark": {
+      "Y12": 59.2588,
+      "Y16": 19.0676,
+      "Y20": 68.4286,
+      "Y25": 2.6213
+    }
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

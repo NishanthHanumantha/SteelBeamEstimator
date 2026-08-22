@@ -1,0 +1,92 @@
+{
+  "beam_id": "B55",
+  "target_identity": {
+    "value": "B55",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B55",
+    "deterministic_value": "B55",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "group_count": 4,
+  "group_matching": {
+    "matched": 2,
+    "vision_only": 0,
+    "deterministic_only": 1,
+    "ambiguous": 1,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 2,
+        "score": 7,
+        "vision_id": "VG1",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG3",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": [
+      {
+        "code": "AMBIGUOUS_GROUP_MATCH",
+        "vision_index": 1,
+        "deterministic_index": 1,
+        "score": 6,
+        "vision_id": "VG2",
+        "deterministic_id": "G02",
+        "reason": "TIED_TOP_SCORE"
+      }
+    ]
+  },
+  "possible_duplicate_groups": [],
+  "reinforcement_groups": [
+    {
+      "group_id": "VG1",
+      "origin": "MATCHED",
+      "layer": "TOP",
+      "role": "MAIN",
+      "bar_count": 3,
+      "diameter": 16,
+      "specification": "3Y16",
+      "support_scope": "LEFT_SUPPORT"
+    },
+    {
+      "group_id": "VG3",
+      "origin": "MATCHED",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 5,
+      "diameter": 20,
+      "specification": "5Y20",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG2",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": "TOP",
+      "role": "EXTRA",
+      "bar_count": 5,
+      "diameter": 20,
+      "specification": "5Y20",
+      "support_scope": "BOTH_SUPPORTS"
+    },
+    {
+      "group_id": "G02",
+      "origin": "DETERMINISTIC_ONLY_GROUP",
+      "layer": "TOP",
+      "role": "EXTRA",
+      "bar_count": 2,
+      "diameter": 16,
+      "specification": "2Y16",
+      "support_scope": "BOTH_SUPPORTS"
+    }
+  ]
+}

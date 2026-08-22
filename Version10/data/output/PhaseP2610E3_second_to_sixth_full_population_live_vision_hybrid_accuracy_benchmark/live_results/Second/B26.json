@@ -1,0 +1,180 @@
+{
+  "beam_id": "B26",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B26_render.png",
+    "sha256": "16f05a393910b00c56ecb4a1967d0336a6de622ba0ccbfe2040fa040ad507552",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.70518509997055",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3210",
+      "output_tokens": "530"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "88ee88ff5284d50ca97a42cbea6a74f09279c374343940bffd52180095cf4116",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B26",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two Y16 bars shown in dark blue running full span along bottom of beam, labeled '2-Y16' with leader annotations at two locations"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.85,
+        "evidence": "Two Y16 bars shown in green at top of beam, labeled '2-Y16' in magenta, extending 1350mm from right support with dimension shown"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Ld",
+        "confidence": 0.4,
+        "evidence": "Label 'Ld' visible in section view but no clear stirrup specification, count, or spacing provided in detail image"
+      }
+    ],
+    "ambiguities": [
+      "Stirrup specification unclear - only 'Ld' label visible without diameter, spacing or distribution details",
+      "Left support top bar details not clearly dimensioned - only right support shows 1350mm dimension"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B26",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown in dark blue running full span along bottom of beam, labeled '2-Y16' with leader annotations at two locations",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two Y16 bars shown in dark blue running full span along bottom of beam, labeled '2-Y16' with leader annotations at two locations"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y16 bars shown in green at top of beam, labeled '2-Y16' in magenta, extending 1350mm from right support with dimension shown",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.85,
+          "evidence": "Two Y16 bars shown in green at top of beam, labeled '2-Y16' in magenta, extending 1350mm from right support with dimension shown"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Ld",
+        "specification": "Ld",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.4,
+        "evidence": "Label 'Ld' visible in section view but no clear stirrup specification, count, or spacing provided in detail image",
+        "raw": {
+          "spec": "Ld",
+          "confidence": 0.4,
+          "evidence": "Label 'Ld' visible in section view but no clear stirrup specification, count, or spacing provided in detail image"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3210",
+    "output_tokens": "530"
+  }
+}

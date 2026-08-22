@@ -1,0 +1,179 @@
+{
+  "beam_id": "B102",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B102_render.png",
+    "sha256": "c7c6f075ed693165dfd6fa43f60988c95824e763d4ffff57e97c51eeabe4bd75",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.20224730001064",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "645"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "56ef73b695929de342998070b11837a2aa104feab517fd57caeb08711dad1d8f",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B102",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Top layer bars shown with green leader line pointing to 3-Y25 annotation at top of beam section"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3L-Y12@100/150/100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Bottom layer longitudinal bars indicated by annotation 3L-Y12@100/150/100C/C with variable spacing pattern, suggesting continuous bottom reinforcement across span"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y12@100/150/100C/C",
+        "confidence": 0.75,
+        "evidence": "Annotation indicates links/stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support. The 'L' prefix and spacing pattern typical of stirrup notation"
+      }
+    ],
+    "ambiguities": [
+      "The 3L-Y12@100/150/100C/C annotation could represent either bottom longitudinal bars or stirrups. The 'L' prefix and spacing pattern suggest stirrups, but the '3L' could indicate 3 longitudinal bars. Without clearer visual representation of the bars themselves, this remains ambiguous.",
+      "Bar lengths and span relationships cannot be determined from the available visual evidence - no dimension lines or clear indication of bar termination points visible",
+      "The dashed horizontal line in the middle of the beam section may indicate a construction joint or reference line, but its purpose is unclear"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B102",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer bars shown with green leader line pointing to 3-Y25 annotation at top of beam section",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Top layer bars shown with green leader line pointing to 3-Y25 annotation at top of beam section"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3L-Y12@100/150/100C/C",
+        "specification": "3L-Y12@100/150/100C/C",
+        "bar_count": 3,
+        "diameter": 12,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom layer longitudinal bars indicated by annotation 3L-Y12@100/150/100C/C with variable spacing pattern, suggesting continuous bottom reinforcement across span",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3L-Y12@100/150/100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Bottom layer longitudinal bars indicated by annotation 3L-Y12@100/150/100C/C with variable spacing pattern, suggesting continuous bottom reinforcement across span"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y12@100/150/100C/C",
+        "specification": "3L-Y12@100/150/100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.75,
+        "evidence": "Annotation indicates links/stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support. The 'L' prefix and spacing pattern typical of stirrup notation",
+        "raw": {
+          "spec": "3L-Y12@100/150/100C/C",
+          "confidence": 0.75,
+          "evidence": "Annotation indicates links/stirrups with variable spacing: 100mm at supports, 150mm at mid-span, 100mm at opposite support. The 'L' prefix and spacing pattern typical of stirrup notation"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "645"
+  }
+}

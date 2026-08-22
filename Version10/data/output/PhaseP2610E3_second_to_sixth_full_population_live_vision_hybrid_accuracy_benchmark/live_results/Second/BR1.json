@@ -1,0 +1,119 @@
+{
+  "beam_id": "BR1",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\BR1_render.png",
+    "sha256": "0bb2f9c5c15bad0a8b50ef5faf4ccef42ced263880998cf54743a876f01993c6",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "7.143241900019348",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3468",
+      "output_tokens": "323"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "2521e6cf5690a5c06ab835fa49885e4370c75873322a062d43f4f07feb9ef67b",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "BR1",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y12",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.95,
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y12' pointing to them. Bars appear to be main top reinforcement based on position and representation."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "No stirrups or links are visible in the detail drawing",
+      "Bar length and span relationship cannot be determined from the cross-sectional view provided",
+      "No bottom reinforcement is shown in the detail",
+      "The drawing shows only a partial cross-section view, limiting complete reinforcement interpretation"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "BR1",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y12",
+        "specification": "2-Y12",
+        "bar_count": 2,
+        "diameter": 12,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.95,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y12' pointing to them. Bars appear to be main top reinforcement based on position and representation.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y12",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.95,
+          "evidence": "Two green vertical bars shown at top of beam section with annotation '2-Y12' pointing to them. Bars appear to be main top reinforcement based on position and representation."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3468",
+    "output_tokens": "323"
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "beam_id": "B64",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B64_render.png",
+    "sha256": "b3b8e6878db599b81e6551a2323234f6e333028f5c9f7b9a6b189cb459c06f68",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "13.601819699979387",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3390",
+      "output_tokens": "845"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "9e13e16639c3a5d3eef9e7f05d4544c93fe8a26140bd169adf76842e67707bf9",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B64",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y20",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.9,
+        "evidence": "Dark blue bars at top layer, labeled 3-Y20 at bottom support, visible extending from both left and right supports but not full span"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "2-Y16",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.8,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Dark blue bars at top right support area, labeled 2-Y16, shorter than main reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "NSW",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Label NSW at top center indicates no supplementary works or no standard width bars at bottom, suggesting minimal or no bottom reinforcement specified"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "spec": "Green outline bars",
+        "bar_count": 4,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Green outline bars visible on both sides running full span length, appear to be hanger or side face reinforcement, no specific diameter annotation visible"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "3L-Y10@100/125/100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation at bottom center reads 3L-Y10@100/125/100C/C indicating three-legged Y10 stirrups with varying spacing pattern"
+      }
+    ],
+    "ambiguities": [
+      "NSW label interpretation unclear - may indicate no supplementary works or specific bar designation",
+      "Green outline bars lack diameter specification in visible annotations",
+      "Exact span coverage of 3-Y20 bars uncertain from visual evidence alone"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B64",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y20",
+        "specification": "3-Y20",
+        "bar_count": 3,
+        "diameter": 20,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top layer, labeled 3-Y20 at bottom support, visible extending from both left and right supports but not full span",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y20",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.9,
+          "evidence": "Dark blue bars at top layer, labeled 3-Y20 at bottom support, visible extending from both left and right supports but not full span"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "2-Y16",
+        "specification": "2-Y16",
+        "bar_count": 2,
+        "diameter": 16,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top right support area, labeled 2-Y16, shorter than main reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "2-Y16",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.8,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.85,
+          "evidence": "Dark blue bars at top right support area, labeled 2-Y16, shorter than main reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "NSW",
+        "specification": "NSW",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Label NSW at top center indicates no supplementary works or no standard width bars at bottom, suggesting minimal or no bottom reinforcement specified",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "NSW",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Label NSW at top center indicates no supplementary works or no standard width bars at bottom, suggesting minimal or no bottom reinforcement specified"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "Green outline bars",
+        "specification": "Green outline bars",
+        "bar_count": 4,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.0,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green outline bars visible on both sides running full span length, appear to be hanger or side face reinforcement, no specific diameter annotation visible",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "SIDE_FACE",
+          "spec": "Green outline bars",
+          "bar_count": 4,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Green outline bars visible on both sides running full span length, appear to be hanger or side face reinforcement, no specific diameter annotation visible"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "3L-Y10@100/125/100C/C",
+        "specification": "3L-Y10@100/125/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation at bottom center reads 3L-Y10@100/125/100C/C indicating three-legged Y10 stirrups with varying spacing pattern",
+        "raw": {
+          "spec": "3L-Y10@100/125/100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation at bottom center reads 3L-Y10@100/125/100C/C indicating three-legged Y10 stirrups with varying spacing pattern"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3390",
+    "output_tokens": "845"
+  }
+}

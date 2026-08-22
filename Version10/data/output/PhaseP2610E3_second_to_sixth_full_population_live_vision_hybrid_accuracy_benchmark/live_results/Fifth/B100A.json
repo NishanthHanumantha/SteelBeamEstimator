@@ -1,0 +1,249 @@
+{
+  "beam_id": "B100A",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "REUSE",
+  "call_provenance": "VISION_REUSED_CURRENT_ARCHITECTURE",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B100A_render.png",
+    "sha256": "5eb30af9f6a15d34d836dbdebc07328c47d322b59c80e28b28d4cd74c336b5c4",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": false,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "parsed": {
+    "target_beam_id": "B100A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "continuous bars shown in green",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two green continuous bars running full span at top of beam B100A, visible in both context and detail views"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "continuous bars shown in blue",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two blue continuous bars running full span at bottom of beam B100A, visible in both context and detail views"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "2Y10_750<d<900",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.85,
+        "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 2Y10_750<d<900, indicating 2 bars Y10 with spacing constraint"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "spec": "3Y10_900<d<1400",
+        "bar_count": 3,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.85,
+        "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 3Y10_900<d<1400, indicating 3 bars Y10 with different spacing constraint"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100/150/100C/C",
+        "confidence": 0.9,
+        "evidence": "Stirrup specification clearly labeled on beam B100A in context view, showing 4-legged Y10 stirrups with varying spacing pattern"
+      }
+    ],
+    "ambiguities": [
+      "Side face reinforcement specifications use depth-based spacing (d) rather than absolute positions, making exact bar locations uncertain",
+      "Physical arrangement of side face bars (G3 and G4) not clearly shown in elevation views"
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B100A",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "continuous bars shown in green",
+        "specification": "continuous bars shown in green",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two green continuous bars running full span at top of beam B100A, visible in both context and detail views",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "continuous bars shown in green",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two green continuous bars running full span at top of beam B100A, visible in both context and detail views"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "continuous bars shown in blue",
+        "specification": "continuous bars shown in blue",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two blue continuous bars running full span at bottom of beam B100A, visible in both context and detail views",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "continuous bars shown in blue",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two blue continuous bars running full span at bottom of beam B100A, visible in both context and detail views"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "2Y10_750<d<900",
+        "specification": "2Y10_750<d<900",
+        "bar_count": 2,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 2Y10_750<d<900, indicating 2 bars Y10 with spacing constraint",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "2Y10_750<d<900",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.85,
+          "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 2Y10_750<d<900, indicating 2 bars Y10 with spacing constraint"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "3Y10_900<d<1400",
+        "specification": "3Y10_900<d<1400",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 3Y10_900<d<1400, indicating 3 bars Y10 with different spacing constraint",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "SIDE_FACE",
+          "spec": "3Y10_900<d<1400",
+          "bar_count": 3,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.85,
+          "evidence": "Side face reinforcement specification shown in cyan text: S.F.R.- 3Y10_900<d<1400, indicating 3 bars Y10 with different spacing constraint"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100/150/100C/C",
+        "specification": "4L-Y10@100/150/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Stirrup specification clearly labeled on beam B100A in context view, showing 4-legged Y10 stirrups with varying spacing pattern",
+        "raw": {
+          "spec": "4L-Y10@100/150/100C/C",
+          "confidence": 0.9,
+          "evidence": "Stirrup specification clearly labeled on beam B100A in context view, showing 4-legged Y10 stirrups with varying spacing pattern"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2102",
+    "output_tokens": "879"
+  },
+  "set_key": "Fifth",
+  "reuse_source": "E2_FIFTH_LIVE"
+}

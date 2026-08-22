@@ -1,0 +1,137 @@
+{
+  "beam_id": "B188",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B188_render.png",
+    "sha256": "130ecfd574ff23d905611ee28036f1740a462ab87210f39bdd83875908273153",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "8.492228600021917",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3132",
+      "output_tokens": "414"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "9127d9906b93286f89e39d3b224b6144c8f1af4a3a5d9b701a703780de7902ae",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B188",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Annotation '4-Y25' positioned at top of beam section with leader pointing to top reinforcement layer. Blue bars visible at top of beam cross-section."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y8@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y8@100C/C' positioned in mid-section of beam. Standard stirrup notation format indicating 4-legged Y8 bars at 100mm centers."
+      }
+    ],
+    "ambiguities": [
+      "No bottom reinforcement annotation visible in detail view. Cannot determine if bottom bars are present or if detail is incomplete.",
+      "Bar lengths and span relationships cannot be determined from the cross-sectional view provided. No longitudinal section or elevation view available.",
+      "Support scope unclear - only cross-section shown without indication of bar curtailment or support locations."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B188",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '4-Y25' positioned at top of beam section with leader pointing to top reinforcement layer. Blue bars visible at top of beam cross-section.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Annotation '4-Y25' positioned at top of beam section with leader pointing to top reinforcement layer. Blue bars visible at top of beam cross-section."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y8@100C/C",
+        "specification": "4L-Y8@100C/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y8@100C/C' positioned in mid-section of beam. Standard stirrup notation format indicating 4-legged Y8 bars at 100mm centers.",
+        "raw": {
+          "spec": "4L-Y8@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '4L-Y8@100C/C' positioned in mid-section of beam. Standard stirrup notation format indicating 4-legged Y8 bars at 100mm centers."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3132",
+    "output_tokens": "414"
+  }
+}

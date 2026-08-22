@@ -1,0 +1,202 @@
+{
+  "beam_id": "B176",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B176_render.png",
+    "sha256": "9a6fb7c2c3a93f2263a87f0b775d02c74cb151d5e94aee2e7b812a1437f4f7bc",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.2045290999813",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "680"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "659576804d38470a70c07ac82c589caf4133908dd5645d4a4309d7889ffabb8b",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B176",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3LY10@100/125/100C/C",
+        "bar_count": 3,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.95,
+        "evidence": "Green bars shown at top layer with annotation 3LY10@100/125/100C/C, extending from both ends toward center but not full span. Labeled as links/distribution steel pattern."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "5-Y20",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Five continuous green bars running full length of beam at top layer, marked with two S-Y20 annotations indicating 5-Y20 specification. These appear to be primary longitudinal reinforcement."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Blue dashed line visible at bottom of section suggests possible bottom reinforcement, but no clear specification or bar count visible in provided images."
+      }
+    ],
+    "stirrups": [],
+    "ambiguities": [
+      "The 3LY10@100/125/100C/C notation appears to describe a link/stirrup pattern rather than longitudinal bars, but visual representation shows as longitudinal green bars at top",
+      "Bottom reinforcement indicated by blue dashed line but specification not clearly visible",
+      "No explicit stirrup specification visible despite 3LY10 notation which may indicate stirrup spacing"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B176",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "3LY10@100/125/100C/C",
+        "specification": "3LY10@100/125/100C/C",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.95,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars shown at top layer with annotation 3LY10@100/125/100C/C, extending from both ends toward center but not full span. Labeled as links/distribution steel pattern.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3LY10@100/125/100C/C",
+          "bar_count": 3,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.95,
+          "evidence": "Green bars shown at top layer with annotation 3LY10@100/125/100C/C, extending from both ends toward center but not full span. Labeled as links/distribution steel pattern."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y20",
+        "specification": "5-Y20",
+        "bar_count": 5,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Five continuous green bars running full length of beam at top layer, marked with two S-Y20 annotations indicating 5-Y20 specification. These appear to be primary longitudinal reinforcement.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "5-Y20",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Five continuous green bars running full length of beam at top layer, marked with two S-Y20 annotations indicating 5-Y20 specification. These appear to be primary longitudinal reinforcement."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue dashed line visible at bottom of section suggests possible bottom reinforcement, but no clear specification or bar count visible in provided images.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Blue dashed line visible at bottom of section suggests possible bottom reinforcement, but no clear specification or bar count visible in provided images."
+        }
+      }
+    ],
+    "stirrups": [],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "680"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "beam_id": "B74",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B74_render.png",
+    "sha256": "6d07b710deda7cc8e9698241f7c3f63c9a34826841fce91a220b688409ffe53e",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "13.273505799996201",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "539"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "059d08a4b7733c7b072cb7c73dfa701a18a680dba47c000cfdb6874fabe89401",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B74",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Dark blue/teal continuous bar running full span at bottom of beam in both views, extends beyond beam ends with hooks"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_SUPPORT",
+        "confidence": 0.75,
+        "evidence": "Light green bars visible at top layer near both ends of beam, shorter than bottom bars, appear to provide support reinforcement"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.6,
+        "evidence": "Hatched/cross-hatched rectangular zones visible at beam ends suggest stirrup/link presence but no specification text visible"
+      }
+    ],
+    "ambiguities": [
+      "No text specification visible for bar count or diameter for any reinforcement group",
+      "Annotation '2-Y16' visible but location unclear - may refer to different element or detail not clearly associated with B74 main reinforcement",
+      "Exact bar counts cannot be determined from visual evidence alone",
+      "Stirrup spacing and specification not readable from images"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B74",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue/teal continuous bar running full span at bottom of beam in both views, extends beyond beam ends with hooks",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Dark blue/teal continuous bar running full span at bottom of beam in both views, extends beyond beam ends with hooks"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.75,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_SUPPORT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Light green bars visible at top layer near both ends of beam, shorter than bottom bars, appear to provide support reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_SUPPORT",
+          "confidence": 0.75,
+          "evidence": "Light green bars visible at top layer near both ends of beam, shorter than bottom bars, appear to provide support reinforcement"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.6,
+        "evidence": "Hatched/cross-hatched rectangular zones visible at beam ends suggest stirrup/link presence but no specification text visible",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.6,
+          "evidence": "Hatched/cross-hatched rectangular zones visible at beam ends suggest stirrup/link presence but no specification text visible"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "539"
+  }
+}

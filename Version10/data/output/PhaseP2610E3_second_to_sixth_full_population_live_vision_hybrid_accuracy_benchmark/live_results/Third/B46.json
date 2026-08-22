@@ -1,0 +1,224 @@
+{
+  "beam_id": "B46",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B46_render.png",
+    "sha256": "ffa006ed7bbcab65eba9496e652e0e8105287daf304d7f8f794204151e43698e",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.965238099975977",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3918",
+      "output_tokens": "670"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "8e4db815a66a8685e6ff6d2a7764d8cf3f29317555c0e297a0a03ee84fdf1319",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B46",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y25",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Two Y25 bars visible at top of beam section in detail view, labeled '2-Y25' with leader pointing to top reinforcement layer"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Single dark blue bar visible at bottom of beam section running full span in both elevation and section views, appears to be main bottom reinforcement but specification not labeled"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "UNKNOWN",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.5,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.65,
+        "evidence": "Green vertical bars visible at left and right ends of beam section, likely side face or hanger bars, specification not provided"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "No stirrup specification visible in either image, though beam outline suggests stirrups would be present"
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement specification not labeled - bar visible but count and diameter unclear",
+      "Side face bars visible but no specification provided",
+      "Stirrup specification not shown in detail view",
+      "Bar lengths and exact span relationships cannot be determined from section view alone"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B46",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y25",
+        "specification": "2-Y25",
+        "bar_count": 2,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two Y25 bars visible at top of beam section in detail view, labeled '2-Y25' with leader pointing to top reinforcement layer",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y25",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Two Y25 bars visible at top of beam section in detail view, labeled '2-Y25' with leader pointing to top reinforcement layer"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Single dark blue bar visible at bottom of beam section running full span in both elevation and section views, appears to be main bottom reinforcement but specification not labeled",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Single dark blue bar visible at bottom of beam section running full span in both elevation and section views, appears to be main bottom reinforcement but specification not labeled"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.65,
+        "role_confidence": 0.5,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green vertical bars visible at left and right ends of beam section, likely side face or hanger bars, specification not provided",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "UNKNOWN",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.5,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.65,
+          "evidence": "Green vertical bars visible at left and right ends of beam section, likely side face or hanger bars, specification not provided"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.3,
+        "evidence": "No stirrup specification visible in either image, though beam outline suggests stirrups would be present",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "No stirrup specification visible in either image, though beam outline suggests stirrups would be present"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3918",
+    "output_tokens": "670"
+  }
+}

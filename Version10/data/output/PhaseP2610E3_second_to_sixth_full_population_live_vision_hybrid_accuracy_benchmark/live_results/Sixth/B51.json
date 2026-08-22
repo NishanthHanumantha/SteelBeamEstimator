@@ -1,0 +1,222 @@
+{
+  "beam_id": "B51",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B51_render.png",
+    "sha256": "8dc56d00401a781b3fc1c75b4bdf70a6356aac731106e16e8f7f97cee892da2f",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.041064799996093",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3132",
+      "output_tokens": "743"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "22d8d58a6df9ecd9fe68a1b7d3afde3fae918c80cb0a8aea3fd153964da61674",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B51",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2 bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Two continuous top bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2 bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Two continuous bottom bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "2 bars (1 each side)",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Two side face bars (one on each vertical face) shown in green in the detail view, running full span. These appear as vertical green lines on the left and right edges of the beam cross-section."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y12@100C/C' clearly visible in context view, indicating 4-legged Y12 stirrups at 100mm centers. The '4L' indicates closed stirrups enclosing the longitudinal reinforcement."
+      }
+    ],
+    "ambiguities": [
+      "Bar diameters for longitudinal reinforcement are not explicitly labeled in the visible portions of the drawings. Count is clear but diameter specification is not visible.",
+      "Green leader lines point to reinforcement groups but do not provide explicit diameter or count labels for the longitudinal bars."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B51",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2 bars",
+        "specification": "2 bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two continuous top bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2 bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Two continuous top bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2 bars",
+        "specification": "2 bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two continuous bottom bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2 bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Two continuous bottom bars running full span of B51, visible in both context and detail views. Bars extend through supports at both ends."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "2 bars (1 each side)",
+        "specification": "2 bars (1 each side)",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.7,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two side face bars (one on each vertical face) shown in green in the detail view, running full span. These appear as vertical green lines on the left and right edges of the beam cross-section.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "2 bars (1 each side)",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Two side face bars (one on each vertical face) shown in green in the detail view, running full span. These appear as vertical green lines on the left and right edges of the beam cross-section."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '4L-Y12@100C/C' clearly visible in context view, indicating 4-legged Y12 stirrups at 100mm centers. The '4L' indicates closed stirrups enclosing the longitudinal reinforcement.",
+        "raw": {
+          "spec": "4L-Y12@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '4L-Y12@100C/C' clearly visible in context view, indicating 4-legged Y12 stirrups at 100mm centers. The '4L' indicates closed stirrups enclosing the longitudinal reinforcement."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3132",
+    "output_tokens": "743"
+  }
+}

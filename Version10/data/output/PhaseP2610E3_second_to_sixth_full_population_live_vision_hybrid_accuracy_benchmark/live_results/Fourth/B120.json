@@ -1,0 +1,181 @@
+{
+  "beam_id": "B120",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B120_render.png",
+    "sha256": "1795ef9ba8e187fa845ca0481b3e12fff950f9a9e4fb1e99ecc7bfd98ac55358",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "13.532096799986903",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3926",
+      "output_tokens": "649"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "383efef298bcf7b5aa2a01f174c660bde89e753adf5eb5707d015ebe5ee90488",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B120",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "3-Y25",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.9,
+        "evidence": "Dark teal/black bars shown at top of beam in both elevation and section views. Annotation '3-Y25' with leader pointing to top reinforcement. Bars appear to run full length of beam."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "3L-Y10@100C/150/100/C",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Green bars shown at bottom of beam in section views (left and right sections). Annotation '3L-Y10@100C/150/100/C' with leader pointing to bottom reinforcement. The 'L' prefix and spacing pattern suggests layered or distributed bottom bars."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Y8@100C/150/100/C",
+        "confidence": 0.7,
+        "evidence": "Stirrup specification appears to be embedded in the bottom bar annotation '3L-Y10@100C/150/100/C'. The spacing pattern 100C/150/100/C suggests variable stirrup spacing. Blue vertical lines in section views indicate stirrups/links."
+      }
+    ],
+    "ambiguities": [
+      "The annotation '3L-Y10@100C/150/100/C' is ambiguous - it may describe bottom bars with spacing OR it may combine bottom bar count with stirrup spacing. The 'L' prefix is unusual.",
+      "Bar lengths cannot be determined from the drawings - no dimensional information visible for span length.",
+      "Support scope and relative lengths are unclear without span dimensions or clear termination points shown."
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B120",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "3-Y25",
+        "specification": "3-Y25",
+        "bar_count": 3,
+        "diameter": 25,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark teal/black bars shown at top of beam in both elevation and section views. Annotation '3-Y25' with leader pointing to top reinforcement. Bars appear to run full length of beam.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "3-Y25",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.9,
+          "evidence": "Dark teal/black bars shown at top of beam in both elevation and section views. Annotation '3-Y25' with leader pointing to top reinforcement. Bars appear to run full length of beam."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "3L-Y10@100C/150/100/C",
+        "specification": "3L-Y10@100C/150/100/C",
+        "bar_count": 3,
+        "diameter": 10,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green bars shown at bottom of beam in section views (left and right sections). Annotation '3L-Y10@100C/150/100/C' with leader pointing to bottom reinforcement. The 'L' prefix and spacing pattern suggests layered or distributed bottom bars.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "3L-Y10@100C/150/100/C",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Green bars shown at bottom of beam in section views (left and right sections). Annotation '3L-Y10@100C/150/100/C' with leader pointing to bottom reinforcement. The 'L' prefix and spacing pattern suggests layered or distributed bottom bars."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Y8@100C/150/100/C",
+        "specification": "Y8@100C/150/100/C",
+        "diameter": 8,
+        "legs": null,
+        "confidence": 0.7,
+        "evidence": "Stirrup specification appears to be embedded in the bottom bar annotation '3L-Y10@100C/150/100/C'. The spacing pattern 100C/150/100/C suggests variable stirrup spacing. Blue vertical lines in section views indicate stirrups/links.",
+        "raw": {
+          "spec": "Y8@100C/150/100/C",
+          "confidence": 0.7,
+          "evidence": "Stirrup specification appears to be embedded in the bottom bar annotation '3L-Y10@100C/150/100/C'. The spacing pattern 100C/150/100/C suggests variable stirrup spacing. Blue vertical lines in section views indicate stirrups/links."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3926",
+    "output_tokens": "649"
+  }
+}

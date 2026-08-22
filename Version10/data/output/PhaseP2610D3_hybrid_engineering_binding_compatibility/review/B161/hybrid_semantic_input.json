@@ -1,0 +1,136 @@
+{
+  "beam_id": "B161",
+  "target_identity": {
+    "value": "B161",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B161",
+    "deterministic_value": "B161",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "group_count": 5,
+  "group_matching": {
+    "matched": 4,
+    "vision_only": 1,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [
+      {
+        "code": "POSSIBLE_DUPLICATE_GROUP",
+        "group_ids": [
+          "VG4",
+          "VG5"
+        ],
+        "key": [
+          "TOP",
+          "EXTRA",
+          "4-Y16",
+          "4",
+          "16"
+        ]
+      }
+    ],
+    "pairs": [
+      {
+        "vision_index": 3,
+        "deterministic_index": 2,
+        "score": 13,
+        "vision_id": "VG4",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 1,
+        "deterministic_index": 3,
+        "score": 10,
+        "vision_id": "VG2",
+        "deterministic_id": "G04"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG3",
+        "deterministic_id": "G01"
+      },
+      {
+        "vision_index": 0,
+        "deterministic_index": 1,
+        "score": 4,
+        "vision_id": "VG1",
+        "deterministic_id": "G02"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "possible_duplicate_groups": [
+    {
+      "code": "POSSIBLE_DUPLICATE_GROUP",
+      "group_ids": [
+        "VG4",
+        "VG5"
+      ],
+      "key": [
+        "TOP",
+        "EXTRA",
+        "4-Y16",
+        "4",
+        "16"
+      ]
+    }
+  ],
+  "reinforcement_groups": [
+    {
+      "group_id": "VG4",
+      "origin": "MATCHED",
+      "layer": "TOP",
+      "role": "EXTRA",
+      "bar_count": 4,
+      "diameter": 16,
+      "specification": "4-Y16",
+      "support_scope": "LEFT_SUPPORT"
+    },
+    {
+      "group_id": "VG2",
+      "origin": "MATCHED",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 4,
+      "diameter": 25,
+      "specification": "4-Y25",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG3",
+      "origin": "MATCHED",
+      "layer": "BOTTOM",
+      "role": "MAIN",
+      "bar_count": 4,
+      "diameter": 16,
+      "specification": "4-Y16",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG1",
+      "origin": "MATCHED",
+      "layer": "TOP",
+      "role": "MAIN",
+      "bar_count": 4,
+      "diameter": 20,
+      "specification": "4-Y20",
+      "support_scope": "FULL_SPAN"
+    },
+    {
+      "group_id": "VG5",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": "TOP",
+      "role": "EXTRA",
+      "bar_count": 4,
+      "diameter": 16,
+      "specification": "4-Y16",
+      "support_scope": "RIGHT_SUPPORT"
+    }
+  ]
+}

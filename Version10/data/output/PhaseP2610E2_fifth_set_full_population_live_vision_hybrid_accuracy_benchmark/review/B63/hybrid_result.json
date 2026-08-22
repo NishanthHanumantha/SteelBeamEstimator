@@ -1,0 +1,347 @@
+{
+  "beam_id": "B63",
+  "source_provenance": {
+    "kind": "HYBRID",
+    "vision_used": true,
+    "vision_source": "E2_LIVE",
+    "mode": "LIVE_BENCHMARK",
+    "call_provenance": "VISION_NEW_LIVE_CALL"
+  },
+  "target_identity": {
+    "value": "B63",
+    "source": "VISION",
+    "confidence": 0.95,
+    "fallback_used": false,
+    "vision_value": "B63",
+    "deterministic_value": "B63",
+    "conflict_detected": false,
+    "resolution_reason": "VISION_PREFERRED_VALID",
+    "validation_reason": "VISION_ACCEPTED"
+  },
+  "reinforcement_groups": [
+    {
+      "group_id": "G1",
+      "origin": "MATCHED",
+      "layer": {
+        "value": "TOP",
+        "source": "VISION",
+        "confidence": 0.9,
+        "fallback_used": false,
+        "vision_value": "TOP",
+        "deterministic_value": "TOP",
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "role": {
+        "value": "MAIN",
+        "source": "VISION",
+        "confidence": 0.85,
+        "fallback_used": false,
+        "vision_value": "MAIN",
+        "deterministic_value": "MAIN",
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "bar_count": {
+        "value": 3,
+        "source": "VISION",
+        "confidence": 0.9,
+        "fallback_used": false,
+        "vision_value": 3,
+        "deterministic_value": 3,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "diameter": {
+        "value": 20,
+        "source": "VISION",
+        "confidence": 0.9,
+        "fallback_used": false,
+        "vision_value": 20,
+        "deterministic_value": 20,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "specification": {
+        "value": "3-Y20",
+        "source": "VISION",
+        "confidence": 0.9,
+        "fallback_used": false,
+        "vision_value": "3-Y20",
+        "deterministic_value": "3Y20",
+        "conflict_detected": true,
+        "resolution_reason": "VISION_PREFERRED_VALID",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "support_scope": {
+        "value": "FULL_SPAN",
+        "source": "DETERMINISTIC",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": "FULL_SPAN",
+        "conflict_detected": true,
+        "resolution_reason": "DETERMINISTIC_FALLBACK",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": 3340.0,
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "UNKNOWN",
+      "relative_group_extent": "UNKNOWN",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": true,
+        "conflict_detected": true,
+        "resolution_reason": "MATCHED",
+        "vision_id": "G1",
+        "deterministic_id": "G01",
+        "match_score": 13
+      }
+    },
+    {
+      "group_id": "G2",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": {
+        "value": "TOP",
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": "TOP",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "role": {
+        "value": "EXTRA",
+        "source": "VISION",
+        "confidence": 0.7,
+        "fallback_used": false,
+        "vision_value": "EXTRA",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "bar_count": {
+        "value": 2,
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": 2,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "diameter": {
+        "value": 20,
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": 20,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "specification": {
+        "value": "2-Y20",
+        "source": "VISION",
+        "confidence": 0.75,
+        "fallback_used": false,
+        "vision_value": "2-Y20",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "validation_reason": "VISION_ACCEPTED"
+      },
+      "support_scope": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_MISSING_VALUE"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": "UNAVAILABLE",
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "SHORTER",
+      "relative_group_extent": "PARTIAL_SUPPORT",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": false,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "vision_id": "G2",
+        "deterministic_id": null,
+        "match_score": null
+      }
+    },
+    {
+      "group_id": "G3",
+      "origin": "VISION_ONLY_GROUP",
+      "layer": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": false,
+        "vision_value": "TOP",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "role": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "bar_count": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "diameter": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": null,
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "specification": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "support_scope": {
+        "value": null,
+        "source": "UNRESOLVED",
+        "confidence": null,
+        "fallback_used": true,
+        "vision_value": "UNKNOWN",
+        "deterministic_value": null,
+        "conflict_detected": false,
+        "resolution_reason": "UNRESOLVED",
+        "validation_reason": "VISION_LOW_CONFIDENCE"
+      },
+      "deterministic_engineering": {
+        "geometry_reference": "DETERMINISTIC_AUTHORITY",
+        "cut_length_reference": "UNAVAILABLE",
+        "development_length_reference": "DETERMINISTIC_AUTHORITY",
+        "anchorage_reference": "DETERMINISTIC_AUTHORITY",
+        "hook_reference": "DETERMINISTIC_AUTHORITY",
+        "source": "DETERMINISTIC",
+        "authority": "DETERMINISTIC_ENGINEERING"
+      },
+      "relative_span_length": "UNKNOWN",
+      "relative_group_extent": "UNKNOWN",
+      "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY",
+      "provenance": {
+        "vision_available": true,
+        "deterministic_available": false,
+        "conflict_detected": false,
+        "resolution_reason": "VISION_ONLY_GROUP",
+        "vision_id": "G3",
+        "deterministic_id": null,
+        "match_score": null
+      }
+    }
+  ],
+  "stirrups": {
+    "items": [
+      {
+        "origin": "VISION_ONLY_GROUP",
+        "semantic_identification": {
+          "value": "3L-Y10@X100C/C",
+          "source": "VISION",
+          "confidence": 0.9,
+          "fallback_used": false,
+          "vision_value": "3L-Y10@X100C/C",
+          "deterministic_value": null,
+          "conflict_detected": false,
+          "resolution_reason": "VISION_ONLY_GROUP",
+          "validation_reason": "VISION_ACCEPTED"
+        },
+        "engineering_calculation_reference": {
+          "source": "DETERMINISTIC",
+          "authority": "DETERMINISTIC_ENGINEERING",
+          "reason": "DETERMINISTIC_AUTHORITY",
+          "cut_length_mm": "UNAVAILABLE"
+        }
+      }
+    ],
+    "semantic_identification_authority": "VISION_PREFERRED",
+    "engineering_calculation_authority": "DETERMINISTIC_ENGINEERING"
+  },
+  "spacers": {
+    "source": "DETERMINISTIC",
+    "authority": "DETERMINISTIC_ENGINEERING",
+    "reason": "DETERMINISTIC_AUTHORITY",
+    "groups": []
+  },
+  "group_matching": {
+    "matched": 1,
+    "vision_only": 2,
+    "deterministic_only": 0,
+    "ambiguous": 0,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 0,
+        "score": 13,
+        "vision_id": "G1",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": []
+  },
+  "possible_duplicate_groups": [],
+  "successfully_resolved": true
+}

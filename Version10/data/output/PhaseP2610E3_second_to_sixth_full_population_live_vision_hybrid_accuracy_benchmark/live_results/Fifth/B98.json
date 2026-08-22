@@ -1,0 +1,120 @@
+{
+  "beam_id": "B98",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "REUSE",
+  "call_provenance": "VISION_REUSED_CURRENT_ARCHITECTURE",
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fifth_Set_Drawings\\RenderedCrops\\shared_renders\\B98_render.png",
+    "sha256": "cad58d4b3e1de9ff55aca949d1271fc6e0c3ec71cfa3c10f26ec6f870a6d778d",
+    "source": "QA30_FIFTH_SHARED_RENDER"
+  },
+  "called": false,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "parsed": {
+    "target_beam_id": "B98",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y25",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.95,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Blue bars shown at top of beam section in elevation view, labeled 4-Y25, extending full span with hooks at both ends"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y10@100/200/100C/C",
+        "confidence": 0.95,
+        "evidence": "Stirrup specification shown in annotation below the beam elevation, indicating 4-legged Y10 stirrups at varying spacing: 100mm at supports, 200mm at mid-span, 100mm at supports"
+      }
+    ],
+    "ambiguities": [],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B98",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y25",
+        "specification": "4-Y25",
+        "bar_count": 4,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.95,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Blue bars shown at top of beam section in elevation view, labeled 4-Y25, extending full span with hooks at both ends",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y25",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.95,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Blue bars shown at top of beam section in elevation view, labeled 4-Y25, extending full span with hooks at both ends"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y10@100/200/100C/C",
+        "specification": "4L-Y10@100/200/100C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Stirrup specification shown in annotation below the beam elevation, indicating 4-legged Y10 stirrups at varying spacing: 100mm at supports, 200mm at mid-span, 100mm at supports",
+        "raw": {
+          "spec": "4L-Y10@100/200/100C/C",
+          "confidence": 0.95,
+          "evidence": "Stirrup specification shown in annotation below the beam elevation, indicating 4-legged Y10 stirrups at varying spacing: 100mm at supports, 200mm at mid-span, 100mm at supports"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "342"
+  },
+  "set_key": "Fifth",
+  "reuse_source": "E2_FIFTH_LIVE"
+}

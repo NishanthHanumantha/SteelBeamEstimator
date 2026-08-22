@@ -1,0 +1,1395 @@
+[
+  {
+    "beam_id": "B100",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 129.2564,
+    "deterministic_kg": 133.588,
+    "benchmark_kg": 168.4749,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 23.28,
+    "deterministic_error_pct": 20.71,
+    "hybrid_accuracy_pct": 76.72,
+    "deterministic_accuracy_pct": 79.29,
+    "hybrid_signed_percent_error": -23.28,
+    "deterministic_signed_percent_error": -20.71,
+    "absolute_error_hybrid_kg": 39.2185,
+    "absolute_error_deterministic_kg": 34.8869,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 16.0,
+        "bar_count": 3.0,
+        "weight_kg": 28.0615
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 25.0,
+        "bar_count": 3.0,
+        "weight_kg": 24.2859
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 3.0,
+        "weight_kg": 9.9475
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 3.0,
+        "weight_kg": 43.8461
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 40.0,
+        "weight_kg": 40.9546
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 40.0,
+        "weight_kg": 15.7897
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 5.0,
+        "weight_kg": 5.5896
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y16": 11.1604,
+        "Y20": 69.0042,
+        "Y25": 2.2349,
+        "Y10": 46.8569
+      },
+      "deterministic": {
+        "Y20": 40.87,
+        "Y16": 49.283,
+        "Y10": 38.965,
+        "Y25": 4.47
+      },
+      "benchmark": {
+        "Y10": 56.7443,
+        "Y16": 38.009,
+        "Y20": 43.8461,
+        "Y25": 29.8755
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B100A",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 215.6334,
+    "deterministic_kg": 130.335,
+    "benchmark_kg": 202.1577,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 6.67,
+    "deterministic_error_pct": 35.53,
+    "hybrid_accuracy_pct": 93.33,
+    "deterministic_accuracy_pct": 64.47,
+    "hybrid_signed_percent_error": 6.67,
+    "deterministic_signed_percent_error": -35.53,
+    "absolute_error_hybrid_kg": 13.4757,
+    "absolute_error_deterministic_kg": 71.8227,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 25.0,
+        "bar_count": 4.0,
+        "weight_kg": 52.4268
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 25.0,
+        "bar_count": 4.0,
+        "weight_kg": 52.4268
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 21.0,
+        "weight_kg": 38.3394
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 8.0,
+        "weight_kg": 14.6055
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 21.0,
+        "weight_kg": 32.1222
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 8.0,
+        "weight_kg": 12.237
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y25": 156.4458,
+        "Y10": 59.1876
+      },
+      "deterministic": {
+        "Y25": 77.067,
+        "Y10": 53.269
+      },
+      "benchmark": {
+        "Y10": 97.3041,
+        "Y25": 104.8536
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B103",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 139.3298,
+    "deterministic_kg": 163.255,
+    "benchmark_kg": 112.536,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 23.81,
+    "deterministic_error_pct": 45.07,
+    "hybrid_accuracy_pct": 76.19,
+    "deterministic_accuracy_pct": 54.93,
+    "hybrid_signed_percent_error": 23.81,
+    "deterministic_signed_percent_error": 45.07,
+    "absolute_error_hybrid_kg": 26.7938,
+    "absolute_error_deterministic_kg": 50.719,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 16.0,
+        "bar_count": 3.0,
+        "weight_kg": 22.6898
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 3.0,
+        "weight_kg": 9.237
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 3.0,
+        "weight_kg": 36.9331
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 30.0,
+        "weight_kg": 30.7159
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 30.0,
+        "weight_kg": 11.8423
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 1.0,
+        "weight_kg": 1.1179
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 91.9558,
+        "Y16": 9.9965,
+        "Y25": 2.2349,
+        "Y10": 35.1426
+      },
+      "deterministic": {
+        "Y20": 89.589,
+        "Y16": 39.972,
+        "Y10": 29.224,
+        "Y25": 4.47
+      },
+      "benchmark": {
+        "Y10": 42.5582,
+        "Y16": 31.9268,
+        "Y20": 36.9331,
+        "Y25": 1.1179
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B119",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 221.4875,
+    "deterministic_kg": 228.519,
+    "benchmark_kg": 384.6245,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 42.41,
+    "deterministic_error_pct": 40.59,
+    "hybrid_accuracy_pct": 57.59,
+    "deterministic_accuracy_pct": 59.41,
+    "hybrid_signed_percent_error": -42.41,
+    "deterministic_signed_percent_error": -40.59,
+    "absolute_error_hybrid_kg": 163.137,
+    "absolute_error_deterministic_kg": 156.1055,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 25.0,
+        "bar_count": 3.0,
+        "weight_kg": 96.7968
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 25.0,
+        "bar_count": 3.0,
+        "weight_kg": 96.7968
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 45.0,
+        "weight_kg": 79.3803
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 13.0,
+        "weight_kg": 22.9321
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 45.0,
+        "weight_kg": 68.8333
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 13.0,
+        "weight_kg": 19.8852
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y25": 93.313,
+        "Y10": 128.1745
+      },
+      "deterministic": {
+        "Y25": 91.579,
+        "Y16": 34.102,
+        "Y10": 102.838
+      },
+      "benchmark": {
+        "Y10": 191.0309,
+        "Y25": 193.5936
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B128",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 298.1243,
+    "deterministic_kg": 270.668,
+    "benchmark_kg": 469.2765,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 36.47,
+    "deterministic_error_pct": 42.32,
+    "hybrid_accuracy_pct": 63.53,
+    "deterministic_accuracy_pct": 57.68,
+    "hybrid_signed_percent_error": -36.47,
+    "deterministic_signed_percent_error": -42.32,
+    "absolute_error_hybrid_kg": 171.1522,
+    "absolute_error_deterministic_kg": 198.6085,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 60.445
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 60.445
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 25.0,
+        "bar_count": 5.0,
+        "weight_kg": 111.7924
+      },
+      {
+        "role": "Bottom Bars Extra",
+        "description": "Bottom bars  -extra",
+        "diameter_mm": 20.0,
+        "bar_count": 3.0,
+        "weight_kg": 38.0433
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps -1",
+        "diameter_mm": 12.0,
+        "bar_count": 28.0,
+        "weight_kg": 93.258
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps -2",
+        "diameter_mm": 12.0,
+        "bar_count": 9.333333333333334,
+        "weight_kg": 25.7254
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 12.0,
+        "bar_count": 28.0,
+        "weight_kg": 73.6116
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 3.0,
+        "weight_kg": 5.9558
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 63.2074,
+        "Y25": 159.9144,
+        "Y12": 75.0025
+      },
+      "deterministic": {
+        "Y25": 127.932,
+        "Y20": 73.985,
+        "Y12": 68.752
+      },
+      "benchmark": {
+        "Y12": 192.595,
+        "Y20": 158.9333,
+        "Y25": 117.7482
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B129",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 197.6427,
+    "deterministic_kg": 136.882,
+    "benchmark_kg": 149.3763,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 32.31,
+    "deterministic_error_pct": 8.36,
+    "hybrid_accuracy_pct": 67.69,
+    "deterministic_accuracy_pct": 91.64,
+    "hybrid_signed_percent_error": 32.31,
+    "deterministic_signed_percent_error": -8.36,
+    "absolute_error_hybrid_kg": 48.2664,
+    "absolute_error_deterministic_kg": 12.4943,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 34.2143
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 2.0,
+        "weight_kg": 9.5338
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 34.2143
+      },
+      {
+        "role": "Bottom Bars Extra",
+        "description": "Bottom bars  -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 2.0,
+        "weight_kg": 9.5338
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 12.0,
+        "bar_count": 12.0,
+        "weight_kg": 31.9742
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 12.0,
+        "bar_count": 12.0,
+        "weight_kg": 27.2846
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 2.0,
+        "weight_kg": 2.6213
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 160.9903,
+        "Y16": 34.0321,
+        "Y25": 2.6203
+      },
+      "deterministic": {
+        "Y20": 79.903,
+        "Y16": 49.118,
+        "Y25": 7.861
+      },
+      "benchmark": {
+        "Y12": 59.2588,
+        "Y16": 19.0676,
+        "Y20": 68.4286,
+        "Y25": 2.6213
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B133",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 273.6156,
+    "deterministic_kg": 301.098,
+    "benchmark_kg": 310.829,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 11.97,
+    "deterministic_error_pct": 3.13,
+    "hybrid_accuracy_pct": 88.03,
+    "deterministic_accuracy_pct": 96.87,
+    "hybrid_signed_percent_error": -11.97,
+    "deterministic_signed_percent_error": -3.13,
+    "absolute_error_hybrid_kg": 37.2134,
+    "absolute_error_deterministic_kg": 9.731,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 99.6726
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 99.6726
+      },
+      {
+        "role": "Bottom Bars Extra",
+        "description": "Bottom bars - extra",
+        "diameter_mm": 16.0,
+        "bar_count": 2.0,
+        "weight_kg": 17.9371
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 43.0,
+        "weight_kg": 35.9848
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 17.0,
+        "weight_kg": 14.2265
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 43.0,
+        "weight_kg": 23.7635
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 17.0,
+        "weight_kg": 9.3949
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 6.0,
+        "weight_kg": 10.177
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 202.2687,
+        "Y16": 9.2891,
+        "Y25": 3.391,
+        "Y8": 58.6668
+      },
+      "deterministic": {
+        "Y20": 97.003,
+        "Y25": 105.737,
+        "Y16": 47.645,
+        "Y8": 50.712
+      },
+      "benchmark": {
+        "Y8": 83.3697,
+        "Y16": 17.9371,
+        "Y20": 199.3452,
+        "Y25": 10.177
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B139",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 29.8306,
+    "deterministic_kg": 39.932,
+    "benchmark_kg": null,
+    "truth_source": "NO_BENCHMARK_TRUTH",
+    "hybrid_error_pct": null,
+    "deterministic_error_pct": null,
+    "hybrid_accuracy_pct": null,
+    "deterministic_accuracy_pct": null,
+    "hybrid_signed_percent_error": null,
+    "deterministic_signed_percent_error": null,
+    "absolute_error_hybrid_kg": null,
+    "absolute_error_deterministic_kg": null,
+    "winner": "NO_BENCHMARK_TRUTH",
+    "truth_lines": [],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y16": 10.1014,
+        "Y20": 19.7292
+      },
+      "deterministic": {
+        "Y20": 19.729,
+        "Y16": 20.203
+      },
+      "benchmark": {}
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B141",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 179.6274,
+    "deterministic_kg": 68.263,
+    "benchmark_kg": 90.5896,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 98.29,
+    "deterministic_error_pct": 24.65,
+    "hybrid_accuracy_pct": 1.71,
+    "deterministic_accuracy_pct": 75.35,
+    "hybrid_signed_percent_error": 98.29,
+    "deterministic_signed_percent_error": -24.65,
+    "absolute_error_hybrid_kg": 89.0378,
+    "absolute_error_deterministic_kg": 22.3266,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 47.8626
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 16.0,
+        "bar_count": 5.0,
+        "weight_kg": 26.7162
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 13.0,
+        "weight_kg": 9.8528
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 13.0,
+        "weight_kg": 6.158
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y16": 69.0206,
+        "Y20": 110.6068
+      },
+      "deterministic": {
+        "Y16": 68.263
+      },
+      "benchmark": {
+        "Y8": 16.0108,
+        "Y16": 26.7162,
+        "Y20": 47.8626
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B161",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 344.4999,
+    "deterministic_kg": 405.181,
+    "benchmark_kg": 325.1765,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 5.94,
+    "deterministic_error_pct": 24.6,
+    "hybrid_accuracy_pct": 94.06,
+    "deterministic_accuracy_pct": 75.4,
+    "hybrid_signed_percent_error": 5.94,
+    "deterministic_signed_percent_error": 24.6,
+    "absolute_error_hybrid_kg": 19.3234,
+    "absolute_error_deterministic_kg": 80.0045,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 79.3433
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 25.0,
+        "bar_count": 4.0,
+        "weight_kg": 129.525
+      },
+      {
+        "role": "Bottom Bars Extra",
+        "description": "Bottom bars - extra",
+        "diameter_mm": 16.0,
+        "bar_count": 4.0,
+        "weight_kg": 27.7899
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 60.0,
+        "weight_kg": 47.8428
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 60.0,
+        "weight_kg": 33.1584
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 5.0,
+        "weight_kg": 7.5171
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 76.1666,
+        "Y25": 131.6492,
+        "Y16": 82.2867,
+        "Y8": 54.3974
+      },
+      "deterministic": {
+        "Y25": 141.359,
+        "Y20": 56.237,
+        "Y16": 160.89,
+        "Y8": 46.695
+      },
+      "benchmark": {
+        "Y8": 81.0012,
+        "Y16": 27.7899,
+        "Y20": 79.3433,
+        "Y25": 137.0421
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B17",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 86.3123,
+    "deterministic_kg": 124.169,
+    "benchmark_kg": 46.6757,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 84.92,
+    "deterministic_error_pct": 166.02,
+    "hybrid_accuracy_pct": 15.08,
+    "deterministic_accuracy_pct": 0.0,
+    "hybrid_signed_percent_error": 84.92,
+    "deterministic_signed_percent_error": 166.02,
+    "absolute_error_hybrid_kg": 39.6366,
+    "absolute_error_deterministic_kg": 77.4933,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 2.0,
+        "weight_kg": 6.9277
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars-extra",
+        "diameter_mm": 25.0,
+        "bar_count": 2.0,
+        "weight_kg": 11.2872
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 2.0,
+        "weight_kg": 6.9277
+      },
+      {
+        "role": "Bottom Bars Extra",
+        "description": "Bottom bars -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 2.0,
+        "weight_kg": 4.2822
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 12.0,
+        "bar_count": 11.0,
+        "weight_kg": 15.6318
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 3.0,
+        "weight_kg": 1.6191
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 76.1548,
+        "Y16": 9.0786,
+        "Y25": 1.0789
+      },
+      "deterministic": {
+        "Y20": 74.971,
+        "Y16": 45.961,
+        "Y25": 3.237
+      },
+      "benchmark": {
+        "Y12": 15.6318,
+        "Y16": 4.2822,
+        "Y20": 13.8554,
+        "Y25": 12.9063
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B46",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 63.528,
+    "deterministic_kg": 61.16,
+    "benchmark_kg": 96.9094,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 34.45,
+    "deterministic_error_pct": 36.89,
+    "hybrid_accuracy_pct": 65.55,
+    "deterministic_accuracy_pct": 63.11,
+    "hybrid_signed_percent_error": -34.45,
+    "deterministic_signed_percent_error": -36.89,
+    "absolute_error_hybrid_kg": 33.3814,
+    "absolute_error_deterministic_kg": 35.7494,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 33.4545
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 33.4545
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 11.0,
+        "weight_kg": 11.941
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 10.0,
+        "bar_count": 5.0,
+        "weight_kg": 5.4277
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 11.0,
+        "weight_kg": 8.6843
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 10.0,
+        "bar_count": 5.0,
+        "weight_kg": 3.9474
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 63.528
+      },
+      "deterministic": {
+        "Y20": 61.16
+      },
+      "benchmark": {
+        "Y10": 30.0004,
+        "Y20": 66.909
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B55",
+    "status": "SHADOW_AMBIGUOUS",
+    "completeness": "PARTIAL",
+    "hybrid_kg": 170.9528,
+    "deterministic_kg": 214.412,
+    "benchmark_kg": 221.4518,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 22.8,
+    "deterministic_error_pct": 3.18,
+    "hybrid_accuracy_pct": 77.2,
+    "deterministic_accuracy_pct": 96.82,
+    "hybrid_signed_percent_error": -22.8,
+    "deterministic_signed_percent_error": -3.18,
+    "absolute_error_hybrid_kg": 50.499,
+    "absolute_error_deterministic_kg": 7.0398,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 78.8746
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars -extra",
+        "diameter_mm": 16.0,
+        "bar_count": 3.0,
+        "weight_kg": 11.5675
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 78.8746
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 49.0,
+        "weight_kg": 37.1374
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 49.0,
+        "weight_kg": 11.6054
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 2.0,
+        "weight_kg": 3.3923
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y16": 39.5563,
+        "Y20": 86.9318,
+        "Y25": 1.8496,
+        "Y8": 42.6151
+      },
+      "deterministic": {
+        "Y20": 80.15,
+        "Y16": 87.787,
+        "Y8": 36.302,
+        "Y25": 10.173
+      },
+      "benchmark": {
+        "Y8": 48.7428,
+        "Y16": 11.5675,
+        "Y20": 157.7492,
+        "Y25": 3.3923
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B65",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 265.2411,
+    "deterministic_kg": 280.198,
+    "benchmark_kg": 222.6927,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 19.11,
+    "deterministic_error_pct": 25.82,
+    "hybrid_accuracy_pct": 80.89,
+    "deterministic_accuracy_pct": 74.18,
+    "hybrid_signed_percent_error": 19.11,
+    "deterministic_signed_percent_error": 25.82,
+    "absolute_error_hybrid_kg": 42.5484,
+    "absolute_error_deterministic_kg": 57.5053,
+    "winner": "HYBRID",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 16.0,
+        "bar_count": 5.0,
+        "weight_kg": 55.6587
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars - extra",
+        "diameter_mm": 16.0,
+        "bar_count": 2.0,
+        "weight_kg": 6.4738
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 86.9668
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 45.0,
+        "weight_kg": 34.1058
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 12.0,
+        "weight_kg": 9.0949
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 45.0,
+        "weight_kg": 21.3161
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 12.0,
+        "weight_kg": 5.6843
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 2.0,
+        "weight_kg": 3.3923
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y16": 103.3147,
+        "Y20": 101.9753,
+        "Y25": 3.6992,
+        "Y8": 56.2519
+      },
+      "deterministic": {
+        "Y20": 100.495,
+        "Y25": 131.784,
+        "Y8": 47.918
+      },
+      "benchmark": {
+        "Y8": 70.2011,
+        "Y16": 62.1325,
+        "Y20": 86.9668,
+        "Y25": 3.3923
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B66",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 281.68,
+    "deterministic_kg": 222.804,
+    "benchmark_kg": 183.888,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 53.18,
+    "deterministic_error_pct": 21.16,
+    "hybrid_accuracy_pct": 46.82,
+    "deterministic_accuracy_pct": 78.84,
+    "hybrid_signed_percent_error": 53.18,
+    "deterministic_signed_percent_error": 21.16,
+    "absolute_error_hybrid_kg": 97.792,
+    "absolute_error_deterministic_kg": 38.916,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 16.0,
+        "bar_count": 5.0,
+        "weight_kg": 48.4586
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 5.0,
+        "weight_kg": 78.7759
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 33.0,
+        "weight_kg": 25.0109
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 13.0,
+        "weight_kg": 9.8528
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 33.0,
+        "weight_kg": 15.6318
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 13.0,
+        "weight_kg": 6.158
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y25": 108.6647,
+        "Y20": 81.6296,
+        "Y16": 48.7706,
+        "Y8": 42.6151
+      },
+      "deterministic": {
+        "Y20": 80.15,
+        "Y25": 106.353,
+        "Y8": 36.302
+      },
+      "benchmark": {
+        "Y8": 56.6535,
+        "Y16": 48.4586,
+        "Y20": 78.7759
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  },
+  {
+    "beam_id": "B68",
+    "status": "SHADOW_COMPLETE",
+    "completeness": "COMPLETE",
+    "hybrid_kg": 120.934,
+    "deterministic_kg": 113.764,
+    "benchmark_kg": 91.6002,
+    "truth_source": "ESTIMATOR_EXCEL",
+    "hybrid_error_pct": 32.02,
+    "deterministic_error_pct": 24.2,
+    "hybrid_accuracy_pct": 67.98,
+    "deterministic_accuracy_pct": 75.8,
+    "hybrid_signed_percent_error": 32.02,
+    "deterministic_signed_percent_error": 24.2,
+    "absolute_error_hybrid_kg": 29.3338,
+    "absolute_error_deterministic_kg": 22.1638,
+    "winner": "DETERMINISTIC",
+    "truth_lines": [
+      {
+        "role": "Top Bars",
+        "description": "Top bars",
+        "diameter_mm": 16.0,
+        "bar_count": 4.0,
+        "weight_kg": 22.4214
+      },
+      {
+        "role": "Bottom Bars",
+        "description": "Bottom bars",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 37.0071
+      },
+      {
+        "role": "Top Bars Extra",
+        "description": "Top bars - extra",
+        "diameter_mm": 20.0,
+        "bar_count": 4.0,
+        "weight_kg": 8.8817
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 21.0,
+        "weight_kg": 14.2581
+      },
+      {
+        "role": "Stirrups",
+        "description": "Stirupps",
+        "diameter_mm": 8.0,
+        "bar_count": 3.0,
+        "weight_kg": 2.0369
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 21.0,
+        "weight_kg": 4.9738
+      },
+      {
+        "role": "Hooks",
+        "description": "C - Hook",
+        "diameter_mm": 8.0,
+        "bar_count": 3.0,
+        "weight_kg": 0.7105
+      },
+      {
+        "role": "Spacer Bars",
+        "description": "Spacer bars",
+        "diameter_mm": 25.0,
+        "bar_count": 1.0,
+        "weight_kg": 1.3107
+      }
+    ],
+    "deterministic_group_count": null,
+    "weight_by_diameter": {
+      "hybrid": {
+        "Y20": 84.5973,
+        "Y16": 12.835,
+        "Y25": 2.6203,
+        "Y8": 20.8814
+      },
+      "deterministic": {
+        "Y20": 41.707,
+        "Y16": 49.344,
+        "Y8": 17.472,
+        "Y25": 5.241
+      },
+      "benchmark": {
+        "Y8": 21.9793,
+        "Y16": 22.4214,
+        "Y20": 45.8888,
+        "Y25": 1.3107
+      }
+    },
+    "formulas": {
+      "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+      "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+      "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+      "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+    }
+  }
+]

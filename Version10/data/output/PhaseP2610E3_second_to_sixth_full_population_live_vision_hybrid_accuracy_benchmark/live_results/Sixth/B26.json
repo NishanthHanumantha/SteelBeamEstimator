@@ -1,0 +1,223 @@
+{
+  "beam_id": "B26",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B26_render.png",
+    "sha256": "41ed3e6f250aa9a25e7d221868a43a01ae0b09a7b0167a9780c7e8faf73da0de",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.887032600003295",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3218",
+      "output_tokens": "737"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "d0edc29f0ed85da343ede828c6a139217be286433c04a77da6d965be8be1fc66",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B26",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "LEFT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_LEFT",
+        "confidence": 0.9,
+        "evidence": "Two dark blue bars shown at top left of beam section, extending partially into span from left support. Annotation '2-Y20' with filled circle marker points to this group."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "Continuous top bars",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.75,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.7,
+        "evidence": "Multiple dark blue horizontal lines visible at top of beam running full length. Count unclear from visual, appears to be continuous top reinforcement distinct from the 2-Y20 group."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "Continuous bottom bars",
+        "bar_count": 0,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Dark blue horizontal lines at bottom of beam section running full span length. Exact count not clearly visible but distinct from top reinforcement."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y10@125/150/125C/C",
+        "confidence": 0.95,
+        "evidence": "Annotation '2L-Y10@125/150/125C/C' with filled circle marker below beam section. Vertical stirrup lines visible in section view showing 2-legged configuration."
+      }
+    ],
+    "ambiguities": [
+      "Exact bar count for continuous top reinforcement (G2) not clearly visible in section view",
+      "Exact bar count for continuous bottom reinforcement (G3) not clearly visible in section view",
+      "Multiple dashed vertical lines in section suggest possible curtailment points but specific bar terminations unclear"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B26",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "LEFT_SUPPORT",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_LEFT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two dark blue bars shown at top left of beam section, extending partially into span from left support. Annotation '2-Y20' with filled circle marker points to this group.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "LEFT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_LEFT",
+          "confidence": 0.9,
+          "evidence": "Two dark blue bars shown at top left of beam section, extending partially into span from left support. Annotation '2-Y20' with filled circle marker points to this group."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "Continuous top bars",
+        "specification": "Continuous top bars",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.7,
+        "role_confidence": 0.75,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Multiple dark blue horizontal lines visible at top of beam running full length. Count unclear from visual, appears to be continuous top reinforcement distinct from the 2-Y20 group.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "Continuous top bars",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.75,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.7,
+          "evidence": "Multiple dark blue horizontal lines visible at top of beam running full length. Count unclear from visual, appears to be continuous top reinforcement distinct from the 2-Y20 group."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "Continuous bottom bars",
+        "specification": "Continuous bottom bars",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.8,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue horizontal lines at bottom of beam section running full span length. Exact count not clearly visible but distinct from top reinforcement.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "Continuous bottom bars",
+          "bar_count": 0,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Dark blue horizontal lines at bottom of beam section running full span length. Exact count not clearly visible but distinct from top reinforcement."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y10@125/150/125C/C",
+        "specification": "2L-Y10@125/150/125C/C",
+        "diameter": 10,
+        "legs": null,
+        "confidence": 0.95,
+        "evidence": "Annotation '2L-Y10@125/150/125C/C' with filled circle marker below beam section. Vertical stirrup lines visible in section view showing 2-legged configuration.",
+        "raw": {
+          "spec": "2L-Y10@125/150/125C/C",
+          "confidence": 0.95,
+          "evidence": "Annotation '2L-Y10@125/150/125C/C' with filled circle marker below beam section. Vertical stirrup lines visible in section view showing 2-legged configuration."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3218",
+    "output_tokens": "737"
+  }
+}

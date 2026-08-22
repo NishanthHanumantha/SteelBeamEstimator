@@ -1,0 +1,308 @@
+{
+  "beam_id": "B59",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B59_render.png",
+    "sha256": "6bd1d6c6f53b2ec8b372913e7761fcb0ad300759d5711a7ac2f07a6b24eb2915",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "17.24426070001209",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3468",
+      "output_tokens": "1053"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "09c1f178c7da83dfd63e57270a9e77ef7ca3387b6a264099da2e1e76110a3ff4",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B59",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Two horizontal bars visible at top of beam section in detail view. Annotations show 'Ld+10db' at both left and right supports indicating development length extensions. Bars appear to extend over supports."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 1,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.6,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Single continuous horizontal bar at bottom of section, appears to run full span of beam. Positioned at bottommost layer."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 1,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.6,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Second horizontal bar at bottom layer, positioned above G2. Appears to run full span. Physically distinct from G2 despite similar length."
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 1,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.6,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Third horizontal bar at bottom layer, positioned above G3. Appears to run full span. Physically distinct group despite similar specification to G2 and G3."
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "SIDE_FACE",
+        "spec": "S.F.R ON BOTH FACE",
+        "bar_count": 0,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.8,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Annotation 'S.F.R ON BOTH FACE' with green arrow pointing to side face reinforcement location. Label 'SIDE FACE REINFORCEMENT DETAILS' at bottom confirms presence. Specific bar count and diameter not visible in this view."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.4,
+        "evidence": "Green leader lines visible in section view suggest stirrup/link presence but no specification text visible for spacing, diameter, or count."
+      }
+    ],
+    "ambiguities": [
+      "Bar diameters not specified in visible annotations",
+      "Exact bar count for side face reinforcement not visible",
+      "Stirrup specification (diameter, spacing, legs) not readable in provided views",
+      "Development length 'Ld+10db' shown but base bar diameter 'db' not specified"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B59",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.7,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two horizontal bars visible at top of beam section in detail view. Annotations show 'Ld+10db' at both left and right supports indicating development length extensions. Bars appear to extend over supports.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Two horizontal bars visible at top of beam section in detail view. Annotations show 'Ld+10db' at both left and right supports indicating development length extensions. Bars appear to extend over supports."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 1,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.6,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Single continuous horizontal bar at bottom of section, appears to run full span of beam. Positioned at bottommost layer.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 1,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.6,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Single continuous horizontal bar at bottom of section, appears to run full span of beam. Positioned at bottommost layer."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 1,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.6,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Second horizontal bar at bottom layer, positioned above G2. Appears to run full span. Physically distinct from G2 despite similar length.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 1,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.6,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Second horizontal bar at bottom layer, positioned above G2. Appears to run full span. Physically distinct from G2 despite similar length."
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 1,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.6,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Third horizontal bar at bottom layer, positioned above G3. Appears to run full span. Physically distinct group despite similar specification to G2 and G3.",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 1,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.6,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Third horizontal bar at bottom layer, positioned above G3. Appears to run full span. Physically distinct group despite similar specification to G2 and G3."
+        }
+      },
+      {
+        "physical_group_id": "G5",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "S.F.R ON BOTH FACE",
+        "specification": "S.F.R ON BOTH FACE",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation 'S.F.R ON BOTH FACE' with green arrow pointing to side face reinforcement location. Label 'SIDE FACE REINFORCEMENT DETAILS' at bottom confirms presence. Specific bar count and diameter not visible in this view.",
+        "raw": {
+          "physical_group_id": "G5",
+          "layer": "SIDE_FACE",
+          "spec": "S.F.R ON BOTH FACE",
+          "bar_count": 0,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.8,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Annotation 'S.F.R ON BOTH FACE' with green arrow pointing to side face reinforcement location. Label 'SIDE FACE REINFORCEMENT DETAILS' at bottom confirms presence. Specific bar count and diameter not visible in this view."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.4,
+        "evidence": "Green leader lines visible in section view suggest stirrup/link presence but no specification text visible for spacing, diameter, or count.",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.4,
+          "evidence": "Green leader lines visible in section view suggest stirrup/link presence but no specification text visible for spacing, diameter, or count."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3468",
+    "output_tokens": "1053"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "beam_id": "B40",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B40_render.png",
+    "sha256": "c85de6a9d1f1fe4ef56b05aa8528f7f192e2716a6dd59ff5cd6a3bf77fbad074",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.004524900054093",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3918",
+      "output_tokens": "708"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "7912e576754de6cbbacc49d9abba269c7be0fa538570b065347f82d235979192",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B40",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "6-Y25",
+        "bar_count": 6,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Top layer showing 6 bars of Y25 diameter running full span, visible in both context and detail views. Green leader line annotation '6-Y25' points to this group on the left side of the beam."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "spec": "6-Y25",
+        "bar_count": 6,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.75,
+        "support_scope": "RIGHT_SUPPORT",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "PARTIAL_RIGHT",
+        "confidence": 0.85,
+        "evidence": "Top layer showing 6 bars of Y25 diameter at right support region. Green leader line annotation '6-Y25' points to this group on the right side. Bars appear shorter than G1, extending partially from right support."
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 0,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.3,
+        "evidence": "Bottom reinforcement visible in detail view as dark blue/navy lines running along bottom face, but no clear annotation or specification visible for count or diameter."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "UNKNOWN",
+        "confidence": 0.0,
+        "evidence": "No stirrup or link annotations visible in either context or detail images for beam B40."
+      }
+    ],
+    "ambiguities": [
+      "Bottom reinforcement is visible but lacks clear specification annotation",
+      "Two groups of 6-Y25 bars in top layer - physical separation suggests distinct groups but identical specification raises question whether they are intended as continuous or separate groups",
+      "No stirrup specification visible"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B40",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "6-Y25",
+        "specification": "6-Y25",
+        "bar_count": 6,
+        "diameter": 25,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer showing 6 bars of Y25 diameter running full span, visible in both context and detail views. Green leader line annotation '6-Y25' points to this group on the left side of the beam.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "6-Y25",
+          "bar_count": 6,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Top layer showing 6 bars of Y25 diameter running full span, visible in both context and detail views. Green leader line annotation '6-Y25' points to this group on the left side of the beam."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "TOP",
+        "role": "EXTRA",
+        "specification_raw": "6-Y25",
+        "specification": "6-Y25",
+        "bar_count": 6,
+        "diameter": 25,
+        "support_scope": "RIGHT_SUPPORT",
+        "confidence": 0.85,
+        "role_confidence": 0.75,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "PARTIAL_RIGHT",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer showing 6 bars of Y25 diameter at right support region. Green leader line annotation '6-Y25' points to this group on the right side. Bars appear shorter than G1, extending partially from right support.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "TOP",
+          "spec": "6-Y25",
+          "bar_count": 6,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.75,
+          "support_scope": "RIGHT_SUPPORT",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "PARTIAL_RIGHT",
+          "confidence": 0.85,
+          "evidence": "Top layer showing 6 bars of Y25 diameter at right support region. Green leader line annotation '6-Y25' points to this group on the right side. Bars appear shorter than G1, extending partially from right support."
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.3,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Bottom reinforcement visible in detail view as dark blue/navy lines running along bottom face, but no clear annotation or specification visible for count or diameter.",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 0,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.3,
+          "evidence": "Bottom reinforcement visible in detail view as dark blue/navy lines running along bottom face, but no clear annotation or specification visible for count or diameter."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.0,
+        "evidence": "No stirrup or link annotations visible in either context or detail images for beam B40.",
+        "raw": {
+          "spec": "UNKNOWN",
+          "confidence": 0.0,
+          "evidence": "No stirrup or link annotations visible in either context or detail images for beam B40."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3918",
+    "output_tokens": "708"
+  }
+}

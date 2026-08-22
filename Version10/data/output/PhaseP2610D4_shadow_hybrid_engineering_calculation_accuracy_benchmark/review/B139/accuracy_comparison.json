@@ -1,0 +1,37 @@
+{
+  "beam_id": "B139",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 29.8306,
+  "deterministic_kg": 39.932,
+  "benchmark_kg": null,
+  "truth_source": "NO_BENCHMARK_TRUTH",
+  "hybrid_error_pct": null,
+  "deterministic_error_pct": null,
+  "hybrid_accuracy_pct": null,
+  "deterministic_accuracy_pct": null,
+  "hybrid_signed_percent_error": null,
+  "deterministic_signed_percent_error": null,
+  "absolute_error_hybrid_kg": null,
+  "absolute_error_deterministic_kg": null,
+  "winner": "NO_BENCHMARK_TRUTH",
+  "truth_lines": [],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y16": 10.1014,
+      "Y20": 19.7292
+    },
+    "deterministic": {
+      "Y20": 19.729,
+      "Y16": 20.203
+    },
+    "benchmark": {}
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

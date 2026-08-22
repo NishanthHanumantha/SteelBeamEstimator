@@ -1,0 +1,181 @@
+{
+  "beam_id": "B76",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B76_render.png",
+    "sha256": "4f7ed0eff22150edfc9da06ec65ea2407a58e6ad129a95cfcb046e5dc7a3df39",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.597309799981304",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3046",
+      "output_tokens": "524"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "74db55d7a9c3672b19f7d7c7260e2aea60ef948361ec06f3e3cf814b69cf7855",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B76",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.85,
+        "evidence": "Two annotations labeled '2-Y20' pointing to top bars in the beam section. Dark blue bars visible at top of beam cross-section."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-Y20",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.75,
+        "evidence": "Dark blue bars visible at bottom of beam cross-section. Same specification as top bars but physically distinct group at different layer."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "2L-Y12@100C/C",
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y12@100C/C' visible at bottom of detail view, indicating stirrup specification for beam B76."
+      }
+    ],
+    "ambiguities": [
+      "Cannot determine relative bar lengths from the cross-sectional view provided - no longitudinal elevation visible",
+      "Role classification (MAIN vs EXTRA) unclear without span information or loading context",
+      "Support scope cannot be determined from cross-section alone"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B76",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.85,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two annotations labeled '2-Y20' pointing to top bars in the beam section. Dark blue bars visible at top of beam cross-section.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.85,
+          "evidence": "Two annotations labeled '2-Y20' pointing to top bars in the beam section. Dark blue bars visible at top of beam cross-section."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "UNKNOWN",
+        "specification_raw": "2-Y20",
+        "specification": "2-Y20",
+        "bar_count": 2,
+        "diameter": 20,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.75,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars visible at bottom of beam cross-section. Same specification as top bars but physically distinct group at different layer.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-Y20",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.75,
+          "evidence": "Dark blue bars visible at bottom of beam cross-section. Same specification as top bars but physically distinct group at different layer."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "2L-Y12@100C/C",
+        "specification": "2L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.9,
+        "evidence": "Annotation '2L-Y12@100C/C' visible at bottom of detail view, indicating stirrup specification for beam B76.",
+        "raw": {
+          "spec": "2L-Y12@100C/C",
+          "confidence": 0.9,
+          "evidence": "Annotation '2L-Y12@100C/C' visible at bottom of detail view, indicating stirrup specification for beam B76."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3046",
+    "output_tokens": "524"
+  }
+}

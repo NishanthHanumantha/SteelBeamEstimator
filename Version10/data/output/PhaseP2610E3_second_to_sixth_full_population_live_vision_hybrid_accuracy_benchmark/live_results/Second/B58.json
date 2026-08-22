@@ -1,0 +1,225 @@
+{
+  "beam_id": "B58",
+  "set_key": "Second",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Second_Set_Drawings_20260805_164750\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B58_render.png",
+    "sha256": "e3d34a5cfe7ce595fab65e876e56ae6b606ad291e298365856b0578fd7b11d61",
+    "source": "T183_SECOND_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "12.510603300004732",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3922",
+      "output_tokens": "708"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "c832f5278bb2422bad5ac5b0f81f8d6c8076c007d89435943241feedc28c51f6",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B58",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "UNKNOWN",
+        "bar_count": null,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.0,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.6,
+        "evidence": "Top layer visible in cross-section detail, appears to be single bar running full span, but specification not clearly readable"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "UNKNOWN",
+        "bar_count": 3,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.75,
+        "evidence": "Three horizontal bars visible in bottom layer of cross-section, running full span length, likely main reinforcement"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "spec": "S.F.R ON BOTH FACE",
+        "bar_count": null,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.85,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.8,
+        "evidence": "Annotation 'S.F.R ON BOTH FACE' with pointer to side face reinforcement, specific bar count and diameter not visible"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "Ld+10db",
+        "confidence": 0.5,
+        "evidence": "Annotation 'Ld+10db' visible at support regions, appears to indicate stirrup or link development length rather than full specification"
+      }
+    ],
+    "ambiguities": [
+      "Bar specifications (diameter and count) are not clearly readable in the detail image",
+      "Top layer reinforcement count is unclear from cross-section",
+      "Side face reinforcement specification lacks bar count and diameter details",
+      "Stirrup spacing and diameter not explicitly shown",
+      "Reference to 'SIDE FACE REINFORCEMENT DETAILS F...' suggests additional detail sheet not provided"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B58",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.6,
+        "role_confidence": 0.0,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Top layer visible in cross-section detail, appears to be single bar running full span, but specification not clearly readable",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "UNKNOWN",
+          "bar_count": null,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.0,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.6,
+          "evidence": "Top layer visible in cross-section detail, appears to be single bar running full span, but specification not clearly readable"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "UNKNOWN",
+        "specification": "UNKNOWN",
+        "bar_count": 3,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.75,
+        "role_confidence": 0.7,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Three horizontal bars visible in bottom layer of cross-section, running full span length, likely main reinforcement",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "UNKNOWN",
+          "bar_count": 3,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.75,
+          "evidence": "Three horizontal bars visible in bottom layer of cross-section, running full span length, likely main reinforcement"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "SIDE_FACE",
+        "role": "EXTRA",
+        "specification_raw": "S.F.R ON BOTH FACE",
+        "specification": "S.F.R ON BOTH FACE",
+        "bar_count": null,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.8,
+        "role_confidence": 0.85,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation 'S.F.R ON BOTH FACE' with pointer to side face reinforcement, specific bar count and diameter not visible",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "SIDE_FACE",
+          "spec": "S.F.R ON BOTH FACE",
+          "bar_count": null,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.85,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.8,
+          "evidence": "Annotation 'S.F.R ON BOTH FACE' with pointer to side face reinforcement, specific bar count and diameter not visible"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "Ld+10db",
+        "specification": "Ld+10db",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.5,
+        "evidence": "Annotation 'Ld+10db' visible at support regions, appears to indicate stirrup or link development length rather than full specification",
+        "raw": {
+          "spec": "Ld+10db",
+          "confidence": 0.5,
+          "evidence": "Annotation 'Ld+10db' visible at support regions, appears to indicate stirrup or link development length rather than full specification"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3922",
+    "output_tokens": "708"
+  }
+}

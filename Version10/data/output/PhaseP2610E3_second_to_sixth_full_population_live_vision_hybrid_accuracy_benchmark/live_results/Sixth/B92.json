@@ -1,0 +1,180 @@
+{
+  "beam_id": "B92",
+  "set_key": "Sixth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Sixth_Set_Drawings\\RenderedCrops\\shared_renders\\B92_render.png",
+    "sha256": "6d1e06aa9a2e54b882c61903e6d841c84a3a435427b8d60130e3bf71eabd5608",
+    "source": "QA30_SIXTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "11.713246700004674",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2788",
+      "output_tokens": "649"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "96757d1cec984a7584756e894086d4f21c068f325df42573d85af251edee2c56",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B92",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "5-Y32",
+        "bar_count": 5,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.85,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.9,
+        "evidence": "Two annotations '5-Y32' visible at top of beam section, indicating 5 bars of Y32 diameter running continuously along the top face. Bars shown extending full span with continuity beyond beam ends."
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.8,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Annotation '4L-Y12@100C/C' positioned centrally below beam section. The 'L' designation typically indicates longitudinal bars. Four bars of Y12 diameter at bottom face, distributed at 100mm centers."
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@100C/C",
+        "confidence": 0.75,
+        "evidence": "Annotation '4L-Y12@100C/C' may represent stirrups or links at 100mm spacing, though the 'L' designation creates some ambiguity between longitudinal bars and links. Position suggests stirrup specification."
+      }
+    ],
+    "ambiguities": [
+      "The annotation '4L-Y12@100C/C' is ambiguous - it could represent either bottom longitudinal bars or stirrup/link specification. The 'L' typically means longitudinal, but the '@100C/C' spacing notation is more typical of stirrups.",
+      "Unable to definitively determine if 4L-Y12@100C/C represents a separate bottom longitudinal group or stirrup specification based on visual evidence alone."
+    ],
+    "neighbour_evidence_detected": true,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B92",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "5-Y32",
+        "specification": "5-Y32",
+        "bar_count": 5,
+        "diameter": 32,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.9,
+        "role_confidence": 0.85,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two annotations '5-Y32' visible at top of beam section, indicating 5 bars of Y32 diameter running continuously along the top face. Bars shown extending full span with continuity beyond beam ends.",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "5-Y32",
+          "bar_count": 5,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.85,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.9,
+          "evidence": "Two annotations '5-Y32' visible at top of beam section, indicating 5 bars of Y32 diameter running continuously along the top face. Bars shown extending full span with continuity beyond beam ends."
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "diameter": 12,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.8,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '4L-Y12@100C/C' positioned centrally below beam section. The 'L' designation typically indicates longitudinal bars. Four bars of Y12 diameter at bottom face, distributed at 100mm centers.",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "4L-Y12@100C/C",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.8,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Annotation '4L-Y12@100C/C' positioned centrally below beam section. The 'L' designation typically indicates longitudinal bars. Four bars of Y12 diameter at bottom face, distributed at 100mm centers."
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.75,
+        "evidence": "Annotation '4L-Y12@100C/C' may represent stirrups or links at 100mm spacing, though the 'L' designation creates some ambiguity between longitudinal bars and links. Position suggests stirrup specification.",
+        "raw": {
+          "spec": "4L-Y12@100C/C",
+          "confidence": 0.75,
+          "evidence": "Annotation '4L-Y12@100C/C' may represent stirrups or links at 100mm spacing, though the 'L' designation creates some ambiguity between longitudinal bars and links. Position suggests stirrup specification."
+        }
+      }
+    ],
+    "neighbour_evidence_detected": true
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2788",
+    "output_tokens": "649"
+  }
+}

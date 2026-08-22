@@ -1,0 +1,54 @@
+{
+  "beam_id": "B133",
+  "codes": [
+    "DETERMINISTIC_CUT_LENGTH_CONTRIBUTION",
+    "DETERMINISTIC_SPACER_CONTRIBUTION",
+    "DETERMINISTIC_STIRRUP_ENGINEERING_CONTRIBUTION",
+    "VISION_BAR_COUNT_CORRECTION",
+    "VISION_DIAMETER_CORRECTION",
+    "VISION_LAYER_CORRECTION",
+    "VISION_SPECIFICATION_CORRECTION"
+  ],
+  "details": [
+    {
+      "code": "VISION_SPECIFICATION_CORRECTION",
+      "group_id": "G1",
+      "vision": "5-Y20",
+      "deterministic": "5Y20"
+    },
+    {
+      "code": "VISION_DIAMETER_CORRECTION",
+      "group_id": "G2",
+      "vision": 20,
+      "deterministic": 25
+    },
+    {
+      "code": "VISION_BAR_COUNT_CORRECTION",
+      "group_id": "G2",
+      "vision": 5,
+      "deterministic": 3
+    },
+    {
+      "code": "VISION_SPECIFICATION_CORRECTION",
+      "group_id": "G2",
+      "vision": "5-Y20",
+      "deterministic": "3Y25"
+    },
+    {
+      "code": "VISION_LAYER_CORRECTION",
+      "group_id": "G3",
+      "vision": "BOTTOM",
+      "deterministic": "TOP"
+    },
+    {
+      "code": "VISION_SPECIFICATION_CORRECTION",
+      "group_id": "G3",
+      "vision": "2-Y16",
+      "deterministic": "2Y16"
+    }
+  ],
+  "hybrid_minus_deterministic_kg": -27.4824,
+  "primary_cause": "VISION_DIAMETER_CORRECTION",
+  "outcome": "HYBRID_REGRESSION",
+  "winner": "DETERMINISTIC"
+}

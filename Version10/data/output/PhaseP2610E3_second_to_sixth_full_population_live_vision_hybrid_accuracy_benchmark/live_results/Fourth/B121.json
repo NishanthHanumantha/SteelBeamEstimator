@@ -1,0 +1,180 @@
+{
+  "beam_id": "B121",
+  "set_key": "Fourth",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version10\\data\\output\\PhaseQA30_unseen_benchmark\\Fourth_Set_Drawings\\RenderedCrops\\shared_renders\\B121_render.png",
+    "sha256": "3025d83c29df79d8e801f9ac0da02a8901e70a067a082e03b13798aac212543e",
+    "source": "QA30_FOURTH_SHARED_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "9.942241200013086",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "2100",
+      "output_tokens": "596"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "cd6087addfc871e713029839966000e489369457e122a2fefdebd4026ce9bef5",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B121",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "4-Y20",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SHORTER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Dark blue bars at top of beam section, labeled 4-Y20, shown as continuous bars spanning the full length but shorter than bottom bars"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.9,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.95,
+        "evidence": "Green highlighted bars at bottom of beam section, labeled 4L-Y12@100C/C, shown as continuous bars spanning the full length with extensions beyond the top bars"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "4L-Y12@100C/C",
+        "confidence": 0.3,
+        "evidence": "The 4L-Y12@100C/C notation appears to describe the bottom longitudinal bars rather than stirrups. No clear vertical stirrup representation is visible in the detail view, though the 'L' prefix and spacing notation are typically associated with links/stirrups"
+      }
+    ],
+    "ambiguities": [
+      "The 4L-Y12@100C/C specification uses 'L' prefix and spacing notation typical of stirrups/links, but the visual representation shows these as longitudinal bottom bars rather than vertical stirrups",
+      "No clear vertical stirrup elements are visible in the cross-section detail"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B121",
+    "target_identified": true,
+    "association_confidence": 1.0,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "MAIN",
+        "specification_raw": "4-Y20",
+        "specification": "4-Y20",
+        "bar_count": 4,
+        "diameter": 20,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "SHORTER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Dark blue bars at top of beam section, labeled 4-Y20, shown as continuous bars spanning the full length but shorter than bottom bars",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "4-Y20",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SHORTER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Dark blue bars at top of beam section, labeled 4-Y20, shown as continuous bars spanning the full length but shorter than bottom bars"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "bar_count": 4,
+        "diameter": 12,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.95,
+        "role_confidence": 0.9,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Green highlighted bars at bottom of beam section, labeled 4L-Y12@100C/C, shown as continuous bars spanning the full length with extensions beyond the top bars",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "4L-Y12@100C/C",
+          "bar_count": 4,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.9,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.95,
+          "evidence": "Green highlighted bars at bottom of beam section, labeled 4L-Y12@100C/C, shown as continuous bars spanning the full length with extensions beyond the top bars"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "4L-Y12@100C/C",
+        "specification": "4L-Y12@100C/C",
+        "diameter": 12,
+        "legs": null,
+        "confidence": 0.3,
+        "evidence": "The 4L-Y12@100C/C notation appears to describe the bottom longitudinal bars rather than stirrups. No clear vertical stirrup representation is visible in the detail view, though the 'L' prefix and spacing notation are typically associated with links/stirrups",
+        "raw": {
+          "spec": "4L-Y12@100C/C",
+          "confidence": 0.3,
+          "evidence": "The 4L-Y12@100C/C notation appears to describe the bottom longitudinal bars rather than stirrups. No clear vertical stirrup representation is visible in the detail view, though the 'L' prefix and spacing notation are typically associated with links/stirrups"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "2100",
+    "output_tokens": "596"
+  }
+}

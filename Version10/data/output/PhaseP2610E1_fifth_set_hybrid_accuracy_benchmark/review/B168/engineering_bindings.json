@@ -1,0 +1,291 @@
+{
+  "beam_id": "B168",
+  "target_identity": {
+    "value": "B168",
+    "source": "DETERMINISTIC",
+    "confidence": null,
+    "fallback_used": true,
+    "vision_value": null,
+    "deterministic_value": "B168",
+    "conflict_detected": false,
+    "resolution_reason": "DETERMINISTIC_FALLBACK",
+    "validation_reason": "VISION_SCHEMA_INVALID"
+  },
+  "geometry": {
+    "available": true,
+    "section_available": true,
+    "reason": null,
+    "beam_geometry_reference": {
+      "source": "DETERMINISTIC",
+      "kind": "EXISTING_BEAM_GEOMETRY",
+      "geometry_source": "FRAMING_PLAN_LINE",
+      "span_mm": 2228.658,
+      "clear_span_mm": 2228.658
+    },
+    "section_geometry_reference": {
+      "source": "DETERMINISTIC",
+      "width_mm": 300.0,
+      "depth_mm": 600.0,
+      "kind": "EXISTING_SECTION_GEOMETRY"
+    },
+    "width_mm": 300.0,
+    "depth_mm": 600.0,
+    "span_mm": 2228.658,
+    "clear_span_mm": 2228.658,
+    "longitudinal_direction": "UNKNOWN",
+    "geometry_source": "FRAMING_PLAN_LINE"
+  },
+  "groups": [
+    {
+      "beam_id": "B168",
+      "group_id": "G01",
+      "origin": "DETERMINISTIC_ONLY_GROUP",
+      "ambiguous": false,
+      "possible_duplicate": false,
+      "semantic": {
+        "target_identity": "B168",
+        "layer": "TOP",
+        "role": "MAIN",
+        "bar_count": 3,
+        "diameter": 20,
+        "specification": "3Y20",
+        "support_scope": "FULL_SPAN",
+        "provenance": {
+          "vision_available": false,
+          "deterministic_available": true,
+          "conflict_detected": false,
+          "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+          "vision_id": null,
+          "deterministic_id": "G01",
+          "match_score": null
+        },
+        "field_records": {
+          "layer": {
+            "value": "TOP",
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": "TOP",
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          },
+          "role": {
+            "value": "MAIN",
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": "MAIN",
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          },
+          "bar_count": {
+            "value": 3,
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": 3,
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          },
+          "diameter": {
+            "value": 20,
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": 20,
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          },
+          "specification": {
+            "value": "3Y20",
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": "3Y20",
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          },
+          "support_scope": {
+            "value": "FULL_SPAN",
+            "source": "DETERMINISTIC",
+            "confidence": null,
+            "fallback_used": false,
+            "vision_value": null,
+            "deterministic_value": "FULL_SPAN",
+            "conflict_detected": false,
+            "resolution_reason": "DETERMINISTIC_ONLY_GROUP",
+            "validation_reason": "VISION_SCHEMA_INVALID"
+          }
+        },
+        "longer_bar_likely_main_hook": "ARCHITECTURE_HOOK_ONLY"
+      },
+      "engineering_binding": {
+        "beam_geometry_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "EXISTING_BEAM_GEOMETRY",
+          "geometry_source": "FRAMING_PLAN_LINE",
+          "span_mm": 2228.658,
+          "clear_span_mm": 2228.658
+        },
+        "section_geometry_reference": {
+          "source": "DETERMINISTIC",
+          "width_mm": 300.0,
+          "depth_mm": 600.0,
+          "kind": "EXISTING_SECTION_GEOMETRY"
+        },
+        "longitudinal_direction": "UNKNOWN",
+        "span_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "FULL_SPAN",
+          "span_mm": 2228.658
+        },
+        "support_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "NOT_REQUIRED",
+          "reason": "FULL_SPAN"
+        },
+        "cut_length_rule_reference": "DETERMINISTIC_LONGITUDINAL_CUT_LENGTH_RULE",
+        "development_length_reference": "DETERMINISTIC_DEVELOPMENT_LENGTH_RULE",
+        "anchorage_reference": "DETERMINISTIC_ANCHORAGE_RULE",
+        "hook_bend_reference": "DETERMINISTIC_HOOK_BEND_RULE",
+        "instance_cut_length_reference": 3948.7,
+        "binding_status": "BOUND",
+        "binding_reasons": [
+          "DETERMINISTIC_ONLY_PRESERVED",
+          "SPAN_BOUND_FULL_SPAN",
+          "RULE_FAMILY_BOUND",
+          "GEOM_OK",
+          "SECTION_OK"
+        ],
+        "calculated": {
+          "cut_length": false,
+          "development_length": false,
+          "anchorage": false,
+          "hook_bend": false,
+          "steel_weight": false
+        }
+      },
+      "resolved_references": {
+        "beam_geometry_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "EXISTING_BEAM_GEOMETRY",
+          "geometry_source": "FRAMING_PLAN_LINE",
+          "span_mm": 2228.658,
+          "clear_span_mm": 2228.658
+        },
+        "section_geometry_reference": {
+          "source": "DETERMINISTIC",
+          "width_mm": 300.0,
+          "depth_mm": 600.0,
+          "kind": "EXISTING_SECTION_GEOMETRY"
+        },
+        "longitudinal_direction": "UNKNOWN",
+        "span_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "FULL_SPAN",
+          "span_mm": 2228.658
+        },
+        "support_reference": {
+          "source": "DETERMINISTIC",
+          "kind": "NOT_REQUIRED",
+          "reason": "FULL_SPAN"
+        },
+        "cut_length_rule_reference": "DETERMINISTIC_LONGITUDINAL_CUT_LENGTH_RULE",
+        "development_length_reference": "DETERMINISTIC_DEVELOPMENT_LENGTH_RULE",
+        "anchorage_reference": "DETERMINISTIC_ANCHORAGE_RULE",
+        "hook_bend_reference": "DETERMINISTIC_HOOK_BEND_RULE"
+      },
+      "unresolved_references": [],
+      "diagnostics": {
+        "origin": "DETERMINISTIC_ONLY_GROUP",
+        "status": "BOUND",
+        "reasons": [
+          "DETERMINISTIC_ONLY_PRESERVED",
+          "SPAN_BOUND_FULL_SPAN",
+          "RULE_FAMILY_BOUND",
+          "GEOM_OK",
+          "SECTION_OK"
+        ],
+        "possible_duplicate": false,
+        "ambiguous": false
+      }
+    }
+  ],
+  "stirrups": [],
+  "spacers": {
+    "source": "DETERMINISTIC",
+    "binding_status": "BOUND",
+    "rule_reference": "DETERMINISTIC_SPACER_ENGINEERING_RULE",
+    "group_count": 0,
+    "groups": [],
+    "authority": "DETERMINISTIC_ENGINEERING",
+    "reason": "SPACER_DETERMINISTIC_ONLY",
+    "vision_matched": false
+  },
+  "compatibility": {
+    "beam_id": "B168",
+    "total_groups": 1,
+    "bound_groups": 1,
+    "partially_bound_groups": 0,
+    "ambiguous_groups": 0,
+    "unsupported_groups": 0,
+    "invalid_groups": 0,
+    "missing_geometry_groups": 0,
+    "missing_support_groups": 0,
+    "missing_rule_groups": 0,
+    "beam_geometry_available": true,
+    "section_geometry_available": true,
+    "support_information_available": true,
+    "cut_length_compatibility": "AVAILABLE",
+    "development_length_compatibility": "AVAILABLE",
+    "anchorage_compatibility": "AVAILABLE",
+    "hook_bend_compatibility": "AVAILABLE",
+    "overall_status": "ENGINEERING_COMPATIBLE",
+    "reasons": [
+      "DETERMINISTIC_ONLY_PRESERVED",
+      "GEOM_OK",
+      "RULE_FAMILY_BOUND",
+      "SECTION_OK",
+      "SPAN_BOUND_FULL_SPAN"
+    ],
+    "group_matching_preserved": {
+      "matched": 0,
+      "vision_only": 0,
+      "deterministic_only": 1,
+      "ambiguous": 0,
+      "possible_duplicates": [],
+      "pairs": [],
+      "ambiguous_records": []
+    },
+    "possible_duplicate_groups_preserved": [],
+    "spacers_deterministic_only": true,
+    "stirrup_authority_split": {
+      "semantic_identification_authority": "VISION_PREFERRED",
+      "engineering_calculation_authority": "DETERMINISTIC_ENGINEERING"
+    },
+    "calculations_performed": {
+      "cut_length": false,
+      "development_length": false,
+      "steel_weight": false,
+      "bbs": false
+    },
+    "longest_bar_main_override": false
+  },
+  "source_categories": {
+    "matched": 0,
+    "vision_only": 0,
+    "deterministic_only": 1,
+    "ambiguous": 0,
+    "possible_duplicates": 0
+  }
+}

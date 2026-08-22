@@ -1,0 +1,77 @@
+{
+  "beam_id": "B55",
+  "total_groups": 4,
+  "bound_groups": 3,
+  "partially_bound_groups": 0,
+  "ambiguous_groups": 1,
+  "unsupported_groups": 0,
+  "invalid_groups": 0,
+  "missing_geometry_groups": 0,
+  "missing_support_groups": 0,
+  "missing_rule_groups": 0,
+  "beam_geometry_available": true,
+  "section_geometry_available": true,
+  "support_information_available": true,
+  "cut_length_compatibility": "AVAILABLE",
+  "development_length_compatibility": "AVAILABLE",
+  "anchorage_compatibility": "AVAILABLE",
+  "hook_bend_compatibility": "AVAILABLE",
+  "overall_status": "ENGINEERING_AMBIGUOUS",
+  "reasons": [
+    "DETERMINISTIC_ONLY_PRESERVED",
+    "GEOM_OK",
+    "RULE_FAMILY_BOUND",
+    "SECTION_OK",
+    "SPAN_BOUND_FULL_SPAN",
+    "SUPPORT_BOUND",
+    "SUPPORT_BOUND_BOTH",
+    "VISION_ONLY_RULE_FAMILY_BOUND_INSTANCE_UNAVAILABLE"
+  ],
+  "group_matching_preserved": {
+    "matched": 2,
+    "vision_only": 0,
+    "deterministic_only": 1,
+    "ambiguous": 1,
+    "possible_duplicates": [],
+    "pairs": [
+      {
+        "vision_index": 0,
+        "deterministic_index": 2,
+        "score": 7,
+        "vision_id": "VG1",
+        "deterministic_id": "G03"
+      },
+      {
+        "vision_index": 2,
+        "deterministic_index": 0,
+        "score": 6,
+        "vision_id": "VG3",
+        "deterministic_id": "G01"
+      }
+    ],
+    "ambiguous_records": [
+      {
+        "code": "AMBIGUOUS_GROUP_MATCH",
+        "vision_index": 1,
+        "deterministic_index": 1,
+        "score": 6,
+        "vision_id": "VG2",
+        "deterministic_id": "G02",
+        "reason": "TIED_TOP_SCORE"
+      }
+    ]
+  },
+  "possible_duplicate_groups_preserved": [],
+  "spacers_deterministic_only": true,
+  "stirrup_authority_split": {
+    "semantic_identification_authority": "VISION_PREFERRED",
+    "engineering_calculation_authority": "DETERMINISTIC_ENGINEERING"
+  },
+  "calculations_performed": {
+    "cut_length": false,
+    "development_length": false,
+    "steel_weight": false,
+    "bbs": false
+  },
+  "longest_bar_main_override": false
+}

@@ -1,0 +1,89 @@
+{
+  "beam_id": "B103",
+  "status": "SHADOW_COMPLETE",
+  "completeness": "COMPLETE",
+  "hybrid_kg": 139.3298,
+  "deterministic_kg": 163.255,
+  "benchmark_kg": 112.536,
+  "truth_source": "ESTIMATOR_EXCEL",
+  "hybrid_error_pct": 23.81,
+  "deterministic_error_pct": 45.07,
+  "hybrid_accuracy_pct": 76.19,
+  "deterministic_accuracy_pct": 54.93,
+  "hybrid_signed_percent_error": 23.81,
+  "deterministic_signed_percent_error": 45.07,
+  "absolute_error_hybrid_kg": 26.7938,
+  "absolute_error_deterministic_kg": 50.719,
+  "winner": "HYBRID",
+  "truth_lines": [
+    {
+      "role": "Top Bars",
+      "description": "Top bars",
+      "diameter_mm": 16.0,
+      "bar_count": 3.0,
+      "weight_kg": 22.6898
+    },
+    {
+      "role": "Top Bars Extra",
+      "description": "Top bars -extra",
+      "diameter_mm": 16.0,
+      "bar_count": 3.0,
+      "weight_kg": 9.237
+    },
+    {
+      "role": "Bottom Bars",
+      "description": "Bottom bars",
+      "diameter_mm": 20.0,
+      "bar_count": 3.0,
+      "weight_kg": 36.9331
+    },
+    {
+      "role": "Stirrups",
+      "description": "Stirupps",
+      "diameter_mm": 10.0,
+      "bar_count": 30.0,
+      "weight_kg": 30.7159
+    },
+    {
+      "role": "Hooks",
+      "description": "C - Hook",
+      "diameter_mm": 10.0,
+      "bar_count": 30.0,
+      "weight_kg": 11.8423
+    },
+    {
+      "role": "Spacer Bars",
+      "description": "Spacer bars",
+      "diameter_mm": 25.0,
+      "bar_count": 1.0,
+      "weight_kg": 1.1179
+    }
+  ],
+  "deterministic_group_count": null,
+  "weight_by_diameter": {
+    "hybrid": {
+      "Y20": 91.9558,
+      "Y16": 9.9965,
+      "Y25": 2.2349,
+      "Y10": 35.1426
+    },
+    "deterministic": {
+      "Y20": 89.589,
+      "Y16": 39.972,
+      "Y10": 29.224,
+      "Y25": 4.47
+    },
+    "benchmark": {
+      "Y10": 42.5582,
+      "Y16": 31.9268,
+      "Y20": 36.9331,
+      "Y25": 1.1179
+    }
+  },
+  "formulas": {
+    "weight": "W = (pi * d^2 / 4) * L * qty * 7850 / 1e9",
+    "weight_source": "PhaseR1_3_reinforcement_piece_generation.piece_geometry.PieceGeometry.weight_kg",
+    "weight_error_percent": "abs(predicted - benchmark) / benchmark * 100  [QA.2A metric8 / PhaseP258 metrics]",
+    "weight_accuracy_percent": "max(0, 100 - weight_error_percent)  [QA.2A metric8 / PhaseP258 metrics]"
+  }
+}

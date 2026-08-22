@@ -1,0 +1,266 @@
+{
+  "beam_id": "B58",
+  "set_key": "Third",
+  "complete": true,
+  "mode": "LIVE_BENCHMARK",
+  "action": "LIVE",
+  "call_provenance": "VISION_NEW_LIVE_CALL",
+  "reuse_source": null,
+  "eligible": true,
+  "gate_status": "VISION_READY",
+  "visual": {
+    "path": "C:\\Users\\nishanth.h\\SteelBeamEstimator\\Version9\\data\\web_runs\\qa2_Third_Set_Drawings_20260805_170657\\data\\output\\PhaseT183_shared_engineering_ownership\\RenderedBeams\\B58_render.png",
+    "sha256": "183f0a8bdf1f68d3b567bc18e82d0532445cc25498470b0c6f0f0449d2c4d02c",
+    "source": "T183_THIRD_RENDER"
+  },
+  "called": true,
+  "semantic_usable": true,
+  "failure_category": "OK",
+  "attempts": 1,
+  "retry_count": 0,
+  "audit": {
+    "success": "True",
+    "model": "claude-sonnet-4-5",
+    "latency_s": "14.865735800005496",
+    "retry_count": "0",
+    "usage": {
+      "input_tokens": "3918",
+      "output_tokens": "858"
+    },
+    "error": null,
+    "error_type": null,
+    "temperature": "0",
+    "prompt_fingerprint": "eb2d657e60f90e46a3ea57b4e52c771645d26c33469eadc94f83481afdc84bb9",
+    "n_images": "2"
+  },
+  "parsed": {
+    "target_beam_id": "B58",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "spec": "2-bars",
+        "bar_count": 2,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.3,
+        "support_scope": "BOTH_SUPPORTS",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.75,
+        "evidence": "Two top bars visible in detail section, marked with 'Ld+10db' annotations at both support locations, indicating development length requirements at supports"
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "spec": "2-bars",
+        "bar_count": 2,
+        "role_hypothesis": "MAIN",
+        "role_confidence": 0.7,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "LONGER",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.85,
+        "evidence": "Two bottom bars running full span of beam, appear to be primary longitudinal reinforcement based on position and continuity"
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "spec": "2-bars",
+        "bar_count": 2,
+        "role_hypothesis": "EXTRA",
+        "role_confidence": 0.65,
+        "support_scope": "FULL_SPAN",
+        "relative_length_evidence": "SIMILAR",
+        "span_relationship": "FULL_SPAN",
+        "confidence": 0.8,
+        "evidence": "Two additional bottom bars running full span, positioned below the first pair of bottom bars, physically distinct group despite similar span"
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "spec": "5-bars-both-faces",
+        "bar_count": 5,
+        "role_hypothesis": "UNKNOWN",
+        "role_confidence": 0.5,
+        "support_scope": "UNKNOWN",
+        "relative_length_evidence": "UNKNOWN",
+        "span_relationship": "UNKNOWN",
+        "confidence": 0.7,
+        "evidence": "Annotation '5 FR ON BOTH FACE' indicates 5 bars on each side face of the beam, total 10 bars (5 per face)"
+      }
+    ],
+    "stirrups": [
+      {
+        "spec": "LEG-STIRRUPS",
+        "confidence": 0.6,
+        "evidence": "Text label 'LEG-STIRRUPS' visible in drawing, with reference to 'SIDE FACE REINFORCEMENT DETAILS F...' but specific spacing and diameter not clearly readable in provided images"
+      }
+    ],
+    "ambiguities": [
+      "Bar diameters not specified in visible annotations",
+      "Exact stirrup spacing and diameter not clearly visible",
+      "Side face bar length and distribution along span unclear from detail view",
+      "Top bar specification beyond count not provided"
+    ],
+    "neighbour_evidence_detected": false,
+    "response_status": "OK",
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "production_action": "NO_CHANGE",
+    "shadow_only": true,
+    "usable": true,
+    "unusable_reason": null,
+    "call_status": "OK"
+  },
+  "extracted": {
+    "usable": true,
+    "unusable_reason": null,
+    "schema_version": "P2610C5_PHYSICAL_GROUP_SCHEMA_V1",
+    "target_beam_id": "B58",
+    "target_identified": true,
+    "association_confidence": 0.95,
+    "groups": [
+      {
+        "physical_group_id": "G1",
+        "layer": "TOP",
+        "role": "UNKNOWN",
+        "specification_raw": "2-bars",
+        "specification": "2-bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "BOTH_SUPPORTS",
+        "confidence": 0.75,
+        "role_confidence": 0.3,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two top bars visible in detail section, marked with 'Ld+10db' annotations at both support locations, indicating development length requirements at supports",
+        "raw": {
+          "physical_group_id": "G1",
+          "layer": "TOP",
+          "spec": "2-bars",
+          "bar_count": 2,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.3,
+          "support_scope": "BOTH_SUPPORTS",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.75,
+          "evidence": "Two top bars visible in detail section, marked with 'Ld+10db' annotations at both support locations, indicating development length requirements at supports"
+        }
+      },
+      {
+        "physical_group_id": "G2",
+        "layer": "BOTTOM",
+        "role": "MAIN",
+        "specification_raw": "2-bars",
+        "specification": "2-bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.85,
+        "role_confidence": 0.7,
+        "relative_span_length": "LONGER",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two bottom bars running full span of beam, appear to be primary longitudinal reinforcement based on position and continuity",
+        "raw": {
+          "physical_group_id": "G2",
+          "layer": "BOTTOM",
+          "spec": "2-bars",
+          "bar_count": 2,
+          "role_hypothesis": "MAIN",
+          "role_confidence": 0.7,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "LONGER",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.85,
+          "evidence": "Two bottom bars running full span of beam, appear to be primary longitudinal reinforcement based on position and continuity"
+        }
+      },
+      {
+        "physical_group_id": "G3",
+        "layer": "BOTTOM",
+        "role": "EXTRA",
+        "specification_raw": "2-bars",
+        "specification": "2-bars",
+        "bar_count": 2,
+        "diameter": null,
+        "support_scope": "FULL_SPAN",
+        "confidence": 0.8,
+        "role_confidence": 0.65,
+        "relative_span_length": "SIMILAR",
+        "relative_group_extent": "FULL_SPAN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Two additional bottom bars running full span, positioned below the first pair of bottom bars, physically distinct group despite similar span",
+        "raw": {
+          "physical_group_id": "G3",
+          "layer": "BOTTOM",
+          "spec": "2-bars",
+          "bar_count": 2,
+          "role_hypothesis": "EXTRA",
+          "role_confidence": 0.65,
+          "support_scope": "FULL_SPAN",
+          "relative_length_evidence": "SIMILAR",
+          "span_relationship": "FULL_SPAN",
+          "confidence": 0.8,
+          "evidence": "Two additional bottom bars running full span, positioned below the first pair of bottom bars, physically distinct group despite similar span"
+        }
+      },
+      {
+        "physical_group_id": "G4",
+        "layer": "SIDE_FACE",
+        "role": "UNKNOWN",
+        "specification_raw": "5-bars-both-faces",
+        "specification": "5-bars-both-faces",
+        "bar_count": 5,
+        "diameter": null,
+        "support_scope": "UNKNOWN",
+        "confidence": 0.7,
+        "role_confidence": 0.5,
+        "relative_span_length": "UNKNOWN",
+        "relative_group_extent": "UNKNOWN",
+        "directional_orientation": "UNKNOWN",
+        "evidence": "Annotation '5 FR ON BOTH FACE' indicates 5 bars on each side face of the beam, total 10 bars (5 per face)",
+        "raw": {
+          "physical_group_id": "G4",
+          "layer": "SIDE_FACE",
+          "spec": "5-bars-both-faces",
+          "bar_count": 5,
+          "role_hypothesis": "UNKNOWN",
+          "role_confidence": 0.5,
+          "support_scope": "UNKNOWN",
+          "relative_length_evidence": "UNKNOWN",
+          "span_relationship": "UNKNOWN",
+          "confidence": 0.7,
+          "evidence": "Annotation '5 FR ON BOTH FACE' indicates 5 bars on each side face of the beam, total 10 bars (5 per face)"
+        }
+      }
+    ],
+    "stirrups": [
+      {
+        "stirrup_id": "VS1",
+        "specification_raw": "LEG-STIRRUPS",
+        "specification": "LEG-STIRRUPS",
+        "diameter": null,
+        "legs": null,
+        "confidence": 0.6,
+        "evidence": "Text label 'LEG-STIRRUPS' visible in drawing, with reference to 'SIDE FACE REINFORCEMENT DETAILS F...' but specific spacing and diameter not clearly readable in provided images",
+        "raw": {
+          "spec": "LEG-STIRRUPS",
+          "confidence": 0.6,
+          "evidence": "Text label 'LEG-STIRRUPS' visible in drawing, with reference to 'SIDE FACE REINFORCEMENT DETAILS F...' but specific spacing and diameter not clearly readable in provided images"
+        }
+      }
+    ],
+    "neighbour_evidence_detected": false
+  },
+  "schema_valid": true,
+  "api_success": true,
+  "model": "claude-sonnet-4-5",
+  "usage": {
+    "input_tokens": "3918",
+    "output_tokens": "858"
+  }
+}
