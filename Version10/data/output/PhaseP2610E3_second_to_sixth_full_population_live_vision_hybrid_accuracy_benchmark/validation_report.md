@@ -93,6 +93,38 @@ PRODUCTION_WRITE = False
 | Output tokens | 213497 |
 | Runtime s | 3854.94 |
 
+## TABLE J — DIAMETER IDENTIFICATION (DETECTED BAR LINES)
+
+| Diameter | GT bar lines | Detected | MATCH | WRONG_DIA | Diameter ID | Note |
+|---|---|---|---|---|---|---|
+| Ø8 | 358 | 152 | 32 | 3 | 98.03 | Usually right when found; many missing |
+| Ø10 | 714 | 214 | 56 | 11 | 94.86 | Usually right when found; many missing |
+| Ø12 | 573 | 207 | 68 | 28 | 86.47 | Usually right when found; many missing |
+| Ø16 | 588 | 372 | 169 | 112 | 69.89 | Frequent diameter swaps |
+| Ø20 | 784 | 436 | 193 | 155 | 64.45 | Frequent diameter swaps |
+| Ø25 | 1097 | 616 | 210 | 130 | 78.90 |  |
+| Ø32 | 26 | 11 | 5 | 6 | 45.45 | Low volume - percentage unstable |
+| TOTAL scored Ø8-Ø32 | 4140 | 2008 | 733 | 445 | 77.84 | Pooled headline from raw counts |
+
+QA.2A diameter_accuracy_pct is an alias of bar matching (MATCH / detected) and is not used. A detected bar is diameter-correct unless status is WRONG_DIAMETER. GT diameter is the estimator line diameter. Pooled % uses summed raw counts, not the average of set percentages. Diameter remains excluded from overall.
+
+
+## TABLE K — DIAMETER-WISE STEEL QUANTITY
+
+| Diameter | Estimated kg | Automated kg | Difference kg | Abs % diff | Quantity ratio |
+|---|---|---|---|---|---|
+| Ø8 | 6515.421 | 5051.185 | -1464.236 | 22.47 | 77.53 |
+| Ø10 | 24555.441 | 14162.820 | -10392.621 | 42.32 | 57.68 |
+| Ø12 | 22252.521 | 12721.515 | -9531.006 | 42.83 | 57.17 |
+| Ø16 | 11598.150 | 7678.112 | -3920.038 | 33.80 | 66.20 |
+| Ø20 | 35887.539 | 20505.869 | -15381.670 | 42.86 | 57.14 |
+| Ø25 | 45293.831 | 28282.361 | -17011.470 | 37.56 | 62.44 |
+| Ø32 | 2807.740 | 1901.463 | -906.277 | 32.28 | 67.72 |
+| TOTAL | 148910.643 | 90303.325 | -58607.318 | 39.36 | 60.64 |
+
+Quantity ratio = automated kg / estimated kg x 100. It is not accuracy. A ratio above 100% is an overestimate. This is not the same as diameter identification.
+
+
 ## TABLE I — SAFETY / IMMUTABILITY
 
 | Item | Value |

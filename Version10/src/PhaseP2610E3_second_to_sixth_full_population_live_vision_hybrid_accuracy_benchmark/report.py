@@ -17,7 +17,7 @@ from .config import (
     PRODUCTION_WRITE,
 )
 from .docx_report import write_docx
-from .metrics import kpi_block
+from .metrics import pool_identification_rows, pool_steel_rows
 from .pdf_report import write_pdf
 from .pooling import display_block, merge_taxonomy, pool_kpi_blocks
 from .population import slim_set_population
@@ -190,6 +190,47 @@ def write_validation_report(*, out_root: Path, result: Dict[str, Any], report_da
             ["Runtime s", str(cost.get("runtime_s"))],
         ],
     )
+    dia = report_data.get("diameter_wise") or {}
+    lines += ["", "## TABLE J — DIAMETER IDENTIFICATION (DETECTED BAR LINES)", ""]
+    ident_rows = []
+    for row in dia.get("identification_rows") or []:
+        ident_rows.append(
+            [
+                str(row.get("diameter_label") or ""),
+                str(row.get("gt_bar_lines") or 0),
+                str(row.get("detected") or 0),
+                str(row.get("match") or 0),
+                str(row.get("wrong_diameter") or 0),
+                _fmt(row.get("diameter_identification_percent")),
+                str(row.get("note") or ""),
+            ]
+        )
+    if ident_rows:
+        lines += _md_table(["Diameter", "GT bar lines", "Detected", "MATCH", "WRONG_DIA", "Diameter ID", "Note"], ident_rows)
+    else:
+        lines.append("No diameter-wise identification rows.")
+    lines += ["", str(dia.get("formula_identification") or ""), ""]
+    lines += ["", "## TABLE K — DIAMETER-WISE STEEL QUANTITY", ""]
+    steel_rows = []
+    for row in dia.get("steel_rows") or []:
+        steel_rows.append(
+            [
+                str(row.get("diameter_label") or ""),
+                _fmt(row.get("benchmark_kg") if row.get("benchmark_kg") is not None else row.get("estimator_kg"), 3),
+                _fmt(row.get("model_kg"), 3),
+                _fmt(row.get("difference_kg"), 3),
+                _fmt(row.get("difference_pct")),
+                _fmt(row.get("quantity_ratio_percent")),
+            ]
+        )
+    if steel_rows:
+        lines += _md_table(
+            ["Diameter", "Estimated kg", "Automated kg", "Difference kg", "Abs % diff", "Quantity ratio"],
+            steel_rows,
+        )
+    else:
+        lines.append("No diameter-wise steel rows.")
+    lines += ["", str(dia.get("formula_steel") or ""), ""]
     lines += ["", "## TABLE I — SAFETY / IMMUTABILITY", ""]
     lines += _md_table(
         ["Item", "Value"],
@@ -213,6 +254,9 @@ def write_reports(*, out_root: Path, result: Dict[str, Any]) -> Dict[str, Any]:
     hybrid_by = {}
     steel_by = {}
     dia_by = {}
+    dia_wise_by = {}
+    ident_tables = []
+    steel_tables = []
     perf_rows = {}
     tax_blocks = []
     full_blocks = []
@@ -286,6 +330,13 @@ def write_reports(*, out_root: Path, result: Dict[str, Any]) -> Dict[str, Any]:
             "numerator": block.get("diameter_n"),
             "denominator": block.get("diameter_d"),
         }
+        dw = scores.get("diameter_wise") or {}
+        dia_wise_by[key] = {
+            "identification_rows": dw.get("identification_rows") or [],
+            "steel_rows": dw.get("steel_rows") or [],
+        }
+        ident_tables.append(dw.get("identification_rows") or [])
+        steel_tables.append(dw.get("steel_rows") or [])
         perf_rows[key] = per_set_acc[key]
         if block:
             full_blocks.append(block)
@@ -361,6 +412,23 @@ def write_reports(*, out_root: Path, result: Dict[str, Any]) -> Dict[str, Any]:
         "limitations": result.get("limitations") or [],
         "conclusion": result.get("conclusion") or "",
         "fifth_reuse_decision": (result.get("fifth_reuse") or {}).get("decision"),
+        "diameter_wise": {
+            "by_set": dia_wise_by,
+            "identification_rows": pool_identification_rows(ident_tables),
+            "steel_rows": pool_steel_rows(steel_tables),
+            "formula_identification": (
+                "QA.2A diameter_accuracy_pct is an alias of bar matching (MATCH / detected) and is not used. "
+                "A detected bar is diameter-correct unless status is WRONG_DIAMETER. "
+                "GT diameter is the estimator line diameter. "
+                "Pooled % uses summed raw counts, not the average of set percentages. "
+                "Diameter remains excluded from overall."
+            ),
+            "formula_steel": (
+                "Quantity ratio = automated kg / estimated kg x 100. It is not accuracy. "
+                "A ratio above 100% is an overestimate. "
+                "This is not the same as diameter identification."
+            ),
+        },
     }
     charts = write_charts(out_root=out_root, report_data=report_data)
     report_data["charts"] = charts
@@ -391,6 +459,9 @@ def write_reports(*, out_root: Path, result: Dict[str, Any]) -> Dict[str, Any]:
     _dump(out_root / "vision_failure_analysis.json", vision_fail_all)
     _dump(out_root / "steel_accuracy_by_set.json", steel_by)
     _dump(out_root / "diameter_accuracy_by_set.json", dia_by)
+    _dump(out_root / "diameter_wise_identification.json", (report_data.get("diameter_wise") or {}).get("identification_rows"))
+    _dump(out_root / "diameter_wise_steel.json", (report_data.get("diameter_wise") or {}).get("steel_rows"))
+    _dump(out_root / "diameter_wise_by_set.json", dia_wise_by)
     _dump(out_root / "per_set_performance_summary.json", perf_rows)
     _dump(out_root / "source_fingerprint_check.json", result.get("fingerprints") or {})
     _dump(out_root / "production_mutation_check.json", result.get("production") or {})

@@ -153,6 +153,69 @@ def _fmt(v: Any, n: int = 2, suffix: str = "") -> str:
         return str(v)
 
 
+def _fmt_int(v: Any) -> str:
+    if v is None:
+        return "—"
+    try:
+        return f"{int(v):,}"
+    except (TypeError, ValueError):
+        return str(v)
+
+
+def _fmt_kg(v: Any) -> str:
+    if v is None:
+        return "—"
+    try:
+        return f"{float(v):,.0f}"
+    except (TypeError, ValueError):
+        return str(v)
+
+
+def _fmt_signed_kg(v: Any) -> str:
+    if v is None:
+        return "—"
+    try:
+        n = float(v)
+        sign = "−" if n < 0 else ("+" if n > 0 else "")
+        return f"{sign}{abs(n):,.0f}"
+    except (TypeError, ValueError):
+        return str(v)
+
+
+def _diameter_ident_rows(data: Dict[str, Any]) -> List[List[str]]:
+    rows = []
+    for row in (data.get("diameter_wise") or {}).get("identification_rows") or []:
+        rows.append(
+            [
+                str(row.get("diameter_label") or ""),
+                _fmt_int(row.get("gt_bar_lines")),
+                _fmt_int(row.get("detected")),
+                _fmt_int(row.get("match")),
+                _fmt_int(row.get("wrong_diameter")),
+                _fmt(row.get("diameter_identification_percent"), suffix="%"),
+                str(row.get("note") or ""),
+            ]
+        )
+    return rows
+
+
+def _diameter_steel_rows(data: Dict[str, Any]) -> List[List[str]]:
+    rows = []
+    for row in (data.get("diameter_wise") or {}).get("steel_rows") or []:
+        ratio = row.get("quantity_ratio_percent")
+        rows.append(
+            [
+                str(row.get("diameter_label") or ""),
+                _fmt_kg(row.get("benchmark_kg") if row.get("benchmark_kg") is not None else row.get("estimator_kg")),
+                _fmt_kg(row.get("model_kg")),
+                _fmt_signed_kg(row.get("difference_kg")),
+                _fmt(row.get("difference_pct"), n=1, suffix="%"),
+                "—" if ratio is None else f"{float(ratio):.0f}%",
+            ]
+        )
+    return rows
+
+
 def _add_picture(doc, path: Optional[str], width_in: float = 6.4) -> None:
     if not path or not Path(path).exists():
         return
@@ -375,7 +438,51 @@ def write_docx(*, out_root: Path, data: Dict[str, Any], charts: Dict[str, str]) 
     )
     _add_picture(doc, charts.get("model_vs_benchmark_steel_kg.png"))
 
-    heading_bar(doc, "7.  Semantic error profile")
+    heading_bar(doc, "7.  Diameter identification (detected bar lines)")
+    body(
+        doc,
+        "QA.2A’s published field diameter_accuracy_pct is an alias of bar matching accuracy "
+        "(MATCH / detected) and is not used here. Diameter identification below is counted from "
+        "Bar Matching rows: a detected bar is diameter-correct unless status is WRONG_DIAMETER. "
+        "GT diameter is the estimator line diameter. Percentages are pooled from raw counts across "
+        "Second–Sixth; set percentages are not averaged. Diameter remains excluded from overall.",
+        size=9,
+        space_after=5,
+    )
+    ident_rows = _diameter_ident_rows(data)
+    if ident_rows:
+        grid(
+            doc,
+            ["Diameter", "GT bar lines", "Detected", "MATCH", "WRONG_DIA", "Diameter ID", "Note"],
+            ident_rows,
+            [2.4, 2.2, 1.8, 1.6, 2.0, 2.2, 4.8],
+            total_last=True,
+        )
+    else:
+        body(doc, "No diameter-wise identification rows were produced for this report payload.", size=9)
+
+    heading_bar(doc, "8.  Diameter-wise steel quantity  —  not the same as diameter identification")
+    body(
+        doc,
+        "Quantity ratio = automated kg / estimated kg × 100. It is not accuracy. "
+        "A ratio above 100% is an overestimate. This table pools kilogram totals by diameter "
+        "before computing difference and ratio. It is not diameter identification.",
+        size=9,
+        space_after=5,
+    )
+    steel_rows = _diameter_steel_rows(data)
+    if steel_rows:
+        grid(
+            doc,
+            ["Diameter", "Estimated kg", "Automated kg", "Difference kg", "Abs % diff", "Quantity ratio"],
+            steel_rows,
+            [2.4, 3.0, 3.0, 2.8, 2.4, 3.4],
+            total_last=True,
+        )
+    else:
+        body(doc, "No diameter-wise steel rows were produced for this report payload.", size=9)
+
+    heading_bar(doc, "9.  Semantic error profile")
     tax = data.get("semantic_taxonomy_pooled") or {}
     tax_rows = [[k, str(v)] for k, v in sorted(tax.items(), key=lambda kv: -int(kv[1] or 0))]
     if tax_rows:
@@ -389,7 +496,7 @@ def write_docx(*, out_root: Path, data: Dict[str, Any], charts: Dict[str, str]) 
     )
     _add_picture(doc, charts.get("semantic_error_distribution.png"))
 
-    heading_bar(doc, "8.  Engineering calculation profile")
+    heading_bar(doc, "10.  Engineering calculation profile")
     eng = data.get("engineering_errors") or {}
     counts = eng.get("counts") or eng
     if isinstance(counts, dict):
@@ -407,7 +514,7 @@ def write_docx(*, out_root: Path, data: Dict[str, Any], charts: Dict[str, str]) 
         size=9.5,
     )
 
-    heading_bar(doc, "9.  HYBRID / FALLBACK coverage")
+    heading_bar(doc, "11.  HYBRID / FALLBACK coverage")
     body(
         doc,
         "HYBRID_ONLY scores use the valid matched benchmark subset for Vision-usable beams. "
@@ -442,7 +549,7 @@ def write_docx(*, out_root: Path, data: Dict[str, Any], charts: Dict[str, str]) 
         [3.2, 2.2, 2.2, 2.2, 2.2, 2.2, 2.2],
     )
 
-    heading_bar(doc, "10.  Current workflow value")
+    heading_bar(doc, "12.  Current workflow value")
     body(
         doc,
         "Positioning: model-assisted estimation. Estimator verification is required. "
@@ -452,7 +559,7 @@ def write_docx(*, out_root: Path, data: Dict[str, Any], charts: Dict[str, str]) 
         size=10,
     )
 
-    heading_bar(doc, "11.  Methodology, sources and limitations")
+    heading_bar(doc, "13.  Methodology, sources and limitations")
     body(
         doc,
         f"{PHASE_ID} uses QA.2A BeamMatcher / BarMatcher / MetricsEngine metric8 and the QA.3.0 four-KPI overall mean. "

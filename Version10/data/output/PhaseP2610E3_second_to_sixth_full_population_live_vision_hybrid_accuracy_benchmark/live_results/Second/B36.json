@@ -3,9 +3,9 @@
   "set_key": "Second",
   "complete": true,
   "mode": "LIVE_BENCHMARK",
-  "action": "LIVE",
-  "call_provenance": "VISION_NEW_LIVE_CALL",
-  "reuse_source": null,
+  "action": "REUSE",
+  "call_provenance": "VISION_REUSED_CURRENT_ARCHITECTURE",
+  "reuse_source": "E3_CHECKPOINT",
   "eligible": true,
   "gate_status": "VISION_READY",
   "visual": {
@@ -13,26 +13,11 @@
     "sha256": "5761cfb0fd520da8c62365691738d06effbb4fe9196cc40f56c6c2c30ea6af5a",
     "source": "T183_SECOND_RENDER"
   },
-  "called": true,
+  "called": false,
   "semantic_usable": true,
   "failure_category": "OK",
   "attempts": 1,
   "retry_count": 0,
-  "audit": {
-    "success": "True",
-    "model": "claude-sonnet-4-5",
-    "latency_s": "6.966150599997491",
-    "retry_count": "0",
-    "usage": {
-      "input_tokens": "3910",
-      "output_tokens": "320"
-    },
-    "error": null,
-    "error_type": null,
-    "temperature": "0",
-    "prompt_fingerprint": "b37530a27e28f3369c92bf14fee1289788f0269b4b8c33a57520adfce6384a64",
-    "n_images": "2"
-  },
   "parsed": {
     "target_beam_id": "B36",
     "target_identified": true,

@@ -41,7 +41,7 @@ from .config import (
     STATUS_READY,
 )
 from .docx_report import write_docx
-from .metrics import kpi_block
+from .metrics import identification_from_bar_rows, kpi_block, pool_identification_rows, pool_steel_rows
 from .pdf_report import write_pdf
 from .pooling import overall_from_kpis, pool_kpi_blocks, weight_accuracy_percent
 from .population import discover_all_sets
@@ -176,7 +176,37 @@ def test_q_correct_of_detected() -> Dict[str, Any]:
 
 def test_r_diameter() -> Dict[str, Any]:
     overall = overall_from_kpis(beam_pct=50, bar_pct=50, correct_pct=50, weight_pct=50)
-    return _ok(overall == 50.0)
+    rows = [
+        {"diameter": 8, "status": "MATCH"},
+        {"diameter": 8, "status": "WRONG_DIAMETER"},
+        {"diameter": 8, "status": "MISSING"},
+        {"diameter": 16, "status": "MATCH"},
+        {"diameter": 16, "status": "EXTRA"},
+    ]
+    ident = identification_from_bar_rows(rows)
+    by_d = {r.get("diameter"): r for r in ident}
+    eight = by_d.get(8) or {}
+    ident_ok = (
+        eight.get("gt_bar_lines") == 3
+        and eight.get("detected") == 2
+        and eight.get("match") == 1
+        and eight.get("wrong_diameter") == 1
+        and abs(float(eight.get("diameter_identification_percent") or 0) - 50.0) < 1e-9
+    )
+    a = [{"diameter": 8, "gt_bar_lines": 2, "detected": 2, "match": 1, "wrong_diameter": 1}]
+    b = [{"diameter": 8, "gt_bar_lines": 10, "detected": 10, "match": 10, "wrong_diameter": 0}]
+    pooled = pool_identification_rows([a, b])
+    pooled_eight = next((r for r in pooled if r.get("diameter") == 8), {})
+    pooled_ok = abs(float(pooled_eight.get("diameter_identification_percent") or 0) - 91.67) < 1e-9
+    steel = pool_steel_rows(
+        [
+            [{"diameter": 10, "benchmark_kg": 100, "model_kg": 40}],
+            [{"diameter": 10, "benchmark_kg": 100, "model_kg": 160}],
+        ]
+    )
+    steel_ten = next((r for r in steel if r.get("diameter") == 10), {})
+    steel_ok = abs(float(steel_ten.get("quantity_ratio_percent") or 0) - 100.0) < 1e-9
+    return _ok(overall == 50.0 and ident_ok and pooled_ok and steel_ok, pooled_eight)
 
 
 def test_s_steel() -> Dict[str, Any]:
@@ -322,6 +352,54 @@ def _fixture_report(tmp: Path) -> Dict[str, Any]:
         "limitations": ["OFFLINE_VALIDATION_NO_LIVE_CALLS"],
         "conclusion": "Fixture conclusion for report generation tests.",
         "fifth_reuse_decision": "VISION_REUSED_CURRENT_ARCHITECTURE",
+        "diameter_wise": {
+            "identification_rows": [
+                {
+                    "diameter": 8,
+                    "diameter_label": "Ø8",
+                    "gt_bar_lines": 10,
+                    "detected": 8,
+                    "match": 5,
+                    "wrong_diameter": 1,
+                    "diameter_identification_percent": 87.5,
+                    "note": "fixture",
+                    "is_total": False,
+                },
+                {
+                    "diameter": None,
+                    "diameter_label": "TOTAL scored",
+                    "gt_bar_lines": 10,
+                    "detected": 8,
+                    "match": 5,
+                    "wrong_diameter": 1,
+                    "diameter_identification_percent": 87.5,
+                    "note": "",
+                    "is_total": True,
+                },
+            ],
+            "steel_rows": [
+                {
+                    "diameter": 8,
+                    "diameter_label": "Ø8",
+                    "benchmark_kg": 100.0,
+                    "model_kg": 80.0,
+                    "difference_kg": -20.0,
+                    "difference_pct": 20.0,
+                    "quantity_ratio_percent": 80.0,
+                    "is_total": False,
+                },
+                {
+                    "diameter": None,
+                    "diameter_label": "TOTAL",
+                    "benchmark_kg": 100.0,
+                    "model_kg": 80.0,
+                    "difference_kg": -20.0,
+                    "difference_pct": 20.0,
+                    "quantity_ratio_percent": 80.0,
+                    "is_total": True,
+                },
+            ],
+        },
     }
 
 
@@ -356,7 +434,22 @@ def test_al_docx_pdf_consistency() -> Dict[str, Any]:
     pdf_txt = pdf.read_bytes().decode("latin-1", errors="ignore")
     token = MODEL_VERSION
     overall = f"{float(data['pooled']['overall_accuracy_percent']):.2f}"
-    return _ok(token in xml and token in pdf_txt and overall in xml and overall in pdf_txt, overall)
+    heading = "Diameter identification (detected"
+    dia_label = "Ø8"
+    pdf_heading = "DIAMETER IDENTIFICATION"
+    steel_heading = "Diameter-wise steel quantity"
+    return _ok(
+        token in xml
+        and token in pdf_txt
+        and overall in xml
+        and overall in pdf_txt
+        and heading in xml
+        and dia_label in xml
+        and steel_heading in xml
+        and pdf_heading in pdf_txt
+        and dia_label in pdf_txt,
+        overall,
+    )
 
 
 def test_am_cost_fields() -> Dict[str, Any]:

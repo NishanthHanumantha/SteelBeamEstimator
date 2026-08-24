@@ -1,0 +1,66 @@
+PREPARED FOR FUTURE DEPLOYMENT — NOT YET DEPLOYED
+Phase W.2.1 deployment package inventory
+=========================================
+
+A. DEPLOY REQUIRED
+------------------
+Version10/webapp/
+  app.py
+  wsgi.py
+  config.py
+  routes.py
+  requirements.txt
+  templates/
+  static/
+  services/estimation_service.py
+  services/version10_adapter.py
+  services/flight_guard.py
+  services/__init__.py
+  deployment/gunicorn.w21.conf.py
+  deployment/LAUNCH_W21.txt
+
+Version10/Run_PY/
+  All production runners listed in webapp/config.py PRODUCTION_STAGES
+  (vroot1, r1, t1, r2a, r21b, r21c, r21d, l2_2, r3, r31, r12a, r13, vb1)
+  plus any modules those runners import from Run_PY (e.g. bootstrap)
+
+Version10/src/
+  Production phase packages used by those runners, including:
+  PhaseVROOT.1_*, PhaseR.1_*, PhaseT1_*, PhaseR.2A_*, PhaseR2.1B/C/D_*,
+  PhaseL.2.2_*, PhaseR3_*, PhaseR3.1_*, PhaseR1_2A_*, PhaseR1.3_*,
+  PhaseVB.1_*, src/config/run_context.py
+  and their in-tree imports (do not omit shared src utilities)
+
+Version10/config/          YAML/templates consumed by production stages
+Version10/requirements.txt
+
+Runtime directories (create empty on the instance; do not copy local artefacts):
+  Version10/data/web_runs/
+  Version10/webapp/uploads/
+  Version10/webapp/outputs/
+  Version10/webapp/logs/
+
+Python 3.12 on Ubuntu (Lightsail config.yaml) + venv with both requirements files.
+
+
+B. DEPLOY OPTIONAL
+------------------
+Version10/webapp/README.md
+Version10/webapp/tests/          local smoke only
+Version10/webapp/deployment/     this inventory / launch notes
+Steel-Beam-Estimation/deployment/  prior 8.9.5 nginx/systemd templates as reference
+                                   (must retarget ENGINE_ROOT to Version10)
+
+
+C. DO NOT DEPLOY
+----------------
+__pycache__/  *.pyc  .venv/  .venv_w21/  .env
+Version10/webapp/uploads/* (except .gitkeep)
+Version10/webapp/outputs/*
+Version10/webapp/logs/*
+Version10/data/web_runs/*          previous local runs
+Version10/data/output/*            local benchmark / hybrid / QA artefacts
+Version10/src/PhaseP2610*          hybrid D/E research (not the Excel production path)
+Test_Input/                        source drawings stay off the server unless a
+                                   future smoke set is explicitly copied
+agent-transcripts, canvases, local caches

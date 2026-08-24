@@ -68,7 +68,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 9 0 R >> >> >>
 endobj
 6 0 obj
-<< /Length 3490 >>
+<< /Length 4173 >>
 stream
 BT
 /F1 11 Tf
@@ -89,40 +89,40 @@ BT
 1 0 0 1 48 618 Tm (Set percentages are not averaged for the headline overall score.) Tj
 1 0 0 1 48 604 Tm (Overall = mean\(beam ID, bar ID, correct-of-detected, steel/weight\). Diameter excluded.) Tj
 1 0 0 1 48 590 Tm () Tj
-1 0 0 1 48 576 Tm (7. SEMANTIC ERROR PROFILE) Tj
-1 0 0 1 48 562 Tm (MISSING: 2161) Tj
-1 0 0 1 48 548 Tm (MATCH: 733) Tj
-1 0 0 1 48 534 Tm (WRONG_QUANTITY: 593) Tj
-1 0 0 1 48 520 Tm (WRONG_DIAMETER: 445) Tj
-1 0 0 1 48 506 Tm (EXTRA: 183) Tj
-1 0 0 1 48 492 Tm (WRONG_ROLE: 134) Tj
-1 0 0 1 48 478 Tm (PARTIAL_MATCH: 103) Tj
-1 0 0 1 48 464 Tm (ACCEPTABLE_EXTRA: 89) Tj
-1 0 0 1 48 450 Tm () Tj
-1 0 0 1 48 436 Tm (8. ENGINEERING CALCULATION PROFILE) Tj
-1 0 0 1 48 422 Tm (CUT_LENGTH_DERIVED_FALLBACK: 188) Tj
-1 0 0 1 48 408 Tm (CUT_LENGTH_UNAVAILABLE: 0) Tj
-1 0 0 1 48 394 Tm (STIRRUP_ENGINEERING_UNAVAILABLE: 69) Tj
-1 0 0 1 48 380 Tm (PARTIAL_CALCULATION: 82) Tj
-1 0 0 1 48 366 Tm (INCOMPATIBLE: 0) Tj
-1 0 0 1 48 352 Tm (SPACER_ZERO: 242) Tj
-1 0 0 1 48 338 Tm () Tj
-1 0 0 1 48 324 Tm (9. HYBRID / FALLBACK COHORTS \(pooled applicable subsets\)) Tj
-1 0 0 1 48 310 Tm (HYBRID_ONLY: beam=97.52% bar=57.03% correct=36.39% steel=75.22% overall=66.54%) Tj
-1 0 0 1 48 296 Tm (FALLBACK_ONLY: beam=97.73% bar=48.43% correct=38.21% steel=71.00% overall=63.84%) Tj
-1 0 0 1 48 282 Tm (FULL_POPULATION: beam=85.12% bar=48.17% correct=36.50% steel=60.64% overall=57.61%) Tj
-1 0 0 1 48 268 Tm () Tj
-1 0 0 1 48 254 Tm (10. CURRENT WORKFLOW VALUE) Tj
-1 0 0 1 48 240 Tm (Model-assisted estimation. Estimator verification required.) Tj
-1 0 0 1 48 226 Tm (Accuracy is not equivalent to time saved. No time study in this phase.) Tj
-1 0 0 1 48 212 Tm (Do not treat Vision API success as engineering accuracy.) Tj
-1 0 0 1 48 198 Tm () Tj
-1 0 0 1 48 184 Tm (11. METHODOLOGY, SOURCES AND LIMITATIONS) Tj
-1 0 0 1 48 170 Tm (Truth: estimator Excel \(evaluation-only\). QA.2A BeamMatcher / BarMatcher / metric8.) Tj
-1 0 0 1 48 156 Tm (QA.3.0 four-KPI overall. Ground truth is never used in runtime semantic resolution.) Tj
-1 0 0 1 48 142 Tm (Limitations: ESTIMATOR_WORKBOOK_MAPPING_LIMITATION, FIRST_SET_EXCLUDED, SHADOW_ONLY_NOT_PRODUCTION, FALLBACK_POPULATION_PRESENT) Tj
-1 0 0 1 48 128 Tm (PRODUCTION_WRITE=false  ENGINEERING_CHANGES=NONE  shadow_only=true) Tj
-1 0 0 1 48 114 Tm () Tj
+1 0 0 1 48 576 Tm (7. DIAMETER IDENTIFICATION \(DETECTED BAR LINES\)) Tj
+1 0 0 1 48 562 Tm (QA.2A diameter_accuracy_pct is MATCH/detected and is not used here.) Tj
+1 0 0 1 48 548 Tm (A detected bar is diameter-correct unless status is WRONG_DIAMETER.) Tj
+1 0 0 1 48 534 Tm (GT diameter is the estimator line diameter. Pooled from raw counts. Diameter excluded from overall.) Tj
+1 0 0 1 48 520 Tm (Diameter | GT bar lines | Detected | MATCH | WRONG_DIA | Diameter ID | Note) Tj
+1 0 0 1 48 506 Tm (Ø8: GT=358 detected=152 MATCH=32 WRONG_DIA=3 ID=98.03% Usually right when found; many missing) Tj
+1 0 0 1 48 492 Tm (Ø10: GT=714 detected=214 MATCH=56 WRONG_DIA=11 ID=94.86% Usually right when found; many missing) Tj
+1 0 0 1 48 478 Tm (Ø12: GT=573 detected=207 MATCH=68 WRONG_DIA=28 ID=86.47% Usually right when found; many missing) Tj
+1 0 0 1 48 464 Tm (Ø16: GT=588 detected=372 MATCH=169 WRONG_DIA=112 ID=69.89% Frequent diameter swaps) Tj
+1 0 0 1 48 450 Tm (Ø20: GT=784 detected=436 MATCH=193 WRONG_DIA=155 ID=64.45% Frequent diameter swaps) Tj
+1 0 0 1 48 436 Tm (Ø25: GT=1097 detected=616 MATCH=210 WRONG_DIA=130 ID=78.90%) Tj
+1 0 0 1 48 422 Tm (Ø32: GT=26 detected=11 MATCH=5 WRONG_DIA=6 ID=45.45% Low volume - percentage unstable) Tj
+1 0 0 1 48 408 Tm (TOTAL scored Ø8-Ø32: GT=4140 detected=2008 MATCH=733 WRONG_DIA=445 ID=77.84% Pooled headline from raw counts) Tj
+1 0 0 1 48 394 Tm () Tj
+1 0 0 1 48 380 Tm (8. DIAMETER-WISE STEEL QUANTITY \(NOT THE SAME AS DIAMETER IDENTIFICATION\)) Tj
+1 0 0 1 48 366 Tm (Quantity ratio = automated kg / estimated kg x 100. It is not accuracy.) Tj
+1 0 0 1 48 352 Tm (A ratio above 100% is an overestimate. kg pooled before difference and ratio.) Tj
+1 0 0 1 48 338 Tm (Diameter | Estimated kg | Automated kg | Difference kg | Abs % diff | Quantity ratio) Tj
+1 0 0 1 48 324 Tm (Ø8: est=6515 auto=5051 diff=-1464 abs=22.5% ratio=78%) Tj
+1 0 0 1 48 310 Tm (Ø10: est=24555 auto=14163 diff=-10393 abs=42.3% ratio=58%) Tj
+1 0 0 1 48 296 Tm (Ø12: est=22253 auto=12722 diff=-9531 abs=42.8% ratio=57%) Tj
+1 0 0 1 48 282 Tm (Ø16: est=11598 auto=7678 diff=-3920 abs=33.8% ratio=66%) Tj
+1 0 0 1 48 268 Tm (Ø20: est=35888 auto=20506 diff=-15382 abs=42.9% ratio=57%) Tj
+1 0 0 1 48 254 Tm (Ø25: est=45294 auto=28282 diff=-17011 abs=37.6% ratio=62%) Tj
+1 0 0 1 48 240 Tm (Ø32: est=2808 auto=1901 diff=-906 abs=32.3% ratio=68%) Tj
+1 0 0 1 48 226 Tm (TOTAL: est=148911 auto=90303 diff=-58607 abs=39.4% ratio=61%) Tj
+1 0 0 1 48 212 Tm () Tj
+1 0 0 1 48 198 Tm (9. SEMANTIC ERROR PROFILE) Tj
+1 0 0 1 48 184 Tm (MISSING: 2161) Tj
+1 0 0 1 48 170 Tm (MATCH: 733) Tj
+1 0 0 1 48 156 Tm (WRONG_QUANTITY: 593) Tj
+1 0 0 1 48 142 Tm (WRONG_DIAMETER: 445) Tj
+1 0 0 1 48 128 Tm (EXTRA: 183) Tj
+1 0 0 1 48 114 Tm (WRONG_ROLE: 134) Tj
 ET
 endstream
 endobj
@@ -130,18 +130,45 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 9 0 R >> >> >>
 endobj
 8 0 obj
-<< /Length 656 >>
+<< /Length 2434 >>
 stream
 BT
 /F1 11 Tf
 /F1 10 Tf
-1 0 0 1 48 800 Tm (COST / EXECUTION) Tj
-1 0 0 1 48 786 Tm (New live: 343  Reused: 143  Retried: 0  Failed: 0) Tj
-1 0 0 1 48 772 Tm (Input tokens: 1088060  Output tokens: 213497  Runtime s: 3854.94) Tj
-1 0 0 1 48 758 Tm () Tj
-1 0 0 1 48 744 Tm (CONCLUSION) Tj
-1 0 0 1 48 730 Tm (This benchmark reports current hybrid architecture performance on Second through Sixth sets. It is not a historical improvement comparison and not a production-readiness claim. HYBRID beams=486, FALLBACK beams=44. Vision API success is not engineering accuracy.) Tj
-1 0 0 1 48 716 Tm (No historical improvement claim. No production readiness claim.) Tj
+1 0 0 1 48 800 Tm (PARTIAL_MATCH: 103) Tj
+1 0 0 1 48 786 Tm (ACCEPTABLE_EXTRA: 89) Tj
+1 0 0 1 48 772 Tm () Tj
+1 0 0 1 48 758 Tm (10. ENGINEERING CALCULATION PROFILE) Tj
+1 0 0 1 48 744 Tm (CUT_LENGTH_DERIVED_FALLBACK: 188) Tj
+1 0 0 1 48 730 Tm (CUT_LENGTH_UNAVAILABLE: 0) Tj
+1 0 0 1 48 716 Tm (STIRRUP_ENGINEERING_UNAVAILABLE: 69) Tj
+1 0 0 1 48 702 Tm (PARTIAL_CALCULATION: 82) Tj
+1 0 0 1 48 688 Tm (INCOMPATIBLE: 0) Tj
+1 0 0 1 48 674 Tm (SPACER_ZERO: 242) Tj
+1 0 0 1 48 660 Tm () Tj
+1 0 0 1 48 646 Tm (11. HYBRID / FALLBACK COHORTS \(pooled applicable subsets\)) Tj
+1 0 0 1 48 632 Tm (HYBRID_ONLY: beam=97.52% bar=57.03% correct=36.39% steel=75.22% overall=66.54%) Tj
+1 0 0 1 48 618 Tm (FALLBACK_ONLY: beam=97.73% bar=48.43% correct=38.21% steel=71.00% overall=63.84%) Tj
+1 0 0 1 48 604 Tm (FULL_POPULATION: beam=85.12% bar=48.17% correct=36.50% steel=60.64% overall=57.61%) Tj
+1 0 0 1 48 590 Tm () Tj
+1 0 0 1 48 576 Tm (12. CURRENT WORKFLOW VALUE) Tj
+1 0 0 1 48 562 Tm (Model-assisted estimation. Estimator verification required.) Tj
+1 0 0 1 48 548 Tm (Accuracy is not equivalent to time saved. No time study in this phase.) Tj
+1 0 0 1 48 534 Tm (Do not treat Vision API success as engineering accuracy.) Tj
+1 0 0 1 48 520 Tm () Tj
+1 0 0 1 48 506 Tm (13. METHODOLOGY, SOURCES AND LIMITATIONS) Tj
+1 0 0 1 48 492 Tm (Truth: estimator Excel \(evaluation-only\). QA.2A BeamMatcher / BarMatcher / metric8.) Tj
+1 0 0 1 48 478 Tm (QA.3.0 four-KPI overall. Ground truth is never used in runtime semantic resolution.) Tj
+1 0 0 1 48 464 Tm (Limitations: ESTIMATOR_WORKBOOK_MAPPING_LIMITATION, FIRST_SET_EXCLUDED, SHADOW_ONLY_NOT_PRODUCTION, FALLBACK_POPULATION_PRESENT) Tj
+1 0 0 1 48 450 Tm (PRODUCTION_WRITE=false  ENGINEERING_CHANGES=NONE  shadow_only=true) Tj
+1 0 0 1 48 436 Tm () Tj
+1 0 0 1 48 422 Tm (COST / EXECUTION) Tj
+1 0 0 1 48 408 Tm (New live: 343  Reused: 143  Retried: 0  Failed: 0) Tj
+1 0 0 1 48 394 Tm (Input tokens: 1088060  Output tokens: 213497  Runtime s: 3854.94) Tj
+1 0 0 1 48 380 Tm () Tj
+1 0 0 1 48 366 Tm (CONCLUSION) Tj
+1 0 0 1 48 352 Tm (This benchmark reports current hybrid architecture performance on Second through Sixth sets. It is not a historical improvement comparison and not a production-readiness claim. HYBRID beams=486, FALLBACK beams=44. Vision API success is not engineering accuracy.) Tj
+1 0 0 1 48 338 Tm (No historical improvement claim. No production readiness claim.) Tj
 ET
 endstream
 endobj
@@ -157,11 +184,11 @@ xref
 0000000253 00000 n 
 0000003634 00000 n 
 0000003760 00000 n 
-0000007302 00000 n 
-0000007428 00000 n 
-0000008135 00000 n 
+0000007985 00000 n 
+0000008111 00000 n 
+0000010597 00000 n 
 trailer
 << /Size 10 /Root 1 0 R >>
 startxref
-8205
+10667
 %%EOF

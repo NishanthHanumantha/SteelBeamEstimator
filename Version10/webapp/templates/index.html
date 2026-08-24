@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Steel Beam Estimation Automation</title>
+  <title>Steel Beam Estimation</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
 </head>
 <body>
   <header>
-    <h1>Steel Beam Estimation Automation</h1>
+    <h1>Steel Beam Estimation</h1>
     <p>
-      Upload one complete beam drawing set to generate the Beam Steel Estimation workbook.
-      <span class="badge">MODEL {{ model_version }}</span>
+      Upload one complete beam drawing set to generate the estimation workbook.
+      <span class="badge">{{ engine_display }}</span>
+      <span class="badge badge-release">Release {{ app_release }}</span>
     </p>
   </header>
 
   <main>
-    <!-- HOME / UPLOAD -->
     <section id="view-home" class="card">
       <h2>Upload Beam Drawing Set</h2>
       <p class="muted">All three DXF drawings are mandatory. PDF, DWG, images, and ZIP are not accepted.</p>
@@ -62,36 +62,42 @@
       </form>
     </section>
 
-    <!-- PROCESS -->
     <section id="view-process" class="card hidden">
       <h2>Processing</h2>
-      <p class="muted">Please wait. The existing engineering pipeline is running.</p>
+      <p class="muted">Please wait. The Version10 production pipeline is running. Only one estimation can run at a time.</p>
       <div class="process-row">
         <span class="spinner" aria-hidden="true"></span>
-        <span id="process-message">Uploading files...</span>
+        <span id="process-message">Processing drawing...</span>
       </div>
     </section>
 
-    <!-- SUCCESS -->
     <section id="view-success" class="card hidden">
-      <div class="okbox">✔ Steel Estimation Completed Successfully</div>
-      <div class="meta-grid">
+      <div class="okbox">Steel estimation completed successfully</div>
+      <div class="meta-grid" id="success-stats">
         <div class="stat">
           <div class="k">Workbook Name</div>
           <div class="v" id="success-workbook">—</div>
         </div>
         <div class="stat">
-          <div class="k">Generation Time</div>
+          <div class="k">Processing Time</div>
           <div class="v" id="success-duration">—</div>
         </div>
+        <div class="stat" id="stat-beams">
+          <div class="k">Beam Count</div>
+          <div class="v" id="success-beams">—</div>
+        </div>
+        <div class="stat" id="stat-steel">
+          <div class="k">Total Steel Quantity</div>
+          <div class="v" id="success-steel">—</div>
+        </div>
       </div>
+      <div id="success-warnings" class="warn hidden"></div>
       <div class="actions">
         <a class="btn" id="btn-download" href="#">Download Excel</a>
         <button type="button" class="secondary" id="btn-another">Estimate Another Drawing</button>
       </div>
     </section>
 
-    <!-- ERROR -->
     <section id="view-error" class="card hidden">
       <h2>Estimation Failed</h2>
       <div id="error-message" class="err"></div>

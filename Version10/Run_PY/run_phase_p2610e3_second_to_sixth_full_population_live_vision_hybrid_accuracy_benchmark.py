@@ -26,7 +26,11 @@ def main() -> int:
     p = argparse.ArgumentParser(description="P2.6.10-E.3 Second-to-Sixth live Vision hybrid accuracy benchmark")
     p.add_argument("--output", type=Path, default=None)
     p.add_argument("--skip-unit-tests", action="store_true")
-    p.add_argument("--mode", default="OFFLINE_VALIDATION", help="OFFLINE_VALIDATION (default) or LIVE_BENCHMARK")
+    p.add_argument(
+        "--mode",
+        default="OFFLINE_VALIDATION",
+        help="OFFLINE_VALIDATION (default), LIVE_BENCHMARK, or REFRESH_REPORTS (reuse live_results, no Claude)",
+    )
     args = p.parse_args()
 
     print("P2.6.10-E.3 SECOND-TO-SIXTH FULL-POPULATION LIVE VISION HYBRID ACCURACY BENCHMARK")

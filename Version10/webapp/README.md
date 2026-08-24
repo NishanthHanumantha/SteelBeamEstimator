@@ -1,8 +1,10 @@
-﻿# Steel Beam Estimation Web Application
+﻿# Steel Beam Estimation Web Application (Version10)
 
-**MODEL_VERSION:** 8.9.5  
-**Status:** Version9 accuracy branch (baseline 8.9.5)  
-**Scope:** Presentation layer only. Does **not** modify engineering logic.
+**App release:** W.2  
+**Engine:** Version10 production pipeline (VROOT1 → R1 → **T1** → R2A → … → VB.1)  
+**Scope:** Presentation + adapter only. Does **not** modify engineering logic.
+
+This is not the packaged Lightsail 8.9.5 engine. `ENGINE_ROOT` is `Version10/`.
 
 ## What it does
 
@@ -10,63 +12,73 @@
    - General Notes
    - Beam Framing Plan
    - Beam Reinforcement Plan
-2. Run the Version9 production pipeline via `RunContext` (per-run `web_runs/<run_id>/`)
-3. Download the generated `Estimation_Output.xlsx` from the **same** run
+2. Create an isolated `data/web_runs/<run_id>/` workspace
+3. Invoke the Version10 production runners via RunContext
+4. Download `Estimation_Output_<run_id>.xlsx` from that run
+
+Only one estimation runs at a time (single-flight). Concurrent runs are rejected.
 
 ## Requirements
 
-- Python 3.10+
-- Version9 engineering dependencies (`Version9/requirements.txt`)
-- Flask webapp deps:
+Install **engine** dependencies, then web dependencies:
 
 ```powershell
-cd Version9\webapp
+cd Version10
+pip install -r requirements.txt
+cd webapp
 pip install -r requirements.txt
 ```
+
+T1 uses matplotlib, Pillow, and opencv-python-headless from `Version10/requirements.txt`.
 
 ## Run (development)
 
 ```powershell
-cd Version9\webapp
+cd Version10\webapp
 python app.py
 ```
 
 Open: http://127.0.0.1:5000  
 Health: http://127.0.0.1:5000/health
 
-## Run (production-style)
+## Production-style launch (Linux / Lightsail)
 
-```powershell
-cd Version9\webapp
-gunicorn -b 0.0.0.0:5000 --timeout 3600 "app:app"
+PREPARED FOR FUTURE DEPLOYMENT — NOT YET DEPLOYED.
+
+From `Version10/webapp`, workers **must** be 1:
+
+```bash
+gunicorn --workers 1 --timeout 3600 --bind 127.0.0.1:8000 "wsgi:app"
 ```
+
+Gunicorn cannot be started on Windows (`fcntl` is Unix-only). See `deployment/LAUNCH_W21.txt`.
 
 ## Configuration
 
 | Variable | Default | Meaning |
-|----------|---------|---------|
+|---|---|---|
 | `STEEL_WEB_MAX_UPLOAD_MB` | `256` | Max total upload size (MB) |
 | `STEEL_WEB_SECRET_KEY` | dev key | Flask secret |
-| `STEEL_ENGINE_ROOT` | Version9 | Set by service per stage |
-| `STEEL_RUN_ROOT` | `web_runs/<run_id>` | Set by service per stage |
-| `STEEL_OUTPUT_ROOT` | `â€¦/data/output` | Set by service per stage |
+| `STEEL_ENGINE_ROOT` | Version10 | Set by adapter per stage |
+| `STEEL_RUN_ROOT` | `web_runs/<run_id>` | Set by adapter per stage |
+| `STEEL_OUTPUT_ROOT` | `…/data/output` | Set by adapter per stage |
+| `STEEL_WEB_PIPELINE_MODE` | `live` | `stub` is **tests only** |
 
 ## Production pipeline
 
 ```text
-Upload â†’ VROOT1 â†’ R1 â†’ R2A â†’ R.2.1B â†’ R.2.1C â†’ R.2.1D
-      â†’ L.2.2 â†’ R.3 â†’ R.3.1 â†’ R.1.2A â†’ R.1.3 â†’ VB.1
-      â†’ web_runs/<run_id>/data/output/Production_Output/Estimation_Output.xlsx
-      â†’ download Estimation_Output_<run_id>.xlsx
+Upload → VROOT1 → R1 → T1 → R2A → R.2.1B → R.2.1C → R.2.1D
+      → L.2.2 → R.3 → R.3.1 → R.1.2A → R.1.3 → VB.1
+      → web_runs/<run_id>/data/output/Production_Output/Estimation_Output.xlsx
+      → download Estimation_Output_<run_id>.xlsx
 ```
 
-All artefacts are written under the current run tree. No Version7 seeding and no
-shared `Version9/data/output` dependency on the web path.
+The hybrid D.1–D.4 / E.* shadow path is not invoked.
 
 ## Notes
 
 - Only `.dxf` uploads are accepted.
-- All three files are mandatory.
-- UI errors are engineering-readable; Python stack traces are not shown.
-- Per-run `web_runs/<run_id>/` artefacts are retained for support/inspection.
-
+- All three files are mandatory and must be non-empty.
+- UI errors are estimator-readable; Python stack traces are not shown.
+- Per-run `web_runs/<run_id>/` artefacts are retained.
+- Do not deploy this phase to Lightsail (W.2 is local validation only).

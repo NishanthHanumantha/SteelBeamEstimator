@@ -1,0 +1,41 @@
+PREPARED FOR FUTURE DEPLOYMENT — NOT YET DEPLOYED
+
+Phase W.2.1 — Version10 web application launch notes
+=====================================================
+
+Working directory:
+    Version10/webapp
+
+Install (clean environment):
+    python -m venv .venv
+    .venv\Scripts\python.exe -m pip install -r ..\requirements.txt
+    .venv\Scripts\python.exe -m pip install -r requirements.txt
+
+WSGI target (confirmed from Version10/webapp/wsgi.py):
+    wsgi:app
+
+Equivalent:
+    app:app
+    because app.py assigns app = create_app()
+
+Production launch (Linux / Lightsail) — workers MUST be 1:
+    gunicorn --workers 1 --timeout 3600 --bind 127.0.0.1:8000 "wsgi:app"
+
+Or:
+    gunicorn --config deployment/gunicorn.w21.conf.py "wsgi:app"
+
+Nginx should reverse-proxy to that bind with:
+    client_max_body_size 256M
+    proxy_read_timeout 3600s
+
+Environment:
+    FLASK_ENV=production
+    SECRET_KEY=<required in production>
+    STEEL_WEB_SECRET_KEY=<optional alias>
+    STEEL_WEB_MAX_UPLOAD_MB=256
+    STEEL_ENGINE_ROOT is set per-run by the adapter; do not point it at Version8.
+
+Do NOT:
+    - use more than 1 Gunicorn worker
+    - invoke hybrid D.1-D.4 / E.* as the estimator engine
+    - deploy from this file automatically (this phase is local only)

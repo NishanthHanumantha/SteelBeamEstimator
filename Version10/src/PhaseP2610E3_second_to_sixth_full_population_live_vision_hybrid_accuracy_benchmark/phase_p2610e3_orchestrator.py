@@ -27,6 +27,7 @@ from .config import (
     KIND_HYBRID,
     MODE_LIVE,
     MODE_OFFLINE,
+    MODE_REFRESH,
     MODEL_VERSION,
     OUTPUT_DIRNAME,
     PHASE_ID,
@@ -173,9 +174,17 @@ def run_phase_p2610e3(
     out_root.mkdir(parents=True, exist_ok=True)
     t0 = time.perf_counter()
     mode_u = str(mode or DEFAULT_MODE).upper()
-    if mode_u not in (MODE_LIVE, MODE_OFFLINE):
+    if mode_u not in (MODE_LIVE, MODE_OFFLINE, MODE_REFRESH):
         raise RuntimeError(f"unsupported mode {mode}")
+    refresh = mode_u == MODE_REFRESH
     live_enabled = mode_u == MODE_LIVE
+    execute_mode = MODE_OFFLINE if refresh else mode_u
+    previous_slim: Dict[str, Any] = {}
+    if refresh:
+        prev_path = out_root / "P2.6.10-E.3_RESULTS.json"
+        if not prev_path.exists():
+            raise RuntimeError("REFRESH_REPORTS requires existing P2.6.10-E.3_RESULTS.json")
+        previous_slim = json.loads(prev_path.read_text(encoding="utf-8"))
 
     def _log(msg: str) -> None:
         print(msg, flush=True)
@@ -249,10 +258,18 @@ def run_phase_p2610e3(
             beam_ids=beam_ids,
             catalog=catalog,
             eligibility=eligibility,
-            mode=mode_u,
+            mode=execute_mode,
             client_override=client_override if live_enabled else None,
             e2_reuse_allowed=bool(set_key == FIFTH_SET_KEY and fifth_reuse.get("allowed")),
         )
+        if refresh:
+            disabled = [
+                c for c in calcs if str((c.get("live") or {}).get("failure_category") or "") == "LIVE_DISABLED"
+            ]
+            if disabled:
+                raise RuntimeError(
+                    f"REFRESH_REPORTS missing reusable live artefacts for {set_key}: {len(disabled)}"
+                )
         model_wb = calcs_to_workbook(calcs, source_path=f"shadow-hybrid-{set_key.lower()}-e3")
         truth = pop.get("truth") or {}
         hy_ids = _cohort_ids(calcs, KIND_HYBRID)
@@ -296,6 +313,36 @@ def run_phase_p2610e3(
 
     live_all = _merge_live(live_parts)
     live_all["runtime_s"] = round(time.perf_counter() - t0, 3)
+    if refresh:
+        prev_report_path = out_root / "report_data.json"
+        prev_report: Dict[str, Any] = {}
+        if prev_report_path.exists():
+            try:
+                prev_report = json.loads(prev_report_path.read_text(encoding="utf-8"))
+            except Exception:
+                prev_report = {}
+        prev_vis = ((prev_report.get("vision_execution") or {}).get("by_set")) or {}
+        for key in INCLUDED_SET_KEYS:
+            row = prev_vis.get(key) or {}
+            if not row:
+                continue
+            by_set[key]["live_summary"] = {
+                "attempted": row.get("attempted"),
+                "api_success": row.get("api_success"),
+                "api_failed": row.get("api_failed"),
+                "schema_valid": row.get("schema_valid"),
+                "semantic_usable": row.get("usable"),
+                "retries": row.get("retried"),
+                "new_live": row.get("new_live"),
+                "reused": row.get("reused"),
+                "retried": row.get("retried"),
+                "not_available": row.get("not_available"),
+                "input_tokens": 0,
+                "output_tokens": 0,
+            }
+        live_all = dict(prev_report.get("cost") or previous_slim.get("cost") or live_all)
+        if previous_slim.get("fifth_reuse"):
+            fifth_reuse = previous_slim.get("fifth_reuse") or fifth_reuse
     after = capture_fingerprints(fp_paths)
     fp_cmp = compare_fingerprints(before, after)
     intact = prior_artefacts_intact(v10)
@@ -312,12 +359,13 @@ def run_phase_p2610e3(
     }
     frozen_ok = all(v.get("ok") for v in frozen_units.values())
     runtime_s = round(time.perf_counter() - t0, 3)
-    live_all["runtime_s"] = runtime_s
+    if not refresh:
+        live_all["runtime_s"] = runtime_s
 
     hy_n = sum(len(by_set[k]["hybrid_ids"]) for k in INCLUDED_SET_KEYS)
     fb_n = sum(len(by_set[k]["fallback_ids"]) for k in INCLUDED_SET_KEYS)
     limitations = ["ESTIMATOR_WORKBOOK_MAPPING_LIMITATION", "FIRST_SET_EXCLUDED", "SHADOW_ONLY_NOT_PRODUCTION"]
-    if not live_enabled:
+    if (not live_enabled) and (not refresh):
         limitations.append("OFFLINE_VALIDATION_NO_LIVE_CALLS")
     if fb_n:
         limitations.append("FALLBACK_POPULATION_PRESENT")
@@ -325,9 +373,13 @@ def run_phase_p2610e3(
         limitations.append("API_FAILURES")
     if not fifth_reuse.get("allowed"):
         limitations.append("FIFTH_E2_REUSE_NOT_PROVEN")
+    if refresh and previous_slim.get("limitations"):
+        limitations = list(previous_slim.get("limitations") or limitations)
 
     if not unit.get("success") or not fp_cmp.get("unchanged") or not anti.get("ok") or not intact.get("ok") or not frozen_ok:
         decision = "FAILED"
+    elif refresh:
+        decision = str(previous_slim.get("decision") or "PASS_WITH_LIMITATIONS")
     elif live_enabled:
         decision = "PASS_WITH_LIMITATIONS" if limitations else "PASS"
     else:
@@ -346,8 +398,9 @@ def run_phase_p2610e3(
         "gate_version": GATE_VERSION,
         "decision": decision,
         "pass_fail": "PASS" if decision != "FAILED" else "FAIL",
-        "mode": mode_u,
-        "live_claude_call": live_enabled,
+        "mode": (previous_slim.get("mode") if refresh else mode_u),
+        "live_claude_call": (previous_slim.get("live_claude_call") if refresh else live_enabled),
+        "report_refresh": refresh,
         "runtime_s": runtime_s,
         "population_all": pop_all,
         "by_set": by_set,
@@ -371,7 +424,7 @@ def run_phase_p2610e3(
             "production_action": PRODUCTION_ACTION,
             "engineering_changes": ENGINEERING_CHANGES,
             "shadow_only": SHADOW_ONLY,
-            "live_claude_call": live_enabled,
+            "live_claude_call": (previous_slim.get("live_claude_call") if refresh else live_enabled),
             "production_mutation_delta": 0 if fp_cmp.get("unchanged") else 1,
         },
         "output_root": str(out_root),

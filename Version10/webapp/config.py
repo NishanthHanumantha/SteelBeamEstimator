@@ -1,6 +1,8 @@
 """
-Flask web application configuration — Version9 accuracy branch.
-MODEL_VERSION: 8.9.5 (baseline from Version8 freeze)
+Flask web application configuration — Version10 adapter (Phase W.2).
+
+Application/release label is independent of engineering MODEL_VERSION.
+Do not display 8.9.5 as the active engine. Engineering constants are untouched.
 """
 from __future__ import annotations
 
@@ -8,24 +10,31 @@ import os
 from pathlib import Path
 
 WEBAPP_ROOT = Path(__file__).resolve().parent
-# Engine root (historically named V8_ROOT; parent is Version9/)
-V8_ROOT = WEBAPP_ROOT.parent
-ENGINE_ROOT = V8_ROOT
-REPO_ROOT = V8_ROOT.parent
+ENGINE_ROOT = WEBAPP_ROOT.parent
+# Historical alias used by older web copies; always Version10 in this tree.
+V8_ROOT = ENGINE_ROOT
+REPO_ROOT = ENGINE_ROOT.parent
 
-# Uploads / outputs / logs live under webapp (not engineering data/output)
+APP_RELEASE = "W.3"
+ENGINE_LABEL = "Version10"
+ENGINE_DISPLAY = "Version10 production pipeline"
+
 UPLOAD_ROOT = WEBAPP_ROOT / "uploads"
 OUTPUT_ROOT = WEBAPP_ROOT / "outputs"
 LOG_ROOT = WEBAPP_ROOT / "logs"
-
-# Per-run staging + artefacts
-WEB_RUNS_ROOT = V8_ROOT / "data" / "web_runs"
+WEB_RUNS_ROOT = ENGINE_ROOT / "data" / "web_runs"
 
 MAX_CONTENT_LENGTH = int(os.environ.get("STEEL_WEB_MAX_UPLOAD_MB", "256")) * 1024 * 1024
 ALLOWED_EXTENSIONS = {".dxf"}
+MIN_DXF_BYTES = 32
 SECRET_KEY = os.environ.get("STEEL_WEB_SECRET_KEY", "steel-beam-estimation-ui1-dev")
 
-# Production pipeline — upload through Excel (VB.1).
+BUSY_MESSAGE = (
+    "An estimation is currently running. Please wait and try again."
+)
+
+# Canonical Version10 estimator Excel path (QA.2 web stages minus T16CHAIN).
+# T16CHAIN is a post-Excel visual/QA chain, not required for workbook download.
 PRODUCTION_STAGES = [
     {
         "id": "VROOT1",
@@ -120,8 +129,7 @@ PRODUCTION_STAGES = [
     },
 ]
 
-# Offline/shared Excel path only — web uses VB1_EXCEL_REL under the run tree.
-PRODUCTION_EXCEL = V8_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
+PRODUCTION_EXCEL = ENGINE_ROOT / "data" / "output" / "Production_Output" / "Estimation_Output.xlsx"
 
 R21C_FACTS_REL = (
     "data/output/PhaseR2.1C_engineering_fact_normalization/EngineeringFacts.json"
@@ -146,9 +154,39 @@ R13_MODELS_REL = (
     "data/output/PhaseR1.3_pipeline_integration/"
     "beam_reinforcement_models_production.json"
 )
-VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
-
-# Path used by existing R.2A factory discovery (do not change engineering code).
-R2A_GN_POINTER = (
-    V8_ROOT / "src" / "PhaseVROOT.1_dynamic_pipeline_initialization" / "beam_registry.json"
+T1_EVIDENCE_REL = (
+    "data/output/PhaseT1_geometric_stirrup_evidence/stirrup_geometry_evidence.json"
 )
+VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
+STEEL_SUMMARY_REL = "data/output/Production_Output/steel_weight_summary.json"
+ENGINEERING_TOTALS_REL = "data/output/Production_Output/engineering_totals.json"
+
+SOFT_ARTEFACTS = {
+    "R3": R3_CONTEXTS_REL,
+    "R31": R31_RELS_REL,
+    "R12A": R12A_CATALOG_REL,
+    "R13": R13_MODELS_REL,
+    "VB1": VB1_EXCEL_REL,
+    "L22": L22_REGISTRY_REL,
+    "R21D": R21D_FACTS_REL,
+    "R21C": R21C_FACTS_REL,
+    "R21B": (
+        "data/output/PhaseR2.1B_engineering_semantic_interpreter/"
+        "engineering_semantic_objects.json"
+    ),
+    "T1": T1_EVIDENCE_REL,
+}
+
+R2A_GN_POINTER = (
+    ENGINE_ROOT / "src" / "PhaseVROOT.1_dynamic_pipeline_initialization" / "beam_registry.json"
+)
+
+GN_POINTER_SOURCE = "UI.1_WEBAPP_POINTER"
+
+
+def t1_is_configured() -> bool:
+    return any(stage["id"] == "T1" for stage in PRODUCTION_STAGES)
+
+
+def t1_runner_path() -> Path:
+    return ENGINE_ROOT / "Run_PY" / "run_phase_t1_geometric_stirrup_evidence.py"

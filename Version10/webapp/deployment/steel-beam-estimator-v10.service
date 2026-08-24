@@ -1,0 +1,35 @@
+# systemd unit — Version10 Steel Beam Estimation (Phase W.3)
+# Does not replace steel-beam-estimator.service (8.9.5 on 127.0.0.1:8000).
+
+[Unit]
+Description=Steel Beam Estimation Version10 (Gunicorn)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp
+Environment=FLASK_ENV=production
+Environment=PYTHONUNBUFFERED=1
+Environment=MPLBACKEND=Agg
+Environment=GUNICORN_BIND=127.0.0.1:8001
+EnvironmentFile=-/opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/.env
+ExecStart=/opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/.venv/bin/gunicorn \
+    --config /opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/deployment/gunicorn.w3.conf.py \
+    --workers 1 \
+    --timeout 3600 \
+    --bind 127.0.0.1:8001 \
+    "wsgi:app"
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=60
+TimeoutStartSec=120
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

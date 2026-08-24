@@ -1,11 +1,11 @@
 """
-Steel Beam Estimation Web Application
-MODEL_VERSION: 8.9.5 (Version9 accuracy branch baseline)
+Steel Beam Estimation Web Application — Version10 adapter (Phase W.2).
 
-Presentation layer only. Invokes Version9 production runners.
-Does not modify engineering logic by itself.
+Presentation layer only. Invokes Version10 production runners via RunContext.
+Does not modify engineering logic.
 
-Run (from Version9/webapp):
+Run (from Version10/webapp):
+    pip install -r ../requirements.txt
     pip install -r requirements.txt
     python app.py
 
@@ -14,14 +14,14 @@ Then open http://127.0.0.1:5000
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 
 from flask import Flask
 
 import config
 from routes import bp
 
-MODEL_VERSION = "8.9.5"
+APP_RELEASE = config.APP_RELEASE
+ENGINE_LABEL = config.ENGINE_LABEL
 
 
 def create_app() -> Flask:
@@ -32,11 +32,14 @@ def create_app() -> Flask:
     )
     app.config["SECRET_KEY"] = config.SECRET_KEY
     app.config["MAX_CONTENT_LENGTH"] = config.MAX_CONTENT_LENGTH
-    app.config["MODEL_VERSION"] = MODEL_VERSION
+    app.config["APP_RELEASE"] = APP_RELEASE
+    app.config["ENGINE_LABEL"] = ENGINE_LABEL
+    app.config["ENGINE_DISPLAY"] = config.ENGINE_DISPLAY
 
     config.UPLOAD_ROOT.mkdir(parents=True, exist_ok=True)
     config.OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
     config.LOG_ROOT.mkdir(parents=True, exist_ok=True)
+    config.WEB_RUNS_ROOT.mkdir(parents=True, exist_ok=True)
 
     logging.basicConfig(
         level=logging.INFO,
@@ -50,5 +53,4 @@ app = create_app()
 
 
 if __name__ == "__main__":
-    # Development server. Production: gunicorn "app:app"
     app.run(host="0.0.0.0", port=5000, debug=False)

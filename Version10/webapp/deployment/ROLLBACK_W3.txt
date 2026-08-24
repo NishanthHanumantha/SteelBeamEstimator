@@ -1,0 +1,30 @@
+Phase W.3 rollback — keep 8.9.5 running on 127.0.0.1:8000.
+
+Lightsail snapshot: NOT created from this workstation (AWS CLI / credentials absent).
+Create one in the AWS Lightsail console before any destructive change:
+  Lightsail → Instances → Steel-Beam-Estimator → Snapshots → Create snapshot
+
+OLD (public until Nginx switch)
+  service:  steel-beam-estimator.service
+  directory: /opt/steel-beam-estimation/SteelBeamEstimator/Steel-Beam-Estimation/current_model
+  engine:   /opt/steel-beam-estimation/SteelBeamEstimator/Version8
+  gunicorn: 127.0.0.1:8000  workers=1
+  unit file backup: /opt/steel-beam-estimation/rollback-w3/steel-beam-estimator.service
+  nginx backup:     /opt/steel-beam-estimation/rollback-w3/steel-beam-estimator.conf
+
+NEW Version10 (loopback until Nginx switch)
+  service:  steel-beam-estimator-v10.service
+  directory: /opt/steel-beam-estimation/SteelBeamEstimator/Version10
+  webapp:   /opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp
+  venv:     /opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/.venv
+  gunicorn: 127.0.0.1:8001  workers=1  timeout=3600
+
+Rollback public traffic to 8.9.5:
+  sudo cp /opt/steel-beam-estimation/rollback-w3/steel-beam-estimator.conf \
+          /etc/nginx/sites-available/steel-beam-estimator.conf
+  sudo nginx -t && sudo systemctl reload nginx
+  curl -sS http://127.0.0.1/health
+  curl -sS http://13.127.104.99/health
+
+Do not delete the old application directory or stop steel-beam-estimator.service
+until later explicit approval.

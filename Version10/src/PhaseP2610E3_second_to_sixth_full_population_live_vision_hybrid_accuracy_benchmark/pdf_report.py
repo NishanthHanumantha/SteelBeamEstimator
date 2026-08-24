@@ -108,17 +108,56 @@ def build_lines(data: Dict[str, Any]) -> List[str]:
         "Set percentages are not averaged for the headline overall score.",
         f"Overall = mean(beam ID, bar ID, correct-of-detected, steel/weight). Diameter excluded.",
         "",
-        "7. SEMANTIC ERROR PROFILE",
+        "7. DIAMETER IDENTIFICATION (DETECTED BAR LINES)",
+        "QA.2A diameter_accuracy_pct is MATCH/detected and is not used here.",
+        "A detected bar is diameter-correct unless status is WRONG_DIAMETER.",
+        "GT diameter is the estimator line diameter. Pooled from raw counts. Diameter excluded from overall.",
+    ]
+    dia = data.get("diameter_wise") or {}
+    ident = dia.get("identification_rows") or []
+    if ident:
+        lines.append("Diameter | GT bar lines | Detected | MATCH | WRONG_DIA | Diameter ID | Note")
+        for row in ident:
+            lines.append(
+                f"{row.get('diameter_label')}: GT={row.get('gt_bar_lines')} detected={row.get('detected')} "
+                f"MATCH={row.get('match')} WRONG_DIA={row.get('wrong_diameter')} "
+                f"ID={_fmt(row.get('diameter_identification_percent'), suffix='%')} "
+                f"{row.get('note') or ''}".strip()
+            )
+    else:
+        lines.append("No diameter-wise identification rows.")
+    lines += [
+        "",
+        "8. DIAMETER-WISE STEEL QUANTITY (NOT THE SAME AS DIAMETER IDENTIFICATION)",
+        "Quantity ratio = automated kg / estimated kg x 100. It is not accuracy.",
+        "A ratio above 100% is an overestimate. kg pooled before difference and ratio.",
+    ]
+    steel_rows = dia.get("steel_rows") or []
+    if steel_rows:
+        lines.append("Diameter | Estimated kg | Automated kg | Difference kg | Abs % diff | Quantity ratio")
+        for row in steel_rows:
+            ratio = row.get("quantity_ratio_percent")
+            ratio_s = "-" if ratio is None else f"{float(ratio):.0f}%"
+            lines.append(
+                f"{row.get('diameter_label')}: est={_fmt(row.get('benchmark_kg') if row.get('benchmark_kg') is not None else row.get('estimator_kg'), 0)} "
+                f"auto={_fmt(row.get('model_kg'), 0)} diff={_fmt(row.get('difference_kg'), 0)} "
+                f"abs={_fmt(row.get('difference_pct'), 1, suffix='%')} ratio={ratio_s}"
+            )
+    else:
+        lines.append("No diameter-wise steel rows.")
+    lines += [
+        "",
+        "9. SEMANTIC ERROR PROFILE",
     ]
     for k, v in sorted((tax or {}).items(), key=lambda kv: -int(kv[1] or 0)):
         lines.append(f"{k}: {v}")
-    lines += ["", "8. ENGINEERING CALCULATION PROFILE"]
+    lines += ["", "10. ENGINEERING CALCULATION PROFILE"]
     if isinstance(eng, dict):
         for k, v in eng.items():
             if k in ("kind", "ranked"):
                 continue
             lines.append(f"{k}: {v}")
-    lines += ["", "9. HYBRID / FALLBACK COHORTS (pooled applicable subsets)"]
+    lines += ["", "11. HYBRID / FALLBACK COHORTS (pooled applicable subsets)"]
     for label in ("HYBRID_ONLY", "FALLBACK_ONLY", "FULL_POPULATION"):
         block = coh.get(label) or {}
         if not block.get("applicable"):
@@ -134,12 +173,12 @@ def build_lines(data: Dict[str, Any]) -> List[str]:
             )
     lines += [
         "",
-        "10. CURRENT WORKFLOW VALUE",
+        "12. CURRENT WORKFLOW VALUE",
         "Model-assisted estimation. Estimator verification required.",
         "Accuracy is not equivalent to time saved. No time study in this phase.",
         "Do not treat Vision API success as engineering accuracy.",
         "",
-        "11. METHODOLOGY, SOURCES AND LIMITATIONS",
+        "13. METHODOLOGY, SOURCES AND LIMITATIONS",
         "Truth: estimator Excel (evaluation-only). QA.2A BeamMatcher / BarMatcher / metric8.",
         "QA.3.0 four-KPI overall. Ground truth is never used in runtime semantic resolution.",
         f"Limitations: {', '.join(data.get('limitations') or [])}",

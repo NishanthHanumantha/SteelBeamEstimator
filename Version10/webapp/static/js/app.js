@@ -70,6 +70,13 @@
         updateMeta(slot);
         return;
       }
+      if (file.size <= 0) {
+        setError("The selected file is empty.");
+        input.value = "";
+        state.files[slot] = null;
+        updateMeta(slot);
+        return;
+      }
       setError("");
       state.files[slot] = file;
       updateMeta(slot);
@@ -89,6 +96,10 @@
         setError("Only .dxf files are allowed.");
         return;
       }
+      if (state.files[slot].size <= 0) {
+        setError("One or more selected files are empty.");
+        return;
+      }
     }
 
     const form = new FormData();
@@ -97,17 +108,23 @@
     form.append("reinforcement", state.files.reinforcement);
 
     setUploadsDisabled(true);
-    show("process");
-    el("process-message").textContent = "Uploading files...";
 
     try {
       const res = await fetch("/api/estimate", { method: "POST", body: form });
       const data = await res.json();
+      if (res.status === 409) {
+        setUploadsDisabled(false);
+        setError(data.error || "An estimation is currently running. Please wait and try again.");
+        return;
+      }
       if (!res.ok || !data.ok) {
-        throw new Error(data.error || "Unable to start estimation.");
+        setUploadsDisabled(false);
+        setError(data.error || "Unable to start estimation.");
+        return;
       }
       state.runId = data.run_id;
-      el("process-message").textContent = "Preparing estimation...";
+      show("process");
+      el("process-message").textContent = "Processing drawing...";
       startPolling();
     } catch (err) {
       setUploadsDisabled(false);
@@ -129,6 +146,13 @@
     }
   }
 
+  function formatSteel(kg) {
+    if (kg == null || kg === "") return "—";
+    const n = Number(kg);
+    if (Number.isNaN(n)) return String(kg);
+    return `${n} kg`;
+  }
+
   async function pollStatus() {
     if (!state.runId) return;
     try {
@@ -146,6 +170,18 @@
         el("success-workbook").textContent = data.workbook_name || "Estimation_Output.xlsx";
         el("success-duration").textContent =
           data.duration_s != null ? `${data.duration_s} seconds` : "—";
+        const summary = data.summary || {};
+        el("success-beams").textContent =
+          summary.total_beams != null ? String(summary.total_beams) : "—";
+        el("success-steel").textContent = formatSteel(summary.total_steel_kg);
+        const warnBox = el("success-warnings");
+        if (data.warnings && data.warnings.length) {
+          warnBox.textContent = data.warnings.join(" ");
+          warnBox.classList.remove("hidden");
+        } else {
+          warnBox.classList.add("hidden");
+          warnBox.textContent = "";
+        }
         el("btn-download").href = `/api/download/${state.runId}`;
         show("success");
       } else if (data.status === "error") {
