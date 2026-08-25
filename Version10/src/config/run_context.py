@@ -35,6 +35,7 @@ PHASE_R3 = "PhaseR3_geometry_context_engine"
 PHASE_R31 = "PhaseR3.1_engineering_relationship_engine"
 PHASE_R12A = "PhaseR1_2A_geometry_accuracy"
 PHASE_R13 = "PhaseR1.3_pipeline_integration"
+PHASE_W6 = "PhaseW6_hybrid_semantic_resolution"
 PHASE_VB1 = "Production_Output"
 
 

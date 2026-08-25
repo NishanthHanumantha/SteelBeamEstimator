@@ -20,6 +20,7 @@ from werkzeug.utils import secure_filename
 
 import config
 from services.flight_guard import GUARD
+from services.hybrid_shadow_service import maybe_run_hybrid_shadow
 from services.version10_adapter import AdapterError, invoke_version10_pipeline
 
 config.LOG_ROOT.mkdir(parents=True, exist_ok=True)
@@ -59,6 +60,7 @@ class JobState:
     stages_run: List[str] = field(default_factory=list)
     t1_executed: bool = False
     engine_root: str = ""
+    hybrid_summary: Dict[str, Any] = field(default_factory=dict)
 
 
 _JOBS: Dict[str, JobState] = {}
@@ -249,6 +251,13 @@ def start_estimation(
 
 
 def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
+    hybrid_cfg = None
+    try:
+        from PhaseW5_production_hybrid_shadow.settings import load_settings as _load_hybrid
+
+        hybrid_cfg = _load_hybrid()
+    except Exception:
+        hybrid_cfg = None
     try:
         _set_job(run_id, status="running", message="Preparing estimation...")
 
@@ -278,6 +287,25 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
         download_path = config.OUTPUT_ROOT / download_name
         shutil.copy2(excel, download_path)
 
+        pending_hybrid = None
+        if (
+            hybrid_cfg is not None
+            and hybrid_cfg.mode != "off"
+            and not config.hybrid_stage_configured()
+        ):
+            pending_hybrid = {
+                "hybrid_mode": hybrid_cfg.mode,
+                "hybrid_status": "PENDING",
+                "reason": "SHADOW_AFTER_EXCEL",
+                "request_count": 0,
+            }
+            _set_job(run_id, hybrid_summary=pending_hybrid)
+
+        hybrid_summary = maybe_run_hybrid_shadow(
+            run_id=run_id,
+            staging=staging,
+            settings=hybrid_cfg,
+        )
         _set_job(
             run_id,
             status="success",
@@ -290,6 +318,7 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             stages_run=result.stages_run,
             t1_executed=result.t1_executed,
             engine_root=result.engine_root,
+            hybrid_summary=hybrid_summary or pending_hybrid or {},
         )
         logger.info(
             "Pipeline complete run_id=%s excel=%s download=%s duration_s=%s "

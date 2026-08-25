@@ -126,6 +126,59 @@ def _write_stub_xlsx(path: Path) -> None:
         )
 
 
+def _write_stub_hybrid(staging: Path, run_id: str) -> None:
+    """Stub-pipeline Hybrid artefact. Does not invoke Claude."""
+    try:
+        from PhaseW5_production_hybrid_shadow.settings import load_settings
+
+        cfg = load_settings()
+        mode = cfg.mode
+        key = cfg.api_key_status
+    except Exception:
+        mode = "off"
+        key = "ABSENT"
+    if mode == "off":
+        return
+    if key != "PRESENT":
+        classification = "HYBRID_UNAVAILABLE"
+        status = "KEY_ABSENT"
+        reason = "ANTHROPIC_API_KEY_ABSENT" if key == "ABSENT" else "ANTHROPIC_API_KEY_EMPTY"
+    else:
+        classification = "HYBRID_UNAVAILABLE"
+        status = "NO_ENGINEERING_CONTEXT"
+        reason = "STUB_PIPELINE_NO_R13"
+    rel = getattr(config, "W6_OBSERVABILITY_REL", None) or (
+        "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_observability.json"
+    )
+    path = staging / rel
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "phase_id": "W.6",
+                "run_id": run_id,
+                "hybrid_mode": mode,
+                "hybrid_enabled": True,
+                "hybrid_invocation_attempted": False,
+                "api_key_configured": key == "PRESENT",
+                "classification": classification,
+                "hybrid_status": status,
+                "reason": reason,
+                "production_authority": "semantic_only" if mode == "production" else "none",
+                "production_authority_applied": False,
+                "claude_invocation_count": 0,
+                "request_count": 0,
+                "successful_invocation_count": 0,
+                "failed_invocation_count": 0,
+                "fallback_used": True,
+                "stub": True,
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+
 def _run_stub_pipeline(run_id: str, staging: Path) -> None:
     fail_stage = (os.environ.get("STEEL_WEB_FAIL_STAGE") or "").strip()
     for stage in config.PRODUCTION_STAGES:
@@ -135,6 +188,9 @@ def _run_stub_pipeline(run_id: str, staging: Path) -> None:
                 "Check webapp/logs/webapp.log for details, then try again."
             )
         rel = config.SOFT_ARTEFACTS.get(stage["id"])
+        if stage["id"] == "HYBRID":
+            _write_stub_hybrid(staging, run_id)
+            continue
         if rel:
             artefact = staging / rel
             artefact.parent.mkdir(parents=True, exist_ok=True)
@@ -279,6 +335,22 @@ def invoke_version10_pipeline(
                     on_stage(stage["id"], stage["label"])
                 _run_live_stage(stage, staging)
                 stages_run.append(stage["id"])
+                if stage["id"] == "HYBRID":
+                    w6 = staging / getattr(
+                        config,
+                        "W6_OBSERVABILITY_REL",
+                        "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_observability.json",
+                    )
+                    if w6.is_file():
+                        try:
+                            obs = json.loads(w6.read_text(encoding="utf-8"))
+                        except (OSError, json.JSONDecodeError):
+                            obs = {}
+                        if obs.get("fallback_used"):
+                            warnings.append(
+                                "Hybrid semantic fallback used: "
+                                f"{obs.get('classification') or obs.get('reason')}"
+                            )
 
         required = {
             "EngineeringFacts.json": staging / config.R21D_FACTS_REL,

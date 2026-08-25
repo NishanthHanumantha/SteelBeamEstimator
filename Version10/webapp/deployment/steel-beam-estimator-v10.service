@@ -1,5 +1,7 @@
-# systemd unit — Version10 Steel Beam Estimation (Phase W.3)
+# systemd unit — Version10 Steel Beam Estimation (Phase W.8)
 # Does not replace steel-beam-estimator.service (8.9.5 on 127.0.0.1:8000).
+# Hybrid production authority is off unless /etc/steel-beam-estimator-v10.env
+# sets HYBRID_MODE=production and supplies ANTHROPIC_API_KEY.
 
 [Unit]
 Description=Steel Beam Estimation Version10 (Gunicorn)
@@ -15,6 +17,8 @@ Environment=FLASK_ENV=production
 Environment=PYTHONUNBUFFERED=1
 Environment=MPLBACKEND=Agg
 Environment=GUNICORN_BIND=127.0.0.1:8001
+Environment=HYBRID_MODE=off
+EnvironmentFile=-/etc/steel-beam-estimator-v10.env
 EnvironmentFile=-/opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/.env
 ExecStart=/opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/.venv/bin/gunicorn \
     --config /opt/steel-beam-estimation/SteelBeamEstimator/Version10/webapp/deployment/gunicorn.w3.conf.py \

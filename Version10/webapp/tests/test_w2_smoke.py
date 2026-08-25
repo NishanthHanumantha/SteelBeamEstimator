@@ -57,6 +57,7 @@ class W2SmokeTests(unittest.TestCase):
 
     def setUp(self) -> None:
         os.environ["STEEL_WEB_PIPELINE_MODE"] = "stub"
+        os.environ["HYBRID_MODE"] = "off"
         os.environ.pop("STEEL_WEB_FAIL_STAGE", None)
         with _LOCK:
             _JOBS.clear()

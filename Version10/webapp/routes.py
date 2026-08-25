@@ -28,6 +28,23 @@ def _engine_ready() -> bool:
     return (config.ENGINE_ROOT / "Run_PY").is_dir() and config.t1_runner_path().exists()
 
 
+def _hybrid_health() -> dict:
+    try:
+        from services.hybrid_shadow_service import hybrid_health
+
+        return hybrid_health()
+    except Exception:
+        return {
+            "mode": "unknown",
+            "api_key_status": "UNKNOWN",
+            "api_key_configured": False,
+            "production_excel_invokes_claude": False,
+            "shadow_may_invoke_claude": False,
+            "authoritative_enabled": False,
+            "production_authority": "none",
+        }
+
+
 @bp.get("/health")
 def health():
     from datetime import datetime, timezone
@@ -36,7 +53,7 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "steel-beam-estimation",
-        "phase": "W.3",
+        "phase": "W.8",
         "app_release": current_app.config.get("APP_RELEASE"),
         "engine_label": current_app.config.get("ENGINE_LABEL"),
         "engine_display": current_app.config.get("ENGINE_DISPLAY"),
@@ -54,6 +71,7 @@ def health():
             "STEEL_RUN_ROOT": "<web_runs>/<run_id>",
             "STEEL_OUTPUT_ROOT": "<web_runs>/<run_id>/data/output",
         },
+        "hybrid": _hybrid_health(),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
@@ -108,6 +126,7 @@ def api_status(run_id: str):
         "stages_run": job.stages_run,
         "t1_executed": job.t1_executed,
         "engine_root": job.engine_root,
+        "hybrid": job.hybrid_summary or None,
     })
 
 

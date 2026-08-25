@@ -28,22 +28,50 @@ def _estimate_tokens(text: str) -> int:
     return max(1, len(text) // 4)
 
 
-def load_api_key() -> str:
-    """Load ANTHROPIC_API_KEY from the repository root .env file."""
-    dotenv_path = ClaudeConfig.DOTENV_PATH
-    if not dotenv_path.exists():
-        raise ClaudeAuthenticationError(
-            f".env file not found at {dotenv_path}. "
-            f"Create it with {ClaudeConfig.API_KEY_ENV}=<your-key>."
-        )
+def _dotenv_candidates() -> list:
+    """Process env first; then optional dotenv files. Never log file contents."""
+    from pathlib import Path
 
-    load_dotenv(dotenv_path, override=True)
-    api_key = os.getenv(ClaudeConfig.API_KEY_ENV)
-    if not api_key:
-        raise ClaudeAuthenticationError(
-            f"{ClaudeConfig.API_KEY_ENV} is missing in {dotenv_path}."
-        )
-    return api_key
+    candidates = []
+    override = os.getenv("ANTHROPIC_DOTENV_PATH")
+    if override:
+        candidates.append(Path(override))
+    candidates.append(ClaudeConfig.DOTENV_PATH)
+    here = Path(__file__).resolve()
+    try:
+        candidates.append(here.parents[3] / ".env")
+    except IndexError:
+        pass
+    try:
+        candidates.append(here.parents[2] / ".env")
+    except IndexError:
+        pass
+    return candidates
+
+
+def load_api_key() -> str:
+    """Load ANTHROPIC_API_KEY from the process environment, then dotenv files."""
+    existing = os.getenv(ClaudeConfig.API_KEY_ENV)
+    if existing and str(existing).strip():
+        return str(existing).strip()
+
+    seen = set()
+    for dotenv_path in _dotenv_candidates():
+        key = str(dotenv_path)
+        if key in seen:
+            continue
+        seen.add(key)
+        if not dotenv_path.exists():
+            continue
+        load_dotenv(dotenv_path, override=False)
+        api_key = os.getenv(ClaudeConfig.API_KEY_ENV)
+        if api_key and str(api_key).strip():
+            return str(api_key).strip()
+
+    raise ClaudeAuthenticationError(
+        f"{ClaudeConfig.API_KEY_ENV} is not set in the process environment "
+        "and no usable .env file was found."
+    )
 
 
 def map_sdk_exception(exc: Exception) -> ClaudeAPIError:

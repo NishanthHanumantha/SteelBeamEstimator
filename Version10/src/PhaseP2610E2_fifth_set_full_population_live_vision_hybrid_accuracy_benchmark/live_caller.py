@@ -50,17 +50,21 @@ def call_live_beam(
     context_source: str,
     detail_source: str,
     client_override: Optional[Callable] = None,
+    context_path: Optional[Path] = None,
+    detail_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
     attempts = 0
     last: Dict[str, Any] = {}
     schema_attempts = 0
+    ctx = Path(context_path or render_path)
+    det = Path(detail_path or render_path)
     while attempts < MAX_API_ATTEMPTS:
         attempts += 1
         last = call_selected_beam(
             version10_root=version10_root,
             beam_id=beam_id,
-            context_path=Path(render_path),
-            detail_path=Path(render_path),
+            context_path=ctx,
+            detail_path=det,
             context_source=context_source,
             detail_source=detail_source,
             client_override=client_override,

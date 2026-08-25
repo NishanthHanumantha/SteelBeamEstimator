@@ -15,7 +15,7 @@ ENGINE_ROOT = WEBAPP_ROOT.parent
 V8_ROOT = ENGINE_ROOT
 REPO_ROOT = ENGINE_ROOT.parent
 
-APP_RELEASE = "W.3"
+APP_RELEASE = "W.8"
 ENGINE_LABEL = "Version10"
 ENGINE_DISPLAY = "Version10 production pipeline"
 
@@ -121,6 +121,13 @@ PRODUCTION_STAGES = [
         "timeout_s": 1200,
     },
     {
+        "id": "HYBRID",
+        "label": "Resolving reinforcement semantics...",
+        "script": "Run_PY/run_phase_w6_hybrid_production_authority.py",
+        "uses_input_folder": False,
+        "timeout_s": 7200,
+    },
+    {
         "id": "VB1",
         "label": "Generating estimation workbook...",
         "script": "Run_PY/run_phase_vb1_production_output_completion.py",
@@ -161,11 +168,19 @@ VB1_EXCEL_REL = "data/output/Production_Output/Estimation_Output.xlsx"
 STEEL_SUMMARY_REL = "data/output/Production_Output/steel_weight_summary.json"
 ENGINEERING_TOTALS_REL = "data/output/Production_Output/engineering_totals.json"
 
+W6_OBSERVABILITY_REL = (
+    "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_observability.json"
+)
+W6_RESOLUTION_REL = (
+    "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_resolution.json"
+)
+
 SOFT_ARTEFACTS = {
     "R3": R3_CONTEXTS_REL,
     "R31": R31_RELS_REL,
     "R12A": R12A_CATALOG_REL,
     "R13": R13_MODELS_REL,
+    "HYBRID": W6_OBSERVABILITY_REL,
     "VB1": VB1_EXCEL_REL,
     "L22": L22_REGISTRY_REL,
     "R21D": R21D_FACTS_REL,
@@ -190,3 +205,10 @@ def t1_is_configured() -> bool:
 
 def t1_runner_path() -> Path:
     return ENGINE_ROOT / "Run_PY" / "run_phase_t1_geometric_stirrup_evidence.py"
+
+
+HYBRID_OUTPUT_REL = "data/output/PhaseW5_production_hybrid_shadow/hybrid_shadow_report.json"
+
+
+def hybrid_stage_configured() -> bool:
+    return any(stage["id"] == "HYBRID" for stage in PRODUCTION_STAGES)
