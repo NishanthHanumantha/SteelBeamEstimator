@@ -65,8 +65,78 @@ def prepare_production_evidence(staging: Path, *, beam_ids: List[str]) -> Dict[s
         "multiple_detail_beams": 0,
         "distinct_context_detail": 0,
     }
-    for bid in beam_ids:
-        rec = build_beam_evidence(staging=staging, beam_id=str(bid), session=session)
+    run_id = Path(staging).name
+    evidence_timeout_s = 120.0
+    try:
+        from PhaseW5_production_hybrid_shadow.settings import load_settings as _load_hybrid
+
+        evidence_timeout_s = float(getattr(_load_hybrid(), "evidence_timeout_s", 120.0) or 0)
+    except Exception:
+        evidence_timeout_s = 120.0
+    try:
+        from PhaseW11_hybrid_reliability.bounded import TimeoutExpired, run_with_timeout
+        from PhaseW11_hybrid_reliability.config import (
+            PHASE_EVIDENCE,
+            STATUS_EVIDENCE_TIMEOUT,
+        )
+        from PhaseW11_hybrid_reliability.progress import write_progress
+    except Exception:
+        TimeoutExpired = TimeoutError  # type: ignore[misc,assignment]
+
+        def run_with_timeout(fn, timeout_s):  # type: ignore[no-redef]
+            return fn()
+
+        PHASE_EVIDENCE = "EVIDENCE_GENERATION"
+        STATUS_EVIDENCE_TIMEOUT = "EVIDENCE_TIMEOUT"
+
+        def write_progress(*_a, **_k):  # type: ignore[no-redef]
+            return None
+
+    total_n = len(beam_ids)
+    for i, bid in enumerate(beam_ids, 1):
+        write_progress(
+            staging,
+            run_id=run_id,
+            phase=PHASE_EVIDENCE,
+            beam_id=str(bid),
+            index=i,
+            total=total_n,
+        )
+        try:
+            rec = run_with_timeout(
+                lambda b=str(bid): build_beam_evidence(
+                    staging=staging, beam_id=b, session=session
+                ),
+                evidence_timeout_s,
+            )
+        except (TimeoutExpired, TimeoutError):
+            logger.warning(
+                "W.8 evidence timed out beam_id=%s timeout_s=%s",
+                bid,
+                evidence_timeout_s,
+            )
+            rec = {
+                "ok": False,
+                "available": False,
+                "beam_id": str(bid),
+                "evidence_class": CLASS_UNAVAILABLE,
+                "visual_source": None,
+                "context_path": None,
+                "detail_path": None,
+                "path": None,
+                "fallback_status": CLASS_UNAVAILABLE,
+                "fallback_reason": STATUS_EVIDENCE_TIMEOUT,
+                "manifest": {
+                    "beam_id": str(bid),
+                    "available": False,
+                    "evidence_class": CLASS_UNAVAILABLE,
+                    "fallback_status": CLASS_UNAVAILABLE,
+                    "fallback_reason": STATUS_EVIDENCE_TIMEOUT,
+                    "timeout_status": STATUS_EVIDENCE_TIMEOUT,
+                },
+                "reason": STATUS_EVIDENCE_TIMEOUT,
+                "timeout_status": STATUS_EVIDENCE_TIMEOUT,
+            }
         _dump_manifest(manifest_path(staging, str(bid)), rec.get("manifest") or {})
         by_id[str(bid)] = rec
         cls = rec.get("evidence_class")

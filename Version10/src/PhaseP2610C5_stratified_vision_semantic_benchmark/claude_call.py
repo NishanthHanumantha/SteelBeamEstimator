@@ -41,6 +41,8 @@ def call_selected_beam(
     context_source: str,
     detail_source: str,
     client_override=None,
+    timeout_s=None,
+    max_attempts=None,
 ) -> Dict[str, Any]:
     user_prompt = build_user_prompt(
         beam_id=beam_id,
@@ -62,6 +64,8 @@ def call_selected_beam(
             system_prompt=SYSTEM_PROMPT,
             user_prompt=user_prompt,
             images=images,
+            timeout_s=timeout_s,
+            max_attempts=max_attempts,
         )
     audit = {
         "success": bool(call.get("success")),

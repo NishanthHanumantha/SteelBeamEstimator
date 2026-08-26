@@ -38,6 +38,23 @@ from .semantic import resolve_semantic
 from .settings import HybridSettings, load_settings
 from .visual_sources import discover_visuals
 
+try:
+    from PhaseW11_hybrid_reliability.bounded import TimeoutExpired, run_with_timeout
+    from PhaseW11_hybrid_reliability.config import PHASE_FALLBACK, PHASE_VISION, STATUS_VISION_TIMEOUT
+    from PhaseW11_hybrid_reliability.progress import write_progress
+except Exception:  # pragma: no cover - fail-safe if W.11 package missing
+    TimeoutExpired = TimeoutError  # type: ignore[misc,assignment]
+
+    def run_with_timeout(fn, timeout_s):  # type: ignore[no-redef]
+        return fn()
+
+    PHASE_FALLBACK = "DETERMINISTIC_FALLBACK"
+    PHASE_VISION = "CLAUDE_VISION"
+    STATUS_VISION_TIMEOUT = "VISION_TIMEOUT"
+
+    def write_progress(*_a, **_k):  # type: ignore[no-redef]
+        return None
+
 logger = logging.getLogger("steel_webapp.hybrid_shadow")
 
 
@@ -260,11 +277,16 @@ def _run_shadow_body(
     cache_hits = 0
     input_tokens = 0
     output_tokens = 0
+    timeout_count = 0
     seen_calls: Dict[str, Dict[str, Any]] = {}
     budget_hit = False
     deadline = None
     if float(settings.max_wall_s) > 0:
         deadline = started + float(settings.max_wall_s)
+    vision_attempts = max(1, int(getattr(settings, "max_retries", 1) or 0) + 1)
+    beam_budget = float(getattr(settings, "total_beam_timeout_s", 0) or 0)
+    per_call = float(settings.per_call_timeout_s or 0)
+    total_n = len(beam_ids)
 
     models = catalog.get("by_id") or {}
     for beam_id in beam_ids:
@@ -333,20 +355,85 @@ def _run_shadow_body(
             row["cache_hit"] = True
             row["called"] = False
         else:
+            write_progress(
+                staging,
+                run_id=run_id,
+                phase=PHASE_VISION,
+                beam_id=beam_id,
+                index=len(observations) + 1,
+                total=total_n,
+                started_at=started_iso,
+            )
+            claude_started = datetime.now(timezone.utc).isoformat()
+            claude_t0 = time.perf_counter()
+            row["claude_started_at"] = claude_started
+            row["attempt_number"] = 1
             try:
-                live = call_shadow_beam(
-                    version10_root=ENGINE_ROOT,
-                    beam_id=beam_id,
-                    render_path=Path(context_path or vis["path"]),
-                    context_path=Path(context_path) if context_path else None,
-                    detail_path=Path(detail_path) if detail_path else None,
-                    context_source=str(vis.get("context_source") or vis.get("source") or "W8_EVIDENCE"),
-                    detail_source=str(vis.get("detail_source") or vis.get("source") or "W8_EVIDENCE"),
-                    client_override=client_override,
-                )
+
+                def _invoke(
+                    bid=beam_id,
+                    ctxp=context_path,
+                    detp=detail_path,
+                    vis_local=vis,
+                ):
+                    return call_shadow_beam(
+                        version10_root=ENGINE_ROOT,
+                        beam_id=bid,
+                        render_path=Path(ctxp or vis_local["path"]),
+                        context_path=Path(ctxp) if ctxp else None,
+                        detail_path=Path(detp) if detp else None,
+                        context_source=str(
+                            vis_local.get("context_source")
+                            or vis_local.get("source")
+                            or "W8_EVIDENCE"
+                        ),
+                        detail_source=str(
+                            vis_local.get("detail_source")
+                            or vis_local.get("source")
+                            or "W8_EVIDENCE"
+                        ),
+                        client_override=client_override,
+                        timeout_s=per_call if per_call > 0 else None,
+                        max_attempts=vision_attempts,
+                        max_api_attempts=1,
+                    )
+
+                live = run_with_timeout(_invoke, beam_budget)
                 request_count += 1
                 row["called"] = True
                 seen_calls[cache_key] = live
+            except (TimeoutExpired, TimeoutError) as exc:
+                timeout_count += 1
+                logger.warning(
+                    "Hybrid live call timed out run_id=%s beam_id=%s error_type=%s",
+                    run_id,
+                    beam_id,
+                    type(exc).__name__,
+                )
+                write_progress(
+                    staging,
+                    run_id=run_id,
+                    phase=PHASE_FALLBACK,
+                    beam_id=beam_id,
+                    index=len(observations) + 1,
+                    total=total_n,
+                    extra="Vision call timed out — continuing with deterministic fallback...",
+                    started_at=started_iso,
+                )
+                row["hybrid_status"] = HYBRID_UNAVAILABLE
+                row["error_type"] = type(exc).__name__
+                row["skip_reason"] = STATUS_VISION_TIMEOUT
+                row["timeout_status"] = STATUS_VISION_TIMEOUT
+                row["claude_ended_at"] = datetime.now(timezone.utc).isoformat()
+                row["claude_duration_s"] = round(time.perf_counter() - claude_t0, 3)
+                row["comparison"] = classify_beam(
+                    beam_id=beam_id,
+                    hybrid=None,
+                    status=HYBRID_UNAVAILABLE,
+                    error=STATUS_VISION_TIMEOUT,
+                )
+                observations.append(row)
+                continue
             except Exception as exc:
                 logger.warning(
                     "Hybrid live call failed run_id=%s beam_id=%s error_type=%s",
@@ -357,6 +444,8 @@ def _run_shadow_body(
                 row["hybrid_status"] = HYBRID_ERROR
                 row["error_type"] = type(exc).__name__
                 row["skip_reason"] = "LIVE_CALL_EXCEPTION"
+                row["claude_ended_at"] = datetime.now(timezone.utc).isoformat()
+                row["claude_duration_s"] = round(time.perf_counter() - claude_t0, 3)
                 row["comparison"] = classify_beam(
                     beam_id=beam_id,
                     hybrid=None,
@@ -365,6 +454,10 @@ def _run_shadow_body(
                 )
                 observations.append(row)
                 continue
+            row["claude_ended_at"] = datetime.now(timezone.utc).isoformat()
+            row["claude_duration_s"] = round(time.perf_counter() - claude_t0, 3)
+            row["retry_count"] = (live or {}).get("retry_count")
+            row["timeout_status"] = None
 
         audit = (live or {}).get("audit") if isinstance(live, dict) else None
         usage_payload = dict(audit) if isinstance(audit, dict) else {}
@@ -489,7 +582,8 @@ def _run_shadow_body(
         "estimated_cost_usd": cost["estimated_cost_usd"],
         "cost_basis": cost["cost_basis"],
         "hybrid_latency_s": elapsed,
-        "timeout": budget_hit,
+        "timeout": budget_hit or timeout_count > 0,
+        "timeout_count": timeout_count,
         "error_classification": reason if hybrid_status in (STATUS_ERROR, STATUS_KEY_ABSENT) else None,
         "agreement_counts": counts,
         "excel_fingerprint": _excel_fingerprint(staging),

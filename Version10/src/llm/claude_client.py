@@ -103,7 +103,12 @@ class ClaudeClient:
     def __init__(self, config: type[ClaudeConfig] = ClaudeConfig) -> None:
         self._config = config
         api_key = load_api_key()
-        self._client = Anthropic(api_key=api_key, timeout=float(config.TIMEOUT_SECONDS))
+        # Application layer owns retries. SDK retries would multiply wait time.
+        self._client = Anthropic(
+            api_key=api_key,
+            timeout=float(config.TIMEOUT_SECONDS),
+            max_retries=0,
+        )
 
     def generate_response(
         self,
@@ -176,6 +181,8 @@ class ClaudeClient:
         prompt: str,
         images: list[dict[str, Any]],
         system_prompt: str | None = None,
+        timeout_s: float | None = None,
+        max_attempts: int | None = None,
     ) -> dict[str, Any]:
         """
         Execute a Claude vision request with image content blocks.
@@ -203,7 +210,14 @@ class ClaudeClient:
         estimated_input_tokens = _estimate_tokens(prompt) + _estimate_tokens(system_prompt or "")
 
         last_error: Exception | None = None
-        for attempt in range(1, self._config.MAX_RETRIES + 1):
+        attempts = int(max_attempts) if max_attempts is not None else int(self._config.MAX_RETRIES)
+        attempts = max(1, attempts)
+        call_timeout = (
+            float(timeout_s)
+            if timeout_s is not None
+            else float(self._config.TIMEOUT_SECONDS)
+        )
+        for attempt in range(1, attempts + 1):
             started = time.perf_counter()
             try:
                 kwargs: dict[str, Any] = {
@@ -211,6 +225,7 @@ class ClaudeClient:
                     "max_tokens": self._config.MAX_OUTPUT_TOKENS,
                     "temperature": self._config.TEMPERATURE,
                     "messages": messages,
+                    "timeout": call_timeout,
                 }
                 if system_prompt:
                     kwargs["system"] = system_prompt
@@ -257,7 +272,7 @@ class ClaudeClient:
                     attempt,
                     type(mapped).__name__,
                 )
-                if attempt >= self._config.MAX_RETRIES:
+                if attempt >= attempts:
                     break
                 time.sleep(min(2 ** (attempt - 1), 8))
 

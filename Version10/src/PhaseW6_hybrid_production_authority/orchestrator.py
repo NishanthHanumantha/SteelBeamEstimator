@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Dict, Optional
@@ -156,10 +157,30 @@ def run_production_hybrid(
 
     catalog = load_r13_catalog(staging)
     visual_prep = {"rendered": 0, "t1_available": 0}
+    try:
+        from PhaseW11_hybrid_reliability.config import PHASE_COMPLETE, PHASE_EVIDENCE, PHASE_RESOLUTION
+        from PhaseW11_hybrid_reliability.progress import write_progress
+    except Exception:
+        PHASE_COMPLETE = PHASE_EVIDENCE = PHASE_RESOLUTION = "HYBRID"
+        def write_progress(*_a, **_k):
+            return None
+    write_progress(
+        staging,
+        run_id=run_id,
+        phase=PHASE_EVIDENCE,
+        extra="Preparing visual evidence...",
+        started_at=started_iso,
+        extra_fields={"hybrid_stage_started_at": started_iso},
+    )
     if catalog.get("ok"):
+        evidence_t0 = time.perf_counter()
         visual_prep = ensure_visuals(
             staging, beam_ids=list(catalog.get("beam_ids") or [])
         )
+        if isinstance(visual_prep, dict):
+            visual_prep["evidence_generation_duration_s"] = round(
+                time.perf_counter() - evidence_t0, 3
+            )
 
     shadow = run_hybrid_shadow(
         run_id=run_id,
@@ -167,6 +188,13 @@ def run_production_hybrid(
         client_override=client_override,
         settings=cfg,
         persist=True,
+    )
+    write_progress(
+        staging,
+        run_id=run_id,
+        phase=PHASE_RESOLUTION,
+        extra="Completing deterministic engineering...",
+        started_at=started_iso,
     )
     apply = cfg.mode == MODE_PRODUCTION
     try:
@@ -299,6 +327,59 @@ def run_production_hybrid(
             },
         )
         _dump(out / COVERAGE_FILENAME, coverage)
+        try:
+            from PhaseW10_hybrid_production_monitoring.writer import write_run_monitor
+
+            write_run_monitor(
+                staging=staging,
+                run_id=run_id,
+                live_result={
+                    "hybrid_mode": cfg.mode,
+                    "classification": classification,
+                    "evidence_generation_duration_s": (
+                        visual_prep.get("evidence_generation_duration_s")
+                        if isinstance(visual_prep, dict)
+                        else None
+                    ),
+                },
+            )
+        except Exception as exc:
+            logger.warning("W.10 monitoring failed error_type=%s", type(exc).__name__)
+        try:
+            from PhaseW11_hybrid_reliability.config import LIFECYCLE_FILENAME
+
+            ended_iso = datetime.now(timezone.utc).isoformat()
+            _dump(
+                out / LIFECYCLE_FILENAME,
+                {
+                    "run_id": run_id,
+                    "hybrid_mode": cfg.mode,
+                    "started_at": started_iso,
+                    "ended_at": ended_iso,
+                    "hybrid_duration_s": observability.get("hybrid_latency_s"),
+                    "evidence_generation_duration_s": (
+                        visual_prep.get("evidence_generation_duration_s")
+                        if isinstance(visual_prep, dict)
+                        else None
+                    ),
+                    "final_hybrid_status": classification,
+                    "claude_attempted": observability.get("claude_invocation_count"),
+                    "claude_successful": observability.get("successful_invocation_count"),
+                    "claude_failed": observability.get("failed_invocation_count"),
+                    "timeout_count": (shadow.get("timeout_count") if isinstance(shadow, dict) else None),
+                    "fallback_used": observability.get("fallback_used"),
+                },
+            )
+            write_progress(
+                staging,
+                run_id=run_id,
+                phase=PHASE_COMPLETE,
+                extra="Completing deterministic engineering...",
+                started_at=started_iso,
+                extra_fields={"hybrid_stage_ended_at": ended_iso},
+            )
+        except Exception as exc:
+            logger.warning("W.11 lifecycle persist failed error_type=%s", type(exc).__name__)
     result = {
         "ok": True,
         "phase_id": PHASE_ID,

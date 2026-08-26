@@ -8,16 +8,22 @@ from typing import Optional
 from .config import (
     ALLOWED_MODES,
     AUTHORITATIVE_ENABLED,
+    DEFAULT_EVIDENCE_TIMEOUT_S,
     DEFAULT_MAX_LIVE_CALLS,
+    DEFAULT_MAX_RETRIES,
     DEFAULT_MAX_WALL_S,
     DEFAULT_PER_CALL_TIMEOUT_S,
+    DEFAULT_TOTAL_BEAM_TIMEOUT_S,
     ENV_API_KEY,
     ENV_DOTENV_PATH,
     ENV_HYBRID_MODE,
+    ENV_EVIDENCE_TIMEOUT_S,
     ENV_MAX_LIVE_CALLS,
+    ENV_MAX_RETRIES,
     ENV_MAX_WALL_S,
     ENV_MODEL,
     ENV_PER_CALL_TIMEOUT_S,
+    ENV_TOTAL_BEAM_TIMEOUT_S,
     MODE_AUTHORITATIVE,
     MODE_OFF,
     MODE_PRODUCTION,
@@ -89,6 +95,9 @@ class HybridSettings:
     per_call_timeout_s: float
     dotenv_override: Optional[str]
     authoritative_enabled: bool = AUTHORITATIVE_ENABLED
+    max_retries: int = DEFAULT_MAX_RETRIES
+    total_beam_timeout_s: float = DEFAULT_TOTAL_BEAM_TIMEOUT_S
+    evidence_timeout_s: float = DEFAULT_EVIDENCE_TIMEOUT_S
 
     @property
     def shadow_requested(self) -> bool:
@@ -110,6 +119,9 @@ class HybridSettings:
             "max_live_calls": self.max_live_calls,
             "max_wall_s": self.max_wall_s,
             "per_call_timeout_s": self.per_call_timeout_s,
+            "max_retries": self.max_retries,
+            "total_beam_timeout_s": self.total_beam_timeout_s,
+            "evidence_timeout_s": self.evidence_timeout_s,
             "dotenv_override_configured": bool(self.dotenv_override),
             "authoritative_enabled": self.authoritative_enabled,
             "live_calls_allowed": self.live_calls_allowed,
@@ -140,6 +152,13 @@ def load_settings() -> HybridSettings:
             ENV_PER_CALL_TIMEOUT_S, DEFAULT_PER_CALL_TIMEOUT_S
         ),
         dotenv_override=dotenv,
+        max_retries=_positive_int(ENV_MAX_RETRIES, DEFAULT_MAX_RETRIES),
+        total_beam_timeout_s=_positive_float(
+            ENV_TOTAL_BEAM_TIMEOUT_S, DEFAULT_TOTAL_BEAM_TIMEOUT_S
+        ),
+        evidence_timeout_s=_positive_float(
+            ENV_EVIDENCE_TIMEOUT_S, DEFAULT_EVIDENCE_TIMEOUT_S
+        ),
     )
 
 
@@ -160,5 +179,9 @@ def health_payload(settings: Optional[HybridSettings] = None) -> dict:
         "production_may_invoke_claude": cfg.mode == MODE_PRODUCTION and key_present,
         "max_live_calls": cfg.max_live_calls,
         "max_wall_s": cfg.max_wall_s,
+        "per_call_timeout_s": cfg.per_call_timeout_s,
+        "max_retries": cfg.max_retries,
+        "total_beam_timeout_s": cfg.total_beam_timeout_s,
+        "evidence_timeout_s": cfg.evidence_timeout_s,
         "live_calls_allowed": cfg.live_calls_allowed,
     }

@@ -99,6 +99,8 @@ def call_claude_vision(
     system_prompt: str,
     user_prompt: str,
     images: List[Dict[str, Any]],
+    timeout_s: float | None = None,
+    max_attempts: int | None = None,
 ) -> Dict[str, Any]:
     """
     Call Claude with vision evidence.
@@ -119,6 +121,8 @@ def call_claude_vision(
             prompt=user_prompt,
             images=img_payload,
             system_prompt=system_prompt,
+            timeout_s=timeout_s,
+            max_attempts=max_attempts,
         )
         return {
             "success": True,

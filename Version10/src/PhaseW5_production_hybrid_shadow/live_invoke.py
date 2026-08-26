@@ -17,6 +17,9 @@ def call_shadow_beam(
     detail_path: Optional[Path] = None,
     context_source: Optional[str] = None,
     detail_source: Optional[str] = None,
+    timeout_s: Optional[float] = None,
+    max_attempts: Optional[int] = None,
+    max_api_attempts: Optional[int] = None,
 ) -> Dict[str, Any]:
     ensure_src_on_path()
     from PhaseP2610E2_fifth_set_full_population_live_vision_hybrid_accuracy_benchmark.live_caller import (  # noqa: WPS433
@@ -36,4 +39,7 @@ def call_shadow_beam(
         context_source=str(ctx_src),
         detail_source=str(det_src),
         client_override=client_override,
+        timeout_s=timeout_s,
+        max_attempts=max_attempts,
+        max_api_attempts=max_api_attempts,
     )

@@ -52,13 +52,18 @@ def call_live_beam(
     client_override: Optional[Callable] = None,
     context_path: Optional[Path] = None,
     detail_path: Optional[Path] = None,
+    timeout_s: Optional[float] = None,
+    max_attempts: Optional[int] = None,
+    max_api_attempts: Optional[int] = None,
 ) -> Dict[str, Any]:
     attempts = 0
     last: Dict[str, Any] = {}
     schema_attempts = 0
     ctx = Path(context_path or render_path)
     det = Path(detail_path or render_path)
-    while attempts < MAX_API_ATTEMPTS:
+    api_limit = int(max_api_attempts) if max_api_attempts is not None else MAX_API_ATTEMPTS
+    api_limit = max(1, api_limit)
+    while attempts < api_limit:
         attempts += 1
         last = call_selected_beam(
             version10_root=version10_root,
@@ -68,11 +73,17 @@ def call_live_beam(
             context_source=context_source,
             detail_source=detail_source,
             client_override=client_override,
+            timeout_s=timeout_s,
+            max_attempts=max_attempts,
         )
         audit = last.get("audit") or {}
         parsed = last.get("parsed") or unusable("empty")
         fail = classify_failure(audit=audit, parsed=parsed)
-        if fail == "API_FAILED" and attempts < MAX_API_ATTEMPTS:
+        error_type = str(audit.get("error_type") or "")
+        timed_out = fail == "API_FAILED" and (
+            "Timeout" in error_type or "timeout" in str(audit.get("error") or "").lower()
+        )
+        if fail == "API_FAILED" and attempts < api_limit and not timed_out:
             continue
         if fail == "SCHEMA_FAILED":
             schema_attempts += 1
