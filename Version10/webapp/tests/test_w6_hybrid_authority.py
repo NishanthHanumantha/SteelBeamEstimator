@@ -110,8 +110,8 @@ class W6FlaskHybridTests(unittest.TestCase):
         res = self.client.get("/health")
         self.assertEqual(res.status_code, 200)
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.8")
-        self.assertEqual(data.get("app_release"), "W.8")
+        self.assertEqual(data.get("phase"), "W.12")
+        self.assertEqual(data.get("app_release"), "W.12")
         ids = data.get("production_stages") or []
         self.assertIn("HYBRID", ids)
         self.assertLess(ids.index("R13"), ids.index("HYBRID"))

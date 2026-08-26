@@ -69,6 +69,7 @@
         <span class="spinner" aria-hidden="true"></span>
         <span id="process-message">Processing drawing...</span>
       </div>
+      <p id="process-detail" class="muted"></p>
     </section>
 
     <section id="view-success" class="card hidden">
@@ -92,8 +93,9 @@
         </div>
       </div>
       <div id="success-warnings" class="warn hidden"></div>
+      <div id="download-error" class="err hidden"></div>
       <div class="actions">
-        <a class="btn" id="btn-download" href="#">Download Excel</a>
+        <button type="button" class="btn" id="btn-download">Download Excel</button>
         <button type="button" class="secondary" id="btn-another">Estimate Another Drawing</button>
       </div>
     </section>

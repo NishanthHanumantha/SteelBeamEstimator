@@ -15,7 +15,7 @@ ENGINE_ROOT = WEBAPP_ROOT.parent
 V8_ROOT = ENGINE_ROOT
 REPO_ROOT = ENGINE_ROOT.parent
 
-APP_RELEASE = "W.8"
+APP_RELEASE = "W.12"
 ENGINE_LABEL = "Version10"
 ENGINE_DISPLAY = "Version10 production pipeline"
 
@@ -173,6 +173,9 @@ W6_OBSERVABILITY_REL = (
 )
 W6_RESOLUTION_REL = (
     "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_resolution.json"
+)
+W11_PROGRESS_REL = (
+    "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_progress.json"
 )
 
 SOFT_ARTEFACTS = {

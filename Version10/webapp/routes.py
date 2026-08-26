@@ -1,7 +1,8 @@
-"""Flask routes — Version10 web adapter (Phase W.2)."""
+"""Flask routes — Version10 web adapter (Phase W.2 / W.12)."""
 from __future__ import annotations
 
-from pathlib import Path
+import json
+from datetime import datetime
 
 from flask import (
     Blueprint,
@@ -20,8 +21,45 @@ from services.estimation_service import (
     get_job,
     start_estimation,
 )
+from services.result_registry import (
+    CLASS_INVALID_RUN,
+    CLASS_NOT_READY,
+    CLASS_OK,
+    CLASS_TRAVERSAL,
+    CLASS_UNAVAILABLE,
+    is_valid_run_id,
+    record_download_attempt,
+    resolve_download,
+    workbook_filename,
+)
 
 bp = Blueprint("ui", __name__)
+
+
+def _load_hybrid_progress(run_id: str):
+    rel = getattr(
+        config,
+        "W11_PROGRESS_REL",
+        "data/output/PhaseW6_hybrid_semantic_resolution/hybrid_progress.json",
+    )
+    path = config.WEB_RUNS_ROOT / run_id / rel
+    if not path.is_file():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _elapsed_s(created_at):
+    if not created_at:
+        return None
+    try:
+        created = datetime.fromisoformat(created_at)
+        return round((datetime.now() - created).total_seconds(), 1)
+    except (TypeError, ValueError):
+        return None
 
 
 def _engine_ready() -> bool:
@@ -53,7 +91,7 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "steel-beam-estimation",
-        "phase": "W.8",
+        "phase": "W.12",
         "app_release": current_app.config.get("APP_RELEASE"),
         "engine_label": current_app.config.get("ENGINE_LABEL"),
         "engine_display": current_app.config.get("ENGINE_DISPLAY"),
@@ -72,6 +110,11 @@ def health():
             "STEEL_OUTPUT_ROOT": "<web_runs>/<run_id>/data/output",
         },
         "hybrid": _hybrid_health(),
+        "result_delivery": {
+            "durable_registry": True,
+            "download_reconstructs_from_disk": True,
+            "retention": "completed workbooks retained until operator cleanup",
+        },
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
@@ -108,14 +151,31 @@ def api_estimate():
 
 @bp.get("/api/status/<run_id>")
 def api_status(run_id: str):
+    if not is_valid_run_id(run_id):
+        return jsonify({
+            "ok": False,
+            "error": "Unknown run id.",
+            "classification": CLASS_INVALID_RUN,
+        }), 404
     job = get_job(run_id)
     if job is None:
-        return jsonify({"ok": False, "error": "Unknown run id."}), 404
+        return jsonify({
+            "ok": False,
+            "error": "Unknown run id.",
+            "classification": CLASS_INVALID_RUN,
+        }), 404
+    progress = _load_hybrid_progress(run_id)
+    message = job.message
+    if job.status == "running" and isinstance(progress, dict) and progress.get("label"):
+        message = str(progress.get("label"))
+    elapsed_s = _elapsed_s(job.created_at)
     return jsonify({
         "ok": True,
         "run_id": job.run_id,
         "status": job.status,
-        "message": job.message,
+        "message": message,
+        "elapsed_s": elapsed_s,
+        "progress": progress,
         "workbook_name": job.workbook_name,
         "duration_s": job.duration_s,
         "error": job.error,
@@ -127,26 +187,66 @@ def api_status(run_id: str):
         "t1_executed": job.t1_executed,
         "engine_root": job.engine_root,
         "hybrid": job.hybrid_summary or None,
+        "result_lifecycle": job.result_lifecycle,
+        "excel_generated": bool(job.excel_generated),
+        "excel_exists": bool(job.excel_exists),
+        "result_registered": bool(job.result_registered),
+        "download_ready": bool(job.download_ready),
     })
 
 
 @bp.get("/api/download/<run_id>")
 def api_download(run_id: str):
+    classification, path, error = resolve_download(run_id)
+    if classification == CLASS_INVALID_RUN or classification == CLASS_TRAVERSAL:
+        return jsonify({
+            "ok": False,
+            "error": error,
+            "classification": classification,
+            "download_ready": False,
+        }), 404
+    if classification == CLASS_UNAVAILABLE:
+        record_download_attempt(
+            run_id, http_status=404, classification=classification, ok=False
+        )
+        return jsonify({
+            "ok": False,
+            "error": error,
+            "classification": classification,
+            "download_ready": False,
+        }), 404
+    if classification == CLASS_NOT_READY or path is None:
+        record_download_attempt(
+            run_id, http_status=400, classification=classification, ok=False
+        )
+        return jsonify({
+            "ok": False,
+            "error": error,
+            "classification": classification,
+            "download_ready": False,
+        }), 400
+    if classification != CLASS_OK:
+        record_download_attempt(
+            run_id, http_status=404, classification=classification, ok=False
+        )
+        return jsonify({
+            "ok": False,
+            "error": error or "Workbook file is missing.",
+            "classification": classification,
+            "download_ready": False,
+        }), 404
     job = get_job(run_id)
-    if job is None:
-        return jsonify({"ok": False, "error": "Unknown run id."}), 404
-    if job.status != "success" or not job.workbook_path:
-        return jsonify({"ok": False, "error": "Workbook is not ready for download."}), 400
-    path = Path(job.workbook_path)
-    if not path.exists():
-        return jsonify({"ok": False, "error": "Workbook file is missing."}), 404
-    try:
-        path.resolve().relative_to(config.OUTPUT_ROOT.resolve())
-    except ValueError:
-        return jsonify({"ok": False, "error": "Workbook file is missing."}), 404
+    download_name = (
+        (job.workbook_name if job else None) or workbook_filename(run_id)
+    )
+    record_download_attempt(
+        run_id, http_status=200, classification=CLASS_OK, ok=True
+    )
     return send_file(
         path,
         as_attachment=True,
-        download_name=job.workbook_name or path.name,
+        download_name=download_name,
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        max_age=0,
+        conditional=False,
     )

@@ -21,6 +21,24 @@ from werkzeug.utils import secure_filename
 import config
 from services.flight_guard import GUARD
 from services.hybrid_shadow_service import maybe_run_hybrid_shadow
+from services.result_registry import (
+    LIFECYCLE_DOWNLOAD_READY,
+    LIFECYCLE_FAILED,
+    LIFECYCLE_INTERRUPTED,
+    LIFECYCLE_PROCESSING,
+    LIFECYCLE_RESULT_UNAVAILABLE,
+    is_valid_run_id,
+    load_manifest,
+    mark_excel_generated,
+    mark_failed,
+    mark_interrupted,
+    register_download_ready,
+    register_existing_workbook,
+    workbook_filename,
+    workbook_is_present,
+    workbook_path_for_run,
+    write_processing_manifest,
+)
 from services.version10_adapter import AdapterError, invoke_version10_pipeline
 
 config.LOG_ROOT.mkdir(parents=True, exist_ok=True)
@@ -61,6 +79,11 @@ class JobState:
     t1_executed: bool = False
     engine_root: str = ""
     hybrid_summary: Dict[str, Any] = field(default_factory=dict)
+    download_ready: bool = False
+    excel_generated: bool = False
+    excel_exists: bool = False
+    result_registered: bool = False
+    result_lifecycle: str = LIFECYCLE_PROCESSING
 
 
 _JOBS: Dict[str, JobState] = {}
@@ -68,8 +91,121 @@ _LOCK = threading.Lock()
 
 
 def get_job(run_id: str) -> Optional[JobState]:
+    if not is_valid_run_id(run_id):
+        return None
     with _LOCK:
-        return _JOBS.get(run_id)
+        job = _JOBS.get(run_id)
+        if job is not None:
+            _refresh_excel_flags(job)
+            return job
+    hydrated = _hydrate_job_from_disk(run_id)
+    if hydrated is None:
+        return None
+    with _LOCK:
+        existing = _JOBS.get(run_id)
+        if existing is not None:
+            _refresh_excel_flags(existing)
+            return existing
+        _JOBS[run_id] = hydrated
+        return hydrated
+
+
+def _refresh_excel_flags(job: JobState) -> None:
+    exists = workbook_is_present(job.run_id)
+    job.excel_exists = exists
+    if job.status == "success":
+        job.excel_generated = True
+        job.result_registered = True
+        job.download_ready = exists
+        job.result_lifecycle = (
+            LIFECYCLE_DOWNLOAD_READY if exists else LIFECYCLE_RESULT_UNAVAILABLE
+        )
+    elif job.status in {"queued", "running"}:
+        job.result_lifecycle = LIFECYCLE_PROCESSING
+        job.download_ready = False
+
+
+def _job_from_manifest(run_id: str, manifest: Dict[str, Any], *, available: bool) -> JobState:
+    lifecycle = str(manifest.get("lifecycle") or "")
+    error = manifest.get("error")
+    if lifecycle in {LIFECYCLE_FAILED, LIFECYCLE_INTERRUPTED} and not available:
+        return JobState(
+            run_id=run_id,
+            status="error",
+            message="Estimation failed",
+            error=str(error or "Estimation failed"),
+            created_at=str(manifest.get("created_at") or datetime.now().isoformat(timespec="seconds")),
+            filenames=dict(manifest.get("filenames") or {}),
+            result_lifecycle=lifecycle,
+            download_ready=False,
+            excel_generated=bool(manifest.get("excel_generated")),
+            excel_exists=False,
+            result_registered=False,
+        )
+    return JobState(
+        run_id=run_id,
+        status="success",
+        message=(
+            "Estimation workbook generated successfully."
+            if available
+            else "Estimation completed but the workbook is no longer available."
+        ),
+        workbook_name=str(manifest.get("workbook_name") or workbook_filename(run_id)),
+        workbook_path=str(workbook_path_for_run(run_id) or ""),
+        duration_s=manifest.get("duration_s"),
+        created_at=str(
+            manifest.get("created_at")
+            or manifest.get("registered_at")
+            or datetime.now().isoformat(timespec="seconds")
+        ),
+        filenames=dict(manifest.get("filenames") or {}),
+        summary=dict(manifest.get("summary") or {}),
+        warnings=list(manifest.get("warnings") or []),
+        stages_run=list(manifest.get("stages_run") or []),
+        t1_executed=bool(manifest.get("t1_executed")),
+        engine_root=str(config.ENGINE_ROOT.resolve()),
+        hybrid_summary=dict(manifest.get("hybrid_summary") or {}),
+        download_ready=available,
+        excel_generated=True,
+        excel_exists=available,
+        result_registered=True,
+        result_lifecycle=LIFECYCLE_DOWNLOAD_READY if available else LIFECYCLE_RESULT_UNAVAILABLE,
+        error=None if available else "Workbook file is missing.",
+    )
+
+
+def _hydrate_job_from_disk(run_id: str) -> Optional[JobState]:
+    present = workbook_is_present(run_id)
+    manifest = load_manifest(run_id)
+    if present:
+        try:
+            if not manifest or manifest.get("lifecycle") != LIFECYCLE_DOWNLOAD_READY:
+                manifest = register_existing_workbook(run_id, manifest)
+        except Exception:
+            logger.warning("Could not register surviving workbook run_id=%s", run_id)
+            manifest = manifest or {"run_id": run_id, "workbook_name": workbook_filename(run_id)}
+        return _job_from_manifest(run_id, manifest, available=True)
+
+    if manifest and manifest.get("lifecycle") == LIFECYCLE_DOWNLOAD_READY:
+        return _job_from_manifest(run_id, manifest, available=False)
+
+    if manifest and manifest.get("lifecycle") in {LIFECYCLE_FAILED, LIFECYCLE_INTERRUPTED}:
+        return _job_from_manifest(run_id, manifest, available=False)
+
+    if manifest and manifest.get("lifecycle") in {
+        LIFECYCLE_PROCESSING,
+        "EXCEL_GENERATED",
+        "RESULT_REGISTERED",
+    }:
+        if GUARD.active_run_id() == run_id:
+            return None
+        try:
+            manifest = mark_interrupted(run_id)
+        except Exception:
+            pass
+        return _job_from_manifest(run_id, manifest or {}, available=False)
+
+    return None
 
 
 def active_run_id() -> Optional[str]:
@@ -83,6 +219,22 @@ def _set_job(run_id: str, **kwargs: Any) -> None:
             return
         for k, v in kwargs.items():
             setattr(job, k, v)
+
+
+def _fail_job(run_id: str, error: str) -> None:
+    _set_job(
+        run_id,
+        status="error",
+        error=error,
+        message="Estimation failed",
+        download_ready=False,
+        result_registered=False,
+        result_lifecycle=LIFECYCLE_FAILED,
+    )
+    try:
+        mark_failed(run_id, error)
+    except Exception:
+        logger.warning("Failed-state manifest write failed run_id=%s", run_id)
 
 
 def _is_dxf(filename: str) -> bool:
@@ -229,6 +381,10 @@ def start_estimation(
         )
         with _LOCK:
             _JOBS[run_id] = job
+        try:
+            write_processing_manifest(run_id, filenames=job.filenames)
+        except Exception:
+            logger.warning("Processing manifest write failed run_id=%s", run_id)
 
         logger.info(
             "Execution start run_id=%s files=%s engine_root=%s",
@@ -283,9 +439,15 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             )
 
         config.OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
-        download_name = f"Estimation_Output_{run_id}.xlsx"
-        download_path = config.OUTPUT_ROOT / download_name
+        download_name = workbook_filename(run_id)
+        download_path = workbook_path_for_run(run_id)
+        if download_path is None:
+            raise EstimationError("Unable to register a safe download path for this run.")
         shutil.copy2(excel, download_path)
+        try:
+            mark_excel_generated(run_id, download_path.stat().st_size)
+        except Exception:
+            logger.warning("Excel-generated manifest write failed run_id=%s", run_id)
 
         pending_hybrid = None
         if (
@@ -306,6 +468,25 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             staging=staging,
             settings=hybrid_cfg,
         )
+        final_hybrid = hybrid_summary or pending_hybrid or {}
+        with _LOCK:
+            filenames = dict((_JOBS.get(run_id).filenames if _JOBS.get(run_id) else {}) or {})
+        try:
+            register_download_ready(
+                run_id,
+                duration_s=result.duration_s,
+                summary=result.summary,
+                warnings=result.warnings,
+                stages_run=result.stages_run,
+                t1_executed=result.t1_executed,
+                hybrid_summary=final_hybrid,
+                filenames=filenames,
+            )
+        except Exception:
+            logger.exception("Result registration failed run_id=%s", run_id)
+            raise EstimationError(
+                "Workbook was generated but could not be registered for download."
+            )
         _set_job(
             run_id,
             status="success",
@@ -318,41 +499,34 @@ def _run_pipeline(run_id: str, staging: Path, gn_path: Path) -> None:
             stages_run=result.stages_run,
             t1_executed=result.t1_executed,
             engine_root=result.engine_root,
-            hybrid_summary=hybrid_summary or pending_hybrid or {},
+            hybrid_summary=final_hybrid,
+            download_ready=True,
+            excel_generated=True,
+            excel_exists=True,
+            result_registered=True,
+            result_lifecycle=LIFECYCLE_DOWNLOAD_READY,
         )
         logger.info(
-            "Pipeline complete run_id=%s excel=%s download=%s duration_s=%s "
-            "t1_executed=%s stages=%s",
+            "Pipeline complete run_id=%s workbook=%s duration_s=%s "
+            "t1_executed=%s stages=%s result_lifecycle=%s",
             run_id,
-            excel,
-            download_path,
+            download_name,
             result.duration_s,
             result.t1_executed,
             result.stages_run,
+            LIFECYCLE_DOWNLOAD_READY,
         )
     except AdapterError as exc:
         logger.error("Adapter error run_id=%s: %s", run_id, exc)
-        _set_job(
-            run_id,
-            status="error",
-            error=str(exc),
-            message="Estimation failed",
-        )
+        _fail_job(run_id, str(exc))
     except EstimationError as exc:
         logger.error("Estimation error run_id=%s: %s", run_id, exc)
-        _set_job(
-            run_id,
-            status="error",
-            error=str(exc),
-            message="Estimation failed",
-        )
+        _fail_job(run_id, str(exc))
     except Exception:
         logger.exception("Unexpected error run_id=%s", run_id)
-        _set_job(
+        _fail_job(
             run_id,
-            status="error",
-            error="An unexpected error occurred while running the estimation engine.",
-            message="Estimation failed",
+            "An unexpected error occurred while running the estimation engine.",
         )
     finally:
         GUARD.release(run_id)

@@ -108,7 +108,8 @@ class W5FlaskHybridTests(unittest.TestCase):
         res = self.client.get("/health")
         self.assertEqual(res.status_code, 200)
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.8")
+        self.assertEqual(data.get("phase"), "W.12")
+        hybrid = data.get("hybrid") or {}
         hybrid = data.get("hybrid") or {}
         self.assertEqual(hybrid.get("mode"), "off")
         self.assertEqual(hybrid.get("production_excel_invokes_claude"), False)
