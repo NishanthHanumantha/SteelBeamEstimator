@@ -109,11 +109,11 @@ class W13DownloadAndHealthTests(unittest.TestCase):
     def test_w13_08_health_and_cache_bust(self):
         res = self.client.get("/health")
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.13")
+        self.assertEqual(data.get("phase"), "W.14")
         html = self.client.get("/").get_data(as_text=True)
         self.assertIn('id="btn-download"', html)
-        self.assertIn("app.js?v=W.13", html)
-        self.assertIn("app.css?v=W.13", html)
+        self.assertIn("app.js?v=W.14", html)
+        self.assertIn("app.css?v=W.14", html)
         self.assertIn('href="#"', html)
         self.assertNotIn("sk-ant-", html.lower())
 
@@ -314,7 +314,7 @@ class W13HybridTraceUnitTests(unittest.TestCase):
             }
         )
         self.assertEqual(usage[1], "VISION_API_ERROR")
-        self.assertEqual(usage[2], "WORKSPACE_USAGE_LIMIT")
+        self.assertEqual(usage[2], "WORKSPACE_SPEND_LIMIT")
 
     def test_w13_06_no_fabricated_vision(self):
         from PhaseW5_production_hybrid_shadow.paths import ensure_src_on_path

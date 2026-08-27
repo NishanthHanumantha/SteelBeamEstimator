@@ -1,4 +1,4 @@
-"""Phase W.5 Flask-level Hybrid shadow tests (stub pipeline)."""
+"""Phase W.14 provider classification, lifecycle identity, and download path."""
 from __future__ import annotations
 
 import io
@@ -14,7 +14,6 @@ if str(WEBAPP_ROOT) not in sys.path:
     sys.path.insert(0, str(WEBAPP_ROOT))
 
 os.environ.setdefault("STEEL_WEB_PIPELINE_MODE", "stub")
-os.environ["HYBRID_MODE"] = "off"
 
 import config  # noqa: E402
 from app import create_app  # noqa: E402
@@ -22,7 +21,7 @@ from services.estimation_service import _JOBS, _LOCK  # noqa: E402
 from services.flight_guard import GUARD  # noqa: E402
 
 
-def _dxf_bytes(tag: str = "W5") -> bytes:
+def _dxf_bytes(tag: str = "W14") -> bytes:
     body = (
         "  0\nSECTION\n  2\nHEADER\n  0\nENDSEC\n"
         f"  0\nSECTION\n  2\nENTITIES\n  1\n{tag}\n  0\nENDSEC\n"
@@ -31,10 +30,10 @@ def _dxf_bytes(tag: str = "W5") -> bytes:
     return body.encode("ascii")
 
 
-class W5FlaskHybridTests(unittest.TestCase):
+class W14RecoveryTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls._tmpdir = tempfile.TemporaryDirectory(prefix="w5_web_")
+        cls._tmpdir = tempfile.TemporaryDirectory(prefix="w14_web_")
         root = Path(cls._tmpdir.name)
         config.UPLOAD_ROOT = root / "uploads"
         config.OUTPUT_ROOT = root / "outputs"
@@ -59,8 +58,8 @@ class W5FlaskHybridTests(unittest.TestCase):
     def setUp(self) -> None:
         os.environ["STEEL_WEB_PIPELINE_MODE"] = "stub"
         os.environ["HYBRID_MODE"] = "off"
-        os.environ.pop("ANTHROPIC_API_KEY", None)
         os.environ.pop("STEEL_WEB_FAIL_STAGE", None)
+        os.environ.pop("ANTHROPIC_API_KEY", None)
         with _LOCK:
             _JOBS.clear()
         active = GUARD.active_run_id()
@@ -69,8 +68,7 @@ class W5FlaskHybridTests(unittest.TestCase):
         self.client = self.app.test_client()
 
     def tearDown(self) -> None:
-        os.environ["HYBRID_MODE"] = "off"
-        os.environ.pop("ANTHROPIC_API_KEY", None)
+        os.environ.pop("STEEL_WEB_FAIL_STAGE", None)
         active = GUARD.active_run_id()
         if active:
             GUARD.release(active)
@@ -94,61 +92,54 @@ class W5FlaskHybridTests(unittest.TestCase):
             res = self.client.get(f"/api/status/{run_id}")
             last = res.get_json() or {}
             if last.get("status") in {"success", "error"}:
-                hybrid = last.get("hybrid") or {}
-                if last.get("status") == "error":
-                    return last
-                if os.environ.get("HYBRID_MODE", "off").lower() in {"off", ""}:
-                    return last
-                if hybrid.get("hybrid_status") and hybrid.get("hybrid_status") != "PENDING":
-                    return last
+                return last
             time.sleep(0.05)
         self.fail(f"Timed out waiting for run {run_id}: {last}")
 
-    def test_health_reports_hybrid_off_without_key(self):
+    def test_w14_health_phase(self):
         res = self.client.get("/health")
-        self.assertEqual(res.status_code, 200)
         data = res.get_json()
         self.assertEqual(data.get("phase"), "W.14")
-        hybrid = data.get("hybrid") or {}
-        hybrid = data.get("hybrid") or {}
-        self.assertEqual(hybrid.get("mode"), "off")
-        self.assertEqual(hybrid.get("production_excel_invokes_claude"), False)
-        self.assertEqual(hybrid.get("authoritative_enabled"), False)
-        self.assertFalse(hybrid.get("shadow_may_invoke_claude"))
-        self.assertIn(hybrid.get("api_key_status"), ("ABSENT", "EMPTY", "PRESENT"))
+        self.assertEqual(data.get("app_release"), "W.14")
+        html = self.client.get("/").get_data(as_text=True)
+        self.assertIn("app.js?v=W.14", html)
+        self.assertIn('id="btn-download"', html)
+        blob = str(data).lower()
+        self.assertNotIn("sk-ant-", blob)
 
-    def test_1_hybrid_off_excel_succeeds(self):
-        os.environ["HYBRID_MODE"] = "off"
+    def test_w14_download_path_intact(self):
         res = self._post()
         self.assertEqual(res.status_code, 200)
         run_id = res.get_json()["run_id"]
         status = self._wait(run_id)
         self.assertEqual(status["status"], "success")
-        excel = config.WEB_RUNS_ROOT / run_id / config.VB1_EXCEL_REL
-        self.assertTrue(excel.exists())
-        self.assertGreater(excel.stat().st_size, 0)
-        hybrid_dir = config.WEB_RUNS_ROOT / run_id / "data" / "output" / "PhaseW5_production_hybrid_shadow"
-        self.assertFalse(hybrid_dir.exists())
-        self.assertFalse(status.get("hybrid"))
+        first = self.client.get(f"/api/download/{run_id}")
+        second = self.client.get(f"/api/download/{run_id}")
+        self.assertEqual(first.status_code, 200)
+        self.assertEqual(second.status_code, 200)
+        self.assertEqual(first.data[:2], b"PK")
+        self.assertEqual(first.data, second.data)
 
-    def test_3_shadow_missing_key_excel_still_succeeds(self):
-        os.environ["HYBRID_MODE"] = "shadow"
-        os.environ.pop("ANTHROPIC_API_KEY", None)
-        res = self._post()
-        self.assertEqual(res.status_code, 200)
-        run_id = res.get_json()["run_id"]
-        status = self._wait(run_id)
-        self.assertEqual(status["status"], "success")
-        excel = config.WEB_RUNS_ROOT / run_id / config.VB1_EXCEL_REL
-        self.assertTrue(excel.exists())
-        hybrid = status.get("hybrid") or {}
-        self.assertEqual(hybrid.get("hybrid_mode"), "shadow")
-        self.assertIn(
-            hybrid.get("hybrid_status"),
-            ("KEY_ABSENT", "NO_ENGINEERING_CONTEXT", "HYBRID_UNAVAILABLE"),
+    def test_w14_provider_classification_spend_limit(self):
+        from PhaseW5_production_hybrid_shadow.paths import ensure_src_on_path
+
+        ensure_src_on_path()
+        from PhaseW6_hybrid_production_authority.resolution_trace import (
+            PROVIDER_WORKSPACE_SPEND_LIMIT,
+            classify_provider_error,
+            classify_stop_stage,
         )
-        self.assertEqual(hybrid.get("request_count"), 0)
 
-
-if __name__ == "__main__":
-    unittest.main()
+        row = {
+            "called": True,
+            "visual_available": True,
+            "hybrid_status": "HYBRID_UNAVAILABLE",
+            "failure_category": "API_FAILED",
+            "skip_reason": "API_FAILED",
+            "api_error": "Error code: 400 - invalid_request_error You have reached your specified workspace API usage limits.",
+        }
+        self.assertEqual(classify_provider_error(row), PROVIDER_WORKSPACE_SPEND_LIMIT)
+        status, reason, existing = classify_stop_stage(row)
+        self.assertEqual(reason, "VISION_API_ERROR")
+        self.assertEqual(existing, PROVIDER_WORKSPACE_SPEND_LIMIT)
+        self.assertNotEqual(status, "HYBRID_RESOLVED")

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
@@ -27,6 +28,31 @@ REASON_EVIDENCE_UNAVAILABLE = "EVIDENCE_UNAVAILABLE"
 REASON_OTHER = "OTHER_EXPLICIT_REASON"
 REASON_OK = "OK"
 
+PROVIDER_OK = "OK"
+PROVIDER_WORKSPACE_SPEND_LIMIT = "WORKSPACE_SPEND_LIMIT"
+PROVIDER_RATE_LIMIT = "RATE_LIMIT"
+PROVIDER_REQUEST_LIMIT = "REQUEST_LIMIT"
+PROVIDER_TOKEN_LIMIT = "TOKEN_LIMIT"
+PROVIDER_VISION_TIMEOUT = "VISION_TIMEOUT"
+PROVIDER_NETWORK_ERROR = "NETWORK_ERROR"
+PROVIDER_INVALID_REQUEST = "INVALID_REQUEST"
+PROVIDER_PROVIDER_ERROR = "PROVIDER_ERROR"
+PROVIDER_PARSE_FAILURE = "PARSE_FAILURE"
+PROVIDER_SCHEMA_FAILURE = "SCHEMA_FAILURE"
+PROVIDER_E2_REJECTED = "E2_REJECTED"
+PROVIDER_D2_UNRESOLVED = "D2_UNRESOLVED"
+PROVIDER_OTHER = "OTHER"
+
+_HTTP_STATUS_RE = re.compile(
+    r"(?:error code|status(?: code)?|http)[:\s]*(\d{3})",
+    re.IGNORECASE,
+)
+_HTTP_BARE_RE = re.compile(r"\b(400|401|403|408|429|500|502|503|529)\b")
+_SECRET_EXCERPT_RE = re.compile(
+    r"(sk-ant-[A-Za-z0-9_\-]+)|(ANTHROPIC_API_KEY\s*=\s*\S+)",
+    re.IGNORECASE,
+)
+
 
 def _load_json(path: Path) -> Optional[Dict[str, Any]]:
     if not path.is_file():
@@ -51,11 +77,126 @@ def _patched_beam_ids(handoff: Dict[str, Any]) -> set[str]:
     return ids
 
 
+def extract_http_status(row: Dict[str, Any]) -> Optional[int]:
+    raw = row.get("http_status")
+    if raw is not None and str(raw) not in ("", "None"):
+        try:
+            code = int(raw)
+            if 100 <= code <= 599:
+                return code
+        except (TypeError, ValueError):
+            pass
+    err = str(row.get("api_error") or "")
+    match = _HTTP_STATUS_RE.search(err)
+    if match:
+        return int(match.group(1))
+    match = _HTTP_BARE_RE.search(err)
+    if match:
+        return int(match.group(1))
+    return None
+
+
+def safe_error_excerpt(value: Any, *, limit: int = 240) -> Optional[str]:
+    if value is None:
+        return None
+    text = _SECRET_EXCERPT_RE.sub("[REDACTED]", str(value)).strip()
+    if not text:
+        return None
+    if len(text) > limit:
+        return text[:limit] + "..."
+    return text
+
+
+def classify_provider_error(row: Dict[str, Any]) -> str:
+    """Normalized W.14 provider/lifecycle category. Does not invent unsupported labels."""
+    skip = str(row.get("skip_reason") or "")
+    fail = str(row.get("failure_category") or "")
+    et = str(row.get("error_type") or "")
+    err = str(row.get("api_error") or "").lower()
+    timeout = str(row.get("timeout_status") or "")
+    parse_status = str(row.get("parse_status") or "")
+    status = str(row.get("hybrid_status") or "")
+    http = extract_http_status(row)
+    visual = bool(row.get("visual_available"))
+    called = bool(row.get("called"))
+
+    if skip in ("NO_USABLE_EVIDENCE", "RENDER_MISSING", "EVIDENCE_UNAVAILABLE") or (
+        not visual and not called
+    ):
+        return PROVIDER_OTHER
+
+    if (
+        timeout == "VISION_TIMEOUT"
+        or skip == "VISION_TIMEOUT"
+        or skip == "WALL_CLOCK_BUDGET"
+        or et in ("TimeoutError", "TimeoutExpired", "ClaudeTimeoutError")
+        or "timeout" in et.lower()
+    ):
+        return PROVIDER_VISION_TIMEOUT
+
+    if fail == "SCHEMA_FAILED" or parse_status == "SCHEMA_INVALID":
+        return PROVIDER_SCHEMA_FAILURE
+    if parse_status in ("PARSE_FAILED", "JSON_INVALID", "PARSE_INVALID"):
+        return PROVIDER_PARSE_FAILURE
+    if fail in ("SEMANTIC_UNUSABLE", "TARGET_NOT_IDENTIFIED"):
+        return PROVIDER_E2_REJECTED
+
+    if fail == "API_FAILED" or skip == "API_FAILED" or skip == "LIVE_CALL_EXCEPTION":
+        if (
+            "usage limit" in err
+            or "workspace api usage" in err
+            or "spend limit" in err
+            or "workspace usage" in err
+        ):
+            return PROVIDER_WORKSPACE_SPEND_LIMIT
+        if "RateLimit" in et or http == 429 or "rate limit" in err or "rate_limit" in err:
+            return PROVIDER_RATE_LIMIT
+        if "timeout" in err or "timeout" in et.lower() or http == 408:
+            return PROVIDER_VISION_TIMEOUT
+        if (
+            "connection" in et.lower()
+            or "network" in err
+            or "dns" in err
+            or et in ("APIConnectionError", "ConnectTimeout", "ReadTimeout")
+        ):
+            return PROVIDER_NETWORK_ERROR
+        if ("token" in err and "limit" in err) or "max_tokens" in err or "context length" in err:
+            return PROVIDER_TOKEN_LIMIT
+        if "request limit" in err or "too many requests" in err:
+            return PROVIDER_REQUEST_LIMIT
+        if "invalid_request" in err or http == 400:
+            return PROVIDER_INVALID_REQUEST
+        return PROVIDER_PROVIDER_ERROR
+
+    if skip in (
+        "LIVE_DISABLED",
+        "ANTHROPIC_API_KEY_ABSENT",
+        "ANTHROPIC_API_KEY_EMPTY",
+        "PER_RUN_REQUEST_LIMIT",
+    ) or not called:
+        return PROVIDER_OTHER
+
+    if status == "HYBRID_ERROR":
+        return PROVIDER_D2_UNRESOLVED if skip != "LIVE_CALL_EXCEPTION" else PROVIDER_PROVIDER_ERROR
+
+    if status == "OBSERVED":
+        if row.get("semantic_usable") is False:
+            return PROVIDER_E2_REJECTED
+        if row.get("hybrid_semantic") is None and row.get("hybrid_interpretation") is None:
+            return PROVIDER_D2_UNRESOLVED
+        return PROVIDER_OK
+
+    if fail:
+        return PROVIDER_OTHER
+    return PROVIDER_OTHER
+
+
 def classify_stop_stage(row: Dict[str, Any]) -> Tuple[str, str, str]:
     """
     Return (final_status, reason_code, existing_code).
 
-    existing_code preserves the codebase's native skip_reason / failure_category.
+    existing_code preserves the codebase's native skip_reason / failure_category
+    unless a more specific W.14 provider category is known.
     """
     skip = str(row.get("skip_reason") or "")
     fail = str(row.get("failure_category") or "")
@@ -85,8 +226,8 @@ def classify_stop_stage(row: Dict[str, Any]) -> Tuple[str, str, str]:
         return STATUS_VISION_FAILED, REASON_VISION_TIMEOUT, existing or REASON_VISION_TIMEOUT
 
     if fail == "API_FAILED" or skip == "API_FAILED":
-        err = str(row.get("api_error") or "").lower()
-        existing_api = "WORKSPACE_USAGE_LIMIT" if "usage limit" in err else (existing or "API_FAILED")
+        provider = classify_provider_error(row)
+        existing_api = provider if provider != PROVIDER_OTHER else (existing or "API_FAILED")
         return STATUS_VISION_FAILED, REASON_VISION_API_ERROR, existing_api
 
     if fail == "SCHEMA_FAILED" or parse_status == "SCHEMA_INVALID":
@@ -156,6 +297,7 @@ def _stage_flags(row: Dict[str, Any], *, patched: bool) -> Dict[str, Any]:
     d2_resolved = str(row.get("hybrid_status") or "") == "OBSERVED" and (
         isinstance(row.get("hybrid_semantic"), dict) or isinstance(row.get("hybrid_interpretation"), dict)
     )
+    provider_category = classify_provider_error(row)
     return {
         "deterministic_registry_present": True,
         "evidence_generated": bool(row.get("visual_available")),
@@ -180,6 +322,136 @@ def _stage_flags(row: Dict[str, Any], *, patched: bool) -> Dict[str, Any]:
         "hybrid_status": row.get("hybrid_status"),
         "parse_status": row.get("parse_status"),
         "claude_duration_s": row.get("claude_duration_s"),
+        "http_status": extract_http_status(row),
+        "provider_category": provider_category,
+        "api_error_excerpt": safe_error_excerpt(row.get("api_error")),
+        "timeout_flag": bool(
+            str(row.get("timeout_status") or "") == "VISION_TIMEOUT"
+            or provider_category == PROVIDER_VISION_TIMEOUT
+        ),
+    }
+
+
+def _api_recovery_checkpoint(beams: List[Dict[str, Any]]) -> Dict[str, Any]:
+    successes: List[Dict[str, Any]] = []
+    first_failure: Optional[Dict[str, Any]] = None
+    attempt_n = 0
+    for row in beams:
+        if not row.get("claude_attempted"):
+            continue
+        attempt_n += 1
+        if row.get("claude_api_success"):
+            successes.append(
+                {
+                    "success_number": len(successes) + 1,
+                    "attempt_number": attempt_n,
+                    "beam_id": row.get("beam_id"),
+                }
+            )
+        elif first_failure is None:
+            first_failure = {
+                "attempt_number": attempt_n,
+                "beam_id": row.get("beam_id"),
+                "provider_category": row.get("provider_category"),
+                "http_status": row.get("http_status"),
+                "api_error_excerpt": row.get("api_error_excerpt"),
+            }
+    n_success = len(successes)
+    beyond_26 = n_success > 26
+    all_attempted_succeeded = attempt_n > 0 and n_success == attempt_n
+    if all_attempted_succeeded or beyond_26:
+        cliff = "PREVIOUS_26_CALL_CLIFF_NOT_REPRODUCED"
+    elif n_success == 26 and first_failure is not None:
+        cliff = "CLIFF_REPRODUCED_AT_26"
+    elif 0 < n_success < 26 and first_failure is not None:
+        cliff = "FAILURE_BEFORE_26"
+    elif n_success == 0 and first_failure is not None:
+        cliff = "NO_API_SUCCESS"
+    else:
+        cliff = "INCONCLUSIVE"
+    def _nth(n: int) -> Optional[Dict[str, Any]]:
+        return successes[n - 1] if len(successes) >= n else None
+
+    return {
+        "attempted": attempt_n,
+        "api_success": n_success,
+        "api_failure": max(0, attempt_n - n_success),
+        "success_continued_beyond_26": beyond_26,
+        "cliff_classification": cliff,
+        "first_api_success": _nth(1),
+        "success_26": _nth(26),
+        "success_27": _nth(27),
+        "final_successful_api_call_number": n_success if n_success else None,
+        "first_api_failure": first_failure,
+    }
+
+
+def _cost_summary(shadow: Dict[str, Any], totals: Dict[str, Any]) -> Dict[str, Any]:
+    try:
+        from PhaseW5_production_hybrid_shadow.cost import estimate_cost_usd
+        from PhaseW5_production_hybrid_shadow.config import COST_BASIS
+    except Exception:
+        estimate_cost_usd = None  # type: ignore[assignment]
+        COST_BASIS = "ESTIMATED"
+    try:
+        inp = int(shadow.get("input_tokens") or 0)
+        out = int(shadow.get("output_tokens") or 0)
+    except (TypeError, ValueError):
+        inp, out = 0, 0
+    if estimate_cost_usd is not None:
+        est = estimate_cost_usd(input_tokens=inp, output_tokens=out)
+        usd = float(est.get("estimated_cost_usd") or 0.0)
+        basis = str(est.get("cost_basis") or COST_BASIS)
+        rates = {
+            "input_usd_per_mtok": est.get("input_usd_per_mtok"),
+            "output_usd_per_mtok": est.get("output_usd_per_mtok"),
+        }
+    else:
+        usd = 0.0
+        basis = "ESTIMATED"
+        rates = {}
+    attempted = int(totals.get("claude_attempted") or 0)
+    success = int(totals.get("claude_api_success") or 0)
+    drawing_beams = int(totals.get("total_beams") or 0)
+    per_beam_tokens: List[int] = []
+    for row in shadow.get("beams") or []:
+        if not isinstance(row, dict):
+            continue
+        usage = row.get("usage") if isinstance(row.get("usage"), dict) else {}
+        try:
+            tok = int(usage.get("input_tokens") or 0) + int(usage.get("output_tokens") or 0)
+        except (TypeError, ValueError):
+            tok = 0
+        if tok > 0:
+            per_beam_tokens.append(tok)
+    token_mean = round(sum(per_beam_tokens) / len(per_beam_tokens), 1) if per_beam_tokens else 0
+    token_max = max(per_beam_tokens) if per_beam_tokens else 0
+    token_min = min(per_beam_tokens) if per_beam_tokens else 0
+    unreliable = bool(per_beam_tokens) and token_mean > 0 and (token_max / token_mean) >= 2.0
+    projection_143 = None
+    if attempted > 0:
+        projection_143 = round(usd * (143.0 / float(attempted)), 6)
+    return {
+        "cost_label": "ESTIMATED",
+        "cost_basis": basis,
+        "not_billed_exact": True,
+        "input_tokens": inp,
+        "output_tokens": out,
+        "total_tokens": inp + out,
+        "estimated_cost_usd": round(usd, 6),
+        "cost_per_attempted_beam_usd": round(usd / attempted, 6) if attempted else None,
+        "cost_per_successful_vision_beam_usd": round(usd / success, 6) if success else None,
+        "cost_per_total_drawing_usd": round(usd, 6),
+        "drawing_beam_count": drawing_beams,
+        "attempted_beam_count": attempted,
+        "successful_vision_beam_count": success,
+        "per_success_token_min": token_min,
+        "per_success_token_mean": token_mean,
+        "per_success_token_max": token_max,
+        "projection_143_beam_usd": projection_143,
+        "projection_label": "PROJECTION ONLY",
+        "projection_unreliable": unreliable,
+        **rates,
     }
 
 
@@ -224,6 +496,7 @@ def build_resolution_trace(
         "r13_patch_applied": 0,
         "r13_patch_rejected": 0,
         "deterministic_fallback": 0,
+        "unexplained": 0,
     }
 
     for bid in eligible:
@@ -296,12 +569,27 @@ def build_resolution_trace(
         for b in beams
         if b["final_status"] != STATUS_HYBRID_RESOLVED and not b.get("reason_code")
     ]
+    totals["unexplained"] = len(unexplained)
+    totals["parse_valid"] = totals["response_parse_success"]
+    totals["parse_invalid"] = totals["response_parse_failure"]
+    provider_counts: Dict[str, int] = {}
+    for b in beams:
+        cat = str(b.get("provider_category") or PROVIDER_OTHER)
+        provider_counts[cat] = provider_counts.get(cat, 0) + 1
+    identity_ok = totals["total_beams"] == len(beams) and len(unexplained) == 0
+    fallback_identity = (
+        totals["hybrid_eligible"]
+        == totals["d2_resolved"] + totals["deterministic_fallback"]
+    )
     return {
         "run_id": run_id,
         "artifact": TRACE_FILENAME,
         "lifecycle_counts": totals,
         "reason_counts": reason_counts,
         "status_counts": status_counts,
+        "provider_category_counts": provider_counts,
+        "api_recovery": _api_recovery_checkpoint(beams),
+        "cost_summary": _cost_summary(shadow_result, totals),
         "unexplained": unexplained,
         "coverage_reconcile": {
             "claude_attempted_coverage": coverage.get("claude_attempted"),
@@ -319,7 +607,8 @@ def build_resolution_trace(
             "beams_patched": handoff.get("beams_patched"),
             "fields_patched": handoff.get("fields_patched"),
         },
-        "identity_ok": totals["total_beams"] == len(beams) and len(unexplained) == 0,
+        "identity_ok": identity_ok,
+        "fallback_identity_ok": fallback_identity,
         "beams": beams,
     }
 
@@ -346,6 +635,9 @@ def reconstruct_from_staging(staging: Path, *, run_id: Optional[str] = None) -> 
 __all__ = [
     "TRACE_FILENAME",
     "build_resolution_trace",
+    "classify_provider_error",
     "classify_stop_stage",
+    "extract_http_status",
     "reconstruct_from_staging",
+    "safe_error_excerpt",
 ]

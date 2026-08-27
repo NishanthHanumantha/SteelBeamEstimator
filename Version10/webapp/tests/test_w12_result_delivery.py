@@ -114,8 +114,8 @@ class W12ResultDeliveryTests(unittest.TestCase):
         res = self.client.get("/health")
         self.assertEqual(res.status_code, 200)
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.13")
-        self.assertEqual(data.get("app_release"), "W.13")
+        self.assertEqual(data.get("phase"), "W.14")
+        self.assertEqual(data.get("app_release"), "W.14")
         delivery = data.get("result_delivery") or {}
         self.assertTrue(delivery.get("durable_registry"))
         self.assertTrue(delivery.get("download_reconstructs_from_disk"))

@@ -102,6 +102,20 @@ def _copy_live_diagnostics(row: Dict[str, Any], live: Optional[Dict[str, Any]]) 
         row["retry_count"] = live.get("retry_count")
     if live.get("attempts") is not None:
         row["attempts"] = live.get("attempts")
+    try:
+        from PhaseW6_hybrid_production_authority.resolution_trace import (
+            classify_provider_error,
+            extract_http_status,
+            safe_error_excerpt,
+        )
+
+        row["http_status"] = extract_http_status(row)
+        row["provider_category"] = classify_provider_error(row)
+        excerpt = safe_error_excerpt(row.get("api_error"))
+        if excerpt:
+            row["api_error_excerpt"] = excerpt
+    except Exception:
+        pass
 
 
 def _looks_like_rate_limit(row: Dict[str, Any], live: Optional[Dict[str, Any]]) -> bool:

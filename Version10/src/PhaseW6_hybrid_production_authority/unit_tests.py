@@ -509,8 +509,103 @@ class OrchestratorTests(unittest.TestCase):
         by_id = {b["beam_id"]: b for b in trace["beams"]}
         self.assertEqual(by_id["B2"]["final_status"], STATUS_VISION_FAILED)
         self.assertEqual(by_id["B2"]["reason_code"], REASON_VISION_API_ERROR)
-        self.assertEqual(by_id["B2"]["existing_code"], "API_FAILED")
+        self.assertEqual(by_id["B2"]["existing_code"], "RATE_LIMIT")
+        self.assertEqual(by_id["B2"]["provider_category"], "RATE_LIMIT")
         self.assertEqual(by_id["B2"]["error_type"], "ClaudeRateLimitError")
+
+    def test_w14_provider_categories_and_recovery(self):
+        from .resolution_trace import (
+            PROVIDER_RATE_LIMIT,
+            PROVIDER_WORKSPACE_SPEND_LIMIT,
+            build_resolution_trace,
+            classify_provider_error,
+            extract_http_status,
+        )
+
+        spend = {
+            "beam_id": "B1",
+            "visual_available": True,
+            "called": True,
+            "hybrid_status": "HYBRID_UNAVAILABLE",
+            "failure_category": "API_FAILED",
+            "skip_reason": "API_FAILED",
+            "api_success": False,
+            "api_error": "Error code: 400 - invalid_request_error You have reached your specified workspace API usage limits.",
+            "error_type": "ClaudeAPIError",
+        }
+        rate = {
+            "beam_id": "B2",
+            "visual_available": True,
+            "called": True,
+            "hybrid_status": "HYBRID_UNAVAILABLE",
+            "failure_category": "API_FAILED",
+            "api_success": False,
+            "error_type": "ClaudeRateLimitError",
+            "api_error": "Error code: 429 - rate limit",
+        }
+        ok = {
+            "beam_id": "B3",
+            "visual_available": True,
+            "called": True,
+            "hybrid_status": "OBSERVED",
+            "failure_category": "OK",
+            "api_success": True,
+            "schema_valid": True,
+            "parse_status": "OK",
+            "semantic_usable": True,
+            "hybrid_semantic": {"beam_id": "B3"},
+            "usage": {"input_tokens": 1000, "output_tokens": 80},
+        }
+        self.assertEqual(classify_provider_error(spend), PROVIDER_WORKSPACE_SPEND_LIMIT)
+        self.assertEqual(extract_http_status(spend), 400)
+        self.assertEqual(classify_provider_error(rate), PROVIDER_RATE_LIMIT)
+        self.assertEqual(extract_http_status(rate), 429)
+        beams_ok = []
+        for i in range(1, 28):
+            beams_ok.append(
+                {
+                    "beam_id": f"B{i}",
+                    "visual_available": True,
+                    "called": True,
+                    "hybrid_status": "OBSERVED",
+                    "failure_category": "OK",
+                    "api_success": True,
+                    "schema_valid": True,
+                    "parse_status": "OK",
+                    "semantic_usable": True,
+                    "hybrid_semantic": {"beam_id": f"B{i}"},
+                    "usage": {"input_tokens": 100, "output_tokens": 10},
+                }
+            )
+        trace = build_resolution_trace(
+            run_id="t-w14",
+            beam_ids=[b["beam_id"] for b in beams_ok],
+            shadow_result={
+                "input_tokens": 2700,
+                "output_tokens": 270,
+                "estimated_cost_usd": 0.01215,
+                "cost_basis": "ESTIMATED",
+                "beams": beams_ok,
+            },
+            handoff={"applied": True, "ledger": [{"beam_id": b["beam_id"], "action": "PATCHED"} for b in beams_ok]},
+        )
+        self.assertTrue(trace["identity_ok"])
+        self.assertTrue(trace["fallback_identity_ok"])
+        self.assertEqual(trace["lifecycle_counts"]["unexplained"], 0)
+        self.assertEqual(trace["lifecycle_counts"]["claude_api_success"], 27)
+        self.assertTrue(trace["api_recovery"]["success_continued_beyond_26"])
+        self.assertEqual(trace["api_recovery"]["cliff_classification"], "PREVIOUS_26_CALL_CLIFF_NOT_REPRODUCED")
+        self.assertIsNotNone(trace["api_recovery"]["success_27"])
+        self.assertEqual(trace["cost_summary"]["cost_label"], "ESTIMATED")
+        self.assertTrue(trace["cost_summary"]["not_billed_exact"])
+        self.assertEqual(trace["cost_summary"]["projection_label"], "PROJECTION ONLY")
+        spend_trace = build_resolution_trace(
+            run_id="t-w14-spend",
+            beam_ids=["B1"],
+            shadow_result={"beams": [spend], "input_tokens": 0, "output_tokens": 0},
+        )
+        self.assertEqual(spend_trace["beams"][0]["provider_category"], PROVIDER_WORKSPACE_SPEND_LIMIT)
+        self.assertEqual(spend_trace["beams"][0]["http_status"], 400)
 
     def test_shadow_does_not_patch(self):
         before = (self.root / R13_REL).read_text(encoding="utf-8")
