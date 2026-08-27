@@ -74,19 +74,46 @@ def load_api_key() -> str:
     )
 
 
+def _retry_after_s(exc: Exception) -> float | None:
+    resp = getattr(exc, "response", None)
+    headers = getattr(resp, "headers", None) if resp is not None else None
+    if not headers:
+        return None
+    raw = headers.get("retry-after") or headers.get("Retry-After")
+    if raw is None:
+        return None
+    try:
+        value = float(str(raw).strip())
+    except (TypeError, ValueError):
+        return None
+    if value <= 0:
+        return None
+    return min(value, 60.0)
+
+
+def _backoff_s(mapped: Exception, attempt: int) -> float:
+    retry_after = getattr(mapped, "retry_after_s", None)
+    if isinstance(mapped, ClaudeRateLimitError):
+        if retry_after:
+            return float(retry_after)
+        return min(15 * max(1, attempt), 45)
+    return min(2 ** (attempt - 1), 8)
+
+
 def map_sdk_exception(exc: Exception) -> ClaudeAPIError:
     """Map Anthropic SDK exceptions to project-specific errors."""
+    retry_after = _retry_after_s(exc)
     if isinstance(exc, AuthenticationError):
         return ClaudeAuthenticationError(str(exc))
     if isinstance(exc, RateLimitError):
-        return ClaudeRateLimitError(str(exc))
+        return ClaudeRateLimitError(str(exc), retry_after_s=retry_after)
     if isinstance(exc, APITimeoutError):
         return ClaudeTimeoutError(str(exc))
     if isinstance(exc, APIStatusError):
         if exc.status_code == 408:
             return ClaudeTimeoutError(str(exc))
         if exc.status_code == 429:
-            return ClaudeRateLimitError(str(exc))
+            return ClaudeRateLimitError(str(exc), retry_after_s=retry_after)
         if exc.status_code in {401, 403}:
             return ClaudeAuthenticationError(str(exc))
         return ClaudeAPIError(str(exc))
@@ -168,7 +195,7 @@ class ClaudeClient:
                 )
                 if attempt >= self._config.MAX_RETRIES:
                     break
-                time.sleep(min(2 ** (attempt - 1), 8))
+                time.sleep(_backoff_s(mapped, attempt))
 
         assert last_error is not None
         if isinstance(last_error, ClaudeResponseFormatError):
@@ -274,7 +301,7 @@ class ClaudeClient:
                 )
                 if attempt >= attempts:
                     break
-                time.sleep(min(2 ** (attempt - 1), 8))
+                time.sleep(_backoff_s(mapped, attempt))
 
         assert last_error is not None
         raise last_error

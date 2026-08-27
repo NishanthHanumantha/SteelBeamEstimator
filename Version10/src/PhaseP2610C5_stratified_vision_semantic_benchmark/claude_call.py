@@ -75,6 +75,7 @@ def call_selected_beam(
         "usage": call.get("usage"),
         "error": call.get("error"),
         "error_type": call.get("error_type"),
+        "retry_after_s": call.get("retry_after_s"),
         "temperature": call.get("temperature"),
         "prompt_fingerprint": p_fp,
         "n_images": 2,

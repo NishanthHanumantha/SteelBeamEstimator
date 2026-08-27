@@ -24,10 +24,12 @@ from .config import (
     PHASE_NAME,
     R13_REL,
     RESOLUTION_FILENAME,
+    TRACE_FILENAME,
 )
 from .coverage import build_coverage
 from .handoff import apply_production_handoff
 from .observability import classify_run, public_observability, public_summary
+from .resolution_trace import build_resolution_trace
 from .visuals import ensure_visuals
 
 logger = logging.getLogger("steel_webapp.hybrid_production")
@@ -259,6 +261,17 @@ def run_production_hybrid(
             "identity_ok",
         )
     }
+    trace = build_resolution_trace(
+        run_id=run_id,
+        beam_ids=list(catalog.get("beam_ids") or []) if catalog.get("ok") else [],
+        shadow_result=shadow,
+        handoff=handoff,
+        coverage=coverage,
+        visual_prep=visual_prep if isinstance(visual_prep, dict) else {},
+    )
+    observability["lifecycle_counts"] = trace.get("lifecycle_counts")
+    observability["reason_counts"] = trace.get("reason_counts")
+    observability["status_counts"] = trace.get("status_counts")
     resolution = {
         "phase_id": PHASE_ID,
         "gate_version": GATE_VERSION,
@@ -327,6 +340,7 @@ def run_production_hybrid(
             },
         )
         _dump(out / COVERAGE_FILENAME, coverage)
+        _dump(out / TRACE_FILENAME, trace)
         try:
             from PhaseW10_hybrid_production_monitoring.writer import write_run_monitor
 

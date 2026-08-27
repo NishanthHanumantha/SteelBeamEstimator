@@ -261,8 +261,33 @@ class AdapterTests(unittest.TestCase):
         )
         self.assertEqual((self.root / EXCEL_REL).read_bytes(), self.excel)
         self.assertEqual(failed["request_count"], 1)
-        cls = (failed.get("beams") or [{}])[0].get("comparison", {}).get("agreement_classification")
+        fail_row = (failed.get("beams") or [{}])[0]
+        cls = fail_row.get("comparison", {}).get("agreement_classification")
         self.assertEqual(cls, HYBRID_UNAVAILABLE)
+        self.assertEqual(fail_row.get("failure_category"), "API_FAILED")
+        self.assertEqual(fail_row.get("error_type"), "APIError")
+        self.assertFalse(fail_row.get("api_success"))
+        self.assertIn("simulated_api_failure", str(fail_row.get("api_error") or ""))
+
+    def test_w13_api_failed_retries_live_loop(self):
+        os.environ["HYBRID_MODE"] = "shadow"
+        os.environ["ANTHROPIC_API_KEY"] = "not-a-real-key"
+        calls = {"n": 0}
+        inner = _vision_client(fail=True)
+
+        def counting_client(**kwargs):
+            calls["n"] += 1
+            return inner(**kwargs)
+
+        result = run_hybrid_shadow(
+            run_id="t-retry",
+            staging=self.root,
+            client_override=counting_client,
+            persist=True,
+        )
+        self.assertEqual((self.root / EXCEL_REL).read_bytes(), self.excel)
+        self.assertGreaterEqual(calls["n"], 2)
+        self.assertEqual(result["request_count"], 1)
 
     def test_5_excel_isolation(self):
         os.environ["HYBRID_MODE"] = "shadow"

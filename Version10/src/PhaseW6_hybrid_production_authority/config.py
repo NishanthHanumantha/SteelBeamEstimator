@@ -19,6 +19,7 @@ RESOLUTION_FILENAME = "hybrid_resolution.json"
 OBSERVABILITY_FILENAME = "hybrid_observability.json"
 HANDOFF_LEDGER_FILENAME = "hybrid_handoff_ledger.json"
 COVERAGE_FILENAME = "hybrid_coverage.json"
+TRACE_FILENAME = "hybrid_resolution_trace.json"
 
 R13_REL = "data/output/PhaseR1.3_pipeline_integration/beam_reinforcement_models_production.json"
 R13_DIR_REL = "data/output/PhaseR1.3_pipeline_integration"

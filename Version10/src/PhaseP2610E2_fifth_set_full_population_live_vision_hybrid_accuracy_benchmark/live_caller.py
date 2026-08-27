@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import time
 from pathlib import Path
 from typing import Any, Callable, Dict, Optional
 
@@ -25,6 +26,37 @@ def sanitize(value: Any) -> Any:
     if isinstance(value, list):
         return [sanitize(v) for v in value]
     return _SECRET_RE.sub("[REDACTED]", str(value))
+
+
+def _api_retry_delay_s(audit: Dict[str, Any]) -> float:
+    et = str(audit.get("error_type") or "")
+    err = str(audit.get("error") or "").lower()
+    if (
+        "RateLimit" in et
+        or "429" in err
+        or "rate limit" in err
+        or "rate_limit" in err
+    ):
+        raw = audit.get("retry_after_s")
+        try:
+            if raw is not None:
+                return min(max(float(raw), 1.0), 60.0)
+        except (TypeError, ValueError):
+            pass
+        return 15.0
+    if et in {"APIConnectionError", "APIStatusError", "ClaudeAPIError"} or "overloaded" in err:
+        return 2.0
+    return 0.0
+
+
+def _is_nonretryable_api_error(audit: Dict[str, Any]) -> bool:
+    et = str(audit.get("error_type") or "")
+    err = str(audit.get("error") or "").lower()
+    if "Authentication" in et or "ClaudeAuthenticationError" in et:
+        return True
+    if "usage limit" in err or "invalid_request_error" in err and "limit" in err:
+        return True
+    return False
 
 
 def classify_failure(*, audit: Dict[str, Any], parsed: Dict[str, Any]) -> str:
@@ -84,7 +116,11 @@ def call_live_beam(
             "Timeout" in error_type or "timeout" in str(audit.get("error") or "").lower()
         )
         if fail == "API_FAILED" and attempts < api_limit and not timed_out:
-            continue
+            if not _is_nonretryable_api_error(audit):
+                delay = _api_retry_delay_s(audit)
+                if delay > 0:
+                    time.sleep(delay)
+                continue
         if fail == "SCHEMA_FAILED":
             schema_attempts += 1
             if schema_attempts < MAX_SCHEMA_PARSE_ATTEMPTS:

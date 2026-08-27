@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Steel Beam Estimation</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css', v=app_release) }}" />
 </head>
 <body>
   <header>
@@ -95,7 +95,7 @@
       <div id="success-warnings" class="warn hidden"></div>
       <div id="download-error" class="err hidden"></div>
       <div class="actions">
-        <button type="button" class="btn" id="btn-download">Download Excel</button>
+        <a class="btn" id="btn-download" href="#" role="button">Download Excel</a>
         <button type="button" class="secondary" id="btn-another">Estimate Another Drawing</button>
       </div>
     </section>
@@ -109,6 +109,6 @@
     </section>
   </main>
 
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js', v=app_release) }}"></script>
 </body>
 </html>

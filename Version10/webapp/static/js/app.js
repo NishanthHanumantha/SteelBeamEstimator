@@ -226,6 +226,11 @@
     } else {
       setDownloadError("");
     }
+    const btn = el("btn-download");
+    if (btn && state.runId && data.download_ready !== false && data.excel_exists !== false) {
+      btn.setAttribute("href", `/api/download/${state.runId}`);
+      if (data.workbook_name) btn.setAttribute("download", data.workbook_name);
+    }
     show("success");
   }
 
@@ -309,10 +314,13 @@
     setDownloadError("");
     const btn = el("btn-download");
     const previous = btn.textContent;
-    btn.disabled = true;
+    btn.classList.add("is-downloading");
+    btn.setAttribute("aria-busy", "true");
     btn.textContent = "Downloading…";
+    const nativeHref = `/api/download/${state.runId}`;
+    btn.setAttribute("href", nativeHref);
     try {
-      const res = await fetch(`/api/download/${state.runId}`);
+      const res = await fetch(nativeHref);
       if (!res.ok) {
         let msg = "Download failed. The workbook is still available — try again.";
         try {
@@ -342,14 +350,17 @@
       a.download = name;
       document.body.appendChild(a);
       a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        try { URL.revokeObjectURL(url); } catch (err) { /* ignore */ }
+        a.remove();
+      }, 60000);
     } catch (err) {
       setDownloadError(
         "Download failed due to a network error. The result is still available — try again."
       );
     } finally {
-      btn.disabled = false;
+      btn.classList.remove("is-downloading");
+      btn.setAttribute("aria-busy", "false");
       btn.textContent = previous || "Download Excel";
     }
   }

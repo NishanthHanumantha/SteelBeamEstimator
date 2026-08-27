@@ -114,8 +114,8 @@ class W12ResultDeliveryTests(unittest.TestCase):
         res = self.client.get("/health")
         self.assertEqual(res.status_code, 200)
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.12")
-        self.assertEqual(data.get("app_release"), "W.12")
+        self.assertEqual(data.get("phase"), "W.13")
+        self.assertEqual(data.get("app_release"), "W.13")
         delivery = data.get("result_delivery") or {}
         self.assertTrue(delivery.get("durable_registry"))
         self.assertTrue(delivery.get("download_reconstructs_from_disk"))
@@ -125,8 +125,9 @@ class W12ResultDeliveryTests(unittest.TestCase):
         home = self.client.get("/")
         html = home.get_data(as_text=True)
         self.assertIn('id="btn-download"', html)
-        self.assertIn('type="button"', html)
         self.assertIn("download-error", html)
+        self.assertIn("app.js?v=", html)
+        self.assertIn("app.css?v=", html)
 
     def test_w12_01_server_result_registration(self):
         run_id, status = self._complete()

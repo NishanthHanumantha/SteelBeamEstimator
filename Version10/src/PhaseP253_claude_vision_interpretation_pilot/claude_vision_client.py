@@ -147,6 +147,7 @@ def call_claude_vision(
             "usage": None,
             "error": str(exc),
             "error_type": type(exc).__name__,
+            "retry_after_s": getattr(exc, "retry_after_s", None),
             "temperature": getattr(config, "TEMPERATURE", None),
         }
 

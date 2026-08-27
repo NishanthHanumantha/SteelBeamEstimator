@@ -79,6 +79,46 @@ def _dump(path: Path, payload: Dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
+def _copy_live_diagnostics(row: Dict[str, Any], live: Optional[Dict[str, Any]]) -> None:
+    """Persist API/parse diagnostics. Never copies secrets; live.audit is already sanitized."""
+    if not isinstance(live, dict):
+        return
+    audit = live.get("audit") if isinstance(live.get("audit"), dict) else {}
+    parsed = live.get("parsed") if isinstance(live.get("parsed"), dict) else {}
+    row["api_success"] = bool(live.get("api_success"))
+    row["schema_valid"] = live.get("schema_valid")
+    row["semantic_usable"] = bool(live.get("semantic_usable"))
+    row["parse_status"] = parsed.get("call_status")
+    if live.get("error_type"):
+        row["error_type"] = live.get("error_type")
+    elif audit.get("error_type") and not row.get("error_type"):
+        row["error_type"] = audit.get("error_type")
+    err = audit.get("error")
+    if err and not row.get("api_error"):
+        row["api_error"] = str(err)[:400]
+    if audit.get("retry_after_s") is not None:
+        row["retry_after_s"] = audit.get("retry_after_s")
+    if live.get("retry_count") is not None:
+        row["retry_count"] = live.get("retry_count")
+    if live.get("attempts") is not None:
+        row["attempts"] = live.get("attempts")
+
+
+def _looks_like_rate_limit(row: Dict[str, Any], live: Optional[Dict[str, Any]]) -> bool:
+    et = str(row.get("error_type") or "")
+    err = str(row.get("api_error") or "").lower()
+    audit = (live or {}).get("audit") if isinstance(live, dict) else {}
+    if isinstance(audit, dict):
+        et = et or str(audit.get("error_type") or "")
+        err = err or str(audit.get("error") or "").lower()
+    return (
+        "RateLimit" in et
+        or "429" in err
+        or "rate limit" in err
+        or "rate_limit" in err
+    )
+
+
 def _empty_result(
     *,
     run_id: str,
@@ -287,6 +327,8 @@ def _run_shadow_body(
     beam_budget = float(getattr(settings, "total_beam_timeout_s", 0) or 0)
     per_call = float(settings.per_call_timeout_s or 0)
     total_n = len(beam_ids)
+    consecutive_rate_limit = 0
+    rate_limit_cooldown_used = False
 
     models = catalog.get("by_id") or {}
     for beam_id in beam_ids:
@@ -395,7 +437,7 @@ def _run_shadow_body(
                         client_override=client_override,
                         timeout_s=per_call if per_call > 0 else None,
                         max_attempts=vision_attempts,
-                        max_api_attempts=1,
+                        max_api_attempts=vision_attempts,
                     )
 
                 live = run_with_timeout(_invoke, beam_budget)
@@ -479,6 +521,7 @@ def _run_shadow_body(
         }
         row["failure_category"] = (live or {}).get("failure_category")
         row["attempts"] = (live or {}).get("attempts")
+        _copy_live_diagnostics(row, live if isinstance(live, dict) else None)
         semantic_usable = bool((live or {}).get("semantic_usable"))
         vision_row = None
         if semantic_usable and isinstance(live, dict):
@@ -535,6 +578,22 @@ def _run_shadow_body(
                 status=HYBRID_ERROR,
                 error=type(exc).__name__,
             )
+        if row.get("hybrid_status") == "OBSERVED":
+            consecutive_rate_limit = 0
+        elif (
+            str(row.get("failure_category") or "") == "API_FAILED"
+            and _looks_like_rate_limit(row, live if isinstance(live, dict) else None)
+        ):
+            consecutive_rate_limit += 1
+            if consecutive_rate_limit >= 3 and not rate_limit_cooldown_used:
+                logger.warning(
+                    "Hybrid rate-limit cooldown run_id=%s beam_id=%s",
+                    run_id,
+                    beam_id,
+                )
+                time.sleep(30)
+                rate_limit_cooldown_used = True
+                consecutive_rate_limit = 0
         observations.append(row)
 
     cost = estimate_cost_usd(input_tokens=input_tokens, output_tokens=output_tokens)

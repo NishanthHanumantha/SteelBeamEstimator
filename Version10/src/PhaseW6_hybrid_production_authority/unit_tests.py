@@ -23,7 +23,7 @@ from PhaseW5_production_hybrid_shadow.config import (
 from PhaseW5_production_hybrid_shadow.settings import HybridSettings, load_settings
 from PhaseW5_production_hybrid_shadow.unit_tests import _png, _vision_client
 
-from .config import COVERAGE_FILENAME, OBSERVABILITY_FILENAME, OUTPUT_DIRNAME, PRE_HYBRID_FILENAME, R13_DIR_REL
+from .config import COVERAGE_FILENAME, OBSERVABILITY_FILENAME, OUTPUT_DIRNAME, PRE_HYBRID_FILENAME, R13_DIR_REL, TRACE_FILENAME
 from .coverage import (
     CROP_T1_NATIVE,
     CROP_UNAVAILABLE,
@@ -371,6 +371,10 @@ class OrchestratorTests(unittest.TestCase):
         self.assertTrue((out / "hybrid_observability.json").is_file())
         self.assertTrue((out / "hybrid_handoff_ledger.json").is_file())
         self.assertTrue((out / COVERAGE_FILENAME).is_file())
+        self.assertTrue((out / TRACE_FILENAME).is_file())
+        trace = json.loads((out / TRACE_FILENAME).read_text(encoding="utf-8"))
+        self.assertTrue(trace.get("identity_ok"))
+        self.assertEqual(trace["lifecycle_counts"]["total_beams"], 1)
         cov = json.loads((out / COVERAGE_FILENAME).read_text(encoding="utf-8"))
         self.assertTrue(cov.get("identity_ok"))
         self.assertEqual(cov.get("unexplained"), 0)
@@ -444,6 +448,69 @@ class OrchestratorTests(unittest.TestCase):
         self.assertEqual(by_id["B1"]["hybrid_outcome"], OUT_CLAUDE_SUCCESS)
         self.assertEqual(by_id["B4"]["hybrid_outcome"], OUT_CLAUDE_FAILURE)
         self.assertEqual(by_id["B3"]["hybrid_outcome"], OUT_FALLBACK)
+
+    def test_w13_trace_api_failed_not_opaque(self):
+        from .resolution_trace import (
+            REASON_VISION_API_ERROR,
+            STATUS_VISION_FAILED,
+            build_resolution_trace,
+        )
+
+        shadow = {
+            "request_count": 2,
+            "beams": [
+                {
+                    "beam_id": "B1",
+                    "visual_available": True,
+                    "visual_source": "W8_EVIDENCE",
+                    "context_path": "/tmp/c.png",
+                    "detail_path": "/tmp/d.png",
+                    "called": True,
+                    "hybrid_status": "OBSERVED",
+                    "failure_category": "OK",
+                    "semantic_usable": True,
+                    "api_success": True,
+                    "schema_valid": True,
+                    "parse_status": "OK",
+                    "hybrid_semantic": {"beam_id": "B1"},
+                    "usage": {"input_tokens": 10, "output_tokens": 5},
+                },
+                {
+                    "beam_id": "B2",
+                    "visual_available": True,
+                    "visual_source": "W8_EVIDENCE",
+                    "called": True,
+                    "hybrid_status": "HYBRID_UNAVAILABLE",
+                    "skip_reason": "API_FAILED",
+                    "failure_category": "API_FAILED",
+                    "api_success": False,
+                    "error_type": "ClaudeRateLimitError",
+                    "api_error": "429 rate limit",
+                    "retry_count": 1,
+                    "attempts": 2,
+                    "usage": {"input_tokens": 0, "output_tokens": 0},
+                },
+            ],
+        }
+        trace = build_resolution_trace(
+            run_id="t-w13",
+            beam_ids=["B1", "B2"],
+            shadow_result=shadow,
+            handoff={"applied": True, "ledger": [{"beam_id": "B1", "action": "PATCHED"}]},
+            coverage={},
+            visual_prep={"evidence_packages_generated": 2},
+        )
+        self.assertTrue(trace["identity_ok"])
+        self.assertEqual(trace["lifecycle_counts"]["claude_attempted"], 2)
+        self.assertEqual(trace["lifecycle_counts"]["claude_api_success"], 1)
+        self.assertEqual(trace["lifecycle_counts"]["claude_api_failure"], 1)
+        self.assertEqual(trace["lifecycle_counts"]["d2_resolved"], 1)
+        self.assertEqual(trace["lifecycle_counts"]["deterministic_fallback"], 1)
+        by_id = {b["beam_id"]: b for b in trace["beams"]}
+        self.assertEqual(by_id["B2"]["final_status"], STATUS_VISION_FAILED)
+        self.assertEqual(by_id["B2"]["reason_code"], REASON_VISION_API_ERROR)
+        self.assertEqual(by_id["B2"]["existing_code"], "API_FAILED")
+        self.assertEqual(by_id["B2"]["error_type"], "ClaudeRateLimitError")
 
     def test_shadow_does_not_patch(self):
         before = (self.root / R13_REL).read_text(encoding="utf-8")
