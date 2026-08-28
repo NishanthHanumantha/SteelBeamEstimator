@@ -1,0 +1,2324 @@
+{
+  "dataset": "2nd Set \u2014 Galera GF",
+  "beams": [
+    "B1",
+    "B10",
+    "B23"
+  ],
+  "phase": "W.17 READ-ONLY CALCULATION AUDIT",
+  "production_mutation": "NO",
+  "project_engineering_context": {
+    "frame": "GF",
+    "cover_mm": 30,
+    "cover_source": "GN_DXF_TABLE_2",
+    "steel_grade": "Fe550",
+    "concrete_grade_beam": "M30",
+    "hook_multiple_135": 5,
+    "dev_length_factor_representative_dia12": 50,
+    "dev_length_source": "GN_DXF_TABLE_1",
+    "gn_dxf_path": "C:\\Users\\nishanth.h\\AppData\\Local\\Temp\\w16_gn\\galera_gn.dxf",
+    "parse_confidence": 1.0,
+    "loader_validation_passed": true,
+    "density_kg_m3": 7850.0,
+    "ld_by_diameter_for_project_grades": {
+      "8": {
+        "used": true,
+        "table_hit": true,
+        "key": [
+          "Fe550",
+          8,
+          "M30"
+        ],
+        "ld_mm": 400,
+        "ld_m": 0.4,
+        "ld_over_d": 50.0,
+        "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+        "fallback": false
+      },
+      "10": {
+        "used": true,
+        "table_hit": true,
+        "key": [
+          "Fe550",
+          10,
+          "M30"
+        ],
+        "ld_mm": 500,
+        "ld_m": 0.5,
+        "ld_over_d": 50.0,
+        "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+        "fallback": false
+      },
+      "16": {
+        "used": true,
+        "table_hit": true,
+        "key": [
+          "Fe550",
+          16,
+          "M30"
+        ],
+        "ld_mm": 800,
+        "ld_m": 0.8,
+        "ld_over_d": 50.0,
+        "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+        "fallback": false
+      },
+      "20": {
+        "used": true,
+        "table_hit": true,
+        "key": [
+          "Fe550",
+          20,
+          "M30"
+        ],
+        "ld_mm": 1000,
+        "ld_m": 1.0,
+        "ld_over_d": 50.0,
+        "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+        "fallback": false
+      },
+      "25": {
+        "used": true,
+        "table_hit": true,
+        "key": [
+          "Fe550",
+          25,
+          "M30"
+        ],
+        "ld_mm": 1250,
+        "ld_m": 1.25,
+        "ld_over_d": 50.0,
+        "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+        "fallback": false
+      }
+    },
+    "note": "Excel Project Totals prints representative Ld/d at dia=12 only. Per-bar Ld is table lookup (steel, dia, conc)."
+  },
+  "pipeline_map": [
+    "DXF (framing + reinforcement + GN)",
+    "PhaseR1_2A GeometryProvider -> L.2 geometry.clear_span_mm / width_mm / depth_mm",
+    "PhaseR1.3 EngineeringBarBuilder -> L.2 bar records",
+    "SteelWeightCompletion._compute_beam/_compute_bar/_derive_cut_length",
+    "StirrupImprover.compute_beam (SI.1) for stirrups",
+    "BBSCompletionEngine.generate",
+    "EstimatorExcelGenerator (Bar Bending Schedule + Steel Summary)"
+  ],
+  "bbs_header_row_note": "Beam header reuses Dia=1 (member count), Spacing=span_m, No.of Bars=width_mm, Dvlp.L=depth_m. These are presentation fields, not bar calculations.",
+  "beams_detail": {
+    "B1": {
+      "geometry": {
+        "l2_geometry": {
+          "beam_id": "B1",
+          "width_mm": 200.0,
+          "depth_mm": 750.0,
+          "clear_span_mm": 4158.3,
+          "effective_span_mm": 4158.3,
+          "geometry_source": "BEAM_REGISTRY",
+          "geometry_confidence": 0.55,
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        },
+        "field_used_by_vb1": "geometry.clear_span_mm  ->  SteelWeightCompletion._compute_beam span_mm",
+        "clear_span_mm": 4158.3,
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "source_on_model": "BEAM_REGISTRY"
+      },
+      "l2_bar_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+          "bar_label": "2-Y16",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 5918.3,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+          "bar_label": "2-Y16",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 2799.6,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+          "bar_label": "2-Y16",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 2799.6,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B1-TOP_MAIN-602fb7",
+          "bar_label": "2-Y20",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 6358.3,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "stirrups",
+          "bar_id": "R13-B1-STIRRUP-949d3f",
+          "bar_label": "2L-Y8@200#Zone_A",
+          "diameter_mm": 8.0,
+          "quantity": 21,
+          "spacing_mm": 200.0,
+          "cut_length_mm": 2060.0,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-eb6aef",
+          "bar_label": "SPACER 25@1000",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "steel_grade": "Y",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-6eda9b",
+          "bar_label": "SPACER 25@1000",
+          "diameter_mm": 25.0,
+          "quantity": 7,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "steel_grade": "Y",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-31ecd5",
+          "bar_label": "SPACER 25@1000",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "steel_grade": "Y",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        }
+      ],
+      "computed_bar_weights": [
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+          "bar_label": "2-Y16",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 5758.3,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 9.088533047728252,
+          "total_weight_kg": 18.177066095456503,
+          "formula_used": "W = (pi*16.0^2/4)*5758*2*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 4158.3,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 5758.3,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 2,
+            "cut_m": 5.7583,
+            "total_m": 11.5166
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 11.5166,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 18.177066095456503,
+            "engine_kg": 18.177066095456503,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.5999999999999996,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+          "bar_label": "2-Y16",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 5758.3,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 9.088533047728252,
+          "total_weight_kg": 18.177066095456503,
+          "formula_used": "W = (pi*16.0^2/4)*5758*2*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 4158.3,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 5758.3,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 2,
+            "cut_m": 5.7583,
+            "total_m": 11.5166
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 11.5166,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 18.177066095456503,
+            "engine_kg": 18.177066095456503,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.5999999999999996,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+          "bar_label": "2-Y16",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 5758.3,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 9.088533047728252,
+          "total_weight_kg": 18.177066095456503,
+          "formula_used": "W = (pi*16.0^2/4)*5758*2*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 4158.3,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 5758.3,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 2,
+            "cut_m": 5.7583,
+            "total_m": 11.5166
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 11.5166,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 18.177066095456503,
+            "engine_kg": 18.177066095456503,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.5999999999999996,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-TOP_MAIN-602fb7",
+          "bar_label": "2-Y20",
+          "role": "TOP_EXTRA",
+          "family": "TOP_EXTRA",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 6158.3,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 314.1592653589793,
+          "weight_per_bar_kg": 15.187292980302589,
+          "total_weight_kg": 30.374585960605177,
+          "formula_used": "W = (pi*20.0^2/4)*6158*2*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              20,
+              "M30"
+            ],
+            "ld_mm": 1000,
+            "ld_m": 1.0,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 4158.3,
+            "Ld_mm": 1000,
+            "two_Ld_mm": 2000
+          },
+          "expected_cut_mm_from_current_formula": 6158.3,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 2,
+            "cut_m": 6.1583,
+            "total_m": 12.3166
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 2.466150233067988,
+            "total_m": 12.3166,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 30.37458596060518,
+            "engine_kg": 30.374585960605177,
+            "match": true
+          },
+          "excel_dvlp_m_display": 2.0,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-STIRRUP-949d3f",
+          "bar_label": "2L-Y8@200#Zone_A",
+          "role": "STIRRUP",
+          "family": "STIRRUP",
+          "diameter_mm": 8.0,
+          "quantity": 21,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 1740.0,
+          "cut_length_source": "SI1_zone_engine",
+          "area_mm2": 50.26548245743669,
+          "weight_per_bar_kg": 0.6865762248861277,
+          "total_weight_kg": 14.418100722608681,
+          "formula_used": "SI.1: W=(pi*8.0^2/4)*1740*21*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "stirrup Dvlp.L in Excel is hook allowance 2*N*d, not TABLE 1 Ld"
+          },
+          "cut_length_formula": "cut_mm = 2*(width-2*cover)+2*(depth-2*cover)+2*hook_multiple*d",
+          "cut_length_inputs": {
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30,
+            "hook_multiple": 5,
+            "hook_mm": 80.0,
+            "perimeter_mm": 1660.0,
+            "defaults_if_missing": "depth default 600 if None; width default 200 if None"
+          },
+          "expected_cut_mm_from_current_formula": 1740.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm and geometry.depth_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 21,
+            "cut_m": 1.74,
+            "total_m": 36.54
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 0.394584037290878,
+            "total_m": 36.54,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 14.418100722608681,
+            "engine_kg": 14.418100722608681,
+            "match": true
+          },
+          "excel_dvlp_m_display": 0.08,
+          "excel_dvlp_m_formula": "SI.1: dvlp_m = 2 * hook_multiple * d / 1000  (hook allowance, NOT Ld)",
+          "code_path": {
+            "weight": "StirrupImprover.compute_beam + StirrupWeightEngine.cut_length_mm then SteelWeightCompletion SI.1 branch",
+            "bbs": "BBSCompletionEngine.generate re-invokes StirrupImprover.compute_beam per STIRRUP BarSteelWeight",
+            "quantity": "StirrupQuantityEngine.calculate (spacing-derived) or L.2 quantity for legacy"
+          }
+        },
+        {
+          "bar_id": "R13-B1-SPACER_BAR-eb6aef",
+          "bar_label": "SPACER 25@1000",
+          "role": "SPACER",
+          "family": "SPACER",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "steel_grade_on_bar": "Y",
+          "cut_length_mm": 140.0,
+          "cut_length_source": "SpacerRuleEngine_M.2",
+          "area_mm2": 490.8738521234052,
+          "weight_per_bar_kg": 0.5394703634836223,
+          "total_weight_kg": 1.6184110904508668,
+          "formula_used": "W = (pi*25.0^2/4)*140*3*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "spacer uses width - 2*cover, not Ld"
+          },
+          "cut_length_formula": "cut_mm = width_mm - 2 * cover_mm  (or provided_cut_length_mm if set)",
+          "cut_length_inputs": {
+            "width_mm": 200.0,
+            "cover_mm": 30,
+            "provided_cut_length_mm": null
+          },
+          "expected_cut_mm_from_current_formula": 140.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 3,
+            "cut_m": 0.14,
+            "total_m": 0.42
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 3.853359739168731,
+            "total_m": 0.42,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 1.618411090450867,
+            "engine_kg": 1.6184110904508668,
+            "match": true
+          },
+          "excel_dvlp_m_display": -4.018300000000001,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-SPACER_BAR-6eda9b",
+          "bar_label": "SPACER 25@1000",
+          "role": "SPACER",
+          "family": "SPACER",
+          "diameter_mm": 25.0,
+          "quantity": 7,
+          "steel_grade_on_bar": "Y",
+          "cut_length_mm": 140.0,
+          "cut_length_source": "SpacerRuleEngine_M.2",
+          "area_mm2": 490.8738521234052,
+          "weight_per_bar_kg": 0.5394703634836223,
+          "total_weight_kg": 3.776292544385356,
+          "formula_used": "W = (pi*25.0^2/4)*140*7*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "spacer uses width - 2*cover, not Ld"
+          },
+          "cut_length_formula": "cut_mm = width_mm - 2 * cover_mm  (or provided_cut_length_mm if set)",
+          "cut_length_inputs": {
+            "width_mm": 200.0,
+            "cover_mm": 30,
+            "provided_cut_length_mm": null
+          },
+          "expected_cut_mm_from_current_formula": 140.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 7,
+            "cut_m": 0.14,
+            "total_m": 0.98
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 3.853359739168731,
+            "total_m": 0.98,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 3.7762925443853566,
+            "engine_kg": 3.776292544385356,
+            "match": true
+          },
+          "excel_dvlp_m_display": -4.018300000000001,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B1-SPACER_BAR-31ecd5",
+          "bar_label": "SPACER 25@1000",
+          "role": "SPACER",
+          "family": "SPACER",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "steel_grade_on_bar": "Y",
+          "cut_length_mm": 140.0,
+          "cut_length_source": "SpacerRuleEngine_M.2",
+          "area_mm2": 490.8738521234052,
+          "weight_per_bar_kg": 0.5394703634836223,
+          "total_weight_kg": 1.6184110904508668,
+          "formula_used": "W = (pi*25.0^2/4)*140*3*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "spacer uses width - 2*cover, not Ld"
+          },
+          "cut_length_formula": "cut_mm = width_mm - 2 * cover_mm  (or provided_cut_length_mm if set)",
+          "cut_length_inputs": {
+            "width_mm": 200.0,
+            "cover_mm": 30,
+            "provided_cut_length_mm": null
+          },
+          "expected_cut_mm_from_current_formula": 140.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm",
+            "clear_span_mm": 4158.3,
+            "width_mm": 200.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 3,
+            "cut_m": 0.14,
+            "total_m": 0.42
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 3.853359739168731,
+            "total_m": 0.42,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 1.618411090450867,
+            "engine_kg": 1.6184110904508668,
+            "match": true
+          },
+          "excel_dvlp_m_display": -4.018300000000001,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        }
+      ],
+      "bbs_engine_rows": [
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 2,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 5.758,
+          "total_length_m": 11.517,
+          "total_weight_kg": 18.177,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 18.177,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 2,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 5.758,
+          "total_length_m": 11.517,
+          "total_weight_kg": 18.177,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 18.177,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 2,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 5.758,
+          "total_length_m": 11.517,
+          "total_weight_kg": 18.177,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 18.177,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars - Extra",
+          "frame": "GF",
+          "diameter_mm": 20.0,
+          "spacing_m": null,
+          "quantity": 2,
+          "dvlp_length_m": 2.0,
+          "cut_length_m": 6.158,
+          "total_length_m": 12.317,
+          "total_weight_kg": 30.375,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": 30.375,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Stirrups (Mid.)",
+          "frame": "GF",
+          "diameter_mm": 8.0,
+          "spacing_m": 0.2,
+          "quantity": 21,
+          "dvlp_length_m": 0.16,
+          "cut_length_m": 1.74,
+          "total_length_m": 36.54,
+          "total_weight_kg": 14.418,
+          "weight_d8": 14.418,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Spacer bars",
+          "frame": "GF",
+          "diameter_mm": 25.0,
+          "spacing_m": null,
+          "quantity": 3,
+          "dvlp_length_m": -4.018,
+          "cut_length_m": 0.14,
+          "total_length_m": 0.42,
+          "total_weight_kg": 1.618,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": 1.618,
+          "weight_d32": null
+        },
+        {
+          "description": "Spacer bars",
+          "frame": "GF",
+          "diameter_mm": 25.0,
+          "spacing_m": null,
+          "quantity": 7,
+          "dvlp_length_m": -4.018,
+          "cut_length_m": 0.14,
+          "total_length_m": 0.98,
+          "total_weight_kg": 3.776,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": 3.776,
+          "weight_d32": null
+        },
+        {
+          "description": "Spacer bars",
+          "frame": "GF",
+          "diameter_mm": 25.0,
+          "spacing_m": null,
+          "quantity": 3,
+          "dvlp_length_m": -4.018,
+          "cut_length_m": 0.14,
+          "total_length_m": 0.42,
+          "total_weight_kg": 1.618,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": 1.618,
+          "weight_d32": null
+        }
+      ],
+      "excel_rows": [
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 2,
+          "dvlp_m": 1.6,
+          "cut_m": 5.758,
+          "total_m": 11.517,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 18.177,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 18.177
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 2,
+          "dvlp_m": 1.6,
+          "cut_m": 5.758,
+          "total_m": 11.517,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 18.177,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 18.177
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 2,
+          "dvlp_m": 1.6,
+          "cut_m": 5.758,
+          "total_m": 11.517,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 18.177,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 18.177
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars - Extra",
+          "dia_mm": 20,
+          "spacing_m": null,
+          "qty": 2,
+          "dvlp_m": 2,
+          "cut_m": 6.158,
+          "total_m": 12.317,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": 30.375,
+          "y25": null,
+          "y32": null,
+          "total_kg": 30.375
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Stirrups (Mid.)",
+          "dia_mm": 8,
+          "spacing_m": 0.2,
+          "qty": 21,
+          "dvlp_m": 0.16,
+          "cut_m": 1.74,
+          "total_m": 36.54,
+          "y8": 14.418,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 14.418
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Spacer bars",
+          "dia_mm": 25,
+          "spacing_m": null,
+          "qty": 3,
+          "dvlp_m": -4.018,
+          "cut_m": 0.14,
+          "total_m": 0.42,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": 1.618,
+          "y32": null,
+          "total_kg": 1.618
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Spacer bars",
+          "dia_mm": 25,
+          "spacing_m": null,
+          "qty": 7,
+          "dvlp_m": -4.018,
+          "cut_m": 0.14,
+          "total_m": 0.98,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": 3.776,
+          "y32": null,
+          "total_kg": 3.776
+        },
+        {
+          "beam_id": "B1",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Spacer bars",
+          "dia_mm": 25,
+          "spacing_m": null,
+          "qty": 3,
+          "dvlp_m": -4.018,
+          "cut_m": 0.14,
+          "total_m": 0.42,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": 1.618,
+          "y32": null,
+          "total_kg": 1.618
+        }
+      ],
+      "reconciliation": {
+        "n_l2_bars": 8,
+        "n_computed": 8,
+        "n_bbs_lines": 8,
+        "n_excel_lines": 8,
+        "computed_weight_sum_kg": 106.337,
+        "bbs_weight_sum_kg": 106.336,
+        "steel_summary_diameter_sum_kg": 106.337,
+        "steel_summary_total_kg": 106.337,
+        "weight_by_diameter": {
+          "16": 54.531198,
+          "20": 30.374586,
+          "8": 14.418101,
+          "25": 7.013115
+        },
+        "beam_total_kg": 106.337,
+        "bbs_vs_computed_diff": -0.001,
+        "ss_total_vs_diameter_diff": 0.0
+      }
+    },
+    "B10": {
+      "geometry": {
+        "l2_geometry": {
+          "beam_id": "B10",
+          "width_mm": 600.0,
+          "depth_mm": 750.0,
+          "clear_span_mm": 2656.6,
+          "effective_span_mm": 2656.6,
+          "geometry_source": "BEAM_REGISTRY",
+          "geometry_confidence": 0.55,
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        },
+        "field_used_by_vb1": "geometry.clear_span_mm  ->  SteelWeightCompletion._compute_beam span_mm",
+        "clear_span_mm": 2656.6,
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "source_on_model": "BEAM_REGISTRY"
+      },
+      "l2_bar_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_MAIN-03b02b",
+          "bar_label": "5Y20",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 4856.6,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+          "bar_label": "5-Y16",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 2424.2,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+          "bar_label": "5-Y16",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 2424.2,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "stirrups",
+          "bar_id": "R13-B10-STIRRUP-b7bcf3",
+          "bar_label": "4L-Y10@150#Zone_A",
+          "diameter_mm": 10.0,
+          "quantity": 18,
+          "spacing_mm": 150.0,
+          "cut_length_mm": 2900.0,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B10-SPACER_BAR-c8906a",
+          "bar_label": "SPACER 25@1000",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 540.0,
+          "steel_grade": "Y",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        }
+      ],
+      "computed_bar_weights": [
+        {
+          "bar_id": "R13-B10-TOP_MAIN-03b02b",
+          "bar_label": "5Y20",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 4656.6,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 314.1592653589793,
+          "weight_per_bar_kg": 11.483875175304393,
+          "total_weight_kg": 57.41937587652196,
+          "formula_used": "W = (pi*20.0^2/4)*4657*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              20,
+              "M30"
+            ],
+            "ld_mm": 1000,
+            "ld_m": 1.0,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 2656.6,
+            "Ld_mm": 1000,
+            "two_Ld_mm": 2000
+          },
+          "expected_cut_mm_from_current_formula": 4656.6,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 2656.6,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 4.6566,
+            "total_m": 23.283
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 2.466150233067988,
+            "total_m": 23.283,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 57.41937587652196,
+            "engine_kg": 57.41937587652196,
+            "match": true
+          },
+          "excel_dvlp_m_display": 2.0,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+          "bar_label": "5-Y16",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 4256.6,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 6.718345652529407,
+          "total_weight_kg": 33.59172826264703,
+          "formula_used": "W = (pi*16.0^2/4)*4257*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 2656.6,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 4256.6,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 2656.6,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 4.2566,
+            "total_m": 21.283
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 21.283,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 33.591728262647024,
+            "engine_kg": 33.59172826264703,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.6000000000000005,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+          "bar_label": "5-Y16",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 4256.6,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 6.718345652529407,
+          "total_weight_kg": 33.59172826264703,
+          "formula_used": "W = (pi*16.0^2/4)*4257*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 2656.6,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 4256.6,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 2656.6,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 4.2566,
+            "total_m": 21.283
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 21.283,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 33.591728262647024,
+            "engine_kg": 33.59172826264703,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.6000000000000005,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B10-STIRRUP-b7bcf3",
+          "bar_label": "4L-Y10@150#Zone_A",
+          "role": "STIRRUP",
+          "family": "STIRRUP",
+          "diameter_mm": 10.0,
+          "quantity": 18,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 2560.0,
+          "cut_length_source": "SI1_zone_engine",
+          "area_mm2": 78.53981633974483,
+          "weight_per_bar_kg": 1.5783361491635122,
+          "total_weight_kg": 28.41005068494322,
+          "formula_used": "SI.1: W=(pi*10.0^2/4)*2560*18*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "stirrup Dvlp.L in Excel is hook allowance 2*N*d, not TABLE 1 Ld"
+          },
+          "cut_length_formula": "cut_mm = 2*(width-2*cover)+2*(depth-2*cover)+2*hook_multiple*d",
+          "cut_length_inputs": {
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30,
+            "hook_multiple": 5,
+            "hook_mm": 100.0,
+            "perimeter_mm": 2460.0,
+            "defaults_if_missing": "depth default 600 if None; width default 200 if None"
+          },
+          "expected_cut_mm_from_current_formula": 2560.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm and geometry.depth_mm",
+            "clear_span_mm": 2656.6,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 18,
+            "cut_m": 2.56,
+            "total_m": 46.08
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 0.616537558266997,
+            "total_m": 46.08,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 28.41005068494322,
+            "engine_kg": 28.41005068494322,
+            "match": true
+          },
+          "excel_dvlp_m_display": 0.1,
+          "excel_dvlp_m_formula": "SI.1: dvlp_m = 2 * hook_multiple * d / 1000  (hook allowance, NOT Ld)",
+          "code_path": {
+            "weight": "StirrupImprover.compute_beam + StirrupWeightEngine.cut_length_mm then SteelWeightCompletion SI.1 branch",
+            "bbs": "BBSCompletionEngine.generate re-invokes StirrupImprover.compute_beam per STIRRUP BarSteelWeight",
+            "quantity": "StirrupQuantityEngine.calculate (spacing-derived) or L.2 quantity for legacy"
+          }
+        },
+        {
+          "bar_id": "R13-B10-SPACER_BAR-c8906a",
+          "bar_label": "SPACER 25@1000",
+          "role": "SPACER",
+          "family": "SPACER",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "steel_grade_on_bar": "Y",
+          "cut_length_mm": 540.0,
+          "cut_length_source": "SpacerRuleEngine_M.2",
+          "area_mm2": 490.8738521234052,
+          "weight_per_bar_kg": 2.0808142591511145,
+          "total_weight_kg": 8.323257036604458,
+          "formula_used": "W = (pi*25.0^2/4)*540*4*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "spacer uses width - 2*cover, not Ld"
+          },
+          "cut_length_formula": "cut_mm = width_mm - 2 * cover_mm  (or provided_cut_length_mm if set)",
+          "cut_length_inputs": {
+            "width_mm": 600.0,
+            "cover_mm": 30,
+            "provided_cut_length_mm": null
+          },
+          "expected_cut_mm_from_current_formula": 540.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm",
+            "clear_span_mm": 2656.6,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 4,
+            "cut_m": 0.54,
+            "total_m": 2.16
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 3.853359739168731,
+            "total_m": 2.16,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 8.32325703660446,
+            "engine_kg": 8.323257036604458,
+            "match": true
+          },
+          "excel_dvlp_m_display": -2.1166,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        }
+      ],
+      "bbs_engine_rows": [
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 20.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 2.0,
+          "cut_length_m": 4.657,
+          "total_length_m": 23.283,
+          "total_weight_kg": 57.419,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": 57.419,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 4.257,
+          "total_length_m": 21.283,
+          "total_weight_kg": 33.592,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 33.592,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 4.257,
+          "total_length_m": 21.283,
+          "total_weight_kg": 33.592,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 33.592,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Stirrups (Mid.)",
+          "frame": "GF",
+          "diameter_mm": 10.0,
+          "spacing_m": 0.15,
+          "quantity": 18,
+          "dvlp_length_m": 0.2,
+          "cut_length_m": 2.58,
+          "total_length_m": 46.44,
+          "total_weight_kg": 28.632,
+          "weight_d8": null,
+          "weight_d10": 28.632,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Spacer bars",
+          "frame": "GF",
+          "diameter_mm": 25.0,
+          "spacing_m": null,
+          "quantity": 4,
+          "dvlp_length_m": -2.117,
+          "cut_length_m": 0.54,
+          "total_length_m": 2.16,
+          "total_weight_kg": 8.323,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": 8.323,
+          "weight_d32": null
+        }
+      ],
+      "excel_rows": [
+        {
+          "beam_id": "B10",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 20,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 2,
+          "cut_m": 4.657,
+          "total_m": 23.283,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": 57.419,
+          "y25": null,
+          "y32": null,
+          "total_kg": 57.419
+        },
+        {
+          "beam_id": "B10",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 1.6,
+          "cut_m": 4.257,
+          "total_m": 21.283,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 33.592,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 33.592
+        },
+        {
+          "beam_id": "B10",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 1.6,
+          "cut_m": 4.257,
+          "total_m": 21.283,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 33.592,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 33.592
+        },
+        {
+          "beam_id": "B10",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Stirrups (Mid.)",
+          "dia_mm": 10,
+          "spacing_m": 0.15,
+          "qty": 18,
+          "dvlp_m": 0.2,
+          "cut_m": 2.58,
+          "total_m": 46.44,
+          "y8": null,
+          "y10": 28.632,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 28.632
+        },
+        {
+          "beam_id": "B10",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Spacer bars",
+          "dia_mm": 25,
+          "spacing_m": null,
+          "qty": 4,
+          "dvlp_m": -2.117,
+          "cut_m": 0.54,
+          "total_m": 2.16,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": 8.323,
+          "y32": null,
+          "total_kg": 8.323
+        }
+      ],
+      "reconciliation": {
+        "n_l2_bars": 5,
+        "n_computed": 5,
+        "n_bbs_lines": 5,
+        "n_excel_lines": 5,
+        "computed_weight_sum_kg": 161.33614,
+        "bbs_weight_sum_kg": 161.558,
+        "steel_summary_diameter_sum_kg": 161.335,
+        "steel_summary_total_kg": 161.336,
+        "weight_by_diameter": {
+          "20": 57.419376,
+          "16": 67.183457,
+          "10": 28.410051,
+          "25": 8.323257
+        },
+        "beam_total_kg": 161.33614,
+        "bbs_vs_computed_diff": 0.22186,
+        "ss_total_vs_diameter_diff": 0.001
+      }
+    },
+    "B23": {
+      "geometry": {
+        "l2_geometry": {
+          "beam_id": "B23",
+          "width_mm": 600.0,
+          "depth_mm": 750.0,
+          "clear_span_mm": 7800.351,
+          "effective_span_mm": 7800.351,
+          "geometry_source": "REINFORCEMENT_DIMENSION",
+          "geometry_confidence": 0.582,
+          "top_cover_mm": 30,
+          "bottom_cover_mm": 30
+        },
+        "field_used_by_vb1": "geometry.clear_span_mm  ->  SteelWeightCompletion._compute_beam span_mm",
+        "clear_span_mm": 7800.351,
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "source_on_model": "REINFORCEMENT_DIMENSION"
+      },
+      "l2_bar_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+          "bar_label": "5-Y20",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 10000.4,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B23-TOP_EXTRA-645920",
+          "bar_label": "5Y16#L",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 3710.1,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+          "bar_label": "5Y16#R",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 3710.1,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "stirrups",
+          "bar_id": "R13-B23-STIRRUP-2ee285",
+          "bar_label": "4L-Y10@100#Zone_A",
+          "diameter_mm": 10.0,
+          "quantity": 79,
+          "spacing_mm": 100.0,
+          "cut_length_mm": 2900.0,
+          "steel_grade": "Fe550",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B23-SPACER_BAR-7ce240",
+          "bar_label": "SPACER 25@1000",
+          "diameter_mm": 25.0,
+          "quantity": 5,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 540.0,
+          "steel_grade": "Y",
+          "development_length_mm": null,
+          "cover_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "engineering_metadata": {}
+        }
+      ],
+      "computed_bar_weights": [
+        {
+          "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+          "bar_label": "5-Y20",
+          "role": "TOP_MAIN",
+          "family": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 9800.350999999999,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 314.1592653589793,
+          "weight_per_bar_kg": 24.169137902798084,
+          "total_weight_kg": 120.84568951399042,
+          "formula_used": "W = (pi*20.0^2/4)*9800*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              20,
+              "M30"
+            ],
+            "ld_mm": 1000,
+            "ld_m": 1.0,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 7800.351,
+            "Ld_mm": 1000,
+            "two_Ld_mm": 2000
+          },
+          "expected_cut_mm_from_current_formula": 9800.350999999999,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 7800.351,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 9.800351,
+            "total_m": 49.001755
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 2.466150233067988,
+            "total_m": 49.001755,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 120.84568951399044,
+            "engine_kg": 120.84568951399042,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.9999999999999991,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B23-TOP_EXTRA-645920",
+          "bar_label": "5Y16#L",
+          "role": "TOP_EXTRA",
+          "family": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 9400.350999999999,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 14.836913798125368,
+          "total_weight_kg": 74.18456899062684,
+          "formula_used": "W = (pi*16.0^2/4)*9400*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 7800.351,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 9400.350999999999,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 7800.351,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 9.400351,
+            "total_m": 47.001755
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 47.001755,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 74.18456899062684,
+            "engine_kg": 74.18456899062684,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.5999999999999988,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+          "bar_label": "5Y16#R",
+          "role": "TOP_EXTRA",
+          "family": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 9400.350999999999,
+          "cut_length_source": "EngineeringContext",
+          "area_mm2": 201.06192982974676,
+          "weight_per_bar_kg": 14.836913798125368,
+          "total_weight_kg": 74.18456899062684,
+          "formula_used": "W = (pi*16.0^2/4)*9400*5*7850/1e9",
+          "development_length": {
+            "used": true,
+            "table_hit": true,
+            "key": [
+              "Fe550",
+              16,
+              "M30"
+            ],
+            "ld_mm": 800,
+            "ld_m": 0.8,
+            "ld_over_d": 50.0,
+            "formula": "EngineeringContextLoader.get_development_length_mm: development_length_table[(steel, dia, conc)]",
+            "fallback": false
+          },
+          "cut_length_formula": "cut_mm = clear_span_mm + 2 * Ld_mm",
+          "cut_length_inputs": {
+            "clear_span_mm": 7800.351,
+            "Ld_mm": 800,
+            "two_Ld_mm": 1600
+          },
+          "expected_cut_mm_from_current_formula": 9400.350999999999,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.clear_span_mm",
+            "clear_span_mm": 7800.351,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 9.400351,
+            "total_m": 47.001755
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 1.578336149163512,
+            "total_m": 47.001755,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 74.18456899062684,
+            "engine_kg": 74.18456899062684,
+            "match": true
+          },
+          "excel_dvlp_m_display": 1.5999999999999988,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        },
+        {
+          "bar_id": "R13-B23-STIRRUP-2ee285",
+          "bar_label": "4L-Y10@100#Zone_A",
+          "role": "STIRRUP",
+          "family": "STIRRUP",
+          "diameter_mm": 10.0,
+          "quantity": 79,
+          "steel_grade_on_bar": "Fe550",
+          "cut_length_mm": 2560.0,
+          "cut_length_source": "SI1_zone_engine",
+          "area_mm2": 78.53981633974483,
+          "weight_per_bar_kg": 1.5783361491635122,
+          "total_weight_kg": 124.68855578391747,
+          "formula_used": "SI.1: W=(pi*10.0^2/4)*2560*79*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "stirrup Dvlp.L in Excel is hook allowance 2*N*d, not TABLE 1 Ld"
+          },
+          "cut_length_formula": "cut_mm = 2*(width-2*cover)+2*(depth-2*cover)+2*hook_multiple*d",
+          "cut_length_inputs": {
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30,
+            "hook_multiple": 5,
+            "hook_mm": 100.0,
+            "perimeter_mm": 2460.0,
+            "defaults_if_missing": "depth default 600 if None; width default 200 if None"
+          },
+          "expected_cut_mm_from_current_formula": 2560.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm and geometry.depth_mm",
+            "clear_span_mm": 7800.351,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 79,
+            "cut_m": 2.56,
+            "total_m": 202.24
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 0.616537558266997,
+            "total_m": 202.24,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 124.68855578391747,
+            "engine_kg": 124.68855578391747,
+            "match": true
+          },
+          "excel_dvlp_m_display": 0.1,
+          "excel_dvlp_m_formula": "SI.1: dvlp_m = 2 * hook_multiple * d / 1000  (hook allowance, NOT Ld)",
+          "code_path": {
+            "weight": "StirrupImprover.compute_beam + StirrupWeightEngine.cut_length_mm then SteelWeightCompletion SI.1 branch",
+            "bbs": "BBSCompletionEngine.generate re-invokes StirrupImprover.compute_beam per STIRRUP BarSteelWeight",
+            "quantity": "StirrupQuantityEngine.calculate (spacing-derived) or L.2 quantity for legacy"
+          }
+        },
+        {
+          "bar_id": "R13-B23-SPACER_BAR-7ce240",
+          "bar_label": "SPACER 25@1000",
+          "role": "SPACER",
+          "family": "SPACER",
+          "diameter_mm": 25.0,
+          "quantity": 5,
+          "steel_grade_on_bar": "Y",
+          "cut_length_mm": 540.0,
+          "cut_length_source": "SpacerRuleEngine_M.2",
+          "area_mm2": 490.8738521234052,
+          "weight_per_bar_kg": 2.0808142591511145,
+          "total_weight_kg": 10.404071295755573,
+          "formula_used": "W = (pi*25.0^2/4)*540*5*7850/1e9",
+          "development_length": {
+            "used": false,
+            "reason": "spacer uses width - 2*cover, not Ld"
+          },
+          "cut_length_formula": "cut_mm = width_mm - 2 * cover_mm  (or provided_cut_length_mm if set)",
+          "cut_length_inputs": {
+            "width_mm": 600.0,
+            "cover_mm": 30,
+            "provided_cut_length_mm": null
+          },
+          "expected_cut_mm_from_current_formula": 540.0,
+          "cut_matches_formula": true,
+          "geometry": {
+            "field_used": "geometry.width_mm",
+            "clear_span_mm": 7800.351,
+            "width_mm": 600.0,
+            "depth_mm": 750.0,
+            "cover_mm": 30
+          },
+          "total_length": {
+            "formula": "total_m = quantity * cut_length_mm / 1000",
+            "quantity": 5,
+            "cut_m": 0.54,
+            "total_m": 2.7
+          },
+          "weight": {
+            "unit_weight_formula": "uw_kg_m = (pi * d^2 / 4) * 1000 * 7850 / 1e9",
+            "unit_weight_kg_m": 3.853359739168731,
+            "total_m": 2.7,
+            "formula": "W = total_m * uw_kg_m   equivalently (pi*d^2/4)*cut_mm*qty*7850/1e9",
+            "recomputed_kg": 10.404071295755575,
+            "engine_kg": 10.404071295755573,
+            "match": true
+          },
+          "excel_dvlp_m_display": -7.260351,
+          "excel_dvlp_m_formula": "BBSCompletionEngine: dvlp_m = cut_m - span_m   (= 2*Ld/1000 for longitudinal; NEGATIVE for spacers)",
+          "code_path": {
+            "weight": "SteelWeightCompletion._compute_bar / _derive_cut_length",
+            "bbs": "BBSCompletionEngine.generate",
+            "quantity": "L.2 bar.quantity (directly extracted)"
+          }
+        }
+      ],
+      "bbs_engine_rows": [
+        {
+          "description": "Top bars",
+          "frame": "GF",
+          "diameter_mm": 20.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 2.0,
+          "cut_length_m": 9.8,
+          "total_length_m": 49.002,
+          "total_weight_kg": 120.846,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": 120.846,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars - Extra",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 9.4,
+          "total_length_m": 47.002,
+          "total_weight_kg": 74.185,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 74.185,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Top bars - Extra",
+          "frame": "GF",
+          "diameter_mm": 16.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": 1.6,
+          "cut_length_m": 9.4,
+          "total_length_m": 47.002,
+          "total_weight_kg": 74.185,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": 74.185,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Stirrups (Mid.)",
+          "frame": "GF",
+          "diameter_mm": 10.0,
+          "spacing_m": 0.1,
+          "quantity": 79,
+          "dvlp_length_m": 0.2,
+          "cut_length_m": 2.58,
+          "total_length_m": 203.82,
+          "total_weight_kg": 125.663,
+          "weight_d8": null,
+          "weight_d10": 125.663,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": null,
+          "weight_d32": null
+        },
+        {
+          "description": "Spacer bars",
+          "frame": "GF",
+          "diameter_mm": 25.0,
+          "spacing_m": null,
+          "quantity": 5,
+          "dvlp_length_m": -7.26,
+          "cut_length_m": 0.54,
+          "total_length_m": 2.7,
+          "total_weight_kg": 10.404,
+          "weight_d8": null,
+          "weight_d10": null,
+          "weight_d12": null,
+          "weight_d16": null,
+          "weight_d20": null,
+          "weight_d25": 10.404,
+          "weight_d32": null
+        }
+      ],
+      "excel_rows": [
+        {
+          "beam_id": "B23",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars",
+          "dia_mm": 20,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 2,
+          "cut_m": 9.8,
+          "total_m": 49.002,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": 120.846,
+          "y25": null,
+          "y32": null,
+          "total_kg": 120.846
+        },
+        {
+          "beam_id": "B23",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars - Extra",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 1.6,
+          "cut_m": 9.4,
+          "total_m": 47.002,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 74.185,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 74.185
+        },
+        {
+          "beam_id": "B23",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Top bars - Extra",
+          "dia_mm": 16,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": 1.6,
+          "cut_m": 9.4,
+          "total_m": 47.002,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": 74.185,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 74.185
+        },
+        {
+          "beam_id": "B23",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Stirrups (Mid.)",
+          "dia_mm": 10,
+          "spacing_m": 0.1,
+          "qty": 79,
+          "dvlp_m": 0.2,
+          "cut_m": 2.58,
+          "total_m": 203.82,
+          "y8": null,
+          "y10": 125.663,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": null,
+          "y32": null,
+          "total_kg": 125.663
+        },
+        {
+          "beam_id": "B23",
+          "kind": "line",
+          "frame": "GF",
+          "description": "Spacer bars",
+          "dia_mm": 25,
+          "spacing_m": null,
+          "qty": 5,
+          "dvlp_m": -7.26,
+          "cut_m": 0.54,
+          "total_m": 2.7,
+          "y8": null,
+          "y10": null,
+          "y12": null,
+          "y16": null,
+          "y20": null,
+          "y25": 10.404,
+          "y32": null,
+          "total_kg": 10.404
+        }
+      ],
+      "reconciliation": {
+        "n_l2_bars": 5,
+        "n_computed": 5,
+        "n_bbs_lines": 5,
+        "n_excel_lines": 5,
+        "computed_weight_sum_kg": 404.307455,
+        "bbs_weight_sum_kg": 405.283,
+        "steel_summary_diameter_sum_kg": 404.308,
+        "steel_summary_total_kg": 404.307,
+        "weight_by_diameter": {
+          "20": 120.84569,
+          "16": 148.369138,
+          "10": 124.688556,
+          "25": 10.404071
+        },
+        "beam_total_kg": 404.307455,
+        "bbs_vs_computed_diff": 0.975545,
+        "ss_total_vs_diameter_diff": -0.001
+      }
+    }
+  }
+}
