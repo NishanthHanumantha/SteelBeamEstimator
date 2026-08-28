@@ -348,3 +348,16 @@ class GeneralNotesTextExtractor:
             if rx.search(item.text):
                 return item
         return None
+
+    def find_table_title(self, n: int) -> Optional[DXFTextItem]:
+        """Prefer a short 'TABLE n' label over a notes paragraph that mentions it."""
+        exact = re.compile(rf"^\s*TABLE\s*[-:]?\s*{n}\s*$", re.I)
+        mentioned = re.compile(rf"TABLE\s*[-:]?\s*{n}\b", re.I)
+        short: Optional[DXFTextItem] = None
+        for item in self.extract():
+            t = item.text.strip()
+            if exact.match(t):
+                return item
+            if short is None and len(t) <= 24 and mentioned.search(t):
+                short = item
+        return short

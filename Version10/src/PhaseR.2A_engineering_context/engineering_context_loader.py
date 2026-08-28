@@ -203,11 +203,22 @@ class EngineeringContextLoader:
         return _IS456_STEEL_DENSITY
 
     def summary(self) -> Dict[str, Any]:
+        cover = self.get_cover("BEAM")
+        factor = self.get_development_length_factor()
+        cover_fallback = any("get_cover(" in w for w in self._fallback_log)
+        dl_fallback = any("get_development_length_factor(" in w for w in self._fallback_log)
+        cover_source = "FALLBACK_IS456" if cover_fallback else "GN_DXF_TABLE_2"
+        if self._ctx.cover_rules and not cover_fallback:
+            for rule in self._ctx.cover_rules:
+                if "BEAM" in rule.element_type.upper():
+                    cover_source = rule.source or "GN_DXF_TABLE_2"
+                    break
+        dl_source = "FALLBACK_IS456" if dl_fallback else "GN_DXF_TABLE_1"
         return {
             "primary_steel_grade": self.get_primary_steel_grade(),
-            "cover_beam_mm":       self.get_cover("BEAM"),
+            "cover_beam_mm":       cover,
             "concrete_grade_beam": self.get_concrete_grade("BEAM"),
-            "dev_length_factor":   self.get_development_length_factor(),
+            "dev_length_factor":   factor,
             "hook_multiple_135":   self.get_hook_multiple(135),
             "bend_multiple_90":    self.get_standard_bend_multiple(),
             "min_lap_mm":          self.get_minimum_lap_mm(),
@@ -217,6 +228,9 @@ class EngineeringContextLoader:
             "code_references":     len(self._ctx.code_references),
             "parse_confidence":    self._ctx.parse_confidence,
             "fallback_log":        self._fallback_log,
+            "cover_source":        cover_source,
+            "dev_length_source":   dl_source,
+            "gn_dxf_path":         self._ctx.gn_dxf_path,
         }
 
     def _normalize_element(self, element_type: str) -> str:

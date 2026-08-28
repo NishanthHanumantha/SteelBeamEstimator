@@ -127,6 +127,25 @@ class DevelopmentLengthParser:
             if _STEEL_GRADE_PAT.search(item.text):
                 headers.append(item)
 
+        if not headers:
+            # TABLE 1 is not at the Galera absolute X window; search the full sheet.
+            headers = [
+                item for item in all_items if _STEEL_GRADE_PAT.search(item.text)
+            ]
+            headers.sort(key=lambda i: -i.y)
+            if headers:
+                xs = [h.x for h in headers]
+                ys = [h.y for h in headers]
+                x_min = min(xs) - 40.0
+                x_max = max(xs) + 280.0
+                y_bottom = min(ys) - 80.0
+                y_top = max(ys) + 10.0
+                table_items = [
+                    item for item in all_items
+                    if x_min <= item.x <= x_max and y_bottom <= item.y <= y_top
+                ]
+                table_items.sort(key=lambda i: -i.y)
+
         dxf_grades_parsed: Set[str] = set()
         entries: List[DevelopmentLengthEntry] = []
         warnings: List[str] = []

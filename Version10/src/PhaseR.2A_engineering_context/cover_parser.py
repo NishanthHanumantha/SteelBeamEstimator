@@ -67,17 +67,24 @@ class CoverParser:
         all_items = self._ext.extract()
 
         # Locate TABLE 2 anchor
-        table2_anchor = self._ext.find_anchor(r"TABLE\s+2")
+        table2_anchor = self._ext.find_table_title(2)
+        if table2_anchor is None:
+            table2_anchor = self._ext.find_anchor(r"^\s*TABLE\s+2\s*$")
         if table2_anchor is None:
             return self._fallback_parse(all_items)
 
-        # Scan TABLE 2 region: from anchor Y downward to ~anchor.y - 200
+        # Scan TABLE 2 region: from anchor Y downward to ~anchor.y - 200.
+        # X window is relative to the TABLE 2 label so non-Galera sheets still parse.
         y_top    = table2_anchor.y + 5.0
         y_bottom = table2_anchor.y - 220.0
+        x_min = table2_anchor.x - 30.0
+        x_max = table2_anchor.x + 280.0
 
-        region = self._ext.items_in_region(
-            _TABLE2_X_MIN, _TABLE2_X_MAX, y_bottom, y_top
-        )
+        region = self._ext.items_in_region(x_min, x_max, y_bottom, y_top)
+        if not region:
+            region = self._ext.items_in_region(
+                _TABLE2_X_MIN, _TABLE2_X_MAX, y_bottom, y_top
+            )
         region.sort(key=lambda i: -i.y)
 
         if not region:

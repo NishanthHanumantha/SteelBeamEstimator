@@ -122,6 +122,13 @@ class PhaseVB1Orchestrator:
         self._v7_root = v7_root or _V6
         self._run_root = pathlib.Path(run_root) if run_root is not None else self._v7_root
         self.output_dir = output_dir or _OUTPUT_DIR
+        import os
+        if not (os.environ.get("STEEL_RUN_ROOT") or "").strip():
+            gn_dir = self._run_root / "general_notes"
+            if gn_dir.is_dir() and (
+                any(gn_dir.glob("*.dxf")) or any(gn_dir.glob("*.DXF"))
+            ):
+                os.environ["STEEL_RUN_ROOT"] = str(self._run_root.resolve())
         self._loader = loader
         if self._loader is None and _R2A_AVAILABLE and parse_engineering_context:
             self._loader, _, _ = parse_engineering_context(self._v7_root)
@@ -281,7 +288,9 @@ class PhaseVB1Orchestrator:
 
             # Step 4 — BBS generation
             print("[4/9] BBS Completion Engine")
-            bbs_engine = BBSCompletionEngine(steel_summary)
+            bbs_engine = BBSCompletionEngine(
+                steel_summary, frame_type=self._resolve_frame_identifier()
+            )
             bbs_rows = bbs_engine.generate()
             print(f"      BBS rows generated: {len(bbs_rows)}")
 
@@ -364,6 +373,61 @@ class PhaseVB1Orchestrator:
         print(f"      False positives identified: {len(fp)} — all DEFERRED state")
         print(f"      Genuine errors: 0 — EXIT CODE = 0 confirmed")
         return report
+
+    def _resolve_frame_identifier(self) -> str:
+        """Drawing-specific floor/frame from VROOT.1 project_manifest when present."""
+        import json
+        import os
+
+        candidates = []
+        if self._run_root:
+            candidates.append(
+                pathlib.Path(self._run_root)
+                / "data" / "output"
+                / "PhaseVROOT.1_dynamic_pipeline_initialization"
+                / "project_manifest.json"
+            )
+        env_run = (os.environ.get("STEEL_RUN_ROOT") or "").strip()
+        if env_run:
+            candidates.append(
+                pathlib.Path(env_run)
+                / "data" / "output"
+                / "PhaseVROOT.1_dynamic_pipeline_initialization"
+                / "project_manifest.json"
+            )
+        for path in candidates:
+            if not path.is_file():
+                continue
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            floor = str(data.get("floor") or "").strip()
+            if floor and floor not in ("UNKNOWN_FLOOR", "UNKNOWN"):
+                return floor
+        try:
+            vroot = pathlib.Path(self._v7_root) / "src" / "PhaseVROOT.1_dynamic_pipeline_initialization"
+            if str(vroot) not in sys.path:
+                sys.path.insert(0, str(vroot))
+            from project_discovery import ProjectDiscovery
+            roots = []
+            if self._run_root:
+                roots.append(pathlib.Path(self._run_root))
+            if env_run:
+                roots.append(pathlib.Path(env_run))
+            seen = set()
+            for root in roots:
+                key = str(root.resolve()) if root.exists() else str(root)
+                if key in seen:
+                    continue
+                seen.add(key)
+                discovered = ProjectDiscovery().discover(root)
+                floor = str(discovered.get("floor") or "").strip()
+                if floor and floor not in ("UNKNOWN_FLOOR", "UNKNOWN"):
+                    return floor
+        except Exception:
+            pass
+        return ""
 
     def _step_steel_weight(self):
         models_path = self.l2_path

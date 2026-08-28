@@ -44,10 +44,26 @@ class ConcreteGradeParser:
 
         # Build element-grade map from TABLE 2
         element_map: Dict[str, str] = {}
-        region = self._ext.items_in_region(
-            1540.0, 1680.0, _TABLE2_Y_BOT, _TABLE2_Y_TOP
-        )
+        table2_anchor = self._ext.find_table_title(2)
+        if table2_anchor is not None:
+            region = self._ext.items_in_region(
+                table2_anchor.x - 30.0,
+                table2_anchor.x + 280.0,
+                table2_anchor.y - 220.0,
+                table2_anchor.y + 5.0,
+            )
+        else:
+            region = self._ext.items_in_region(
+                1540.0, 1680.0, _TABLE2_Y_BOT, _TABLE2_Y_TOP
+            )
         region.sort(key=lambda i: -i.y)
+
+        conc_col_x = None
+        for item in region:
+            up = item.text.upper()
+            if "CONCRETE" in up or "MIX" in up:
+                conc_col_x = item.x
+                break
 
         # Group by Y row
         rows = self._group_by_y(region)
@@ -58,8 +74,11 @@ class ConcreteGradeParser:
                 if _MEMBER_PAT.search(item.text) and not item.text.strip().isdigit():
                     member = item.text.strip().upper()
                 m = _CONC_PAT.search(item.text)
-                if m and _CONC_COL_X_MIN <= item.x <= _CONC_COL_X_MAX:
-                    grade = f"M{m.group(1)}"
+                if m:
+                    if conc_col_x is None or abs(item.x - conc_col_x) <= 40.0:
+                        grade = f"M{m.group(1)}"
+                    elif _CONC_COL_X_MIN <= item.x <= _CONC_COL_X_MAX:
+                        grade = f"M{m.group(1)}"
             if member and grade:
                 element_map[member] = grade
 

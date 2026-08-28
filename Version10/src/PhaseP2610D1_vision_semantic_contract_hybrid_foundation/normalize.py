@@ -38,14 +38,34 @@ def map_layer(raw: Any) -> str:
 def parse_diameter(spec: Any, explicit: Any = None) -> Optional[int]:
     if explicit not in (None, "", "UNKNOWN"):
         try:
-            return int(explicit)
+            n = int(explicit)
+            if n in SUPPORTED_DIAMETERS:
+                return n
+            repaired = _supported_diameter_prefix(n)
+            if repaired is not None:
+                return repaired
         except (TypeError, ValueError):
             pass
     s = str(spec or "").upper()
     m = _DIA_RE.search(s)
     if not m:
+        compact = normalize_spec(spec)
+        m = _DIA_RE.search(compact)
+    if not m:
         return None
-    return int(m.group(1))
+    n = int(m.group(1))
+    if n in SUPPORTED_DIAMETERS:
+        return n
+    return _supported_diameter_prefix(n)
+
+
+def _supported_diameter_prefix(n: int) -> Optional[int]:
+    digits = str(abs(int(n)))
+    for length in range(len(digits), 0, -1):
+        v = int(digits[:length])
+        if v in SUPPORTED_DIAMETERS:
+            return v
+    return None
 
 
 def parse_bar_count(spec: Any, explicit: Any = None) -> Optional[int]:

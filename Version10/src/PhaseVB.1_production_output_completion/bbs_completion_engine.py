@@ -30,7 +30,7 @@ except Exception:
     _STIRRUP_IMPROVER = None
     _SI1_AVAILABLE = False
 
-_FRAME_TYPE = "TF"
+_FRAME_UNRESOLVED = "UNRESOLVED"
 
 _ROLE_DISPLAY = {
     "TOP_MAIN":    "Top bars",
@@ -55,8 +55,13 @@ class BBSCompletionEngine:
     mirror the estimator workbook layout.
     """
 
-    def __init__(self, summary: ProjectSteelSummary) -> None:
+    def __init__(self, summary: ProjectSteelSummary, frame_type: Optional[str] = None) -> None:
         self.summary = summary
+        resolved = (frame_type or "").strip()
+        if resolved and resolved not in ("UNKNOWN_FLOOR", "UNKNOWN"):
+            self._frame_type = resolved
+        else:
+            self._frame_type = _FRAME_UNRESOLVED
 
     def generate(self) -> List[BBSRow]:
         rows: List[BBSRow] = []
@@ -65,7 +70,7 @@ class BBSCompletionEngine:
             # ── Beam header row ──────────────────────────────────────
             rows.append(BBSRow(
                 si_no=si,
-                frame_type=_FRAME_TYPE,
+                frame_type=self._frame_type,
                 description=bw.beam_id,
                 diameter_mm=1,                    # member count
                 spacing_m=round(bw.span_mm / 1000, 3) if bw.span_mm else None,
@@ -118,7 +123,7 @@ class BBSCompletionEngine:
 
                     rows.append(BBSRow(
                         si_no=None,
-                        frame_type=_FRAME_TYPE,
+                        frame_type=self._frame_type,
                         description=_ROLE_DISPLAY.get(role, role),
                         diameter_mm=bar.diameter_mm,
                         spacing_m=spacing_m,
@@ -142,6 +147,8 @@ class BBSCompletionEngine:
                         beam_id=bw.beam_id,
                     ))
 
+        for row in rows:
+            row.frame_type = self._frame_type
         return rows
 
     def diameter_totals(self, rows: List[BBSRow]) -> Dict[int, float]:

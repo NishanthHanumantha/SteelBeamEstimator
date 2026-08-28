@@ -58,9 +58,18 @@ class SteelGradeParser:
 
     def _primary_from_table2(self) -> Optional[str]:
         """Read the steel grade from the BEAM IN SUPERSTRUCTURE row of TABLE 2."""
-        region = self._ext.items_in_region(
-            1540.0, 1680.0, _TABLE2_Y_BOTTOM, _TABLE2_Y_TOP
-        )
+        table2_anchor = self._ext.find_table_title(2)
+        if table2_anchor is not None:
+            region = self._ext.items_in_region(
+                table2_anchor.x - 30.0,
+                table2_anchor.x + 280.0,
+                table2_anchor.y - 220.0,
+                table2_anchor.y + 5.0,
+            )
+        else:
+            region = self._ext.items_in_region(
+                1540.0, 1680.0, _TABLE2_Y_BOTTOM, _TABLE2_Y_TOP
+            )
         region.sort(key=lambda i: -i.y)
 
         # Find the Y of the beam row

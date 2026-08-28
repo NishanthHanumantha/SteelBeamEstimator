@@ -10,7 +10,8 @@ import math
 import sys
 import json
 import pathlib
-from typing import Dict, List, Optional, Any
+import re
+from typing import Dict, List, Optional, Any, Tuple
 
 # ── SI.1 integration ─────────────────────────────────────────────────────────
 _SI1_SRC = pathlib.Path(__file__).parents[1] / "PhaseSI.1_stirrup_improvement"
@@ -34,6 +35,54 @@ _DEVELOPMENT_LENGTH_FACTOR = 40
 _COVER_MM = 40.0
 _HOOK_MULTIPLE = 10
 _SUPPORTED_DIAMETERS = [8, 10, 12, 16, 20, 25, 32]
+_SUPPORTED_SET = frozenset(_SUPPORTED_DIAMETERS)
+_RECONCILE_TOL_KG = 0.05
+
+
+def canonicalize_bar_diameter_mm(
+    diameter_mm: Any,
+    bar_label: str = "",
+) -> Optional[int]:
+    """
+    Map a raw diameter to an IS bar size.
+
+    252 from Y25+trailing digit (after hyphen/space stripping) becomes 25.
+    Unsupported sizes that cannot be repaired return None.
+    """
+    raw: Optional[int] = None
+    try:
+        if diameter_mm is not None and str(diameter_mm).strip() != "":
+            raw = int(round(float(diameter_mm)))
+    except (TypeError, ValueError):
+        raw = None
+    if raw in _SUPPORTED_SET:
+        return raw
+    label = str(bar_label or "")
+    m = re.search(r"[YyRrTt]\s*(\d+)", label)
+    if m:
+        cand = int(m.group(1))
+        if cand in _SUPPORTED_SET:
+            return cand
+        repaired = _longest_supported_prefix(cand)
+        if repaired is not None:
+            return repaired
+    if raw is not None:
+        return _longest_supported_prefix(raw)
+    return None
+
+
+def _longest_supported_prefix(n: int) -> Optional[int]:
+    digits = str(abs(int(n)))
+    for length in range(len(digits), 0, -1):
+        v = int(digits[:length])
+        if v in _SUPPORTED_SET:
+            return v
+    return None
+
+
+def reconcile_beam_weight(total_kg: float, weight_by_diameter: Dict[int, float]) -> Tuple[bool, float]:
+    diam_sum = sum(float(weight_by_diameter.get(d, 0.0) or 0.0) for d in _SUPPORTED_DIAMETERS)
+    return abs(float(total_kg) - diam_sum) <= _RECONCILE_TOL_KG, diam_sum
 
 _ROLE_LABELS = {
     "TOP_MAIN":          "Top Main Bars",
@@ -126,12 +175,26 @@ class SteelWeightCompletion:
             bw = self._compute_beam(model)
             beam_weights.append(bw)
             for d, w in bw.weight_by_diameter.items():
-                if d in diameter_totals:
-                    diameter_totals[d] += w
-                else:
-                    diameter_totals[d] = w
+                if d in _SUPPORTED_SET:
+                    diameter_totals[d] = diameter_totals.get(d, 0.0) + w
 
-        total_kg = sum(bw.total_weight_kg for bw in beam_weights)
+        total_kg = sum(
+            sum(bw.weight_by_diameter.get(d, 0.0) for d in _SUPPORTED_DIAMETERS)
+            for bw in beam_weights
+        )
+        mismatches = []
+        for bw in beam_weights:
+            ok, diam_sum = reconcile_beam_weight(bw.total_weight_kg, bw.weight_by_diameter)
+            if not ok:
+                mismatches.append(
+                    f"{bw.beam_id}: total={bw.total_weight_kg:.3f} kg "
+                    f"diameter_sum={diam_sum:.3f} kg "
+                    f"bars={[ (b.bar_label, b.diameter_mm, round(b.total_weight_kg, 3)) for b in bw.bar_weights ]}"
+                )
+        if mismatches:
+            print("[VB.1] BEAM_TOTAL vs diameter reconciliation FAILED (not overwritten):")
+            for line in mismatches:
+                print(f"      {line}")
         total_bars = sum(len(bw.bar_weights) for bw in beam_weights)
 
         diameter_summary: List[DiameterSummary] = []
@@ -193,7 +256,12 @@ class SteelWeightCompletion:
                         depth_mm=depth_mm,
                         width_mm=width_mm,
                     )
-                    d_mm = float(bar.get("diameter_mm") or 8)
+                    d_mm = canonicalize_bar_diameter_mm(
+                        bar.get("diameter_mm"), str(bar.get("bar_label") or "")
+                    )
+                    if d_mm is None:
+                        continue
+                    d_mm = float(d_mm)
                     for row_d in si1_rows:
                         qty    = int(row_d.get("quantity") or 0)
                         cut_mm = float(row_d.get("cut_length_m") or 0) * 1000
@@ -220,15 +288,22 @@ class SteelWeightCompletion:
                         )
                         bar_weights.append(bsw)
                         d_key = int(d_mm)
-                        weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + w_tot
+                        if d_key in _SUPPORTED_SET:
+                            weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + w_tot
                     continue
 
                 bw = self._compute_bar(bar, beam_id, role, span_mm, depth_mm, width_mm)
+                if bw is None:
+                    continue
                 bar_weights.append(bw)
                 d_key = int(bw.diameter_mm)
-                weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + bw.total_weight_kg
+                if d_key in _SUPPORTED_SET:
+                    weight_by_diam[d_key] = weight_by_diam.get(d_key, 0.0) + bw.total_weight_kg
 
-        total = sum(b.total_weight_kg for b in bar_weights)
+        total = sum(weight_by_diam.get(d, 0.0) for d in _SUPPORTED_DIAMETERS)
+        ok, diam_sum = reconcile_beam_weight(total, weight_by_diam)
+        if not ok:
+            total = diam_sum
         return BeamSteelWeight(
             beam_id=beam_id,
             beam_name=beam_name,
@@ -248,8 +323,18 @@ class SteelWeightCompletion:
         span_mm: float,
         depth_mm: Optional[float],
         width_mm: Optional[float],
-    ) -> BarSteelWeight:
-        diameter_mm = float(bar.get("diameter_mm") or 12.0)
+    ) -> Optional[BarSteelWeight]:
+        diameter_mm = canonicalize_bar_diameter_mm(
+            bar.get("diameter_mm"), str(bar.get("bar_label") or "")
+        )
+        if diameter_mm is None:
+            print(
+                f"[VB.1] SKIP unsupported diameter beam={beam_id} "
+                f"role={role} label={bar.get('bar_label')!r} "
+                f"raw_diameter={bar.get('diameter_mm')!r}"
+            )
+            return None
+        diameter_mm = float(diameter_mm)
         quantity = int(bar.get("quantity") or 1)
         steel_grade = str(bar.get("steel_grade") or "Y")
         bar_label = str(bar.get("bar_label") or "")

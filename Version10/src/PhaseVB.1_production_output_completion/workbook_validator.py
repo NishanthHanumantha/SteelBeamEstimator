@@ -107,6 +107,55 @@ class WorkbookValidator:
             except Exception as exc:
                 errors.append(f"Steel total check failed: {exc}")
 
+        # ── 4b. Per-beam and project aggregation invariants ───────────────
+        aggregation_ok = True
+        if "Steel Summary" in ws_names:
+            try:
+                ss_ws = wb["Steel Summary"]
+                ss_rows = list(ss_ws.iter_rows(values_only=True))
+                beam_totals: List[float] = []
+                diameter_column_sum = [0.0] * 7
+                for row in ss_rows[2:]:
+                    if not row or row[0] is None:
+                        continue
+                    label = str(row[0]).strip()
+                    if label.upper() in ("PROJECT TOTAL", "TOTAL", "STEEL WEIGHT SUMMARY — PER BEAM"):
+                        continue
+                    try:
+                        diam_vals = [float(row[i] or 0.0) for i in range(1, 8)]
+                        total = float(row[8] or 0.0)
+                    except (TypeError, ValueError, IndexError):
+                        continue
+                    diam_sum = sum(diam_vals)
+                    if abs(total - diam_sum) > 0.05:
+                        aggregation_ok = False
+                        errors.append(
+                            f"Steel Summary beam {label}: total={total:.3f} kg "
+                            f"!= diameter subtotal={diam_sum:.3f} kg "
+                            f"(Y8..Y32={diam_vals})"
+                        )
+                    beam_totals.append(total)
+                    for i, v in enumerate(diam_vals):
+                        diameter_column_sum[i] += v
+                project_from_beams = sum(beam_totals)
+                project_from_dias = sum(diameter_column_sum)
+                if beam_totals:
+                    if abs(project_from_beams - project_from_dias) > 0.05:
+                        aggregation_ok = False
+                        errors.append(
+                            f"Project diameter totals {project_from_dias:.3f} kg "
+                            f"!= sum of beam totals {project_from_beams:.3f} kg"
+                        )
+                    if steel_total_found > 0 and abs(steel_total_found - project_from_beams) > 0.05:
+                        aggregation_ok = False
+                        errors.append(
+                            f"Project Totals steel {steel_total_found:.3f} kg "
+                            f"!= sum of beam totals {project_from_beams:.3f} kg"
+                        )
+            except Exception as exc:
+                aggregation_ok = False
+                errors.append(f"Steel Summary aggregation check failed: {exc}")
+
         wb.close()
 
         # ── 5. Completeness ───────────────────────────────────────────────
@@ -117,7 +166,7 @@ class WorkbookValidator:
             and no_corrupted
         )
 
-        validation_passed = is_complete and (steel_total_found > 0)
+        validation_passed = is_complete and (steel_total_found > 0) and aggregation_ok
 
         return self._result(
             is_readable, is_complete, ws_count, ws_names, missing,

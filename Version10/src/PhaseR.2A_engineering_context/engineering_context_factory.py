@@ -79,6 +79,16 @@ class EngineeringContextFactory:
     @classmethod
     def _discover_gn_path(cls, v7_root: pathlib.Path) -> Optional[pathlib.Path]:
         import json
+        import os
+
+        # 0. Run-scoped uploaded General Notes (web production).
+        run = (os.environ.get("STEEL_RUN_ROOT") or "").strip()
+        if run:
+            gn_dir = pathlib.Path(run) / "general_notes"
+            if gn_dir.is_dir():
+                dxf_files = sorted(gn_dir.glob("*.dxf")) + sorted(gn_dir.glob("*.DXF"))
+                if dxf_files:
+                    return dxf_files[0]
 
         # 1. Check beam_registry.json
         registry = v7_root / "src" / "PhaseVROOT.1_dynamic_pipeline_initialization" / "beam_registry.json"

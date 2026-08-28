@@ -336,13 +336,28 @@ class EstimatorExcelGenerator:
         cover = ls.get("cover_beam_mm", 40)
         dl_factor = ls.get("dev_length_factor", 40)
         sg = ls.get("primary_steel_grade", "Fe415")
+        cover_source = ls.get("cover_source") or "UNRESOLVED"
+        dl_source = ls.get("dev_length_source") or "UNRESOLVED"
+        if not ls:
+            cover_value = f"UNRESOLVED (IS456 fallback {cover} mm)"
+            dl_value = f"UNRESOLVED (IS456 fallback {sg}, ~{dl_factor}d)"
+        elif str(cover_source).startswith("FALLBACK") or str(cover_source) == "UNRESOLVED":
+            cover_value = f"UNRESOLVED ({cover_source} {cover} mm)"
+            dl_value = (
+                f"UNRESOLVED ({dl_source} {sg}, ~{dl_factor}d)"
+                if str(dl_source).startswith("FALLBACK") or str(dl_source) == "UNRESOLVED"
+                else f"GN table ({sg}, ~{dl_factor}d)"
+            )
+        else:
+            cover_value = cover
+            dl_value = f"GN table ({sg}, ~{dl_factor}d)"
         totals_data = [
             ("Total Beams",            self.steel_summary.total_beams,        "beams"),
             ("Total Bars",             self.steel_summary.total_bars,         "bars"),
             ("Total Steel Weight",     round(self.steel_summary.total_weight_kg, 3), "kg"),
             ("Steel Density",          density,                               "kg/m³"),
-            ("Development Length",     f"GN table ({sg}, ~{dl_factor}d)",     ""),
-            ("Cover",                  cover,                                 "mm"),
+            ("Development Length",     dl_value,                              ""),
+            ("Cover",                  cover_value,                           "mm" if isinstance(cover_value, (int, float)) else ""),
         ]
         for d in self.steel_summary.diameter_summary:
             totals_data.append((

@@ -14,7 +14,15 @@ from typing import Any, Dict, List, Optional
 
 
 _FLOOR_PATTERNS = [
-    (re.compile(r'\b(GF|GROUND\s*FL(?:OOR)?)\b', re.I), 'GF'),
+    # Multi-floor range must win over TYPICAL FLOOR and "18TH FL".
+    (re.compile(r'\b(\d+)\s*[-–_/to]+\s*(\d+)\s*(?:ST|ND|RD|TH)\b', re.I), "RANGE"),
+    (re.compile(r'\b(\d+)\s*[-–_/to]+\s*(\d+)\s*(?:ST|ND|RD|TH)?[_ ]*(?:FL|F\b)', re.I), "RANGE"),
+    (re.compile(r'\((\d+)\s*[-–]\s*(\d+)\)'), "RANGE"),
+    (re.compile(r'\b(\d+)\s*[-–]\s*(\d+)F\b', re.I), "RANGE"),
+    # GF/TF are drawing tokens; underscores in filenames are word chars so \bGF\b misses Galera_GF_*.
+    (re.compile(r'(?:^|[^A-Za-z0-9])(GF|GROUND\s*FL(?:OOR)?)(?:[^A-Za-z0-9]|$)', re.I), 'GF'),
+    (re.compile(r'(?:^|[^A-Za-z0-9])TYPICAL\s+FLOOR(?:[^A-Za-z0-9]|$)', re.I), 'TF'),
+    (re.compile(r'(?:^|[^A-Za-z0-9])TF(?:[^A-Za-z0-9]|$)', re.I), 'TF'),
     (re.compile(r'\b(B\d)\b'), None),          # basement floor e.g. B1
     (re.compile(r'\bFL?[-_]?(\d+)\b', re.I), None),   # F1, FL2, F-3
     (re.compile(r'\b(\d+)(?:ST|ND|RD|TH)\s*FL', re.I), None),
@@ -102,8 +110,14 @@ class ProjectDiscovery:
     def _infer_floor(self, text: str) -> str:
         for pat, label in _FLOOR_PATTERNS:
             m = pat.search(text)
-            if m:
-                return label if label else m.group(1).upper()
+            if not m:
+                continue
+            if label == "RANGE":
+                lo, hi = m.group(1), m.group(2)
+                return f"{lo}-{hi}F"
+            if label:
+                return label
+            return m.group(1).upper()
         return 'UNKNOWN_FLOOR'
 
     def _infer_discipline(self, text: str) -> str:

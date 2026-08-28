@@ -19,6 +19,25 @@ _ROLE_TO_ZONE = {
     "SIDE_FACE_REINFORCEMENT": "SIDE_ZONE",
 }
 
+_SUPPORTED_DIA = {8, 10, 12, 16, 20, 25, 32}
+
+
+def _canonicalize_diameter_mm(raw: Any) -> Optional[float]:
+    """Map concatenated/unsupported diameters (e.g. 252 from Y25+digit) to IS sizes."""
+    try:
+        n = int(round(float(raw)))
+    except (TypeError, ValueError):
+        return None
+    if n in _SUPPORTED_DIA:
+        return float(n)
+    digits = str(abs(n))
+    for length in range(len(digits), 0, -1):
+        v = int(digits[:length])
+        if v in _SUPPORTED_DIA:
+            return float(v)
+    return None
+
+
 _ROLE_TO_L2_KEY = {
     "TOP_MAIN": "top_main_bars",
     "BOTTOM_MAIN": "bottom_main_bars",
@@ -548,10 +567,12 @@ class EngineeringBarBuilder:
 
         if labels:
             for lbl in labels:
-                m = re.match(r"(\d+)[YRyTt](\d+)", lbl)
+                m = re.match(r"(\d+)\s*[-–]?\s*[YRyTt]\s*(\d+)", str(lbl).replace(" ", ""))
                 if m:
                     qty = int(m.group(1))
-                    dia = float(m.group(2))
+                    dia = _canonicalize_diameter_mm(m.group(2))
+                    if dia is None:
+                        continue
                     ld = self._ld_for_dia(int(dia), conc, steel)
                     bars.append(EngineeringBarModel(
                         beam_id=beam_id,
@@ -575,7 +596,9 @@ class EngineeringBarBuilder:
                     ))
                 elif diameters:
                     qty_each = max(1, total_qty // len(diameters))
-                    dia = float(diameters[0])
+                    dia = _canonicalize_diameter_mm(diameters[0])
+                    if dia is None:
+                        continue
                     bars.append(EngineeringBarModel(
                         beam_id=beam_id,
                         bar_role=role,
