@@ -798,6 +798,36 @@ class EngineeringBarBuilder:
                     "piece_type": meta.get("piece_type"),
                     "shape_code": meta.get("shape_code"),
                     "cut_length_mm": meta.get("cut_length_mm"),
+                    "piece_start_mm": meta.get("piece_start_mm"),
+                    "piece_end_mm": meta.get("piece_end_mm"),
+                    "detail_id": meta.get("detail_id"),
+                    "zone_start_mm": meta.get("zone_start_mm"),
+                    "zone_end_mm": meta.get("zone_end_mm"),
+                    "zone_length_mm": meta.get("zone_length_mm"),
+                    "extent_fallback": meta.get("extent_fallback"),
+                    "raw_quantity": meta.get("raw_quantity"),
+                    "zones": meta.get("zones"),
+                    "engineering_metadata": {
+                        k: meta.get(k)
+                        for k in (
+                            "source",
+                            "rule_version",
+                            "face",
+                            "piece_id",
+                            "detail_id",
+                            "piece_start_mm",
+                            "piece_end_mm",
+                            "zone_start_mm",
+                            "zone_end_mm",
+                            "zone_length_mm",
+                            "extent_fallback",
+                            "raw_quantity",
+                            "zones",
+                            "cut_length_mm",
+                            "piece_type",
+                        )
+                        if meta.get(k) is not None
+                    },
                 }
                 if isinstance(l2.get(l2_key), list):
                     l2[l2_key].append(l2_bar)

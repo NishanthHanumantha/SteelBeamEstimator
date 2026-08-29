@@ -1,13 +1,13 @@
 """
 spacer_models.py — Dataclasses for Phase M.2 Spacer Bar Rule Engine.
-MODEL_VERSION: 9.1.0
+MODEL_VERSION: 9.2.0
 """
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
-MODEL_VERSION = "9.1.0"
+MODEL_VERSION = "9.2.0"
 RULE_VERSION = "M.2"
 
 FaceName = str  # "TOP" | "BOTTOM"
@@ -26,6 +26,10 @@ class LongitudinalGroup:
     extent_confidence: str = "HIGH"  # HIGH | LOW | MISSING
     diameter_mm: Optional[float] = None
     quantity: int = 1
+    piece_type: str = ""
+    bar_label: str = ""
+    detail_id: str = ""
+    piece_id: str = ""
 
     def has_extent(self) -> bool:
         if self.start_mm is None or self.end_mm is None:
@@ -46,6 +50,7 @@ class SpacerZone:
     length_mm: float
     quantity: int
     extent_fallback: bool = False
+    raw_quantity: float = 0.0
 
 
 @dataclass
@@ -67,11 +72,23 @@ class SpacerRow:
     rule_version: str = RULE_VERSION
     extent_fallback: bool = False
     cover_fallback: bool = False
+    raw_quantity: float = 0.0
+    component_zones: List[Dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
 
     def to_engineering_metadata(self) -> Dict[str, Any]:
+        zones = list(self.component_zones) if self.component_zones else [
+            {
+                "zone_start_mm": self.zone_start_mm,
+                "zone_end_mm": self.zone_end_mm,
+                "zone_length_mm": self.zone_length_mm,
+                "quantity": self.quantity,
+                "raw_quantity": self.raw_quantity,
+                "extent_fallback": self.extent_fallback,
+            }
+        ]
         return {
             "source": self.source,
             "rule_version": self.rule_version,
@@ -84,6 +101,8 @@ class SpacerRow:
             "cover_fallback": self.cover_fallback,
             "piece_type": "SPACER_BAR",
             "extent": "ZONE",
+            "raw_quantity": self.raw_quantity,
+            "zones": zones,
         }
 
 
@@ -96,6 +115,7 @@ class BeamSpacerInput:
     cover_mm: Optional[float]
     groups: List[LongitudinalGroup] = field(default_factory=list)
     already_has_spacer: bool = False
+    clear_span_mm: Optional[float] = None
 
 
 @dataclass

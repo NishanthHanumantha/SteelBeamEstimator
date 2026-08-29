@@ -1,7 +1,7 @@
 """
 Unit tests for Phase M.2 Spacer Bar Rule Engine.
 Hand-computed vectors from ground-truth / frozen M.2 spec.
-MODEL_VERSION: 9.1.0
+MODEL_VERSION: 9.2.0
 """
 from __future__ import annotations
 
@@ -99,18 +99,19 @@ def test_b4_two_zones_qty4_and_qty8():
 
 
 # ---------------------------------------------------------------------------
-# Vector 3 — ceil(2150/1000)+1 = 4
+# Vector 3 — W.18B: (2150/1000)+1 = 3.15 → round-half-up 3
 # ---------------------------------------------------------------------------
-def test_ceil_2150_qty4():
-    assert spacer_quantity(2150) == 4
+def test_qty_2150_round_half_up_3():
+    assert spacer_quantity(2150) == 3
 
 
 # ---------------------------------------------------------------------------
-# Vector 4 — exact multiple 3000 → qty 4 (ceil does not bump)
+# Vector 4 — exact multiple 3000 → qty 4
 # ---------------------------------------------------------------------------
 def test_exact_multiple_3000_qty4():
     assert spacer_quantity(3000) == 4
-    assert math.ceil(3000 / 1000) + 1 == 4
+    assert math.floor(3.0 + 0.5) == 3  # 3000 mm → raw 4.0
+    assert spacer_quantity(3000) == 4
 
 
 # ---------------------------------------------------------------------------
@@ -209,9 +210,9 @@ def test_constants_not_context_derived():
 
 
 # ---------------------------------------------------------------------------
-# Vector 11 — extent fallback
+# Vector 11 — extras without geometric extents are unresolved (no cut fallback)
 # ---------------------------------------------------------------------------
-def test_extent_fallback_flag():
+def test_extent_fallback_not_cut_length():
     beam = _beam(
         "Fb", 250.0, 50.0,
         [
@@ -220,10 +221,8 @@ def test_extent_fallback_flag():
         ],
     )
     res = compute_spacers_for_beam(beam)
-    assert len(res.rows) == 1
-    assert res.rows[0].extent_fallback is True
-    assert res.rows[0].quantity == 5
-    assert any("extent_fallback" in w for w in res.warnings)
+    assert res.rows == []
+    assert any("cut_length_mm is not used" in w or "no geometric extra" in w for w in res.warnings)
 
 
 # ---------------------------------------------------------------------------

@@ -13,7 +13,7 @@ identical support zones into single estimator-style BBS rows.
 import math
 import sys
 import pathlib
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 from production_output_models import BBSRow, BeamSteelWeight, ProjectSteelSummary
 
@@ -97,6 +97,8 @@ class BBSCompletionEngine:
 
             for role in role_order:
                 bars = role_groups.get(role, [])
+                if role == "SPACER":
+                    bars = self._aggregate_equivalent_spacers(bars)
                 for bar in bars:
                     # ── SI.1: STIRRUP role handled by StirrupImprover ────────
                     if role == "STIRRUP" and _SI1_AVAILABLE and _STIRRUP_IMPROVER is not None:
@@ -150,6 +152,46 @@ class BBSCompletionEngine:
         for row in rows:
             row.frame_type = self._frame_type
         return rows
+
+    @staticmethod
+    def _aggregate_equivalent_spacers(bars: List[Any]) -> List[Any]:
+        """One BBS line per identical spacer spec (dia + cut) on the beam.
+
+        LEFT/RIGHT zones are calculated separately in M.2; equivalent outputs
+        combine here. Does not merge different diameters or cut lengths.
+        """
+        if len(bars) <= 1:
+            return bars
+        grouped: Dict[Tuple, Any] = {}
+        order: List[Tuple] = []
+        for bar in bars:
+            key = (
+                int(round(float(bar.diameter_mm))),
+                round(float(bar.cut_length_mm or 0.0), 3),
+            )
+            if key not in grouped:
+                grouped[key] = bar
+                order.append(key)
+                continue
+            prev = grouped[key]
+            qty = int(prev.quantity or 0) + int(bar.quantity or 0)
+            total_w = float(prev.total_weight_kg or 0.0) + float(bar.total_weight_kg or 0.0)
+            grouped[key] = type(prev)(
+                bar_id=str(prev.bar_id),
+                beam_id=prev.beam_id,
+                role=prev.role,
+                bar_label=prev.bar_label,
+                diameter_mm=prev.diameter_mm,
+                quantity=qty,
+                steel_grade=prev.steel_grade,
+                cut_length_mm=prev.cut_length_mm,
+                cut_length_source=prev.cut_length_source,
+                area_mm2=prev.area_mm2,
+                weight_per_bar_kg=prev.weight_per_bar_kg,
+                total_weight_kg=total_w,
+                formula_used=prev.formula_used + "|aggregated_equivalent_spacer_zones",
+            )
+        return [grouped[k] for k in order]
 
     def diameter_totals(self, rows: List[BBSRow]) -> Dict[int, float]:
         totals: Dict[int, float] = {d: 0.0 for d in _SUPPORTED_DIAMETERS}

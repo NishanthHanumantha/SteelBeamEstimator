@@ -1,6 +1,6 @@
 """
 r13_injector.py — Apply SpacerRuleEngine onto R.1.3 BeamEngineeringModel lists.
-MODEL_VERSION: 9.1.0
+MODEL_VERSION: 9.2.0
 
 Purely additive: appends SPACER_BAR EngineeringBarModel rows. Never mutates
 existing bars. Behind enable_spacer_rule (caller responsibility).
@@ -14,6 +14,7 @@ from .spacer_engine import (
     RULE_VERSION,
     SPACER_DIA_MM,
     SPACER_SPACING_MM,
+    aggregate_equivalent_spacer_rows,
     compute_spacers_for_beam,
     face_for_role,
     is_longitudinal_role,
@@ -22,7 +23,7 @@ from .spacer_models import BeamSpacerInput, LongitudinalGroup, SpacerRow
 
 logger = logging.getLogger(__name__)
 
-MODEL_VERSION = "9.1.0"
+MODEL_VERSION = "9.2.0"
 
 
 def _meta(bar: Any) -> Dict[str, Any]:
@@ -39,13 +40,13 @@ def _bar_to_group(bar: Any, span_mm: Optional[float] = None) -> Optional[Longitu
     meta = _meta(bar)
     start = meta.get("piece_start_mm")
     end = meta.get("piece_end_mm")
-    clear = meta.get("cut_length_mm")
+    clear = None
     conf = "HIGH"
-    # Prefer geometric piece length when available
+    # Geometric piece length only — never fabrication cut_length_mm (W.18B).
     if start is not None and end is not None:
         try:
             if float(end) > float(start):
-                clear = clear or (float(end) - float(start))
+                clear = float(end) - float(start)
         except (TypeError, ValueError):
             pass
     else:
@@ -55,18 +56,10 @@ def _bar_to_group(bar: Any, span_mm: Optional[float] = None) -> Optional[Longitu
             start = 0.0
             end = float(span_mm)
             conf = "LOW"
-            clear = clear or float(span_mm)
+            clear = float(span_mm)
     if start is not None and end is not None:
         if str(meta.get("extent") or "").upper() in ("", "UNKNOWN") and conf == "HIGH":
             conf = "LOW"
-    # EXTRA clear length: prefer piece length over hooked cut length when both exist
-    if "EXTRA" in role and start is not None and end is not None:
-        try:
-            piece_len = float(end) - float(start)
-            if piece_len > 0:
-                clear = piece_len
-        except (TypeError, ValueError):
-            pass
     return LongitudinalGroup(
         role=role,
         face=face,
@@ -76,6 +69,10 @@ def _bar_to_group(bar: Any, span_mm: Optional[float] = None) -> Optional[Longitu
         extent_confidence=conf,
         diameter_mm=getattr(bar, "diameter_mm", None),
         quantity=int(getattr(bar, "quantity", 1) or 1),
+        piece_type=str(meta.get("piece_type") or ""),
+        bar_label=str(getattr(bar, "bar_label", "") or ""),
+        detail_id=str(meta.get("detail_id") or ""),
+        piece_id=str(meta.get("piece_id") or ""),
     )
 
 
@@ -107,8 +104,6 @@ def _beam_to_input(beam: Any, cover_mm: Optional[float]) -> BeamSpacerInput:
             continue
         g = _bar_to_group(bar, span_mm=span_mm)
         if g is not None:
-            if g.clear_length_mm is None and span_mm is not None and span_mm > 0:
-                g.clear_length_mm = span_mm
             groups.append(g)
 
     return BeamSpacerInput(
@@ -117,6 +112,7 @@ def _beam_to_input(beam: Any, cover_mm: Optional[float]) -> BeamSpacerInput:
         cover_mm=cover_mm,
         groups=groups,
         already_has_spacer=already,
+        clear_span_mm=span_mm,
     )
 
 
@@ -187,7 +183,8 @@ def inject_spacers(
         cover_used = float(cover_mm) if cover_mm is not None else (
             result.rows[0].cover_mm if result.rows else 30.0
         )
-        for row in result.rows:
+        aggregated = aggregate_equivalent_spacer_rows(result.rows)
+        for row in aggregated:
             new_bars.append(_row_to_engineering_bar(row, bar_model_cls, cover_used))
             report["rows_emitted"] += 1
             if row.extent_fallback:
@@ -211,9 +208,11 @@ def inject_spacers(
         report["per_beam"].append({
             "beam_id": result.beam_id,
             "skipped": False,
-            "rows": len(result.rows),
-            "quantities": [r.quantity for r in result.rows],
-            "faces": [r.face for r in result.rows],
+            "rows": len(aggregated),
+            "zone_rows": len(result.rows),
+            "quantities": [r.quantity for r in aggregated],
+            "zone_quantities": [r.quantity for r in result.rows],
+            "faces": [r.face for r in aggregated],
         })
         for w in result.warnings:
             logger.warning("[M.2 SpacerRule] %s", w)

@@ -91,7 +91,7 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "steel-beam-estimation",
-        "phase": "W.14",
+        "phase": "W.19",
         "app_release": current_app.config.get("APP_RELEASE"),
         "engine_label": current_app.config.get("ENGINE_LABEL"),
         "engine_display": current_app.config.get("ENGINE_DISPLAY"),

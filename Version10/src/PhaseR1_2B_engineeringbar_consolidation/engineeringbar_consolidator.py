@@ -212,6 +212,8 @@ class EngineeringBarConsolidator:
                     "hook_type", "anchor_type", "side_face",
                     "detail_confidence", "piece_type", "fabrication_type",
                     "shape_code", "cut_length_mm", "piece_confidence",
+                    "piece_start_mm", "piece_end_mm", "evidence",
+                    "validation_flags",
                 ) if k in canon_meta},
                 "intent_id": intent_ids[0] if intent_ids else canon_meta.get("intent_id"),
                 "detail_id": canon_meta.get("detail_id"),

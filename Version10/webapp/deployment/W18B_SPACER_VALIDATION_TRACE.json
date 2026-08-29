@@ -1,0 +1,371 @@
+{
+  "phase": "W.18B",
+  "production_mutation": "NO",
+  "l2_temp_path": "C:\\Users\\nishanth.h\\AppData\\Local\\Temp\\w18b_galera_l2.json",
+  "source": "W.18A forensic identities + PieceGenerator extents + live M.2/L.2/VB.1/BBS",
+  "injector_report": {
+    "model_version": "9.2.0",
+    "rule_version": "M.2",
+    "enabled": true,
+    "beams_processed": 3,
+    "beams_skipped": 0,
+    "rows_emitted": 3,
+    "extent_fallback_rows": 0,
+    "cover_fallback": false,
+    "cover_mm_used": 30.0,
+    "warnings": [
+      "TOP: dropping CONTINUOUS extra piece representation for family ('TOP', 'TOP_EXTRA', 16, '2Y16') (LEFT/RIGHT extents retained)"
+    ],
+    "per_beam": [
+      {
+        "beam_id": "B1",
+        "skipped": false,
+        "rows": 1,
+        "zone_rows": 2,
+        "quantities": [
+          4
+        ],
+        "zone_quantities": [
+          2,
+          2
+        ],
+        "faces": [
+          "TOP"
+        ]
+      },
+      {
+        "beam_id": "B10",
+        "skipped": false,
+        "rows": 1,
+        "zone_rows": 2,
+        "quantities": [
+          4
+        ],
+        "zone_quantities": [
+          2,
+          2
+        ],
+        "faces": [
+          "TOP"
+        ]
+      },
+      {
+        "beam_id": "B23",
+        "skipped": false,
+        "rows": 1,
+        "zone_rows": 2,
+        "quantities": [
+          6
+        ],
+        "zone_quantities": [
+          3,
+          3
+        ],
+        "faces": [
+          "TOP"
+        ]
+      }
+    ]
+  },
+  "rounding": {
+    "rule": "round_half_up((overlap_mm / 1000) + 1)",
+    "1040_mm": {
+      "raw": 2.04,
+      "qty": 2
+    },
+    "1500_mm": {
+      "raw": 2.5,
+      "qty": 3
+    },
+    "2490_mm": {
+      "raw": 3.49,
+      "qty": 3
+    },
+    "2500_mm": {
+      "raw": 3.5,
+      "qty": 4
+    },
+    "bankers_round_2_5": 2,
+    "estimator_round_half_up_2_5": 3,
+    "dia_mm": 25,
+    "spacing_mm": 1000
+  },
+  "beams": [
+    {
+      "beam_id": "B1",
+      "pieces": [
+        {
+          "piece_id": "PCE::B1::0002",
+          "piece_type": "CONTINUOUS_BAR",
+          "bar_label": "2-Y16",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "fabrication_cut_length_mm": 5918.3,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 4158.3,
+          "physical_overlap_length_mm": 4158.3
+        },
+        {
+          "piece_id": "PCE::B1::0004",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "bar_label": "2-Y16",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "fabrication_cut_length_mm": 2799.6,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 1039.575,
+          "physical_overlap_length_mm": 1039.575
+        },
+        {
+          "piece_id": "PCE::B1::0005",
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "bar_label": "2-Y16",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "fabrication_cut_length_mm": 2799.6,
+          "piece_start_mm": 3118.7250000000004,
+          "piece_end_mm": 4158.3,
+          "physical_overlap_length_mm": 1039.5749999999998
+        },
+        {
+          "piece_id": "PCE::B1::0001",
+          "piece_type": "TOP_MAIN",
+          "bar_label": "2-Y20",
+          "bar_role": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "fabrication_cut_length_mm": 6358.3,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 4158.3,
+          "physical_overlap_length_mm": 4158.3
+        }
+      ],
+      "m2_zone_rows_before_aggregation": 2,
+      "m2_zone_quantities": [
+        2,
+        2
+      ],
+      "overlap_zones": [
+        {
+          "zone_start_mm": 0.0,
+          "zone_end_mm": 1039.575,
+          "physical_overlap_length_mm": 1039.575,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 2.039575,
+          "rounded_quantity": 2
+        },
+        {
+          "zone_start_mm": 3118.7250000000004,
+          "zone_end_mm": 4158.3,
+          "physical_overlap_length_mm": 1039.5749999999998,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 2.039575,
+          "rounded_quantity": 2
+        }
+      ],
+      "spacer_cut_length_mm": 140.0,
+      "extent_fallback": false,
+      "l2_spacer_count": 1,
+      "l2_spacer_quantity": [
+        4
+      ],
+      "l2_piece_start_preserved_on_longitudinal": true,
+      "l2_zone_metadata_on_spacer": true,
+      "bbs": [
+        {
+          "description": "Spacer bars",
+          "quantity": 4,
+          "cut_length_m": 0.14,
+          "aggregation_key": "B1|SPACER|25|0.14"
+        }
+      ],
+      "hooked_fabrication_cuts_present_but_not_used_as_overlap": [
+        5918.3,
+        2799.6,
+        2799.6
+      ],
+      "w18a_was": [
+        3,
+        7,
+        3
+      ]
+    },
+    {
+      "beam_id": "B10",
+      "pieces": [
+        {
+          "piece_id": "PCE::B10::0012",
+          "piece_type": "TOP_MAIN",
+          "bar_label": "5Y20",
+          "bar_role": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 4856.6,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 2656.6,
+          "physical_overlap_length_mm": 2656.6
+        },
+        {
+          "piece_id": "PCE::B10::0007",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "bar_label": "5-Y16",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 2424.2,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 664.15,
+          "physical_overlap_length_mm": 664.15
+        },
+        {
+          "piece_id": "PCE::B10::0008",
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "bar_label": "5-Y16",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 2424.2,
+          "piece_start_mm": 1992.4499999999998,
+          "piece_end_mm": 2656.6,
+          "physical_overlap_length_mm": 664.1500000000001
+        }
+      ],
+      "m2_zone_rows_before_aggregation": 2,
+      "m2_zone_quantities": [
+        2,
+        2
+      ],
+      "overlap_zones": [
+        {
+          "zone_start_mm": 0.0,
+          "zone_end_mm": 664.15,
+          "physical_overlap_length_mm": 664.15,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 1.66415,
+          "rounded_quantity": 2
+        },
+        {
+          "zone_start_mm": 1992.4499999999998,
+          "zone_end_mm": 2656.6,
+          "physical_overlap_length_mm": 664.1500000000001,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 1.6641500000000002,
+          "rounded_quantity": 2
+        }
+      ],
+      "spacer_cut_length_mm": 540.0,
+      "extent_fallback": false,
+      "l2_spacer_count": 1,
+      "l2_spacer_quantity": [
+        4
+      ],
+      "l2_piece_start_preserved_on_longitudinal": true,
+      "l2_zone_metadata_on_spacer": true,
+      "bbs": [
+        {
+          "description": "Spacer bars",
+          "quantity": 4,
+          "cut_length_m": 0.54,
+          "aggregation_key": "B10|SPACER|25|0.54"
+        }
+      ],
+      "hooked_fabrication_cuts_present_but_not_used_as_overlap": [
+        2424.2,
+        2424.2
+      ],
+      "w18a_was": [
+        4
+      ]
+    },
+    {
+      "beam_id": "B23",
+      "pieces": [
+        {
+          "piece_id": "PCE::B23::0110",
+          "piece_type": "TOP_MAIN",
+          "bar_label": "5-Y20",
+          "bar_role": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 10000.4,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 7800.351,
+          "physical_overlap_length_mm": 7800.351
+        },
+        {
+          "piece_id": "PCE::B23::0111",
+          "piece_type": "TOP_EXTRA_LEFT",
+          "bar_label": "5Y16#L",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 3710.1,
+          "piece_start_mm": 0.0,
+          "piece_end_mm": 1950.08775,
+          "physical_overlap_length_mm": 1950.08775
+        },
+        {
+          "piece_id": "PCE::B23::0112",
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "bar_label": "5Y16#R",
+          "bar_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "fabrication_cut_length_mm": 3710.1,
+          "piece_start_mm": 5850.26325,
+          "piece_end_mm": 7800.351,
+          "physical_overlap_length_mm": 1950.0877499999997
+        }
+      ],
+      "m2_zone_rows_before_aggregation": 2,
+      "m2_zone_quantities": [
+        3,
+        3
+      ],
+      "overlap_zones": [
+        {
+          "zone_start_mm": 0.0,
+          "zone_end_mm": 1950.08775,
+          "physical_overlap_length_mm": 1950.08775,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 2.95008775,
+          "rounded_quantity": 3
+        },
+        {
+          "zone_start_mm": 5850.26325,
+          "zone_end_mm": 7800.351,
+          "physical_overlap_length_mm": 1950.0877499999997,
+          "fabrication_cut_length_mm": "NOT_USED",
+          "raw_quantity": 2.95008775,
+          "rounded_quantity": 3
+        }
+      ],
+      "spacer_cut_length_mm": 540.0,
+      "extent_fallback": false,
+      "l2_spacer_count": 1,
+      "l2_spacer_quantity": [
+        6
+      ],
+      "l2_piece_start_preserved_on_longitudinal": true,
+      "l2_zone_metadata_on_spacer": true,
+      "bbs": [
+        {
+          "description": "Spacer bars",
+          "quantity": 6,
+          "cut_length_m": 0.54,
+          "aggregation_key": "B23|SPACER|25|0.54"
+        }
+      ],
+      "hooked_fabrication_cuts_present_but_not_used_as_overlap": [
+        3710.1,
+        3710.1
+      ],
+      "w18a_was": [
+        5
+      ]
+    }
+  ]
+}

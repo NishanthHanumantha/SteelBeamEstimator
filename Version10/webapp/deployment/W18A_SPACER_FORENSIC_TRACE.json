@@ -1,0 +1,5863 @@
+{
+  "phase": "W.18A",
+  "mode": "READ_ONLY_FORENSIC",
+  "l2_path": "C:\\Users\\nishanth.h\\AppData\\Local\\Temp\\w16_gn\\galera_l2.json",
+  "l2_source": "Phase R.1.3 \u2014 EngineeringBarModel + ReinforcementPiece",
+  "l2_model_version": "8.5.0",
+  "l2_model_count": 65,
+  "engine_qty_formula": "ceil(zone_length_mm / 1000) + 1",
+  "engine_cut_formula": "beam_width_mm - 2 * cover_mm",
+  "authoritative_qty_formula": "(overlapping_bar_length / spacing) + 1",
+  "focused_beams": [
+    {
+      "beam_id": "B1",
+      "geometry": {
+        "width_mm": 200.0,
+        "depth_mm": 750.0,
+        "clear_span_mm": 4158.3,
+        "cover_mm_l2": 30,
+        "geometry_source": "BEAM_REGISTRY",
+        "confidence": null,
+        "l2_geometry_keys": [
+          "beam_id",
+          "bottom_cover_mm",
+          "clear_span_mm",
+          "depth_mm",
+          "effective_span_mm",
+          "geometry_confidence",
+          "geometry_source",
+          "top_cover_mm",
+          "width_mm"
+        ]
+      },
+      "cut_from_width_cover": 140.0,
+      "longitudinal_reinforcement_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+          "bar_label": "2-Y16",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 5918.3,
+          "piece_type": "CONTINUOUS_BAR",
+          "shape_code": "SHAPE_STRAIGHT",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "SINGLE_SPAN",
+          "position_zone": "TOP_ZONE",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B1::0002",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B1::0002: 2Y16",
+          "classification_confidence": "0.8325",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 5918.3,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 4158.3,
+            "implied_base_kind": "FULL_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+          "bar_label": "2-Y16",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 2799.6,
+          "piece_type": "TOP_EXTRA_LEFT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "UNKNOWN",
+          "position_zone": "LEFT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B1::0004",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B1::0004: 2Y16#L",
+          "classification_confidence": "0.8325",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 2799.6,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 1039.6,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+          "bar_label": "2-Y16",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 2799.6,
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "UNKNOWN",
+          "position_zone": "RIGHT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B1::0005",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B1::0005: 2Y16#R",
+          "classification_confidence": "0.8325",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 2799.6,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 1039.6,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B1-TOP_MAIN-602fb7",
+          "bar_label": "2-Y20",
+          "semantic_role": "TOP_EXTRA",
+          "bar_id_role_token": "TOP_MAIN",
+          "bucket_role": "TOP_EXTRA",
+          "diameter_mm": 20.0,
+          "quantity": 2,
+          "spacing_mm": null,
+          "cut_length_mm": 6358.3,
+          "piece_type": "TOP_MAIN",
+          "shape_code": "SHAPE_STRAIGHT",
+          "extent": "FULL_SPAN",
+          "continuity": "CONTINUOUS",
+          "position_zone": "TOP_ZONE",
+          "support_zone": "FULL_SPAN",
+          "source_bar_id": "PCE::B1::0001",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B1::0001: 2Y20",
+          "classification_confidence": "0.8382",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 6358.3,
+            "assumed_ld_mm": 1000.0,
+            "assumed_hook_add_mm": 200.0,
+            "implied_base_mm": 4158.3,
+            "implied_base_kind": "FULL_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        }
+      ],
+      "spacer_records": [
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-eb6aef",
+          "bar_label": "SPACER 25@1000",
+          "semantic_role": "SPACER_BAR",
+          "bar_id_role_token": "SPACER_BAR",
+          "bucket_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "piece_type": "SPACER_BAR",
+          "shape_code": null,
+          "extent": "ZONE",
+          "continuity": "SINGLE_BEAM",
+          "position_zone": "TOP_ZONE",
+          "support_zone": null,
+          "source_bar_id": null,
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 EngineeringBarModel: SPACER 25@1000",
+          "classification_confidence": "HIGH",
+          "steel_grade": "Y",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "qty_matches_ceil_of_which_long_cut": [],
+          "qty_matches_ceil_of_span": false
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-6eda9b",
+          "bar_label": "SPACER 25@1000",
+          "semantic_role": "SPACER_BAR",
+          "bar_id_role_token": "SPACER_BAR",
+          "bucket_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 7,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "piece_type": "SPACER_BAR",
+          "shape_code": null,
+          "extent": "ZONE",
+          "continuity": "SINGLE_BEAM",
+          "position_zone": "TOP_ZONE",
+          "support_zone": null,
+          "source_bar_id": null,
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 EngineeringBarModel: SPACER 25@1000",
+          "classification_confidence": "HIGH",
+          "steel_grade": "Y",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "qty_matches_ceil_of_which_long_cut": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "cut_length_mm": 5918.3,
+              "formula": "ceil(cut_length_mm/1000)+1"
+            }
+          ],
+          "qty_matches_ceil_of_span": false
+        },
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B1-SPACER_BAR-31ecd5",
+          "bar_label": "SPACER 25@1000",
+          "semantic_role": "SPACER_BAR",
+          "bar_id_role_token": "SPACER_BAR",
+          "bucket_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 3,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 140.0,
+          "piece_type": "SPACER_BAR",
+          "shape_code": null,
+          "extent": "ZONE",
+          "continuity": "SINGLE_BEAM",
+          "position_zone": "TOP_ZONE",
+          "support_zone": null,
+          "source_bar_id": null,
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 EngineeringBarModel: SPACER 25@1000",
+          "classification_confidence": "HIGH",
+          "steel_grade": "Y",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "qty_matches_ceil_of_which_long_cut": [],
+          "qty_matches_ceil_of_span": false
+        }
+      ],
+      "n_longitudinal": 4,
+      "n_spacer_l2_rows": 3,
+      "current_quantity_sum": 13,
+      "role_bucket_mismatches": [
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+          "bar_label": "2-Y16",
+          "bar_id_role_token": "TOP_EXTRA",
+          "l2_key": "top_main_bars",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+          "bar_label": "2-Y16",
+          "bar_id_role_token": "TOP_EXTRA",
+          "l2_key": "top_main_bars",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+          "bar_label": "2-Y16",
+          "bar_id_role_token": "TOP_EXTRA",
+          "l2_key": "top_main_bars",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "bar_id": "R13-B1-TOP_MAIN-602fb7",
+          "bar_label": "2-Y20",
+          "bar_id_role_token": "TOP_MAIN",
+          "l2_key": "top_extra_bars",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ],
+      "m2_replays": {
+        "bar_id_inferExtents=False": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 5918.3,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 6358.3,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=5918.3",
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=2799.6"
+            ],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 4,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 2799.6,
+                "zone_length_mm": 2799.6,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 4
+              },
+              {
+                "face": "TOP",
+                "quantity": 7,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 5918.3,
+                "zone_length_mm": 5918.3,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 7
+              }
+            ],
+            "quantities": [
+              4,
+              7
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "bar_id_inferExtents=True": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 4158.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1039.575,
+                "clear_length_mm": 1039.575,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 3118.7250000000004,
+                "end_mm": 4158.3,
+                "clear_length_mm": 1039.5749999999998,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 6358.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1039.575,
+                "zone_length_mm": 1039.575,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 3118.7250000000004,
+                "zone_end_mm": 4158.3,
+                "zone_length_mm": 1039.5749999999998,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "semantic_role_inferExtents=False": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 5918.3,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 6358.3,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=6358.3"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 8,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 6358.3,
+                "zone_length_mm": 6358.3,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 8
+              }
+            ],
+            "quantities": [
+              8
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "semantic_role_inferExtents=True": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 5918.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1039.575,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 3118.7250000000004,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 4158.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1039.575,
+                "zone_length_mm": 1039.575,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 3118.7250000000004,
+                "zone_end_mm": 4158.3,
+                "zone_length_mm": 1039.5749999999998,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "bucket_inferExtents=False": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 5918.3,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 6358.3,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=6358.3"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 8,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 6358.3,
+                "zone_length_mm": 6358.3,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 8
+              }
+            ],
+            "quantities": [
+              8
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "bucket_inferExtents=True": {
+          "n_groups": 4,
+          "lineage": [
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 5918.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1039.575,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+              "bar_label": "2-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 3118.7250000000004,
+                "end_mm": 4158.3,
+                "clear_length_mm": 2799.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            },
+            {
+              "bar_id": "R13-B1-TOP_MAIN-602fb7",
+              "bar_label": "2-Y20",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 4158.3,
+                "clear_length_mm": 4158.3,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 2,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1039.575,
+                "zone_length_mm": 1039.575,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 140.0,
+                "zone_start_mm": 3118.7250000000004,
+                "zone_end_mm": 4158.3,
+                "zone_length_mm": 1039.5749999999998,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        }
+      },
+      "authoritative_rule": {
+        "diameter_mm": 25,
+        "spacing_mm": 1000,
+        "qty_formula_text": "(overlapping_bar_length / 1000) + 1",
+        "implementation_qty_formula": "ceil(zone_length_mm / 1000) + 1",
+        "cut_formula": "beam_width_mm - 2 * cover_mm",
+        "expected_qty_if_full_span_overlap": 5.1583000000000006,
+        "implementation_qty_if_full_span_overlap": 6,
+        "notes": []
+      },
+      "missing_information": {
+        "piece_start_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "piece_end_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "overlap_start_end": "NOT_AVAILABLE",
+        "spacer_engineering_metadata": "EMPTY_OR_MISSING",
+        "parent_trigger_bars": "NOT_AVAILABLE"
+      },
+      "duplication_classification": "MIXTURE",
+      "root-cause_classification": "CAUSE_A_piece_split + CAUSE_B_cut_fallback",
+      "confidence": "HIGH",
+      "expected_spacer_quantity_notes": "Support-end 3+3 from 0.25L ceil formula; qty 7 is hooked cut fallback. Oracle overlap 1.04m would be ~2 per end if not ceil.",
+      "current_quantity": [
+        3,
+        7,
+        3
+      ],
+      "W18B_recommendation": "Dedupe CONTINUOUS+LEFT+RIGHT same extra; never use cut_length as overlap.",
+      "role_bucket_consistency": "mismatch_affects_BBS_captions_not_M2_emission"
+    },
+    {
+      "beam_id": "B10",
+      "geometry": {
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "clear_span_mm": 2656.6,
+        "cover_mm_l2": 30,
+        "geometry_source": "BEAM_REGISTRY",
+        "confidence": null,
+        "l2_geometry_keys": [
+          "beam_id",
+          "bottom_cover_mm",
+          "clear_span_mm",
+          "depth_mm",
+          "effective_span_mm",
+          "geometry_confidence",
+          "geometry_source",
+          "top_cover_mm",
+          "width_mm"
+        ]
+      },
+      "cut_from_width_cover": 540.0,
+      "longitudinal_reinforcement_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_MAIN-03b02b",
+          "bar_label": "5Y20",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_MAIN",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 4856.6,
+          "piece_type": "TOP_MAIN",
+          "shape_code": "SHAPE_STRAIGHT",
+          "extent": "FULL_SPAN",
+          "continuity": "CONTINUOUS",
+          "position_zone": "TOP_ZONE",
+          "support_zone": "FULL_SPAN",
+          "source_bar_id": "PCE::B10::0012",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B10::0012: 5Y20",
+          "classification_confidence": "0.8346",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 4856.6,
+            "assumed_ld_mm": 1000.0,
+            "assumed_hook_add_mm": 200.0,
+            "implied_base_mm": 2656.6,
+            "implied_base_kind": "FULL_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+          "bar_label": "5-Y16",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 2424.2,
+          "piece_type": "TOP_EXTRA_LEFT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "CURTAILED",
+          "position_zone": "LEFT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B10::0007",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B10::0007: 5Y16#L",
+          "classification_confidence": "0.826",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 2424.2,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 664.2,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+          "bar_label": "5-Y16",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 2424.2,
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "CURTAILED",
+          "position_zone": "RIGHT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B10::0008",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B10::0008: 5Y16#R",
+          "classification_confidence": "0.826",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 2424.2,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 664.2,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        }
+      ],
+      "spacer_records": [
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B10-SPACER_BAR-c8906a",
+          "bar_label": "SPACER 25@1000",
+          "semantic_role": "SPACER_BAR",
+          "bar_id_role_token": "SPACER_BAR",
+          "bucket_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 4,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 540.0,
+          "piece_type": "SPACER_BAR",
+          "shape_code": null,
+          "extent": "ZONE",
+          "continuity": "SINGLE_BEAM",
+          "position_zone": "TOP_ZONE",
+          "support_zone": null,
+          "source_bar_id": null,
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 EngineeringBarModel: SPACER 25@1000",
+          "classification_confidence": "HIGH",
+          "steel_grade": "Y",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "qty_matches_ceil_of_which_long_cut": [
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "cut_length_mm": 2424.2,
+              "formula": "ceil(cut_length_mm/1000)+1"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "cut_length_mm": 2424.2,
+              "formula": "ceil(cut_length_mm/1000)+1"
+            }
+          ],
+          "qty_matches_ceil_of_span": true
+        }
+      ],
+      "n_longitudinal": 3,
+      "n_spacer_l2_rows": 1,
+      "current_quantity_sum": 4,
+      "role_bucket_mismatches": [
+        {
+          "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+          "bar_label": "5-Y16",
+          "bar_id_role_token": "TOP_EXTRA",
+          "l2_key": "top_main_bars",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+          "bar_label": "5-Y16",
+          "bar_id_role_token": "TOP_EXTRA",
+          "l2_key": "top_main_bars",
+          "semantic_role": "TOP_MAIN"
+        }
+      ],
+      "m2_replays": {
+        "bar_id_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=2424.2"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 4,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 2424.2,
+                "zone_length_mm": 2424.2,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 4
+              }
+            ],
+            "quantities": [
+              4
+            ]
+          },
+          "matches_l2_quantities": true
+        },
+        "bar_id_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 664.15,
+                "clear_length_mm": 664.15,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 1992.4499999999998,
+                "end_mm": 2656.6,
+                "clear_length_mm": 664.1500000000001,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 2,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 664.15,
+                "zone_length_mm": 664.15,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 2
+              },
+              {
+                "face": "TOP",
+                "quantity": 2,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 1992.4499999999998,
+                "zone_end_mm": 2656.6,
+                "zone_length_mm": 664.1500000000001,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 2
+              }
+            ],
+            "quantities": [
+              2,
+              2
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "semantic_role_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 0,
+            "rows": [],
+            "quantities": []
+          },
+          "matches_l2_quantities": false
+        },
+        "semantic_role_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 664.15,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 1992.4499999999998,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 0,
+            "rows": [],
+            "quantities": []
+          },
+          "matches_l2_quantities": false
+        },
+        "bucket_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 0,
+            "rows": [],
+            "quantities": []
+          },
+          "matches_l2_quantities": false
+        },
+        "bucket_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B10-TOP_MAIN-03b02b",
+              "bar_label": "5Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 2656.6,
+                "clear_length_mm": 4856.6,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 664.15,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+              "bar_label": "5-Y16",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 1992.4499999999998,
+                "end_mm": 2656.6,
+                "clear_length_mm": 2424.2,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 0,
+            "rows": [],
+            "quantities": []
+          },
+          "matches_l2_quantities": false
+        }
+      },
+      "authoritative_rule": {
+        "diameter_mm": 25,
+        "spacing_mm": 1000,
+        "qty_formula_text": "(overlapping_bar_length / 1000) + 1",
+        "implementation_qty_formula": "ceil(zone_length_mm / 1000) + 1",
+        "cut_formula": "beam_width_mm - 2 * cover_mm",
+        "expected_qty_if_full_span_overlap": 3.6566,
+        "implementation_qty_if_full_span_overlap": 4,
+        "notes": []
+      },
+      "missing_information": {
+        "piece_start_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "piece_end_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "overlap_start_end": "NOT_AVAILABLE",
+        "spacer_engineering_metadata": "EMPTY_OR_MISSING",
+        "parent_trigger_bars": "NOT_AVAILABLE"
+      },
+      "duplication_classification": "NO_ROW_DUPLICATE_ZONES_UNDERCOUNTED",
+      "root-cause_classification": "CAUSE_B + CAUSE_D",
+      "confidence": "HIGH",
+      "expected_spacer_quantity_notes": "If L/R extras: two zones qty ceil(664/1000)+1=2 each. Current one row qty 4 from cut 2424.2.",
+      "current_quantity": [
+        4
+      ],
+      "W18B_recommendation": "Use 0.25L extents for LEFT/RIGHT; emit two zones.",
+      "role_bucket_consistency": "mismatch_affects_BBS_captions_not_M2_emission"
+    },
+    {
+      "beam_id": "B23",
+      "geometry": {
+        "width_mm": 600.0,
+        "depth_mm": 750.0,
+        "clear_span_mm": 7800.351,
+        "cover_mm_l2": 30,
+        "geometry_source": "REINFORCEMENT_DIMENSION",
+        "confidence": null,
+        "l2_geometry_keys": [
+          "beam_id",
+          "bottom_cover_mm",
+          "clear_span_mm",
+          "depth_mm",
+          "effective_span_mm",
+          "geometry_confidence",
+          "geometry_source",
+          "top_cover_mm",
+          "width_mm"
+        ]
+      },
+      "cut_from_width_cover": 540.0,
+      "longitudinal_reinforcement_records": [
+        {
+          "l2_key": "top_main_bars",
+          "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+          "bar_label": "5-Y20",
+          "semantic_role": "TOP_MAIN",
+          "bar_id_role_token": "TOP_MAIN",
+          "bucket_role": "TOP_MAIN",
+          "diameter_mm": 20.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 10000.4,
+          "piece_type": "TOP_MAIN",
+          "shape_code": "SHAPE_STRAIGHT",
+          "extent": "FULL_SPAN",
+          "continuity": "CONTINUOUS",
+          "position_zone": "TOP_ZONE",
+          "support_zone": "FULL_SPAN",
+          "source_bar_id": "PCE::B23::0110",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B23::0110: 5Y20",
+          "classification_confidence": "0.8346",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "hybrid_semantic_handoff",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 10000.4,
+            "assumed_ld_mm": 1000.0,
+            "assumed_hook_add_mm": 200.0,
+            "implied_base_mm": 7800.4,
+            "implied_base_kind": "FULL_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B23-TOP_EXTRA-645920",
+          "bar_label": "5Y16#L",
+          "semantic_role": "TOP_EXTRA",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 3710.1,
+          "piece_type": "TOP_EXTRA_LEFT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "CURTAILED",
+          "position_zone": "LEFT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B23::0111",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B23::0111: 5Y16#L",
+          "classification_confidence": "0.826",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 3710.1,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 1950.1,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+          "bar_label": "5Y16#R",
+          "semantic_role": "TOP_EXTRA",
+          "bar_id_role_token": "TOP_EXTRA",
+          "bucket_role": "TOP_EXTRA",
+          "diameter_mm": 16.0,
+          "quantity": 5,
+          "spacing_mm": null,
+          "cut_length_mm": 3710.1,
+          "piece_type": "TOP_EXTRA_RIGHT",
+          "shape_code": "SHAPE_SUPPORT_EXTRA",
+          "extent": "BOTH_SUPPORTS",
+          "continuity": "CURTAILED",
+          "position_zone": "RIGHT_SUPPORT",
+          "support_zone": "BOTH_SUPPORTS",
+          "source_bar_id": "PCE::B23::0112",
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 Piece PCE::B23::0112: 5Y16#R",
+          "classification_confidence": "0.826",
+          "steel_grade": "Fe550",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "cut_reverse": {
+            "cut_length_mm": 3710.1,
+            "assumed_ld_mm": 800.0,
+            "assumed_hook_add_mm": 160.0,
+            "implied_base_mm": 1950.1,
+            "implied_base_kind": "LEFT_OR_QUARTER_SPAN_PLUS_2LD_AND_HOOKS",
+            "note": "cut - 2*50d - 2*5d",
+            "WARNING": "Ld/hook assumptions are Galera TABLE 1 Fe550 + GN 5d; not stored on the L.2 spacer row"
+          }
+        }
+      ],
+      "spacer_records": [
+        {
+          "l2_key": "spacer_bars",
+          "bar_id": "R13-B23-SPACER_BAR-7ce240",
+          "bar_label": "SPACER 25@1000",
+          "semantic_role": "SPACER_BAR",
+          "bar_id_role_token": "SPACER_BAR",
+          "bucket_role": "SPACER_BAR",
+          "diameter_mm": 25.0,
+          "quantity": 5,
+          "spacing_mm": 1000.0,
+          "cut_length_mm": 540.0,
+          "piece_type": "SPACER_BAR",
+          "shape_code": null,
+          "extent": "ZONE",
+          "continuity": "SINGLE_BEAM",
+          "position_zone": "TOP_ZONE",
+          "support_zone": null,
+          "source_bar_id": null,
+          "source_pipeline_role": "R.1.3+PIECE",
+          "classification_evidence": "R.1.3 EngineeringBarModel: SPACER 25@1000",
+          "classification_confidence": "HIGH",
+          "steel_grade": "Y",
+          "engineering_metadata": {},
+          "piece_start_mm": null,
+          "piece_end_mm": null,
+          "zone": null,
+          "source_phase": null,
+          "l2_keys_present": [
+            "bar_id",
+            "bar_label",
+            "beam_id",
+            "classification_confidence",
+            "classification_evidence",
+            "continuity",
+            "coverage_ratio",
+            "cut_length_mm",
+            "diameter_mm",
+            "extent",
+            "is_corrected",
+            "is_reference_anchored",
+            "piece_type",
+            "position_zone",
+            "quantity",
+            "semantic_role",
+            "shape_code",
+            "source_bar_id",
+            "source_pipeline_role",
+            "spacing_mm",
+            "spacing_pattern",
+            "steel_grade",
+            "stirrup_segments",
+            "support_zone"
+          ],
+          "role_bucket_match": true,
+          "qty_matches_ceil_of_which_long_cut": [
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "cut_length_mm": 3710.1,
+              "formula": "ceil(cut_length_mm/1000)+1"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "cut_length_mm": 3710.1,
+              "formula": "ceil(cut_length_mm/1000)+1"
+            }
+          ],
+          "qty_matches_ceil_of_span": false
+        }
+      ],
+      "n_longitudinal": 3,
+      "n_spacer_l2_rows": 1,
+      "current_quantity_sum": 5,
+      "role_bucket_mismatches": [],
+      "m2_replays": {
+        "bar_id_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=3710.1"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 5,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 3710.1,
+                "zone_length_mm": 3710.1,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 5
+              }
+            ],
+            "quantities": [
+              5
+            ]
+          },
+          "matches_l2_quantities": true
+        },
+        "bar_id_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1950.08775,
+                "clear_length_mm": 1950.08775,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bar_id",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 5850.26325,
+                "end_mm": 7800.351,
+                "clear_length_mm": 1950.0877499999997,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1950.08775,
+                "zone_length_mm": 1950.08775,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 5850.26325,
+                "zone_end_mm": 7800.351,
+                "zone_length_mm": 1950.0877499999997,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "semantic_role_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=3710.1"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 5,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 3710.1,
+                "zone_length_mm": 3710.1,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 5
+              }
+            ],
+            "quantities": [
+              5
+            ]
+          },
+          "matches_l2_quantities": true
+        },
+        "semantic_role_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1950.08775,
+                "clear_length_mm": 1950.08775,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "semantic_role",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 5850.26325,
+                "end_mm": 7800.351,
+                "clear_length_mm": 1950.0877499999997,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1950.08775,
+                "zone_length_mm": 1950.08775,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 5850.26325,
+                "zone_end_mm": 7800.351,
+                "zone_length_mm": 1950.0877499999997,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        },
+        "bucket_inferExtents=False": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "LOW",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": null,
+                "end_mm": null,
+                "clear_length_mm": 3710.1,
+                "extent_confidence": "MISSING",
+                "has_extent": false,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "not_applied"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [
+              "TOP: extent_fallback for TOP_EXTRA using clear_length=3710.1"
+            ],
+            "n_rows": 1,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 5,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 3710.1,
+                "zone_length_mm": 3710.1,
+                "extent_fallback": true,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 5
+              }
+            ],
+            "quantities": [
+              5
+            ]
+          },
+          "matches_l2_quantities": true
+        },
+        "bucket_inferExtents=True": {
+          "n_groups": 3,
+          "lineage": [
+            {
+              "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+              "bar_label": "5-Y20",
+              "l2_key": "top_main_bars",
+              "role_used": "TOP_MAIN",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_MAIN",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 7800.351,
+                "clear_length_mm": 10000.4,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 20.0
+              },
+              "extent_inference": "inferred_from_piece_type_full_span"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-645920",
+              "bar_label": "5Y16#L",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 0.0,
+                "end_mm": 1950.08775,
+                "clear_length_mm": 1950.08775,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_left_0.25L"
+            },
+            {
+              "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+              "bar_label": "5Y16#R",
+              "l2_key": "top_extra_bars",
+              "role_used": "TOP_EXTRA",
+              "role_source": "bucket",
+              "group": {
+                "role": "TOP_EXTRA",
+                "face": "TOP",
+                "start_mm": 5850.26325,
+                "end_mm": 7800.351,
+                "clear_length_mm": 1950.0877499999997,
+                "extent_confidence": "HIGH",
+                "has_extent": true,
+                "quantity": 5,
+                "diameter_mm": 16.0
+              },
+              "extent_inference": "inferred_from_piece_type_right_0.75L"
+            }
+          ],
+          "engine": {
+            "skipped": false,
+            "skip_reason": "",
+            "warnings": [],
+            "n_rows": 2,
+            "rows": [
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 0.0,
+                "zone_end_mm": 1950.08775,
+                "zone_length_mm": 1950.08775,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              },
+              {
+                "face": "TOP",
+                "quantity": 3,
+                "diameter_mm": 25,
+                "spacing_mm": 1000,
+                "cut_length_mm": 540.0,
+                "zone_start_mm": 5850.26325,
+                "zone_end_mm": 7800.351,
+                "zone_length_mm": 1950.0877499999997,
+                "extent_fallback": false,
+                "cover_mm": 30.0,
+                "qty_from_ceil_formula": 3
+              }
+            ],
+            "quantities": [
+              3,
+              3
+            ]
+          },
+          "matches_l2_quantities": false
+        }
+      },
+      "authoritative_rule": {
+        "diameter_mm": 25,
+        "spacing_mm": 1000,
+        "qty_formula_text": "(overlapping_bar_length / 1000) + 1",
+        "implementation_qty_formula": "ceil(zone_length_mm / 1000) + 1",
+        "cut_formula": "beam_width_mm - 2 * cover_mm",
+        "expected_qty_if_full_span_overlap": 8.800351,
+        "implementation_qty_if_full_span_overlap": 9,
+        "notes": []
+      },
+      "missing_information": {
+        "piece_start_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "piece_end_mm": "NOT_AVAILABLE_IN_L2_EXPORT",
+        "overlap_start_end": "NOT_AVAILABLE",
+        "spacer_engineering_metadata": "EMPTY_OR_MISSING",
+        "parent_trigger_bars": "NOT_AVAILABLE"
+      },
+      "duplication_classification": "NO_ROW_DUPLICATE_ZONES_UNDERCOUNTED",
+      "root-cause_classification": "CAUSE_B + CAUSE_D",
+      "confidence": "HIGH",
+      "expected_spacer_quantity_notes": "If L/R extras: two zones qty 3 each from 1950mm. Current one row qty 5 from cut 3710.1. Labels preserve #L/#R.",
+      "current_quantity": [
+        5
+      ],
+      "W18B_recommendation": "Honor LEFT/RIGHT extents as two overlap regions.",
+      "role_bucket_consistency": "consistent"
+    }
+  ],
+  "additional_galera_diagnostic_beams": [
+    {
+      "beam_id": "B1",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        7,
+        3
+      ],
+      "n_top_main": 3,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4158.3,
+      "width_mm": 200.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "multiple_top_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5918.3,
+          "bar_id": "R13-B1-TOP_EXTRA-ac9cd9",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2799.6,
+          "bar_id": "R13-B1-TOP_EXTRA-6b9a58",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2799.6,
+          "bar_id": "R13-B1-TOP_EXTRA-c049cb",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2-Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 6358.3,
+          "bar_id": "R13-B1-TOP_MAIN-602fb7",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B10",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        4
+      ],
+      "n_top_main": 3,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2656.6,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_top_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 4856.6,
+          "bar_id": "R13-B10-TOP_MAIN-03b02b",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 2424.2,
+          "bar_id": "R13-B10-TOP_EXTRA-f3dada",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 2424.2,
+          "bar_id": "R13-B10-TOP_EXTRA-2d1359",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B11",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        6,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7858.331,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y25",
+          "qty": 5,
+          "dia": 25.0,
+          "cut": 10608.3,
+          "bar_id": "R13-B11-TOP_MAIN-e46931",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y20#L",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B11-TOP_EXTRA-68ef32",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y20#R",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B11-TOP_EXTRA-015b17",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#L",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B11-TOP_EXTRA-358dd0",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#R",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B11-TOP_EXTRA-b00478",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B12",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7858.331,
+      "width_mm": 400.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4L-Y12",
+          "qty": 4,
+          "dia": 12,
+          "cut": 10058.3,
+          "bar_id": "R13-B12-TOP_MAIN-55245f",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#L",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B12-TOP_EXTRA-421787",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#R",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B12-TOP_EXTRA-45a4b7",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y20#L",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B12-TOP_EXTRA-6e4e79",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y20#R",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B12-TOP_EXTRA-4423d2",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B13",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 0,
+      "n_top_extra": 3,
+      "n_bottom_main": 2,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4759.9,
+      "width_mm": 400.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "multiple_bottom_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2950.0,
+          "bar_id": "R13-B13-TOP_EXTRA-06dead",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2950.0,
+          "bar_id": "R13-B13-TOP_EXTRA-007e08",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 6519.9,
+          "bar_id": "R13-B13-TOP_MAIN-02cf6c",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "4-Y12",
+          "qty": 4,
+          "dia": 12.0,
+          "cut": 2510.0,
+          "bar_id": "R13-B13-TOP_EXTRA-e05108",
+          "semantic_role": "BOTTOM_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "4-Y12",
+          "qty": 4,
+          "dia": 12.0,
+          "cut": 2510.0,
+          "bar_id": "R13-B13-TOP_EXTRA-d75cc5",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B14",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1808.363,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3568.4,
+          "bar_id": "R13-B14-TOP_MAIN-02b101",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3128.4,
+          "bar_id": "R13-B14-TOP_EXTRA-3d9ee8",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B14A",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1808.363,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3568.4,
+          "bar_id": "R13-B14A-TOP_MAIN-307c81",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3128.4,
+          "bar_id": "R13-B14A-TOP_EXTRA-ff1eab",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2L-Y8@100C/C",
+          "qty": 2,
+          "dia": 8,
+          "cut": 4008.4,
+          "bar_id": "R13-B14A-BOTTOM_MAIN-92de4d",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B15",
+      "n_spacer_rows": 4,
+      "spacer_quantities": [
+        3,
+        4,
+        5,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 2,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 5958.4,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "multiple_bottom_main_records",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3-Y20",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 8158.4,
+          "bar_id": "R13-B15-TOP_MAIN-e159f5",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3249.6,
+          "bar_id": "R13-B15-TOP_EXTRA-7fa3b8",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3249.6,
+          "bar_id": "R13-B15-TOP_EXTRA-1570ce",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2809.6,
+          "bar_id": "R13-B15-TOP_EXTRA-6bfcc6",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2809.6,
+          "bar_id": "R13-B15-TOP_EXTRA-ae4bba",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2L-Y12@100C/C",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2809.6,
+          "bar_id": "R13-B15-TOP_EXTRA-e72f77",
+          "semantic_role": "BOTTOM_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2L-Y12@100C/C",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2809.6,
+          "bar_id": "R13-B15-TOP_EXTRA-f8bb72",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B16",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1700.221,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3020.2,
+          "bar_id": "R13-B16-TOP_MAIN-629426",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B17",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1825.691,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3145.7,
+          "bar_id": "R13-B17-TOP_MAIN-8f41e2",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B18",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1825.691,
+      "width_mm": 400.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3585.7,
+          "bar_id": "R13-B18-TOP_MAIN-99706d",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B19",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        2,
+        4,
+        2
+      ],
+      "n_top_main": 2,
+      "n_top_extra": 2,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1992.344,
+      "width_mm": 400.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "multiple_top_main_records",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 2258.1,
+          "bar_id": "R13-B19-TOP_EXTRA-6fea1a",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 2258.1,
+          "bar_id": "R13-B19-TOP_EXTRA-ce0152",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2258.1,
+          "bar_id": "R13-B19-TOP_EXTRA-ba3272",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2258.1,
+          "bar_id": "R13-B19-TOP_EXTRA-a2198f",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "4L-Y8@100C/C",
+          "qty": 4,
+          "dia": 8,
+          "cut": 4742.3,
+          "bar_id": "R13-B19-TOP_MAIN-68fc44",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B2",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 0,
+      "n_top_extra": 4,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4858.331,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2974.6,
+          "bar_id": "R13-B2-TOP_EXTRA-0fa056",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2974.6,
+          "bar_id": "R13-B2-TOP_EXTRA-0de2bb",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2534.6,
+          "bar_id": "R13-B2-TOP_EXTRA-2620c9",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2534.6,
+          "bar_id": "R13-B2-TOP_EXTRA-00c98c",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "3-Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 6618.3,
+          "bar_id": "R13-B2-TOP_MAIN-3a7e91",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B20",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        6,
+        3
+      ],
+      "n_top_main": 3,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7806.4,
+      "width_mm": 400.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "multiple_top_main_records",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y25",
+          "qty": 2,
+          "dia": 25.0,
+          "cut": 10556.4,
+          "bar_id": "R13-B20-TOP_MAIN-b62c1b",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y20",
+          "qty": 4,
+          "dia": 20.0,
+          "cut": 4151.6,
+          "bar_id": "R13-B20-TOP_EXTRA-a44daa",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y20",
+          "qty": 4,
+          "dia": 20.0,
+          "cut": 4151.6,
+          "bar_id": "R13-B20-TOP_EXTRA-2d3e2c",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#L",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3711.6,
+          "bar_id": "R13-B20-TOP_EXTRA-80bb00",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#R",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3711.6,
+          "bar_id": "R13-B20-TOP_EXTRA-3d2921",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B20A",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 2,
+      "n_top_extra": 0,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1821.8,
+      "width_mm": 200.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "multiple_top_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2215.4,
+          "bar_id": "R13-B20A-TOP_EXTRA-ce012d",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2215.4,
+          "bar_id": "R13-B20A-TOP_EXTRA-f87c08",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2L-Y10@100C/C",
+          "qty": 2,
+          "dia": 10,
+          "cut": 4021.8,
+          "bar_id": "R13-B20A-TOP_MAIN-d5ae5a",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B21",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        5,
+        3
+      ],
+      "n_top_main": 3,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 5821.0,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "multiple_top_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 8021.0,
+          "bar_id": "R13-B21-TOP_MAIN-806fb1",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3215.2,
+          "bar_id": "R13-B21-TOP_EXTRA-884e1d",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3215.2,
+          "bar_id": "R13-B21-TOP_EXTRA-e98906",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3215.2,
+          "bar_id": "R13-B21-TOP_EXTRA-94e597",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3215.2,
+          "bar_id": "R13-B21-TOP_EXTRA-83d3bf",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B22",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        5,
+        3
+      ],
+      "n_top_main": 4,
+      "n_top_extra": 0,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7966.346,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "multiple_top_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3751.6,
+          "bar_id": "R13-B22-TOP_EXTRA-7209d7",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "4-Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3751.6,
+          "bar_id": "R13-B22-TOP_EXTRA-638303",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3751.6,
+          "bar_id": "R13-B22-TOP_EXTRA-8aa934",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_main_bars",
+          "label": "5-Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3751.6,
+          "bar_id": "R13-B22-TOP_EXTRA-e43e7f",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "5-Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 10166.3,
+          "bar_id": "R13-B22-TOP_MAIN-b0b539",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B23",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        5
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7800.351,
+      "width_mm": 600.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5-Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 10000.4,
+          "bar_id": "R13-B23-TOP_MAIN-5c6a95",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#L",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3710.1,
+          "bar_id": "R13-B23-TOP_EXTRA-645920",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#R",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3710.1,
+          "bar_id": "R13-B23-TOP_EXTRA-a36b4f",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B25",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        5
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 6647.8,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 8847.8,
+          "bar_id": "R13-B25-TOP_MAIN-cdf6fa",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3421.9,
+          "bar_id": "R13-B25-TOP_EXTRA-f3e8ab",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3421.9,
+          "bar_id": "R13-B25-TOP_EXTRA-da5dc0",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B27",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 2,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3259.1,
+      "width_mm": 200.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "multiple_bottom_main_records"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2-Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5019.1,
+          "bar_id": "R13-B27-TOP_MAIN-13ff13",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2-Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2134.8,
+          "bar_id": "R13-B27-TOP_EXTRA-e70ef2",
+          "semantic_role": "BOTTOM_MAIN"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2-Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2134.8,
+          "bar_id": "R13-B27-TOP_EXTRA-b9b313",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B28",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3418.731,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5178.7,
+          "bar_id": "R13-B28-TOP_MAIN-675dc0",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B29",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3418.731,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5178.7,
+          "bar_id": "R13-B29-TOP_MAIN-c6f32f",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B29A",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1551.004,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3311.0,
+          "bar_id": "R13-B29A-TOP_MAIN-57a83b",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B3",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4858.331,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y20",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 7058.3,
+          "bar_id": "R13-B3-TOP_MAIN-bc4b9e",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2974.6,
+          "bar_id": "R13-B3-TOP_EXTRA-c92421",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2974.6,
+          "bar_id": "R13-B3-TOP_EXTRA-9313fb",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2534.6,
+          "bar_id": "R13-B3-TOP_EXTRA-3abb28",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2534.6,
+          "bar_id": "R13-B3-TOP_EXTRA-f41da9",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B30",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2890.0,
+      "width_mm": 200.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4650.0,
+          "bar_id": "R13-B30-TOP_MAIN-4a065d",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2042.5,
+          "bar_id": "R13-B30-TOP_EXTRA-e906eb",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2042.5,
+          "bar_id": "R13-B30-TOP_EXTRA-c94bb6",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B31",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1946.641,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3706.6,
+          "bar_id": "R13-B31-TOP_MAIN-ccc2fb",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1806.7,
+          "bar_id": "R13-B31-TOP_EXTRA-bd1bfc",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1806.7,
+          "bar_id": "R13-B31-TOP_EXTRA-5871d3",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B31A",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2801.641,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4561.6,
+          "bar_id": "R13-B31A-TOP_MAIN-2b2b5a",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 4121.6,
+          "bar_id": "R13-B31A-TOP_EXTRA-0543b0",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B32",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3935.6,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5695.6,
+          "bar_id": "R13-B32-TOP_MAIN-964e40",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 5255.6,
+          "bar_id": "R13-B32-TOP_EXTRA-f89bd5",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B33",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        4
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4021.6,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 6221.6,
+          "bar_id": "R13-B33-TOP_MAIN-40215d",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2765.4,
+          "bar_id": "R13-B33-TOP_EXTRA-6e2f21",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2765.4,
+          "bar_id": "R13-B33-TOP_EXTRA-58a6af",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B36",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 0.0,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": null,
+          "bar_id": "R13-B36-TOP_MAIN-c3fb65",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B38",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 0.0,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": null,
+          "bar_id": "R13-B38-TOP_MAIN-a534e6",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B39",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        4
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2801.545,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4561.5,
+          "bar_id": "R13-B39-TOP_MAIN-1329b8",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2020.4,
+          "bar_id": "R13-B39-TOP_EXTRA-9606e3",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2020.4,
+          "bar_id": "R13-B39-TOP_EXTRA-46f2b2",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B39A",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2545.354,
+      "width_mm": 200.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4305.4,
+          "bar_id": "R13-B39A-TOP_MAIN-67d656",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1956.3,
+          "bar_id": "R13-B39A-TOP_EXTRA-7f31b0",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1956.3,
+          "bar_id": "R13-B39A-TOP_EXTRA-129f20",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B40",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        4
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3810.153,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 5570.2,
+          "bar_id": "R13-B40-TOP_MAIN-79cd2a",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2272.5,
+          "bar_id": "R13-B40-TOP_EXTRA-85c76c",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2272.5,
+          "bar_id": "R13-B40-TOP_EXTRA-4f25f2",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B41",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2801.545,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4561.5,
+          "bar_id": "R13-B41-TOP_MAIN-fd361c",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B42",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2476.063,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4236.1,
+          "bar_id": "R13-B42-TOP_MAIN-4ed0d8",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3796.1,
+          "bar_id": "R13-B42-TOP_EXTRA-fe8441",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B45",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        6
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2693.211,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 4893.2,
+          "bar_id": "R13-B45-TOP_MAIN-f20bf7",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4453.2,
+          "bar_id": "R13-B45-TOP_EXTRA-bd1e5f",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B46",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2908.1,
+      "width_mm": 400.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 4668.1,
+          "bar_id": "R13-B46-TOP_MAIN-bf0672",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y12#L",
+          "qty": 4,
+          "dia": 12.0,
+          "cut": 2047.0,
+          "bar_id": "R13-B46-TOP_EXTRA-c40c36",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y12#R",
+          "qty": 4,
+          "dia": 12.0,
+          "cut": 2047.0,
+          "bar_id": "R13-B46-TOP_EXTRA-46f954",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B47",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 3589.8,
+      "width_mm": 400.0,
+      "tags": [
+        "top_main_plus_top_extra"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "4Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 5349.8,
+          "bar_id": "R13-B47-TOP_MAIN-5458fe",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y12#R",
+          "qty": 4,
+          "dia": 12.0,
+          "cut": 2217.4,
+          "bar_id": "R13-B47-TOP_EXTRA-02a73e",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B48",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        4,
+        4
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 6,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 8821.4,
+      "width_mm": 750.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "6Y25",
+          "qty": 6,
+          "dia": 25.0,
+          "cut": 11571.4,
+          "bar_id": "R13-B48-TOP_MAIN-6bbaca",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y20#L",
+          "qty": 6,
+          "dia": 20.0,
+          "cut": 4405.4,
+          "bar_id": "R13-B48-TOP_EXTRA-8ca291",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y20#R",
+          "qty": 6,
+          "dia": 20.0,
+          "cut": 4405.4,
+          "bar_id": "R13-B48-TOP_EXTRA-d0913a",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y20#L",
+          "qty": 4,
+          "dia": 20.0,
+          "cut": 4405.4,
+          "bar_id": "R13-B48-TOP_EXTRA-8638a1",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y20#R",
+          "qty": 4,
+          "dia": 20.0,
+          "cut": 4405.4,
+          "bar_id": "R13-B48-TOP_EXTRA-52b6ce",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y16#L",
+          "qty": 6,
+          "dia": 16.0,
+          "cut": 3965.3,
+          "bar_id": "R13-B48-TOP_EXTRA-f5d857",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y16#R",
+          "qty": 6,
+          "dia": 16.0,
+          "cut": 3965.4,
+          "bar_id": "R13-B48-TOP_EXTRA-057bff",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "3Y20",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 11021.4,
+          "bar_id": "R13-B48-BOTTOM_MAIN-d7e38d",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B48A",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1773.3,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 3973.3,
+          "bar_id": "R13-B48A-TOP_MAIN-263629",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B49",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        6,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7405.3,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "6Y25",
+          "qty": 6,
+          "dia": 25.0,
+          "cut": 10155.3,
+          "bar_id": "R13-B49-TOP_MAIN-2bf6db",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y20#L",
+          "qty": 6,
+          "dia": 20.0,
+          "cut": 4051.3,
+          "bar_id": "R13-B49-TOP_EXTRA-57c350",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "6Y20#R",
+          "qty": 6,
+          "dia": 20.0,
+          "cut": 4051.3,
+          "bar_id": "R13-B49-TOP_EXTRA-dbc048",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#L",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3611.3,
+          "bar_id": "R13-B49-TOP_EXTRA-447091",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#R",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3611.3,
+          "bar_id": "R13-B49-TOP_EXTRA-673da9",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "4Y16",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 9165.3,
+          "bar_id": "R13-B49-BOTTOM_MAIN-225d3a",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B50",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        5
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 6582.1,
+      "width_mm": 600.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "6Y16",
+          "qty": 6,
+          "dia": 16.0,
+          "cut": 8342.1,
+          "bar_id": "R13-B50-TOP_MAIN-f758f1",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#L",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3405.5,
+          "bar_id": "R13-B50-TOP_EXTRA-de561d",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "4Y16#R",
+          "qty": 4,
+          "dia": 16.0,
+          "cut": 3405.5,
+          "bar_id": "R13-B50-TOP_EXTRA-8f5ecf",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 8342.1,
+          "bar_id": "R13-B50-BOTTOM_MAIN-de0c03",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B51",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 6,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4006.645,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y20",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 6206.6,
+          "bar_id": "R13-B51-TOP_MAIN-f62bc8",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2761.7,
+          "bar_id": "R13-B51-TOP_EXTRA-b2e2fc",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2761.7,
+          "bar_id": "R13-B51-TOP_EXTRA-d2dd70",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2321.7,
+          "bar_id": "R13-B51-TOP_EXTRA-fe302e",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2321.7,
+          "bar_id": "R13-B51-TOP_EXTRA-d5c7cb",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "3Y16#L",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 2761.7,
+          "bar_id": "R13-B51-TOP_EXTRA-1fbf0e",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "3Y16#R",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 2761.7,
+          "bar_id": "R13-B51-TOP_EXTRA-cc1c17",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B52",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2842.155,
+      "width_mm": 300.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 4602.2,
+          "bar_id": "R13-B52-TOP_MAIN-c2d2ab",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B53",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 6687.543,
+      "width_mm": 600.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 8887.5,
+          "bar_id": "R13-B53-TOP_MAIN-60824f",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 8447.5,
+          "bar_id": "R13-B53-TOP_EXTRA-8c0bf9",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 8887.5,
+          "bar_id": "R13-B53-BOTTOM_MAIN-adf3c7",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B54",
+      "n_spacer_rows": 3,
+      "spacer_quantities": [
+        3,
+        5,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 4,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 6036.33,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y20",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 8236.3,
+          "bar_id": "R13-B54-TOP_MAIN-6d22d9",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#L",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3269.1,
+          "bar_id": "R13-B54-TOP_EXTRA-1d8462",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#R",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3269.1,
+          "bar_id": "R13-B54-TOP_EXTRA-a80138",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3269.1,
+          "bar_id": "R13-B54-TOP_EXTRA-933958",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3269.1,
+          "bar_id": "R13-B54-TOP_EXTRA-a0fe9a",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 8236.3,
+          "bar_id": "R13-B54-BOTTOM_MAIN-41441c",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B55",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        3,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 6,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4014.226,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 5774.2,
+          "bar_id": "R13-B55-TOP_MAIN-49d7d5",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2763.6,
+          "bar_id": "R13-B55-TOP_EXTRA-0c0ece",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2763.6,
+          "bar_id": "R13-B55-TOP_EXTRA-2b5f83",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2323.6,
+          "bar_id": "R13-B55-TOP_EXTRA-0e3c3c",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 2323.6,
+          "bar_id": "R13-B55-TOP_EXTRA-e335f8",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2323.6,
+          "bar_id": "R13-B55-TOP_EXTRA-ef913b",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 2323.6,
+          "bar_id": "R13-B55-TOP_EXTRA-806d05",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B56",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 5,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1714.456,
+      "width_mm": 300.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 3474.5,
+          "bar_id": "R13-B56-TOP_MAIN-7b07cd",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2188.6,
+          "bar_id": "R13-B56-TOP_EXTRA-637527",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 2188.6,
+          "bar_id": "R13-B56-TOP_EXTRA-f6df1b",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#L",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 1748.6,
+          "bar_id": "R13-B56-TOP_EXTRA-7dc748",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12#R",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 1748.6,
+          "bar_id": "R13-B56-TOP_EXTRA-992868",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3034.5,
+          "bar_id": "R13-B56-TOP_EXTRA-fdedc5",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B57",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2891.062,
+      "width_mm": 300.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 4651.1,
+          "bar_id": "R13-B57-TOP_MAIN-2f75af",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 4651.1,
+          "bar_id": "R13-B57-TOP_EXTRA-a3c554",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 4211.1,
+          "bar_id": "R13-B57-TOP_EXTRA-2bae5b",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B59",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 6590.5,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 8790.5,
+          "bar_id": "R13-B59-TOP_MAIN-72c1ab",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 8350.5,
+          "bar_id": "R13-B59-TOP_EXTRA-44cd30",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B6",
+      "n_spacer_rows": 4,
+      "spacer_quantities": [
+        3,
+        5,
+        6,
+        3
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 8,
+      "n_bottom_main": 1,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 7858.331,
+      "width_mm": 600.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "5Y25",
+          "qty": 5,
+          "dia": 25.0,
+          "cut": 10608.3,
+          "bar_id": "R13-B6-TOP_MAIN-94a18a",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "3Y20#L",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B6-TOP_EXTRA-bff261",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "3Y20#R",
+          "qty": 3,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B6-TOP_EXTRA-10727f",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#L",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B6-TOP_EXTRA-44c4f6",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16#R",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B6-TOP_EXTRA-2302dd",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#L",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B6-TOP_EXTRA-e3cd13",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y16#R",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 3724.6,
+          "bar_id": "R13-B6-TOP_EXTRA-b17add",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y20#L",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B6-TOP_EXTRA-9494be",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "5Y20#R",
+          "qty": 5,
+          "dia": 20.0,
+          "cut": 4164.6,
+          "bar_id": "R13-B6-TOP_EXTRA-abcfa0",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "bottom_main_bars",
+          "label": "5Y16",
+          "qty": 5,
+          "dia": 16.0,
+          "cut": 9618.3,
+          "bar_id": "R13-B6-BOTTOM_MAIN-c00cf3",
+          "semantic_role": "BOTTOM_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B60",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 5919.9,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 8119.9,
+          "bar_id": "R13-B60-TOP_MAIN-6a137f",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 7679.9,
+          "bar_id": "R13-B60-TOP_EXTRA-9ab689",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B61",
+      "n_spacer_rows": 1,
+      "spacer_quantities": [
+        5
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1821.8,
+      "width_mm": 200.0,
+      "tags": [
+        "top_main_plus_top_extra"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 4021.8,
+          "bar_id": "R13-B61-TOP_MAIN-e8ee37",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3141.8,
+          "bar_id": "R13-B61-TOP_EXTRA-e0aae4",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B63",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 0,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1564.3,
+      "width_mm": 200.0,
+      "tags": [
+        "no_spacer_expected_single_layer"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y20",
+          "qty": 2,
+          "dia": 20.0,
+          "cut": 3764.3,
+          "bar_id": "R13-B63-TOP_MAIN-512cc3",
+          "semantic_role": "TOP_MAIN"
+        }
+      ]
+    },
+    {
+      "beam_id": "B7",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 3,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4858.331,
+      "width_mm": 300.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 6618.3,
+          "bar_id": "R13-B7-TOP_MAIN-75fc63",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 6618.3,
+          "bar_id": "R13-B7-TOP_EXTRA-c2d2e9",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 6178.3,
+          "bar_id": "R13-B7-TOP_EXTRA-786dbb",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 6178.3,
+          "bar_id": "R13-B7-TOP_EXTRA-f436e8",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B8",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 1,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 2013.9,
+      "width_mm": 300.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 3773.9,
+          "bar_id": "R13-B8-TOP_MAIN-1dd10b",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 3333.9,
+          "bar_id": "R13-B8-TOP_EXTRA-785095",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "B9",
+      "n_spacer_rows": 0,
+      "spacer_quantities": [],
+      "n_top_main": 1,
+      "n_top_extra": 3,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 4858.331,
+      "width_mm": 300.0,
+      "tags": [
+        "top_main_plus_top_extra",
+        "extra_present_but_zero_spacers"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "3Y16",
+          "qty": 3,
+          "dia": 16.0,
+          "cut": 6618.3,
+          "bar_id": "R13-B9-TOP_MAIN-8addf7",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 6618.3,
+          "bar_id": "R13-B9-TOP_EXTRA-72cd47",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "1Y12",
+          "qty": 1,
+          "dia": 12.0,
+          "cut": 6178.3,
+          "bar_id": "R13-B9-TOP_EXTRA-e50e58",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 6178.3,
+          "bar_id": "R13-B9-TOP_EXTRA-f5f1de",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    },
+    {
+      "beam_id": "BR1",
+      "n_spacer_rows": 2,
+      "spacer_quantities": [
+        2,
+        2
+      ],
+      "n_top_main": 1,
+      "n_top_extra": 2,
+      "n_bottom_main": 0,
+      "n_bottom_extra": 0,
+      "clear_span_mm": 1564.3,
+      "width_mm": 150.0,
+      "tags": [
+        "multiple_spacer_rows",
+        "top_main_plus_top_extra",
+        "left_right_extras"
+      ],
+      "longitudinal": [
+        {
+          "l2_key": "top_main_bars",
+          "label": "2Y16",
+          "qty": 2,
+          "dia": 16.0,
+          "cut": 3324.3,
+          "bar_id": "R13-BR1-TOP_MAIN-ad9c39",
+          "semantic_role": "TOP_MAIN"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#L",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1711.1,
+          "bar_id": "R13-BR1-TOP_EXTRA-4df6bd",
+          "semantic_role": "TOP_EXTRA"
+        },
+        {
+          "l2_key": "top_extra_bars",
+          "label": "2Y12#R",
+          "qty": 2,
+          "dia": 12.0,
+          "cut": 1711.1,
+          "bar_id": "R13-BR1-TOP_EXTRA-c7a35f",
+          "semantic_role": "TOP_EXTRA"
+        }
+      ]
+    }
+  ],
+  "galera_spacer_row_histogram": {
+    "3": 8,
+    "1": 12,
+    "2": 14,
+    "0": 29,
+    "4": 2
+  },
+  "notes": [
+    "L.2 export (to_l2_compatible) drops engineering_metadata, piece_start_mm, piece_end_mm, and M.2 zone fields.",
+    "M.2 replay here reconstructs injector groups from remaining L.2 fields; bar_id role token is the pre-hybrid EngineeringBarModel.bar_role."
+  ],
+  "w18a_conclusions": {
+    "classification": "W18A_FORENSIC_COMPLETE_MULTIPLE_CAUSES_IDENTIFIED",
+    "first_duplication_point": "PhaseV9_spacer_rule.spacer_engine._zones_for_face during M.2 inject (pipeline_integration_manager._apply_spacer_rule). Not VB.1, not BBS, not Excel.",
+    "b1": "MIXTURE: two geometric 0.25L support zones (qty 3+3) plus one extent_fallback row whose zone_length is the CONTINUOUS 2-Y16 hooked cut 5918.3 (qty 7). Same drawing extra split into CONTINUOUS_BAR + TOP_EXTRA_LEFT + TOP_EXTRA_RIGHT.",
+    "b10": "ONE fallback row. Two TOP_EXTRA_LEFT/RIGHT 5-Y16 pieces share cut 2424.2; seen_cl collapses them. Qty=ceil(2424.2/1000)+1=4 uses hooked cut, not 0.25L overlap.",
+    "b23": "ONE fallback row. 5Y16#L and #R share cut 3710.1; collapsed. Qty=ceil(3710.1/1000)+1=5. Left/right distinction in labels is not used as two overlap zones.",
+    "role_bucket": "Hybrid W.6 relocates bars after M.2. Spacer uses EngineeringBarModel.bar_role (bar_id token). Bucket mismatch does not create extra spacer rows; it can hide MAIN+EXTRA pairing if M.2 is ever re-run from post-hybrid L.2 buckets.",
+    "l2_gap": "to_l2_compatible drops piece_start_mm, piece_end_mm, and M.2 zone metadata. Overlap cannot be re-read from L.2.",
+    "vb1_bbs": "1:1 copy of L.2 spacer_bars. No merge. Negative Dvlp = cut-span (W17-OBS-03)."
+  }
+}

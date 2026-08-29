@@ -15,7 +15,7 @@ ENGINE_ROOT = WEBAPP_ROOT.parent
 V8_ROOT = ENGINE_ROOT
 REPO_ROOT = ENGINE_ROOT.parent
 
-APP_RELEASE = "W.14"
+APP_RELEASE = "W.19"
 ENGINE_LABEL = "Version10"
 ENGINE_DISPLAY = "Version10 production pipeline"
 
