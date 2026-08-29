@@ -15,6 +15,7 @@ Orchestration sequence:
 Raises PRODUCTION_OUTPUT_ERROR on genuine failures.
 Returns EXIT CODE = 0 when workbook generation succeeds.
 """
+import json
 import pathlib
 import sys
 import time
@@ -72,9 +73,76 @@ try:
         "PhaseR2A.engineering_context_parser"
     ].parse_engineering_context
     _R2A_AVAILABLE = True
-except Exception:
+    _R2A_BOOTSTRAP_ERROR = ""
+except Exception as exc:
     parse_engineering_context = None
     _R2A_AVAILABLE = False
+    _R2A_BOOTSTRAP_ERROR = f"{type(exc).__name__}: {exc}"
+
+
+def loader_summary_from_r2a_artefacts(output_dir: pathlib.Path) -> Optional[Dict[str, Any]]:
+    """Map this run's R.2A JSON artefacts into EstimatorExcelGenerator.loader_summary.
+
+    VB.1's in-process R.2A bootstrap is often unavailable; the R.2A stage already
+    wrote the resolved context. Do not re-parse General Notes here.
+    """
+    r2a_dir = pathlib.Path(output_dir).resolve().parent / "PhaseR.2A_engineering_context"
+    summary_path = r2a_dir / "engineering_context_summary.json"
+    if not summary_path.is_file():
+        return None
+    try:
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(summary, dict):
+        return None
+
+    cover_source = "UNRESOLVED"
+    dl_source = "UNRESOLVED"
+    ctx_path = r2a_dir / "engineering_context.json"
+    audit_path = r2a_dir / "engineering_context_audit.json"
+    try:
+        if ctx_path.is_file():
+            ctx = json.loads(ctx_path.read_text(encoding="utf-8"))
+            if isinstance(ctx, dict):
+                for rule in ctx.get("cover_rules") or []:
+                    if not isinstance(rule, dict):
+                        continue
+                    elem = str(rule.get("element") or "").upper()
+                    if "BEAM" in elem:
+                        cover_source = str(rule.get("source") or "GN_DXF_TABLE_2")
+                        break
+                else:
+                    rules = ctx.get("cover_rules") or []
+                    if rules and isinstance(rules[0], dict):
+                        cover_source = str(rules[0].get("source") or "GN_DXF_TABLE_2")
+                if ctx.get("development_length_table"):
+                    dl_source = "GN_DXF_TABLE_1"
+        elif audit_path.is_file():
+            audit = json.loads(audit_path.read_text(encoding="utf-8"))
+            cov = (audit.get("coverage_summary") or {}) if isinstance(audit, dict) else {}
+            if cov.get("cover_rules") == "PARSED":
+                cover_source = "GN_DXF_TABLE_2"
+            if cov.get("development_length_table") == "PARSED":
+                dl_source = "GN_DXF_TABLE_1"
+    except (OSError, json.JSONDecodeError):
+        pass
+
+    cover = summary.get("cover_beam_mm")
+    factor = summary.get("dev_length_factor_d")
+    grade = summary.get("primary_steel_grade") or ""
+    if cover is None and factor is None and not grade:
+        return None
+    return {
+        "primary_steel_grade": grade,
+        "cover_beam_mm": cover,
+        "concrete_grade_beam": summary.get("concrete_grade_beam"),
+        "dev_length_factor": factor,
+        "steel_density": summary.get("steel_density_kg_m3", 7850.0),
+        "cover_source": cover_source,
+        "dev_length_source": dl_source,
+        "gn_dxf_path": summary.get("gn_dxf"),
+    }
 
 # Offline defaults only (engine_root = Version8/); runners pass explicit paths.
 _V6 = pathlib.Path(__file__).resolve().parents[2]  # Version8/
@@ -447,6 +515,15 @@ class PhaseVB1Orchestrator:
 
     def _step_excel_generation(self, bbs_rows, steel_summary) -> Dict:
         loader_summary = self._loader.summary() if self._loader else None
+        artefact_summary = loader_summary_from_r2a_artefacts(self.output_dir)
+        if artefact_summary:
+            loader_summary = artefact_summary
+            print("      Excel metadata source: R.2A artefacts")
+        elif not loader_summary:
+            if _R2A_BOOTSTRAP_ERROR:
+                print(f"      Excel metadata: no R.2A artefacts; in-process loader unavailable ({_R2A_BOOTSTRAP_ERROR})")
+            else:
+                print("      Excel metadata: no R.2A artefacts; using existing fallback")
         generator = EstimatorExcelGenerator(
             bbs_rows=bbs_rows,
             steel_summary=steel_summary,

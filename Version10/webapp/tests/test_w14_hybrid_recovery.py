@@ -99,10 +99,10 @@ class W14RecoveryTests(unittest.TestCase):
     def test_w14_health_phase(self):
         res = self.client.get("/health")
         data = res.get_json()
-        self.assertEqual(data.get("phase"), "W.19")
-        self.assertEqual(data.get("app_release"), "W.19")
+        self.assertEqual(data.get("phase"), "W.19.1")
+        self.assertEqual(data.get("app_release"), "W.19.1")
         html = self.client.get("/").get_data(as_text=True)
-        self.assertIn("app.js?v=W.19", html)
+        self.assertIn("app.js?v=W.19.1", html)
         self.assertIn('id="btn-download"', html)
         blob = str(data).lower()
         self.assertNotIn("sk-ant-", blob)
