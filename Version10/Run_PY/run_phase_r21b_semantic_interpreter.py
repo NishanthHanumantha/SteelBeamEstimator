@@ -2,11 +2,12 @@
 run_phase_r21b_semantic_interpreter.py — Phase R.2.1B Runner
 MODEL_VERSION: 8.9.0
 
-Usage (from project root):
-    python Version8/Run_PY/run_phase_r21b_semantic_interpreter.py
-    python Version8/Run_PY/run_phase_r21b_semantic_interpreter.py <run_root>
+Usage (from Version10/):
+    python Run_PY/run_phase_r21b_semantic_interpreter.py
+    python Run_PY/run_phase_r21b_semantic_interpreter.py <run_root>
 
 Web: set STEEL_RUN_ROOT / STEEL_OUTPUT_ROOT (preferred) or pass run_root as argv[1].
+Loads Version10 src/PhaseR2.1B_engineering_semantic_interpreter (not Version8).
 """
 from __future__ import annotations
 
@@ -18,11 +19,10 @@ import sys
 import types
 
 SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
-Version8_SRC = PROJECT_ROOT / "Version8" / "src"
-Version8_ROOT = PROJECT_ROOT / "Version8"
+ENGINE_ROOT = SCRIPT_DIR.parent  # Version10/
+VERSION_SRC = ENGINE_ROOT / "src"
 
-for _p in [str(Version8_SRC), str(Version8_ROOT)]:
+for _p in [str(VERSION_SRC), str(ENGINE_ROOT)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -32,7 +32,7 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 
-_PKG_DIR = Version8_SRC / "PhaseR2.1B_engineering_semantic_interpreter"
+_PKG_DIR = VERSION_SRC / "PhaseR2.1B_engineering_semantic_interpreter"
 _PKG_NAME = "PhaseR21B"
 
 _pkg_mod = types.ModuleType(_PKG_NAME)
@@ -73,7 +73,7 @@ def main() -> int:
     from config.run_context import PHASE_R21B, resolve_run_context, run_root_from_argv
 
     arg = run_root_from_argv(sys.argv, 1)
-    ctx = resolve_run_context(run_root_arg=arg, engine_root=Version8_ROOT)
+    ctx = resolve_run_context(run_root_arg=arg, engine_root=ENGINE_ROOT)
     os.environ.setdefault("STEEL_ENGINE_ROOT", str(ctx.engine_root))
     os.environ.setdefault("STEEL_RUN_ROOT", str(ctx.run_root))
     os.environ.setdefault("STEEL_OUTPUT_ROOT", str(ctx.output_root))

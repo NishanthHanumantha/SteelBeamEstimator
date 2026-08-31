@@ -3,8 +3,12 @@ run_phase_r2a_engineering_context.py
 Runner for Phase R.2A — General Notes Runtime Parsing & Engineering Context Injection
 MODEL_VERSION: 7.5.0
 
-Usage (from project root):
-    python Version8/Run_PY/run_phase_r2a_engineering_context.py
+Usage (from Version10/):
+    python Run_PY/run_phase_r2a_engineering_context.py
+    python Run_PY/run_phase_r2a_engineering_context.py <run_root>
+
+Web: STEEL_ENGINE_ROOT / STEEL_RUN_ROOT / STEEL_OUTPUT_ROOT (preferred).
+Loads Version10 src/PhaseR.2A_engineering_context (not Version8).
 """
 import importlib.util
 import pathlib
@@ -12,14 +16,13 @@ import sys
 import types
 
 SCRIPT_DIR    = pathlib.Path(__file__).resolve().parent
-PROJECT_ROOT  = SCRIPT_DIR.parent.parent
-VERSION7_SRC  = PROJECT_ROOT / "Version8" / "src"
-VERSION7_ROOT = PROJECT_ROOT / "Version8"
+ENGINE_ROOT   = SCRIPT_DIR.parent  # Version10/
+VERSION_SRC   = ENGINE_ROOT / "src"
 
-if str(VERSION7_SRC) not in sys.path:
-    sys.path.insert(0, str(VERSION7_SRC))
+if str(VERSION_SRC) not in sys.path:
+    sys.path.insert(0, str(VERSION_SRC))
 
-_PKG_DIR  = VERSION7_SRC / "PhaseR.2A_engineering_context"
+_PKG_DIR  = VERSION_SRC / "PhaseR.2A_engineering_context"
 pkg_name  = "PhaseR2A"
 
 pkg_mod  = types.ModuleType(pkg_name)
@@ -74,7 +77,7 @@ def main() -> int:
     from config.run_context import PHASE_R2A, resolve_run_context, run_root_from_argv
 
     arg = run_root_from_argv(sys.argv, 1)
-    ctx = resolve_run_context(run_root_arg=arg, engine_root=VERSION7_ROOT)
+    ctx = resolve_run_context(run_root_arg=arg, engine_root=ENGINE_ROOT)
     os.environ.setdefault("STEEL_ENGINE_ROOT", str(ctx.engine_root))
     os.environ.setdefault("STEEL_RUN_ROOT", str(ctx.run_root))
     os.environ.setdefault("STEEL_OUTPUT_ROOT", str(ctx.output_root))

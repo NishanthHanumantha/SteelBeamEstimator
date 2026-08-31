@@ -111,19 +111,25 @@ Do not archive based on package name alone. See `PRODUCTION_MODULE_INDEX.md`.
 
 ---
 
-## VERSION8 RUNTIME GATE (BLOCKED)
+## VERSION8 RUNTIME GATE (CLOSED)
 
-Production web **R.2A** (`Version10/Run_PY/run_phase_r2a_engineering_context.py`) still **executes Version8** `PhaseR.2A_*` source.
+**Closed:** 2026-08-31 (Phase 3)
 
-Version8 `engineering_context_factory._discover_gn_path` has **no** `STEEL_RUN_ROOT` check and falls back to:
+Live web **R.2A** and **R.2.1B** now execute **Version10** source:
 
-`Version8/data/Benchmark_Set_2/general_notes/`
+- `Version10/Run_PY/run_phase_r2a_engineering_context.py` → `Version10/src/PhaseR.2A_engineering_context/` with `engine_root=Version10`
+- `Version10/Run_PY/run_phase_r21b_semantic_interpreter.py` → `Version10/src/PhaseR2.1B_engineering_semantic_interpreter/` with `engine_root=Version10`
 
-The webapp writes a GN pointer to **Version10** `beam_registry.json`. Version8 factory does not read that file.
+GN discovery (Version10 factory, production contract):
 
-Production **R.2.1B** likewise loads **Version8** `PhaseR2.1B_*` source.
+1. `STEEL_RUN_ROOT/general_notes/*.dxf` (uploaded run GN — authoritative)
+2. Version10 `beam_registry.json` pointer
+3. `Version10/data/Benchmark_Set_2/general_notes/`
 
-**VERSION8 ARCHIVE STATUS = BLOCKED.** Do not delete or move `Version8/`.
+**VERSION8 ARCHIVE STATUS = CLOSED for live R.2A / R.2.1B runtime.**  
+Do **not** delete or move `Version8/` unless a later explicit archive phase is requested. Historical CLI runners and docs may still name Version8.
+
+Validation: syntax/import of both runners; W.16; W.19.1; W.2 smoke; W.6 Flask + W.6 unit tests; W.18B spacer. No live Claude estimate.
 
 ---
 
@@ -131,5 +137,5 @@ Production **R.2.1B** likewise loads **Version8** `PhaseR2.1B_*` source.
 
 - Production entry: `Version10/webapp/` + 14 `PRODUCTION_STAGES` only.  
 - Hybrid: `PhaseW5_*` / `PhaseW6_*` / `PhaseW8_*` plus listed Vision files in mixed packages.  
-- Do not “fix” R.2A / R.2.1B Version8 loading unless explicitly requested.  
+- Live R.2A / R.2.1B load Version10 source. Do not reintroduce Version8 into those runners.  
 - Do not consume Claude API credits for casual validation.

@@ -11,8 +11,8 @@ Do **not** archive a runner merely because it is not web-invoked.
 | `run_phase_vroot1_dynamic_pipeline_initialization.py` | VROOT1 | Yes | Yes | Web stage 1 — drawing/beam discovery | NO | High |
 | `run_phase_r1_generalized_reinforcement_discovery.py` | R1 | Yes | Yes | Web stage 2 — DXF reinforcement discovery (loads Version10 src) | NO | High |
 | `run_phase_t1_geometric_stirrup_evidence.py` | T1 | Yes | Yes | Web stage 3 — geometric stirrup evidence | NO | High |
-| `run_phase_r2a_engineering_context.py` | R2A | Yes | Yes | Web stage 4 — GN context; loads Version8 PhaseR.2A source | NO | High |
-| `run_phase_r21b_semantic_interpreter.py` | R21B | Yes | Yes | Web stage 5 — loads Version8 PhaseR2.1B source | NO | High |
+| `run_phase_r2a_engineering_context.py` | R2A | Yes | Yes | Web stage 4 — GN context; loads Version10 PhaseR.2A source | NO | High |
+| `run_phase_r21b_semantic_interpreter.py` | R21B | Yes | Yes | Web stage 5 — loads Version10 PhaseR2.1B source | NO | High |
 | `run_phase_r21c_engineering_fact_normalization.py` | R21C | Yes | Yes | Web stage 6 — loads Version10 PhaseR2.1C | NO | High |
 | `run_phase_r21d_evidence_hypothesis_engine.py` | R21D | Yes | Yes | Web stage 7 | NO | High |
 | `run_phase_l2_2_geometry_recovery.py` | L22 | Yes | Yes | Web stage 8 — loads Version10 PhaseL.2.2 | NO | High |

@@ -45,7 +45,7 @@ Adapter env (every stage):
 - `STEEL_OUTPUT_ROOT` = `<run>/data/output`  
 - `cwd` = Version10  
 
-**Important:** R.2A and R.2.1B runners still **load Python from Version8/src** even though the web adapter cwd is Version10. See § Version8 gate.
+**Phase 3 (2026-08-31):** R.2A and R.2.1B runners load **Version10** `src` with `engine_root=Version10`. See § Version8 gate (CLOSED).
 
 ---
 
@@ -95,9 +95,9 @@ Source of truth: `Version10/webapp/config.py` `PRODUCTION_STAGES` (exactly **14*
 |---|---|
 | STAGE | R2A |
 | RUNNER | `run_phase_r2a_engineering_context.py` |
-| PRIMARY PACKAGE | **Runtime: `Version8/src/PhaseR.2A_engineering_context/`** (not Version10 copy) |
-| DIRECT DEPENDENCIES | Version8 parsers + `engineering_context_factory` |
-| IMPORTANT INDIRECT | GN DXF: Version8 factory has **no** `STEEL_RUN_ROOT` scan; fallback `Version8/data/Benchmark_Set_2/general_notes/`. Web writes pointer to **Version10** `src/PhaseVROOT.1_.../beam_registry.json` which Version8 factory does **not** read. Version10 **does** contain a copy of the same GN DXF under `Version10/data/Benchmark_Set_2/general_notes/` — **unused by the executed Version8 factory**. |
+| PRIMARY PACKAGE | `Version10/src/PhaseR.2A_engineering_context/` |
+| DIRECT DEPENDENCIES | Version10 parsers + `engineering_context_factory` (W.16 table-title + `STEEL_RUN_ROOT`) |
+| IMPORTANT INDIRECT | GN order: run `STEEL_RUN_ROOT/general_notes/` → Version10 `beam_registry.json` pointer → `Version10/data/Benchmark_Set_2/general_notes/`. |
 | OUTPUTS | Engineering context JSON under run `PhaseR.2A_engineering_context/` |
 | NEXT STAGE | R21B |
 
@@ -107,9 +107,9 @@ Source of truth: `Version10/webapp/config.py` `PRODUCTION_STAGES` (exactly **14*
 |---|---|
 | STAGE | R21B |
 | RUNNER | `run_phase_r21b_semantic_interpreter.py` |
-| PRIMARY PACKAGE | **Runtime: `Version8/src/PhaseR2.1B_engineering_semantic_interpreter/`** |
-| DIRECT DEPENDENCIES | Version8 semantic interpreter modules |
-| IMPORTANT INDIRECT | Additional Version8 **source** runtime dependency (archive still BLOCKED) |
+| PRIMARY PACKAGE | `Version10/src/PhaseR2.1B_engineering_semantic_interpreter/` |
+| DIRECT DEPENDENCIES | Version10 semantic interpreter modules (byte-identical to Version8 package) |
+| IMPORTANT INDIRECT | Dictionary YAML from `engine_root` (Version10); R.2.1C reads run-scoped `engineering_semantic_objects.json` |
 | OUTPUTS | `engineering_semantic_objects.json` |
 | NEXT STAGE | R21C |
 
@@ -259,8 +259,8 @@ Classify **files**, not whole folders. See `PRODUCTION_MODULE_INDEX.md`.
 |---|---|---|
 | R.1 | `PhaseR.1_generalized_reinforcement_discovery/` | Version10 src |
 | T.1 | `PhaseT1_geometric_stirrup_evidence/` | Web stage 3 |
-| R.2A | **Version8** `PhaseR.2A_engineering_context/` at runtime | Version10 copy exists but is **not** what the web runner loads |
-| R.2.1B | **Version8** `PhaseR2.1B_*` at runtime | Same pattern as R.2A |
+| R.2A | Version10 `PhaseR.2A_engineering_context/` | Phase 3 closed Version8 runtime load |
+| R.2.1B | Version10 `PhaseR2.1B_*` | Phase 3 closed Version8 runtime load |
 | R.2.1C / D | Version10 `PhaseR2.1C_*`, `PhaseR2.1D_*` | |
 | L.2.2 | Version10 `PhaseL.2.2_geometry_recovery/` | Not L.2 |
 | R.3 / R.3.1 | Version10 `PhaseR3_*`, `PhaseR3.1_*` | |
@@ -290,7 +290,7 @@ Classify **files**, not whole folders. See `PRODUCTION_MODULE_INDEX.md`.
 | Static UI | `webapp/static/` | |
 | Render | M.1 `dxf_renderer.py`; W.8 evidence PNGs under run tree | |
 | Templates | Excel generator internals in VB.1 | |
-| Dynamically loaded | R.1.3 `importlib` of pieces / R.1.2B / M.2; R.2A/R21B `importlib` of Version8 packages | |
+| Dynamically loaded | R.1.3 `importlib` of pieces / R.1.2B / M.2; R.2A/R21B `importlib` of Version10 packages | |
 | Overlay pack | `pack_w191.py` | Latest production overlay recipe |
 
 ---
@@ -318,19 +318,17 @@ Live e2e scripts (`run_w6_live_e2e.py`, `run_live_e2e.py`, `run_w8_live_verify.p
 
 ## Version8 dependency gate
 
-**VERSION8 ARCHIVE STATUS = BLOCKED**
+**VERSION8 LIVE R.2A / R.2.1B RUNTIME = CLOSED** (Phase 3, 2026-08-31)
 
-Evidence:
+Live web runners now `importlib`-load Version10 packages with `engine_root=Version10`. Version10 factory prefers `STEEL_RUN_ROOT/general_notes`.
 
-1. Web R.2A runner inserts `Version8/src` and `importlib`-loads every R.2A module from Version8.  
-2. It passes `engine_root=Version8` into `resolve_run_context` / `Orchestrator(v7_root=...)`.  
-3. Version8 `_discover_gn_path` order: Version8 `beam_registry.json` → **`Version8/data/Benchmark_Set_2/general_notes`**. No `STEEL_RUN_ROOT/general_notes`.  
-4. Web `write_r2a_gn_pointer` writes Version10 `beam_registry.json` — ignored by Version8 factory.  
-5. Same GN DXF **also exists** in Version10 Benchmark_Set_2; production still uses the Version8 path when fallback fires.  
-6. Web R.2.1B runner likewise executes Version8 `PhaseR2.1B_*`.  
-7. VROOT1 `_default_input()` still lists Version8 Benchmark_Set folders (CLI default only).
+**VERSION8 TREE = STILL PRESENT.** Do not delete or move it in this phase.
 
-Phase 2 **did not** change R.2A logic.
+Remaining **historical** Version8 references (not live R.2A/R.2.1B):
+
+- Non-web `Run_PY` runners that still name Version8 (R.2.1A CLI, SI.0, QA, etc.)
+- VROOT1 `_default_input()` Benchmark_Set folders (CLI default only; web passes the upload folder)
+- Deployment / rollback docs describing the old `:8000` 8.9.x app
 
 ---
 
@@ -344,7 +342,7 @@ Searched `Version10/webapp/`, `Version10/webapp/tests/`, `Version10/webapp/deplo
 Classification: **LIKELY_SAFE_TO_ARCHIVE** for V1–V7 **source trees**.  
 **Not moved in Phase 2** (evidence is strong for *webapp*, but historical YAML/comments and duplicate phase trees remain; policy is no broad archival).
 
-**Version8 / Version9:** do not archive. Version8 is BLOCKED. Version9 remains REVIEW_REQUIRED (R.1 docstring still says Version9; large tree).
+**Version8 / Version9:** do not archive. Live R.2A/R.2.1B Version8 runtime is CLOSED; the Version8 tree remains in place. Version9 remains REVIEW_REQUIRED (R.1 docstring still says Version9; large tree).
 
 ---
 
