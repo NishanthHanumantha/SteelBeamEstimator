@@ -1,13 +1,13 @@
 """
-WSGI entry for production process managers (Phase W.2.1).
+WSGI entry for production process managers.
 
-PREPARED FOR FUTURE DEPLOYMENT — NOT YET DEPLOYED.
+Live Lightsail Gunicorn target (cwd = Version10/webapp):
 
-Confirmed target (cwd = Version10/webapp):
+    gunicorn --config deployment/gunicorn.w3.conf.py wsgi:app
 
-    gunicorn --workers 1 --timeout 3600 --bind 127.0.0.1:8000 "wsgi:app"
-
+Confirmed bind: 127.0.0.1:8001 (see gunicorn.w3.conf.py).
 workers MUST remain 1 (in-process job store + single-flight guard).
+APP_RELEASE: W.19.1 (Version10 Hybrid).
 """
 from __future__ import annotations
 

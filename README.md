@@ -2,6 +2,9 @@
 
 Structural steel beam extraction pipeline from AutoCAD DXF drawings.
 
+**Current production:** Version10 Hybrid (release **W.19.1**), entered at `Version10/webapp/wsgi.py`.  
+See `PRODUCTION_TRUTH.md` before changing production behaviour.
+
 ## Repository layout
 
 | Folder | Purpose |
@@ -11,11 +14,14 @@ Structural steel beam extraction pipeline from AutoCAD DXF drawings.
 | **Version3/** | Frozen — intermediate development |
 | **Version4/** | Frozen — through Phase G.5.3.4 |
 | **Version5/** | Frozen — through Phase J.2.1 (5.28.1) |
-| **Version6/** | **Active development** — model improvement |
+| **Version6/** | Frozen historical engine — **not** current production |
+| **Version10/** | **Current production** — Hybrid pipeline (14 stages, W.6 + VB.1) |
 
-All new work happens in **Version6/**.
+Version1–Version9 remain in-tree as historical engines. Do not treat them as the live Lightsail app.
 
-## Version 6 — quick start
+## Version 6 — historical quick start (archive)
+
+The commands below are the **Version6 archive** workflow, not the deployed system.
 
 ```powershell
 cd Version6
