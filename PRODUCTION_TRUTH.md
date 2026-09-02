@@ -129,7 +129,9 @@ GN discovery (Version10 factory, production contract):
 **VERSION8 ARCHIVE STATUS = CLOSED for live R.2A / R.2.1B runtime.**  
 **VROOT1 Version8 filesystem coupling closed:** 2026-09-02 (Phase 5a) — no write to `Version8/data/output/`, no CLI default under `Version8/data/Benchmark_Set_*`. Web still passes the upload folder. Canonical VROOT1 artefacts remain run-scoped (`STEEL_OUTPUT_ROOT`).
 
-Do **not** delete or move `Version8/` until Phase 5b (archive) is explicitly requested. Historical CLI runners, YAML, and Lightsail `:8000` rollback docs may still name Version8. Archive decision remains **CONDITIONAL_GO**.
+**Phase 5b (2026-09-02):** live Version8 execute / required-read / required-write = **none**. Remaining Version8-hardcoded non-web CLIs are classified **non-production**; breakage after a future archive is accepted. Lightsail `:8000` 8.9.x rollback is **not** confirmed retired from repository evidence (no SSH this phase).
+
+Version8 archive status = **CONDITIONAL_GO**. The technical production boundary is clear. Do **not** move or delete `Version8/` until a dedicated archive phase **and** the owner/operator confirms `:8000` rollback is retired or explicitly accepts losing it.
 
 Validation: syntax/import of both runners; W.16; W.19.1; W.2 smoke; W.6 Flask + W.6 unit tests; W.18B spacer. No live Claude estimate.
 
