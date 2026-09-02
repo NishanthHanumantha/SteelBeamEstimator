@@ -10,8 +10,8 @@ import pathlib
 import sys
 from typing import Any, Dict, List, Optional
 
-# Allow import of run_context when cwd/sys.path is Version8 or PhaseVROOT1 src
-_SRC = pathlib.Path(__file__).resolve().parents[1]  # Version8/src
+# Allow import of run_context when cwd/sys.path is Version10 or PhaseVROOT1 src
+_SRC = pathlib.Path(__file__).resolve().parents[1]  # Version10/src
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 

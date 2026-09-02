@@ -3,8 +3,8 @@ Runner -- Phase V.ROOT.1 Dynamic DXF Discovery & Pipeline Initialization
 MODEL_VERSION : 8.9.0
 
 Usage:
-    cd Version8
-    # Offline (writes Version8/data/output/...):
+    cd Version10
+    # Offline (writes Version10/data/output/... when no STEEL_RUN_ROOT):
     python Run_PY/run_phase_vroot1_dynamic_pipeline_initialization.py [input_folder]
 
     # Web / per-run (STEEL_RUN_ROOT or argv = web_runs/<run_id>):

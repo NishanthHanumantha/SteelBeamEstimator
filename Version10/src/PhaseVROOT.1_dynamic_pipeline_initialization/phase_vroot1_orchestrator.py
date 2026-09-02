@@ -41,8 +41,7 @@ from initialization_export      import InitializationExport
 MODEL_VERSION = "7.1.0"
 PHASE_ID      = "V.ROOT.1"
 
-_ROOT = pathlib.Path(__file__).resolve().parents[3]   # SteelBeamEstimator/
-_V7   = _ROOT / "Version8"
+_ENGINE = pathlib.Path(__file__).resolve().parents[2]  # Version10/
 
 
 class PhaseVROOT1Orchestrator:
@@ -267,12 +266,12 @@ class PhaseVROOT1Orchestrator:
 
     @staticmethod
     def _default_input() -> pathlib.Path:
-        """Default to Benchmark Set 2 if no folder specified."""
+        """Default to Version10 Benchmark Set 2 if no folder specified."""
         for candidate in [
-            _V7 / "data/Benchmark_Set_2",
-            _V7 / "data/Benchmark_Set_1",
-            _V7 / "data/input",
+            _ENGINE / "data/Benchmark_Set_2",
+            _ENGINE / "data/Benchmark_Set_1",
+            _ENGINE / "data/input",
         ]:
             if candidate.exists() and any(candidate.rglob('*.dxf')):
                 return candidate
-        return _V7 / "data"
+        return _ENGINE / "data"

@@ -21,7 +21,6 @@ from typing import Any, Dict, List, Optional
 
 _ROOT = pathlib.Path(__file__).resolve().parents[3]   # SteelBeamEstimator/
 _V5_DATA = _ROOT / "Version5" / "data" / "output"
-_V7_DATA = _ROOT / "Version8" / "data" / "output"
 
 # Canonical Version5 adapter paths (what L.2's collector reads)
 _ADAPTER_PATHS: Dict[str, pathlib.Path] = {
@@ -92,9 +91,6 @@ class EngineeringObjectInitializer:
                 "beam_geometry", beam_geometry,
                 result['adapter_paths'], result['backup_created']
             )
-
-        # Also write to V7 output for traceability
-        self._write_v7_copy(beam_schedule, reinf_objects, eng_objects, beam_geometry)
 
         result['payloads'] = {
             'beam_schedule':        beam_schedule,
@@ -267,20 +263,3 @@ class EngineeringObjectInitializer:
 
         path.write_text(json.dumps(data, indent=2), encoding='utf-8')
         adapter_paths[key] = str(path)
-
-    def _write_v7_copy(
-        self,
-        beam_schedule: Dict[str, Any],
-        reinf_objects: Dict[str, Any],
-        eng_objects:   Dict[str, Any],
-        beam_geometry: Dict[str, Any],
-    ) -> None:
-        out = _V7_DATA / "PhaseVROOT.1_dynamic_pipeline_initialization"
-        out.mkdir(parents=True, exist_ok=True)
-        for name, data in [
-            ("dynamic_beam_schedule.json",       beam_schedule),
-            ("dynamic_reinforcement_objects.json", reinf_objects),
-            ("dynamic_engineering_objects.json",  eng_objects),
-            ("dynamic_beam_geometry.json",        beam_geometry),
-        ]:
-            (out / name).write_text(json.dumps(data, indent=2), encoding='utf-8')
