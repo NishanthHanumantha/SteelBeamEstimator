@@ -129,9 +129,13 @@ GN discovery (Version10 factory, production contract):
 **VERSION8 ARCHIVE STATUS = CLOSED for live R.2A / R.2.1B runtime.**  
 **VROOT1 Version8 filesystem coupling closed:** 2026-09-02 (Phase 5a) — no write to `Version8/data/output/`, no CLI default under `Version8/data/Benchmark_Set_*`. Web still passes the upload folder. Canonical VROOT1 artefacts remain run-scoped (`STEEL_OUTPUT_ROOT`).
 
-**Phase 5b (2026-09-02):** live Version8 execute / required-read / required-write = **none**. Remaining Version8-hardcoded non-web CLIs are classified **non-production**; breakage after a future archive is accepted. Lightsail `:8000` 8.9.x rollback is **not** confirmed retired from repository evidence (no SSH this phase).
+**Phase 5b (2026-09-02):** live Version8 execute / required-read / required-write = **none**. Remaining Version8-hardcoded non-web CLIs are classified **non-production**; breakage after a future archive is accepted.
 
-Version8 archive status = **CONDITIONAL_GO**. The technical production boundary is clear. Do **not** move or delete `Version8/` until a dedicated archive phase **and** the owner/operator confirms `:8000` rollback is retired or explicitly accepts losing it.
+**Phase 5b.1 (2026-09-02):** Lightsail `steel-beam-estimator.service` is **ACTIVE_BUT_UNUSED** on loopback `:8000` (Version8 / 8.9.4). Current public production is Version10 `:8001` only. Active Nginx does not route to `:8000`.
+
+**Phase 5b.2 (2026-09-02):** Version8 operational rollback is intentionally preserved temporarily. Lightsail `steel-beam-estimator.service` remains active on loopback `:8000` but is not used by the current public estimator path. Version10 `:8001` remains the sole current public production path. Version8 archive/move is deferred until Version10 Hybrid production acceptance is complete and the owner explicitly authorizes retirement/archive. Version8 must remain untouched during the acceptance period.
+
+Version8 archive status = **CONDITIONAL_GO — ARCHIVE HOLD**. Do **not** move, delete, stop, or disable Version8 until a dedicated archive phase is explicitly requested.
 
 Validation: syntax/import of both runners; W.16; W.19.1; W.2 smoke; W.6 Flask + W.6 unit tests; W.18B spacer. No live Claude estimate.
 
