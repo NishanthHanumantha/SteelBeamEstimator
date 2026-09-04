@@ -1,43 +1,40 @@
-                    DXF
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-          ▼                     ▼
-  Deterministic Geometry     Render Pipeline
-  + Beam Registry                  │
-          │                        ▼
-          │                  Context + Detail
-          │                        │
-          │                        ▼
-          │                   Claude Vision
-          │                        │
-          │                        ▼
-          │              SEMANTIC REINFORCEMENT
-          │
-          ▼
-  ENGINEERING / GEOMETRIC FACTS
-          │
-          └──────────┬─────────────┘
-                     ▼
-              HYBRID RESOLUTION
-                     │
-                     ▼
-          Deterministic Engineering Engine
-                     │
-          ┌──────────┼──────────┐
-          ▼          ▼          ▼
-       Cut Length   DL      Piece Generation
-          │          │          │
-          └──────────┴──────────┘
-                     │
-                     ▼
-               Steel Quantity
-                     │
-                     ▼
-                    BBS
-                     │
-                     ▼
-                   Excel
+                         DXF DRAWING
+                              │
+               ┌──────────────┴──────────────┐
+               │                             │
+               ▼                             ▼
+      DETERMINISTIC CAD              RENDER / VISION PIPELINE
+      GEOMETRY PIPELINE                       │
+               │                              ▼
+               │                     CONTEXT + DETAIL VIEW
+               │                              │
+               │                              ▼
+               │                       CLAUDE VISION
+               │                              │
+               │                              ▼
+               │                  SEMANTIC REINFORCEMENT
+               │                              │
+               └──────────────┬───────────────┘
+                              ▼
+                    HYBRID RESOLUTION
+                              │
+                              ▼
+               DETERMINISTIC ENGINEERING ENGINE
+                              │
+             ┌────────────────┼────────────────┐
+             ▼                ▼                ▼
+        CUT LENGTH            DL          PIECE GENERATION
+             │                │                │
+             └────────────────┴────────────────┘
+                              │
+                              ▼
+                       STEEL QUANTITY
+                              │
+                              ▼
+                            BBS
+                              │
+                              ▼
+                           EXCEL
 
 
 Vision preferred:
