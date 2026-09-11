@@ -1,0 +1,39 @@
+# Phase SI.0 — Stirrup Recovery Configuration
+# MODEL_VERSION: 6.6.2
+
+phase: "SI.0"
+model_version: "6.6.2"
+
+# Benchmark beams — must never be overwritten
+benchmark_beams:
+  - B1
+  - B2
+  - B8
+  - B9
+  - B10
+
+# IS 456 engineering inference rules (span_min_mm, span_max_mm, label, confidence)
+inference_rules:
+  - span_min_mm: 0
+    span_max_mm: 2000
+    label: "2L-Y8@200"
+    confidence: 0.55
+  - span_min_mm: 2000
+    span_max_mm: 5000
+    label: "2L-Y8@150"
+    confidence: 0.55
+  - span_min_mm: 5000
+    span_max_mm: 99999
+    label: "2L-Y8@100"
+    confidence: 0.50
+
+# Shared drawing groups (beams explicitly sharing one annotation note)
+shared_annotation_groups:
+  - [B8, B9, B10]
+
+# Recovery priority order
+recovery_priority:
+  - ANNOTATION
+  - SHARED_GROUP
+  - PROXIMITY
+  - ENGINEERING_INFERENCE

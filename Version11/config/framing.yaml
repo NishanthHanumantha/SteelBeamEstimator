@@ -1,0 +1,207 @@
+# Phase F.1 — Framing Plan Intelligence Foundation
+# Phase F.2 — Dimension Resolution Engine
+
+detect_connectivity: true
+detect_supports: true
+extract_dimensions: true
+generate_debug_dxf: true
+
+beam_line_layers: STR-BEAM
+beam_label_layers: S-BEAM-IDEN
+column_layers: S-COLUMN,S-COL HATCH
+wall_layers: Wall,STR-RC WALL
+
+min_beam_segment_mm: 500
+max_label_segment_distance_mm: 3000
+support_detection_tolerance_mm: 350
+connectivity_tolerance_mm: 250
+parallel_width_min_mm: 80
+parallel_width_max_mm: 800
+orthogonal_tolerance_deg: 5
+
+dimension_resolution:
+    enable: true
+    use_label_dimensions: true
+    use_parallel_edge_measurement: true
+    use_attribute_dimensions: true
+    use_geometry_measurement: true
+    geometry_tolerance_mm: 20
+    minimum_reasonable_width: 100
+    maximum_reasonable_width: 600
+    minimum_reasonable_depth: 150
+    maximum_reasonable_depth: 1500
+    generate_debug_dimensions: true
+
+support_resolution:
+    enable: true
+    detection_tolerance_mm: 350
+    column_confidence: 0.97
+    wall_confidence: 0.94
+    beam_confidence: 0.93
+    slab_edge_confidence: 0.91
+    free_end_confidence: 0.85
+    unknown_confidence: 0.0
+    slab_edge_layers:
+    generate_debug_supports: true
+
+beam_section:
+    enable: true
+    deep_section_ratio: 2.0
+    property_tolerance: 0.5
+    generate_debug_section: true
+
+engineering_length:
+    enable: true
+    beam_half_width_fallback_mm: 100
+    effective_span_min_face_confidence: 0.85
+    generate_debug_lengths: true
+
+knowledge_graph:
+    enable: true
+    junction_tolerance_mm: 250
+    continuous_angle_tolerance_deg: 5
+    phase_e_rules_path: data/output/phase_e/general_notes_engineering_rules.json
+    generate_debug_graph: true
+
+engineering_context:
+    enable: true
+    knowledge_version: 1.0
+    generate_debug_context: true
+    generate_debug_dependencies: true
+    generate_debug_project_graph: true
+
+workspace:
+    enable: true
+    generate_debug_workspace: true
+    default_floor:
+        name: Ground Floor
+        slug: GROUND_FLOOR
+
+reinforcement_loading:
+    enable: true
+    generate_debug_reinforcement: true
+
+reinforcement_drawings:
+    ground_floor: data/framing/Beam_Reinforcement_Details.dxf
+
+drawing_identity:
+    enable: true
+    generate_debug_drawing_identity: true
+    general_notes_path: data/general_notes/SE-100-R0-SH-01&SH-02(GENERAL NOTES).dxf
+
+drawing_set:
+    enable: true
+    generate_debug_drawing_set: true
+
+drawing_set_lifecycle:
+    enable: true
+    generate_debug_drawing_set_state: true
+
+reinforcement_geometry:
+    enable: true
+    generate_debug_reinforcement_geometry: true
+    region_header_layers: SEC TEXT,S-BEAM-IDEN
+    row_tolerance_mm: 2500
+    header_merge_distance_mm: 4000
+    detail_band_below_mm: 4500
+    detail_band_above_mm: 1500
+    strip_width_mm: 300
+    continuity_gap_mm: 800
+    geometry_overlap_ratio: 0.12
+    shared_bar_threshold: 1
+    shared_leader_threshold: 0.3
+    whitespace_threshold: 0
+    region_growth_radius: 12000
+    region_margin_y_above_mm: 2500
+    region_margin_y_below_mm: 9000
+    allow_multibeam_regions: true
+    continuity_min_score: 0.75
+    min_strip_entities_for_continuity: 4
+    duplicate_mark_detection: true
+    enable_multiview_detection: true
+    duplicate_merge_distance_mm: 250
+    min_duplicate_confidence: 0.85
+    reinforcement_layers: -STR-REINF,-STR-BEAM,-S-STIRUP
+    stirrup_layers: -S-STIRUP
+    beam_layers: -STR-BEAM
+    arrow_layers: -S-ARROW
+    sketch_cluster_tolerance_mm: 1200
+    sketch_min_geometry_count: 2
+    detail_context_enable: true
+    detail_context_generate_debug: true
+    detail_identity_enable: true
+    detail_identity_generate_debug: true
+    beam_candidate_enable: true
+    beam_candidate_generate_debug: true
+    match_decision_enable: true
+    match_decision_generate_debug: true
+    match_decision_quality_enable: true
+    match_decision_quality_generate_debug: true
+    beam_matching_enable: true
+    beam_matching_generate_debug: true
+    ownership_resolver_enable: true
+    ownership_resolver_generate_debug: true
+    engineering_asset_registry_enable: true
+    engineering_asset_registry_generate_debug: true
+    engineering_object_framework_enable: true
+    engineering_semantic_role_enable: true
+    engineering_semantic_relationship_enable: true
+    engineering_object_enable: true
+    engineering_object_graph_enable: true
+    engineering_object_validation_enable: true
+    engineering_object_debug_enable: false
+    engineering_object_instantiation_enable: true
+    property_graph_enable: true
+    property_graph_validation_enable: true
+    property_parser_enable: true
+    property_parser_validation_enable: true
+    property_resolver_enable: true
+    property_resolver_validation_enable: true
+    engineering_specification_enable: true
+    engineering_specification_validation_enable: true
+    geometry_association_enable: true
+    geometry_association_validation_enable: true
+    calculation_context_enable: true
+    calculation_context_validation_enable: true
+    reinforcement_calculation_enable: true
+    reinforcement_calculation_validation_enable: true
+    reinforcement_readiness_enable: true
+    reinforcement_readiness_validation_enable: true
+    calculation_result_framework_enable: true
+    calculation_result_framework_validation_enable: true
+    development_length_enable: true
+    development_length_validation_enable: true
+    hook_length_enable: true
+    hook_length_validation_enable: true
+    calculation_index_enable: true
+    calculation_index_validation_enable: true
+    calculation_dependency_enable: true
+    calculation_dependency_validation_enable: true
+    lap_length_enable: true
+    lap_length_validation_enable: true
+    calculation_provenance_enable: true
+    calculation_provenance_validation_enable: true
+    cut_length_enable: true
+    cut_length_validation_enable: true
+    shape_code_enable: true
+    shape_code_validation_enable: true
+    bar_identity_enable: true
+    bar_identity_validation_enable: true
+    bar_group_enable: true
+    bar_group_validation_enable: true
+    bbs_enable: true
+    bbs_validation_enable: true
+    steel_weight_enable: true
+    steel_weight_validation_enable: true
+    beam_summary_enable: true
+    beam_summary_validation_enable: true
+    quantity_enable: true
+    quantity_validation_enable: true
+    material_quantification_enable: true
+    material_validation_enable: true
+    beam_schedule_enable: true
+    beam_schedule_validation_enable: true
+    engineering_report_enable: true
+    engineering_report_validation_enable: true
+    excel_export_enable: true
+    excel_export_validation_enable: true

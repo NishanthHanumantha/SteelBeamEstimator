@@ -1,0 +1,16 @@
+# Phase K.2 — Engineering Decision Execution configuration
+# When enable is false, K.2 still builds execution artifacts but does not
+# invoke production calculation engines (Version5-compatible path).
+
+model_version: "6.1.0"
+phase: "Phase K.2"
+
+enable: true
+
+invoke_calculation_engine: true
+invoke_steel_bridge: true
+invoke_bbs_bridge: true
+invoke_excel_bridge: true
+invoke_qa_bridge: false
+
+lifecycle_initial: CREATED

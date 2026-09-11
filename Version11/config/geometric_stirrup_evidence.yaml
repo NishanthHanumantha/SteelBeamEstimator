@@ -1,0 +1,29 @@
+# Phase T1 — Geometric Stirrup Evidence Engine (9.3.0)
+# Soft-exit: when false, pipeline is row-identical to 9.2.0.
+
+enable_geometry_stirrup_evidence: true
+
+detection:
+  min_tick_count: 3
+  pitch_min_mm: 50
+  pitch_max_mm: 400
+  pitch_cv_max: 0.35          # coefficient of variation for "even" trains
+  text_spacing_tolerance_mm: 15
+  prefer_vector: true
+  enable_opencv_fallback: true
+  # Fusion treats confidence < 0.55 as inconclusive (text-only / no synth)
+
+fusion:
+  # Residual-scope only — beams not in residual_target_beams.json are untouched
+  synthesize_geometry_only: true
+  synthesized_confidence: "WARN"   # never HIGH — R3 / Excel must show SYNTHESIZED_GEOMETRY
+  agree_confidence: "HIGH"
+  conflict_flag: "GEOMETRY_TEXT_CONFLICT"
+
+zone_refinement:
+  enable: true
+  # Prefer measured pitch-change boundaries; else SupportLocations; else legacy 0.25L / equal-N
+  prefer_pitch_change: true
+  prefer_support_locations: true
+
+residual_targets_path: "data/output/Track1_geometric_evidence/residual_target_beams.json"

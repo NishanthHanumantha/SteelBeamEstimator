@@ -1,0 +1,31 @@
+# Phase R.2.0.1 — Engineering Notation Semantic Inventory
+# MODEL_VERSION: 7.9.1
+# TYPE: READ-ONLY DISCOVERY
+
+model_version: "7.9.1"
+phase: "R.2.0.1"
+
+paths:
+  dxf: "data/Benchmark_Set_2/reinforcement/Galera_GF_BeamReinforcementDetails.dxf"
+  beam_registry: "data/output/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+  output_dir: "data/output/PhaseR2.0.1_engineering_notation_inventory"
+
+entity_types:
+  - TEXT
+  - MTEXT
+  - ATTRIB
+  - ATTDEF
+
+# Use Phase R.2.0 EngineeringTextRecovery for MTEXT (read-only import)
+use_r20_mtext_recovery: true
+
+# Support status reasons keyed by production regex / classifier knowledge
+support_rules:
+  RE_BAR: "Matched by production RE_BAR"
+  RE_STIRRUP: "Matched by production RE_STIRRUP"
+  RE_COMPOSITE: "Matched by production RE_COMPOSITE"
+  PARTIAL_BAR: "Partial bar pattern matched; modifiers ignored"
+  NOISE: "Filtered as noise by production _NOISE_PATTERNS"
+  UNSUPPORTED_SEMANTIC: "No semantic classifier in production parser"
+  UNSUPPORTED_MODIFIER: "No quantity/face modifier interpretation"
+  UNKNOWN: "No matching production regex or known engineering symbol"

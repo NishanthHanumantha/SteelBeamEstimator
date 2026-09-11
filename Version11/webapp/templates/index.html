@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel Beam Estimation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css', v=app_release) }}" />
+</head>
+<body>
+  <header>
+    <h1>Steel Beam Estimation</h1>
+    <p>
+      Upload one complete beam drawing set to generate the estimation workbook.
+      <span class="badge">{{ engine_display }}</span>
+      <span class="badge badge-release">Release {{ app_release }}</span>
+    </p>
+  </header>
+
+  <main>
+    <section id="view-home" class="card">
+      <h2>Upload Beam Drawing Set</h2>
+      <p class="muted">All three DXF drawings are mandatory. PDF, DWG, images, and ZIP are not accepted.</p>
+
+      <form id="estimate-form">
+        <div class="upload-grid">
+          <div class="upload-card" data-slot="general_notes">
+            <div class="req">REQUIRED</div>
+            <h3>General Notes DXF</h3>
+            <div class="file-meta" id="meta-general_notes">No file selected</div>
+            <div class="upload-actions">
+              <button type="button" class="secondary pick-btn" data-slot="general_notes">Choose file</button>
+              <button type="button" class="secondary replace-btn hidden" data-slot="general_notes">Replace</button>
+            </div>
+            <input type="file" id="file-general_notes" name="general_notes" accept=".dxf,application/dxf" />
+          </div>
+
+          <div class="upload-card" data-slot="framing">
+            <div class="req">REQUIRED</div>
+            <h3>Beam Framing Plan DXF</h3>
+            <div class="file-meta" id="meta-framing">No file selected</div>
+            <div class="upload-actions">
+              <button type="button" class="secondary pick-btn" data-slot="framing">Choose file</button>
+              <button type="button" class="secondary replace-btn hidden" data-slot="framing">Replace</button>
+            </div>
+            <input type="file" id="file-framing" name="framing" accept=".dxf,application/dxf" />
+          </div>
+
+          <div class="upload-card" data-slot="reinforcement">
+            <div class="req">REQUIRED</div>
+            <h3>Beam Reinforcement Plan DXF</h3>
+            <div class="file-meta" id="meta-reinforcement">No file selected</div>
+            <div class="upload-actions">
+              <button type="button" class="secondary pick-btn" data-slot="reinforcement">Choose file</button>
+              <button type="button" class="secondary replace-btn hidden" data-slot="reinforcement">Replace</button>
+            </div>
+            <input type="file" id="file-reinforcement" name="reinforcement" accept=".dxf,application/dxf" />
+          </div>
+        </div>
+
+        <button type="submit" class="primary" id="btn-generate">Generate Steel Estimation</button>
+        <div id="home-error" class="err hidden"></div>
+      </form>
+    </section>
+
+    <section id="view-process" class="card hidden">
+      <h2>Processing</h2>
+      <p class="muted">Please wait. The Version10 production pipeline is running. Only one estimation can run at a time.</p>
+      <div class="process-row">
+        <span class="spinner" aria-hidden="true"></span>
+        <span id="process-message">Processing drawing...</span>
+      </div>
+      <p id="process-detail" class="muted"></p>
+    </section>
+
+    <section id="view-success" class="card hidden">
+      <div class="okbox">Steel estimation completed successfully</div>
+      <div class="meta-grid" id="success-stats">
+        <div class="stat">
+          <div class="k">Workbook Name</div>
+          <div class="v" id="success-workbook">—</div>
+        </div>
+        <div class="stat">
+          <div class="k">Processing Time</div>
+          <div class="v" id="success-duration">—</div>
+        </div>
+        <div class="stat" id="stat-beams">
+          <div class="k">Beam Count</div>
+          <div class="v" id="success-beams">—</div>
+        </div>
+        <div class="stat" id="stat-steel">
+          <div class="k">Total Steel Quantity</div>
+          <div class="v" id="success-steel">—</div>
+        </div>
+      </div>
+      <div id="success-warnings" class="warn hidden"></div>
+      <div id="download-error" class="err hidden"></div>
+      <div class="actions">
+        <a class="btn" id="btn-download" href="#" role="button">Download Excel</a>
+        <button type="button" class="secondary" id="btn-another">Estimate Another Drawing</button>
+      </div>
+    </section>
+
+    <section id="view-error" class="card hidden">
+      <h2>Estimation Failed</h2>
+      <div id="error-message" class="err"></div>
+      <div class="actions">
+        <button type="button" class="secondary" id="btn-retry">Try Again</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js', v=app_release) }}"></script>
+</body>
+</html>

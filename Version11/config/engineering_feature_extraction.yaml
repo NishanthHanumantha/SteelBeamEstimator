@@ -1,0 +1,60 @@
+# Phase L.2.1 — Engineering Feature Extraction Engine
+# MODEL_VERSION: 6.4.1
+# ─────────────────────────────────────────────────────────────────────────────
+# This phase extracts engineering observations only.
+# It does NOT assign semantic roles.
+# It does NOT modify BeamReinforcementModel.
+# ─────────────────────────────────────────────────────────────────────────────
+
+enable: true
+generate_excel_report: true
+strict_validation: true
+extract_all_beams: true
+
+# Feature extraction thresholds
+continuity_threshold: 0.80    # coverage_ratio >= this → bar is continuous
+support_zone_fraction: 0.25   # fraction of span considered "support zone"
+
+# Beam geometry defaults (used when Phase F data not available)
+top_cover_mm: 25.0
+bottom_cover_mm: 25.0
+side_cover_mm: 25.0
+default_beam_width_mm: 200.0
+default_beam_depth_mm: 600.0
+
+# Input sources (read-only)
+inputs:
+  l2_beam_models: "PhaseL.2 - engineering_reinforcement_interpretation/beam_reinforcement_models.json"
+  l2_bar_classification: "PhaseL.2 - engineering_reinforcement_interpretation/bar_role_classification.json"
+  v5_engineering_objects: "phase_g/g_5_1_engineering_objects/engineering_objects.json"
+  v5_reinforcement_objects: "phase_i/i_2_reinforcement_engine/reinforcement_objects.json"
+  v5_beam_schedule: "phase_i/i_15_beam_schedule/beam_schedule_results.json"
+  v5_recovery: "engineering_recovery/recovered_engineering_objects.json"
+
+# Output files (observations only — no semantic roles)
+outputs:
+  - engineering_feature_database.json   # complete feature record per bar
+  - geometry_features.json
+  - position_features.json
+  - continuity_features.json
+  - support_features.json
+  - extent_features.json
+  - orientation_features.json
+  - annotation_features.json
+  - topology_features.json
+  - feature_statistics.json
+  - feature_dashboard.json
+  - engineering_feature_report.xlsx
+
+# Non-negotiable constraints
+constraints:
+  modify_version5: false
+  modify_parser: false
+  modify_engineering_objects: false
+  modify_recovery: false
+  modify_intent: false
+  modify_decisions: false
+  modify_calculations: false
+  modify_beam_reinforcement_model: false
+  assign_semantic_roles: false
+  implement_engineering_rules: false

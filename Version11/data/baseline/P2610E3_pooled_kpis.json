@@ -1,0 +1,55 @@
+{
+  "source": "Version10/data/output/PhaseP2610E3_second_to_sixth_full_population_live_vision_hybrid_accuracy_benchmark/report_data.json",
+  "phase_id": "P2.6.10-E.3",
+  "model_version": "10.11.24",
+  "mode": "LIVE_BENCHMARK",
+  "decision": "PASS_WITH_LIMITATIONS",
+  "note": "Extracted pooled KPIs only. Ground-truth estimator workbooks were not copied. Do not use E.1/E.2 fixture accuracy_report_data.json (stub values of 1).",
+  "population": {
+    "model_beam_total": 530,
+    "estimator_beam_total": 605,
+    "matched_total": 515
+  },
+  "pooled": {
+    "beam_identification_percent": 85.12,
+    "bar_identification_percent": 48.17,
+    "correct_of_detected_percent": 36.5,
+    "diameter_identification_percent": 77.84,
+    "weight_accuracy_percent": 60.64,
+    "overall_accuracy_percent": 57.61,
+    "beam_n": 515,
+    "beam_d": 605,
+    "bar_n": 2008,
+    "bar_d": 4169,
+    "correct_n": 733,
+    "correct_d": 2008,
+    "diameter_n": 1563,
+    "diameter_d": 2008,
+    "hybrid_total_kg": 90305.121,
+    "benchmark_total_kg": 148910.644,
+    "signed_error_kg": -58605.523,
+    "taxonomy": {
+      "MATCH": 733,
+      "WRONG_QUANTITY": 593,
+      "EXTRA": 183,
+      "ACCEPTABLE_EXTRA": 89,
+      "WRONG_ROLE": 134,
+      "WRONG_DIAMETER": 445,
+      "MISSING": 2161,
+      "PARTIAL_MATCH": 103
+    }
+  },
+  "vision_coverage": {
+    "hybrid_count": 486,
+    "fallback_count": 44,
+    "hybrid_percent": 91.7,
+    "fallback_percent": 8.3
+  },
+  "per_set_overall_accuracy_percent": {
+    "Second": 70.03,
+    "Third": 60.07,
+    "Fourth": 53.59,
+    "Fifth": 50.06,
+    "Sixth": 69.56
+  }
+}

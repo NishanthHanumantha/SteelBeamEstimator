@@ -1,0 +1,143 @@
+# Phase GN.1 — General Notes Engineering Context Audit Configuration
+# MODEL_VERSION: 7.4.0
+# READ-ONLY: no engineering values are modified by this phase.
+
+phase:
+  id: "GN.1"
+  name: "General Notes Engineering Context Audit & Consumption Validation"
+  model_version: "7.4.0"
+  read_only: true
+
+inputs:
+  beam_registry:
+    path: "src/PhaseVROOT.1_dynamic_pipeline_initialization/beam_registry.json"
+    required: true
+  general_notes_dxf_dir:
+    path: "data/Benchmark_Set_2/general_notes"
+    required: true
+  framing_dxf_dir:
+    path: "data/Benchmark_Set_2/framing"
+    required: false
+  reinforcement_dxf_dir:
+    path: "data/Benchmark_Set_2/reinforcement"
+    required: false
+  r1_models:
+    path: "data/output/PhaseR.1_generalized_reinforcement_discovery/beam_reinforcement_models.json"
+    required: false
+
+outputs:
+  base_dir: "data/output/PhaseGN.1_general_notes_context_audit"
+  artefacts:
+    - general_notes_discovery.json
+    - engineering_context.json
+    - engineering_parameter_traceability.json
+    - framing_context_traceability.json
+    - reinforcement_context_traceability.json
+    - parameter_consumption_matrix.json
+    - hardcoded_defaults_report.json
+    - engineering_gap_analysis.json
+    - validation_report.json
+    - general_notes_context_audit_report.json
+
+audit:
+  parts:
+    - id: 1
+      name: "General Notes Discovery"
+      verify:
+        - project_specific_gn_discovered: true
+        - no_benchmark_set_1_reuse: true
+        - no_version6_reuse: true
+        - no_hardcoded_values: true
+
+    - id: 2
+      name: "General Notes Extraction"
+      parameters:
+        - steel_grade
+        - concrete_grade
+        - development_length_table
+        - cover
+        - spacer_diameter
+        - spacer_spacing
+        - hook_rules
+        - bend_rules
+        - lap_rules
+        - IS456_constants
+        - IS2502_constants
+
+    - id: 3
+      name: "Engineering Context Traceability"
+      downstream_phases:
+        - SteelWeightCompletion
+        - BBSCompletionEngine
+        - EstimatorExcelGenerator
+
+    - id: 4
+      name: "Framing Plan Audit"
+      fields:
+        - beam_width_mm
+        - beam_depth_mm
+        - beam_length_mm
+        - clear_span_mm
+        - support_width_mm
+        - connectivity
+
+    - id: 5
+      name: "Reinforcement Drawing Audit"
+      fields:
+        - top_main_bars
+        - bottom_main_bars
+        - top_extra_bars
+        - bottom_extra_bars
+        - stirrups
+        - spacer_bars
+        - side_face_reinforcement
+        - dimension_callouts
+
+    - id: 6
+      name: "Default Value Detector"
+      search_patterns:
+        - "7850"
+        - "Fe500"
+        - "Fe415"
+        - "M30"
+        - "M25"
+        - "_COVER_MM"
+        - "_DEVELOPMENT_LENGTH_FACTOR"
+        - "_HOOK_MULTIPLE"
+
+    - id: 7
+      name: "Consumption Validation"
+
+    - id: 8
+      name: "Engineering Gap Analysis"
+      severity_levels:
+        - CRITICAL
+        - HIGH
+        - MEDIUM
+        - LOW
+
+    - id: 9
+      name: "Project Generalization Check"
+
+    - id: 10
+      name: "Validation (12 Rules)"
+      rules:
+        RULE_1: "General Notes discovered"
+        RULE_2: "Correct engineering sheet parsed"
+        RULE_3: "Development Length table extracted"
+        RULE_4: "Steel Grade extracted"
+        RULE_5: "Concrete Grade extracted"
+        RULE_6: "Cover specification audited"
+        RULE_7: "Hook / Bend / Lap / Spacer rules audited"
+        RULE_8: "Engineering context propagated to pipeline"
+        RULE_9: "No Benchmark Set 1 dependency"
+        RULE_10: "Hardcoded constants assessed vs. GN values"
+        RULE_11: "Every extracted parameter has traceability record"
+        RULE_12: "Audit report generated with gap analysis"
+
+success_criteria:
+  validation_score: "12/12"
+  description: >
+    Prove with deterministic evidence that every engineering value used by the
+    production pipeline originates from the correct source drawing, and identify
+    all remaining hardcoded assumptions before implementing Phase R.2.
