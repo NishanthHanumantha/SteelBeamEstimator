@@ -34,6 +34,7 @@ from production_output_models import ProductionOutputResult
 from integration_engine_validator import IntegrationEngineValidator
 from steel_weight_completion import SteelWeightCompletion
 from bbs_completion_engine import BBSCompletionEngine
+from bbs_beam_ordering import apply_bbs_drawing_order, trace_to_dict
 from estimator_excel_generator import EstimatorExcelGenerator
 from workbook_validator import WorkbookValidator
 from production_statistics import ProductionStatisticsCollector
@@ -203,6 +204,7 @@ class PhaseVB1Orchestrator:
         self._reinforcement_source = "REFERENCE_CLASSIFICATION_LEGACY"
         self._use_r14_validation = use_r14_validation
         self._r14_result = None
+        self._bbs_order_trace = None
         if l2_path is not None:
             self.l2_path = l2_path
         elif use_r13_integration:
@@ -361,6 +363,16 @@ class PhaseVB1Orchestrator:
             )
             bbs_rows = bbs_engine.generate()
             print(f"      BBS rows generated: {len(bbs_rows)}")
+            bbs_rows, order_trace = apply_bbs_drawing_order(
+                bbs_rows,
+                run_root=self._run_root,
+                output_dir=self.output_dir,
+            )
+            self._bbs_order_trace = order_trace
+            print(
+                f"      BBS drawing order: {len(order_trace.ordered_beam_ids)} beams, "
+                f"{len(order_trace.rows)} drawing row(s)"
+            )
 
             # Step 5 — Excel workbook generation
             print("[5/9] Estimator Excel Generator")
@@ -404,6 +416,14 @@ class PhaseVB1Orchestrator:
                 statistics=statistics,
                 result=self.result,
             )
+            if self._bbs_order_trace is not None:
+                trace_path = pathlib.Path(self.output_dir) / "bbs_beam_order_trace.json"
+                trace_path.parent.mkdir(parents=True, exist_ok=True)
+                trace_path.write_text(
+                    json.dumps(trace_to_dict(self._bbs_order_trace), indent=2),
+                    encoding="utf-8",
+                )
+                exported["bbs_beam_order_trace"] = str(trace_path)
 
             # ── Validation rules ──────────────────────────────────────────
             self._validate_rules(val_result, steel_summary, paths)

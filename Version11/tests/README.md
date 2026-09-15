@@ -10,6 +10,7 @@ Tests were not duplicated into a second tree. Locations:
 | W.6 Flask hybrid authority | `webapp/tests/test_w6_hybrid_authority.py` |
 | W.6 package unit tests | `src/PhaseW6_hybrid_production_authority/unit_tests.py` |
 | W.18B spacer | `src/PhaseV9_spacer_rule/tests/test_w18b_spacer_rule.py` |
+| V11.1 BBS drawing order | `src/PhaseVB.1_production_output_completion/tests/test_bbs_beam_ordering.py` |
 
 From repository root:
 
